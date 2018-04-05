@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="customExportHandlerBundle" 
+			class="net.sf.jasperreports.engine.export.DefaultElementHandlerBundle">
+		<property name="namespace" value="http://www.dynamicreports.org/custom"/>
+		<property name="elementHandlers">
+			<map>
+				<entry key="custom">
+					<map>
+						<entry key="net.sf.jasperreports.html">
+							<ref local="customHtmlExportHandler"/>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+		
+	<bean id="customHtmlExportHandler" class="net.sf.dynamicreports.test.jasper.component.CustomHtmlHandler">
+	</bean>
+
+</beans>

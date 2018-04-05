@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="templatedesign1" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+	<field name="item" class="java.lang.String"/>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Page header defined in jrxml file]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement x="30" y="10" width="100" height="1"/>
+			</line>
+			<line>
+				<reportElement x="445" y="10" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="135" y="0" width="305" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["row " + $V{REPORT_COUNT} +
+", item = " + $F{item} +
+", quantity = " + $F{quantity} +
+", unit price = " + $F{unitprice} +
+", defined in jrxml file"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Page footer defined in jrxml file]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Summary defined in jrxml file]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

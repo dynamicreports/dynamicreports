@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>net.sourceforge.dynamicreports</groupId>
+		<artifactId>dynamicreports-parent</artifactId>
+		<version>5.1.0</version>
+	</parent>
+
+	<artifactId>dynamicreports-adhoc</artifactId>
+	<packaging>jar</packaging>
+
+	<name>DynamicReports - adhoc</name>
+	<url>http://www.dynamicreports.org</url>
+	<description>DynamicReports adhoc</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sourceforge.dynamicreports</groupId>
+			<artifactId>dynamicreports-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.13.1</version>
+				<configuration>
+					<schemaIncludes>
+						<schemaInclude>**/adhocconfiguration.xsd</schemaInclude>
+					</schemaIncludes>
+					<bindingIncludes>
+						<bindingInclude>**/adhocconfiguration.xjb</bindingInclude>
+					</bindingIncludes>
+					<removeOldOutput>true</removeOldOutput>
+				</configuration>
+				<executions>
+					<execution>
+						<id>jaxb</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

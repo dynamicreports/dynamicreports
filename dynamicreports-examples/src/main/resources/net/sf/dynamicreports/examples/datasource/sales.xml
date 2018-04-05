@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sales>
+	<item id="1">
+		<item>Book</item>
+		<quantity>15</quantity>
+		<unitprice>10</unitprice>
+	</item>
+	<item id="2">
+		<item>PDA</item>
+		<quantity>5</quantity>
+		<unitprice>100</unitprice>
+	</item>
+	<chart>
+		<item>
+			<item>Book</item>
+			<quantity>100</quantity>
+		</item>
+		<item>
+			<item>PDA</item>
+			<quantity>80</quantity>
+		</item>
+	</chart>
+</sales>

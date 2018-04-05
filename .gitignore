@@ -1,0 +1,102 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+# IDEA Ignores #
+################
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+target/
+local.properties
+
+# Eclipse #
+################
+.settings/
+.project
+.classpath
+*.ftl
+
+# Generic Android ignores #
+###########################
+bin/
+target
+gen/
+
+# Built Application Files
+###########################
+*.apk
+*.ap_
+
+# Files for the dex VM
+###########################
+*.dex
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+log/
+*.log
+logs/
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# VCS #
+#######
+.svn
+.svn/
+CVS
+
+# Directory files #
+###################
+upload-dir/
+temp-uploads/
+
+# Release files #
+#################
+*.releaseBackup
+release.properties
+
+# XCode 5 #
+###########
+*.xcuserstate
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+

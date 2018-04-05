@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DynamicReports>
+	<!-- DEFAULT FONT -->
+	<font fontName="Arial" fontSize="15" pdfFontName="Courier New" pdfEncoding="Cp1250" pdfEmbedded="true"/>
+	
+	<!-- DEFAULT DATA TYPES -->
+	<bigDecimalType pattern="#,###.00#" horizontalAlignment="LEFT"/>
+	<bigIntegerType pattern="#,###" horizontalAlignment="LEFT"/>   
+	<byteType pattern="#,###" horizontalAlignment="LEFT"/>
+	<doubleType pattern="#,###.#" horizontalAlignment="LEFT"/>
+	<floatType pattern="#,###.#" horizontalAlignment="LEFT"/>   
+	<integerType pattern="#,###" horizontalAlignment="LEFT"/>
+	<longType pattern="#,###" horizontalAlignment="LEFT"/>   
+	<shortType pattern="#,###" horizontalAlignment="LEFT"/>
+	<dateType pattern="MM.dd.yyyy" horizontalAlignment="LEFT"/>
+	<dateYearToMonthType pattern="MM.yyyy" horizontalAlignment="LEFT"/>   
+	<dateYearToHourType pattern="MM.dd.yyyy h a" horizontalAlignment="LEFT"/>
+	<dateYearToMinuteType pattern="MM.dd.yyyy h:mm a" horizontalAlignment="LEFT"/>
+	<dateYearToSecondType pattern="MM.dd.yyyy h:mm:ss a" horizontalAlignment="LEFT"/>
+	<dateYearToFractionType pattern="MM.dd.yyyy h:mm:ss,SSS a" horizontalAlignment="LEFT"/>	
+	<dateYearType pattern="yy" horizontalAlignment="LEFT"/>
+	<dateMonthType pattern="MM" horizontalAlignment="LEFT"/> 
+	<dateDayType pattern="d" horizontalAlignment="LEFT"/>  	   
+	<timeHourToMinuteType pattern="hh:mm a" horizontalAlignment="LEFT"/>
+	<timeHourToSecondType pattern="hh:mm:ss a" horizontalAlignment="LEFT"/>
+	<timeHourToFractionType pattern="hh:mm:ss,SSS a" horizontalAlignment="LEFT"/>  
+	<percentageType pattern="#,###.00%" horizontalAlignment="LEFT"/>
+	<booleanType horizontalAlignment="RIGHT"/>
+	<characterType horizontalAlignment="RIGHT"/>
+	<stringType horizontalAlignment="RIGHT"/>
+</DynamicReports>

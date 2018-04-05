@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:configuration xmlns:ns2="http://dynamicreports.sourceforge.net/schema/adhocconfiguration">
+    <report>
+        <column name="field1" title="Column1 &amp;&amp; C&lt;a&gt;aa&lt;/a&gt; &quot;a&quot; 'c'" width="50">
+            <style foregroundColor="#0000FF"/>
+            <titleStyle>
+                <leftBorder lineWidth="2.0"/>
+            </titleStyle>
+        </column>
+        <column name="field2" title="Column2"/>
+        <column name="field3"/>
+        <group name="field4">
+            <style foregroundColor="#0000FF"/>
+            <titleStyle>
+                <leftBorder lineWidth="2.0"/>
+            </titleStyle>
+        </group>
+    </report>
+</ns2:configuration>

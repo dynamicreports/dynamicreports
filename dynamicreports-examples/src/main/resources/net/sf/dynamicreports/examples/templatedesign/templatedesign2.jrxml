@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="templatedesign2" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+	<field name="item" class="java.lang.String"/>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Page header defined in templatedesign2.jrxml file]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Page footer defined in templatedesign2.jrxml file]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="15" width="515" height="47"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="27" width="515" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Summary defined in templatedesign2.jrxml file]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

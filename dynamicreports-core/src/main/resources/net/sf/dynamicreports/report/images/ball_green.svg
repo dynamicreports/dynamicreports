@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="159.60748"
+   height="159.60748"
+   id="svg1968"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   version="1.0"
+   sodipodi:docbase="C:\Documents and Settings\Molumen\Desktop"
+   sodipodi:docname="green_square_icon.svg">
+  <defs
+     id="defs1970">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2055">
+      <stop
+         style="stop-color:#eeeeec;stop-opacity:1;"
+         offset="0"
+         id="stop2057" />
+      <stop
+         style="stop-color:#eeeeec;stop-opacity:0;"
+         offset="1"
+         id="stop2059" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2055"
+       id="linearGradient2061"
+       x1="414.44666"
+       y1="535.74768"
+       x2="417.98221"
+       y2="602.92285"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2063">
+      <stop
+         style="stop-color:#eeeeec;stop-opacity:1;"
+         offset="0"
+         id="stop2065" />
+      <stop
+         style="stop-color:#eeeeec;stop-opacity:0;"
+         offset="1"
+         id="stop2067" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2063"
+       id="linearGradient2069"
+       x1="470.51016"
+       y1="698.3822"
+       x2="471.52029"
+       y2="609.9939"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="102.48001"
+     inkscape:cy="80.572383"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="853"
+     inkscape:window-height="569"
+     inkscape:window-x="596"
+     inkscape:window-y="30" />
+  <metadata
+     id="metadata1973">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon</rdf:li>
+            <rdf:li>button</rdf:li>
+            <rdf:li>submit</rdf:li>
+            <rdf:li>add</rdf:li>
+            <rdf:li>ok</rdf:li>
+            <rdf:li>green</rdf:li>
+            <rdf:li>yes</rdf:li>
+            <rdf:li>positive</rdf:li>
+            <rdf:li>good</rdf:li>
+            <rdf:li>confirm</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Lumen Design Studio</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Lumen Design Studio</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <cc:license
+           rdf:resource="http://web.resource.org/cc/PublicDomain" />
+        <dc:title>round submit icon</dc:title>
+        <dc:description>green round submit icon</dc:description>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-394.8348,-342.3994)">
+    <g
+       transform="matrix(0.9,0,0,0.9,72.7396,-118.4149)"
+       id="g2084">
+      <path
+         transform="matrix(0.306862,0,0,0.306862,328.6317,428.9959)"
+         d="M 634.28571 559.50507 A 250 250 0 1 1  134.28571,559.50507 A 250 250 0 1 1  634.28571 559.50507 z"
+         sodipodi:ry="250"
+         sodipodi:rx="250"
+         sodipodi:cy="559.50507"
+         sodipodi:cx="384.28571"
+         id="path1954"
+         style="fill:#8ae234;fill-opacity:1;fill-rule:evenodd;stroke:#73d216;stroke-width:20.127882;stroke-linecap:butt;stroke-linejoin:miter;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="arc" />
+      <path
+         sodipodi:nodetypes="cccc"
+         id="path1956"
+         d="M 465.20401,668.93136 C 484.25065,663.82784 499.37724,651.27316 508.43271,635.10742 C 523.1404,600.28933 468.2659,681.80733 422.94143,666.99805 C 436.11746,671.83026 450.75472,672.80304 465.20401,668.93136 z "
+         style="fill:url(#linearGradient2069);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         style="fill:url(#linearGradient2061);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="M 446.67133,529.36222 C 407.23429,529.36222 375.22913,562.20957 375.22913,602.68438 C 375.22913,608.15829 375.83658,613.48618 376.94663,618.61875 C 416.15174,543.15095 458.39222,590.65582 512.85368,575.07214 C 502.21825,548.27438 476.58935,529.36222 446.67133,529.36222 z "
+         id="path1958"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

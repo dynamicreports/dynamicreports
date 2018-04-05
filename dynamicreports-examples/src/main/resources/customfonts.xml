@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fontFamilies>
+
+	<fontFamily name="FreeUniversal">
+		<normal>net/sf/dynamicreports/examples/fonts/FreeUniversal-Regular.ttf</normal>
+		<bold>net/sf/dynamicreports/examples/fonts/FreeUniversal-Bold.ttf</bold>
+		<italic>net/sf/dynamicreports/examples/fonts/FreeUniversal-Italic.ttf</italic>
+		<boldItalic>net/sf/dynamicreports/examples/fonts/FreeUniversal-BoldItalic.ttf</boldItalic>
+		<pdfEncoding>Cp1252</pdfEncoding>
+		<pdfEmbedded>true</pdfEmbedded>
+	</fontFamily>
+
+</fontFamilies>

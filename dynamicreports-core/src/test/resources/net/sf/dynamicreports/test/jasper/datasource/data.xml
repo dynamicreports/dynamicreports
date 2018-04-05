@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<row1 field1="text1">
+		<field2>5</field2>
+		<field3>100</field3>
+	</row1>
+	<row2 field4="text2">
+		<field5>1</field5>
+		<field6>10</field6>
+	</row2>
+</data>

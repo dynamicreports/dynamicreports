@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.dynamicreports.org/googlecharts"
+	xmlns:c="http://www.dynamicreports.org/googlecharts"
+	xmlns:jr="http://jasperreports.sourceforge.net/jasperreports"
+	elementFormDefault="qualified">
+
+	<import namespace="http://jasperreports.sourceforge.net/jasperreports" />
+
+	<element name="geoMap" substitutionGroup="jr:component">
+		<complexType>
+			<complexContent>
+				<extension base="jr:componentType">
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>	
+
+</schema>

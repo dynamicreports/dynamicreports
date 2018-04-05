@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.0"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+
+	<bindings schemaLocation="adhocconfiguration.xsd" node="/xsd:schema">
+		<schemaBindings>
+			<package name="net.sf.dynamicreports.adhoc.xmlconfiguration" />
+			<nameXmlTransform>
+				<typeName prefix="XmlAdhoc" />
+			</nameXmlTransform>
+		</schemaBindings>
+	</bindings>
+</bindings>

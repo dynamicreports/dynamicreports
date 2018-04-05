@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="net.sf.dynamicreports.jasper.base.JasperScriptlet">
+	<style name="style_33_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
+	<field name="column1" class="java.lang.String"/>
+	<field name="column2" class="java.lang.String"/>
+	<field name="column3" class="java.lang.String"/>
+	<title>
+		<band height="16">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="title.textField1" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Subreport" + $P{MASTER_REPORT_PARAMETERS}.getReportRowNumber()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="16">
+			<frame>
+				<reportElement key="columnHeader.list1" positionType="Float" x="0" y="0" width="575" height="16"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_column1.title1" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Column1"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_column2.title1" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="191" y="0" width="192" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Column2"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_column3.title1" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="383" y="0" width="192" height="16"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Column3"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16">
+			<frame>
+				<reportElement key="detail.list1" positionType="Float" x="0" y="0" width="575" height="16"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="detail.column_column11" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="16"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{column1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="detail.column_column21" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="191" y="0" width="192" height="16"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{column2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="detail.column_column31" style="style_33_" positionType="Float" stretchType="RelativeToTallestObject" x="383" y="0" width="192" height="16"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{column3}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

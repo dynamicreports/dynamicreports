@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:configuration xmlns:ns2="http://dynamicreports.sourceforge.net/schema/adhocconfiguration">
+    <report highlightDetailOddRows="true" highlightDetailEvenRows="true" ignorePagination="true" tableOfContents="true">
+        <textStyle foregroundColor="#FFFFFF" backgroundColor="#404040" horizontalAlignment="CENTER" verticalAlignment="MIDDLE" pattern="#,###.00">
+            <font fontName="a" fontSize="5" bold="true" italic="true" underline="true" strikeThrough="true"/>
+            <topBorder lineWidth="2.0" lineColor="#00FFFF"/>
+            <leftBorder lineWidth="2.0" lineColor="#00FFFF"/>
+            <bottomBorder lineWidth="2.0" lineColor="#00FFFF"/>
+            <rightBorder lineWidth="2.0" lineColor="#00FFFF"/>
+        </textStyle>
+        <columnStyle foregroundColor="#0000FF"/>
+        <columnTitleStyle foregroundColor="#0000FF"/>
+        <groupStyle foregroundColor="#0000FF"/>
+        <groupTitleStyle foregroundColor="#0000FF"/>
+        <subtotalStyle foregroundColor="#0000FF"/>
+        <detailOddRowStyle foregroundColor="#0000FF"/>
+        <detailEvenRowStyle foregroundColor="#0000FF"/>
+        <page width="100" height="200" orientation="PORTRAIT" topMargin="1" bottomMargin="2" leftMargin="3" rightMargin="4" ignorePageWidth="true"/>
+        <column name="field1" title="Column1" width="50">
+            <style foregroundColor="#0000FF"/>
+            <titleStyle foregroundColor="#0000FF"/>
+        </column>
+        <column name="field2" title="Column2"/>
+        <column name="field3"/>
+        <group name="field4" startInNewPage="true" headerLayout="TITLE_AND_VALUE">
+            <style foregroundColor="#0000FF"/>
+            <titleStyle foregroundColor="#0000FF"/>
+        </group>
+        <group name="field4">
+            <property key="key1">value&lt;a&gt;&amp;&amp;&lt;/a&gt;1</property>
+            <property key="key2">value&lt;a&gt;&amp;&amp;&lt;/a&gt;2</property>
+        </group>
+        <sort name="field1" orderType="DESCENDING"/>
+        <sort name="field1"/>
+        <subtotal name="field1" label="label" calculation="SUM">
+            <style foregroundColor="#0000FF"/>
+            <labelStyle foregroundColor="#0000FF"/>
+        </subtotal>
+        <subtotal name="field1"/>
+        <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:TextField" text="text" key="textField" width="150" height="200">
+            <style foregroundColor="#0000FF"/>
+        </component>
+        <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Chart" type="AREA" title="title" titleColor="#FF00FF" showLegend="true" xValue="field2" orientation="VERTICAL" key="chart1">
+            <property key="net.sf.dynamicreports.chart.useseriesascategory" valueClass="java.lang.Boolean">true</property>
+            <titleFont/>
+            <serie series="field5" yValue="field1" label="label"/>
+            <seriesColors>#C0C0C0</seriesColors>
+            <xAxisFormat label="label" labelColor="#0000FF">
+                <labelFont/>
+            </xAxisFormat>
+            <yAxisFormat label="label" labelColor="#0000FF">
+                <labelFont/>
+            </yAxisFormat>
+        </component>
+        <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Chart" xValue="field2" key="chart2">
+            <serie yValue="field1"/>
+        </component>
+    </report>
+    <filter>
+        <restriction key="restriction1">
+            <property key="key">value</property>
+            <property key="key_int" valueClass="java.lang.Integer">100</property>
+            <property key="key_empty"/>
+            <property key="key_boolean" valueClass="java.lang.Boolean">true</property>
+        </restriction>
+        <restriction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:ValueRestriction" name="aa" operator="IN" key="restriction2">
+            <value>value1</value>
+            <value>value2</value>
+        </restriction>
+    </filter>
+</ns2:configuration>

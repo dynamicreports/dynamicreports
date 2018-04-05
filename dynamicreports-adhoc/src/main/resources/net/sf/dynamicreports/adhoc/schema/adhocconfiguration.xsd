@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://dynamicreports.sourceforge.net/schema/adhocconfiguration" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dynamicreports.sourceforge.net/schema/adhocconfiguration">
+	
+	<xs:element name="configuration" type="Configuration">
+	</xs:element>
+	
+	<!-- *********************************************************** C O N F I G U R A T I O N *********************************************************** -->	
+	
+	<xs:complexType name="Configuration">
+		<xs:sequence>
+			<xs:element name="report" type="Report" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="filter" type="Filter" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ******************** PROPERTY ******************** -->
+
+	<xs:complexType name="Property">
+		<xs:simpleContent>
+ 			<xs:extension base="xs:string">
+				<xs:attribute name="key" type="xs:string"/>
+				<xs:attribute name="valueClass" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<!-- *********************************************************** R E P O R T *********************************************************** -->
+	
+	<xs:complexType name="Report">
+		<xs:sequence>
+			<xs:element name="textStyle" type="Style" minOccurs="0" maxOccurs="1"/>			
+			<xs:element name="columnStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="columnTitleStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="groupStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="groupTitleStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="subtotalStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="detailOddRowStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="detailEvenRowStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="page" type="Page" minOccurs="0" maxOccurs="1"/>			
+			<xs:element name="column" type="Column" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="group" type="Group" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="sort" type="Sort" minOccurs="0" maxOccurs="unbounded"/>			
+			<xs:element name="subtotal" type="Subtotal" minOccurs="0" maxOccurs="unbounded"/>			
+			<xs:element name="component" type="Component" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="highlightDetailOddRows" type="xs:boolean"/>		
+		<xs:attribute name="highlightDetailEvenRows" type="xs:boolean"/>
+		<xs:attribute name="ignorePagination" type="xs:boolean"/>	
+		<xs:attribute name="tableOfContents" type="xs:boolean"/>
+	</xs:complexType>
+	
+	<!-- ******************** COLUMN ******************** -->
+	
+	<xs:complexType name="Column">
+		<xs:sequence>
+			<xs:element name="style" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="titleStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="title" type="xs:string"/>
+		<xs:attribute name="width" type="xs:int"/>
+	</xs:complexType>
+	
+	<!-- ******************** GROUP ******************** -->
+	
+	<xs:complexType name="Group">
+		<xs:sequence>
+			<xs:element name="style" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="titleStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="startInNewPage" type="xs:boolean"/>
+		<xs:attribute name="headerLayout" type="GroupHeaderLayout"/>
+	</xs:complexType>
+
+	<xs:simpleType name="GroupHeaderLayout">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EMPTY" />
+			<xs:enumeration value="VALUE" />
+			<xs:enumeration value="TITLE_AND_VALUE" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ******************** SUBTOTAL ******************** -->
+
+	<xs:complexType name="Subtotal">
+		<xs:sequence>
+			<xs:element name="style" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="labelStyle" type="Style" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="label" type="xs:string"/>		
+		<xs:attribute name="calculation" type="Calculation"/>
+		<xs:attribute name="position" type="SubtotalPosition"/>
+		<xs:attribute name="groupName" type="xs:string"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="Calculation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NOTHING"/>
+			<xs:enumeration value="COUNT"/>
+			<xs:enumeration value="SUM"/>
+			<xs:enumeration value="AVERAGE"/>
+			<xs:enumeration value="LOWEST"/>
+			<xs:enumeration value="HIGHEST"/>
+			<xs:enumeration value="STANDARD_DEVIATION"/>
+			<xs:enumeration value="VARIANCE"/>
+			<xs:enumeration value="FIRST"/>
+			<xs:enumeration value="DISTINCT_COUNT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SubtotalPosition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TITLE"/>
+			<xs:enumeration value="PAGE_HEADER"/>
+			<xs:enumeration value="PAGE_FOOTER"/>
+			<xs:enumeration value="COLUMN_HEADER"/>
+			<xs:enumeration value="COLUMN_FOOTER"/>
+			<xs:enumeration value="GROUP_HEADER"/>
+			<xs:enumeration value="GROUP_FOOTER"/>
+			<xs:enumeration value="FIRST_GROUP_HEADER"/>
+			<xs:enumeration value="FIRST_GROUP_FOOTER"/>
+			<xs:enumeration value="LAST_GROUP_HEADER"/>
+			<xs:enumeration value="LAST_GROUP_FOOTER"/>
+			<xs:enumeration value="LAST_PAGE_FOOTER"/>
+			<xs:enumeration value="SUMMARY"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- ******************** SORT ******************** -->
+	
+	<xs:complexType name="Sort">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="orderType" type="OrderType"/>
+	</xs:complexType>	
+	
+	<xs:simpleType name="OrderType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ASCENDING"/>
+			<xs:enumeration value="DESCENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ******************** STYLE ******************** -->
+
+	<xs:complexType name="Style">
+		<xs:sequence>
+			<xs:element name="font" type="Font" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="topBorder" type="Pen" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="leftBorder" type="Pen" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="bottomBorder" type="Pen" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="rightBorder" type="Pen" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="foregroundColor" type="xs:string"/>
+		<xs:attribute name="backgroundColor" type="xs:string"/>
+		<xs:attribute name="horizontalAlignment" type="HorizontalAlignment"/>
+		<xs:attribute name="verticalAlignment" type="VerticalAlignment"/>
+		<xs:attribute name="pattern" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:complexType name="Font">
+		<xs:attribute name="fontName" type="xs:string"/>
+		<xs:attribute name="fontSize" type="xs:int"/>
+		<xs:attribute name="bold" type="xs:boolean"/>
+		<xs:attribute name="italic" type="xs:boolean"/>
+		<xs:attribute name="underline" type="xs:boolean"/>
+		<xs:attribute name="strikeThrough" type="xs:boolean"/>
+	</xs:complexType>
+
+	<xs:complexType name="Pen">
+		<xs:attribute name="lineWidth" type="xs:float"/>
+		<xs:attribute name="lineColor" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:simpleType name="HorizontalAlignment">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LEFT"/>
+			<xs:enumeration value="CENTER"/>
+			<xs:enumeration value="RIGHT"/>
+			<xs:enumeration value="JUSTIFIED"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VerticalAlignment">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TOP"/>
+			<xs:enumeration value="MIDDLE"/>
+			<xs:enumeration value="BOTTOM"/>
+			<xs:enumeration value="JUSTIFIED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- ******************** PAGE ******************** -->
+	
+	<xs:complexType name="Page">
+		<xs:attribute name="width" type="xs:int"/>
+		<xs:attribute name="height" type="xs:int"/>
+		<xs:attribute name="orientation" type="PageOrientation"/>
+		<xs:attribute name="topMargin" type="xs:int"/>
+		<xs:attribute name="bottomMargin" type="xs:int"/>
+		<xs:attribute name="leftMargin" type="xs:int"/>
+		<xs:attribute name="rightMargin" type="xs:int"/>
+		<xs:attribute name="ignorePageWidth" type="xs:boolean"/>
+	</xs:complexType>
+
+	<xs:simpleType name="PageOrientation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PORTRAIT"/>
+			<xs:enumeration value="LANDSCAPE"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ******************** COMPONENT ******************** -->
+
+	<xs:complexType name="Component">
+		<xs:sequence>
+			<xs:element name="style" type="Style" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="key" type="xs:string"/>
+		<xs:attribute name="width" type="xs:int"/>
+		<xs:attribute name="height" type="xs:int"/>		
+	</xs:complexType>
+	
+	<!-- ******************** TEXTFIELD ******************** -->	
+	
+	<xs:complexType name="TextField">
+		<xs:complexContent>
+			<xs:extension base="Component">
+				<xs:attribute name="text" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+		
+	<!-- ******************** CHART ******************** -->
+		
+	<xs:complexType name="Chart">
+		<xs:complexContent>
+			<xs:extension base="Component">
+				<xs:sequence>
+					<xs:element name="titleFont" type="Font" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="serie" type="ChartSerie" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="seriesColors" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="xAxisFormat" type="AxisFormat" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="yAxisFormat" type="AxisFormat" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="ChartType"/>
+				<xs:attribute name="title" type="xs:string"/>
+				<xs:attribute name="titleColor" type="xs:string"/>	
+				<xs:attribute name="showLegend" type="xs:boolean"/>				
+				<xs:attribute name="xValue" type="xs:string"/>
+				<xs:attribute name="orientation" type="Orientation"/>			
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="Orientation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HORIZONTAL"/>
+			<xs:enumeration value="VERTICAL"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="AxisFormat">
+		<xs:sequence>
+			<xs:element name="labelFont" type="Font" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="label" type="xs:string"/>
+		<xs:attribute name="labelColor" type="xs:string"/>		
+	</xs:complexType>
+	
+	<xs:complexType name="ChartSerie">
+		<xs:sequence>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="series" type="xs:string"/>
+		<xs:attribute name="xValue" type="xs:string"/>
+		<xs:attribute name="yValue" type="xs:string"/>
+		<xs:attribute name="zValue" type="xs:string"/>
+		<xs:attribute name="label" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:simpleType name="ChartType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AREA"/>
+			<xs:enumeration value="STACKEDAREA"/>
+			<xs:enumeration value="BAR"/>
+			<xs:enumeration value="STACKEDBAR"/>
+			<xs:enumeration value="GROUPEDSTACKEDBAR"/>
+			<xs:enumeration value="BAR3D"/>
+			<xs:enumeration value="STACKEDBAR3D"/>
+			<xs:enumeration value="LINE"/>
+			<xs:enumeration value="LAYEREDBAR"/>
+			<xs:enumeration value="WATERFALLBAR"/>
+			<xs:enumeration value="DIFFERENCE"/>
+			<xs:enumeration value="PIE"/>
+			<xs:enumeration value="PIE3D"/>
+			<xs:enumeration value="SCATTER"/>
+			<xs:enumeration value="SPIDER"/>
+			<xs:enumeration value="TIMESERIES"/>
+			<xs:enumeration value="XYAREA"/>
+			<xs:enumeration value="XYBAR"/>
+			<xs:enumeration value="XYLINE"/>
+			<xs:enumeration value="XYSTEP"/>
+			<xs:enumeration value="BUBBLE"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- *********************************************************** F I L T E R *********************************************************** -->
+
+	<xs:complexType name="Filter">
+		<xs:sequence>
+			<xs:element name="restriction" type="Restriction" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ******************** RESTRICTION ******************** -->
+		
+	<xs:complexType name="Restriction">
+		<xs:sequence>
+			<xs:element name="property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="key" type="xs:string"/>
+	</xs:complexType>
+
+	<!-- ******************** VALUE RESTRICTION ******************** -->
+
+	<xs:complexType name="ValueRestriction">
+		<xs:complexContent>
+			<xs:extension base="Restriction">
+				<xs:sequence>
+					<xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="operator" type="ValueOperator"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="ValueOperator">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EQUAL"/>
+			<xs:enumeration value="UNEQUAL"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="NOT_IN"/>
+			<xs:enumeration value="LIKE"/>
+			<xs:enumeration value="NOT_LIKE"/>
+			<xs:enumeration value="START_WITH"/>
+			<xs:enumeration value="NOT_START_WITH"/>
+			<xs:enumeration value="END_WITH"/>
+			<xs:enumeration value="NOT_END_WITH"/>
+			<xs:enumeration value="GREATER"/>
+			<xs:enumeration value="GREATER_OR_EQUAL"/>
+			<xs:enumeration value="SMALLER"/>
+			<xs:enumeration value="SMALLER_OR_EQUAL"/>
+			<xs:enumeration value="BETWEEN"/>
+			<xs:enumeration value="NOT_BETWEEN"/>
+			<xs:enumeration value="IS_NOT_NULL"/>
+			<xs:enumeration value="IS_NULL"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

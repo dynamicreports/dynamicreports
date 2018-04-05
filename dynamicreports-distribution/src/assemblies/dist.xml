@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/POM/4.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.1.1.xsd">
+
+	<id>dist</id>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<fileSets>
+		<fileSet>
+			<directory>..</directory>
+			<includes>
+				<include>*.txt</include>
+			</includes>
+		</fileSet>		
+	</fileSets>
+	
+	<files>
+		<file>
+			<source>src/assemblies/readme.txt</source>
+		</file>
+ 	</files>
+	
+	<dependencySets>
+		<dependencySet>
+			<includes>
+				<include>net.sourceforge.dynamicreports:dynamicreports-core:jar</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-core:*:javadoc</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-core:*:sources</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-adhoc:jar</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-adhoc:*:sources</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-googlecharts:jar</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-googlecharts:*:sources</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-examples:jar</include>
+				<include>net.sourceforge.dynamicreports:dynamicreports-examples:*:sources</include>
+			</includes>      
+		</dependencySet>   
+	</dependencySets>
+	
+</assembly>

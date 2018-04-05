@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="575" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenNoDataType="AllSectionsNoDetail">
+	<style name="style_22_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<summary>
+		<band height="48">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="summary.textField1" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="summary.textField2" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="16" width="575" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{MASTER_REPORT_PARAMETERS}.getValue("parameter4")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="summary.textField3" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="32" width="575" height="16"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{parameter5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

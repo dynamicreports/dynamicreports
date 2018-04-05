@@ -1,0 +1,11 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+	<weaver>
+		<!-- only weave classes in our application-specific packages -->
+		<include within="net.sf.dynamicreports.jasper.builder..*" />
+		<include within="net.sf.dynamicreports.examples..*" />
+	</weaver>
+	<aspects>
+		<aspect name="net.sf.dynamicreports.site.ExamplesAspect" />
+	</aspects>
+</aspectj>

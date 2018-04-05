@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="DynamicReports" type="DynamicReports">
+	</xs:element>
+	
+	<xs:complexType name="DynamicReports">
+		<xs:sequence>
+			<xs:element name="font" type="Font" minOccurs="0"/>
+		
+			<xs:element name="bigDecimalType" type="DataType" minOccurs="0"/>
+			<xs:element name="bigIntegerType" type="DataType" minOccurs="0"/>			
+			<xs:element name="byteType" type="DataType" minOccurs="0"/>
+			<xs:element name="doubleType" type="DataType" minOccurs="0"/>
+			<xs:element name="floatType" type="DataType" minOccurs="0"/>			
+			<xs:element name="integerType" type="DataType" minOccurs="0"/>
+			<xs:element name="longType" type="DataType" minOccurs="0"/>
+			<xs:element name="shortType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateYearToMonthType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateYearToHourType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateYearToMinuteType" type="DataType" minOccurs="0"/>			
+			<xs:element name="dateYearToSecondType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateYearToFractionType" type="DataType" minOccurs="0"/>			
+			<xs:element name="dateYearType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateMonthType" type="DataType" minOccurs="0"/>
+			<xs:element name="dateDayType" type="DataType" minOccurs="0"/>						
+			<xs:element name="timeHourToMinuteType" type="DataType" minOccurs="0"/>
+			<xs:element name="timeHourToSecondType" type="DataType" minOccurs="0"/>
+			<xs:element name="timeHourToFractionType" type="DataType" minOccurs="0"/>
+			<xs:element name="percentageType" type="DataType" minOccurs="0"/>			
+			<xs:element name="booleanType" type="DataType" minOccurs="0"/>
+			<xs:element name="characterType" type="DataType" minOccurs="0"/>
+			<xs:element name="stringType" type="DataType" minOccurs="0"/>
+			
+			<xs:element name="loadSystemFonts" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Font">
+		<xs:attribute name="fontName" type="xs:string"/>
+		<xs:attribute name="fontSize" type="xs:int"/>
+		<xs:attribute name="pdfFontName" type="xs:string"/>
+		<xs:attribute name="pdfEncoding" type="xs:string"/>
+		<xs:attribute name="pdfEmbedded" type="xs:boolean"/>
+	</xs:complexType>
+	
+	<xs:complexType name="DataType">
+		<xs:attribute name="pattern" type="xs:string"/>
+		<xs:attribute name="horizontalAlignment" type="HorizontalAlignment"/>		
+	</xs:complexType>
+	
+	<xs:simpleType name="HorizontalAlignment">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LEFT"/>
+			<xs:enumeration value="CENTER"/>
+			<xs:enumeration value="RIGHT"/>
+			<xs:enumeration value="JUSTIFIED"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

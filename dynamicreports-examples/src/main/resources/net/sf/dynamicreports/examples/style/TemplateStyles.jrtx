@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="style1" isBold="true"/>
+	<style name="style2" style="style1" isItalic="true"/>
+	<style name="columnStyle" vAlign="Middle"/>
+	<style name="columnTitleStyle" style="columnStyle" backcolor="#C0C0C0" hAlign="Center">
+		<box>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0"/>
+			<bottomPen lineWidth="1.0"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+</jasperTemplate>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="openFlashChartExportHandlerBundle" 
+			class="net.sf.jasperreports.engine.export.DefaultElementHandlerBundle">
+		<property name="namespace" value="http://www.dynamicreports.org/openflashchart"/>
+		<property name="elementHandlers">
+			<map>
+				<entry key="openflashchart">
+					<map>
+						<entry key="net.sf.jasperreports.html">
+							<bean class="net.sf.dynamicreports.examples.genericelement.openflashchart.OpenFlashChartHtmlHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.xhtml">
+							<bean class="net.sf.dynamicreports.examples.genericelement.openflashchart.OpenFlashChartXhtmlHandler"/>
+						</entry>
+						<entry key="net.sf.jasperreports.pdf">
+							<bean class="net.sf.dynamicreports.examples.genericelement.openflashchart.OpenFlashChartPdfHandler"/>
+						</entry>
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

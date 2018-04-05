@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="net.sf.dynamicreports.jasper.base.JasperScriptlet">
+	<style name="style_27_" isDefault="false" isBlankWhenNull="true" fontName="SansSerif" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<style name="style_26_" isDefault="false" style="style_27_" isBlankWhenNull="true" isBold="true"/>
+	<style name="style_25_" isDefault="false" style="style_26_" hAlign="Center" vAlign="Middle" isBlankWhenNull="true"/>
+	<style name="style_24_" isDefault="false" style="style_25_" isBlankWhenNull="true" fontSize="12"/>
+	<style name="style_29_" isDefault="false" style="style_27_" vAlign="Middle" isBlankWhenNull="true"/>
+	<style name="style_28_" isDefault="false" style="style_29_" mode="Opaque" backcolor="#C0C0C0" hAlign="Center" isBlankWhenNull="true" isBold="true">
+		<box>
+			<topPen lineWidth="1.0" lineStyle="Solid"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid"/>
+		</box>
+	</style>
+	<parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
+	<field name="item" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="unitprice" class="java.math.BigDecimal"/>
+	<title>
+		<band height="20">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="title.textField1" style="style_24_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Subreport" + $P{MASTER_REPORT_PARAMETERS}.getReportRowNumber()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="17">
+			<frame>
+				<reportElement key="columnHeader.list1" positionType="Float" x="0" y="0" width="575" height="17"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_item.title1" style="style_28_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="17"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Item"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_quantity.title1" style="style_28_" positionType="Float" stretchType="RelativeToTallestObject" x="191" y="0" width="192" height="17"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Quantity"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="columnHeader.column_unitprice.title1" style="style_28_" positionType="Float" stretchType="RelativeToTallestObject" x="383" y="0" width="192" height="17"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Unit price"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17">
+			<frame>
+				<reportElement key="detail.list1" positionType="Float" x="0" y="0" width="575" height="17"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="detail.column_item1" style="style_29_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="17"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{item}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+					<reportElement key="detail.column_quantity1" style="style_29_" positionType="Float" stretchType="RelativeToTallestObject" x="191" y="0" width="192" height="17"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{quantity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00#" isBlankWhenNull="true">
+					<reportElement key="detail.column_unitprice1" style="style_29_" positionType="Float" stretchType="RelativeToTallestObject" x="383" y="0" width="192" height="17"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{unitprice}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

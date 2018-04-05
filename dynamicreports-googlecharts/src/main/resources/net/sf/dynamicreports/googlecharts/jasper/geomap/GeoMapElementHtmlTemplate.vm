@@ -1,0 +1,54 @@
+  <div
+#if(${xhtml})
+		style='position: absolute; left: ${elementX}; top: ${elementY}; width: ${elementWidth}px; height: ${elementHeight}px;
+#else
+		style='width: ${elementWidth}px; height: ${elementHeight}px;
+#end
+		#if(${backgroundColor}) 
+			background-color: \#${backgroundColor};
+		#end
+	'>
+		<div id='${id}' style='width: 100%; height: 100%; overflow: auto'></div>
+	</div>
+
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = new google.visualization.DataTable();
+      data.addRows($dataset.size());
+      data.addColumn('string', 'Location');
+      data.addColumn('number', '${valueLabel}');
+      data.addColumn('string', 'Label');
+#set($count = 0)
+#foreach ($data in ${dataset})
+      data.setValue($count, 0, '$data.location');
+      data.setValue($count, 1, $data.value);
+      data.setValue($count, 2,#if (${data.label}) '$data.label'#else '$data.location'#end);  
+#set($count = $count + 1)
+#end
+
+      var options = {};
+      options['width'] = '${elementWidth}px';
+      options['height'] = '${elementHeight}px';
+#if (${showLegend} || ${showLegend} == false)
+      options['showLegend'] = ${showLegend};
+#end
+#if (${dataMode})
+      options['dataMode'] = '${dataMode}';
+#end      
+#if (${region})
+      options['region'] = '${region}';
+#end
+#if (${colors})
+      options['colors'] = [${colors}];
+#end      
+
+      var container = document.getElementById('${id}');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    };
+  
+  </script>
