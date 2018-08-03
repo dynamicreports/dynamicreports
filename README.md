@@ -40,12 +40,13 @@ A few tools merit to be mentioned:
  that up too)
 
 #### Contributing
-- git clone https://github.com/dynamicreports/dynamicreports.git
-- cd dynamicreports
-- .*[do some stuff]:
-- git commit -a -m "I have done stuff" && git push origin master
-- *[give username and password]:
-- initiate pull request from your repo
+
+See [CONTRIBUTING](.github/CONTRIBUTING.md)
+
+### Raising Issues or bug reports
+Before submitting a bug report see this [guideline](.github/CONTRIBUTING.md/#before-submitting-a-bug-report) and be sure
+to follow this [approach](.github/CONTRIBUTING.md/#how-do-i-submit-a-good-bug-report) with as many details as possible.
+and fill out the issue [template](.github/ISSUE_TEMPLATE.md)
 
 #### Rules for Mergeable PRs
 This is a young project and we would like it to continue to grow, and because of that, kindly be gentle and
