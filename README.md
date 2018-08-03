@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.com/dynamicreports/dynamicreports.svg?branch=master)](https://travis-ci.com/dynamicreports/dynamicreports)
+
 # Dynamic Reports
 DynamicReports is an open source Java reporting library based on JasperReports.
 It allows to create dynamic report designs and it doesn't need a visual report designer.
@@ -32,8 +34,8 @@ These are the main goals of the project
 A few tools merit to be mentioned:
  - Versioning : git
  - Build Tool : maven
- - CI : Travis (yet to fully setup)
- - Java version: ... (to be discussed, but minimum can be expected to be java version 8. For now)
+ - CI : [Travis](https://travis-ci.com/dynamicreports/dynamicreports) (yet to fully setup)
+ - Java version: ... (to be discussed, but minimum can be expected to be java version 8. For now).
  - Code style: [google](https://google.github.io/styleguide/javaguide.html). Enforced by checkstyle. (Setting
  that up too)
 
@@ -50,6 +52,6 @@ This is a young project and we would like it to continue to grow, and because of
 understanding when it seems like the maintainers are just making stuff up as they go:
 - The [travis](https://github.com/dynamicreports/dynamicreports/blob/master/.travis.yml) build must run successfully.
 - The PR must have test cases and must not reduce the code coverage (That needs to be setup)
-- The PR adheres to the template [provided]()
+- The PR adheres to the template [provided](https://github.com/dynamicreports/dynamicreports/blob/master/.github/CONTRIBUTING.md)
 - Watch this space :)
 
