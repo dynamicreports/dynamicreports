@@ -43,8 +43,8 @@ A few tools merit to be mentioned:
 
 See [CONTRIBUTING](.github/CONTRIBUTING.md)
 
-### Raising Issues or bug reports
-Before submitting a bug report see this [guideline](.github/CONTRIBUTING.md/#before-submitting-a-bug-report) and be sure
+#### Raising Issues or bug reports
+Before submitting a bug report see this [checklist](.github/CONTRIBUTING.md/#before-submitting-a-bug-report) and be sure
 to follow this [approach](.github/CONTRIBUTING.md/#how-do-i-submit-a-good-bug-report) with as many details as possible.
 and fill out the issue [template](.github/ISSUE_TEMPLATE.md)
 
