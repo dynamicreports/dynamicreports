@@ -404,4 +404,27 @@
 		</profile>
 	</profiles>
 
+    <repositories>
+        <!--Repository containing com.lowagie:itext:jar:2.1.7.js6, not available in maven central-->
+        <repository>
+            <id>jaspersoft-third-party</id>
+            <url>
+                http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/
+            </url>
+        </repository>
+        <repository>
+            <id>jr-ce-releases</id>
+            <name>JasperReports CE Releases</name>
+            <url>
+                http://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases
+            </url>
+        </repository>
+        <!--<repository>
+            <id>jr-snapshots</id>
+            <url>
+                http://jaspersoft.jfrog.io/jaspersoft/jr-ce-snapshots/
+            </url>
+        </repository>-->
+    </repositories>
+
 </project>
