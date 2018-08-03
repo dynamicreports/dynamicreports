@@ -76,6 +76,7 @@
         <jacoco-maven-plugin-version>0.8.0</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+        <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
 	</properties>
 
@@ -315,10 +316,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin-version}</version>
-                <configuration>
-                    <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
-                    <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
-                </configuration>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -327,6 +324,11 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${maven-project-info-reports-plugin}</version>
             </plugin>
         </plugins>
     </reporting>
@@ -419,12 +421,6 @@
                 http://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases
             </url>
         </repository>
-        <!--<repository>
-            <id>jr-snapshots</id>
-            <url>
-                http://jaspersoft.jfrog.io/jaspersoft/jr-ce-snapshots/
-            </url>
-        </repository>-->
     </repositories>
 
 </project>
