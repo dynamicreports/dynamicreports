@@ -8,7 +8,7 @@ script:
 - mvn verify
 # to add plugin
 #- mvn spotbugs:check
-- mvn clean package
+#- mvn clean package
 - mvn clean install
 jdk:
   - oraclejdk8
