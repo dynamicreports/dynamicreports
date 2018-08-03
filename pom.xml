@@ -50,24 +50,33 @@
 	</developers>
 	
 	<properties>
+		<!--Environment-->
+        <encoding>UTF-8</encoding>
 		<sourceVersion>1.7</sourceVersion>
 		<targetVersion>1.7</targetVersion>
-		<encoding>UTF-8</encoding>
-		<jasperreportsVersion>6.5.1</jasperreportsVersion>
+
+        <!--Dependencies-->
+        <barcode4jVersion>2.0</barcode4jVersion>
+        <barbecueVersion>1.5-beta1</barbecueVersion>
+        <batikbridgeVersion>1.9</batikbridgeVersion>
 		<commonslangVersion>2.6</commonslangVersion>
 		<commonslang3Version>3.1</commonslang3Version>
-		<barcode4jVersion>2.0</barcode4jVersion>
-		<barbecueVersion>1.5-beta1</barbecueVersion>
-		<batikbridgeVersion>1.9</batikbridgeVersion>
-		<xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
+        <groovyVersion>1.7.5</groovyVersion>
+        <hsqldbVersion>1.8.0.10</hsqldbVersion>
+        <jasperreportsVersion>6.5.1</jasperreportsVersion>
+        <jsonVersion>20080701</jsonVersion>
+        <junitVersion>4.0</junitVersion>
+        <poiVersion>3.15</poiVersion>
 		<springframeworkVersion>3.2.18.RELEASE</springframeworkVersion>
-		<poiVersion>3.15</poiVersion>
-		<junitVersion>4.0</junitVersion>
-		<hsqldbVersion>1.8.0.10</hsqldbVersion>
-		<xalanVersion>2.7.2</xalanVersion>
-		<groovyVersion>1.7.5</groovyVersion>
-		<velocityVersion>1.7</velocityVersion>
-		<jsonVersion>20080701</jsonVersion>		
+        <velocityVersion>1.7</velocityVersion>
+        <xalanVersion>2.7.2</xalanVersion>
+        <xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
+
+        <!--Plugins-->
+        <jacoco-maven-plugin-version>0.8.0</jacoco-maven-plugin-version>
+        <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
+        <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -237,7 +246,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.3</version>
+					<version>${maven-compiler-plugin-version}</version>
 					<configuration>						
 						<source>${sourceVersion}</source>
 						<target>${targetVersion}</target>
@@ -256,7 +265,7 @@
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
+					<version>${lifecycle-mapping-plugin-version}</version>
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
@@ -299,6 +308,28 @@
 			</plugins>
 		</pluginManagement>	
 	</build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin-version}</version>
+                <configuration>
+                    <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+                    <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
   
 	<profiles>
 		<profile>
