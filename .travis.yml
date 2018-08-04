@@ -1,6 +1,14 @@
 language: java
 install: true
 
+addons:
+  apt:
+    update: true
+
+before_install:
+  - sudo apt-get install ttf-mscorefonts-installer
+
+
 script:
 #- mvn checkstyle:check
 # to add plugin
