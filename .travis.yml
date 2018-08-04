@@ -1,6 +1,11 @@
 language: java
 install: true
 
+jdk:
+  - oraclejdk8
+ # - oraclejdk9 -> this is not working yet
+ # - oraclejdk10 -> this is not working yet
+
 addons:
   apt:
     update: true
@@ -18,7 +23,3 @@ script:
 #- mvn spotbugs:check
 #- mvn clean package
 - mvn clean install
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk10
