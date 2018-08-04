@@ -6,9 +6,8 @@ addons:
     update: true
 
 before_install:
-  - sudo echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+  - echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
   - sudo apt-get install ttf-mscorefonts-installer
-
 
 script:
 #- mvn checkstyle:check
