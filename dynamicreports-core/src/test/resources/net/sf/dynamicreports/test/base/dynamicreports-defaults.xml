@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DynamicReports>
 	<!-- DEFAULT FONT -->
-	<!--Replace Arial with SansSerif, since Arial is not readily in linux testing environments-->
-	<!--<font fontName="Arial" fontSize="15" pdfFontName="Courier New" pdfEncoding="Cp1250" pdfEmbedded="true"/>-->
-	<font fontName="SansSerif" fontSize="15" pdfFontName="Courier New" pdfEncoding="Cp1250" pdfEmbedded="true"/>
+	<font fontName="Arial" fontSize="15" pdfFontName="Courier New" pdfEncoding="Cp1250" pdfEmbedded="true"/>
 
 	<!-- DEFAULT DATA TYPES -->
 	<bigDecimalType pattern="#,###.00#" horizontalAlignment="LEFT"/>
