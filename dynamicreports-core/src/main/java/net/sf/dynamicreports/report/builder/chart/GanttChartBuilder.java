@@ -52,7 +52,7 @@ public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilde
 	}
 
 	public GanttChartBuilder setTask(String fieldName, Class<String> valueClass) {
-		return setTask(DynamicReports.field(fieldName, valueClass));
+		return setTask(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
 	public GanttChartBuilder setTask(FieldBuilder<String> field) {

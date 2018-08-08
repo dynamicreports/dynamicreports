@@ -32,6 +32,7 @@ import java.util.Locale;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.constant.ValueLocation;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
@@ -51,7 +52,7 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
 		rb.setLocale(Locale.ENGLISH)
 				.summary(
 						cht.thermometerChart()
-								.setValue(field("field1", Integer.class))
+								.setValue(DynamicReports.<Number>field("field1", Integer.class))
 								.setDataRangeLowExpression(3)
 								.setDataRangeHighExpression(30)
 								.setValueColor(Color.BLUE)
@@ -66,7 +67,7 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
 								.setHighDataRangeLowExpression(28)
 								.setHighDataRangeHighExpression(30),
 						cht.thermometerChart()
-								.setValue(field("field1", Integer.class)));
+								.setValue(DynamicReports.<Number>field("field1", Integer.class)));
 	}
 
 	@Override

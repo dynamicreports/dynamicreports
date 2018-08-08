@@ -52,7 +52,7 @@ public class Columns {
 	 * @return a column builder
 	 */
 	public static <T> TextColumnBuilder<T> column(String fieldName, Class<T> valueClass) {
-		return column(DynamicReports.field(fieldName, valueClass));
+		return (TextColumnBuilder<T>) column(DynamicReports.field(fieldName, valueClass));
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class Columns {
 	 * @return a column builder
 	 */
 	public static <T> TextColumnBuilder<T> column(String title, String fieldName, Class<T> valueClass) {
-		return column(title, DynamicReports.field(fieldName, valueClass));
+		return (TextColumnBuilder<T>) column(title, DynamicReports.field(fieldName, valueClass));
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class Columns {
 	 */
 	public static <T> TextColumnBuilder<T> column(String fieldName, DRIDataType<? super T, T> dataType) {
 		Validate.notNull(dataType, "dataType must not be null");
-		TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(DynamicReports.field(fieldName, dataType.getValueClass()));
+		TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(DynamicReports.<T>field(fieldName, dataType.getValueClass()));
 		textColumnBuilder.setDataType(dataType);
 		return textColumnBuilder;
 	}
@@ -205,7 +205,7 @@ public class Columns {
 	 * @return a column builder
 	 */
 	public static PercentageColumnBuilder percentageColumn(String fieldName, Class<? extends Number> valueClass) {
-		return percentageColumn(DynamicReports.field(fieldName, valueClass));
+		return percentageColumn(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	/**
@@ -365,7 +365,7 @@ public class Columns {
 	 * @return a column builder
 	 */
 	public static BooleanColumnBuilder booleanColumn(String fieldName) {
-		return booleanColumn(DynamicReports.field(fieldName, Boolean.class));
+		return booleanColumn(DynamicReports.<Boolean>field(fieldName, Boolean.class));
 	}
 
 	/**
@@ -379,7 +379,7 @@ public class Columns {
 	 * @return a column builder
 	 */
 	public static BooleanColumnBuilder booleanColumn(String title, String fieldName) {
-		return booleanColumn(title, DynamicReports.field(fieldName, Boolean.class));
+		return booleanColumn(title, DynamicReports.<Boolean>field(fieldName, Boolean.class));
 	}
 
 	/**

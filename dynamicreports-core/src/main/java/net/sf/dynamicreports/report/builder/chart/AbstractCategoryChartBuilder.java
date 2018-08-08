@@ -59,7 +59,7 @@ public abstract class AbstractCategoryChartBuilder<T extends AbstractCategoryCha
 	}
 
 	public T setCategory(String fieldName, Class<String> valueClass) {
-		return setCategory(DynamicReports.field(fieldName, valueClass));
+		return setCategory(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
 	public T setCategory(FieldBuilder<String> field) {

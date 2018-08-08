@@ -141,7 +141,7 @@ public class DynamicReports {
 	}
 
 	// field
-	public static <T> FieldBuilder<T> field(String name, Class<T> valueClass) {
+	public static <T> FieldBuilder<T> field(String name, Class valueClass) {
 		FieldBuilder<T> fieldBuilder = new FieldBuilder<T>(name, valueClass);
 		try {
 			DRIDataType<? super T, T> dataType = DataTypes.detectType(valueClass);
@@ -151,7 +151,7 @@ public class DynamicReports {
 		return fieldBuilder;
 	}
 
-	public static <T> FieldBuilder<T> field(String name, DRIDataType<? super T, T> dataType) {
+	public static <T> FieldBuilder<T> field(String name, DRIDataType dataType) {
 		Validate.notNull(dataType, "dataType must not be null");
 		FieldBuilder<T> fieldBuilder = new FieldBuilder<T>(name, dataType.getValueClass());
 		fieldBuilder.setDataType(dataType);

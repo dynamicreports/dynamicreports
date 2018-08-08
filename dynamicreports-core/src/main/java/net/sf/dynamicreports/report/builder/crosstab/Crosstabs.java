@@ -51,7 +51,7 @@ public class Crosstabs {
 	}
 
 	public static <T> CrosstabColumnGroupBuilder<T> columnGroup(String fieldName, Class<T> valueClass) {
-		return new CrosstabColumnGroupBuilder<T>(DynamicReports.field(fieldName, valueClass));
+		return new CrosstabColumnGroupBuilder<T>(DynamicReports.<T>field(fieldName, valueClass));
 	}
 
 	public static <T> CrosstabColumnGroupBuilder<T> columnGroup(DRIExpression<T> expression) {
@@ -68,7 +68,7 @@ public class Crosstabs {
 	}
 
 	public static <T> CrosstabRowGroupBuilder<T> rowGroup(String fieldName, Class<T> valueClass) {
-		return new CrosstabRowGroupBuilder<T>(DynamicReports.field(fieldName, valueClass));
+		return new CrosstabRowGroupBuilder<T>(DynamicReports.<T>field(fieldName, valueClass));
 	}
 
 	public static <T> CrosstabRowGroupBuilder<T> rowGroup(DRIExpression<T> expression) {

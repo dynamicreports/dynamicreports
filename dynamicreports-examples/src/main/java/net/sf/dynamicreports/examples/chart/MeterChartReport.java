@@ -27,6 +27,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import java.awt.Color;
 
 import net.sf.dynamicreports.examples.Templates;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.chart.MeterChartBuilder;
 import net.sf.dynamicreports.report.constant.MeterShape;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -44,7 +45,7 @@ public class MeterChartReport {
 
 	private void build() {
 		MeterChartBuilder chart1 = cht.meterChart()
-				.setValue(field("value", type.integerType()))
+				.setValue(DynamicReports.<Number>field("value", type.integerType()))
 				.setShape(MeterShape.DIAL);
 
 		MeterChartBuilder chart2 = cht.meterChart()

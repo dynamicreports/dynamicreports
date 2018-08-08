@@ -50,7 +50,7 @@ public class Column1Test extends AbstractJasperValueTest implements Serializable
 	private TextColumnBuilder<Double> column4;
 	private TextColumnBuilder<BigDecimal> column5;
 	private TextColumnBuilder<Double> column6;
-	private TextColumnBuilder<Date> column7;
+	private TextColumnBuilder<Object> column7;
 
 	private Date date = new Date();
 

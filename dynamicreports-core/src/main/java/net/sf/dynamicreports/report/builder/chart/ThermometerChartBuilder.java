@@ -66,7 +66,7 @@ public class ThermometerChartBuilder extends AbstractChartBuilder<ThermometerCha
 	}
 
 	public ThermometerChartBuilder setValue(String fieldName, Class<? extends Number> valueClass) {
-		return setValue(DynamicReports.field(fieldName, valueClass));
+		return setValue(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public ThermometerChartBuilder setValue(FieldBuilder<? extends Number> field) {

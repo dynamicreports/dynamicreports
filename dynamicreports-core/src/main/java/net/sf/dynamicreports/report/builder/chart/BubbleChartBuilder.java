@@ -53,7 +53,7 @@ public class BubbleChartBuilder extends AbstractBaseChartBuilder<BubbleChartBuil
 	}
 
 	public BubbleChartBuilder setXValue(String fieldName, Class<? extends Number> valueClass) {
-		return setXValue(DynamicReports.field(fieldName, valueClass));
+		return setXValue(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public BubbleChartBuilder setXValue(FieldBuilder<? extends Number> field) {

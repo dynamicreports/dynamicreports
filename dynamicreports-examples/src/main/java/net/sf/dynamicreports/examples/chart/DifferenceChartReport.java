@@ -25,8 +25,10 @@ package net.sf.dynamicreports.examples.chart;
 import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import net.sf.dynamicreports.examples.Templates;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.style.FontBuilder;
 import net.sf.dynamicreports.report.constant.TimePeriod;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -53,11 +55,11 @@ public class DifferenceChartReport {
 							cht.differenceChart()
 									.setTitle("Difference chart")
 									.setTitleFont(boldFont)
-									.setTimePeriod(field("date", type.dateType()))
+									.setTimePeriod(DynamicReports.<Date>field("date", type.dateType()))
 									.setTimePeriodType(TimePeriod.DAY)
 									.series(
-											cht.serie(field("value1", type.doubleType())).setLabel("Value1"),
-											cht.serie(field("value2", type.doubleType())).setLabel("Value2"))
+											cht.serie(DynamicReports.<Number>field("value1", type.doubleType())).setLabel("Value1"),
+											cht.serie(DynamicReports.<Number>field("value2", type.doubleType())).setLabel("Value2"))
 									.setTimeAxisFormat(
 											cht.axisFormat().setLabel("Date")))
 					.pageFooter(Templates.footerComponent)

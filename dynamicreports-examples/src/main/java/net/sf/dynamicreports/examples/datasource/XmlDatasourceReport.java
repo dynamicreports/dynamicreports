@@ -47,7 +47,7 @@ public class XmlDatasourceReport {
 			JRXmlDataSource dataSource = new JRXmlDataSource(XmlDatasourceReport.class.getResourceAsStream("sales.xml"), "/sales/item");
 			JRXmlDataSource chartDataSource = dataSource.dataSource("/sales/chart/item");
 
-			FieldBuilder<Integer> idField = field("id", type.integerType())
+			FieldBuilder<Object> idField = field("id", type.integerType())
 					.setDescription("@id");
 			FieldBuilder<String> itemField = field("item", type.stringType());
 			FieldBuilder<Integer> quantityField = field("quantity", type.integerType());

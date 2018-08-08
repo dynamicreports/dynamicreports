@@ -51,7 +51,7 @@ public class Charts {
 	}
 
 	public static CategoryChartSerieBuilder serie(String fieldName, Class<? extends Number> valueClass) {
-		return serie(DynamicReports.field(fieldName, valueClass));
+		return serie(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public static CategoryChartSerieBuilder serie(FieldBuilder<? extends Number> field) {
@@ -72,7 +72,7 @@ public class Charts {
 	}
 
 	public static GroupedCategoryChartSerieBuilder groupedSerie(String fieldName, Class<? extends Number> valueClass) {
-		return groupedSerie(DynamicReports.field(fieldName, valueClass));
+		return groupedSerie(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public static GroupedCategoryChartSerieBuilder groupedSerie(FieldBuilder<? extends Number> field) {
@@ -93,7 +93,7 @@ public class Charts {
 	}
 
 	public static XyChartSerieBuilder xySerie(String fieldName, Class<? extends Number> valueClass) {
-		return xySerie(DynamicReports.field(fieldName, valueClass));
+		return xySerie(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public static XyChartSerieBuilder xySerie(FieldBuilder<? extends Number> field) {

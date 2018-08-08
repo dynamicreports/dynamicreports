@@ -225,7 +225,7 @@ public class Subtotals {
 	}
 
 	public static PercentageSubtotalBuilder percentage(String fieldName, Class<? extends Number> valueClass, ColumnBuilder<?, ?> showInColumn) {
-		return percentage(DynamicReports.field(fieldName, valueClass), showInColumn);
+		return percentage(DynamicReports.<Number>field(fieldName, valueClass), showInColumn);
 	}
 
 	public static PercentageSubtotalBuilder percentage(FieldBuilder<? extends Number> field, ColumnBuilder<?, ?> showInColumn) {

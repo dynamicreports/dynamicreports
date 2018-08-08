@@ -27,6 +27,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import java.awt.Color;
 
 import net.sf.dynamicreports.examples.Templates;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.chart.ThermometerChartBuilder;
 import net.sf.dynamicreports.report.constant.ValueLocation;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -44,7 +45,7 @@ public class ThermometerChartReport {
 
 	private void build() {
 		ThermometerChartBuilder chart1 = cht.thermometerChart()
-				.setValue(field("value", type.integerType()));
+				.setValue(DynamicReports.<Number>field("value", type.integerType()));
 
 		ThermometerChartBuilder chart2 = cht.thermometerChart()
 				.setValue(18)

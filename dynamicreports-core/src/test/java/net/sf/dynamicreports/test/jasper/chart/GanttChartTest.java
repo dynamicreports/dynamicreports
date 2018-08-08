@@ -30,6 +30,7 @@ import java.util.Date;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
@@ -63,8 +64,8 @@ public class GanttChartTest extends AbstractJasperChartTest {
 										.setPercent(field4)
 										.setLabel("label"),
 								cht.ganttSerie()
-										.setStartDate(field("field5", Date.class))
-										.setEndDate(field("field6", Date.class)))
+										.setStartDate(DynamicReports.<Date>field("field5", Date.class))
+										.setEndDate(DynamicReports.<Date>field("field6", Date.class)))
 						.setShowLabels(true)
 						.setShowTickLabels(false)
 						.setShowTickMarks(false),

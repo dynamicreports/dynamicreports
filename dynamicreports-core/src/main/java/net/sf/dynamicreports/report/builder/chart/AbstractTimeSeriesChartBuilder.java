@@ -57,7 +57,7 @@ public abstract class AbstractTimeSeriesChartBuilder<T extends AbstractTimeSerie
 	}
 
 	public T setTimePeriod(String fieldName, Class<? extends Date> valueClass) {
-		return setTimePeriod(DynamicReports.field(fieldName, valueClass));
+		return setTimePeriod(DynamicReports.<Date>field(fieldName, valueClass));
 	}
 
 	public T setTimePeriod(FieldBuilder<? extends Date> field) {

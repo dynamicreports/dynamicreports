@@ -101,7 +101,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
 	}
 
 	public GeoMapBuilder setLocation(String fieldName, Class<String> valueClass) {
-		return setLocation(DynamicReports.field(fieldName, valueClass));
+		return setLocation(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
 	public GeoMapBuilder setLocation(FieldBuilder<String> field) {
@@ -123,7 +123,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
 	}
 
 	public GeoMapBuilder setValue(String fieldName, Class<? extends Number> valueClass) {
-		return setValue(DynamicReports.field(fieldName, valueClass));
+		return setValue(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public GeoMapBuilder setValue(FieldBuilder<? extends Number> field) {
@@ -151,7 +151,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
 	}
 
 	public GeoMapBuilder setLabel(String fieldName, Class<String> valueClass) {
-		return setLabel(DynamicReports.field(fieldName, valueClass));
+		return setLabel(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
 	public GeoMapBuilder setLabel(FieldBuilder<String> field) {

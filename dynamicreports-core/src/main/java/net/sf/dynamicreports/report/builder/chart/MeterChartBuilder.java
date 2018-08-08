@@ -66,7 +66,7 @@ public class MeterChartBuilder extends AbstractChartBuilder<MeterChartBuilder> {
 	}
 
 	public MeterChartBuilder setValue(String fieldName, Class<? extends Number> valueClass) {
-		return setValue(DynamicReports.field(fieldName, valueClass));
+		return setValue(DynamicReports.<Number>field(fieldName, valueClass));
 	}
 
 	public MeterChartBuilder setValue(FieldBuilder<? extends Number> field) {

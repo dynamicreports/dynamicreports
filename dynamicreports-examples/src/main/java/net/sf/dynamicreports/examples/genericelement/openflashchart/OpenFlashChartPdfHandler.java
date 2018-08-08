@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.JRGenericPrintElement;
 import net.sf.jasperreports.engine.export.GenericElementPdfHandler;
 import net.sf.jasperreports.engine.export.JRPdfExporterContext;
 
-import org.apache.commons.collections.ReferenceMap;
+import org.apache.commons.collections.map.ReferenceMap;
 
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.PdfAnnotation;

@@ -54,7 +54,7 @@ public abstract class AbstractPieChartBuilder<T extends AbstractPieChartBuilder<
 	}
 
 	public T setKey(String fieldName, Class<String> valueClass) {
-		return setKey(DynamicReports.field(fieldName, valueClass));
+		return setKey(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
 	public T setKey(FieldBuilder<String> field) {

@@ -30,6 +30,7 @@ import java.util.Locale;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.constant.MeterShape;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
@@ -51,7 +52,7 @@ public class MeterChartTest extends AbstractJasperChartTest {
 		rb.setLocale(Locale.ENGLISH)
 				.summary(
 						cht.meterChart()
-								.setValue(field("field1", Integer.class))
+								.setValue(DynamicReports.<Number>field("field1", Integer.class))
 								.setDataRangeLowExpression(3)
 								.setDataRangeHighExpression(30)
 								.setValueColor(Color.BLUE)
