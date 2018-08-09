@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>XyBlockChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyBlockChartReport {
 
+	/**
+	 * <p>Constructor for XyBlockChartReport.</p>
+	 */
 	public XyBlockChartReport() {
 		build();
 	}
@@ -88,6 +94,11 @@ public class XyBlockChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new XyBlockChartReport();
 	}

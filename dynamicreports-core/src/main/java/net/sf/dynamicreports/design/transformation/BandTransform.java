@@ -42,7 +42,10 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>BandTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BandTransform {
 	private DesignTransformAccessor accessor;
@@ -60,11 +63,21 @@ public class BandTransform {
 	private DRDesignBand noDataBand;
 	private DRDesignBand backgroundBand;
 
+	/**
+	 * <p>Constructor for BandTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public BandTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		this.detailBands = new ArrayList<DRDesignBand>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		TemplateTransform templateTransform = accessor.getTemplateTransform();
 
@@ -129,6 +142,11 @@ public class BandTransform {
 				templateTransform.getBackgroundBackgroundComponent(band), ResetType.NONE, null);
 	}
 
+	/**
+	 * <p>prepareBands.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void prepareBands() throws DRException {
 		BandComponentsTransform bandComponents = new BandComponentsTransform(accessor);
 		DRITemplateDesign<?> templateDesign = accessor.getReport().getTemplateDesign();
@@ -191,6 +209,19 @@ public class BandTransform {
 	}
 
 	// band
+	/**
+	 * <p>band.</p>
+	 *
+	 * @param bandName a {@link java.lang.String} object.
+	 * @param band a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
+	 * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 * @param defaultStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 * @param defaultBackgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignBand band(String bandName, DRIBand band, SplitType splitType, DRIReportStyle defaultStyle, DRIComponent defaultBackgroundComponent,
 			ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		DRDesignBand designBand = new DRDesignBand(bandName);
@@ -209,6 +240,17 @@ public class BandTransform {
 		return designBand;
 	}
 
+	/**
+	 * <p>band.</p>
+	 *
+	 * @param bandName a {@link java.lang.String} object.
+	 * @param band a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
+	 * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 * @param defaultStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 * @param defaultBackgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignBand band(String bandName, DRIBand band, SplitType splitType, DRIReportStyle defaultStyle, DRIComponent defaultBackgroundComponent)
 			throws DRException {
 		DRDesignBand designBand = new DRDesignBand(bandName);
@@ -232,50 +274,110 @@ public class BandTransform {
 		return designBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getTitleBand() {
 		return titleBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageHeaderBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getPageHeaderBand() {
 		return pageHeaderBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageFooterBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getPageFooterBand() {
 		return pageFooterBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnHeaderBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getColumnHeaderBand() {
 		return columnHeaderBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnHeaderForGroupBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getColumnHeaderForGroupBand() {
 		return columnHeaderForGroupBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnFooterBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getColumnFooterBand() {
 		return columnFooterBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailBands</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRDesignBand> getDetailBands() {
 		return detailBands;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getDetailBand() {
 		return detailBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>lastPageFooterBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getLastPageFooterBand() {
 		return lastPageFooterBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>summaryBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getSummaryBand() {
 		return summaryBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>noDataBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getNoDataBand() {
 		return noDataBand;
 	}
 
+	/**
+	 * <p>Getter for the field <code>backgroundBand</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public DRDesignBand getBackgroundBand() {
 		return backgroundBand;
 	}

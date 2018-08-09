@@ -28,24 +28,49 @@ import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>QrCodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class QrCodeBuilder extends AbstractBarcodeBuilder<QrCodeBuilder, DRQrCode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for QrCodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected QrCodeBuilder(String code) {
 		super(code, new DRQrCode());
 	}
 
+	/**
+	 * <p>Constructor for QrCodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected QrCodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRQrCode());
 	}
 
+	/**
+	 * <p>setMargin.</p>
+	 *
+	 * @param margin a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.QrCodeBuilder} object.
+	 */
 	public QrCodeBuilder setMargin(Integer margin) {
 		getObject().setMargin(margin);
 		return this;
 	}
 
+	/**
+	 * <p>setErrorCorrectionLevel.</p>
+	 *
+	 * @param errorCorrectionLevel a {@link net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.QrCodeBuilder} object.
+	 */
 	public QrCodeBuilder setErrorCorrectionLevel(QrCodeErrorCorrectionLevel errorCorrectionLevel) {
 		getObject().setErrorCorrectionLevel(errorCorrectionLevel);
 		return this;

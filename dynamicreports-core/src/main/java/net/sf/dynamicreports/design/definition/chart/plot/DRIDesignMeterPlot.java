@@ -30,35 +30,108 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignFont;
 import net.sf.dynamicreports.report.constant.MeterShape;
 
 /**
+ * <p>DRIDesignMeterPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignMeterPlot extends DRIDesignPlot {
 
+	/**
+	 * <p>getDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeLowExpression();
 
+	/**
+	 * <p>getDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeHighExpression();
 
+	/**
+	 * <p>getValueColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getValueColor();
 
+	/**
+	 * <p>getValueMask.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getValueMask();
 
+	/**
+	 * <p>getValueFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getValueFont();
 
+	/**
+	 * <p>getShape.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.MeterShape} object.
+	 */
 	public MeterShape getShape();
 
+	/**
+	 * <p>getIntervals.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignMeterInterval> getIntervals();
 
+	/**
+	 * <p>getMeterAngle.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMeterAngle();
 
+	/**
+	 * <p>getUnits.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getUnits();
 
+	/**
+	 * <p>getTickInterval.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getTickInterval();
 
+	/**
+	 * <p>getMeterBackgroundColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getMeterBackgroundColor();
 
+	/**
+	 * <p>getNeedleColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getNeedleColor();
 
+	/**
+	 * <p>getTickColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getTickColor();
 
+	/**
+	 * <p>getTickLabelFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getTickLabelFont();
 }

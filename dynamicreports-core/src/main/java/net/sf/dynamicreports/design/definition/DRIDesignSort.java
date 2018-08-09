@@ -28,11 +28,24 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.OrderType;
 
 /**
+ * <p>DRIDesignSort interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignSort extends Serializable {
 
+	/**
+	 * <p>getExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getExpression();
 
+	/**
+	 * <p>getOrderType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public OrderType getOrderType();
 }

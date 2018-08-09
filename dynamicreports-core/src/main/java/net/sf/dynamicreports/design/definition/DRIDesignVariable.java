@@ -27,17 +27,45 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Calculation;
 
 /**
+ * <p>DRIDesignVariable interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignVariable extends DRIDesignExpression {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 
+	/**
+	 * <p>getInitialValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getInitialValueExpression();
 
+	/**
+	 * <p>getCalculation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public Calculation getCalculation();
 
+	/**
+	 * <p>getResetType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public ResetType getResetType();
 
+	/**
+	 * <p>getResetGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getResetGroup();
 }

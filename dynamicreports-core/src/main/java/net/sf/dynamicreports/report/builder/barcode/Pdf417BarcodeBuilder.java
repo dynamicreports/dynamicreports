@@ -27,44 +27,93 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Pdf417BarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Pdf417BarcodeBuilder extends AbstractBarcode4jBuilder<Pdf417BarcodeBuilder, DRPdf417Barcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for Pdf417BarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected Pdf417BarcodeBuilder(String code) {
 		super(code, new DRPdf417Barcode());
 	}
 
+	/**
+	 * <p>Constructor for Pdf417BarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected Pdf417BarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRPdf417Barcode());
 	}
 
+	/**
+	 * <p>setMinColumns.</p>
+	 *
+	 * @param minColumns a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setMinColumns(Integer minColumns) {
 		getObject().setMinColumns(minColumns);
 		return this;
 	}
 
+	/**
+	 * <p>setMaxColumns.</p>
+	 *
+	 * @param maxColumns a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setMaxColumns(Integer maxColumns) {
 		getObject().setMaxColumns(maxColumns);
 		return this;
 	}
 
+	/**
+	 * <p>setMinRows.</p>
+	 *
+	 * @param minRows a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setMinRows(Integer minRows) {
 		getObject().setMinRows(minRows);
 		return this;
 	}
 
+	/**
+	 * <p>setMaxRows.</p>
+	 *
+	 * @param maxRows a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setMaxRows(Integer maxRows) {
 		getObject().setMaxRows(maxRows);
 		return this;
 	}
 
+	/**
+	 * <p>setWidthToHeightRatio.</p>
+	 *
+	 * @param widthToHeightRatio a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setWidthToHeightRatio(Double widthToHeightRatio) {
 		getObject().setWidthToHeightRatio(widthToHeightRatio);
 		return this;
 	}
 
+	/**
+	 * <p>setErrorCorrectionLevel.</p>
+	 *
+	 * @param errorCorrectionLevel a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Pdf417BarcodeBuilder} object.
+	 */
 	public Pdf417BarcodeBuilder setErrorCorrectionLevel(Integer errorCorrectionLevel) {
 		getObject().setErrorCorrectionLevel(errorCorrectionLevel);
 		return this;

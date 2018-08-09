@@ -28,20 +28,38 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.LineDirection;
 
 /**
+ * <p>LineBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class LineBuilder extends DimensionComponentBuilder<LineBuilder, DRLine> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for LineBuilder.</p>
+	 */
 	protected LineBuilder() {
 		super(new DRLine());
 	}
 
+	/**
+	 * <p>setDirection.</p>
+	 *
+	 * @param lineDirection a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.LineBuilder} object.
+	 */
 	public LineBuilder setDirection(LineDirection lineDirection) {
 		getObject().setDirection(lineDirection);
 		return this;
 	}
 
+	/**
+	 * <p>setPen.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.LineBuilder} object.
+	 */
 	public LineBuilder setPen(PenBuilder pen) {
 		if (pen != null) {
 			getObject().setPen(pen.build());

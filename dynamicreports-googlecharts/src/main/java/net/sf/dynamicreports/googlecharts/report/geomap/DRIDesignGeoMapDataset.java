@@ -28,19 +28,52 @@ import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignGeoMapDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignGeoMapDataset {
 
+	/**
+	 * <p>getSubDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public DRIDesignDataset getSubDataset();
 
+	/**
+	 * <p>getLocationExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLocationExpression();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLabelExpression();
 
+	/**
+	 * <p>getResetType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public ResetType getResetType();
 
+	/**
+	 * <p>getResetGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getResetGroup();
 }

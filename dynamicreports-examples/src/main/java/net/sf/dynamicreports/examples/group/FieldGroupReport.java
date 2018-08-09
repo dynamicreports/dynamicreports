@@ -37,10 +37,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>FieldGroupReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class FieldGroupReport {
 
+	/**
+	 * <p>Constructor for FieldGroupReport.</p>
+	 */
 	public FieldGroupReport() {
 		build();
 	}
@@ -93,6 +99,11 @@ public class FieldGroupReport {
 		return c.getTime();
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new FieldGroupReport();
 	}

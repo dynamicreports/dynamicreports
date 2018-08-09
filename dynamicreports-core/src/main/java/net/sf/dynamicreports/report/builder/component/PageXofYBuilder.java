@@ -28,24 +28,30 @@ import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>PageXofYBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder, DRPageXofY> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PageXofYBuilder.</p>
+	 */
 	protected PageXofYBuilder() {
 		super(new DRPageXofY());
 	}
 
 	/**
 	 * Sets the pageX component preferred width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageX component preferred width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageXWidth(Integer width) {
 		getObject().setPageXWidth(width);
@@ -54,13 +60,13 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 
 	/**
 	 * Sets the pageX component fixed width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageX component fixed width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageXFixedWidth(Integer width) {
 		getObject().setPageXWidth(width);
@@ -70,13 +76,13 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 
 	/**
 	 * Sets the pageX component minimum width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageX component minimum width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageXMinWidth(Integer width) {
 		getObject().setPageXWidth(width);
@@ -86,13 +92,13 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 
 	/**
 	 * Sets the pageY component preferred width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageY component preferred width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageYWidth(Integer width) {
 		getObject().setPageYWidth(width);
@@ -101,13 +107,13 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 
 	/**
 	 * Sets the pageY component fixed width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageY component fixed width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageYFixedWidth(Integer width) {
 		getObject().setPageYWidth(width);
@@ -117,13 +123,13 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 
 	/**
 	 * Sets the pageY component minimum width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the pageY component minimum width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.PageXofYBuilder} object.
 	 */
 	public PageXofYBuilder setPageYMinWidth(Integer width) {
 		getObject().setPageYWidth(width);
@@ -131,6 +137,7 @@ public class PageXofYBuilder extends AbstractFormatFieldBuilder<PageXofYBuilder,
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		if (getObject().getFormatExpression() == null) {

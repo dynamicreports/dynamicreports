@@ -25,14 +25,32 @@ package net.sf.dynamicreports.report.definition.component;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIMap interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIMap extends DRIDimensionComponent {
 
+	/**
+	 * <p>getLatitudeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Float> getLatitudeExpression();
 
+	/**
+	 * <p>getLongitudeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Float> getLongitudeExpression();
 
+	/**
+	 * <p>getZoomExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Integer> getZoomExpression();
 
 }

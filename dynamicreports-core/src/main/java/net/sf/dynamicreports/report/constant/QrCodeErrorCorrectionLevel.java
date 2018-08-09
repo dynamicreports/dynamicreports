@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>QrCodeErrorCorrectionLevel class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum QrCodeErrorCorrectionLevel {
 	L, M, Q, H;

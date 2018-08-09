@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.definition.component.DRIMap;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRMap class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRMap extends DRDimensionComponent implements DRIMap {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,29 +39,47 @@ public class DRMap extends DRDimensionComponent implements DRIMap {
 	public DRIExpression<Float> longitudeExpression;
 	public DRIExpression<Integer> zoomExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Float> getLatitudeExpression() {
 		return latitudeExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>latitudeExpression</code>.</p>
+	 *
+	 * @param latitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLatitudeExpression(DRIExpression<Float> latitudeExpression) {
 		this.latitudeExpression = latitudeExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Float> getLongitudeExpression() {
 		return longitudeExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>longitudeExpression</code>.</p>
+	 *
+	 * @param longitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLongitudeExpression(DRIExpression<Float> longitudeExpression) {
 		this.longitudeExpression = longitudeExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Integer> getZoomExpression() {
 		return zoomExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>zoomExpression</code>.</p>
+	 *
+	 * @param zoomExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setZoomExpression(DRIExpression<Integer> zoomExpression) {
 		this.zoomExpression = zoomExpression;
 	}

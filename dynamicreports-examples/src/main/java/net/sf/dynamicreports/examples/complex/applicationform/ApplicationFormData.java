@@ -27,11 +27,17 @@ import java.util.Calendar;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ApplicationFormData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ApplicationFormData {
 	private ApplicationForm applicationForm;
 
+	/**
+	 * <p>Constructor for ApplicationFormData.</p>
+	 */
 	public ApplicationFormData() {
 		applicationForm = createApplicationForm();
 	}
@@ -55,10 +61,20 @@ public class ApplicationFormData {
 		return applicationForm;
 	}
 
+	/**
+	 * <p>Getter for the field <code>applicationForm</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.examples.complex.applicationform.ApplicationForm} object.
+	 */
 	public ApplicationForm getApplicationForm() {
 		return applicationForm;
 	}
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		return null;
 	}

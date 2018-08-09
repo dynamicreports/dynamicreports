@@ -26,14 +26,32 @@ import java.awt.Paint;
 import java.io.Serializable;
 
 /**
+ * <p>DRIPaintScale interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPaintScale extends Serializable {
 
+	/**
+	 * <p>getLabel.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabel();
 
+	/**
+	 * <p>getValue.</p>
+	 *
+	 * @return a double.
+	 */
 	public double getValue();
 
+	/**
+	 * <p>getPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getPaint();
 
 }

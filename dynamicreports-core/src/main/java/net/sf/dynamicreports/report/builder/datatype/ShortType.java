@@ -27,21 +27,27 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.defaults.Defaults;
 
 /**
+ * <p>ShortType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ShortType extends NumberType<Short> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getShortType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getShortType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Short numberToValue(Number number) {
 		return new Short(number.shortValue());

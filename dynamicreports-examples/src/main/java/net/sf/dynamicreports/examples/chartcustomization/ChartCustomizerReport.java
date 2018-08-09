@@ -43,10 +43,16 @@ import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.renderer.category.BarRenderer;
 
 /**
+ * <p>ChartCustomizerReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ChartCustomizerReport {
 
+	/**
+	 * <p>Constructor for ChartCustomizerReport.</p>
+	 */
 	public ChartCustomizerReport() {
 		build();
 	}
@@ -102,6 +108,11 @@ public class ChartCustomizerReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ChartCustomizerReport();
 	}

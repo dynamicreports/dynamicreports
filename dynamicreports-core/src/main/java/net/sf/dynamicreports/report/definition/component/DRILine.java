@@ -26,12 +26,25 @@ import net.sf.dynamicreports.report.constant.LineDirection;
 import net.sf.dynamicreports.report.definition.style.DRIPen;
 
 /**
+ * <p>DRILine interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRILine extends DRIDimensionComponent {
 
+	/**
+	 * <p>getDirection.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+	 */
 	public LineDirection getDirection();
 
+	/**
+	 * <p>getPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
+	 */
 	public DRIPen getPen();
 
 }

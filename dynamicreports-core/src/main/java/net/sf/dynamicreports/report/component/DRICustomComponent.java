@@ -25,7 +25,10 @@ package net.sf.dynamicreports.report.component;
 import net.sf.dynamicreports.report.definition.component.DRIDimensionComponent;
 
 /**
+ * <p>DRICustomComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICustomComponent extends DRIDimensionComponent {
 

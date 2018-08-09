@@ -25,10 +25,18 @@ package net.sf.dynamicreports.design.definition.component;
 import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
 
 /**
+ * <p>DRIDesignEllipse interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignEllipse extends DRIDesignComponent {
 
+	/**
+	 * <p>getPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getPen();
 
 }

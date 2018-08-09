@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.Orientation;
 
 /**
+ * <p>Abstract AbstractDesignBasePlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractDesignBasePlot implements DRIDesignBasePlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,19 +41,31 @@ public abstract class AbstractDesignBasePlot implements DRIDesignBasePlot {
 	private Orientation orientation;
 	private List<Color> seriesColors;
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	public void setOrientation(Orientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Orientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesColors</code>.</p>
+	 *
+	 * @param seriesColors a {@link java.util.List} object.
+	 */
 	public void setSeriesColors(List<Color> seriesColors) {
 		this.seriesColors = seriesColors;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<Color> getSeriesColors() {
 		return seriesColors;

@@ -31,17 +31,45 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRIComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIComponent extends Serializable {
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getStyle();
 
+	/**
+	 * <p>getPrintWhenExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Boolean> getPrintWhenExpression();
 
+	/**
+	 * <p>getRemoveLineWhenBlank.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getRemoveLineWhenBlank();
 
+	/**
+	 * <p>getPropertyExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIPropertyExpression> getPropertyExpressions();
 
+	/**
+	 * <p>getTableOfContentsHeading.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsHeading} object.
+	 */
 	public DRITableOfContentsHeading getTableOfContentsHeading();
 }

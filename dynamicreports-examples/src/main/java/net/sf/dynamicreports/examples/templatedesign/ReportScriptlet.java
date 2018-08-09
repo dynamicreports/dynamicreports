@@ -38,11 +38,15 @@ import net.sf.jasperreports.engine.JRScriptletException;
 import net.sf.jasperreports.engine.JasperReport;
 
 /**
+ * <p>ReportScriptlet class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ReportScriptlet extends JRDefaultScriptlet {
 	private JasperReportBuilder dynamicSubreport;
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforeDetailEval() throws JRScriptletException {
 		super.beforeDetailEval();
@@ -66,14 +70,31 @@ public class ReportScriptlet extends JRDefaultScriptlet {
 		return dataSource;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dynamicSubreport</code>.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JasperReport} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReport getDynamicSubreport() throws DRException {
 		return dynamicSubreport.toJasperReport();
 	}
 
+	/**
+	 * <p>getDynamicSubreportParameters.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public Map<String, Object> getDynamicSubreportParameters() throws DRException {
 		return dynamicSubreport.getJasperParameters();
 	}
 
+	/**
+	 * <p>getDynamicSubreportDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource getDynamicSubreportDataSource() {
 		return createDataSource();
 	}

@@ -27,19 +27,52 @@ import java.io.Serializable;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignHyperLink interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignHyperLink extends Serializable {
 
+	/**
+	 * <p>getAnchorExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getAnchorExpression();
 
+	/**
+	 * <p>getPageExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getPageExpression();
 
+	/**
+	 * <p>getReferenceExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getReferenceExpression();
 
+	/**
+	 * <p>getTooltipExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getTooltipExpression();
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getType();
 
+	/**
+	 * <p>getTarget.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getTarget();
 }

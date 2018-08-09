@@ -42,7 +42,10 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>ApplicationFormDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ApplicationFormDesign {
 	private static final int cellWidth = 18;
@@ -55,6 +58,12 @@ public class ApplicationFormDesign {
 	private StyleBuilder labelStyle;
 	private StyleBuilder cellStyle;
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
 
@@ -162,6 +171,11 @@ public class ApplicationFormDesign {
 		return label;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		ApplicationFormDesign design = new ApplicationFormDesign();
 		try {

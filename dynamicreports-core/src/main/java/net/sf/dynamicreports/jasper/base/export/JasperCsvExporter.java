@@ -26,7 +26,10 @@ import net.sf.dynamicreports.jasper.definition.export.JasperICsvExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperCsvExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperCsvExporter extends AbstractJasperExporter implements JasperICsvExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,20 +37,32 @@ public class JasperCsvExporter extends AbstractJasperExporter implements JasperI
 	private String fieldDelimiter;
 	private String recordDelimiter;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getFieldDelimiter() {
 		return fieldDelimiter;
 	}
 
+	/**
+	 * <p>Setter for the field <code>fieldDelimiter</code>.</p>
+	 *
+	 * @param fieldDelimiter a {@link java.lang.String} object.
+	 */
 	public void setFieldDelimiter(String fieldDelimiter) {
 		this.fieldDelimiter = fieldDelimiter;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getRecordDelimiter() {
 		return recordDelimiter;
 	}
 
+	/**
+	 * <p>Setter for the field <code>recordDelimiter</code>.</p>
+	 *
+	 * @param recordDelimiter a {@link java.lang.String} object.
+	 */
 	public void setRecordDelimiter(String recordDelimiter) {
 		this.recordDelimiter = recordDelimiter;
 	}

@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIPaintScale;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRPaintScale class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRPaintScale implements DRIPaintScale {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,29 +42,47 @@ public class DRPaintScale implements DRIPaintScale {
 	private double value;
 	private Paint paint;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLabel() {
 		return label;
 	}
 
+	/**
+	 * <p>Setter for the field <code>label</code>.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 */
 	public void setLabel(String label) {
 		this.label = label;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public double getValue() {
 		return value;
 	}
 
+	/**
+	 * <p>Setter for the field <code>value</code>.</p>
+	 *
+	 * @param value a double.
+	 */
 	public void setValue(double value) {
 		this.value = value;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Paint getPaint() {
 		return paint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>paint</code>.</p>
+	 *
+	 * @param paint a {@link java.awt.Paint} object.
+	 */
 	public void setPaint(Paint paint) {
 		Validate.notNull(paint, "paint must not be null");
 		this.paint = paint;

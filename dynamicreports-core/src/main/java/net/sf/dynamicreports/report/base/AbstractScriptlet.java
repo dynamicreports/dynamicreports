@@ -29,61 +29,83 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractScriptlet class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractScriptlet implements DRIScriptlet {
 	private String name;
 
+	/**
+	 * <p>Constructor for AbstractScriptlet.</p>
+	 */
 	public AbstractScriptlet() {
 		this.name = ReportUtils.generateUniqueName("scriptlet");
 	}
 
+	/**
+	 * <p>Constructor for AbstractScriptlet.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public AbstractScriptlet(String name) {
 		Validate.notEmpty(name, "name must not be empty");
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterColumnInit(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterDetailEval(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterGroupInit(String groupName, ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterPageInit(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterReportInit(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforeColumnInit(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforeDetailEval(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforeGroupInit(String groupName, ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforePageInit(ReportParameters reportParameters) {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void beforeReportInit(ReportParameters reportParameters) {
 	}

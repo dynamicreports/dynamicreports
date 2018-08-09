@@ -32,23 +32,66 @@ import net.sf.jasperreports.engine.component.Component;
 import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 
 /**
+ * <p>GeoMapComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface GeoMapComponent extends Component, JRCloneable {
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.type.EvaluationTimeEnum} object.
+	 */
 	public EvaluationTimeEnum getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getEvaluationGroup();
 
+	/**
+	 * <p>getShowLegend.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLegend();
 
+	/**
+	 * <p>getDataMode.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
+	 */
 	public GeoMapDataMode getDataMode();
 
+	/**
+	 * <p>getRegionExpression.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public JRExpression getRegionExpression();
 
+	/**
+	 * <p>getValueLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public JRExpression getValueLabelExpression();
 
+	/**
+	 * <p>getColors.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getColors();
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
+	 */
 	public GeoMapDataset getDataset();
 }

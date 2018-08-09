@@ -34,37 +34,76 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Abstract AbstractChartSerieBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractChartSerieBuilder<T extends AbstractChartSerieBuilder<T, U>, U extends DRChartSerie> extends AbstractBuilder<T, U> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for AbstractChartSerieBuilder.</p>
+	 *
+	 * @param object a U object.
+	 */
 	protected AbstractChartSerieBuilder(U object) {
 		super(object);
 	}
 
+	/**
+	 * <p>setSeries.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @return a T object.
+	 */
 	public T setSeries(ValueColumnBuilder<?, ?> column) {
 		Validate.notNull(column, "column must not be null");
 		getObject().setSeriesExpression(column.getColumn());
 		return (T) this;
 	}
 
+	/**
+	 * <p>setSeries.</p>
+	 *
+	 * @param fieldName a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 * @return a T object.
+	 */
 	public T setSeries(String fieldName, Class<?> valueClass) {
 		return setSeries(DynamicReports.field(fieldName, valueClass));
 	}
 
+	/**
+	 * <p>setSeries.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a T object.
+	 */
 	public T setSeries(FieldBuilder<?> field) {
 		Validate.notNull(field, "field must not be null");
 		getObject().setSeriesExpression(field.build());
 		return (T) this;
 	}
 
+	/**
+	 * <p>setSeries.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a T object.
+	 */
 	public T setSeries(DRIExpression<?> expression) {
 		getObject().setSeriesExpression(expression);
 		return (T) this;
 	}
 
+	/**
+	 * <p>setItemHyperLink.</p>
+	 *
+	 * @param itemHyperLink a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 * @return a T object.
+	 */
 	public T setItemHyperLink(HyperLinkBuilder itemHyperLink) {
 		Validate.notNull(itemHyperLink, "itemHyperLink must not be null");
 		getObject().setItemHyperLink(itemHyperLink.build());

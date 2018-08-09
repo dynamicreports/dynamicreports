@@ -45,17 +45,27 @@ import net.sf.jasperreports.engine.JRScriptletException;
 import net.sf.jasperreports.engine.JRVariable;
 
 /**
+ * <p>JasperReportParameters class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperReportParameters implements ReportParameters {
+	/** Constant <code>MASTER_REPORT_PARAMETERS="MASTER_REPORT_PARAMETERS"</code> */
 	public static final String MASTER_REPORT_PARAMETERS = "MASTER_REPORT_PARAMETERS";
 
 	private JasperScriptlet jasperScriptlet;
 
+	/**
+	 * <p>Constructor for JasperReportParameters.</p>
+	 *
+	 * @param jasperScriptlet a {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} object.
+	 */
 	protected JasperReportParameters(JasperScriptlet jasperScriptlet) {
 		this.jasperScriptlet = jasperScriptlet;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T getValue(String name) {
@@ -82,6 +92,7 @@ public class JasperReportParameters implements ReportParameters {
 		throw new DRReportException("Value " + name + " not found");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T getValue(DRIValue<T> value) {
@@ -89,6 +100,7 @@ public class JasperReportParameters implements ReportParameters {
 	}
 
 	// field
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T getFieldValue(String name) {
@@ -100,6 +112,7 @@ public class JasperReportParameters implements ReportParameters {
 	}
 
 	// variable
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T getVariableValue(String name) {
@@ -110,31 +123,37 @@ public class JasperReportParameters implements ReportParameters {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageNumber() {
 		return (Integer) getVariableValue(JRVariable.PAGE_NUMBER);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getColumnNumber() {
 		return (Integer) getVariableValue(JRVariable.COLUMN_NUMBER);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getReportRowNumber() {
 		return (Integer) getVariableValue(JRVariable.REPORT_COUNT);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageRowNumber() {
 		return (Integer) getVariableValue(JRVariable.PAGE_COUNT);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getColumnRowNumber() {
 		return (Integer) getVariableValue(JRVariable.COLUMN_COUNT);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getCrosstabRowNumber() {
 		CrosstabRowCounter counter = (CrosstabRowCounter) getValue(CROSSTAB_ROW_COUNTER);
@@ -144,12 +163,14 @@ public class JasperReportParameters implements ReportParameters {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getGroupCount(String groupName) {
 		return (Integer) getVariableValue(groupName + "_COUNT");
 	}
 
 	// parameter
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> T getParameterValue(String name) {
@@ -160,26 +181,31 @@ public class JasperReportParameters implements ReportParameters {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Connection getConnection() {
 		return (Connection) getParameterValue(JRParameter.REPORT_CONNECTION);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Locale getLocale() {
 		return (Locale) getParameterValue(JRParameter.REPORT_LOCALE);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIScriptlet getScriptlet(String name) {
 		return ((CustomScriptlet) getParameterValue(name + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX)).getScriptlet();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getMessage(String key) {
 		return ((ResourceBundle) getParameterValue(JRParameter.REPORT_RESOURCE_BUNDLE)).getString(key);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getMessage(String key, Object[] arguments) {
 		String message = getMessage(key);
@@ -210,16 +236,19 @@ public class JasperReportParameters implements ReportParameters {
 		return jasperScriptlet.getSystemValue(name);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ReportParameters getMasterParameters() {
 		return (ReportParameters) getParameterValue(MASTER_REPORT_PARAMETERS);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getSubreportWidth() {
 		return jasperScriptlet.getSubreportWidth();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String toString() {
 		StringBuilder result = new StringBuilder();

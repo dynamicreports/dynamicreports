@@ -40,10 +40,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>GroupChartReport2 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupChartReport2 {
 
+	/**
+	 * <p>Constructor for GroupChartReport2.</p>
+	 */
 	public GroupChartReport2() {
 		build();
 	}
@@ -99,6 +105,11 @@ public class GroupChartReport2 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new GroupChartReport2();
 	}

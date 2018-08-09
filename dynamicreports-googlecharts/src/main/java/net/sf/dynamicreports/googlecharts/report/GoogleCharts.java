@@ -25,10 +25,18 @@ package net.sf.dynamicreports.googlecharts.report;
 import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder;
 
 /**
+ * <p>GoogleCharts class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GoogleCharts {
 
+	/**
+	 * <p>geoMap.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
+	 */
 	public static GeoMapBuilder geoMap() {
 		return new GeoMapBuilder();
 	}

@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocSubtotal class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocSubtotal implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -38,62 +41,133 @@ public class AdhocSubtotal implements Cloneable, Serializable {
 	private AdhocSubtotalPosition position;
 	private String groupName;
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>label</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabel() {
 		return label;
 	}
 
+	/**
+	 * <p>Setter for the field <code>label</code>.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 */
 	public void setLabel(String label) {
 		this.label = label;
 	}
 
+	/**
+	 * <p>Getter for the field <code>calculation</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocCalculation} object.
+	 */
 	public AdhocCalculation getCalculation() {
 		return calculation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>calculation</code>.</p>
+	 *
+	 * @param calculation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocCalculation} object.
+	 */
 	public void setCalculation(AdhocCalculation calculation) {
 		this.calculation = calculation;
 	}
 
+	/**
+	 * <p>Getter for the field <code>style</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getStyle() {
 		return style;
 	}
 
+	/**
+	 * <p>Setter for the field <code>style</code>.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setStyle(AdhocStyle style) {
 		this.style = style;
 	}
 
+	/**
+	 * <p>Getter for the field <code>labelStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getLabelStyle() {
 		return labelStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelStyle</code>.</p>
+	 *
+	 * @param labelStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setLabelStyle(AdhocStyle labelStyle) {
 		this.labelStyle = labelStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>position</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotalPosition} object.
+	 */
 	public AdhocSubtotalPosition getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotalPosition} object.
+	 */
 	public void setPosition(AdhocSubtotalPosition position) {
 		this.position = position;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupName</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getGroupName() {
 		return groupName;
 	}
 
+	/**
+	 * <p>Setter for the field <code>groupName</code>.</p>
+	 *
+	 * @param groupName a {@link java.lang.String} object.
+	 */
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -132,6 +206,7 @@ public class AdhocSubtotal implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocSubtotal clone() {
 		AdhocSubtotal clone;

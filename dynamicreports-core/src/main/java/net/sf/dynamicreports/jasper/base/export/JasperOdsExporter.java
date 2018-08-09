@@ -26,18 +26,27 @@ import net.sf.dynamicreports.jasper.definition.export.JasperIOdsExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperOdsExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperOdsExporter extends AbstractJasperExcelExporter implements JasperIOdsExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean flexibleRowHeight;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getFlexibleRowHeight() {
 		return flexibleRowHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>flexibleRowHeight</code>.</p>
+	 *
+	 * @param flexibleRowHeight a {@link java.lang.Boolean} object.
+	 */
 	public void setFlexibleRowHeight(Boolean flexibleRowHeight) {
 		this.flexibleRowHeight = flexibleRowHeight;
 	}

@@ -34,7 +34,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRSeriesDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,35 +46,56 @@ public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset 
 	private List<DRIChartSerie> series;
 	private DRIHyperLink itemHyperLink;
 
+	/**
+	 * <p>Constructor for DRSeriesDataset.</p>
+	 */
 	public DRSeriesDataset() {
 		series = new ArrayList<DRIChartSerie>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<?> valueExpression) {
 		Validate.notNull(valueExpression, "valueExpression must not be null");
 		this.valueExpression = valueExpression;
 	}
 
+	/**
+	 * <p>addSerie.</p>
+	 *
+	 * @param serie a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartSerie} object.
+	 */
 	public void addSerie(DRIChartSerie serie) {
 		Validate.notNull(serie, "serie must not be null");
 		series.add(serie);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIChartSerie> getSeries() {
 		return series;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIHyperLink getItemHyperLink() {
 		return itemHyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>itemHyperLink</code>.</p>
+	 *
+	 * @param itemHyperLink a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 */
 	public void setItemHyperLink(DRIHyperLink itemHyperLink) {
 		this.itemHyperLink = itemHyperLink;
 	}

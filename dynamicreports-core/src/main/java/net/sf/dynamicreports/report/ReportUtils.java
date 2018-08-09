@@ -27,11 +27,20 @@ import java.lang.reflect.ParameterizedType;
 import net.sf.dynamicreports.report.constant.Calculation;
 
 /**
+ * <p>ReportUtils class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ReportUtils {
 	private static int counter = 0;
 
+	/**
+	 * <p>generateUniqueName.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	public static String generateUniqueName(String name) {
 		if (counter == Integer.MAX_VALUE) {
 			counter = 0;
@@ -39,6 +48,13 @@ public class ReportUtils {
 		return name + "_" + counter++ + "_";
 	}
 
+	/**
+	 * <p>getVariableValueClass.</p>
+	 *
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public static Class<?> getVariableValueClass(Calculation calculation, Class<?> valueClass) {
 		if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
 			return Long.class;
@@ -50,6 +66,13 @@ public class ReportUtils {
 		return valueClass;
 	}
 
+	/**
+	 * <p>getGenericClass.</p>
+	 *
+	 * @param object a {@link java.lang.Object} object.
+	 * @param index a int.
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public static Class<?> getGenericClass(Object object, int index) {
 		ParameterizedType genericSuperclass = getParameterizedType(object.getClass());
 		if (genericSuperclass == null) {

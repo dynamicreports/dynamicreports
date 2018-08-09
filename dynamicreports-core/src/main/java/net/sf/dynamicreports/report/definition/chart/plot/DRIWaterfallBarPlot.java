@@ -25,16 +25,39 @@ package net.sf.dynamicreports.report.definition.chart.plot;
 import java.awt.Paint;
 
 /**
+ * <p>DRIWaterfallBarPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIWaterfallBarPlot extends DRIBarPlot {
 
+	/**
+	 * <p>getFirstBarPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getFirstBarPaint();
 
+	/**
+	 * <p>getLastBarPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getLastBarPaint();
 
+	/**
+	 * <p>getPositiveBarPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getPositiveBarPaint();
 
+	/**
+	 * <p>getNegativeBarPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getNegativeBarPaint();
 
 }

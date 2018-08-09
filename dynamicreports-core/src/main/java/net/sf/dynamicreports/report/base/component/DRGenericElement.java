@@ -32,7 +32,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIParameterExpression
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRGenericElement class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRGenericElement extends DRDimensionComponent implements DRIGenericElement {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -41,6 +44,12 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
 	private String genericElementName;
 	private List<DRIParameterExpression> parameterExpressions;
 
+	/**
+	 * <p>Constructor for DRGenericElement.</p>
+	 *
+	 * @param namespace a {@link java.lang.String} object.
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public DRGenericElement(String namespace, String name) {
 		Validate.notEmpty(namespace, "namespace must not be empty");
 		Validate.notEmpty(name, "name must not be empty");
@@ -48,40 +57,64 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
 		genericElementName = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void init() {
 		super.init();
 		parameterExpressions = new ArrayList<DRIParameterExpression>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getGenericElementNamespace() {
 		return genericElementNamespace;
 	}
 
+	/**
+	 * <p>Setter for the field <code>genericElementNamespace</code>.</p>
+	 *
+	 * @param genericElementNamespace a {@link java.lang.String} object.
+	 */
 	public void setGenericElementNamespace(String genericElementNamespace) {
 		this.genericElementNamespace = genericElementNamespace;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getGenericElementName() {
 		return genericElementName;
 	}
 
+	/**
+	 * <p>Setter for the field <code>genericElementName</code>.</p>
+	 *
+	 * @param genericElementName a {@link java.lang.String} object.
+	 */
 	public void setGenericElementName(String genericElementName) {
 		this.genericElementName = genericElementName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIParameterExpression> getParameterExpressions() {
 		return parameterExpressions;
 	}
 
+	/**
+	 * <p>addParameterExpression.</p>
+	 *
+	 * @param parameterExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIParameterExpression} object.
+	 */
 	public void addParameterExpression(DRIParameterExpression parameterExpression) {
 		Validate.notNull(parameterExpression, "parameterExpression must not be null");
 		this.parameterExpressions.add(parameterExpression);
 	}
 
+	/**
+	 * <p>Setter for the field <code>parameterExpressions</code>.</p>
+	 *
+	 * @param parameterExpressions a {@link java.util.List} object.
+	 */
 	public void setParameterExpressions(List<DRIParameterExpression> parameterExpressions) {
 		this.parameterExpressions = parameterExpressions;
 	}

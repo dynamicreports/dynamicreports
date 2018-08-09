@@ -31,10 +31,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>StackedBar3DChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StackedBar3DChartReport {
 
+	/**
+	 * <p>Constructor for StackedBar3DChartReport.</p>
+	 */
 	public StackedBar3DChartReport() {
 		build();
 	}
@@ -77,6 +83,11 @@ public class StackedBar3DChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new StackedBar3DChartReport();
 	}

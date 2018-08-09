@@ -29,25 +29,73 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
 
 /**
+ * <p>DRIDesignTextField interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignTextField extends DRIDesignHyperLinkComponent {
 
+	/**
+	 * <p>getPattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getPattern();
 
+	/**
+	 * <p>getPatternExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getPatternExpression();
 
+	/**
+	 * <p>getHorizontalTextAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public HorizontalTextAlignment getHorizontalTextAlignment();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 
+	/**
+	 * <p>isPrintRepeatedValues.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isPrintRepeatedValues();
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public EvaluationTime getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getEvaluationGroup();
 
+	/**
+	 * <p>getMarkup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
+	 */
 	public Markup getMarkup();
 
+	/**
+	 * <p>isStretchWithOverflow.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isStretchWithOverflow();
 }

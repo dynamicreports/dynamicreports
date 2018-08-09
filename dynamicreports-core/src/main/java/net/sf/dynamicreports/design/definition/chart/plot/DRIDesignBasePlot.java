@@ -28,11 +28,24 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.Orientation;
 
 /**
+ * <p>DRIDesignBasePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBasePlot extends DRIDesignPlot {
 
+	/**
+	 * <p>getOrientation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	public Orientation getOrientation();
 
+	/**
+	 * <p>getSeriesColors.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getSeriesColors();
 }

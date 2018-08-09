@@ -397,6 +397,9 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <nosince>false</nosince>
+                            <defaultVersion>5.0.1</defaultVersion>
+                            <defaultSince>5.0.1</defaultSince>
                             <javadocExecutable>${env.JAVA_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>

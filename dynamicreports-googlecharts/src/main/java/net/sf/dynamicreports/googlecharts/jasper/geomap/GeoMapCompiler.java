@@ -30,10 +30,14 @@ import net.sf.jasperreports.engine.design.JRVerifier;
 import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 
 /**
+ * <p>GeoMapCompiler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GeoMapCompiler implements ComponentCompiler {
 
+	/** {@inheritDoc} */
 	@Override
 	public void collectExpressions(Component component, JRExpressionCollector collector) {
 		GeoMapComponent geoMap = (GeoMapComponent) component;
@@ -42,6 +46,7 @@ public class GeoMapCompiler implements ComponentCompiler {
 		collectExpressions(geoMap.getDataset(), collector);
 	}
 
+	/** {@inheritDoc} */
 	public static void collectExpressions(GeoMapDataset dataset, JRExpressionCollector collector) {
 		if (dataset != null) {
 			collector.collect(dataset);
@@ -52,12 +57,14 @@ public class GeoMapCompiler implements ComponentCompiler {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Component toCompiledComponent(Component component, JRBaseObjectFactory baseFactory) {
 		GeoMapComponent geoMap = (GeoMapComponent) component;
 		return new StandardGeoMapComponent(geoMap, baseFactory);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void verify(Component component, JRVerifier verifier) {
 		GeoMapComponent geoMap = (GeoMapComponent) component;

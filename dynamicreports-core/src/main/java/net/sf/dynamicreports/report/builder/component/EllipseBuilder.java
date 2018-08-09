@@ -27,15 +27,27 @@ import net.sf.dynamicreports.report.builder.style.PenBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>EllipseBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class EllipseBuilder extends DimensionComponentBuilder<EllipseBuilder, DREllipse> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for EllipseBuilder.</p>
+	 */
 	protected EllipseBuilder() {
 		super(new DREllipse());
 	}
 
+	/**
+	 * <p>setPen.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.EllipseBuilder} object.
+	 */
 	public EllipseBuilder setPen(PenBuilder pen) {
 		if (pen != null) {
 			getObject().setPen(pen.build());

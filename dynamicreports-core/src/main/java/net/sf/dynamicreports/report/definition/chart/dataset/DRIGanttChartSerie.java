@@ -25,15 +25,38 @@ package net.sf.dynamicreports.report.definition.chart.dataset;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIGanttChartSerie interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIGanttChartSerie extends DRIChartSerie {
 
+	/**
+	 * <p>getStartDateExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getStartDateExpression();
 
+	/**
+	 * <p>getEndDateExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getEndDateExpression();
 
+	/**
+	 * <p>getPercentExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getPercentExpression();
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getLabelExpression();
 }

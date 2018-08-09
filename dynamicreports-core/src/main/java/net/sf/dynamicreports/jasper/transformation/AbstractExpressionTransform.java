@@ -57,7 +57,10 @@ import net.sf.jasperreports.engine.design.JRDesignVariable;
 import net.sf.jasperreports.engine.type.SortFieldTypeEnum;
 
 /**
+ * <p>Abstract AbstractExpressionTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractExpressionTransform {
 	private static final String VALUE = "$P'{'{0}'}'.getValue(\"{1}\")";
@@ -68,10 +71,16 @@ public abstract class AbstractExpressionTransform {
 
 	private Map<String, JRDesignExpression> expressions;
 
+	/**
+	 * <p>Constructor for AbstractExpressionTransform.</p>
+	 */
 	public AbstractExpressionTransform() {
 		this.expressions = new HashMap<String, JRDesignExpression>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		for (DRIDesignField field : getFields()) {
 			addField(field);
@@ -109,6 +118,11 @@ public abstract class AbstractExpressionTransform {
 		addExpression(jasperExpression);
 	}
 
+	/**
+	 * <p>addSimpleExpression.</p>
+	 *
+	 * @param simpleExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignSimpleExpression} object.
+	 */
 	protected void addSimpleExpression(DRIDesignSimpleExpression simpleExpression) {
 		if (simpleExpression == null)
 			return;
@@ -138,6 +152,11 @@ public abstract class AbstractExpressionTransform {
 		}
 	}
 
+	/**
+	 * <p>addComplexExpression.</p>
+	 *
+	 * @param complexExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignComplexExpression} object.
+	 */
 	protected void addComplexExpression(DRIDesignComplexExpression complexExpression) {
 		if (complexExpression == null)
 			return;
@@ -188,6 +207,12 @@ public abstract class AbstractExpressionTransform {
 		return jrVariable;
 	}
 
+	/**
+	 * <p>getGroup.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 * @return a {@link net.sf.jasperreports.engine.JRGroup} object.
+	 */
 	protected JRGroup getGroup(DRIDesignGroup group) {
 		return null;
 	}
@@ -249,10 +274,22 @@ public abstract class AbstractExpressionTransform {
 		return MessageFormat.format(VARIABLE_VALUE, expression);
 	}
 
+	/**
+	 * <p>toParameterValue.</p>
+	 *
+	 * @param expression a {@link java.lang.String} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected String toParameterValue(String expression) {
 		return MessageFormat.format(PARAMETER_VALUE, expression);
 	}
 
+	/**
+	 * <p>getExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignExpression} object.
+	 */
 	public JRDesignExpression getExpression(DRIDesignExpression expression) {
 		if (expression == null)
 			return null;
@@ -284,6 +321,12 @@ public abstract class AbstractExpressionTransform {
 		return jrSort;
 	}
 
+	/**
+	 * <p>getPropertyExpression.</p>
+	 *
+	 * @param propertyExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignPropertyExpression} object.
+	 * @return a {@link net.sf.jasperreports.engine.JRPropertyExpression} object.
+	 */
 	protected JRPropertyExpression getPropertyExpression(DRIDesignPropertyExpression propertyExpression) {
 		JRDesignPropertyExpression jrPropertyExpression = new JRDesignPropertyExpression();
 		jrPropertyExpression.setName(propertyExpression.getName());
@@ -291,6 +334,12 @@ public abstract class AbstractExpressionTransform {
 		return jrPropertyExpression;
 	}
 
+	/**
+	 * <p>getGenericElementParameterExpression.</p>
+	 *
+	 * @param parameterExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpression} object.
+	 * @return a {@link net.sf.jasperreports.engine.JRGenericElementParameter} object.
+	 */
 	protected JRGenericElementParameter getGenericElementParameterExpression(DRIDesignParameterExpression parameterExpression) {
 		JRDesignGenericElementParameter jrParameterExpression = new JRDesignGenericElementParameter();
 		jrParameterExpression.setName(parameterExpression.getName());
@@ -298,25 +347,83 @@ public abstract class AbstractExpressionTransform {
 		return jrParameterExpression;
 	}
 
+	/**
+	 * <p>getCustomValues.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.base.JasperCustomValues} object.
+	 */
 	protected abstract JasperCustomValues getCustomValues();
 
+	/**
+	 * <p>getFields.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignField> getFields();
 
+	/**
+	 * <p>getVariables.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignVariable> getVariables();
 
+	/**
+	 * <p>getSystemExpressions.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignSystemExpression> getSystemExpressions();
 
+	/**
+	 * <p>getJasperExpressions.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignJasperExpression> getJasperExpressions();
 
+	/**
+	 * <p>getSimpleExpressions.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignSimpleExpression> getSimpleExpressions();
 
+	/**
+	 * <p>getComplexExpressions.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignComplexExpression> getComplexExpressions();
 
+	/**
+	 * <p>getSorts.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected abstract Collection<DRIDesignSort> getSorts();
 
+	/**
+	 * <p>addField.</p>
+	 *
+	 * @param field a {@link net.sf.jasperreports.engine.design.JRDesignField} object.
+	 * @throws net.sf.jasperreports.engine.JRException if any.
+	 */
 	protected abstract void addField(JRDesignField field) throws JRException;
 
+	/**
+	 * <p>addVariable.</p>
+	 *
+	 * @param variable a {@link net.sf.jasperreports.engine.design.JRDesignVariable} object.
+	 * @throws net.sf.jasperreports.engine.JRException if any.
+	 */
 	protected abstract void addVariable(JRDesignVariable variable) throws JRException;
 
+	/**
+	 * <p>addSort.</p>
+	 *
+	 * @param sort a {@link net.sf.jasperreports.engine.design.JRDesignSortField} object.
+	 * @throws net.sf.jasperreports.engine.JRException if any.
+	 */
 	protected abstract void addSort(JRDesignSortField sort) throws JRException;
 }

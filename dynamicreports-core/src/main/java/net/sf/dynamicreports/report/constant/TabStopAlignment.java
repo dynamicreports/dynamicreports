@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>TabStopAlignment class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum TabStopAlignment {
 	LEFT, CENTER, RIGHT

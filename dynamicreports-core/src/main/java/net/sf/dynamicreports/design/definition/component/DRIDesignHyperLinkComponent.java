@@ -26,13 +26,31 @@ import net.sf.dynamicreports.design.definition.DRIDesignHyperLink;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignHyperLinkComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignHyperLinkComponent extends DRIDesignComponent {
 
+	/**
+	 * <p>getAnchorNameExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getAnchorNameExpression();
 
+	/**
+	 * <p>getBookmarkLevel.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getBookmarkLevel();
 
+	/**
+	 * <p>getHyperLink.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignHyperLink} object.
+	 */
 	public DRIDesignHyperLink getHyperLink();
 }

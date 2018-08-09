@@ -61,7 +61,10 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRChart class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRChart extends DRHyperLinkComponent implements DRIChart {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -75,10 +78,16 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
 	private DRChartLegend legend;
 	private String theme;
 
+	/**
+	 * <p>Constructor for DRChart.</p>
+	 *
+	 * @param chartType a {@link net.sf.dynamicreports.report.constant.ChartType} object.
+	 */
 	public DRChart(ChartType chartType) {
 		setChartType(chartType);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void init() {
 		super.init();
@@ -201,69 +210,107 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ChartType getChartType() {
 		return chartType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRChartDataset getDataset() {
 		return dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIPlot getPlot() {
 		return plot;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIChartCustomizer> getCustomizers() {
 		return customizers;
 	}
 
+	/**
+	 * <p>addCustomizer.</p>
+	 *
+	 * @param customizer a {@link net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer} object.
+	 */
 	public void addCustomizer(DRIChartCustomizer customizer) {
 		this.customizers.add(customizer);
 	}
 
+	/**
+	 * <p>Setter for the field <code>customizers</code>.</p>
+	 *
+	 * @param customizers a {@link java.util.List} object.
+	 */
 	public void setCustomizers(List<DRIChartCustomizer> customizers) {
 		this.customizers = customizers;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRChartTitle getTitle() {
 		return title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link net.sf.dynamicreports.report.base.chart.DRChartTitle} object.
+	 */
 	public void setTitle(DRChartTitle title) {
 		Validate.notNull(title, "title must not be null");
 		this.title = title;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRChartSubtitle getSubtitle() {
 		return subtitle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subtitle</code>.</p>
+	 *
+	 * @param subtitle a {@link net.sf.dynamicreports.report.base.chart.DRChartSubtitle} object.
+	 */
 	public void setSubtitle(DRChartSubtitle subtitle) {
 		Validate.notNull(subtitle, "subtitle must not be null");
 		this.subtitle = subtitle;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRChartLegend getLegend() {
 		return legend;
 	}
 
+	/**
+	 * <p>Setter for the field <code>legend</code>.</p>
+	 *
+	 * @param legend a {@link net.sf.dynamicreports.report.base.chart.DRChartLegend} object.
+	 */
 	public void setLegend(DRChartLegend legend) {
 		Validate.notNull(legend, "legend must not be null");
 		this.legend = legend;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getTheme() {
 		return theme;
 	}
 
+	/**
+	 * <p>Setter for the field <code>theme</code>.</p>
+	 *
+	 * @param theme a {@link java.lang.String} object.
+	 */
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}

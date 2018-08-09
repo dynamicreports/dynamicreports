@@ -32,36 +32,50 @@ import net.sf.dynamicreports.report.definition.DRISort;
 import net.sf.dynamicreports.report.definition.DRIVariable;
 
 /**
+ * <p>DatasetExpressionTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatasetExpressionTransform extends AbstractExpressionTransform {
 	private DRIDataset dataset;
 
+	/**
+	 * <p>Constructor for DatasetExpressionTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 * @param dataset a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 */
 	public DatasetExpressionTransform(DesignTransformAccessor accessor, DRIDataset dataset) {
 		super(accessor);
 		this.dataset = dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected ResetType getVariableResetType(DRIVariable<?> variable) {
 		return ResetType.REPORT;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRIField<?>> transformFields() {
 		return dataset.getFields();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRIVariable<?>> transformVariables() {
 		return dataset.getVariables();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRISort> transformSorts() {
 		return dataset.getSorts();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected DRIDesignDataset getDataset() {
 		return accessor.getDatasetTransform().getDesignDataset(dataset);

@@ -35,7 +35,10 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract DRComponent class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRComponent implements DRIComponent {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -46,60 +49,101 @@ public abstract class DRComponent implements DRIComponent {
 	private List<DRIPropertyExpression> propertyExpressions;
 	private DRTableOfContentsHeading tableOfContentsHeading;
 
+	/**
+	 * <p>Constructor for DRComponent.</p>
+	 */
 	public DRComponent() {
 		init();
 	}
 
+	/**
+	 * <p>init.</p>
+	 */
 	protected void init() {
 		propertyExpressions = new ArrayList<DRIPropertyExpression>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIReportStyle getStyle() {
 		return style;
 	}
 
+	/**
+	 * <p>Setter for the field <code>style</code>.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public void setStyle(DRIReportStyle style) {
 		this.style = style;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Boolean> getPrintWhenExpression() {
 		return printWhenExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>printWhenExpression</code>.</p>
+	 *
+	 * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
 		this.printWhenExpression = printWhenExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getRemoveLineWhenBlank() {
 		return removeLineWhenBlank;
 	}
 
+	/**
+	 * <p>Setter for the field <code>removeLineWhenBlank</code>.</p>
+	 *
+	 * @param removeLineWhenBlank a {@link java.lang.Boolean} object.
+	 */
 	public void setRemoveLineWhenBlank(Boolean removeLineWhenBlank) {
 		this.removeLineWhenBlank = removeLineWhenBlank;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIPropertyExpression> getPropertyExpressions() {
 		return propertyExpressions;
 	}
 
+	/**
+	 * <p>addPropertyExpression.</p>
+	 *
+	 * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
+	 */
 	public void addPropertyExpression(DRIPropertyExpression propertyExpression) {
 		Validate.notNull(propertyExpression, "propertyExpression must not be null");
 		this.propertyExpressions.add(propertyExpression);
 	}
 
+	/**
+	 * <p>Setter for the field <code>propertyExpressions</code>.</p>
+	 *
+	 * @param propertyExpressions a {@link java.util.List} object.
+	 */
 	public void setPropertyExpressions(List<DRIPropertyExpression> propertyExpressions) {
 		this.propertyExpressions = propertyExpressions;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRTableOfContentsHeading getTableOfContentsHeading() {
 		return tableOfContentsHeading;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tableOfContentsHeading</code>.</p>
+	 *
+	 * @param tableOfContentsHeading a {@link net.sf.dynamicreports.report.base.DRTableOfContentsHeading} object.
+	 */
 	public void setTableOfContentsHeading(DRTableOfContentsHeading tableOfContentsHeading) {
 		this.tableOfContentsHeading = tableOfContentsHeading;
 	}

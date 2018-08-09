@@ -23,13 +23,31 @@
 package net.sf.dynamicreports.design.definition.chart.plot;
 
 /**
+ * <p>DRIDesignPiePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignPiePlot extends DRIDesignBasePlot {
 
+	/**
+	 * <p>getCircular.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getCircular();
 
+	/**
+	 * <p>getLabelFormat.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabelFormat();
 
+	/**
+	 * <p>getLegendLabelFormat.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLegendLabelFormat();
 }

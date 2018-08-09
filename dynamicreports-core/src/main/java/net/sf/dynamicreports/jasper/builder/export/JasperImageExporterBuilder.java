@@ -27,33 +27,61 @@ import net.sf.dynamicreports.jasper.constant.ImageType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperImageExporterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperImageExporterBuilder extends AbstractJasperExporterBuilder<JasperImageExporterBuilder, JasperImageExporter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperImageExporterBuilder.</p>
+	 */
 	protected JasperImageExporterBuilder() {
 		super(new JasperImageExporter());
 	}
 
+	/**
+	 * <p>setPageGap.</p>
+	 *
+	 * @param pageGap a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
+	 */
 	public JasperImageExporterBuilder setPageGap(Integer pageGap) {
 		this.getObject().setPageGap(pageGap);
 		return this;
 	}
 
+	/**
+	 * <p>setImageType.</p>
+	 *
+	 * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
+	 */
 	public JasperImageExporterBuilder setImageType(ImageType imageType) {
 		this.getObject().setImageType(imageType);
 		return this;
 	}
 
 	/**
+	 * <p>setZoom.</p>
+	 *
 	 * @deprecated To be removed. Use setZoomRatio instead.
+	 * @param zoom a {@link java.lang.Float} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
 	 */
 	@Deprecated
 	public JasperImageExporterBuilder setZoom(Float zoom) {
 		return setZoomRatio(zoom);
 	}
 
+	/**
+	 * <p>setZoomRatio.</p>
+	 *
+	 * @param zoom a {@link java.lang.Float} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
+	 */
 	public JasperImageExporterBuilder setZoomRatio(Float zoom) {
 		this.getObject().setZoomRatio(zoom);
 		return this;

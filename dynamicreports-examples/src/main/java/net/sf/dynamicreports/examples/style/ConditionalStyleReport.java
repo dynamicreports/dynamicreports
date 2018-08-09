@@ -40,10 +40,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ConditionalStyleReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ConditionalStyleReport {
 
+	/**
+	 * <p>Constructor for ConditionalStyleReport.</p>
+	 */
 	public ConditionalStyleReport() {
 		build();
 	}
@@ -101,6 +107,11 @@ public class ConditionalStyleReport {
 		return c.getTime();
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ConditionalStyleReport();
 	}

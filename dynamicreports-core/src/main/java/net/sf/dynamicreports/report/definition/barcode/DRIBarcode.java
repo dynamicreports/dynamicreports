@@ -26,10 +26,18 @@ import net.sf.dynamicreports.report.definition.component.DRIDimensionComponent;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIBarcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBarcode extends DRIDimensionComponent {
 
+	/**
+	 * <p>getCodeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getCodeExpression();
 
 }

@@ -32,10 +32,16 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
 /**
+ * <p>JasperTemplateDesignReport3 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTemplateDesignReport3 {
 
+	/**
+	 * <p>Constructor for JasperTemplateDesignReport3.</p>
+	 */
 	public JasperTemplateDesignReport3() {
 		build();
 	}
@@ -58,6 +64,11 @@ public class JasperTemplateDesignReport3 {
 		return new JREmptyDataSource(2);
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new JasperTemplateDesignReport3();
 	}

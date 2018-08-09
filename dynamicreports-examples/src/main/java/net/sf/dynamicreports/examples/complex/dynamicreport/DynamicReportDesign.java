@@ -39,11 +39,20 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DynamicReportDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DynamicReportDesign {
 	private DynamicReportData data = new DynamicReportData();
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
@@ -97,6 +106,11 @@ public class DynamicReportDesign {
 		return report;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		DynamicReportDesign design = new DynamicReportDesign();
 		try {

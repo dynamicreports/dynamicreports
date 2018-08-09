@@ -130,16 +130,33 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ChartTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ChartTransform {
 	private DesignTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for ChartTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public ChartTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
 	// chart
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.chart.DRDesignChart} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignChart transform(DRIChart chart, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		return transform(chart, null, resetType, resetGroup);
 	}

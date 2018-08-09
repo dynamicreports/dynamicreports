@@ -26,15 +26,25 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIValue;
 
 /**
+ * <p>UnEqualValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class UnEqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for UnEqualValueExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param numbers a {@link java.lang.Number} object.
+	 */
 	public UnEqualValueExpression(DRIValue<T> value, Number... numbers) {
 		super(value, numbers);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Boolean compare(Number actualValue, Number[] numbers) {
 		for (Number number : numbers) {

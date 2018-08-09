@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>TocReferenceLinkExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TocReferenceLinkExpression extends AbstractComplexExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,6 +41,12 @@ public class TocReferenceLinkExpression extends AbstractComplexExpression<String
 	private String expressionName;
 	private boolean customId;
 
+	/**
+	 * <p>Constructor for TocReferenceLinkExpression.</p>
+	 *
+	 * @param expressionName a {@link java.lang.String} object.
+	 * @param anchorNameExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public TocReferenceLinkExpression(String expressionName, DRIExpression<String> anchorNameExpression) {
 		this.expressionName = expressionName;
 		customId = anchorNameExpression != null;
@@ -46,6 +55,7 @@ public class TocReferenceLinkExpression extends AbstractComplexExpression<String
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(List<?> values, ReportParameters reportParameters) {
 		String id;

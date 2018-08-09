@@ -37,27 +37,58 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>TemplateStylesBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder, List<StyleBuilder>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TemplateStylesBuilder.</p>
+	 */
 	protected TemplateStylesBuilder() {
 		super(new ArrayList<StyleBuilder>());
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param inputStream a {@link java.io.InputStream} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 */
 	public TemplateStylesBuilder loadStyles(InputStream inputStream) {
 		return addStyles(JasperTemplateStyleLoader.loadStyles(inputStream));
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param file a {@link java.io.File} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 */
 	public TemplateStylesBuilder loadStyles(File file) {
 		return addStyles(JasperTemplateStyleLoader.loadStyles(file));
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param fileName a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public TemplateStylesBuilder loadStyles(String fileName) throws DRException {
 		return addStyles(JasperTemplateStyleLoader.loadStyles(fileName));
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param url a {@link java.net.URL} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 */
 	public TemplateStylesBuilder loadStyles(URL url) {
 		return addStyles(JasperTemplateStyleLoader.loadStyles(url));
 	}
@@ -69,10 +100,22 @@ public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder
 		return this;
 	}
 
+	/**
+	 * <p>styles.</p>
+	 *
+	 * @param styles a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 */
 	public TemplateStylesBuilder styles(StyleBuilder... styles) {
 		return addStyle(styles);
 	}
 
+	/**
+	 * <p>addStyle.</p>
+	 *
+	 * @param styles a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
+	 */
 	public TemplateStylesBuilder addStyle(StyleBuilder... styles) {
 		Validate.notNull(styles, "styles must not be null");
 		Validate.noNullElements(styles, "styles must not contains null style");
@@ -82,6 +125,12 @@ public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder
 		return this;
 	}
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	public StyleBuilder getStyle(String name) {
 		Validate.notNull(name, "name must not be null");
 		for (StyleBuilder style : getStyles()) {
@@ -92,6 +141,11 @@ public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder
 		return null;
 	}
 
+	/**
+	 * <p>getStyles.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<StyleBuilder> getStyles() {
 		return build();
 	}

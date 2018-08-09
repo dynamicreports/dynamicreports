@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignPiePlot;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignPiePlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPiePlot extends AbstractDesignBasePlot implements DRIDesignPiePlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,29 +38,47 @@ public class DRDesignPiePlot extends AbstractDesignBasePlot implements DRIDesign
 	private String labelFormat;
 	private String legendLabelFormat;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getCircular() {
 		return circular;
 	}
 
+	/**
+	 * <p>Setter for the field <code>circular</code>.</p>
+	 *
+	 * @param circular a {@link java.lang.Boolean} object.
+	 */
 	public void setCircular(Boolean circular) {
 		this.circular = circular;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLabelFormat() {
 		return labelFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelFormat</code>.</p>
+	 *
+	 * @param labelFormat a {@link java.lang.String} object.
+	 */
 	public void setLabelFormat(String labelFormat) {
 		this.labelFormat = labelFormat;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLegendLabelFormat() {
 		return legendLabelFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>legendLabelFormat</code>.</p>
+	 *
+	 * @param legendLabelFormat a {@link java.lang.String} object.
+	 */
 	public void setLegendLabelFormat(String legendLabelFormat) {
 		this.legendLabelFormat = legendLabelFormat;
 	}

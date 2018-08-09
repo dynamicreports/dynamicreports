@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.definition.DRIBand;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRBand class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBand implements DRIBand {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,33 +43,54 @@ public class DRBand implements DRIBand {
 	private DRList list;
 	private DRIExpression<Boolean> printWhenExpression;
 
+	/**
+	 * <p>Constructor for DRBand.</p>
+	 */
 	public DRBand() {
 		this.list = new DRList(ListType.VERTICAL);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public SplitType getSplitType() {
 		return splitType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>splitType</code>.</p>
+	 *
+	 * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public void setSplitType(SplitType splitType) {
 		this.splitType = splitType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRList getList() {
 		return list;
 	}
 
+	/**
+	 * <p>addComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	public void addComponent(DRComponent component) {
 		list.addComponent(component);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Boolean> getPrintWhenExpression() {
 		return printWhenExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>printWhenExpression</code>.</p>
+	 *
+	 * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
 		this.printWhenExpression = printWhenExpression;
 	}

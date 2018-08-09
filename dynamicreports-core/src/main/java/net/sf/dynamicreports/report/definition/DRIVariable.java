@@ -27,17 +27,45 @@ import net.sf.dynamicreports.report.constant.Evaluation;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIVariable interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIVariable<T> extends DRIExpression<T>, DRIValue<T> {
 
+	/**
+	 * <p>getCalculation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public Calculation getCalculation();
 
+	/**
+	 * <p>getResetType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 */
 	public Evaluation getResetType();
 
+	/**
+	 * <p>getResetGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	public DRIGroup getResetGroup();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getValueExpression();
 
+	/**
+	 * <p>getInitialValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getInitialValueExpression();
 }

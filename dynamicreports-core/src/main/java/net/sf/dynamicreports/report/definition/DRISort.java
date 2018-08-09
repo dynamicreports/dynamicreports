@@ -28,11 +28,24 @@ import net.sf.dynamicreports.report.constant.OrderType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRISort interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRISort extends Serializable {
 
+	/**
+	 * <p>getExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getExpression();
 
+	/**
+	 * <p>getOrderType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public OrderType getOrderType();
 }

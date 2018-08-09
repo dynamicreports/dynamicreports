@@ -39,10 +39,16 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
 /**
+ * <p>JasperTemplateDesignReport2 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTemplateDesignReport2 {
 
+	/**
+	 * <p>Constructor for JasperTemplateDesignReport2.</p>
+	 */
 	public JasperTemplateDesignReport2() {
 		build();
 	}
@@ -114,6 +120,11 @@ public class JasperTemplateDesignReport2 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new JasperTemplateDesignReport2();
 	}

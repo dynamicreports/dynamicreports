@@ -28,21 +28,59 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIBooleanField interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBooleanField extends DRIHyperLinkComponent {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Boolean> getValueExpression();
 
+	/**
+	 * <p>getComponentType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BooleanComponentType} object.
+	 */
 	public BooleanComponentType getComponentType();
 
+	/**
+	 * <p>getEmptyWhenNullValue.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getEmptyWhenNullValue();
 
+	/**
+	 * <p>getImageWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getImageWidth();
 
+	/**
+	 * <p>getImageHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getImageHeight();
 
+	/**
+	 * <p>getHorizontalImageAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 */
 	public HorizontalImageAlignment getHorizontalImageAlignment();
 
+	/**
+	 * <p>getHorizontalTextAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public HorizontalTextAlignment getHorizontalTextAlignment();
 }

@@ -35,7 +35,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>DRTextField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -54,65 +57,101 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
 	private Boolean stretchWithOverflow;
 	private Boolean printRepeatedValues;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<T> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<T> valueExpression) {
 		Validate.notNull(valueExpression, "valueExpression must not be null");
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return pattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pattern</code>.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getPatternExpression() {
 		return patternExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>patternExpression</code>.</p>
+	 *
+	 * @param patternExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setPatternExpression(DRIExpression<String> patternExpression) {
 		this.patternExpression = patternExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalTextAlignment</code>.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIValueFormatter<?, ? super T> getValueFormatter() {
 		return valueFormatter;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueFormatter</code>.</p>
+	 *
+	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 */
 	public void setValueFormatter(DRIValueFormatter<?, ? super T> valueFormatter) {
 		this.valueFormatter = valueFormatter;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDataType<? super T, T> getDataType() {
 		return dataType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataType</code>.</p>
+	 *
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	public void setDataType(DRIDataType<? super T, T> dataType) {
 		this.dataType = dataType;
 	}
 
 	/**
-	 * Returns the number of columns.
+	 * {@inheritDoc}
 	 *
-	 * @return the number of columns >= 0
+	 * Returns the number of columns.
 	 */
 	@Override
 	public Integer getColumns() {
@@ -137,9 +176,9 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
 	}
 
 	/**
-	 * Returns the number of rows.
+	 * {@inheritDoc}
 	 *
-	 * @return the number of rows >= 0
+	 * Returns the number of rows.
 	 */
 	@Override
 	public Integer getRows() {
@@ -162,47 +201,77 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
 		this.rows = rows;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Evaluation getEvaluationTime() {
 		return evaluationTime;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationTime</code>.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 */
 	public void setEvaluationTime(Evaluation evaluationTime) {
 		this.evaluationTime = evaluationTime;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRGroup getEvaluationGroup() {
 		return evaluationGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationGroup</code>.</p>
+	 *
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.report.base.DRGroup} object.
+	 */
 	public void setEvaluationGroup(DRGroup evaluationGroup) {
 		this.evaluationGroup = evaluationGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Markup getMarkup() {
 		return markup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>markup</code>.</p>
+	 *
+	 * @param markup a {@link net.sf.dynamicreports.report.constant.Markup} object.
+	 */
 	public void setMarkup(Markup markup) {
 		this.markup = markup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getStretchWithOverflow() {
 		return stretchWithOverflow;
 	}
 
+	/**
+	 * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
+	 *
+	 * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+	 */
 	public void setStretchWithOverflow(Boolean stretchWithOverflow) {
 		this.stretchWithOverflow = stretchWithOverflow;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getPrintRepeatedValues() {
 		return printRepeatedValues;
 	}
 
+	/**
+	 * <p>Setter for the field <code>printRepeatedValues</code>.</p>
+	 *
+	 * @param printRepeatedValues a {@link java.lang.Boolean} object.
+	 */
 	public void setPrintRepeatedValues(Boolean printRepeatedValues) {
 		this.printRepeatedValues = printRepeatedValues;
 	}

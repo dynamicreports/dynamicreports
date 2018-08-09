@@ -35,37 +35,73 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>BooleanFieldBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("deprecation")
 public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldBuilder, DRBooleanField> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for BooleanFieldBuilder.</p>
+	 */
 	protected BooleanFieldBuilder() {
 		super(new DRBooleanField());
 	}
 
+	/**
+	 * <p>setValue.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setValue(FieldBuilder<Boolean> field) {
 		Validate.notNull(field, "field must not be null");
 		getObject().setValueExpression(field.getField());
 		return this;
 	}
 
+	/**
+	 * <p>setValue.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setValue(DRIExpression<Boolean> valueExpression) {
 		getObject().setValueExpression(valueExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setValue.</p>
+	 *
+	 * @param value a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setValue(Boolean value) {
 		getObject().setValueExpression(Expressions.value(value));
 		return this;
 	}
 
+	/**
+	 * <p>setComponentType.</p>
+	 *
+	 * @param booleanComponentType a {@link net.sf.dynamicreports.report.constant.BooleanComponentType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setComponentType(BooleanComponentType booleanComponentType) {
 		getObject().setComponentType(booleanComponentType);
 		return this;
 	}
 
+	/**
+	 * <p>setEmptyWhenNullValue.</p>
+	 *
+	 * @param emptyWhenNullValue a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setEmptyWhenNullValue(Boolean emptyWhenNullValue) {
 		getObject().setEmptyWhenNullValue(emptyWhenNullValue);
 		return this;
@@ -110,13 +146,23 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
 		return this;
 	}
 
+	/**
+	 * <p>setHorizontalImageAlignment.</p>
+	 *
+	 * @param horizontalImageAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setHorizontalImageAlignment(HorizontalImageAlignment horizontalImageAlignment) {
 		getObject().setHorizontalImageAlignment(horizontalImageAlignment);
 		return this;
 	}
 
 	/**
+	 * <p>setHorizontalAlignment.</p>
+	 *
 	 * @deprecated use setHorizontalImageAlignment instead
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
 	 */
 	@Deprecated
 	public BooleanFieldBuilder setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
@@ -128,6 +174,12 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
 		return this;
 	}
 
+	/**
+	 * <p>setHorizontalTextAlignment.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+	 */
 	public BooleanFieldBuilder setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		getObject().setHorizontalTextAlignment(horizontalTextAlignment);
 		return this;

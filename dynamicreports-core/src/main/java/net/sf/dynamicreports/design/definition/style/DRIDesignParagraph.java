@@ -28,25 +28,73 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.LineSpacing;
 
 /**
+ * <p>DRIDesignParagraph interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignParagraph extends Serializable {
 
+	/**
+	 * <p>getLineSpacing.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.LineSpacing} object.
+	 */
 	public LineSpacing getLineSpacing();
 
+	/**
+	 * <p>getLineSpacingSize.</p>
+	 *
+	 * @return a {@link java.lang.Float} object.
+	 */
 	public Float getLineSpacingSize();
 
+	/**
+	 * <p>getFirstLineIndent.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getFirstLineIndent();
 
+	/**
+	 * <p>getLeftIndent.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getLeftIndent();
 
+	/**
+	 * <p>getRightIndent.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getRightIndent();
 
+	/**
+	 * <p>getSpacingBefore.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getSpacingBefore();
 
+	/**
+	 * <p>getSpacingAfter.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getSpacingAfter();
 
+	/**
+	 * <p>getTabStopWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTabStopWidth();
 
+	/**
+	 * <p>getTabStops.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignTabStop> getTabStops();
 }

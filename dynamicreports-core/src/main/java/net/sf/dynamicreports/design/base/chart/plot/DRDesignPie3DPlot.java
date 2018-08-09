@@ -26,17 +26,26 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignPie3DPlot;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignPie3DPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPie3DPlot extends DRDesignPiePlot implements DRIDesignPie3DPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Double depthFactor;
 
+	/**
+	 * <p>Setter for the field <code>depthFactor</code>.</p>
+	 *
+	 * @param depthFactor a {@link java.lang.Double} object.
+	 */
 	public void setDepthFactor(Double depthFactor) {
 		this.depthFactor = depthFactor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getDepthFactor() {
 		return depthFactor;

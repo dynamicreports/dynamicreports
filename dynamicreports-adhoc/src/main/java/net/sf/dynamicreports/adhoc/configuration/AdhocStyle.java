@@ -26,7 +26,10 @@ import java.awt.Color;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocStyle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocStyle implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -42,86 +45,187 @@ public class AdhocStyle implements Cloneable, Serializable {
 	private AdhocVerticalAlignment verticalAlignment;
 	private String pattern;
 
+	/**
+	 * <p>Getter for the field <code>font</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public AdhocFont getFont() {
 		return font;
 	}
 
+	/**
+	 * <p>Setter for the field <code>font</code>.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public void setFont(AdhocFont font) {
 		this.font = font;
 	}
 
+	/**
+	 * <p>Getter for the field <code>topBorder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public AdhocPen getTopBorder() {
 		return topBorder;
 	}
 
+	/**
+	 * <p>Setter for the field <code>topBorder</code>.</p>
+	 *
+	 * @param topBorder a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public void setTopBorder(AdhocPen topBorder) {
 		this.topBorder = topBorder;
 	}
 
+	/**
+	 * <p>Getter for the field <code>leftBorder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public AdhocPen getLeftBorder() {
 		return leftBorder;
 	}
 
+	/**
+	 * <p>Setter for the field <code>leftBorder</code>.</p>
+	 *
+	 * @param leftBorder a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public void setLeftBorder(AdhocPen leftBorder) {
 		this.leftBorder = leftBorder;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bottomBorder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public AdhocPen getBottomBorder() {
 		return bottomBorder;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bottomBorder</code>.</p>
+	 *
+	 * @param bottomBorder a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public void setBottomBorder(AdhocPen bottomBorder) {
 		this.bottomBorder = bottomBorder;
 	}
 
+	/**
+	 * <p>Getter for the field <code>rightBorder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public AdhocPen getRightBorder() {
 		return rightBorder;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rightBorder</code>.</p>
+	 *
+	 * @param rightBorder a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 */
 	public void setRightBorder(AdhocPen rightBorder) {
 		this.rightBorder = rightBorder;
 	}
 
+	/**
+	 * <p>Getter for the field <code>foregroundColor</code>.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getForegroundColor() {
 		return foregroundColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>foregroundColor</code>.</p>
+	 *
+	 * @param foregroundColor a {@link java.awt.Color} object.
+	 */
 	public void setForegroundColor(Color foregroundColor) {
 		this.foregroundColor = foregroundColor;
 	}
 
+	/**
+	 * <p>Getter for the field <code>backgroundColor</code>.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getBackgroundColor() {
 		return backgroundColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>backgroundColor</code>.</p>
+	 *
+	 * @param backgroundColor a {@link java.awt.Color} object.
+	 */
 	public void setBackgroundColor(Color backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
 
+	/**
+	 * <p>Getter for the field <code>horizontalAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocHorizontalAlignment} object.
+	 */
 	public AdhocHorizontalAlignment getHorizontalAlignment() {
 		return horizontalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalAlignment</code>.</p>
+	 *
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocHorizontalAlignment} object.
+	 */
 	public void setHorizontalAlignment(AdhocHorizontalAlignment horizontalAlignment) {
 		this.horizontalAlignment = horizontalAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>verticalAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment} object.
+	 */
 	public AdhocVerticalAlignment getVerticalAlignment() {
 		return verticalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>verticalAlignment</code>.</p>
+	 *
+	 * @param verticalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment} object.
+	 */
 	public void setVerticalAlignment(AdhocVerticalAlignment verticalAlignment) {
 		this.verticalAlignment = verticalAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pattern</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getPattern() {
 		return pattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pattern</code>.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -167,6 +271,7 @@ public class AdhocStyle implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocStyle clone() {
 		AdhocStyle clone;

@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
 
 /**
+ * <p>DRDesignTextField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRIDesignTextField {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -46,87 +49,144 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
 	private Markup markup;
 	private boolean stretchWithOverflow;
 
+	/**
+	 * <p>Constructor for DRDesignTextField.</p>
+	 */
 	public DRDesignTextField() {
 		super("textField");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return pattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pattern</code>.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getPatternExpression() {
 		return patternExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>patternExpression</code>.</p>
+	 *
+	 * @param patternExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setPatternExpression(DRIDesignExpression patternExpression) {
 		this.patternExpression = patternExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalTextAlignment</code>.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isPrintRepeatedValues() {
 		return printRepeatedValues;
 	}
 
+	/**
+	 * <p>Setter for the field <code>printRepeatedValues</code>.</p>
+	 *
+	 * @param printRepeatedValues a boolean.
+	 */
 	public void setPrintRepeatedValues(boolean printRepeatedValues) {
 		this.printRepeatedValues = printRepeatedValues;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public EvaluationTime getEvaluationTime() {
 		return evaluationTime;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationTime</code>.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public void setEvaluationTime(EvaluationTime evaluationTime) {
 		this.evaluationTime = evaluationTime;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignGroup getEvaluationGroup() {
 		return evaluationGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationGroup</code>.</p>
+	 *
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	public void setEvaluationGroup(DRDesignGroup evaluationGroup) {
 		this.evaluationGroup = evaluationGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Markup getMarkup() {
 		return markup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>markup</code>.</p>
+	 *
+	 * @param markup a {@link net.sf.dynamicreports.report.constant.Markup} object.
+	 */
 	public void setMarkup(Markup markup) {
 		this.markup = markup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isStretchWithOverflow() {
 		return stretchWithOverflow;
 	}
 
+	/**
+	 * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
+	 *
+	 * @param stretchWithOverflow a boolean.
+	 */
 	public void setStretchWithOverflow(boolean stretchWithOverflow) {
 		this.stretchWithOverflow = stretchWithOverflow;
 	}

@@ -32,6 +32,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * It can be applied in any report column, group, subtotal, or text field component.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIValueFormatter<T, U> extends Serializable {
 
@@ -46,5 +47,10 @@ public interface DRIValueFormatter<T, U> extends Serializable {
 	 */
 	public T format(U value, ReportParameters reportParameters);
 
+	/**
+	 * <p>getValueClass.</p>
+	 *
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public Class<T> getValueClass();
 }

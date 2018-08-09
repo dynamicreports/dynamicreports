@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRILinePlot;
 
 /**
+ * <p>DRLinePlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRLinePlot extends DRAxisPlot implements DRILinePlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,19 +37,31 @@ public class DRLinePlot extends DRAxisPlot implements DRILinePlot {
 	private Boolean showShapes;
 	private Boolean showLines;
 
+	/**
+	 * <p>Setter for the field <code>showShapes</code>.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 */
 	public void setShowShapes(Boolean showShapes) {
 		this.showShapes = showShapes;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowShapes() {
 		return showShapes;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showLines</code>.</p>
+	 *
+	 * @param showLines a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLines(Boolean showLines) {
 		this.showLines = showLines;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowLines() {
 		return showLines;

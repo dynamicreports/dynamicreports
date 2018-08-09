@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCategoryChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCategoryChartSerie extends DRDesignChartSerie implements DRIDesignCategoryChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,20 +38,32 @@ public class DRDesignCategoryChartSerie extends DRDesignChartSerie implements DR
 	private DRIDesignExpression valueExpression;
 	private DRIDesignExpression labelExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setLabelExpression(DRIDesignExpression labelExpression) {
 		this.labelExpression = labelExpression;
 	}

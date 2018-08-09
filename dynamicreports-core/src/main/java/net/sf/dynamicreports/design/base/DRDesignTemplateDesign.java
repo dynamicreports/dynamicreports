@@ -28,62 +28,80 @@ import net.sf.dynamicreports.report.definition.DRITemplateDesign;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DRDesignTemplateDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignTemplateDesign implements DRIDesignTemplateDesign {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRITemplateDesign<?> templateDesign;
 
+	/**
+	 * <p>Constructor for DRDesignTemplateDesign.</p>
+	 *
+	 * @param templateDesign a {@link net.sf.dynamicreports.report.definition.DRITemplateDesign} object.
+	 */
 	public DRDesignTemplateDesign(DRITemplateDesign<?> templateDesign) {
 		this.templateDesign = templateDesign;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getTitleComponentsCount() {
 		return templateDesign.getTitleComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageHeaderComponentsCount() {
 		return templateDesign.getPageHeaderComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageFooterComponentsCount() {
 		return templateDesign.getPageFooterComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnHeaderComponentsCount() {
 		return templateDesign.getColumnHeaderComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnFooterComponentsCount() {
 		return templateDesign.getColumnFooterComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getLastPageFooterComponentsCount() {
 		return templateDesign.getLastPageFooterComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getSummaryComponentsCount() {
 		return templateDesign.getSummaryComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getNoDataComponentsCount() {
 		return templateDesign.getNoDataComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getBackgroundComponentsCount() {
 		return templateDesign.getBackgroundComponentsCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object getDesign() throws DRException {
 		return templateDesign.getDesign();

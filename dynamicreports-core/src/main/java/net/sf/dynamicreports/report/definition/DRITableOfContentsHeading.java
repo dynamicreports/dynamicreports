@@ -27,14 +27,32 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRITableOfContentsHeading interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRITableOfContentsHeading extends Serializable {
 
+	/**
+	 * <p>getParentHeading.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsHeading} object.
+	 */
 	public DRITableOfContentsHeading getParentHeading();
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getLabelExpression();
 
+	/**
+	 * <p>getCustomValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getCustomValueExpression();
 
 }

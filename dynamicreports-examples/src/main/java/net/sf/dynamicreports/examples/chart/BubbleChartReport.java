@@ -31,10 +31,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>BubbleChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BubbleChartReport {
 
+	/**
+	 * <p>Constructor for BubbleChartReport.</p>
+	 */
 	public BubbleChartReport() {
 		build();
 	}
@@ -81,6 +87,11 @@ public class BubbleChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new BubbleChartReport();
 	}

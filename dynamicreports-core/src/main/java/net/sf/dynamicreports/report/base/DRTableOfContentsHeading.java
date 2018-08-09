@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.definition.DRITableOfContentsHeading;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRTableOfContentsHeading class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRTableOfContentsHeading implements DRITableOfContentsHeading {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,29 +39,47 @@ public class DRTableOfContentsHeading implements DRITableOfContentsHeading {
 	private DRIExpression<String> labelExpression;
 	private DRIExpression<?> customValueExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRTableOfContentsHeading getParentHeading() {
 		return parentHeading;
 	}
 
+	/**
+	 * <p>Setter for the field <code>parentHeading</code>.</p>
+	 *
+	 * @param parentHeading a {@link net.sf.dynamicreports.report.base.DRTableOfContentsHeading} object.
+	 */
 	public void setParentHeading(DRTableOfContentsHeading parentHeading) {
 		this.parentHeading = parentHeading;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLabelExpression(DRIExpression<String> labelExpression) {
 		this.labelExpression = labelExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getCustomValueExpression() {
 		return customValueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>customValueExpression</code>.</p>
+	 *
+	 * @param customValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setCustomValueExpression(DRIExpression<?> customValueExpression) {
 		this.customValueExpression = customValueExpression;
 	}

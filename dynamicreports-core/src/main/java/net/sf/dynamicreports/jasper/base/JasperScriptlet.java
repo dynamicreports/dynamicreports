@@ -41,22 +41,45 @@ import net.sf.jasperreports.engine.fill.JRFillParameter;
 import net.sf.jasperreports.engine.fill.JRFillVariable;
 
 /**
+ * <p>JasperScriptlet class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperScriptlet extends JRDefaultScriptlet {
+	/** Constant <code>NAME="DYNAMICREPORTS"</code> */
 	public static final String NAME = "DYNAMICREPORTS";
+	/** Constant <code>SCRIPTLET_NAME="NAME + JRScriptlet.SCRIPTLET_PARAMETER_"{trunked}</code> */
 	public static final String SCRIPTLET_NAME = NAME + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX;
 
 	private JasperReportParameters reportParameters;
 
+	/**
+	 * <p>getValue.</p>
+	 *
+	 * @param valueName a {@link java.lang.String} object.
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object getValue(String valueName) {
 		return reportParameters.getValue(valueName);
 	}
 
+	/**
+	 * <p>getValue.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param values an array of {@link java.lang.Object} objects.
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object getValue(String name, Object[] values) {
 		return getComplexExpression(name).evaluate(Arrays.asList(values), reportParameters);
 	}
 
+	/**
+	 * <p>Getter for the field <code>reportParameters</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.base.JasperReportParameters} object.
+	 */
 	public JasperReportParameters getReportParameters() {
 		return reportParameters;
 	}
@@ -69,48 +92,100 @@ public class JasperScriptlet extends JRDefaultScriptlet {
 		}
 	}
 
+	/**
+	 * <p>getValueType.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.constant.ValueType} object.
+	 */
 	protected ValueType getValueType(String name) {
 		return getCustomValues().getValueType(name);
 	}
 
+	/**
+	 * <p>getSimpleExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignSimpleExpression} object.
+	 */
 	protected DRIDesignSimpleExpression getSimpleExpression(String name) {
 		return getCustomValues().getSimpleExpression(name);
 	}
 
+	/**
+	 * <p>getComplexExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignComplexExpression} object.
+	 */
 	protected DRIDesignComplexExpression getComplexExpression(String name) {
 		return getCustomValues().getComplexExpression(name);
 	}
 
+	/**
+	 * <p>getChartCustomizers.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link java.util.List} object.
+	 */
 	protected List<DRIChartCustomizer> getChartCustomizers(String name) {
 		return getCustomValues().getChartCustomizers(name);
 	}
 
+	/**
+	 * <p>getSystemValue.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link java.lang.Object} object.
+	 */
 	protected Object getSystemValue(String name) {
 		return getCustomValues().getSystemValue(name);
 	}
 
+	/**
+	 * <p>getFields.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected Collection<String> getFields() {
 		return fieldsMap.keySet();
 	}
 
+	/**
+	 * <p>getVariables.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected Collection<String> getVariables() {
 		return variablesMap.keySet();
 	}
 
+	/**
+	 * <p>getParameters.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	protected Collection<String> getParameters() {
 		return parametersMap.keySet();
 	}
 
+	/**
+	 * <p>getSubreportWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	protected Integer getSubreportWidth() {
 		return getCustomValues().getSubreportWidth();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setData(Map<String, JRFillParameter> parsm, Map<String, JRFillField> fldsm, Map<String, JRFillVariable> varsm, JRFillGroup[] grps) {
 		super.setData(parsm, fldsm, varsm, grps);
 		reportParameters = new JasperReportParameters(this);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterReportInit() throws JRScriptletException {
 		super.afterReportInit();

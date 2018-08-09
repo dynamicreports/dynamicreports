@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignHyperLink class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignHyperLink implements DRIDesignHyperLink {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,56 +42,92 @@ public class DRDesignHyperLink implements DRIDesignHyperLink {
 	private String hyperLinkType;
 	private String hyperLinkTarget;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getAnchorExpression() {
 		return anchorExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>anchorExpression</code>.</p>
+	 *
+	 * @param anchorExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setAnchorExpression(DRIDesignExpression anchorExpression) {
 		this.anchorExpression = anchorExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getPageExpression() {
 		return pageExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pageExpression</code>.</p>
+	 *
+	 * @param pageExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setPageExpression(DRIDesignExpression pageExpression) {
 		this.pageExpression = pageExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getReferenceExpression() {
 		return referenceExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>referenceExpression</code>.</p>
+	 *
+	 * @param referenceExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setReferenceExpression(DRIDesignExpression referenceExpression) {
 		this.referenceExpression = referenceExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getTooltipExpression() {
 		return tooltipExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tooltipExpression</code>.</p>
+	 *
+	 * @param tooltipExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setTooltipExpression(DRIDesignExpression tooltipExpression) {
 		this.tooltipExpression = tooltipExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getType() {
 		return hyperLinkType;
 	}
 
+	/**
+	 * <p>setType.</p>
+	 *
+	 * @param hyperLinkType a {@link java.lang.String} object.
+	 */
 	public void setType(String hyperLinkType) {
 		this.hyperLinkType = hyperLinkType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getTarget() {
 		return hyperLinkTarget;
 	}
 
+	/**
+	 * <p>setTarget.</p>
+	 *
+	 * @param hyperLinkTarget a {@link java.lang.String} object.
+	 */
 	public void setTarget(String hyperLinkTarget) {
 		this.hyperLinkTarget = hyperLinkTarget;
 	}

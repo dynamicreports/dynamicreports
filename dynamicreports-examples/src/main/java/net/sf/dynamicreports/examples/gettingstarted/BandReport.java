@@ -35,11 +35,17 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>BandReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BandReport {
 	private StyleBuilder boldCenteredStyle;
 
+	/**
+	 * <p>Constructor for BandReport.</p>
+	 */
 	public BandReport() {
 		build();
 	}
@@ -98,6 +104,11 @@ public class BandReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new BandReport();
 	}

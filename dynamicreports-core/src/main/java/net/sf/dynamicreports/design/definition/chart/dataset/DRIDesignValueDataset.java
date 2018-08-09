@@ -25,9 +25,17 @@ package net.sf.dynamicreports.design.definition.chart.dataset;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignValueDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignValueDataset extends DRIDesignChartDataset {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 }

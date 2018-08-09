@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.component.DRIListCell;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRListCell class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRListCell implements DRIListCell {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,35 +42,60 @@ public class DRListCell implements DRIListCell {
 	private VerticalCellComponentAlignment verticalAlignment;
 	private DRComponent component;
 
+	/**
+	 * <p>Constructor for DRListCell.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	public DRListCell(DRComponent component) {
 		Validate.notNull(component, "component must not be null");
 		this.component = component;
 	}
 
+	/**
+	 * <p>Constructor for DRListCell.</p>
+	 *
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	public DRListCell(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRComponent component) {
 		this(component);
 		this.horizontalAlignment = horizontalAlignment;
 		this.verticalAlignment = verticalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalAlignment</code>.</p>
+	 *
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public void setHorizontalAlignment(HorizontalCellComponentAlignment horizontalAlignment) {
 		this.horizontalAlignment = horizontalAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalCellComponentAlignment getHorizontalAlignment() {
 		return horizontalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>verticalAlignment</code>.</p>
+	 *
+	 * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public void setVerticalAlignment(VerticalCellComponentAlignment verticalAlignment) {
 		this.verticalAlignment = verticalAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public VerticalCellComponentAlignment getVerticalAlignment() {
 		return verticalAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRComponent getComponent() {
 		return component;

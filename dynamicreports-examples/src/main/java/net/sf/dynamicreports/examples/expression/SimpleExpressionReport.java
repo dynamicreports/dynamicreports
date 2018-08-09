@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SimpleExpressionReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SimpleExpressionReport {
 
+	/**
+	 * <p>Constructor for SimpleExpressionReport.</p>
+	 */
 	public SimpleExpressionReport() {
 		build();
 	}
@@ -67,6 +73,11 @@ public class SimpleExpressionReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SimpleExpressionReport();
 	}

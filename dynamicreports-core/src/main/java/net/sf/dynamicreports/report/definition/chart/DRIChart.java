@@ -30,23 +30,66 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIPlot;
 import net.sf.dynamicreports.report.definition.component.DRIHyperLinkComponent;
 
 /**
+ * <p>DRIChart interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIChart extends DRIHyperLinkComponent {
 
+	/**
+	 * <p>getChartType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ChartType} object.
+	 */
 	public ChartType getChartType();
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset} object.
+	 */
 	public DRIChartDataset getDataset();
 
+	/**
+	 * <p>getPlot.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIPlot} object.
+	 */
 	public DRIPlot getPlot();
 
+	/**
+	 * <p>getCustomizers.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIChartCustomizer> getCustomizers();
 
+	/**
+	 * <p>getTitle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartTitle} object.
+	 */
 	public DRIChartTitle getTitle();
 
+	/**
+	 * <p>getSubtitle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartSubtitle} object.
+	 */
 	public DRIChartSubtitle getSubtitle();
 
+	/**
+	 * <p>getLegend.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartLegend} object.
+	 */
 	public DRIChartLegend getLegend();
 
+	/**
+	 * <p>getTheme.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getTheme();
 }

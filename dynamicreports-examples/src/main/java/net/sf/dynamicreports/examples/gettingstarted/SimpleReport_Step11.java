@@ -42,10 +42,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SimpleReport_Step11 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SimpleReport_Step11 {
 
+	/**
+	 * <p>Constructor for SimpleReport_Step11.</p>
+	 */
 	public SimpleReport_Step11() {
 		build();
 	}
@@ -148,6 +154,11 @@ public class SimpleReport_Step11 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SimpleReport_Step11();
 	}

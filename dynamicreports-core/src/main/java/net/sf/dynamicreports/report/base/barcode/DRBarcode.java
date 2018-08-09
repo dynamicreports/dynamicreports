@@ -30,18 +30,27 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract DRBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRBarcode extends DRDimensionComponent implements DRIBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIExpression<String> codeExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getCodeExpression() {
 		return codeExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>codeExpression</code>.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setCodeExpression(DRIExpression<String> codeExpression) {
 		Validate.notNull(codeExpression, "codeExpression must not be null");
 		this.codeExpression = codeExpression;

@@ -41,11 +41,20 @@ import net.sf.dynamicreports.report.constant.Orientation;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>SalesDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SalesDesign {
 	private SalesData data = new SalesData();
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
 
@@ -129,6 +138,11 @@ public class SalesDesign {
 		return report;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		SalesDesign design = new SalesDesign();
 		try {

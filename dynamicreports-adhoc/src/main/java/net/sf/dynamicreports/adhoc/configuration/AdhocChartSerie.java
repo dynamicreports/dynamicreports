@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocChartSerie implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,66 +40,143 @@ public class AdhocChartSerie implements Cloneable, Serializable {
 	private String label;
 	private AdhocProperties properties;
 
+	/**
+	 * <p>Constructor for AdhocChartSerie.</p>
+	 */
 	public AdhocChartSerie() {
 		properties = new AdhocProperties();
 	}
 
+	/**
+	 * <p>Getter for the field <code>series</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getSeries() {
 		return series;
 	}
 
+	/**
+	 * <p>Setter for the field <code>series</code>.</p>
+	 *
+	 * @param series a {@link java.lang.String} object.
+	 */
 	public void setSeries(String series) {
 		this.series = series;
 	}
 
+	/**
+	 * <p>Getter for the field <code>xValue</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getXValue() {
 		return xValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xValue</code>.</p>
+	 *
+	 * @param xValue a {@link java.lang.String} object.
+	 */
 	public void setXValue(String xValue) {
 		this.xValue = xValue;
 	}
 
+	/**
+	 * <p>Getter for the field <code>yValue</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getYValue() {
 		return yValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yValue</code>.</p>
+	 *
+	 * @param yValue a {@link java.lang.String} object.
+	 */
 	public void setYValue(String yValue) {
 		this.yValue = yValue;
 	}
 
+	/**
+	 * <p>Getter for the field <code>zValue</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getZValue() {
 		return zValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>zValue</code>.</p>
+	 *
+	 * @param zValue a {@link java.lang.String} object.
+	 */
 	public void setZValue(String zValue) {
 		this.zValue = zValue;
 	}
 
+	/**
+	 * <p>Getter for the field <code>label</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabel() {
 		return label;
 	}
 
+	/**
+	 * <p>Setter for the field <code>label</code>.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 */
 	public void setLabel(String label) {
 		this.label = label;
 	}
 
+	/**
+	 * <p>Getter for the field <code>properties</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public AdhocProperties getProperties() {
 		return properties;
 	}
 
+	/**
+	 * <p>getProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 */
 	public <T> T getProperty(String key) {
 		return this.properties.getProperty(key);
 	}
 
+	/**
+	 * <p>setProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param value a {@link java.lang.Object} object.
+	 */
 	public void setProperty(String key, Object value) {
 		this.properties.setProperty(key, value);
 	}
 
+	/**
+	 * <p>Setter for the field <code>properties</code>.</p>
+	 *
+	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public void setProperties(AdhocProperties properties) {
 		this.properties = properties;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -130,6 +210,7 @@ public class AdhocChartSerie implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocChartSerie clone() {
 		AdhocChartSerie clone;

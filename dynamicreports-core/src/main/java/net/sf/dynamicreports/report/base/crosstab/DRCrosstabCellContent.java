@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabCellContent;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRCrosstabCellContent class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCrosstabCellContent implements DRICrosstabCellContent {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,24 +41,39 @@ public class DRCrosstabCellContent implements DRICrosstabCellContent {
 	private DRList list;
 	private DRIReportStyle style;
 
+	/**
+	 * <p>Constructor for DRCrosstabCellContent.</p>
+	 */
 	public DRCrosstabCellContent() {
 		this.list = new DRList(ListType.VERTICAL);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRList getList() {
 		return list;
 	}
 
+	/**
+	 * <p>addComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	public void addComponent(DRComponent component) {
 		list.addComponent(component);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIReportStyle getStyle() {
 		return style;
 	}
 
+	/**
+	 * <p>Setter for the field <code>style</code>.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public void setStyle(DRIReportStyle style) {
 		this.style = style;
 	}

@@ -29,13 +29,32 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
+ * <p>JasperReportHandler interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperReportHandler {
 
+	/**
+	 * <p>concatenate.</p>
+	 *
+	 * @param jasperReportBuilders a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 */
 	public void concatenate(JasperReportBuilder... jasperReportBuilders);
 
+	/**
+	 * <p>setContinuousPageNumbering.</p>
+	 *
+	 * @param continuousPageNumbering a boolean.
+	 */
 	public void setContinuousPageNumbering(boolean continuousPageNumbering);
 
+	/**
+	 * <p>getPrintList.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public List<JasperPrint> getPrintList() throws DRException;
 }

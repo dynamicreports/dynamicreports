@@ -28,15 +28,38 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignComponent;
 import net.sf.dynamicreports.design.definition.style.DRIDesignStyle;
 
 /**
+ * <p>DRIDesignCrosstabCellContent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCrosstabCellContent extends Serializable {
 
+	/**
+	 * <p>getWidth.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getWidth();
 
+	/**
+	 * <p>getHeight.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getHeight();
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
+	 */
 	public DRIDesignComponent getComponent();
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+	 */
 	public DRIDesignStyle getStyle();
 }

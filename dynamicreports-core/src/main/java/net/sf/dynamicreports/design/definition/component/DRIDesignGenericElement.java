@@ -29,18 +29,46 @@ import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpression;
 
 /**
+ * <p>DRIDesignGenericElement interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignGenericElement extends DRIDesignComponent {
 
+	/**
+	 * <p>getGenericElementNamespace.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getGenericElementNamespace();
 
+	/**
+	 * <p>getGenericElementName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getGenericElementName();
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public EvaluationTime getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getEvaluationGroup();
 
+	/**
+	 * <p>getParameterExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignParameterExpression> getParameterExpressions();
 
 }

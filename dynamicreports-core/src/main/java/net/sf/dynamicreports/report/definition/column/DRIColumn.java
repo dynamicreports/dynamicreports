@@ -32,25 +32,73 @@ import net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRIColumn interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIColumn<T extends DRIComponent> extends DRIColumnGridComponent {
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @return a T object.
+	 */
 	public T getComponent();
 
+	/**
+	 * <p>getTitleExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getTitleExpression();
 
+	/**
+	 * <p>getTitleStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getTitleStyle();
 
+	/**
+	 * <p>getTitleHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleHeight();
 
+	/**
+	 * <p>getTitleHeightType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getTitleHeightType();
 
+	/**
+	 * <p>getTitleRows.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleRows();
 
+	/**
+	 * <p>getTitleStretchWithOverflow.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getTitleStretchWithOverflow();
 
+	/**
+	 * <p>getTitlePropertyExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIPropertyExpression> getTitlePropertyExpressions();
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 }

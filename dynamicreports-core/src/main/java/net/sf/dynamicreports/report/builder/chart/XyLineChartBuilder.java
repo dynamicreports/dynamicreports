@@ -27,30 +27,60 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>XyLineChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyLineChartBuilder extends AbstractXyChartBuilder<XyLineChartBuilder, DRLinePlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyLineChartBuilder.</p>
+	 */
 	protected XyLineChartBuilder() {
 		super(ChartType.XYLINE);
 	}
 
+	/**
+	 * <p>setShowShapes.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+	 */
 	public XyLineChartBuilder setShowShapes(Boolean showShapes) {
 		getPlot().setShowShapes(showShapes);
 		return this;
 	}
 
+	/**
+	 * <p>setShowLines.</p>
+	 *
+	 * @param showLines a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+	 */
 	public XyLineChartBuilder setShowLines(Boolean showLines) {
 		getPlot().setShowLines(showLines);
 		return this;
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+	 */
 	public XyLineChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+	 */
 	public XyLineChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;

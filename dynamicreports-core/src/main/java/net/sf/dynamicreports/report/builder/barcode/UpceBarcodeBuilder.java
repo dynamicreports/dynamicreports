@@ -27,15 +27,28 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>UpceBarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class UpceBarcodeBuilder extends AbstractChecksumBarcodeBuilder<UpceBarcodeBuilder, DRUpceBarcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for UpceBarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected UpceBarcodeBuilder(String code) {
 		super(code, new DRUpceBarcode());
 	}
 
+	/**
+	 * <p>Constructor for UpceBarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected UpceBarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRUpceBarcode());
 	}

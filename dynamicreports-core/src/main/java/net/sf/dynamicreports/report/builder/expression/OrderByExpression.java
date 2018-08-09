@@ -28,17 +28,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>OrderByExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class OrderByExpression extends AbstractSimpleExpression<Comparable<?>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private CrosstabMeasureBuilder<? extends Comparable<?>> measure;
 
+	/**
+	 * <p>Constructor for OrderByExpression.</p>
+	 *
+	 * @param measure a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public OrderByExpression(CrosstabMeasureBuilder<? extends Comparable<?>> measure) {
 		this.measure = measure;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Comparable<?> evaluate(ReportParameters reportParameters) {
 		return reportParameters.getValue(measure);

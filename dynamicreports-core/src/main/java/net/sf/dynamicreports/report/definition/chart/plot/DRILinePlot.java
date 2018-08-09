@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 /**
+ * <p>DRILinePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRILinePlot extends DRIAxisPlot {
 
+	/**
+	 * <p>getShowShapes.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowShapes();
 
+	/**
+	 * <p>getShowLines.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLines();
 }

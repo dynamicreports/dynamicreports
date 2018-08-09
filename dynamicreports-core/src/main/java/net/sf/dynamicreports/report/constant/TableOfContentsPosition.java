@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>TableOfContentsPosition class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum TableOfContentsPosition {
 	TOP, BOTTOM

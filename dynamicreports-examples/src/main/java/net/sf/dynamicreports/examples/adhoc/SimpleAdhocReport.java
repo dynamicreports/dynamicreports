@@ -38,10 +38,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SimpleAdhocReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SimpleAdhocReport {
 
+	/**
+	 * <p>Constructor for SimpleAdhocReport.</p>
+	 */
 	public SimpleAdhocReport() {
 		build();
 	}
@@ -84,6 +90,11 @@ public class SimpleAdhocReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SimpleAdhocReport();
 	}

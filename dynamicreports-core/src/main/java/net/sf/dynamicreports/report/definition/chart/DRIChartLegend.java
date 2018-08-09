@@ -29,17 +29,45 @@ import net.sf.dynamicreports.report.constant.Position;
 import net.sf.dynamicreports.report.definition.style.DRIFont;
 
 /**
+ * <p>DRIChartLegend interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIChartLegend extends Serializable {
 
+	/**
+	 * <p>getColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getColor();
 
+	/**
+	 * <p>getBackgroundColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getBackgroundColor();
 
+	/**
+	 * <p>getShowLegend.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLegend();
 
+	/**
+	 * <p>getFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+	 */
 	public DRIFont getFont();
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Position} object.
+	 */
 	public Position getPosition();
 }

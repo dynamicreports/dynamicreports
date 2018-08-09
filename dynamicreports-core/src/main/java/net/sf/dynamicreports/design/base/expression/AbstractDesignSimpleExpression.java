@@ -27,26 +27,39 @@ import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>Abstract AbstractDesignSimpleExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractDesignSimpleExpression implements DRIDesignSimpleExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String name;
 
+	/**
+	 * <p>Constructor for AbstractDesignSimpleExpression.</p>
+	 */
 	protected AbstractDesignSimpleExpression() {
 		this(ReportUtils.generateUniqueName("simpleExpression"));
 	}
 
+	/**
+	 * <p>Constructor for AbstractDesignSimpleExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	protected AbstractDesignSimpleExpression(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getParameterName() {
 		return null;

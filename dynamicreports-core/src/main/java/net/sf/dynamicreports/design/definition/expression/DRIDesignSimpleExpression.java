@@ -25,11 +25,25 @@ package net.sf.dynamicreports.design.definition.expression;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>DRIDesignSimpleExpression interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignSimpleExpression extends DRIDesignExpression {
 
+	/**
+	 * <p>evaluate.</p>
+	 *
+	 * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object evaluate(ReportParameters reportParameters);
 
+	/**
+	 * <p>getParameterName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getParameterName();
 }

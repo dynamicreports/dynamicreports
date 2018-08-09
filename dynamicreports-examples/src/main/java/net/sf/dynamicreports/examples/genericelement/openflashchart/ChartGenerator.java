@@ -23,11 +23,20 @@
 package net.sf.dynamicreports.examples.genericelement.openflashchart;
 
 /**
+ * <p>ChartGenerator interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface ChartGenerator {
+	/** Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code> */
 	public static final String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
 
+	/**
+	 * <p>generateChart.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String generateChart();
 
 }

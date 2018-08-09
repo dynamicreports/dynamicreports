@@ -31,15 +31,20 @@ import net.sf.jasperreports.engine.util.JRColorUtil;
 import net.sf.jasperreports.engine.util.JRStringUtil;
 
 /**
+ * <p>OpenFlashChartHtmlHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean toExport(JRGenericPrintElement element) {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
 		String divID = "ofc" + System.identityHashCode(element);
@@ -80,6 +85,11 @@ public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
 		return result.toString();
 	}
 
+	/**
+	 * <p>getSwfLocation.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getSwfLocation() {
 		return "open-flash-chart.swf";
 	}

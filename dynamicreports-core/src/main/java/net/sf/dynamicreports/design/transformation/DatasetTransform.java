@@ -34,19 +34,34 @@ import net.sf.dynamicreports.report.definition.DRIDataset;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DatasetTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatasetTransform {
 	private DesignTransformAccessor accessor;
 	private Map<String, DRIDesignDataset> datasets;
 	private Map<DRIDataset, DRDesignDataset> designDatasets;
 
+	/**
+	 * <p>Constructor for DatasetTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public DatasetTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		datasets = new HashMap<>();
 		designDatasets = new HashMap<>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignDataset} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public DRDesignDataset transform(DRIDataset dataset) throws DRException {
 		if (dataset == null) {
 			return null;
@@ -70,10 +85,22 @@ public class DatasetTransform {
 		return designDataset;
 	}
 
+	/**
+	 * <p>getDatasetExpressionTransform.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 * @return a {@link net.sf.dynamicreports.design.transformation.DatasetExpressionTransform} object.
+	 */
 	public DatasetExpressionTransform getDatasetExpressionTransform(DRIDataset dataset) {
 		return designDatasets.get(dataset).getDatasetExpressionTransform();
 	}
 
+	/**
+	 * <p>getDesignDataset.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignDataset} object.
+	 */
 	protected DRDesignDataset getDesignDataset(DRIDataset dataset) {
 		return designDatasets.get(dataset);
 	}
@@ -86,6 +113,11 @@ public class DatasetTransform {
 		designDatasets.put(dataset, designDataset);
 	}
 
+	/**
+	 * <p>Getter for the field <code>datasets</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignDataset> getDatasets() {
 		return datasets.values();
 	}

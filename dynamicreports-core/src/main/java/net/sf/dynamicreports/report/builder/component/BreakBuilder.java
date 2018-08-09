@@ -27,15 +27,27 @@ import net.sf.dynamicreports.report.constant.BreakType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>BreakBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BreakBuilder extends ComponentBuilder<BreakBuilder, DRBreak> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for BreakBuilder.</p>
+	 */
 	protected BreakBuilder() {
 		super(new DRBreak());
 	}
 
+	/**
+	 * <p>setType.</p>
+	 *
+	 * @param breakType a {@link net.sf.dynamicreports.report.constant.BreakType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.BreakBuilder} object.
+	 */
 	public BreakBuilder setType(BreakType breakType) {
 		getObject().setType(breakType);
 		return this;

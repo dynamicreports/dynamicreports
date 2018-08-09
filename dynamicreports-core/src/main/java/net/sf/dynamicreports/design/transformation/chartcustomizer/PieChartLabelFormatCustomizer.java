@@ -34,7 +34,10 @@ import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 
 /**
+ * <p>PieChartLabelFormatCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,12 +46,20 @@ public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serial
 	private String valuePattern;
 	private String percentValuePattern;
 
+	/**
+	 * <p>Constructor for PieChartLabelFormatCustomizer.</p>
+	 *
+	 * @param labelFormat a {@link java.lang.String} object.
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 */
 	public PieChartLabelFormatCustomizer(String labelFormat, String valuePattern, String percentValuePattern) {
 		this.labelFormat = labelFormat;
 		this.valuePattern = valuePattern;
 		this.percentValuePattern = percentValuePattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		PiePlot plot = (PiePlot) chart.getPlot();

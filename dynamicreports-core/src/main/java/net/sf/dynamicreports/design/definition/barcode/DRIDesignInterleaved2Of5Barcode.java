@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.design.definition.barcode;
 
 /**
+ * <p>DRIDesignInterleaved2Of5Barcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignInterleaved2Of5Barcode extends DRIDesignChecksumBarcode {
 
+	/**
+	 * <p>getDisplayChecksum.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDisplayChecksum();
 
+	/**
+	 * <p>getWideFactor.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getWideFactor();
 }

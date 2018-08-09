@@ -25,9 +25,17 @@ package net.sf.dynamicreports.report.builder.grid;
 import net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent;
 
 /**
+ * <p>ColumnGridComponentBuilder interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface ColumnGridComponentBuilder {
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
+	 */
 	public DRIColumnGridComponent build();
 }

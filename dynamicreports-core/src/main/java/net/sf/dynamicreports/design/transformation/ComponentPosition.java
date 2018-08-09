@@ -40,6 +40,15 @@ import net.sf.dynamicreports.report.exception.DRException;
  */
 class ComponentPosition {
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 * @param maxWidth a int.
+	 * @param maxHeight a int.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected static void component(String name, DRDesignComponent component, int maxWidth, int maxHeight) throws DRException {
 		if (component instanceof DRDesignList) {
 			DRDesignList list = (DRDesignList) component;
@@ -204,6 +213,11 @@ class ComponentPosition {
 		}
 	}
 
+	/**
+	 * <p>width.</p>
+	 *
+	 * @param list a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+	 */
 	protected static void width(DRDesignList list) {
 		int maxWidth = 0;
 		ListType type = list.getType();
@@ -395,6 +409,11 @@ class ComponentPosition {
 		return maxWidth;
 	}
 
+	/**
+	 * <p>height.</p>
+	 *
+	 * @param list a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+	 */
 	protected static void height(DRDesignList list) {
 		int maxHeight = 0;
 		ListType type = list.getType();

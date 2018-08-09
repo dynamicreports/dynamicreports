@@ -29,18 +29,27 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRGroupedCategoryChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRGroupedCategoryChartSerie extends DRCategoryChartSerie implements DRIGroupedCategoryChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIExpression<?> groupExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getGroupExpression() {
 		return groupExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>groupExpression</code>.</p>
+	 *
+	 * @param groupExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setGroupExpression(DRIExpression<?> groupExpression) {
 		Validate.notNull(groupExpression, "groupExpression must not be null");
 		this.groupExpression = groupExpression;

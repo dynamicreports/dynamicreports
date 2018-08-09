@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.AxisPosition;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignChartAxis class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignChartAxis implements DRIDesignChartAxis {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,20 +39,32 @@ public class DRDesignChartAxis implements DRIDesignChartAxis {
 	private AxisPosition position;
 	private DRIDesignChart chart;
 
+	/** {@inheritDoc} */
 	@Override
 	public AxisPosition getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
+	 */
 	public void setPosition(AxisPosition position) {
 		this.position = position;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignChart getChart() {
 		return chart;
 	}
 
+	/**
+	 * <p>Setter for the field <code>chart</code>.</p>
+	 *
+	 * @param chart a {@link net.sf.dynamicreports.design.definition.chart.DRIDesignChart} object.
+	 */
 	public void setChart(DRIDesignChart chart) {
 		this.chart = chart;
 	}

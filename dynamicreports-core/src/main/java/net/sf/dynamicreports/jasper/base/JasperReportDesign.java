@@ -34,7 +34,10 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.design.JasperDesign;
 
 /**
+ * <p>JasperReportDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperReportDesign implements Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,10 +50,25 @@ public class JasperReportDesign implements Serializable {
 	private boolean tableOfContents;
 	private DRITableOfContentsCustomizer tableOfContentsCustomizer;
 
+	/**
+	 * <p>Constructor for JasperReportDesign.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
+	 * @param startPageNumber a {@link java.lang.Integer} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportDesign(DRIDesignReport report, Integer startPageNumber) throws DRException {
 		this(report, null, startPageNumber);
 	}
 
+	/**
+	 * <p>Constructor for JasperReportDesign.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
+	 * @param masterReportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+	 * @param startPageNumber a {@link java.lang.Integer} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportDesign(DRIDesignReport report, ReportParameters masterReportParameters, Integer startPageNumber) throws DRException {
 		this.masterReportParameters = masterReportParameters;
 		this.startPageNumber = startPageNumber;
@@ -65,30 +83,65 @@ public class JasperReportDesign implements Serializable {
 		this.parameters = new HashMap<String, Object>();
 	}
 
+	/**
+	 * <p>Getter for the field <code>customValues</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.base.JasperCustomValues} object.
+	 */
 	public JasperCustomValues getCustomValues() {
 		return customValues;
 	}
 
+	/**
+	 * <p>Getter for the field <code>design</code>.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.design.JasperDesign} object.
+	 */
 	public JasperDesign getDesign() {
 		return design;
 	}
 
+	/**
+	 * <p>Getter for the field <code>parameters</code>.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 */
 	public Map<String, Object> getParameters() {
 		return parameters;
 	}
 
+	/**
+	 * <p>Getter for the field <code>startPageNumber</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getStartPageNumber() {
 		return startPageNumber;
 	}
 
+	/**
+	 * <p>Getter for the field <code>masterReportParameters</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+	 */
 	public ReportParameters getMasterReportParameters() {
 		return masterReportParameters;
 	}
 
+	/**
+	 * <p>isTableOfContents.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isTableOfContents() {
 		return tableOfContents;
 	}
 
+	/**
+	 * <p>Getter for the field <code>tableOfContentsCustomizer</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer} object.
+	 */
 	public DRITableOfContentsCustomizer getTableOfContentsCustomizer() {
 		return tableOfContentsCustomizer;
 	}

@@ -27,14 +27,32 @@ import java.util.List;
 import net.sf.dynamicreports.report.definition.expression.DRIParameterExpression;
 
 /**
+ * <p>DRIGenericElement interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIGenericElement extends DRIDimensionComponent {
 
+	/**
+	 * <p>getGenericElementNamespace.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getGenericElementNamespace();
 
+	/**
+	 * <p>getGenericElementName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getGenericElementName();
 
+	/**
+	 * <p>getParameterExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIParameterExpression> getParameterExpressions();
 
 }

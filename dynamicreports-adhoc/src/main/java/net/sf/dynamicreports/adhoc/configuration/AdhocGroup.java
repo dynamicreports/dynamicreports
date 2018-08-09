@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocGroup implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,66 +40,143 @@ public class AdhocGroup implements Cloneable, Serializable {
 	private AdhocStyle titleStyle;
 	private AdhocProperties properties;
 
+	/**
+	 * <p>Constructor for AdhocGroup.</p>
+	 */
 	public AdhocGroup() {
 		properties = new AdhocProperties();
 	}
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>startInNewPage</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getStartInNewPage() {
 		return startInNewPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>startInNewPage</code>.</p>
+	 *
+	 * @param startInNewPage a {@link java.lang.Boolean} object.
+	 */
 	public void setStartInNewPage(Boolean startInNewPage) {
 		this.startInNewPage = startInNewPage;
 	}
 
+	/**
+	 * <p>Getter for the field <code>headerLayout</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroupHeaderLayout} object.
+	 */
 	public AdhocGroupHeaderLayout getHeaderLayout() {
 		return headerLayout;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headerLayout</code>.</p>
+	 *
+	 * @param headerLayout a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroupHeaderLayout} object.
+	 */
 	public void setHeaderLayout(AdhocGroupHeaderLayout headerLayout) {
 		this.headerLayout = headerLayout;
 	}
 
+	/**
+	 * <p>Getter for the field <code>style</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getStyle() {
 		return style;
 	}
 
+	/**
+	 * <p>Setter for the field <code>style</code>.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setStyle(AdhocStyle style) {
 		this.style = style;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getTitleStyle() {
 		return titleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setTitleStyle(AdhocStyle titleStyle) {
 		this.titleStyle = titleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>properties</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public AdhocProperties getProperties() {
 		return properties;
 	}
 
+	/**
+	 * <p>getProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 */
 	public <T> T getProperty(String key) {
 		return this.properties.getProperty(key);
 	}
 
+	/**
+	 * <p>setProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param value a {@link java.lang.Object} object.
+	 */
 	public void setProperty(String key, Object value) {
 		this.properties.setProperty(key, value);
 	}
 
+	/**
+	 * <p>Setter for the field <code>properties</code>.</p>
+	 *
+	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public void setProperties(AdhocProperties properties) {
 		this.properties = properties;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -130,6 +210,7 @@ public class AdhocGroup implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocGroup clone() {
 		AdhocGroup clone;

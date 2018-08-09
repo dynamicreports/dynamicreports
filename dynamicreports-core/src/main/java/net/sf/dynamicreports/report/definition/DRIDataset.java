@@ -29,21 +29,59 @@ import java.util.List;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDataset extends Serializable {
 
+	/**
+	 * <p>getFields.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIField<?>> getFields();
 
+	/**
+	 * <p>getVariables.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIVariable<?>> getVariables();
 
+	/**
+	 * <p>getSorts.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRISort> getSorts();
 
+	/**
+	 * <p>getQuery.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIQuery} object.
+	 */
 	public DRIQuery getQuery();
 
+	/**
+	 * <p>getConnectionExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Connection> getConnectionExpression();
 
+	/**
+	 * <p>getDataSourceExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getDataSourceExpression();
 
+	/**
+	 * <p>getFilterExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Boolean> getFilterExpression();
 }

@@ -27,20 +27,53 @@ import net.sf.dynamicreports.report.constant.BarcodeOrientation;
 import net.sf.dynamicreports.report.constant.BarcodeTextPosition;
 
 /**
+ * <p>DRIDesignBarcode4j interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBarcode4j extends DRIDesignBarcode {
 
+	/**
+	 * <p>getPatternExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getPatternExpression();
 
+	/**
+	 * <p>getModuleWidth.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getModuleWidth();
 
+	/**
+	 * <p>getOrientation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
+	 */
 	public BarcodeOrientation getOrientation();
 
+	/**
+	 * <p>getTextPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeTextPosition} object.
+	 */
 	public BarcodeTextPosition getTextPosition();
 
+	/**
+	 * <p>getQuietZone.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getQuietZone();
 
+	/**
+	 * <p>getVerticalQuietZone.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getVerticalQuietZone();
 
 }

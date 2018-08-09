@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.BarcodeBaselinePosition;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignPostnetBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPostnetBarcode extends DRDesignChecksumBarcode implements DRIDesignPostnetBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,42 +40,69 @@ public class DRDesignPostnetBarcode extends DRDesignChecksumBarcode implements D
 	private BarcodeBaselinePosition baselinePosition;
 	private Double intercharGapWidth;
 
+	/**
+	 * <p>Constructor for DRDesignPostnetBarcode.</p>
+	 */
 	public DRDesignPostnetBarcode() {
 		super("POSTNET");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDisplayChecksum() {
 		return displayChecksum;
 	}
 
+	/**
+	 * <p>Setter for the field <code>displayChecksum</code>.</p>
+	 *
+	 * @param displayChecksum a {@link java.lang.Boolean} object.
+	 */
 	public void setDisplayChecksum(Boolean displayChecksum) {
 		this.displayChecksum = displayChecksum;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getShortBarHeight() {
 		return shortBarHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>shortBarHeight</code>.</p>
+	 *
+	 * @param shortBarHeight a {@link java.lang.Double} object.
+	 */
 	public void setShortBarHeight(Double shortBarHeight) {
 		this.shortBarHeight = shortBarHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeBaselinePosition getBaselinePosition() {
 		return baselinePosition;
 	}
 
+	/**
+	 * <p>Setter for the field <code>baselinePosition</code>.</p>
+	 *
+	 * @param baselinePosition a {@link net.sf.dynamicreports.report.constant.BarcodeBaselinePosition} object.
+	 */
 	public void setBaselinePosition(BarcodeBaselinePosition baselinePosition) {
 		this.baselinePosition = baselinePosition;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getIntercharGapWidth() {
 		return intercharGapWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>intercharGapWidth</code>.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 */
 	public void setIntercharGapWidth(Double intercharGapWidth) {
 		this.intercharGapWidth = intercharGapWidth;
 	}

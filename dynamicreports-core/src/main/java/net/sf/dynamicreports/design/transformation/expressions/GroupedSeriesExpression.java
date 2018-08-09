@@ -32,11 +32,22 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>GroupedSeriesExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupedSeriesExpression extends AbstractComplexExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for GroupedSeriesExpression.</p>
+	 *
+	 * @param groupExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param seriesExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param index a int.
+	 */
 	public GroupedSeriesExpression(DRIExpression<?> groupExpression, DRIExpression<?> seriesExpression, DRIExpression<?> labelExpression, int index) {
 		if (groupExpression != null) {
 			addExpression(groupExpression);
@@ -54,6 +65,7 @@ public class GroupedSeriesExpression extends AbstractComplexExpression<String> {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(List<?> values, ReportParameters reportParameters) {
 		String group = (String) values.get(0);

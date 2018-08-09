@@ -27,11 +27,24 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.definition.DRIDataset;
 
 /**
+ * <p>DRICrosstabDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabDataset extends Serializable {
 
+	/**
+	 * <p>getSubDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 */
 	public DRIDataset getSubDataset();
 
+	/**
+	 * <p>getDataPreSorted.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDataPreSorted();
 }

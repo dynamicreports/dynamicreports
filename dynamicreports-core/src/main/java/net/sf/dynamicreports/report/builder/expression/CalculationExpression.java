@@ -38,6 +38,11 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	@SafeVarargs
+	/**
+	 * <p>Constructor for CalculationExpression.</p>
+	 *
+	 * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected CalculationExpression(DRIExpression<? extends Number>... expressions) {
 		Validate.notNull(expressions, "expressions must not be null");
 		Validate.noNullElements(expressions, "expressions must not contains null expression");
@@ -46,6 +51,7 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
 		BigDecimal result = null;
@@ -65,5 +71,12 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
 		return result;
 	}
 
+	/**
+	 * <p>calculate.</p>
+	 *
+	 * @param value1 a {@link java.math.BigDecimal} object.
+	 * @param value2 a {@link java.math.BigDecimal} object.
+	 * @return a {@link java.math.BigDecimal} object.
+	 */
 	protected abstract BigDecimal calculate(BigDecimal value1, BigDecimal value2);
 }

@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.style.DRIBorder;
 
 /**
+ * <p>DRBorder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBorder implements DRIBorder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,6 +39,9 @@ public class DRBorder implements DRIBorder {
 	private DRPen bottomPen;
 	private DRPen rightPen;
 
+	/**
+	 * <p>Constructor for DRBorder.</p>
+	 */
 	public DRBorder() {
 		topPen = new DRPen();
 		leftPen = new DRPen();
@@ -43,6 +49,11 @@ public class DRBorder implements DRIBorder {
 		rightPen = new DRPen();
 	}
 
+	/**
+	 * <p>Constructor for DRBorder.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public DRBorder(DRPen pen) {
 		topPen = pen;
 		leftPen = pen;
@@ -50,38 +61,62 @@ public class DRBorder implements DRIBorder {
 		rightPen = pen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRPen getTopPen() {
 		return topPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>topPen</code>.</p>
+	 *
+	 * @param topPen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public void setTopPen(DRPen topPen) {
 		this.topPen = topPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRPen getLeftPen() {
 		return leftPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>leftPen</code>.</p>
+	 *
+	 * @param leftPen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public void setLeftPen(DRPen leftPen) {
 		this.leftPen = leftPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRPen getBottomPen() {
 		return bottomPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bottomPen</code>.</p>
+	 *
+	 * @param bottomPen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public void setBottomPen(DRPen bottomPen) {
 		this.bottomPen = bottomPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRPen getRightPen() {
 		return rightPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rightPen</code>.</p>
+	 *
+	 * @param rightPen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public void setRightPen(DRPen rightPen) {
 		this.rightPen = rightPen;
 	}

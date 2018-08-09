@@ -25,15 +25,29 @@ package net.sf.dynamicreports.design.exception;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignReportException class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignReportException extends RuntimeException {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DRDesignReportException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 */
 	public DRDesignReportException(String message) {
 		super(message);
 	}
 
+	/**
+	 * <p>Constructor for DRDesignReportException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 * @param cause a {@link java.lang.Throwable} object.
+	 */
 	public DRDesignReportException(String message, Throwable cause) {
 		super(message, cause);
 	}

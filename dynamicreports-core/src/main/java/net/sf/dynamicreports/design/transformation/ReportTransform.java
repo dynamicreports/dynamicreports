@@ -40,7 +40,10 @@ import net.sf.dynamicreports.report.definition.DRIReport;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ReportTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ReportTransform {
 	private DesignTransformAccessor accessor;
@@ -49,11 +52,21 @@ public class ReportTransform {
 	private List<DRIDesignParameter> parameters;
 	private DRIDesignExpression filterExpression;
 
+	/**
+	 * <p>Constructor for ReportTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public ReportTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		parameters = new ArrayList<DRIDesignParameter>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		DRIReport report = accessor.getReport();
 		templateDesign = new DRDesignTemplateDesign(report.getTemplateDesign());
@@ -66,6 +79,12 @@ public class ReportTransform {
 		filterExpression = accessor.getExpressionTransform().transformExpression(report.getFilterExpression(), JasperScriptlet.SCRIPTLET_NAME);
 	}
 
+	/**
+	 * <p>query.</p>
+	 *
+	 * @param query a {@link net.sf.dynamicreports.report.definition.DRIQuery} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignQuery} object.
+	 */
 	protected DRDesignQuery query(DRIQuery query) {
 		DRDesignQuery designQuery = new DRDesignQuery();
 		designQuery.setText(query.getText());
@@ -82,6 +101,13 @@ public class ReportTransform {
 		return designParameter;
 	}
 
+	/**
+	 * <p>hyperlink.</p>
+	 *
+	 * @param hyperLink a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignHyperLink} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public DRDesignHyperLink hyperlink(DRIHyperLink hyperLink) throws DRException {
 		if (hyperLink == null) {
 			return null;
@@ -98,18 +124,38 @@ public class ReportTransform {
 		return designHyperLink;
 	}
 
+	/**
+	 * <p>Getter for the field <code>templateDesign</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignTemplateDesign} object.
+	 */
 	public DRIDesignTemplateDesign getTemplateDesign() {
 		return templateDesign;
 	}
 
+	/**
+	 * <p>Getter for the field <code>query</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignQuery} object.
+	 */
 	public DRDesignQuery getQuery() {
 		return query;
 	}
 
+	/**
+	 * <p>Getter for the field <code>parameters</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignParameter> getParameters() {
 		return parameters;
 	}
 
+	/**
+	 * <p>Getter for the field <code>filterExpression</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getFilterExpression() {
 		return filterExpression;
 	}

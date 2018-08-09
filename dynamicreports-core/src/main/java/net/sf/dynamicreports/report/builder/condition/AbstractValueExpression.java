@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractValueExpression<T extends Number> extends AbstractSimpleExpression<Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,6 +41,12 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
 	private DRIValue<T> value;
 	private Number number;
 
+	/**
+	 * <p>Constructor for AbstractValueExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param number a {@link java.lang.Number} object.
+	 */
 	public AbstractValueExpression(DRIValue<T> value, Number number) {
 		Validate.notNull(value, "value must not be null");
 		Validate.notNull(number, "number must not be null");
@@ -45,6 +54,7 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
 		this.number = number;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean evaluate(ReportParameters reportParameters) {
 		Number actualValue = reportParameters.getValue(value);
@@ -54,10 +64,18 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
 		return false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<Boolean> getValueClass() {
 		return Boolean.class;
 	}
 
+	/**
+	 * <p>compare.</p>
+	 *
+	 * @param actualValue a {@link java.lang.Number} object.
+	 * @param number a {@link java.lang.Number} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected abstract Boolean compare(Number actualValue, Number number);
 }

@@ -31,10 +31,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>XYAreaChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XYAreaChartReport {
 
+	/**
+	 * <p>Constructor for XYAreaChartReport.</p>
+	 */
 	public XYAreaChartReport() {
 		build();
 	}
@@ -78,6 +84,11 @@ public class XYAreaChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new XYAreaChartReport();
 	}

@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.definition.DRIParameter;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRParameter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRParameter<T> implements DRIParameter<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,6 +41,12 @@ public class DRParameter<T> implements DRIParameter<T> {
 	private T value;
 
 	@SuppressWarnings("unchecked")
+	/**
+	 * <p>Constructor for DRParameter.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param value a T object.
+	 */
 	public DRParameter(String name, T value) {
 		Validate.notEmpty(name, "name must not be empty");
 		Validate.notNull(value, "value must not be null");
@@ -46,6 +55,12 @@ public class DRParameter<T> implements DRIParameter<T> {
 		this.value = value;
 	}
 
+	/**
+	 * <p>Constructor for DRParameter.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	public DRParameter(String name, Class<T> valueClass) {
 		Validate.notEmpty(name, "name must not be empty");
 		Validate.notNull(valueClass, "valueClass must not be null");
@@ -53,16 +68,19 @@ public class DRParameter<T> implements DRIParameter<T> {
 		this.valueClass = valueClass;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<T> getValueClass() {
 		return valueClass;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public T getValue() {
 		return value;

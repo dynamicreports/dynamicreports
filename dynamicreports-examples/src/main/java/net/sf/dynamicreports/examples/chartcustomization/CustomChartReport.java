@@ -41,11 +41,17 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.renderers.Renderable;
 
 /**
+ * <p>CustomChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomChartReport {
 	private DefaultBoxAndWhiskerCategoryDataset dataset = new DefaultBoxAndWhiskerCategoryDataset();
 
+	/**
+	 * <p>Constructor for CustomChartReport.</p>
+	 */
 	public CustomChartReport() {
 		build();
 	}
@@ -95,6 +101,11 @@ public class CustomChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CustomChartReport();
 	}

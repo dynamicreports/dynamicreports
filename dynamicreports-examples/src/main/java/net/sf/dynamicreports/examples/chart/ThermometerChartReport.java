@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ThermometerChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ThermometerChartReport {
 
+	/**
+	 * <p>Constructor for ThermometerChartReport.</p>
+	 */
 	public ThermometerChartReport() {
 		build();
 	}
@@ -79,6 +85,11 @@ public class ThermometerChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ThermometerChartReport();
 	}

@@ -36,7 +36,10 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.renderers.Renderable;
 
 /**
+ * <p>BooleanImageExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BooleanImageExpression extends AbstractComplexExpression<Renderable> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -45,6 +48,15 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
 	private Renderable imageFalse;
 	private boolean emptyWhenNullValue;
 
+	/**
+	 * <p>Constructor for BooleanImageExpression.</p>
+	 *
+	 * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
+	 * @param emptyWhenNullValue a boolean.
+	 * @param width a int.
+	 * @param height a int.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public BooleanImageExpression(DRIBooleanField booleanField, boolean emptyWhenNullValue, int width, int height) throws DRException {
 		this.emptyWhenNullValue = emptyWhenNullValue;
 		addExpression(booleanField.getValueExpression());
@@ -90,6 +102,7 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Renderable evaluate(List<?> values, ReportParameters reportParameters) {
 		Boolean value = (Boolean) values.get(0);

@@ -30,29 +30,87 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRIColumnTitleGroup interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIColumnTitleGroup extends DRIColumnGridComponent {
 
+	/**
+	 * <p>getList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridList} object.
+	 */
 	public DRIColumnGridList getList();
 
+	/**
+	 * <p>getTitleExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getTitleExpression();
 
+	/**
+	 * <p>getTitleStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getTitleStyle();
 
+	/**
+	 * <p>getTitleWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleWidth();
 
+	/**
+	 * <p>getTitleWidthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getTitleWidthType();
 
+	/**
+	 * <p>getTitleColumns.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleColumns();
 
+	/**
+	 * <p>getTitleHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleHeight();
 
+	/**
+	 * <p>getTitleHeightType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getTitleHeightType();
 
+	/**
+	 * <p>getTitleRows.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTitleRows();
 
+	/**
+	 * <p>getTitleStretchWithOverflow.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getTitleStretchWithOverflow();
 
+	/**
+	 * <p>getTitlePropertyExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIPropertyExpression> getTitlePropertyExpressions();
 }

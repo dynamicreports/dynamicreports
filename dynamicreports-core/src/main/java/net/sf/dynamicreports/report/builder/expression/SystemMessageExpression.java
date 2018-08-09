@@ -29,17 +29,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>SystemMessageExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SystemMessageExpression extends AbstractSimpleExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String key;
 
+	/**
+	 * <p>Constructor for SystemMessageExpression.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 */
 	public SystemMessageExpression(String key) {
 		this.key = key;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(ReportParameters reportParameters) {
 		return ResourceBundle.getBundle(Constants.RESOURCE_BUNDLE_NAME, reportParameters.getLocale()).getString(key);

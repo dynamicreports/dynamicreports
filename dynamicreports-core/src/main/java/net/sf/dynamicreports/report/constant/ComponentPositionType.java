@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>ComponentPositionType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum ComponentPositionType {
 	FLOAT, FIX_RELATIVE_TO_TOP, FIX_RELATIVE_TO_BOTTOM;

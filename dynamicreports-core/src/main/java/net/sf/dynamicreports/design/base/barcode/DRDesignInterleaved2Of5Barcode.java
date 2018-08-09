@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.barcode.DRIDesignInterleaved2Of5B
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignInterleaved2Of5Barcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignInterleaved2Of5Barcode extends DRDesignChecksumBarcode implements DRIDesignInterleaved2Of5Barcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,24 +37,39 @@ public class DRDesignInterleaved2Of5Barcode extends DRDesignChecksumBarcode impl
 	private Boolean displayChecksum;
 	private Double wideFactor;
 
+	/**
+	 * <p>Constructor for DRDesignInterleaved2Of5Barcode.</p>
+	 */
 	public DRDesignInterleaved2Of5Barcode() {
 		super("Interleaved2Of5");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDisplayChecksum() {
 		return displayChecksum;
 	}
 
+	/**
+	 * <p>Setter for the field <code>displayChecksum</code>.</p>
+	 *
+	 * @param displayChecksum a {@link java.lang.Boolean} object.
+	 */
 	public void setDisplayChecksum(Boolean displayChecksum) {
 		this.displayChecksum = displayChecksum;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getWideFactor() {
 		return wideFactor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>wideFactor</code>.</p>
+	 *
+	 * @param wideFactor a {@link java.lang.Double} object.
+	 */
 	public void setWideFactor(Double wideFactor) {
 		this.wideFactor = wideFactor;
 	}

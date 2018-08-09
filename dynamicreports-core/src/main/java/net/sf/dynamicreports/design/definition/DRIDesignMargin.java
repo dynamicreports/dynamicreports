@@ -25,15 +25,38 @@ package net.sf.dynamicreports.design.definition;
 import java.io.Serializable;
 
 /**
+ * <p>DRIDesignMargin interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignMargin extends Serializable {
 
+	/**
+	 * <p>getTop.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getTop();
 
+	/**
+	 * <p>getLeft.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getLeft();
 
+	/**
+	 * <p>getBottom.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBottom();
 
+	/**
+	 * <p>getRight.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getRight();
 }

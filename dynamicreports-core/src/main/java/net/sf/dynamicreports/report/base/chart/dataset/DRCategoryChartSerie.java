@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRCategoryChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCategoryChartSerie extends DRChartSerie implements DRICategoryChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,21 +40,33 @@ public class DRCategoryChartSerie extends DRChartSerie implements DRICategoryCha
 	private DRIExpression<?> valueExpression;
 	private DRIExpression<?> labelExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<?> valueExpression) {
 		Validate.notNull(valueExpression, "valueExpression must not be null");
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLabelExpression(DRIExpression<?> labelExpression) {
 		this.labelExpression = labelExpression;
 	}

@@ -30,19 +30,33 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 /**
+ * <p>BeanCollectionSubDatasourceExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BeanCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<?>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
+	 *
+	 * @param fieldName a {@link java.lang.String} object.
+	 */
 	public BeanCollectionSubDatasourceExpression(String fieldName) {
 		super(fieldName);
 	}
 
+	/**
+	 * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public BeanCollectionSubDatasourceExpression(DRIExpression<? extends Collection<?>> expression) {
 		super(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected JRDataSource createSubDatasource(Collection<?> data) {
 		return new JRBeanCollectionDataSource(data);

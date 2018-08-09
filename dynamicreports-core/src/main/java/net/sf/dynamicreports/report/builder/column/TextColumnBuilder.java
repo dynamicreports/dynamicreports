@@ -43,15 +43,26 @@ import org.apache.commons.lang3.Validate;
  * It is used to show values from the data source.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T>, T> implements DRIValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TextColumnBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	protected TextColumnBuilder(FieldBuilder<T> field) {
 		Validate.notNull(field, "field must not be null");
 		setValueExpression(field.getField());
 	}
 
+	/**
+	 * <p>Constructor for TextColumnBuilder.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected TextColumnBuilder(DRIExpression<T> valueExpression) {
 		setValueExpression(valueExpression);
 	}
@@ -162,6 +173,7 @@ public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T
 	 * @param column
 	 *          the column builder
 	 * @return a column builder
+	 * @param scale a int.
 	 */
 	@SuppressWarnings("unchecked")
 	public TextColumnBuilder<BigDecimal> divide(int scale, TextColumnBuilder<? extends Number> column) {
@@ -178,6 +190,7 @@ public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T
 	 * @param number
 	 *          the value
 	 * @return a column builder
+	 * @param scale a int.
 	 */
 	@SuppressWarnings("unchecked")
 	public TextColumnBuilder<BigDecimal> divide(int scale, Number number) {
@@ -188,6 +201,7 @@ public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T
 		return new TextColumnBuilder<BigDecimal>(exp).setDataType(type.bigDecimalType());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getObject().getName();

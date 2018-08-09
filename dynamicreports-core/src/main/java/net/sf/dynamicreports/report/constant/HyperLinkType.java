@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>HyperLinkType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum HyperLinkType {
 	NONE, REFERENCE, LOCAL_ANCHOR, LOCAL_PAGE, REMOTE_ANCHOR, REMOTE_PAGE

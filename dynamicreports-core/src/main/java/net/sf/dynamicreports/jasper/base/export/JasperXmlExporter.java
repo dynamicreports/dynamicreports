@@ -26,18 +26,27 @@ import net.sf.dynamicreports.jasper.definition.export.JasperIXmlExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperXmlExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperXmlExporter extends AbstractJasperExporter implements JasperIXmlExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean embeddingImages;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getEmbeddingImages() {
 		return embeddingImages;
 	}
 
+	/**
+	 * <p>Setter for the field <code>embeddingImages</code>.</p>
+	 *
+	 * @param embeddingImages a {@link java.lang.Boolean} object.
+	 */
 	public void setEmbeddingImages(Boolean embeddingImages) {
 		this.embeddingImages = embeddingImages;
 	}

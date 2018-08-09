@@ -25,7 +25,10 @@ package net.sf.dynamicreports.report.component;
 import net.sf.dynamicreports.design.definition.component.DRIDesignComponent;
 
 /**
+ * <p>DRIDesignCustomComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCustomComponent extends DRIDesignComponent {
 

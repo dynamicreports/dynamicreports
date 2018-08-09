@@ -26,18 +26,27 @@ import net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabColumnG
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCrosstabColumnGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCrosstabColumnGroup extends DRDesignCrosstabGroup implements DRIDesignCrosstabColumnGroup {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private int height;
 
+	/** {@inheritDoc} */
 	@Override
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * <p>Setter for the field <code>height</code>.</p>
+	 *
+	 * @param height a int.
+	 */
 	public void setHeight(int height) {
 		this.height = height;
 	}

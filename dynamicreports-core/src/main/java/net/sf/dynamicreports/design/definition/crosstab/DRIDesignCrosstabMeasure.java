@@ -29,17 +29,45 @@ import net.sf.dynamicreports.report.constant.Calculation;
 import net.sf.dynamicreports.report.constant.CrosstabPercentageType;
 
 /**
+ * <p>DRIDesignCrosstabMeasure interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCrosstabMeasure extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getValueClass.</p>
+	 *
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public Class<?> getValueClass();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 
+	/**
+	 * <p>getCalculation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public Calculation getCalculation();
 
+	/**
+	 * <p>getPercentageType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 */
 	public CrosstabPercentageType getPercentageType();
 }

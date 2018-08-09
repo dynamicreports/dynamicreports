@@ -29,13 +29,31 @@ import net.sf.dynamicreports.report.definition.component.DRIList;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIBand interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBand extends Serializable {
 
+	/**
+	 * <p>getSplitType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getSplitType();
 
+	/**
+	 * <p>getList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIList} object.
+	 */
 	public DRIList getList();
 
+	/**
+	 * <p>getPrintWhenExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Boolean> getPrintWhenExpression();
 }

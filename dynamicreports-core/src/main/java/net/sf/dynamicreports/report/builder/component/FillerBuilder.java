@@ -26,11 +26,17 @@ import net.sf.dynamicreports.report.base.component.DRFiller;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>FillerBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class FillerBuilder extends DimensionComponentBuilder<FillerBuilder, DRFiller> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for FillerBuilder.</p>
+	 */
 	protected FillerBuilder() {
 		super(new DRFiller());
 	}

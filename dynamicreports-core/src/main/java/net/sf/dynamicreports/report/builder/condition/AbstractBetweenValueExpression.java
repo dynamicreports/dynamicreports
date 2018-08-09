@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractBetweenValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractBetweenValueExpression<T extends Number> extends AbstractSimpleExpression<Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,6 +42,13 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
 	private Number min;
 	private Number max;
 
+	/**
+	 * <p>Constructor for AbstractBetweenValueExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param min a {@link java.lang.Number} object.
+	 * @param max a {@link java.lang.Number} object.
+	 */
 	public AbstractBetweenValueExpression(DRIValue<T> value, Number min, Number max) {
 		Validate.notNull(value, "value must not be null");
 		Validate.notNull(min, "min must not be null");
@@ -49,6 +59,7 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
 		this.max = max;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean evaluate(ReportParameters reportParameters) {
 		Number actualValue = reportParameters.getValue(value);
@@ -58,10 +69,19 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
 		return false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<Boolean> getValueClass() {
 		return Boolean.class;
 	}
 
+	/**
+	 * <p>compare.</p>
+	 *
+	 * @param actualValue a {@link java.lang.Number} object.
+	 * @param min a {@link java.lang.Number} object.
+	 * @param max a {@link java.lang.Number} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected abstract Boolean compare(Number actualValue, Number min, Number max);
 }

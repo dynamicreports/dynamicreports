@@ -29,13 +29,31 @@ import java.util.Map;
 import net.sf.dynamicreports.report.constant.Orientation;
 
 /**
+ * <p>DRIBasePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBasePlot extends DRIPlot {
 
+	/**
+	 * <p>getOrientation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	public Orientation getOrientation();
 
+	/**
+	 * <p>getSeriesColors.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getSeriesColors();
 
+	/**
+	 * <p>getSeriesColorsByName.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 */
 	public Map<String, Color> getSeriesColorsByName();
 }

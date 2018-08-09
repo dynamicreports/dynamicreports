@@ -29,21 +29,27 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.defaults.Defaults;
 
 /**
+ * <p>BigIntegerType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BigIntegerType extends NumberType<BigInteger> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getBigIntegerType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getBigIntegerType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected BigInteger numberToValue(Number number) {
 		return BigInteger.valueOf(number.longValue());

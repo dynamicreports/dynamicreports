@@ -28,20 +28,30 @@ import net.sf.dynamicreports.report.definition.column.DRIBooleanColumn;
 import net.sf.dynamicreports.report.definition.component.DRIBooleanField;
 
 /**
+ * <p>DRBooleanColumn class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBooleanColumn extends DRColumn<DRIBooleanField> implements DRIBooleanColumn {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DRBooleanColumn.</p>
+	 *
+	 * @param booleanField a {@link net.sf.dynamicreports.report.base.component.DRBooleanField} object.
+	 */
 	public DRBooleanColumn(DRBooleanField booleanField) {
 		super(booleanField);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getComponent().getValueExpression().getName();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<Boolean> getValueClass() {
 		return Boolean.class;

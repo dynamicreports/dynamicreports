@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabDataset;
 
 /**
+ * <p>DRCrosstabDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCrosstabDataset implements DRICrosstabDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,20 +38,32 @@ public class DRCrosstabDataset implements DRICrosstabDataset {
 	private DRDataset subDataset;
 	private Boolean dataPreSorted;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDataset getSubDataset() {
 		return subDataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subDataset</code>.</p>
+	 *
+	 * @param subDataset a {@link net.sf.dynamicreports.report.base.DRDataset} object.
+	 */
 	public void setSubDataset(DRDataset subDataset) {
 		this.subDataset = subDataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDataPreSorted() {
 		return dataPreSorted;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataPreSorted</code>.</p>
+	 *
+	 * @param dataPreSorted a {@link java.lang.Boolean} object.
+	 */
 	public void setDataPreSorted(Boolean dataPreSorted) {
 		this.dataPreSorted = dataPreSorted;
 	}

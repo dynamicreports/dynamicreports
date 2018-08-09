@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>PageType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum PageType {
 	LETTER(612, 792), NOTE(540, 720), LEGAL(612, 1008), A0(2380, 3368), A1(1684, 2380), A2(1190, 1684), A3(842, 1190), A4(595, 842), A5(421, 595), A6(297,
@@ -40,10 +43,20 @@ public enum PageType {
 		this.height = height;
 	}
 
+	/**
+	 * <p>Getter for the field <code>width</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * <p>Getter for the field <code>height</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getHeight() {
 		return height;
 	}

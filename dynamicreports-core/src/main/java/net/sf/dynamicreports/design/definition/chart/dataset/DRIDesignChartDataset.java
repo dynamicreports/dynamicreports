@@ -29,13 +29,31 @@ import net.sf.dynamicreports.design.definition.DRIDesignDataset;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 
 /**
+ * <p>DRIDesignChartDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignChartDataset extends Serializable {
 
+	/**
+	 * <p>getSubDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public DRIDesignDataset getSubDataset();
 
+	/**
+	 * <p>getResetType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public ResetType getResetType();
 
+	/**
+	 * <p>getResetGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getResetGroup();
 }

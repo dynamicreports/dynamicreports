@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.DRIDesignMargin;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignMargin class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignMargin implements DRIDesignMargin {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,38 +39,62 @@ public class DRDesignMargin implements DRIDesignMargin {
 	private int bottom;
 	private int right;
 
+	/** {@inheritDoc} */
 	@Override
 	public int getTop() {
 		return top;
 	}
 
+	/**
+	 * <p>Setter for the field <code>top</code>.</p>
+	 *
+	 * @param top a int.
+	 */
 	public void setTop(int top) {
 		this.top = top;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getLeft() {
 		return left;
 	}
 
+	/**
+	 * <p>Setter for the field <code>left</code>.</p>
+	 *
+	 * @param left a int.
+	 */
 	public void setLeft(int left) {
 		this.left = left;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getBottom() {
 		return bottom;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bottom</code>.</p>
+	 *
+	 * @param bottom a int.
+	 */
 	public void setBottom(int bottom) {
 		this.bottom = bottom;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getRight() {
 		return right;
 	}
 
+	/**
+	 * <p>Setter for the field <code>right</code>.</p>
+	 *
+	 * @param right a int.
+	 */
 	public void setRight(int right) {
 		this.right = right;
 	}

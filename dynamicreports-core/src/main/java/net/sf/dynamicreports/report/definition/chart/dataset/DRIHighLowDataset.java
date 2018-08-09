@@ -26,23 +26,66 @@ import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIHighLowDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIHighLowDataset extends DRIChartDataset {
 
+	/**
+	 * <p>getSeriesExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getSeriesExpression();
 
+	/**
+	 * <p>getDateExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getDateExpression();
 
+	/**
+	 * <p>getHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getHighExpression();
 
+	/**
+	 * <p>getLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getLowExpression();
 
+	/**
+	 * <p>getOpenExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getOpenExpression();
 
+	/**
+	 * <p>getCloseExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getCloseExpression();
 
+	/**
+	 * <p>getVolumeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getVolumeExpression();
 
+	/**
+	 * <p>getItemHyperLink.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 */
 	public DRIHyperLink getItemHyperLink();
 }

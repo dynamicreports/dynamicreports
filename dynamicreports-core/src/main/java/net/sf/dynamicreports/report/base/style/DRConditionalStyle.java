@@ -29,18 +29,27 @@ import net.sf.dynamicreports.report.definition.style.DRIConditionalStyle;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRConditionalStyle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRConditionalStyle extends DRBaseStyle implements DRIConditionalStyle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIExpression<Boolean> conditionExpression;
 
+	/**
+	 * <p>Constructor for DRConditionalStyle.</p>
+	 *
+	 * @param conditionExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRConditionalStyle(DRIExpression<Boolean> conditionExpression) {
 		Validate.notNull(conditionExpression, "conditionExpression must not be null");
 		this.conditionExpression = conditionExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Boolean> getConditionExpression() {
 		return conditionExpression;

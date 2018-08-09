@@ -28,7 +28,10 @@ import net.sf.jasperreports.engine.JRScriptletException;
 import net.sf.jasperreports.engine.JRVariable;
 
 /**
+ * <p>StartPageNumberScriptlet class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StartPageNumberScriptlet extends JRDefaultScriptlet {
 
@@ -40,6 +43,7 @@ public class StartPageNumberScriptlet extends JRDefaultScriptlet {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void afterReportInit() throws JRScriptletException {
 		super.afterReportInit();

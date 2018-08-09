@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignAxisPlot;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignAxisPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignAxisPlot extends AbstractDesignBasePlot implements DRIDesignAxisPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,20 +37,32 @@ public class DRDesignAxisPlot extends AbstractDesignBasePlot implements DRIDesig
 	private DRDesignAxisFormat xAxisFormat;
 	private DRDesignAxisFormat yAxisFormat;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignAxisFormat getXAxisFormat() {
 		return xAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xAxisFormat</code>.</p>
+	 *
+	 * @param xAxisFormat a {@link net.sf.dynamicreports.design.base.chart.plot.DRDesignAxisFormat} object.
+	 */
 	public void setXAxisFormat(DRDesignAxisFormat xAxisFormat) {
 		this.xAxisFormat = xAxisFormat;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignAxisFormat getYAxisFormat() {
 		return yAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yAxisFormat</code>.</p>
+	 *
+	 * @param yAxisFormat a {@link net.sf.dynamicreports.design.base.chart.plot.DRDesignAxisFormat} object.
+	 */
 	public void setYAxisFormat(DRDesignAxisFormat yAxisFormat) {
 		this.yAxisFormat = yAxisFormat;
 	}

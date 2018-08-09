@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.definition.component.DRIXyListCell;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRXyListCell class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRXyListCell implements DRIXyListCell {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,6 +40,13 @@ public class DRXyListCell implements DRIXyListCell {
 	private Integer y;
 	private DRComponent component;
 
+	/**
+	 * <p>Constructor for DRXyListCell.</p>
+	 *
+	 * @param x a {@link java.lang.Integer} object.
+	 * @param y a {@link java.lang.Integer} object.
+	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	public DRXyListCell(Integer x, Integer y, DRComponent component) {
 		Validate.notNull(x, "x must not be null");
 		Validate.notNull(y, "y must not be null");
@@ -46,24 +56,37 @@ public class DRXyListCell implements DRIXyListCell {
 		this.component = component;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getX() {
 		return x;
 	}
 
+	/**
+	 * <p>Setter for the field <code>x</code>.</p>
+	 *
+	 * @param x a {@link java.lang.Integer} object.
+	 */
 	public void setX(Integer x) {
 		this.x = x;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getY() {
 		return y;
 	}
 
+	/**
+	 * <p>Setter for the field <code>y</code>.</p>
+	 *
+	 * @param y a {@link java.lang.Integer} object.
+	 */
 	public void setY(Integer y) {
 		this.y = y;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRComponent getComponent() {
 		return component;

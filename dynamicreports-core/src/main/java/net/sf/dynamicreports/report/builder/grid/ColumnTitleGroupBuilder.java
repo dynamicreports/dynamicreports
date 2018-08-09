@@ -34,15 +34,27 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>ColumnTitleGroupBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBuilder, DRColumnTitleGroup> implements ColumnGridComponentBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ColumnTitleGroupBuilder.</p>
+	 */
 	protected ColumnTitleGroupBuilder() {
 		super(new DRColumnTitleGroup());
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+	 */
 	public ColumnTitleGroupBuilder add(ColumnGridComponentBuilder... components) {
 		Validate.notNull(components, "components must not be null");
 		Validate.noNullElements(components, "components must not contains null component");
@@ -52,16 +64,34 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 		return this;
 	}
 
+	/**
+	 * <p>setTitle.</p>
+	 *
+	 * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+	 */
 	public ColumnTitleGroupBuilder setTitle(DRIExpression<?> titleExpression) {
 		getObject().setTitleExpression(titleExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setTitle.</p>
+	 *
+	 * @param title a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+	 */
 	public ColumnTitleGroupBuilder setTitle(String title) {
 		getObject().setTitleExpression(Expressions.text(title));
 		return this;
 	}
 
+	/**
+	 * <p>setTitleStyle.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+	 */
 	public ColumnTitleGroupBuilder setTitleStyle(ReportStyleBuilder titleStyle) {
 		if (titleStyle != null) {
 			getObject().setTitleStyle(titleStyle.getStyle());
@@ -79,6 +109,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of preferred columns >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>columns</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleColumns(Integer columns) {
 		getObject().setTitleColumns(columns);
@@ -93,6 +124,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of fixed columns >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>columns</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleFixedColumns(Integer columns) {
 		getObject().setTitleColumns(columns);
@@ -108,6 +140,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of minimum columns >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>columns</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleMinColumns(Integer columns) {
 		getObject().setTitleColumns(columns);
@@ -117,13 +150,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the preferred width of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column title preferred width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleWidth(Integer width) {
 		getObject().setTitleWidth(width);
@@ -132,13 +165,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the fixed width of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column title fixed width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleFixedWidth(Integer width) {
 		getObject().setTitleWidth(width);
@@ -148,13 +181,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the minimum width of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column title minimum width >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>width</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleMinWidth(Integer width) {
 		getObject().setTitleWidth(width);
@@ -170,6 +203,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of preferred rows >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>rows</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleRows(Integer rows) {
 		getObject().setTitleRows(rows);
@@ -184,6 +218,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of fixed rows >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>rows</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleFixedRows(Integer rows) {
 		getObject().setTitleRows(rows);
@@ -199,6 +234,7 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 	 *          the number of minimum rows >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>rows</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleMinRows(Integer rows) {
 		getObject().setTitleRows(rows);
@@ -208,13 +244,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the preferred height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title preferred height >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>height</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleHeight(Integer height) {
 		getObject().setTitleHeight(height);
@@ -223,13 +259,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the fixed height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title fixed height >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>height</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleFixedHeight(Integer height) {
 		getObject().setTitleHeight(height);
@@ -239,13 +275,13 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 
 	/**
 	 * Sets the minimum height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title minimum height >= 0
 	 * @exception IllegalArgumentException
 	 *              if <code>height</code> is < 0
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
 	 */
 	public ColumnTitleGroupBuilder setTitleMinHeight(Integer height) {
 		getObject().setTitleHeight(height);
@@ -253,6 +289,12 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 		return this;
 	}
 
+	/**
+	 * <p>setTitleStretchWithOverflow.</p>
+	 *
+	 * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+	 */
 	public ColumnTitleGroupBuilder setTitleStretchWithOverflow(Boolean stretchWithOverflow) {
 		getObject().setTitleStretchWithOverflow(stretchWithOverflow);
 		return this;
@@ -298,6 +340,11 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
 		return this;
 	}
 
+	/**
+	 * <p>getColumnGridTitleGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.grid.DRColumnTitleGroup} object.
+	 */
 	public DRColumnTitleGroup getColumnGridTitleGroup() {
 		return build();
 	}

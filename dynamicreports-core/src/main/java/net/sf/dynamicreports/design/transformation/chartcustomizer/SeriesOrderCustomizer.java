@@ -35,7 +35,10 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.data.category.CategoryDataset;
 
 /**
+ * <p>SeriesOrderCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,11 +46,18 @@ public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {
 	private Comparator<String> seriesOrderBy;
 	private OrderType seriesOrderType;
 
+	/**
+	 * <p>Constructor for SeriesOrderCustomizer.</p>
+	 *
+	 * @param seriesOrderBy a {@link java.util.Comparator} object.
+	 * @param seriesOrderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public SeriesOrderCustomizer(Comparator<String> seriesOrderBy, OrderType seriesOrderType) {
 		this.seriesOrderBy = seriesOrderBy;
 		this.seriesOrderType = seriesOrderType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		if (chart.getPlot() instanceof CategoryPlot) {

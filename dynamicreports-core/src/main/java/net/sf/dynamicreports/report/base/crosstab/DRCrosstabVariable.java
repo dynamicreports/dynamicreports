@@ -32,7 +32,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRCrosstabVariable class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -42,6 +45,12 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
 	private Calculation calculation;
 	private CrosstabPercentageType percentageType;
 
+	/**
+	 * <p>Constructor for DRCrosstabVariable.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public DRCrosstabVariable(DRIExpression<?> valueExpression, Calculation calculation) {
 		Validate.notNull(valueExpression, "valueExpression must not be null");
 		Validate.notNull(calculation, "calculation must not be null");
@@ -50,30 +59,40 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
 		this.name = ReportUtils.generateUniqueName("crosstabMeasure");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getValueExpression() {
 		return valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Calculation getCalculation() {
 		return calculation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public CrosstabPercentageType getPercentageType() {
 		return percentageType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentageType</code>.</p>
+	 *
+	 * @param percentageType a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 */
 	public void setPercentageType(CrosstabPercentageType percentageType) {
 		this.percentageType = percentageType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Class<? super T> getValueClass() {

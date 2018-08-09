@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.barcode.DRIBarcode4j;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Abstract DRBarcode4j class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -41,56 +44,92 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
 	private Double quietZone;
 	private Double verticalQuietZone;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getPatternExpression() {
 		return patternExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>patternExpression</code>.</p>
+	 *
+	 * @param patternExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setPatternExpression(DRIExpression<String> patternExpression) {
 		this.patternExpression = patternExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getModuleWidth() {
 		return moduleWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>moduleWidth</code>.</p>
+	 *
+	 * @param moduleWidth a {@link java.lang.Double} object.
+	 */
 	public void setModuleWidth(Double moduleWidth) {
 		this.moduleWidth = moduleWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeOrientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
+	 */
 	public void setOrientation(BarcodeOrientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeTextPosition getTextPosition() {
 		return textPosition;
 	}
 
+	/**
+	 * <p>Setter for the field <code>textPosition</code>.</p>
+	 *
+	 * @param textPosition a {@link net.sf.dynamicreports.report.constant.BarcodeTextPosition} object.
+	 */
 	public void setTextPosition(BarcodeTextPosition textPosition) {
 		this.textPosition = textPosition;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getQuietZone() {
 		return quietZone;
 	}
 
+	/**
+	 * <p>Setter for the field <code>quietZone</code>.</p>
+	 *
+	 * @param quietZone a {@link java.lang.Double} object.
+	 */
 	public void setQuietZone(Double quietZone) {
 		this.quietZone = quietZone;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getVerticalQuietZone() {
 		return verticalQuietZone;
 	}
 
+	/**
+	 * <p>Setter for the field <code>verticalQuietZone</code>.</p>
+	 *
+	 * @param verticalQuietZone a {@link java.lang.Double} object.
+	 */
 	public void setVerticalQuietZone(Double verticalQuietZone) {
 		this.verticalQuietZone = verticalQuietZone;
 	}

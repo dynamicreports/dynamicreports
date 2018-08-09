@@ -23,13 +23,22 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>QueryLanguage class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class QueryLanguage {
+	/** Constant <code>SQL="sql"</code> */
 	public static final String SQL = "sql";
+	/** Constant <code>HQL="hql"</code> */
 	public static final String HQL = "hql";
+	/** Constant <code>XPATH="xPath"</code> */
 	public static final String XPATH = "xPath";
+	/** Constant <code>MDX="mdx"</code> */
 	public static final String MDX = "mdx";
+	/** Constant <code>EJBQL="ejbql"</code> */
 	public static final String EJBQL = "ejbql";
+	/** Constant <code>CSV="csv"</code> */
 	public static final String CSV = "csv";
 }

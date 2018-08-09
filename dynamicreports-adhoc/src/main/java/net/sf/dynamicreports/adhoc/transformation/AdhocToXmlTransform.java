@@ -87,10 +87,19 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment;
 
 /**
+ * <p>AdhocToXmlTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocToXmlTransform {
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration} object.
+	 */
 	public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
 		XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();
 		xmlAdhocConfiguration.setReport(report(adhocConfiguration.getReport()));
@@ -98,6 +107,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocConfiguration;
 	}
 
+	/**
+	 * <p>properties.</p>
+	 *
+	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 * @param xmlAdhocProperties a {@link java.util.List} object.
+	 */
 	protected void properties(AdhocProperties properties, List<XmlAdhocProperty> xmlAdhocProperties) {
 		for (String key : properties.getProperties().keySet()) {
 			XmlAdhocProperty xmlAdhocProperty = new XmlAdhocProperty();
@@ -111,6 +126,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>propertyValueToString.</p>
+	 *
+	 * @param value a {@link java.lang.Object} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected String propertyValueToString(Object value) {
 		if (value == null) {
 			return null;
@@ -127,6 +148,12 @@ public class AdhocToXmlTransform {
 		throw new AdhocException("Property value type " + value.getClass().getName() + " not supported");
 	}
 
+	/**
+	 * <p>report.</p>
+	 *
+	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocReport} object.
+	 */
 	protected XmlAdhocReport report(AdhocReport adhocReport) {
 		if (adhocReport == null) {
 			return null;
@@ -178,6 +205,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocReport;
 	}
 
+	/**
+	 * <p>column.</p>
+	 *
+	 * @param adhocColumn a {@link net.sf.dynamicreports.adhoc.configuration.AdhocColumn} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocColumn} object.
+	 */
 	protected XmlAdhocColumn column(AdhocColumn adhocColumn) {
 		XmlAdhocColumn xmlAdhocColumn = new XmlAdhocColumn();
 		xmlAdhocColumn.setName(adhocColumn.getName());
@@ -191,6 +224,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocColumn;
 	}
 
+	/**
+	 * <p>group.</p>
+	 *
+	 * @param adhocGroup a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroup} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocGroup} object.
+	 */
 	protected XmlAdhocGroup group(AdhocGroup adhocGroup) {
 		XmlAdhocGroup xmlAdhocGroup = new XmlAdhocGroup();
 		xmlAdhocGroup.setName(adhocGroup.getName());
@@ -204,6 +243,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocGroup;
 	}
 
+	/**
+	 * <p>groupHeaderLayout.</p>
+	 *
+	 * @param adhocGroupHeaderLayout a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroupHeaderLayout} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocGroupHeaderLayout} object.
+	 */
 	protected XmlAdhocGroupHeaderLayout groupHeaderLayout(AdhocGroupHeaderLayout adhocGroupHeaderLayout) {
 		if (adhocGroupHeaderLayout == null) {
 			return null;
@@ -221,6 +266,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>subtotal.</p>
+	 *
+	 * @param adhocSubtotal a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotal} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocSubtotal} object.
+	 */
 	protected XmlAdhocSubtotal subtotal(AdhocSubtotal adhocSubtotal) {
 		XmlAdhocSubtotal xmlAdhocSubtotal = new XmlAdhocSubtotal();
 		xmlAdhocSubtotal.setName(adhocSubtotal.getName());
@@ -233,6 +284,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocSubtotal;
 	}
 
+	/**
+	 * <p>calculation.</p>
+	 *
+	 * @param adhocCalculation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocCalculation} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocCalculation} object.
+	 */
 	protected XmlAdhocCalculation calculation(AdhocCalculation adhocCalculation) {
 		if (adhocCalculation == null) {
 			return null;
@@ -264,6 +321,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>subtotalPosition.</p>
+	 *
+	 * @param adhocSubtotalPosition a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotalPosition} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocSubtotalPosition} object.
+	 */
 	protected XmlAdhocSubtotalPosition subtotalPosition(AdhocSubtotalPosition adhocSubtotalPosition) {
 		if (adhocSubtotalPosition == null) {
 			return null;
@@ -301,6 +364,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>sort.</p>
+	 *
+	 * @param adhocSort a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSort} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocSort} object.
+	 */
 	protected XmlAdhocSort sort(AdhocSort adhocSort) {
 		XmlAdhocSort xmlAdhocSort = new XmlAdhocSort();
 		xmlAdhocSort.setName(adhocSort.getName());
@@ -308,6 +377,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocSort;
 	}
 
+	/**
+	 * <p>orderType.</p>
+	 *
+	 * @param adhocOrderType a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrderType} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocOrderType} object.
+	 */
 	protected XmlAdhocOrderType orderType(AdhocOrderType adhocOrderType) {
 		if (adhocOrderType == null) {
 			return null;
@@ -323,6 +398,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>style.</p>
+	 *
+	 * @param adhocStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocStyle} object.
+	 */
 	protected XmlAdhocStyle style(AdhocStyle adhocStyle) {
 		if (adhocStyle == null) {
 			return null;
@@ -342,6 +423,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocStyle;
 	}
 
+	/**
+	 * <p>color.</p>
+	 *
+	 * @param color a {@link java.awt.Color} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected String color(Color color) {
 		if (color == null) {
 			return null;
@@ -352,6 +439,12 @@ public class AdhocToXmlTransform {
 		return "#" + ("000000" + hex).substring(hex.length());
 	}
 
+	/**
+	 * <p>font.</p>
+	 *
+	 * @param adhocFont a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocFont} object.
+	 */
 	protected XmlAdhocFont font(AdhocFont adhocFont) {
 		if (adhocFont == null) {
 			return null;
@@ -367,6 +460,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocFont;
 	}
 
+	/**
+	 * <p>pen.</p>
+	 *
+	 * @param adhocPen a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocPen} object.
+	 */
 	protected XmlAdhocPen pen(AdhocPen adhocPen) {
 		if (adhocPen == null) {
 			return null;
@@ -378,6 +477,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocPen;
 	}
 
+	/**
+	 * <p>horizontalAlignment.</p>
+	 *
+	 * @param adhocHorizontalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocHorizontalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocHorizontalAlignment} object.
+	 */
 	protected XmlAdhocHorizontalAlignment horizontalAlignment(AdhocHorizontalAlignment adhocHorizontalAlignment) {
 		if (adhocHorizontalAlignment == null) {
 			return null;
@@ -397,6 +502,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>verticalAlignment.</p>
+	 *
+	 * @param adhocVerticalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment} object.
+	 */
 	protected XmlAdhocVerticalAlignment verticalAlignment(AdhocVerticalAlignment adhocVerticalAlignment) {
 		if (adhocVerticalAlignment == null) {
 			return null;
@@ -416,6 +527,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>page.</p>
+	 *
+	 * @param adhocPage a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPage} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocPage} object.
+	 */
 	protected XmlAdhocPage page(AdhocPage adhocPage) {
 		if (adhocPage == null) {
 			return null;
@@ -433,6 +550,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocPage;
 	}
 
+	/**
+	 * <p>pageOrientation.</p>
+	 *
+	 * @param adhocPageOrientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPageOrientation} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocPageOrientation} object.
+	 */
 	protected XmlAdhocPageOrientation pageOrientation(AdhocPageOrientation adhocPageOrientation) {
 		if (adhocPageOrientation == null) {
 			return null;
@@ -448,6 +571,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param adhocComponent a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocComponent} object.
+	 */
 	protected XmlAdhocComponent component(AdhocComponent adhocComponent) {
 		if (adhocComponent instanceof AdhocTextField) {
 			XmlAdhocTextField xmlAdhocComponent = new XmlAdhocTextField();
@@ -465,6 +594,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param adhocComponent a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 * @param xmlAdhocComponent a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocComponent} object.
+	 */
 	protected void component(AdhocComponent adhocComponent, XmlAdhocComponent xmlAdhocComponent) {
 		xmlAdhocComponent.setKey(adhocComponent.getKey());
 		xmlAdhocComponent.setStyle(style(adhocComponent.getStyle()));
@@ -475,11 +610,23 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>textField.</p>
+	 *
+	 * @param adhocTextField a {@link net.sf.dynamicreports.adhoc.configuration.AdhocTextField} object.
+	 * @param xmlAdhocTextField a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocTextField} object.
+	 */
 	protected void textField(AdhocTextField adhocTextField, XmlAdhocTextField xmlAdhocTextField) {
 		component(adhocTextField, xmlAdhocTextField);
 		xmlAdhocTextField.setText(adhocTextField.getText());
 	}
 
+	/**
+	 * <p>chart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param xmlAdhocChart a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocChart} object.
+	 */
 	protected void chart(AdhocChart adhocChart, XmlAdhocChart xmlAdhocChart) {
 		component(adhocChart, xmlAdhocChart);
 		xmlAdhocChart.setType(chartType(adhocChart.getType()));
@@ -503,6 +650,12 @@ public class AdhocToXmlTransform {
 		xmlAdhocChart.setOrientation(orientation(adhocChart.getOrientation()));
 	}
 
+	/**
+	 * <p>orientation.</p>
+	 *
+	 * @param adhocOrientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrientation} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocOrientation} object.
+	 */
 	protected XmlAdhocOrientation orientation(AdhocOrientation adhocOrientation) {
 		if (adhocOrientation == null) {
 			return null;
@@ -518,6 +671,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>axisFormat.</p>
+	 *
+	 * @param adhocAxisFormat a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocAxisFormat} object.
+	 */
 	protected XmlAdhocAxisFormat axisFormat(AdhocAxisFormat adhocAxisFormat) {
 		if (adhocAxisFormat == null) {
 			return null;
@@ -530,6 +689,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocAxisFormat;
 	}
 
+	/**
+	 * <p>chartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocChartSerie} object.
+	 */
 	protected XmlAdhocChartSerie chartSerie(AdhocChartSerie adhocChartSerie) {
 		XmlAdhocChartSerie xmlAdhocChartSerie = new XmlAdhocChartSerie();
 		xmlAdhocChartSerie.setSeries(adhocChartSerie.getSeries());
@@ -543,6 +708,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocChartSerie;
 	}
 
+	/**
+	 * <p>chartType.</p>
+	 *
+	 * @param adhocChartType a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartType} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocChartType} object.
+	 */
 	protected XmlAdhocChartType chartType(AdhocChartType adhocChartType) {
 		if (adhocChartType == null) {
 			return null;
@@ -596,6 +767,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>filter.</p>
+	 *
+	 * @param adhocFilter a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFilter} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocFilter} object.
+	 */
 	protected XmlAdhocFilter filter(AdhocFilter adhocFilter) {
 		if (adhocFilter == null) {
 			return null;
@@ -610,6 +787,12 @@ public class AdhocToXmlTransform {
 		return xmlAdhocFilter;
 	}
 
+	/**
+	 * <p>restriction.</p>
+	 *
+	 * @param adhocRestriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocRestriction} object.
+	 */
 	protected XmlAdhocRestriction restriction(AdhocRestriction adhocRestriction) {
 		if (adhocRestriction instanceof AdhocValueRestriction) {
 			XmlAdhocValueRestriction xmlAdhocRestriction = new XmlAdhocValueRestriction();
@@ -622,6 +805,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>restriction.</p>
+	 *
+	 * @param adhocRestriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+	 * @param xmlAdhocRestriction a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocRestriction} object.
+	 */
 	protected void restriction(AdhocRestriction adhocRestriction, XmlAdhocRestriction xmlAdhocRestriction) {
 		xmlAdhocRestriction.setKey(adhocRestriction.getKey());
 		if (adhocRestriction.getProperties() != null && !adhocRestriction.getProperties().isEmpty()) {
@@ -629,6 +818,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>valueRestriction.</p>
+	 *
+	 * @param adhocValueRestriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction} object.
+	 * @param xmlAdhocValueRestriction a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction} object.
+	 */
 	protected void valueRestriction(AdhocValueRestriction adhocValueRestriction, XmlAdhocValueRestriction xmlAdhocValueRestriction) {
 		restriction(adhocValueRestriction, xmlAdhocValueRestriction);
 		xmlAdhocValueRestriction.setName(adhocValueRestriction.getName());
@@ -640,6 +835,12 @@ public class AdhocToXmlTransform {
 		}
 	}
 
+	/**
+	 * <p>valueOperator.</p>
+	 *
+	 * @param adhocValueOperator a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueOperator} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueOperator} object.
+	 */
 	protected XmlAdhocValueOperator valueOperator(AdhocValueOperator adhocValueOperator) {
 		if (adhocValueOperator == null) {
 			return null;

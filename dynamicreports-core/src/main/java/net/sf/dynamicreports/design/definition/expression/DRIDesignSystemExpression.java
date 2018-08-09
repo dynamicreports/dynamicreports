@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.design.definition.expression;
 
 /**
+ * <p>DRIDesignSystemExpression interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignSystemExpression extends DRIDesignExpression {
 }

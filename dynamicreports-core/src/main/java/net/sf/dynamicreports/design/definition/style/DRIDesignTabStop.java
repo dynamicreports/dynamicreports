@@ -27,11 +27,24 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.constant.TabStopAlignment;
 
 /**
+ * <p>DRIDesignTabStop interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignTabStop extends Serializable {
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPosition();
 
+	/**
+	 * <p>getAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.TabStopAlignment} object.
+	 */
 	public TabStopAlignment getAlignment();
 }

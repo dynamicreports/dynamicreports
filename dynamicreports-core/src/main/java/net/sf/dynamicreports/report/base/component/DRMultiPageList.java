@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.definition.component.DRIComponent;
 import net.sf.dynamicreports.report.definition.component.DRIMultiPageList;
 
 /**
+ * <p>DRMultiPageList class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPageList {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,28 +42,48 @@ public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPag
 	private List<DRIComponent> components;
 	private SplitType splitType;
 
+	/**
+	 * <p>Constructor for DRMultiPageList.</p>
+	 */
 	public DRMultiPageList() {
 		components = new ArrayList<DRIComponent>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIComponent> getComponents() {
 		return components;
 	}
 
+	/**
+	 * <p>addComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public void addComponent(DRIComponent component) {
 		components.add(component);
 	}
 
+	/**
+	 * <p>Setter for the field <code>components</code>.</p>
+	 *
+	 * @param components a {@link java.util.List} object.
+	 */
 	public void setComponents(List<DRIComponent> components) {
 		this.components = components;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public SplitType getSplitType() {
 		return splitType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>splitType</code>.</p>
+	 *
+	 * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public void setSplitType(SplitType splitType) {
 		this.splitType = splitType;
 	}

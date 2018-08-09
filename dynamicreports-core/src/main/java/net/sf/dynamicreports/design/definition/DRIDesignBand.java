@@ -30,19 +30,52 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.SplitType;
 
 /**
+ * <p>DRIDesignBand interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBand extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getSplitType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getSplitType();
 
+	/**
+	 * <p>getBandComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
+	 */
 	public DRIDesignComponent getBandComponent();
 
+	/**
+	 * <p>getList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+	 */
 	public DRDesignList getList();
 
+	/**
+	 * <p>getHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getHeight();
 
+	/**
+	 * <p>getPrintWhenExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getPrintWhenExpression();
 }

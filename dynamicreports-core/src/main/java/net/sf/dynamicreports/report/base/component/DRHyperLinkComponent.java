@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.definition.component.DRIHyperLinkComponent;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Abstract DRHyperLinkComponent class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRHyperLinkComponent extends DRDimensionComponent implements DRIHyperLinkComponent {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,29 +40,47 @@ public abstract class DRHyperLinkComponent extends DRDimensionComponent implemen
 	private Integer bookmarkLevel;
 	private DRHyperLink hyperLink;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getAnchorNameExpression() {
 		return anchorNameExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>anchorNameExpression</code>.</p>
+	 *
+	 * @param anchorNameExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setAnchorNameExpression(DRIExpression<String> anchorNameExpression) {
 		this.anchorNameExpression = anchorNameExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getBookmarkLevel() {
 		return bookmarkLevel;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bookmarkLevel</code>.</p>
+	 *
+	 * @param bookmarkLevel a {@link java.lang.Integer} object.
+	 */
 	public void setBookmarkLevel(Integer bookmarkLevel) {
 		this.bookmarkLevel = bookmarkLevel;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRHyperLink getHyperLink() {
 		return hyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>hyperLink</code>.</p>
+	 *
+	 * @param hyperLink a {@link net.sf.dynamicreports.report.base.DRHyperLink} object.
+	 */
 	public void setHyperLink(DRHyperLink hyperLink) {
 		this.hyperLink = hyperLink;
 	}

@@ -31,17 +31,24 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
+ * <p>JasperReportBuilderHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperReportBuilderHandler implements JasperReportHandler {
 	private List<JasperReportBuilder> jasperReportBuilders;
 	private boolean continuousPageNumbering;
 
+	/**
+	 * <p>Constructor for JasperReportBuilderHandler.</p>
+	 */
 	public JasperReportBuilderHandler() {
 		jasperReportBuilders = new ArrayList<JasperReportBuilder>();
 		continuousPageNumbering = false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void concatenate(JasperReportBuilder... jasperReportBuilders) {
 		for (JasperReportBuilder jasperReportBuilder : jasperReportBuilders) {
@@ -49,11 +56,13 @@ public class JasperReportBuilderHandler implements JasperReportHandler {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setContinuousPageNumbering(boolean continuousPageNumbering) {
 		this.continuousPageNumbering = continuousPageNumbering;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<JasperPrint> getPrintList() throws DRException {
 		List<JasperPrint> printList = new ArrayList<JasperPrint>();

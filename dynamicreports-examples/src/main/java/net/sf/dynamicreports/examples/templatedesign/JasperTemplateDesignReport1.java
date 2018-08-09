@@ -32,10 +32,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>JasperTemplateDesignReport1 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTemplateDesignReport1 {
 
+	/**
+	 * <p>Constructor for JasperTemplateDesignReport1.</p>
+	 */
 	public JasperTemplateDesignReport1() {
 		build();
 	}
@@ -67,6 +73,11 @@ public class JasperTemplateDesignReport1 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new JasperTemplateDesignReport1();
 	}

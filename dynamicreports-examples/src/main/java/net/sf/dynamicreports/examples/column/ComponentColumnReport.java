@@ -36,10 +36,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ComponentColumnReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComponentColumnReport {
 
+	/**
+	 * <p>Constructor for ComponentColumnReport.</p>
+	 */
 	public ComponentColumnReport() {
 		build();
 	}
@@ -109,6 +115,11 @@ public class ComponentColumnReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ComponentColumnReport();
 	}

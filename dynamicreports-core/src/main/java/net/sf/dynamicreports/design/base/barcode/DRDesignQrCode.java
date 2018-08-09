@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
 
 /**
+ * <p>DRDesignQrCode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,24 +38,39 @@ public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {
 	private Integer margin;
 	private QrCodeErrorCorrectionLevel errorCorrectionLevel;
 
+	/**
+	 * <p>Constructor for DRDesignQrCode.</p>
+	 */
 	public DRDesignQrCode() {
 		super("QRCode");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getMargin() {
 		return margin;
 	}
 
+	/**
+	 * <p>Setter for the field <code>margin</code>.</p>
+	 *
+	 * @param margin a {@link java.lang.Integer} object.
+	 */
 	public void setMargin(Integer margin) {
 		this.margin = margin;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public QrCodeErrorCorrectionLevel getErrorCorrectionLevel() {
 		return errorCorrectionLevel;
 	}
 
+	/**
+	 * <p>Setter for the field <code>errorCorrectionLevel</code>.</p>
+	 *
+	 * @param errorCorrectionLevel a {@link net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel} object.
+	 */
 	public void setErrorCorrectionLevel(QrCodeErrorCorrectionLevel errorCorrectionLevel) {
 		this.errorCorrectionLevel = errorCorrectionLevel;
 	}

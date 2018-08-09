@@ -26,7 +26,10 @@ import java.awt.Color;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocAxisFormat class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocAxisFormat implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -35,30 +38,61 @@ public class AdhocAxisFormat implements Cloneable, Serializable {
 	private AdhocFont labelFont;
 	private Color labelColor;
 
+	/**
+	 * <p>Getter for the field <code>label</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabel() {
 		return label;
 	}
 
+	/**
+	 * <p>Setter for the field <code>label</code>.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 */
 	public void setLabel(String label) {
 		this.label = label;
 	}
 
+	/**
+	 * <p>Getter for the field <code>labelFont</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public AdhocFont getLabelFont() {
 		return labelFont;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelFont</code>.</p>
+	 *
+	 * @param labelFont a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public void setLabelFont(AdhocFont labelFont) {
 		this.labelFont = labelFont;
 	}
 
+	/**
+	 * <p>Getter for the field <code>labelColor</code>.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getLabelColor() {
 		return labelColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelColor</code>.</p>
+	 *
+	 * @param labelColor a {@link java.awt.Color} object.
+	 */
 	public void setLabelColor(Color labelColor) {
 		this.labelColor = labelColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -83,6 +117,7 @@ public class AdhocAxisFormat implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocAxisFormat clone() {
 		AdhocAxisFormat clone;

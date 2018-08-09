@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.definition.DRISort;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRSort class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRSort implements DRISort {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,20 +39,32 @@ public class DRSort implements DRISort {
 	private DRIExpression<?> expression;
 	private OrderType orderType;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getExpression() {
 		return expression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>expression</code>.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setExpression(DRIExpression<?> expression) {
 		this.expression = expression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public OrderType getOrderType() {
 		return orderType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orderType</code>.</p>
+	 *
+	 * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public void setOrderType(OrderType orderType) {
 		this.orderType = orderType;
 	}

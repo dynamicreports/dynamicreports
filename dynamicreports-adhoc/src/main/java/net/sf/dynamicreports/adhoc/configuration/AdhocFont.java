@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocFont class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocFont implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,54 +40,115 @@ public class AdhocFont implements Cloneable, Serializable {
 	private Boolean underline;
 	private Boolean strikeThrough;
 
+	/**
+	 * <p>Getter for the field <code>fontName</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getFontName() {
 		return fontName;
 	}
 
+	/**
+	 * <p>Setter for the field <code>fontName</code>.</p>
+	 *
+	 * @param fontName a {@link java.lang.String} object.
+	 */
 	public void setFontName(String fontName) {
 		this.fontName = fontName;
 	}
 
+	/**
+	 * <p>Getter for the field <code>fontSize</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getFontSize() {
 		return fontSize;
 	}
 
+	/**
+	 * <p>Setter for the field <code>fontSize</code>.</p>
+	 *
+	 * @param fontSize a {@link java.lang.Integer} object.
+	 */
 	public void setFontSize(Integer fontSize) {
 		this.fontSize = fontSize;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bold</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getBold() {
 		return bold;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bold</code>.</p>
+	 *
+	 * @param bold a {@link java.lang.Boolean} object.
+	 */
 	public void setBold(Boolean bold) {
 		this.bold = bold;
 	}
 
+	/**
+	 * <p>Getter for the field <code>italic</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getItalic() {
 		return italic;
 	}
 
+	/**
+	 * <p>Setter for the field <code>italic</code>.</p>
+	 *
+	 * @param italic a {@link java.lang.Boolean} object.
+	 */
 	public void setItalic(Boolean italic) {
 		this.italic = italic;
 	}
 
+	/**
+	 * <p>Getter for the field <code>underline</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getUnderline() {
 		return underline;
 	}
 
+	/**
+	 * <p>Setter for the field <code>underline</code>.</p>
+	 *
+	 * @param underline a {@link java.lang.Boolean} object.
+	 */
 	public void setUnderline(Boolean underline) {
 		this.underline = underline;
 	}
 
+	/**
+	 * <p>Getter for the field <code>strikeThrough</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getStrikeThrough() {
 		return strikeThrough;
 	}
 
+	/**
+	 * <p>Setter for the field <code>strikeThrough</code>.</p>
+	 *
+	 * @param strikeThrough a {@link java.lang.Boolean} object.
+	 */
 	public void setStrikeThrough(Boolean strikeThrough) {
 		this.strikeThrough = strikeThrough;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -118,6 +182,7 @@ public class AdhocFont implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocFont clone() {
 		AdhocFont clone;

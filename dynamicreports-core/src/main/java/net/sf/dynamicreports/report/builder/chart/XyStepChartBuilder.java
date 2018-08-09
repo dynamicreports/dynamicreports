@@ -27,20 +27,38 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>XyStepChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyStepChartBuilder extends AbstractXyChartBuilder<XyStepChartBuilder, DRXyStepPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyStepChartBuilder.</p>
+	 */
 	protected XyStepChartBuilder() {
 		super(ChartType.XYSTEP);
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
+	 */
 	public XyStepChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
+	 */
 	public XyStepChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;
@@ -51,6 +69,12 @@ public class XyStepChartBuilder extends AbstractXyChartBuilder<XyStepChartBuilde
 		return this;
 	}*/
 
+	/**
+	 * <p>setStepPoint.</p>
+	 *
+	 * @param stepPoint a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
+	 */
 	public XyStepChartBuilder setStepPoint(Double stepPoint) {
 		getPlot().setStepPoint(stepPoint);
 		return this;

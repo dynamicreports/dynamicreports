@@ -27,21 +27,27 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.defaults.Defaults;
 
 /**
+ * <p>IntegerType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class IntegerType extends NumberType<Integer> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getIntegerType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getIntegerType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Integer numberToValue(Number number) {
 		return new Integer(number.intValue());

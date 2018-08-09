@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.component.DRIPageNumber;
 
 /**
+ * <p>DRPageNumber class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRPageNumber extends DRFormatField implements DRIPageNumber {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

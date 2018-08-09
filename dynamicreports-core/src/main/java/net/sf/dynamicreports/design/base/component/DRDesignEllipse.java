@@ -27,22 +27,34 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignEllipse;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignEllipse class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignEllipse extends DRDesignComponent implements DRIDesignEllipse {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRDesignPen pen;
 
+	/**
+	 * <p>Constructor for DRDesignEllipse.</p>
+	 */
 	public DRDesignEllipse() {
 		super("ellipse");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getPen() {
 		return pen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pen</code>.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setPen(DRDesignPen pen) {
 		this.pen = pen;
 	}

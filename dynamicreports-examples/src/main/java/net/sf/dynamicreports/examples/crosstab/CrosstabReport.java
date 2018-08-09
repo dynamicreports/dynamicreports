@@ -38,10 +38,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>CrosstabReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabReport {
 
+	/**
+	 * <p>Constructor for CrosstabReport.</p>
+	 */
 	public CrosstabReport() {
 		build();
 	}
@@ -106,6 +112,11 @@ public class CrosstabReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CrosstabReport();
 	}

@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.adhoc.configuration;
 
 /**
+ * <p>AdhocHorizontalAlignment class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum AdhocHorizontalAlignment {
 	LEFT, CENTER, RIGHT, JUSTIFIED

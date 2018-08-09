@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignXyzChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignXyzChartSerie extends DRDesignChartSerie implements DRIDesignXyzChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,29 +39,47 @@ public class DRDesignXyzChartSerie extends DRDesignChartSerie implements DRIDesi
 	private DRIDesignExpression yValueExpression;
 	private DRIDesignExpression zValueExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getXValueExpression() {
 		return xValueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xValueExpression</code>.</p>
+	 *
+	 * @param xValueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setXValueExpression(DRIDesignExpression xValueExpression) {
 		this.xValueExpression = xValueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getYValueExpression() {
 		return yValueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yValueExpression</code>.</p>
+	 *
+	 * @param yValueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setYValueExpression(DRIDesignExpression yValueExpression) {
 		this.yValueExpression = yValueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getZValueExpression() {
 		return zValueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>zValueExpression</code>.</p>
+	 *
+	 * @param zValueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setZValueExpression(DRIDesignExpression zValueExpression) {
 		this.zValueExpression = zValueExpression;
 	}

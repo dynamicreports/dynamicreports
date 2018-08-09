@@ -39,7 +39,10 @@ import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 import net.sf.jasperreports.engine.util.JRStringUtil;
 
 /**
+ * <p>GeoMapFillComponent class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GeoMapFillComponent extends BaseFillComponent {
 
@@ -51,16 +54,28 @@ public class GeoMapFillComponent extends BaseFillComponent {
 	private List<Color> colors;
 	private GeoMapFillDataset dataset;
 
+	/**
+	 * <p>Constructor for GeoMapFillComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapComponent} object.
+	 * @param factory a {@link net.sf.jasperreports.engine.fill.JRFillObjectFactory} object.
+	 */
 	public GeoMapFillComponent(GeoMapComponent component, JRFillObjectFactory factory) {
 		this.geoMapComponent = component;
 		this.dataset = new GeoMapFillDataset(component.getDataset(), factory);
 		factory.registerElementDataset(this.dataset);
 	}
 
+	/**
+	 * <p>getGeoMap.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapComponent} object.
+	 */
 	protected GeoMapComponent getGeoMap() {
 		return geoMapComponent;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void evaluate(byte evaluation) throws JRException {
 		if (isEvaluateNow()) {
@@ -83,11 +98,13 @@ public class GeoMapFillComponent extends BaseFillComponent {
 		return geoMapComponent.getEvaluationTime() == EvaluationTimeEnum.NOW;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public FillPrepareResult prepare(int availableHeight) {
 		return FillPrepareResult.PRINT_NO_STRETCH;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRPrintElement fill() {
 		JRComponentElement element = fillContext.getComponentElement();
@@ -109,6 +126,7 @@ public class GeoMapFillComponent extends BaseFillComponent {
 		return printElement;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void evaluateDelayedElement(JRPrintElement element, byte evaluation) throws JRException {
 		evaluateGeoMap(evaluation);

@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRIPostnetBarcode;
 
 /**
+ * <p>DRPostnetBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRPostnetBarcode extends DRChecksumBarcode implements DRIPostnetBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,38 +40,62 @@ public class DRPostnetBarcode extends DRChecksumBarcode implements DRIPostnetBar
 	private BarcodeBaselinePosition baselinePosition;
 	private Double intercharGapWidth;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDisplayChecksum() {
 		return displayChecksum;
 	}
 
+	/**
+	 * <p>Setter for the field <code>displayChecksum</code>.</p>
+	 *
+	 * @param displayChecksum a {@link java.lang.Boolean} object.
+	 */
 	public void setDisplayChecksum(Boolean displayChecksum) {
 		this.displayChecksum = displayChecksum;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getShortBarHeight() {
 		return shortBarHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>shortBarHeight</code>.</p>
+	 *
+	 * @param shortBarHeight a {@link java.lang.Double} object.
+	 */
 	public void setShortBarHeight(Double shortBarHeight) {
 		this.shortBarHeight = shortBarHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeBaselinePosition getBaselinePosition() {
 		return baselinePosition;
 	}
 
+	/**
+	 * <p>Setter for the field <code>baselinePosition</code>.</p>
+	 *
+	 * @param baselinePosition a {@link net.sf.dynamicreports.report.constant.BarcodeBaselinePosition} object.
+	 */
 	public void setBaselinePosition(BarcodeBaselinePosition baselinePosition) {
 		this.baselinePosition = baselinePosition;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getIntercharGapWidth() {
 		return intercharGapWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>intercharGapWidth</code>.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 */
 	public void setIntercharGapWidth(Double intercharGapWidth) {
 		this.intercharGapWidth = intercharGapWidth;
 	}

@@ -35,14 +35,23 @@ import net.sf.dynamicreports.report.definition.DRIVariable;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>MainDatasetExpressionTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MainDatasetExpressionTransform extends AbstractExpressionTransform {
 
+	/**
+	 * <p>Constructor for MainDatasetExpressionTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public MainDatasetExpressionTransform(DesignTransformAccessor accessor) {
 		super(accessor);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void transform() throws DRException {
 		DRIReport report = accessor.getReport();
@@ -56,32 +65,38 @@ public class MainDatasetExpressionTransform extends AbstractExpressionTransform 
 		super.transform();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected ResetType getVariableResetType(DRIVariable<?> variable) {
 		return ConstantTransform.variableResetType(variable.getResetType(), variable.getResetGroup(), accessor);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected DRDesignGroup getVariableResetGroup(DRIVariable<?> variable) throws DRException {
 		return accessor.getGroupTransform()
 				.getGroup(ConstantTransform.variableResetGroup(variable.getName(), variable.getResetType(), variable.getResetGroup(), accessor));
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRIField<?>> transformFields() {
 		return accessor.getReport().getFields();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRIVariable<?>> transformVariables() {
 		return accessor.getReport().getVariables();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected List<? extends DRISort> transformSorts() {
 		return accessor.getReport().getSorts();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected DRIDesignDataset getDataset() {
 		return null;

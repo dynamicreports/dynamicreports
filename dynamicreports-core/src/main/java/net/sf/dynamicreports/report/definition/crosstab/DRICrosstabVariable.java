@@ -29,16 +29,35 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
 
 /**
+ * <p>DRICrosstabVariable interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabVariable<T> extends DRISystemExpression<T>, DRIValue<T> {
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<? super T> getValueClass();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getValueExpression();
 
+	/**
+	 * <p>getCalculation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public Calculation getCalculation();
 
+	/**
+	 * <p>getPercentageType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 */
 	public CrosstabPercentageType getPercentageType();
 }

@@ -27,17 +27,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>PrintWhenGroupHasMoreThanOneRowExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PrintWhenGroupHasMoreThanOneRowExpression extends AbstractSimpleExpression<Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String groupName;
 
+	/**
+	 * <p>Constructor for PrintWhenGroupHasMoreThanOneRowExpression.</p>
+	 *
+	 * @param groupName a {@link java.lang.String} object.
+	 */
 	public PrintWhenGroupHasMoreThanOneRowExpression(String groupName) {
 		this.groupName = groupName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean evaluate(ReportParameters reportParameters) {
 		return reportParameters.getGroupCount(groupName) > 1;

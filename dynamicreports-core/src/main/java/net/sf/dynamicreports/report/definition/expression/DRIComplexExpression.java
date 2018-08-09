@@ -32,9 +32,15 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * fields or variables that are not defined in the report and are needed for calculating the value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIComplexExpression<T> extends DRIExpression<T> {
 
+	/**
+	 * <p>getExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIExpression<?>> getExpressions();
 
 	/**

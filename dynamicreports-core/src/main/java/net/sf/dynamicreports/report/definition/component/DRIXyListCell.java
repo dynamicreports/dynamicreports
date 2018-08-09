@@ -25,13 +25,31 @@ package net.sf.dynamicreports.report.definition.component;
 import java.io.Serializable;
 
 /**
+ * <p>DRIXyListCell interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIXyListCell extends Serializable {
 
+	/**
+	 * <p>getX.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getX();
 
+	/**
+	 * <p>getY.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getY();
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public DRIComponent getComponent();
 }

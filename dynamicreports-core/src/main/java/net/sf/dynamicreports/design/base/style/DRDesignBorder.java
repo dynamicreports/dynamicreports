@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
+ * <p>DRDesignBorder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignBorder implements DRIDesignBorder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,42 +41,67 @@ public class DRDesignBorder implements DRIDesignBorder {
 	private DRDesignPen bottomPen;
 	private DRDesignPen rightPen;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getTopPen() {
 		return topPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>topPen</code>.</p>
+	 *
+	 * @param topPen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setTopPen(DRDesignPen topPen) {
 		this.topPen = topPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getLeftPen() {
 		return leftPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>leftPen</code>.</p>
+	 *
+	 * @param leftPen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setLeftPen(DRDesignPen leftPen) {
 		this.leftPen = leftPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getBottomPen() {
 		return bottomPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bottomPen</code>.</p>
+	 *
+	 * @param bottomPen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setBottomPen(DRDesignPen bottomPen) {
 		this.bottomPen = bottomPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getRightPen() {
 		return rightPen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rightPen</code>.</p>
+	 *
+	 * @param rightPen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setRightPen(DRDesignPen rightPen) {
 		this.rightPen = rightPen;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {

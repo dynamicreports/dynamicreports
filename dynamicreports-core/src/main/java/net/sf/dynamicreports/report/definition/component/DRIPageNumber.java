@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.definition.component;
 
 /**
+ * <p>DRIPageNumber interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPageNumber extends DRIFormatField {
 

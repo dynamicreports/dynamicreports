@@ -34,12 +34,20 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 
 /**
+ * <p>Abstract ColumnBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("unchecked")
 public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRColumn<?>> extends AbstractBuilder<T, U> implements ColumnGridComponentBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ColumnBuilder.</p>
+	 *
+	 * @param column a U object.
+	 */
 	protected ColumnBuilder(U column) {
 		super(column);
 	}
@@ -161,9 +169,8 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
 
 	/**
 	 * Sets the preferred height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title preferred height >= 0
 	 * @exception IllegalArgumentException
@@ -177,9 +184,8 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
 
 	/**
 	 * Sets the fixed height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title fixed height >= 0
 	 * @exception IllegalArgumentException
@@ -194,9 +200,8 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
 
 	/**
 	 * Sets the minimum height of a column title.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column title minimum height >= 0
 	 * @exception IllegalArgumentException
@@ -209,6 +214,12 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
 		return (T) this;
 	}
 
+	/**
+	 * <p>setTitleStretchWithOverflow.</p>
+	 *
+	 * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+	 * @return a T object.
+	 */
 	public T setTitleStretchWithOverflow(Boolean stretchWithOverflow) {
 		getObject().setTitleStretchWithOverflow(stretchWithOverflow);
 		return (T) this;
@@ -254,10 +265,20 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
 		return (T) this;
 	}
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+	 */
 	protected DRComponent getComponent() {
 		return (DRComponent) getObject().getComponent();
 	}
 
+	/**
+	 * <p>getColumn.</p>
+	 *
+	 * @return a U object.
+	 */
 	public U getColumn() {
 		return build();
 	}

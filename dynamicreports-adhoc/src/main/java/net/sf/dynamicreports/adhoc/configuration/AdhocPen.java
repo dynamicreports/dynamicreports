@@ -26,7 +26,10 @@ import java.awt.Color;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocPen class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocPen implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -34,22 +37,43 @@ public class AdhocPen implements Cloneable, Serializable {
 	private Float lineWidth;
 	private Color lineColor;
 
+	/**
+	 * <p>Getter for the field <code>lineWidth</code>.</p>
+	 *
+	 * @return a {@link java.lang.Float} object.
+	 */
 	public Float getLineWidth() {
 		return lineWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineWidth</code>.</p>
+	 *
+	 * @param lineWidth a {@link java.lang.Float} object.
+	 */
 	public void setLineWidth(Float lineWidth) {
 		this.lineWidth = lineWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>lineColor</code>.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getLineColor() {
 		return lineColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineColor</code>.</p>
+	 *
+	 * @param lineColor a {@link java.awt.Color} object.
+	 */
 	public void setLineColor(Color lineColor) {
 		this.lineColor = lineColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -71,6 +95,7 @@ public class AdhocPen implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocPen clone() {
 		AdhocPen clone;

@@ -25,15 +25,38 @@ package net.sf.dynamicreports.design.definition.crosstab;
 import java.io.Serializable;
 
 /**
+ * <p>DRIDesignCrosstabCell interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCrosstabCell extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getRowTotalGroup.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getRowTotalGroup();
 
+	/**
+	 * <p>getColumnTotalGroup.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getColumnTotalGroup();
 
+	/**
+	 * <p>getContent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
+	 */
 	public DRIDesignCrosstabCellContent getContent();
 }

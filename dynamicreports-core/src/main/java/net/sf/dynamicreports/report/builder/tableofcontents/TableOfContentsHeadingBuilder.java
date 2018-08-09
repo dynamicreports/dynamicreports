@@ -29,15 +29,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>TableOfContentsHeadingBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfContentsHeadingBuilder, DRTableOfContentsHeading> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TableOfContentsHeadingBuilder.</p>
+	 */
 	public TableOfContentsHeadingBuilder() {
 		super(new DRTableOfContentsHeading());
 	}
 
+	/**
+	 * <p>setParentHeading.</p>
+	 *
+	 * @param parentHeading a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 */
 	public TableOfContentsHeadingBuilder setParentHeading(TableOfContentsHeadingBuilder parentHeading) {
 		if (parentHeading != null) {
 			getObject().setParentHeading(parentHeading.build());
@@ -47,26 +59,55 @@ public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfConten
 		return this;
 	}
 
+	/**
+	 * <p>setLabel.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 */
 	public TableOfContentsHeadingBuilder setLabel(String label) {
 		this.getObject().setLabelExpression(Expressions.text(label));
 		return this;
 	}
 
+	/**
+	 * <p>setLabel.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 */
 	public TableOfContentsHeadingBuilder setLabel(DRIExpression<String> labelExpression) {
 		this.getObject().setLabelExpression(labelExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setCustomValue.</p>
+	 *
+	 * @param customValue a {@link java.lang.Object} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 */
 	public TableOfContentsHeadingBuilder setCustomValue(Object customValue) {
 		this.getObject().setCustomValueExpression(Expressions.value(customValue));
 		return this;
 	}
 
+	/**
+	 * <p>setCustomValue.</p>
+	 *
+	 * @param customValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
+	 */
 	public TableOfContentsHeadingBuilder setCustomValue(DRIExpression<?> customValueExpression) {
 		this.getObject().setCustomValueExpression(customValueExpression);
 		return this;
 	}
 
+	/**
+	 * <p>getTableOfContentsHeading.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRTableOfContentsHeading} object.
+	 */
 	public DRTableOfContentsHeading getTableOfContentsHeading() {
 		return build();
 	}

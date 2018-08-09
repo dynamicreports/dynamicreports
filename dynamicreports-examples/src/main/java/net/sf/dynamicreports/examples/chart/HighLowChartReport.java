@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>HighLowChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class HighLowChartReport {
 
+	/**
+	 * <p>Constructor for HighLowChartReport.</p>
+	 */
 	public HighLowChartReport() {
 		build();
 	}
@@ -96,6 +102,11 @@ public class HighLowChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new HighLowChartReport();
 	}

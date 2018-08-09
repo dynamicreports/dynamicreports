@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.GroupFooterPosition;
 
 /**
+ * <p>DRDesignGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignGroup implements DRIDesignGroup {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -49,6 +52,11 @@ public class DRDesignGroup implements DRIDesignGroup {
 	private boolean keepTogether;
 	private boolean headerWithSubtotal;
 
+	/**
+	 * <p>Constructor for DRDesignGroup.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public DRDesignGroup(String name) {
 		this.name = name;
 		init();
@@ -59,118 +67,201 @@ public class DRDesignGroup implements DRIDesignGroup {
 		footerBands = new ArrayList<DRDesignBand>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getGroupExpression() {
 		return groupExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>groupExpression</code>.</p>
+	 *
+	 * @param groupExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setGroupExpression(DRIDesignExpression groupExpression) {
 		this.groupExpression = groupExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRDesignBand> getHeaderBands() {
 		return headerBands;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headerBands</code>.</p>
+	 *
+	 * @param headerBands a {@link java.util.List} object.
+	 */
 	public void setHeaderBands(List<DRDesignBand> headerBands) {
 		this.headerBands = headerBands;
 	}
 
+	/**
+	 * <p>addHeaderBand.</p>
+	 *
+	 * @param headerBand a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public void addHeaderBand(DRDesignBand headerBand) {
 		this.headerBands.add(headerBand);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRDesignBand> getFooterBands() {
 		return footerBands;
 	}
 
+	/**
+	 * <p>Setter for the field <code>footerBands</code>.</p>
+	 *
+	 * @param footerBands a {@link java.util.List} object.
+	 */
 	public void setFooterBands(List<DRDesignBand> footerBands) {
 		this.footerBands = footerBands;
 	}
 
+	/**
+	 * <p>addFooterBand.</p>
+	 *
+	 * @param footerBand a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public void addFooterBand(DRDesignBand footerBand) {
 		this.footerBands.add(footerBand);
 	}
 
+	/**
+	 * <p>addFooterBand.</p>
+	 *
+	 * @param index a int.
+	 * @param footerBand a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 */
 	public void addFooterBand(int index, DRDesignBand footerBand) {
 		this.footerBands.add(index, footerBand);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isStartInNewPage() {
 		return startInNewPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>startInNewPage</code>.</p>
+	 *
+	 * @param startInNewPage a boolean.
+	 */
 	public void setStartInNewPage(boolean startInNewPage) {
 		this.startInNewPage = startInNewPage;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isStartInNewColumn() {
 		return startInNewColumn;
 	}
 
+	/**
+	 * <p>Setter for the field <code>startInNewColumn</code>.</p>
+	 *
+	 * @param startInNewColumn a boolean.
+	 */
 	public void setStartInNewColumn(boolean startInNewColumn) {
 		this.startInNewColumn = startInNewColumn;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isReprintHeaderOnEachPage() {
 		return reprintHeaderOnEachPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>reprintHeaderOnEachPage</code>.</p>
+	 *
+	 * @param reprintHeaderOnEachPage a boolean.
+	 */
 	public void setReprintHeaderOnEachPage(boolean reprintHeaderOnEachPage) {
 		this.reprintHeaderOnEachPage = reprintHeaderOnEachPage;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isResetPageNumber() {
 		return resetPageNumber;
 	}
 
+	/**
+	 * <p>Setter for the field <code>resetPageNumber</code>.</p>
+	 *
+	 * @param resetPageNumber a boolean.
+	 */
 	public void setResetPageNumber(boolean resetPageNumber) {
 		this.resetPageNumber = resetPageNumber;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getMinHeightToStartNewPage() {
 		return minHeightToStartNewPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>minHeightToStartNewPage</code>.</p>
+	 *
+	 * @param minHeightToStartNewPage a {@link java.lang.Integer} object.
+	 */
 	public void setMinHeightToStartNewPage(Integer minHeightToStartNewPage) {
 		this.minHeightToStartNewPage = minHeightToStartNewPage;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public GroupFooterPosition getFooterPosition() {
 		return footerPosition;
 	}
 
+	/**
+	 * <p>Setter for the field <code>footerPosition</code>.</p>
+	 *
+	 * @param footerPosition a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
+	 */
 	public void setFooterPosition(GroupFooterPosition footerPosition) {
 		this.footerPosition = footerPosition;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isKeepTogether() {
 		return keepTogether;
 	}
 
+	/**
+	 * <p>Setter for the field <code>keepTogether</code>.</p>
+	 *
+	 * @param keepTogether a boolean.
+	 */
 	public void setKeepTogether(boolean keepTogether) {
 		this.keepTogether = keepTogether;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isHeaderWithSubtotal() {
 		return headerWithSubtotal;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headerWithSubtotal</code>.</p>
+	 *
+	 * @param headerWithSubtotal a boolean.
+	 */
 	public void setHeaderWithSubtotal(boolean headerWithSubtotal) {
 		this.headerWithSubtotal = headerWithSubtotal;
 	}

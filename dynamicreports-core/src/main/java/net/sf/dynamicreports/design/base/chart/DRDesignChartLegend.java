@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.Position;
 
 /**
+ * <p>DRDesignChartLegend class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignChartLegend implements DRIDesignChartLegend {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -41,50 +44,83 @@ public class DRDesignChartLegend implements DRIDesignChartLegend {
 	private DRDesignFont font;
 	private Position position;
 
+	/**
+	 * <p>Constructor for DRDesignChartLegend.</p>
+	 */
 	public DRDesignChartLegend() {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getColor() {
 		return color;
 	}
 
+	/**
+	 * <p>Setter for the field <code>color</code>.</p>
+	 *
+	 * @param color a {@link java.awt.Color} object.
+	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getBackgroundColor() {
 		return backgroundColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>backgroundColor</code>.</p>
+	 *
+	 * @param backgroundColor a {@link java.awt.Color} object.
+	 */
 	public void setBackgroundColor(Color backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowLegend() {
 		return showLegend;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showLegend</code>.</p>
+	 *
+	 * @param showLegend a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLegend(Boolean showLegend) {
 		this.showLegend = showLegend;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignFont getFont() {
 		return font;
 	}
 
+	/**
+	 * <p>Setter for the field <code>font</code>.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.design.base.style.DRDesignFont} object.
+	 */
 	public void setFont(DRDesignFont font) {
 		this.font = font;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Position getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.report.constant.Position} object.
+	 */
 	public void setPosition(Position position) {
 		this.position = position;
 	}

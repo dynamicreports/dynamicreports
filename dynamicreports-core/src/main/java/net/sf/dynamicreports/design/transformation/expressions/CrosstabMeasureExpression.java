@@ -30,15 +30,24 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>CrosstabMeasureExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabMeasureExpression extends AbstractComplexExpression<Double> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CrosstabMeasureExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public CrosstabMeasureExpression(DRIExpression<?> expression) {
 		addExpression(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double evaluate(List<?> values, ReportParameters reportParameters) {
 		Number value = (Number) values.get(0);

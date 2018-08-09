@@ -30,19 +30,33 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>ColumnGroupBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnGroupBuilder extends GroupBuilder<ColumnGroupBuilder> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRValueColumn<?> column;
 
+	/**
+	 * <p>Constructor for ColumnGroupBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 */
 	protected ColumnGroupBuilder(ValueColumnBuilder<?, ?> column) {
 		Validate.notNull(column, "column must not be null");
 		this.column = column.build();
 		init();
 	}
 
+	/**
+	 * <p>Constructor for ColumnGroupBuilder.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 */
 	protected ColumnGroupBuilder(String name, ValueColumnBuilder<?, ?> column) {
 		super(name);
 		Validate.notNull(column, "column must not be null");
@@ -64,11 +78,18 @@ public class ColumnGroupBuilder extends GroupBuilder<ColumnGroupBuilder> {
 		getObject().setTitleWidth(column.getComponent().getWidth());
 	}
 
+	/**
+	 * <p>setHideColumn.</p>
+	 *
+	 * @param hideColumn a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder} object.
+	 */
 	public ColumnGroupBuilder setHideColumn(Boolean hideColumn) {
 		getObject().setHideColumn(hideColumn);
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		setValueExpression(column);

@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>BooleanTextValueFormatter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,12 +41,20 @@ public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Bo
 	private String keyFalse;
 	private boolean emptyWhenNullValue;
 
+	/**
+	 * <p>Constructor for BooleanTextValueFormatter.</p>
+	 *
+	 * @param keyTrue a {@link java.lang.String} object.
+	 * @param keyFalse a {@link java.lang.String} object.
+	 * @param emptyWhenNullValue a boolean.
+	 */
 	public BooleanTextValueFormatter(String keyTrue, String keyFalse, boolean emptyWhenNullValue) {
 		this.keyTrue = keyTrue;
 		this.keyFalse = keyFalse;
 		this.emptyWhenNullValue = emptyWhenNullValue;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String format(Boolean value, ReportParameters reportParameters) {
 		if (emptyWhenNullValue && value == null) {

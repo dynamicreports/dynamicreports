@@ -25,9 +25,17 @@ package net.sf.dynamicreports.design.definition.chart.plot;
 import java.util.List;
 
 /**
+ * <p>DRIDesignMultiAxisPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignMultiAxisPlot extends DRIDesignAxisPlot {
 
+	/**
+	 * <p>getAxes.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignChartAxis> getAxes();
 }

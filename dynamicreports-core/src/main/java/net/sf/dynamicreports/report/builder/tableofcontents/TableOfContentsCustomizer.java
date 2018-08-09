@@ -47,11 +47,15 @@ import net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>TableOfContentsCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** Constant <code>dots=""</code> */
 	protected static String dots;
 
 	protected ReportBuilder<?> report;
@@ -83,10 +87,16 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 		TableOfContentsCustomizer.dots = dots.toString();
 	}
 
+	/**
+	 * <p>Constructor for TableOfContentsCustomizer.</p>
+	 */
 	public TableOfContentsCustomizer() {
 		headingStyles = new HashMap<Integer, ReportStyleBuilder>();
 	}
 
+	/**
+	 * <p>init.</p>
+	 */
 	protected void init() {
 		levelField = field("level", type.integerType());
 		textField = field("text", type.stringType());
@@ -107,26 +117,31 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setReport(ReportBuilder<?> report) {
 		this.report = report;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setHeadingList(List<JasperTocHeading> headingList) {
 		this.headingList = headingList;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setHeadings(int headings) {
 		this.headings = headings;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setLevels(int levels) {
 		this.levels = levels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize() {
 		init();
@@ -140,10 +155,20 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 				.detail(detailComponent());
 	}
 
+	/**
+	 * <p>title.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected ComponentBuilder<?, ?> title() {
 		return cmp.text(new SystemMessageExpression("table_of_contents")).setStyle(titleStyle);
 	}
 
+	/**
+	 * <p>detailComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected ComponentBuilder<?, ?> detailComponent() {
 		VerticalListBuilder detailComponent = cmp.verticalList();
 		for (int i = 0; i < levels; i++) {
@@ -155,6 +180,12 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 		return detailComponent;
 	}
 
+	/**
+	 * <p>headingComponent.</p>
+	 *
+	 * @param level a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected ComponentBuilder<?, ?> headingComponent(int level) {
 		HorizontalListBuilder headingComponent = cmp.horizontalList();
 
@@ -203,35 +234,72 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 		return headingComponent;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 */
 	public void setTitleStyle(ReportStyleBuilder titleStyle) {
 		this.titleStyle = titleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headingStyle</code>.</p>
+	 *
+	 * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 */
 	public void setHeadingStyle(ReportStyleBuilder headingStyle) {
 		this.headingStyle = headingStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headingStyle</code>.</p>
+	 *
+	 * @param level a int.
+	 * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 */
 	public void setHeadingStyle(int level, ReportStyleBuilder headingStyle) {
 		this.headingStyles.put(level, headingStyle);
 	}
 
+	/**
+	 * <p>Setter for the field <code>textFixedWidth</code>.</p>
+	 *
+	 * @param textFixedWidth a {@link java.lang.Integer} object.
+	 */
 	public void setTextFixedWidth(Integer textFixedWidth) {
 		this.textFixedWidth = textFixedWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dotsFixedWidth</code>.</p>
+	 *
+	 * @param dotsFixedWidth a {@link java.lang.Integer} object.
+	 */
 	public void setDotsFixedWidth(Integer dotsFixedWidth) {
 		this.dotsFixedWidth = dotsFixedWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pageIndexFixedWidth</code>.</p>
+	 *
+	 * @param pageIndexFixedWidth a {@link java.lang.Integer} object.
+	 */
 	public void setPageIndexFixedWidth(Integer pageIndexFixedWidth) {
 		this.pageIndexFixedWidth = pageIndexFixedWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public TableOfContentsPosition getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
+	 */
 	public void setPosition(TableOfContentsPosition position) {
 		this.position = position;
 	}

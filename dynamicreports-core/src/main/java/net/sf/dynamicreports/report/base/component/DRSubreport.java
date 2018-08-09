@@ -32,7 +32,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRSubreport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRSubreport extends DRDimensionComponent implements DRISubreport {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,48 +46,78 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
 	private DRIExpression<?> dataSourceExpression;
 	private Boolean runToBottom;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getReportExpression() {
 		return reportExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>reportExpression</code>.</p>
+	 *
+	 * @param reportExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setReportExpression(DRIExpression<?> reportExpression) {
 		Validate.notNull(reportExpression, "reportExpression must not be null");
 		this.reportExpression = reportExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Map<String, Object>> getParametersExpression() {
 		return parametersExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>parametersExpression</code>.</p>
+	 *
+	 * @param parametersExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setParametersExpression(DRIExpression<Map<String, Object>> parametersExpression) {
 		this.parametersExpression = parametersExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Connection> getConnectionExpression() {
 		return connectionExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>connectionExpression</code>.</p>
+	 *
+	 * @param connectionExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setConnectionExpression(DRIExpression<Connection> connectionExpression) {
 		this.connectionExpression = connectionExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getDataSourceExpression() {
 		return dataSourceExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataSourceExpression</code>.</p>
+	 *
+	 * @param dataSourceExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setDataSourceExpression(DRIExpression<?> dataSourceExpression) {
 		this.dataSourceExpression = dataSourceExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getRunToBottom() {
 		return runToBottom;
 	}
 
+	/**
+	 * <p>Setter for the field <code>runToBottom</code>.</p>
+	 *
+	 * @param runToBottom a {@link java.lang.Boolean} object.
+	 */
 	public void setRunToBottom(Boolean runToBottom) {
 		this.runToBottom = runToBottom;
 	}

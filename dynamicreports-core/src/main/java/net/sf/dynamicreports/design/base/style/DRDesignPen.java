@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.constant.LineStyle;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
+ * <p>DRDesignPen class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPen implements DRIDesignPen {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,33 +43,52 @@ public class DRDesignPen implements DRIDesignPen {
 	private LineStyle lineStyle;
 	private Color lineColor;
 
+	/** {@inheritDoc} */
 	@Override
 	public Float getLineWidth() {
 		return lineWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineWidth</code>.</p>
+	 *
+	 * @param lineWidth a {@link java.lang.Float} object.
+	 */
 	public void setLineWidth(Float lineWidth) {
 		this.lineWidth = lineWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public LineStyle getLineStyle() {
 		return lineStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineStyle</code>.</p>
+	 *
+	 * @param lineStyle a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+	 */
 	public void setLineStyle(LineStyle lineStyle) {
 		this.lineStyle = lineStyle;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getLineColor() {
 		return lineColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineColor</code>.</p>
+	 *
+	 * @param lineColor a {@link java.awt.Color} object.
+	 */
 	public void setLineColor(Color lineColor) {
 		this.lineColor = lineColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {

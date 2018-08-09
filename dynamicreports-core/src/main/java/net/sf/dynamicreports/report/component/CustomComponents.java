@@ -27,10 +27,19 @@ import java.util.List;
 import net.sf.jasperreports.extensions.ExtensionsEnvironment;
 
 /**
+ * <p>CustomComponents class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomComponents {
 
+	/**
+	 * <p>getComponentTransform.</p>
+	 *
+	 * @param component a {@link java.lang.Object} object.
+	 * @return a {@link net.sf.dynamicreports.report.component.CustomComponentTransform} object.
+	 */
 	@SuppressWarnings("rawtypes")
 	public static CustomComponentTransform<?, ?> getComponentTransform(Object component) {
 		List<CustomComponentTransform> transforms = ExtensionsEnvironment.getExtensionsRegistry().getExtensions(CustomComponentTransform.class);

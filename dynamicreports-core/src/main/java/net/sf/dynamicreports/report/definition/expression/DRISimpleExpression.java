@@ -29,6 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * The basic and the simplest implementation of an expression.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRISimpleExpression<T> extends DRIValue<T>, DRIExpression<T> {
 

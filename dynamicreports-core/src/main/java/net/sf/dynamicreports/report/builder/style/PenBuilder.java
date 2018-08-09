@@ -30,34 +30,69 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.LineStyle;
 
 /**
+ * <p>PenBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PenBuilder extends AbstractBuilder<PenBuilder, DRPen> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PenBuilder.</p>
+	 */
 	protected PenBuilder() {
 		super(new DRPen());
 	}
 
+	/**
+	 * <p>Constructor for PenBuilder.</p>
+	 *
+	 * @param lineWidth a {@link java.lang.Float} object.
+	 * @param lineStyle a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+	 */
 	protected PenBuilder(Float lineWidth, LineStyle lineStyle) {
 		super(new DRPen(lineWidth, lineStyle));
 	}
 
+	/**
+	 * <p>setLineWidth.</p>
+	 *
+	 * @param lineWidth a {@link java.lang.Float} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 */
 	public PenBuilder setLineWidth(Float lineWidth) {
 		getObject().setLineWidth(lineWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setLineStyle.</p>
+	 *
+	 * @param lineStyle a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 */
 	public PenBuilder setLineStyle(LineStyle lineStyle) {
 		getObject().setLineStyle(lineStyle);
 		return this;
 	}
 
+	/**
+	 * <p>setLineColor.</p>
+	 *
+	 * @param lineColor a {@link java.awt.Color} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 */
 	public PenBuilder setLineColor(Color lineColor) {
 		getObject().setLineColor(lineColor);
 		return this;
 	}
 
+	/**
+	 * <p>getPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public DRPen getPen() {
 		return build();
 	}

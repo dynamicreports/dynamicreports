@@ -30,11 +30,17 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 /**
+ * <p>InvoiceData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class InvoiceData {
 	private Invoice invoice;
 
+	/**
+	 * <p>Constructor for InvoiceData.</p>
+	 */
 	public InvoiceData() {
 		invoice = createInvoice();
 	}
@@ -75,10 +81,20 @@ public class InvoiceData {
 		return item;
 	}
 
+	/**
+	 * <p>Getter for the field <code>invoice</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.examples.complex.invoice.Invoice} object.
+	 */
 	public Invoice getInvoice() {
 		return invoice;
 	}
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		return new JRBeanCollectionDataSource(invoice.getItems());
 	}

@@ -30,10 +30,16 @@ import net.sf.dynamicreports.report.builder.component.HorizontalListBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>BarcodeReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BarcodeReport {
 
+	/**
+	 * <p>Constructor for BarcodeReport.</p>
+	 */
 	public BarcodeReport() {
 		build();
 	}
@@ -118,6 +124,11 @@ public class BarcodeReport {
 		return cmp.verticalList(cmp.text(label).setStyle(Templates.bold12CenteredStyle), barcode);
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new BarcodeReport();
 	}

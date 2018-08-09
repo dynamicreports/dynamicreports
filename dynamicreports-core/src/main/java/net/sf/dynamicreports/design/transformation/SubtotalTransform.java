@@ -49,16 +49,29 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>SubtotalTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SubtotalTransform {
 	private DesignTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for SubtotalTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public SubtotalTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
 	// subtotals
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		ColumnGrid title = accessor.getColumnGridTransform().createColumnGrid();
 		ColumnGrid pageHeader = accessor.getColumnGridTransform().createColumnGrid();

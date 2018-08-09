@@ -25,10 +25,18 @@ package net.sf.dynamicreports.report.definition.component;
 import net.sf.dynamicreports.report.constant.BreakType;
 
 /**
+ * <p>DRIBreak interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBreak extends DRIComponent {
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BreakType} object.
+	 */
 	public BreakType getType();
 
 }

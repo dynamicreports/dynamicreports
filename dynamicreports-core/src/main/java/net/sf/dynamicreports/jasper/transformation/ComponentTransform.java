@@ -85,15 +85,30 @@ import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
 import net.sf.jasperreports.engine.type.OnErrorTypeEnum;
 
 /**
+ * <p>ComponentTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComponentTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for ComponentTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public ComponentTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
+	 * @param listType a {@link net.sf.dynamicreports.report.constant.ListType} object.
+	 * @return an array of {@link net.sf.jasperreports.engine.design.JRDesignElement} objects.
+	 */
 	protected JRDesignElement[] component(DRIDesignComponent component, ListType listType) {
 		JRDesignElement[] jrElements;
 		if (component instanceof DRIDesignChart) {

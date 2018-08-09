@@ -25,15 +25,38 @@ package net.sf.dynamicreports.design.definition;
 import java.io.Serializable;
 
 /**
+ * <p>DRIDesignParameter interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignParameter extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getValueClass.</p>
+	 *
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public Class<?> getValueClass();
 
+	/**
+	 * <p>getValue.</p>
+	 *
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object getValue();
 
+	/**
+	 * <p>isExternal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isExternal();
 }

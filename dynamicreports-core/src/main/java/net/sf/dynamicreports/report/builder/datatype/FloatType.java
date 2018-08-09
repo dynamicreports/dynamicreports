@@ -27,21 +27,27 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.defaults.Defaults;
 
 /**
+ * <p>FloatType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class FloatType extends NumberType<Float> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getFloatType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getFloatType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Float numberToValue(Number number) {
 		return new Float(number.floatValue());

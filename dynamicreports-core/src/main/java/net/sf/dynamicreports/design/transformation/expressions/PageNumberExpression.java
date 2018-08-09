@@ -31,15 +31,24 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>PageNumberExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PageNumberExpression extends AbstractComplexExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PageNumberExpression.</p>
+	 *
+	 * @param pageNumberFormatExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public PageNumberExpression(DRIExpression<String> pageNumberFormatExpression) {
 		addExpression(pageNumberFormatExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(List<?> values, ReportParameters reportParameters) {
 		String pattern = (String) values.get(0);

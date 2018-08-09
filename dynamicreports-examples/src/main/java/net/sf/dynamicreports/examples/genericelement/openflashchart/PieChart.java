@@ -29,7 +29,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
+ * <p>PieChart class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PieChart implements ChartGenerator {
 	private String title;
@@ -37,6 +40,7 @@ public class PieChart implements ChartGenerator {
 	private String[] valueColors = { "fadf12", "ed262a", "006f3c", "fa6112", "409dcf", "e5018c", "eaab35" };
 	private JSONArray values = new JSONArray();
 
+	/** {@inheritDoc} */
 	@Override
 	public String generateChart() {
 		try {
@@ -75,6 +79,12 @@ public class PieChart implements ChartGenerator {
 		}
 	}
 
+	/**
+	 * <p>addValue.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @param value a {@link java.lang.Number} object.
+	 */
 	public void addValue(String label, Number value) {
 		JSONObject pieValue = new JSONObject();
 		try {
@@ -86,14 +96,29 @@ public class PieChart implements ChartGenerator {
 		values.put(pieValue);
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link java.lang.String} object.
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>backgroundColor</code>.</p>
+	 *
+	 * @param backgroundColor a {@link java.lang.String} object.
+	 */
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueColors</code>.</p>
+	 *
+	 * @param valueColors an array of {@link java.lang.String} objects.
+	 */
 	public void setValueColors(String[] valueColors) {
 		this.valueColors = valueColors;
 	}

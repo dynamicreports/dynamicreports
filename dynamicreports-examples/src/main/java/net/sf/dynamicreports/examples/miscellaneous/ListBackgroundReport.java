@@ -39,10 +39,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ListBackgroundReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ListBackgroundReport {
 
+	/**
+	 * <p>Constructor for ListBackgroundReport.</p>
+	 */
 	public ListBackgroundReport() {
 		build();
 	}
@@ -106,6 +112,11 @@ public class ListBackgroundReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ListBackgroundReport();
 	}

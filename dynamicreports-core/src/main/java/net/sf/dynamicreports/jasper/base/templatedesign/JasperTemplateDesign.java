@@ -53,7 +53,10 @@ import net.sf.jasperreports.engine.xml.JRXmlWriter;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>JasperTemplateDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -63,10 +66,22 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 	private DRMargin margin;
 	private transient ByteArrayOutputStream templateDesign;
 
+	/**
+	 * <p>Constructor for JasperTemplateDesign.</p>
+	 *
+	 * @param jasperDesign a {@link net.sf.jasperreports.engine.design.JasperDesign} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperTemplateDesign(JasperDesign jasperDesign) throws DRException {
 		init(jasperDesign);
 	}
 
+	/**
+	 * <p>Constructor for JasperTemplateDesign.</p>
+	 *
+	 * @param file a {@link java.io.File} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperTemplateDesign(File file) throws DRException {
 		Validate.notNull(file, "file must not be null");
 		try {
@@ -76,6 +91,12 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 		}
 	}
 
+	/**
+	 * <p>Constructor for JasperTemplateDesign.</p>
+	 *
+	 * @param fileName a {@link java.lang.String} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperTemplateDesign(String fileName) throws DRException {
 		Validate.notNull(fileName, "fileName must not be null");
 		try {
@@ -85,6 +106,12 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 		}
 	}
 
+	/**
+	 * <p>Constructor for JasperTemplateDesign.</p>
+	 *
+	 * @param inputStream a {@link java.io.InputStream} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperTemplateDesign(InputStream inputStream) throws DRException {
 		Validate.notNull(inputStream, "inputStream must not be null");
 		try {
@@ -94,6 +121,12 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 		}
 	}
 
+	/**
+	 * <p>Constructor for JasperTemplateDesign.</p>
+	 *
+	 * @param url a {@link java.net.URL} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperTemplateDesign(URL url) throws DRException {
 		Validate.notNull(url, "url must not be null");
 		try {
@@ -123,137 +156,164 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 		margin.setRight(jasperDesign.getRightMargin());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getReportName() {
 		return jasperDesign.getName();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIField<?>> getFields() {
 		return fields;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isDefinedParameter(String name) {
 		JRParameter parameter = jasperDesign.getParametersMap().get(name);
 		return parameter != null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getResourceBundleName() {
 		return jasperDesign.getResourceBundle();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getIgnorePagination() {
 		return jasperDesign.isIgnorePagination();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public WhenNoDataType getWhenNoDataType() {
 		return ConstantTransform.whenNoDataType(jasperDesign.getWhenNoDataTypeValue());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public WhenResourceMissingType getWhenResourceMissingType() {
 		return ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingTypeValue());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getTitleOnANewPage() {
 		return jasperDesign.isTitleNewPage();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getSummaryOnANewPage() {
 		return jasperDesign.isSummaryNewPage();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getSummaryWithPageHeaderAndFooter() {
 		return jasperDesign.isSummaryWithPageHeaderAndFooter();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getFloatColumnFooter() {
 		return jasperDesign.isFloatColumnFooter();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageWidth() {
 		return jasperDesign.getPageWidth();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageHeight() {
 		return jasperDesign.getPageHeight();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public PageOrientation getPageOrientation() {
 		return ConstantTransform.pageOrientation(jasperDesign.getOrientationValue());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIMargin getPageMargin() {
 		return margin;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnsPerPage() {
 		return jasperDesign.getColumnCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnSpace() {
 		return jasperDesign.getColumnSpacing();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnWidth() {
 		return jasperDesign.getColumnWidth();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getTitleComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getTitle());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageHeaderComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getPageHeader());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageFooterComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getPageFooter());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnHeaderComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getColumnHeader());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnFooterComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getColumnFooter());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getLastPageFooterComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getLastPageFooter());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getSummaryComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getSummary());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getNoDataComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getNoData());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getBackgroundComponentsCount() {
 		return getBandComponentsCount(jasperDesign.getBackground());
@@ -266,6 +326,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JasperDesign getDesign() throws DRException {
 		try {

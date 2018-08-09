@@ -25,9 +25,17 @@ package net.sf.dynamicreports.report.definition.grid;
 import java.io.Serializable;
 
 /**
+ * <p>DRIColumnGrid interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIColumnGrid extends Serializable {
 
+	/**
+	 * <p>getList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridList} object.
+	 */
 	public DRIColumnGridList getList();
 }

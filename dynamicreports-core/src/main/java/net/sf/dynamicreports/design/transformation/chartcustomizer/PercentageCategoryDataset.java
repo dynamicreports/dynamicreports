@@ -32,65 +32,83 @@ import org.jfree.data.general.DatasetChangeListener;
 import org.jfree.data.general.DatasetGroup;
 
 /**
+ * <p>PercentageCategoryDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PercentageCategoryDataset implements CategoryDataset, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	protected CategoryDataset dataset;
 
+	/**
+	 * <p>Constructor for PercentageCategoryDataset.</p>
+	 *
+	 * @param dataset a {@link org.jfree.data.category.CategoryDataset} object.
+	 */
 	public PercentageCategoryDataset(CategoryDataset dataset) {
 		this.dataset = dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Comparable<?> getRowKey(int row) {
 		return dataset.getRowKey(row);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("rawtypes")
 	public int getRowIndex(Comparable key) {
 		return dataset.getRowIndex(key);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<?> getRowKeys() {
 		return dataset.getRowKeys();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Comparable<?> getColumnKey(int column) {
 		return dataset.getColumnKey(column);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("rawtypes")
 	public int getColumnIndex(Comparable key) {
 		return dataset.getColumnIndex(key);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<?> getColumnKeys() {
 		return dataset.getColumnKeys();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("rawtypes")
 	public Number getValue(Comparable rowKey, Comparable columnKey) {
 		return getValue(getRowIndex(rowKey), getColumnIndex(columnKey));
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getRowCount() {
 		return dataset.getRowCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnCount() {
 		return dataset.getColumnCount();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Number getValue(int row, int column) {
 		double total = 0;
@@ -111,21 +129,25 @@ public class PercentageCategoryDataset implements CategoryDataset, Serializable 
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void addChangeListener(DatasetChangeListener listener) {
 		dataset.addChangeListener(listener);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void removeChangeListener(DatasetChangeListener listener) {
 		dataset.removeChangeListener(listener);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DatasetGroup getGroup() {
 		return dataset.getGroup();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void setGroup(DatasetGroup group) {
 		dataset.setGroup(group);

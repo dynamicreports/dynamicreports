@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.report.definition.crosstab;
 
 /**
+ * <p>DRICrosstabRowGroup interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabRowGroup<T> extends DRICrosstabGroup<T> {
 
+	/**
+	 * <p>getHeaderWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getHeaderWidth();
 
+	/**
+	 * <p>getTotalHeaderHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTotalHeaderHeight();
 }

@@ -37,6 +37,14 @@ import net.sf.dynamicreports.report.exception.DRException;
  */
 class ConstantTransform {
 
+	/**
+	 * <p>variableResetType.</p>
+	 *
+	 * @param resetType a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public static ResetType variableResetType(Evaluation resetType, DRIGroup resetGroup, DesignTransformAccessor accessor) {
 		if (resetType == null) {
 			return ResetType.REPORT;
@@ -73,6 +81,16 @@ class ConstantTransform {
 		}
 	}
 
+	/**
+	 * <p>variableResetGroup.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param resetType a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static DRIGroup variableResetGroup(String name, Evaluation resetType, DRIGroup resetGroup, DesignTransformAccessor accessor) throws DRException {
 		if (resetType == null) {
 			return null;
@@ -112,6 +130,14 @@ class ConstantTransform {
 		}
 	}
 
+	/**
+	 * <p>textFieldEvaluationTime.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public static EvaluationTime textFieldEvaluationTime(Evaluation evaluationTime, DRIGroup evaluationGroup, DesignTransformAccessor accessor) {
 		if (evaluationTime == null) {
 			return EvaluationTime.NOW;
@@ -148,6 +174,15 @@ class ConstantTransform {
 		}
 	}
 
+	/**
+	 * <p>textFieldEvaluationGroup.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static DRIGroup textFieldEvaluationGroup(Evaluation evaluationTime, DRIGroup evaluationGroup, DesignTransformAccessor accessor) throws DRException {
 		if (evaluationTime == null) {
 			return null;
@@ -187,6 +222,12 @@ class ConstantTransform {
 		}
 	}
 
+	/**
+	 * <p>toHorizontalCellComponentAlignment.</p>
+	 *
+	 * @param widthType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public static HorizontalCellComponentAlignment toHorizontalCellComponentAlignment(ComponentDimensionType widthType) {
 		if (widthType == null) {
 			return null;
@@ -204,6 +245,12 @@ class ConstantTransform {
 		}
 	}
 
+	/**
+	 * <p>toVerticalCellComponentAlignment.</p>
+	 *
+	 * @param heightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public static VerticalCellComponentAlignment toVerticalCellComponentAlignment(ComponentDimensionType heightType) {
 		if (heightType == null) {
 			return null;

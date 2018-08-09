@@ -25,11 +25,24 @@ package net.sf.dynamicreports.design.definition;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignField interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignField extends DRIDesignExpression {
 
+	/**
+	 * <p>isExternal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isExternal();
 
+	/**
+	 * <p>getDescription.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getDescription();
 }

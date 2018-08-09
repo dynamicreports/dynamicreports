@@ -27,11 +27,24 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>ReportStyleBuilder interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface ReportStyleBuilder extends Serializable {
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getStyle();
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle build();
 }

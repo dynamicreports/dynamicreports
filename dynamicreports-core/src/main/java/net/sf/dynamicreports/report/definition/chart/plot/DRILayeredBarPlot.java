@@ -25,9 +25,17 @@ package net.sf.dynamicreports.report.definition.chart.plot;
 import java.util.List;
 
 /**
+ * <p>DRILayeredBarPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRILayeredBarPlot extends DRIBarPlot {
 
+	/**
+	 * <p>getSeriesBarWidths.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Double> getSeriesBarWidths();
 }

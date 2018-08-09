@@ -28,29 +28,56 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 
 /**
+ * <p>FieldBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class FieldBuilder<T> extends AbstractBuilder<FieldBuilder<T>, DRField<T>> implements DRIValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for FieldBuilder.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	protected FieldBuilder(String name, Class<? super T> valueClass) {
 		super(new DRField<T>(name, valueClass));
 	}
 
+	/**
+	 * <p>setDataType.</p>
+	 *
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	public FieldBuilder<T> setDataType(DRIDataType<? super T, T> dataType) {
 		getObject().setDataType(dataType);
 		return this;
 	}
 
+	/**
+	 * <p>setDescription.</p>
+	 *
+	 * @param description a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	public FieldBuilder<T> setDescription(String description) {
 		getObject().setDescription(description);
 		return this;
 	}
 
+	/**
+	 * <p>getField.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRField} object.
+	 */
 	public DRField<T> getField() {
 		return build();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getField().getName();

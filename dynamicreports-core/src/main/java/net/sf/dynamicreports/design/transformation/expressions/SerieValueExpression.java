@@ -34,7 +34,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>SerieValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SerieValueExpression extends AbstractSimpleExpression<Number> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,6 +50,15 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
 	private Object resetValue;
 	private Map<Object, Double> values;
 
+	/**
+	 * <p>Constructor for SerieValueExpression.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @param serieExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @param key a {@link java.lang.String} object.
+	 */
 	public SerieValueExpression(DRIDesignExpression valueExpression, DRIDesignExpression serieExpression, ResetType resetType, DRDesignGroup resetGroup,
 			String key) {
 		this.valueExpression = valueExpression;
@@ -56,6 +68,7 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
 		this.key = key;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Number evaluate(ReportParameters reportParameters) {
 		if (reportParameters.getReportRowNumber() <= 1) {

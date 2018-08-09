@@ -27,18 +27,27 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignValueDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignValueDataset extends DRDesignChartDataset implements DRIDesignValueDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIDesignExpression valueExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}

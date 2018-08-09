@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignRectangle;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignRectangle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignRectangle extends DRDesignComponent implements DRIDesignRectangle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,24 +38,39 @@ public class DRDesignRectangle extends DRDesignComponent implements DRIDesignRec
 	private Integer radius;
 	private DRDesignPen pen;
 
+	/**
+	 * <p>Constructor for DRDesignRectangle.</p>
+	 */
 	public DRDesignRectangle() {
 		super("rectangle");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getRadius() {
 		return radius;
 	}
 
+	/**
+	 * <p>Setter for the field <code>radius</code>.</p>
+	 *
+	 * @param radius a {@link java.lang.Integer} object.
+	 */
 	public void setRadius(Integer radius) {
 		this.radius = radius;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignPen getPen() {
 		return pen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pen</code>.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	public void setPen(DRDesignPen pen) {
 		this.pen = pen;
 	}

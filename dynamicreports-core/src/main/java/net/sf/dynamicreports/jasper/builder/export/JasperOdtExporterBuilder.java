@@ -26,20 +26,38 @@ import net.sf.dynamicreports.jasper.base.export.JasperOdtExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperOdtExporterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperOdtExporterBuilder extends AbstractJasperExporterBuilder<JasperOdtExporterBuilder, JasperOdtExporter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperOdtExporterBuilder.</p>
+	 */
 	protected JasperOdtExporterBuilder() {
 		super(new JasperOdtExporter());
 	}
 
+	/**
+	 * <p>setFlexibleRowHeight.</p>
+	 *
+	 * @param flexibleRowHeight a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
+	 */
 	public JasperOdtExporterBuilder setFlexibleRowHeight(Boolean flexibleRowHeight) {
 		this.getObject().setFlexibleRowHeight(flexibleRowHeight);
 		return this;
 	}
 
+	/**
+	 * <p>setIgnoreHyperLink.</p>
+	 *
+	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
+	 */
 	public JasperOdtExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
 		this.getObject().setIgnoreHyperLink(ignoreHyperLink);
 		return this;

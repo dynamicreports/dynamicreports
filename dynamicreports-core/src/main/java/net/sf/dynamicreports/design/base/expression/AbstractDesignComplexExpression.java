@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>Abstract AbstractDesignComplexExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractDesignComplexExpression implements DRIDesignComplexExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,33 +42,54 @@ public abstract class AbstractDesignComplexExpression implements DRIDesignComple
 	private String name;
 	private List<DRIDesignExpression> expressions;
 
+	/**
+	 * <p>Constructor for AbstractDesignComplexExpression.</p>
+	 */
 	protected AbstractDesignComplexExpression() {
 		this(ReportUtils.generateUniqueName("complexExpression"));
 	}
 
+	/**
+	 * <p>Constructor for AbstractDesignComplexExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	protected AbstractDesignComplexExpression(String name) {
 		this.name = name;
 		this.expressions = new ArrayList<DRIDesignExpression>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>expressions</code>.</p>
+	 *
+	 * @param expressions a {@link java.util.List} object.
+	 */
 	public void setExpressions(List<DRIDesignExpression> expressions) {
 		this.expressions = expressions;
 	}
 
+	/**
+	 * <p>addExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void addExpression(DRIDesignExpression expression) {
 		this.expressions.add(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIDesignExpression> getExpressions() {
 		return expressions;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getParameterName() {
 		return null;

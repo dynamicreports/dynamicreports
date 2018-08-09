@@ -27,17 +27,45 @@ import net.sf.dynamicreports.report.constant.HorizontalImageAlignment;
 import net.sf.dynamicreports.report.constant.ImageScale;
 
 /**
+ * <p>DRIDesignImage interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignImage extends DRIDesignHyperLinkComponent {
 
+	/**
+	 * <p>getImageExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getImageExpression();
 
+	/**
+	 * <p>getImageScale.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ImageScale} object.
+	 */
 	public ImageScale getImageScale();
 
+	/**
+	 * <p>getUsingCache.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getUsingCache();
 
+	/**
+	 * <p>getLazy.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getLazy();
 
+	/**
+	 * <p>getHorizontalImageAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 */
 	public HorizontalImageAlignment getHorizontalImageAlignment();
 }

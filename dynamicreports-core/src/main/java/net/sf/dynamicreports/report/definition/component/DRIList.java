@@ -27,15 +27,38 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.ListType;
 
 /**
+ * <p>DRIList interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIList extends DRIDimensionComponent {
 
+	/**
+	 * <p>getListCells.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIListCell> getListCells();
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ListType} object.
+	 */
 	public ListType getType();
 
+	/**
+	 * <p>getGap.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getGap();
 
+	/**
+	 * <p>getBackgroundComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public DRIComponent getBackgroundComponent();
 }

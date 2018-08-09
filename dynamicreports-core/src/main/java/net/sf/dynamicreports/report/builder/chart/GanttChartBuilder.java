@@ -35,41 +35,84 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>GanttChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilder, DRBarPlot, DRSeriesDataset> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for GanttChartBuilder.</p>
+	 */
 	protected GanttChartBuilder() {
 		super(ChartType.GANTT);
 	}
 
 	// dataset
+	/**
+	 * <p>setTask.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTask(ValueColumnBuilder<?, String> column) {
 		Validate.notNull(column, "column must not be null");
 		getDataset().setValueExpression(column.getColumn());
 		return this;
 	}
 
+	/**
+	 * <p>setTask.</p>
+	 *
+	 * @param fieldName a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTask(String fieldName, Class<String> valueClass) {
 		return setTask(DynamicReports.<String>field(fieldName, valueClass));
 	}
 
+	/**
+	 * <p>setTask.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTask(FieldBuilder<String> field) {
 		Validate.notNull(field, "field must not be null");
 		getDataset().setValueExpression(field.build());
 		return this;
 	}
 
+	/**
+	 * <p>setTask.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTask(DRIExpression<String> expression) {
 		getDataset().setValueExpression(expression);
 		return this;
 	}
 
+	/**
+	 * <p>series.</p>
+	 *
+	 * @param chartSeries a {@link net.sf.dynamicreports.report.builder.chart.GanttChartSerieBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder series(GanttChartSerieBuilder... chartSeries) {
 		return addSerie(chartSeries);
 	}
 
+	/**
+	 * <p>addSerie.</p>
+	 *
+	 * @param chartSeries a {@link net.sf.dynamicreports.report.builder.chart.GanttChartSerieBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder addSerie(GanttChartSerieBuilder... chartSeries) {
 		Validate.notNull(chartSeries, "chartSeries must not be null");
 		Validate.noNullElements(chartSeries, "chartSeries must not contains null chartSerie");
@@ -79,6 +122,12 @@ public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilde
 		return this;
 	}
 
+	/**
+	 * <p>setItemHyperLink.</p>
+	 *
+	 * @param itemHyperLink a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setItemHyperLink(HyperLinkBuilder itemHyperLink) {
 		Validate.notNull(itemHyperLink, "itemHyperLink must not be null");
 		getDataset().setItemHyperLink(itemHyperLink.build());
@@ -86,28 +135,58 @@ public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilde
 	}
 
 	// plot
+	/**
+	 * <p>setTimeAxisFormat.</p>
+	 *
+	 * @param timeAxisFormat a {@link net.sf.dynamicreports.report.builder.chart.AxisFormatBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTimeAxisFormat(AxisFormatBuilder timeAxisFormat) {
 		Validate.notNull(timeAxisFormat, "timeAxisFormat must not be null");
 		getPlot().setYAxisFormat(timeAxisFormat.build());
 		return this;
 	}
 
+	/**
+	 * <p>setTaskAxisFormat.</p>
+	 *
+	 * @param taskAxisFormat a {@link net.sf.dynamicreports.report.builder.chart.AxisFormatBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setTaskAxisFormat(AxisFormatBuilder taskAxisFormat) {
 		Validate.notNull(taskAxisFormat, "taskAxisFormat must not be null");
 		getPlot().setXAxisFormat(taskAxisFormat.build());
 		return this;
 	}
 
+	/**
+	 * <p>setShowLabels.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setShowLabels(Boolean showLabels) {
 		getPlot().setShowLabels(showLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickLabels.</p>
+	 *
+	 * @param showTickLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setShowTickLabels(Boolean showTickLabels) {
 		getPlot().setShowTickLabels(showTickLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickMarks.</p>
+	 *
+	 * @param showTickMarks a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+	 */
 	public GanttChartBuilder setShowTickMarks(Boolean showTickMarks) {
 		getPlot().setShowTickMarks(showTickMarks);
 		return this;

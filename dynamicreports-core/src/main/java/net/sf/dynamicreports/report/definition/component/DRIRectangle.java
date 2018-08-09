@@ -25,12 +25,25 @@ package net.sf.dynamicreports.report.definition.component;
 import net.sf.dynamicreports.report.definition.style.DRIPen;
 
 /**
+ * <p>DRIRectangle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIRectangle extends DRIDimensionComponent {
 
+	/**
+	 * <p>getRadius.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getRadius();
 
+	/**
+	 * <p>getPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
+	 */
 	public DRIPen getPen();
 
 }

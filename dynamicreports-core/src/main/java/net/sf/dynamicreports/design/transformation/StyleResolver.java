@@ -39,26 +39,55 @@ import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.fonts.FontUtil;
 
 /**
+ * <p>StyleResolver class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StyleResolver {
 	private static FontRenderContext context = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB).createGraphics().getFontRenderContext();
 
+	/**
+	 * <p>getFontWidth.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @param columns a int.
+	 * @return a int.
+	 */
 	protected static int getFontWidth(DRDesignStyle style, int columns) {
 		double width = getFont(style).getStringBounds("m", context).getWidth();
 		return (int) Math.ceil(width * columns) + getHorizontalPadding(style);
 	}
 
+	/**
+	 * <p>getFontHeight.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @param rows a int.
+	 * @return a int.
+	 */
 	protected static int getFontHeight(DRDesignStyle style, int rows) {
 		double height = getFont(style).getMaxCharBounds(context).getHeight();
 		return (int) Math.ceil(height * rows) + getVerticalPadding(style);
 	}
 
+	/**
+	 * <p>getFontWidth.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 * @return a double.
+	 */
 	public static double getFontWidth(DRFont font) {
 		Font fnt = getFont(font.getFontName(), font.getBold(), font.getItalic(), font.getFontSize());
 		return fnt.getStringBounds("m", context).getWidth();
 	}
 
+	/**
+	 * <p>getFontHeight.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 * @return a double.
+	 */
 	public static double getFontHeight(DRFont font) {
 		Font fnt = getFont(font.getFontName(), font.getBold(), font.getItalic(), font.getFontSize());
 		return fnt.getMaxCharBounds(context).getHeight();
@@ -98,6 +127,12 @@ public class StyleResolver {
 		return font;
 	}
 
+	/**
+	 * <p>getFontName.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected static String getFontName(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -111,6 +146,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getFontSize.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	protected static Integer getFontSize(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -124,6 +165,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getFontBold.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected static Boolean getFontBold(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -137,6 +184,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getFontItalic.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected static Boolean getFontItalic(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -150,6 +203,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getFontUnderline.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected static Boolean getFontUnderline(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -163,6 +222,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getFontStrikeThrough.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected static Boolean getFontStrikeThrough(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -176,6 +241,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getPdfFontName.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected static String getPdfFontName(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -189,6 +260,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getPdfEncoding.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected static String getPdfEncoding(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -202,6 +279,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getPdfEmbedded.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	protected static Boolean getPdfEmbedded(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -215,10 +298,22 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getHorizontalPadding.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+	 * @return a int.
+	 */
 	public static int getHorizontalPadding(DRIDesignStyle style) {
 		return getLeftPadding(style) + getRightPadding(style) + getLeftIndent(style) + getRightIndent(style);
 	}
 
+	/**
+	 * <p>getVerticalPadding.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+	 * @return a int.
+	 */
 	public static int getVerticalPadding(DRIDesignStyle style) {
 		return getTopPadding(style) + getBottomPadding(style) + getFirstLineIndent(style);
 	}
@@ -314,6 +409,12 @@ public class StyleResolver {
 		return 0;
 	}
 
+	/**
+	 * <p>getPattern.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	public static String getPattern(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -327,6 +428,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getHorizontalTextAlignment.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public static HorizontalTextAlignment getHorizontalTextAlignment(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -340,6 +447,12 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getHorizontalImageAlignment.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 */
 	public static HorizontalImageAlignment getHorizontalImageAlignment(DRDesignStyle style) {
 		if (style == null) {
 			return null;
@@ -353,6 +466,13 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>getBackgroundColor.</p>
+	 *
+	 * @param reportStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 * @param transform a {@link net.sf.dynamicreports.design.transformation.StyleTransform} object.
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public static Color getBackgroundColor(DRIReportStyle reportStyle, StyleTransform transform) {
 		if (reportStyle == null) {
 			return null;
@@ -367,6 +487,14 @@ public class StyleResolver {
 		return null;
 	}
 
+	/**
+	 * <p>mergeColors.</p>
+	 *
+	 * @param color1 a {@link java.awt.Color} object.
+	 * @param color2 a {@link java.awt.Color} object.
+	 * @param percent a float.
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public static Color mergeColors(Color color1, Color color2, float percent) {
 		float amount = 1.0f - percent;
 		int r = (int) (color1.getRed() * amount + color2.getRed() * percent);

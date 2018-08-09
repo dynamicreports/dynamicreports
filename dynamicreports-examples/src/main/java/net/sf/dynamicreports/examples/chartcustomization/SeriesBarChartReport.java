@@ -31,10 +31,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SeriesBarChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SeriesBarChartReport {
 
+	/**
+	 * <p>Constructor for SeriesBarChartReport.</p>
+	 */
 	public SeriesBarChartReport() {
 		build();
 	}
@@ -79,6 +85,11 @@ public class SeriesBarChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SeriesBarChartReport();
 	}

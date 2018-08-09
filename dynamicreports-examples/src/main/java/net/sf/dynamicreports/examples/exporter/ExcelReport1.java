@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ExcelReport1 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ExcelReport1 {
 
+	/**
+	 * <p>Constructor for ExcelReport1.</p>
+	 */
 	public ExcelReport1() {
 		build();
 	}
@@ -74,6 +80,11 @@ public class ExcelReport1 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ExcelReport1();
 	}

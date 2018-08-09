@@ -27,35 +27,71 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>LineChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class LineChartBuilder extends AbstractCategoryChartBuilder<LineChartBuilder, DRLinePlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for LineChartBuilder.</p>
+	 */
 	protected LineChartBuilder() {
 		super(ChartType.LINE);
 	}
 
+	/**
+	 * <p>setShowShapes.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	public LineChartBuilder setShowShapes(Boolean showShapes) {
 		getPlot().setShowShapes(showShapes);
 		return this;
 	}
 
+	/**
+	 * <p>setShowLines.</p>
+	 *
+	 * @param showLines a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	public LineChartBuilder setShowLines(Boolean showLines) {
 		getPlot().setShowLines(showLines);
 		return this;
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	public LineChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	public LineChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;
 	}
 
+	/**
+	 * <p>setPercentValuePattern.</p>
+	 *
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	public LineChartBuilder setPercentValuePattern(String percentValuePattern) {
 		getPlot().setPercentValuePattern(percentValuePattern);
 		return this;

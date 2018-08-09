@@ -31,34 +31,63 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>SortBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SortBuilder extends AbstractBuilder<SortBuilder, DRSort> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for SortBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.TextColumnBuilder} object.
+	 */
 	protected SortBuilder(TextColumnBuilder<?> column) {
 		super(new DRSort());
 		Validate.notNull(column, "column must not be null");
 		getObject().setExpression(column.build());
 	}
 
+	/**
+	 * <p>Constructor for SortBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	protected SortBuilder(FieldBuilder<?> field) {
 		super(new DRSort());
 		Validate.notNull(field, "field must not be null");
 		getObject().setExpression(field.build());
 	}
 
+	/**
+	 * <p>Constructor for SortBuilder.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 */
 	protected SortBuilder(VariableBuilder<?> variable) {
 		super(new DRSort());
 		Validate.notNull(variable, "variable must not be null");
 		getObject().setExpression(variable.build());
 	}
 
+	/**
+	 * <p>Constructor for SortBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected SortBuilder(DRIExpression<?> expression) {
 		super(new DRSort());
 		getObject().setExpression(expression);
 	}
 
+	/**
+	 * <p>setOrderType.</p>
+	 *
+	 * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
+	 */
 	public SortBuilder setOrderType(OrderType orderType) {
 		getObject().setOrderType(orderType);
 		return this;

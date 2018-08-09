@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.adhoc.configuration;
 
 /**
+ * <p>AdhocChartType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum AdhocChartType {
 	AREA, STACKEDAREA, BAR, STACKEDBAR, GROUPEDSTACKEDBAR, BAR3D, STACKEDBAR3D, LINE, LAYEREDBAR, WATERFALLBAR, DIFFERENCE, PIE, PIE3D, SCATTER, SPIDER, TIMESERIES, XYAREA, XYBAR, XYLINE, XYSTEP, BUBBLE

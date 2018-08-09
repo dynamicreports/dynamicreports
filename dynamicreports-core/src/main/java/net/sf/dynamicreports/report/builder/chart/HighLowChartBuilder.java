@@ -27,20 +27,38 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>HighLowChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class HighLowChartBuilder extends AbstractHighLowChartBuilder<HighLowChartBuilder, DRHighLowPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for HighLowChartBuilder.</p>
+	 */
 	protected HighLowChartBuilder() {
 		super(ChartType.HIGHLOW);
 	}
 
+	/**
+	 * <p>setShowOpenTicks.</p>
+	 *
+	 * @param showOpenTicks a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
+	 */
 	public HighLowChartBuilder setShowOpenTicks(Boolean showOpenTicks) {
 		getPlot().setShowOpenTicks(showOpenTicks);
 		return this;
 	}
 
+	/**
+	 * <p>setShowCloseTicks.</p>
+	 *
+	 * @param showCloseTicks a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
+	 */
 	public HighLowChartBuilder setShowCloseTicks(Boolean showCloseTicks) {
 		getPlot().setShowCloseTicks(showCloseTicks);
 		return this;

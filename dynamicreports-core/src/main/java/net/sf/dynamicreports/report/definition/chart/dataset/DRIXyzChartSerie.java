@@ -25,13 +25,31 @@ package net.sf.dynamicreports.report.definition.chart.dataset;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIXyzChartSerie interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIXyzChartSerie extends DRIChartSerie {
 
+	/**
+	 * <p>getXValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getXValueExpression();
 
+	/**
+	 * <p>getYValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getYValueExpression();
 
+	/**
+	 * <p>getZValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getZValueExpression();
 }

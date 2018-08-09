@@ -26,11 +26,17 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignFiller;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignFiller class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignFiller extends DRDesignComponent implements DRIDesignFiller {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DRDesignFiller.</p>
+	 */
 	public DRDesignFiller() {
 		super("filler");
 	}

@@ -37,6 +37,7 @@ import org.apache.commons.lang3.Validate;
  * It is used to display data in a multi-column layout.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Columns {
 
@@ -50,6 +51,7 @@ public class Columns {
 	 * @param valueClass
 	 *          the field value class
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String fieldName, Class<T> valueClass) {
 		return (TextColumnBuilder<T>) column(DynamicReports.field(fieldName, valueClass));
@@ -66,6 +68,7 @@ public class Columns {
 	 * @param valueClass
 	 *          the field value class
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String title, String fieldName, Class<T> valueClass) {
 		return (TextColumnBuilder<T>) column(title, DynamicReports.field(fieldName, valueClass));
@@ -80,6 +83,7 @@ public class Columns {
 	 * @param dataType
 	 *          the field data type
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String fieldName, DRIDataType<? super T, T> dataType) {
 		Validate.notNull(dataType, "dataType must not be null");
@@ -99,6 +103,7 @@ public class Columns {
 	 * @param dataType
 	 *          the field data type
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String title, String fieldName, DRIDataType<? super T, T> dataType) {
 		TextColumnBuilder<T> textColumnBuilder = column(fieldName, dataType);
@@ -113,6 +118,7 @@ public class Columns {
 	 * @param field
 	 *          the field definition
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(FieldBuilder<T> field) {
 		TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(field);
@@ -131,6 +137,7 @@ public class Columns {
 	 * @param field
 	 *          the field definition
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String title, FieldBuilder<T> field) {
 		return column(field).setTitle(title);
@@ -144,6 +151,7 @@ public class Columns {
 	 * @param expression
 	 *          the value expression
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(DRIExpression<T> expression) {
 		TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(expression);
@@ -162,6 +170,7 @@ public class Columns {
 	 * @param expression
 	 *          the value expression
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public static <T> TextColumnBuilder<T> column(String title, DRIExpression<T> expression) {
 		return column(expression).setTitle(title);

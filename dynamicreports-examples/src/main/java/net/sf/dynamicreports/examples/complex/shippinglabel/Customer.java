@@ -23,33 +23,66 @@
 package net.sf.dynamicreports.examples.complex.shippinglabel;
 
 /**
+ * <p>Customer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Customer {
 	private String name;
 	private String address;
 	private String city;
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>address</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getAddress() {
 		return address;
 	}
 
+	/**
+	 * <p>Setter for the field <code>address</code>.</p>
+	 *
+	 * @param address a {@link java.lang.String} object.
+	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+	/**
+	 * <p>Getter for the field <code>city</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getCity() {
 		return city;
 	}
 
+	/**
+	 * <p>Setter for the field <code>city</code>.</p>
+	 *
+	 * @param city a {@link java.lang.String} object.
+	 */
 	public void setCity(String city) {
 		this.city = city;
 	}

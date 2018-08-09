@@ -45,11 +45,17 @@ import net.sf.jasperreports.extensions.ExtensionsRegistry;
 import net.sf.jasperreports.extensions.ExtensionsRegistryFactory;
 
 /**
+ * <p>GoogleChartsExtensionsRegistryFactory class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GoogleChartsExtensionsRegistryFactory implements ExtensionsRegistryFactory {
+	/** Constant <code>NAMESPACE="http://www.dynamicreports.org/googlecha"{trunked}</code> */
 	public static final String NAMESPACE = "http://www.dynamicreports.org/googlecharts";
+	/** Constant <code>XSD_LOCATION="http://www.dynamicreports.org/xsd/googl"{trunked}</code> */
 	public static final String XSD_LOCATION = "http://www.dynamicreports.org/xsd/googlecharts.xsd";
+	/** Constant <code>XSD_RESOURCE="net/sf/dynamicreports/googlecharts/jasp"{trunked}</code> */
 	public static final String XSD_RESOURCE = "net/sf/dynamicreports/googlecharts/jasper/googlecharts.xsd";
 
 	private static final ExtensionsRegistry REGISTRY;
@@ -99,6 +105,7 @@ public class GoogleChartsExtensionsRegistryFactory implements ExtensionsRegistry
 		transforms.add(new GeoMapTransform());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ExtensionsRegistry createRegistry(String registryId, JRPropertiesMap properties) {
 		return REGISTRY;

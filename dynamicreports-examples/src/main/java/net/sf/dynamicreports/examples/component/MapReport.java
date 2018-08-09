@@ -28,10 +28,16 @@ import net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>MapReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MapReport {
 
+	/**
+	 * <p>Constructor for MapReport.</p>
+	 */
 	public MapReport() {
 		build();
 	}
@@ -53,6 +59,11 @@ public class MapReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new MapReport();
 	}

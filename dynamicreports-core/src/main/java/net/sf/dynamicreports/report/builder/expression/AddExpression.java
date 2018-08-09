@@ -28,16 +28,25 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>AddExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AddExpression extends CalculationExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	@SafeVarargs
+	/**
+	 * <p>Constructor for AddExpression.</p>
+	 *
+	 * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public AddExpression(DRIExpression<? extends Number>... expressions) {
 		super(expressions);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
 		return value1.add(value2);

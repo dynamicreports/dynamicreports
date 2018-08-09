@@ -49,12 +49,21 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>CrosstabMeasureBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("deprecation")
 public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBuilder<T>, DRCrosstabMeasure<T>> implements DRICrosstabValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CrosstabMeasureBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabMeasureBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
 		super(new DRCrosstabMeasure<T>(Crosstabs.variable(column, calculation).build()));
 		if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
@@ -69,6 +78,12 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		}
 	}
 
+	/**
+	 * <p>Constructor for CrosstabMeasureBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabMeasureBuilder(FieldBuilder<?> field, Calculation calculation) {
 		super(new DRCrosstabMeasure<T>(Crosstabs.variable(field, calculation).build()));
 		if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
@@ -81,6 +96,12 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		}
 	}
 
+	/**
+	 * <p>Constructor for CrosstabMeasureBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabMeasureBuilder(DRIExpression<?> expression, Calculation calculation) {
 		super(new DRCrosstabMeasure<T>(Crosstabs.variable(expression, calculation).build()));
 		if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
@@ -93,16 +114,33 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		}
 	}
 
+	/**
+	 * <p>Constructor for CrosstabMeasureBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected CrosstabMeasureBuilder(DRIExpression<?> expression) {
 		super(new DRCrosstabMeasure<T>(expression));
 	}
 
+	/**
+	 * <p>setDataType.</p>
+	 *
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public CrosstabMeasureBuilder<T> setDataType(DRIDataType dataType) {
 		getObject().setDataType(dataType);
 		return this;
 	}
 
+	/**
+	 * <p>setPercentageType.</p>
+	 *
+	 * @param percentageType a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setPercentageType(CrosstabPercentageType percentageType) {
 		if (getObject().getExpression() instanceof DRCrosstabVariable<?>) {
 			DRCrosstabVariable<?> variable = ((DRCrosstabVariable<?>) getObject().getExpression());
@@ -117,13 +155,23 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setPattern.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setPattern(String pattern) {
 		getObject().setPattern(pattern);
 		return this;
 	}
 
 	/**
+	 * <p>setHorizontalAlignment.</p>
+	 *
 	 * @deprecated use setHorizontalTextAlignment instead
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
 	 */
 	@Deprecated
 	public CrosstabMeasureBuilder<T> setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
@@ -135,16 +183,34 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setHorizontalTextAlignment.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		getObject().setHorizontalTextAlignment(horizontalTextAlignment);
 		return this;
 	}
 
+	/**
+	 * <p>setValueFormatter.</p>
+	 *
+	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setValueFormatter(DRIValueFormatter<?, ? super T> valueFormatter) {
 		getObject().setValueFormatter(valueFormatter);
 		return this;
 	}
 
+	/**
+	 * <p>setStretchWithOverflow.</p>
+	 *
+	 * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setStretchWithOverflow(Boolean stretchWithOverflow) {
 		getObject().setStretchWithOverflow(stretchWithOverflow);
 		return this;
@@ -206,12 +272,25 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setStyle(ReportStyleBuilder style) {
 		Validate.notNull(style, "style must not be null");
 		getObject().getStyles().add(new DRCrosstabCellStyle(style.getStyle()));
 		return this;
 	}
 
+	/**
+	 * <p>setStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @param rowGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setStyle(ReportStyleBuilder style, CrosstabRowGroupBuilder<?> rowGroup) {
 		Validate.notNull(style, "style must not be null");
 		Validate.notNull(rowGroup, "rowGroup must not be null");
@@ -219,6 +298,13 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @param columnGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabColumnGroupBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setStyle(ReportStyleBuilder style, CrosstabColumnGroupBuilder<?> columnGroup) {
 		Validate.notNull(style, "style must not be null");
 		Validate.notNull(columnGroup, "columnGroup must not be null");
@@ -226,6 +312,14 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @param rowGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
+	 * @param columnGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabColumnGroupBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setStyle(ReportStyleBuilder style, CrosstabRowGroupBuilder<?> rowGroup, CrosstabColumnGroupBuilder<?> columnGroup) {
 		Validate.notNull(style, "style must not be null");
 		Validate.notNull(rowGroup, "rowGroup must not be null");
@@ -234,16 +328,34 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/**
+	 * <p>setTitle.</p>
+	 *
+	 * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setTitle(DRIExpression<?> titleExpression) {
 		getObject().setTitleExpression(titleExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setTitle.</p>
+	 *
+	 * @param title a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setTitle(String title) {
 		getObject().setTitleExpression(Expressions.text(title));
 		return this;
 	}
 
+	/**
+	 * <p>setTitleStyle.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
+	 */
 	public CrosstabMeasureBuilder<T> setTitleStyle(ReportStyleBuilder titleStyle) {
 		if (titleStyle != null) {
 			getObject().setTitleStyle(titleStyle.getStyle());
@@ -253,6 +365,7 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return build().getExpression().getName();

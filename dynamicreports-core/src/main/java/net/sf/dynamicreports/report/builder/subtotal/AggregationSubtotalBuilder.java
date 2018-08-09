@@ -38,7 +38,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRReportException;
 
 /**
+ * <p>AggregationSubtotalBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSubtotalBuilder<T>, T> implements DRIValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,16 +50,36 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
 	private Calculation calculation;
 
 	// column
+	/**
+	 * <p>Constructor for AggregationSubtotalBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected AggregationSubtotalBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
 		this(column.getColumn(), column, calculation);
 	}
 
 	// field
+	/**
+	 * <p>Constructor for AggregationSubtotalBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected AggregationSubtotalBuilder(FieldBuilder<?> field, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
 		this(field.build(), showInColumn, calculation);
 	}
 
 	// expression
+	/**
+	 * <p>Constructor for AggregationSubtotalBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected AggregationSubtotalBuilder(DRIExpression<?> expression, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
 		super(showInColumn);
 		this.expression = expression;
@@ -74,6 +97,7 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		DRVariable<T> subtotalVariable = new DRVariable<T>(expression, calculation);
@@ -111,6 +135,7 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getSubtotal().getName();

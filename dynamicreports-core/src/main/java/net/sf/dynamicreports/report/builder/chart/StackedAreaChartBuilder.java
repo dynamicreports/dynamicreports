@@ -27,11 +27,17 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>StackedAreaChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StackedAreaChartBuilder extends AbstractCategoryChartBuilder<StackedAreaChartBuilder, DRAxisPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for StackedAreaChartBuilder.</p>
+	 */
 	protected StackedAreaChartBuilder() {
 		super(ChartType.STACKEDAREA);
 	}

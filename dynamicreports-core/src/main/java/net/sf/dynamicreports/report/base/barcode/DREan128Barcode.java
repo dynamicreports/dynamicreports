@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRIEan128Barcode;
 
 /**
+ * <p>DREan128Barcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DREan128Barcode extends DRChecksumBarcode implements DRIEan128Barcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

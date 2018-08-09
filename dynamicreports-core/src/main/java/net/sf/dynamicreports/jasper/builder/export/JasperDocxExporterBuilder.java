@@ -26,25 +26,49 @@ import net.sf.dynamicreports.jasper.base.export.JasperDocxExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperDocxExporterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperDocxExporterBuilder extends AbstractJasperExporterBuilder<JasperDocxExporterBuilder, JasperDocxExporter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperDocxExporterBuilder.</p>
+	 */
 	protected JasperDocxExporterBuilder() {
 		super(new JasperDocxExporter());
 	}
 
+	/**
+	 * <p>setFramesAsNestedTables.</p>
+	 *
+	 * @param framesAsNestedTables a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
+	 */
 	public JasperDocxExporterBuilder setFramesAsNestedTables(Boolean framesAsNestedTables) {
 		this.getObject().setFramesAsNestedTables(framesAsNestedTables);
 		return this;
 	}
 
+	/**
+	 * <p>setFlexibleRowHeight.</p>
+	 *
+	 * @param flexibleRowHeight a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
+	 */
 	public JasperDocxExporterBuilder setFlexibleRowHeight(Boolean flexibleRowHeight) {
 		this.getObject().setFlexibleRowHeight(flexibleRowHeight);
 		return this;
 	}
 
+	/**
+	 * <p>setIgnoreHyperLink.</p>
+	 *
+	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
+	 */
 	public JasperDocxExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
 		this.getObject().setIgnoreHyperLink(ignoreHyperLink);
 		return this;

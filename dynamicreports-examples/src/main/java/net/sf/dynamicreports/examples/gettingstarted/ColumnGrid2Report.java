@@ -29,11 +29,17 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ColumnGrid2Report class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnGrid2Report {
 	private final int columns_count = 12;
 
+	/**
+	 * <p>Constructor for ColumnGrid2Report.</p>
+	 */
 	public ColumnGrid2Report() {
 		build();
 	}
@@ -83,6 +89,11 @@ public class ColumnGrid2Report {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ColumnGrid2Report();
 	}

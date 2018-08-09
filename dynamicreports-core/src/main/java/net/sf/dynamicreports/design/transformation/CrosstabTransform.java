@@ -78,13 +78,21 @@ import net.sf.dynamicreports.report.definition.style.DRIStyle;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>CrosstabTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabTransform {
 	private DesignTransformAccessor accessor;
 	private Map<DRDesignCrosstab, DRICrosstab> crosstabs;
 	private CrosstabRowCounter crosstabRowCounter;
 
+	/**
+	 * <p>Constructor for CrosstabTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public CrosstabTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		init();
@@ -95,6 +103,15 @@ public class CrosstabTransform {
 		crosstabRowCounter = new CrosstabRowCounter();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignCrosstab transform(DRICrosstab crosstab, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		DRDesignCrosstab designCrosstab = new DRDesignCrosstab();
 		designCrosstab.setDataset(dataset(crosstab.getDataset(), resetType, resetGroup));
@@ -540,6 +557,12 @@ public class CrosstabTransform {
 		designCrosstab.getMeasures().add(designMeasure);
 	}
 
+	/**
+	 * <p>getCrosstab.</p>
+	 *
+	 * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+	 */
 	protected DRICrosstab getCrosstab(DRDesignCrosstab designCrosstab) {
 		return crosstabs.get(designCrosstab);
 	}

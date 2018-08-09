@@ -33,7 +33,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>ListType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("rawtypes")
 public class ListType extends AbstractDataType<List, List> {
@@ -41,16 +44,19 @@ public class ListType extends AbstractDataType<List, List> {
 
 	private static ListFormatter listFormatter = new ListFormatter();
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIValueFormatter<?, ? extends List> getValueFormatter() {
 		return listFormatter;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getStringType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getStringType().getHorizontalTextAlignment();

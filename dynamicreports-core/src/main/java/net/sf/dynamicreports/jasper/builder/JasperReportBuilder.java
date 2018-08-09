@@ -105,6 +105,7 @@ import net.sf.jasperreports.view.JasperViewer;
  * Each part is created and configured using a particular builder method and it's passed to the report builder instance.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -119,10 +120,20 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 	private Integer startPageNumber;
 	private Map<String, Object> parameters;
 
+	/**
+	 * <p>Constructor for JasperReportBuilder.</p>
+	 */
 	public JasperReportBuilder() {
 		setTemplateDesign(new JasperEmptyTemplateDesign());
 	}
 
+	/**
+	 * <p>Setter for the field <code>startPageNumber</code>.</p>
+	 *
+	 * @param startPageNumber a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setStartPageNumber(Integer startPageNumber) throws DRException {
 		if (this.startPageNumber == startPageNumber) {
 			return this;
@@ -132,6 +143,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>Setter for the field <code>connection</code>.</p>
+	 *
+	 * @param connection a {@link java.sql.Connection} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 */
 	public JasperReportBuilder setConnection(Connection connection) {
 		Validate.notNull(connection, "connection must not be null");
 		this.connection = connection;
@@ -210,22 +227,57 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 	}
 
 	// template design
+	/**
+	 * <p>setTemplateDesign.</p>
+	 *
+	 * @param inputStream a {@link java.io.InputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setTemplateDesign(InputStream inputStream) throws DRException {
 		return setTemplateDesign(new JasperTemplateDesign(inputStream));
 	}
 
+	/**
+	 * <p>setTemplateDesign.</p>
+	 *
+	 * @param file a {@link java.io.File} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setTemplateDesign(File file) throws DRException {
 		return setTemplateDesign(new JasperTemplateDesign(file));
 	}
 
+	/**
+	 * <p>setTemplateDesign.</p>
+	 *
+	 * @param fileName a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setTemplateDesign(String fileName) throws DRException {
 		return setTemplateDesign(new JasperTemplateDesign(fileName));
 	}
 
+	/**
+	 * <p>setTemplateDesign.</p>
+	 *
+	 * @param jasperDesign a {@link net.sf.jasperreports.engine.design.JasperDesign} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setTemplateDesign(JasperDesign jasperDesign) throws DRException {
 		return setTemplateDesign(new JasperTemplateDesign(jasperDesign));
 	}
 
+	/**
+	 * <p>setTemplateDesign.</p>
+	 *
+	 * @param jasperDesignUrl a {@link java.net.URL} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder setTemplateDesign(URL jasperDesignUrl) throws DRException {
 		return setTemplateDesign(new JasperTemplateDesign(jasperDesignUrl));
 	}
@@ -235,6 +287,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JasperReportBuilder setParameter(String name, Object value) {
 		super.setParameter(name, value);
@@ -243,6 +296,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JasperReportBuilder setParameters(Map<String, Object> parameters) {
 		super.setParameters(parameters);
@@ -251,6 +305,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>rebuild.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder rebuild() throws DRException {
 		builded = false;
 		reportDesign = null;
@@ -278,6 +338,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return reportDesign;
 	}
 
+	/**
+	 * <p>toJasperDesign.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.design.JasperDesign} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperDesign toJasperDesign() throws DRException {
 		if (jasperDesign == null) {
 			jasperDesign = toJasperReportDesign().getDesign();
@@ -285,6 +351,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return jasperDesign;
 	}
 
+	/**
+	 * <p>toJasperReport.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JasperReport} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReport toJasperReport() throws DRException {
 		if (jasperReport == null) {
 			try {
@@ -296,6 +368,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return jasperReport;
 	}
 
+	/**
+	 * <p>getJasperParameters.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public Map<String, Object> getJasperParameters() throws DRException {
 		if (parameters == null) {
 			parameters = new HashMap<>();
@@ -308,6 +386,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return parameters;
 	}
 
+	/**
+	 * <p>toJasperPrint.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JasperPrint} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperPrint toJasperPrint() throws DRException {
 		if (jasperPrint == null) {
 			Map<String, Object> parameters = getJasperParameters();
@@ -335,16 +419,35 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return jasperPrint;
 	}
 
+	/**
+	 * <p>show.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder show() throws DRException {
 		JasperViewer.viewReport(toJasperPrint());
 		return this;
 	}
 
+	/**
+	 * <p>show.</p>
+	 *
+	 * @param exitOnClose a boolean.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder show(boolean exitOnClose) throws DRException {
 		JasperViewer.viewReport(toJasperPrint(), exitOnClose, null);
 		return this;
 	}
 
+	/**
+	 * <p>showJrXml.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder showJrXml() throws DRException {
 		try {
 			JasperDesignViewer.viewReportDesign(toJasperDesign());
@@ -354,6 +457,13 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>toJrXml.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toJrXml(OutputStream outputStream) throws DRException {
 		Validate.notNull(outputStream, "outputStream must not be null");
 		try {
@@ -364,10 +474,23 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>print.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder print() throws DRException {
 		return print(true);
 	}
 
+	/**
+	 * <p>print.</p>
+	 *
+	 * @param withPrintDialog a boolean.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder print(boolean withPrintDialog) throws DRException {
 		try {
 			JasperPrintManager.printReport(toJasperPrint(), withPrintDialog);
@@ -377,16 +500,37 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>Setter for the field <code>virtualizer</code>.</p>
+	 *
+	 * @param virtualizer a {@link net.sf.jasperreports.engine.JRVirtualizer} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 */
 	public JasperReportBuilder setVirtualizer(JRVirtualizer virtualizer) {
 		this.virtualizer = virtualizer;
 		return this;
 	}
 
 	// image
+	/**
+	 * <p>toImage.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toImage(OutputStream outputStream, ImageType imageType) throws DRException {
 		return toImage(Exporters.imageExporter(outputStream, imageType));
 	}
 
+	/**
+	 * <p>toImage.</p>
+	 *
+	 * @param imageExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toImage(JasperImageExporterBuilder imageExporterBuilder) throws DRException {
 		Validate.notNull(imageExporterBuilder, "imageExporterBuilder must not be null");
 
@@ -483,113 +627,288 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 	}
 
 	// csv
+	/**
+	 * <p>toCsv.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toCsv(OutputStream outputStream) throws DRException {
 		return toCsv(Exporters.csvExporter(outputStream));
 	}
 
+	/**
+	 * <p>toCsv.</p>
+	 *
+	 * @param csvExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toCsv(JasperCsvExporterBuilder csvExporterBuilder) throws DRException {
 		return export(csvExporterBuilder);
 	}
 
 	// docx
+	/**
+	 * <p>toDocx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toDocx(OutputStream outputStream) throws DRException {
 		return toDocx(Exporters.docxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toDocx.</p>
+	 *
+	 * @param docxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toDocx(JasperDocxExporterBuilder docxExporterBuilder) throws DRException {
 		return export(docxExporterBuilder);
 	}
 
 	// html
+	/**
+	 * <p>toHtml.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toHtml(OutputStream outputStream) throws DRException {
 		return toHtml(Exporters.htmlExporter(outputStream));
 	}
 
+	/**
+	 * <p>toHtml.</p>
+	 *
+	 * @param htmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toHtml(JasperHtmlExporterBuilder htmlExporterBuilder) throws DRException {
 		return export(htmlExporterBuilder);
 	}
 
 	// ods
+	/**
+	 * <p>toOds.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toOds(OutputStream outputStream) throws DRException {
 		return toOds(Exporters.odsExporter(outputStream));
 	}
 
+	/**
+	 * <p>toOds.</p>
+	 *
+	 * @param odsExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdsExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toOds(JasperOdsExporterBuilder odsExporterBuilder) throws DRException {
 		return export(odsExporterBuilder);
 	}
 
 	// odt
+	/**
+	 * <p>toOdt.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toOdt(OutputStream outputStream) throws DRException {
 		return toOdt(Exporters.odtExporter(outputStream));
 	}
 
+	/**
+	 * <p>toOdt.</p>
+	 *
+	 * @param odtExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toOdt(JasperOdtExporterBuilder odtExporterBuilder) throws DRException {
 		return export(odtExporterBuilder);
 	}
 
 	// pdf
+	/**
+	 * <p>toPdf.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toPdf(OutputStream outputStream) throws DRException {
 		return toPdf(Exporters.pdfExporter(outputStream));
 	}
 
+	/**
+	 * <p>toPdf.</p>
+	 *
+	 * @param pdfExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toPdf(JasperPdfExporterBuilder pdfExporterBuilder) throws DRException {
 		return export(pdfExporterBuilder);
 	}
 
 	// rtf
+	/**
+	 * <p>toRtf.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toRtf(OutputStream outputStream) throws DRException {
 		return toRtf(Exporters.rtfExporter(outputStream));
 	}
 
+	/**
+	 * <p>toRtf.</p>
+	 *
+	 * @param rtfExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperRtfExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toRtf(JasperRtfExporterBuilder rtfExporterBuilder) throws DRException {
 		return export(rtfExporterBuilder);
 	}
 
 	// text
+	/**
+	 * <p>toText.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toText(OutputStream outputStream) throws DRException {
 		return toText(Exporters.textExporter(outputStream));
 	}
 
+	/**
+	 * <p>toText.</p>
+	 *
+	 * @param textExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toText(JasperTextExporterBuilder textExporterBuilder) throws DRException {
 		return export(textExporterBuilder);
 	}
 
 	// xls
+	/**
+	 * <p>toXls.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXls(OutputStream outputStream) throws DRException {
 		return toXls(Exporters.xlsExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXls.</p>
+	 *
+	 * @param xlsExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXlsExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXls(JasperXlsExporterBuilder xlsExporterBuilder) throws DRException {
 		return export(xlsExporterBuilder);
 	}
 
 	// xlsx
+	/**
+	 * <p>toXlsx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXlsx(OutputStream outputStream) throws DRException {
 		return toXlsx(Exporters.xlsxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXlsx.</p>
+	 *
+	 * @param xlsxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXlsxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXlsx(JasperXlsxExporterBuilder xlsxExporterBuilder) throws DRException {
 		return export(xlsxExporterBuilder);
 	}
 
 	// xml
+	/**
+	 * <p>toXml.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXml(OutputStream outputStream) throws DRException {
 		return toXml(Exporters.xmlExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXml.</p>
+	 *
+	 * @param xmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXmlExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toXml(JasperXmlExporterBuilder xmlExporterBuilder) throws DRException {
 		return export(xmlExporterBuilder);
 	}
 
 	// pptx
+	/**
+	 * <p>toPptx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toPptx(OutputStream outputStream) throws DRException {
 		return toPptx(Exporters.pptxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toPptx.</p>
+	 *
+	 * @param pptxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperPptxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder toPptx(JasperPptxExporterBuilder pptxExporterBuilder) throws DRException {
 		return export(pptxExporterBuilder);
 	}
 
+	/**
+	 * <p>export.</p>
+	 *
+	 * @param exporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.AbstractJasperExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder export(AbstractJasperExporterBuilder<?, ? extends AbstractJasperExporter> exporterBuilder) throws DRException {
 		Validate.notNull(exporterBuilder, "exporterBuilder must not be null");
 		try {
@@ -604,10 +923,20 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 		return this;
 	}
 
+	/**
+	 * <p>Getter for the field <code>connection</code>.</p>
+	 *
+	 * @return a {@link java.sql.Connection} object.
+	 */
 	public Connection getConnection() {
 		return connection;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dataSource</code>.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource getDataSource() {
 		return dataSource;
 	}

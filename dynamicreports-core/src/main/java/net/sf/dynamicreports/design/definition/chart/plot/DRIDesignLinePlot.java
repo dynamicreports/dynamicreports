@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.design.definition.chart.plot;
 
 /**
+ * <p>DRIDesignLinePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignLinePlot extends DRIDesignAxisPlot {
 
+	/**
+	 * <p>getShowShapes.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowShapes();
 
+	/**
+	 * <p>getShowLines.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLines();
 }

@@ -36,13 +36,23 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>CrosstabExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIExpression<T> expression;
 
+	/**
+	 * <p>Constructor for CrosstabExpression.</p>
+	 *
+	 * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public CrosstabExpression(DRICrosstab crosstab, DRIExpression<T> expression) throws DRException {
 		this.expression = expression;
 		if (expression instanceof DRIComplexExpression) {
@@ -60,6 +70,7 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@SuppressWarnings("unchecked")
 	@Override
 	public T evaluate(List<?> values, ReportParameters reportParameters) {
@@ -75,6 +86,7 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Class getValueClass() {

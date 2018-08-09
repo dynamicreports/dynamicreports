@@ -25,11 +25,24 @@ package net.sf.dynamicreports.report.definition.expression;
 import java.io.Serializable;
 
 /**
+ * <p>DRIPropertyExpression interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPropertyExpression extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getValueExpression();
 }

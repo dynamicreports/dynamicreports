@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract DRFormatField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRFormatField extends DRHyperLinkComponent implements DRIFormatField {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,21 +41,33 @@ public abstract class DRFormatField extends DRHyperLinkComponent implements DRIF
 	private DRIExpression<String> formatExpression;
 	private HorizontalTextAlignment horizontalTextAlignment;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getFormatExpression() {
 		return formatExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>formatExpression</code>.</p>
+	 *
+	 * @param formatExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setFormatExpression(DRIExpression<String> formatExpression) {
 		Validate.notNull(formatExpression, "formatExpression must not be null");
 		this.formatExpression = formatExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalTextAlignment</code>.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}

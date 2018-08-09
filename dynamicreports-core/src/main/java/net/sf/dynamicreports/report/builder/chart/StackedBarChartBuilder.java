@@ -27,40 +27,82 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>StackedBarChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StackedBarChartBuilder extends AbstractCategoryChartBuilder<StackedBarChartBuilder, DRBarPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for StackedBarChartBuilder.</p>
+	 */
 	protected StackedBarChartBuilder() {
 		super(ChartType.STACKEDBAR);
 	}
 
+	/**
+	 * <p>setShowLabels.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setShowLabels(Boolean showLabels) {
 		getPlot().setShowLabels(showLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickLabels.</p>
+	 *
+	 * @param showTickLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setShowTickLabels(Boolean showTickLabels) {
 		getPlot().setShowTickLabels(showTickLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickMarks.</p>
+	 *
+	 * @param showTickMarks a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setShowTickMarks(Boolean showTickMarks) {
 		getPlot().setShowTickMarks(showTickMarks);
 		return this;
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;
 	}
 
+	/**
+	 * <p>setPercentValuePattern.</p>
+	 *
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	public StackedBarChartBuilder setPercentValuePattern(String percentValuePattern) {
 		getPlot().setPercentValuePattern(percentValuePattern);
 		return this;

@@ -26,18 +26,27 @@ import net.sf.dynamicreports.jasper.definition.export.JasperIPptxExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperPptxExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperPptxExporter extends AbstractJasperExporter implements JasperIPptxExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean ignoreHyperLink;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getIgnoreHyperLink() {
 		return ignoreHyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
+	 *
+	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+	 */
 	public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
 		this.ignoreHyperLink = ignoreHyperLink;
 	}

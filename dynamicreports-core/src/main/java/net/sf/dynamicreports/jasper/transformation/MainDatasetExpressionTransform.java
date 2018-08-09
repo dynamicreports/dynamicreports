@@ -40,70 +40,90 @@ import net.sf.jasperreports.engine.design.JRDesignSortField;
 import net.sf.jasperreports.engine.design.JRDesignVariable;
 
 /**
+ * <p>MainDatasetExpressionTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MainDatasetExpressionTransform extends AbstractExpressionTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for MainDatasetExpressionTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public MainDatasetExpressionTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected JasperCustomValues getCustomValues() {
 		return accessor.getCustomValues();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected JRGroup getGroup(DRIDesignGroup group) {
 		return accessor.getGroupTransform().getGroup(group);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignField> getFields() {
 		return accessor.getReport().getFields();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignVariable> getVariables() {
 		return accessor.getReport().getVariables();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignSystemExpression> getSystemExpressions() {
 		return accessor.getReport().getSystemExpressions();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignJasperExpression> getJasperExpressions() {
 		return accessor.getReport().getJasperExpressions();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignSimpleExpression> getSimpleExpressions() {
 		return accessor.getReport().getSimpleExpressions();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignComplexExpression> getComplexExpressions() {
 		return accessor.getReport().getComplexExpressions();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Collection<DRIDesignSort> getSorts() {
 		return accessor.getReport().getSorts();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void addField(JRDesignField field) throws JRException {
 		accessor.getDesign().addField(field);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void addVariable(JRDesignVariable variable) throws JRException {
 		accessor.getDesign().addVariable(variable);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void addSort(JRDesignSortField sort) throws JRException {
 		accessor.getDesign().addSortField(sort);

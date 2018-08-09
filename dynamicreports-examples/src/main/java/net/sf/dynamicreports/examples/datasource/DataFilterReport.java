@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>DataFilterReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DataFilterReport {
 
+	/**
+	 * <p>Constructor for DataFilterReport.</p>
+	 */
 	public DataFilterReport() {
 		build();
 	}
@@ -72,6 +78,11 @@ public class DataFilterReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new DataFilterReport();
 	}

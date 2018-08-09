@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>EqualExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class EqualExpression extends AbstractSimpleExpression<Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,6 +42,13 @@ public class EqualExpression extends AbstractSimpleExpression<Boolean> {
 	private Object[] values;
 
 	@SafeVarargs
+	/**
+	 * <p>Constructor for EqualExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param values a T object.
+	 * @param <T> a T object.
+	 */
 	public <T> EqualExpression(DRIValue<T> value, T... values) {
 		Validate.notNull(value, "value must not be null");
 		Validate.noNullElements(values, "values must not contains null value");
@@ -46,6 +56,7 @@ public class EqualExpression extends AbstractSimpleExpression<Boolean> {
 		this.values = values;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean evaluate(ReportParameters reportParameters) {
 		Object actualValue = reportParameters.getValue(value);
@@ -57,6 +68,7 @@ public class EqualExpression extends AbstractSimpleExpression<Boolean> {
 		return false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<Boolean> getValueClass() {
 		return Boolean.class;

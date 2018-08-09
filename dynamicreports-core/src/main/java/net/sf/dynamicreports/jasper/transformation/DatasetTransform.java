@@ -36,19 +36,30 @@ import net.sf.jasperreports.engine.design.JRDesignDatasetRun;
 import net.sf.jasperreports.engine.design.JRDesignParameter;
 
 /**
+ * <p>DatasetTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatasetTransform {
 	private JasperTransformAccessor accessor;
 	private Map<DRIDesignDataset, Map<String, Object>> datasetParameters;
 	private Map<DRIDesignDataset, DatasetExpressionTransform> datasetExpressions;
 
+	/**
+	 * <p>Constructor for DatasetTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public DatasetTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 		datasetParameters = new HashMap<DRIDesignDataset, Map<String, Object>>();
 		datasetExpressions = new HashMap<DRIDesignDataset, DatasetExpressionTransform>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		for (DRIDesignDataset dataset : accessor.getReport().getDatasets()) {
 			addDataset(dataset);
@@ -104,6 +115,12 @@ public class DatasetTransform {
 		}
 	}
 
+	/**
+	 * <p>datasetRun.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignDatasetRun} object.
+	 */
 	public JRDesignDatasetRun datasetRun(DRIDesignDataset dataset) {
 		if (dataset == null) {
 			return null;
@@ -119,10 +136,22 @@ public class DatasetTransform {
 		return jrDatasetRun;
 	}
 
+	/**
+	 * <p>Getter for the field <code>datasetParameters</code>.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 * @return a {@link java.util.Map} object.
+	 */
 	protected Map<String, Object> getDatasetParameters(DRIDesignDataset dataset) {
 		return datasetParameters.get(dataset);
 	}
 
+	/**
+	 * <p>getDatasetExpressionTransform.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.DatasetExpressionTransform} object.
+	 */
 	public DatasetExpressionTransform getDatasetExpressionTransform(DRIDesignDataset dataset) {
 		return datasetExpressions.get(dataset);
 	}

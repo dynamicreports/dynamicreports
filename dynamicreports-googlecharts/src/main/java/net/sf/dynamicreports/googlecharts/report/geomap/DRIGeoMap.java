@@ -29,19 +29,52 @@ import net.sf.dynamicreports.report.component.DRICustomComponent;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIGeoMap interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIGeoMap extends DRICustomComponent {
 
+	/**
+	 * <p>getShowLegend.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLegend();
 
+	/**
+	 * <p>getDataMode.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
+	 */
 	public GeoMapDataMode getDataMode();
 
+	/**
+	 * <p>getRegionExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getRegionExpression();
 
+	/**
+	 * <p>getValueLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getValueLabelExpression();
 
+	/**
+	 * <p>getColors.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getColors();
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIGeoMapDataset} object.
+	 */
 	public DRIGeoMapDataset getDataset();
 }

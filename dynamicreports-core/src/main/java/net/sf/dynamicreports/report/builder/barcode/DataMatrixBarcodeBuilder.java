@@ -28,19 +28,38 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DataMatrixBarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DataMatrixBarcodeBuilder extends AbstractBarcode4jBuilder<DataMatrixBarcodeBuilder, DRDataMatrixBarcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DataMatrixBarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected DataMatrixBarcodeBuilder(String code) {
 		super(code, new DRDataMatrixBarcode());
 	}
 
+	/**
+	 * <p>Constructor for DataMatrixBarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected DataMatrixBarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRDataMatrixBarcode());
 	}
 
+	/**
+	 * <p>setShape.</p>
+	 *
+	 * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.DataMatrixBarcodeBuilder} object.
+	 */
 	public DataMatrixBarcodeBuilder setShape(BarcodeShape shape) {
 		getObject().setShape(shape);
 		return this;

@@ -25,11 +25,24 @@ package net.sf.dynamicreports.design.definition.barcode;
 import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
 
 /**
+ * <p>DRIDesignQrCode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignQrCode extends DRIDesignBarcode {
 
+	/**
+	 * <p>getMargin.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMargin();
 
+	/**
+	 * <p>getErrorCorrectionLevel.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel} object.
+	 */
 	public QrCodeErrorCorrectionLevel getErrorCorrectionLevel();
 }

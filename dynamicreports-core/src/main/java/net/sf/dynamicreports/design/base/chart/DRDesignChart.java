@@ -36,7 +36,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
+ * <p>DRDesignChart class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesignChart {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -52,97 +55,160 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
 	private DRDesignGroup evaluationGroup;
 	private String theme;
 
+	/**
+	 * <p>Constructor for DRDesignChart.</p>
+	 */
 	public DRDesignChart() {
 		super("chart");
 		customizers = new ArrayList<DRIChartCustomizer>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ChartType getChartType() {
 		return chartType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>chartType</code>.</p>
+	 *
+	 * @param chartType a {@link net.sf.dynamicreports.report.constant.ChartType} object.
+	 */
 	public void setChartType(ChartType chartType) {
 		this.chartType = chartType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignChartDataset getDataset() {
 		return dataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataset</code>.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.base.chart.dataset.DRDesignChartDataset} object.
+	 */
 	public void setDataset(DRDesignChartDataset dataset) {
 		this.dataset = dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignPlot getPlot() {
 		return plot;
 	}
 
+	/**
+	 * <p>Setter for the field <code>plot</code>.</p>
+	 *
+	 * @param plot a {@link net.sf.dynamicreports.design.definition.chart.plot.DRIDesignPlot} object.
+	 */
 	public void setPlot(DRIDesignPlot plot) {
 		this.plot = plot;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIChartCustomizer> getCustomizers() {
 		return customizers;
 	}
 
+	/**
+	 * <p>Setter for the field <code>customizers</code>.</p>
+	 *
+	 * @param customizers a {@link java.util.List} object.
+	 */
 	public void setCustomizers(List<DRIChartCustomizer> customizers) {
 		this.customizers = customizers;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignChartTitle getTitle() {
 		return title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link net.sf.dynamicreports.design.base.chart.DRDesignChartTitle} object.
+	 */
 	public void setTitle(DRDesignChartTitle title) {
 		this.title = title;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignChartSubtitle getSubtitle() {
 		return subtitle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subtitle</code>.</p>
+	 *
+	 * @param subtitle a {@link net.sf.dynamicreports.design.base.chart.DRDesignChartSubtitle} object.
+	 */
 	public void setSubtitle(DRDesignChartSubtitle subtitle) {
 		this.subtitle = subtitle;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignChartLegend getLegend() {
 		return legend;
 	}
 
+	/**
+	 * <p>Setter for the field <code>legend</code>.</p>
+	 *
+	 * @param legend a {@link net.sf.dynamicreports.design.base.chart.DRDesignChartLegend} object.
+	 */
 	public void setLegend(DRDesignChartLegend legend) {
 		this.legend = legend;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public EvaluationTime getEvaluationTime() {
 		return evaluationTime;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationTime</code>.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public void setEvaluationTime(EvaluationTime evaluationTime) {
 		this.evaluationTime = evaluationTime;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignGroup getEvaluationGroup() {
 		return evaluationGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationGroup</code>.</p>
+	 *
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	public void setEvaluationGroup(DRDesignGroup evaluationGroup) {
 		this.evaluationGroup = evaluationGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getTheme() {
 		return theme;
 	}
 
+	/**
+	 * <p>Setter for the field <code>theme</code>.</p>
+	 *
+	 * @param theme a {@link java.lang.String} object.
+	 */
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}

@@ -64,7 +64,10 @@ import net.sf.dynamicreports.report.definition.component.DRIComponent;
 import net.sf.dynamicreports.report.definition.style.DRIStyle;
 
 /**
+ * <p>Default class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Default {
 	private String reportName;
@@ -268,6 +271,9 @@ public class Default {
 	// system fonts
 	private boolean loadSystemFonts;
 
+	/**
+	 * <p>Constructor for Default.</p>
+	 */
 	public Default() {
 		init();
 	}
@@ -488,686 +494,1541 @@ public class Default {
 		this.loadSystemFonts = true;
 	}
 
+	/**
+	 * <p>Getter for the field <code>reportName</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getReportName() {
 		return reportName;
 	}
 
+	/**
+	 * <p>Getter for the field <code>locale</code>.</p>
+	 *
+	 * @return a {@link java.util.Locale} object.
+	 */
 	public Locale getLocale() {
 		return locale;
 	}
 
+	/**
+	 * <p>isShowColumnTitle.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isShowColumnTitle() {
 		return showColumnTitle;
 	}
 
+	/**
+	 * <p>isShowColumnValues.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isShowColumnValues() {
 		return showColumnValues;
 	}
 
+	/**
+	 * <p>isIgnorePagination.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isIgnorePagination() {
 		return ignorePagination;
 	}
 
+	/**
+	 * <p>Getter for the field <code>whenNoDataType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.WhenNoDataType} object.
+	 */
 	public WhenNoDataType getWhenNoDataType() {
 		return whenNoDataType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>whenResourceMissingType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.WhenResourceMissingType} object.
+	 */
 	public WhenResourceMissingType getWhenResourceMissingType() {
 		return whenResourceMissingType;
 	}
 
+	/**
+	 * <p>isTitleOnANewPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isTitleOnANewPage() {
 		return titleOnANewPage;
 	}
 
+	/**
+	 * <p>isSummaryOnANewPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isSummaryOnANewPage() {
 		return summaryOnANewPage;
 	}
 
+	/**
+	 * <p>isSummaryWithPageHeaderAndFooter.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isSummaryWithPageHeaderAndFooter() {
 		return summaryWithPageHeaderAndFooter;
 	}
 
+	/**
+	 * <p>isFloatColumnFooter.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isFloatColumnFooter() {
 		return floatColumnFooter;
 	}
 
+	/**
+	 * <p>Getter for the field <code>printOrder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	public Orientation getPrintOrder() {
 		return printOrder;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnDirection</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.RunDirection} object.
+	 */
 	public RunDirection getColumnDirection() {
 		return columnDirection;
 	}
 
+	/**
+	 * <p>Getter for the field <code>language</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLanguage() {
 		return language;
 	}
 
+	/**
+	 * <p>isUseFieldNameAsDescription.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isUseFieldNameAsDescription() {
 		return useFieldNameAsDescription;
 	}
 
+	/**
+	 * <p>isHighlightDetailOddRows.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isHighlightDetailOddRows() {
 		return highlightDetailOddRows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailOddRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRSimpleStyle} object.
+	 */
 	public DRSimpleStyle getDetailOddRowStyle() {
 		return detailOddRowStyle;
 	}
 
+	/**
+	 * <p>isHighlightDetailEvenRows.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isHighlightDetailEvenRows() {
 		return highlightDetailEvenRows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailEvenRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRSimpleStyle} object.
+	 */
 	public DRSimpleStyle getDetailEvenRowStyle() {
 		return detailEvenRowStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>textStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getTextStyle() {
 		return textStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnTitleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getColumnTitleStyle() {
 		return columnTitleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getColumnStyle() {
 		return columnStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupTitleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getGroupTitleStyle() {
 		return groupTitleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getGroupStyle() {
 		return groupStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subtotalStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getSubtotalStyle() {
 		return subtotalStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>imageStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getImageStyle() {
 		return imageStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getChartStyle() {
 		return chartStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>barcodeStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getBarcodeStyle() {
 		return barcodeStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageWidth() {
 		return pageWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageHeight() {
 		return pageHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageOrientation</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public PageOrientation getPageOrientation() {
 		return pageOrientation;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageMargin</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRMargin} object.
+	 */
 	public DRMargin getPageMargin() {
 		return pageMargin;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subreportPageMargin</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRMargin} object.
+	 */
 	public DRMargin getSubreportPageMargin() {
 		return subreportPageMargin;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageColumnsPerPage</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageColumnsPerPage() {
 		return pageColumnsPerPage;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageColumnSpace</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageColumnSpace() {
 		return pageColumnSpace;
 	}
 
+	/**
+	 * <p>isIgnorePageWidth.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isIgnorePageWidth() {
 		return ignorePageWidth;
 	}
 
+	/**
+	 * <p>isColumnPrintRepeatedDetailValues.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isColumnPrintRepeatedDetailValues() {
 		return columnPrintRepeatedDetailValues;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getColumnWidth() {
 		return columnWidth;
 	}
 
+	/**
+	 * <p>isRemoveLineWhenBlank.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isRemoveLineWhenBlank() {
 		return removeLineWhenBlank;
 	}
 
+	/**
+	 * <p>isPrintInFirstWholeBand.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isPrintInFirstWholeBand() {
 		return printInFirstWholeBand;
 	}
 
+	/**
+	 * <p>isPrintWhenDetailOverflows.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isPrintWhenDetailOverflows() {
 		return printWhenDetailOverflows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupHeaderLayout</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.GroupHeaderLayout} object.
+	 */
 	public GroupHeaderLayout getGroupHeaderLayout() {
 		return groupHeaderLayout;
 	}
 
+	/**
+	 * <p>isGroupHideColumn.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupHideColumn() {
 		return groupHideColumn;
 	}
 
+	/**
+	 * <p>isGroupShowColumnHeaderAndFooter.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupShowColumnHeaderAndFooter() {
 		return groupShowColumnHeaderAndFooter;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupPadding</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getGroupPadding() {
 		return groupPadding;
 	}
 
+	/**
+	 * <p>isGroupStartInNewPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupStartInNewPage() {
 		return groupStartInNewPage;
 	}
 
+	/**
+	 * <p>isGroupStartInNewColumn.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupStartInNewColumn() {
 		return groupStartInNewColumn;
 	}
 
+	/**
+	 * <p>isGroupReprintHeaderOnEachPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupReprintHeaderOnEachPage() {
 		return groupReprintHeaderOnEachPage;
 	}
 
+	/**
+	 * <p>isGroupResetPageNumber.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupResetPageNumber() {
 		return groupResetPageNumber;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupMinHeightToStartNewPage</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getGroupMinHeightToStartNewPage() {
 		return groupMinHeightToStartNewPage;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupFooterPosition</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
+	 */
 	public GroupFooterPosition getGroupFooterPosition() {
 		return groupFooterPosition;
 	}
 
+	/**
+	 * <p>isGroupKeepTogether.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupKeepTogether() {
 		return groupKeepTogether;
 	}
 
+	/**
+	 * <p>isGroupHeaderWithSubtotal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupHeaderWithSubtotal() {
 		return groupHeaderWithSubtotal;
 	}
 
+	/**
+	 * <p>isGroupByDataType.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isGroupByDataType() {
 		return groupByDataType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subtotalLabelPosition</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Position} object.
+	 */
 	public Position getSubtotalLabelPosition() {
 		return subtotalLabelPosition;
 	}
 
+	/**
+	 * <p>isTableOfContents.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isTableOfContents() {
 		return tableOfContents;
 	}
 
+	/**
+	 * <p>Getter for the field <code>tableOfContentsCustomizer</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer} object.
+	 */
 	public DRITableOfContentsCustomizer getTableOfContentsCustomizer() {
 		return tableOfContentsCustomizer;
 	}
 
+	/**
+	 * <p>isAddGroupToTableOfContents.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isAddGroupToTableOfContents() {
 		return addGroupToTableOfContents;
 	}
 
+	/**
+	 * <p>Getter for the field <code>tableOfContentsPosition</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
+	 */
 	public TableOfContentsPosition getTableOfContentsPosition() {
 		return tableOfContentsPosition;
 	}
 
+	/**
+	 * <p>Getter for the field <code>textFieldWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getTextFieldWidth() {
 		return textFieldWidth;
 	}
 
+	/**
+	 * <p>isTextFieldPrintRepeatedValues.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isTextFieldPrintRepeatedValues() {
 		return textFieldPrintRepeatedValues;
 	}
 
+	/**
+	 * <p>isTextFieldStretchWithOverflow.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isTextFieldStretchWithOverflow() {
 		return textFieldStretchWithOverflow;
 	}
 
+	/**
+	 * <p>Getter for the field <code>imageWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getImageWidth() {
 		return imageWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>imageHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getImageHeight() {
 		return imageHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>fillerWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getFillerWidth() {
 		return fillerWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>fillerHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getFillerHeight() {
 		return fillerHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>lineWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getLineWidth() {
 		return lineWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>lineHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getLineHeight() {
 		return lineHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>ellipseWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getEllipseWidth() {
 		return ellipseWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>ellipseHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getEllipseHeight() {
 		return ellipseHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>rectangleRadius</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getRectangleRadius() {
 		return rectangleRadius;
 	}
 
+	/**
+	 * <p>Getter for the field <code>rectangleWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getRectangleWidth() {
 		return rectangleWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>rectangleHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getRectangleHeight() {
 		return rectangleHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>mapWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getMapWidth() {
 		return mapWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>mapHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getMapHeight() {
 		return mapHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>customComponentWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCustomComponentWidth() {
 		return customComponentWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>customComponentHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCustomComponentHeight() {
 		return customComponentHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>breakWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBreakWidth() {
 		return breakWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>breakHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBreakHeight() {
 		return breakHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>genericElementWidth</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getGenericElementWidth() {
 		return genericElementWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>genericElementHeight</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getGenericElementHeight() {
 		return genericElementHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>listWidth</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getListWidth() {
 		return listWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>listHeight</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getListHeight() {
 		return listHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>listgap</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getListgap() {
 		return listgap;
 	}
 
+	/**
+	 * <p>Getter for the field <code>horizontalCellComponentAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public HorizontalCellComponentAlignment getHorizontalCellComponentAlignment() {
 		return horizontalCellComponentAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>verticalCellComponentAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public VerticalCellComponentAlignment getVerticalCellComponentAlignment() {
 		return verticalCellComponentAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>multiPageListWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getMultiPageListWidth() {
 		return multiPageListWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>multiPageListHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getMultiPageListHeight() {
 		return multiPageListHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getChartWidth() {
 		return chartWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getChartHeight() {
 		return chartHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartSeriesColors</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getChartSeriesColors() {
 		return chartSeriesColors;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartValuePattern</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getChartValuePattern() {
 		return chartValuePattern;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartPercentValuePattern</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getChartPercentValuePattern() {
 		return chartPercentValuePattern;
 	}
 
+	/**
+	 * <p>isChartCategoryDatasetUseSeriesAsCategory.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isChartCategoryDatasetUseSeriesAsCategory() {
 		return chartCategoryDatasetUseSeriesAsCategory;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartTimeSeriesDatasetTimePeriodType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
+	 */
 	public TimePeriod getChartTimeSeriesDatasetTimePeriodType() {
 		return chartTimeSeriesDatasetTimePeriodType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartThermometerPlotValueLocation</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ValueLocation} object.
+	 */
 	public ValueLocation getChartThermometerPlotValueLocation() {
 		return chartThermometerPlotValueLocation;
 	}
 
+	/**
+	 * <p>Getter for the field <code>chartTheme</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getChartTheme() {
 		return chartTheme;
 	}
 
+	/**
+	 * <p>Getter for the field <code>barcodeWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBarcodeWidth() {
 		return barcodeWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>barcodeHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBarcodeHeight() {
 		return barcodeHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subreportWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getSubreportWidth() {
 		return subreportWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subreportHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getSubreportHeight() {
 		return subreportHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCrosstabWidth() {
 		return crosstabWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCrosstabHeight() {
 		return crosstabHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabColumnGroupTotalPosition</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
+	 */
 	public CrosstabTotalPosition getCrosstabColumnGroupTotalPosition() {
 		return crosstabColumnGroupTotalPosition;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabRowGroupTotalPosition</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
+	 */
 	public CrosstabTotalPosition getCrosstabRowGroupTotalPosition() {
 		return crosstabRowGroupTotalPosition;
 	}
 
+	/**
+	 * <p>isCrosstabColumnGroupShowTotal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isCrosstabColumnGroupShowTotal() {
 		return crosstabColumnGroupShowTotal;
 	}
 
+	/**
+	 * <p>isCrosstabRowGroupShowTotal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isCrosstabRowGroupShowTotal() {
 		return crosstabRowGroupShowTotal;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabColumnGroupTotalHeaderMaxWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCrosstabColumnGroupTotalHeaderMaxWidth() {
 		return crosstabColumnGroupTotalHeaderMaxWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabRowGroupHeaderMaxWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCrosstabRowGroupHeaderMaxWidth() {
 		return crosstabRowGroupHeaderMaxWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabCellMaxWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getCrosstabCellMaxWidth() {
 		return crosstabCellMaxWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabOddRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRSimpleStyle} object.
+	 */
 	public DRSimpleStyle getCrosstabOddRowStyle() {
 		return crosstabOddRowStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabEvenRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRSimpleStyle} object.
+	 */
 	public DRSimpleStyle getCrosstabEvenRowStyle() {
 		return crosstabEvenRowStyle;
 	}
 
+	/**
+	 * <p>isCrosstabHighlightOddRows.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isCrosstabHighlightOddRows() {
 		return crosstabHighlightOddRows;
 	}
 
+	/**
+	 * <p>isCrosstabHighlightEvenRows.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isCrosstabHighlightEvenRows() {
 		return crosstabHighlightEvenRows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabGroupStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getCrosstabGroupStyle() {
 		return crosstabGroupStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabGroupTotalStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getCrosstabGroupTotalStyle() {
 		return crosstabGroupTotalStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabGrandTotalStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getCrosstabGrandTotalStyle() {
 		return crosstabGrandTotalStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabCellStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getCrosstabCellStyle() {
 		return crosstabCellStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabMeasureTitleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	public DRStyle getCrosstabMeasureTitleStyle() {
 		return crosstabMeasureTitleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>crosstabPercentageType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 */
 	public CrosstabPercentageType getCrosstabPercentageType() {
 		return crosstabPercentageType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanComponentType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BooleanComponentType} object.
+	 */
 	public BooleanComponentType getBooleanComponentType() {
 		return booleanComponentType;
 	}
 
+	/**
+	 * <p>isBooleanEmptyWhenNullValue.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isBooleanEmptyWhenNullValue() {
 		return booleanEmptyWhenNullValue;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanImageWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBooleanImageWidth() {
 		return booleanImageWidth;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanImageHeight</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBooleanImageHeight() {
 		return booleanImageHeight;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanColumnStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIStyle} object.
+	 */
 	public DRIStyle getBooleanColumnStyle() {
 		return booleanColumnStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanHorizontalImageAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 */
 	public HorizontalImageAlignment getBooleanHorizontalImageAlignment() {
 		return booleanHorizontalImageAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>defaultSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getDefaultSplitType() {
 		return defaultSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getTitleSplitType() {
 		return titleSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageHeaderSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getPageHeaderSplitType() {
 		return pageHeaderSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageFooterSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getPageFooterSplitType() {
 		return pageFooterSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnHeaderSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getColumnHeaderSplitType() {
 		return columnHeaderSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnFooterSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getColumnFooterSplitType() {
 		return columnFooterSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupHeaderSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getGroupHeaderSplitType() {
 		return groupHeaderSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupFooterSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getGroupFooterSplitType() {
 		return groupFooterSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailHeaderSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getDetailHeaderSplitType() {
 		return detailHeaderSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getDetailSplitType() {
 		return detailSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailFooterSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getDetailFooterSplitType() {
 		return detailFooterSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>lastPageFooterSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getLastPageFooterSplitType() {
 		return lastPageFooterSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>summarySplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getSummarySplitType() {
 		return summarySplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>noDataSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getNoDataSplitType() {
 		return noDataSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>backgroundSplitType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getBackgroundSplitType() {
 		return backgroundSplitType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bandStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIStyle} object.
+	 */
 	public DRIStyle getBandStyle() {
 		return bandStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bandBackgroundComponent</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public DRIComponent getBandBackgroundComponent() {
 		return bandBackgroundComponent;
 	}
 
+	/**
+	 * <p>Getter for the field <code>font</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 */
 	public DRFont getFont() {
 		return font;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bigDecimalType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, BigDecimal> getBigDecimalType() {
 		return bigDecimalType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>bigIntegerType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, BigInteger> getBigIntegerType() {
 		return bigIntegerType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>byteType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Byte> getByteType() {
 		return byteType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>doubleType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Double> getDoubleType() {
 		return doubleType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>floatType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Float> getFloatType() {
 		return floatType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>integerType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Integer> getIntegerType() {
 		return integerType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>longType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Long> getLongType() {
 		return longType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>shortType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Short> getShortType() {
 		return shortType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateType() {
 		return dateType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearToMonthType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearToMonthType() {
 		return dateYearToMonthType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearToHourType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearToHourType() {
 		return dateYearToHourType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearToMinuteType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearToMinuteType() {
 		return dateYearToMinuteType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearToSecondType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearToSecondType() {
 		return dateYearToSecondType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearToFractionType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearToFractionType() {
 		return dateYearToFractionType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateYearType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateYearType() {
 		return dateYearType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateMonthType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateMonthType() {
 		return dateMonthType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>dateDayType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getDateDayType() {
 		return dateDayType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>timeHourToMinuteType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getTimeHourToMinuteType() {
 		return timeHourToMinuteType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>timeHourToSecondType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getTimeHourToSecondType() {
 		return timeHourToSecondType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>timeHourToFractionType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Date, Date> getTimeHourToFractionType() {
 		return timeHourToFractionType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>percentageType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Number, Double> getPercentageType() {
 		return percentageType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>booleanType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Boolean, Boolean> getBooleanType() {
 		return booleanType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>characterType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<Character, Character> getCharacterType() {
 		return characterType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>stringType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.datatype.DRDataType} object.
+	 */
 	public DRDataType<String, String> getStringType() {
 		return stringType;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageXofYHorizontalTextAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public HorizontalTextAlignment getPageXofYHorizontalTextAlignment() {
 		return pageXofYHorizontalTextAlignment;
 	}
 
+	/**
+	 * <p>isLoadSystemFonts.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isLoadSystemFonts() {
 		return loadSystemFonts;
 	}
 
+	/**
+	 * <p>Setter for the field <code>loadSystemFonts</code>.</p>
+	 *
+	 * @param loadSystemFonts a boolean.
+	 */
 	protected void setLoadSystemFonts(boolean loadSystemFonts) {
 		this.loadSystemFonts = loadSystemFonts;
 	}

@@ -25,9 +25,17 @@ package net.sf.dynamicreports.design.definition.barcode;
 import net.sf.dynamicreports.report.constant.BarcodeChecksumMode;
 
 /**
+ * <p>DRIDesignChecksumBarcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignChecksumBarcode extends DRIDesignBarcode4j {
 
+	/**
+	 * <p>getChecksumMode.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
+	 */
 	public BarcodeChecksumMode getChecksumMode();
 }

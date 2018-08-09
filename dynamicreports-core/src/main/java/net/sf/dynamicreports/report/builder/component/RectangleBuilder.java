@@ -27,20 +27,38 @@ import net.sf.dynamicreports.report.builder.style.PenBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>RectangleBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class RectangleBuilder extends DimensionComponentBuilder<RectangleBuilder, DRRectangle> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for RectangleBuilder.</p>
+	 */
 	protected RectangleBuilder() {
 		super(new DRRectangle());
 	}
 
+	/**
+	 * <p>setRadius.</p>
+	 *
+	 * @param radius a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
+	 */
 	public RectangleBuilder setRadius(Integer radius) {
 		getObject().setRadius(radius);
 		return this;
 	}
 
+	/**
+	 * <p>setPen.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
+	 */
 	public RectangleBuilder setPen(PenBuilder pen) {
 		if (pen != null) {
 			getObject().setPen(pen.build());

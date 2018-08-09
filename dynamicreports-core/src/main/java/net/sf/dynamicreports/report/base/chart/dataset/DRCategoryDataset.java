@@ -26,17 +26,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRICategoryDataset;
 
 /**
+ * <p>DRCategoryDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCategoryDataset extends DRSeriesDataset implements DRICategoryDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean useSeriesAsCategory;
 
+	/**
+	 * <p>Setter for the field <code>useSeriesAsCategory</code>.</p>
+	 *
+	 * @param useSeriesAsCategory a {@link java.lang.Boolean} object.
+	 */
 	public void setUseSeriesAsCategory(Boolean useSeriesAsCategory) {
 		this.useSeriesAsCategory = useSeriesAsCategory;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getUseSeriesAsCategory() {
 		return useSeriesAsCategory;

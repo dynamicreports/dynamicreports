@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.LineDirection;
 import net.sf.dynamicreports.report.definition.component.DRILine;
 
 /**
+ * <p>DRLine class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRLine extends DRDimensionComponent implements DRILine {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,20 +39,32 @@ public class DRLine extends DRDimensionComponent implements DRILine {
 	private LineDirection direction;
 	private DRPen pen;
 
+	/** {@inheritDoc} */
 	@Override
 	public LineDirection getDirection() {
 		return direction;
 	}
 
+	/**
+	 * <p>Setter for the field <code>direction</code>.</p>
+	 *
+	 * @param direction a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+	 */
 	public void setDirection(LineDirection direction) {
 		this.direction = direction;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRPen getPen() {
 		return pen;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pen</code>.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	public void setPen(DRPen pen) {
 		this.pen = pen;
 	}

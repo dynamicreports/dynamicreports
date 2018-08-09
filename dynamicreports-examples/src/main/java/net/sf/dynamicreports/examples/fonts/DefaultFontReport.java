@@ -29,13 +29,19 @@ import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DefaultFontReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  *
  *         This report is working properly only when the font "FreeUniversal" is registered.
  *         The font is registered in these files: customfonts.xml and jasperreports_extension.properties. The files are located in the root of the classpath.
+ * @version $Id: $Id
  */
 public class DefaultFontReport {
 
+	/**
+	 * <p>Constructor for DefaultFontReport.</p>
+	 */
 	public DefaultFontReport() {
 		build();
 	}
@@ -65,6 +71,11 @@ public class DefaultFontReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new DefaultFontReport();
 	}

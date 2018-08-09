@@ -46,7 +46,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
+ * <p>SubreportExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SubreportExpression extends AbstractDesignComplexExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -58,6 +61,13 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
 	private Map<ReportBuilder<?>, JasperReportDesign> reportDesigns;
 	private Map<ReportBuilder<?>, JasperReport> jasperReports;
 
+	/**
+	 * <p>Constructor for SubreportExpression.</p>
+	 *
+	 * @param pageWidthExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @param reportExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @param pageWidth a {@link java.lang.Integer} object.
+	 */
 	public SubreportExpression(DRIDesignExpression pageWidthExpression, DRIDesignExpression reportExpression, Integer pageWidth) {
 		addExpression(pageWidthExpression);
 		addExpression(reportExpression);
@@ -67,6 +77,7 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
 		jasperReports = new HashMap<ReportBuilder<?>, JasperReport>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object evaluate(List<?> values, ReportParameters reportParameters) {
 		reportBuilder = (ReportBuilder<?>) values.get(1);
@@ -95,19 +106,31 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
 		return null;
 	}
 
+	/**
+	 * <p>getReportDesign.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.base.JasperReportDesign} object.
+	 */
 	public JasperReportDesign getReportDesign() {
 		return reportDesigns.get(reportBuilder);
 	}
 
+	/**
+	 * <p>Getter for the field <code>reportBuilder</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+	 */
 	public ReportBuilder<?> getReportBuilder() {
 		return reportBuilder;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return JasperReport.class;

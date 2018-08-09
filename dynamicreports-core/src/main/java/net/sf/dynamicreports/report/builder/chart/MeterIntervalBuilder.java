@@ -31,45 +31,93 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>MeterIntervalBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MeterIntervalBuilder extends AbstractBuilder<MeterIntervalBuilder, DRMeterInterval> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for MeterIntervalBuilder.</p>
+	 */
 	protected MeterIntervalBuilder() {
 		super(new DRMeterInterval());
 	}
 
+	/**
+	 * <p>setLabel.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setLabel(String label) {
 		getObject().setLabel(label);
 		return this;
 	}
 
+	/**
+	 * <p>setBackgroundColor.</p>
+	 *
+	 * @param backgroundColor a {@link java.awt.Color} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setBackgroundColor(Color backgroundColor) {
 		getObject().setBackgroundColor(backgroundColor);
 		return this;
 	}
 
+	/**
+	 * <p>setAlpha.</p>
+	 *
+	 * @param alpha a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setAlpha(Double alpha) {
 		getObject().setAlpha(alpha);
 		return this;
 	}
 
+	/**
+	 * <p>setDataRangeLowExpression.</p>
+	 *
+	 * @param dataRangeLowValue a {@link java.lang.Number} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setDataRangeLowExpression(Number dataRangeLowValue) {
 		getObject().setDataRangeLowExpression(Expressions.number(dataRangeLowValue));
 		return this;
 	}
 
+	/**
+	 * <p>setDataRangeLowExpression.</p>
+	 *
+	 * @param dataRangeLowExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setDataRangeLowExpression(DRIExpression<? extends Number> dataRangeLowExpression) {
 		getObject().setDataRangeLowExpression(dataRangeLowExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setDataRangeHighExpression.</p>
+	 *
+	 * @param dataRangeHighValue a {@link java.lang.Number} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setDataRangeHighExpression(Number dataRangeHighValue) {
 		getObject().setDataRangeHighExpression(Expressions.number(dataRangeHighValue));
 		return this;
 	}
 
+	/**
+	 * <p>setDataRangeHighExpression.</p>
+	 *
+	 * @param dataRangeHighExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+	 */
 	public MeterIntervalBuilder setDataRangeHighExpression(DRIExpression<? extends Number> dataRangeHighExpression) {
 		getObject().setDataRangeHighExpression(dataRangeHighExpression);
 		return this;

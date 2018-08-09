@@ -25,13 +25,31 @@ package net.sf.dynamicreports.design.definition.style;
 import java.util.List;
 
 /**
+ * <p>DRIDesignStyle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignStyle extends DRIDesignBaseStyle {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getParentStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+	 */
 	public DRIDesignStyle getParentStyle();
 
+	/**
+	 * <p>getConditionalStyles.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIDesignConditionalStyle> getConditionalStyles();
 }

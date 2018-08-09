@@ -39,12 +39,21 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ShippingLabelDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ShippingLabelDesign {
 	private ShippingLabelData data = new ShippingLabelData();
 	private StyleBuilder bold14Style;
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
 
@@ -120,6 +129,11 @@ public class ShippingLabelDesign {
 		return cell;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		ShippingLabelDesign design = new ShippingLabelDesign();
 		try {

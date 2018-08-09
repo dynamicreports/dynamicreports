@@ -36,10 +36,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ChartSeriesColorsByNameReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ChartSeriesColorsByNameReport {
 
+	/**
+	 * <p>Constructor for ChartSeriesColorsByNameReport.</p>
+	 */
 	public ChartSeriesColorsByNameReport() {
 		build();
 	}
@@ -90,6 +96,11 @@ public class ChartSeriesColorsByNameReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ChartSeriesColorsByNameReport();
 	}

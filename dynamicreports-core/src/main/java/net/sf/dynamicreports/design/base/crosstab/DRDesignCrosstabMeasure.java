@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.CrosstabPercentageType;
 
 /**
+ * <p>DRDesignCrosstabMeasure class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,42 +43,67 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
 	private Calculation calculation;
 	private CrosstabPercentageType percentageType;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Calculation getCalculation() {
 		return calculation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>calculation</code>.</p>
+	 *
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	public void setCalculation(Calculation calculation) {
 		this.calculation = calculation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public CrosstabPercentageType getPercentageType() {
 		return percentageType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentageType</code>.</p>
+	 *
+	 * @param percentageType a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 */
 	public void setPercentageType(CrosstabPercentageType percentageType) {
 		this.percentageType = percentageType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		if (percentageType != null && percentageType.equals(CrosstabPercentageType.GRAND_TOTAL) &&

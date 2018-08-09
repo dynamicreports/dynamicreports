@@ -36,13 +36,19 @@ import net.sf.jasperreports.extensions.ExtensionsRegistry;
 import net.sf.jasperreports.extensions.ExtensionsRegistryFactory;
 
 /**
+ * <p>JasperSystemFontExtensionsRegistryFactory class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperSystemFontExtensionsRegistryFactory implements ExtensionsRegistryFactory {
+	/** Constant <code>SYSTEM_FONT_FAMILIES_PROPERTY_PREFIX="DefaultExtensionsRegistry.PROPERTY_REGI"{trunked}</code> */
 	public final static String SYSTEM_FONT_FAMILIES_PROPERTY_PREFIX = DefaultExtensionsRegistry.PROPERTY_REGISTRY_PREFIX + "system.font.families.";
+	/** Constant <code>PROPERTY_SYSTEM_FONT_FAMILIES_REGISTRY_FACTORY="DefaultExtensionsRegistry.PROPERTY_REGI"{trunked}</code> */
 	public final static String PROPERTY_SYSTEM_FONT_FAMILIES_REGISTRY_FACTORY = DefaultExtensionsRegistry.PROPERTY_REGISTRY_FACTORY_PREFIX
 			+ "system.font.families";
 
+	/** {@inheritDoc} */
 	@Override
 	public ExtensionsRegistry createRegistry(String registryId, JRPropertiesMap properties) {
 		List<PropertySuffix> fontFamiliesProperties = JRPropertiesUtil.getProperties(properties, SYSTEM_FONT_FAMILIES_PROPERTY_PREFIX);

@@ -26,11 +26,24 @@ import net.sf.dynamicreports.design.definition.DRIDesignDataset;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignConditionalStyle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignConditionalStyle extends DRIDesignBaseStyle {
 
+	/**
+	 * <p>getConditionExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getConditionExpression();
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public DRIDesignDataset getDataset();
 }

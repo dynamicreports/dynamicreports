@@ -23,10 +23,18 @@
 package net.sf.dynamicreports.jasper.definition.export;
 
 /**
+ * <p>JasperIPptxExporter interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperIPptxExporter extends JasperIExporter {
 
+	/**
+	 * <p>getIgnoreHyperLink.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getIgnoreHyperLink();
 
 }

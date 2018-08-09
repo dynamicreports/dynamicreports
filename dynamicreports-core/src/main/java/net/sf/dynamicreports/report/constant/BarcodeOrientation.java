@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>BarcodeOrientation class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum BarcodeOrientation {
 	NONE, LEFT, RIGHT, UPSIDE_DOWN

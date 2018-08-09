@@ -38,10 +38,16 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 /**
+ * <p>CollectionDatasourceReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CollectionDatasourceReport {
 
+	/**
+	 * <p>Constructor for CollectionDatasourceReport.</p>
+	 */
 	public CollectionDatasourceReport() {
 		build();
 	}
@@ -111,6 +117,11 @@ public class CollectionDatasourceReport {
 		return c.getTime();
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CollectionDatasourceReport();
 	}

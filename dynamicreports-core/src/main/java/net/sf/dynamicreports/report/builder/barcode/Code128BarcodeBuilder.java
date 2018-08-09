@@ -27,15 +27,28 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Code128BarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Code128BarcodeBuilder extends AbstractBarcode4jBuilder<Code128BarcodeBuilder, DRCode128Barcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for Code128BarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected Code128BarcodeBuilder(String code) {
 		super(code, new DRCode128Barcode());
 	}
 
+	/**
+	 * <p>Constructor for Code128BarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected Code128BarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRCode128Barcode());
 	}

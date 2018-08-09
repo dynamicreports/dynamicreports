@@ -43,10 +43,16 @@ import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.renderer.category.BarRenderer;
 
 /**
+ * <p>ChartLayoutReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ChartLayoutReport {
 
+	/**
+	 * <p>Constructor for ChartLayoutReport.</p>
+	 */
 	public ChartLayoutReport() {
 		build();
 	}
@@ -109,6 +115,11 @@ public class ChartLayoutReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ChartLayoutReport();
 	}

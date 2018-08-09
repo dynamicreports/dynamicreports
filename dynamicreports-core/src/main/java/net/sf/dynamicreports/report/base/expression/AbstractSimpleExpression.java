@@ -29,27 +29,40 @@ import net.sf.dynamicreports.report.definition.expression.DRISimpleExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractSimpleExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractSimpleExpression<T> implements DRISimpleExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String name;
 
+	/**
+	 * <p>Constructor for AbstractSimpleExpression.</p>
+	 */
 	protected AbstractSimpleExpression() {
 		this.name = ReportUtils.generateUniqueName("simpleExpression");
 	}
 
+	/**
+	 * <p>Constructor for AbstractSimpleExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	protected AbstractSimpleExpression(String name) {
 		Validate.notEmpty(name, "name must not be empty");
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Class<? super T> getValueClass() {

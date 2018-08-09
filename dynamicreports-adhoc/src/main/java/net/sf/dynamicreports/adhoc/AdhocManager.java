@@ -45,22 +45,47 @@ import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>AdhocManager class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocManager {
 	private static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
 	private static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
 
+	/**
+	 * <p>createReport.</p>
+	 *
+	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
 		return createReport(adhocReport, new DefaultAdhocReportCustomizer());
 	}
 
+	/**
+	 * <p>createReport.</p>
+	 *
+	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 * @param adhocReportCustomizer a {@link net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
 		JasperReportBuilder report = DynamicReports.report();
 		adhocReportCustomizer.customize(report, adhocReport);
 		return report;
 	}
 
+	/**
+	 * <p>saveConfiguration.</p>
+	 *
+	 * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
+	 * @param os a {@link java.io.OutputStream} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
 		XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
 		try {
@@ -73,6 +98,13 @@ public class AdhocManager {
 		}
 	}
 
+	/**
+	 * <p>loadConfiguration.</p>
+	 *
+	 * @param is a {@link java.io.InputStream} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
 		try {
 			Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();

@@ -25,11 +25,24 @@ package net.sf.dynamicreports.design.definition;
 import java.io.Serializable;
 
 /**
+ * <p>DRIDesignQuery interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignQuery extends Serializable {
 
+	/**
+	 * <p>getText.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getText();
 
+	/**
+	 * <p>getLanguage.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLanguage();
 }

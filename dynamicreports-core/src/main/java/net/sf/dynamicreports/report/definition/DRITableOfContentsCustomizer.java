@@ -30,19 +30,50 @@ import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
 
 /**
+ * <p>DRITableOfContentsCustomizer interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRITableOfContentsCustomizer extends Serializable {
 
+	/**
+	 * <p>setReport.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+	 */
 	public void setReport(ReportBuilder<?> report);
 
+	/**
+	 * <p>setHeadingList.</p>
+	 *
+	 * @param headingList a {@link java.util.List} object.
+	 */
 	public void setHeadingList(List<JasperTocHeading> headingList);
 
+	/**
+	 * <p>setHeadings.</p>
+	 *
+	 * @param headings a int.
+	 */
 	public void setHeadings(int headings);
 
+	/**
+	 * <p>setLevels.</p>
+	 *
+	 * @param levels a int.
+	 */
 	public void setLevels(int levels);
 
+	/**
+	 * <p>customize.</p>
+	 */
 	public void customize();
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
+	 */
 	public TableOfContentsPosition getPosition();
 }

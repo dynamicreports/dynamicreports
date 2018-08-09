@@ -45,11 +45,20 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>SalesCrosstabDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SalesCrosstabDesign {
 	private SalesCrosstabData data = new SalesCrosstabData();
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
 
@@ -123,6 +132,11 @@ public class SalesCrosstabDesign {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		SalesCrosstabDesign design = new SalesCrosstabDesign();
 		try {

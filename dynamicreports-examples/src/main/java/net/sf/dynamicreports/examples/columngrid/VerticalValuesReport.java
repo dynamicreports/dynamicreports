@@ -40,10 +40,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>VerticalValuesReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class VerticalValuesReport {
 
+	/**
+	 * <p>Constructor for VerticalValuesReport.</p>
+	 */
 	public VerticalValuesReport() {
 		build();
 	}
@@ -98,6 +104,11 @@ public class VerticalValuesReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new VerticalValuesReport();
 	}

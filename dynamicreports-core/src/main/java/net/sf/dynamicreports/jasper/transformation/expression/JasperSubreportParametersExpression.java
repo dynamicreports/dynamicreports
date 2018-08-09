@@ -34,11 +34,19 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>JasperSubreportParametersExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperSubreportParametersExpression extends AbstractDesignComplexExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperSubreportParametersExpression.</p>
+	 *
+	 * @param parametersExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public JasperSubreportParametersExpression(DRIDesignExpression parametersExpression) {
 		super(ReportUtils.generateUniqueName("jasperSubreportParametersExpression"));
 		if (parametersExpression != null) {
@@ -46,6 +54,7 @@ public class JasperSubreportParametersExpression extends AbstractDesignComplexEx
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object evaluate(List<?> values, ReportParameters reportParameters) {
@@ -59,6 +68,7 @@ public class JasperSubreportParametersExpression extends AbstractDesignComplexEx
 		return parameters;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return Map.class;

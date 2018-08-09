@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>ChartType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum ChartType {
 	AREA, STACKEDAREA, BAR, LAYEREDBAR, WATERFALLBAR, BAR3D, STACKEDBAR, STACKEDBAR3D, GROUPEDSTACKEDBAR, LINE, PIE, PIE3D, TIMESERIES, DIFFERENCE, XYAREA, XYBAR, XYLINE, XYSTEP, SCATTER, MULTI_AXIS, SPIDER, XYBLOCK, BUBBLE, CANDLESTICK, HIGHLOW, METER, THERMOMETER, GANTT

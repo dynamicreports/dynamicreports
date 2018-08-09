@@ -27,13 +27,33 @@ import java.util.List;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>DRIDesignComplexExpression interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignComplexExpression extends DRIDesignExpression {
 
+	/**
+	 * <p>getExpressions.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIDesignExpression> getExpressions();
 
+	/**
+	 * <p>evaluate.</p>
+	 *
+	 * @param values a {@link java.util.List} object.
+	 * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object evaluate(List<?> values, ReportParameters reportParameters);
 
+	/**
+	 * <p>getParameterName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getParameterName();
 }

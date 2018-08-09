@@ -40,7 +40,10 @@ import net.sf.dynamicreports.report.definition.component.DRIComponent;
 import net.sf.dynamicreports.report.definition.style.DRIStyle;
 
 /**
+ * <p>MultiPageListSubreportExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MultiPageListSubreportExpression extends AbstractSimpleExpression<JasperReportBuilder> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -52,6 +55,16 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
 	private List<DRIComponent> detailComponents;
 	private Map<String, DRIStyle> templateStyles;
 
+	/**
+	 * <p>Constructor for MultiPageListSubreportExpression.</p>
+	 *
+	 * @param locale a {@link java.util.Locale} object.
+	 * @param resourceBundle a {@link java.util.ResourceBundle} object.
+	 * @param resourceBundleName a {@link java.lang.String} object.
+	 * @param whenResourceMissingType a {@link net.sf.dynamicreports.report.constant.WhenResourceMissingType} object.
+	 * @param detailComponents a {@link java.util.List} object.
+	 * @param templateStyles a {@link java.util.Map} object.
+	 */
 	public MultiPageListSubreportExpression(Locale locale, ResourceBundle resourceBundle, String resourceBundleName,
 			WhenResourceMissingType whenResourceMissingType, List<DRIComponent> detailComponents, Map<String, DRIStyle> templateStyles) {
 		this.locale = locale;
@@ -62,6 +75,7 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
 		this.templateStyles = templateStyles;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JasperReportBuilder evaluate(ReportParameters reportParameters) {
 		JasperReportBuilder report = report();

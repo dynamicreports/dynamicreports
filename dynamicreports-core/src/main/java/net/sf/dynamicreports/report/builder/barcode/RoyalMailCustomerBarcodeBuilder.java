@@ -27,29 +27,60 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>RoyalMailCustomerBarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class RoyalMailCustomerBarcodeBuilder extends AbstractChecksumBarcodeBuilder<RoyalMailCustomerBarcodeBuilder, DRRoyalMailCustomerBarcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for RoyalMailCustomerBarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected RoyalMailCustomerBarcodeBuilder(String code) {
 		super(code, new DRRoyalMailCustomerBarcode());
 	}
 
+	/**
+	 * <p>Constructor for RoyalMailCustomerBarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected RoyalMailCustomerBarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRRoyalMailCustomerBarcode());
 	}
 
+	/**
+	 * <p>setAscenderHeight.</p>
+	 *
+	 * @param ascenderHeight a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.RoyalMailCustomerBarcodeBuilder} object.
+	 */
 	public RoyalMailCustomerBarcodeBuilder setAscenderHeight(Double ascenderHeight) {
 		getObject().setAscenderHeight(ascenderHeight);
 		return this;
 	}
 
+	/**
+	 * <p>setIntercharGapWidth.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.RoyalMailCustomerBarcodeBuilder} object.
+	 */
 	public RoyalMailCustomerBarcodeBuilder setIntercharGapWidth(Double intercharGapWidth) {
 		getObject().setIntercharGapWidth(intercharGapWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setTrackHeight.</p>
+	 *
+	 * @param trackHeight a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.RoyalMailCustomerBarcodeBuilder} object.
+	 */
 	public RoyalMailCustomerBarcodeBuilder setTrackHeight(Double trackHeight) {
 		getObject().setTrackHeight(trackHeight);
 		return this;
