@@ -35,6 +35,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
@@ -50,6 +51,13 @@ import org.slf4j.LoggerFactory;
  * <p>AdhocManager class.</p>
  * Provides methods for creating {@link JasperReportBuilder} given an {@link AdhocReportCustomizer} and the
  * {@link AdhocReport} itself.
+ * <pre>
+ *     {@code
+ *      JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
+ *     }
+ * </pre>
+ * The {@link JasperReportBuilder} may also be created using the {@link #createReport(AdhocReport)} without providing an
+ * an implementation for {@link AdhocReportCustomizer} relying on the {@link DefaultAdhocReportCustomizer} object instead.
  *
  * todo: comment and illustrations here
  *
@@ -101,14 +109,16 @@ public class AdhocManager {
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
 	public static void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
+        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os);
 		XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
+        JAXBElement<XmlAdhocConfiguration> element = null;
 		try {
 			Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			JAXBElement<XmlAdhocConfiguration> element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
+			element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
 			marshaller.marshal(element, new StreamResult(os));
 		} catch (JAXBException e) {
-			throw new DRException(e);
+			throw new ConfigurationMarshallerException(element, os);
 		}
 	}
 
