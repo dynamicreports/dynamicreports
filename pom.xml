@@ -78,6 +78,7 @@
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+        <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
     </properties>
 
@@ -330,6 +331,7 @@
             </plugins>
         </pluginManagement>
     </build>
+
     <profiles>
         <profile>
             <id>distribution</id>
@@ -385,7 +387,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9</version>
+                        <version>${maven-javadoc-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -395,7 +397,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <javadocExecutable>${env.JAVA_1.7_HOME}\bin\javadoc.exe</javadocExecutable>
+                            <javadocExecutable>${env.JAVA_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
                 </plugins>
