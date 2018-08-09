@@ -43,14 +43,26 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.exception.DRException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>AdhocManager class.</p>
+ * Provides methods for creating {@link JasperReportBuilder} given an {@link AdhocReportCustomizer} and the
+ * {@link AdhocReport} itself.
+ *
+ * todo: comment and illustrations here
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
 public class AdhocManager {
+
+	// todo add singleton here
+	// todo remove static calls and use typical methods with tests included
+
+	private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
+
 	private static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
 	private static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
 
@@ -62,6 +74,7 @@ public class AdhocManager {
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
 	public static JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
+		log.debug("Creating JasperReportBuilder from adhocReport: {} using defaultAdhocReportCustomizer", adhocReport.getProperties().getProperties());
 		return createReport(adhocReport, new DefaultAdhocReportCustomizer());
 	}
 
@@ -74,6 +87,7 @@ public class AdhocManager {
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
 	public static JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
+		log.debug("Creating JasperReportBuilder from adhocReport: {} and adhocReportCustomizer : {}", adhocReport.getProperties().getProperties(), adhocReportCustomizer);
 		JasperReportBuilder report = DynamicReports.report();
 		adhocReportCustomizer.customize(report, adhocReport);
 		return report;
