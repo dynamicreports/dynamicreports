@@ -17,9 +17,6 @@ before_install:
 script:
 #- mvn checkstyle:check
 # to add plugin
-#- mvn jacoco:report
-  - mvn verify
-# to add plugin
 #- mvn spotbugs:check
 #- mvn clean package
   - mvn clean install
