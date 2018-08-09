@@ -58,8 +58,10 @@ import org.slf4j.LoggerFactory;
  * </pre>
  * The {@link JasperReportBuilder} may also be created using the {@link #createReport(AdhocReport)} without providing an
  * an implementation for {@link AdhocReportCustomizer} relying on the {@link DefaultAdhocReportCustomizer} object instead.
- *
- * todo: comment and illustrations here
+ * <br>
+ * The {@link AdhocManager} also provides {@link #saveConfiguration(AdhocConfiguration, OutputStream)} and the
+ * {@link #loadConfiguration(InputStream)} methods for marshalling configuration and unmarshalling configuration
+ * to and from the outputStream and inputStream respectively.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -67,16 +69,33 @@ import org.slf4j.LoggerFactory;
 public class AdhocManager {
 
 	// todo add singleton here
-	// todo remove static calls and use typical methods with tests included
+	// todo use non-static methods and run tests
+    // todo stop configuring transformers in class and initialize in constructor
+
 
 	private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
 
+	// fixme this will be a maintenance nightmare, but fixing it also change the API, so there's that
 	private static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
 	private static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
 
 	/**
 	 * <p>createReport.</p>
-	 *
+     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to
+     * create a report like shown here:
+     * <pre>
+     *     {@link
+     *     AdhocConfiguration configuration = new AdhocConfiguration();
+     * 		AdhocReport report = new AdhocReport();
+     * 		configuration.setReport(report);
+     * 		// configure report...
+     *     JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport());
+     * 	   reportBuilder.setDataSource(createDataSource());
+     * 	   reportBuilder.show();
+     *     }
+     * </pre>
+     * The {@link AdhocReportCustomizer} is internally provided by invocation of the {@link DefaultAdhocReportCustomizer}
+     *
 	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
 	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -88,6 +107,19 @@ public class AdhocManager {
 
 	/**
 	 * <p>createReport.</p>
+     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to
+     * create a report like shown here:
+     * <pre>
+     *     {@link
+     *     AdhocConfiguration configuration = new AdhocConfiguration();
+     * 		AdhocReport report = new AdhocReport();
+     * 		configuration.setReport(report);
+     * 		// configure report...
+     *     JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
+     * 	   reportBuilder.setDataSource(createDataSource());
+     * 	   reportBuilder.show();
+     *     }
+     * </pre>
 	 *
 	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
 	 * @param adhocReportCustomizer a {@link net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer} object.
@@ -103,13 +135,29 @@ public class AdhocManager {
 
 	/**
 	 * <p>saveConfiguration.</p>
+     * This method enables a client to save configuration to an XML file. Consider the folowing example
+     * <pre>
+     *     AdhocReport report = new AdhocReport();
+     *     AdhocColumn column = new AdhocColumn();
+     * 		column.setName("item");
+     * 		report.addColumn(column);
+     *
+     * 		column = new AdhocColumn();
+     * 		column.setName("quantity");
+     * 		report.addColumn(column);
+     * 	AdhocConfiguration configuration = new AdhocConfiguration();
+     * 	configuration.setReport(report);
+     *
+     * 	// Now saving to an XML file in the system
+     * 	AdhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
+     * </pre>
 	 *
 	 * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
 	 * @param os a {@link java.io.OutputStream} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
 	public static void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
-        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os);
+        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os.toString());
 		XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
         JAXBElement<XmlAdhocConfiguration> element = null;
 		try {
@@ -124,6 +172,13 @@ public class AdhocManager {
 
 	/**
 	 * <p>loadConfiguration.</p>
+     * This method enables a client to read {@link AdhocConfiguration} from an {@link InputStream}
+     * The method may be applied as shown:
+     * <pre>
+     *     {@link
+     * 			AdhocConfiguration loadedConfiguration = AdhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
+     *     }
+     * </pre>
 	 *
 	 * @param is a {@link java.io.InputStream} object.
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
