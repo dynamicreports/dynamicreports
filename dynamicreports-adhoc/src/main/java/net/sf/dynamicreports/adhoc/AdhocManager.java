@@ -68,16 +68,20 @@ import org.slf4j.LoggerFactory;
  */
 public class AdhocManager {
 
+    private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
+    // fixme this will be a maintenance nightmare, but fixing it also change the API, so there's that
+    private final static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
+    private final static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
+
+
 	// todo add singleton here
 	// todo use non-static methods and run tests
     // todo stop configuring transformers in class and initialize in constructor
 
 
-	private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
 
-	// fixme this will be a maintenance nightmare, but fixing it also change the API, so there's that
-	private static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
-	private static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
+
+
 
 	/**
 	 * <p>createReport.</p>
