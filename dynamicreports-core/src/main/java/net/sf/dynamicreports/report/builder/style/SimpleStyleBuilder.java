@@ -26,11 +26,17 @@ import net.sf.dynamicreports.report.base.style.DRSimpleStyle;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>SimpleStyleBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SimpleStyleBuilder extends BaseStyleBuilder<SimpleStyleBuilder, DRSimpleStyle> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for SimpleStyleBuilder.</p>
+	 */
 	protected SimpleStyleBuilder() {
 		super(new DRSimpleStyle());
 	}

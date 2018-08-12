@@ -29,25 +29,49 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DifferenceChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DifferenceChartBuilder extends AbstractTimeSeriesChartBuilder<DifferenceChartBuilder, DRDifferencePlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DifferenceChartBuilder.</p>
+	 */
 	protected DifferenceChartBuilder() {
 		super(ChartType.DIFFERENCE);
 	}
 
+	/**
+	 * <p>setPositiveColor.</p>
+	 *
+	 * @param positiveColor a {@link java.awt.Color} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
+	 */
 	public DifferenceChartBuilder setPositiveColor(Color positiveColor) {
 		getPlot().setPositiveColor(positiveColor);
 		return this;
 	}
 
+	/**
+	 * <p>setNegativeColor.</p>
+	 *
+	 * @param negativeColor a {@link java.awt.Color} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
+	 */
 	public DifferenceChartBuilder setNegativeColor(Color negativeColor) {
 		getPlot().setNegativeColor(negativeColor);
 		return this;
 	}
 
+	/**
+	 * <p>setShowShapes.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
+	 */
 	public DifferenceChartBuilder setShowShapes(Boolean showShapes) {
 		getPlot().setShowShapes(showShapes);
 		return this;

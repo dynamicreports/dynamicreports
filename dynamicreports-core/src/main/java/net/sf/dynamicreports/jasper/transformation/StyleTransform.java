@@ -45,15 +45,26 @@ import net.sf.jasperreports.engine.design.JRDesignStyle;
 import net.sf.jasperreports.engine.type.ModeEnum;
 
 /**
+ * <p>StyleTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StyleTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for StyleTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public StyleTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		for (DRIDesignStyle style : accessor.getReport().getStyles()) {
 			addStyle(style);
@@ -136,6 +147,12 @@ public class StyleTransform {
 		}
 	}
 
+	/**
+	 * <p>pen.</p>
+	 *
+	 * @param jrPen a {@link net.sf.jasperreports.engine.JRPen} object.
+	 * @param pen a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	protected void pen(JRPen jrPen, DRIDesignPen pen) {
 		if (pen == null) {
 			return;
@@ -184,6 +201,12 @@ public class StyleTransform {
 		baseStyle.setPdfEmbedded(font.getPdfEmbedded());
 	}
 
+	/**
+	 * <p>font.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 * @return a {@link net.sf.jasperreports.engine.base.JRBaseFont} object.
+	 */
 	protected JRBaseFont font(DRIDesignFont font) {
 		if (font == null) {
 			return null;
@@ -202,6 +225,12 @@ public class StyleTransform {
 		return jrFont;
 	}
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignStyle} object.
+	 */
 	protected JRDesignStyle getStyle(DRIDesignStyle style) {
 		if (style == null) {
 			return null;

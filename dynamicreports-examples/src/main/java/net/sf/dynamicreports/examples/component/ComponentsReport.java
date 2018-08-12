@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.constant.BooleanComponentType;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ComponentsReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComponentsReport {
 
+	/**
+	 * <p>Constructor for ComponentsReport.</p>
+	 */
 	public ComponentsReport() {
 		build();
 	}
@@ -99,6 +105,11 @@ public class ComponentsReport {
 		return cmp.verticalList(labelField, component);
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ComponentsReport();
 	}

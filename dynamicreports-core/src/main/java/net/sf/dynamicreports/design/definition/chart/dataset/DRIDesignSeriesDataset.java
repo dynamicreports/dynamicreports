@@ -27,11 +27,24 @@ import java.util.List;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignSeriesDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignSeriesDataset extends DRIDesignChartDataset {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getValueExpression();
 
+	/**
+	 * <p>getSeries.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIDesignChartSerie> getSeries();
 }

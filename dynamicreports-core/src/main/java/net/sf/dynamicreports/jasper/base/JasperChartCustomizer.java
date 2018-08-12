@@ -31,10 +31,14 @@ import net.sf.jasperreports.engine.JRChart;
 import org.jfree.chart.JFreeChart;
 
 /**
+ * <p>JasperChartCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperChartCustomizer extends JRAbstractChartCustomizer {
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, JRChart jasperChart) {
 		String key = jasperChart.getKey();

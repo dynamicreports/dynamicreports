@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.DRIDesignQuery;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignQuery class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignQuery implements DRIDesignQuery {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,20 +37,32 @@ public class DRDesignQuery implements DRIDesignQuery {
 	private String text;
 	private String language;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getText() {
 		return text;
 	}
 
+	/**
+	 * <p>Setter for the field <code>text</code>.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 */
 	public void setText(String text) {
 		this.text = text;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLanguage() {
 		return language;
 	}
 
+	/**
+	 * <p>Setter for the field <code>language</code>.</p>
+	 *
+	 * @param language a {@link java.lang.String} object.
+	 */
 	public void setLanguage(String language) {
 		this.language = language;
 	}

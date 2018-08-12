@@ -23,13 +23,31 @@
 package net.sf.dynamicreports.design.definition.barcode;
 
 /**
+ * <p>DRIDesignUspsIntelligentMailBarcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignUspsIntelligentMailBarcode extends DRIDesignChecksumBarcode {
 
+	/**
+	 * <p>getAscenderHeight.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getAscenderHeight();
 
+	/**
+	 * <p>getIntercharGapWidth.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getIntercharGapWidth();
 
+	/**
+	 * <p>getTrackHeight.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getTrackHeight();
 }

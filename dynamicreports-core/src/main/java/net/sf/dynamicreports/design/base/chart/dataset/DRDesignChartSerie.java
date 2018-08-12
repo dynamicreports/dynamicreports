@@ -28,7 +28,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>Abstract DRDesignChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRDesignChartSerie implements DRIDesignChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,20 +39,32 @@ public abstract class DRDesignChartSerie implements DRIDesignChartSerie {
 	private DRIDesignExpression seriesExpression;
 	private DRIDesignHyperLink itemHyperLink;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getSeriesExpression() {
 		return seriesExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesExpression</code>.</p>
+	 *
+	 * @param seriesExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setSeriesExpression(DRIDesignExpression seriesExpression) {
 		this.seriesExpression = seriesExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignHyperLink getItemHyperLink() {
 		return itemHyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>itemHyperLink</code>.</p>
+	 *
+	 * @param itemHyperLink a {@link net.sf.dynamicreports.design.definition.DRIDesignHyperLink} object.
+	 */
 	public void setItemHyperLink(DRIDesignHyperLink itemHyperLink) {
 		this.itemHyperLink = itemHyperLink;
 	}

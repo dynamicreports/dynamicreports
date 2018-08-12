@@ -25,15 +25,38 @@ package net.sf.dynamicreports.report.definition.barcode;
 import net.sf.dynamicreports.report.constant.BarcodeBaselinePosition;
 
 /**
+ * <p>DRIPostnetBarcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPostnetBarcode extends DRIChecksumBarcode {
 
+	/**
+	 * <p>getDisplayChecksum.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDisplayChecksum();
 
+	/**
+	 * <p>getShortBarHeight.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getShortBarHeight();
 
+	/**
+	 * <p>getBaselinePosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeBaselinePosition} object.
+	 */
 	public BarcodeBaselinePosition getBaselinePosition();
 
+	/**
+	 * <p>getIntercharGapWidth.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getIntercharGapWidth();
 }

@@ -27,19 +27,38 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>CodabarBarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CodabarBarcodeBuilder extends AbstractBarcode4jBuilder<CodabarBarcodeBuilder, DRCodabarBarcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CodabarBarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected CodabarBarcodeBuilder(String code) {
 		super(code, new DRCodabarBarcode());
 	}
 
+	/**
+	 * <p>Constructor for CodabarBarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected CodabarBarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRCodabarBarcode());
 	}
 
+	/**
+	 * <p>setWideFactor.</p>
+	 *
+	 * @param wideFactor a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.CodabarBarcodeBuilder} object.
+	 */
 	public CodabarBarcodeBuilder setWideFactor(Double wideFactor) {
 		getObject().setWideFactor(wideFactor);
 		return this;

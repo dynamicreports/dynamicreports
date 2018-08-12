@@ -26,18 +26,27 @@ import net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabRowGrou
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCrosstabRowGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCrosstabRowGroup extends DRDesignCrosstabGroup implements DRIDesignCrosstabRowGroup {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private int width;
 
+	/** {@inheritDoc} */
 	@Override
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * <p>Setter for the field <code>width</code>.</p>
+	 *
+	 * @param width a int.
+	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}

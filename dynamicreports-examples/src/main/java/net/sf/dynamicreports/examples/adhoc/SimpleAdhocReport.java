@@ -32,21 +32,32 @@ import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
+import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SimpleAdhocReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SimpleAdhocReport {
 
+	/**
+	 * <p>Constructor for SimpleAdhocReport.</p>
+	 */
 	public SimpleAdhocReport() {
 		build();
 	}
 
 	private void build() {
+
+		AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+
 		AdhocConfiguration configuration = new AdhocConfiguration();
 		AdhocReport report = new AdhocReport();
 		configuration.setReport(report);
@@ -61,12 +72,12 @@ public class SimpleAdhocReport {
 
 		try {
 			// The following code stores the configuration to an xml file
-			AdhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
+			adhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
 			@SuppressWarnings("unused")
 			// The following code loads a configuration from an xml file
-			AdhocConfiguration loadedConfiguration = AdhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
+			AdhocConfiguration loadedConfiguration = adhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
 
-			JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport());
+			JasperReportBuilder reportBuilder = adhocManager.createReport(configuration.getReport());
 			reportBuilder.setDataSource(createDataSource());
 			reportBuilder.show();
 		} catch (DRException e) {
@@ -84,6 +95,11 @@ public class SimpleAdhocReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SimpleAdhocReport();
 	}

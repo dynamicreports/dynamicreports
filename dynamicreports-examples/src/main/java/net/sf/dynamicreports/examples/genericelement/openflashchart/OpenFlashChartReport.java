@@ -36,12 +36,18 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>OpenFlashChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class OpenFlashChartReport {
 	private PieChart pieChart1;
 	private PieChart pieChart2;
 
+	/**
+	 * <p>Constructor for OpenFlashChartReport.</p>
+	 */
 	public OpenFlashChartReport() {
 		build();
 	}
@@ -81,6 +87,11 @@ public class OpenFlashChartReport {
 		}
 	}
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	protected JRDataSource createDataSource() {
 		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
 		dataSource.add("Book", 60, new BigDecimal(150));
@@ -102,6 +113,11 @@ public class OpenFlashChartReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new OpenFlashChartReport();
 	}

@@ -27,7 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * <p>AdhocChart class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocChart extends AdhocComponent {
 	private static final long serialVersionUID = 1L;
@@ -44,107 +47,231 @@ public class AdhocChart extends AdhocComponent {
 	private AdhocAxisFormat yAxisFormat;
 	private AdhocOrientation orientation;
 
+	/**
+	 * <p>Constructor for AdhocChart.</p>
+	 */
 	public AdhocChart() {
 		series = new ArrayList<AdhocChartSerie>();
 		seriesColors = new ArrayList<Color>();
 	}
 
+	/**
+	 * <p>Getter for the field <code>type</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartType} object.
+	 */
 	public AdhocChartType getType() {
 		return type;
 	}
 
+	/**
+	 * <p>Setter for the field <code>type</code>.</p>
+	 *
+	 * @param type a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartType} object.
+	 */
 	public void setType(AdhocChartType type) {
 		this.type = type;
 	}
 
+	/**
+	 * <p>Getter for the field <code>title</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getTitle() {
 		return title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link java.lang.String} object.
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleFont</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public AdhocFont getTitleFont() {
 		return titleFont;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleFont</code>.</p>
+	 *
+	 * @param titleFont a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 */
 	public void setTitleFont(AdhocFont titleFont) {
 		this.titleFont = titleFont;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleColor</code>.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getTitleColor() {
 		return titleColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleColor</code>.</p>
+	 *
+	 * @param titleColor a {@link java.awt.Color} object.
+	 */
 	public void setTitleColor(Color titleColor) {
 		this.titleColor = titleColor;
 	}
 
+	/**
+	 * <p>Getter for the field <code>showLegend</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLegend() {
 		return showLegend;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showLegend</code>.</p>
+	 *
+	 * @param showLegend a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLegend(Boolean showLegend) {
 		this.showLegend = showLegend;
 	}
 
+	/**
+	 * <p>Getter for the field <code>xValue</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getXValue() {
 		return xValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xValue</code>.</p>
+	 *
+	 * @param xValue a {@link java.lang.String} object.
+	 */
 	public void setXValue(String xValue) {
 		this.xValue = xValue;
 	}
 
+	/**
+	 * <p>Getter for the field <code>series</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocChartSerie> getSeries() {
 		return series;
 	}
 
+	/**
+	 * <p>addSerie.</p>
+	 *
+	 * @param serie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 */
 	public void addSerie(AdhocChartSerie serie) {
 		this.series.add(serie);
 	}
 
+	/**
+	 * <p>Setter for the field <code>series</code>.</p>
+	 *
+	 * @param series a {@link java.util.List} object.
+	 */
 	public void setSeries(List<AdhocChartSerie> series) {
 		this.series = series;
 	}
 
+	/**
+	 * <p>Getter for the field <code>seriesColors</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<Color> getSeriesColors() {
 		return seriesColors;
 	}
 
+	/**
+	 * <p>addSeriesColor.</p>
+	 *
+	 * @param seriesColor a {@link java.awt.Color} object.
+	 */
 	public void addSeriesColor(Color seriesColor) {
 		this.seriesColors.add(seriesColor);
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesColors</code>.</p>
+	 *
+	 * @param seriesColors a {@link java.util.List} object.
+	 */
 	public void setSeriesColors(List<Color> seriesColors) {
 		this.seriesColors = seriesColors;
 	}
 
+	/**
+	 * <p>Getter for the field <code>xAxisFormat</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 */
 	public AdhocAxisFormat getXAxisFormat() {
 		return xAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xAxisFormat</code>.</p>
+	 *
+	 * @param xAxisFormat a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 */
 	public void setXAxisFormat(AdhocAxisFormat xAxisFormat) {
 		this.xAxisFormat = xAxisFormat;
 	}
 
+	/**
+	 * <p>Getter for the field <code>yAxisFormat</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 */
 	public AdhocAxisFormat getYAxisFormat() {
 		return yAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yAxisFormat</code>.</p>
+	 *
+	 * @param yAxisFormat a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 */
 	public void setYAxisFormat(AdhocAxisFormat yAxisFormat) {
 		this.yAxisFormat = yAxisFormat;
 	}
 
+	/**
+	 * <p>Getter for the field <code>orientation</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrientation} object.
+	 */
 	public AdhocOrientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrientation} object.
+	 */
 	public void setOrientation(AdhocOrientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		boolean equals = super.equals(obj);
@@ -194,6 +321,7 @@ public class AdhocChart extends AdhocComponent {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocChart clone() {
 		AdhocChart clone = (AdhocChart) super.clone();

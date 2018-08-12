@@ -28,13 +28,31 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.constant.LineStyle;
 
 /**
+ * <p>DRIPen interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPen extends Serializable {
 
+	/**
+	 * <p>getLineWidth.</p>
+	 *
+	 * @return a {@link java.lang.Float} object.
+	 */
 	public Float getLineWidth();
 
+	/**
+	 * <p>getLineStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+	 */
 	public LineStyle getLineStyle();
 
+	/**
+	 * <p>getLineColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getLineColor();
 }

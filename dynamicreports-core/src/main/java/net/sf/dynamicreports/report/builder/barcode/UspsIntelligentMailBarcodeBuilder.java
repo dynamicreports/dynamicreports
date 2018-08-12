@@ -27,29 +27,60 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>UspsIntelligentMailBarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class UspsIntelligentMailBarcodeBuilder extends AbstractChecksumBarcodeBuilder<UspsIntelligentMailBarcodeBuilder, DRUspsIntelligentMailBarcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for UspsIntelligentMailBarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected UspsIntelligentMailBarcodeBuilder(String code) {
 		super(code, new DRUspsIntelligentMailBarcode());
 	}
 
+	/**
+	 * <p>Constructor for UspsIntelligentMailBarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected UspsIntelligentMailBarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRUspsIntelligentMailBarcode());
 	}
 
+	/**
+	 * <p>setAscenderHeight.</p>
+	 *
+	 * @param ascenderHeight a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.UspsIntelligentMailBarcodeBuilder} object.
+	 */
 	public UspsIntelligentMailBarcodeBuilder setAscenderHeight(Double ascenderHeight) {
 		getObject().setAscenderHeight(ascenderHeight);
 		return this;
 	}
 
+	/**
+	 * <p>setIntercharGapWidth.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.UspsIntelligentMailBarcodeBuilder} object.
+	 */
 	public UspsIntelligentMailBarcodeBuilder setIntercharGapWidth(Double intercharGapWidth) {
 		getObject().setIntercharGapWidth(intercharGapWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setTrackHeight.</p>
+	 *
+	 * @param trackHeight a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.UspsIntelligentMailBarcodeBuilder} object.
+	 */
 	public UspsIntelligentMailBarcodeBuilder setTrackHeight(Double trackHeight) {
 		getObject().setTrackHeight(trackHeight);
 		return this;

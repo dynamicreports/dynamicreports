@@ -27,25 +27,49 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>XyBarChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyBarChartBuilder extends AbstractXyChartBuilder<XyBarChartBuilder, DRBarPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyBarChartBuilder.</p>
+	 */
 	protected XyBarChartBuilder() {
 		super(ChartType.XYBAR);
 	}
 
+	/**
+	 * <p>setShowLabels.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
+	 */
 	public XyBarChartBuilder setShowLabels(Boolean showLabels) {
 		getPlot().setShowLabels(showLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
+	 */
 	public XyBarChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
+	 */
 	public XyBarChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;

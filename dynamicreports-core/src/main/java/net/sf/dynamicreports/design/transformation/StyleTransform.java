@@ -64,7 +64,10 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>StyleTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StyleTransform {
 	private DesignTransformAccessor accessor;
@@ -72,6 +75,11 @@ public class StyleTransform {
 	private Map<String, DRDesignStyle> designStyles;
 	private Map<String, DRIStyle> templateStyles;
 
+	/**
+	 * <p>Constructor for StyleTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public StyleTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		init();
@@ -87,6 +95,15 @@ public class StyleTransform {
 		return transformStyle(style, textStyle, DefaultStyleType.NONE);
 	}
 
+	/**
+	 * <p>transformStyle.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 * @param textStyle a boolean.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
 		if (style == null) {
 			return getDefaultStyle(defaultStyleType);
@@ -130,6 +147,12 @@ public class StyleTransform {
 		return designStyle;
 	}
 
+	/**
+	 * <p>transformFont.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignFont} object.
+	 */
 	protected DRDesignFont transformFont(DRIFont font) {
 		if (font == null) {
 			return null;
@@ -165,6 +188,12 @@ public class StyleTransform {
 		return designStyle;
 	}
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @param reportStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIStyle} object.
+	 */
 	protected DRIStyle getStyle(DRIReportStyle reportStyle) {
 		if (reportStyle == null) {
 			return null;
@@ -183,6 +212,11 @@ public class StyleTransform {
 		throw new DRDesignReportException("Style " + reportStyle.getClass().getName() + " not supported");
 	}
 
+	/**
+	 * <p>transformTemplateStyles.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transformTemplateStyles() throws DRException {
 		for (DRIStyle style : templateStyles.values()) {
 			if (styles.containsKey(style.getName())) {
@@ -258,6 +292,12 @@ public class StyleTransform {
 		return designPadding;
 	}
 
+	/**
+	 * <p>pen.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+	 */
 	protected DRDesignPen pen(DRIPen pen) {
 		if (pen == null) {
 			return null;
@@ -269,6 +309,13 @@ public class StyleTransform {
 		return designPen;
 	}
 
+	/**
+	 * <p>getDefaultStyle.</p>
+	 *
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignStyle getDefaultStyle(DefaultStyleType defaultStyleType) throws DRException {
 		TemplateTransform templateTransform = accessor.getTemplateTransform();
 		switch (defaultStyleType) {
@@ -311,6 +358,12 @@ public class StyleTransform {
 		designStyles.put(styleName, designStyle);
 	}
 
+	/**
+	 * <p>copyStyle.</p>
+	 *
+	 * @param toStyle a {@link net.sf.dynamicreports.report.base.style.DRBaseStyle} object.
+	 * @param fromStyle a {@link net.sf.dynamicreports.report.definition.style.DRIBaseStyle} object.
+	 */
 	public void copyStyle(DRBaseStyle toStyle, DRIBaseStyle fromStyle) {
 		toStyle.setForegroundColor(fromStyle.getForegroundColor());
 		toStyle.setBackgroundColor(fromStyle.getBackgroundColor());
@@ -330,6 +383,11 @@ public class StyleTransform {
 		toStyle.setLinePen((DRPen) fromStyle.getLinePen());
 	}
 
+	/**
+	 * <p>Getter for the field <code>styles</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignStyle> getStyles() {
 		return styles.values();
 	}

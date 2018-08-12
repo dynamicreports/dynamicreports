@@ -38,7 +38,10 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.engine.util.JRSaver;
 
 /**
+ * <p>JasperPrintListFileHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperPrintListFileHandler extends AbstractPrintListHandler {
 	private static final String TEMP_FILE_PREFIX = "JasperPrint";
@@ -48,10 +51,21 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
 	private File directory;
 	private JRVirtualizer virtualizer;
 
+	/**
+	 * <p>Constructor for JasperPrintListFileHandler.</p>
+	 *
+	 * @param directory a {@link java.lang.String} object.
+	 */
 	public JasperPrintListFileHandler(String directory) {
 		this(directory, null);
 	}
 
+	/**
+	 * <p>Constructor for JasperPrintListFileHandler.</p>
+	 *
+	 * @param directory a {@link java.lang.String} object.
+	 * @param virtualizer a {@link net.sf.jasperreports.engine.JRVirtualizer} object.
+	 */
 	public JasperPrintListFileHandler(String directory, JRVirtualizer virtualizer) {
 		this.virtualizer = virtualizer;
 		if (directory != null) {
@@ -61,6 +75,7 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
 		tempFiles = new ArrayList<File>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void add(JasperPrint jasperPrint) {
 		try {
@@ -74,11 +89,13 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<JasperPrint> getPrintList() {
 		return printList;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void finalize() throws Throwable {
 		for (File tempFile : tempFiles) {

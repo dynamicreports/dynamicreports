@@ -26,39 +26,79 @@ import net.sf.dynamicreports.report.base.DRMargin;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>MarginBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MarginBuilder extends AbstractBuilder<MarginBuilder, DRMargin> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for MarginBuilder.</p>
+	 */
 	protected MarginBuilder() {
 		super(new DRMargin());
 	}
 
+	/**
+	 * <p>Constructor for MarginBuilder.</p>
+	 *
+	 * @param margin a int.
+	 */
 	protected MarginBuilder(int margin) {
 		super(new DRMargin(margin));
 	}
 
+	/**
+	 * <p>setTop.</p>
+	 *
+	 * @param top a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
+	 */
 	public MarginBuilder setTop(int top) {
 		getObject().setTop(top);
 		return this;
 	}
 
+	/**
+	 * <p>setLeft.</p>
+	 *
+	 * @param left a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
+	 */
 	public MarginBuilder setLeft(int left) {
 		getObject().setLeft(left);
 		return this;
 	}
 
+	/**
+	 * <p>setBottom.</p>
+	 *
+	 * @param bottom a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
+	 */
 	public MarginBuilder setBottom(int bottom) {
 		getObject().setBottom(bottom);
 		return this;
 	}
 
+	/**
+	 * <p>setRight.</p>
+	 *
+	 * @param right a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
+	 */
 	public MarginBuilder setRight(int right) {
 		getObject().setRight(right);
 		return this;
 	}
 
+	/**
+	 * <p>getMargin.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRMargin} object.
+	 */
 	public DRMargin getMargin() {
 		return build();
 	}

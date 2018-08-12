@@ -34,18 +34,30 @@ import net.sf.jasperreports.renderers.SimpleDataRenderer;
 import net.sf.jasperreports.renderers.WrappingSvgDataToGraphics2DRenderer;
 
 /**
+ * <p>CustomBatikRenderer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Dimension dimension;
 
+	/**
+	 * <p>Constructor for CustomBatikRenderer.</p>
+	 *
+	 * @param svgURL a {@link java.net.URL} object.
+	 * @param width a int.
+	 * @param height a int.
+	 * @throws net.sf.jasperreports.engine.JRException if any.
+	 */
 	public CustomBatikRenderer(URL svgURL, int width, int height) throws JRException {
 		super(new SimpleDataRenderer(JRLoader.loadBytes(svgURL), null));
 		this.dimension = new Dimension(width, height);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Dimension2D getDimension(JasperReportsContext jasperReportsContext) {
 		return dimension;

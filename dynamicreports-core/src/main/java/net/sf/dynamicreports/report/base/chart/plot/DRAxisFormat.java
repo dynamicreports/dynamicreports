@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIAxisFormat;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRAxisFormat class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRAxisFormat implements DRIAxisFormat {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,100 +50,166 @@ public class DRAxisFormat implements DRIAxisFormat {
 	private DRIExpression<? extends Number> rangeMinValueExpression;
 	private DRIExpression<? extends Number> rangeMaxValueExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLabelExpression(DRIExpression<String> labelExpression) {
 		this.labelExpression = labelExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRFont getLabelFont() {
 		return labelFont;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelFont</code>.</p>
+	 *
+	 * @param labelFont a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 */
 	public void setLabelFont(DRFont labelFont) {
 		this.labelFont = labelFont;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getLabelColor() {
 		return labelColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelColor</code>.</p>
+	 *
+	 * @param labelColor a {@link java.awt.Color} object.
+	 */
 	public void setLabelColor(Color labelColor) {
 		this.labelColor = labelColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRFont getTickLabelFont() {
 		return tickLabelFont;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tickLabelFont</code>.</p>
+	 *
+	 * @param tickLabelFont a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 */
 	public void setTickLabelFont(DRFont tickLabelFont) {
 		this.tickLabelFont = tickLabelFont;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getTickLabelColor() {
 		return tickLabelColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tickLabelColor</code>.</p>
+	 *
+	 * @param tickLabelColor a {@link java.awt.Color} object.
+	 */
 	public void setTickLabelColor(Color tickLabelColor) {
 		this.tickLabelColor = tickLabelColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getTickLabelMask() {
 		return tickLabelMask;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tickLabelMask</code>.</p>
+	 *
+	 * @param tickLabelMask a {@link java.lang.String} object.
+	 */
 	public void setTickLabelMask(String tickLabelMask) {
 		this.tickLabelMask = tickLabelMask;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getVerticalTickLabels() {
 		return verticalTickLabels;
 	}
 
+	/**
+	 * <p>Setter for the field <code>verticalTickLabels</code>.</p>
+	 *
+	 * @param verticalTickLabels a {@link java.lang.Boolean} object.
+	 */
 	public void setVerticalTickLabels(Boolean verticalTickLabels) {
 		this.verticalTickLabels = verticalTickLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getTickLabelRotation() {
 		return tickLabelRotation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tickLabelRotation</code>.</p>
+	 *
+	 * @param tickLabelRotation a {@link java.lang.Double} object.
+	 */
 	public void setTickLabelRotation(Double tickLabelRotation) {
 		this.tickLabelRotation = tickLabelRotation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getLineColor() {
 		return lineColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lineColor</code>.</p>
+	 *
+	 * @param lineColor a {@link java.awt.Color} object.
+	 */
 	public void setLineColor(Color lineColor) {
 		this.lineColor = lineColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rangeMinValueExpression</code>.</p>
+	 *
+	 * @param rangeMinValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setRangeMinValueExpression(DRIExpression<? extends Number> rangeMinValueExpression) {
 		this.rangeMinValueExpression = rangeMinValueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<? extends Number> getRangeMinValueExpression() {
 		return rangeMinValueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rangeMaxValueExpression</code>.</p>
+	 *
+	 * @param rangeMaxValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setRangeMaxValueExpression(DRIExpression<? extends Number> rangeMaxValueExpression) {
 		this.rangeMaxValueExpression = rangeMaxValueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<? extends Number> getRangeMaxValueExpression() {
 		return rangeMaxValueExpression;

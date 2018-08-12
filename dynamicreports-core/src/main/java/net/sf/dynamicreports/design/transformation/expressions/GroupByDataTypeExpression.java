@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>GroupByDataTypeExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,11 +40,18 @@ public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> 
 	private DRIExpression<?> valueExpression;
 	DRIDataType<?, ?> dataType;
 
+	/**
+	 * <p>Constructor for GroupByDataTypeExpression.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	public GroupByDataTypeExpression(DRIExpression<?> valueExpression, DRIDataType<?, ?> dataType) {
 		this.valueExpression = valueExpression;
 		this.dataType = dataType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(ReportParameters reportParameters) {
 		return dataType.valueToString(valueExpression.getName(), reportParameters);

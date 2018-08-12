@@ -27,15 +27,28 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Ean13BarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Ean13BarcodeBuilder extends AbstractChecksumBarcodeBuilder<Ean13BarcodeBuilder, DREan13Barcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for Ean13BarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected Ean13BarcodeBuilder(String code) {
 		super(code, new DREan13Barcode());
 	}
 
+	/**
+	 * <p>Constructor for Ean13BarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected Ean13BarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DREan13Barcode());
 	}

@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.definition.barcode;
 
 /**
+ * <p>DRIEan8Barcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIEan8Barcode extends DRIChecksumBarcode {
 

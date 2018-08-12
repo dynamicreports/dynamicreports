@@ -27,17 +27,26 @@ import net.sf.dynamicreports.report.constant.TimePeriod;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRITimeSeriesDataset;
 
 /**
+ * <p>DRTimeSeriesDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRTimeSeriesDataset extends DRSeriesDataset implements DRITimeSeriesDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private TimePeriod timePeriodType;
 
+	/**
+	 * <p>Setter for the field <code>timePeriodType</code>.</p>
+	 *
+	 * @param timePeriodType a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
+	 */
 	public void setTimePeriodType(TimePeriod timePeriodType) {
 		this.timePeriodType = timePeriodType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public TimePeriod getTimePeriodType() {
 		return timePeriodType;

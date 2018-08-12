@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.design.definition.chart.plot;
 
 /**
+ * <p>DRIDesignHighLowPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignHighLowPlot extends DRIDesignAxisPlot {
 
+	/**
+	 * <p>getShowOpenTicks.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowOpenTicks();
 
+	/**
+	 * <p>getShowCloseTicks.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowCloseTicks();
 }

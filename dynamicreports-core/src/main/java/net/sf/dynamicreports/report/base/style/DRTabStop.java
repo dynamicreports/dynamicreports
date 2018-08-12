@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.TabStopAlignment;
 import net.sf.dynamicreports.report.definition.style.DRITabStop;
 
 /**
+ * <p>DRTabStop class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRTabStop implements DRITabStop {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,20 +38,32 @@ public class DRTabStop implements DRITabStop {
 	private int position;
 	private TabStopAlignment alignment;
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a int.
+	 */
 	public void setPosition(int position) {
 		this.position = position;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public TabStopAlignment getAlignment() {
 		return alignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>alignment</code>.</p>
+	 *
+	 * @param alignment a {@link net.sf.dynamicreports.report.constant.TabStopAlignment} object.
+	 */
 	public void setAlignment(TabStopAlignment alignment) {
 		this.alignment = alignment;
 	}

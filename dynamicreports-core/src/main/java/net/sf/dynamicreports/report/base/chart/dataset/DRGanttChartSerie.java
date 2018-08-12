@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRIGanttChartSerie;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRGanttChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRGanttChartSerie extends DRChartSerie implements DRIGanttChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,38 +40,62 @@ public class DRGanttChartSerie extends DRChartSerie implements DRIGanttChartSeri
 	private DRIExpression<?> percentExpression;
 	private DRIExpression<?> labelExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getStartDateExpression() {
 		return startDateExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>startDateExpression</code>.</p>
+	 *
+	 * @param startDateExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setStartDateExpression(DRIExpression<?> startDateExpression) {
 		this.startDateExpression = startDateExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getEndDateExpression() {
 		return endDateExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>endDateExpression</code>.</p>
+	 *
+	 * @param endDateExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setEndDateExpression(DRIExpression<?> endDateExpression) {
 		this.endDateExpression = endDateExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getPercentExpression() {
 		return percentExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentExpression</code>.</p>
+	 *
+	 * @param percentExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setPercentExpression(DRIExpression<?> percentExpression) {
 		this.percentExpression = percentExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLabelExpression(DRIExpression<?> labelExpression) {
 		this.labelExpression = labelExpression;
 	}

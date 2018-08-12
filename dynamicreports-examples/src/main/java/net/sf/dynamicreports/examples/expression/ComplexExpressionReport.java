@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ComplexExpressionReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComplexExpressionReport {
 
+	/**
+	 * <p>Constructor for ComplexExpressionReport.</p>
+	 */
 	public ComplexExpressionReport() {
 		build();
 	}
@@ -65,6 +71,11 @@ public class ComplexExpressionReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ComplexExpressionReport();
 	}

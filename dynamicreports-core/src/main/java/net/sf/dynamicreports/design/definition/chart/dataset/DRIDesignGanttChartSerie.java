@@ -25,15 +25,38 @@ package net.sf.dynamicreports.design.definition.chart.dataset;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignGanttChartSerie interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignGanttChartSerie extends DRIDesignChartSerie {
 
+	/**
+	 * <p>getStartDateExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getStartDateExpression();
 
+	/**
+	 * <p>getEndDateExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getEndDateExpression();
 
+	/**
+	 * <p>getPercentExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getPercentExpression();
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLabelExpression();
 }

@@ -26,11 +26,19 @@ import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>Abstract SubtotalBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class SubtotalBuilder<T extends SubtotalBuilder<T, U>, U> extends BaseSubtotalBuilder<T, U> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for SubtotalBuilder.</p>
+	 *
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 */
 	protected SubtotalBuilder(ColumnBuilder<?, ?> showInColumn) {
 		super(showInColumn);
 	}

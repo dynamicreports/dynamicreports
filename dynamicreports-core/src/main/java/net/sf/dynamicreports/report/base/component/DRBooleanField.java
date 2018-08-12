@@ -32,7 +32,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRBooleanField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanField {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -45,39 +48,63 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
 	private HorizontalImageAlignment horizontalImageAlignment;
 	private HorizontalTextAlignment horizontalTextAlignment;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<Boolean> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<Boolean> valueExpression) {
 		Validate.notNull(valueExpression, "valueExpression must not be null");
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BooleanComponentType getComponentType() {
 		return componentType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>componentType</code>.</p>
+	 *
+	 * @param componentType a {@link net.sf.dynamicreports.report.constant.BooleanComponentType} object.
+	 */
 	public void setComponentType(BooleanComponentType componentType) {
 		this.componentType = componentType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getEmptyWhenNullValue() {
 		return emptyWhenNullValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>emptyWhenNullValue</code>.</p>
+	 *
+	 * @param emptyWhenNullValue a {@link java.lang.Boolean} object.
+	 */
 	public void setEmptyWhenNullValue(Boolean emptyWhenNullValue) {
 		this.emptyWhenNullValue = emptyWhenNullValue;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getImageWidth() {
 		return imageWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>imageWidth</code>.</p>
+	 *
+	 * @param imageWidth a {@link java.lang.Integer} object.
+	 */
 	public void setImageWidth(Integer imageWidth) {
 		if (imageWidth != null) {
 			Validate.isTrue(imageWidth >= 0, "imageWidth must be >= 0");
@@ -85,11 +112,17 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
 		this.imageWidth = imageWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getImageHeight() {
 		return imageHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>imageHeight</code>.</p>
+	 *
+	 * @param imageHeight a {@link java.lang.Integer} object.
+	 */
 	public void setImageHeight(Integer imageHeight) {
 		if (imageHeight != null) {
 			Validate.isTrue(imageHeight >= 0, "imageHeight must be >= 0");
@@ -97,20 +130,32 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
 		this.imageHeight = imageHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalImageAlignment getHorizontalImageAlignment() {
 		return horizontalImageAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalImageAlignment</code>.</p>
+	 *
+	 * @param horizontalImageAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+	 */
 	public void setHorizontalImageAlignment(HorizontalImageAlignment horizontalImageAlignment) {
 		this.horizontalImageAlignment = horizontalImageAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalTextAlignment</code>.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}

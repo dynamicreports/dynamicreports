@@ -71,15 +71,31 @@ import net.sf.jasperreports.engine.xml.JRXmlTemplateLoader;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>JasperTemplateStyleLoader class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTemplateStyleLoader {
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param file a {@link java.io.File} object.
+	 * @return an array of {@link net.sf.dynamicreports.report.base.style.DRStyle} objects.
+	 */
 	public static DRStyle[] loadStyles(File file) {
 		Validate.notNull(file, "file must not be null");
 		return loadStyles(JRXmlTemplateLoader.load(file));
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param fileName a {@link java.lang.String} object.
+	 * @return an array of {@link net.sf.dynamicreports.report.base.style.DRStyle} objects.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static DRStyle[] loadStyles(String fileName) throws DRException {
 		Validate.notNull(fileName, "fileName must not be null");
 		try {
@@ -89,11 +105,23 @@ public class JasperTemplateStyleLoader {
 		}
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param inputStream a {@link java.io.InputStream} object.
+	 * @return an array of {@link net.sf.dynamicreports.report.base.style.DRStyle} objects.
+	 */
 	public static DRStyle[] loadStyles(InputStream inputStream) {
 		Validate.notNull(inputStream, "inputStream must not be null");
 		return loadStyles(JRXmlTemplateLoader.load(inputStream));
 	}
 
+	/**
+	 * <p>loadStyles.</p>
+	 *
+	 * @param url a {@link java.net.URL} object.
+	 * @return an array of {@link net.sf.dynamicreports.report.base.style.DRStyle} objects.
+	 */
 	public static DRStyle[] loadStyles(URL url) {
 		Validate.notNull(url, "url must not be null");
 		return loadStyles(JRXmlTemplateLoader.load(url));
@@ -170,6 +198,12 @@ public class JasperTemplateStyleLoader {
 		}
 	}
 
+	/**
+	 * <p>pen.</p>
+	 *
+	 * @param jrPen a {@link net.sf.jasperreports.engine.JRPen} object.
+	 * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+	 */
 	protected static void pen(JRPen jrPen, DRPen pen) {
 		pen.setLineColor(jrPen.getOwnLineColor());
 		pen.setLineStyle(lineStyle(jrPen.getOwnLineStyleValue()));
@@ -358,6 +392,12 @@ public class JasperTemplateStyleLoader {
 		}
 	}
 
+	/**
+	 * <p>rotation.</p>
+	 *
+	 * @param rotation a {@link net.sf.jasperreports.engine.type.RotationEnum} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.Rotation} object.
+	 */
 	protected static Rotation rotation(RotationEnum rotation) {
 		if (rotation == null) {
 			return null;

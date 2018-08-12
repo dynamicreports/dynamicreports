@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
+ * <p>DRDesignPadding class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPadding implements DRIDesignPadding {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,42 +41,67 @@ public class DRDesignPadding implements DRIDesignPadding {
 	private Integer bottom;
 	private Integer right;
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getTop() {
 		return top;
 	}
 
+	/**
+	 * <p>Setter for the field <code>top</code>.</p>
+	 *
+	 * @param top a {@link java.lang.Integer} object.
+	 */
 	public void setTop(Integer top) {
 		this.top = top;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getLeft() {
 		return left;
 	}
 
+	/**
+	 * <p>Setter for the field <code>left</code>.</p>
+	 *
+	 * @param left a {@link java.lang.Integer} object.
+	 */
 	public void setLeft(Integer left) {
 		this.left = left;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getBottom() {
 		return bottom;
 	}
 
+	/**
+	 * <p>Setter for the field <code>bottom</code>.</p>
+	 *
+	 * @param bottom a {@link java.lang.Integer} object.
+	 */
 	public void setBottom(Integer bottom) {
 		this.bottom = bottom;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getRight() {
 		return right;
 	}
 
+	/**
+	 * <p>Setter for the field <code>right</code>.</p>
+	 *
+	 * @param right a {@link java.lang.Integer} object.
+	 */
 	public void setRight(Integer right) {
 		this.right = right;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {

@@ -33,19 +33,28 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>SeriesOrderByNamesComparator class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SeriesOrderByNamesComparator implements Comparator<String>, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private List<String> seriesNames;
 
+	/**
+	 * <p>Constructor for SeriesOrderByNamesComparator.</p>
+	 *
+	 * @param seriesNames a {@link java.util.List} object.
+	 */
 	public SeriesOrderByNamesComparator(List<String> seriesNames) {
 		Validate.notNull(seriesNames, "seriesNames must not be null");
 		Validate.noNullElements(seriesNames, "seriesNames must not contains null seriesName");
 		this.seriesNames = seriesNames;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int compare(String o1, String o2) {
 		String row1;

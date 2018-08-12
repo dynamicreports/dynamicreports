@@ -28,15 +28,26 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.design.JRDesignGroup;
 
 /**
+ * <p>GroupTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for GroupTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public GroupTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		for (DRIDesignGroup group : accessor.getReport().getGroups()) {
 			addGroup(group);
@@ -67,12 +78,21 @@ public class GroupTransform {
 		return jrGroup;
 	}
 
+	/**
+	 * <p>transformExpressions.</p>
+	 */
 	public void transformExpressions() {
 		for (DRIDesignGroup group : accessor.getReport().getGroups()) {
 			getGroup(group).setExpression(accessor.getExpressionTransform().getExpression(group.getGroupExpression()));
 		}
 	}
 
+	/**
+	 * <p>getGroup.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignGroup} object.
+	 */
 	public JRDesignGroup getGroup(DRIDesignGroup group) {
 		JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign().getGroupsMap().get(group.getName());
 		if (jrGroup == null)

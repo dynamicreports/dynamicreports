@@ -31,21 +31,27 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>BooleanType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BooleanType extends AbstractDataType<Boolean, Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getBooleanType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getBooleanType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean stringToValue(String value, Locale locale) throws DRException {
 		return new Boolean(value);

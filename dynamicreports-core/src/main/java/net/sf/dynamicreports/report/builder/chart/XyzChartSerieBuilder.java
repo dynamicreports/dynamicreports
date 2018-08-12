@@ -32,33 +32,63 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>XyzChartSerieBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyzChartSerieBuilder extends AbstractChartSerieBuilder<XyzChartSerieBuilder, DRXyzChartSerie> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyzChartSerieBuilder.</p>
+	 */
 	protected XyzChartSerieBuilder() {
 		super(new DRXyzChartSerie());
 	}
 
 	// x
+	/**
+	 * <p>setXValue.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setXValue(ValueColumnBuilder<?, ? extends Number> column) {
 		Validate.notNull(column, "column must not be null");
 		getObject().setXValueExpression(column.getColumn());
 		return this;
 	}
 
+	/**
+	 * <p>setXValue.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setXValue(FieldBuilder<? extends Number> field) {
 		Validate.notNull(field, "field must not be null");
 		getObject().setXValueExpression(field.build());
 		return this;
 	}
 
+	/**
+	 * <p>setXValue.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setXValue(DRIExpression<? extends Number> valueExpression) {
 		getObject().setXValueExpression(valueExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setXValue.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setXValue(VariableBuilder<? extends Number> variable) {
 		Validate.notNull(variable, "variable must not be null");
 		getObject().setXValueExpression(variable.build());
@@ -66,23 +96,47 @@ public class XyzChartSerieBuilder extends AbstractChartSerieBuilder<XyzChartSeri
 	}
 
 	// y
+	/**
+	 * <p>setYValue.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setYValue(ValueColumnBuilder<?, ? extends Number> column) {
 		Validate.notNull(column, "column must not be null");
 		getObject().setYValueExpression(column.getColumn());
 		return this;
 	}
 
+	/**
+	 * <p>setYValue.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setYValue(FieldBuilder<? extends Number> field) {
 		Validate.notNull(field, "field must not be null");
 		getObject().setYValueExpression(field.build());
 		return this;
 	}
 
+	/**
+	 * <p>setYValue.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setYValue(DRIExpression<? extends Number> valueExpression) {
 		getObject().setYValueExpression(valueExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setYValue.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setYValue(VariableBuilder<? extends Number> variable) {
 		Validate.notNull(variable, "variable must not be null");
 		getObject().setYValueExpression(variable.build());
@@ -90,29 +144,58 @@ public class XyzChartSerieBuilder extends AbstractChartSerieBuilder<XyzChartSeri
 	}
 
 	// z
+	/**
+	 * <p>setZValue.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setZValue(ValueColumnBuilder<?, ? extends Number> column) {
 		Validate.notNull(column, "column must not be null");
 		getObject().setZValueExpression(column.getColumn());
 		return this;
 	}
 
+	/**
+	 * <p>setZValue.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setZValue(FieldBuilder<? extends Number> field) {
 		Validate.notNull(field, "field must not be null");
 		getObject().setZValueExpression(field.build());
 		return this;
 	}
 
+	/**
+	 * <p>setZValue.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setZValue(DRIExpression<? extends Number> valueExpression) {
 		getObject().setZValueExpression(valueExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setZValue.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	public XyzChartSerieBuilder setZValue(VariableBuilder<? extends Number> variable) {
 		Validate.notNull(variable, "variable must not be null");
 		getObject().setZValueExpression(variable.build());
 		return this;
 	}
 
+	/**
+	 * <p>getChartSerie.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.chart.dataset.DRXyzChartSerie} object.
+	 */
 	public DRXyzChartSerie getChartSerie() {
 		return build();
 	}

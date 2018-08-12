@@ -126,7 +126,62 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DefaultAdhocReportCustomizer class.</p>
+ * Provides basic implementation for the {@link AdhocReportCustomizer#customize(ReportBuilder, AdhocReport)} method.
+ * The public methods can be extended to provide further customization at runtime as shown;
+ * <pre>
+ *     {@code
+ *      class ReportCustomizer extends DefaultAdhocReportCustomizer {
+ *
+ *         //@Override
+ *         public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException {
+ *            super.customize(report, adhocReport);
+ *            // default report values
+ * 	          report.setTemplate(Templates.reportTemplate);
+ *            report.title(Templates.createTitleComponent("AdhocCustomizer"));
+ *            // a fixed page footer that user cannot change, this customization is not stored in the xml file
+ *            report.pageFooter(Templates.footerComponent);
+ *         }
+ *
+ *         //@Override
+ *         protected DRIDataType<?, ?> getFieldType(String name) {
+ *           if (name.equals("item")) {
+ *             return type.stringType();
+ *            }
+ *           if (name.equals("orderdate")) {
+ *             return type.dateType();
+ *            }
+ *            if (name.equals("quantity")) {
+ *              return type.integerType();
+ *            }
+ *            if (name.equals("unitprice")) {
+ *              return type.bigDecimalType();
+ *            }
+ *           return super.getFieldType(name);
+ *          }
+ *
+ *         //@Override
+ *         protected String getFieldLabel(String name) {
+ *           if (name.equals("item")) {
+ *              return "Item";
+ *            }
+ *            if (name.equals("orderdate")) {
+ *              return "Order date";
+ *            }
+ *            if (name.equals("quantity")) {
+ *               return "Quantity";
+ *            }
+ *            if (name.equals("unitprice")) {
+ *               return "Unit price";
+ *            }
+ *            return name;
+ *          }
+ *       }
+ *    }
+ * </pre>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 	protected ReportBuilder<?> report;
@@ -135,6 +190,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 	protected Map<String, GroupBuilder<?>> groups = new LinkedHashMap<String, GroupBuilder<?>>();
 	protected Map<String, ComponentBuilder<?, ?>> components = new LinkedHashMap<String, ComponentBuilder<?, ?>>();
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException {
 		this.report = report;
@@ -179,14 +235,32 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		addComponents();
 	}
 
+	/**
+	 * <p>getFieldLabel.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	protected String getFieldLabel(String name) {
 		return name;
 	}
 
+	/**
+	 * <p>getFieldType.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	protected DRIDataType<?, ?> getFieldType(String name) {
 		return null;
 	}
 
+	/**
+	 * <p>getFieldExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected DRIExpression<?> getFieldExpression(String name) {
 		DRIDataType<?, ?> type = getFieldType(name);
 		if (type != null) {
@@ -195,6 +269,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return DynamicReports.field(name, Object.class).build();
 	}
 
+	/**
+	 * <p>column.</p>
+	 *
+	 * @param adhocColumn a {@link net.sf.dynamicreports.adhoc.configuration.AdhocColumn} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 */
 	protected ColumnBuilder<?, ?> column(AdhocColumn adhocColumn) {
 		TextColumnBuilder<?> column = Columns.column(getFieldExpression(adhocColumn.getName()));
 		if (adhocColumn.getTitle() != null) {
@@ -213,6 +293,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return column;
 	}
 
+	/**
+	 * <p>group.</p>
+	 *
+	 * @param adhocGroup a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroup} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+	 */
 	protected GroupBuilder<?> group(AdhocGroup adhocGroup) {
 		GroupBuilder<?> group;
 		ColumnBuilder<?, ?> groupColumn = columns.get(adhocGroup.getName());
@@ -228,6 +314,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return group;
 	}
 
+	/**
+	 * <p>groupHeaderLayout.</p>
+	 *
+	 * @param groupHeaderLayout a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroupHeaderLayout} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.GroupHeaderLayout} object.
+	 */
 	protected GroupHeaderLayout groupHeaderLayout(AdhocGroupHeaderLayout groupHeaderLayout) {
 		if (groupHeaderLayout == null) {
 			return null;
@@ -245,6 +337,9 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>addSubtotals.</p>
+	 */
 	protected void addSubtotals() {
 		for (AdhocSubtotal adhocSubtotal : adhocReport.getSubtotals()) {
 			if (adhocSubtotal.getPosition() == null) {
@@ -258,6 +353,11 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		report.subtotalsAtSummary(subtotals());
 	}
 
+	/**
+	 * <p>subtotals.</p>
+	 *
+	 * @return an array of {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} objects.
+	 */
 	protected SubtotalBuilder<?, ?>[] subtotals() {
 		List<SubtotalBuilder<?, ?>> subtotals = new ArrayList<SubtotalBuilder<?, ?>>();
 		for (AdhocSubtotal adhocSubtotal : adhocReport.getSubtotals()) {
@@ -272,6 +372,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return subtotals.toArray(new SubtotalBuilder<?, ?>[subtotals.size()]);
 	}
 
+	/**
+	 * <p>subtotal.</p>
+	 *
+	 * @param adhocSubtotal a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotal} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
+	 */
 	protected SubtotalBuilder<?, ?> subtotal(AdhocSubtotal adhocSubtotal) {
 		if (adhocReport.getColumns().isEmpty()) {
 			return null;
@@ -292,6 +398,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return subtotal;
 	}
 
+	/**
+	 * <p>calculation.</p>
+	 *
+	 * @param adhocCalculation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocCalculation} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected Calculation calculation(AdhocCalculation adhocCalculation) {
 		if (adhocCalculation == null) {
 			return Calculation.NOTHING;
@@ -323,6 +435,13 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>addSubtotal.</p>
+	 *
+	 * @param subtotal a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
+	 * @param adhocSubtotalPosition a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotalPosition} object.
+	 * @param groupName a {@link java.lang.String} object.
+	 */
 	protected void addSubtotal(SubtotalBuilder<?, ?> subtotal, AdhocSubtotalPosition adhocSubtotalPosition, String groupName) {
 		Validate.notNull(adhocSubtotalPosition, "subtotalPosition must not be null");
 
@@ -371,6 +490,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>sort.</p>
+	 *
+	 * @param adhocSort a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSort} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
+	 */
 	protected SortBuilder sort(AdhocSort adhocSort) {
 		SortBuilder sort;
 		ColumnBuilder<?, ?> sortColumn = columns.get(adhocSort.getName());
@@ -384,6 +509,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return sort;
 	}
 
+	/**
+	 * <p>orderType.</p>
+	 *
+	 * @param adhocOrderType a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrderType} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	protected OrderType orderType(AdhocOrderType adhocOrderType) {
 		if (adhocOrderType == null) {
 			return OrderType.ASCENDING;
@@ -399,6 +530,13 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>baseStyle.</p>
+	 *
+	 * @param adhocStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 * @param baseStyle a {@link net.sf.dynamicreports.report.builder.style.BaseStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.BaseStyleBuilder} object.
+	 */
 	protected BaseStyleBuilder<?, ?> baseStyle(AdhocStyle adhocStyle, BaseStyleBuilder<?, ?> baseStyle) {
 		if (adhocStyle.getFont() != null) {
 			baseStyle.setFont(font(adhocStyle.getFont()));
@@ -424,6 +562,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return baseStyle;
 	}
 
+	/**
+	 * <p>style.</p>
+	 *
+	 * @param adhocStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	protected StyleBuilder style(AdhocStyle adhocStyle) {
 		if (adhocStyle == null) {
 			return null;
@@ -434,6 +578,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return style;
 	}
 
+	/**
+	 * <p>simpleStyle.</p>
+	 *
+	 * @param adhocStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.SimpleStyleBuilder} object.
+	 */
 	protected SimpleStyleBuilder simpleStyle(AdhocStyle adhocStyle) {
 		if (adhocStyle == null) {
 			return null;
@@ -444,6 +594,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return simpleStyle;
 	}
 
+	/**
+	 * <p>font.</p>
+	 *
+	 * @param adhocFont a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFont} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
+	 */
 	protected FontBuilder font(AdhocFont adhocFont) {
 		if (adhocFont == null) {
 			return null;
@@ -459,6 +615,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return font;
 	}
 
+	/**
+	 * <p>pen.</p>
+	 *
+	 * @param adhocPen a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPen} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 */
 	protected PenBuilder pen(AdhocPen adhocPen) {
 		if (adhocPen == null) {
 			return null;
@@ -470,6 +632,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return pen;
 	}
 
+	/**
+	 * <p>horizontalTextAlignment.</p>
+	 *
+	 * @param adhocHorizontalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocHorizontalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	protected HorizontalTextAlignment horizontalTextAlignment(AdhocHorizontalAlignment adhocHorizontalAlignment) {
 		if (adhocHorizontalAlignment == null) {
 			return null;
@@ -489,6 +657,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>verticalTextAlignment.</p>
+	 *
+	 * @param adhocVerticalAlignment a {@link net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalTextAlignment} object.
+	 */
 	protected VerticalTextAlignment verticalTextAlignment(AdhocVerticalAlignment adhocVerticalAlignment) {
 		if (adhocVerticalAlignment == null) {
 			return null;
@@ -508,6 +682,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>page.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+	 * @param adhocPage a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPage} object.
+	 */
 	protected void page(ReportBuilder<?> report, AdhocPage adhocPage) {
 		if (adhocPage == null) {
 			return;
@@ -531,6 +711,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		report.setIgnorePageWidth(adhocPage.getIgnorePageWidth());
 	}
 
+	/**
+	 * <p>pageOrientation.</p>
+	 *
+	 * @param adhocPageOrientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPageOrientation} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	protected PageOrientation pageOrientation(AdhocPageOrientation adhocPageOrientation) {
 		if (adhocPageOrientation == null) {
 			return PageOrientation.PORTRAIT;
@@ -546,9 +732,18 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>addComponents.</p>
+	 */
 	protected void addComponents() {
 	}
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param adhocComponent a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected ComponentBuilder<?, ?> component(AdhocComponent adhocComponent) {
 		if (adhocComponent instanceof AdhocTextField) {
 			return textField((AdhocTextField) adhocComponent);
@@ -559,6 +754,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		throw new AdhocException("Component " + adhocComponent.getClass().getName() + " not supported");
 	}
 
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param adhocComponent a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected void component(AdhocComponent adhocComponent, ComponentBuilder<?, ?> component) {
 		component.setStyle(style(adhocComponent.getStyle()));
 		if (component instanceof DimensionComponentBuilder) {
@@ -571,12 +772,24 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>textField.</p>
+	 *
+	 * @param adhocTextField a {@link net.sf.dynamicreports.adhoc.configuration.AdhocTextField} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
+	 */
 	protected TextFieldBuilder<?> textField(AdhocTextField adhocTextField) {
 		TextFieldBuilder<String> textField = Components.text(adhocTextField.getText());
 		component(adhocTextField, textField);
 		return textField;
 	}
 
+	/**
+	 * <p>chart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AbstractChartBuilder} object.
+	 */
 	protected AbstractChartBuilder<?> chart(AdhocChart adhocChart) {
 		AdhocChartType type = adhocChart.getType();
 		if (type == null) {
@@ -631,6 +844,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>chart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param chart a {@link net.sf.dynamicreports.report.builder.chart.AbstractChartBuilder} object.
+	 */
 	protected void chart(AdhocChart adhocChart, AbstractChartBuilder<?> chart) {
 		component(adhocChart, chart);
 		if (adhocChart.getTitle() != null) {
@@ -643,6 +862,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		chart.setShowLegend(adhocChart.getShowLegend());
 	}
 
+	/**
+	 * <p>baseChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param baseChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractBaseChartBuilder} object.
+	 */
 	protected void baseChart(AdhocChart adhocChart, AbstractBaseChartBuilder<?, ?, ?> baseChart) {
 		chart(adhocChart, baseChart);
 		if (adhocChart.getSeriesColors() != null && !adhocChart.getSeriesColors().isEmpty()) {
@@ -653,6 +878,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		baseChart.setOrientation(orientation(adhocChart.getOrientation()));
 	}
 
+	/**
+	 * <p>categoryChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param categoryChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractCategoryChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void categoryChart(AdhocChart adhocChart, AbstractCategoryChartBuilder<?, ?> categoryChart) {
 		baseChart(adhocChart, categoryChart);
@@ -687,6 +918,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		categoryChart.setShowPercentages(showPercentages);
 	}
 
+	/**
+	 * <p>timeSeriesChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param timeSeriesChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractTimeSeriesChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void timeSeriesChart(AdhocChart adhocChart, AbstractTimeSeriesChartBuilder<?, ?> timeSeriesChart) {
 		baseChart(adhocChart, timeSeriesChart);
@@ -716,6 +953,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		timeSeriesChart.setShowValues(showValues);
 	}
 
+	/**
+	 * <p>timePeriodType.</p>
+	 *
+	 * @param timePeriod a {@link net.sf.dynamicreports.adhoc.configuration.AdhocTimePeriod} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
+	 */
 	protected TimePeriod timePeriodType(AdhocTimePeriod timePeriod) {
 		if (timePeriod == null) {
 			return null;
@@ -745,6 +988,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>pieChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param pieChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractPieChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void pieChart(AdhocChart adhocChart, AbstractPieChartBuilder<?, ?> pieChart) {
 		baseChart(adhocChart, pieChart);
@@ -766,6 +1015,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		pieChart.setShowPercentages(showPercentages);
 	}
 
+	/**
+	 * <p>xyChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param xyChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractXyChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void xyChart(AdhocChart adhocChart, AbstractXyChartBuilder<?, ?> xyChart) {
 		baseChart(adhocChart, xyChart);
@@ -791,6 +1046,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>spiderChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param spiderChart a {@link net.sf.dynamicreports.report.builder.chart.SpiderChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void spiderChart(AdhocChart adhocChart, SpiderChartBuilder spiderChart) {
 		chart(adhocChart, spiderChart);
@@ -808,6 +1069,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>bubbleChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @param bubbleChart a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void bubbleChart(AdhocChart adhocChart, BubbleChartBuilder bubbleChart) {
 		baseChart(adhocChart, bubbleChart);
@@ -833,6 +1100,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>areaChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
+	 */
 	protected AreaChartBuilder areaChart(AdhocChart adhocChart) {
 		AreaChartBuilder areaChart = Charts.areaChart();
 		categoryChart(adhocChart, areaChart);
@@ -841,12 +1114,24 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return areaChart;
 	}
 
+	/**
+	 * <p>stackedAreaChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedAreaChartBuilder} object.
+	 */
 	protected StackedAreaChartBuilder stackedAreaChart(AdhocChart adhocChart) {
 		StackedAreaChartBuilder stackedAreaChart = Charts.stackedAreaChart();
 		categoryChart(adhocChart, stackedAreaChart);
 		return stackedAreaChart;
 	}
 
+	/**
+	 * <p>barChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.BarChartBuilder} object.
+	 */
 	protected BarChartBuilder barChart(AdhocChart adhocChart) {
 		BarChartBuilder barChart = Charts.barChart();
 		categoryChart(adhocChart, barChart);
@@ -855,6 +1140,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return barChart;
 	}
 
+	/**
+	 * <p>stackedBarChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+	 */
 	protected StackedBarChartBuilder stackedBarChart(AdhocChart adhocChart) {
 		StackedBarChartBuilder stackedBarChart = Charts.stackedBarChart();
 		categoryChart(adhocChart, stackedBarChart);
@@ -863,6 +1154,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return stackedBarChart;
 	}
 
+	/**
+	 * <p>groupedStackedBarChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedStackedBarChartBuilder} object.
+	 */
 	protected GroupedStackedBarChartBuilder groupedStackedBarChart(AdhocChart adhocChart) {
 		GroupedStackedBarChartBuilder groupedStackedBarChart = Charts.groupedStackedBarChart();
 		categoryChart(adhocChart, groupedStackedBarChart);
@@ -871,6 +1168,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return groupedStackedBarChart;
 	}
 
+	/**
+	 * <p>bar3DChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.Bar3DChartBuilder} object.
+	 */
 	protected Bar3DChartBuilder bar3DChart(AdhocChart adhocChart) {
 		Bar3DChartBuilder bar3DChart = Charts.bar3DChart();
 		categoryChart(adhocChart, bar3DChart);
@@ -879,6 +1182,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return bar3DChart;
 	}
 
+	/**
+	 * <p>stackedBar3DChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBar3DChartBuilder} object.
+	 */
 	protected StackedBar3DChartBuilder stackedBar3DChart(AdhocChart adhocChart) {
 		StackedBar3DChartBuilder stackedBar3DChart = Charts.stackedBar3DChart();
 		categoryChart(adhocChart, stackedBar3DChart);
@@ -887,6 +1196,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return stackedBar3DChart;
 	}
 
+	/**
+	 * <p>lineChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+	 */
 	protected LineChartBuilder lineChart(AdhocChart adhocChart) {
 		LineChartBuilder lineChart = Charts.lineChart();
 		categoryChart(adhocChart, lineChart);
@@ -895,36 +1210,72 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return lineChart;
 	}
 
+	/**
+	 * <p>layeredBarChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	protected LayeredBarChartBuilder layeredBarChart(AdhocChart adhocChart) {
 		LayeredBarChartBuilder layeredChart = Charts.layeredBarChart();
 		categoryChart(adhocChart, layeredChart);
 		return layeredChart;
 	}
 
+	/**
+	 * <p>waterfallBarChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.WaterfallBarChartBuilder} object.
+	 */
 	protected WaterfallBarChartBuilder waterfallBarChart(AdhocChart adhocChart) {
 		WaterfallBarChartBuilder waterfallChart = Charts.waterfallBarChart();
 		categoryChart(adhocChart, waterfallChart);
 		return waterfallChart;
 	}
 
+	/**
+	 * <p>differenceChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
+	 */
 	protected DifferenceChartBuilder differenceChart(AdhocChart adhocChart) {
 		DifferenceChartBuilder differenceChart = Charts.differenceChart();
 		timeSeriesChart(adhocChart, differenceChart);
 		return differenceChart;
 	}
 
+	/**
+	 * <p>pieChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.PieChartBuilder} object.
+	 */
 	protected PieChartBuilder pieChart(AdhocChart adhocChart) {
 		PieChartBuilder pieChart = Charts.pieChart();
 		pieChart(adhocChart, pieChart);
 		return pieChart;
 	}
 
+	/**
+	 * <p>pie3DChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.Pie3DChartBuilder} object.
+	 */
 	protected Pie3DChartBuilder pie3DChart(AdhocChart adhocChart) {
 		Pie3DChartBuilder pie3DChart = Charts.pie3DChart();
 		pieChart(adhocChart, pie3DChart);
 		return pie3DChart;
 	}
 
+	/**
+	 * <p>scatterChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+	 */
 	protected ScatterChartBuilder scatterChart(AdhocChart adhocChart) {
 		ScatterChartBuilder scatterChart = Charts.scatterChart();
 		xyChart(adhocChart, scatterChart);
@@ -933,24 +1284,48 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return scatterChart;
 	}
 
+	/**
+	 * <p>spiderChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.SpiderChartBuilder} object.
+	 */
 	protected SpiderChartBuilder spiderChart(AdhocChart adhocChart) {
 		SpiderChartBuilder spiderChart = Charts.spiderChart();
 		spiderChart(adhocChart, spiderChart);
 		return spiderChart;
 	}
 
+	/**
+	 * <p>timeSeriesChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+	 */
 	protected TimeSeriesChartBuilder timeSeriesChart(AdhocChart adhocChart) {
 		TimeSeriesChartBuilder timeSeriesChart = Charts.timeSeriesChart();
 		timeSeriesChart(adhocChart, timeSeriesChart);
 		return timeSeriesChart;
 	}
 
+	/**
+	 * <p>xyAreaChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyAreaChartBuilder} object.
+	 */
 	protected XyAreaChartBuilder xyAreaChart(AdhocChart adhocChart) {
 		XyAreaChartBuilder xyAreaChart = Charts.xyAreaChart();
 		xyChart(adhocChart, xyAreaChart);
 		return xyAreaChart;
 	}
 
+	/**
+	 * <p>xyBarChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
+	 */
 	protected XyBarChartBuilder xyBarChart(AdhocChart adhocChart) {
 		XyBarChartBuilder xyBarChart = Charts.xyBarChart();
 		xyChart(adhocChart, xyBarChart);
@@ -959,6 +1334,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return xyBarChart;
 	}
 
+	/**
+	 * <p>xyLineChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+	 */
 	protected XyLineChartBuilder xyLineChart(AdhocChart adhocChart) {
 		XyLineChartBuilder xyLineChart = Charts.xyLineChart();
 		xyChart(adhocChart, xyLineChart);
@@ -967,6 +1348,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return xyLineChart;
 	}
 
+	/**
+	 * <p>xyStepChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
+	 */
 	protected XyStepChartBuilder xyStepChart(AdhocChart adhocChart) {
 		XyStepChartBuilder xyStepChart = Charts.xyStepChart();
 		xyChart(adhocChart, xyStepChart);
@@ -975,12 +1362,24 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return xyStepChart;
 	}
 
+	/**
+	 * <p>bubbleChart.</p>
+	 *
+	 * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
+	 */
 	protected BubbleChartBuilder bubbleChart(AdhocChart adhocChart) {
 		BubbleChartBuilder bubbleChart = Charts.bubbleChart();
 		bubbleChart(adhocChart, bubbleChart);
 		return bubbleChart;
 	}
 
+	/**
+	 * <p>orientation.</p>
+	 *
+	 * @param adhocOrientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrientation} object.
+	 * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	protected Orientation orientation(AdhocOrientation adhocOrientation) {
 		if (adhocOrientation == null) {
 			return null;
@@ -996,6 +1395,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>axisFormat.</p>
+	 *
+	 * @param adhocAxisFormat a {@link net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AxisFormatBuilder} object.
+	 */
 	protected AxisFormatBuilder axisFormat(AdhocAxisFormat adhocAxisFormat) {
 		if (adhocAxisFormat == null) {
 			return null;
@@ -1012,6 +1417,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return axisFormat;
 	}
 
+	/**
+	 * <p>chartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @param chartSerie a {@link net.sf.dynamicreports.report.builder.chart.AbstractChartSerieBuilder} object.
+	 */
 	protected void chartSerie(AdhocChartSerie adhocChartSerie, AbstractChartSerieBuilder<?, ?> chartSerie) {
 		if (adhocChartSerie.getSeries() != null) {
 			ColumnBuilder<?, ?> seriesColumn = columns.get(adhocChartSerie.getSeries());
@@ -1023,6 +1434,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		}
 	}
 
+	/**
+	 * <p>categoryChartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected CategoryChartSerieBuilder categoryChartSerie(AdhocChartSerie adhocChartSerie) {
 		CategoryChartSerieBuilder categoryChartSerie;
@@ -1045,6 +1462,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return categoryChartSerie;
 	}
 
+	/**
+	 * <p>groupedCategoryChartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected GroupedCategoryChartSerieBuilder groupedCategoryChartSerie(AdhocChartSerie adhocChartSerie) {
 		GroupedCategoryChartSerieBuilder groupedCategoryChartSerie;
@@ -1077,6 +1500,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return groupedCategoryChartSerie;
 	}
 
+	/**
+	 * <p>xyChartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected XyChartSerieBuilder xyChartSerie(AdhocChartSerie adhocChartSerie) {
 		XyChartSerieBuilder xyChartSerie;
@@ -1108,6 +1537,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 		return xyChartSerie;
 	}
 
+	/**
+	 * <p>xyzChartSerie.</p>
+	 *
+	 * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected XyzChartSerieBuilder xyzChartSerie(AdhocChartSerie adhocChartSerie) {
 		XyzChartSerieBuilder xyzChartSerie = Charts.xyzSerie();

@@ -27,20 +27,33 @@ import net.sf.dynamicreports.report.builder.expression.SystemMessageExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>CurrentDateBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CurrentDateBuilder extends AbstractFormatFieldBuilder<CurrentDateBuilder, DRCurrentDate> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CurrentDateBuilder.</p>
+	 */
 	protected CurrentDateBuilder() {
 		super(new DRCurrentDate());
 	}
 
+	/**
+	 * <p>setPattern.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.CurrentDateBuilder} object.
+	 */
 	public CurrentDateBuilder setPattern(String pattern) {
 		getObject().setPattern(pattern);
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		if (getObject().getFormatExpression() == null) {

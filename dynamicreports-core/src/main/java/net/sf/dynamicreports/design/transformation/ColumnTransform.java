@@ -50,17 +50,30 @@ import net.sf.dynamicreports.report.definition.style.DRIStyle;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ColumnTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnTransform {
 	private DesignTransformAccessor accessor;
 	private Map<DRIColumn<?>, DRIComponent> columnComponents;
 
+	/**
+	 * <p>Constructor for ColumnTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public ColumnTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
 	// columns
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		columnComponents = getColumnComponents();
 		boolean showColumnTitle = accessor.getTemplateTransform().isShowColumnTitle();
@@ -252,6 +265,12 @@ public class ColumnTransform {
 		return conditionalStyle;
 	}
 
+	/**
+	 * <p>getColumnComponent.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public DRIComponent getColumnComponent(DRIColumn<?> column) {
 		return columnComponents.get(column);
 	}

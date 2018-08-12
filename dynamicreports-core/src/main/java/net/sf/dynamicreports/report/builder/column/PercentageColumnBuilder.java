@@ -41,6 +41,7 @@ import org.apache.commons.lang3.Validate;
  * It calculates percentage values from the field or column values.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumnBuilder, Double> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -49,11 +50,21 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
 	private PercentageTotalType totalType;
 	private DRGroup totalGroup;
 
+	/**
+	 * <p>Constructor for PercentageColumnBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 */
 	protected PercentageColumnBuilder(ValueColumnBuilder<?, ? extends Number> column) {
 		Validate.notNull(column, "column must not be null");
 		this.actualExpression = column.build();
 	}
 
+	/**
+	 * <p>Constructor for PercentageColumnBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	protected PercentageColumnBuilder(FieldBuilder<? extends Number> field) {
 		Validate.notNull(field, "field must not be null");
 		this.actualExpression = field.getField();
@@ -94,6 +105,7 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		if (getComponent().getDataType() == null) {

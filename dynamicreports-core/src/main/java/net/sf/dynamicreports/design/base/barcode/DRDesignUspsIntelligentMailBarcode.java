@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.barcode.DRIDesignUspsIntelligentM
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignUspsIntelligentMailBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode implements DRIDesignUspsIntelligentMailBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,33 +38,54 @@ public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode 
 	private Double intercharGapWidth;
 	private Double trackHeight;
 
+	/**
+	 * <p>Constructor for DRDesignUspsIntelligentMailBarcode.</p>
+	 */
 	public DRDesignUspsIntelligentMailBarcode() {
 		super("USPSIntelligentMail");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getAscenderHeight() {
 		return ascenderHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ascenderHeight</code>.</p>
+	 *
+	 * @param ascenderHeight a {@link java.lang.Double} object.
+	 */
 	public void setAscenderHeight(Double ascenderHeight) {
 		this.ascenderHeight = ascenderHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getIntercharGapWidth() {
 		return intercharGapWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>intercharGapWidth</code>.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 */
 	public void setIntercharGapWidth(Double intercharGapWidth) {
 		this.intercharGapWidth = intercharGapWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getTrackHeight() {
 		return trackHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>trackHeight</code>.</p>
+	 *
+	 * @param trackHeight a {@link java.lang.Double} object.
+	 */
 	public void setTrackHeight(Double trackHeight) {
 		this.trackHeight = trackHeight;
 	}

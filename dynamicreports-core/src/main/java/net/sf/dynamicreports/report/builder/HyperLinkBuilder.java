@@ -32,30 +32,58 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>HyperLinkBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class HyperLinkBuilder extends AbstractBuilder<HyperLinkBuilder, DRHyperLink> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for HyperLinkBuilder.</p>
+	 */
 	protected HyperLinkBuilder() {
 		super(new DRHyperLink());
 	}
 
+	/**
+	 * <p>Constructor for HyperLinkBuilder.</p>
+	 *
+	 * @param link a {@link java.lang.String} object.
+	 */
 	protected HyperLinkBuilder(String link) {
 		super(new DRHyperLink());
 		setLink(link);
 	}
 
+	/**
+	 * <p>Constructor for HyperLinkBuilder.</p>
+	 *
+	 * @param linkExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected HyperLinkBuilder(DRIExpression<String> linkExpression) {
 		super(new DRHyperLink());
 		setLink(linkExpression);
 	}
 
+	/**
+	 * <p>setLink.</p>
+	 *
+	 * @param link a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setLink(String link) {
 		Validate.notNull(link, "link must not be null");
 		return setLink(Expressions.text(link));
 	}
 
+	/**
+	 * <p>setLink.</p>
+	 *
+	 * @param linkExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setLink(DRIExpression<String> linkExpression) {
 		Validate.notNull(linkExpression, "linkExpression must not be null");
 		getObject().setReferenceExpression(linkExpression);
@@ -63,66 +91,143 @@ public class HyperLinkBuilder extends AbstractBuilder<HyperLinkBuilder, DRHyperL
 		return this;
 	}
 
+	/**
+	 * <p>setAnchor.</p>
+	 *
+	 * @param anchor a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setAnchor(String anchor) {
 		getObject().setAnchorExpression(Expressions.text(anchor));
 		return this;
 	}
 
+	/**
+	 * <p>setAnchor.</p>
+	 *
+	 * @param anchorExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setAnchor(DRIExpression<String> anchorExpression) {
 		getObject().setAnchorExpression(anchorExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setPage.</p>
+	 *
+	 * @param page a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setPage(Integer page) {
 		getObject().setPageExpression(Expressions.value(page));
 		return this;
 	}
 
+	/**
+	 * <p>setPage.</p>
+	 *
+	 * @param pageExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setPage(DRIExpression<Integer> pageExpression) {
 		getObject().setPageExpression(pageExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setReference.</p>
+	 *
+	 * @param reference a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setReference(String reference) {
 		getObject().setReferenceExpression(Expressions.text(reference));
 		return this;
 	}
 
+	/**
+	 * <p>setReference.</p>
+	 *
+	 * @param referenceExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setReference(DRIExpression<String> referenceExpression) {
 		getObject().setReferenceExpression(referenceExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setTooltip.</p>
+	 *
+	 * @param tooltip a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setTooltip(String tooltip) {
 		getObject().setTooltipExpression(Expressions.text(tooltip));
 		return this;
 	}
 
+	/**
+	 * <p>setTooltip.</p>
+	 *
+	 * @param tooltipExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setTooltip(DRIExpression<String> tooltipExpression) {
 		getObject().setTooltipExpression(tooltipExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setType.</p>
+	 *
+	 * @param hyperLinkType a {@link net.sf.dynamicreports.report.constant.HyperLinkType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setType(HyperLinkType hyperLinkType) {
 		getObject().setType(hyperLinkType.name());
 		return this;
 	}
 
+	/**
+	 * <p>setType.</p>
+	 *
+	 * @param hyperLinkType a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setType(String hyperLinkType) {
 		getObject().setType(hyperLinkType);
 		return this;
 	}
 
+	/**
+	 * <p>setTarget.</p>
+	 *
+	 * @param hyperLinkTarget a {@link net.sf.dynamicreports.report.constant.HyperLinkTarget} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setTarget(HyperLinkTarget hyperLinkTarget) {
 		getObject().setTarget(hyperLinkTarget.name());
 		return this;
 	}
 
+	/**
+	 * <p>setTarget.</p>
+	 *
+	 * @param hyperLinkTarget a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
+	 */
 	public HyperLinkBuilder setTarget(String hyperLinkTarget) {
 		getObject().setTarget(hyperLinkTarget);
 		return this;
 	}
 
+	/**
+	 * <p>getHyperLink.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRHyperLink} object.
+	 */
 	public DRHyperLink getHyperLink() {
 		return build();
 	}

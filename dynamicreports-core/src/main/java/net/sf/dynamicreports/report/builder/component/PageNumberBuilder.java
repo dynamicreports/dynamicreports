@@ -27,15 +27,22 @@ import net.sf.dynamicreports.report.builder.expression.SystemMessageExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>PageNumberBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PageNumberBuilder extends AbstractFormatFieldBuilder<PageNumberBuilder, DRPageNumber> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PageNumberBuilder.</p>
+	 */
 	protected PageNumberBuilder() {
 		super(new DRPageNumber());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		if (getObject().getFormatExpression() == null) {

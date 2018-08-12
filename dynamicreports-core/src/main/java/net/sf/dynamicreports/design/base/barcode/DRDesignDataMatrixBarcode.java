@@ -27,22 +27,34 @@ import net.sf.dynamicreports.report.constant.BarcodeShape;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignDataMatrixBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignDataMatrixBarcode extends DRDesignBarcode4j implements DRIDesignDataMatrixBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private BarcodeShape shape;
 
+	/**
+	 * <p>Constructor for DRDesignDataMatrixBarcode.</p>
+	 */
 	public DRDesignDataMatrixBarcode() {
 		super("DataMatrix");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeShape getShape() {
 		return shape;
 	}
 
+	/**
+	 * <p>Setter for the field <code>shape</code>.</p>
+	 *
+	 * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
+	 */
 	public void setShape(BarcodeShape shape) {
 		this.shape = shape;
 	}

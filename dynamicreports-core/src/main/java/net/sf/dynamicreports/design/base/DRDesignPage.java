@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.PageOrientation;
 
 /**
+ * <p>DRDesignPage class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignPage implements DRIDesignPage {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,65 +43,107 @@ public class DRDesignPage implements DRIDesignPage {
 	private int columnSpace;
 	private int columnWidth;
 
+	/** {@inheritDoc} */
 	@Override
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * <p>Setter for the field <code>width</code>.</p>
+	 *
+	 * @param width a int.
+	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * <p>Setter for the field <code>height</code>.</p>
+	 *
+	 * @param height a int.
+	 */
 	public void setHeight(int height) {
 		this.height = height;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public PageOrientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public void setOrientation(PageOrientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignMargin getMargin() {
 		return margin;
 	}
 
+	/**
+	 * <p>Setter for the field <code>margin</code>.</p>
+	 *
+	 * @param margin a {@link net.sf.dynamicreports.design.base.DRDesignMargin} object.
+	 */
 	public void setMargin(DRDesignMargin margin) {
 		this.margin = margin;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnsPerPage() {
 		return columnsPerPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnsPerPage</code>.</p>
+	 *
+	 * @param columnsPerPage a int.
+	 */
 	public void setColumnsPerPage(int columnsPerPage) {
 		this.columnsPerPage = columnsPerPage;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnSpace() {
 		return columnSpace;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnSpace</code>.</p>
+	 *
+	 * @param columnSpace a int.
+	 */
 	public void setColumnSpace(int columnSpace) {
 		this.columnSpace = columnSpace;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnWidth() {
 		return columnWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnWidth</code>.</p>
+	 *
+	 * @param columnWidth a int.
+	 */
 	public void setColumnWidth(int columnWidth) {
 		this.columnWidth = columnWidth;
 	}

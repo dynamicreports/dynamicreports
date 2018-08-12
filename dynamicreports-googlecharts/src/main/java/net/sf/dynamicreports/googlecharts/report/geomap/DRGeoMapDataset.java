@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRGeoMapDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRGeoMapDataset implements DRIGeoMapDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,38 +40,62 @@ public class DRGeoMapDataset implements DRIGeoMapDataset {
 	private DRIExpression<?> valueExpression;
 	private DRIExpression<?> labelExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDataset getSubDataset() {
 		return subDataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subDataset</code>.</p>
+	 *
+	 * @param subDataset a {@link net.sf.dynamicreports.report.base.DRDataset} object.
+	 */
 	public void setSubDataset(DRDataset subDataset) {
 		this.subDataset = subDataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getLocationExpression() {
 		return locationExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>locationExpression</code>.</p>
+	 *
+	 * @param locationExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLocationExpression(DRIExpression<?> locationExpression) {
 		this.locationExpression = locationExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<?> valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setLabelExpression(DRIExpression<?> labelExpression) {
 		this.labelExpression = labelExpression;
 	}

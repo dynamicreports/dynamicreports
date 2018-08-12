@@ -37,10 +37,16 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
+ * <p>JasperSubreport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperSubreport {
 
+	/**
+	 * <p>Constructor for JasperSubreport.</p>
+	 */
 	public JasperSubreport() {
 		build();
 	}
@@ -85,6 +91,11 @@ public class JasperSubreport {
 		return (JasperReport) JRLoader.loadObject(is);
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new JasperSubreport();
 	}

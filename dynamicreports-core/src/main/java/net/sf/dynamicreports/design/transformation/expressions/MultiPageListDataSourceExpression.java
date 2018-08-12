@@ -29,22 +29,32 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
 /**
+ * <p>MultiPageListDataSourceExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MultiPageListDataSourceExpression extends AbstractSimpleExpression<JRDataSource> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private int count;
 
+	/**
+	 * <p>Constructor for MultiPageListDataSourceExpression.</p>
+	 *
+	 * @param count a int.
+	 */
 	public MultiPageListDataSourceExpression(int count) {
 		this.count = count;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRDataSource evaluate(ReportParameters reportParameters) {
 		return new JREmptyDataSource(count);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<JRDataSource> getValueClass() {
 		return JRDataSource.class;

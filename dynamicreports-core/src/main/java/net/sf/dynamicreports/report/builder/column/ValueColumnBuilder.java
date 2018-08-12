@@ -36,16 +36,27 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>Abstract ValueColumnBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings({ "unchecked", "deprecation" })
 public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> extends ColumnBuilder<T, DRValueColumn<U>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ValueColumnBuilder.</p>
+	 */
 	protected ValueColumnBuilder() {
 		super(new DRValueColumn<U>(new DRTextField<U>()));
 	}
 
+	/**
+	 * <p>setValueExpression.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected void setValueExpression(DRIExpression<U> valueExpression) {
 		getComponent().setValueExpression(valueExpression);
 	}
@@ -65,9 +76,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 	/**
 	 * Sets the column value horizontal alignment.
 	 *
-	 * @param horizontalAlignment
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
 	 * @return a column builder
-	 *
 	 * @deprecated use setHorizontalTextAlignment instead
 	 */
 	@Deprecated
@@ -84,7 +94,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 	/**
 	 * Sets the column value horizontal text alignment.
 	 *
-	 * @param horizontalTextAlignment
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
 	 * @return a column builder
 	 */
 	public T setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
@@ -238,16 +248,34 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 		return (T) this;
 	}
 
+	/**
+	 * <p>setAnchorName.</p>
+	 *
+	 * @param anchorName a {@link java.lang.String} object.
+	 * @return a T object.
+	 */
 	public T setAnchorName(String anchorName) {
 		getComponent().setAnchorNameExpression(Expressions.text(anchorName));
 		return (T) this;
 	}
 
+	/**
+	 * <p>setAnchorName.</p>
+	 *
+	 * @param anchorNameExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a T object.
+	 */
 	public T setAnchorName(DRIExpression<String> anchorNameExpression) {
 		getComponent().setAnchorNameExpression(anchorNameExpression);
 		return (T) this;
 	}
 
+	/**
+	 * <p>setBookmarkLevel.</p>
+	 *
+	 * @param bookmarkLevel a {@link java.lang.Integer} object.
+	 * @return a T object.
+	 */
 	public T setBookmarkLevel(Integer bookmarkLevel) {
 		getComponent().setBookmarkLevel(bookmarkLevel);
 		return (T) this;
@@ -271,9 +299,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the preferred width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column preferred width >= 0
 	 * @exception IllegalArgumentException
@@ -287,9 +314,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the fixed width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column fixed width >= 0
 	 * @exception IllegalArgumentException
@@ -304,9 +330,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the minimum width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column minimum width >= 0
 	 * @exception IllegalArgumentException
@@ -321,9 +346,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the preferred height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column preferred height >= 0
 	 * @exception IllegalArgumentException
@@ -337,9 +361,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the fixed height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column fixed height >= 0
 	 * @exception IllegalArgumentException
@@ -354,9 +377,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 
 	/**
 	 * Sets the minimum height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column minimum height >= 0
 	 * @exception IllegalArgumentException
@@ -369,24 +391,52 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 		return (T) this;
 	}
 
+	/**
+	 * <p>setStretchWithOverflow.</p>
+	 *
+	 * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+	 * @return a T object.
+	 */
 	public T setStretchWithOverflow(Boolean stretchWithOverflow) {
 		getComponent().setStretchWithOverflow(stretchWithOverflow);
 		return (T) this;
 	}
 
+	/**
+	 * <p>printInFirstWholeBand.</p>
+	 *
+	 * @return a T object.
+	 */
 	public T printInFirstWholeBand() {
 		return setPrintInFirstWholeBand(true);
 	}
 
+	/**
+	 * <p>setPrintInFirstWholeBand.</p>
+	 *
+	 * @param printInFirstWholeBand a {@link java.lang.Boolean} object.
+	 * @return a T object.
+	 */
 	public T setPrintInFirstWholeBand(Boolean printInFirstWholeBand) {
 		getComponent().setPrintInFirstWholeBand(printInFirstWholeBand);
 		return (T) this;
 	}
 
+	/**
+	 * <p>printWhenDetailOverflows.</p>
+	 *
+	 * @return a T object.
+	 */
 	public T printWhenDetailOverflows() {
 		return setPrintWhenDetailOverflows(true);
 	}
 
+	/**
+	 * <p>setPrintWhenDetailOverflows.</p>
+	 *
+	 * @param printWhenDetailOverflows a {@link java.lang.Boolean} object.
+	 * @return a T object.
+	 */
 	public T setPrintWhenDetailOverflows(Boolean printWhenDetailOverflows) {
 		getComponent().setPrintWhenDetailOverflows(printWhenDetailOverflows);
 		return (T) this;
@@ -432,6 +482,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
 		return (T) this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected DRTextField<U> getComponent() {
 		return (DRTextField<U>) getObject().getComponent();

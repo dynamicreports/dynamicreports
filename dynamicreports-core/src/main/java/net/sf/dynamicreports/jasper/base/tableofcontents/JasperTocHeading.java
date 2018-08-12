@@ -27,7 +27,10 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperTocHeading class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTocHeading implements Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,42 +41,92 @@ public class JasperTocHeading implements Serializable {
 	private Integer pageIndex;
 	private Object customValue;
 
+	/**
+	 * <p>Getter for the field <code>level</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getLevel() {
 		return level;
 	}
 
+	/**
+	 * <p>Setter for the field <code>level</code>.</p>
+	 *
+	 * @param level a {@link java.lang.Integer} object.
+	 */
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
 
+	/**
+	 * <p>Getter for the field <code>text</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getText() {
 		return text;
 	}
 
+	/**
+	 * <p>Setter for the field <code>text</code>.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 */
 	public void setText(String text) {
 		this.text = text;
 	}
 
+	/**
+	 * <p>Getter for the field <code>reference</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getReference() {
 		return reference;
 	}
 
+	/**
+	 * <p>Setter for the field <code>reference</code>.</p>
+	 *
+	 * @param reference a {@link java.lang.String} object.
+	 */
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
 
+	/**
+	 * <p>Getter for the field <code>pageIndex</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getPageIndex() {
 		return pageIndex;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pageIndex</code>.</p>
+	 *
+	 * @param pageIndex a {@link java.lang.Integer} object.
+	 */
 	public void setPageIndex(Integer pageIndex) {
 		this.pageIndex = pageIndex;
 	}
 
+	/**
+	 * <p>Getter for the field <code>customValue</code>.</p>
+	 *
+	 * @return a {@link java.lang.Object} object.
+	 */
 	public Object getCustomValue() {
 		return customValue;
 	}
 
+	/**
+	 * <p>Setter for the field <code>customValue</code>.</p>
+	 *
+	 * @param customValue a {@link java.lang.Object} object.
+	 */
 	public void setCustomValue(Object customValue) {
 		this.customValue = customValue;
 	}

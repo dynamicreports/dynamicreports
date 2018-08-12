@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCell;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCrosstabCell class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCrosstabCell implements DRIDesignCrosstabCell {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,38 +39,62 @@ public class DRDesignCrosstabCell implements DRIDesignCrosstabCell {
 	private String columnTotalGroup;
 	private DRDesignCrosstabCellContent content;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getRowTotalGroup() {
 		return rowTotalGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>rowTotalGroup</code>.</p>
+	 *
+	 * @param rowTotalGroup a {@link java.lang.String} object.
+	 */
 	public void setRowTotalGroup(String rowTotalGroup) {
 		this.rowTotalGroup = rowTotalGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getColumnTotalGroup() {
 		return columnTotalGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnTotalGroup</code>.</p>
+	 *
+	 * @param columnTotalGroup a {@link java.lang.String} object.
+	 */
 	public void setColumnTotalGroup(String columnTotalGroup) {
 		this.columnTotalGroup = columnTotalGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignCrosstabCellContent getContent() {
 		return content;
 	}
 
+	/**
+	 * <p>Setter for the field <code>content</code>.</p>
+	 *
+	 * @param content a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstabCellContent} object.
+	 */
 	public void setContent(DRDesignCrosstabCellContent content) {
 		this.content = content;
 	}

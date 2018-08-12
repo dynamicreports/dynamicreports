@@ -26,15 +26,25 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIValue;
 
 /**
+ * <p>GreaterOrEqualsValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GreaterOrEqualsValueExpression<T extends Number> extends AbstractValueExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for GreaterOrEqualsValueExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param number a {@link java.lang.Number} object.
+	 */
 	public GreaterOrEqualsValueExpression(DRIValue<T> value, Number number) {
 		super(value, number);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Boolean compare(Number actualValue, Number number) {
 		return actualValue.doubleValue() >= number.doubleValue();

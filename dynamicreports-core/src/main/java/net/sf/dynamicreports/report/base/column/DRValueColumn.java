@@ -28,31 +28,47 @@ import net.sf.dynamicreports.report.definition.column.DRIValueColumn;
 import net.sf.dynamicreports.report.definition.component.DRITextField;
 
 /**
+ * <p>DRValueColumn class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRValueColumn<T> extends DRColumn<DRITextField<T>> implements DRIValueColumn<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean printRepeatedDetailValues;
 
+	/**
+	 * <p>Constructor for DRValueColumn.</p>
+	 *
+	 * @param valueField a {@link net.sf.dynamicreports.report.base.component.DRTextField} object.
+	 */
 	public DRValueColumn(DRTextField<T> valueField) {
 		super(valueField);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getPrintRepeatedDetailValues() {
 		return printRepeatedDetailValues;
 	}
 
+	/**
+	 * <p>Setter for the field <code>printRepeatedDetailValues</code>.</p>
+	 *
+	 * @param printRepeatedDetailValues a {@link java.lang.Boolean} object.
+	 */
 	public void setPrintRepeatedDetailValues(Boolean printRepeatedDetailValues) {
 		this.printRepeatedDetailValues = printRepeatedDetailValues;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getComponent().getValueExpression().getName();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<? super T> getValueClass() {
 		return getComponent().getValueExpression().getValueClass();

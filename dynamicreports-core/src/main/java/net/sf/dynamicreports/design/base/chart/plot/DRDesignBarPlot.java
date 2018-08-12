@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignBarPlot;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignBarPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignBarPlot extends DRDesignAxisPlot implements DRIDesignBarPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,28 +38,46 @@ public class DRDesignBarPlot extends DRDesignAxisPlot implements DRIDesignBarPlo
 	private Boolean showTickLabels;
 	private Boolean showLabels;
 
+	/**
+	 * <p>Setter for the field <code>showLabels</code>.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLabels(Boolean showLabels) {
 		this.showLabels = showLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowLabels() {
 		return showLabels;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showTickLabels</code>.</p>
+	 *
+	 * @param showTickLabels a {@link java.lang.Boolean} object.
+	 */
 	public void setShowTickLabels(Boolean showTickLabels) {
 		this.showTickLabels = showTickLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowTickLabels() {
 		return showTickLabels;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showTickMarks</code>.</p>
+	 *
+	 * @param showTickMarks a {@link java.lang.Boolean} object.
+	 */
 	public void setShowTickMarks(Boolean showTickMarks) {
 		this.showTickMarks = showTickMarks;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowTickMarks() {
 		return showTickMarks;

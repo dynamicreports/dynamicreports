@@ -33,28 +33,56 @@ import net.sf.dynamicreports.report.definition.DRICrosstabValue;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>CrosstabVariableBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariableBuilder<T>, DRCrosstabVariable<T>> implements DRICrosstabValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CrosstabVariableBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabVariableBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
 		super(new DRCrosstabVariable<T>(column.build(), calculation));
 	}
 
+	/**
+	 * <p>Constructor for CrosstabVariableBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabVariableBuilder(FieldBuilder<?> field, Calculation calculation) {
 		super(new DRCrosstabVariable<T>(field.getField(), calculation));
 	}
 
+	/**
+	 * <p>Constructor for CrosstabVariableBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+	 */
 	protected CrosstabVariableBuilder(DRIExpression<?> expression, Calculation calculation) {
 		super(new DRCrosstabVariable<T>(expression, calculation));
 	}
 
+	/**
+	 * <p>setPercentageType.</p>
+	 *
+	 * @param percentageType a {@link net.sf.dynamicreports.report.constant.CrosstabPercentageType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabVariableBuilder} object.
+	 */
 	public CrosstabVariableBuilder<T> setPercentageType(CrosstabPercentageType percentageType) {
 		getObject().setPercentageType(percentageType);
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getObject().getName();

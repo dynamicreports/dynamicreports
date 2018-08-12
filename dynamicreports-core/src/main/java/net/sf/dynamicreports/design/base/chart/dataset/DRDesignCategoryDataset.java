@@ -26,17 +26,26 @@ import net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignCategoryDa
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCategoryDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCategoryDataset extends DRDesignSeriesDataset implements DRIDesignCategoryDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private boolean useSeriesAsCategory;
 
+	/**
+	 * <p>Setter for the field <code>useSeriesAsCategory</code>.</p>
+	 *
+	 * @param useSeriesAsCategory a boolean.
+	 */
 	public void setUseSeriesAsCategory(boolean useSeriesAsCategory) {
 		this.useSeriesAsCategory = useSeriesAsCategory;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isUseSeriesAsCategory() {
 		return useSeriesAsCategory;

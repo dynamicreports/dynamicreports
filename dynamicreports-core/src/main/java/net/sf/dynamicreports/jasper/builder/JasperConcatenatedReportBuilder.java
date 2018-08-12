@@ -71,20 +71,35 @@ import net.sf.jasperreports.export.SimpleGraphics2DReportConfiguration;
  * Each report starts on a new page with its own page dimension.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperConcatenatedReportBuilder implements Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private JasperReportHandler jasperReportHandler;
 
+	/**
+	 * <p>Constructor for JasperConcatenatedReportBuilder.</p>
+	 */
 	public JasperConcatenatedReportBuilder() {
 		this(new JasperReportBuilderHandler());
 	}
 
+	/**
+	 * <p>Constructor for JasperConcatenatedReportBuilder.</p>
+	 *
+	 * @param jasperReportHandler a {@link net.sf.dynamicreports.jasper.definition.JasperReportHandler} object.
+	 */
 	public JasperConcatenatedReportBuilder(JasperReportHandler jasperReportHandler) {
 		this.jasperReportHandler = jasperReportHandler;
 	}
 
+	/**
+	 * <p>concatenate.</p>
+	 *
+	 * @param jasperReportBuilders a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 */
 	public JasperConcatenatedReportBuilder concatenate(JasperReportBuilder... jasperReportBuilders) {
 		Validate.notNull(jasperReportBuilders, "jasperReportBuilders must not be null");
 		Validate.noNullElements(jasperReportBuilders, "jasperReportBuilders must not contains null jasperReportBuilder");
@@ -92,10 +107,25 @@ public class JasperConcatenatedReportBuilder implements Serializable {
 		return this;
 	}
 
+	/**
+	 * <p>toPng.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPng(OutputStream outputStream) throws DRException {
 		return toPng(outputStream, 1);
 	}
 
+	/**
+	 * <p>toPng.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @param zoom a float.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPng(OutputStream outputStream, float zoom) throws DRException {
 		Validate.notNull(outputStream, "outputStream must not be null");
 		Validate.isTrue(zoom > 0, "zoom must be > 0");
@@ -155,123 +185,309 @@ public class JasperConcatenatedReportBuilder implements Serializable {
 		return this;
 	}
 
+	/**
+	 * <p>continuousPageNumbering.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 */
 	public JasperConcatenatedReportBuilder continuousPageNumbering() {
 		return setContinuousPageNumbering(true);
 	}
 
+	/**
+	 * <p>setContinuousPageNumbering.</p>
+	 *
+	 * @param continuousPageNumbering a boolean.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 */
 	public JasperConcatenatedReportBuilder setContinuousPageNumbering(boolean continuousPageNumbering) {
 		jasperReportHandler.setContinuousPageNumbering(continuousPageNumbering);
 		return this;
 	}
 
 	// csv
+	/**
+	 * <p>toCsv.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toCsv(OutputStream outputStream) throws DRException {
 		return toCsv(Exporters.csvExporter(outputStream));
 	}
 
+	/**
+	 * <p>toCsv.</p>
+	 *
+	 * @param csvExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toCsv(JasperCsvExporterBuilder csvExporterBuilder) throws DRException {
 		return export(csvExporterBuilder);
 	}
 
 	// docx
+	/**
+	 * <p>toDocx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toDocx(OutputStream outputStream) throws DRException {
 		return toDocx(Exporters.docxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toDocx.</p>
+	 *
+	 * @param docxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toDocx(JasperDocxExporterBuilder docxExporterBuilder) throws DRException {
 		return export(docxExporterBuilder);
 	}
 
 	// html
+	/**
+	 * <p>toHtml.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toHtml(OutputStream outputStream) throws DRException {
 		return toHtml(Exporters.htmlExporter(outputStream));
 	}
 
+	/**
+	 * <p>toHtml.</p>
+	 *
+	 * @param htmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toHtml(JasperHtmlExporterBuilder htmlExporterBuilder) throws DRException {
 		return export(htmlExporterBuilder);
 	}
 
 	// ods
+	/**
+	 * <p>toOds.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toOds(OutputStream outputStream) throws DRException {
 		return toOds(Exporters.odsExporter(outputStream));
 	}
 
+	/**
+	 * <p>toOds.</p>
+	 *
+	 * @param odsExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdsExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toOds(JasperOdsExporterBuilder odsExporterBuilder) throws DRException {
 		return export(odsExporterBuilder);
 	}
 
 	// odt
+	/**
+	 * <p>toOdt.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toOdt(OutputStream outputStream) throws DRException {
 		return toOdt(Exporters.odtExporter(outputStream));
 	}
 
+	/**
+	 * <p>toOdt.</p>
+	 *
+	 * @param odtExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toOdt(JasperOdtExporterBuilder odtExporterBuilder) throws DRException {
 		return export(odtExporterBuilder);
 	}
 
 	// pdf
+	/**
+	 * <p>toPdf.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPdf(OutputStream outputStream) throws DRException {
 		return toPdf(Exporters.pdfExporter(outputStream));
 	}
 
+	/**
+	 * <p>toPdf.</p>
+	 *
+	 * @param pdfExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPdf(JasperPdfExporterBuilder pdfExporterBuilder) throws DRException {
 		return export(pdfExporterBuilder);
 	}
 
 	// rtf
+	/**
+	 * <p>toRtf.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toRtf(OutputStream outputStream) throws DRException {
 		return toRtf(Exporters.rtfExporter(outputStream));
 	}
 
+	/**
+	 * <p>toRtf.</p>
+	 *
+	 * @param rtfExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperRtfExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toRtf(JasperRtfExporterBuilder rtfExporterBuilder) throws DRException {
 		return export(rtfExporterBuilder);
 	}
 
 	// text
+	/**
+	 * <p>toText.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toText(OutputStream outputStream) throws DRException {
 		return toText(Exporters.textExporter(outputStream));
 	}
 
+	/**
+	 * <p>toText.</p>
+	 *
+	 * @param textExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toText(JasperTextExporterBuilder textExporterBuilder) throws DRException {
 		return export(textExporterBuilder);
 	}
 
 	// xls
+	/**
+	 * <p>toXls.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXls(OutputStream outputStream) throws DRException {
 		return toXls(Exporters.xlsExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXls.</p>
+	 *
+	 * @param xlsExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXlsExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXls(JasperXlsExporterBuilder xlsExporterBuilder) throws DRException {
 		return export(xlsExporterBuilder);
 	}
 
 	// xlsx
+	/**
+	 * <p>toXlsx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXlsx(OutputStream outputStream) throws DRException {
 		return toXlsx(Exporters.xlsxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXlsx.</p>
+	 *
+	 * @param xlsxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXlsxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXlsx(JasperXlsxExporterBuilder xlsxExporterBuilder) throws DRException {
 		return export(xlsxExporterBuilder);
 	}
 
 	// xml
+	/**
+	 * <p>toXml.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXml(OutputStream outputStream) throws DRException {
 		return toXml(Exporters.xmlExporter(outputStream));
 	}
 
+	/**
+	 * <p>toXml.</p>
+	 *
+	 * @param xmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperXmlExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toXml(JasperXmlExporterBuilder xmlExporterBuilder) throws DRException {
 		return export(xmlExporterBuilder);
 	}
 
 	// pptx
+	/**
+	 * <p>toPptx.</p>
+	 *
+	 * @param outputStream a {@link java.io.OutputStream} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPptx(OutputStream outputStream) throws DRException {
 		return toPptx(Exporters.pptxExporter(outputStream));
 	}
 
+	/**
+	 * <p>toPptx.</p>
+	 *
+	 * @param pptxExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperPptxExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder toPptx(JasperPptxExporterBuilder pptxExporterBuilder) throws DRException {
 		return export(pptxExporterBuilder);
 	}
 
+	/**
+	 * <p>export.</p>
+	 *
+	 * @param exporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.AbstractJasperExporterBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperConcatenatedReportBuilder export(AbstractJasperExporterBuilder<?, ? extends AbstractJasperExporter> exporterBuilder) throws DRException {
 		Validate.notNull(exporterBuilder, "exporterBuilder must not be null");
 		try {

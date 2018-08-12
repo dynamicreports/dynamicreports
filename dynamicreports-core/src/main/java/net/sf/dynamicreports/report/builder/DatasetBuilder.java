@@ -36,28 +36,61 @@ import net.sf.jasperreports.engine.JRDataSource;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DatasetBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DatasetBuilder.</p>
+	 */
 	protected DatasetBuilder() {
 		super(new DRDataset());
 	}
 
 	// field
+	/**
+	 * <p>fields.</p>
+	 *
+	 * @param fields a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder fields(FieldBuilder<?>... fields) {
 		return addField(fields);
 	}
 
+	/**
+	 * <p>addField.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder addField(String name, Class<?> valueClass) {
 		return addField(DynamicReports.field(name, valueClass));
 	}
 
+	/**
+	 * <p>addField.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 * @param <U> a U object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public <U> DatasetBuilder addField(String name, DRIDataType<? super U, U> dataType) {
 		return addField(DynamicReports.field(name, dataType));
 	}
 
+	/**
+	 * <p>addField.</p>
+	 *
+	 * @param fields a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder addField(FieldBuilder<?>... fields) {
 		Validate.notNull(fields, "fields must not be null");
 		Validate.noNullElements(fields, "fields must not contains null field");
@@ -68,10 +101,22 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 	}
 
 	// variable
+	/**
+	 * <p>variables.</p>
+	 *
+	 * @param variables a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder variables(VariableBuilder<?>... variables) {
 		return addVariable(variables);
 	}
 
+	/**
+	 * <p>addVariable.</p>
+	 *
+	 * @param variables a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder addVariable(VariableBuilder<?>... variables) {
 		Validate.notNull(variables, "variables must not be null");
 		Validate.noNullElements(variables, "variables must not contains null variable");
@@ -82,6 +127,12 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 	}
 
 	// sort
+	/**
+	 * <p>sortBy.</p>
+	 *
+	 * @param sortColumns a {@link net.sf.dynamicreports.report.builder.column.TextColumnBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder sortBy(TextColumnBuilder<?>... sortColumns) {
 		Validate.notNull(sortColumns, "sortColumns must not be null");
 		Validate.noNullElements(sortColumns, "sortColumns must not contains null sortColumn");
@@ -91,10 +142,22 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 		return this;
 	}
 
+	/**
+	 * <p>sortBy.</p>
+	 *
+	 * @param sorts a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder sortBy(SortBuilder... sorts) {
 		return addSort(sorts);
 	}
 
+	/**
+	 * <p>addSort.</p>
+	 *
+	 * @param sorts a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder addSort(SortBuilder... sorts) {
 		Validate.notNull(sorts, "sorts must not be null");
 		Validate.noNullElements(sorts, "sorts must not contains null sort");
@@ -105,17 +168,36 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 	}
 
 	// query
+	/**
+	 * <p>setQuery.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 * @param language a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setQuery(String text, String language) {
 		Validate.notNull(text, "text must not be null");
 		Validate.notNull(language, "language must not be null");
 		return setQuery(DynamicReports.query(text, language));
 	}
 
+	/**
+	 * <p>setQuery.</p>
+	 *
+	 * @param sql a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setQuery(String sql) {
 		Validate.notNull(sql, "sql must not be null");
 		return setQuery(DynamicReports.query(sql, QueryLanguage.SQL));
 	}
 
+	/**
+	 * <p>setQuery.</p>
+	 *
+	 * @param query a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setQuery(QueryBuilder query) {
 		Validate.notNull(query, "query must not be null");
 		getObject().setQuery(query.build());
@@ -123,38 +205,82 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
 	}
 
 	// connection
+	/**
+	 * <p>setConnection.</p>
+	 *
+	 * @param connection a {@link java.sql.Connection} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setConnection(Connection connection) {
 		getObject().setConnectionExpression(Expressions.value(connection));
 		return this;
 	}
 
+	/**
+	 * <p>setConnection.</p>
+	 *
+	 * @param connectionExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setConnection(DRIExpression<Connection> connectionExpression) {
 		getObject().setConnectionExpression(connectionExpression);
 		return this;
 	}
 
 	// datasource
+	/**
+	 * <p>setDataSource.</p>
+	 *
+	 * @param dataSource a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setDataSource(JRDataSource dataSource) {
 		getObject().setDataSourceExpression(Expressions.dataSource(dataSource));
 		return this;
 	}
 
+	/**
+	 * <p>setDataSource.</p>
+	 *
+	 * @param dataSourceExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setDataSource(DRIExpression<JRDataSource> dataSourceExpression) {
 		getObject().setDataSourceExpression(dataSourceExpression);
 		return this;
 	}
 
 	// filter
+	/**
+	 * <p>setFilterExpression.</p>
+	 *
+	 * @param filterExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setFilterExpression(DRIExpression<Boolean> filterExpression) {
 		getObject().setFilterExpression(filterExpression);
 		return this;
 	}
 
+	/**
+	 * <p>setDataSource.</p>
+	 *
+	 * @param sql a {@link java.lang.String} object.
+	 * @param connection a {@link java.sql.Connection} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setDataSource(String sql, Connection connection) {
 		Validate.notNull(sql, "sql must not be null");
 		return setDataSource(DynamicReports.query(sql, QueryLanguage.SQL), connection);
 	}
 
+	/**
+	 * <p>setDataSource.</p>
+	 *
+	 * @param query a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
+	 * @param connection a {@link java.sql.Connection} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
+	 */
 	public DatasetBuilder setDataSource(QueryBuilder query, Connection connection) {
 		Validate.notNull(query, "query must not be null");
 		Validate.notNull(connection, "connection must not be null");

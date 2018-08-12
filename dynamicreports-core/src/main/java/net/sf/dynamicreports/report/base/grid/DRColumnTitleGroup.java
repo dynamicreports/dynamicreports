@@ -37,7 +37,10 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRColumnTitleGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -55,42 +58,63 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 	private Boolean titleStretchWithOverflow;
 	private List<DRIPropertyExpression> titlePropertyExpressions;
 
+	/**
+	 * <p>Constructor for DRColumnTitleGroup.</p>
+	 */
 	public DRColumnTitleGroup() {
 		this.list = new DRColumnGridList(ListType.HORIZONTAL);
 		titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRColumnGridList getList() {
 		return list;
 	}
 
+	/**
+	 * <p>addComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
+	 */
 	public void addComponent(DRIColumnGridComponent component) {
 		list.addComponent(component);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getTitleExpression() {
 		return titleExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleExpression</code>.</p>
+	 *
+	 * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setTitleExpression(DRIExpression<?> titleExpression) {
 		this.titleExpression = titleExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIReportStyle getTitleStyle() {
 		return titleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public void setTitleStyle(DRIReportStyle titleStyle) {
 		this.titleStyle = titleStyle;
 	}
 
 	/**
-	 * Returns the column title width.
+	 * {@inheritDoc}
 	 *
-	 * @return the column title width >= 0
+	 * Returns the column title width.
 	 */
 	@Override
 	public Integer getTitleWidth() {
@@ -99,9 +123,8 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 
 	/**
 	 * Sets the column title width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param titleWidth
 	 *          the column title width >= 0
 	 * @exception IllegalArgumentException
@@ -114,19 +137,25 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 		this.titleWidth = titleWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ComponentDimensionType getTitleWidthType() {
 		return titleWidthType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleWidthType</code>.</p>
+	 *
+	 * @param titleWidthType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public void setTitleWidthType(ComponentDimensionType titleWidthType) {
 		this.titleWidthType = titleWidthType;
 	}
 
 	/**
-	 * Returns the number of title columns.
+	 * {@inheritDoc}
 	 *
-	 * @return the number of title columns >= 0
+	 * Returns the number of title columns.
 	 */
 	@Override
 	public Integer getTitleColumns() {
@@ -151,9 +180,9 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 	}
 
 	/**
-	 * Returns the column title height.
+	 * {@inheritDoc}
 	 *
-	 * @return the column title height >= 0
+	 * Returns the column title height.
 	 */
 	@Override
 	public Integer getTitleHeight() {
@@ -162,9 +191,8 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 
 	/**
 	 * Sets the column title height.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param titleHeight
 	 *          the column title height >= 0
 	 * @exception IllegalArgumentException
@@ -177,19 +205,25 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 		this.titleHeight = titleHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ComponentDimensionType getTitleHeightType() {
 		return titleHeightType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleHeightType</code>.</p>
+	 *
+	 * @param titleHeightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public void setTitleHeightType(ComponentDimensionType titleHeightType) {
 		this.titleHeightType = titleHeightType;
 	}
 
 	/**
-	 * Returns the number of title rows.
+	 * {@inheritDoc}
 	 *
-	 * @return the number of title rows >= 0
+	 * Returns the number of title rows.
 	 */
 	@Override
 	public Integer getTitleRows() {
@@ -212,25 +246,42 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
 		this.titleRows = titleRows;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getTitleStretchWithOverflow() {
 		return titleStretchWithOverflow;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
+	 *
+	 * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
+	 */
 	public void setTitleStretchWithOverflow(Boolean titleStretchWithOverflow) {
 		this.titleStretchWithOverflow = titleStretchWithOverflow;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIPropertyExpression> getTitlePropertyExpressions() {
 		return titlePropertyExpressions;
 	}
 
+	/**
+	 * <p>addTitlePropertyExpression.</p>
+	 *
+	 * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
+	 */
 	public void addTitlePropertyExpression(DRIPropertyExpression propertyExpression) {
 		Validate.notNull(propertyExpression, "propertyExpression must not be null");
 		this.titlePropertyExpressions.add(propertyExpression);
 	}
 
+	/**
+	 * <p>Setter for the field <code>titlePropertyExpressions</code>.</p>
+	 *
+	 * @param titlePropertyExpressions a {@link java.util.List} object.
+	 */
 	public void setTitlePropertyExpressions(List<DRIPropertyExpression> titlePropertyExpressions) {
 		this.titlePropertyExpressions = titlePropertyExpressions;
 	}

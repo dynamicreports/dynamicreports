@@ -23,9 +23,17 @@
 package net.sf.dynamicreports.jasper.definition.export;
 
 /**
+ * <p>JasperIXmlExporter interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperIXmlExporter extends JasperIExporter {
 
+	/**
+	 * <p>getEmbeddingImages.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getEmbeddingImages();
 }

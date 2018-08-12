@@ -53,15 +53,29 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 
 /**
+ * <p>CrosstabTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for CrosstabTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public CrosstabTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param crosstab a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstab} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
+	 */
 	protected JRDesignElement transform(DRIDesignCrosstab crosstab) {
 		JRDesignCrosstab jrCrosstab = new JRDesignCrosstab();
 

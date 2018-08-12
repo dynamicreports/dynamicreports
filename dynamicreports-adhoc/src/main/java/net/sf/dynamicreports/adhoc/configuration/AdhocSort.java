@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocSort class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocSort implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -33,22 +36,43 @@ public class AdhocSort implements Cloneable, Serializable {
 	private String name;
 	private AdhocOrderType orderType;
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>orderType</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrderType} object.
+	 */
 	public AdhocOrderType getOrderType() {
 		return orderType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orderType</code>.</p>
+	 *
+	 * @param orderType a {@link net.sf.dynamicreports.adhoc.configuration.AdhocOrderType} object.
+	 */
 	public void setOrderType(AdhocOrderType orderType) {
 		this.orderType = orderType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -70,6 +94,7 @@ public class AdhocSort implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocSort clone() {
 		AdhocSort clone;

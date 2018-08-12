@@ -31,33 +31,101 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>DRITextField interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRITextField<T> extends DRIHyperLinkComponent {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<T> getValueExpression();
 
+	/**
+	 * <p>getPattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getPattern();
 
+	/**
+	 * <p>getPatternExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<String> getPatternExpression();
 
+	/**
+	 * <p>getHorizontalTextAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public HorizontalTextAlignment getHorizontalTextAlignment();
 
+	/**
+	 * <p>getValueFormatter.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 */
 	public DRIValueFormatter<?, ? super T> getValueFormatter();
 
+	/**
+	 * <p>getDataType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	public DRIDataType<? super T, T> getDataType();
 
+	/**
+	 * <p>getColumns.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getColumns();
 
+	/**
+	 * <p>getRows.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getRows();
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+	 */
 	public Evaluation getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	public DRIGroup getEvaluationGroup();
 
+	/**
+	 * <p>getMarkup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
+	 */
 	public Markup getMarkup();
 
+	/**
+	 * <p>getStretchWithOverflow.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getStretchWithOverflow();
 
+	/**
+	 * <p>getPrintRepeatedValues.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getPrintRepeatedValues();
 }

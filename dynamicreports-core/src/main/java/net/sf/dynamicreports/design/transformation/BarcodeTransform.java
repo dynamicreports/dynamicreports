@@ -64,15 +64,30 @@ import net.sf.dynamicreports.report.definition.barcode.DRIUspsIntelligentMailBar
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>BarcodeTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BarcodeTransform {
 	private DesignTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for BarcodeTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public BarcodeTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param barcode a {@link net.sf.dynamicreports.report.definition.barcode.DRIBarcode} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.barcode.DRDesignBarcode} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignBarcode transform(DRIBarcode barcode) throws DRException {
 		if (barcode instanceof DRICodabarBarcode) {
 			return codabar((DRICodabarBarcode) barcode);
@@ -109,6 +124,13 @@ public class BarcodeTransform {
 		}
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param barbecue a {@link net.sf.dynamicreports.report.definition.barcode.DRIBarbecue} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.barcode.DRDesignBarbecue} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignBarbecue transform(DRIBarbecue barbecue) throws DRException {
 		DRDesignBarbecue designBarbecue = new DRDesignBarbecue();
 		designBarbecue.setWidth(accessor.getTemplateTransform().getBarbecueWidth(barbecue));

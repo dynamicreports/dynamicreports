@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ConcatenatedReport2 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ConcatenatedReport2 {
 
+	/**
+	 * <p>Constructor for ConcatenatedReport2.</p>
+	 */
 	public ConcatenatedReport2() {
 		build();
 	}
@@ -83,6 +89,11 @@ public class ConcatenatedReport2 {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ConcatenatedReport2();
 	}

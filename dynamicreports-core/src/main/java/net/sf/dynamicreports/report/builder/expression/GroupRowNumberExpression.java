@@ -27,17 +27,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>GroupRowNumberExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupRowNumberExpression extends AbstractSimpleExpression<Integer> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String groupName;
 
+	/**
+	 * <p>Constructor for GroupRowNumberExpression.</p>
+	 *
+	 * @param groupName a {@link java.lang.String} object.
+	 */
 	public GroupRowNumberExpression(String groupName) {
 		this.groupName = groupName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer evaluate(ReportParameters reportParameters) {
 		return reportParameters.getGroupCount(groupName);

@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
+ * <p>DRDesignConditionalStyle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDesignConditionalStyle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,24 +41,37 @@ public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDe
 	private DRIDesignExpression conditionExpression;
 	private DRIDesignDataset dataset;
 
+	/**
+	 * <p>Setter for the field <code>conditionExpression</code>.</p>
+	 *
+	 * @param conditionExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setConditionExpression(DRIDesignExpression conditionExpression) {
 		this.conditionExpression = conditionExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getConditionExpression() {
 		return conditionExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignDataset getDataset() {
 		return dataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataset</code>.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public void setDataset(DRIDesignDataset dataset) {
 		this.dataset = dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		EqualsBuilder equalsBuilder = new EqualsBuilder().appendSuper(super.equals(obj));

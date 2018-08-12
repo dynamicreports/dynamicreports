@@ -28,11 +28,24 @@ import net.sf.dynamicreports.report.constant.AxisPosition;
 import net.sf.dynamicreports.report.definition.chart.DRIChart;
 
 /**
+ * <p>DRIChartAxis interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIChartAxis extends Serializable {
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
+	 */
 	public AxisPosition getPosition();
 
+	/**
+	 * <p>getChart.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+	 */
 	public DRIChart getChart();
 }

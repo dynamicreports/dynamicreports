@@ -35,7 +35,10 @@ import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
 /**
+ * <p>DifferenceRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DifferenceRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -44,12 +47,18 @@ public class DifferenceRendererCustomizer implements DRIChartCustomizer, Seriali
 	private Color negativeColor;
 	private Boolean showShapes;
 
+	/**
+	 * <p>Constructor for DifferenceRendererCustomizer.</p>
+	 *
+	 * @param differencePlot a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIDifferencePlot} object.
+	 */
 	public DifferenceRendererCustomizer(DRIDifferencePlot differencePlot) {
 		this.positiveColor = differencePlot.getPositiveColor();
 		this.negativeColor = differencePlot.getNegativeColor();
 		this.showShapes = differencePlot.getShowShapes();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();

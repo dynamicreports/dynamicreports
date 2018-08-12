@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIWaterfallBarPlot;
 
 /**
+ * <p>DRWaterfallBarPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,38 +41,62 @@ public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot
 	private Paint positiveBarPaint;
 	private Paint negativeBarPaint;
 
+	/** {@inheritDoc} */
 	@Override
 	public Paint getFirstBarPaint() {
 		return firstBarPaint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>firstBarPaint</code>.</p>
+	 *
+	 * @param firstBarPaint a {@link java.awt.Paint} object.
+	 */
 	public void setFirstBarPaint(Paint firstBarPaint) {
 		this.firstBarPaint = firstBarPaint;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Paint getLastBarPaint() {
 		return lastBarPaint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>lastBarPaint</code>.</p>
+	 *
+	 * @param lastBarPaint a {@link java.awt.Paint} object.
+	 */
 	public void setLastBarPaint(Paint lastBarPaint) {
 		this.lastBarPaint = lastBarPaint;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Paint getPositiveBarPaint() {
 		return positiveBarPaint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>positiveBarPaint</code>.</p>
+	 *
+	 * @param positiveBarPaint a {@link java.awt.Paint} object.
+	 */
 	public void setPositiveBarPaint(Paint positiveBarPaint) {
 		this.positiveBarPaint = positiveBarPaint;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Paint getNegativeBarPaint() {
 		return negativeBarPaint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>negativeBarPaint</code>.</p>
+	 *
+	 * @param negativeBarPaint a {@link java.awt.Paint} object.
+	 */
 	public void setNegativeBarPaint(Paint negativeBarPaint) {
 		this.negativeBarPaint = negativeBarPaint;
 	}

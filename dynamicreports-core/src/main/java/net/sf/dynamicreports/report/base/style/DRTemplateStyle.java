@@ -26,17 +26,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.style.DRITemplateStyle;
 
 /**
+ * <p>DRTemplateStyle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRTemplateStyle implements DRITemplateStyle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String name;
 
+	/**
+	 * <p>Constructor for DRTemplateStyle.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public DRTemplateStyle(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;

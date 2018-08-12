@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>Pie3DChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Pie3DChartReport {
 
+	/**
+	 * <p>Constructor for Pie3DChartReport.</p>
+	 */
 	public Pie3DChartReport() {
 		build();
 	}
@@ -77,6 +83,11 @@ public class Pie3DChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new Pie3DChartReport();
 	}

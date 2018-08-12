@@ -29,10 +29,21 @@ import java.io.Serializable;
  * Every expression can access the declared report fields, variables and other expressions and get their values to calculate the expression value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIExpression<T> extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getValueClass.</p>
+	 *
+	 * @return a {@link java.lang.Class} object.
+	 */
 	public Class<? super T> getValueClass();
 }

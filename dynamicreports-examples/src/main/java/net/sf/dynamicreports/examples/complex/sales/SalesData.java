@@ -30,10 +30,18 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SalesData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SalesData {
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		DRDataSource dataSource = new DRDataSource("state", "item", "orderdate", "quantity", "unitprice");
 		dataSource.add("New York", "Notebook", toDate(2010, 1, 1), 1, new BigDecimal(500));

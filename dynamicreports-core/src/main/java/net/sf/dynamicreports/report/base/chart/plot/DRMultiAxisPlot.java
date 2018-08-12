@@ -32,32 +32,55 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIChartAxis;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIMultiAxisPlot;
 
 /**
+ * <p>DRMultiAxisPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRMultiAxisPlot extends DRAxisPlot implements DRIMultiAxisPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private List<DRIChartAxis> axes;
 
+	/**
+	 * <p>Constructor for DRMultiAxisPlot.</p>
+	 */
 	public DRMultiAxisPlot() {
 		axes = new ArrayList<DRIChartAxis>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIChartAxis> getAxes() {
 		return axes;
 	}
 
+	/**
+	 * <p>Setter for the field <code>axes</code>.</p>
+	 *
+	 * @param axes a {@link java.util.List} object.
+	 */
 	public void setAxes(List<DRIChartAxis> axes) {
 		this.axes = axes;
 	}
 
+	/**
+	 * <p>addChart.</p>
+	 *
+	 * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+	 */
 	public void addChart(DRIChart chart) {
 		DRChartAxis axis = new DRChartAxis();
 		axis.setChart(chart);
 		axes.add(axis);
 	}
 
+	/**
+	 * <p>addChart.</p>
+	 *
+	 * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+	 * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
+	 */
 	public void addChart(DRIChart chart, AxisPosition position) {
 		DRChartAxis axis = new DRChartAxis();
 		axis.setChart(chart);

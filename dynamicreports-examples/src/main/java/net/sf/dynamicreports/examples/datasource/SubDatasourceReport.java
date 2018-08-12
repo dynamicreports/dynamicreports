@@ -42,10 +42,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SubDatasourceReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SubDatasourceReport {
 
+	/**
+	 * <p>Constructor for SubDatasourceReport.</p>
+	 */
 	public SubDatasourceReport() {
 		build();
 	}
@@ -154,6 +160,11 @@ public class SubDatasourceReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SubDatasourceReport();
 	}

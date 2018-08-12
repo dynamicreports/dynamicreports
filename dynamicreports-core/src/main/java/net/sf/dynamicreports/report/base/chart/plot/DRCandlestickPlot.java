@@ -26,17 +26,26 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRICandlestickPlot;
 
 /**
+ * <p>DRCandlestickPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCandlestickPlot extends DRAxisPlot implements DRICandlestickPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Boolean showVolume;
 
+	/**
+	 * <p>Setter for the field <code>showVolume</code>.</p>
+	 *
+	 * @param showVolume a {@link java.lang.Boolean} object.
+	 */
 	public void setShowVolume(Boolean showVolume) {
 		this.showVolume = showVolume;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowVolume() {
 		return showVolume;

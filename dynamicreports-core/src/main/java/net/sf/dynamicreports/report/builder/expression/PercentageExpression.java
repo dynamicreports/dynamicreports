@@ -29,16 +29,26 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>PercentageExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PercentageExpression extends AbstractComplexExpression<Double> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PercentageExpression.</p>
+	 *
+	 * @param actualExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param totalExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public PercentageExpression(DRIExpression<? extends Number> actualExpression, DRIExpression<? extends Number> totalExpression) {
 		addExpression(actualExpression);
 		addExpression(totalExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double evaluate(List<?> values, ReportParameters reportParameters) {
 		return ((Number) values.get(0)).doubleValue() / ((Number) values.get(1)).doubleValue();

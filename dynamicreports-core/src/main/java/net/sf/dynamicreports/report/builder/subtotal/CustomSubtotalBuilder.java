@@ -28,16 +28,26 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>CustomSubtotalBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomSubtotalBuilder<T> extends SubtotalBuilder<CustomSubtotalBuilder<T>, T> implements DRIValue<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CustomSubtotalBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 */
 	protected CustomSubtotalBuilder(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
 		super(showInColumn);
 		setValueExpression(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return getSubtotal().getName();

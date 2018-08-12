@@ -23,13 +23,31 @@
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 /**
+ * <p>DRIBarPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBarPlot extends DRIAxisPlot {
 
+	/**
+	 * <p>getShowLabels.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLabels();
 
+	/**
+	 * <p>getShowTickLabels.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowTickLabels();
 
+	/**
+	 * <p>getShowTickMarks.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowTickMarks();
 }

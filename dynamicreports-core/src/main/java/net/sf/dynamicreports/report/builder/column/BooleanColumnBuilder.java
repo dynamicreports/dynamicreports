@@ -39,17 +39,28 @@ import org.apache.commons.lang3.Validate;
  * It shows a boolean value either as a text or as an image.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("deprecation")
 public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DRBooleanColumn> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for BooleanColumnBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 */
 	protected BooleanColumnBuilder(FieldBuilder<Boolean> field) {
 		super(new DRBooleanColumn(new DRBooleanField()));
 		Validate.notNull(field, "field must not be null");
 		getComponent().setValueExpression(field.getField());
 	}
 
+	/**
+	 * <p>Constructor for BooleanColumnBuilder.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected BooleanColumnBuilder(DRIExpression<Boolean> valueExpression) {
 		super(new DRBooleanColumn(new DRBooleanField()));
 		getComponent().setValueExpression(valueExpression);
@@ -57,9 +68,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the preferred width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column preferred width >= 0
 	 * @exception IllegalArgumentException
@@ -73,9 +83,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the fixed width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column fixed width >= 0
 	 * @exception IllegalArgumentException
@@ -90,9 +99,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the minimum width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column minimum width >= 0
 	 * @exception IllegalArgumentException
@@ -107,9 +115,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the preferred height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column preferred height >= 0
 	 * @exception IllegalArgumentException
@@ -123,9 +130,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the fixed height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column fixed height >= 0
 	 * @exception IllegalArgumentException
@@ -140,9 +146,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 
 	/**
 	 * Sets the minimum height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column minimum height >= 0
 	 * @exception IllegalArgumentException
@@ -169,6 +174,12 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 		return this;
 	}
 
+	/**
+	 * <p>setEmptyWhenNullValue.</p>
+	 *
+	 * @param emptyWhenNullValue a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.column.BooleanColumnBuilder} object.
+	 */
 	public BooleanColumnBuilder setEmptyWhenNullValue(Boolean emptyWhenNullValue) {
 		getComponent().setEmptyWhenNullValue(emptyWhenNullValue);
 		return this;
@@ -216,9 +227,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 	/**
 	 * Sets the column value horizontal alignment.
 	 *
-	 * @param horizontalAlignment
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
 	 * @return a column builder
-	 *
 	 * @deprecated use setHorizontalImageAlignment instead
 	 */
 	@Deprecated
@@ -234,7 +244,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 	/**
 	 * Sets the column value horizontal image alignment.
 	 *
-	 * @param horizontalImageAlignment
+	 * @param horizontalImageAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
 	 * @return a column builder
 	 */
 	public BooleanColumnBuilder setHorizontalImageAlignment(HorizontalImageAlignment horizontalImageAlignment) {
@@ -245,7 +255,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 	/**
 	 * Sets the column value horizontal text alignment.
 	 *
-	 * @param horizontalTextAlignment
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
 	 * @return a column builder
 	 */
 	public BooleanColumnBuilder setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
@@ -253,6 +263,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected DRBooleanField getComponent() {
 		return (DRBooleanField) getObject().getComponent();

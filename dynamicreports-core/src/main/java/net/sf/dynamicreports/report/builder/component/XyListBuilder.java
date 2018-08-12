@@ -28,15 +28,29 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>XyListBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXyList> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyListBuilder.</p>
+	 */
 	protected XyListBuilder() {
 		super(new DRXyList());
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param x a {@link java.lang.Integer} object.
+	 * @param y a {@link java.lang.Integer} object.
+	 * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.XyListBuilder} object.
+	 */
 	public XyListBuilder add(Integer x, Integer y, ComponentBuilder<?, ?> component) {
 		Validate.notNull(x, "x must not be null");
 		Validate.notNull(y, "y must not be null");
@@ -45,6 +59,16 @@ public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXy
 		return this;
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param x a {@link java.lang.Integer} object.
+	 * @param y a {@link java.lang.Integer} object.
+	 * @param width a {@link java.lang.Integer} object.
+	 * @param height a {@link java.lang.Integer} object.
+	 * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.XyListBuilder} object.
+	 */
 	public XyListBuilder add(Integer x, Integer y, Integer width, Integer height, ComponentBuilder<?, ?> component) {
 		Validate.notNull(x, "x must not be null");
 		Validate.notNull(y, "y must not be null");
@@ -57,6 +81,12 @@ public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXy
 		return this;
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param cells a {@link net.sf.dynamicreports.report.builder.component.XyListCellBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.XyListBuilder} object.
+	 */
 	public XyListBuilder add(XyListCellBuilder... cells) {
 		Validate.notNull(cells, "cells must not be null");
 		Validate.noNullElements(cells, "cells must not contains null cell");
@@ -66,6 +96,11 @@ public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXy
 		return this;
 	}
 
+	/**
+	 * <p>getXyList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.component.DRXyList} object.
+	 */
 	public DRXyList getXyList() {
 		return build();
 	}

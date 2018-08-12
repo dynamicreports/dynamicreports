@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>DRDataType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,45 +39,83 @@ public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
 	private HorizontalTextAlignment horizontalTextAlignment;
 	private DRIValueFormatter<?, ? extends U> valueFormatter;
 
+	/**
+	 * <p>Constructor for DRDataType.</p>
+	 */
 	public DRDataType() {
 	}
 
+	/**
+	 * <p>Constructor for DRDataType.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public DRDataType(String pattern) {
 		this.pattern = pattern;
 	}
 
+	/**
+	 * <p>Constructor for DRDataType.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public DRDataType(String pattern, HorizontalTextAlignment horizontalTextAlignment) {
 		this.pattern = pattern;
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pattern</code>.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return pattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalTextAlignment</code>.</p>
+	 *
+	 * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+	 */
 	public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
 		this.horizontalTextAlignment = horizontalTextAlignment;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return horizontalTextAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueFormatter</code>.</p>
+	 *
+	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 */
 	public void setValueFormatter(DRIValueFormatter<?, ? extends U> valueFormatter) {
 		this.valueFormatter = valueFormatter;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIValueFormatter<?, ? extends U> getValueFormatter() {
 		return valueFormatter;
 	}
 
+	/**
+	 * <p>toString.</p>
+	 *
+	 * @param value a T object.
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String toString(T value) {
 		return String.valueOf(value);
 	}

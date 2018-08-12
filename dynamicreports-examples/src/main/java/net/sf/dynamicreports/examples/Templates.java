@@ -39,24 +39,42 @@ import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>Templates class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Templates {
+	/** Constant <code>rootStyle</code> */
 	public static final StyleBuilder rootStyle;
+	/** Constant <code>boldStyle</code> */
 	public static final StyleBuilder boldStyle;
+	/** Constant <code>italicStyle</code> */
 	public static final StyleBuilder italicStyle;
+	/** Constant <code>boldCenteredStyle</code> */
 	public static final StyleBuilder boldCenteredStyle;
+	/** Constant <code>bold12CenteredStyle</code> */
 	public static final StyleBuilder bold12CenteredStyle;
+	/** Constant <code>bold18CenteredStyle</code> */
 	public static final StyleBuilder bold18CenteredStyle;
+	/** Constant <code>bold22CenteredStyle</code> */
 	public static final StyleBuilder bold22CenteredStyle;
+	/** Constant <code>columnStyle</code> */
 	public static final StyleBuilder columnStyle;
+	/** Constant <code>columnTitleStyle</code> */
 	public static final StyleBuilder columnTitleStyle;
+	/** Constant <code>groupStyle</code> */
 	public static final StyleBuilder groupStyle;
+	/** Constant <code>subtotalStyle</code> */
 	public static final StyleBuilder subtotalStyle;
 
+	/** Constant <code>reportTemplate</code> */
 	public static final ReportTemplateBuilder reportTemplate;
+	/** Constant <code>currencyType</code> */
 	public static final CurrencyType currencyType;
+	/** Constant <code>dynamicReportsComponent</code> */
 	public static final ComponentBuilder<?, ?> dynamicReportsComponent;
+	/** Constant <code>footerComponent</code> */
 	public static final ComponentBuilder<?, ?> footerComponent;
 
 	static {
@@ -126,6 +144,9 @@ public class Templates {
 
 	/**
 	 * Creates custom component which is possible to add to any report band component
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
 	 */
 	public static ComponentBuilder<?, ?> createTitleComponent(String label) {
 		return cmp.horizontalList()
@@ -138,6 +159,12 @@ public class Templates {
 				.add(cmp.verticalGap(10));
 	}
 
+	/**
+	 * <p>createCurrencyValueFormatter.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.examples.Templates.CurrencyValueFormatter} object.
+	 */
 	public static CurrencyValueFormatter createCurrencyValueFormatter(String label) {
 		return new CurrencyValueFormatter(label);
 	}

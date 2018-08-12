@@ -28,23 +28,46 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>StyleBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StyleBuilder extends BaseStyleBuilder<StyleBuilder, DRStyle> implements ReportStyleBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for StyleBuilder.</p>
+	 */
 	protected StyleBuilder() {
 		this(new DRStyle());
 	}
 
+	/**
+	 * <p>Constructor for StyleBuilder.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.report.base.style.DRStyle} object.
+	 */
 	protected StyleBuilder(DRStyle style) {
 		super(style);
 	}
 
+	/**
+	 * <p>conditionalStyles.</p>
+	 *
+	 * @param conditionalStyles a {@link net.sf.dynamicreports.report.builder.style.ConditionalStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	public StyleBuilder conditionalStyles(ConditionalStyleBuilder... conditionalStyles) {
 		return addConditionalStyle(conditionalStyles);
 	}
 
+	/**
+	 * <p>addConditionalStyle.</p>
+	 *
+	 * @param conditionalStyles a {@link net.sf.dynamicreports.report.builder.style.ConditionalStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	public StyleBuilder addConditionalStyle(ConditionalStyleBuilder... conditionalStyles) {
 		Validate.notNull(conditionalStyles, "conditionalStyles must not be null");
 		Validate.noNullElements(conditionalStyles, "conditionalStyles must not contains null conditionalStyle");
@@ -54,11 +77,23 @@ public class StyleBuilder extends BaseStyleBuilder<StyleBuilder, DRStyle> implem
 		return this;
 	}
 
+	/**
+	 * <p>setName.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	public StyleBuilder setName(String name) {
 		getObject().setName(name);
 		return this;
 	}
 
+	/**
+	 * <p>setParentStyle.</p>
+	 *
+	 * @param parentStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
+	 */
 	public StyleBuilder setParentStyle(ReportStyleBuilder parentStyle) {
 		if (parentStyle != null) {
 			getObject().setParentStyle(parentStyle.build());

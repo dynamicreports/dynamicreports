@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment;
 import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
 
 /**
+ * <p>DRDesignListCell class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignListCell implements Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -42,10 +45,22 @@ public class DRDesignListCell implements Serializable {
 	private Integer width;
 	private Integer height;
 
+	/**
+	 * <p>Constructor for DRDesignListCell.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 */
 	protected DRDesignListCell(DRDesignComponent component) {
 		this(null, null, component);
 	}
 
+	/**
+	 * <p>Constructor for DRDesignListCell.</p>
+	 *
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 */
 	protected DRDesignListCell(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment,
 			DRDesignComponent component) {
 		this.horizontalAlignment = horizontalAlignment;
@@ -53,54 +68,119 @@ public class DRDesignListCell implements Serializable {
 		this.component = component;
 	}
 
+	/**
+	 * <p>Getter for the field <code>horizontalAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public HorizontalCellComponentAlignment getHorizontalAlignment() {
 		return horizontalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>horizontalAlignment</code>.</p>
+	 *
+	 * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public void setHorizontalAlignment(HorizontalCellComponentAlignment horizontalAlignment) {
 		this.horizontalAlignment = horizontalAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>verticalAlignment</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public VerticalCellComponentAlignment getVerticalAlignment() {
 		return verticalAlignment;
 	}
 
+	/**
+	 * <p>Setter for the field <code>verticalAlignment</code>.</p>
+	 *
+	 * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public void setVerticalAlignment(VerticalCellComponentAlignment verticalAlignment) {
 		this.verticalAlignment = verticalAlignment;
 	}
 
+	/**
+	 * <p>Getter for the field <code>component</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 */
 	public DRDesignComponent getComponent() {
 		return component;
 	}
 
+	/**
+	 * <p>Getter for the field <code>x</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getX() {
 		return x;
 	}
 
+	/**
+	 * <p>Setter for the field <code>x</code>.</p>
+	 *
+	 * @param x a {@link java.lang.Integer} object.
+	 */
 	public void setX(Integer x) {
 		this.x = x;
 	}
 
+	/**
+	 * <p>Getter for the field <code>y</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getY() {
 		return y;
 	}
 
+	/**
+	 * <p>Setter for the field <code>y</code>.</p>
+	 *
+	 * @param y a {@link java.lang.Integer} object.
+	 */
 	public void setY(Integer y) {
 		this.y = y;
 	}
 
+	/**
+	 * <p>Getter for the field <code>width</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getWidth() {
 		return width;
 	}
 
+	/**
+	 * <p>Setter for the field <code>width</code>.</p>
+	 *
+	 * @param width a {@link java.lang.Integer} object.
+	 */
 	public void setWidth(Integer width) {
 		this.width = width;
 	}
 
+	/**
+	 * <p>Getter for the field <code>height</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getHeight() {
 		return height;
 	}
 
+	/**
+	 * <p>Setter for the field <code>height</code>.</p>
+	 *
+	 * @param height a {@link java.lang.Integer} object.
+	 */
 	public void setHeight(Integer height) {
 		this.height = height;
 	}

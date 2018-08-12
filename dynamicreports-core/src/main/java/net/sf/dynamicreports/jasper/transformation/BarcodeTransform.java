@@ -67,15 +67,29 @@ import net.sf.jasperreports.engine.design.JRDesignComponentElement;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 
 /**
+ * <p>BarcodeTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BarcodeTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for BarcodeTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public BarcodeTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param barcode a {@link net.sf.dynamicreports.design.definition.barcode.DRIDesignBarcode} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
+	 */
 	protected JRDesignElement transform(DRIDesignBarcode barcode) {
 		JRDesignComponentElement jrComponent = new JRDesignComponentElement();
 		jrComponent.setComponent(barcodeComponent(barcode));
@@ -83,6 +97,12 @@ public class BarcodeTransform {
 		return jrComponent;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param barbecue a {@link net.sf.dynamicreports.design.definition.barcode.DRIDesignBarbecue} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
+	 */
 	protected JRDesignElement transform(DRIDesignBarbecue barbecue) {
 		JRDesignComponentElement jrComponent = new JRDesignComponentElement();
 		jrComponent.setComponent(barbecueComponent(barbecue));

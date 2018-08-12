@@ -27,15 +27,27 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>CandlestickChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CandlestickChartBuilder extends AbstractHighLowChartBuilder<CandlestickChartBuilder, DRCandlestickPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for CandlestickChartBuilder.</p>
+	 */
 	protected CandlestickChartBuilder() {
 		super(ChartType.CANDLESTICK);
 	}
 
+	/**
+	 * <p>setShowVolume.</p>
+	 *
+	 * @param showVolume a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CandlestickChartBuilder} object.
+	 */
 	public CandlestickChartBuilder setShowVolume(Boolean showVolume) {
 		getPlot().setShowVolume(showVolume);
 		return this;

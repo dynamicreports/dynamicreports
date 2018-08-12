@@ -31,10 +31,19 @@ import net.sf.dynamicreports.report.defaults.xml.XmlFont;
 import net.sf.dynamicreports.report.exception.DRReportException;
 
 /**
+ * <p>DefaultBinder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DefaultBinder {
 
+	/**
+	 * <p>bind.</p>
+	 *
+	 * @param xmlDynamicReports a {@link net.sf.dynamicreports.report.defaults.xml.XmlDynamicReports} object.
+	 * @return a {@link net.sf.dynamicreports.report.defaults.Default} object.
+	 */
 	public static Default bind(XmlDynamicReports xmlDynamicReports) {
 		Default defaults = new Default();
 		if (xmlDynamicReports != null) {

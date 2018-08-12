@@ -91,15 +91,29 @@ import net.sf.jasperreports.export.SimpleXmlExporterOutput;
 import net.sf.jasperreports.web.util.WebHtmlResourceHandler;
 
 /**
+ * <p>ExporterTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ExporterTransform {
 	private JasperIExporter jasperExporter;
 
+	/**
+	 * <p>Constructor for ExporterTransform.</p>
+	 *
+	 * @param jasperExporter a {@link net.sf.dynamicreports.jasper.definition.export.JasperIExporter} object.
+	 */
 	public ExporterTransform(JasperIExporter jasperExporter) {
 		this.jasperExporter = jasperExporter;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.export.Exporter} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public Exporter<?, ?, ?, ?> transform() throws DRException {
 		Exporter<?, ?, ?, ?> jrExporter;
 

@@ -38,7 +38,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRReportException;
 
 /**
+ * <p>PercentageSubtotalBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSubtotalBuilder, Double> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -48,26 +51,55 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
 	private DRGroup totalGroup;
 
 	// column
+	/**
+	 * <p>Constructor for PercentageSubtotalBuilder.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+	 */
 	protected PercentageSubtotalBuilder(ValueColumnBuilder<?, ? extends Number> column) {
 		this(column.build(), column);
 	}
 
 	// field
+	/**
+	 * <p>Constructor for PercentageSubtotalBuilder.</p>
+	 *
+	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 */
 	protected PercentageSubtotalBuilder(FieldBuilder<? extends Number> field, ColumnBuilder<?, ?> showInColumn) {
 		this(field.getField(), showInColumn);
 	}
 
 	// expression
+	/**
+	 * <p>Constructor for PercentageSubtotalBuilder.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
+	 */
 	protected PercentageSubtotalBuilder(DRIExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
 		super(showInColumn);
 		this.expression = expression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>totalType</code>.</p>
+	 *
+	 * @param totalType a {@link net.sf.dynamicreports.report.constant.PercentageTotalType} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
+	 */
 	public PercentageSubtotalBuilder setTotalType(PercentageTotalType totalType) {
 		this.totalType = totalType;
 		return this;
 	}
 
+	/**
+	 * <p>Setter for the field <code>totalGroup</code>.</p>
+	 *
+	 * @param totalGroup a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
+	 */
 	public PercentageSubtotalBuilder setTotalGroup(GroupBuilder<?> totalGroup) {
 		if (totalGroup != null) {
 			this.totalGroup = totalGroup.getGroup();
@@ -78,6 +110,7 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
 		return this;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void configure() {
 		if (getObject().getValueField().getDataType() == null) {

@@ -34,10 +34,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>LayeredBarChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class LayeredBarChartReport {
 
+	/**
+	 * <p>Constructor for LayeredBarChartReport.</p>
+	 */
 	public LayeredBarChartReport() {
 		build();
 	}
@@ -80,6 +86,11 @@ public class LayeredBarChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new LayeredBarChartReport();
 	}

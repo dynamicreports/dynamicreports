@@ -28,11 +28,24 @@ import net.sf.dynamicreports.report.definition.component.DRIList;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRICrosstabCellContent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabCellContent extends Serializable {
 
+	/**
+	 * <p>getList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIList} object.
+	 */
 	public DRIList getList();
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getStyle();
 }

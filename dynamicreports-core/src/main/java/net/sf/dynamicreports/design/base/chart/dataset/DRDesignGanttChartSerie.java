@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignGanttChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDesignGanttChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,38 +40,62 @@ public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDe
 	private DRIDesignExpression percentExpression;
 	private DRIDesignExpression labelExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getStartDateExpression() {
 		return startDateExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>startDateExpression</code>.</p>
+	 *
+	 * @param startDateExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setStartDateExpression(DRIDesignExpression startDateExpression) {
 		this.startDateExpression = startDateExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getEndDateExpression() {
 		return endDateExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>endDateExpression</code>.</p>
+	 *
+	 * @param endDateExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setEndDateExpression(DRIDesignExpression endDateExpression) {
 		this.endDateExpression = endDateExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getPercentExpression() {
 		return percentExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentExpression</code>.</p>
+	 *
+	 * @param percentExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setPercentExpression(DRIDesignExpression percentExpression) {
 		this.percentExpression = percentExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setLabelExpression(DRIDesignExpression labelExpression) {
 		this.labelExpression = labelExpression;
 	}

@@ -26,15 +26,29 @@ import net.sf.dynamicreports.report.base.DRQuery;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>QueryBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class QueryBuilder extends AbstractBuilder<QueryBuilder, DRQuery> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for QueryBuilder.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 * @param language a {@link java.lang.String} object.
+	 */
 	protected QueryBuilder(String text, String language) {
 		super(new DRQuery(text, language));
 	}
 
+	/**
+	 * <p>getQuery.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRQuery} object.
+	 */
 	public DRQuery getQuery() {
 		return build();
 	}

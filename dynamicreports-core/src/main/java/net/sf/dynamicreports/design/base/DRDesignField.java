@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.DRIDesignField;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignField implements DRIDesignField {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,42 +39,69 @@ public class DRDesignField implements DRIDesignField {
 	private boolean external;
 	private String description;
 
+	/**
+	 * <p>Constructor for DRDesignField.</p>
+	 */
 	public DRDesignField() {
 		this.external = false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return valueClass;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueClass</code>.</p>
+	 *
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	public void setValueClass(Class<?> valueClass) {
 		this.valueClass = valueClass;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isExternal() {
 		return external;
 	}
 
+	/**
+	 * <p>Setter for the field <code>external</code>.</p>
+	 *
+	 * @param external a boolean.
+	 */
 	public void setExternal(boolean external) {
 		this.external = external;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * <p>Setter for the field <code>description</code>.</p>
+	 *
+	 * @param description a {@link java.lang.String} object.
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}

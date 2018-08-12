@@ -28,11 +28,24 @@ import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIChartSerie interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIChartSerie extends Serializable {
 
+	/**
+	 * <p>getSeriesExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getSeriesExpression();
 
+	/**
+	 * <p>getItemHyperLink.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 */
 	public DRIHyperLink getItemHyperLink();
 }

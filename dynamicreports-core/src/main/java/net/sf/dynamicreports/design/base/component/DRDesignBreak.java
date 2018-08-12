@@ -27,22 +27,34 @@ import net.sf.dynamicreports.report.constant.BreakType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignBreak class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignBreak extends DRDesignComponent implements DRIDesignBreak {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private BreakType breakType;
 
+	/**
+	 * <p>Constructor for DRDesignBreak.</p>
+	 */
 	public DRDesignBreak() {
 		super("break");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BreakType getType() {
 		return breakType;
 	}
 
+	/**
+	 * <p>setType.</p>
+	 *
+	 * @param breakType a {@link net.sf.dynamicreports.report.constant.BreakType} object.
+	 */
 	public void setType(BreakType breakType) {
 		this.breakType = breakType;
 	}

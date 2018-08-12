@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRICode128Barcode;
 
 /**
+ * <p>DRCode128Barcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCode128Barcode extends DRBarcode4j implements DRICode128Barcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

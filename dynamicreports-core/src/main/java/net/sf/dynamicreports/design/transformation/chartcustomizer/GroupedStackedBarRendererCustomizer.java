@@ -48,15 +48,20 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
+ * <p>GroupedStackedBarRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+	/** Constant <code>GROUP_SERIES_KEY="-{group-series}-"</code> */
 	public static final String GROUP_SERIES_KEY = "-{group-series}-";
 
 	private KeyToGroupMap map;
 	private Map<String, Paint> seriesColors;
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		this.seriesColors = new LinkedHashMap<String, Paint>();

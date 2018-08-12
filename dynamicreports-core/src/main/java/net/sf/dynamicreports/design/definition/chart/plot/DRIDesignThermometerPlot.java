@@ -29,33 +29,101 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignFont;
 import net.sf.dynamicreports.report.constant.ValueLocation;
 
 /**
+ * <p>DRIDesignThermometerPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignThermometerPlot extends DRIDesignPlot {
 
+	/**
+	 * <p>getDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeLowExpression();
 
+	/**
+	 * <p>getDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeHighExpression();
 
+	/**
+	 * <p>getValueColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getValueColor();
 
+	/**
+	 * <p>getValueMask.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getValueMask();
 
+	/**
+	 * <p>getValueFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getValueFont();
 
+	/**
+	 * <p>getValueLocation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ValueLocation} object.
+	 */
 	public ValueLocation getValueLocation();
 
+	/**
+	 * <p>getMercuryColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getMercuryColor();
 
+	/**
+	 * <p>getLowDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLowDataRangeLowExpression();
 
+	/**
+	 * <p>getLowDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLowDataRangeHighExpression();
 
+	/**
+	 * <p>getMediumDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getMediumDataRangeLowExpression();
 
+	/**
+	 * <p>getMediumDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getMediumDataRangeHighExpression();
 
+	/**
+	 * <p>getHighDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getHighDataRangeLowExpression();
 
+	/**
+	 * <p>getHighDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getHighDataRangeHighExpression();
 }

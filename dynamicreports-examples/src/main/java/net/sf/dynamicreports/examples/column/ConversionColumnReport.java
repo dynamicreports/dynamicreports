@@ -40,10 +40,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ConversionColumnReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ConversionColumnReport {
 
+	/**
+	 * <p>Constructor for ConversionColumnReport.</p>
+	 */
 	public ConversionColumnReport() {
 		build();
 	}
@@ -85,6 +91,11 @@ public class ConversionColumnReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ConversionColumnReport();
 	}

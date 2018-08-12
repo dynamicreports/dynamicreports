@@ -26,15 +26,27 @@ import net.sf.dynamicreports.jasper.base.export.JasperRtfExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperRtfExporterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperRtfExporterBuilder extends AbstractJasperExporterBuilder<JasperRtfExporterBuilder, JasperRtfExporter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperRtfExporterBuilder.</p>
+	 */
 	protected JasperRtfExporterBuilder() {
 		super(new JasperRtfExporter());
 	}
 
+	/**
+	 * <p>setIgnoreHyperLink.</p>
+	 *
+	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperRtfExporterBuilder} object.
+	 */
 	public JasperRtfExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
 		this.getObject().setIgnoreHyperLink(ignoreHyperLink);
 		return this;

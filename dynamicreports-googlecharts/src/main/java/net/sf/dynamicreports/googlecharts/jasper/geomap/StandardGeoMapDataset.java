@@ -30,22 +30,37 @@ import net.sf.jasperreports.engine.design.JRDesignElementDataset;
 import net.sf.jasperreports.engine.util.JRCloneUtils;
 
 /**
+ * <p>StandardGeoMapDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class StandardGeoMapDataset extends JRDesignElementDataset implements GeoMapDataset {
 	private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
 
+	/** Constant <code>PROPERTY_LOCATION_EXPRESSION="locationExpression"</code> */
 	public static final String PROPERTY_LOCATION_EXPRESSION = "locationExpression";
+	/** Constant <code>PROPERTY_VALUE_EXPRESSION="valueExpression"</code> */
 	public static final String PROPERTY_VALUE_EXPRESSION = "valueExpression";
+	/** Constant <code>PROPERTY_LABEL_EXPRESSION="labelExpression"</code> */
 	public static final String PROPERTY_LABEL_EXPRESSION = "labelExpression";
 
 	private JRExpression locationExpression;
 	private JRExpression valueExpression;
 	private JRExpression labelExpression;
 
+	/**
+	 * <p>Constructor for StandardGeoMapDataset.</p>
+	 */
 	public StandardGeoMapDataset() {
 	}
 
+	/**
+	 * <p>Constructor for StandardGeoMapDataset.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
+	 * @param factory a {@link net.sf.jasperreports.engine.base.JRBaseObjectFactory} object.
+	 */
 	public StandardGeoMapDataset(GeoMapDataset dataset, JRBaseObjectFactory factory) {
 		super(dataset, factory);
 		this.locationExpression = factory.getExpression(dataset.getLocationExpression());
@@ -53,38 +68,57 @@ public class StandardGeoMapDataset extends JRDesignElementDataset implements Geo
 		this.labelExpression = factory.getExpression(dataset.getLabelExpression());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void collectExpressions(JRExpressionCollector collector) {
 		GeoMapCompiler.collectExpressions(this, collector);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getLocationExpression() {
 		return locationExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>locationExpression</code>.</p>
+	 *
+	 * @param locationExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public void setLocationExpression(JRExpression locationExpression) {
 		Object old = this.locationExpression;
 		this.locationExpression = locationExpression;
 		getEventSupport().firePropertyChange(PROPERTY_LOCATION_EXPRESSION, old, this.locationExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public void setValueExpression(JRExpression valueExpression) {
 		Object old = this.valueExpression;
 		this.valueExpression = valueExpression;
 		getEventSupport().firePropertyChange(PROPERTY_VALUE_EXPRESSION, old, this.valueExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public void setLabelExpression(JRExpression labelExpression) {
 		this.labelExpression = labelExpression;
 
@@ -93,6 +127,7 @@ public class StandardGeoMapDataset extends JRDesignElementDataset implements Geo
 		getEventSupport().firePropertyChange(PROPERTY_LABEL_EXPRESSION, old, this.labelExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object clone() {
 		StandardGeoMapDataset clone = (StandardGeoMapDataset) super.clone();

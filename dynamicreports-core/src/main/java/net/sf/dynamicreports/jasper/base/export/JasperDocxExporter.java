@@ -26,7 +26,10 @@ import net.sf.dynamicreports.jasper.definition.export.JasperIDocxExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperDocxExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperDocxExporter extends AbstractJasperExporter implements JasperIDocxExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,29 +38,47 @@ public class JasperDocxExporter extends AbstractJasperExporter implements Jasper
 	private Boolean flexibleRowHeight;
 	private Boolean ignoreHyperLink;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getFramesAsNestedTables() {
 		return framesAsNestedTables;
 	}
 
+	/**
+	 * <p>Setter for the field <code>framesAsNestedTables</code>.</p>
+	 *
+	 * @param framesAsNestedTables a {@link java.lang.Boolean} object.
+	 */
 	public void setFramesAsNestedTables(Boolean framesAsNestedTables) {
 		this.framesAsNestedTables = framesAsNestedTables;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getFlexibleRowHeight() {
 		return flexibleRowHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>flexibleRowHeight</code>.</p>
+	 *
+	 * @param flexibleRowHeight a {@link java.lang.Boolean} object.
+	 */
 	public void setFlexibleRowHeight(Boolean flexibleRowHeight) {
 		this.flexibleRowHeight = flexibleRowHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getIgnoreHyperLink() {
 		return ignoreHyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
+	 *
+	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+	 */
 	public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
 		this.ignoreHyperLink = ignoreHyperLink;
 	}

@@ -33,21 +33,27 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>CharacterType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CharacterType extends AbstractDataType<Character, Character> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getCharacterType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getCharacterType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Character stringToValue(String value, Locale locale) throws DRException {
 		if (StringUtils.isNotEmpty(value)) {

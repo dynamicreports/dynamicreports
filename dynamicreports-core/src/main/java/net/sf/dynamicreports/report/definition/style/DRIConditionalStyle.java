@@ -25,9 +25,17 @@ package net.sf.dynamicreports.report.definition.style;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIConditionalStyle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIConditionalStyle extends DRIBaseStyle {
 
+	/**
+	 * <p>getConditionExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Boolean> getConditionExpression();
 }

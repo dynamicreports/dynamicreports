@@ -34,10 +34,16 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
 
 /**
+ * <p>XmlDatasourceReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XmlDatasourceReport {
 
+	/**
+	 * <p>Constructor for XmlDatasourceReport.</p>
+	 */
 	public XmlDatasourceReport() {
 		build();
 	}
@@ -78,6 +84,11 @@ public class XmlDatasourceReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new XmlDatasourceReport();
 	}

@@ -28,11 +28,24 @@ import net.sf.dynamicreports.design.definition.chart.DRIDesignChart;
 import net.sf.dynamicreports.report.constant.AxisPosition;
 
 /**
+ * <p>DRIDesignChartAxis interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignChartAxis extends Serializable {
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
+	 */
 	public AxisPosition getPosition();
 
+	/**
+	 * <p>getChart.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.chart.DRIDesignChart} object.
+	 */
 	public DRIDesignChart getChart();
 }

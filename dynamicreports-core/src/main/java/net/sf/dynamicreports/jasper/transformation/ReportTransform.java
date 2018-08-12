@@ -56,15 +56,26 @@ import net.sf.jasperreports.engine.type.HyperlinkTargetEnum;
 import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
 
 /**
+ * <p>ReportTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ReportTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for ReportTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public ReportTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		DRIDesignReport report = accessor.getReport();
 		JasperDesign design = accessor.getDesign();
@@ -112,10 +123,16 @@ public class ReportTransform {
 		}
 	}
 
+	/**
+	 * <p>transformExpressions.</p>
+	 */
 	public void transformExpressions() {
 		accessor.getDesign().setFilterExpression(accessor.getExpressionTransform().getExpression(accessor.getReport().getFilterExpression()));
 	}
 
+	/**
+	 * <p>addDependencies.</p>
+	 */
 	public void addDependencies() {
 		DRIDesignReport report = accessor.getReport();
 		if (!accessor.getCustomValues().isEmpty() || !report.getScriptlets().isEmpty() ||
@@ -186,6 +203,12 @@ public class ReportTransform {
 		}
 	}
 
+	/**
+	 * <p>hyperLink.</p>
+	 *
+	 * @param hyperLink a {@link net.sf.dynamicreports.design.definition.DRIDesignHyperLink} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignHyperlink} object.
+	 */
 	public JRDesignHyperlink hyperLink(DRIDesignHyperLink hyperLink) {
 		if (hyperLink == null) {
 			return null;
@@ -243,6 +266,13 @@ public class ReportTransform {
 	}
 
 	// scriptlet
+	/**
+	 * <p>scriptlet.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param scriptletClass a {@link java.lang.Class} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignScriptlet} object.
+	 */
 	protected JRDesignScriptlet scriptlet(String name, Class<? extends JRAbstractScriptlet> scriptletClass) {
 		JRDesignScriptlet jrScriptlet = new JRDesignScriptlet();
 		jrScriptlet.setName(name);
@@ -251,6 +281,12 @@ public class ReportTransform {
 	}
 
 	// query
+	/**
+	 * <p>query.</p>
+	 *
+	 * @param query a {@link net.sf.dynamicreports.design.definition.DRIDesignQuery} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignQuery} object.
+	 */
 	protected JRDesignQuery query(DRIDesignQuery query) {
 		JRDesignQuery jrQuery = new JRDesignQuery();
 		jrQuery.setText(query.getText());

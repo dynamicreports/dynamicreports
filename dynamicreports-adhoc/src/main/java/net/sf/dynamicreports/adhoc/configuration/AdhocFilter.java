@@ -27,21 +27,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * <p>AdhocFilter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocFilter implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private List<AdhocRestriction> restrictions;
 
+	/**
+	 * <p>Constructor for AdhocFilter.</p>
+	 */
 	public AdhocFilter() {
 		restrictions = new ArrayList<AdhocRestriction>();
 	}
 
+	/**
+	 * <p>Getter for the field <code>restrictions</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocRestriction> getRestrictions() {
 		return restrictions;
 	}
 
+	/**
+	 * <p>getRestriction.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+	 */
 	public AdhocRestriction getRestriction(String key) {
 		if (restrictions == null) {
 			return null;
@@ -55,10 +72,21 @@ public class AdhocFilter implements Cloneable, Serializable {
 		return null;
 	}
 
+	/**
+	 * <p>addRestriction.</p>
+	 *
+	 * @param restriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+	 */
 	public void addRestriction(AdhocRestriction restriction) {
 		this.restrictions.add(restriction);
 	}
 
+	/**
+	 * <p>setRestriction.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param restriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+	 */
 	public void setRestriction(String key, AdhocRestriction restriction) {
 		int index = -1;
 		for (AdhocRestriction cmp : restrictions) {
@@ -74,10 +102,16 @@ public class AdhocFilter implements Cloneable, Serializable {
 		}
 	}
 
+	/**
+	 * <p>Setter for the field <code>restrictions</code>.</p>
+	 *
+	 * @param restrictions a {@link java.util.List} object.
+	 */
 	public void setRestrictions(List<AdhocRestriction> restrictions) {
 		this.restrictions = restrictions;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -96,6 +130,7 @@ public class AdhocFilter implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocFilter clone() {
 		AdhocFilter clone;

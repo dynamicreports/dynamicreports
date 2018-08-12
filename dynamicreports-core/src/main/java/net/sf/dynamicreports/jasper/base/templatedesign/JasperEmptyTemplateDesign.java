@@ -28,11 +28,15 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.design.JasperDesign;
 
 /**
+ * <p>JasperEmptyTemplateDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperEmptyTemplateDesign extends AbstractTemplateDesign<JasperDesign> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public JasperDesign getDesign() throws DRException {
 		JasperDesign design = new JasperDesign();

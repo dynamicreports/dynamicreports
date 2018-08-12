@@ -31,10 +31,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>XYStepChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XYStepChartReport {
 
+	/**
+	 * <p>Constructor for XYStepChartReport.</p>
+	 */
 	public XYStepChartReport() {
 		build();
 	}
@@ -78,6 +84,11 @@ public class XYStepChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new XYStepChartReport();
 	}

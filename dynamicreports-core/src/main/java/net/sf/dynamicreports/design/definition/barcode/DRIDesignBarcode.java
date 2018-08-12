@@ -28,13 +28,31 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignComponent;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignBarcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBarcode extends DRIDesignComponent {
 
+	/**
+	 * <p>getCodeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getCodeExpression();
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public EvaluationTime getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getEvaluationGroup();
 }

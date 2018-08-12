@@ -28,22 +28,60 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.RectangleAnchor;
 
 /**
+ * <p>DRIXyBlockPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIXyBlockPlot extends DRIAxisPlot {
 
+	/**
+	 * <p>getBlockWidth.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getBlockWidth();
 
+	/**
+	 * <p>getBlockHeight.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getBlockHeight();
 
+	/**
+	 * <p>getBlockAnchor.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.RectangleAnchor} object.
+	 */
 	public RectangleAnchor getBlockAnchor();
 
+	/**
+	 * <p>getDefaultLowerBound.</p>
+	 *
+	 * @return a double.
+	 */
 	public double getDefaultLowerBound();
 
+	/**
+	 * <p>getDefaultUpperBound.</p>
+	 *
+	 * @return a double.
+	 */
 	public double getDefaultUpperBound();
 
+	/**
+	 * <p>getDefaultPaint.</p>
+	 *
+	 * @return a {@link java.awt.Paint} object.
+	 */
 	public Paint getDefaultPaint();
 
+	/**
+	 * <p>getPaintScales.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIPaintScale> getPaintScales();
 
 }

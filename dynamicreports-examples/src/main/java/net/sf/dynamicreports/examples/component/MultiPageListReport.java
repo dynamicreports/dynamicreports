@@ -32,10 +32,16 @@ import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>MultiPageListReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MultiPageListReport {
 
+	/**
+	 * <p>Constructor for MultiPageListReport.</p>
+	 */
 	public MultiPageListReport() {
 		build();
 	}
@@ -64,6 +70,11 @@ public class MultiPageListReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new MultiPageListReport();
 	}

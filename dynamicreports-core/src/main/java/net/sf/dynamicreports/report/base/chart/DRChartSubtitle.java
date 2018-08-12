@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.chart.DRIChartSubtitle;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRChartSubtitle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRChartSubtitle implements DRIChartSubtitle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,29 +42,47 @@ public class DRChartSubtitle implements DRIChartSubtitle {
 	private DRFont font;
 	private DRIExpression<String> title;
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getColor() {
 		return color;
 	}
 
+	/**
+	 * <p>Setter for the field <code>color</code>.</p>
+	 *
+	 * @param color a {@link java.awt.Color} object.
+	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRFont getFont() {
 		return font;
 	}
 
+	/**
+	 * <p>Setter for the field <code>font</code>.</p>
+	 *
+	 * @param font a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+	 */
 	public void setFont(DRFont font) {
 		this.font = font;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getTitle() {
 		return title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setTitle(DRIExpression<String> title) {
 		this.title = title;
 	}

@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.definition.component.DRIBooleanField;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIBooleanColumn interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIBooleanColumn extends DRIExpression<Boolean>, DRIColumn<DRIBooleanField>, DRIValue<Boolean> {
 

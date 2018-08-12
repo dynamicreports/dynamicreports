@@ -31,14 +31,21 @@ import net.sf.jasperreports.engine.convert.ReportConverter;
 import net.sf.jasperreports.engine.util.JRImageLoader;
 
 /**
+ * <p>GoogleChartsDesignConverter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GoogleChartsDesignConverter extends ElementIconConverter implements ComponentDesignConverter {
 
+	/**
+	 * <p>Constructor for GoogleChartsDesignConverter.</p>
+	 */
 	public GoogleChartsDesignConverter() {
 		super(JRImageLoader.SUBREPORT_IMAGE_RESOURCE);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRPrintElement convert(ReportConverter reportConverter, JRComponentElement element) {
 		return convert(reportConverter, (JRElement) element);

@@ -34,18 +34,28 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>PageXofYNumberExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PageXofYNumberExpression extends AbstractComplexExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private int index;
 
+	/**
+	 * <p>Constructor for PageXofYNumberExpression.</p>
+	 *
+	 * @param pageNumberFormatExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param index a int.
+	 */
 	public PageXofYNumberExpression(DRIExpression<String> pageNumberFormatExpression, int index) {
 		addExpression(pageNumberFormatExpression);
 		this.index = index;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(List<?> values, ReportParameters reportParameters) {
 		String pattern = (String) values.get(0);

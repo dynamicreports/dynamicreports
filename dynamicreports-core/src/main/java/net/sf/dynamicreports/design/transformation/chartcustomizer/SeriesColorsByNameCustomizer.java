@@ -46,17 +46,26 @@ import org.jfree.data.general.PieDataset;
 import org.jfree.data.xy.XYDataset;
 
 /**
+ * <p>SeriesColorsByNameCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Map<String, Color> seriesColorsByName;
 
+	/**
+	 * <p>Constructor for SeriesColorsByNameCustomizer.</p>
+	 *
+	 * @param seriesColorsByName a {@link java.util.Map} object.
+	 */
 	public SeriesColorsByNameCustomizer(Map<String, Color> seriesColorsByName) {
 		this.seriesColorsByName = seriesColorsByName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		if (chart.getPlot() instanceof CategoryPlot) {

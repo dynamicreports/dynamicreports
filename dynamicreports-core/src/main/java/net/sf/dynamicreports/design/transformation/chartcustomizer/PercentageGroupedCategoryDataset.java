@@ -28,15 +28,24 @@ import org.apache.commons.lang3.StringUtils;
 import org.jfree.data.category.CategoryDataset;
 
 /**
+ * <p>PercentageGroupedCategoryDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PercentageGroupedCategoryDataset extends PercentageCategoryDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PercentageGroupedCategoryDataset.</p>
+	 *
+	 * @param dataset a {@link org.jfree.data.category.CategoryDataset} object.
+	 */
 	public PercentageGroupedCategoryDataset(CategoryDataset dataset) {
 		super(dataset);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Number getValue(int row, int column) {
 		double total = 0;

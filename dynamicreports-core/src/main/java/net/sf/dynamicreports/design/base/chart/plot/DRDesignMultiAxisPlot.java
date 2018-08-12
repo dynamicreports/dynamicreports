@@ -30,22 +30,34 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignMultiAxisPlot
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignMultiAxisPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignMultiAxisPlot extends DRDesignAxisPlot implements DRIDesignMultiAxisPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private List<DRIDesignChartAxis> axes;
 
+	/**
+	 * <p>Constructor for DRDesignMultiAxisPlot.</p>
+	 */
 	public DRDesignMultiAxisPlot() {
 		axes = new ArrayList<DRIDesignChartAxis>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIDesignChartAxis> getAxes() {
 		return axes;
 	}
 
+	/**
+	 * <p>Setter for the field <code>axes</code>.</p>
+	 *
+	 * @param axes a {@link java.util.List} object.
+	 */
 	public void setAxes(List<DRIDesignChartAxis> axes) {
 		this.axes = axes;
 	}

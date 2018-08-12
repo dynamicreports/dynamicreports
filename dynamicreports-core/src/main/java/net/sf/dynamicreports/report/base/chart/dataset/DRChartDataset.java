@@ -27,18 +27,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset;
 
 /**
+ * <p>DRChartDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRChartDataset implements DRIChartDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRDataset subDataset;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDataset getSubDataset() {
 		return subDataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subDataset</code>.</p>
+	 *
+	 * @param subDataset a {@link net.sf.dynamicreports.report.base.DRDataset} object.
+	 */
 	public void setSubDataset(DRDataset subDataset) {
 		this.subDataset = subDataset;
 	}

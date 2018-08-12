@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.design.definition.chart.plot;
 
 /**
+ * <p>DRIDesignAxisPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignAxisPlot extends DRIDesignBasePlot {
 
+	/**
+	 * <p>getXAxisFormat.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.chart.plot.DRIDesignAxisFormat} object.
+	 */
 	public DRIDesignAxisFormat getXAxisFormat();
 
+	/**
+	 * <p>getYAxisFormat.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.chart.plot.DRIDesignAxisFormat} object.
+	 */
 	public DRIDesignAxisFormat getYAxisFormat();
 }

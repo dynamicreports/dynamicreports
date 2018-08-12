@@ -28,49 +28,103 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
 
 /**
+ * <p>TableOfContentsCustomizerBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfContentsCustomizerBuilder, TableOfContentsCustomizer> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TableOfContentsCustomizerBuilder.</p>
+	 */
 	public TableOfContentsCustomizerBuilder() {
 		super(new TableOfContentsCustomizer());
 	}
 
+	/**
+	 * <p>getTableOfContents.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizer} object.
+	 */
 	public TableOfContentsCustomizer getTableOfContents() {
 		return build();
 	}
 
+	/**
+	 * <p>setTitleStyle.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setTitleStyle(ReportStyleBuilder titleStyle) {
 		this.getObject().setTitleStyle(titleStyle);
 		return this;
 	}
 
+	/**
+	 * <p>setHeadingStyle.</p>
+	 *
+	 * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setHeadingStyle(ReportStyleBuilder headingStyle) {
 		this.getObject().setHeadingStyle(headingStyle);
 		return this;
 	}
 
+	/**
+	 * <p>setHeadingStyle.</p>
+	 *
+	 * @param level a int.
+	 * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setHeadingStyle(int level, ReportStyleBuilder headingStyle) {
 		this.getObject().setHeadingStyle(level, headingStyle);
 		return this;
 	}
 
+	/**
+	 * <p>setTextFixedWidth.</p>
+	 *
+	 * @param textFixedWidth a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setTextFixedWidth(Integer textFixedWidth) {
 		this.getObject().setTextFixedWidth(textFixedWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setDotsFixedWidth.</p>
+	 *
+	 * @param dotsFixedWidth a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setDotsFixedWidth(Integer dotsFixedWidth) {
 		this.getObject().setDotsFixedWidth(dotsFixedWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setPageIndexFixedWidth.</p>
+	 *
+	 * @param pageIndexFixedWidth a {@link java.lang.Integer} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setPageIndexFixedWidth(Integer pageIndexFixedWidth) {
 		this.getObject().setPageIndexFixedWidth(pageIndexFixedWidth);
 		return this;
 	}
 
+	/**
+	 * <p>setPosition.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
+	 */
 	public TableOfContentsCustomizerBuilder setPosition(TableOfContentsPosition position) {
 		this.getObject().setPosition(position);
 		return this;

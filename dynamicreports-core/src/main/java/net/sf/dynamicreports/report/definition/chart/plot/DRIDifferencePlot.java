@@ -25,14 +25,32 @@ package net.sf.dynamicreports.report.definition.chart.plot;
 import java.awt.Color;
 
 /**
+ * <p>DRIDifferencePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDifferencePlot extends DRIAxisPlot {
 
+	/**
+	 * <p>getPositiveColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getPositiveColor();
 
+	/**
+	 * <p>getNegativeColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getNegativeColor();
 
+	/**
+	 * <p>getShowShapes.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowShapes();
 
 }

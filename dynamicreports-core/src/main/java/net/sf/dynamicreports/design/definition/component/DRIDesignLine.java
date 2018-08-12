@@ -26,12 +26,25 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
 import net.sf.dynamicreports.report.constant.LineDirection;
 
 /**
+ * <p>DRIDesignLine interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignLine extends DRIDesignComponent {
 
+	/**
+	 * <p>getDirection.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+	 */
 	public LineDirection getDirection();
 
+	/**
+	 * <p>getPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getPen();
 
 }

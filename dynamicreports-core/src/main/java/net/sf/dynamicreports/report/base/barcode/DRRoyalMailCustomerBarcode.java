@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRIRoyalMailCustomerBarcode;
 
 /**
+ * <p>DRRoyalMailCustomerBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRRoyalMailCustomerBarcode extends DRChecksumBarcode implements DRIRoyalMailCustomerBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,29 +38,47 @@ public class DRRoyalMailCustomerBarcode extends DRChecksumBarcode implements DRI
 	private Double intercharGapWidth;
 	private Double trackHeight;
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getAscenderHeight() {
 		return ascenderHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ascenderHeight</code>.</p>
+	 *
+	 * @param ascenderHeight a {@link java.lang.Double} object.
+	 */
 	public void setAscenderHeight(Double ascenderHeight) {
 		this.ascenderHeight = ascenderHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getIntercharGapWidth() {
 		return intercharGapWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>intercharGapWidth</code>.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 */
 	public void setIntercharGapWidth(Double intercharGapWidth) {
 		this.intercharGapWidth = intercharGapWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getTrackHeight() {
 		return trackHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>trackHeight</code>.</p>
+	 *
+	 * @param trackHeight a {@link java.lang.Double} object.
+	 */
 	public void setTrackHeight(Double trackHeight) {
 		this.trackHeight = trackHeight;
 	}

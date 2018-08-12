@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRField<T> implements DRIField<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,6 +42,12 @@ public class DRField<T> implements DRIField<T> {
 	private DRIDataType<? super T, T> dataType;
 	private String description;
 
+	/**
+	 * <p>Constructor for DRField.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	public DRField(String name, Class<? super T> valueClass) {
 		Validate.notEmpty(name, "name must not be empty");
 		Validate.notNull(valueClass, "valueClass must not be null");
@@ -46,30 +55,44 @@ public class DRField<T> implements DRIField<T> {
 		this.valueClass = valueClass;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataType</code>.</p>
+	 *
+	 * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	public void setDataType(DRIDataType<? super T, T> dataType) {
 		this.dataType = dataType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDataType<? super T, T> getDataType() {
 		return dataType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<? super T> getValueClass() {
 		return valueClass;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getDescription() {
 		return description;
 	}
 
+	/**
+	 * <p>Setter for the field <code>description</code>.</p>
+	 *
+	 * @param description a {@link java.lang.String} object.
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}

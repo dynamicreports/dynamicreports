@@ -34,10 +34,16 @@ import net.sf.jasperreports.renderers.Renderable;
 import net.sf.jasperreports.renderers.SimpleDataRenderer;
 
 /**
+ * <p>SvgRendererReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SvgRendererReport {
 
+	/**
+	 * <p>Constructor for SvgRendererReport.</p>
+	 */
 	public SvgRendererReport() {
 		build();
 	}
@@ -60,6 +66,11 @@ public class SvgRendererReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SvgRendererReport();
 	}

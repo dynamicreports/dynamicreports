@@ -23,10 +23,16 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>Language class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Language {
+	/** Constant <code>JAVA="java"</code> */
 	public static final String JAVA = "java";
+	/** Constant <code>GROOVY="groovy"</code> */
 	public static final String GROOVY = "groovy";
+	/** Constant <code>JAVA_SCRIPT="javascript"</code> */
 	public static final String JAVA_SCRIPT = "javascript";
 }

@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIMeterInterval;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRMeterInterval class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRMeterInterval implements DRIMeterInterval {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,47 +43,77 @@ public class DRMeterInterval implements DRIMeterInterval {
 	private DRIExpression<? extends Number> dataRangeLowExpression;
 	private DRIExpression<? extends Number> dataRangeHighExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLabel() {
 		return label;
 	}
 
+	/**
+	 * <p>Setter for the field <code>label</code>.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 */
 	public void setLabel(String label) {
 		this.label = label;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Color getBackgroundColor() {
 		return backgroundColor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>backgroundColor</code>.</p>
+	 *
+	 * @param backgroundColor a {@link java.awt.Color} object.
+	 */
 	public void setBackgroundColor(Color backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getAlpha() {
 		return alpha;
 	}
 
+	/**
+	 * <p>Setter for the field <code>alpha</code>.</p>
+	 *
+	 * @param alpha a {@link java.lang.Double} object.
+	 */
 	public void setAlpha(Double alpha) {
 		this.alpha = alpha;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<? extends Number> getDataRangeLowExpression() {
 		return dataRangeLowExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataRangeLowExpression</code>.</p>
+	 *
+	 * @param dataRangeLowExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setDataRangeLowExpression(DRIExpression<? extends Number> dataRangeLowExpression) {
 		this.dataRangeLowExpression = dataRangeLowExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<? extends Number> getDataRangeHighExpression() {
 		return dataRangeHighExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>dataRangeHighExpression</code>.</p>
+	 *
+	 * @param dataRangeHighExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setDataRangeHighExpression(DRIExpression<? extends Number> dataRangeHighExpression) {
 		this.dataRangeHighExpression = dataRangeHighExpression;
 	}

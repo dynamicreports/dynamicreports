@@ -28,25 +28,73 @@ import net.sf.dynamicreports.report.constant.StretchType;
 import net.sf.dynamicreports.report.definition.DRIGroup;
 
 /**
+ * <p>DRIDimensionComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDimensionComponent extends DRIComponent {
 
+	/**
+	 * <p>getWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getWidth();
 
+	/**
+	 * <p>getHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getHeight();
 
+	/**
+	 * <p>getWidthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getWidthType();
 
+	/**
+	 * <p>getHeightType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getHeightType();
 
+	/**
+	 * <p>getPositionType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentPositionType} object.
+	 */
 	public ComponentPositionType getPositionType();
 
+	/**
+	 * <p>getStretchType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.StretchType} object.
+	 */
 	public StretchType getStretchType();
 
+	/**
+	 * <p>getPrintInFirstWholeBand.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getPrintInFirstWholeBand();
 
+	/**
+	 * <p>getPrintWhenDetailOverflows.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getPrintWhenDetailOverflows();
 
+	/**
+	 * <p>getPrintWhenGroupChanges.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	public DRIGroup getPrintWhenGroupChanges();
 }

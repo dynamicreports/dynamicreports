@@ -23,23 +23,66 @@
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 /**
+ * <p>DRIPiePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPiePlot extends DRIBasePlot {
 
+	/**
+	 * <p>getCircular.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getCircular();
 
+	/**
+	 * <p>getShowLabels.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowLabels();
 
+	/**
+	 * <p>getShowValues.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowValues();
 
+	/**
+	 * <p>getValuePattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getValuePattern();
 
+	/**
+	 * <p>getShowPercentages.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowPercentages();
 
+	/**
+	 * <p>getPercentValuePattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getPercentValuePattern();
 
+	/**
+	 * <p>getLabelFormat.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabelFormat();
 
+	/**
+	 * <p>getLegendLabelFormat.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLegendLabelFormat();
 }

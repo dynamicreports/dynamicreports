@@ -27,24 +27,67 @@ import java.util.Comparator;
 import net.sf.dynamicreports.report.constant.OrderType;
 
 /**
+ * <p>DRIAxisPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIAxisPlot extends DRIBasePlot {
 
+	/**
+	 * <p>getXAxisFormat.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIAxisFormat} object.
+	 */
 	public DRIAxisFormat getXAxisFormat();
 
+	/**
+	 * <p>getYAxisFormat.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIAxisFormat} object.
+	 */
 	public DRIAxisFormat getYAxisFormat();
 
+	/**
+	 * <p>getShowValues.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowValues();
 
+	/**
+	 * <p>getValuePattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getValuePattern();
 
+	/**
+	 * <p>getShowPercentages.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getShowPercentages();
 
+	/**
+	 * <p>getPercentValuePattern.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getPercentValuePattern();
 
+	/**
+	 * <p>getSeriesOrderBy.</p>
+	 *
+	 * @return a {@link java.util.Comparator} object.
+	 */
 	public Comparator<String> getSeriesOrderBy();
 
+	/**
+	 * <p>getSeriesOrderType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public OrderType getSeriesOrderType();
 
 }

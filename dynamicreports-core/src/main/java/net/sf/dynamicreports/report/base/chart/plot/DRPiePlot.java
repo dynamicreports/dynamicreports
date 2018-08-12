@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIPiePlot;
 
 /**
+ * <p>DRPiePlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -40,74 +43,122 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
 	private String labelFormat;
 	private String legendLabelFormat;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getCircular() {
 		return circular;
 	}
 
+	/**
+	 * <p>Setter for the field <code>circular</code>.</p>
+	 *
+	 * @param circular a {@link java.lang.Boolean} object.
+	 */
 	public void setCircular(Boolean circular) {
 		this.circular = circular;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showLabels</code>.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLabels(Boolean showLabels) {
 		this.showLabels = showLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowLabels() {
 		return showLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowValues() {
 		return showValues;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showValues</code>.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 */
 	public void setShowValues(Boolean showValues) {
 		this.showValues = showValues;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getValuePattern() {
 		return valuePattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valuePattern</code>.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 */
 	public void setValuePattern(String valuePattern) {
 		this.valuePattern = valuePattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowPercentages() {
 		return showPercentages;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showPercentages</code>.</p>
+	 *
+	 * @param showPercentages a {@link java.lang.Boolean} object.
+	 */
 	public void setShowPercentages(Boolean showPercentages) {
 		this.showPercentages = showPercentages;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPercentValuePattern() {
 		return percentValuePattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentValuePattern</code>.</p>
+	 *
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 */
 	public void setPercentValuePattern(String percentValuePattern) {
 		this.percentValuePattern = percentValuePattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLabelFormat() {
 		return labelFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelFormat</code>.</p>
+	 *
+	 * @param labelFormat a {@link java.lang.String} object.
+	 */
 	public void setLabelFormat(String labelFormat) {
 		this.labelFormat = labelFormat;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLegendLabelFormat() {
 		return legendLabelFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>legendLabelFormat</code>.</p>
+	 *
+	 * @param legendLabelFormat a {@link java.lang.String} object.
+	 */
 	public void setLegendLabelFormat(String legendLabelFormat) {
 		this.legendLabelFormat = legendLabelFormat;
 	}

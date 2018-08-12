@@ -41,11 +41,17 @@ import net.sf.jasperreports.engine.JRDataSource;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>ScriptletReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ScriptletReport {
 	private Map<String, Integer> itemsCount;
 
+	/**
+	 * <p>Constructor for ScriptletReport.</p>
+	 */
 	public ScriptletReport() {
 		build();
 	}
@@ -127,6 +133,11 @@ public class ScriptletReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ScriptletReport();
 	}

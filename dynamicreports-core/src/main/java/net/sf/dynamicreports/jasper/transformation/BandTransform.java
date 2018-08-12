@@ -34,15 +34,26 @@ import net.sf.jasperreports.engine.design.JRDesignSection;
 import net.sf.jasperreports.engine.design.JasperDesign;
 
 /**
+ * <p>BandTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BandTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for BandTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public BandTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		DRIDesignReport report = accessor.getReport();
 		JasperDesign design = accessor.getDesign();

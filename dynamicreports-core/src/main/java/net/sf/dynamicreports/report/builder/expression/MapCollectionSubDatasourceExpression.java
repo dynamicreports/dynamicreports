@@ -31,19 +31,33 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 
 /**
+ * <p>MapCollectionSubDatasourceExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MapCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<Map<String, ?>>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for MapCollectionSubDatasourceExpression.</p>
+	 *
+	 * @param fieldName a {@link java.lang.String} object.
+	 */
 	public MapCollectionSubDatasourceExpression(String fieldName) {
 		super(fieldName);
 	}
 
+	/**
+	 * <p>Constructor for MapCollectionSubDatasourceExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public MapCollectionSubDatasourceExpression(DRIExpression<? extends Collection<Map<String, ?>>> expression) {
 		super(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected JRDataSource createSubDatasource(Collection<Map<String, ?>> data) {
 		return new JRMapCollectionDataSource(data);

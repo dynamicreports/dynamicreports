@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.adhoc.configuration;
 
 /**
+ * <p>AdhocPageOrientation class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum AdhocPageOrientation {
 	PORTRAIT, LANDSCAPE

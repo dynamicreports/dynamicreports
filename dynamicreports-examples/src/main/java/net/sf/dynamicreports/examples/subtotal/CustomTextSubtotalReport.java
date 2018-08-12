@@ -42,10 +42,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>CustomTextSubtotalReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomTextSubtotalReport {
 
+	/**
+	 * <p>Constructor for CustomTextSubtotalReport.</p>
+	 */
 	public CustomTextSubtotalReport() {
 		build();
 	}
@@ -134,6 +140,11 @@ public class CustomTextSubtotalReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CustomTextSubtotalReport();
 	}

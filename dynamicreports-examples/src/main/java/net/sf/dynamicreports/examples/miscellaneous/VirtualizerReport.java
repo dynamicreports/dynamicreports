@@ -34,10 +34,16 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.fill.JRFileVirtualizer;
 
 /**
+ * <p>VirtualizerReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class VirtualizerReport {
 
+	/**
+	 * <p>Constructor for VirtualizerReport.</p>
+	 */
 	public VirtualizerReport() {
 		build();
 	}
@@ -71,6 +77,11 @@ public class VirtualizerReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new VirtualizerReport();
 	}

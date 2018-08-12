@@ -29,13 +29,31 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.design.definition.style.DRIDesignFont;
 
 /**
+ * <p>DRIDesignChartSubtitle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignChartSubtitle extends Serializable {
 
+	/**
+	 * <p>getColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getColor();
 
+	/**
+	 * <p>getFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getFont();
 
+	/**
+	 * <p>getTitle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getTitle();
 }

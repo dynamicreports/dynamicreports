@@ -27,11 +27,17 @@ import java.util.Date;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ShippingLabelData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ShippingLabelData {
 	private ShippingLabel shippingLabel;
 
+	/**
+	 * <p>Constructor for ShippingLabelData.</p>
+	 */
 	public ShippingLabelData() {
 		shippingLabel = createShippingLabel();
 	}
@@ -62,10 +68,20 @@ public class ShippingLabelData {
 		return customer;
 	}
 
+	/**
+	 * <p>Getter for the field <code>shippingLabel</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.examples.complex.shippinglabel.ShippingLabel} object.
+	 */
 	public ShippingLabel getShippingLabel() {
 		return shippingLabel;
 	}
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		return null;
 	}

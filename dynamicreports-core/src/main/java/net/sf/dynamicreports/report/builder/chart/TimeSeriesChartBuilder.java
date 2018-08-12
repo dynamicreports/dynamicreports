@@ -27,20 +27,38 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>TimeSeriesChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TimeSeriesChartBuilder extends AbstractTimeSeriesChartBuilder<TimeSeriesChartBuilder, DRLinePlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TimeSeriesChartBuilder.</p>
+	 */
 	protected TimeSeriesChartBuilder() {
 		super(ChartType.TIMESERIES);
 	}
 
+	/**
+	 * <p>setShowShapes.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+	 */
 	public TimeSeriesChartBuilder setShowShapes(Boolean showShapes) {
 		getPlot().setShowShapes(showShapes);
 		return this;
 	}
 
+	/**
+	 * <p>setShowLines.</p>
+	 *
+	 * @param showLines a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+	 */
 	public TimeSeriesChartBuilder setShowLines(Boolean showLines) {
 		getPlot().setShowLines(showLines);
 		return this;

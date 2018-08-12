@@ -26,20 +26,38 @@ import net.sf.dynamicreports.jasper.base.export.JasperCsvExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperCsvExporterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperCsvExporterBuilder extends AbstractJasperExporterBuilder<JasperCsvExporterBuilder, JasperCsvExporter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperCsvExporterBuilder.</p>
+	 */
 	protected JasperCsvExporterBuilder() {
 		super(new JasperCsvExporter());
 	}
 
+	/**
+	 * <p>setFieldDelimiter.</p>
+	 *
+	 * @param fieldDelimiter a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
+	 */
 	public JasperCsvExporterBuilder setFieldDelimiter(String fieldDelimiter) {
 		this.getObject().setFieldDelimiter(fieldDelimiter);
 		return this;
 	}
 
+	/**
+	 * <p>setRecordDelimiter.</p>
+	 *
+	 * @param recordDelimiter a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
+	 */
 	public JasperCsvExporterBuilder setRecordDelimiter(String recordDelimiter) {
 		this.getObject().setRecordDelimiter(recordDelimiter);
 		return this;

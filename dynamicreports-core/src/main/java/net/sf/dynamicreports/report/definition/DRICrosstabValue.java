@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.definition;
 
 /**
+ * <p>DRICrosstabValue interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabValue<T> extends DRIValue<T> {
 

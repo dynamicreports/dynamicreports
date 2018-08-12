@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRISimpleExpression;
 
 /**
+ * <p>DRDesignSimpleExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignSimpleExpression extends AbstractDesignSimpleExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,26 +38,36 @@ public class DRDesignSimpleExpression extends AbstractDesignSimpleExpression {
 	private DRISimpleExpression<?> simpleExpression;
 	private String parameterName;
 
+	/**
+	 * <p>Constructor for DRDesignSimpleExpression.</p>
+	 *
+	 * @param simpleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISimpleExpression} object.
+	 * @param parameterName a {@link java.lang.String} object.
+	 */
 	public DRDesignSimpleExpression(DRISimpleExpression<?> simpleExpression, String parameterName) {
 		this.simpleExpression = simpleExpression;
 		this.parameterName = parameterName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object evaluate(ReportParameters reportParameters) {
 		return simpleExpression.evaluate(reportParameters);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return simpleExpression.getValueClass();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return simpleExpression.getName();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getParameterName() {
 		return parameterName;

@@ -25,9 +25,17 @@ package net.sf.dynamicreports.design.definition.chart;
 import net.sf.dynamicreports.report.constant.Position;
 
 /**
+ * <p>DRIDesignChartTitle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignChartTitle extends DRIDesignChartSubtitle {
 
+	/**
+	 * <p>getPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.Position} object.
+	 */
 	public Position getPosition();
 }

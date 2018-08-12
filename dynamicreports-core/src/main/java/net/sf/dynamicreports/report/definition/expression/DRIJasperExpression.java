@@ -27,6 +27,7 @@ package net.sf.dynamicreports.report.definition.expression;
  * Knowledge of the jasper syntax is also required for proper use.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIJasperExpression<T> extends DRIExpression<T> {
 

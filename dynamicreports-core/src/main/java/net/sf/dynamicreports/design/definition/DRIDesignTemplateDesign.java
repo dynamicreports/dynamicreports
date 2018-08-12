@@ -27,27 +27,81 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DRIDesignTemplateDesign interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignTemplateDesign extends Serializable {
 
+	/**
+	 * <p>getTitleComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getTitleComponentsCount();
 
+	/**
+	 * <p>getPageHeaderComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageHeaderComponentsCount();
 
+	/**
+	 * <p>getPageFooterComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getPageFooterComponentsCount();
 
+	/**
+	 * <p>getColumnHeaderComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getColumnHeaderComponentsCount();
 
+	/**
+	 * <p>getColumnFooterComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getColumnFooterComponentsCount();
 
+	/**
+	 * <p>getLastPageFooterComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getLastPageFooterComponentsCount();
 
+	/**
+	 * <p>getSummaryComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getSummaryComponentsCount();
 
+	/**
+	 * <p>getNoDataComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getNoDataComponentsCount();
 
+	/**
+	 * <p>getBackgroundComponentsCount.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getBackgroundComponentsCount();
 
+	/**
+	 * <p>getDesign.</p>
+	 *
+	 * @return a {@link java.lang.Object} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public Object getDesign() throws DRException;
 }

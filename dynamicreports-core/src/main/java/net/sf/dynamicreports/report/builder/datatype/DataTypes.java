@@ -36,6 +36,7 @@ import org.apache.commons.lang3.Validate;
  * A set of build in data types
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DataTypes {
 	private static final BigDecimalType bigDecimalType = new BigDecimalType();
@@ -64,10 +65,27 @@ public class DataTypes {
 	private static final StringType stringType = new StringType();
 	private static final ListType listType = new ListType();
 
+	/**
+	 * <p>detectType.</p>
+	 *
+	 * @param dataType a {@link java.lang.Class} object.
+	 * @param <U> a U object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public static <U, T extends DRIDataType<? super U, U>> T detectType(Class<U> dataType) throws DRException {
 		return detectType(dataType.getName());
 	}
 
+	/**
+	 * <p>detectType.</p>
+	 *
+	 * @param dataType a {@link java.lang.String} object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends DRIDataType<?, ?>> T detectType(String dataType) throws DRException {
 		Validate.notNull(dataType, "dataType must not be null");
@@ -152,102 +170,227 @@ public class DataTypes {
 		throw new DRException("Data type \"" + dataType + "\" is not supported");
 	}
 
+	/**
+	 * <p>bigDecimalType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.BigDecimalType} object.
+	 */
 	public static BigDecimalType bigDecimalType() {
 		return bigDecimalType;
 	}
 
+	/**
+	 * <p>bigIntegerType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.BigIntegerType} object.
+	 */
 	public static BigIntegerType bigIntegerType() {
 		return bigIntegerType;
 	}
 
+	/**
+	 * <p>booleanType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.BooleanType} object.
+	 */
 	public static BooleanType booleanType() {
 		return booleanType;
 	}
 
+	/**
+	 * <p>byteType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.ByteType} object.
+	 */
 	public static ByteType byteType() {
 		return byteType;
 	}
 
+	/**
+	 * <p>dateType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateType} object.
+	 */
 	public static DateType dateType() {
 		return dateType;
 	}
 
+	/**
+	 * <p>dateYearToFractionType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearToFractionType} object.
+	 */
 	public static DateYearToFractionType dateYearToFractionType() {
 		return dateYearToFractionType;
 	}
 
+	/**
+	 * <p>dateYearType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearType} object.
+	 */
 	public static DateYearType dateYearType() {
 		return dateYearType;
 	}
 
+	/**
+	 * <p>dateMonthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateMonthType} object.
+	 */
 	public static DateMonthType dateMonthType() {
 		return dateMonthType;
 	}
 
+	/**
+	 * <p>dateDayType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateDayType} object.
+	 */
 	public static DateDayType dateDayType() {
 		return dateDayType;
 	}
 
+	/**
+	 * <p>dateYearToHourType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearToHourType} object.
+	 */
 	public static DateYearToHourType dateYearToHourType() {
 		return dateYearToHourType;
 	}
 
+	/**
+	 * <p>dateYearToMinuteType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearToMinuteType} object.
+	 */
 	public static DateYearToMinuteType dateYearToMinuteType() {
 		return dateYearToMinuteType;
 	}
 
+	/**
+	 * <p>dateYearToMonthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearToMonthType} object.
+	 */
 	public static DateYearToMonthType dateYearToMonthType() {
 		return dateYearToMonthType;
 	}
 
+	/**
+	 * <p>dateYearToSecondType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DateYearToSecondType} object.
+	 */
 	public static DateYearToSecondType dateYearToSecondType() {
 		return dateYearToSecondType;
 	}
 
+	/**
+	 * <p>doubleType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.DoubleType} object.
+	 */
 	public static DoubleType doubleType() {
 		return doubleType;
 	}
 
+	/**
+	 * <p>floatType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.FloatType} object.
+	 */
 	public static FloatType floatType() {
 		return floatType;
 	}
 
+	/**
+	 * <p>characterType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.CharacterType} object.
+	 */
 	public static CharacterType characterType() {
 		return characterType;
 	}
 
+	/**
+	 * <p>integerType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.IntegerType} object.
+	 */
 	public static IntegerType integerType() {
 		return integerType;
 	}
 
+	/**
+	 * <p>longType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.LongType} object.
+	 */
 	public static LongType longType() {
 		return longType;
 	}
 
+	/**
+	 * <p>shortType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.ShortType} object.
+	 */
 	public static ShortType shortType() {
 		return shortType;
 	}
 
+	/**
+	 * <p>stringType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.StringType} object.
+	 */
 	public static StringType stringType() {
 		return stringType;
 	}
 
+	/**
+	 * <p>listType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.ListType} object.
+	 */
 	public static ListType listType() {
 		return listType;
 	}
 
+	/**
+	 * <p>timeHourToFractionType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.TimeHourToFractionType} object.
+	 */
 	public static TimeHourToFractionType timeHourToFractionType() {
 		return timeHourToFractionType;
 	}
 
+	/**
+	 * <p>timeHourToMinuteType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.TimeHourToMinuteType} object.
+	 */
 	public static TimeHourToMinuteType timeHourToMinuteType() {
 		return timeHourToMinuteType;
 	}
 
+	/**
+	 * <p>timeHourToSecondType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.TimeHourToSecondType} object.
+	 */
 	public static TimeHourToSecondType timeHourToSecondType() {
 		return timeHourToSecondType;
 	}
 
+	/**
+	 * <p>percentageType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.datatype.PercentageType} object.
+	 */
 	public static PercentageType percentageType() {
 		return percentageType;
 	}

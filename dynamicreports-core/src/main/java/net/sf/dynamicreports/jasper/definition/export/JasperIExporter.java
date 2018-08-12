@@ -28,28 +28,81 @@ import java.io.Serializable;
 import java.io.Writer;
 
 /**
+ * <p>JasperIExporter interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperIExporter extends Serializable {
 
+	/**
+	 * <p>getOutputWriter.</p>
+	 *
+	 * @return a {@link java.io.Writer} object.
+	 */
 	public Writer getOutputWriter();
 
+	/**
+	 * <p>getOutputStream.</p>
+	 *
+	 * @return a {@link java.io.OutputStream} object.
+	 */
 	public OutputStream getOutputStream();
 
+	/**
+	 * <p>getOutputFile.</p>
+	 *
+	 * @return a {@link java.io.File} object.
+	 */
 	public File getOutputFile();
 
+	/**
+	 * <p>getOutputFileName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getOutputFileName();
 
+	/**
+	 * <p>getPageIndex.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getPageIndex();
 
+	/**
+	 * <p>getStartPageIndex.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getStartPageIndex();
 
+	/**
+	 * <p>getEndPageIndex.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getEndPageIndex();
 
+	/**
+	 * <p>getCharacterEncoding.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getCharacterEncoding();
 
+	/**
+	 * <p>getOffsetX.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getOffsetX();
 
+	/**
+	 * <p>getOffsetY.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getOffsetY();
 
 }

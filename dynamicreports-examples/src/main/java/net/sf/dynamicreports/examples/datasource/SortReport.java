@@ -33,10 +33,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SortReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SortReport {
 
+	/**
+	 * <p>Constructor for SortReport.</p>
+	 */
 	public SortReport() {
 		build();
 	}
@@ -72,6 +78,11 @@ public class SortReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new SortReport();
 	}

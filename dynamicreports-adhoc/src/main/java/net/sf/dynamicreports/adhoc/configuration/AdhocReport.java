@@ -27,7 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * <p>AdhocReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocReport implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -52,6 +55,9 @@ public class AdhocReport implements Cloneable, Serializable {
 	private List<AdhocComponent> components;
 	private AdhocProperties properties;
 
+	/**
+	 * <p>Constructor for AdhocReport.</p>
+	 */
 	public AdhocReport() {
 		columns = new ArrayList<AdhocColumn>();
 		groups = new ArrayList<AdhocGroup>();
@@ -61,114 +67,255 @@ public class AdhocReport implements Cloneable, Serializable {
 		properties = new AdhocProperties();
 	}
 
+	/**
+	 * <p>Getter for the field <code>textStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getTextStyle() {
 		return textStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>textStyle</code>.</p>
+	 *
+	 * @param textStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setTextStyle(AdhocStyle textStyle) {
 		this.textStyle = textStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getColumnStyle() {
 		return columnStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnStyle</code>.</p>
+	 *
+	 * @param columnStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setColumnStyle(AdhocStyle columnStyle) {
 		this.columnStyle = columnStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columnTitleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getColumnTitleStyle() {
 		return columnTitleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnTitleStyle</code>.</p>
+	 *
+	 * @param columnTitleStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setColumnTitleStyle(AdhocStyle columnTitleStyle) {
 		this.columnTitleStyle = columnTitleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getGroupStyle() {
 		return groupStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>groupStyle</code>.</p>
+	 *
+	 * @param groupStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setGroupStyle(AdhocStyle groupStyle) {
 		this.groupStyle = groupStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupTitleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getGroupTitleStyle() {
 		return groupTitleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>groupTitleStyle</code>.</p>
+	 *
+	 * @param groupTitleStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setGroupTitleStyle(AdhocStyle groupTitleStyle) {
 		this.groupTitleStyle = groupTitleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subtotalStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getSubtotalStyle() {
 		return subtotalStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subtotalStyle</code>.</p>
+	 *
+	 * @param subtotalStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setSubtotalStyle(AdhocStyle subtotalStyle) {
 		this.subtotalStyle = subtotalStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailOddRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getDetailOddRowStyle() {
 		return detailOddRowStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>detailOddRowStyle</code>.</p>
+	 *
+	 * @param detailOddRowStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setDetailOddRowStyle(AdhocStyle detailOddRowStyle) {
 		this.detailOddRowStyle = detailOddRowStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>highlightDetailOddRows</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getHighlightDetailOddRows() {
 		return highlightDetailOddRows;
 	}
 
+	/**
+	 * <p>Setter for the field <code>highlightDetailOddRows</code>.</p>
+	 *
+	 * @param highlightDetailOddRows a {@link java.lang.Boolean} object.
+	 */
 	public void setHighlightDetailOddRows(Boolean highlightDetailOddRows) {
 		this.highlightDetailOddRows = highlightDetailOddRows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>detailEvenRowStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getDetailEvenRowStyle() {
 		return detailEvenRowStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>detailEvenRowStyle</code>.</p>
+	 *
+	 * @param detailEvenRowStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setDetailEvenRowStyle(AdhocStyle detailEvenRowStyle) {
 		this.detailEvenRowStyle = detailEvenRowStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>highlightDetailEvenRows</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getHighlightDetailEvenRows() {
 		return highlightDetailEvenRows;
 	}
 
+	/**
+	 * <p>Setter for the field <code>highlightDetailEvenRows</code>.</p>
+	 *
+	 * @param highlightDetailEvenRows a {@link java.lang.Boolean} object.
+	 */
 	public void setHighlightDetailEvenRows(Boolean highlightDetailEvenRows) {
 		this.highlightDetailEvenRows = highlightDetailEvenRows;
 	}
 
+	/**
+	 * <p>Getter for the field <code>ignorePagination</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getIgnorePagination() {
 		return ignorePagination;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ignorePagination</code>.</p>
+	 *
+	 * @param ignorePagination a {@link java.lang.Boolean} object.
+	 */
 	public void setIgnorePagination(Boolean ignorePagination) {
 		this.ignorePagination = ignorePagination;
 	}
 
+	/**
+	 * <p>Getter for the field <code>tableOfContents</code>.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getTableOfContents() {
 		return tableOfContents;
 	}
 
+	/**
+	 * <p>Setter for the field <code>tableOfContents</code>.</p>
+	 *
+	 * @param tableOfContents a {@link java.lang.Boolean} object.
+	 */
 	public void setTableOfContents(Boolean tableOfContents) {
 		this.tableOfContents = tableOfContents;
 	}
 
+	/**
+	 * <p>Getter for the field <code>page</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPage} object.
+	 */
 	public AdhocPage getPage() {
 		return page;
 	}
 
+	/**
+	 * <p>Setter for the field <code>page</code>.</p>
+	 *
+	 * @param page a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPage} object.
+	 */
 	public void setPage(AdhocPage page) {
 		this.page = page;
 	}
 
+	/**
+	 * <p>Getter for the field <code>columns</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocColumn> getColumns() {
 		return columns;
 	}
 
+	/**
+	 * <p>getColumn.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocColumn} object.
+	 */
 	public AdhocColumn getColumn(String name) {
 		if (columns == null) {
 			return null;
@@ -182,54 +329,120 @@ public class AdhocReport implements Cloneable, Serializable {
 		return null;
 	}
 
+	/**
+	 * <p>addColumn.</p>
+	 *
+	 * @param column a {@link net.sf.dynamicreports.adhoc.configuration.AdhocColumn} object.
+	 */
 	public void addColumn(AdhocColumn column) {
 		this.columns.add(column);
 	}
 
+	/**
+	 * <p>Setter for the field <code>columns</code>.</p>
+	 *
+	 * @param columns a {@link java.util.List} object.
+	 */
 	public void setColumns(List<AdhocColumn> columns) {
 		this.columns = columns;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groups</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocGroup> getGroups() {
 		return groups;
 	}
 
+	/**
+	 * <p>addGroup.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.adhoc.configuration.AdhocGroup} object.
+	 */
 	public void addGroup(AdhocGroup group) {
 		this.groups.add(group);
 	}
 
+	/**
+	 * <p>Setter for the field <code>groups</code>.</p>
+	 *
+	 * @param groups a {@link java.util.List} object.
+	 */
 	public void setGroups(List<AdhocGroup> groups) {
 		this.groups = groups;
 	}
 
+	/**
+	 * <p>Getter for the field <code>sorts</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocSort> getSorts() {
 		return sorts;
 	}
 
+	/**
+	 * <p>addSort.</p>
+	 *
+	 * @param sort a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSort} object.
+	 */
 	public void addSort(AdhocSort sort) {
 		this.sorts.add(sort);
 	}
 
+	/**
+	 * <p>Setter for the field <code>sorts</code>.</p>
+	 *
+	 * @param sorts a {@link java.util.List} object.
+	 */
 	public void setSorts(List<AdhocSort> sorts) {
 		this.sorts = sorts;
 	}
 
+	/**
+	 * <p>Getter for the field <code>subtotals</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocSubtotal> getSubtotals() {
 		return subtotals;
 	}
 
+	/**
+	 * <p>addSubtotal.</p>
+	 *
+	 * @param subtotal a {@link net.sf.dynamicreports.adhoc.configuration.AdhocSubtotal} object.
+	 */
 	public void addSubtotal(AdhocSubtotal subtotal) {
 		this.subtotals.add(subtotal);
 	}
 
+	/**
+	 * <p>Setter for the field <code>subtotals</code>.</p>
+	 *
+	 * @param subtotals a {@link java.util.List} object.
+	 */
 	public void setSubtotals(List<AdhocSubtotal> subtotals) {
 		this.subtotals = subtotals;
 	}
 
+	/**
+	 * <p>Getter for the field <code>components</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<AdhocComponent> getComponents() {
 		return components;
 	}
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 */
 	public AdhocComponent getComponent(String key) {
 		if (components == null) {
 			return null;
@@ -243,10 +456,21 @@ public class AdhocReport implements Cloneable, Serializable {
 		return null;
 	}
 
+	/**
+	 * <p>addComponent.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 */
 	public void addComponent(AdhocComponent component) {
 		this.components.add(component);
 	}
 
+	/**
+	 * <p>setComponent.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param component a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+	 */
 	public void setComponent(String key, AdhocComponent component) {
 		int index = -1;
 		for (AdhocComponent cmp : components) {
@@ -262,26 +486,55 @@ public class AdhocReport implements Cloneable, Serializable {
 		}
 	}
 
+	/**
+	 * <p>Setter for the field <code>components</code>.</p>
+	 *
+	 * @param components a {@link java.util.List} object.
+	 */
 	public void setComponents(List<AdhocComponent> components) {
 		this.components = components;
 	}
 
+	/**
+	 * <p>Getter for the field <code>properties</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public AdhocProperties getProperties() {
 		return properties;
 	}
 
+	/**
+	 * <p>getProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 */
 	public <T> T getProperty(String key) {
 		return this.properties.getProperty(key);
 	}
 
+	/**
+	 * <p>setProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param value a {@link java.lang.Object} object.
+	 */
 	public void setProperty(String key, Object value) {
 		this.properties.setProperty(key, value);
 	}
 
+	/**
+	 * <p>Setter for the field <code>properties</code>.</p>
+	 *
+	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public void setProperties(AdhocProperties properties) {
 		this.properties = properties;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -355,6 +608,7 @@ public class AdhocReport implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocReport clone() {
 		AdhocReport clone;

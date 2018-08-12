@@ -26,7 +26,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * <p>AdhocValueRestriction class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocValueRestriction extends AdhocRestriction {
 	private static final long serialVersionUID = 1L;
@@ -35,38 +38,77 @@ public class AdhocValueRestriction extends AdhocRestriction {
 	private AdhocValueOperator operator;
 	private List<String> values;
 
+	/**
+	 * <p>Constructor for AdhocValueRestriction.</p>
+	 */
 	public AdhocValueRestriction() {
 		values = new ArrayList<String>();
 	}
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>operator</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueOperator} object.
+	 */
 	public AdhocValueOperator getOperator() {
 		return operator;
 	}
 
+	/**
+	 * <p>Setter for the field <code>operator</code>.</p>
+	 *
+	 * @param operator a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueOperator} object.
+	 */
 	public void setOperator(AdhocValueOperator operator) {
 		this.operator = operator;
 	}
 
+	/**
+	 * <p>Getter for the field <code>values</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<String> getValues() {
 		return values;
 	}
 
+	/**
+	 * <p>addValue.</p>
+	 *
+	 * @param value a {@link java.lang.String} object.
+	 */
 	public void addValue(String value) {
 		this.values.add(value);
 	}
 
+	/**
+	 * <p>Setter for the field <code>values</code>.</p>
+	 *
+	 * @param values a {@link java.util.List} object.
+	 */
 	public void setValues(List<String> values) {
 		this.values = values;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		boolean equals = super.equals(obj);
@@ -92,6 +134,7 @@ public class AdhocValueRestriction extends AdhocRestriction {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocValueRestriction clone() {
 		AdhocValueRestriction clone = (AdhocValueRestriction) super.clone();

@@ -33,17 +33,26 @@ import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.renderer.xy.XYStepRenderer;
 
 /**
+ * <p>XyStepRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyStepRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Double stepPoint;
 
+	/**
+	 * <p>Constructor for XyStepRendererCustomizer.</p>
+	 *
+	 * @param stepPoint a {@link java.lang.Double} object.
+	 */
 	public XyStepRendererCustomizer(Double stepPoint) {
 		this.stepPoint = stepPoint;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();

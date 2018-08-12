@@ -27,7 +27,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>MessageExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class MessageExpression extends AbstractSimpleExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,15 +38,27 @@ public class MessageExpression extends AbstractSimpleExpression<String> {
 	private String key;
 	private Object[] arguments;
 
+	/**
+	 * <p>Constructor for MessageExpression.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 */
 	public MessageExpression(String key) {
 		this(key, null);
 	}
 
+	/**
+	 * <p>Constructor for MessageExpression.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param arguments an array of {@link java.lang.Object} objects.
+	 */
 	public MessageExpression(String key, Object[] arguments) {
 		this.key = key;
 		this.arguments = arguments;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(ReportParameters reportParameters) {
 		return reportParameters.getMessage(key, arguments);

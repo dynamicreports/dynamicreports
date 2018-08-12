@@ -33,11 +33,15 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>Abstract NumberType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class NumberType<T extends Number> extends AbstractDataType<Number, T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String valueToString(Number value, Locale locale) {
 		if (value != null) {
@@ -46,6 +50,7 @@ public abstract class NumberType<T extends Number> extends AbstractDataType<Numb
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public T stringToValue(String value, Locale locale) throws DRException {
 		if (value != null) {
@@ -58,8 +63,15 @@ public abstract class NumberType<T extends Number> extends AbstractDataType<Numb
 		return null;
 	}
 
+	/**
+	 * <p>numberToValue.</p>
+	 *
+	 * @param number a {@link java.lang.Number} object.
+	 * @return a T object.
+	 */
 	protected abstract T numberToValue(Number number);
 
+	/** {@inheritDoc} */
 	@SuppressWarnings("unchecked")
 	@Override
 	public Class<T> getValueClass() {

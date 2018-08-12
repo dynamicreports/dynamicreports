@@ -35,19 +35,24 @@ import net.sf.dynamicreports.report.exception.DRReportException;
  * It is used to display custom components (e.g. images or complex content) in columns.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder, DRColumn<DRComponent>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ComponentColumnBuilder.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
+	 */
 	protected ComponentColumnBuilder(ComponentBuilder<?, ?> component) {
 		super(new DRColumn<DRComponent>(component.getComponent()));
 	}
 
 	/**
 	 * Sets the preferred width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column preferred width >= 0
 	 * @exception IllegalArgumentException
@@ -61,9 +66,8 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
 
 	/**
 	 * Sets the fixed width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column fixed width >= 0
 	 * @exception IllegalArgumentException
@@ -78,9 +82,8 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
 
 	/**
 	 * Sets the minimum width of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the column minimum width >= 0
 	 * @exception IllegalArgumentException
@@ -95,9 +98,8 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
 
 	/**
 	 * Sets the preferred height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column preferred height >= 0
 	 * @exception IllegalArgumentException
@@ -111,9 +113,8 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
 
 	/**
 	 * Sets the fixed height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column fixed height >= 0
 	 * @exception IllegalArgumentException
@@ -128,9 +129,8 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
 
 	/**
 	 * Sets the minimum height of a column.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the column minimum height >= 0
 	 * @exception IllegalArgumentException

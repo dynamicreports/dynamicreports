@@ -27,24 +27,49 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Interleaved2Of5BarcodeBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Interleaved2Of5BarcodeBuilder extends AbstractChecksumBarcodeBuilder<Interleaved2Of5BarcodeBuilder, DRInterleaved2Of5Barcode> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for Interleaved2Of5BarcodeBuilder.</p>
+	 *
+	 * @param code a {@link java.lang.String} object.
+	 */
 	protected Interleaved2Of5BarcodeBuilder(String code) {
 		super(code, new DRInterleaved2Of5Barcode());
 	}
 
+	/**
+	 * <p>Constructor for Interleaved2Of5BarcodeBuilder.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	protected Interleaved2Of5BarcodeBuilder(DRIExpression<String> codeExpression) {
 		super(codeExpression, new DRInterleaved2Of5Barcode());
 	}
 
+	/**
+	 * <p>setDisplayChecksum.</p>
+	 *
+	 * @param displayChecksum a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Interleaved2Of5BarcodeBuilder} object.
+	 */
 	public Interleaved2Of5BarcodeBuilder setDisplayChecksum(Boolean displayChecksum) {
 		getObject().setDisplayChecksum(displayChecksum);
 		return this;
 	}
 
+	/**
+	 * <p>setWideFactor.</p>
+	 *
+	 * @param wideFactor a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.Interleaved2Of5BarcodeBuilder} object.
+	 */
 	public Interleaved2Of5BarcodeBuilder setWideFactor(Double wideFactor) {
 		getObject().setWideFactor(wideFactor);
 		return this;

@@ -23,11 +23,24 @@
 package net.sf.dynamicreports.jasper.definition.export;
 
 /**
+ * <p>JasperICsvExporter interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperICsvExporter extends JasperIExporter {
 
+	/**
+	 * <p>getFieldDelimiter.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getFieldDelimiter();
 
+	/**
+	 * <p>getRecordDelimiter.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getRecordDelimiter();
 }

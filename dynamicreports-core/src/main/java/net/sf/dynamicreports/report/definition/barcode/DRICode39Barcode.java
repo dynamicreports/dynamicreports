@@ -23,17 +23,45 @@
 package net.sf.dynamicreports.report.definition.barcode;
 
 /**
+ * <p>DRICode39Barcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICode39Barcode extends DRIChecksumBarcode {
 
+	/**
+	 * <p>getDisplayChecksum.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDisplayChecksum();
 
+	/**
+	 * <p>getDisplayStartStop.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDisplayStartStop();
 
+	/**
+	 * <p>getExtendedCharSetEnabled.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getExtendedCharSetEnabled();
 
+	/**
+	 * <p>getIntercharGapWidth.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getIntercharGapWidth();
 
+	/**
+	 * <p>getWideFactor.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getWideFactor();
 }

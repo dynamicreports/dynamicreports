@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartSerie;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>Abstract DRChartSerie class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class DRChartSerie implements DRIChartSerie {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,21 +41,33 @@ public abstract class DRChartSerie implements DRIChartSerie {
 	private DRIExpression<?> seriesExpression;
 	private DRIHyperLink itemHyperLink;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<?> getSeriesExpression() {
 		return seriesExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesExpression</code>.</p>
+	 *
+	 * @param seriesExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setSeriesExpression(DRIExpression<?> seriesExpression) {
 		Validate.notNull(seriesExpression, "seriesExpression must not be null");
 		this.seriesExpression = seriesExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIHyperLink getItemHyperLink() {
 		return itemHyperLink;
 	}
 
+	/**
+	 * <p>Setter for the field <code>itemHyperLink</code>.</p>
+	 *
+	 * @param itemHyperLink a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 */
 	public void setItemHyperLink(DRIHyperLink itemHyperLink) {
 		this.itemHyperLink = itemHyperLink;
 	}

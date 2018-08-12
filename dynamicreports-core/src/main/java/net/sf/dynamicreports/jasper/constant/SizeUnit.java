@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.jasper.constant;
 
 /**
+ * <p>SizeUnit class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum SizeUnit {
 	PIXEL, POINT

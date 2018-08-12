@@ -50,11 +50,25 @@ class BandComponentsTransform {
 	private DesignTransformAccessor accessor;
 	private Map<String, Integer> componentNames;
 
+	/**
+	 * <p>Constructor for BandComponentsTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public BandComponentsTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		componentNames = new HashMap<String, Integer>();
 	}
 
+	/**
+	 * <p>prepareBand.</p>
+	 *
+	 * @param band a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 * @param maxWidth a int.
+	 * @param templateDesignComponents a int.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public DRDesignBand prepareBand(DRDesignBand band, int maxWidth, int templateDesignComponents) throws DRException {
 		if (band == null) {
 			return null;

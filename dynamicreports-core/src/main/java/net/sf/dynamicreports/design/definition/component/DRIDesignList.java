@@ -28,15 +28,38 @@ import net.sf.dynamicreports.design.constant.ComponentGroupType;
 import net.sf.dynamicreports.report.constant.ListType;
 
 /**
+ * <p>DRIDesignList interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignList extends DRIDesignComponent {
 
+	/**
+	 * <p>getComponents.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIDesignComponent> getComponents();
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ListType} object.
+	 */
 	public ListType getType();
 
+	/**
+	 * <p>getComponentGroupType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.ComponentGroupType} object.
+	 */
 	public ComponentGroupType getComponentGroupType();
 
+	/**
+	 * <p>getBackgroundComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
+	 */
 	public DRIDesignComponent getBackgroundComponent();
 }

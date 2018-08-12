@@ -47,18 +47,23 @@ import com.lowagie.text.pdf.PdfString;
 import com.lowagie.text.pdf.PdfWriter;
 
 /**
+ * <p>OpenFlashChartPdfHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("deprecation")
 public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {
 
 	private final ReferenceMap existingContexts = new ReferenceMap(ReferenceMap.WEAK, ReferenceMap.HARD);
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean toExport(JRGenericPrintElement element) {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void exportElement(JRPdfExporterContext exporterContext, JRGenericPrintElement element) {
 		try {

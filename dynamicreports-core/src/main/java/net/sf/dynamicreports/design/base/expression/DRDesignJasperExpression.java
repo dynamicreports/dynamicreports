@@ -27,27 +27,38 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIJasperExpression;
 
 /**
+ * <p>DRDesignJasperExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignJasperExpression implements DRIDesignJasperExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIJasperExpression<?> jasperExpression;
 
+	/**
+	 * <p>Constructor for DRDesignJasperExpression.</p>
+	 *
+	 * @param jasperExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIJasperExpression} object.
+	 */
 	public DRDesignJasperExpression(DRIJasperExpression<?> jasperExpression) {
 		this.jasperExpression = jasperExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getExpression() {
 		return jasperExpression.getExpression();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return jasperExpression.getValueClass();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return jasperExpression.getName();

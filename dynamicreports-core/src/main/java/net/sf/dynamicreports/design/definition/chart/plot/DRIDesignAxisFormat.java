@@ -29,29 +29,87 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.design.definition.style.DRIDesignFont;
 
 /**
+ * <p>DRIDesignAxisFormat interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignAxisFormat extends Serializable {
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getLabelExpression();
 
+	/**
+	 * <p>getLabelFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getLabelFont();
 
+	/**
+	 * <p>getLabelColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getLabelColor();
 
+	/**
+	 * <p>getTickLabelFont.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+	 */
 	public DRIDesignFont getTickLabelFont();
 
+	/**
+	 * <p>getTickLabelColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getTickLabelColor();
 
+	/**
+	 * <p>getTickLabelMask.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getTickLabelMask();
 
+	/**
+	 * <p>getVerticalTickLabels.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getVerticalTickLabels();
 
+	/**
+	 * <p>getTickLabelRotation.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getTickLabelRotation();
 
+	/**
+	 * <p>getLineColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getLineColor();
 
+	/**
+	 * <p>getRangeMinValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getRangeMinValueExpression();
 
+	/**
+	 * <p>getRangeMaxValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getRangeMaxValueExpression();
 }

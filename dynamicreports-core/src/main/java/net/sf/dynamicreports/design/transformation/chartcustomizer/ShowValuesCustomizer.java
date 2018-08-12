@@ -44,7 +44,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
+ * <p>ShowValuesCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -52,11 +55,18 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
 	private String valuePattern;
 	private boolean customRangeMaxValue;
 
+	/**
+	 * <p>Constructor for ShowValuesCustomizer.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @param customRangeMaxValue a boolean.
+	 */
 	public ShowValuesCustomizer(String valuePattern, boolean customRangeMaxValue) {
 		this.valuePattern = valuePattern;
 		this.customRangeMaxValue = customRangeMaxValue;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		if (chart.getPlot() instanceof CategoryPlot) {

@@ -121,16 +121,30 @@ import net.sf.jasperreports.engine.type.HyperlinkTargetEnum;
 import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
 
 /**
+ * <p>ChartTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ChartTransform {
 	private JasperTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for ChartTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+	 */
 	public ChartTransform(JasperTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
 	// chart
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @param chart a {@link net.sf.dynamicreports.design.definition.chart.DRIDesignChart} object.
+	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
+	 */
 	protected JRDesignElement transform(DRIDesignChart chart) {
 		if (chart.getChartType().equals(ChartType.SPIDER)) {
 			return spiderChart(chart);

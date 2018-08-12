@@ -27,25 +27,49 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>AreaChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AreaChartBuilder extends AbstractCategoryChartBuilder<AreaChartBuilder, DRAxisPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for AreaChartBuilder.</p>
+	 */
 	protected AreaChartBuilder() {
 		super(ChartType.AREA);
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
+	 */
 	public AreaChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
+	 */
 	public AreaChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;
 	}
 
+	/**
+	 * <p>setPercentValuePattern.</p>
+	 *
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
+	 */
 	public AreaChartBuilder setPercentValuePattern(String percentValuePattern) {
 		getPlot().setPercentValuePattern(percentValuePattern);
 		return this;

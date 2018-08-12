@@ -26,18 +26,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRICodabarBarcode;
 
 /**
+ * <p>DRCodabarBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCodabarBarcode extends DRBarcode4j implements DRICodabarBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Double wideFactor;
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getWideFactor() {
 		return wideFactor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>wideFactor</code>.</p>
+	 *
+	 * @param wideFactor a {@link java.lang.Double} object.
+	 */
 	public void setWideFactor(Double wideFactor) {
 		this.wideFactor = wideFactor;
 	}

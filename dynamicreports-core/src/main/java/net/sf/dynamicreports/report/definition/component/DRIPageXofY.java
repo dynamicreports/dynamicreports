@@ -25,16 +25,39 @@ package net.sf.dynamicreports.report.definition.component;
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 
 /**
+ * <p>DRIPageXofY interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPageXofY extends DRIFormatField {
 
+	/**
+	 * <p>getPageXWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getPageXWidth();
 
+	/**
+	 * <p>getPageXWidthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getPageXWidthType();
 
+	/**
+	 * <p>getPageYWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getPageYWidth();
 
+	/**
+	 * <p>getPageYWidthType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+	 */
 	public ComponentDimensionType getPageYWidthType();
 
 }

@@ -33,7 +33,10 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
+ * <p>DRDesignStyle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignStyle extends DRDesignBaseStyle implements DRIDesignStyle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -42,42 +45,69 @@ public class DRDesignStyle extends DRDesignBaseStyle implements DRIDesignStyle {
 	private DRDesignStyle parentStyle;
 	private List<DRDesignConditionalStyle> conditionalStyles;
 
+	/**
+	 * <p>Constructor for DRDesignStyle.</p>
+	 */
 	public DRDesignStyle() {
 		this(ReportUtils.generateUniqueName("style"));
 	}
 
+	/**
+	 * <p>Constructor for DRDesignStyle.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public DRDesignStyle(String name) {
 		this.name = Validate.notBlank(name);
 		this.conditionalStyles = new ArrayList<DRDesignConditionalStyle>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignStyle getParentStyle() {
 		return parentStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>parentStyle</code>.</p>
+	 *
+	 * @param parentStyle a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 */
 	public void setParentStyle(DRDesignStyle parentStyle) {
 		this.parentStyle = parentStyle;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRDesignConditionalStyle> getConditionalStyles() {
 		return conditionalStyles;
 	}
 
+	/**
+	 * <p>Setter for the field <code>conditionalStyles</code>.</p>
+	 *
+	 * @param conditionalStyles a {@link java.util.List} object.
+	 */
 	public void setConditionalStyles(List<DRDesignConditionalStyle> conditionalStyles) {
 		this.conditionalStyles = conditionalStyles;
 	}
 
+	/**
+	 * <p>addConditionalStyle.</p>
+	 *
+	 * @param conditionalStyle a {@link net.sf.dynamicreports.design.base.style.DRDesignConditionalStyle} object.
+	 */
 	public void addConditionalStyle(DRDesignConditionalStyle conditionalStyle) {
 		this.conditionalStyles.add(conditionalStyle);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		EqualsBuilder equalsBuilder = new EqualsBuilder().appendSuper(super.equals(obj));

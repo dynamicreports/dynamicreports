@@ -23,10 +23,18 @@
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 /**
+ * <p>DRIXyStepPlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIXyStepPlot extends DRIAxisPlot {
 
+	/**
+	 * <p>getStepPoint.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getStepPoint();
 
 }

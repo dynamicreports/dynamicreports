@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 
 /**
+ * <p>DRDesignValueFormatter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,16 +41,24 @@ public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
 	private DRIValueFormatter<?, Object> valueFormatter;
 
 	@SuppressWarnings("unchecked")
+	/**
+	 * <p>Constructor for DRDesignValueFormatter.</p>
+	 *
+	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRDesignValueFormatter(DRIValueFormatter<?, ?> valueFormatter, DRIDesignExpression valueExpression) {
 		this.valueFormatter = (DRIValueFormatter<?, Object>) valueFormatter;
 		addExpression(valueExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object evaluate(List<?> values, ReportParameters reportParameters) {
 		return valueFormatter.format(values.get(0), reportParameters);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return valueFormatter.getValueClass();

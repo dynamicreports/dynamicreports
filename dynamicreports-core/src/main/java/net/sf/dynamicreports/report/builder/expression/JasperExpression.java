@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIJasperExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>JasperExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperExpression<T> implements DRIJasperExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,6 +41,12 @@ public class JasperExpression<T> implements DRIJasperExpression<T> {
 	private String expression;
 	private Class<? super T> valueClass;
 
+	/**
+	 * <p>Constructor for JasperExpression.</p>
+	 *
+	 * @param expression a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	protected JasperExpression(String expression, Class<? super T> valueClass) {
 		Validate.notNull(expression, "expression must not be null");
 		Validate.notNull(valueClass, "valueClass must not be null");
@@ -46,16 +55,19 @@ public class JasperExpression<T> implements DRIJasperExpression<T> {
 		this.name = ReportUtils.generateUniqueName("jasperExpression");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getExpression() {
 		return expression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<? super T> getValueClass() {
 		return valueClass;

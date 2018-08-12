@@ -26,10 +26,14 @@ import net.sf.jasperreports.engine.JRGenericPrintElement;
 import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
 
 /**
+ * <p>OpenFlashChartXhtmlHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class OpenFlashChartXhtmlHandler extends OpenFlashChartHtmlHandler {
 
+	/** {@inheritDoc} */
 	@Override
 	public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
 		StringBuilder result = new StringBuilder();

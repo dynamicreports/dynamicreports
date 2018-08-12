@@ -27,22 +27,32 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
 
 /**
+ * <p>DRDesignSystemExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignSystemExpression implements DRIDesignSystemExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRISystemExpression<?> systemExpression;
 
+	/**
+	 * <p>Constructor for DRDesignSystemExpression.</p>
+	 *
+	 * @param systemExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISystemExpression} object.
+	 */
 	public DRDesignSystemExpression(DRISystemExpression<?> systemExpression) {
 		this.systemExpression = systemExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return systemExpression.getValueClass();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return systemExpression.getName();

@@ -30,27 +30,80 @@ import net.sf.dynamicreports.report.constant.BarbecueType;
 import net.sf.dynamicreports.report.constant.BarcodeOrientation;
 
 /**
+ * <p>DRIDesignBarbecue interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBarbecue extends DRIDesignComponent {
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarbecueType} object.
+	 */
 	public BarbecueType getType();
 
+	/**
+	 * <p>getCodeExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getCodeExpression();
 
+	/**
+	 * <p>getApplicationIdentifierExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getApplicationIdentifierExpression();
 
+	/**
+	 * <p>getDrawText.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDrawText();
 
+	/**
+	 * <p>getChecksumRequired.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getChecksumRequired();
 
+	/**
+	 * <p>getBarWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getBarWidth();
 
+	/**
+	 * <p>getBarHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getBarHeight();
 
+	/**
+	 * <p>getOrientation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
+	 */
 	public BarcodeOrientation getOrientation();
 
+	/**
+	 * <p>getEvaluationTime.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public EvaluationTime getEvaluationTime();
 
+	/**
+	 * <p>getEvaluationGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getEvaluationGroup();
 }

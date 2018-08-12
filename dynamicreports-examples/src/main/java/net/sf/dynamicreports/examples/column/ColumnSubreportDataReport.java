@@ -41,10 +41,16 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 
 /**
+ * <p>ColumnSubreportDataReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnSubreportDataReport {
 
+	/**
+	 * <p>Constructor for ColumnSubreportDataReport.</p>
+	 */
 	public ColumnSubreportDataReport() {
 		build();
 	}
@@ -155,6 +161,11 @@ public class ColumnSubreportDataReport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ColumnSubreportDataReport();
 	}

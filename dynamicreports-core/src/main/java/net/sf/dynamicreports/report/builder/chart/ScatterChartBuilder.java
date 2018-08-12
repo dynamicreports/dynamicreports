@@ -27,30 +27,60 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>ScatterChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ScatterChartBuilder extends AbstractXyChartBuilder<ScatterChartBuilder, DRLinePlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ScatterChartBuilder.</p>
+	 */
 	protected ScatterChartBuilder() {
 		super(ChartType.SCATTER);
 	}
 
+	/**
+	 * <p>setShowShapes.</p>
+	 *
+	 * @param showShapes a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+	 */
 	public ScatterChartBuilder setShowShapes(Boolean showShapes) {
 		getPlot().setShowShapes(showShapes);
 		return this;
 	}
 
+	/**
+	 * <p>setShowLines.</p>
+	 *
+	 * @param showLines a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+	 */
 	public ScatterChartBuilder setShowLines(Boolean showLines) {
 		getPlot().setShowLines(showLines);
 		return this;
 	}
 
+	/**
+	 * <p>setShowValues.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+	 */
 	public ScatterChartBuilder setShowValues(Boolean showValues) {
 		getPlot().setShowValues(showValues);
 		return this;
 	}
 
+	/**
+	 * <p>setValuePattern.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+	 */
 	public ScatterChartBuilder setValuePattern(String valuePattern) {
 		getPlot().setValuePattern(valuePattern);
 		return this;

@@ -27,18 +27,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.Position;
 
 /**
+ * <p>DRDesignChartTitle class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignChartTitle extends DRDesignChartSubtitle implements DRIDesignChartTitle {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Position position;
 
+	/** {@inheritDoc} */
 	@Override
 	public Position getPosition() {
 		return position;
 	}
 
+	/**
+	 * <p>Setter for the field <code>position</code>.</p>
+	 *
+	 * @param position a {@link net.sf.dynamicreports.report.constant.Position} object.
+	 */
 	public void setPosition(Position position) {
 		this.position = position;
 	}

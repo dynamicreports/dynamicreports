@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocColumn class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocColumn implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -37,66 +40,143 @@ public class AdhocColumn implements Cloneable, Serializable {
 	private AdhocStyle titleStyle;
 	private AdhocProperties properties;
 
+	/**
+	 * <p>Constructor for AdhocColumn.</p>
+	 */
 	public AdhocColumn() {
 		properties = new AdhocProperties();
 	}
 
+	/**
+	 * <p>Getter for the field <code>name</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * <p>Getter for the field <code>title</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getTitle() {
 		return title;
 	}
 
+	/**
+	 * <p>Setter for the field <code>title</code>.</p>
+	 *
+	 * @param title a {@link java.lang.String} object.
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+	/**
+	 * <p>Getter for the field <code>width</code>.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getWidth() {
 		return width;
 	}
 
+	/**
+	 * <p>Setter for the field <code>width</code>.</p>
+	 *
+	 * @param width a {@link java.lang.Integer} object.
+	 */
 	public void setWidth(Integer width) {
 		this.width = width;
 	}
 
+	/**
+	 * <p>Getter for the field <code>style</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getStyle() {
 		return style;
 	}
 
+	/**
+	 * <p>Setter for the field <code>style</code>.</p>
+	 *
+	 * @param style a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setStyle(AdhocStyle style) {
 		this.style = style;
 	}
 
+	/**
+	 * <p>Getter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public AdhocStyle getTitleStyle() {
 		return titleStyle;
 	}
 
+	/**
+	 * <p>Setter for the field <code>titleStyle</code>.</p>
+	 *
+	 * @param titleStyle a {@link net.sf.dynamicreports.adhoc.configuration.AdhocStyle} object.
+	 */
 	public void setTitleStyle(AdhocStyle titleStyle) {
 		this.titleStyle = titleStyle;
 	}
 
+	/**
+	 * <p>Getter for the field <code>properties</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public AdhocProperties getProperties() {
 		return properties;
 	}
 
+	/**
+	 * <p>getProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param <T> a T object.
+	 * @return a T object.
+	 */
 	public <T> T getProperty(String key) {
 		return this.properties.getProperty(key);
 	}
 
+	/**
+	 * <p>setProperty.</p>
+	 *
+	 * @param key a {@link java.lang.String} object.
+	 * @param value a {@link java.lang.Object} object.
+	 */
 	public void setProperty(String key, Object value) {
 		this.properties.setProperty(key, value);
 	}
 
+	/**
+	 * <p>Setter for the field <code>properties</code>.</p>
+	 *
+	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+	 */
 	public void setProperties(AdhocProperties properties) {
 		this.properties = properties;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -130,6 +210,7 @@ public class AdhocColumn implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocColumn clone() {
 		AdhocColumn clone;

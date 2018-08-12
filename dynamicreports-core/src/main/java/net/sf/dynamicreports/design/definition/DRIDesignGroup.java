@@ -29,31 +29,94 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.GroupFooterPosition;
 
 /**
+ * <p>DRIDesignGroup interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignGroup extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getGroupExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getGroupExpression();
 
+	/**
+	 * <p>getHeaderBands.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIDesignBand> getHeaderBands();
 
+	/**
+	 * <p>getFooterBands.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIDesignBand> getFooterBands();
 
+	/**
+	 * <p>isStartInNewPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isStartInNewPage();
 
+	/**
+	 * <p>isStartInNewColumn.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isStartInNewColumn();
 
+	/**
+	 * <p>isReprintHeaderOnEachPage.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isReprintHeaderOnEachPage();
 
+	/**
+	 * <p>isResetPageNumber.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isResetPageNumber();
 
+	/**
+	 * <p>getMinHeightToStartNewPage.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMinHeightToStartNewPage();
 
+	/**
+	 * <p>getFooterPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
+	 */
 	public GroupFooterPosition getFooterPosition();
 
+	/**
+	 * <p>isKeepTogether.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isKeepTogether();
 
+	/**
+	 * <p>isHeaderWithSubtotal.</p>
+	 *
+	 * @return a boolean.
+	 */
 	public boolean isHeaderWithSubtotal();
 }

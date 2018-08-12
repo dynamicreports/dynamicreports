@@ -23,9 +23,17 @@
 package net.sf.dynamicreports.design.definition.expression;
 
 /**
+ * <p>DRIDesignJasperExpression interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignJasperExpression extends DRIDesignExpression {
 
+	/**
+	 * <p>getExpression.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getExpression();
 }

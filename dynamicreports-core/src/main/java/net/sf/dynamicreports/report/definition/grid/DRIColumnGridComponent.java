@@ -25,7 +25,10 @@ package net.sf.dynamicreports.report.definition.grid;
 import java.io.Serializable;
 
 /**
+ * <p>DRIColumnGridComponent interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIColumnGridComponent extends Serializable {
 

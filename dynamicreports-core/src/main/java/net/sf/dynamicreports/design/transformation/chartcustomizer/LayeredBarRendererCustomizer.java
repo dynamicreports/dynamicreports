@@ -37,17 +37,26 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.ui.GradientPaintTransformer;
 
 /**
+ * <p>LayeredBarRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private List<Double> seriesBarWidths;
 
+	/**
+	 * <p>Constructor for LayeredBarRendererCustomizer.</p>
+	 *
+	 * @param seriesBarWidths a {@link java.util.List} object.
+	 */
 	public LayeredBarRendererCustomizer(List<Double> seriesBarWidths) {
 		this.seriesBarWidths = seriesBarWidths;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();

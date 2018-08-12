@@ -26,18 +26,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIXyStepPlot;
 
 /**
+ * <p>DRXyStepPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRXyStepPlot extends DRAxisPlot implements DRIXyStepPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Double stepPoint;
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getStepPoint() {
 		return stepPoint;
 	}
 
+	/**
+	 * <p>Setter for the field <code>stepPoint</code>.</p>
+	 *
+	 * @param stepPoint a {@link java.lang.Double} object.
+	 */
 	public void setStepPoint(Double stepPoint) {
 		this.stepPoint = stepPoint;
 	}

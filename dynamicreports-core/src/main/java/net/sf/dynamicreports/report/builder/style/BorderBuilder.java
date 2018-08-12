@@ -27,19 +27,36 @@ import net.sf.dynamicreports.report.builder.AbstractBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>BorderBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class BorderBuilder extends AbstractBuilder<BorderBuilder, DRBorder> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for BorderBuilder.</p>
+	 */
 	protected BorderBuilder() {
 		super(new DRBorder());
 	}
 
+	/**
+	 * <p>Constructor for BorderBuilder.</p>
+	 *
+	 * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 */
 	protected BorderBuilder(PenBuilder pen) {
 		super(new DRBorder(pen.build()));
 	}
 
+	/**
+	 * <p>setTopPen.</p>
+	 *
+	 * @param topPen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.BorderBuilder} object.
+	 */
 	public BorderBuilder setTopPen(PenBuilder topPen) {
 		if (topPen != null) {
 			getObject().setTopPen(topPen.build());
@@ -49,6 +66,12 @@ public class BorderBuilder extends AbstractBuilder<BorderBuilder, DRBorder> {
 		return this;
 	}
 
+	/**
+	 * <p>setLeftPen.</p>
+	 *
+	 * @param leftPen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.BorderBuilder} object.
+	 */
 	public BorderBuilder setLeftPen(PenBuilder leftPen) {
 		if (leftPen != null) {
 			getObject().setLeftPen(leftPen.build());
@@ -58,6 +81,12 @@ public class BorderBuilder extends AbstractBuilder<BorderBuilder, DRBorder> {
 		return this;
 	}
 
+	/**
+	 * <p>setBottomPen.</p>
+	 *
+	 * @param bottomPen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.BorderBuilder} object.
+	 */
 	public BorderBuilder setBottomPen(PenBuilder bottomPen) {
 		if (bottomPen != null) {
 			getObject().setBottomPen(bottomPen.build());
@@ -67,6 +96,12 @@ public class BorderBuilder extends AbstractBuilder<BorderBuilder, DRBorder> {
 		return this;
 	}
 
+	/**
+	 * <p>setRightPen.</p>
+	 *
+	 * @param rightPen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.style.BorderBuilder} object.
+	 */
 	public BorderBuilder setRightPen(PenBuilder rightPen) {
 		if (rightPen != null) {
 			getObject().setRightPen(rightPen.build());
@@ -76,6 +111,11 @@ public class BorderBuilder extends AbstractBuilder<BorderBuilder, DRBorder> {
 		return this;
 	}
 
+	/**
+	 * <p>getBorder.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.style.DRBorder} object.
+	 */
 	public DRBorder getBorder() {
 		return build();
 	}

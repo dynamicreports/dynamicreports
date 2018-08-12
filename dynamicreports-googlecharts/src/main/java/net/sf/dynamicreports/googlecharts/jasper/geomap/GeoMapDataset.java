@@ -28,14 +28,32 @@ import net.sf.jasperreports.engine.JRElementDataset;
 import net.sf.jasperreports.engine.JRExpression;
 
 /**
+ * <p>GeoMapDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface GeoMapDataset extends JRElementDataset, Serializable {
 
+	/**
+	 * <p>getLocationExpression.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public JRExpression getLocationExpression();
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public JRExpression getValueExpression();
 
+	/**
+	 * <p>getLabelExpression.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+	 */
 	public JRExpression getLabelExpression();
 
 }

@@ -25,15 +25,38 @@ package net.sf.dynamicreports.report.definition.style;
 import java.io.Serializable;
 
 /**
+ * <p>DRIPadding interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPadding extends Serializable {
 
+	/**
+	 * <p>getTop.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getTop();
 
+	/**
+	 * <p>getLeft.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getLeft();
 
+	/**
+	 * <p>getBottom.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getBottom();
 
+	/**
+	 * <p>getRight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getRight();
 }

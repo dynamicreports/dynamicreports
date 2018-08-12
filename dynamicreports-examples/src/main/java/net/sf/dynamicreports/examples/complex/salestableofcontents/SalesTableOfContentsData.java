@@ -30,10 +30,18 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>SalesTableOfContentsData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SalesTableOfContentsData {
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		String[] countries = new String[] { "USA", "Canada", "Mexico", "Australia", "France", "Spain", "Germany", "China" };
 		String[] items = new String[] { "Book", "Notebook", "PDA" };

@@ -25,7 +25,10 @@ package net.sf.dynamicreports.adhoc.configuration;
 import java.io.Serializable;
 
 /**
+ * <p>AdhocConfiguration class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocConfiguration implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
@@ -33,22 +36,43 @@ public class AdhocConfiguration implements Cloneable, Serializable {
 	private AdhocReport report;
 	private AdhocFilter filter;
 
+	/**
+	 * <p>Getter for the field <code>report</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 */
 	public AdhocReport getReport() {
 		return report;
 	}
 
+	/**
+	 * <p>Setter for the field <code>report</code>.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 */
 	public void setReport(AdhocReport report) {
 		this.report = report;
 	}
 
+	/**
+	 * <p>Getter for the field <code>filter</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFilter} object.
+	 */
 	public AdhocFilter getFilter() {
 		return filter;
 	}
 
+	/**
+	 * <p>Setter for the field <code>filter</code>.</p>
+	 *
+	 * @param filter a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFilter} object.
+	 */
 	public void setFilter(AdhocFilter filter) {
 		this.filter = filter;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -70,6 +94,7 @@ public class AdhocConfiguration implements Cloneable, Serializable {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocConfiguration clone() {
 		AdhocConfiguration clone;

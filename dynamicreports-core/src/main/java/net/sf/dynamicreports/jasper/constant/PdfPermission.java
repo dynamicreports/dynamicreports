@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.jasper.constant;
 
 /**
+ * <p>PdfPermission class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum PdfPermission {
 	PRINTING, MODIFY_CONTENTS, COPY, MODIFY_ANNOTATIONS, FILL_IN, SCREEN_READERS, ASSEMBLY, DEGRADED_PRINTING

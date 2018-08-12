@@ -27,10 +27,18 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.definition.DRIDataset;
 
 /**
+ * <p>DRIChartDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIChartDataset extends Serializable {
 
+	/**
+	 * <p>getSubDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+	 */
 	public DRIDataset getSubDataset();
 
 }

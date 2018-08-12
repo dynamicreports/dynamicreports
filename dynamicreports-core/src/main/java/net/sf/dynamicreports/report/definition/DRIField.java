@@ -26,11 +26,24 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRIField interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIField<T> extends DRIExpression<T>, DRIValue<T> {
 
+	/**
+	 * <p>getDataType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+	 */
 	public DRIDataType<? super T, T> getDataType();
 
+	/**
+	 * <p>getDescription.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getDescription();
 }

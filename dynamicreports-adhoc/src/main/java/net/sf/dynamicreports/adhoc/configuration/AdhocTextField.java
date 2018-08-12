@@ -23,21 +23,35 @@
 package net.sf.dynamicreports.adhoc.configuration;
 
 /**
+ * <p>AdhocTextField class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocTextField extends AdhocComponent {
 	private static final long serialVersionUID = 1L;
 
 	private String text;
 
+	/**
+	 * <p>Getter for the field <code>text</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getText() {
 		return text;
 	}
 
+	/**
+	 * <p>Setter for the field <code>text</code>.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 */
 	public void setText(String text) {
 		this.text = text;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean equals(Object obj) {
 		boolean equals = super.equals(obj);
@@ -57,6 +71,7 @@ public class AdhocTextField extends AdhocComponent {
 		return true;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public AdhocTextField clone() {
 		AdhocTextField clone = (AdhocTextField) super.clone();

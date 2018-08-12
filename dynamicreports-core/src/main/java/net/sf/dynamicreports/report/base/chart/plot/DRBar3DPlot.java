@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIBar3DPlot;
 
 /**
+ * <p>DRBar3DPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBar3DPlot extends DRAxisPlot implements DRIBar3DPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,28 +38,46 @@ public class DRBar3DPlot extends DRAxisPlot implements DRIBar3DPlot {
 	private Double yOffset;
 	private Boolean showLabels;
 
+	/**
+	 * <p>Setter for the field <code>xOffset</code>.</p>
+	 *
+	 * @param xOffset a {@link java.lang.Double} object.
+	 */
 	public void setXOffset(Double xOffset) {
 		this.xOffset = xOffset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getXOffset() {
 		return xOffset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yOffset</code>.</p>
+	 *
+	 * @param yOffset a {@link java.lang.Double} object.
+	 */
 	public void setYOffset(Double yOffset) {
 		this.yOffset = yOffset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getYOffset() {
 		return yOffset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showLabels</code>.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 */
 	public void setShowLabels(Boolean showLabels) {
 		this.showLabels = showLabels;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowLabels() {
 		return showLabels;

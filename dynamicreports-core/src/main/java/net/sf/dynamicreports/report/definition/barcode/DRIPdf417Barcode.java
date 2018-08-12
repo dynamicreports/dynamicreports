@@ -23,19 +23,52 @@
 package net.sf.dynamicreports.report.definition.barcode;
 
 /**
+ * <p>DRIPdf417Barcode interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPdf417Barcode extends DRIBarcode4j {
 
+	/**
+	 * <p>getMinColumns.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMinColumns();
 
+	/**
+	 * <p>getMaxColumns.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMaxColumns();
 
+	/**
+	 * <p>getMinRows.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMinRows();
 
+	/**
+	 * <p>getMaxRows.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getMaxRows();
 
+	/**
+	 * <p>getWidthToHeightRatio.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getWidthToHeightRatio();
 
+	/**
+	 * <p>getErrorCorrectionLevel.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getErrorCorrectionLevel();
 }

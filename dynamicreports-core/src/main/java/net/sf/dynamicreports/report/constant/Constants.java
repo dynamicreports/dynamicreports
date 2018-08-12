@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>Constants interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface Constants {
 	/**
@@ -31,5 +34,6 @@ public interface Constants {
 	 */
 	public static final long SERIAL_VERSION_UID = 10000;
 
+	/** Constant <code>RESOURCE_BUNDLE_NAME="dynamicreports-messages"</code> */
 	public static final String RESOURCE_BUNDLE_NAME = "dynamicreports-messages";
 }

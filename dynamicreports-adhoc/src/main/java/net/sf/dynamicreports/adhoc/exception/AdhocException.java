@@ -25,19 +25,38 @@ package net.sf.dynamicreports.adhoc.exception;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>AdhocException class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class AdhocException extends RuntimeException {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;;
 
+	/**
+	 * <p>Constructor for AdhocException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 */
 	public AdhocException(String message) {
 		super(message);
 	}
 
+	/**
+	 * <p>Constructor for AdhocException.</p>
+	 *
+	 * @param cause a {@link java.lang.Throwable} object.
+	 */
 	public AdhocException(Throwable cause) {
 		super(cause);
 	}
 
+	/**
+	 * <p>Constructor for AdhocException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 * @param cause a {@link java.lang.Throwable} object.
+	 */
 	public AdhocException(String message, Throwable cause) {
 		super(message, cause);
 	}

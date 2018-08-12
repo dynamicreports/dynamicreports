@@ -29,15 +29,38 @@ import net.sf.dynamicreports.design.definition.DRIDesignDataset;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 
 /**
+ * <p>DRIDesignCrosstabDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCrosstabDataset extends Serializable {
 
+	/**
+	 * <p>getSubDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public DRIDesignDataset getSubDataset();
 
+	/**
+	 * <p>getDataPreSorted.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getDataPreSorted();
 
+	/**
+	 * <p>getResetType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public ResetType getResetType();
 
+	/**
+	 * <p>getResetGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+	 */
 	public DRIDesignGroup getResetGroup();
 }

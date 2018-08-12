@@ -35,7 +35,10 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIBasePlot;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractBasePlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractBasePlot implements DRIBasePlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -44,51 +47,86 @@ public abstract class AbstractBasePlot implements DRIBasePlot {
 	private List<Color> seriesColors;
 	private Map<String, Color> seriesColorsByName;
 
+	/**
+	 * <p>Constructor for AbstractBasePlot.</p>
+	 */
 	protected AbstractBasePlot() {
 		init();
 	}
 
+	/**
+	 * <p>init.</p>
+	 */
 	protected void init() {
 		this.seriesColors = new ArrayList<Color>();
 		this.seriesColorsByName = new HashMap<String, Color>();
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 */
 	public void setOrientation(Orientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Orientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>addSeriesColor.</p>
+	 *
+	 * @param color a {@link java.awt.Color} object.
+	 */
 	public void addSeriesColor(Color color) {
 		Validate.notNull(color, "color must not be null");
 		this.seriesColors.add(color);
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesColors</code>.</p>
+	 *
+	 * @param seriesColors a {@link java.util.List} object.
+	 */
 	public void setSeriesColors(List<Color> seriesColors) {
 		Validate.notNull(seriesColors, "seriesColors must not be null");
 		Validate.noNullElements(seriesColors, "seriesColors must not contain null color");
 		this.seriesColors = seriesColors;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<Color> getSeriesColors() {
 		return seriesColors;
 	}
 
+	/**
+	 * <p>addSeriesColorByName.</p>
+	 *
+	 * @param seriesName a {@link java.lang.String} object.
+	 * @param color a {@link java.awt.Color} object.
+	 */
 	public void addSeriesColorByName(String seriesName, Color color) {
 		Validate.notNull(seriesName, "seriesName must not be null");
 		Validate.notNull(color, "color must not be null");
 		this.seriesColorsByName.put(seriesName, color);
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesColorsByName</code>.</p>
+	 *
+	 * @param seriesColorsByName a {@link java.util.Map} object.
+	 */
 	public void setSeriesColorsByName(Map<String, Color> seriesColorsByName) {
 		Validate.notNull(seriesColorsByName, "seriesColorsByName must not be null");
 		this.seriesColorsByName = seriesColorsByName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Map<String, Color> getSeriesColorsByName() {
 		return seriesColorsByName;

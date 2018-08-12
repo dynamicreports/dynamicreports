@@ -35,7 +35,10 @@ import net.sf.jasperreports.engine.JRField;
 import net.sf.jasperreports.engine.JRRewindableDataSource;
 
 /**
+ * <p>DRDataSource class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDataSource implements JRRewindableDataSource, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -45,11 +48,21 @@ public class DRDataSource implements JRRewindableDataSource, Serializable {
 	private Iterator<Map<String, Object>> iterator;
 	private Map<String, Object> currentRecord;
 
+	/**
+	 * <p>Constructor for DRDataSource.</p>
+	 *
+	 * @param columns a {@link java.lang.String} object.
+	 */
 	public DRDataSource(String... columns) {
 		this.columns = columns;
 		this.values = new ArrayList<Map<String, Object>>();
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param values a {@link java.lang.Object} object.
+	 */
 	public void add(Object... values) {
 		Map<String, Object> row = new HashMap<String, Object>();
 		for (int i = 0; i < values.length; i++) {
@@ -58,11 +71,13 @@ public class DRDataSource implements JRRewindableDataSource, Serializable {
 		this.values.add(row);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object getFieldValue(JRField field) throws JRException {
 		return currentRecord.get(field.getName());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean next() throws JRException {
 		if (iterator == null) {
@@ -75,6 +90,7 @@ public class DRDataSource implements JRRewindableDataSource, Serializable {
 		return hasNext;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void moveFirst() throws JRException {
 		iterator = null;

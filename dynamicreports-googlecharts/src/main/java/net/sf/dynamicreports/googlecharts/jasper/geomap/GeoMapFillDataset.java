@@ -35,7 +35,10 @@ import net.sf.jasperreports.engine.fill.JRFillElementDataset;
 import net.sf.jasperreports.engine.fill.JRFillObjectFactory;
 
 /**
+ * <p>GeoMapFillDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDataset {
 	private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
@@ -45,20 +48,29 @@ public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDat
 	private Number value;
 	private String label;
 
+	/**
+	 * <p>Constructor for GeoMapFillDataset.</p>
+	 *
+	 * @param dataset a {@link net.sf.jasperreports.engine.JRElementDataset} object.
+	 * @param factory a {@link net.sf.jasperreports.engine.fill.JRFillObjectFactory} object.
+	 */
 	public GeoMapFillDataset(JRElementDataset dataset, JRFillObjectFactory factory) {
 		super(dataset, factory);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void collectExpressions(JRExpressionCollector collector) {
 		GeoMapCompiler.collectExpressions(this, collector);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void customInitialize() {
 		dataset = new LinkedHashSet<GeoMapData>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void customEvaluate(JRCalculator calculator) throws JRExpressionEvalException {
 		location = (String) calculator.evaluate(getLocationExpression());
@@ -66,6 +78,7 @@ public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDat
 		label = (String) calculator.evaluate(getLabelExpression());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void customIncrement() {
 		GeoMapData data = new GeoMapData();
@@ -75,25 +88,36 @@ public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDat
 		dataset.add(data);
 	}
 
+	/**
+	 * <p>getCustomDataset.</p>
+	 *
+	 * @return a {@link java.util.Set} object.
+	 */
 	public Set<GeoMapData> getCustomDataset() {
 		return dataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getLocationExpression() {
 		return ((GeoMapDataset) parent).getLocationExpression();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getValueExpression() {
 		return ((GeoMapDataset) parent).getValueExpression();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRExpression getLabelExpression() {
 		return ((GeoMapDataset) parent).getLabelExpression();
 	}
 
+	/**
+	 * <p>finishDataset.</p>
+	 */
 	public void finishDataset() {
 		increment();
 	}

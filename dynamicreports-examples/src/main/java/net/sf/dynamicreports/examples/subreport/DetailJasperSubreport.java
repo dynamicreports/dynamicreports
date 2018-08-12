@@ -40,10 +40,16 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
 /**
+ * <p>DetailJasperSubreport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DetailJasperSubreport {
 
+	/**
+	 * <p>Constructor for DetailJasperSubreport.</p>
+	 */
 	public DetailJasperSubreport() {
 		build();
 	}
@@ -90,6 +96,11 @@ public class DetailJasperSubreport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new DetailJasperSubreport();
 	}

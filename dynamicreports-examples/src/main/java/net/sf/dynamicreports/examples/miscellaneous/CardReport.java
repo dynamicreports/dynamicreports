@@ -33,10 +33,16 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>CardReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CardReport {
 
+	/**
+	 * <p>Constructor for CardReport.</p>
+	 */
 	public CardReport() {
 		build();
 	}
@@ -85,6 +91,11 @@ public class CardReport {
 		return cardComponent;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CardReport();
 	}

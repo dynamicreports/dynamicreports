@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.jasper.constant;
 
 /**
+ * <p>ImageType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum ImageType {
 	GIF, PNG, JPG

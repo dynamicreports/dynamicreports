@@ -30,10 +30,16 @@ import net.sf.dynamicreports.jasper.builder.export.Exporters;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ConcatenatedReport1 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ConcatenatedReport1 {
 
+	/**
+	 * <p>Constructor for ConcatenatedReport1.</p>
+	 */
 	public ConcatenatedReport1() {
 		build();
 	}
@@ -57,6 +63,11 @@ public class ConcatenatedReport1 {
 		return new SalesDesign().build();
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ConcatenatedReport1();
 	}

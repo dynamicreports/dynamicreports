@@ -28,13 +28,31 @@ import net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment;
 import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
 
 /**
+ * <p>DRIListCell interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIListCell extends Serializable {
 
+	/**
+	 * <p>getHorizontalAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
+	 */
 	public HorizontalCellComponentAlignment getHorizontalAlignment();
 
+	/**
+	 * <p>getVerticalAlignment.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+	 */
 	public VerticalCellComponentAlignment getVerticalAlignment();
 
+	/**
+	 * <p>getComponent.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 */
 	public DRIComponent getComponent();
 }

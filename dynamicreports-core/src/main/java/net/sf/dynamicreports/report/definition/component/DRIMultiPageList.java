@@ -27,12 +27,25 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.SplitType;
 
 /**
+ * <p>DRIMultiPageList interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIMultiPageList extends DRIDimensionComponent {
 
+	/**
+	 * <p>getComponents.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<DRIComponent> getComponents();
 
+	/**
+	 * <p>getSplitType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+	 */
 	public SplitType getSplitType();
 
 }

@@ -40,10 +40,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>VariableReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class VariableReport {
 
+	/**
+	 * <p>Constructor for VariableReport.</p>
+	 */
 	public VariableReport() {
 		build();
 	}
@@ -85,6 +91,11 @@ public class VariableReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new VariableReport();
 	}

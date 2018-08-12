@@ -42,17 +42,32 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>TableOfContentsTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TableOfContentsTransform {
 	private DesignTransformAccessor accessor;
 	private Map<DRITableOfContentsHeading, Integer> levels;
 
+	/**
+	 * <p>Constructor for TableOfContentsTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public TableOfContentsTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		this.levels = new HashMap<DRITableOfContentsHeading, Integer>();
 	}
 
+	/**
+	 * <p>componentHeading.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignTableOfContentsHeading} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignTableOfContentsHeading componentHeading(DRIComponent component) throws DRException {
 		DRITableOfContentsHeading tocHeading = component.getTableOfContentsHeading();
 		boolean tableOfContents = accessor.isTableOfContents();
@@ -100,6 +115,14 @@ public class TableOfContentsTransform {
 		return level;
 	}
 
+	/**
+	 * <p>groupHeading.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @param level a int.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignTableOfContentsHeading} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignTableOfContentsHeading groupHeading(DRIGroup group, int level) throws DRException {
 		boolean tableOfContents = accessor.isTableOfContents();
 		boolean isAddGroupToTableOfContents = accessor.getTemplateTransform().isAddGroupToTableOfContents(group);

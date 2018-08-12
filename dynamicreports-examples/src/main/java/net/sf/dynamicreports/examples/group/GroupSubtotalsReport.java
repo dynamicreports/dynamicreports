@@ -37,10 +37,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>GroupSubtotalsReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupSubtotalsReport {
 
+	/**
+	 * <p>Constructor for GroupSubtotalsReport.</p>
+	 */
 	public GroupSubtotalsReport() {
 		build();
 	}
@@ -87,6 +93,11 @@ public class GroupSubtotalsReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new GroupSubtotalsReport();
 	}

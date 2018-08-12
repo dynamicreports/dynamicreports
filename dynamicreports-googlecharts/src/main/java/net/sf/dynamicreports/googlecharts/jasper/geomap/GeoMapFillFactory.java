@@ -29,16 +29,21 @@ import net.sf.jasperreports.engine.fill.JRFillCloneFactory;
 import net.sf.jasperreports.engine.fill.JRFillObjectFactory;
 
 /**
+ * <p>GeoMapFillFactory class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GeoMapFillFactory implements ComponentFillFactory {
 
+	/** {@inheritDoc} */
 	@Override
 	public FillComponent toFillComponent(Component component, JRFillObjectFactory factory) {
 		GeoMapComponent geoMap = (GeoMapComponent) component;
 		return new GeoMapFillComponent(geoMap, factory);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public FillComponent cloneFillComponent(FillComponent component, JRFillCloneFactory factory) {
 		throw new UnsupportedOperationException();

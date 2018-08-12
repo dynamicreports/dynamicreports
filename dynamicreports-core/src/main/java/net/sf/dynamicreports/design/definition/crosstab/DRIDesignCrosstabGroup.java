@@ -29,23 +29,66 @@ import net.sf.dynamicreports.report.constant.CrosstabTotalPosition;
 import net.sf.dynamicreports.report.constant.OrderType;
 
 /**
+ * <p>DRIDesignCrosstabGroup interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignCrosstabGroup extends Serializable {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 
+	/**
+	 * <p>getTotalPosition.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
+	 */
 	public CrosstabTotalPosition getTotalPosition();
 
+	/**
+	 * <p>getOrderType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public OrderType getOrderType();
 
+	/**
+	 * <p>getExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getExpression();
 
+	/**
+	 * <p>getOrderByExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getOrderByExpression();
 
+	/**
+	 * <p>getComparatorExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getComparatorExpression();
 
+	/**
+	 * <p>getHeader.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
+	 */
 	public DRIDesignCrosstabCellContent getHeader();
 
+	/**
+	 * <p>getTotalHeader.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
+	 */
 	public DRIDesignCrosstabCellContent getTotalHeader();
 }

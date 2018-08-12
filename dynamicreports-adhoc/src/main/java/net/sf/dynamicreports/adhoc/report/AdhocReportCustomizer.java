@@ -27,10 +27,23 @@ import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>AdhocReportCustomizer interface.</p>
+ *
+ * Enables runtime-provided report configurations to be added to the library, with out using xml like one would with
+ * JasperReports library.
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface AdhocReportCustomizer {
 
+	/**
+	 * <p>customize.</p>
+	 *
+	 * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException;
 
 }

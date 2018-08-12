@@ -25,14 +25,21 @@ package net.sf.dynamicreports.report.builder.grid;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>HorizontalFlowColumnGridListBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class HorizontalFlowColumnGridListBuilder extends HorizontalColumnGridListBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for HorizontalFlowColumnGridListBuilder.</p>
+	 */
 	protected HorizontalFlowColumnGridListBuilder() {
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void init() {
 		newFlowRow();

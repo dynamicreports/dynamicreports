@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.definition.DRIQuery;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRQuery class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRQuery implements DRIQuery {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,6 +39,12 @@ public class DRQuery implements DRIQuery {
 	private String text;
 	private String language;
 
+	/**
+	 * <p>Constructor for DRQuery.</p>
+	 *
+	 * @param text a {@link java.lang.String} object.
+	 * @param language a {@link java.lang.String} object.
+	 */
 	public DRQuery(String text, String language) {
 		Validate.notNull(text, "text must not be null");
 		Validate.notNull(language, "language must not be null");
@@ -43,11 +52,13 @@ public class DRQuery implements DRIQuery {
 		this.language = language;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getText() {
 		return text;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getLanguage() {
 		return language;

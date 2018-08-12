@@ -32,6 +32,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * It is used to display data in a multi-column layout.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnBuilders {
 
@@ -45,6 +46,7 @@ public class ColumnBuilders {
 	 * @param valueClass
 	 *          the field value class
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String fieldName, Class<T> valueClass) {
 		return Columns.column(fieldName, valueClass);
@@ -61,6 +63,7 @@ public class ColumnBuilders {
 	 * @param valueClass
 	 *          the field value class
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String title, String fieldName, Class<T> valueClass) {
 		return Columns.column(title, fieldName, valueClass);
@@ -75,6 +78,7 @@ public class ColumnBuilders {
 	 * @param dataType
 	 *          the field data type
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String fieldName, DRIDataType<? super T, T> dataType) {
 		return Columns.column(fieldName, dataType);
@@ -91,6 +95,7 @@ public class ColumnBuilders {
 	 * @param dataType
 	 *          the field data type
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String title, String fieldName, DRIDataType<? super T, T> dataType) {
 		return Columns.column(title, fieldName, dataType);
@@ -103,6 +108,7 @@ public class ColumnBuilders {
 	 * @param field
 	 *          the field definition
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(FieldBuilder<T> field) {
 		return Columns.column(field);
@@ -117,6 +123,7 @@ public class ColumnBuilders {
 	 * @param field
 	 *          the field definition
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String title, FieldBuilder<T> field) {
 		return Columns.column(title, field);
@@ -130,6 +137,7 @@ public class ColumnBuilders {
 	 * @param expression
 	 *          the value expression
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(DRIExpression<T> expression) {
 		return Columns.column(expression);
@@ -144,6 +152,7 @@ public class ColumnBuilders {
 	 * @param expression
 	 *          the value expression
 	 * @return a column builder
+	 * @param <T> a T object.
 	 */
 	public <T> TextColumnBuilder<T> column(String title, DRIExpression<T> expression) {
 		return Columns.column(title, expression);

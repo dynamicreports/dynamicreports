@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup;
 
 /**
+ * <p>DRCrosstabColumnGroup class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCrosstabColumnGroup<T> extends DRCrosstabGroup<T> implements DRICrosstabColumnGroup<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,20 +37,32 @@ public class DRCrosstabColumnGroup<T> extends DRCrosstabGroup<T> implements DRIC
 	private Integer headerHeight;
 	private Integer totalHeaderWidth;
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getHeaderHeight() {
 		return headerHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>headerHeight</code>.</p>
+	 *
+	 * @param headerHeight a {@link java.lang.Integer} object.
+	 */
 	public void setHeaderHeight(Integer headerHeight) {
 		this.headerHeight = headerHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getTotalHeaderWidth() {
 		return totalHeaderWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>totalHeaderWidth</code>.</p>
+	 *
+	 * @param totalHeaderWidth a {@link java.lang.Integer} object.
+	 */
 	public void setTotalHeaderWidth(Integer totalHeaderWidth) {
 		this.totalHeaderWidth = totalHeaderWidth;
 	}

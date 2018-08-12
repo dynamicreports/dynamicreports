@@ -32,18 +32,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>DatasetParametersExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatasetParametersExpression extends AbstractDesignSimpleExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Map<String, Object> parameters;
 
+	/**
+	 * <p>Constructor for DatasetParametersExpression.</p>
+	 *
+	 * @param parameters a {@link java.util.Map} object.
+	 */
 	public DatasetParametersExpression(Map<String, Object> parameters) {
 		super(ReportUtils.generateUniqueName("datasetParametersExpression"));
 		this.parameters = parameters;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object evaluate(ReportParameters reportParameters) {
 		Map<String, Object> parameters = new HashMap<String, Object>(this.parameters);
@@ -51,6 +60,7 @@ public class DatasetParametersExpression extends AbstractDesignSimpleExpression 
 		return parameters;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return Map.class;

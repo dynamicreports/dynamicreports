@@ -32,7 +32,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpr
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignGenericElement class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignGenericElement extends DRDesignComponent implements DRIDesignGenericElement {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,57 +46,91 @@ public class DRDesignGenericElement extends DRDesignComponent implements DRIDesi
 	private DRDesignGroup evaluationGroup;
 	private List<DRIDesignParameterExpression> parameterExpressions;
 
+	/**
+	 * <p>Constructor for DRDesignGenericElement.</p>
+	 */
 	public DRDesignGenericElement() {
 		super("genericElement");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void init() {
 		super.init();
 		parameterExpressions = new ArrayList<DRIDesignParameterExpression>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getGenericElementNamespace() {
 		return genericElementNamespace;
 	}
 
+	/**
+	 * <p>Setter for the field <code>genericElementNamespace</code>.</p>
+	 *
+	 * @param genericElementNamespace a {@link java.lang.String} object.
+	 */
 	public void setGenericElementNamespace(String genericElementNamespace) {
 		this.genericElementNamespace = genericElementNamespace;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getGenericElementName() {
 		return genericElementName;
 	}
 
+	/**
+	 * <p>Setter for the field <code>genericElementName</code>.</p>
+	 *
+	 * @param genericElementName a {@link java.lang.String} object.
+	 */
 	public void setGenericElementName(String genericElementName) {
 		this.genericElementName = genericElementName;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public EvaluationTime getEvaluationTime() {
 		return evaluationTime;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationTime</code>.</p>
+	 *
+	 * @param evaluationTime a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public void setEvaluationTime(EvaluationTime evaluationTime) {
 		this.evaluationTime = evaluationTime;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignGroup getEvaluationGroup() {
 		return evaluationGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>evaluationGroup</code>.</p>
+	 *
+	 * @param evaluationGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	public void setEvaluationGroup(DRDesignGroup evaluationGroup) {
 		this.evaluationGroup = evaluationGroup;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIDesignParameterExpression> getParameterExpressions() {
 		return parameterExpressions;
 	}
 
+	/**
+	 * <p>Setter for the field <code>parameterExpressions</code>.</p>
+	 *
+	 * @param parameterExpressions a {@link java.util.List} object.
+	 */
 	public void setParameterExpressions(List<DRIDesignParameterExpression> parameterExpressions) {
 		this.parameterExpressions = parameterExpressions;
 	}

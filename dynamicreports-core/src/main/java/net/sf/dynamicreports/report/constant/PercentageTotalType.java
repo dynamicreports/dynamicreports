@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.report.constant;
 
 /**
+ * <p>PercentageTotalType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum PercentageTotalType {
 	REPORT, GROUP, FIRST_GROUP, LAST_GROUP

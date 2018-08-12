@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.DRIPage;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRPage class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRPage implements DRIPage {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -43,11 +46,24 @@ public class DRPage implements DRIPage {
 	private Integer columnSpace;
 	private Boolean ignorePageWidth;
 
+	/**
+	 * <p>setPageFormat.</p>
+	 *
+	 * @param pageType a {@link net.sf.dynamicreports.report.constant.PageType} object.
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public void setPageFormat(PageType pageType, PageOrientation orientation) {
 		Validate.notNull(pageType, "pageType must not be null");
 		setPageFormat(pageType.getWidth(), pageType.getHeight(), orientation);
 	}
 
+	/**
+	 * <p>setPageFormat.</p>
+	 *
+	 * @param width a {@link java.lang.Integer} object.
+	 * @param height a {@link java.lang.Integer} object.
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public void setPageFormat(Integer width, Integer height, PageOrientation orientation) {
 		Validate.isTrue(width >= 0, "width must be >= 0");
 		Validate.isTrue(height >= 0, "height must be >= 0");
@@ -63,9 +79,9 @@ public class DRPage implements DRIPage {
 	}
 
 	/**
-	 * Returns the page width.
+	 * {@inheritDoc}
 	 *
-	 * @return the page width >= 0
+	 * Returns the page width.
 	 */
 	@Override
 	public Integer getWidth() {
@@ -74,9 +90,8 @@ public class DRPage implements DRIPage {
 
 	/**
 	 * Sets the page width.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param width
 	 *          the page width >= 0
 	 * @exception IllegalArgumentException
@@ -90,9 +105,9 @@ public class DRPage implements DRIPage {
 	}
 
 	/**
-	 * Returns the page height.
+	 * {@inheritDoc}
 	 *
-	 * @return the page height >= 0
+	 * Returns the page height.
 	 */
 	@Override
 	public Integer getHeight() {
@@ -101,9 +116,8 @@ public class DRPage implements DRIPage {
 
 	/**
 	 * Sets the page height.
-	 * 
-	 * @see net.sf.dynamicreports.report.builder.Units
 	 *
+	 * @see net.sf.dynamicreports.report.builder.Units
 	 * @param height
 	 *          the page height >= 0
 	 * @exception IllegalArgumentException
@@ -116,29 +130,47 @@ public class DRPage implements DRIPage {
 		this.height = height;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public PageOrientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public void setOrientation(PageOrientation orientation) {
 		this.orientation = orientation;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRMargin getMargin() {
 		return margin;
 	}
 
+	/**
+	 * <p>Setter for the field <code>margin</code>.</p>
+	 *
+	 * @param margin a {@link net.sf.dynamicreports.report.base.DRMargin} object.
+	 */
 	public void setMargin(DRMargin margin) {
 		this.margin = margin;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getColumnsPerPage() {
 		return columnsPerPage;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnsPerPage</code>.</p>
+	 *
+	 * @param columnsPerPage a {@link java.lang.Integer} object.
+	 */
 	public void setColumnsPerPage(Integer columnsPerPage) {
 		if (columnsPerPage != null) {
 			Validate.isTrue(columnsPerPage >= 1, "columnsPerPage must be >= 1");
@@ -146,11 +178,17 @@ public class DRPage implements DRIPage {
 		this.columnsPerPage = columnsPerPage;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getColumnSpace() {
 		return columnSpace;
 	}
 
+	/**
+	 * <p>Setter for the field <code>columnSpace</code>.</p>
+	 *
+	 * @param columnSpace a {@link java.lang.Integer} object.
+	 */
 	public void setColumnSpace(Integer columnSpace) {
 		if (columnSpace != null) {
 			Validate.isTrue(columnSpace >= 0, "columnSpace must be >= 0");
@@ -158,11 +196,17 @@ public class DRPage implements DRIPage {
 		this.columnSpace = columnSpace;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getIgnorePageWidth() {
 		return ignorePageWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>ignorePageWidth</code>.</p>
+	 *
+	 * @param ignorePageWidth a {@link java.lang.Boolean} object.
+	 */
 	public void setIgnorePageWidth(Boolean ignorePageWidth) {
 		this.ignorePageWidth = ignorePageWidth;
 	}

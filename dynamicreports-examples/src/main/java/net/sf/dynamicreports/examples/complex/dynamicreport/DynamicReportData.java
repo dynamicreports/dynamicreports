@@ -31,10 +31,18 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>DynamicReportData class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DynamicReportData {
 
+	/**
+	 * <p>createDataSource.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public JRDataSource createDataSource() {
 		DRDataSource dataSource = new DRDataSource("state", "item", "orderdate", "quantity", "unitprice");
 		dataSource.add("New York", "DVD", toDate(2010, 1, 1), 5, new BigDecimal(30));
@@ -79,6 +87,11 @@ public class DynamicReportData {
 		return c.getTime();
 	}
 
+	/**
+	 * <p>getDynamicReport.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.examples.complex.dynamicreport.DynamicReport} object.
+	 */
 	public DynamicReport getDynamicReport() {
 		DynamicReport report = new DynamicReport();
 

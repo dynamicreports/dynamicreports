@@ -27,15 +27,24 @@ import net.sf.dynamicreports.report.builder.AbstractBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>TemplateStyleBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TemplateStyleBuilder extends AbstractBuilder<TemplateStyleBuilder, DRTemplateStyle> implements ReportStyleBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for TemplateStyleBuilder.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	protected TemplateStyleBuilder(String name) {
 		super(new DRTemplateStyle(name));
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRTemplateStyle getStyle() {
 		return build();

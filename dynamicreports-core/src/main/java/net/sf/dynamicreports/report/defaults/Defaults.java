@@ -36,7 +36,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
+ * <p>Defaults class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class Defaults {
 	private static final Log log = LogFactory.getLog(Defaults.class);
@@ -78,6 +81,11 @@ public class Defaults {
 		}
 	}
 
+	/**
+	 * <p>Getter for the field <code>defaults</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.defaults.Default} object.
+	 */
 	public static Default getDefaults() {
 		return defaults;
 	}

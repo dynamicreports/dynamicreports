@@ -28,17 +28,45 @@ import java.io.Serializable;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRIDesignMeterInterval interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignMeterInterval extends Serializable {
 
+	/**
+	 * <p>getLabel.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLabel();
 
+	/**
+	 * <p>getBackgroundColor.</p>
+	 *
+	 * @return a {@link java.awt.Color} object.
+	 */
 	public Color getBackgroundColor();
 
+	/**
+	 * <p>getAlpha.</p>
+	 *
+	 * @return a {@link java.lang.Double} object.
+	 */
 	public Double getAlpha();
 
+	/**
+	 * <p>getDataRangeLowExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeLowExpression();
 
+	/**
+	 * <p>getDataRangeHighExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public DRIDesignExpression getDataRangeHighExpression();
 }

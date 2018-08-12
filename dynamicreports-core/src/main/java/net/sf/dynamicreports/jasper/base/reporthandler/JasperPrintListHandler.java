@@ -28,20 +28,28 @@ import java.util.List;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
+ * <p>JasperPrintListHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperPrintListHandler extends AbstractPrintListHandler {
 	private List<JasperPrint> printList;
 
+	/**
+	 * <p>Constructor for JasperPrintListHandler.</p>
+	 */
 	public JasperPrintListHandler() {
 		printList = new ArrayList<JasperPrint>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected void add(JasperPrint jasperPrint) {
 		printList.add(jasperPrint);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<JasperPrint> getPrintList() {
 		return printList;

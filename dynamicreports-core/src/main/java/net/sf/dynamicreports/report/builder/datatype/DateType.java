@@ -34,21 +34,27 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DateType class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DateType extends AbstractDataType<Date, Date> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return Defaults.getDefaults().getDateType().getPattern();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public HorizontalTextAlignment getHorizontalTextAlignment() {
 		return Defaults.getDefaults().getDateType().getHorizontalTextAlignment();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String valueToString(Date value, Locale locale) {
 		if (value != null) {
@@ -57,6 +63,7 @@ public class DateType extends AbstractDataType<Date, Date> {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Date stringToValue(String value, Locale locale) throws DRException {
 		if (value != null) {

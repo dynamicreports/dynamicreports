@@ -27,13 +27,31 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
 /**
+ * <p>DRICrosstabCellStyle interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRICrosstabCellStyle extends Serializable {
 
+	/**
+	 * <p>getRowGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
+	 */
 	public DRICrosstabRowGroup<?> getRowGroup();
 
+	/**
+	 * <p>getColumnGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
+	 */
 	public DRICrosstabColumnGroup<?> getColumnGroup();
 
+	/**
+	 * <p>getStyle.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+	 */
 	public DRIReportStyle getStyle();
 }

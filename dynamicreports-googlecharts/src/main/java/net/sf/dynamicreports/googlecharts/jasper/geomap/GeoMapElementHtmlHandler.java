@@ -44,12 +44,16 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 
 /**
+ * <p>GeoMapElementHtmlHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
 
 	private static final String GEOMAP_ELEMENT_HTML_TEMPLATE = "net/sf/dynamicreports/googlecharts/jasper/geomap/GeoMapElementHtmlTemplate.vm";
 
+	/** {@inheritDoc} */
 	@Override
 	public String getHtmlFragment(JRHtmlExporterContext context, JRGenericPrintElement element) {
 		Boolean showLegend = (Boolean) element.getParameterValue(GeoMapPrintElement.PARAMETER_SHOW_LEGEND);
@@ -117,6 +121,7 @@ public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
 		return "0x" + ("000000" + hex).substring(hex.length());
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean toExport(JRGenericPrintElement element) {
 		return true;

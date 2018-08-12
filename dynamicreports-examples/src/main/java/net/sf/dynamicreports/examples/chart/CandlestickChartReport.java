@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>CandlestickChartReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CandlestickChartReport {
 
+	/**
+	 * <p>Constructor for CandlestickChartReport.</p>
+	 */
 	public CandlestickChartReport() {
 		build();
 	}
@@ -94,6 +100,11 @@ public class CandlestickChartReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CandlestickChartReport();
 	}

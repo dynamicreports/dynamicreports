@@ -38,17 +38,26 @@ import org.jfree.chart.renderer.LookupPaintScale;
 import org.jfree.chart.renderer.xy.XYBlockRenderer;
 
 /**
+ * <p>XyBlockRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyBlockRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private DRIXyBlockPlot xyBlockPlot;
 
+	/**
+	 * <p>Constructor for XyBlockRendererCustomizer.</p>
+	 *
+	 * @param xyBlockPlot a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIXyBlockPlot} object.
+	 */
 	public XyBlockRendererCustomizer(DRIXyBlockPlot xyBlockPlot) {
 		this.xyBlockPlot = xyBlockPlot;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		chart.getXYPlot().getDomainAxis().setUpperMargin(0);

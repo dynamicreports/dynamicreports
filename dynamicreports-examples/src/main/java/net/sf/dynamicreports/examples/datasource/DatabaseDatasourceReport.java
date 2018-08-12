@@ -33,11 +33,17 @@ import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>DatabaseDatasourceReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DatabaseDatasourceReport {
 	private Connection connection;
 
+	/**
+	 * <p>Constructor for DatabaseDatasourceReport.</p>
+	 */
 	public DatabaseDatasourceReport() {
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
@@ -74,6 +80,11 @@ public class DatabaseDatasourceReport {
 		st.execute("INSERT INTO sales VALUES ('Book', 5, 100)");
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new DatabaseDatasourceReport();
 	}

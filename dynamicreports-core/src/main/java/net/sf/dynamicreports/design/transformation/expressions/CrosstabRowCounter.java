@@ -27,26 +27,39 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>CrosstabRowCounter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CrosstabRowCounter extends AbstractSimpleExpression<CrosstabRowCounter> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private int rowNumber = 1;
 
+	/** {@inheritDoc} */
 	@Override
 	public CrosstabRowCounter evaluate(ReportParameters reportParameters) {
 		return this;
 	}
 
+	/**
+	 * <p>increment.</p>
+	 */
 	public void increment() {
 		rowNumber++;
 	}
 
+	/**
+	 * <p>Getter for the field <code>rowNumber</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getRowNumber() {
 		return rowNumber;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return ReportParameters.CROSSTAB_ROW_COUNTER;

@@ -29,52 +29,100 @@ import net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment;
 import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
 
 /**
+ * <p>VerticalColumnGridListCellBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class VerticalColumnGridListCellBuilder extends AbstractBuilder<VerticalColumnGridListCellBuilder, DRColumnGridListCell> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for VerticalColumnGridListCellBuilder.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+	 */
 	protected VerticalColumnGridListCellBuilder(ColumnGridComponentBuilder component) {
 		super(new DRColumnGridListCell(component.build()));
 	}
 
 	// width
+	/**
+	 * <p>widthFixedOnLeft.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder widthFixedOnLeft() {
 		getObject().setHorizontalAlignment(HorizontalCellComponentAlignment.LEFT);
 		return this;
 	}
 
+	/**
+	 * <p>widthFixedOnCenter.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder widthFixedOnCenter() {
 		getObject().setHorizontalAlignment(HorizontalCellComponentAlignment.CENTER);
 		return this;
 	}
 
+	/**
+	 * <p>widthFixedOnRight.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder widthFixedOnRight() {
 		getObject().setHorizontalAlignment(HorizontalCellComponentAlignment.RIGHT);
 		return this;
 	}
 
+	/**
+	 * <p>widthFloat.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder widthFloat() {
 		getObject().setHorizontalAlignment(HorizontalCellComponentAlignment.FLOAT);
 		return this;
 	}
 
+	/**
+	 * <p>widthExpand.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder widthExpand() {
 		getObject().setHorizontalAlignment(HorizontalCellComponentAlignment.EXPAND);
 		return this;
 	}
 
 	// height
+	/**
+	 * <p>heightFixed.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder heightFixed() {
 		getObject().setVerticalAlignment(VerticalCellComponentAlignment.TOP);
 		return this;
 	}
 
+	/**
+	 * <p>heightExpand.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 */
 	public VerticalColumnGridListCellBuilder heightExpand() {
 		getObject().setVerticalAlignment(VerticalCellComponentAlignment.EXPAND);
 		return this;
 	}
 
+	/**
+	 * <p>getColumnGridListCell.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.grid.DRColumnGridListCell} object.
+	 */
 	public DRColumnGridListCell getColumnGridListCell() {
 		return build();
 	}

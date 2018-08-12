@@ -42,22 +42,36 @@ import net.sf.jasperreports.engine.xml.JRXmlWriter;
 import org.apache.commons.digester.Digester;
 
 /**
+ * <p>GoogleChartsHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlWriter, GenericElementHandlerBundle {
 	private Map<String, Class<? extends Component>> components;
 	private Map<String, GenericElementHandler> handlers;
 
+	/**
+	 * <p>Constructor for GoogleChartsHandler.</p>
+	 */
 	public GoogleChartsHandler() {
 		components = new HashMap<String, Class<? extends Component>>();
 		handlers = new HashMap<String, GenericElementHandler>();
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param componentClass a {@link java.lang.Class} object.
+	 * @param handler a {@link net.sf.jasperreports.engine.export.GenericElementHandler} object.
+	 */
 	public void add(String name, Class<? extends Component> componentClass, GenericElementHandler handler) {
 		components.put(name, componentClass);
 		handlers.put(name, handler);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void configureDigester(Digester digester) {
 		for (String name : components.keySet()) {
@@ -66,11 +80,13 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isToWrite(JRComponentElement componentElement, JRXmlWriter reportWriter) {
 		return false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void writeToXml(JRComponentElement componentElement, JRXmlWriter reportWriter) throws IOException {
 		if (components.containsKey(componentElement.getComponentKey().getName())) {
@@ -87,11 +103,13 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
 		}
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getNamespace() {
 		return GoogleChartsExtensionsRegistryFactory.NAMESPACE;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public GenericElementHandler getHandler(String elementName, String exporterKey) {
 		if (handlers.containsKey(elementName)) {

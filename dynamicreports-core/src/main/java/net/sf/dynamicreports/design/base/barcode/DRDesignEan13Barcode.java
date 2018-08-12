@@ -26,11 +26,17 @@ import net.sf.dynamicreports.design.definition.barcode.DRIDesignEan13Barcode;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignEan13Barcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignEan13Barcode extends DRDesignChecksumBarcode implements DRIDesignEan13Barcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for DRDesignEan13Barcode.</p>
+	 */
 	public DRDesignEan13Barcode() {
 		super("EAN13");
 	}

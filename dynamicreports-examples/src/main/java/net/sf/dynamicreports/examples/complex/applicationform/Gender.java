@@ -23,7 +23,10 @@
 package net.sf.dynamicreports.examples.complex.applicationform;
 
 /**
+ * <p>Gender class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public enum Gender {
 	MALE, FEMALE

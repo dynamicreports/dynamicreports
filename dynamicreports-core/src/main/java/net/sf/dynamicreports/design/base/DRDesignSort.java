@@ -28,7 +28,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.OrderType;
 
 /**
+ * <p>DRDesignSort class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignSort implements DRIDesignSort {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -36,20 +39,32 @@ public class DRDesignSort implements DRIDesignSort {
 	private DRIDesignExpression expression;
 	private OrderType orderType;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getExpression() {
 		return expression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>expression</code>.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setExpression(DRIDesignExpression expression) {
 		this.expression = expression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public OrderType getOrderType() {
 		return orderType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orderType</code>.</p>
+	 *
+	 * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public void setOrderType(OrderType orderType) {
 		this.orderType = orderType;
 	}

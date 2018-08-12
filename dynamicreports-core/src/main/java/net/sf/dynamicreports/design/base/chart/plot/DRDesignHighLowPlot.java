@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignHighLowPlot;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignHighLowPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignHighLowPlot extends DRDesignAxisPlot implements DRIDesignHighLowPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -34,20 +37,32 @@ public class DRDesignHighLowPlot extends DRDesignAxisPlot implements DRIDesignHi
 	private Boolean showOpenTicks;
 	private Boolean showCloseTicks;
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowOpenTicks() {
 		return showOpenTicks;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showOpenTicks</code>.</p>
+	 *
+	 * @param showOpenTicks a {@link java.lang.Boolean} object.
+	 */
 	public void setShowOpenTicks(Boolean showOpenTicks) {
 		this.showOpenTicks = showOpenTicks;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowCloseTicks() {
 		return showCloseTicks;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showCloseTicks</code>.</p>
+	 *
+	 * @param showCloseTicks a {@link java.lang.Boolean} object.
+	 */
 	public void setShowCloseTicks(Boolean showCloseTicks) {
 		this.showCloseTicks = showCloseTicks;
 	}

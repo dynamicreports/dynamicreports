@@ -26,7 +26,10 @@ import net.sf.dynamicreports.design.definition.barcode.DRIDesignCode39Barcode;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignCode39Barcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignCode39Barcode extends DRDesignChecksumBarcode implements DRIDesignCode39Barcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,51 +40,84 @@ public class DRDesignCode39Barcode extends DRDesignChecksumBarcode implements DR
 	private Double intercharGapWidth;
 	private Double wideFactor;
 
+	/**
+	 * <p>Constructor for DRDesignCode39Barcode.</p>
+	 */
 	public DRDesignCode39Barcode() {
 		super("Code39");
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDisplayChecksum() {
 		return displayChecksum;
 	}
 
+	/**
+	 * <p>Setter for the field <code>displayChecksum</code>.</p>
+	 *
+	 * @param displayChecksum a {@link java.lang.Boolean} object.
+	 */
 	public void setDisplayChecksum(Boolean displayChecksum) {
 		this.displayChecksum = displayChecksum;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDisplayStartStop() {
 		return displayStartStop;
 	}
 
+	/**
+	 * <p>Setter for the field <code>displayStartStop</code>.</p>
+	 *
+	 * @param displayStartStop a {@link java.lang.Boolean} object.
+	 */
 	public void setDisplayStartStop(Boolean displayStartStop) {
 		this.displayStartStop = displayStartStop;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getExtendedCharSetEnabled() {
 		return extendedCharSetEnabled;
 	}
 
+	/**
+	 * <p>Setter for the field <code>extendedCharSetEnabled</code>.</p>
+	 *
+	 * @param extendedCharSetEnabled a {@link java.lang.Boolean} object.
+	 */
 	public void setExtendedCharSetEnabled(Boolean extendedCharSetEnabled) {
 		this.extendedCharSetEnabled = extendedCharSetEnabled;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getIntercharGapWidth() {
 		return intercharGapWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>intercharGapWidth</code>.</p>
+	 *
+	 * @param intercharGapWidth a {@link java.lang.Double} object.
+	 */
 	public void setIntercharGapWidth(Double intercharGapWidth) {
 		this.intercharGapWidth = intercharGapWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Double getWideFactor() {
 		return wideFactor;
 	}
 
+	/**
+	 * <p>Setter for the field <code>wideFactor</code>.</p>
+	 *
+	 * @param wideFactor a {@link java.lang.Double} object.
+	 */
 	public void setWideFactor(Double wideFactor) {
 		this.wideFactor = wideFactor;
 	}

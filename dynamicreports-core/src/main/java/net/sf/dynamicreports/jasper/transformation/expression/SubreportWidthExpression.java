@@ -28,17 +28,26 @@ import net.sf.dynamicreports.report.definition.DRICustomValues;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
 /**
+ * <p>SubreportWidthExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class SubreportWidthExpression extends AbstractDesignSimpleExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Integer pageWidth;
 
+	/**
+	 * <p>Constructor for SubreportWidthExpression.</p>
+	 *
+	 * @param pageWidth a {@link java.lang.Integer} object.
+	 */
 	public SubreportWidthExpression(Integer pageWidth) {
 		this.pageWidth = pageWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Object evaluate(ReportParameters reportParameters) {
 		DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
@@ -46,6 +55,7 @@ public class SubreportWidthExpression extends AbstractDesignSimpleExpression {
 		return pageWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<?> getValueClass() {
 		return Integer.class;

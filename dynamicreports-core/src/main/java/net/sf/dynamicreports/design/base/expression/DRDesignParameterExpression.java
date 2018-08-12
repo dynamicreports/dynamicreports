@@ -27,7 +27,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpr
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignParameterExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignParameterExpression implements DRIDesignParameterExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,20 +38,32 @@ public class DRDesignParameterExpression implements DRIDesignParameterExpression
 	private String name;
 	private DRIDesignExpression valueExpression;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}

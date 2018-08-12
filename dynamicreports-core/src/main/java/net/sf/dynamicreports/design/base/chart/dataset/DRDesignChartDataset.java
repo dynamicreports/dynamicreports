@@ -29,7 +29,10 @@ import net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignChartDatas
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignChartDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignChartDataset implements DRIDesignChartDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,29 +41,47 @@ public class DRDesignChartDataset implements DRIDesignChartDataset {
 	private ResetType resetType;
 	private DRDesignGroup resetGroup;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignDataset getSubDataset() {
 		return subDataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subDataset</code>.</p>
+	 *
+	 * @param subDataset a {@link net.sf.dynamicreports.design.base.DRDesignDataset} object.
+	 */
 	public void setSubDataset(DRDesignDataset subDataset) {
 		this.subDataset = subDataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ResetType getResetType() {
 		return resetType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>resetType</code>.</p>
+	 *
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public void setResetType(ResetType resetType) {
 		this.resetType = resetType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignGroup getResetGroup() {
 		return resetGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>resetGroup</code>.</p>
+	 *
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	public void setResetGroup(DRDesignGroup resetGroup) {
 		this.resetGroup = resetGroup;
 	}

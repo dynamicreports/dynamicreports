@@ -28,17 +28,45 @@ import java.util.Map;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRISubreport interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRISubreport extends DRIDimensionComponent {
 
+	/**
+	 * <p>getReportExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getReportExpression();
 
+	/**
+	 * <p>getParametersExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Map<String, Object>> getParametersExpression();
 
+	/**
+	 * <p>getConnectionExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<Connection> getConnectionExpression();
 
+	/**
+	 * <p>getDataSourceExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getDataSourceExpression();
 
+	/**
+	 * <p>getRunToBottom.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getRunToBottom();
 }

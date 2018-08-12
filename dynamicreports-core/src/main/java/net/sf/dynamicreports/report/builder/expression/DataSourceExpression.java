@@ -30,7 +30,10 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRRewindableDataSource;
 
 /**
+ * <p>DataSourceExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,10 +41,16 @@ public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource>
 	private JRDataSource dataSource;
 	private boolean moveFirst = false;
 
+	/**
+	 * <p>Constructor for DataSourceExpression.</p>
+	 *
+	 * @param dataSource a {@link net.sf.jasperreports.engine.JRDataSource} object.
+	 */
 	public DataSourceExpression(JRDataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public JRDataSource evaluate(ReportParameters reportParameters) {
 		if (moveFirst && dataSource != null && dataSource instanceof JRRewindableDataSource) {
@@ -54,6 +63,7 @@ public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource>
 		return dataSource;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Class<JRDataSource> getValueClass() {
 		return JRDataSource.class;

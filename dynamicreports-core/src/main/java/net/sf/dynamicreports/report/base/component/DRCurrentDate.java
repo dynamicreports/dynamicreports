@@ -26,18 +26,27 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.component.DRICurrentDate;
 
 /**
+ * <p>DRCurrentDate class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRCurrentDate extends DRFormatField implements DRICurrentDate {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String pattern;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPattern() {
 		return pattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pattern</code>.</p>
+	 *
+	 * @param pattern a {@link java.lang.String} object.
+	 */
 	public void setPattern(String pattern) {
 		this.pattern = pattern;
 	}

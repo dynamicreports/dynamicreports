@@ -36,11 +36,17 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>ExpressionColumnReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ExpressionColumnReport {
 	private FieldBuilder<Integer> quantityField;
 
+	/**
+	 * <p>Constructor for ExpressionColumnReport.</p>
+	 */
 	public ExpressionColumnReport() {
 		build();
 	}
@@ -71,6 +77,11 @@ public class ExpressionColumnReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ExpressionColumnReport();
 	}

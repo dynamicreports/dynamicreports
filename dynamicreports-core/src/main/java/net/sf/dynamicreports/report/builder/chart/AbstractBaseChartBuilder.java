@@ -34,32 +34,64 @@ import net.sf.dynamicreports.report.constant.Orientation;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>Abstract AbstractBaseChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractBaseChartBuilder<T extends AbstractBaseChartBuilder<T, U, V>, U extends AbstractBasePlot, V extends DRChartDataset>
 		extends AbstractChartBuilder<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for AbstractBaseChartBuilder.</p>
+	 *
+	 * @param chartType a {@link net.sf.dynamicreports.report.constant.ChartType} object.
+	 */
 	protected AbstractBaseChartBuilder(ChartType chartType) {
 		super(chartType);
 	}
 
+	/**
+	 * <p>setTheme.</p>
+	 *
+	 * @param theme a {@link java.lang.String} object.
+	 * @return a T object.
+	 */
 	public T setTheme(String theme) {
 		getObject().setTheme(theme);
 		return (T) this;
 	}
 
 	// plot
+	/**
+	 * <p>setOrientation.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+	 * @return a T object.
+	 */
 	public T setOrientation(Orientation orientation) {
 		getPlot().setOrientation(orientation);
 		return (T) this;
 	}
 
+	/**
+	 * <p>seriesColors.</p>
+	 *
+	 * @param seriesColors a {@link java.awt.Color} object.
+	 * @return a T object.
+	 */
 	public T seriesColors(Color... seriesColors) {
 		return addSeriesColor(seriesColors);
 	}
 
+	/**
+	 * <p>addSeriesColor.</p>
+	 *
+	 * @param seriesColors a {@link java.awt.Color} object.
+	 * @return a T object.
+	 */
 	public T addSeriesColor(Color... seriesColors) {
 		Validate.notNull(seriesColors, "seriesColors must not be null");
 		Validate.noNullElements(seriesColors, "seriesColors must not contains null seriesColor");
@@ -69,20 +101,43 @@ public abstract class AbstractBaseChartBuilder<T extends AbstractBaseChartBuilde
 		return (T) this;
 	}
 
+	/**
+	 * <p>seriesColorsByName.</p>
+	 *
+	 * @param seriesColorsByName a {@link java.util.Map} object.
+	 * @return a T object.
+	 */
 	public T seriesColorsByName(Map<String, Color> seriesColorsByName) {
 		getPlot().setSeriesColorsByName(seriesColorsByName);
 		return (T) this;
 	}
 
+	/**
+	 * <p>addSeriesColorByName.</p>
+	 *
+	 * @param seriesName a {@link java.lang.String} object.
+	 * @param color a {@link java.awt.Color} object.
+	 * @return a T object.
+	 */
 	public T addSeriesColorByName(String seriesName, Color color) {
 		getPlot().addSeriesColorByName(seriesName, color);
 		return (T) this;
 	}
 
+	/**
+	 * <p>getPlot.</p>
+	 *
+	 * @return a U object.
+	 */
 	protected U getPlot() {
 		return (U) getObject().getPlot();
 	}
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a V object.
+	 */
 	protected V getDataset() {
 		return (V) getObject().getDataset();
 	}

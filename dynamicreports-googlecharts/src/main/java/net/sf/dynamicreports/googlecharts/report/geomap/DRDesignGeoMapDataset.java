@@ -28,7 +28,10 @@ import net.sf.dynamicreports.design.constant.ResetType;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 
 /**
+ * <p>DRDesignGeoMapDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignGeoMapDataset implements DRIDesignGeoMapDataset {
 	private DRDesignDataset subDataset;
@@ -38,56 +41,92 @@ public class DRDesignGeoMapDataset implements DRIDesignGeoMapDataset {
 	private ResetType resetType;
 	private DRDesignGroup resetGroup;
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignDataset getSubDataset() {
 		return subDataset;
 	}
 
+	/**
+	 * <p>Setter for the field <code>subDataset</code>.</p>
+	 *
+	 * @param subDataset a {@link net.sf.dynamicreports.design.base.DRDesignDataset} object.
+	 */
 	public void setSubDataset(DRDesignDataset subDataset) {
 		this.subDataset = subDataset;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getLocationExpression() {
 		return locationExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>locationExpression</code>.</p>
+	 *
+	 * @param locationExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setLocationExpression(DRIDesignExpression locationExpression) {
 		this.locationExpression = locationExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getLabelExpression() {
 		return labelExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>labelExpression</code>.</p>
+	 *
+	 * @param labelExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setLabelExpression(DRIDesignExpression labelExpression) {
 		this.labelExpression = labelExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ResetType getResetType() {
 		return resetType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>resetType</code>.</p>
+	 *
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	public void setResetType(ResetType resetType) {
 		this.resetType = resetType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRDesignGroup getResetGroup() {
 		return resetGroup;
 	}
 
+	/**
+	 * <p>Setter for the field <code>resetGroup</code>.</p>
+	 *
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	public void setResetGroup(DRDesignGroup resetGroup) {
 		this.resetGroup = resetGroup;
 	}

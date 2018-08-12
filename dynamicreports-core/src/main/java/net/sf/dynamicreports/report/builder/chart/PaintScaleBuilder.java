@@ -29,11 +29,21 @@ import net.sf.dynamicreports.report.builder.AbstractBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>PaintScaleBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PaintScaleBuilder extends AbstractBuilder<PaintScaleBuilder, DRPaintScale> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for PaintScaleBuilder.</p>
+	 *
+	 * @param label a {@link java.lang.String} object.
+	 * @param value a double.
+	 * @param paint a {@link java.awt.Paint} object.
+	 */
 	protected PaintScaleBuilder(String label, double value, Paint paint) {
 		super(new DRPaintScale());
 		getObject().setLabel(label);
@@ -41,6 +51,11 @@ public class PaintScaleBuilder extends AbstractBuilder<PaintScaleBuilder, DRPain
 		getObject().setPaint(paint);
 	}
 
+	/**
+	 * <p>getPaintScale.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.chart.plot.DRPaintScale} object.
+	 */
 	public DRPaintScale getPaintScale() {
 		return build();
 	}

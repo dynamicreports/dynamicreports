@@ -23,9 +23,17 @@
 package net.sf.dynamicreports.report.definition;
 
 /**
+ * <p>DRIValue interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIValue<T> {
 
+	/**
+	 * <p>getName.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getName();
 }

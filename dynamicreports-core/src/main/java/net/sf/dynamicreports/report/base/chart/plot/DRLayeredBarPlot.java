@@ -31,28 +31,45 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRILayeredBarPlot;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRLayeredBarPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRLayeredBarPlot extends DRBarPlot implements DRILayeredBarPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private List<Double> seriesBarWidths;
 
+	/**
+	 * <p>Constructor for DRLayeredBarPlot.</p>
+	 */
 	public DRLayeredBarPlot() {
 		seriesBarWidths = new ArrayList<Double>();
 	}
 
+	/**
+	 * <p>addSeriesBarWidth.</p>
+	 *
+	 * @param barWidth a {@link java.lang.Double} object.
+	 */
 	public void addSeriesBarWidth(Double barWidth) {
 		Validate.notNull(barWidth, "barWidth must not be null");
 		this.seriesBarWidths.add(barWidth);
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesBarWidths</code>.</p>
+	 *
+	 * @param seriesBarWidths a {@link java.util.List} object.
+	 */
 	public void setSeriesBarWidths(List<Double> seriesBarWidths) {
 		Validate.notNull(seriesBarWidths, "seriesBarWidths must not be null");
 		Validate.noNullElements(seriesBarWidths, "seriesBarWidths must not contain null seriesBarWidth");
 		this.seriesBarWidths = seriesBarWidths;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<Double> getSeriesBarWidths() {
 		return seriesBarWidths;

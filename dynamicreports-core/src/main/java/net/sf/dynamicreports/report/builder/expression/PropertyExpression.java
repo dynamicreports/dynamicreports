@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>PropertyExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PropertyExpression implements DRIPropertyExpression {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -37,6 +40,12 @@ public class PropertyExpression implements DRIPropertyExpression {
 	private String name;
 	private DRIExpression<String> valueExpression;
 
+	/**
+	 * <p>Constructor for PropertyExpression.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public PropertyExpression(String name, DRIExpression<String> valueExpression) {
 		Validate.notNull(name, "name must not be null");
 		Validate.notNull(valueExpression, "valueExpression must not be null");
@@ -44,20 +53,32 @@ public class PropertyExpression implements DRIPropertyExpression {
 		this.valueExpression = valueExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * <p>Setter for the field <code>name</code>.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setValueExpression(DRIExpression<String> valueExpression) {
 		this.valueExpression = valueExpression;
 	}

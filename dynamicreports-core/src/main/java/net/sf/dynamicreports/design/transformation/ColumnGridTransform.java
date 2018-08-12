@@ -47,16 +47,27 @@ import net.sf.dynamicreports.report.definition.grid.DRIColumnTitleGroup;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ColumnGridTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ColumnGridTransform {
 	private DesignTransformAccessor accessor;
 	private DRIColumnGridList columnGridList;
 
+	/**
+	 * <p>Constructor for ColumnGridTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public ColumnGridTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 */
 	public void transform() {
 		DRIReport report = accessor.getReport();
 		DRIColumnGrid columnGrid = report.getColumnGrid();
@@ -83,10 +94,23 @@ public class ColumnGridTransform {
 		}
 	}
 
+	/**
+	 * <p>createColumnGrid.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.transformation.ColumnGrid} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected ColumnGrid createColumnGrid() throws DRException {
 		return createColumnGrid(columnGridList, null, false);
 	}
 
+	/**
+	 * <p>createColumnTitleGrid.</p>
+	 *
+	 * @param groupPaddingStyle a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+	 * @return a {@link net.sf.dynamicreports.design.transformation.ColumnGrid} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected ColumnGrid createColumnTitleGrid(DRDesignStyle groupPaddingStyle) throws DRException {
 		return createColumnGrid(columnGridList, groupPaddingStyle, true);
 	}

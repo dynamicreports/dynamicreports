@@ -26,18 +26,27 @@ import net.sf.dynamicreports.jasper.definition.export.JasperIXlsxExporter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperXlsxExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperXlsxExporter extends AbstractJasperExcelExporter implements JasperIXlsxExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String macroTemplate;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getMacroTemplate() {
 		return macroTemplate;
 	}
 
+	/**
+	 * <p>Setter for the field <code>macroTemplate</code>.</p>
+	 *
+	 * @param macroTemplate a {@link java.lang.String} object.
+	 */
 	public void setMacroTemplate(String macroTemplate) {
 		this.macroTemplate = macroTemplate;
 	}

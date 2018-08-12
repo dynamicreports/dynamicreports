@@ -27,21 +27,59 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.constant.PageOrientation;
 
 /**
+ * <p>DRIPage interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIPage extends Serializable {
 
+	/**
+	 * <p>getWidth.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getWidth();
 
+	/**
+	 * <p>getHeight.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getHeight();
 
+	/**
+	 * <p>getOrientation.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
+	 */
 	public PageOrientation getOrientation();
 
+	/**
+	 * <p>getMargin.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIMargin} object.
+	 */
 	public DRIMargin getMargin();
 
+	/**
+	 * <p>getColumnsPerPage.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getColumnsPerPage();
 
+	/**
+	 * <p>getColumnSpace.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getColumnSpace();
 
+	/**
+	 * <p>getIgnorePageWidth.</p>
+	 *
+	 * @return a {@link java.lang.Boolean} object.
+	 */
 	public Boolean getIgnorePageWidth();
 }

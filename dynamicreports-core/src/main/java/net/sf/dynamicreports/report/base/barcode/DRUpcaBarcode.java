@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.barcode.DRIUpcaBarcode;
 
 /**
+ * <p>DRUpcaBarcode class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRUpcaBarcode extends DRChecksumBarcode implements DRIUpcaBarcode {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

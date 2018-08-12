@@ -30,17 +30,26 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>TocPrintWhenExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TocPrintWhenExpression extends AbstractComplexExpression<Boolean> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private Object lastValue;
 
+	/**
+	 * <p>Constructor for TocPrintWhenExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public TocPrintWhenExpression(DRIExpression<?> expression) {
 		addExpression(expression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean evaluate(List<?> values, ReportParameters reportParameters) {
 		Object value = values.get(0);

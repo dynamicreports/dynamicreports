@@ -26,7 +26,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIGroupedStackedBarPlot;
 
 /**
+ * <p>DRGroupedStackedBarPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRGroupedStackedBarPlot extends DRBarPlot implements DRIGroupedStackedBarPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

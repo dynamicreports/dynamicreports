@@ -35,18 +35,28 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>CurrentDateExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CurrentDateExpression extends AbstractComplexExpression<String> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
 	private String datePattern;
 
+	/**
+	 * <p>Constructor for CurrentDateExpression.</p>
+	 *
+	 * @param currentDateExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param datePattern a {@link java.lang.String} object.
+	 */
 	public CurrentDateExpression(DRIExpression<String> currentDateExpression, String datePattern) {
 		this.datePattern = datePattern;
 		addExpression(currentDateExpression);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String evaluate(List<?> values, ReportParameters reportParameters) {
 		String pattern = (String) values.get(0);

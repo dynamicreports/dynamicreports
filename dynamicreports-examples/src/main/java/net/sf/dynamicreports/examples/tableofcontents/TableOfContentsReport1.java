@@ -35,10 +35,16 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>TableOfContentsReport1 class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class TableOfContentsReport1 {
 
+	/**
+	 * <p>Constructor for TableOfContentsReport1.</p>
+	 */
 	public TableOfContentsReport1() {
 		build();
 	}
@@ -90,6 +96,11 @@ public class TableOfContentsReport1 {
 		return c.getTime();
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new TableOfContentsReport1();
 	}

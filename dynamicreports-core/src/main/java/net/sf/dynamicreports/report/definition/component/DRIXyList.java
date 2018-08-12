@@ -25,10 +25,18 @@ package net.sf.dynamicreports.report.definition.component;
 import java.util.List;
 
 /**
+ * <p>DRIXyList interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIXyList extends DRIDimensionComponent {
 
+	/**
+	 * <p>getXyListCells.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIXyListCell> getXyListCells();
 
 }

@@ -34,146 +34,177 @@ import net.sf.dynamicreports.report.definition.DRITemplateDesign;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>Abstract AbstractTemplateDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractTemplateDesign<T> implements DRITemplateDesign<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/** {@inheritDoc} */
 	@Override
 	public String getReportName() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIField<?>> getFields() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public boolean isDefinedParameter(String name) {
 		return false;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getResourceBundleName() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getIgnorePagination() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public WhenNoDataType getWhenNoDataType() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public WhenResourceMissingType getWhenResourceMissingType() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getTitleOnANewPage() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getSummaryOnANewPage() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getSummaryWithPageHeaderAndFooter() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getFloatColumnFooter() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageWidth() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageHeight() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public PageOrientation getPageOrientation() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIMargin getPageMargin() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnsPerPage() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnSpace() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageColumnWidth() {
 		return null;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getTitleComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageHeaderComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getPageFooterComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnHeaderComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getColumnFooterComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getLastPageFooterComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getSummaryComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getNoDataComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public int getBackgroundComponentsCount() {
 		return 0;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public T getDesign() throws DRException {
 		return null;

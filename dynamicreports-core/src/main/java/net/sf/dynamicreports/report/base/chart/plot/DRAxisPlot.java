@@ -31,7 +31,10 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIAxisPlot;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>DRAxisPlot class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -45,6 +48,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
 	private Comparator<String> seriesOrderBy;
 	private OrderType seriesOrderType;
 
+	/** {@inheritDoc} */
 	@Override
 	protected void init() {
 		super.init();
@@ -52,76 +56,124 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
 		this.yAxisFormat = new DRAxisFormat();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRAxisFormat getXAxisFormat() {
 		return xAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>xAxisFormat</code>.</p>
+	 *
+	 * @param xAxisFormat a {@link net.sf.dynamicreports.report.base.chart.plot.DRAxisFormat} object.
+	 */
 	public void setXAxisFormat(DRAxisFormat xAxisFormat) {
 		Validate.notNull(xAxisFormat, "xAxisFormat must not be null");
 		this.xAxisFormat = xAxisFormat;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRAxisFormat getYAxisFormat() {
 		return yAxisFormat;
 	}
 
+	/**
+	 * <p>Setter for the field <code>yAxisFormat</code>.</p>
+	 *
+	 * @param yAxisFormat a {@link net.sf.dynamicreports.report.base.chart.plot.DRAxisFormat} object.
+	 */
 	public void setYAxisFormat(DRAxisFormat yAxisFormat) {
 		Validate.notNull(yAxisFormat, "yAxisFormat must not be null");
 		this.yAxisFormat = yAxisFormat;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowValues() {
 		return showValues;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showValues</code>.</p>
+	 *
+	 * @param showValues a {@link java.lang.Boolean} object.
+	 */
 	public void setShowValues(Boolean showValues) {
 		this.showValues = showValues;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getValuePattern() {
 		return valuePattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valuePattern</code>.</p>
+	 *
+	 * @param valuePattern a {@link java.lang.String} object.
+	 */
 	public void setValuePattern(String valuePattern) {
 		this.valuePattern = valuePattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getShowPercentages() {
 		return showPercentages;
 	}
 
+	/**
+	 * <p>Setter for the field <code>showPercentages</code>.</p>
+	 *
+	 * @param showPercentages a {@link java.lang.Boolean} object.
+	 */
 	public void setShowPercentages(Boolean showPercentages) {
 		this.showPercentages = showPercentages;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public String getPercentValuePattern() {
 		return percentValuePattern;
 	}
 
+	/**
+	 * <p>Setter for the field <code>percentValuePattern</code>.</p>
+	 *
+	 * @param percentValuePattern a {@link java.lang.String} object.
+	 */
 	public void setPercentValuePattern(String percentValuePattern) {
 		this.percentValuePattern = percentValuePattern;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Comparator<String> getSeriesOrderBy() {
 		return seriesOrderBy;
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesOrderBy</code>.</p>
+	 *
+	 * @param seriesOrderBy a {@link java.util.Comparator} object.
+	 */
 	public void setSeriesOrderBy(Comparator<String> seriesOrderBy) {
 		this.seriesOrderBy = seriesOrderBy;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public OrderType getSeriesOrderType() {
 		return seriesOrderType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>seriesOrderType</code>.</p>
+	 *
+	 * @param seriesOrderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+	 */
 	public void setSeriesOrderType(OrderType seriesOrderType) {
 		this.seriesOrderType = seriesOrderType;
 	}

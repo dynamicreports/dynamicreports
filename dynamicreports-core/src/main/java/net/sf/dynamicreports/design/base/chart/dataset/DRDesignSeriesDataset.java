@@ -31,7 +31,10 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>DRDesignSeriesDataset class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDesignSeriesDataset {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -39,23 +42,38 @@ public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDe
 	private DRIDesignExpression valueExpression;
 	private List<DRIDesignChartSerie> series;
 
+	/**
+	 * <p>Constructor for DRDesignSeriesDataset.</p>
+	 */
 	public DRDesignSeriesDataset() {
 		series = new ArrayList<DRIDesignChartSerie>();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIDesignExpression getValueExpression() {
 		return valueExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>valueExpression</code>.</p>
+	 *
+	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 */
 	public void setValueExpression(DRIDesignExpression valueExpression) {
 		this.valueExpression = valueExpression;
 	}
 
+	/**
+	 * <p>addSerie.</p>
+	 *
+	 * @param serie a {@link net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignChartSerie} object.
+	 */
 	public void addSerie(DRIDesignChartSerie serie) {
 		series.add(serie);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public List<DRIDesignChartSerie> getSeries() {
 		return series;

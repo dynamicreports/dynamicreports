@@ -28,13 +28,31 @@ import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRISeriesDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRISeriesDataset extends DRIChartDataset {
 
+	/**
+	 * <p>getValueExpression.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public DRIExpression<?> getValueExpression();
 
+	/**
+	 * <p>getSeries.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIChartSerie> getSeries();
 
+	/**
+	 * <p>getItemHyperLink.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+	 */
 	public DRIHyperLink getItemHyperLink();
 }

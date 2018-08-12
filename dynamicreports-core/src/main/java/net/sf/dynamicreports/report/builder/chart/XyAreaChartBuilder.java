@@ -27,11 +27,17 @@ import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>XyAreaChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class XyAreaChartBuilder extends AbstractXyChartBuilder<XyAreaChartBuilder, DRAxisPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for XyAreaChartBuilder.</p>
+	 */
 	protected XyAreaChartBuilder() {
 		super(ChartType.XYAREA);
 	}

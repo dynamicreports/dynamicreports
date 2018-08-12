@@ -27,13 +27,31 @@ import java.util.List;
 import net.sf.dynamicreports.report.constant.ListType;
 
 /**
+ * <p>DRIColumnGridList interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIColumnGridList extends DRIColumnGridComponent {
 
+	/**
+	 * <p>getListCells.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	public List<? extends DRIColumnGridListCell> getListCells();
 
+	/**
+	 * <p>getType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ListType} object.
+	 */
 	public ListType getType();
 
+	/**
+	 * <p>getGap.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getGap();
 }

@@ -30,7 +30,10 @@ import net.sf.dynamicreports.report.definition.barcode.DRIBarbecue;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
+ * <p>DRBarbecue class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DRBarbecue extends DRDimensionComponent implements DRIBarbecue {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -44,74 +47,122 @@ public class DRBarbecue extends DRDimensionComponent implements DRIBarbecue {
 	private Integer barHeight;
 	private BarcodeOrientation orientation;
 
+	/** {@inheritDoc} */
 	@Override
 	public BarbecueType getType() {
 		return type;
 	}
 
+	/**
+	 * <p>Setter for the field <code>type</code>.</p>
+	 *
+	 * @param type a {@link net.sf.dynamicreports.report.constant.BarbecueType} object.
+	 */
 	public void setType(BarbecueType type) {
 		this.type = type;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getCodeExpression() {
 		return codeExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>codeExpression</code>.</p>
+	 *
+	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setCodeExpression(DRIExpression<String> codeExpression) {
 		this.codeExpression = codeExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public DRIExpression<String> getApplicationIdentifierExpression() {
 		return applicationIdentifierExpression;
 	}
 
+	/**
+	 * <p>Setter for the field <code>applicationIdentifierExpression</code>.</p>
+	 *
+	 * @param applicationIdentifierExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 */
 	public void setApplicationIdentifierExpression(DRIExpression<String> applicationIdentifierExpression) {
 		this.applicationIdentifierExpression = applicationIdentifierExpression;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getDrawText() {
 		return drawText;
 	}
 
+	/**
+	 * <p>Setter for the field <code>drawText</code>.</p>
+	 *
+	 * @param drawText a {@link java.lang.Boolean} object.
+	 */
 	public void setDrawText(Boolean drawText) {
 		this.drawText = drawText;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Boolean getChecksumRequired() {
 		return checksumRequired;
 	}
 
+	/**
+	 * <p>Setter for the field <code>checksumRequired</code>.</p>
+	 *
+	 * @param checksumRequired a {@link java.lang.Boolean} object.
+	 */
 	public void setChecksumRequired(Boolean checksumRequired) {
 		this.checksumRequired = checksumRequired;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getBarWidth() {
 		return barWidth;
 	}
 
+	/**
+	 * <p>Setter for the field <code>barWidth</code>.</p>
+	 *
+	 * @param barWidth a {@link java.lang.Integer} object.
+	 */
 	public void setBarWidth(Integer barWidth) {
 		this.barWidth = barWidth;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getBarHeight() {
 		return barHeight;
 	}
 
+	/**
+	 * <p>Setter for the field <code>barHeight</code>.</p>
+	 *
+	 * @param barHeight a {@link java.lang.Integer} object.
+	 */
 	public void setBarHeight(Integer barHeight) {
 		this.barHeight = barHeight;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public BarcodeOrientation getOrientation() {
 		return orientation;
 	}
 
+	/**
+	 * <p>Setter for the field <code>orientation</code>.</p>
+	 *
+	 * @param orientation a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
+	 */
 	public void setOrientation(BarcodeOrientation orientation) {
 		this.orientation = orientation;
 	}

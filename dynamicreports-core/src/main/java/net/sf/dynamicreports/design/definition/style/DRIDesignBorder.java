@@ -25,15 +25,38 @@ package net.sf.dynamicreports.design.definition.style;
 import java.io.Serializable;
 
 /**
+ * <p>DRIDesignBorder interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBorder extends Serializable {
 
+	/**
+	 * <p>getTopPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getTopPen();
 
+	/**
+	 * <p>getLeftPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getLeftPen();
 
+	/**
+	 * <p>getBottomPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getBottomPen();
 
+	/**
+	 * <p>getRightPen.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+	 */
 	public DRIDesignPen getRightPen();
 }

@@ -39,12 +39,21 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>InvoiceDesign class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class InvoiceDesign {
 	private InvoiceData data = new InvoiceData();
 	private AggregationSubtotalBuilder<BigDecimal> totalSum;
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public JasperReportBuilder build() throws DRException {
 		JasperReportBuilder report = report();
 
@@ -151,6 +160,11 @@ public class InvoiceDesign {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		InvoiceDesign design = new InvoiceDesign();
 		try {

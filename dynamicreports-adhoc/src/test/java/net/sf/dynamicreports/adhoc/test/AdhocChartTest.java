@@ -28,7 +28,6 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChart;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie;
@@ -64,7 +63,7 @@ import org.junit.Test;
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
-public class AdhocChartTest {
+public class AdhocChartTest extends AdhocTests {
 	private AdhocConfiguration adhocConfiguration;
 
 	@Before
@@ -234,9 +233,9 @@ public class AdhocChartTest {
 	public void testSaveAndLoad() {
 		try {
 			ByteArrayOutputStream os = new ByteArrayOutputStream();
-			AdhocManager.saveConfiguration(adhocConfiguration, os);
+			adhocManager.saveConfiguration(adhocConfiguration, os);
 			ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
-			AdhocConfiguration adhocConfiguration = AdhocManager.loadConfiguration(is);
+			AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
 			Assert.assertTrue("equals", this.adhocConfiguration.equals(adhocConfiguration));
 			Assert.assertTrue("equals", this.adhocConfiguration.equals(adhocConfiguration.clone()));
 			testConfiguration(adhocConfiguration);
@@ -265,7 +264,7 @@ public class AdhocChartTest {
 	private void testConfiguration(AdhocConfiguration adhocConfiguration) {
 		ReportCustomizer customizer = new ReportCustomizer();
 		try {
-			AdhocManager.createReport(adhocConfiguration.getReport(), customizer);
+			adhocManager.createReport(adhocConfiguration.getReport(), customizer);
 		} catch (DRException e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());

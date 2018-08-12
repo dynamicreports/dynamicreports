@@ -28,18 +28,31 @@ import net.sf.dynamicreports.report.definition.DRIMargin;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>PageTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class PageTransform {
 	private TemplateTransform templateTransform;
 	private DRDesignPage page;
 	private int maxBandWidth;
 
+	/**
+	 * <p>Constructor for PageTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public PageTransform(DesignTransformAccessor accessor) {
 		this.templateTransform = accessor.getTemplateTransform();
 		this.page = new DRDesignPage();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		this.page.setHeight(templateTransform.getPageHeight());
 		this.page.setOrientation(templateTransform.getPageOrientation());
@@ -57,10 +70,20 @@ public class PageTransform {
 		return designMargin;
 	}
 
+	/**
+	 * <p>Getter for the field <code>page</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignPage} object.
+	 */
 	public DRDesignPage getPage() {
 		return page;
 	}
 
+	/**
+	 * <p>transformPageWidth.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transformPageWidth() throws DRException {
 		int pageWidth = templateTransform.getPageWidth();
 		maxBandWidth = pageWidth - getPage().getMargin().getLeft() - getPage().getMargin().getRight();
@@ -68,6 +91,11 @@ public class PageTransform {
 		this.page.setColumnWidth(templateTransform.getPageColumnWidth(this.page));
 	}
 
+	/**
+	 * <p>Getter for the field <code>maxBandWidth</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	public int getMaxBandWidth() {
 		return maxBandWidth;
 	}

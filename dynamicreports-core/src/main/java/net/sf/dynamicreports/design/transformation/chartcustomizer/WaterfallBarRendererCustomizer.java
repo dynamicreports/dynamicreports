@@ -37,7 +37,10 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.ui.GradientPaintTransformer;
 
 /**
+ * <p>WaterfallBarRendererCustomizer class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,6 +50,11 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
 	private Paint positiveBarPaint;
 	private Paint negativeBarPaint;
 
+	/**
+	 * <p>Constructor for WaterfallBarRendererCustomizer.</p>
+	 *
+	 * @param waterfallBarPlot a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIWaterfallBarPlot} object.
+	 */
 	public WaterfallBarRendererCustomizer(DRIWaterfallBarPlot waterfallBarPlot) {
 		this.firstBarPaint = waterfallBarPlot.getFirstBarPaint();
 		this.lastBarPaint = waterfallBarPlot.getLastBarPaint();
@@ -54,6 +62,7 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
 		this.negativeBarPaint = waterfallBarPlot.getNegativeBarPaint();
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void customize(JFreeChart chart, ReportParameters reportParameters) {
 		BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();

@@ -27,7 +27,10 @@ import java.io.Serializable;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>Abstract AbstractBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implements Serializable {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -35,11 +38,21 @@ public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implem
 	private U object;
 	protected boolean builded;
 
+	/**
+	 * <p>Constructor for AbstractBuilder.</p>
+	 *
+	 * @param object a U object.
+	 */
 	protected AbstractBuilder(U object) {
 		this.object = object;
 		this.builded = false;
 	}
 
+	/**
+	 * <p>build.</p>
+	 *
+	 * @return a U object.
+	 */
 	public U build() {
 		if (!builded) {
 			configure();
@@ -48,10 +61,18 @@ public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implem
 		return object;
 	}
 
+	/**
+	 * <p>Getter for the field <code>object</code>.</p>
+	 *
+	 * @return a U object.
+	 */
 	protected U getObject() {
 		return object;
 	}
 
+	/**
+	 * <p>configure.</p>
+	 */
 	protected void configure() {
 	}
 }

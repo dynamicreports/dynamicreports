@@ -26,19 +26,39 @@ import net.sf.dynamicreports.report.base.DRParameter;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>ParameterBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ParameterBuilder<T> extends AbstractBuilder<ParameterBuilder<T>, DRParameter<T>> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for ParameterBuilder.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param value a T object.
+	 */
 	protected ParameterBuilder(String name, T value) {
 		super(new DRParameter<T>(name, value));
 	}
 
+	/**
+	 * <p>Constructor for ParameterBuilder.</p>
+	 *
+	 * @param name a {@link java.lang.String} object.
+	 * @param valueClass a {@link java.lang.Class} object.
+	 */
 	protected ParameterBuilder(String name, Class<T> valueClass) {
 		super(new DRParameter<T>(name, valueClass));
 	}
 
+	/**
+	 * <p>getParameter.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.DRParameter} object.
+	 */
 	public DRParameter<T> getParameter() {
 		return build();
 	}

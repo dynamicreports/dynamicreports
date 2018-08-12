@@ -55,7 +55,10 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>GroupTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class GroupTransform {
 	private DesignTransformAccessor accessor;
@@ -65,6 +68,11 @@ public class GroupTransform {
 	private DRIGroup firstResetPageNumberGroup;
 	private int groupPadding;
 
+	/**
+	 * <p>Constructor for GroupTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public GroupTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		init();
@@ -78,6 +86,11 @@ public class GroupTransform {
 		groupPadding = 0;
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		for (DRIGroup group : groups) {
 			DRDesignGroup designGroup = group(group);
@@ -96,6 +109,11 @@ public class GroupTransform {
 		groupPadding += accessor.getTemplateTransform().getGroupPadding(group);
 	}
 
+	/**
+	 * <p>transformHeaderAndFooter.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transformHeaderAndFooter() throws DRException {
 		int groupPadding = 0;
 		int level = 0;
@@ -230,10 +248,21 @@ public class GroupTransform {
 		return designGroup;
 	}
 
+	/**
+	 * <p>getGroup.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 */
 	protected DRDesignGroup getGroup(DRIGroup group) {
 		return designGroups.get(group);
 	}
 
+	/**
+	 * <p>getFirstGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	protected DRIGroup getFirstGroup() {
 		if (!groups.isEmpty()) {
 			return groups.get(0);
@@ -241,6 +270,12 @@ public class GroupTransform {
 		return null;
 	}
 
+	/**
+	 * <p>getBeforeGroup.</p>
+	 *
+	 * @param group a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	protected DRIGroup getBeforeGroup(DRIGroup group) {
 		if (groups.size() > 1 && groups.indexOf(group) > 0) {
 			return groups.get(groups.indexOf(group) - 1);
@@ -248,6 +283,11 @@ public class GroupTransform {
 		return null;
 	}
 
+	/**
+	 * <p>getLastGroup.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	protected DRIGroup getLastGroup() {
 		if (!groups.isEmpty()) {
 			return groups.get(groups.size() - 1);
@@ -255,18 +295,38 @@ public class GroupTransform {
 		return null;
 	}
 
+	/**
+	 * <p>Getter for the field <code>firstResetPageNumberGroup</code>.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+	 */
 	protected DRIGroup getFirstResetPageNumberGroup() {
 		return firstResetPageNumberGroup;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groupPadding</code>.</p>
+	 *
+	 * @return a int.
+	 */
 	protected int getGroupPadding() {
 		return groupPadding;
 	}
 
+	/**
+	 * <p>Getter for the field <code>hideGroupColumns</code>.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	protected List<DRIValueColumn<?>> getHideGroupColumns() {
 		return hideGroupColumns;
 	}
 
+	/**
+	 * <p>Getter for the field <code>groups</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRDesignGroup> getGroups() {
 		return designGroups.values();
 	}

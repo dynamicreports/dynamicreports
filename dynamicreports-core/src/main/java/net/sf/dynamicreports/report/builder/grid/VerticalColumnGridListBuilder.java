@@ -30,15 +30,27 @@ import net.sf.dynamicreports.report.constant.ListType;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>VerticalColumnGridListBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class VerticalColumnGridListBuilder extends AbstractBuilder<VerticalColumnGridListBuilder, DRColumnGridList> implements ColumnGridComponentBuilder {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for VerticalColumnGridListBuilder.</p>
+	 */
 	protected VerticalColumnGridListBuilder() {
 		super(new DRColumnGridList(ListType.VERTICAL));
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+	 */
 	public VerticalColumnGridListBuilder add(ColumnGridComponentBuilder... components) {
 		Validate.notNull(components, "components must not be null");
 		Validate.noNullElements(components, "components must not contains null component");
@@ -48,6 +60,12 @@ public class VerticalColumnGridListBuilder extends AbstractBuilder<VerticalColum
 		return this;
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param cells a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+	 */
 	public VerticalColumnGridListBuilder add(VerticalColumnGridListCellBuilder... cells) {
 		Validate.notNull(cells, "cells must not be null");
 		Validate.noNullElements(cells, "cells must not contains null cell");
@@ -57,11 +75,22 @@ public class VerticalColumnGridListBuilder extends AbstractBuilder<VerticalColum
 		return this;
 	}
 
+	/**
+	 * <p>setGap.</p>
+	 *
+	 * @param gap a int.
+	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+	 */
 	public VerticalColumnGridListBuilder setGap(int gap) {
 		getObject().setGap(gap);
 		return this;
 	}
 
+	/**
+	 * <p>getColumnGridList.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.base.grid.DRColumnGridList} object.
+	 */
 	public DRColumnGridList getColumnGridList() {
 		return build();
 	}

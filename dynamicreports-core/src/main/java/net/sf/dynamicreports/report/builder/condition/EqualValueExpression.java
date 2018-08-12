@@ -26,15 +26,25 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIValue;
 
 /**
+ * <p>EqualValueExpression class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class EqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for EqualValueExpression.</p>
+	 *
+	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+	 * @param numbers a {@link java.lang.Number} object.
+	 */
 	public EqualValueExpression(DRIValue<T> value, Number... numbers) {
 		super(value, numbers);
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	protected Boolean compare(Number actualValue, Number[] numbers) {
 		for (Number number : numbers) {

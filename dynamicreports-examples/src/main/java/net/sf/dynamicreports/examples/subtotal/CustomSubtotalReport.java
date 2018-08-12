@@ -37,12 +37,18 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>CustomSubtotalReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class CustomSubtotalReport {
 	private AggregationSubtotalBuilder<Integer> quantitySum;
 	private AggregationSubtotalBuilder<BigDecimal> priceSum;
 
+	/**
+	 * <p>Constructor for CustomSubtotalReport.</p>
+	 */
 	public CustomSubtotalReport() {
 		build();
 	}
@@ -99,6 +105,11 @@ public class CustomSubtotalReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new CustomSubtotalReport();
 	}

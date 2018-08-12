@@ -36,14 +36,20 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 /**
+ * <p>GeoMapReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  *
  *         GeoMap component works only for html export.
  *         Visit the following link for more information about geo map parameters
  *         http://code.google.com/apis/chart/interactive/docs/gallery/geomap.html
+ * @version $Id: $Id
  */
 public class GeoMapReport {
 
+	/**
+	 * <p>Constructor for GeoMapReport.</p>
+	 */
 	public GeoMapReport() {
 		build();
 	}
@@ -103,6 +109,11 @@ public class GeoMapReport {
 		return dataSource;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new GeoMapReport();
 	}

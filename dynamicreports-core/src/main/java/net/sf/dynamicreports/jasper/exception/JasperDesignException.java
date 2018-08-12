@@ -25,15 +25,29 @@ package net.sf.dynamicreports.jasper.exception;
 import net.sf.dynamicreports.report.constant.Constants;
 
 /**
+ * <p>JasperDesignException class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperDesignException extends RuntimeException {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for JasperDesignException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 */
 	public JasperDesignException(String message) {
 		super(message);
 	}
 
+	/**
+	 * <p>Constructor for JasperDesignException.</p>
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 * @param cause a {@link java.lang.Throwable} object.
+	 */
 	public JasperDesignException(String message, Throwable cause) {
 		super(message, cause);
 	}

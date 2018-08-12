@@ -73,7 +73,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>Abstract AbstractExpressionTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractExpressionTransform {
 	protected DesignTransformAccessor accessor;
@@ -86,6 +89,11 @@ public abstract class AbstractExpressionTransform {
 	private Map<DRIExpression<?>, DRIDesignExpression> expressions;
 	private List<DRIDesignSort> sorts;
 
+	/**
+	 * <p>Constructor for AbstractExpressionTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public AbstractExpressionTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 		init();
@@ -102,6 +110,11 @@ public abstract class AbstractExpressionTransform {
 		sorts = new ArrayList<DRIDesignSort>();
 	}
 
+	/**
+	 * <p>transform.</p>
+	 *
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public void transform() throws DRException {
 		for (DRIField<?> field : transformFields()) {
 			transformExpression(field);
@@ -114,14 +127,38 @@ public abstract class AbstractExpressionTransform {
 		}
 	}
 
+	/**
+	 * <p>transformExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	public DRIDesignExpression transformExpression(DRIExpression<?> expression) throws DRException {
 		return transformExpression(expression, null, null);
 	}
 
+	/**
+	 * <p>transformExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param parameterName a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRIDesignExpression transformExpression(DRIExpression<?> expression, String parameterName) throws DRException {
 		return transformExpression(expression, null, parameterName);
 	}
 
+	/**
+	 * <p>transformExpression.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+	 * @param parameterName a {@link java.lang.String} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRIDesignExpression transformExpression(DRIExpression<?> expression, DRIValueFormatter<?, ?> valueFormatter, String parameterName)
 			throws DRException {
 		if (expression == null) {
@@ -190,10 +227,23 @@ public abstract class AbstractExpressionTransform {
 		return designVariable;
 	}
 
+	/**
+	 * <p>getVariableResetType.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.definition.DRIVariable} object.
+	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 */
 	protected ResetType getVariableResetType(DRIVariable<?> variable) {
 		return null;
 	}
 
+	/**
+	 * <p>getVariableResetGroup.</p>
+	 *
+	 * @param variable a {@link net.sf.dynamicreports.report.definition.DRIVariable} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignGroup getVariableResetGroup(DRIVariable<?> variable) throws DRException {
 		return null;
 	}
@@ -217,6 +267,13 @@ public abstract class AbstractExpressionTransform {
 		sorts.add(designSort);
 	}
 
+	/**
+	 * <p>transformPropertyExpression.</p>
+	 *
+	 * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignPropertyExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRIDesignPropertyExpression transformPropertyExpression(DRIPropertyExpression propertyExpression) throws DRException {
 		DRDesignPropertyExpression designPropertyExpression = new DRDesignPropertyExpression();
 		designPropertyExpression.setName(propertyExpression.getName());
@@ -224,6 +281,13 @@ public abstract class AbstractExpressionTransform {
 		return designPropertyExpression;
 	}
 
+	/**
+	 * <p>transformParameterExpression.</p>
+	 *
+	 * @param parameterExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIParameterExpression} object.
+	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpression} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRIDesignParameterExpression transformParameterExpression(DRIParameterExpression parameterExpression) throws DRException {
 		DRDesignParameterExpression designParameterExpression = new DRDesignParameterExpression();
 		designParameterExpression.setName(parameterExpression.getName());
@@ -309,39 +373,94 @@ public abstract class AbstractExpressionTransform {
 		complexExpressions.put(complexExpression.getName(), complexExpression);
 	}
 
+	/**
+	 * <p>Getter for the field <code>fields</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignField> getFields() {
 		return fields.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>variables</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignVariable> getVariables() {
 		return variables.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>systemExpressions</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignSystemExpression> getSystemExpressions() {
 		return systemExpressions.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>jasperExpressions</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignJasperExpression> getJasperExpressions() {
 		return jasperExpressions.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>simpleExpressions</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignSimpleExpression> getSimpleExpressions() {
 		return simpleExpressions.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>complexExpressions</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignComplexExpression> getComplexExpressions() {
 		return complexExpressions.values();
 	}
 
+	/**
+	 * <p>Getter for the field <code>sorts</code>.</p>
+	 *
+	 * @return a {@link java.util.Collection} object.
+	 */
 	public Collection<DRIDesignSort> getSorts() {
 		return sorts;
 	}
 
+	/**
+	 * <p>transformFields.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	protected abstract List<? extends DRIField<?>> transformFields();
 
+	/**
+	 * <p>transformVariables.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	protected abstract List<? extends DRIVariable<?>> transformVariables();
 
+	/**
+	 * <p>transformSorts.</p>
+	 *
+	 * @return a {@link java.util.List} object.
+	 */
 	protected abstract List<? extends DRISort> transformSorts();
 
+	/**
+	 * <p>getDataset.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	protected abstract DRIDesignDataset getDataset();
 }

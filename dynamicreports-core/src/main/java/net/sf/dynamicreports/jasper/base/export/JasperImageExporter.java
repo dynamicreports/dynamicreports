@@ -29,7 +29,10 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>JasperImageExporter class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperImageExporter extends AbstractJasperExporter implements JasperIImageExporter {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -38,30 +41,48 @@ public class JasperImageExporter extends AbstractJasperExporter implements Jaspe
 	private ImageType imageType;
 	private Float zoomRatio;
 
+	/** {@inheritDoc} */
 	@Override
 	public Integer getPageGap() {
 		return pageGap;
 	}
 
+	/**
+	 * <p>Setter for the field <code>pageGap</code>.</p>
+	 *
+	 * @param pageGap a {@link java.lang.Integer} object.
+	 */
 	public void setPageGap(Integer pageGap) {
 		this.pageGap = pageGap;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public ImageType getImageType() {
 		return imageType;
 	}
 
+	/**
+	 * <p>Setter for the field <code>imageType</code>.</p>
+	 *
+	 * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+	 */
 	public void setImageType(ImageType imageType) {
 		Validate.notNull(imageType, "imageType must not be null");
 		this.imageType = imageType;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public Float getZoomRatio() {
 		return zoomRatio;
 	}
 
+	/**
+	 * <p>Setter for the field <code>zoomRatio</code>.</p>
+	 *
+	 * @param zoomRatio a {@link java.lang.Float} object.
+	 */
 	public void setZoomRatio(Float zoomRatio) {
 		this.zoomRatio = zoomRatio;
 	}

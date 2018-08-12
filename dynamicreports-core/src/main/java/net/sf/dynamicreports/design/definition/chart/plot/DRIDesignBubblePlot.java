@@ -25,10 +25,18 @@ package net.sf.dynamicreports.design.definition.chart.plot;
 import net.sf.dynamicreports.report.constant.ScaleType;
 
 /**
+ * <p>DRIDesignBubblePlot interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRIDesignBubblePlot extends DRIDesignAxisPlot {
 
+	/**
+	 * <p>getScaleType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.ScaleType} object.
+	 */
 	public ScaleType getScaleType();
 
 }

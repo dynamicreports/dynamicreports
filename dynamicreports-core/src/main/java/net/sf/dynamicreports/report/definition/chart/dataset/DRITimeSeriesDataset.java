@@ -25,9 +25,17 @@ package net.sf.dynamicreports.report.definition.chart.dataset;
 import net.sf.dynamicreports.report.constant.TimePeriod;
 
 /**
+ * <p>DRITimeSeriesDataset interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface DRITimeSeriesDataset extends DRISeriesDataset {
 
+	/**
+	 * <p>getTimePeriodType.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
+	 */
 	public TimePeriod getTimePeriodType();
 }

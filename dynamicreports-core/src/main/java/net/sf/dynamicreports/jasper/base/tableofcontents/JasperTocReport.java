@@ -54,10 +54,22 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>JasperTocReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class JasperTocReport {
 
+	/**
+	 * <p>createTocReport.</p>
+	 *
+	 * @param jasperReportDesign a {@link net.sf.dynamicreports.jasper.base.JasperReportDesign} object.
+	 * @param jasperPrint a {@link net.sf.jasperreports.engine.JasperPrint} object.
+	 * @param parameters a {@link java.util.Map} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 * @throws net.sf.jasperreports.engine.JRException if any.
+	 */
 	public static void createTocReport(JasperReportDesign jasperReportDesign, JasperPrint jasperPrint, Map<String, Object> parameters)
 			throws DRException, JRException {
 		JasperCustomValues customValues = jasperReportDesign.getCustomValues();

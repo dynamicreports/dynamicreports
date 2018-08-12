@@ -122,16 +122,34 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ComponentTransform class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ComponentTransform {
 	private DesignTransformAccessor accessor;
 
+	/**
+	 * <p>Constructor for ComponentTransform.</p>
+	 *
+	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+	 */
 	public ComponentTransform(DesignTransformAccessor accessor) {
 		this.accessor = accessor;
 	}
 
 	// component
+	/**
+	 * <p>component.</p>
+	 *
+	 * @param component a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignComponent component(DRIComponent component, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup)
 			throws DRException {
 		if (component instanceof DRITextField<?>) {
@@ -252,6 +270,16 @@ public class ComponentTransform {
 	}
 
 	// list
+	/**
+	 * <p>list.</p>
+	 *
+	 * @param list a {@link net.sf.dynamicreports.report.definition.component.DRIList} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignList list(DRIList list, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		DRDesignList designList = new DRDesignList();
 		component(designList, list, list.getStyle(), false, DefaultStyleType.NONE);
@@ -280,6 +308,16 @@ public class ComponentTransform {
 		return designList;
 	}
 
+	/**
+	 * <p>xyList.</p>
+	 *
+	 * @param xyList a {@link net.sf.dynamicreports.report.definition.component.DRIXyList} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignList xyList(DRIXyList xyList, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		DRDesignList designList = new DRDesignList(null);
 		component(designList, xyList, xyList.getStyle(), false, DefaultStyleType.NONE);
@@ -297,6 +335,16 @@ public class ComponentTransform {
 		return designList;
 	}
 
+	/**
+	 * <p>listBackgroundComponent.</p>
+	 *
+	 * @param backgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignComponent listBackgroundComponent(DRIComponent backgroundComponent, DefaultStyleType defaultStyleType, ResetType resetType,
 			DRDesignGroup resetGroup) throws DRException {
 		if (backgroundComponent != null) {
@@ -332,6 +380,14 @@ public class ComponentTransform {
 	}
 
 	// text field
+	/**
+	 * <p>textField.</p>
+	 *
+	 * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignTextField} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignTextField textField(DRITextField<?> textField, DefaultStyleType defaultStyleType) throws DRException {
 		DRDesignTextField designTextField = new DRDesignTextField();
 		hyperlink(designTextField, textField, textField.getStyle(), true, defaultStyleType);
@@ -363,6 +419,13 @@ public class ComponentTransform {
 	}
 
 	// filler
+	/**
+	 * <p>filler.</p>
+	 *
+	 * @param filler a {@link net.sf.dynamicreports.report.definition.component.DRIFiller} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignFiller} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignFiller filler(DRIFiller filler) throws DRException {
 		DRDesignFiller designFiller = new DRDesignFiller();
 		component(designFiller, filler, filler.getStyle(), false, DefaultStyleType.NONE);
@@ -578,6 +641,13 @@ public class ComponentTransform {
 	}
 
 	// line
+	/**
+	 * <p>line.</p>
+	 *
+	 * @param line a {@link net.sf.dynamicreports.report.definition.component.DRILine} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignLine} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignLine line(DRILine line) throws DRException {
 		DRDesignLine designLine = new DRDesignLine();
 		component(designLine, line, line.getStyle(), false, DefaultStyleType.NONE);
@@ -589,6 +659,13 @@ public class ComponentTransform {
 	}
 
 	// ellipse
+	/**
+	 * <p>ellipse.</p>
+	 *
+	 * @param ellipse a {@link net.sf.dynamicreports.report.definition.component.DRIEllipse} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignEllipse} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignEllipse ellipse(DRIEllipse ellipse) throws DRException {
 		DRDesignEllipse designEllipse = new DRDesignEllipse();
 		component(designEllipse, ellipse, ellipse.getStyle(), false, DefaultStyleType.NONE);
@@ -599,6 +676,13 @@ public class ComponentTransform {
 	}
 
 	// rectangle
+	/**
+	 * <p>rectangle.</p>
+	 *
+	 * @param rectangle a {@link net.sf.dynamicreports.report.definition.component.DRIRectangle} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignRectangle} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignRectangle rectangle(DRIRectangle rectangle) throws DRException {
 		DRDesignRectangle designRectangle = new DRDesignRectangle();
 		component(designRectangle, rectangle, rectangle.getStyle(), false, DefaultStyleType.NONE);
@@ -610,6 +694,16 @@ public class ComponentTransform {
 	}
 
 	// boolean
+	/**
+	 * <p>booleanField.</p>
+	 *
+	 * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
+	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignComponent booleanField(DRIBooleanField booleanField, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup)
 			throws DRException {
 		BooleanComponentType componentType = accessor.getTemplateTransform().getBooleanComponentType(booleanField);
@@ -679,6 +773,13 @@ public class ComponentTransform {
 	}
 
 	// break
+	/**
+	 * <p>breakComponent.</p>
+	 *
+	 * @param breakComponent a {@link net.sf.dynamicreports.report.definition.component.DRIBreak} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignBreak} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignBreak breakComponent(DRIBreak breakComponent) throws DRException {
 		DRDesignBreak designBreak = new DRDesignBreak();
 		component(designBreak, breakComponent, null, false, DefaultStyleType.NONE);
@@ -689,6 +790,15 @@ public class ComponentTransform {
 	}
 
 	// generic element
+	/**
+	 * <p>genericElement.</p>
+	 *
+	 * @param genericElement a {@link net.sf.dynamicreports.report.definition.component.DRIGenericElement} object.
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignGenericElement} object.
+	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
+	 */
 	protected DRDesignGenericElement genericElement(DRIGenericElement genericElement, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
 		DRDesignGenericElement designGenericElement = new DRDesignGenericElement();
 		component(designGenericElement, genericElement, genericElement.getStyle(), false, DefaultStyleType.NONE);
@@ -745,6 +855,12 @@ public class ComponentTransform {
 		return designComponent;
 	}
 
+	/**
+	 * <p>detectEvaluationTime.</p>
+	 *
+	 * @param expression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	protected EvaluationTime detectEvaluationTime(DRIDesignExpression expression) {
 		if (expression == null) {
 			return null;
@@ -763,6 +879,12 @@ public class ComponentTransform {
 		throw new DRDesignReportException("Expression " + expression.getClass().getName() + " not supported");
 	}
 
+	/**
+	 * <p>evaluationTimeFromResetType.</p>
+	 *
+	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+	 */
 	public EvaluationTime evaluationTimeFromResetType(ResetType resetType) {
 		if (resetType == null) {
 			return null;

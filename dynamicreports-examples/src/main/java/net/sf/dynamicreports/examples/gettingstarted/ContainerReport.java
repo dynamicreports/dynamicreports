@@ -32,12 +32,18 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
+ * <p>ContainerReport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class ContainerReport {
 	private StyleBuilder boldCenteredStyle;
 	private StyleBuilder borderedStyle;
 
+	/**
+	 * <p>Constructor for ContainerReport.</p>
+	 */
 	public ContainerReport() {
 		build();
 	}
@@ -119,6 +125,11 @@ public class ContainerReport {
 		return horizontalList;
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new ContainerReport();
 	}

@@ -31,45 +31,142 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.jasperreports.engine.design.JasperDesign;
 
 /**
+ * <p>JasperTransformAccessor interface.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public interface JasperTransformAccessor {
 
+	/**
+	 * <p>getReport.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
+	 */
 	public DRIDesignReport getReport();
 
+	/**
+	 * <p>getDesign.</p>
+	 *
+	 * @return a {@link net.sf.jasperreports.engine.design.JasperDesign} object.
+	 */
 	public JasperDesign getDesign();
 
+	/**
+	 * <p>getCustomValues.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.base.JasperCustomValues} object.
+	 */
 	public JasperCustomValues getCustomValues();
 
+	/**
+	 * <p>getParameters.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 */
 	public Map<String, Object> getParameters();
 
+	/**
+	 * <p>getParameterValues.</p>
+	 *
+	 * @return a {@link java.util.Map} object.
+	 */
 	public Map<String, Object> getParameterValues();
 
+	/**
+	 * <p>getStartPageNumber.</p>
+	 *
+	 * @return a {@link java.lang.Integer} object.
+	 */
 	public Integer getStartPageNumber();
 
+	/**
+	 * <p>getMasterReportParameters.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+	 */
 	public ReportParameters getMasterReportParameters();
 
+	/**
+	 * <p>getReportTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.ReportTransform} object.
+	 */
 	public ReportTransform getReportTransform();
 
+	/**
+	 * <p>transformToMainDataset.</p>
+	 */
 	public void transformToMainDataset();
 
+	/**
+	 * <p>transformToDataset.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 */
 	public void transformToDataset(DRIDesignDataset dataset);
 
+	/**
+	 * <p>getExpressionTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.AbstractExpressionTransform} object.
+	 */
 	public AbstractExpressionTransform getExpressionTransform();
 
+	/**
+	 * <p>getExpressionTransform.</p>
+	 *
+	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.AbstractExpressionTransform} object.
+	 */
 	public AbstractExpressionTransform getExpressionTransform(DRIDesignDataset dataset);
 
+	/**
+	 * <p>getGroupTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.GroupTransform} object.
+	 */
 	public GroupTransform getGroupTransform();
 
+	/**
+	 * <p>getComponentTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.ComponentTransform} object.
+	 */
 	public ComponentTransform getComponentTransform();
 
+	/**
+	 * <p>getStyleTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.StyleTransform} object.
+	 */
 	public StyleTransform getStyleTransform();
 
+	/**
+	 * <p>getChartTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.ChartTransform} object.
+	 */
 	public ChartTransform getChartTransform();
 
+	/**
+	 * <p>getBarcodeTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.BarcodeTransform} object.
+	 */
 	public BarcodeTransform getBarcodeTransform();
 
+	/**
+	 * <p>getCrosstabTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.CrosstabTransform} object.
+	 */
 	public CrosstabTransform getCrosstabTransform();
 
+	/**
+	 * <p>getDatasetTransform.</p>
+	 *
+	 * @return a {@link net.sf.dynamicreports.jasper.transformation.DatasetTransform} object.
+	 */
 	public DatasetTransform getDatasetTransform();
 }

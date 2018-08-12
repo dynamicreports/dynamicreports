@@ -27,17 +27,24 @@ import net.sf.dynamicreports.jasper.definition.JasperReportHandler;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
+ * <p>Abstract AbstractPrintListHandler class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public abstract class AbstractPrintListHandler implements JasperReportHandler {
 	private boolean continuousPageNumbering;
 	private int pageNumber;
 
+	/**
+	 * <p>Constructor for AbstractPrintListHandler.</p>
+	 */
 	public AbstractPrintListHandler() {
 		continuousPageNumbering = false;
 		pageNumber = 1;
 	}
 
+	/** {@inheritDoc} */
 	@Override
 	public void concatenate(JasperReportBuilder... jasperReportBuilders) {
 		for (JasperReportBuilder jasperReportBuilder : jasperReportBuilders) {
@@ -56,8 +63,14 @@ public abstract class AbstractPrintListHandler implements JasperReportHandler {
 		}
 	}
 
+	/**
+	 * <p>add.</p>
+	 *
+	 * @param jasperPrint a {@link net.sf.jasperreports.engine.JasperPrint} object.
+	 */
 	protected abstract void add(JasperPrint jasperPrint);
 
+	/** {@inheritDoc} */
 	@Override
 	public void setContinuousPageNumbering(boolean continuousPageNumbering) {
 		this.continuousPageNumbering = continuousPageNumbering;

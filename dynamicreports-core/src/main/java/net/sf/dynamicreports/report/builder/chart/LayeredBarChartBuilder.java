@@ -29,34 +29,70 @@ import net.sf.dynamicreports.report.constant.Constants;
 import org.apache.commons.lang3.Validate;
 
 /**
+ * <p>LayeredBarChartBuilder class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class LayeredBarChartBuilder extends AbstractCategoryChartBuilder<LayeredBarChartBuilder, DRLayeredBarPlot> {
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
+	/**
+	 * <p>Constructor for LayeredBarChartBuilder.</p>
+	 */
 	protected LayeredBarChartBuilder() {
 		super(ChartType.LAYEREDBAR);
 	}
 
+	/**
+	 * <p>setShowLabels.</p>
+	 *
+	 * @param showLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	public LayeredBarChartBuilder setShowLabels(Boolean showLabels) {
 		getPlot().setShowLabels(showLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickLabels.</p>
+	 *
+	 * @param showTickLabels a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	public LayeredBarChartBuilder setShowTickLabels(Boolean showTickLabels) {
 		getPlot().setShowTickLabels(showTickLabels);
 		return this;
 	}
 
+	/**
+	 * <p>setShowTickMarks.</p>
+	 *
+	 * @param showTickMarks a {@link java.lang.Boolean} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	public LayeredBarChartBuilder setShowTickMarks(Boolean showTickMarks) {
 		getPlot().setShowTickMarks(showTickMarks);
 		return this;
 	}
 
+	/**
+	 * <p>seriesBarWidths.</p>
+	 *
+	 * @param seriesBarWidths a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	public LayeredBarChartBuilder seriesBarWidths(Double... seriesBarWidths) {
 		return addSeriesBarWidth(seriesBarWidths);
 	}
 
+	/**
+	 * <p>addSeriesBarWidth.</p>
+	 *
+	 * @param seriesBarWidths a {@link java.lang.Double} object.
+	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+	 */
 	public LayeredBarChartBuilder addSeriesBarWidth(Double... seriesBarWidths) {
 		Validate.notNull(seriesBarWidths, "seriesBarWidths must not be null");
 		Validate.noNullElements(seriesBarWidths, "seriesBarWidths must not contains null seriesBarWidth");

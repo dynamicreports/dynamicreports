@@ -34,10 +34,16 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
 /**
+ * <p>DetailDynamicSubreport class.</p>
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @version $Id: $Id
  */
 public class DetailDynamicSubreport {
 
+	/**
+	 * <p>Constructor for DetailDynamicSubreport.</p>
+	 */
 	public DetailDynamicSubreport() {
 		build();
 	}
@@ -107,6 +113,11 @@ public class DetailDynamicSubreport {
 		}
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 		new DetailDynamicSubreport();
 	}
