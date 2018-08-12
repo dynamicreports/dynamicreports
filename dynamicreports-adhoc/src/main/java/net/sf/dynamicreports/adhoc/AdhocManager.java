@@ -36,6 +36,7 @@ import javax.xml.transform.stream.StreamSource;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
@@ -196,7 +197,7 @@ public class AdhocManager {
 			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
 			return adhocConfiguration;
 		} catch (JAXBException e) {
-			throw new DRException(e);
+			throw new ConfigurationUnMarshallerException(is);
 		}
 	}
 
