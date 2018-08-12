@@ -87,14 +87,30 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * <p>XmlToAdhocTransform class.</p>
+ * Used by the library to convert {@code XmlAdhocConfiguration} which is an JAXB generated type, that contains data that
+ * is unmarshalled from an xml datasource at runtime, into {@code AdhocConfiguration}, a POJO which is internally used by
+ * the library to maintain configurations. This is applied in the AdhocManager like so:
+ * <pre>
+ *     {@code
+ *     		Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
+ * 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
+ * 			XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
+ * 			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
+ *     }
+ * </pre>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
 public class XmlToAdhocTransform {
+
+    private static final Logger log = getLogger(XmlToAdhocTransform.class);
 
 	/**
 	 * <p>transform.</p>
@@ -103,9 +119,11 @@ public class XmlToAdhocTransform {
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
 	 */
 	public AdhocConfiguration transform(XmlAdhocConfiguration xmlAdhocConfiguration) {
+        log.debug("Transforming XmlAdhocConfiguration : {} to adhocConfiguration", xmlAdhocConfiguration);
 		AdhocConfiguration adhocConfiguration = new AdhocConfiguration();
 		adhocConfiguration.setReport(report(xmlAdhocConfiguration.getReport()));
 		adhocConfiguration.setFilter(filter(xmlAdhocConfiguration.getFilter()));
+        log.debug("XmlAdhocConfiguration : {} has been transformed into AdhocConfiguration object: {}", xmlAdhocConfiguration, adhocConfiguration);
 		return adhocConfiguration;
 	}
 
@@ -155,6 +173,7 @@ public class XmlToAdhocTransform {
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
 	 */
 	protected AdhocReport report(XmlAdhocReport xmlAdhocReport) {
+        log.debug("Converting xmlAdhocReport :{} into AdhocReport", xmlAdhocReport);
 		if (xmlAdhocReport == null) {
 			return null;
 		}
@@ -201,6 +220,7 @@ public class XmlToAdhocTransform {
 		if (xmlAdhocReport.getProperty() != null && !xmlAdhocReport.getProperty().isEmpty()) {
 			properties(xmlAdhocReport.getProperty(), adhocReport.getProperties());
 		}
+        log.debug("XmlAdhocReport : {} has been converted to AdhocReport: {}", xmlAdhocReport, adhocReport);
 		return adhocReport;
 	}
 
@@ -770,6 +790,7 @@ public class XmlToAdhocTransform {
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocFilter} object.
 	 */
 	protected AdhocFilter filter(XmlAdhocFilter xmlAdhocFilter) {
+        log.debug("Converting XmlAdhocFilter : {} to AdhocFilter", xmlAdhocFilter);
 		if (xmlAdhocFilter == null) {
 			return null;
 		}
@@ -780,6 +801,7 @@ public class XmlToAdhocTransform {
 				adhocFilter.addRestriction(restriction(xmlAdhocRestriction));
 			}
 		}
+        log.debug("XmlAdhocFilter: {} converted to AdhocFilter: {}", xmlAdhocFilter, adhocFilter);
 		return adhocFilter;
 	}
 

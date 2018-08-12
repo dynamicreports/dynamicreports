@@ -194,8 +194,7 @@ public class AdhocManager {
 			Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
 			XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
-			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
-			return adhocConfiguration;
+			return xmlToAdhocTransform.transform(xmlAdhocConfiguration);
 		} catch (JAXBException e) {
 			throw new ConfigurationUnMarshallerException(is);
 		}
