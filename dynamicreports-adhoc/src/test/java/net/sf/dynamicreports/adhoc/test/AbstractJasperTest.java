@@ -53,7 +53,7 @@ import org.junit.Test;
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
-public abstract class AbstractJasperTest {
+public abstract class AbstractJasperTest extends AdhocTests{
 	private JasperReportBuilder reportBuilder;
 	private JasperReport jasperReport;
 	private JasperPrint jasperPrint;

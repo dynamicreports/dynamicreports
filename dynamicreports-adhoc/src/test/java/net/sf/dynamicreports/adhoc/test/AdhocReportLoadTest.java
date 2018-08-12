@@ -31,6 +31,8 @@ import java.util.Locale;
 import junit.framework.Assert;
 import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
+import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
@@ -44,6 +46,7 @@ import org.junit.Test;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class AdhocReportLoadTest extends AbstractJasperTest {
+
 	private AdhocConfiguration adhocConfiguration;
 	private String groupName;
 
@@ -51,7 +54,7 @@ public class AdhocReportLoadTest extends AbstractJasperTest {
 	public void init() {
 		try {
 			InputStream is = AdhocConfigurationLoadTest.class.getResourceAsStream("adhocconfiguration2.xml");
-			this.adhocConfiguration = AdhocManager.loadConfiguration(is);
+			this.adhocConfiguration = adhocManager.loadConfiguration(is);
 		} catch (DRException e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());
@@ -62,7 +65,7 @@ public class AdhocReportLoadTest extends AbstractJasperTest {
 
 	@Override
 	protected JasperReportBuilder createReport() throws DRException {
-		JasperReportBuilder report = AdhocManager.createReport(adhocConfiguration.getReport());
+		JasperReportBuilder report = adhocManager.createReport(adhocConfiguration.getReport());
 		report.setLocale(Locale.ENGLISH);
 
 		groupName = report.getReport().getGroups().get(0).getName();

@@ -30,6 +30,8 @@ import java.util.List;
 import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
+import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 import net.sf.dynamicreports.report.base.chart.DRChart;
 import net.sf.dynamicreports.report.base.chart.dataset.DRCategoryDataset;
 import net.sf.dynamicreports.report.base.chart.dataset.DRSeriesDataset;
@@ -50,13 +52,13 @@ import org.junit.Test;
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
-public class AdhocChartLoadTest {
+public class AdhocChartLoadTest extends AdhocTests {
 
 	@Test
 	public void test() {
 		try {
 			InputStream is = AdhocChartLoadTest.class.getResourceAsStream("adhocconfiguration3.xml");
-			AdhocConfiguration adhocConfiguration = AdhocManager.loadConfiguration(is);
+			AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
 			testConfiguration(adhocConfiguration);
 		} catch (DRException e) {
 			e.printStackTrace();
@@ -67,7 +69,7 @@ public class AdhocChartLoadTest {
 	private void testConfiguration(AdhocConfiguration adhocConfiguration) {
 		ReportCustomizer customizer = new ReportCustomizer();
 		try {
-			AdhocManager.createReport(adhocConfiguration.getReport(), customizer);
+			adhocManager.createReport(adhocConfiguration.getReport(), customizer);
 		} catch (DRException e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());

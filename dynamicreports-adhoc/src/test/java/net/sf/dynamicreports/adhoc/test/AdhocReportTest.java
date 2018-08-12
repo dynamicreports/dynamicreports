@@ -28,7 +28,6 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import junit.framework.Assert;
-import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocGroup;
@@ -92,7 +91,7 @@ public class AdhocReportTest extends AbstractJasperTest {
 
 	@Override
 	protected JasperReportBuilder createReport() throws DRException {
-		JasperReportBuilder report = AdhocManager.createReport(adhocConfiguration.getReport());
+		JasperReportBuilder report = adhocManager.createReport(adhocConfiguration.getReport());
 		report.setLocale(Locale.ENGLISH);
 
 		groupName = report.getReport().getGroups().get(0).getName();

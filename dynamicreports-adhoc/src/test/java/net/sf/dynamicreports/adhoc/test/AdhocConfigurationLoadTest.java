@@ -27,7 +27,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChart;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocGroup;
@@ -68,13 +67,13 @@ import org.junit.Test;
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
-public class AdhocConfigurationLoadTest {
+public class AdhocConfigurationLoadTest extends AdhocTests {
 
 	@Test
 	public void test() {
 		try {
 			InputStream is = AdhocConfigurationLoadTest.class.getResourceAsStream("adhocconfiguration1.xml");
-			AdhocConfiguration adhocConfiguration = AdhocManager.loadConfiguration(is);
+			AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
 			testConfiguration(adhocConfiguration);
 		} catch (DRException e) {
 			e.printStackTrace();
@@ -86,7 +85,7 @@ public class AdhocConfigurationLoadTest {
 		DRReport report = null;
 		ReportCustomizer customizer = new ReportCustomizer();
 		try {
-			JasperReportBuilder reportBuilder = AdhocManager.createReport(adhocConfiguration.getReport(), customizer);
+			JasperReportBuilder reportBuilder = adhocManager.createReport(adhocConfiguration.getReport(), customizer);
 			report = reportBuilder.getReport();
 		} catch (DRException e) {
 			e.printStackTrace();
