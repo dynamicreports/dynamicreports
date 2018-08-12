@@ -98,10 +98,10 @@ import static org.slf4j.LoggerFactory.getLogger;
  * the library to maintain configurations. This is applied in the AdhocManager like so:
  * <pre>
  *     {@code
- *     		Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
- * 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
- * 			XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
- * 			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
+ *          Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
+ *          JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
+ *          XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
+ *          AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
  *     }
  * </pre>
  *

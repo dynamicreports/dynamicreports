@@ -127,6 +127,58 @@ import org.apache.commons.lang3.Validate;
 
 /**
  * <p>DefaultAdhocReportCustomizer class.</p>
+ * Provides basic implementation for the {@link AdhocReportCustomizer#customize(ReportBuilder, AdhocReport)} method.
+ * The public methods can be extended to provide further customization at runtime as shown;
+ * <pre>
+ *     {@code
+ *      class ReportCustomizer extends DefaultAdhocReportCustomizer {
+ *
+ *         //@Override
+ *         public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException {
+ *            super.customize(report, adhocReport);
+ *            // default report values
+ * 	          report.setTemplate(Templates.reportTemplate);
+ *            report.title(Templates.createTitleComponent("AdhocCustomizer"));
+ *            // a fixed page footer that user cannot change, this customization is not stored in the xml file
+ *            report.pageFooter(Templates.footerComponent);
+ *         }
+ *
+ *         //@Override
+ *         protected DRIDataType<?, ?> getFieldType(String name) {
+ *           if (name.equals("item")) {
+ *             return type.stringType();
+ *            }
+ *           if (name.equals("orderdate")) {
+ *             return type.dateType();
+ *            }
+ *            if (name.equals("quantity")) {
+ *              return type.integerType();
+ *            }
+ *            if (name.equals("unitprice")) {
+ *              return type.bigDecimalType();
+ *            }
+ *           return super.getFieldType(name);
+ *          }
+ *
+ *         //@Override
+ *         protected String getFieldLabel(String name) {
+ *           if (name.equals("item")) {
+ *              return "Item";
+ *            }
+ *            if (name.equals("orderdate")) {
+ *              return "Order date";
+ *            }
+ *            if (name.equals("quantity")) {
+ *               return "Quantity";
+ *            }
+ *            if (name.equals("unitprice")) {
+ *               return "Unit price";
+ *            }
+ *            return name;
+ *          }
+ *       }
+ *    }
+ * </pre>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
