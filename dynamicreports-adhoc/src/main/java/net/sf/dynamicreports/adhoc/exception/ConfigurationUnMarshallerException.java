@@ -15,7 +15,7 @@ public class ConfigurationUnMarshallerException extends DRException {
      * reading configurations when the exceptional event occurs. For instance it is used in the
      * adhocManager to capture exceptions when loading data from an xml file like so:
      * <pre>
-     *     {@code 
+     *     {@code
      *     try {
      * 			Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
      * 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
