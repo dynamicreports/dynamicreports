@@ -70,12 +70,27 @@ import org.slf4j.LoggerFactory;
 public class AdhocManager {
 
     private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
-    // fixme this will be a maintenance nightmare, but fixing it also change the API, so there's that
-    private final static AdhocToXmlTransform adhocToXmlTransform = new AdhocToXmlTransform();
-    private final static XmlToAdhocTransform xmlToAdhocTransform = new XmlToAdhocTransform();
+
+    private final AdhocToXmlTransform adhocToXmlTransform;
+    private final XmlToAdhocTransform xmlToAdhocTransform;
+	private static volatile AdhocManager INSTANCE = null;
+
+	public static AdhocManager getInstance(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+	    if(INSTANCE == null) {
+	        synchronized (AdhocManager.class) {
+	            INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);
+            }
+        }
+        return INSTANCE;
+    }
+
+    private AdhocManager(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+	    this.adhocToXmlTransform = adhocToXmlTransform;
+	    this.xmlToAdhocTransform = xmlToAdhocTransform;
+    }
 
 
-	// todo add singleton here
+    // todo add singleton here
 	// todo use non-static methods and run tests
     // todo stop configuring transformers in class and initialize in constructor
 
@@ -105,7 +120,7 @@ public class AdhocManager {
 	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
-	public static JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
+	public JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
 		log.debug("Creating JasperReportBuilder from adhocReport: {} using defaultAdhocReportCustomizer", adhocReport.getProperties().getProperties());
 		return createReport(adhocReport, new DefaultAdhocReportCustomizer());
 	}
@@ -131,7 +146,7 @@ public class AdhocManager {
 	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
-	public static JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
+	public JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
 		log.debug("Creating JasperReportBuilder from adhocReport: {} and adhocReportCustomizer : {}", adhocReport.getProperties().getProperties(), adhocReportCustomizer);
 		JasperReportBuilder report = DynamicReports.report();
 		adhocReportCustomizer.customize(report, adhocReport);
@@ -161,7 +176,7 @@ public class AdhocManager {
 	 * @param os a {@link java.io.OutputStream} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
-	public static void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
+	public void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
         log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os.toString());
 		XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
         JAXBElement<XmlAdhocConfiguration> element = null;
@@ -189,7 +204,7 @@ public class AdhocManager {
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
 	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
 	 */
-	public static AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
+	public AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
 		try {
 			Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
