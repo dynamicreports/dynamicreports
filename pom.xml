@@ -66,6 +66,7 @@
         <groovyVersion>1.7.5</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
         <jasperreportsVersion>6.5.1</jasperreportsVersion>
+        <jaxbVersion>2.3.0</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
         <junitVersion>4.0</junitVersion>
@@ -435,6 +436,23 @@
                     </plugin>
                 </plugins>
             </build>
+            <dependencies>
+                <dependency>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                    <version>${jaxbVersion}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>${jaxbVersion}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                    <version>${jaxbVersion}</version>
+                </dependency>
+            </dependencies>
         </profile>
 
         <profile>
