@@ -82,8 +82,12 @@
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
-        <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
+
+        <!--Profile Plugins-->
+        <license-maven-plugin-version>3.0</license-maven-plugin-version>
+        <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
+
     </properties>
 
     <dependencyManagement>
@@ -299,7 +303,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-compiler-plugin</artifactId>
-                                        <versionRange>[2.0,)</versionRange>
+                                        <version>${maven-compiler-plugin-version}</version>
                                         <goals>
                                             <goal>compile</goal>
                                             <goal>testCompile</goal>
@@ -368,9 +372,9 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.mycila.maven-license-plugin</groupId>
-                        <artifactId>maven-license-plugin</artifactId>
-                        <version>1.7.0</version>
+                        <groupId>com.mycila</groupId>
+                        <artifactId>license-maven-plugin</artifactId>
+                        <version>${license-maven-plugin-version}</version>
                         <configuration>
                             <header>src/etc/license_header.txt</header>
                             <includes>
@@ -397,7 +401,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.1.2</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -421,8 +425,8 @@
                         </executions>
                         <configuration>
                             <nosince>false</nosince>
-                            <defaultVersion>5.0.1</defaultVersion>
-                            <defaultSince>5.0.1</defaultSince>
+                            <defaultVersion>${project.version}</defaultVersion>
+                            <defaultSince>${project.version}</defaultSince>
                             <javadocExecutable>${env.JAVA_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
@@ -437,7 +441,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.1.2</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -461,8 +465,8 @@
                         </executions>
                         <configuration>
                             <nosince>false</nosince>
-                            <defaultVersion>5.0.1</defaultVersion>
-                            <defaultSince>5.0.1</defaultSince>
+                            <defaultVersion>${project.version}</defaultVersion>
+                            <defaultSince>${project.version}</defaultSince>
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
