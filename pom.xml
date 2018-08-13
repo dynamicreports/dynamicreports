@@ -398,6 +398,7 @@
 
         <profile>
             <id>source-10</id>
+            <!--Please remember to run this after running compile in core module-->
             <build>
                 <plugins>
                     <plugin>
