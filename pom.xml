@@ -81,6 +81,7 @@
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+        <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
         <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
     </properties>
@@ -317,7 +318,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-enforcer-plugin</artifactId>
-                                        <versionRange>[1.0,)</versionRange>
+                                        <version>${maven-enforcer-plugin-version}</version>
                                         <goals>
                                             <goal>enforce</goal>
                                         </goals>
@@ -330,6 +331,7 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -422,6 +424,46 @@
                             <defaultVersion>5.0.1</defaultVersion>
                             <defaultSince>5.0.1</defaultSince>
                             <javadocExecutable>${env.JAVA_HOME}\bin\javadoc.exe</javadocExecutable>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>source-10</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.1.2</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin-version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <nosince>false</nosince>
+                            <defaultVersion>5.0.1</defaultVersion>
+                            <defaultSince>5.0.1</defaultSince>
+                            <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
                 </plugins>
