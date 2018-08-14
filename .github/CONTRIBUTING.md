@@ -37,7 +37,7 @@ this document in a pull request.
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Dynamic Reports Code of Conduct](https://github.com/dynamicreports/dynamicreports/blob/master/.github/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
-Please report unacceptable behavior to [atom@github.com](mailto:mailnjeru@gmail.com).
+Please report unacceptable behavior to [mailnjeru@gmail.com](mailto:mailnjeru@gmail.com).
 
 ## What should I know before I get started?
 
@@ -55,8 +55,17 @@ necessary since it is abstracted by the Jasper Reports library, it might still g
 This is a collection of libraries well known to do what this library is already doing except that this has to be done at compile time, or with
 xml files.
 
-### xml
-Because java ...
+### JAXB api
+Dynamic reports behaves dynamically to the end user, but underneath all that, it uses the jasper reports engine which is static.
+Inorder to adhere to its dynamic nature configurations the dynamic reports uses the JAXB api for marshalling and unmarshalling configurations
+at runtime. This introduces a number of complexities which are mainly because the build could suddenly not contain the classes on 
+which the api, depends. Therefore the following conventions are encouraged:
+- Before running tests in the modules other than the core module please run compilation("mvn clean compile") on the core module first
+- If you are generating documentation using the "source-10" profile, also run the compilation on the core module first
+
+### The Dynamic Reports depends on ms-fonts
+This means that if you are running local builds on a linux, you will nee to install the ttf-mscorefonts-installer. If you are
+using ubuntu, just run "sudo apt-get install ttf-mscorefonts-installer". Sorry linux guys
 
 ### Dynamic Reports Design Decisions
 
