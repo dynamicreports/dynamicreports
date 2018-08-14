@@ -21,6 +21,7 @@
  */
 package net.sf.dynamicreports.adhoc;
 
+import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
@@ -29,6 +30,10 @@ import net.sf.dynamicreports.report.builder.ReportBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -42,25 +47,24 @@ public class AdhocManagerTest {
         adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void createReport() throws Exception {
 
-        //assertSame(new JasperReportBuilder(), adhocManager.createReport(new AdhocReport()));
+        assertSame(new JasperReportBuilder(), adhocManager.createReport(new AdhocReport()));
+    }
+
+
+    @Test
+    public void saveConfiguration() throws Exception  {
+
+        adhocManager.saveConfiguration(new AdhocConfiguration(), new FileOutputStream("adhocconfiguration4.xml"));
     }
 
     @Test
-    public void createReport1() {
-    }
+    public void loadConfiguration() throws Exception {
 
-    @Test
-    public void saveConfiguration() {
-    }
+        InputStream is = AdhocManagerTest.class.getResourceAsStream("adhocconfiguration5.xml");
 
-    @Test
-    public void loadConfiguration() {
+        adhocManager.loadConfiguration(is);
     }
 }
