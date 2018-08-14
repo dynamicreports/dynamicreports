@@ -1,6 +1,6 @@
 ---
 name: Standard issue template
-about: This issue template should cover most circumstance. It is created to serve
+about: This issue template should cover most circumstances. It is created to serve
   the developer, its not the developer to serve the template. Therefore use accordingly.
 
 ---
