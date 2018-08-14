@@ -49,7 +49,7 @@ import java.io.OutputStream;
  * {@link OutputStream} into which we are marshalling the element.
  */
 public class ConfigurationMarshallerException extends DRException {
-
+// todo add tests
     /**
      * Creates a DRException when the client encounters an exceptional event while marshalling an
      * element into an assigned outputStream

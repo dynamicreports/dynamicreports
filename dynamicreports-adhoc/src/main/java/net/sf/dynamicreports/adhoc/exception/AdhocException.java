@@ -31,6 +31,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class AdhocException extends RuntimeException {
+	//todo add tests
 	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;;
 
 	/**

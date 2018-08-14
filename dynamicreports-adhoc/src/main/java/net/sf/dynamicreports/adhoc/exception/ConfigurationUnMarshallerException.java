@@ -29,7 +29,7 @@ import java.io.InputStream;
  * Exception thrown when reading configurations from a given InputStream
  */
 public class ConfigurationUnMarshallerException extends DRException {
-
+// todo add tests
 
     /**
      * Constructs a ConfigurationUnMarshallerException using the inputStream from which we are
