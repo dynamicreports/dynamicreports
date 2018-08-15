@@ -164,13 +164,12 @@ public class AdhocManager {
         JAXBElement<XmlAdhocConfiguration> element = null;
         try {
             XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
-            assert adhocConfiguration.getReport() != null;
             Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
             marshaller.marshal(element, new StreamResult(os));
         } catch (Exception e) {
-            throw new ConfigurationMarshallerException(element, os);
+            throw new ConfigurationMarshallerException(element, os, e);
         }
     }
 

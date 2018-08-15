@@ -39,6 +39,8 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocOrientation;
 import net.sf.dynamicreports.adhoc.configuration.AdhocProperties;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.configuration.AdhocTimePeriod;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.report.base.chart.DRChart;
 import net.sf.dynamicreports.report.base.chart.dataset.DRCategoryDataset;
@@ -230,14 +232,14 @@ public class AdhocChartTest extends AdhocTests {
 	}
 
 	@Test
-	public void testSaveAndLoad() {
+	public void testSaveAndLoad() throws Exception {
 		try {
 			ByteArrayOutputStream os = new ByteArrayOutputStream();
 			adhocManager.saveConfiguration(adhocConfiguration, os);
 			ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 			AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
-			Assert.assertTrue("equals", this.adhocConfiguration.equals(adhocConfiguration));
-			Assert.assertTrue("equals", this.adhocConfiguration.equals(adhocConfiguration.clone()));
+            Assert.assertEquals(this.adhocConfiguration, adhocConfiguration);
+            Assert.assertEquals(this.adhocConfiguration, adhocConfiguration.clone());
 			testConfiguration(adhocConfiguration);
 		} catch (DRException e) {
 			e.printStackTrace();

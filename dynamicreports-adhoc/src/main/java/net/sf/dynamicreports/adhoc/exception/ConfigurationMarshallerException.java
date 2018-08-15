@@ -56,10 +56,11 @@ public class ConfigurationMarshallerException extends DRException {
      *
      * @param element The element being marshalled into XML when exception is encountered
      * @param outputStream The output stream into which we are marshalling the element
+     * @param e Exception thrown by the catch block
      */
-    public ConfigurationMarshallerException(final JAXBElement<XmlAdhocConfiguration> element, final OutputStream outputStream) {
+    public ConfigurationMarshallerException(final JAXBElement<XmlAdhocConfiguration> element, final OutputStream outputStream, Exception e) {
 
-        super(String.format("Exception encountered while marshalling the JAXBElement : %s into the outputStream : %s", element, new StreamResult(outputStream)));
+        super(String.format("Exception encountered while marshalling the JAXBElement : %s into the outputStream : %s", element, new StreamResult(outputStream)), e);
     }
 
 }

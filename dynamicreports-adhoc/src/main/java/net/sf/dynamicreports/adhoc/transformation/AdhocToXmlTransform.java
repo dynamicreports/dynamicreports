@@ -126,6 +126,7 @@ public class AdhocToXmlTransform {
 	 */
 	public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
         Validate.notNull(adhocConfiguration.getReport());
+        Validate.notNull(adhocConfiguration.getFilter());
         log.debug("Transforming object : {} to XmlAdhocConfiguration", adhocConfiguration);
 		XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();
 		xmlAdhocConfiguration.setReport(report(adhocConfiguration.getReport()));
