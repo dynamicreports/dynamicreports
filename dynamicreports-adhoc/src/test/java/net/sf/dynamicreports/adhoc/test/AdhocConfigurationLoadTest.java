@@ -34,6 +34,7 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocRestriction;
 import net.sf.dynamicreports.adhoc.configuration.AdhocTextField;
 import net.sf.dynamicreports.adhoc.configuration.AdhocValueOperator;
 import net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.DRGroup;
@@ -79,6 +80,13 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());
 		}
+	}
+
+	@Test(expected = ConfigurationUnMarshallerException.class)
+	public void testUnMarshallerExxception () throws Exception {
+			InputStream is = AdhocConfigurationLoadTest.class.getResourceAsStream("adhocconfiguration8.xml");
+			AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
+			testConfiguration(adhocConfiguration);
 	}
 
 	private void testConfiguration(AdhocConfiguration adhocConfiguration) {
