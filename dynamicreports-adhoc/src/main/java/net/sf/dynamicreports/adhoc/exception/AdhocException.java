@@ -43,23 +43,4 @@ public class AdhocException extends RuntimeException {
 		super(message);
 	}
 
-	/**
-	 * <p>Constructor for AdhocException.</p>
-	 *
-	 * @param cause a {@link java.lang.Throwable} object.
-	 */
-	public AdhocException(Throwable cause) {
-		super(cause);
-	}
-
-	/**
-	 * <p>Constructor for AdhocException.</p>
-	 *
-	 * @param message a {@link java.lang.String} object.
-	 * @param cause a {@link java.lang.Throwable} object.
-	 */
-	public AdhocException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
 }
