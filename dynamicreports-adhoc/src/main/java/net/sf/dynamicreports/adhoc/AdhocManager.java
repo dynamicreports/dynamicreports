@@ -160,10 +160,10 @@ public class AdhocManager {
         if (adhocConfiguration.getReport() != null) {
             log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os.toString());
         }
-        XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
+
         JAXBElement<XmlAdhocConfiguration> element = null;
         try {
-            Validate.notNull(adhocConfiguration.getReport());
+            XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
             assert adhocConfiguration.getReport() != null;
             Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);

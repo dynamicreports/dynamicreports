@@ -85,6 +85,7 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocTextField;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueOperator;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment;
+import org.apache.commons.lang.Validate;
 import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -124,6 +125,7 @@ public class AdhocToXmlTransform {
 	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration} object.
 	 */
 	public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
+        Validate.notNull(adhocConfiguration.getReport());
         log.debug("Transforming object : {} to XmlAdhocConfiguration", adhocConfiguration);
 		XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();
 		xmlAdhocConfiguration.setReport(report(adhocConfiguration.getReport()));
