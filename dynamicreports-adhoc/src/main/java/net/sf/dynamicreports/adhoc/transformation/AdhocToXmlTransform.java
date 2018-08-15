@@ -125,7 +125,6 @@ public class AdhocToXmlTransform {
 	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration} object.
 	 */
 	public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
-        Validate.notNull(adhocConfiguration.getReport());
         log.debug("Transforming object : {} to XmlAdhocConfiguration", adhocConfiguration);
 		XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();
 		xmlAdhocConfiguration.setReport(report(adhocConfiguration.getReport()));

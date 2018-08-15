@@ -163,12 +163,13 @@ public class AdhocManager {
 
         JAXBElement<XmlAdhocConfiguration> element = null;
         try {
+            Validate.notNull(adhocConfiguration.getReport(), "The AdhocReport added to the adhocCOnfiguration is null");
             XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
             Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
             marshaller.marshal(element, new StreamResult(os));
-        } catch (Exception e) {
+        } catch (Throwable e) {
             throw new ConfigurationMarshallerException(element, os, e);
         }
     }
@@ -188,11 +189,12 @@ public class AdhocManager {
      */
     public AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
         try {
+            Validate.notNull(is, "Sorry the inputStream provided is null");
             Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
             JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
             XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
             return xmlToAdhocTransform.transform(xmlAdhocConfiguration);
-        } catch (JAXBException e) {
+        } catch (Throwable e) {
             throw new ConfigurationUnMarshallerException(is, e);
         }
     }

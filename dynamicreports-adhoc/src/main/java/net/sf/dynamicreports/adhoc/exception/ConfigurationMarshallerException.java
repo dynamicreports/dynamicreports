@@ -41,7 +41,7 @@ import java.io.OutputStream;
  * 			element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
  * 			marshaller.marshal(element, new StreamResult(outputStream));
  * 		} catch (JAXBException e) {
- * 			throw new ConfigurationMarshallerException(element, outputStream);
+ * 			throw new ConfigurationMarshallerException(element, outputStream, e);
  * 		}
  *     }
  * </pre>
@@ -58,7 +58,7 @@ public class ConfigurationMarshallerException extends DRException {
      * @param outputStream The output stream into which we are marshalling the element
      * @param e Exception thrown by the catch block
      */
-    public ConfigurationMarshallerException(final JAXBElement<XmlAdhocConfiguration> element, final OutputStream outputStream, Exception e) {
+    public ConfigurationMarshallerException(final JAXBElement<XmlAdhocConfiguration> element, final OutputStream outputStream, Throwable e) {
 
         super(String.format("Exception encountered while marshalling the JAXBElement : %s into the outputStream : %s", element, new StreamResult(outputStream)), e);
     }

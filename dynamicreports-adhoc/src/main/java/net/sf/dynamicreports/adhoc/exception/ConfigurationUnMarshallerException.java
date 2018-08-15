@@ -42,9 +42,9 @@ public class ConfigurationUnMarshallerException extends DRException {
      * 			XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
      * 			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
      * 			return adhocConfiguration;
-     * 		} catch (JAXBException e) {
+     * 		} catch (Throwable e) {
      * 	        // time to throw our exception
-     * 			throw new ConfigurationUnMarshallerException(is);
+     * 			throw new ConfigurationUnMarshallerException(is, e);
      * 		}
      *     }
      * </pre>
@@ -52,7 +52,7 @@ public class ConfigurationUnMarshallerException extends DRException {
      * @param is The InputStream from which we are reading configuration data
      * @param e Exception thrown in the catch block
      */
-    public ConfigurationUnMarshallerException(final InputStream is, final Exception e) {
+    public ConfigurationUnMarshallerException(final InputStream is, final Throwable e) {
 
         super(String.format("Exception encountered when reading configuration from the source : %s", is), e);
     }
