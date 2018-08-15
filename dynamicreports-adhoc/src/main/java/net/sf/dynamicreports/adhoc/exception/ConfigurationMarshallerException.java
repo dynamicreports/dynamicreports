@@ -25,7 +25,6 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.report.exception.DRException;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
 import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStream;
 
