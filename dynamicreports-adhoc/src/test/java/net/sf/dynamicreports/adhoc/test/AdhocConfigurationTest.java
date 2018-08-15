@@ -44,6 +44,7 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocTextField;
 import net.sf.dynamicreports.adhoc.configuration.AdhocValueOperator;
 import net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment;
+import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.DRGroup;
@@ -284,7 +285,7 @@ public class AdhocConfigurationTest extends AdhocTests {
         }
     }
 
-    @Test
+    @Test(expected = ConfigurationMarshallerException.class)
     public void testMarshallerException() throws Exception {
 
         AdhocConfiguration adhocConfiguration1 = new AdhocConfiguration();
