@@ -126,6 +126,7 @@ public class AdhocConfigurationTest extends AdhocTests {
         adhocColumn.setStyle(adhocStyle1);
         adhocColumn.setTitleStyle(adhocStyle1);
         adhocColumn.setWidth(50);
+        //todo replace this call with enum types
         adhocColumn.setProperty("type", "integer");
         adhocReport.addColumn(adhocColumn);
 
