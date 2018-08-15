@@ -50,9 +50,10 @@ public class ConfigurationUnMarshallerException extends DRException {
      * </pre>
      *
      * @param is The InputStream from which we are reading configuration data
+     * @param e Exception thrown in the catch block
      */
-    public ConfigurationUnMarshallerException(final InputStream is) {
+    public ConfigurationUnMarshallerException(final InputStream is, final Exception e) {
 
-        super(String.format("Exception encountered when reading configuration from the source : %s", is));
+        super(String.format("Exception encountered when reading configuration from the source : %s", is), e);
     }
 }

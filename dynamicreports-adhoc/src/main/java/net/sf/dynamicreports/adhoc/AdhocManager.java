@@ -193,7 +193,7 @@ public class AdhocManager {
             XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
             return xmlToAdhocTransform.transform(xmlAdhocConfiguration);
         } catch (JAXBException e) {
-            throw new ConfigurationUnMarshallerException(is);
+            throw new ConfigurationUnMarshallerException(is, e);
         }
     }
 
