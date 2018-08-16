@@ -89,6 +89,16 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedCalculationException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedChartTypeException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedGroupHeaderLayout;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedHorizontalAlignmentException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedOrderTypeException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedOrientationException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedSubtotalPositionException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedValueOperatorException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedVerticalAlignmentException;
+import static net.sf.dynamicreports.adhoc.exception.AdhocException.unsupportedPageOrientationException;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -281,8 +291,9 @@ public class XmlToAdhocTransform {
 			case TITLE_AND_VALUE:
 				return AdhocGroupHeaderLayout.TITLE_AND_VALUE;
 			default:
-				throw new AdhocException("Group header layout " + xmlAdhocGroupHeaderLayout.name() + " not supported");
+			    unSupportedGroupHeaderLayout(xmlAdhocGroupHeaderLayout);
 		}
+		return null;
 	}
 
 	/**
@@ -336,8 +347,9 @@ public class XmlToAdhocTransform {
 			case DISTINCT_COUNT:
 				return AdhocCalculation.DISTINCT_COUNT;
 			default:
-				throw new AdhocException("Calculation " + xmlAdhocCalculation.name() + " not supported");
+			    unSupportedCalculationException(xmlAdhocCalculation);
 		}
+		return AdhocCalculation.NOTHING;
 	}
 
 	/**
@@ -379,8 +391,9 @@ public class XmlToAdhocTransform {
 			case SUMMARY:
 				return AdhocSubtotalPosition.SUMMARY;
 			default:
-				throw new AdhocException("SubtotalPosition " + xmlAdhocSubtotalPosition.name() + " not supported");
+				unSupportedSubtotalPositionException(xmlAdhocSubtotalPosition);
 		}
+		return null;
 	}
 
 	/**
@@ -413,8 +426,9 @@ public class XmlToAdhocTransform {
 			case DESCENDING:
 				return AdhocOrderType.DESCENDING;
 			default:
-				throw new AdhocException("Order type " + xmlAdhocOrderType.name() + " not supported");
+			    unSupportedOrderTypeException(xmlAdhocOrderType);
 		}
+		return AdhocOrderType.ASCENDING;
 	}
 
 	/**
@@ -514,8 +528,9 @@ public class XmlToAdhocTransform {
 			case JUSTIFIED:
 				return AdhocHorizontalAlignment.JUSTIFIED;
 			default:
-				throw new AdhocException("Horizontal alignment " + xmlAdhocHorizontalAlignment.name() + " not supported");
+			    unSupportedHorizontalAlignmentException(xmlAdhocHorizontalAlignment);
 		}
+		return AdhocHorizontalAlignment.LEFT;
 	}
 
 	/**
@@ -539,8 +554,9 @@ public class XmlToAdhocTransform {
 			case JUSTIFIED:
 				return AdhocVerticalAlignment.JUSTIFIED;
 			default:
-				throw new AdhocException("Vertical alignment " + xmlAdhocVerticalAlignment.name() + " not supported");
+				unSupportedVerticalAlignmentException(xmlAdhocVerticalAlignment);
 		}
+		return null;
 	}
 
 	/**
@@ -567,7 +583,7 @@ public class XmlToAdhocTransform {
 	}
 
 	/**
-	 * <p>pageOrientation.</p>
+	 * <p>unsupportedPageOrientationException.</p>
 	 *
 	 * @param xmlAdhocPageOrientation a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocPageOrientation} object.
 	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPageOrientation} object.
@@ -583,8 +599,9 @@ public class XmlToAdhocTransform {
 			case LANDSCAPE:
 				return AdhocPageOrientation.LANDSCAPE;
 			default:
-				throw new AdhocException("Page orientation " + xmlAdhocPageOrientation.name() + " not supported");
+                unsupportedPageOrientationException(xmlAdhocPageOrientation);
 		}
+		return null;
 	}
 
 	/**
@@ -683,8 +700,9 @@ public class XmlToAdhocTransform {
 			case VERTICAL:
 				return AdhocOrientation.VERTICAL;
 			default:
-				throw new AdhocException("Orientation " + xmlAdhocOrientation.name() + " not supported");
+			    unSupportedOrientationException(xmlAdhocOrientation);
 		}
+		return null;
 	}
 
 	/**
@@ -779,8 +797,9 @@ public class XmlToAdhocTransform {
 			case BUBBLE:
 				return AdhocChartType.BUBBLE;
 			default:
-				throw new AdhocException("Chart type " + xmlAdhocChartType.name() + " not supported");
+			    unSupportedChartTypeException(xmlAdhocChartType);
 		}
+		return null;
 	}
 
 	/**
@@ -902,7 +921,8 @@ public class XmlToAdhocTransform {
 			case IS_NULL:
 				return AdhocValueOperator.IS_NULL;
 			default:
-				throw new AdhocException("Value operator " + xmlAdhocValueOperator.name() + " not supported");
+			    unSupportedValueOperatorException(xmlAdhocValueOperator);
 		}
+		return null;
 	}
 }
