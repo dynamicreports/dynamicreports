@@ -125,17 +125,6 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
 
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedCalculationException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedChartTypeException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedGroupHeaderLayout;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedHorizontalTextAlignment;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedOrderTypeException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedOrientationException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedSubtotalPositionException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedTimePeriodException;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unSupportedVerticalTextAlignment;
-import static net.sf.dynamicreports.adhoc.exception.AdhocException.unsupportedPageOrientationException;
-
 /**
  * <p>DefaultAdhocReportCustomizer class.</p>
  * Provides basic implementation for the {@link AdhocReportCustomizer#customize(ReportBuilder, AdhocReport)} method.
@@ -344,9 +333,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case TITLE_AND_VALUE:
 				return GroupHeaderLayout.TITLE_AND_VALUE;
 			default:
-			    unSupportedGroupHeaderLayout(groupHeaderLayout);
+				throw new AdhocException("Group header layout" + groupHeaderLayout.name() + " is not supported");
 		}
-		return null;
 	}
 
 	/**
@@ -443,9 +431,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case DISTINCT_COUNT:
 				return Calculation.DISTINCT_COUNT;
 			default:
-			    unSupportedCalculationException(adhocCalculation);
+				throw new AdhocException("Calculation " + adhocCalculation.name() + " not supported");
 		}
-		return Calculation.NOTHING;
 	}
 
 	/**
@@ -499,7 +486,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 				report.addSubtotalAtSummary(subtotal);
 				break;
 			default:
-			    unSupportedSubtotalPositionException(adhocSubtotalPosition);
+				throw new AdhocException("SubtotalPosition " + adhocSubtotalPosition.name() + " not supported");
 		}
 	}
 
@@ -539,9 +526,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case DESCENDING:
 				return OrderType.DESCENDING;
 			default:
-			    unSupportedOrderTypeException(adhocOrderType);
+				throw new AdhocException("Order type " + adhocOrderType.name() + " not supported");
 		}
-		return OrderType.ASCENDING;
 	}
 
 	/**
@@ -667,9 +653,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case JUSTIFIED:
 				return HorizontalTextAlignment.JUSTIFIED;
 			default:
-			    unSupportedHorizontalTextAlignment(adhocHorizontalAlignment);
+				throw new AdhocException("Horizontal text alignment " + adhocHorizontalAlignment.name() + " not supported");
 		}
-		return HorizontalTextAlignment.LEFT;
 	}
 
 	/**
@@ -693,9 +678,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case JUSTIFIED:
 				return VerticalTextAlignment.JUSTIFIED;
 			default:
-			    unSupportedVerticalTextAlignment(adhocVerticalAlignment);
+				throw new AdhocException("Vertical text alignment " + adhocVerticalAlignment.name() + " not supported");
 		}
-		return null;
 	}
 
 	/**
@@ -728,12 +712,12 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 	}
 
 	/**
-	 * <p>unsupportedPageOrientationException.</p>
+	 * <p>pageOrientation.</p>
 	 *
 	 * @param adhocPageOrientation a {@link net.sf.dynamicreports.adhoc.configuration.AdhocPageOrientation} object.
 	 * @return a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
 	 */
-	protected PageOrientation pageOrientation(final AdhocPageOrientation adhocPageOrientation) {
+	protected PageOrientation pageOrientation(AdhocPageOrientation adhocPageOrientation) {
 		if (adhocPageOrientation == null) {
 			return PageOrientation.PORTRAIT;
 		}
@@ -744,9 +728,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case LANDSCAPE:
 				return PageOrientation.LANDSCAPE;
 			default:
-                unsupportedPageOrientationException(adhocPageOrientation);
+				throw new AdhocException("Page orientation " + adhocPageOrientation.name() + " not supported");
 		}
-		return PageOrientation.PORTRAIT;
 	}
 
 	/**
@@ -857,9 +840,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case BUBBLE:
 				return bubbleChart(adhocChart);
 			default:
-			    unSupportedChartTypeException(type);
+				throw new AdhocException("Chart type " + type.name() + " not supported");
 		}
-		return null;
 	}
 
 	/**
@@ -1002,9 +984,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case MILLISECOND:
 				return TimePeriod.MILLISECOND;
 			default:
-			    unSupportedTimePeriodException(timePeriod);
+				throw new AdhocException("Time period type " + timePeriod.name() + " not supported");
 		}
-		return null;
 	}
 
 	/**
@@ -1410,10 +1391,8 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
 			case VERTICAL:
 				return Orientation.VERTICAL;
 			default:
-			    unSupportedOrientationException(adhocOrientation);
+				throw new AdhocException("Orientation " + adhocOrientation.name() + " not supported");
 		}
-
-		return null;
 	}
 
 	/**

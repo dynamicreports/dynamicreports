@@ -54,9 +54,8 @@
     <properties>
         <!--Environment -->
         <encoding>UTF-8</encoding>
-        <sourceVersion>1.8</sourceVersion>
-        <targetVersion>1.8</targetVersion>
-        <compilerVersion>8</compilerVersion>
+        <sourceVersion>1.7</sourceVersion>
+        <targetVersion>1.7</targetVersion>
 
         <!--Dependencies -->
         <barcode4jVersion>2.0</barcode4jVersion>
@@ -280,19 +279,18 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin-version}</version>
                     <configuration>
-                        <compilerVersion>${compilerVersion}</compilerVersion>
                         <source>${sourceVersion}</source>
                         <target>${targetVersion}</target>
                         <encoding>${encoding}</encoding>
-                        <!--<compilerId>eclipse</compilerId>-->
+                        <compilerId>eclipse</compilerId>
                     </configuration>
-                    <!--<dependencies>
+                    <dependencies>
                         <dependency>
                             <groupId>org.codehaus.plexus</groupId>
                             <artifactId>plexus-compiler-eclipse</artifactId>
                             <version>2.6</version>
                         </dependency>
-                    </dependencies>-->
+                    </dependencies>
                 </plugin>
                 <!--This plugin's configuration is used to store Eclipse m2e settings only.
                     It has no influence on the Maven build itself. -->
