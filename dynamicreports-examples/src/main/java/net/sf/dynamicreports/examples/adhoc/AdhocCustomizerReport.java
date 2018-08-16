@@ -36,8 +36,8 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.configuration.AdhocSort;
 import net.sf.dynamicreports.adhoc.configuration.AdhocSubtotal;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultAdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultXmlToAdhocTransform;
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
@@ -62,7 +62,7 @@ public class AdhocCustomizerReport {
 	}
 
 	private void build() {
-		AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+		AdhocManager adhocManager = AdhocManager.getInstance(new DefaultAdhocToXmlTransform(), new DefaultXmlToAdhocTransform());
 		AdhocConfiguration configuration = new AdhocConfiguration();
 		AdhocReport report = new AdhocReport();
 		configuration.setReport(report);

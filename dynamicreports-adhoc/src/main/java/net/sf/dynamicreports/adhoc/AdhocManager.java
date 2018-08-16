@@ -22,8 +22,8 @@ import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransformer;
+import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransformer;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamResult;
@@ -63,11 +62,11 @@ public class AdhocManager {
 
     private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
 
-    private final AdhocToXmlTransform adhocToXmlTransform;
-    private final XmlToAdhocTransform xmlToAdhocTransform;
+    private final AdhocToXmlTransformer adhocToXmlTransform;
+    private final XmlToAdhocTransformer xmlToAdhocTransform;
     private static volatile AdhocManager INSTANCE = null;
 
-    public static AdhocManager getInstance(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    public static AdhocManager getInstance(AdhocToXmlTransformer adhocToXmlTransform, XmlToAdhocTransformer xmlToAdhocTransform) {
         if (INSTANCE == null) {
             synchronized (AdhocManager.class) {
                 INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);
@@ -76,7 +75,7 @@ public class AdhocManager {
         return INSTANCE;
     }
 
-    private AdhocManager(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    private AdhocManager(AdhocToXmlTransformer adhocToXmlTransform, XmlToAdhocTransformer xmlToAdhocTransform) {
         this.adhocToXmlTransform = adhocToXmlTransform;
         this.xmlToAdhocTransform = xmlToAdhocTransform;
     }

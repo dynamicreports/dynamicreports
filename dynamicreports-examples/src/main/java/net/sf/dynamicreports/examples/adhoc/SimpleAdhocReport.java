@@ -32,8 +32,8 @@ import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultAdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultXmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
@@ -56,7 +56,7 @@ public class SimpleAdhocReport {
 
 	private void build() {
 
-		AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+		AdhocManager adhocManager = AdhocManager.getInstance(new DefaultAdhocToXmlTransform(), new DefaultXmlToAdhocTransform());
 
 		AdhocConfiguration configuration = new AdhocConfiguration();
 		AdhocReport report = new AdhocReport();

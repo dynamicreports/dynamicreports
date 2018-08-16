@@ -85,7 +85,6 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocTextField;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueOperator;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocVerticalAlignment;
-import org.apache.commons.lang.Validate;
 import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -114,9 +113,9 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class AdhocToXmlTransform {
+public class DefaultAdhocToXmlTransform implements AdhocToXmlTransformer {
 
-    private static final Logger log = getLogger(AdhocToXmlTransform.class);
+    private static final Logger log = getLogger(DefaultAdhocToXmlTransform.class);
 
 	/**
 	 * <p>transform.</p>
@@ -124,6 +123,7 @@ public class AdhocToXmlTransform {
 	 * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
 	 * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration} object.
 	 */
+	@Override
 	public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
         log.debug("Transforming object : {} to XmlAdhocConfiguration", adhocConfiguration);
 		XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();

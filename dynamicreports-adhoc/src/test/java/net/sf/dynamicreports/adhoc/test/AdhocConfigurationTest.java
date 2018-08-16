@@ -16,6 +16,7 @@
 
 package net.sf.dynamicreports.adhoc.test;
 
+import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat;
 import net.sf.dynamicreports.adhoc.configuration.AdhocCalculation;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChart;
@@ -46,6 +47,8 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction;
 import net.sf.dynamicreports.adhoc.configuration.AdhocVerticalAlignment;
 import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
+import net.sf.dynamicreports.adhoc.transformation.DefaultAdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultXmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.DRGroup;
 import net.sf.dynamicreports.report.base.DRPage;
@@ -272,6 +275,23 @@ public class AdhocConfigurationTest extends AdhocTests {
 
     @Test
     public void testSaveAndLoad() {
+        try {
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            adhocManager.saveConfiguration(adhocConfiguration, os);
+            ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
+            AdhocConfiguration adhocConfiguration = adhocManager.loadConfiguration(is);
+            Assert.assertEquals("equals", this.adhocConfiguration, adhocConfiguration);
+            Assert.assertEquals("equals", this.adhocConfiguration, adhocConfiguration.clone());
+            testConfiguration(adhocConfiguration);
+        } catch (DRException e) {
+            e.printStackTrace();
+            Assert.fail(e.getMessage());
+        }
+    }
+
+    @Test
+    public void testSaveAndLoadwAdhocException() {
+        AdhocManager adhocManager = AdhocManager.getInstance(new TestAdhocToXmlTransform(), new TestXmlToAdhocTransform());
         try {
             ByteArrayOutputStream os = new ByteArrayOutputStream();
             adhocManager.saveConfiguration(adhocConfiguration, os);

@@ -29,10 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import junit.framework.Assert;
-import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;

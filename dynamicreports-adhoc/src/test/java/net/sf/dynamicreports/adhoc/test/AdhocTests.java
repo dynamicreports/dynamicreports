@@ -22,10 +22,10 @@
 package net.sf.dynamicreports.adhoc.test;
 
 import net.sf.dynamicreports.adhoc.AdhocManager;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultAdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.DefaultXmlToAdhocTransform;
 
 class AdhocTests {
 
-    AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+    AdhocManager adhocManager = AdhocManager.getInstance(new DefaultAdhocToXmlTransform(), new DefaultXmlToAdhocTransform());
 }
