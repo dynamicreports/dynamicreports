@@ -54,8 +54,8 @@
     <properties>
         <!--Environment -->
         <encoding>UTF-8</encoding>
-        <sourceVersion>1.7</sourceVersion>
-        <targetVersion>1.7</targetVersion>
+        <sourceVersion>1.8</sourceVersion>
+        <targetVersion>1.8</targetVersion>
 
         <!--Dependencies -->
         <barcode4jVersion>2.0</barcode4jVersion>
@@ -65,7 +65,7 @@
         <commonslang3Version>3.1</commonslang3Version>
         <groovyVersion>1.7.5</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
-        <jasperreportsVersion>6.5.1</jasperreportsVersion>
+        <jasperreportsVersion>6.7.0</jasperreportsVersion>
         <jaxbVersion>2.3.0</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
