@@ -36,7 +36,7 @@ A few tools merit to be mentioned:
  - Versioning : git
  - Build Tool : maven
  - CI : [Travis](https://travis-ci.com/dynamicreports/dynamicreports) (yet to fully setup)
- - Java version: ... (to be discussed, but minimum can be expected to be java version 8. For now).
+ - Java version 8
  - Code style: [google](https://google.github.io/styleguide/javaguide.html). Enforced by checkstyle. (Setting
  that up too)
 

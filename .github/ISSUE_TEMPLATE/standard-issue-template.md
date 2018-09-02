@@ -23,6 +23,9 @@ Please search on the [issue track](https://github.com/dynamicreports/dynamicrepo
 ## Steps to Reproduce (for bugs)
 <!--- Provide a link to a live example, or an unambiguous set of steps to -->
 <!--- reproduce this bug. Include code to reproduce, if relevant -->
+<!--- Provide logs -->
+<!--- If possible use gif recorder to show the report as it's being generated.
+If on windows use the "problem recorder". Be sure to remove data you are not willing to share about your machine -->
 1.
 2.
 3.

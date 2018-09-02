@@ -59,7 +59,7 @@ xml files.
 Dynamic reports behaves dynamically to the end user, but underneath all that, it uses the jasper reports engine which is static.
 Inorder to adhere to its dynamic nature configurations the dynamic reports uses the JAXB api for marshalling and unmarshalling configurations
 at runtime. This introduces a number of complexities which are mainly because the build could suddenly not contain the classes on 
-which the api, depends. Therefore the following conventions are encouraged:
+which the api, depends. JAXB engines create classes and xml files which are not in the version control. Therefore the following conventions are encouraged:
 - Before running tests in the modules other than the core module please run compilation("mvn clean compile") on the core module first
 - If you are generating documentation using the "source-10" profile, also run the compilation on the core module first
 
@@ -70,6 +70,8 @@ using ubuntu, just run "sudo apt-get install ttf-mscorefonts-installer". Sorry l
 ### Dynamic Reports Design Decisions
 
 When we make a significant decision in how we maintain the project and what we can or cannot support, we will document it in the [dynamicreports/design-decisions repository](https://github.com/dynamicreports/design-decisions). If you have a question around how we do things, check to see if it is documented there.
+There is an excel file in the repository, containing matters about the way forward.  However more details views of what is going
+on can be accessed at the projects [page](https://github.com/dynamicreports/dynamicreports/projects)
 
 ## How Can I Contribute?
 
@@ -77,7 +79,7 @@ When we make a significant decision in how we maintain the project and what we c
 
 This section guides you through submitting a bug report for Dynamic Reports. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
 
-Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md), the information it asks for helps us resolve issues faster.
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE/standard-issue-template.md), the information it asks for helps us resolve issues faster.
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
@@ -89,16 +91,16 @@ Before creating bug reports, please check [this list](#before-submitting-a-bug-r
 
 #### How Do I Submit A (Good) Bug Report?
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](.github/ISSUE_TEMPLATE.md).
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md).
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 
 * **Use a clear and descriptive title** for the issue to identify the problem.
-* **Describe the exact steps which reproduce the problem** in as many details as possible. When listing steps, **don't just say what you did, but show how you did it**. For example, include a snippet of the offending code
+* **Describe the exact steps which reproduce the problem** in as many details as possible. When listing steps, **don't just say what you did, but show how you did it**. For example, include a snippet of the offending code.
 * **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 * **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
 * **Explain which behavior you expected to see instead and why.**
-* **Include screenshots and animated GIFs** which show the report generated with misaligned, or misconfigured or erroneous
+* **Include screenshots and animated GIFs** which show the report generated with misaligned, or misconfigured or erroneous. If on windows 7+, we would love you to reproduce the bug, while running the problem recorder.
 * **If you're reporting that dynamic reports crashed**, include a crash report with the full java stack trace from the operating system, console or IDE. Include the crash report in the issue in a [code block](https://help.github.com/articles/markdown-basics/#multiple-lines), a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/), or put it in a [gist](https://gist.github.com/) and provide link to that gist.
 * **If the problem is related to performance or memory**, include a CPU profile capture with your report.
 * **If the problem wasn't triggered by a specific action**, describe what you were doing before the problem happened and share more information using the guidelines below.
@@ -116,35 +118,35 @@ Include details about your configuration and environment:
 
 * **Which version of dynamic reports are you using?**
 * **What's the name and version of the OS you're using**?
-* **Are you running dynamic reports in a virtual machine?** If so, which VM software are you using and which operating systems and versions are used for the host and the guest?
+* **Are you running dynamic reports in a virtual machine or docker container?** If so, which VM software are you using and which operating systems and versions are used for the host and the guest?
 * **Are you using dynamic reports with multiple monitors?** If so, can you reproduce the problem when you use a single monitor?
 * **Which version of microsoft office were your generating?** Is it the office 2003 or 2007
 
 ### Suggesting Enhancements
 
-This section guides you through submitting an enhancement suggestion for Atom, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
+This section guides you through submitting an enhancement suggestion for dynamicreports, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md), including the steps that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
-* **Check the [debugging guide](https://flight-manual.atom.io/hacking-atom/sections/debugging/)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of Atom](https://flight-manual.atom.io/hacking-atom/sections/debugging/#update-to-the-latest-version) and if you can get the desired behavior by changing [Atom's or packages' config settings](https://flight-manual.atom.io/hacking-atom/sections/debugging/#check-atom-and-package-settings).
-* **Check if there's already [a package](https://atom.io/packages) which provides that enhancement.**
-* **Determine [which repository the enhancement should be suggested in](#atom-and-packages).**
-* **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Aatom)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+* **Check the [debugging guide](.github/DEBUGGING.md)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of DynamicReports](.github/DEBUGGING.md/#update-to-the-latest-version) and if you can get the desired behavior by changing [DynamicReports' config settings](.github/DEBUGGING.md/#check-dynamicReports-settings).
+* **Check if there's already [a module](.github/DEBUGGING.md/#dynamicReports-modules) which provides that enhancement.**
+* **Determine [which module the enhancement should be suggested in](.github/DEBUGGING.md/#dynamicReports-modules).**
+* **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3DynamicReports)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
 #### How Do I Submit A (Good) Enhancement Suggestion?
 
-Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
+Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](.github/DEBUGGING.md/#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
 
 * **Use a clear and descriptive title** for the issue to identify the suggestion.
 * **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
 * **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 * **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
-* **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of Atom which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
-* **Explain why this enhancement would be useful** to most Atom users and isn't something that can or should be implemented as a [community package](#atom-and-packages).
-* **List some other text editors or applications where this enhancement exists.**
-* **Specify which version of Atom you're using.** You can get the exact version by running `atom -v` in your terminal, or by starting Atom and running the `Application: About` command from the [Command Palette](https://github.com/atom/command-palette).
+* **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of DynamicReports which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
+* **Explain why this enhancement would be useful** to most DynamicReports users and isn't something that can or should be implemented as a [module](.github/DEBUGGING.md/#dynamicReports-modules).
+* **List some other reporting libraries (in any programming language) or applications where this enhancement exists.**
+* **Specify which version of DynamicReports you're using.** You can get the exact version by checking version number in the library's project's object model (pom)
 * **Specify the name and version of the OS you're using.**
 
 ### Your First Code Contribution
