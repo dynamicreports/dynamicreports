@@ -1,6 +1,11 @@
 DynamicReports Change Log
 =========================
 
+Changes in version 6.0.0 (2018-09-01)
+---------------------------------------------------
+ - Upgrade to JasperReports 6.7.0
+ - Updated base java version to java 1.8
+
 Changes in version 5.1.0 (2018-01-25)
 ---------------------------------------------------
  - upgrade to JasperReports 6.5.1
