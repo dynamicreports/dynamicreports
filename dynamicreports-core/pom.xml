@@ -6,7 +6,7 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>5.1.0</version>
+        <version>6.0.0</version>
     </parent>
 
     <artifactId>dynamicreports-core</artifactId>
@@ -23,6 +23,11 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>com.google.zxing</groupId>
+          <artifactId>core</artifactId>
+          <version>3.3.3</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>

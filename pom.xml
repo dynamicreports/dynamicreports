@@ -12,7 +12,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>5.1.0</version>
+    <version>6.0.0</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -54,8 +54,8 @@
     <properties>
         <!--Environment -->
         <encoding>UTF-8</encoding>
-        <sourceVersion>1.7</sourceVersion>
-        <targetVersion>1.7</targetVersion>
+        <sourceVersion>1.8</sourceVersion>
+        <targetVersion>1.8</targetVersion>
 
         <!--Dependencies -->
         <barcode4jVersion>2.0</barcode4jVersion>
@@ -65,7 +65,7 @@
         <commonslang3Version>3.1</commonslang3Version>
         <groovyVersion>1.7.5</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
-        <jasperreportsVersion>6.5.1</jasperreportsVersion>
+        <jasperreportsVersion>6.7.0</jasperreportsVersion>
         <jaxbVersion>2.3.0</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
@@ -282,62 +282,8 @@
                         <source>${sourceVersion}</source>
                         <target>${targetVersion}</target>
                         <encoding>${encoding}</encoding>
-                        <compilerId>eclipse</compilerId>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.codehaus.plexus</groupId>
-                            <artifactId>plexus-compiler-eclipse</artifactId>
-                            <version>2.6</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only.
-                    It has no influence on the Maven build itself. -->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>${lifecycle-mapping-plugin-version}</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-compiler-plugin</artifactId>
-                                        <version>${maven-compiler-plugin-version}</version>
-                                        <goals>
-                                            <goal>compile</goal>
-                                            <goal>testCompile</goal>
-                                        </goals>
-                                        <parameters>
-                                            <compilerId>eclipse</compilerId>
-                                        </parameters>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <configurator>
-                                            <id>org.eclipse.m2e.jdt.javaConfigurator</id>
-                                        </configurator>
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-enforcer-plugin</artifactId>
-                                        <version>${maven-enforcer-plugin-version}</version>
-                                        <goals>
-                                            <goal>enforce</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
-
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
