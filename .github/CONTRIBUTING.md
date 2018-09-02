@@ -151,38 +151,34 @@ Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com
 
 ### Your First Code Contribution
 
-Unsure where to begin contributing to Atom? You can start by looking through these `beginner` and `help-wanted` issues:
+Unsure where to begin contributing to DynamicReports? You can start by looking through these `beginner` and `help-wanted` issues:
 
 * [Beginner issues][beginner] - issues which should only require a few lines of code, and a test or two.
 * [Help wanted issues][help-wanted] - issues which should be a bit more involved than `beginner` issues.
 
 Both issue lists are sorted by total number of comments. While not perfect, number of comments is a reasonable proxy for impact a given change will have.
 
-If you want to read about using Atom or developing packages in Atom, the [Atom Flight Manual](https://flight-manual.atom.io) is free and available online. You can find the source to the manual in [atom/flight-manual.atom.io](https://github.com/atom/flight-manual.atom.io).
+If you want to read about using DynamicReports, the usage examples are available [online](https://dynamicreports.readthedocs.io/en/latest/).
 
 #### Local development
 
-Atom Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [Atom Flight Manual](https://flight-manual.atom.io):
+DynamicReports Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [debugging guidelines](.github/DEBUGGING.md/#dynamicReports-local-development):
 
-* [Hacking on Atom Core][hacking-on-atom-core]
-* [Contributing to Official Atom Packages][contributing-to-official-atom-packages]
+* [What I need to know before I get started](#What should I know before I get started?)
+* Watch this space...
 
 ### Pull Requests
 
-* Fill in [the required template](PULL_REQUEST_TEMPLATE.md)
+* Fill in the required [template](.github/PULL_REQUEST_TEMPLATE.md)
 * Do not include issue numbers in the PR title
 * Include screenshots and animated GIFs in your pull request whenever possible.
-* Follow the [JavaScript](#javascript-styleguide) and [CoffeeScript](#coffeescript-styleguide) styleguides.
-* Include thoughtfully-worded, well-structured [Jasmine](https://jasmine.github.io/) specs in the `./spec` folder. Run them using `atom --test spec`. See the [Specs Styleguide](#specs-styleguide) below.
+* Follow the google java style [guide](https://google.github.io/styleguide/javaguide.html).
+* Include thoughtfully-worded, well-structured unit tests folders. Run them using `mvn clean compile && mvn test`.
 * Document new code based on the [Documentation Styleguide](#documentation-styleguide)
-* End all files with a newline
-* [Avoid platform-dependent code](https://flight-manual.atom.io/hacking-atom/sections/cross-platform-compatibility/)
-* Place requires in the following order:
-    * Built in Node Modules (such as `path`)
-    * Built in Atom and Electron Modules (such as `atom`, `remote`)
-    * Local Modules (using relative paths)
+* Avoid platform-dependent code.
+* Disclose the additional libraries included and make a case for them. We would like to keep this library lean.
 * Place class properties in the following order:
-    * Class methods and properties (methods starting with a `@` in CoffeeScript or `static` in JavaScript)
+    * Static Class methods and properties (methods or properties with `static` keyword in they signature)
     * Instance methods and properties
 
 ## Styleguides
@@ -211,253 +207,186 @@ Atom Core and all packages can be developed locally. For instructions on how to 
     * :arrow_down: `:arrow_down:` when downgrading dependencies
     * :shirt: `:shirt:` when removing linter warnings
 
-### JavaScript Styleguide
+### Java Styleguide
 
-All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com/).
+All Java code must adhere to google java style [guide](https://google.github.io/styleguide/javaguide.html).
 
-* Prefer the object spread operator (`{...anotherObj}`) to `Object.assign()`
-* Inline `export`s with expressions whenever possible
-  ```js
-  // Use this:
-  export default class ClassName {
+### XML Styleguide
 
-  }
 
-  // Instead of:
-  class ClassName {
+### Tests Styleguide
 
-  }
-  export default ClassName
-  ```
-
-### CoffeeScript Styleguide
-
-* Set parameter defaults without spaces around the equal sign
-    * `clear = (count=1) ->` instead of `clear = (count = 1) ->`
-* Use spaces around operators
-    * `count + 1` instead of `count+1`
-* Use spaces after commas (unless separated by newlines)
-* Use parentheses if it improves code clarity.
-* Prefer alphabetic keywords to symbolic keywords:
-    * `a is b` instead of `a == b`
-* Avoid spaces inside the curly-braces of hash literals:
-    * `{a: 1, b: 2}` instead of `{ a: 1, b: 2 }`
-* Include a single line of whitespace between methods.
-* Capitalize initialisms and acronyms in names, except for the first word, which
-  should be lower-case:
-  * `getURI` instead of `getUri`
-  * `uriToOpen` instead of `URIToOpen`
-* Use `slice()` to copy an array
-* Add an explicit `return` when your function ends with a `for`/`while` loop and
-  you don't want it to return a collected array.
-* Use `this` instead of a standalone `@`
-  * `return this` instead of `return @`
-
-### Specs Styleguide
-
-- Include thoughtfully-worded, well-structured [Jasmine](https://jasmine.github.io/) specs in the `./spec` folder.
-- Treat `describe` as a noun or situation.
-- Treat `it` as a statement about state or how an operation changes state.
-
-#### Example
-
-```coffee
-describe 'a dog', ->
- it 'barks', ->
- # spec here
- describe 'when the dog is happy', ->
-  it 'wags its tail', ->
-  # spec here
-```
 
 ### Documentation Styleguide
 
-* Use [AtomDoc](https://github.com/atom/atomdoc).
-* Use [Markdown](https://daringfireball.net/projects/markdown).
-* Reference methods and classes in markdown with the custom `{}` notation:
-    * Reference classes with `{ClassName}`
-    * Reference instance methods with `{ClassName::methodName}`
-    * Reference class methods with `{ClassName.methodName}`
+* Stick to the oracle javadoc [guidelines](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#styleguide). Read the [documentation](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) on javadoc tool.
 
-#### Example
-
-```coffee
-# Public: Disable the package with the given name.
-#
-# * `name`    The {String} name of the package to disable.
-# * `options` (optional) The {Object} with disable options (default: {}):
-#   * `trackTime`     A {Boolean}, `true` to track the amount of time taken.
-#   * `ignoreErrors`  A {Boolean}, `true` to catch and ignore errors thrown.
-# * `callback` The {Function} to call after the package has been disabled.
-#
-# Returns `undefined`.
-disablePackage: (name, options, callback) ->
-```
+### Logging Style Guide
 
 ## Additional Notes
 
 ### Issue and Pull Request Labels
 
-This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across all Atom repositories, but some are specific to `atom/atom`.
+This section lists the labels we use to help us track and manage issues and pull requests.
 
-[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `dynamicreports/dynamicreports` and all dynamicreports repositories which are labeled as bugs, but still need to be reliably reproduced](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `dynamicreports/dynamicreports` which haven't been reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `dynamicreports/dynamicreports` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
 
 The labels are loosely grouped by their purpose, but it's not required that every issue have a label from every group or that an issue can't have more than one label from the same group.
 
-Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.
+Please open an issue on `dynamicreports/dynamicreports` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.
 
 #### Type of Issue and Issue State
 
-| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |
+| Label name | `dynamic/reports` :mag_right: | `dynamicreports`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
-| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | Feature requests. |
-| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | Confirmed bugs or reports that are very likely to be bugs. |
-| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | Questions more than bug reports or feature requests (e.g. how do I do X). |
-| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than bug reports or feature requests. |
-| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |
-| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issues which would be good first issues to work on for users who want to contribute to Atom. |
-| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about these problems or feature requests (e.g. steps to reproduce). |
-| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely bugs, but haven't been reliably reproduced. |
-| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issues blocked on other issues. |
-| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issues which are duplicates of other issues, i.e. they have been reported before. |
-| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
-| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issues which aren't valid (e.g. user errors). |
-| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | Feature request which might be good candidates for new packages, instead of extending Atom or core Atom packages. |
-| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issues reported on the wrong repository (e.g. a bug related to the [Settings View package](https://github.com/atom/settings-view) was reported on [Atom core](https://github.com/atom/atom)). |
+| `enhancement` | [search][search-dynamicreports-repo-label-enhancement] | [search][search-dynamicreports-org-label-enhancement] | Feature requests. |
+| `bug` | [search][search-dynamicreports-repo-label-bug] | [search][search-dynamicreports-org-label-bug] | Confirmed bugs or reports that are very likely to be bugs. |
+| `question` | [search][search-dynamicreports-repo-label-question] | [search][search-dynamicreports-org-label-question] | Questions more than bug reports or feature requests (e.g. how do I do X). |
+| `feedback` | [search][search-dynamicreports-repo-label-feedback] | [search][search-dynamicreports-org-label-feedback] | General feedback more than bug reports or feature requests. |
+| `help-wanted` | [search][search-dynamicreports-repo-label-help-wanted] | [search][search-dynamicreports-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |
+| `beginner` | [search][search-dynamicreports-repo-label-beginner] | [search][search-dynamicreports-org-label-beginner] | Less complex issues which would be good first issues to work on for users who want to contribute to Atom. |
+| `more-information-needed` | [search][search-dynamicreports-repo-label-more-information-needed] | [search][search-dynamicreports-org-label-more-information-needed] | More information needs to be collected about these problems or feature requests (e.g. steps to reproduce). |
+| `needs-reproduction` | [search][search-dynamicreports-repo-label-needs-reproduction] | [search][search-dynamicreports-org-label-needs-reproduction] | Likely bugs, but haven't been reliably reproduced. |
+| `blocked` | [search][search-dynamicreports-repo-label-blocked] | [search][search-dynamicreports-org-label-blocked] | Issues blocked on other issues. |
+| `duplicate` | [search][search-dynamicreports-repo-label-duplicate] | [search][search-dynamicreports-org-label-duplicate] | Issues which are duplicates of other issues, i.e. they have been reported before. |
+| `wontfix` | [search][search-dynamicreports-repo-label-wontfix] | [search][search-dynamicreports-org-label-wontfix] | The Atom core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
+| `invalid` | [search][search-dynamicreports-repo-label-invalid] | [search][search-dynamicreports-org-label-invalid] | Issues which aren't valid (e.g. user errors). |
+| `package-idea` | [search][search-dynamicreports-repo-label-package-idea] | [search][search-dynamicreports-org-label-package-idea] | Feature request which might be good candidates for new packages, instead of extending Atom or core Atom packages. |
+| `wrong-repo` | [search][search-dynamicreports-repo-label-wrong-repo] | [search][search-dynamicreports-org-label-wrong-repo] | Issues reported on the wrong repository (e.g. a bug related to the [Settings View package](https://github.com/dynamicreports/settings-view) was reported on [Atom core](https://github.com/dynamicreports/dynamicreports)). |
 
 #### Topic Categories
 
-| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |
+| Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
-| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |
-| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |
-| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on macOS. |
-| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/) and the [flight manual](https://flight-manual.atom.io/)). |
-| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |
-| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |
-| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |
-| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |
-| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues about uncaught exceptions, normally created from the [Notifications package](https://github.com/atom/notifications). |
-| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Reports of Atom completely crashing. |
-| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |
-| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |
-| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |
-| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |
+| `windows` | [search][search-dynamicreports-repo-label-windows] | [search][search-dynamicreports-org-label-windows] | Related to Atom running on Windows. |
+| `linux` | [search][search-dynamicreports-repo-label-linux] | [search][search-dynamicreports-org-label-linux] | Related to Atom running on Linux. |
+| `mac` | [search][search-dynamicreports-repo-label-mac] | [search][search-dynamicreports-org-label-mac] | Related to Atom running on macOS. |
+| `documentation` | [search][search-dynamicreports-repo-label-documentation] | [search][search-dynamicreports-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://dynamicreports.io/docs/api/latest/) and the [flight manual](https://flight-manual.dynamicreports.io/)). |
+| `performance` | [search][search-dynamicreports-repo-label-performance] | [search][search-dynamicreports-org-label-performance] | Related to performance. |
+| `security` | [search][search-dynamicreports-repo-label-security] | [search][search-dynamicreports-org-label-security] | Related to security. |
+| `ui` | [search][search-dynamicreports-repo-label-ui] | [search][search-dynamicreports-org-label-ui] | Related to visual design. |
+| `api` | [search][search-dynamicreports-repo-label-api] | [search][search-dynamicreports-org-label-api] | Related to Atom's public APIs. |
+| `uncaught-exception` | [search][search-dynamicreports-repo-label-uncaught-exception] | [search][search-dynamicreports-org-label-uncaught-exception] | Issues about uncaught exceptions, normally created from the [Notifications package](https://github.com/dynamicreports/notifications). |
+| `crash` | [search][search-dynamicreports-repo-label-crash] | [search][search-dynamicreports-org-label-crash] | Reports of Atom completely crashing. |
+| `auto-indent` | [search][search-dynamicreports-repo-label-auto-indent] | [search][search-dynamicreports-org-label-auto-indent] | Related to auto-indenting text. |
+| `encoding` | [search][search-dynamicreports-repo-label-encoding] | [search][search-dynamicreports-org-label-encoding] | Related to character encoding. |
+| `network` | [search][search-dynamicreports-repo-label-network] | [search][search-dynamicreports-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |
+| `git` | [search][search-dynamicreports-repo-label-git] | [search][search-dynamicreports-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |
 
-#### `atom/atom` Topic Categories
+#### `dynamicreports/dynamicreports` Topic Categories
 
-| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |
+| Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
-| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |
-| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |
-| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |
-| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |
-| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |
-| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |
-| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |
-| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |
-| `electron` | [search][search-atom-repo-label-electron] | [search][search-atom-org-label-electron] | Issues that require changes to [Electron](https://electron.atom.io) to fix or implement. |
+| `editor-rendering` | [search][search-dynamicreports-repo-label-editor-rendering] | [search][search-dynamicreports-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |
+| `build-error` | [search][search-dynamicreports-repo-label-build-error] | [search][search-dynamicreports-org-label-build-error] | Related to problems with building Atom from source. |
+| `error-from-pathwatcher` | [search][search-dynamicreports-repo-label-error-from-pathwatcher] | [search][search-dynamicreports-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/dynamicreports/node-pathwatcher). |
+| `error-from-save` | [search][search-dynamicreports-repo-label-error-from-save] | [search][search-dynamicreports-org-label-error-from-save] | Related to errors thrown when saving files. |
+| `error-from-open` | [search][search-dynamicreports-repo-label-error-from-open] | [search][search-dynamicreports-org-label-error-from-open] | Related to errors thrown when opening files. |
+| `installer` | [search][search-dynamicreports-repo-label-installer] | [search][search-dynamicreports-org-label-installer] | Related to the Atom installers for different OSes. |
+| `auto-updater` | [search][search-dynamicreports-repo-label-auto-updater] | [search][search-dynamicreports-org-label-auto-updater] | Related to the auto-updater for different OSes. |
+| `deprecation-help` | [search][search-dynamicreports-repo-label-deprecation-help] | [search][search-dynamicreports-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |
+| `electron` | [search][search-dynamicreports-repo-label-electron] | [search][search-dynamicreports-org-label-electron] | Issues that require changes to [Electron](https://electron.dynamicreports.io) to fix or implement. |
 
 #### Pull Request Labels
 
-| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description
+| Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description
 | --- | --- | --- | --- |
-| `work-in-progress` | [search][search-atom-repo-label-work-in-progress] | [search][search-atom-org-label-work-in-progress] | Pull requests which are still being worked on, more changes will follow. |
-| `needs-review` | [search][search-atom-repo-label-needs-review] | [search][search-atom-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or Atom core team. |
-| `under-review` | [search][search-atom-repo-label-under-review] | [search][search-atom-org-label-under-review] | Pull requests being reviewed by maintainers or Atom core team. |
-| `requires-changes` | [search][search-atom-repo-label-requires-changes] | [search][search-atom-org-label-requires-changes] | Pull requests which need to be updated based on review comments and then reviewed again. |
-| `needs-testing` | [search][search-atom-repo-label-needs-testing] | [search][search-atom-org-label-needs-testing] | Pull requests which need manual testing. |
+| `work-in-progress` | [search][search-dynamicreports-repo-label-work-in-progress] | [search][search-dynamicreports-org-label-work-in-progress] | Pull requests which are still being worked on, more changes will follow. |
+| `needs-review` | [search][search-dynamicreports-repo-label-needs-review] | [search][search-dynamicreports-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or Atom core team. |
+| `under-review` | [search][search-dynamicreports-repo-label-under-review] | [search][search-dynamicreports-org-label-under-review] | Pull requests being reviewed by maintainers or Atom core team. |
+| `requires-changes` | [search][search-dynamicreports-repo-label-requires-changes] | [search][search-dynamicreports-org-label-requires-changes] | Pull requests which need to be updated based on review comments and then reviewed again. |
+| `needs-testing` | [search][search-dynamicreports-repo-label-needs-testing] | [search][search-dynamicreports-org-label-needs-testing] | Pull requests which need manual testing. |
 
-[search-atom-repo-label-enhancement]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aenhancement
-[search-atom-org-label-enhancement]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aenhancement
-[search-atom-repo-label-bug]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Abug
-[search-atom-org-label-bug]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug
-[search-atom-repo-label-question]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aquestion
-[search-atom-org-label-question]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aquestion
-[search-atom-repo-label-feedback]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Afeedback
-[search-atom-org-label-feedback]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Afeedback
-[search-atom-repo-label-help-wanted]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Ahelp-wanted
-[search-atom-org-label-help-wanted]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Ahelp-wanted
-[search-atom-repo-label-beginner]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Abeginner
-[search-atom-org-label-beginner]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abeginner
-[search-atom-repo-label-more-information-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Amore-information-needed
-[search-atom-org-label-more-information-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Amore-information-needed
-[search-atom-repo-label-needs-reproduction]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aneeds-reproduction
-[search-atom-org-label-needs-reproduction]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aneeds-reproduction
-[search-atom-repo-label-triage-help-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Atriage-help-needed
-[search-atom-org-label-triage-help-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Atriage-help-needed
-[search-atom-repo-label-windows]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Awindows
-[search-atom-org-label-windows]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Awindows
-[search-atom-repo-label-linux]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Alinux
-[search-atom-org-label-linux]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Alinux
-[search-atom-repo-label-mac]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Amac
-[search-atom-org-label-mac]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Amac
-[search-atom-repo-label-documentation]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Adocumentation
-[search-atom-org-label-documentation]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Adocumentation
-[search-atom-repo-label-performance]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aperformance
-[search-atom-org-label-performance]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aperformance
-[search-atom-repo-label-security]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Asecurity
-[search-atom-org-label-security]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Asecurity
-[search-atom-repo-label-ui]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aui
-[search-atom-org-label-ui]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aui
-[search-atom-repo-label-api]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aapi
-[search-atom-org-label-api]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aapi
-[search-atom-repo-label-crash]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Acrash
-[search-atom-org-label-crash]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Acrash
-[search-atom-repo-label-auto-indent]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aauto-indent
-[search-atom-org-label-auto-indent]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aauto-indent
-[search-atom-repo-label-encoding]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aencoding
-[search-atom-org-label-encoding]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aencoding
-[search-atom-repo-label-network]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Anetwork
-[search-atom-org-label-network]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Anetwork
-[search-atom-repo-label-uncaught-exception]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Auncaught-exception
-[search-atom-org-label-uncaught-exception]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Auncaught-exception
-[search-atom-repo-label-git]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Agit
-[search-atom-org-label-git]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Agit
-[search-atom-repo-label-blocked]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Ablocked
-[search-atom-org-label-blocked]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Ablocked
-[search-atom-repo-label-duplicate]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aduplicate
-[search-atom-org-label-duplicate]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aduplicate
-[search-atom-repo-label-wontfix]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Awontfix
-[search-atom-org-label-wontfix]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Awontfix
-[search-atom-repo-label-invalid]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Ainvalid
-[search-atom-org-label-invalid]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Ainvalid
-[search-atom-repo-label-package-idea]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Apackage-idea
-[search-atom-org-label-package-idea]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Apackage-idea
-[search-atom-repo-label-wrong-repo]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Awrong-repo
-[search-atom-org-label-wrong-repo]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Awrong-repo
-[search-atom-repo-label-editor-rendering]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aeditor-rendering
-[search-atom-org-label-editor-rendering]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aeditor-rendering
-[search-atom-repo-label-build-error]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Abuild-error
-[search-atom-org-label-build-error]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abuild-error
-[search-atom-repo-label-error-from-pathwatcher]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aerror-from-pathwatcher
-[search-atom-org-label-error-from-pathwatcher]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aerror-from-pathwatcher
-[search-atom-repo-label-error-from-save]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aerror-from-save
-[search-atom-org-label-error-from-save]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aerror-from-save
-[search-atom-repo-label-error-from-open]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aerror-from-open
-[search-atom-org-label-error-from-open]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aerror-from-open
-[search-atom-repo-label-installer]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Ainstaller
-[search-atom-org-label-installer]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Ainstaller
-[search-atom-repo-label-auto-updater]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Aauto-updater
-[search-atom-org-label-auto-updater]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aauto-updater
-[search-atom-repo-label-deprecation-help]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Aatom%2Fatom+label%3Adeprecation-help
-[search-atom-org-label-deprecation-help]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Adeprecation-help
-[search-atom-repo-label-electron]: https://github.com/search?q=is%3Aissue+repo%3Aatom%2Fatom+is%3Aopen+label%3Aelectron
-[search-atom-org-label-electron]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Aelectron
-[search-atom-repo-label-work-in-progress]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+label%3Awork-in-progress
-[search-atom-org-label-work-in-progress]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Aatom+label%3Awork-in-progress
-[search-atom-repo-label-needs-review]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+label%3Aneeds-review
-[search-atom-org-label-needs-review]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Aatom+label%3Aneeds-review
-[search-atom-repo-label-under-review]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+label%3Aunder-review
-[search-atom-org-label-under-review]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Aatom+label%3Aunder-review
-[search-atom-repo-label-requires-changes]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+label%3Arequires-changes
-[search-atom-org-label-requires-changes]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Aatom+label%3Arequires-changes
-[search-atom-repo-label-needs-testing]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+label%3Aneeds-testing
-[search-atom-org-label-needs-testing]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Aatom+label%3Aneeds-testing
+[search-dynamicreports-repo-label-enhancement]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aenhancement
+[search-dynamicreports-org-label-enhancement]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aenhancement
+[search-dynamicreports-repo-label-bug]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Abug
+[search-dynamicreports-org-label-bug]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abug
+[search-dynamicreports-repo-label-question]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aquestion
+[search-dynamicreports-org-label-question]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aquestion
+[search-dynamicreports-repo-label-feedback]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Afeedback
+[search-dynamicreports-org-label-feedback]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Afeedback
+[search-dynamicreports-repo-label-help-wanted]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Ahelp-wanted
+[search-dynamicreports-org-label-help-wanted]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Ahelp-wanted
+[search-dynamicreports-repo-label-beginner]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Abeginner
+[search-dynamicreports-org-label-beginner]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abeginner
+[search-dynamicreports-repo-label-more-information-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Amore-information-needed
+[search-dynamicreports-org-label-more-information-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Amore-information-needed
+[search-dynamicreports-repo-label-needs-reproduction]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aneeds-reproduction
+[search-dynamicreports-org-label-needs-reproduction]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aneeds-reproduction
+[search-dynamicreports-repo-label-triage-help-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Atriage-help-needed
+[search-dynamicreports-org-label-triage-help-needed]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Atriage-help-needed
+[search-dynamicreports-repo-label-windows]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Awindows
+[search-dynamicreports-org-label-windows]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Awindows
+[search-dynamicreports-repo-label-linux]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Alinux
+[search-dynamicreports-org-label-linux]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Alinux
+[search-dynamicreports-repo-label-mac]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Amac
+[search-dynamicreports-org-label-mac]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Amac
+[search-dynamicreports-repo-label-documentation]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Adocumentation
+[search-dynamicreports-org-label-documentation]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Adocumentation
+[search-dynamicreports-repo-label-performance]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aperformance
+[search-dynamicreports-org-label-performance]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aperformance
+[search-dynamicreports-repo-label-security]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Asecurity
+[search-dynamicreports-org-label-security]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Asecurity
+[search-dynamicreports-repo-label-ui]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aui
+[search-dynamicreports-org-label-ui]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aui
+[search-dynamicreports-repo-label-api]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aapi
+[search-dynamicreports-org-label-api]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aapi
+[search-dynamicreports-repo-label-crash]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Acrash
+[search-dynamicreports-org-label-crash]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Acrash
+[search-dynamicreports-repo-label-auto-indent]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aauto-indent
+[search-dynamicreports-org-label-auto-indent]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aauto-indent
+[search-dynamicreports-repo-label-encoding]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aencoding
+[search-dynamicreports-org-label-encoding]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aencoding
+[search-dynamicreports-repo-label-network]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Anetwork
+[search-dynamicreports-org-label-network]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Anetwork
+[search-dynamicreports-repo-label-uncaught-exception]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Auncaught-exception
+[search-dynamicreports-org-label-uncaught-exception]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Auncaught-exception
+[search-dynamicreports-repo-label-git]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Agit
+[search-dynamicreports-org-label-git]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Agit
+[search-dynamicreports-repo-label-blocked]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Ablocked
+[search-dynamicreports-org-label-blocked]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Ablocked
+[search-dynamicreports-repo-label-duplicate]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aduplicate
+[search-dynamicreports-org-label-duplicate]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aduplicate
+[search-dynamicreports-repo-label-wontfix]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Awontfix
+[search-dynamicreports-org-label-wontfix]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Awontfix
+[search-dynamicreports-repo-label-invalid]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Ainvalid
+[search-dynamicreports-org-label-invalid]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Ainvalid
+[search-dynamicreports-repo-label-package-idea]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Apackage-idea
+[search-dynamicreports-org-label-package-idea]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Apackage-idea
+[search-dynamicreports-repo-label-wrong-repo]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Awrong-repo
+[search-dynamicreports-org-label-wrong-repo]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Awrong-repo
+[search-dynamicreports-repo-label-editor-rendering]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aeditor-rendering
+[search-dynamicreports-org-label-editor-rendering]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aeditor-rendering
+[search-dynamicreports-repo-label-build-error]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Abuild-error
+[search-dynamicreports-org-label-build-error]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abuild-error
+[search-dynamicreports-repo-label-error-from-pathwatcher]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aerror-from-pathwatcher
+[search-dynamicreports-org-label-error-from-pathwatcher]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aerror-from-pathwatcher
+[search-dynamicreports-repo-label-error-from-save]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aerror-from-save
+[search-dynamicreports-org-label-error-from-save]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aerror-from-save
+[search-dynamicreports-repo-label-error-from-open]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aerror-from-open
+[search-dynamicreports-org-label-error-from-open]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aerror-from-open
+[search-dynamicreports-repo-label-installer]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Ainstaller
+[search-dynamicreports-org-label-installer]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Ainstaller
+[search-dynamicreports-repo-label-auto-updater]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Aauto-updater
+[search-dynamicreports-org-label-auto-updater]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aauto-updater
+[search-dynamicreports-repo-label-deprecation-help]: https://github.com/search?q=is%3Aopen+is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+label%3Adeprecation-help
+[search-dynamicreports-org-label-deprecation-help]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Adeprecation-help
+[search-dynamicreports-repo-label-electron]: https://github.com/search?q=is%3Aissue+repo%3Adynamicreports%2Fdynamicreports+is%3Aopen+label%3Aelectron
+[search-dynamicreports-org-label-electron]: https://github.com/search?q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Aelectron
+[search-dynamicreports-repo-label-work-in-progress]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+label%3Awork-in-progress
+[search-dynamicreports-org-label-work-in-progress]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Adynamicreports+label%3Awork-in-progress
+[search-dynamicreports-repo-label-needs-review]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+label%3Aneeds-review
+[search-dynamicreports-org-label-needs-review]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Adynamicreports+label%3Aneeds-review
+[search-dynamicreports-repo-label-under-review]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+label%3Aunder-review
+[search-dynamicreports-org-label-under-review]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Adynamicreports+label%3Aunder-review
+[search-dynamicreports-repo-label-requires-changes]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+label%3Arequires-changes
+[search-dynamicreports-org-label-requires-changes]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Adynamicreports+label%3Arequires-changes
+[search-dynamicreports-repo-label-needs-testing]: https://github.com/search?q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+label%3Aneeds-testing
+[search-dynamicreports-org-label-needs-testing]: https://github.com/search?q=is%3Aopen+is%3Apr+user%3Adynamicreports+label%3Aneeds-testing
 
-[beginner]:https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abeginner+label%3Ahelp-wanted+user%3Aatom+sort%3Acomments-desc
-[help-wanted]:https://github.com/search?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted+user%3Aatom+sort%3Acomments-desc+-label%3Abeginner
-[contributing-to-official-atom-packages]:https://flight-manual.atom.io/hacking-atom/sections/contributing-to-official-atom-packages/
-[hacking-on-atom-core]: https://flight-manual.atom.io/hacking-atom/sections/hacking-on-atom-core/
+[beginner]:https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abeginner+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc
+[help-wanted]:https://github.com/search?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc+-label%3Abeginner
+[contributing-to-official-dynamicreports-packages]:https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/contributing-to-official-dynamicreports-packages/
+[hacking-on-dynamicreports-core]: https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/hacking-on-dynamicreports-core/
 
 * **Please note this guideline is borrowed from the Atom project contribution guide and still contains links to the same as it is still edits-in-progress"** *
