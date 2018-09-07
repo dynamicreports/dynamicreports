@@ -222,10 +222,19 @@ Ok, that would be a bit too much, so this speaks to concept, approach and taste 
 ### Documentation Styleguide
 
 * Stick to the oracle javadoc [guidelines](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#styleguide). Read the [documentation](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) on javadoc tool.
+As for the project wide documentation project be sure to stick to the google python style [guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)
 
 ### Logging Style Guide
+There is not an agreed upon, style-for-the-masses here, neither is this to be enforced anywhere but in the application run, as you debug this library for the purposes of sending the contributors
+a bug report, or an enhancement suggestion, if there be logs, the following format is heartily encouraged : 
+```
+%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+```
+If that format looks familiar, :confused: it's because it is. It's the default logback configuration in :seedling: spring-boot as of version 1.5.8.RELEASE. Logs in this format are quick to triage, but if you 
+know of one that is even more readable :rocket: please send us a PR on this template with the format included.
 
 ## Additional Notes
+As you can see there is a lot of google style going on. That makes it easy to remember so next time you want to remember how to style up something, you simply "google" it (pun intended)
 
 ### Issue and Pull Request Labels
 
