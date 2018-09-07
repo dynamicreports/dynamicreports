@@ -15,10 +15,10 @@ this document in a pull request.
   * [Java and OOP](#java-and-oop)
   * [Apache POI Library](#apache-poi-library)
   * [Jasper Reports Library](#jasper-reports-library)
-  * [xml](#xml)
-  * [Dynamic Reports Design Decisions](#design-decisions)
+  * [xml](https://www.xml.com/pub/a/w3j/s3.walsh.html)
+  * [Dynamic Reports Design Decisions](#Dynamic Reports Design Decisions)
 
-[How Can I Contribute?](#how-can-i-contribute)
+[How Can I Contribute?](#How Can I Contribute?)
   * [Reporting Bugs](#reporting-bugs)
   * [Suggesting Enhancements](#suggesting-enhancements)
   * [Your First Code Contribution](#your-first-code-contribution)
@@ -26,9 +26,9 @@ this document in a pull request.
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
-  * [JavaScript Styleguide](#javascript-styleguide)
-  * [CoffeeScript Styleguide](#coffeescript-styleguide)
-  * [Specs Styleguide](#specs-styleguide)
+  * [Java Styleguide](#Java Styleguide)
+  * [XML Styleguide](#XML Styleguide)
+  * [JUnit tests Styleguide](#Tests StyleGuide)
   * [Documentation Styleguide](#documentation-styleguide)
 
 [Additional Notes](#additional-notes)
@@ -79,7 +79,9 @@ on can be accessed at the projects [page](https://github.com/dynamicreports/dyna
 
 This section guides you through submitting a bug report for Dynamic Reports. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
 
-Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE/standard-issue-template.md), the information it asks for helps us resolve issues faster.
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include 
+as many details as possible](#How to I submit a good bug report?). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/
+.github/ISSUE_TEMPLATE/standard-issue-template.md), the information it asks for helps us resolve issues faster.
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
@@ -89,7 +91,7 @@ Before creating bug reports, please check [this list](#before-submitting-a-bug-r
 * **Check the FAQs on the forum** (coming soon) for a list of common questions and problems.
 * **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Adynamicreports)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
-#### How Do I Submit A (Good) Bug Report?
+#### How to I submit a good bug report?
 
 Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md).
 
@@ -126,7 +128,7 @@ Include details about your configuration and environment:
 
 This section guides you through submitting an enhancement suggestion for dynamicreports, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#How Do I Submit A Good Enhancement Suggestion?). Fill in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
@@ -135,7 +137,7 @@ Before creating enhancement suggestions, please check [this list](#before-submit
 * **Determine [which module the enhancement should be suggested in](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules).**
 * **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3DynamicReports)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
-#### How Do I Submit A (Good) Enhancement Suggestion?
+#### How Do I Submit A Good Enhancement Suggestion?
 
 Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
 
@@ -181,7 +183,7 @@ DynamicReports Core and all packages can be developed locally. For instructions 
     * Static Class methods and properties (methods or properties with `static` keyword in they signature)
     * Instance methods and properties
 
-## Styleguides
+## StyleGuides
 
 ### Git Commit Messages
 
@@ -212,10 +214,10 @@ DynamicReports Core and all packages can be developed locally. For instructions 
 All Java code must adhere to google java style [guide](https://google.github.io/styleguide/javaguide.html).
 
 ### XML Styleguide
+This project seeks to adhere to the google xml document format style [guide](https://google.github.io/styleguide/xmlstyle.html)
 
-
-### Tests Styleguide
-
+### Tests StyleGuide
+Ok, that would be a bit too much, so this speaks to concept, approach and taste rather than style. [This](http://users.csc.calpoly.edu/~jdalbey/205/Resources/JUnit_Style.html) write up would be sufficiently eloquent on most matters pertaining to tests
 
 ### Documentation Styleguide
 
