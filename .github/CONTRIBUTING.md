@@ -259,9 +259,6 @@ Please open an issue on `dynamicreports/dynamicreports` if you have suggestions 
 | `duplicate` | [search][search-dynamicreports-repo-label-duplicate] | [search][search-dynamicreports-org-label-duplicate] | Issues which are duplicates of other issues, i.e. they have been reported before. |
 | `wontfix` | [search][search-dynamicreports-repo-label-wontfix] | [search][search-dynamicreports-org-label-wontfix] | The DynamicReports core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
 | `invalid` | [search][search-dynamicreports-repo-label-invalid] | [search][search-dynamicreports-org-label-invalid] | Issues which aren't valid (e.g. user errors). |
-| `package-idea` | [search][search-dynamicreports-repo-label-package-idea] | [search][search-dynamicreports-org-label-package-idea] | Feature request which might be good candidates for new 
-packages, instead of extending DynamicReports or core DynamicReports modules. |
-| `wrong-repo` | [search][search-dynamicreports-repo-label-wrong-repo] | [search][search-dynamicreports-org-label-wrong-repo] | Issues reported on the wrong repository (e.g. a bug related to the [Settings View package](https://github.com/dynamicreports/settings-view) was reported on [DynamicReports core](https://github.com/dynamicreports/dynamicreports)). |
 
 #### Topic Categories
 
@@ -277,7 +274,6 @@ packages, instead of extending DynamicReports or core DynamicReports modules. |
 | `api` | [search][search-dynamicreports-repo-label-api] | [search][search-dynamicreports-org-label-api] | Related to DynamicReports's public APIs. |
 | `uncaught-exception` | [search][search-dynamicreports-repo-label-uncaught-exception] | [search][search-dynamicreports-org-label-uncaught-exception] | Issues about uncaught exceptions, normally created from the [Notifications package](https://github.com/dynamicreports/notifications). |
 | `crash` | [search][search-dynamicreports-repo-label-crash] | [search][search-dynamicreports-org-label-crash] | Reports of DynamicReports completely crashing. |
-| `auto-indent` | [search][search-dynamicreports-repo-label-auto-indent] | [search][search-dynamicreports-org-label-auto-indent] | Related to auto-indenting text. |
 | `encoding` | [search][search-dynamicreports-repo-label-encoding] | [search][search-dynamicreports-org-label-encoding] | Related to character encoding. |
 | `network` | [search][search-dynamicreports-repo-label-network] | [search][search-dynamicreports-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |
 | `git` | [search][search-dynamicreports-repo-label-git] | [search][search-dynamicreports-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |
@@ -288,13 +284,7 @@ packages, instead of extending DynamicReports or core DynamicReports modules. |
 | --- | --- | --- | --- |
 | `editor-rendering` | [search][search-dynamicreports-repo-label-editor-rendering] | [search][search-dynamicreports-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |
 | `build-error` | [search][search-dynamicreports-repo-label-build-error] | [search][search-dynamicreports-org-label-build-error] | Related to problems with building DynamicReports from source. |
-| `error-from-pathwatcher` | [search][search-dynamicreports-repo-label-error-from-pathwatcher] | [search][search-dynamicreports-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/dynamicreports/node-pathwatcher). |
-| `error-from-save` | [search][search-dynamicreports-repo-label-error-from-save] | [search][search-dynamicreports-org-label-error-from-save] | Related to errors thrown when saving files. |
-| `error-from-open` | [search][search-dynamicreports-repo-label-error-from-open] | [search][search-dynamicreports-org-label-error-from-open] | Related to errors thrown when opening files. |
-| `installer` | [search][search-dynamicreports-repo-label-installer] | [search][search-dynamicreports-org-label-installer] | Related to the DynamicReports installers for different OSes. |
-| `auto-updater` | [search][search-dynamicreports-repo-label-auto-updater] | [search][search-dynamicreports-org-label-auto-updater] | Related to the auto-updater for different OSes. |
 | `deprecation-help` | [search][search-dynamicreports-repo-label-deprecation-help] | [search][search-dynamicreports-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |
-| `electron` | [search][search-dynamicreports-repo-label-electron] | [search][search-dynamicreports-org-label-electron] | Issues that require changes to [Electron](https://electron.dynamicreports.io) to fix or implement. |
 
 #### Pull Request Labels
 
@@ -395,7 +385,5 @@ packages, instead of extending DynamicReports or core DynamicReports modules. |
 
 [beginner]:https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abeginner+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc
 [help-wanted]:https://github.com/search?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc+-label%3Abeginner
-[contributing-to-official-dynamicreports-packages]:https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/contributing-to-official-dynamicreports-packages/
-[hacking-on-dynamicreports-core]: https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/hacking-on-dynamicreports-core/
 
 * **Please note this guideline is borrowed from the Atom project contribution guide and still contains links to the same as it is still edits-in-progress"** *
