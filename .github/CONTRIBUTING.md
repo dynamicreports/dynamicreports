@@ -208,6 +208,7 @@ DynamicReports Core and all packages can be developed locally. For instructions 
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
     * :shirt: `:shirt:` when removing linter warnings
+    * :ship: `:ship:` when adding or removing code that could affect portability
 
 ### Java Styleguide
 
