@@ -91,7 +91,7 @@ Before creating bug reports, please check [this list](#before-submitting-a-bug-r
 
 #### How Do I Submit A (Good) Bug Report?
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md).
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md).
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 
@@ -126,25 +126,25 @@ Include details about your configuration and environment:
 
 This section guides you through submitting an enhancement suggestion for dynamicreports, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md), including the steps that you imagine you would take if the feature you're requesting existed.
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
-* **Check the [debugging guide](.github/DEBUGGING.md)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of DynamicReports](.github/DEBUGGING.md/#update-to-the-latest-version) and if you can get the desired behavior by changing [DynamicReports' config settings](.github/DEBUGGING.md/#check-dynamicReports-settings).
-* **Check if there's already [a module](.github/DEBUGGING.md/#dynamicReports-modules) which provides that enhancement.**
-* **Determine [which module the enhancement should be suggested in](.github/DEBUGGING.md/#dynamicReports-modules).**
+* **Check the [debugging guide](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of DynamicReports](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#update-to-the-latest-version) and if you can get the desired behavior by changing [DynamicReports' config settings](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#check-dynamicReports-settings).
+* **Check if there's already [a module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules) which provides that enhancement.**
+* **Determine [which module the enhancement should be suggested in](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules).**
 * **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3DynamicReports)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
 #### How Do I Submit A (Good) Enhancement Suggestion?
 
-Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](.github/DEBUGGING.md/#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
+Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
 
 * **Use a clear and descriptive title** for the issue to identify the suggestion.
 * **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
 * **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 * **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
 * **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of DynamicReports which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
-* **Explain why this enhancement would be useful** to most DynamicReports users and isn't something that can or should be implemented as a [module](.github/DEBUGGING.md/#dynamicReports-modules).
+* **Explain why this enhancement would be useful** to most DynamicReports users and isn't something that can or should be implemented as a [module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules).
 * **List some other reporting libraries (in any programming language) or applications where this enhancement exists.**
 * **Specify which version of DynamicReports you're using.** You can get the exact version by checking version number in the library's project's object model (pom)
 * **Specify the name and version of the OS you're using.**
@@ -162,14 +162,14 @@ If you want to read about using DynamicReports, the usage examples are available
 
 #### Local development
 
-DynamicReports Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [debugging guidelines](.github/DEBUGGING.md/#dynamicReports-local-development):
+DynamicReports Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [debugging guidelines](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-local-development):
 
 * [What I need to know before I get started](#What should I know before I get started?)
 * Watch this space...
 
 ### Pull Requests
 
-* Fill in the required [template](.github/PULL_REQUEST_TEMPLATE.md)
+* Fill in the required [template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
 * Do not include issue numbers in the PR title
 * Include screenshots and animated GIFs in your pull request whenever possible.
 * Follow the google java style [guide](https://google.github.io/styleguide/javaguide.html).
