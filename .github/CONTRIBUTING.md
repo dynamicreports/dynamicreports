@@ -2,8 +2,8 @@
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to Atom and its packages,
-which are hosted in the [Dynamic Reports Organization](https://github.com/dynamicreports) on GitHub.
+The following is a set of guidelines for contributing to DynamicReports,
+which is hosted in the [Dynamic Reports Organization](https://github.com/dynamicreports) on GitHub.
 These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to
 this document in a pull request.
 
@@ -15,10 +15,10 @@ this document in a pull request.
   * [Java and OOP](#java-and-oop)
   * [Apache POI Library](#apache-poi-library)
   * [Jasper Reports Library](#jasper-reports-library)
-  * [xml](#xml)
-  * [Dynamic Reports Design Decisions](#design-decisions)
+  * [xml](https://www.xml.com/pub/a/w3j/s3.walsh.html)
+  * [Dynamic Reports Design Decisions](#Dynamic Reports Design Decisions)
 
-[How Can I Contribute?](#how-can-i-contribute)
+[How Can I Contribute?](#How Can I Contribute?)
   * [Reporting Bugs](#reporting-bugs)
   * [Suggesting Enhancements](#suggesting-enhancements)
   * [Your First Code Contribution](#your-first-code-contribution)
@@ -26,9 +26,9 @@ this document in a pull request.
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
-  * [JavaScript Styleguide](#javascript-styleguide)
-  * [CoffeeScript Styleguide](#coffeescript-styleguide)
-  * [Specs Styleguide](#specs-styleguide)
+  * [Java Styleguide](#Java Styleguide)
+  * [XML Styleguide](#XML Styleguide)
+  * [JUnit tests Styleguide](#Tests StyleGuide)
   * [Documentation Styleguide](#documentation-styleguide)
 
 [Additional Notes](#additional-notes)
@@ -79,7 +79,9 @@ on can be accessed at the projects [page](https://github.com/dynamicreports/dyna
 
 This section guides you through submitting a bug report for Dynamic Reports. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
 
-Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE/standard-issue-template.md), the information it asks for helps us resolve issues faster.
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include 
+as many details as possible](#How to I submit a good bug report?). Fill out [the required template](https://github.com/dynamicreports/dynamicreports/blob/master/
+.github/ISSUE_TEMPLATE/standard-issue-template.md), the information it asks for helps us resolve issues faster.
 
 > **Note:** If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
@@ -89,9 +91,9 @@ Before creating bug reports, please check [this list](#before-submitting-a-bug-r
 * **Check the FAQs on the forum** (coming soon) for a list of common questions and problems.
 * **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3Adynamicreports)** to see if the problem has already been reported. If it has **and the issue is still open**, add a comment to the existing issue instead of opening a new one.
 
-#### How Do I Submit A (Good) Bug Report?
+#### How to I submit a good bug report?
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md).
+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've done some debuging and cursory search, create an issue on the repository and provide the following information by filling in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md).
 
 Explain the problem and include additional details to help maintainers reproduce the problem:
 
@@ -126,25 +128,25 @@ Include details about your configuration and environment:
 
 This section guides you through submitting an enhancement suggestion for dynamicreports, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
-Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#how-do-i-submit-a-good-enhancement-suggestion). Fill in [the template](.github/ISSUE_TEMPLATE/standard-issue-template.md), including the steps that you imagine you would take if the feature you're requesting existed.
+Before creating enhancement suggestions, please check [this list](#before-submitting-an-enhancement-suggestion) as you might find out that you don't need to create one. When you are creating an enhancement suggestion, please [include as many details as possible](#How Do I Submit A Good Enhancement Suggestion?). Fill in [the template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/ISSUE_TEMPLATE.md), including the steps that you imagine you would take if the feature you're requesting existed.
 
 #### Before Submitting An Enhancement Suggestion
 
-* **Check the [debugging guide](.github/DEBUGGING.md)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of DynamicReports](.github/DEBUGGING.md/#update-to-the-latest-version) and if you can get the desired behavior by changing [DynamicReports' config settings](.github/DEBUGGING.md/#check-dynamicReports-settings).
-* **Check if there's already [a module](.github/DEBUGGING.md/#dynamicReports-modules) which provides that enhancement.**
-* **Determine [which module the enhancement should be suggested in](.github/DEBUGGING.md/#dynamicReports-modules).**
+* **Check the [debugging guide](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md)** for tips — you might discover that the enhancement is already available. Most importantly, check if you're using [the latest version of DynamicReports](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#update-to-the-latest-version) and if you can get the desired behavior by changing [DynamicReports' config settings](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#check-dynamicReports-settings).
+* **Check if there's already [a module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules) which provides that enhancement.**
+* **Determine [which module the enhancement should be suggested in](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules).**
 * **Perform a [cursory search](https://github.com/search?q=+is%3Aissue+user%3DynamicReports)** to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 
-#### How Do I Submit A (Good) Enhancement Suggestion?
+#### How Do I Submit A Good Enhancement Suggestion?
 
-Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](.github/DEBUGGING.md/#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
+Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules) your enhancement suggestion is related to, create an issue on that repository and provide the following information:
 
 * **Use a clear and descriptive title** for the issue to identify the suggestion.
 * **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
 * **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 * **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
 * **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of DynamicReports which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
-* **Explain why this enhancement would be useful** to most DynamicReports users and isn't something that can or should be implemented as a [module](.github/DEBUGGING.md/#dynamicReports-modules).
+* **Explain why this enhancement would be useful** to most DynamicReports users and isn't something that can or should be implemented as a [module](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-modules).
 * **List some other reporting libraries (in any programming language) or applications where this enhancement exists.**
 * **Specify which version of DynamicReports you're using.** You can get the exact version by checking version number in the library's project's object model (pom)
 * **Specify the name and version of the OS you're using.**
@@ -162,14 +164,14 @@ If you want to read about using DynamicReports, the usage examples are available
 
 #### Local development
 
-DynamicReports Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [debugging guidelines](.github/DEBUGGING.md/#dynamicReports-local-development):
+DynamicReports Core and all packages can be developed locally. For instructions on how to do this, see the following sections in the [debugging guidelines](https://github.com/dynamicreports/dynamicreports/blob/master/.github/DEBUGGING.md#dynamicReports-local-development):
 
 * [What I need to know before I get started](#What should I know before I get started?)
 * Watch this space...
 
 ### Pull Requests
 
-* Fill in the required [template](.github/PULL_REQUEST_TEMPLATE.md)
+* Fill in the required [template](https://github.com/dynamicreports/dynamicreports/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
 * Do not include issue numbers in the PR title
 * Include screenshots and animated GIFs in your pull request whenever possible.
 * Follow the google java style [guide](https://google.github.io/styleguide/javaguide.html).
@@ -181,7 +183,7 @@ DynamicReports Core and all packages can be developed locally. For instructions 
     * Static Class methods and properties (methods or properties with `static` keyword in they signature)
     * Instance methods and properties
 
-## Styleguides
+## StyleGuides
 
 ### Git Commit Messages
 
@@ -206,30 +208,45 @@ DynamicReports Core and all packages can be developed locally. For instructions 
     * :arrow_up: `:arrow_up:` when upgrading dependencies
     * :arrow_down: `:arrow_down:` when downgrading dependencies
     * :shirt: `:shirt:` when removing linter warnings
+    * :ship: `:ship:` when adding or removing code that could affect portability
 
 ### Java Styleguide
 
 All Java code must adhere to google java style [guide](https://google.github.io/styleguide/javaguide.html).
 
 ### XML Styleguide
+This project seeks to adhere to the google xml document format style [guide](https://google.github.io/styleguide/xmlstyle.html)
 
-
-### Tests Styleguide
-
+### Tests StyleGuide
+Ok, that would be a bit too much, so this speaks to concept, approach and taste rather than style. [This](http://users.csc.calpoly.edu/~jdalbey/205/Resources/JUnit_Style.html) write up would be sufficiently eloquent on most matters pertaining to tests
 
 ### Documentation Styleguide
 
 * Stick to the oracle javadoc [guidelines](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#styleguide). Read the [documentation](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) on javadoc tool.
+As for the project wide documentation project be sure to stick to the google python style [guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)
 
 ### Logging Style Guide
+There is not an agreed upon, style-for-the-masses here, neither is this to be enforced anywhere but in the application run, as you debug this library for the purposes of sending the contributors
+a bug report, or an enhancement suggestion, if there be logs, the following format is heartily encouraged : 
+```
+%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+```
+If that format looks familiar, :confused: it's because it is. It's the default logback configuration in :seedling: spring-boot as of version 1.5.8.RELEASE. Logs in this format are quick to triage, but if you 
+know of one that is even more readable :rocket: please send us a PR on this template with the format included.
 
 ## Additional Notes
+As you can see there is a lot of google style going on. That makes it easy to remember so next time you want to remember how to style up something, you simply "google" it (pun intended)
 
 ### Issue and Pull Request Labels
 
 This section lists the labels we use to help us track and manage issues and pull requests.
 
-[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `dynamicreports/dynamicreports` and all dynamicreports repositories which are labeled as bugs, but still need to be reliably reproduced](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `dynamicreports/dynamicreports` which haven't been reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `dynamicreports/dynamicreports` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be 
+interested in [open issues across `dynamicreports/dynamicreports` and all dynamicreports repositories which are labeled as bugs, but still need to be reliably reproduced](https://github
+.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Adynamicreports+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `dynamicreports/dynamicreports` which haven't been 
+reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Adynamicreports%2Fdynamicreports+comments%3A0). To help you find issues and pull requests, each label is listed with
+ search links for finding open items with that label in `dynamicreports/dynamicreports` only and also across all DynamicReports repositories. We  encourage you to read about [other search filters]
+ (https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
 
 The labels are loosely grouped by their purpose, but it's not required that every issue have a label from every group or that an issue can't have more than one label from the same group.
 
@@ -243,32 +260,30 @@ Please open an issue on `dynamicreports/dynamicreports` if you have suggestions 
 | `bug` | [search][search-dynamicreports-repo-label-bug] | [search][search-dynamicreports-org-label-bug] | Confirmed bugs or reports that are very likely to be bugs. |
 | `question` | [search][search-dynamicreports-repo-label-question] | [search][search-dynamicreports-org-label-question] | Questions more than bug reports or feature requests (e.g. how do I do X). |
 | `feedback` | [search][search-dynamicreports-repo-label-feedback] | [search][search-dynamicreports-org-label-feedback] | General feedback more than bug reports or feature requests. |
-| `help-wanted` | [search][search-dynamicreports-repo-label-help-wanted] | [search][search-dynamicreports-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |
-| `beginner` | [search][search-dynamicreports-repo-label-beginner] | [search][search-dynamicreports-org-label-beginner] | Less complex issues which would be good first issues to work on for users who want to contribute to Atom. |
+| `help-wanted` | [search][search-dynamicreports-repo-label-help-wanted] | [search][search-dynamicreports-org-label-help-wanted] | The DynamicReports core team would appreciate help from the community
+ in resolving these issues. |
+| `beginner` | [search][search-dynamicreports-repo-label-beginner] | [search][search-dynamicreports-org-label-beginner] | Less complex issues which would be good first issues to work on for users who want to contribute to DynamicReports. |
 | `more-information-needed` | [search][search-dynamicreports-repo-label-more-information-needed] | [search][search-dynamicreports-org-label-more-information-needed] | More information needs to be collected about these problems or feature requests (e.g. steps to reproduce). |
 | `needs-reproduction` | [search][search-dynamicreports-repo-label-needs-reproduction] | [search][search-dynamicreports-org-label-needs-reproduction] | Likely bugs, but haven't been reliably reproduced. |
 | `blocked` | [search][search-dynamicreports-repo-label-blocked] | [search][search-dynamicreports-org-label-blocked] | Issues blocked on other issues. |
 | `duplicate` | [search][search-dynamicreports-repo-label-duplicate] | [search][search-dynamicreports-org-label-duplicate] | Issues which are duplicates of other issues, i.e. they have been reported before. |
-| `wontfix` | [search][search-dynamicreports-repo-label-wontfix] | [search][search-dynamicreports-org-label-wontfix] | The Atom core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
+| `wontfix` | [search][search-dynamicreports-repo-label-wontfix] | [search][search-dynamicreports-org-label-wontfix] | The DynamicReports core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
 | `invalid` | [search][search-dynamicreports-repo-label-invalid] | [search][search-dynamicreports-org-label-invalid] | Issues which aren't valid (e.g. user errors). |
-| `package-idea` | [search][search-dynamicreports-repo-label-package-idea] | [search][search-dynamicreports-org-label-package-idea] | Feature request which might be good candidates for new packages, instead of extending Atom or core Atom packages. |
-| `wrong-repo` | [search][search-dynamicreports-repo-label-wrong-repo] | [search][search-dynamicreports-org-label-wrong-repo] | Issues reported on the wrong repository (e.g. a bug related to the [Settings View package](https://github.com/dynamicreports/settings-view) was reported on [Atom core](https://github.com/dynamicreports/dynamicreports)). |
 
 #### Topic Categories
 
 | Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
-| `windows` | [search][search-dynamicreports-repo-label-windows] | [search][search-dynamicreports-org-label-windows] | Related to Atom running on Windows. |
-| `linux` | [search][search-dynamicreports-repo-label-linux] | [search][search-dynamicreports-org-label-linux] | Related to Atom running on Linux. |
-| `mac` | [search][search-dynamicreports-repo-label-mac] | [search][search-dynamicreports-org-label-mac] | Related to Atom running on macOS. |
+| `windows` | [search][search-dynamicreports-repo-label-windows] | [search][search-dynamicreports-org-label-windows] | Related to DynamicReports running on Windows. |
+| `linux` | [search][search-dynamicreports-repo-label-linux] | [search][search-dynamicreports-org-label-linux] | Related to DynamicReports running on Linux. |
+| `mac` | [search][search-dynamicreports-repo-label-mac] | [search][search-dynamicreports-org-label-mac] | Related to DynamicReports running on macOS. |
 | `documentation` | [search][search-dynamicreports-repo-label-documentation] | [search][search-dynamicreports-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://dynamicreports.io/docs/api/latest/) and the [flight manual](https://flight-manual.dynamicreports.io/)). |
 | `performance` | [search][search-dynamicreports-repo-label-performance] | [search][search-dynamicreports-org-label-performance] | Related to performance. |
 | `security` | [search][search-dynamicreports-repo-label-security] | [search][search-dynamicreports-org-label-security] | Related to security. |
 | `ui` | [search][search-dynamicreports-repo-label-ui] | [search][search-dynamicreports-org-label-ui] | Related to visual design. |
-| `api` | [search][search-dynamicreports-repo-label-api] | [search][search-dynamicreports-org-label-api] | Related to Atom's public APIs. |
+| `api` | [search][search-dynamicreports-repo-label-api] | [search][search-dynamicreports-org-label-api] | Related to DynamicReports's public APIs. |
 | `uncaught-exception` | [search][search-dynamicreports-repo-label-uncaught-exception] | [search][search-dynamicreports-org-label-uncaught-exception] | Issues about uncaught exceptions, normally created from the [Notifications package](https://github.com/dynamicreports/notifications). |
-| `crash` | [search][search-dynamicreports-repo-label-crash] | [search][search-dynamicreports-org-label-crash] | Reports of Atom completely crashing. |
-| `auto-indent` | [search][search-dynamicreports-repo-label-auto-indent] | [search][search-dynamicreports-org-label-auto-indent] | Related to auto-indenting text. |
+| `crash` | [search][search-dynamicreports-repo-label-crash] | [search][search-dynamicreports-org-label-crash] | Reports of DynamicReports completely crashing. |
 | `encoding` | [search][search-dynamicreports-repo-label-encoding] | [search][search-dynamicreports-org-label-encoding] | Related to character encoding. |
 | `network` | [search][search-dynamicreports-repo-label-network] | [search][search-dynamicreports-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |
 | `git` | [search][search-dynamicreports-repo-label-git] | [search][search-dynamicreports-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |
@@ -278,22 +293,16 @@ Please open an issue on `dynamicreports/dynamicreports` if you have suggestions 
 | Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
 | `editor-rendering` | [search][search-dynamicreports-repo-label-editor-rendering] | [search][search-dynamicreports-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |
-| `build-error` | [search][search-dynamicreports-repo-label-build-error] | [search][search-dynamicreports-org-label-build-error] | Related to problems with building Atom from source. |
-| `error-from-pathwatcher` | [search][search-dynamicreports-repo-label-error-from-pathwatcher] | [search][search-dynamicreports-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/dynamicreports/node-pathwatcher). |
-| `error-from-save` | [search][search-dynamicreports-repo-label-error-from-save] | [search][search-dynamicreports-org-label-error-from-save] | Related to errors thrown when saving files. |
-| `error-from-open` | [search][search-dynamicreports-repo-label-error-from-open] | [search][search-dynamicreports-org-label-error-from-open] | Related to errors thrown when opening files. |
-| `installer` | [search][search-dynamicreports-repo-label-installer] | [search][search-dynamicreports-org-label-installer] | Related to the Atom installers for different OSes. |
-| `auto-updater` | [search][search-dynamicreports-repo-label-auto-updater] | [search][search-dynamicreports-org-label-auto-updater] | Related to the auto-updater for different OSes. |
+| `build-error` | [search][search-dynamicreports-repo-label-build-error] | [search][search-dynamicreports-org-label-build-error] | Related to problems with building DynamicReports from source. |
 | `deprecation-help` | [search][search-dynamicreports-repo-label-deprecation-help] | [search][search-dynamicreports-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |
-| `electron` | [search][search-dynamicreports-repo-label-electron] | [search][search-dynamicreports-org-label-electron] | Issues that require changes to [Electron](https://electron.dynamicreports.io) to fix or implement. |
 
 #### Pull Request Labels
 
 | Label name | `dynamicreports/dynamicreports` :mag_right: | `dynamicreports`‑org :mag_right: | Description
 | --- | --- | --- | --- |
 | `work-in-progress` | [search][search-dynamicreports-repo-label-work-in-progress] | [search][search-dynamicreports-org-label-work-in-progress] | Pull requests which are still being worked on, more changes will follow. |
-| `needs-review` | [search][search-dynamicreports-repo-label-needs-review] | [search][search-dynamicreports-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or Atom core team. |
-| `under-review` | [search][search-dynamicreports-repo-label-under-review] | [search][search-dynamicreports-org-label-under-review] | Pull requests being reviewed by maintainers or Atom core team. |
+| `needs-review` | [search][search-dynamicreports-repo-label-needs-review] | [search][search-dynamicreports-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or DynamicReports core team. |
+| `under-review` | [search][search-dynamicreports-repo-label-under-review] | [search][search-dynamicreports-org-label-under-review] | Pull requests being reviewed by maintainers or DynamicReports core team. |
 | `requires-changes` | [search][search-dynamicreports-repo-label-requires-changes] | [search][search-dynamicreports-org-label-requires-changes] | Pull requests which need to be updated based on review comments and then reviewed again. |
 | `needs-testing` | [search][search-dynamicreports-repo-label-needs-testing] | [search][search-dynamicreports-org-label-needs-testing] | Pull requests which need manual testing. |
 
@@ -386,7 +395,5 @@ Please open an issue on `dynamicreports/dynamicreports` if you have suggestions 
 
 [beginner]:https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Abeginner+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc
 [help-wanted]:https://github.com/search?q=is%3Aopen+is%3Aissue+label%3Ahelp-wanted+user%3Adynamicreports+sort%3Acomments-desc+-label%3Abeginner
-[contributing-to-official-dynamicreports-packages]:https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/contributing-to-official-dynamicreports-packages/
-[hacking-on-dynamicreports-core]: https://flight-manual.dynamicreports.io/hacking-dynamicreports/sections/hacking-on-dynamicreports-core/
 
 * **Please note this guideline is borrowed from the Atom project contribution guide and still contains links to the same as it is still edits-in-progress"** *
