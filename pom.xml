@@ -90,6 +90,10 @@
         <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.0.1</maven-source-plugin-version>
 
+        <!--Mycila License plugin configuration-->
+        <license.header.location>src/etc/license_header.txt</license.header.location>
+        <license.header.definition>src/etc/header_definition.xml</license.header.definition>
+
     </properties>
 
     <dependencyManagement>
@@ -324,7 +328,8 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>${license-maven-plugin-version}</version>
                         <configuration>
-                            <header>src/etc/license_header.txt</header>
+                            <header>${license.header.location}</header>
+                            <headerDefinitions>${license.header.definition}</headerDefinitions>
                             <includes>
                                 <include>**/*.java</include>
                             </includes>
