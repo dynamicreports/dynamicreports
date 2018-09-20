@@ -354,6 +354,13 @@
         <profile>
             <id>source-10</id>
             <!--Please remember to run this after running compile in core module-->
+            <activation>
+                <property>
+                    <name>profile</name>
+                    <value>source</value>
+                </property>
+                <jdk>[9,)</jdk>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
