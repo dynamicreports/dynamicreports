@@ -91,8 +91,9 @@
         <maven-source-plugin-version>3.0.1</maven-source-plugin-version>
 
         <!--Mycila License plugin configuration-->
-        <license.header.location>src/etc/license_header.txt</license.header.location>
-        <license.header.definition>src/etc/header_definition.xml</license.header.definition>
+        <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
+        <license.header.definition>${project.basedir}/src/etc/header_definition.xml</license.header.definition>
+        <license.maven.owner>Ricardo Mariaca and the DynamicReports Contributors</license.maven.owner>
 
     </properties>
 
@@ -330,6 +331,9 @@
                         <configuration>
                             <header>${license.header.location}</header>
                             <headerDefinitions>${license.header.definition}</headerDefinitions>
+                            <properties>
+                                <owner>${license.maven.owner}</owner>
+                            </properties>
                             <includes>
                                 <include>**/*.java</include>
                             </includes>
