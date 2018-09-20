@@ -203,6 +203,7 @@ DynamicReports Core and all packages can be developed locally. For instructions 
     * :bug: `:bug:` when fixing a bug
     * :fire: `:fire:` when removing code or files
     * :green_heart: `:green_heart:` when fixing the CI build
+    * :hammer: `:hammer:` when fixing the project object model configurations (pom)
     * :white_check_mark: `:white_check_mark:` when adding tests
     * :lock: `:lock:` when dealing with security
     * :arrow_up: `:arrow_up:` when upgrading dependencies
