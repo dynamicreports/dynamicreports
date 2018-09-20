@@ -130,7 +130,7 @@
   </module>
   <!--&lt;!&ndash; Header inlined due to m2e&ndash;&gt;
   <module name="RegexpHeader">
-    <property name="header" value="^/\*[*]?\n^ \* fassets - Project for light-weight tracking of fixed assets"/>
+    <property name="header" value="^/\*[*]?\n^ \* DynamicReports - Free Java reporting library for creating reports dynamically"/>
     <property name="fileExtensions" value="java"/>
     <property name="severity" value="error"/>
   </module>-->
