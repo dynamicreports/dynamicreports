@@ -365,17 +365,22 @@
         </profile>
 
         <profile>
-            <id>source-10</id>
-            <!--Please remember to run this after running compile in core module-->
-            <activation>
-                <!--This does not apply on the same pom-->
-                <!--<property>
-                    <name>profile</name>
-                    <value>source</value>
-                </property>-->
-                <jdk>[9,)</jdk>
-            </activation>
+            <id>java9</id>
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>${maven-compiler-plugin-version}</version>
+                            <configuration>
+                                <source>9</source>
+                                <target>9</target>
+                                <encoding>${encoding}</encoding>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
