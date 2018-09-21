@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -81,6 +81,7 @@
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
@@ -480,6 +481,47 @@
             </activation>
             <!--Attach to validations during build-->
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>${maven-checkstyle-plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <!--Could run with mvn clean verify-->
+                                    <id>validate</id>
+                                    <phase>validate</phase>
+                                    <configuration>
+                                        <encoding>UTF-8</encoding>
+                                    </configuration>
+                                    <goals>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>run-checkstyle</id>
+                                    <phase>process-sources</phase>
+                                    <goals>
+                                        <goal>checkstyle</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <excludes>module-info.java</excludes>
+                                <headerLocation>../src/etc/checkstyle.xml</headerLocation>
+                                <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                                <configLocation>../src/etc/checkstyle.xml</configLocation>
+                                <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                                <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                                <includeResources>${checkstyle.config.includeResources}</includeResources>
+                                <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                                <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                                <linkXRef>${linkXRef}</linkXRef>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <!-- Setup Checkstyle, excluding module-info -->
                     <plugin>

@@ -80,6 +80,59 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>checkstyle</id>
+            <activation>
+                <!--Activate automagically when source profile is online-->
+                <property>
+                    <name>profile</name>
+                    <value>checkstyle</value>
+                </property>
+            </activation>
+            <!--Attach to validations during build-->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>${maven-checkstyle-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <!--Could run with mvn clean verify-->
+                                <id>validate</id>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <encoding>UTF-8</encoding>
+                                </configuration>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>run-checkstyle</id>
+                                <phase>process-sources</phase>
+                                <goals>
+                                    <goal>checkstyle</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <excludes>module-info.java</excludes>
+                            <headerLocation>../src/etc/checkstyle.xml</headerLocation>
+                            <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                            <configLocation>../src/etc/checkstyle.xml</configLocation>
+                            <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                            <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                            <includeResources>${checkstyle.config.includeResources}</includeResources>
+                            <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                            <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                            <linkXRef>${linkXRef}</linkXRef>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 </project>
