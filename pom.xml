@@ -67,6 +67,7 @@
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
         <jasperreportsVersion>6.7.0</jasperreportsVersion>
         <jaxbVersion>2.3.0.1</jaxbVersion>
+        <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
         <junitVersion>4.0</junitVersion>
@@ -419,20 +420,29 @@
                 </plugins>
             </build>
             <dependencies>
+                <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
                 <dependency>
                     <groupId>javax.xml.bind</groupId>
                     <artifactId>jaxb-api</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>2.4.0-b180830.0359</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-core</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>2.3.0.1</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+                <dependency>
+                    <groupId>org.glassfish.jaxb</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>2.3.0.1</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-impl</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>2.4.0-b180830.0438</version>
                 </dependency>
             </dependencies>
         </profile>
