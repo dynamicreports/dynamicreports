@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,11 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.component;
-
-import java.io.Serializable;
-import java.util.List;
 
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.DRIDesignTableOfContentsHeading;
@@ -33,6 +29,9 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignStyle;
 import net.sf.dynamicreports.report.constant.ComponentPositionType;
 import net.sf.dynamicreports.report.constant.StretchType;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * <p>DRIDesignComponent interface.</p>
  *
@@ -40,115 +39,115 @@ import net.sf.dynamicreports.report.constant.StretchType;
  * @version $Id: $Id
  */
 public interface DRIDesignComponent extends Serializable {
-	/**
-	 * <p>getName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getName();
+    /**
+     * <p>getName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getName();
 
-	/**
-	 * <p>getUniqueName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getUniqueName();
+    /**
+     * <p>getUniqueName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getUniqueName();
 
-	/**
-	 * <p>getStyle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
-	 */
-	public DRIDesignStyle getStyle();
+    /**
+     * <p>getStyle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+     */
+    public DRIDesignStyle getStyle();
 
-	/**
-	 * <p>getX.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getX();
+    /**
+     * <p>getX.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getX();
 
-	/**
-	 * <p>getY.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getY();
+    /**
+     * <p>getY.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getY();
 
-	/**
-	 * <p>getWidth.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getWidth();
+    /**
+     * <p>getWidth.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getWidth();
 
-	/**
-	 * <p>getHeight.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getHeight();
+    /**
+     * <p>getHeight.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getHeight();
 
-	/**
-	 * <p>getPrintWhenExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getPrintWhenExpression();
+    /**
+     * <p>getPrintWhenExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getPrintWhenExpression();
 
-	/**
-	 * <p>isRemoveLineWhenBlank.</p>
-	 *
-	 * @return a boolean.
-	 */
-	public boolean isRemoveLineWhenBlank();
+    /**
+     * <p>isRemoveLineWhenBlank.</p>
+     *
+     * @return a boolean.
+     */
+    public boolean isRemoveLineWhenBlank();
 
-	/**
-	 * <p>getPropertyExpressions.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIDesignPropertyExpression> getPropertyExpressions();
+    /**
+     * <p>getPropertyExpressions.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIDesignPropertyExpression> getPropertyExpressions();
 
-	/**
-	 * <p>getPositionType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentPositionType} object.
-	 */
-	public ComponentPositionType getPositionType();
+    /**
+     * <p>getPositionType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ComponentPositionType} object.
+     */
+    public ComponentPositionType getPositionType();
 
-	/**
-	 * <p>getStretchType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.StretchType} object.
-	 */
-	public StretchType getStretchType();
+    /**
+     * <p>getStretchType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.StretchType} object.
+     */
+    public StretchType getStretchType();
 
-	/**
-	 * <p>isPrintInFirstWholeBand.</p>
-	 *
-	 * @return a boolean.
-	 */
-	public boolean isPrintInFirstWholeBand();
+    /**
+     * <p>isPrintInFirstWholeBand.</p>
+     *
+     * @return a boolean.
+     */
+    public boolean isPrintInFirstWholeBand();
 
-	/**
-	 * <p>isPrintWhenDetailOverflows.</p>
-	 *
-	 * @return a boolean.
-	 */
-	public boolean isPrintWhenDetailOverflows();
+    /**
+     * <p>isPrintWhenDetailOverflows.</p>
+     *
+     * @return a boolean.
+     */
+    public boolean isPrintWhenDetailOverflows();
 
-	/**
-	 * <p>getPrintWhenGroupChanges.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
-	 */
-	public DRIDesignGroup getPrintWhenGroupChanges();
+    /**
+     * <p>getPrintWhenGroupChanges.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+     */
+    public DRIDesignGroup getPrintWhenGroupChanges();
 
-	/**
-	 * <p>getTableOfContentsHeading.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignTableOfContentsHeading} object.
-	 */
-	public DRIDesignTableOfContentsHeading getTableOfContentsHeading();
+    /**
+     * <p>getTableOfContentsHeading.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignTableOfContentsHeading} object.
+     */
+    public DRIDesignTableOfContentsHeading getTableOfContentsHeading();
 }

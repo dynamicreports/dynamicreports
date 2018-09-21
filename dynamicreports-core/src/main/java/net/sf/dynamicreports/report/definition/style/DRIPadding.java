@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.style;
 
 import java.io.Serializable;
@@ -32,31 +31,31 @@ import java.io.Serializable;
  */
 public interface DRIPadding extends Serializable {
 
-	/**
-	 * <p>getTop.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getTop();
+    /**
+     * <p>getTop.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getTop();
 
-	/**
-	 * <p>getLeft.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getLeft();
+    /**
+     * <p>getLeft.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getLeft();
 
-	/**
-	 * <p>getBottom.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getBottom();
+    /**
+     * <p>getBottom.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getBottom();
 
-	/**
-	 * <p>getRight.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getRight();
+    /**
+     * <p>getRight.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getRight();
 }

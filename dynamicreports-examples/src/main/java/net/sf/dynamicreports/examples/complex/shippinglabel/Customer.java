@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.complex.shippinglabel;
 
 /**
@@ -29,61 +28,61 @@ package net.sf.dynamicreports.examples.complex.shippinglabel;
  * @version $Id: $Id
  */
 public class Customer {
-	private String name;
-	private String address;
-	private String city;
+    private String name;
+    private String address;
+    private String city;
 
-	/**
-	 * <p>Getter for the field <code>name</code>.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * <p>Getter for the field <code>name</code>.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * <p>Setter for the field <code>name</code>.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * <p>Setter for the field <code>name</code>.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * <p>Getter for the field <code>address</code>.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getAddress() {
-		return address;
-	}
+    /**
+     * <p>Getter for the field <code>address</code>.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getAddress() {
+        return address;
+    }
 
-	/**
-	 * <p>Setter for the field <code>address</code>.</p>
-	 *
-	 * @param address a {@link java.lang.String} object.
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    /**
+     * <p>Setter for the field <code>address</code>.</p>
+     *
+     * @param address a {@link java.lang.String} object.
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	/**
-	 * <p>Getter for the field <code>city</code>.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getCity() {
-		return city;
-	}
+    /**
+     * <p>Getter for the field <code>city</code>.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getCity() {
+        return city;
+    }
 
-	/**
-	 * <p>Setter for the field <code>city</code>.</p>
-	 *
-	 * @param city a {@link java.lang.String} object.
-	 */
-	public void setCity(String city) {
-		this.city = city;
-	}
+    /**
+     * <p>Setter for the field <code>city</code>.</p>
+     *
+     * @param city a {@link java.lang.String} object.
+     */
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

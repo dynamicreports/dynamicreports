@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.component;
-
-import java.util.List;
 
 import net.sf.dynamicreports.design.constant.EvaluationTime;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpression;
+
+import java.util.List;
 
 /**
  * <p>DRIDesignGenericElement interface.</p>
@@ -36,39 +35,39 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignParameterExpr
  */
 public interface DRIDesignGenericElement extends DRIDesignComponent {
 
-	/**
-	 * <p>getGenericElementNamespace.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getGenericElementNamespace();
+    /**
+     * <p>getGenericElementNamespace.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getGenericElementNamespace();
 
-	/**
-	 * <p>getGenericElementName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getGenericElementName();
+    /**
+     * <p>getGenericElementName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getGenericElementName();
 
-	/**
-	 * <p>getEvaluationTime.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
-	 */
-	public EvaluationTime getEvaluationTime();
+    /**
+     * <p>getEvaluationTime.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+     */
+    public EvaluationTime getEvaluationTime();
 
-	/**
-	 * <p>getEvaluationGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
-	 */
-	public DRIDesignGroup getEvaluationGroup();
+    /**
+     * <p>getEvaluationGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+     */
+    public DRIDesignGroup getEvaluationGroup();
 
-	/**
-	 * <p>getParameterExpressions.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIDesignParameterExpression> getParameterExpressions();
+    /**
+     * <p>getParameterExpressions.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIDesignParameterExpression> getParameterExpressions();
 
 }

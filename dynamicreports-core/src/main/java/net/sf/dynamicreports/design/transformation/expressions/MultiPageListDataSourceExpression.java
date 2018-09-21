@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.transformation.expressions;
 
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -35,28 +34,28 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
  * @version $Id: $Id
  */
 public class MultiPageListDataSourceExpression extends AbstractSimpleExpression<JRDataSource> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private int count;
+    private int count;
 
-	/**
-	 * <p>Constructor for MultiPageListDataSourceExpression.</p>
-	 *
-	 * @param count a int.
-	 */
-	public MultiPageListDataSourceExpression(int count) {
-		this.count = count;
-	}
+    /**
+     * <p>Constructor for MultiPageListDataSourceExpression.</p>
+     *
+     * @param count a int.
+     */
+    public MultiPageListDataSourceExpression(int count) {
+        this.count = count;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public JRDataSource evaluate(ReportParameters reportParameters) {
-		return new JREmptyDataSource(count);
-	}
+    /** {@inheritDoc} */
+    @Override
+    public JRDataSource evaluate(ReportParameters reportParameters) {
+        return new JREmptyDataSource(count);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<JRDataSource> getValueClass() {
-		return JRDataSource.class;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Class<JRDataSource> getValueClass() {
+        return JRDataSource.class;
+    }
 }

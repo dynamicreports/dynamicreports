@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.barcode;
 
 /**
@@ -30,45 +29,45 @@ package net.sf.dynamicreports.report.definition.barcode;
  */
 public interface DRIPdf417Barcode extends DRIBarcode4j {
 
-	/**
-	 * <p>getMinColumns.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getMinColumns();
+    /**
+     * <p>getMinColumns.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinColumns();
 
-	/**
-	 * <p>getMaxColumns.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getMaxColumns();
+    /**
+     * <p>getMaxColumns.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMaxColumns();
 
-	/**
-	 * <p>getMinRows.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getMinRows();
+    /**
+     * <p>getMinRows.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinRows();
 
-	/**
-	 * <p>getMaxRows.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getMaxRows();
+    /**
+     * <p>getMaxRows.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMaxRows();
 
-	/**
-	 * <p>getWidthToHeightRatio.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getWidthToHeightRatio();
+    /**
+     * <p>getWidthToHeightRatio.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getWidthToHeightRatio();
 
-	/**
-	 * <p>getErrorCorrectionLevel.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getErrorCorrectionLevel();
+    /**
+     * <p>getErrorCorrectionLevel.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getErrorCorrectionLevel();
 }

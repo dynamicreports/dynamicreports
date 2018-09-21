@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.design.definition.component.DRIDesignTextField;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignTableOfContentsHeading interface.</p>
@@ -34,11 +33,11 @@ import net.sf.dynamicreports.design.definition.component.DRIDesignTextField;
  */
 public interface DRIDesignTableOfContentsHeading extends Serializable {
 
-	/**
-	 * <p>getReferenceField.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignTextField} object.
-	 */
-	public DRIDesignTextField getReferenceField();
+    /**
+     * <p>getReferenceField.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignTextField} object.
+     */
+    public DRIDesignTextField getReferenceField();
 
 }

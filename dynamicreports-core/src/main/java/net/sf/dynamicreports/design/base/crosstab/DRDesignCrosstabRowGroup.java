@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.crosstab;
 
 import net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabRowGroup;
@@ -32,22 +31,22 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignCrosstabRowGroup extends DRDesignCrosstabGroup implements DRIDesignCrosstabRowGroup {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private int width;
+    private int width;
 
-	/** {@inheritDoc} */
-	@Override
-	public int getWidth() {
-		return width;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public int getWidth() {
+        return width;
+    }
 
-	/**
-	 * <p>Setter for the field <code>width</code>.</p>
-	 *
-	 * @param width a int.
-	 */
-	public void setWidth(int width) {
-		this.width = width;
-	}
+    /**
+     * <p>Setter for the field <code>width</code>.</p>
+     *
+     * @param width a int.
+     */
+    public void setWidth(int width) {
+        this.width = width;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 import java.awt.Paint;
@@ -32,32 +31,32 @@ import java.awt.Paint;
  */
 public interface DRIWaterfallBarPlot extends DRIBarPlot {
 
-	/**
-	 * <p>getFirstBarPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getFirstBarPaint();
+    /**
+     * <p>getFirstBarPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getFirstBarPaint();
 
-	/**
-	 * <p>getLastBarPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getLastBarPaint();
+    /**
+     * <p>getLastBarPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getLastBarPaint();
 
-	/**
-	 * <p>getPositiveBarPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getPositiveBarPaint();
+    /**
+     * <p>getPositiveBarPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getPositiveBarPaint();
 
-	/**
-	 * <p>getNegativeBarPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getNegativeBarPaint();
+    /**
+     * <p>getNegativeBarPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getNegativeBarPaint();
 
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.component;
 
 import net.sf.dynamicreports.report.base.style.DRPen;
@@ -34,38 +33,38 @@ import net.sf.dynamicreports.report.definition.component.DRILine;
  * @version $Id: $Id
  */
 public class DRLine extends DRDimensionComponent implements DRILine {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private LineDirection direction;
-	private DRPen pen;
+    private LineDirection direction;
+    private DRPen pen;
 
-	/** {@inheritDoc} */
-	@Override
-	public LineDirection getDirection() {
-		return direction;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public LineDirection getDirection() {
+        return direction;
+    }
 
-	/**
-	 * <p>Setter for the field <code>direction</code>.</p>
-	 *
-	 * @param direction a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
-	 */
-	public void setDirection(LineDirection direction) {
-		this.direction = direction;
-	}
+    /**
+     * <p>Setter for the field <code>direction</code>.</p>
+     *
+     * @param direction a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+     */
+    public void setDirection(LineDirection direction) {
+        this.direction = direction;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRPen getPen() {
-		return pen;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRPen getPen() {
+        return pen;
+    }
 
-	/**
-	 * <p>Setter for the field <code>pen</code>.</p>
-	 *
-	 * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
-	 */
-	public void setPen(DRPen pen) {
-		this.pen = pen;
-	}
+    /**
+     * <p>Setter for the field <code>pen</code>.</p>
+     *
+     * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+     */
+    public void setPen(DRPen pen) {
+        this.pen = pen;
+    }
 }

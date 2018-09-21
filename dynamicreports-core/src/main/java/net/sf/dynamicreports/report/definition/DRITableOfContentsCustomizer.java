@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
-
-import java.io.Serializable;
-import java.util.List;
 
 import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>DRITableOfContentsCustomizer interface.</p>
@@ -37,43 +36,43 @@ import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
  */
 public interface DRITableOfContentsCustomizer extends Serializable {
 
-	/**
-	 * <p>setReport.</p>
-	 *
-	 * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
-	 */
-	public void setReport(ReportBuilder<?> report);
+    /**
+     * <p>setReport.</p>
+     *
+     * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+     */
+    public void setReport(ReportBuilder<?> report);
 
-	/**
-	 * <p>setHeadingList.</p>
-	 *
-	 * @param headingList a {@link java.util.List} object.
-	 */
-	public void setHeadingList(List<JasperTocHeading> headingList);
+    /**
+     * <p>setHeadingList.</p>
+     *
+     * @param headingList a {@link java.util.List} object.
+     */
+    public void setHeadingList(List<JasperTocHeading> headingList);
 
-	/**
-	 * <p>setHeadings.</p>
-	 *
-	 * @param headings a int.
-	 */
-	public void setHeadings(int headings);
+    /**
+     * <p>setHeadings.</p>
+     *
+     * @param headings a int.
+     */
+    public void setHeadings(int headings);
 
-	/**
-	 * <p>setLevels.</p>
-	 *
-	 * @param levels a int.
-	 */
-	public void setLevels(int levels);
+    /**
+     * <p>setLevels.</p>
+     *
+     * @param levels a int.
+     */
+    public void setLevels(int levels);
 
-	/**
-	 * <p>customize.</p>
-	 */
-	public void customize();
+    /**
+     * <p>customize.</p>
+     */
+    public void customize();
 
-	/**
-	 * <p>getPosition.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
-	 */
-	public TableOfContentsPosition getPosition();
+    /**
+     * <p>getPosition.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
+     */
+    public TableOfContentsPosition getPosition();
 }

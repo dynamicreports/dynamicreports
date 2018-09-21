@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
 
 import net.sf.dynamicreports.report.base.chart.plot.DRPie3DPlot;
@@ -33,23 +32,23 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class Pie3DChartBuilder extends AbstractPieChartBuilder<Pie3DChartBuilder, DRPie3DPlot> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for Pie3DChartBuilder.</p>
-	 */
-	protected Pie3DChartBuilder() {
-		super(ChartType.PIE3D);
-	}
+    /**
+     * <p>Constructor for Pie3DChartBuilder.</p>
+     */
+    protected Pie3DChartBuilder() {
+        super(ChartType.PIE3D);
+    }
 
-	/**
-	 * <p>setDepthFactor.</p>
-	 *
-	 * @param depthFactor a {@link java.lang.Double} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.Pie3DChartBuilder} object.
-	 */
-	public Pie3DChartBuilder setDepthFactor(Double depthFactor) {
-		getPlot().setDepthFactor(depthFactor);
-		return this;
-	}
+    /**
+     * <p>setDepthFactor.</p>
+     *
+     * @param depthFactor a {@link java.lang.Double} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.Pie3DChartBuilder} object.
+     */
+    public Pie3DChartBuilder setDepthFactor(Double depthFactor) {
+        getPlot().setDepthFactor(depthFactor);
+        return this;
+    }
 }

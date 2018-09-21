@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.adhoc.configuration;
 
 /**
@@ -29,53 +28,55 @@ package net.sf.dynamicreports.adhoc.configuration;
  * @version $Id: $Id
  */
 public class AdhocTextField extends AdhocComponent {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private String text;
+    private String text;
 
-	/**
-	 * <p>Getter for the field <code>text</code>.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getText() {
-		return text;
-	}
+    /**
+     * <p>Getter for the field <code>text</code>.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getText() {
+        return text;
+    }
 
-	/**
-	 * <p>Setter for the field <code>text</code>.</p>
-	 *
-	 * @param text a {@link java.lang.String} object.
-	 */
-	public void setText(String text) {
-		this.text = text;
-	}
+    /**
+     * <p>Setter for the field <code>text</code>.</p>
+     *
+     * @param text a {@link java.lang.String} object.
+     */
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public boolean equals(Object obj) {
-		boolean equals = super.equals(obj);
-		if (!equals) {
-			return false;
-		}
-		if (obj == null)
-			return false;
-		if (!(obj instanceof AdhocTextField))
-			return false;
+    /** {@inheritDoc} */
+    @Override
+    public boolean equals(Object obj) {
+        boolean equals = super.equals(obj);
+        if (!equals) {
+            return false;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof AdhocTextField)) {
+            return false;
+        }
 
-		AdhocTextField object = (AdhocTextField) obj;
-		if (!(text == null ? object.getText() == null : text.equals(object.getText()))) {
-			return false;
-		}
+        AdhocTextField object = (AdhocTextField) obj;
+        if (!(text == null ? object.getText() == null : text.equals(object.getText()))) {
+            return false;
+        }
 
-		return true;
-	}
+        return true;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public AdhocTextField clone() {
-		AdhocTextField clone = (AdhocTextField) super.clone();
-		return clone;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public AdhocTextField clone() {
+        AdhocTextField clone = (AdhocTextField) super.clone();
+        return clone;
+    }
 
 }

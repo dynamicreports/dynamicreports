@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -34,39 +33,39 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class DRSort implements DRISort {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIExpression<?> expression;
-	private OrderType orderType;
+    private DRIExpression<?> expression;
+    private OrderType orderType;
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getExpression() {
-		return expression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<?> getExpression() {
+        return expression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>expression</code>.</p>
-	 *
-	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setExpression(DRIExpression<?> expression) {
-		this.expression = expression;
-	}
+    /**
+     * <p>Setter for the field <code>expression</code>.</p>
+     *
+     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setExpression(DRIExpression<?> expression) {
+        this.expression = expression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public OrderType getOrderType() {
-		return orderType;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public OrderType getOrderType() {
+        return orderType;
+    }
 
-	/**
-	 * <p>Setter for the field <code>orderType</code>.</p>
-	 *
-	 * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
-	 */
-	public void setOrderType(OrderType orderType) {
-		this.orderType = orderType;
-	}
+    /**
+     * <p>Setter for the field <code>orderType</code>.</p>
+     *
+     * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+     */
+    public void setOrderType(OrderType orderType) {
+        this.orderType = orderType;
+    }
 
 }

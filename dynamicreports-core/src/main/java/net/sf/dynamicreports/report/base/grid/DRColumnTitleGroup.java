@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,11 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.grid;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
@@ -33,8 +29,10 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent;
 import net.sf.dynamicreports.report.definition.grid.DRIColumnTitleGroup;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
-
 import org.apache.commons.lang3.Validate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>DRColumnTitleGroup class.</p>
@@ -43,246 +41,246 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public class DRColumnTitleGroup implements DRIColumnTitleGroup {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRColumnGridList list;
+    private DRColumnGridList list;
 
-	private DRIExpression<?> titleExpression;
-	private DRIReportStyle titleStyle;
-	private Integer titleWidth;
-	private ComponentDimensionType titleWidthType;
-	private Integer titleColumns;
-	private Integer titleHeight;
-	private ComponentDimensionType titleHeightType;
-	private Integer titleRows;
-	private Boolean titleStretchWithOverflow;
-	private List<DRIPropertyExpression> titlePropertyExpressions;
+    private DRIExpression<?> titleExpression;
+    private DRIReportStyle titleStyle;
+    private Integer titleWidth;
+    private ComponentDimensionType titleWidthType;
+    private Integer titleColumns;
+    private Integer titleHeight;
+    private ComponentDimensionType titleHeightType;
+    private Integer titleRows;
+    private Boolean titleStretchWithOverflow;
+    private List<DRIPropertyExpression> titlePropertyExpressions;
 
-	/**
-	 * <p>Constructor for DRColumnTitleGroup.</p>
-	 */
-	public DRColumnTitleGroup() {
-		this.list = new DRColumnGridList(ListType.HORIZONTAL);
-		titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
-	}
+    /**
+     * <p>Constructor for DRColumnTitleGroup.</p>
+     */
+    public DRColumnTitleGroup() {
+        this.list = new DRColumnGridList(ListType.HORIZONTAL);
+        titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRColumnGridList getList() {
-		return list;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRColumnGridList getList() {
+        return list;
+    }
 
-	/**
-	 * <p>addComponent.</p>
-	 *
-	 * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
-	 */
-	public void addComponent(DRIColumnGridComponent component) {
-		list.addComponent(component);
-	}
+    /**
+     * <p>addComponent.</p>
+     *
+     * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
+     */
+    public void addComponent(DRIColumnGridComponent component) {
+        list.addComponent(component);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getTitleExpression() {
-		return titleExpression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<?> getTitleExpression() {
+        return titleExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titleExpression</code>.</p>
-	 *
-	 * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setTitleExpression(DRIExpression<?> titleExpression) {
-		this.titleExpression = titleExpression;
-	}
+    /**
+     * <p>Setter for the field <code>titleExpression</code>.</p>
+     *
+     * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setTitleExpression(DRIExpression<?> titleExpression) {
+        this.titleExpression = titleExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIReportStyle getTitleStyle() {
-		return titleStyle;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIReportStyle getTitleStyle() {
+        return titleStyle;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titleStyle</code>.</p>
-	 *
-	 * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 */
-	public void setTitleStyle(DRIReportStyle titleStyle) {
-		this.titleStyle = titleStyle;
-	}
+    /**
+     * <p>Setter for the field <code>titleStyle</code>.</p>
+     *
+     * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     */
+    public void setTitleStyle(DRIReportStyle titleStyle) {
+        this.titleStyle = titleStyle;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * Returns the column title width.
-	 */
-	@Override
-	public Integer getTitleWidth() {
-		return titleWidth;
-	}
+    /**
+     * {@inheritDoc}
+     *
+     * Returns the column title width.
+     */
+    @Override
+    public Integer getTitleWidth() {
+        return titleWidth;
+    }
 
-	/**
-	 * Sets the column title width.
-	 *
-	 * @see net.sf.dynamicreports.report.builder.Units
-	 * @param titleWidth
-	 *          the column title width >= 0
-	 * @exception IllegalArgumentException
-	 *              if <code>titleWidth</code> is < 0
-	 */
-	public void setTitleWidth(Integer titleWidth) {
-		if (titleWidth != null) {
-			Validate.isTrue(titleWidth >= 0, "titleWidth must be >= 0");
-		}
-		this.titleWidth = titleWidth;
-	}
+    /**
+     * Sets the column title width.
+     *
+     * @see net.sf.dynamicreports.report.builder.Units
+     * @param titleWidth
+     *          the column title width >= 0
+     * @exception IllegalArgumentException
+     *              if <code>titleWidth</code> is < 0
+     */
+    public void setTitleWidth(Integer titleWidth) {
+        if (titleWidth != null) {
+            Validate.isTrue(titleWidth >= 0, "titleWidth must be >= 0");
+        }
+        this.titleWidth = titleWidth;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public ComponentDimensionType getTitleWidthType() {
-		return titleWidthType;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public ComponentDimensionType getTitleWidthType() {
+        return titleWidthType;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titleWidthType</code>.</p>
-	 *
-	 * @param titleWidthType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
-	 */
-	public void setTitleWidthType(ComponentDimensionType titleWidthType) {
-		this.titleWidthType = titleWidthType;
-	}
+    /**
+     * <p>Setter for the field <code>titleWidthType</code>.</p>
+     *
+     * @param titleWidthType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+     */
+    public void setTitleWidthType(ComponentDimensionType titleWidthType) {
+        this.titleWidthType = titleWidthType;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * Returns the number of title columns.
-	 */
-	@Override
-	public Integer getTitleColumns() {
-		return titleColumns;
-	}
+    /**
+     * {@inheritDoc}
+     *
+     * Returns the number of title columns.
+     */
+    @Override
+    public Integer getTitleColumns() {
+        return titleColumns;
+    }
 
-	/**
-	 * This method is used to define the width of a column title.
-	 * The width is set to the <code>columns</code> multiplied by width of the
-	 * character <em>m</em> for the font used
-	 *
-	 * @param titleColumns
-	 *          the number of columns >= 0
-	 * @exception IllegalArgumentException
-	 *              if <code>columns</code> is < 0
-	 */
-	public void setTitleColumns(Integer titleColumns) {
-		if (titleColumns != null) {
-			Validate.isTrue(titleColumns >= 0, "titleColumns must be >= 0");
-		}
-		this.titleColumns = titleColumns;
-	}
+    /**
+     * This method is used to define the width of a column title.
+     * The width is set to the <code>columns</code> multiplied by width of the
+     * character <em>m</em> for the font used
+     *
+     * @param titleColumns
+     *          the number of columns >= 0
+     * @exception IllegalArgumentException
+     *              if <code>columns</code> is < 0
+     */
+    public void setTitleColumns(Integer titleColumns) {
+        if (titleColumns != null) {
+            Validate.isTrue(titleColumns >= 0, "titleColumns must be >= 0");
+        }
+        this.titleColumns = titleColumns;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * Returns the column title height.
-	 */
-	@Override
-	public Integer getTitleHeight() {
-		return titleHeight;
-	}
+    /**
+     * {@inheritDoc}
+     *
+     * Returns the column title height.
+     */
+    @Override
+    public Integer getTitleHeight() {
+        return titleHeight;
+    }
 
-	/**
-	 * Sets the column title height.
-	 *
-	 * @see net.sf.dynamicreports.report.builder.Units
-	 * @param titleHeight
-	 *          the column title height >= 0
-	 * @exception IllegalArgumentException
-	 *              if <code>titleHeight</code> is < 0
-	 */
-	public void setTitleHeight(Integer titleHeight) {
-		if (titleHeight != null) {
-			Validate.isTrue(titleHeight >= 0, "titleHeight must be >= 0");
-		}
-		this.titleHeight = titleHeight;
-	}
+    /**
+     * Sets the column title height.
+     *
+     * @see net.sf.dynamicreports.report.builder.Units
+     * @param titleHeight
+     *          the column title height >= 0
+     * @exception IllegalArgumentException
+     *              if <code>titleHeight</code> is < 0
+     */
+    public void setTitleHeight(Integer titleHeight) {
+        if (titleHeight != null) {
+            Validate.isTrue(titleHeight >= 0, "titleHeight must be >= 0");
+        }
+        this.titleHeight = titleHeight;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public ComponentDimensionType getTitleHeightType() {
-		return titleHeightType;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public ComponentDimensionType getTitleHeightType() {
+        return titleHeightType;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titleHeightType</code>.</p>
-	 *
-	 * @param titleHeightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
-	 */
-	public void setTitleHeightType(ComponentDimensionType titleHeightType) {
-		this.titleHeightType = titleHeightType;
-	}
+    /**
+     * <p>Setter for the field <code>titleHeightType</code>.</p>
+     *
+     * @param titleHeightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+     */
+    public void setTitleHeightType(ComponentDimensionType titleHeightType) {
+        this.titleHeightType = titleHeightType;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * Returns the number of title rows.
-	 */
-	@Override
-	public Integer getTitleRows() {
-		return titleRows;
-	}
+    /**
+     * {@inheritDoc}
+     *
+     * Returns the number of title rows.
+     */
+    @Override
+    public Integer getTitleRows() {
+        return titleRows;
+    }
 
-	/**
-	 * This method is used to define the height of a column title.
-	 * The height is set to the <code>rows</code> multiplied by height of the font
-	 *
-	 * @param titleRows
-	 *          the number of rows >= 0
-	 * @exception IllegalArgumentException
-	 *              if <code>rows</code> is < 0
-	 */
-	public void setTitleRows(Integer titleRows) {
-		if (titleRows != null) {
-			Validate.isTrue(titleRows >= 0, "titleRows must be >= 0");
-		}
-		this.titleRows = titleRows;
-	}
+    /**
+     * This method is used to define the height of a column title.
+     * The height is set to the <code>rows</code> multiplied by height of the font
+     *
+     * @param titleRows
+     *          the number of rows >= 0
+     * @exception IllegalArgumentException
+     *              if <code>rows</code> is < 0
+     */
+    public void setTitleRows(Integer titleRows) {
+        if (titleRows != null) {
+            Validate.isTrue(titleRows >= 0, "titleRows must be >= 0");
+        }
+        this.titleRows = titleRows;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getTitleStretchWithOverflow() {
-		return titleStretchWithOverflow;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Boolean getTitleStretchWithOverflow() {
+        return titleStretchWithOverflow;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
-	 *
-	 * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
-	 */
-	public void setTitleStretchWithOverflow(Boolean titleStretchWithOverflow) {
-		this.titleStretchWithOverflow = titleStretchWithOverflow;
-	}
+    /**
+     * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
+     *
+     * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
+     */
+    public void setTitleStretchWithOverflow(Boolean titleStretchWithOverflow) {
+        this.titleStretchWithOverflow = titleStretchWithOverflow;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public List<DRIPropertyExpression> getTitlePropertyExpressions() {
-		return titlePropertyExpressions;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public List<DRIPropertyExpression> getTitlePropertyExpressions() {
+        return titlePropertyExpressions;
+    }
 
-	/**
-	 * <p>addTitlePropertyExpression.</p>
-	 *
-	 * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
-	 */
-	public void addTitlePropertyExpression(DRIPropertyExpression propertyExpression) {
-		Validate.notNull(propertyExpression, "propertyExpression must not be null");
-		this.titlePropertyExpressions.add(propertyExpression);
-	}
+    /**
+     * <p>Setter for the field <code>titlePropertyExpressions</code>.</p>
+     *
+     * @param titlePropertyExpressions a {@link java.util.List} object.
+     */
+    public void setTitlePropertyExpressions(List<DRIPropertyExpression> titlePropertyExpressions) {
+        this.titlePropertyExpressions = titlePropertyExpressions;
+    }
 
-	/**
-	 * <p>Setter for the field <code>titlePropertyExpressions</code>.</p>
-	 *
-	 * @param titlePropertyExpressions a {@link java.util.List} object.
-	 */
-	public void setTitlePropertyExpressions(List<DRIPropertyExpression> titlePropertyExpressions) {
-		this.titlePropertyExpressions = titlePropertyExpressions;
-	}
+    /**
+     * <p>addTitlePropertyExpression.</p>
+     *
+     * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
+     */
+    public void addTitlePropertyExpression(DRIPropertyExpression propertyExpression) {
+        Validate.notNull(propertyExpression, "propertyExpression must not be null");
+        this.titlePropertyExpressions.add(propertyExpression);
+    }
 }

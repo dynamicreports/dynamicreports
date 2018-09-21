@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.dataset;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRIXyzChartSerie;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
-
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -35,57 +33,57 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public class DRXyzChartSerie extends DRChartSerie implements DRIXyzChartSerie {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIExpression<?> xValueExpression;
-	private DRIExpression<?> yValueExpression;
-	private DRIExpression<?> zValueExpression;
+    private DRIExpression<?> xValueExpression;
+    private DRIExpression<?> yValueExpression;
+    private DRIExpression<?> zValueExpression;
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getXValueExpression() {
-		return xValueExpression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<?> getXValueExpression() {
+        return xValueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>xValueExpression</code>.</p>
-	 *
-	 * @param xValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setXValueExpression(DRIExpression<?> xValueExpression) {
-		Validate.notNull(xValueExpression, "xValueExpression must not be null");
-		this.xValueExpression = xValueExpression;
-	}
+    /**
+     * <p>Setter for the field <code>xValueExpression</code>.</p>
+     *
+     * @param xValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setXValueExpression(DRIExpression<?> xValueExpression) {
+        Validate.notNull(xValueExpression, "xValueExpression must not be null");
+        this.xValueExpression = xValueExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getYValueExpression() {
-		return yValueExpression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<?> getYValueExpression() {
+        return yValueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>yValueExpression</code>.</p>
-	 *
-	 * @param yValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setYValueExpression(DRIExpression<?> yValueExpression) {
-		Validate.notNull(yValueExpression, "yValueExpression must not be null");
-		this.yValueExpression = yValueExpression;
-	}
+    /**
+     * <p>Setter for the field <code>yValueExpression</code>.</p>
+     *
+     * @param yValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setYValueExpression(DRIExpression<?> yValueExpression) {
+        Validate.notNull(yValueExpression, "yValueExpression must not be null");
+        this.yValueExpression = yValueExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getZValueExpression() {
-		return zValueExpression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<?> getZValueExpression() {
+        return zValueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>zValueExpression</code>.</p>
-	 *
-	 * @param zValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setZValueExpression(DRIExpression<?> zValueExpression) {
-		Validate.notNull(yValueExpression, "zValueExpression must not be null");
-		this.zValueExpression = zValueExpression;
-	}
+    /**
+     * <p>Setter for the field <code>zValueExpression</code>.</p>
+     *
+     * @param zValueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setZValueExpression(DRIExpression<?> zValueExpression) {
+        Validate.notNull(yValueExpression, "zValueExpression must not be null");
+        this.zValueExpression = zValueExpression;
+    }
 }

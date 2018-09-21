@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.barcode;
 
 import net.sf.dynamicreports.report.constant.BarcodeChecksumMode;
@@ -33,22 +32,22 @@ import net.sf.dynamicreports.report.definition.barcode.DRIChecksumBarcode;
  * @version $Id: $Id
  */
 public abstract class DRChecksumBarcode extends DRBarcode4j implements DRIChecksumBarcode {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private BarcodeChecksumMode checksumMode;
+    private BarcodeChecksumMode checksumMode;
 
-	/** {@inheritDoc} */
-	@Override
-	public BarcodeChecksumMode getChecksumMode() {
-		return checksumMode;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public BarcodeChecksumMode getChecksumMode() {
+        return checksumMode;
+    }
 
-	/**
-	 * <p>Setter for the field <code>checksumMode</code>.</p>
-	 *
-	 * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
-	 */
-	public void setChecksumMode(BarcodeChecksumMode checksumMode) {
-		this.checksumMode = checksumMode;
-	}
+    /**
+     * <p>Setter for the field <code>checksumMode</code>.</p>
+     *
+     * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
+     */
+    public void setChecksumMode(BarcodeChecksumMode checksumMode) {
+        this.checksumMode = checksumMode;
+    }
 }

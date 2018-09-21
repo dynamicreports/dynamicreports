@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.chart.plot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignChartAxis;
 import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignMultiAxisPlot;
 import net.sf.dynamicreports.report.constant.Constants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>DRDesignMultiAxisPlot class.</p>
@@ -36,30 +35,30 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignMultiAxisPlot extends DRDesignAxisPlot implements DRIDesignMultiAxisPlot {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private List<DRIDesignChartAxis> axes;
+    private List<DRIDesignChartAxis> axes;
 
-	/**
-	 * <p>Constructor for DRDesignMultiAxisPlot.</p>
-	 */
-	public DRDesignMultiAxisPlot() {
-		axes = new ArrayList<DRIDesignChartAxis>();
-	}
+    /**
+     * <p>Constructor for DRDesignMultiAxisPlot.</p>
+     */
+    public DRDesignMultiAxisPlot() {
+        axes = new ArrayList<DRIDesignChartAxis>();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public List<DRIDesignChartAxis> getAxes() {
-		return axes;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public List<DRIDesignChartAxis> getAxes() {
+        return axes;
+    }
 
-	/**
-	 * <p>Setter for the field <code>axes</code>.</p>
-	 *
-	 * @param axes a {@link java.util.List} object.
-	 */
-	public void setAxes(List<DRIDesignChartAxis> axes) {
-		this.axes = axes;
-	}
+    /**
+     * <p>Setter for the field <code>axes</code>.</p>
+     *
+     * @param axes a {@link java.util.List} object.
+     */
+    public void setAxes(List<DRIDesignChartAxis> axes) {
+        this.axes = axes;
+    }
 
 }

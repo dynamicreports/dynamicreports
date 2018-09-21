@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
+
+import net.sf.dynamicreports.report.constant.Orientation;
 
 import java.awt.Color;
 import java.util.List;
 import java.util.Map;
-
-import net.sf.dynamicreports.report.constant.Orientation;
 
 /**
  * <p>DRIBasePlot interface.</p>
@@ -36,24 +35,24 @@ import net.sf.dynamicreports.report.constant.Orientation;
  */
 public interface DRIBasePlot extends DRIPlot {
 
-	/**
-	 * <p>getOrientation.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
-	 */
-	public Orientation getOrientation();
+    /**
+     * <p>getOrientation.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Orientation} object.
+     */
+    public Orientation getOrientation();
 
-	/**
-	 * <p>getSeriesColors.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<Color> getSeriesColors();
+    /**
+     * <p>getSeriesColors.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<Color> getSeriesColors();
 
-	/**
-	 * <p>getSeriesColorsByName.</p>
-	 *
-	 * @return a {@link java.util.Map} object.
-	 */
-	public Map<String, Color> getSeriesColorsByName();
+    /**
+     * <p>getSeriesColorsByName.</p>
+     *
+     * @return a {@link java.util.Map} object.
+     */
+    public Map<String, Color> getSeriesColorsByName();
 }

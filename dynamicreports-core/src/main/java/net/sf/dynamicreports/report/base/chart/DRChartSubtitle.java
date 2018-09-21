@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart;
-
-import java.awt.Color;
 
 import net.sf.dynamicreports.report.base.style.DRFont;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.DRIChartSubtitle;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.awt.Color;
 
 /**
  * <p>DRChartSubtitle class.</p>
@@ -36,54 +35,54 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class DRChartSubtitle implements DRIChartSubtitle {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Color color;
-	private DRFont font;
-	private DRIExpression<String> title;
+    private Color color;
+    private DRFont font;
+    private DRIExpression<String> title;
 
-	/** {@inheritDoc} */
-	@Override
-	public Color getColor() {
-		return color;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Color getColor() {
+        return color;
+    }
 
-	/**
-	 * <p>Setter for the field <code>color</code>.</p>
-	 *
-	 * @param color a {@link java.awt.Color} object.
-	 */
-	public void setColor(Color color) {
-		this.color = color;
-	}
+    /**
+     * <p>Setter for the field <code>color</code>.</p>
+     *
+     * @param color a {@link java.awt.Color} object.
+     */
+    public void setColor(Color color) {
+        this.color = color;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRFont getFont() {
-		return font;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRFont getFont() {
+        return font;
+    }
 
-	/**
-	 * <p>Setter for the field <code>font</code>.</p>
-	 *
-	 * @param font a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
-	 */
-	public void setFont(DRFont font) {
-		this.font = font;
-	}
+    /**
+     * <p>Setter for the field <code>font</code>.</p>
+     *
+     * @param font a {@link net.sf.dynamicreports.report.base.style.DRFont} object.
+     */
+    public void setFont(DRFont font) {
+        this.font = font;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<String> getTitle() {
-		return title;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIExpression<String> getTitle() {
+        return title;
+    }
 
-	/**
-	 * <p>Setter for the field <code>title</code>.</p>
-	 *
-	 * @param title a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setTitle(DRIExpression<String> title) {
-		this.title = title;
-	}
+    /**
+     * <p>Setter for the field <code>title</code>.</p>
+     *
+     * @param title a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setTitle(DRIExpression<String> title) {
+        this.title = title;
+    }
 }

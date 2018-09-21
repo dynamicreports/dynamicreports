@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.transformation;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 import net.sf.dynamicreports.design.base.style.DRDesignBaseStyle;
 import net.sf.dynamicreports.design.base.style.DRDesignBorder;
@@ -60,8 +52,14 @@ import net.sf.dynamicreports.report.definition.style.DRIStyle;
 import net.sf.dynamicreports.report.definition.style.DRITabStop;
 import net.sf.dynamicreports.report.definition.style.DRITemplateStyle;
 import net.sf.dynamicreports.report.exception.DRException;
-
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>StyleTransform class.</p>
@@ -70,325 +68,348 @@ import org.apache.commons.lang3.StringUtils;
  * @version $Id: $Id
  */
 public class StyleTransform {
-	private DesignTransformAccessor accessor;
-	private Map<String, DRIDesignStyle> styles;
-	private Map<String, DRDesignStyle> designStyles;
-	private Map<String, DRIStyle> templateStyles;
+    private DesignTransformAccessor accessor;
+    private Map<String, DRIDesignStyle> styles;
+    private Map<String, DRDesignStyle> designStyles;
+    private Map<String, DRIStyle> templateStyles;
 
-	/**
-	 * <p>Constructor for StyleTransform.</p>
-	 *
-	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
-	 */
-	public StyleTransform(DesignTransformAccessor accessor) {
-		this.accessor = accessor;
-		init();
-	}
+    /**
+     * <p>Constructor for StyleTransform.</p>
+     *
+     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     */
+    public StyleTransform(DesignTransformAccessor accessor) {
+        this.accessor = accessor;
+        init();
+    }
 
-	private void init() {
-		styles = new LinkedHashMap<String, DRIDesignStyle>();
-		designStyles = new HashMap<String, DRDesignStyle>();
-		templateStyles = accessor.getTemplateTransform().getTemplateStyles();
-	}
+    private void init() {
+        styles = new LinkedHashMap<String, DRIDesignStyle>();
+        designStyles = new HashMap<String, DRDesignStyle>();
+        templateStyles = accessor.getTemplateTransform()
+                                 .getTemplateStyles();
+    }
 
-	private DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle) throws DRException {
-		return transformStyle(style, textStyle, DefaultStyleType.NONE);
-	}
+    private DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle) throws DRException {
+        return transformStyle(style, textStyle, DefaultStyleType.NONE);
+    }
 
-	/**
-	 * <p>transformStyle.</p>
-	 *
-	 * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 * @param textStyle a boolean.
-	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	protected DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
-		if (style == null) {
-			return getDefaultStyle(defaultStyleType);
-		}
-		String styleName = style.hashCode() + "_" + textStyle;
-		if (designStyles.containsKey(styleName)) {
-			return designStyles.get(styleName);
-		}
+    /**
+     * <p>transformStyle.</p>
+     *
+     * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @param textStyle a boolean.
+     * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+     * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    protected DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
+        if (style == null) {
+            return getDefaultStyle(defaultStyleType);
+        }
+        String styleName = style.hashCode() + "_" + textStyle;
+        if (designStyles.containsKey(styleName)) {
+            return designStyles.get(styleName);
+        }
 
-		DRDesignStyle designStyle = style(getStyle(style), textStyle, defaultStyleType);
-		if (textStyle) {
-			if (StyleResolver.getFontName(designStyle) == null) {
-				designStyle.getFont().setFontName(accessor.getTemplateTransform().getDefaultFontName());
-			}
-			if (StyleResolver.getFontSize(designStyle) == null) {
-				designStyle.getFont().setFontSize(accessor.getTemplateTransform().getDefaultFontSize());
-			}
-			if (StyleResolver.getFontBold(designStyle) == null) {
-				designStyle.getFont().setBold(accessor.getTemplateTransform().getDefaultFontBold());
-			}
-			if (StyleResolver.getFontItalic(designStyle) == null) {
-				designStyle.getFont().setItalic(accessor.getTemplateTransform().getDefaultFontItalic());
-			}
-			if (StyleResolver.getFontUnderline(designStyle) == null) {
-				designStyle.getFont().setUnderline(accessor.getTemplateTransform().getDefaultFontUnderline());
-			}
-			if (StyleResolver.getFontStrikeThrough(designStyle) == null) {
-				designStyle.getFont().setStrikeThrough(accessor.getTemplateTransform().getDefaultFontStrikeThrough());
-			}
-			if (StyleResolver.getPdfFontName(designStyle) == null) {
-				designStyle.getFont().setPdfFontName(accessor.getTemplateTransform().getDefaultFontPdfFontName());
-			}
-			if (StyleResolver.getPdfEncoding(designStyle) == null) {
-				designStyle.getFont().setPdfEncoding(accessor.getTemplateTransform().getDefaultFontPdfEncoding());
-			}
-			if (StyleResolver.getPdfEmbedded(designStyle) == null) {
-				designStyle.getFont().setPdfEmbedded(accessor.getTemplateTransform().getDefaultFontPdfEmbedded());
-			}
-		}
-		addStyle(styleName, designStyle);
-		return designStyle;
-	}
+        DRDesignStyle designStyle = style(getStyle(style), textStyle, defaultStyleType);
+        if (textStyle) {
+            if (StyleResolver.getFontName(designStyle) == null) {
+                designStyle.getFont()
+                           .setFontName(accessor.getTemplateTransform()
+                                                .getDefaultFontName());
+            }
+            if (StyleResolver.getFontSize(designStyle) == null) {
+                designStyle.getFont()
+                           .setFontSize(accessor.getTemplateTransform()
+                                                .getDefaultFontSize());
+            }
+            if (StyleResolver.getFontBold(designStyle) == null) {
+                designStyle.getFont()
+                           .setBold(accessor.getTemplateTransform()
+                                            .getDefaultFontBold());
+            }
+            if (StyleResolver.getFontItalic(designStyle) == null) {
+                designStyle.getFont()
+                           .setItalic(accessor.getTemplateTransform()
+                                              .getDefaultFontItalic());
+            }
+            if (StyleResolver.getFontUnderline(designStyle) == null) {
+                designStyle.getFont()
+                           .setUnderline(accessor.getTemplateTransform()
+                                                 .getDefaultFontUnderline());
+            }
+            if (StyleResolver.getFontStrikeThrough(designStyle) == null) {
+                designStyle.getFont()
+                           .setStrikeThrough(accessor.getTemplateTransform()
+                                                     .getDefaultFontStrikeThrough());
+            }
+            if (StyleResolver.getPdfFontName(designStyle) == null) {
+                designStyle.getFont()
+                           .setPdfFontName(accessor.getTemplateTransform()
+                                                   .getDefaultFontPdfFontName());
+            }
+            if (StyleResolver.getPdfEncoding(designStyle) == null) {
+                designStyle.getFont()
+                           .setPdfEncoding(accessor.getTemplateTransform()
+                                                   .getDefaultFontPdfEncoding());
+            }
+            if (StyleResolver.getPdfEmbedded(designStyle) == null) {
+                designStyle.getFont()
+                           .setPdfEmbedded(accessor.getTemplateTransform()
+                                                   .getDefaultFontPdfEmbedded());
+            }
+        }
+        addStyle(styleName, designStyle);
+        return designStyle;
+    }
 
-	/**
-	 * <p>transformFont.</p>
-	 *
-	 * @param font a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
-	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignFont} object.
-	 */
-	protected DRDesignFont transformFont(DRIFont font) {
-		if (font == null) {
-			return null;
-		}
+    /**
+     * <p>transformFont.</p>
+     *
+     * @param font a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+     * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignFont} object.
+     */
+    protected DRDesignFont transformFont(DRIFont font) {
+        if (font == null) {
+            return null;
+        }
 
-		DRDesignFont designFont = new DRDesignFont();
-		designFont.setFontName(font.getFontName());
-		designFont.setFontSize(font.getFontSize());
-		designFont.setBold(font.getBold());
-		designFont.setItalic(font.getItalic());
-		designFont.setUnderline(font.getUnderline());
-		designFont.setStrikeThrough(font.getStrikeThrough());
-		designFont.setPdfFontName(font.getPdfFontName());
-		designFont.setPdfEncoding(font.getPdfEncoding());
-		designFont.setPdfEmbedded(font.getPdfEmbedded());
-		return designFont;
-	}
+        DRDesignFont designFont = new DRDesignFont();
+        designFont.setFontName(font.getFontName());
+        designFont.setFontSize(font.getFontSize());
+        designFont.setBold(font.getBold());
+        designFont.setItalic(font.getItalic());
+        designFont.setUnderline(font.getUnderline());
+        designFont.setStrikeThrough(font.getStrikeThrough());
+        designFont.setPdfFontName(font.getPdfFontName());
+        designFont.setPdfEncoding(font.getPdfEncoding());
+        designFont.setPdfEmbedded(font.getPdfEmbedded());
+        return designFont;
+    }
 
-	private DRDesignStyle style(DRIStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
-		final DRDesignStyle designStyle;
-		if (StringUtils.isBlank(style.getName())) {
-			designStyle = new DRDesignStyle();
-		} else {
-			designStyle = new DRDesignStyle(style.getName());
-		}
-		baseStyle(designStyle, style);
-		if (style.getParentStyle() != null) {
-			designStyle.setParentStyle(transformStyle(style.getParentStyle(), textStyle, defaultStyleType));
-		}
-		for (DRIConditionalStyle conditionalStyle : style.getConditionalStyles()) {
-			designStyle.addConditionalStyle(conditionalStyle(conditionalStyle));
-		}
-		return designStyle;
-	}
+    private DRDesignStyle style(DRIStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
+        final DRDesignStyle designStyle;
+        if (StringUtils.isBlank(style.getName())) {
+            designStyle = new DRDesignStyle();
+        } else {
+            designStyle = new DRDesignStyle(style.getName());
+        }
+        baseStyle(designStyle, style);
+        if (style.getParentStyle() != null) {
+            designStyle.setParentStyle(transformStyle(style.getParentStyle(), textStyle, defaultStyleType));
+        }
+        for (DRIConditionalStyle conditionalStyle : style.getConditionalStyles()) {
+            designStyle.addConditionalStyle(conditionalStyle(conditionalStyle));
+        }
+        return designStyle;
+    }
 
-	/**
-	 * <p>getStyle.</p>
-	 *
-	 * @param reportStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIStyle} object.
-	 */
-	protected DRIStyle getStyle(DRIReportStyle reportStyle) {
-		if (reportStyle == null) {
-			return null;
-		}
-		if (reportStyle instanceof DRIStyle) {
-			return (DRIStyle) reportStyle;
-		}
-		if (reportStyle instanceof DRITemplateStyle) {
-			String name = ((DRITemplateStyle) reportStyle).getName();
-			DRIStyle style = templateStyles.get(name);
-			if (style == null) {
-				throw new DRDesignReportException("Template style " + name + " not found");
-			}
-			return style;
-		}
-		throw new DRDesignReportException("Style " + reportStyle.getClass().getName() + " not supported");
-	}
+    /**
+     * <p>getStyle.</p>
+     *
+     * @param reportStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIStyle} object.
+     */
+    protected DRIStyle getStyle(DRIReportStyle reportStyle) {
+        if (reportStyle == null) {
+            return null;
+        }
+        if (reportStyle instanceof DRIStyle) {
+            return (DRIStyle) reportStyle;
+        }
+        if (reportStyle instanceof DRITemplateStyle) {
+            String name = ((DRITemplateStyle) reportStyle).getName();
+            DRIStyle style = templateStyles.get(name);
+            if (style == null) {
+                throw new DRDesignReportException("Template style " + name + " not found");
+            }
+            return style;
+        }
+        throw new DRDesignReportException("Style " + reportStyle.getClass()
+                                                                .getName() + " not supported");
+    }
 
-	/**
-	 * <p>transformTemplateStyles.</p>
-	 *
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public void transformTemplateStyles() throws DRException {
-		for (DRIStyle style : templateStyles.values()) {
-			if (styles.containsKey(style.getName())) {
-				continue;
-			}
-			transformStyle(style, false);
-		}
-	}
+    /**
+     * <p>transformTemplateStyles.</p>
+     *
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public void transformTemplateStyles() throws DRException {
+        for (DRIStyle style : templateStyles.values()) {
+            if (styles.containsKey(style.getName())) {
+                continue;
+            }
+            transformStyle(style, false);
+        }
+    }
 
-	private DRDesignConditionalStyle conditionalStyle(DRIConditionalStyle conditionalStyle) throws DRException {
-		DRDesignConditionalStyle designConditionalStyle = new DRDesignConditionalStyle();
-		baseStyle(designConditionalStyle, conditionalStyle);
-		designConditionalStyle.setConditionExpression(accessor.getExpressionTransform().transformExpression(conditionalStyle.getConditionExpression()));
-		designConditionalStyle.setDataset(accessor.getExpressionTransform().getDataset());
-		return designConditionalStyle;
-	}
+    private DRDesignConditionalStyle conditionalStyle(DRIConditionalStyle conditionalStyle) throws DRException {
+        DRDesignConditionalStyle designConditionalStyle = new DRDesignConditionalStyle();
+        baseStyle(designConditionalStyle, conditionalStyle);
+        designConditionalStyle.setConditionExpression(accessor.getExpressionTransform()
+                                                              .transformExpression(conditionalStyle.getConditionExpression()));
+        designConditionalStyle.setDataset(accessor.getExpressionTransform()
+                                                  .getDataset());
+        return designConditionalStyle;
+    }
 
-	private void baseStyle(DRDesignBaseStyle designBaseStyle, DRIBaseStyle baseStyle) throws DRException {
-		designBaseStyle.setForegroundColor(baseStyle.getForegroundColor());
-		designBaseStyle.setBackgroundColor(baseStyle.getBackgroundColor());
-		designBaseStyle.setRadius(baseStyle.getRadius());
-		designBaseStyle.setImageScale(baseStyle.getImageScale());
-		designBaseStyle.setHorizontalImageAlignment(baseStyle.getHorizontalImageAlignment());
-		designBaseStyle.setVerticalImageAlignment(baseStyle.getVerticalImageAlignment());
-		designBaseStyle.setHorizontalTextAlignment(baseStyle.getHorizontalTextAlignment());
-		designBaseStyle.setVerticalTextAlignment(baseStyle.getVerticalTextAlignment());
-		designBaseStyle.setBorder(border(baseStyle.getBorder()));
-		designBaseStyle.setPadding(padding(baseStyle.getPadding()));
-		designBaseStyle.setFont(transformFont(baseStyle.getFont()));
-		designBaseStyle.setRotation(baseStyle.getRotation());
-		designBaseStyle.setPattern(baseStyle.getPattern());
-		designBaseStyle.setMarkup(baseStyle.getMarkup());
-		designBaseStyle.setParagraph(paragraph(baseStyle.getParagraph()));
-		designBaseStyle.setLinePen(pen(baseStyle.getLinePen()));
-	}
+    private void baseStyle(DRDesignBaseStyle designBaseStyle, DRIBaseStyle baseStyle) throws DRException {
+        designBaseStyle.setForegroundColor(baseStyle.getForegroundColor());
+        designBaseStyle.setBackgroundColor(baseStyle.getBackgroundColor());
+        designBaseStyle.setRadius(baseStyle.getRadius());
+        designBaseStyle.setImageScale(baseStyle.getImageScale());
+        designBaseStyle.setHorizontalImageAlignment(baseStyle.getHorizontalImageAlignment());
+        designBaseStyle.setVerticalImageAlignment(baseStyle.getVerticalImageAlignment());
+        designBaseStyle.setHorizontalTextAlignment(baseStyle.getHorizontalTextAlignment());
+        designBaseStyle.setVerticalTextAlignment(baseStyle.getVerticalTextAlignment());
+        designBaseStyle.setBorder(border(baseStyle.getBorder()));
+        designBaseStyle.setPadding(padding(baseStyle.getPadding()));
+        designBaseStyle.setFont(transformFont(baseStyle.getFont()));
+        designBaseStyle.setRotation(baseStyle.getRotation());
+        designBaseStyle.setPattern(baseStyle.getPattern());
+        designBaseStyle.setMarkup(baseStyle.getMarkup());
+        designBaseStyle.setParagraph(paragraph(baseStyle.getParagraph()));
+        designBaseStyle.setLinePen(pen(baseStyle.getLinePen()));
+    }
 
-	private DRDesignParagraph paragraph(DRIParagraph paragraph) {
-		DRDesignParagraph designParagraph = new DRDesignParagraph();
-		designParagraph.setLineSpacing(paragraph.getLineSpacing());
-		designParagraph.setLineSpacingSize(paragraph.getLineSpacingSize());
-		designParagraph.setFirstLineIndent(paragraph.getFirstLineIndent());
-		designParagraph.setLeftIndent(paragraph.getLeftIndent());
-		designParagraph.setRightIndent(paragraph.getRightIndent());
-		designParagraph.setSpacingBefore(paragraph.getSpacingBefore());
-		designParagraph.setSpacingAfter(paragraph.getSpacingAfter());
-		designParagraph.setTabStopWidth(paragraph.getTabStopWidth());
-		List<DRIDesignTabStop> designTabStops = new ArrayList<DRIDesignTabStop>();
-		for (DRITabStop tabStop : paragraph.getTabStops()) {
-			DRDesignTabStop designTabStop = new DRDesignTabStop();
-			designTabStop.setPosition(tabStop.getPosition());
-			designTabStop.setAlignment(tabStop.getAlignment());
-			designTabStops.add(designTabStop);
-		}
-		designParagraph.setTabStops(designTabStops);
-		return designParagraph;
-	}
+    private DRDesignParagraph paragraph(DRIParagraph paragraph) {
+        DRDesignParagraph designParagraph = new DRDesignParagraph();
+        designParagraph.setLineSpacing(paragraph.getLineSpacing());
+        designParagraph.setLineSpacingSize(paragraph.getLineSpacingSize());
+        designParagraph.setFirstLineIndent(paragraph.getFirstLineIndent());
+        designParagraph.setLeftIndent(paragraph.getLeftIndent());
+        designParagraph.setRightIndent(paragraph.getRightIndent());
+        designParagraph.setSpacingBefore(paragraph.getSpacingBefore());
+        designParagraph.setSpacingAfter(paragraph.getSpacingAfter());
+        designParagraph.setTabStopWidth(paragraph.getTabStopWidth());
+        List<DRIDesignTabStop> designTabStops = new ArrayList<DRIDesignTabStop>();
+        for (DRITabStop tabStop : paragraph.getTabStops()) {
+            DRDesignTabStop designTabStop = new DRDesignTabStop();
+            designTabStop.setPosition(tabStop.getPosition());
+            designTabStop.setAlignment(tabStop.getAlignment());
+            designTabStops.add(designTabStop);
+        }
+        designParagraph.setTabStops(designTabStops);
+        return designParagraph;
+    }
 
-	private DRDesignBorder border(DRIBorder border) {
-		DRDesignBorder designBorder = new DRDesignBorder();
-		designBorder.setTopPen(pen(border.getTopPen()));
-		designBorder.setLeftPen(pen(border.getLeftPen()));
-		designBorder.setBottomPen(pen(border.getBottomPen()));
-		designBorder.setRightPen(pen(border.getRightPen()));
-		return designBorder;
-	}
+    private DRDesignBorder border(DRIBorder border) {
+        DRDesignBorder designBorder = new DRDesignBorder();
+        designBorder.setTopPen(pen(border.getTopPen()));
+        designBorder.setLeftPen(pen(border.getLeftPen()));
+        designBorder.setBottomPen(pen(border.getBottomPen()));
+        designBorder.setRightPen(pen(border.getRightPen()));
+        return designBorder;
+    }
 
-	private DRDesignPadding padding(DRIPadding padding) {
-		DRDesignPadding designPadding = new DRDesignPadding();
-		designPadding.setTop(padding.getTop());
-		designPadding.setLeft(padding.getLeft());
-		designPadding.setBottom(padding.getBottom());
-		designPadding.setRight(padding.getRight());
-		return designPadding;
-	}
+    private DRDesignPadding padding(DRIPadding padding) {
+        DRDesignPadding designPadding = new DRDesignPadding();
+        designPadding.setTop(padding.getTop());
+        designPadding.setLeft(padding.getLeft());
+        designPadding.setBottom(padding.getBottom());
+        designPadding.setRight(padding.getRight());
+        return designPadding;
+    }
 
-	/**
-	 * <p>pen.</p>
-	 *
-	 * @param pen a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
-	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
-	 */
-	protected DRDesignPen pen(DRIPen pen) {
-		if (pen == null) {
-			return null;
-		}
-		DRDesignPen designPen = new DRDesignPen();
-		designPen.setLineWidth(pen.getLineWidth());
-		designPen.setLineStyle(pen.getLineStyle());
-		designPen.setLineColor(pen.getLineColor());
-		return designPen;
-	}
+    /**
+     * <p>pen.</p>
+     *
+     * @param pen a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
+     * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+     */
+    protected DRDesignPen pen(DRIPen pen) {
+        if (pen == null) {
+            return null;
+        }
+        DRDesignPen designPen = new DRDesignPen();
+        designPen.setLineWidth(pen.getLineWidth());
+        designPen.setLineStyle(pen.getLineStyle());
+        designPen.setLineColor(pen.getLineColor());
+        return designPen;
+    }
 
-	/**
-	 * <p>getDefaultStyle.</p>
-	 *
-	 * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-	 * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	protected DRDesignStyle getDefaultStyle(DefaultStyleType defaultStyleType) throws DRException {
-		TemplateTransform templateTransform = accessor.getTemplateTransform();
-		switch (defaultStyleType) {
-			case NONE:
-				return null;
-			case TEXT:
-				return transformStyle(templateTransform.getTextStyle(), true);
-			case COLUMN:
-				return transformStyle(templateTransform.getColumnStyle(true), true);
-			case COLUMN_TITLE:
-				return transformStyle(templateTransform.getColumnTitleStyle(), true);
-			case GROUP:
-				return transformStyle(templateTransform.getGroupStyle(), true);
-			case GROUP_TITLE:
-				return transformStyle(templateTransform.getGroupTitleStyle(), true);
-			case SUBTOTAL:
-				return transformStyle(templateTransform.getSubtotalStyle(), true);
-			case IMAGE:
-				return transformStyle(templateTransform.getImageStyle(), false);
-			case CHART:
-				return transformStyle(templateTransform.getChartStyle(), false);
-			case BARCODE:
-				return transformStyle(templateTransform.getBarcodeStyle(), false);
-			default:
-				throw new DRDesignReportException("Default style type " + defaultStyleType.name() + " not supported");
-		}
-	}
+    /**
+     * <p>getDefaultStyle.</p>
+     *
+     * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+     * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    protected DRDesignStyle getDefaultStyle(DefaultStyleType defaultStyleType) throws DRException {
+        TemplateTransform templateTransform = accessor.getTemplateTransform();
+        switch (defaultStyleType) {
+            case NONE:
+                return null;
+            case TEXT:
+                return transformStyle(templateTransform.getTextStyle(), true);
+            case COLUMN:
+                return transformStyle(templateTransform.getColumnStyle(true), true);
+            case COLUMN_TITLE:
+                return transformStyle(templateTransform.getColumnTitleStyle(), true);
+            case GROUP:
+                return transformStyle(templateTransform.getGroupStyle(), true);
+            case GROUP_TITLE:
+                return transformStyle(templateTransform.getGroupTitleStyle(), true);
+            case SUBTOTAL:
+                return transformStyle(templateTransform.getSubtotalStyle(), true);
+            case IMAGE:
+                return transformStyle(templateTransform.getImageStyle(), false);
+            case CHART:
+                return transformStyle(templateTransform.getChartStyle(), false);
+            case BARCODE:
+                return transformStyle(templateTransform.getBarcodeStyle(), false);
+            default:
+                throw new DRDesignReportException("Default style type " + defaultStyleType.name() + " not supported");
+        }
+    }
 
-	private void addStyle(String styleName, DRDesignStyle designStyle) {
-		if (designStyle == null) {
-			return;
-		}
-		if (styles.containsKey(designStyle.getName())) {
-			if (!styles.get(designStyle.getName()).equals(designStyle)) {
-				throw new DRDesignReportException("Duplicate declaration of style \"" + designStyle.getName() + "\"");
-			}
-			return;
-		}
-		styles.put(designStyle.getName(), designStyle);
-		designStyles.put(styleName, designStyle);
-	}
+    private void addStyle(String styleName, DRDesignStyle designStyle) {
+        if (designStyle == null) {
+            return;
+        }
+        if (styles.containsKey(designStyle.getName())) {
+            if (!styles.get(designStyle.getName())
+                       .equals(designStyle)) {
+                throw new DRDesignReportException("Duplicate declaration of style \"" + designStyle.getName() + "\"");
+            }
+            return;
+        }
+        styles.put(designStyle.getName(), designStyle);
+        designStyles.put(styleName, designStyle);
+    }
 
-	/**
-	 * <p>copyStyle.</p>
-	 *
-	 * @param toStyle a {@link net.sf.dynamicreports.report.base.style.DRBaseStyle} object.
-	 * @param fromStyle a {@link net.sf.dynamicreports.report.definition.style.DRIBaseStyle} object.
-	 */
-	public void copyStyle(DRBaseStyle toStyle, DRIBaseStyle fromStyle) {
-		toStyle.setForegroundColor(fromStyle.getForegroundColor());
-		toStyle.setBackgroundColor(fromStyle.getBackgroundColor());
-		toStyle.setRadius(fromStyle.getRadius());
-		toStyle.setImageScale(fromStyle.getImageScale());
-		toStyle.setHorizontalImageAlignment(fromStyle.getHorizontalImageAlignment());
-		toStyle.setVerticalImageAlignment(fromStyle.getVerticalImageAlignment());
-		toStyle.setHorizontalTextAlignment(fromStyle.getHorizontalTextAlignment());
-		toStyle.setVerticalTextAlignment(fromStyle.getVerticalTextAlignment());
-		toStyle.setBorder((DRBorder) fromStyle.getBorder());
-		toStyle.setPadding((DRPadding) fromStyle.getPadding());
-		toStyle.setFont((DRFont) fromStyle.getFont());
-		toStyle.setRotation(fromStyle.getRotation());
-		toStyle.setPattern(fromStyle.getPattern());
-		toStyle.setMarkup(fromStyle.getMarkup());
-		toStyle.setParagraph((DRParagraph) fromStyle.getParagraph());
-		toStyle.setLinePen((DRPen) fromStyle.getLinePen());
-	}
+    /**
+     * <p>copyStyle.</p>
+     *
+     * @param toStyle a {@link net.sf.dynamicreports.report.base.style.DRBaseStyle} object.
+     * @param fromStyle a {@link net.sf.dynamicreports.report.definition.style.DRIBaseStyle} object.
+     */
+    public void copyStyle(DRBaseStyle toStyle, DRIBaseStyle fromStyle) {
+        toStyle.setForegroundColor(fromStyle.getForegroundColor());
+        toStyle.setBackgroundColor(fromStyle.getBackgroundColor());
+        toStyle.setRadius(fromStyle.getRadius());
+        toStyle.setImageScale(fromStyle.getImageScale());
+        toStyle.setHorizontalImageAlignment(fromStyle.getHorizontalImageAlignment());
+        toStyle.setVerticalImageAlignment(fromStyle.getVerticalImageAlignment());
+        toStyle.setHorizontalTextAlignment(fromStyle.getHorizontalTextAlignment());
+        toStyle.setVerticalTextAlignment(fromStyle.getVerticalTextAlignment());
+        toStyle.setBorder((DRBorder) fromStyle.getBorder());
+        toStyle.setPadding((DRPadding) fromStyle.getPadding());
+        toStyle.setFont((DRFont) fromStyle.getFont());
+        toStyle.setRotation(fromStyle.getRotation());
+        toStyle.setPattern(fromStyle.getPattern());
+        toStyle.setMarkup(fromStyle.getMarkup());
+        toStyle.setParagraph((DRParagraph) fromStyle.getParagraph());
+        toStyle.setLinePen((DRPen) fromStyle.getLinePen());
+    }
 
-	/**
-	 * <p>Getter for the field <code>styles</code>.</p>
-	 *
-	 * @return a {@link java.util.Collection} object.
-	 */
-	public Collection<DRIDesignStyle> getStyles() {
-		return styles.values();
-	}
+    /**
+     * <p>Getter for the field <code>styles</code>.</p>
+     *
+     * @return a {@link java.util.Collection} object.
+     */
+    public Collection<DRIDesignStyle> getStyles() {
+        return styles.values();
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.transformation.expressions;
-
-import java.util.List;
 
 import net.sf.dynamicreports.report.builder.expression.AbstractComplexExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.util.List;
 
 /**
  * <p>CrosstabMeasureExpression class.</p>
@@ -36,24 +35,24 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class CrosstabMeasureExpression extends AbstractComplexExpression<Double> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for CrosstabMeasureExpression.</p>
-	 *
-	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public CrosstabMeasureExpression(DRIExpression<?> expression) {
-		addExpression(expression);
-	}
+    /**
+     * <p>Constructor for CrosstabMeasureExpression.</p>
+     *
+     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public CrosstabMeasureExpression(DRIExpression<?> expression) {
+        addExpression(expression);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Double evaluate(List<?> values, ReportParameters reportParameters) {
-		Number value = (Number) values.get(0);
-		if (value != null) {
-			return value.doubleValue();
-		}
-		return null;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Double evaluate(List<?> values, ReportParameters reportParameters) {
+        Number value = (Number) values.get(0);
+        if (value != null) {
+            return value.doubleValue();
+        }
+        return null;
+    }
 }

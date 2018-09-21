@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -21,16 +21,11 @@
  */
 package net.sf.dynamicreports.adhoc;
 
-import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.ReportBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AdhocManagerTest {
 

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.barcode;
 
 import net.sf.dynamicreports.report.base.barcode.DRChecksumBarcode;
@@ -34,38 +33,37 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 @SuppressWarnings("unchecked")
-public abstract class AbstractChecksumBarcodeBuilder<T extends AbstractBarcode4jBuilder<T, U>, U extends DRChecksumBarcode>
-		extends AbstractBarcode4jBuilder<T, U> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+public abstract class AbstractChecksumBarcodeBuilder<T extends AbstractBarcode4jBuilder<T, U>, U extends DRChecksumBarcode> extends AbstractBarcode4jBuilder<T, U> {
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
-	 *
-	 * @param code a {@link java.lang.String} object.
-	 * @param barcode a U object.
-	 */
-	protected AbstractChecksumBarcodeBuilder(String code, U barcode) {
-		super(code, barcode);
-	}
+    /**
+     * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
+     *
+     * @param code a {@link java.lang.String} object.
+     * @param barcode a U object.
+     */
+    protected AbstractChecksumBarcodeBuilder(String code, U barcode) {
+        super(code, barcode);
+    }
 
-	/**
-	 * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
-	 *
-	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 * @param barcode a U object.
-	 */
-	protected AbstractChecksumBarcodeBuilder(DRIExpression<String> codeExpression, U barcode) {
-		super(codeExpression, barcode);
-	}
+    /**
+     * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
+     *
+     * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param barcode a U object.
+     */
+    protected AbstractChecksumBarcodeBuilder(DRIExpression<String> codeExpression, U barcode) {
+        super(codeExpression, barcode);
+    }
 
-	/**
-	 * <p>setChecksumMode.</p>
-	 *
-	 * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
-	 * @return a T object.
-	 */
-	public T setChecksumMode(BarcodeChecksumMode checksumMode) {
-		getObject().setChecksumMode(checksumMode);
-		return (T) this;
-	}
+    /**
+     * <p>setChecksumMode.</p>
+     *
+     * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
+     * @return a T object.
+     */
+    public T setChecksumMode(BarcodeChecksumMode checksumMode) {
+        getObject().setChecksumMode(checksumMode);
+        return (T) this;
+    }
 }

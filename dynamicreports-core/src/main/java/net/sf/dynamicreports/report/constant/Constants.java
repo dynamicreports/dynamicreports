@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,11 +28,11 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public interface Constants {
-	/**
-	 * Value used as <code>serialVersionUID</code> for the current version.
-	 */
-	public static final long SERIAL_VERSION_UID = 10000;
+    /**
+     * Value used as <code>serialVersionUID</code> for the current version.
+     */
+    public static final long SERIAL_VERSION_UID = 10000;
 
-	/** Constant <code>RESOURCE_BUNDLE_NAME="dynamicreports-messages"</code> */
-	public static final String RESOURCE_BUNDLE_NAME = "dynamicreports-messages";
+    /** Constant <code>RESOURCE_BUNDLE_NAME="dynamicreports-messages"</code> */
+    public static final String RESOURCE_BUNDLE_NAME = "dynamicreports-messages";
 }

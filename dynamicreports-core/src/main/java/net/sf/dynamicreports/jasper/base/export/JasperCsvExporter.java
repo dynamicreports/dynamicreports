@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.base.export;
 
 import net.sf.dynamicreports.jasper.definition.export.JasperICsvExporter;
@@ -32,38 +31,38 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class JasperCsvExporter extends AbstractJasperExporter implements JasperICsvExporter {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private String fieldDelimiter;
-	private String recordDelimiter;
+    private String fieldDelimiter;
+    private String recordDelimiter;
 
-	/** {@inheritDoc} */
-	@Override
-	public String getFieldDelimiter() {
-		return fieldDelimiter;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public String getFieldDelimiter() {
+        return fieldDelimiter;
+    }
 
-	/**
-	 * <p>Setter for the field <code>fieldDelimiter</code>.</p>
-	 *
-	 * @param fieldDelimiter a {@link java.lang.String} object.
-	 */
-	public void setFieldDelimiter(String fieldDelimiter) {
-		this.fieldDelimiter = fieldDelimiter;
-	}
+    /**
+     * <p>Setter for the field <code>fieldDelimiter</code>.</p>
+     *
+     * @param fieldDelimiter a {@link java.lang.String} object.
+     */
+    public void setFieldDelimiter(String fieldDelimiter) {
+        this.fieldDelimiter = fieldDelimiter;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getRecordDelimiter() {
-		return recordDelimiter;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public String getRecordDelimiter() {
+        return recordDelimiter;
+    }
 
-	/**
-	 * <p>Setter for the field <code>recordDelimiter</code>.</p>
-	 *
-	 * @param recordDelimiter a {@link java.lang.String} object.
-	 */
-	public void setRecordDelimiter(String recordDelimiter) {
-		this.recordDelimiter = recordDelimiter;
-	}
+    /**
+     * <p>Setter for the field <code>recordDelimiter</code>.</p>
+     *
+     * @param recordDelimiter a {@link java.lang.String} object.
+     */
+    public void setRecordDelimiter(String recordDelimiter) {
+        this.recordDelimiter = recordDelimiter;
+    }
 }

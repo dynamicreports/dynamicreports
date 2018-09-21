@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,16 +19,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.chart.dataset;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignChartSerie;
 import net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignSeriesDataset;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>DRDesignSeriesDataset class.</p>
@@ -37,46 +36,46 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDesignSeriesDataset {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIDesignExpression valueExpression;
-	private List<DRIDesignChartSerie> series;
+    private DRIDesignExpression valueExpression;
+    private List<DRIDesignChartSerie> series;
 
-	/**
-	 * <p>Constructor for DRDesignSeriesDataset.</p>
-	 */
-	public DRDesignSeriesDataset() {
-		series = new ArrayList<DRIDesignChartSerie>();
-	}
+    /**
+     * <p>Constructor for DRDesignSeriesDataset.</p>
+     */
+    public DRDesignSeriesDataset() {
+        series = new ArrayList<DRIDesignChartSerie>();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIDesignExpression getValueExpression() {
-		return valueExpression;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRIDesignExpression getValueExpression() {
+        return valueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>valueExpression</code>.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public void setValueExpression(DRIDesignExpression valueExpression) {
-		this.valueExpression = valueExpression;
-	}
+    /**
+     * <p>Setter for the field <code>valueExpression</code>.</p>
+     *
+     * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public void setValueExpression(DRIDesignExpression valueExpression) {
+        this.valueExpression = valueExpression;
+    }
 
-	/**
-	 * <p>addSerie.</p>
-	 *
-	 * @param serie a {@link net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignChartSerie} object.
-	 */
-	public void addSerie(DRIDesignChartSerie serie) {
-		series.add(serie);
-	}
+    /**
+     * <p>addSerie.</p>
+     *
+     * @param serie a {@link net.sf.dynamicreports.design.definition.chart.dataset.DRIDesignChartSerie} object.
+     */
+    public void addSerie(DRIDesignChartSerie serie) {
+        series.add(serie);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public List<DRIDesignChartSerie> getSeries() {
-		return series;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public List<DRIDesignChartSerie> getSeries() {
+        return series;
+    }
 
 }

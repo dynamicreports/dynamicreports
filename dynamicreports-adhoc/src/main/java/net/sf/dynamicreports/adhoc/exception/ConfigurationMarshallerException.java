@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -25,7 +25,6 @@ import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.report.exception.DRException;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
 import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStream;
 

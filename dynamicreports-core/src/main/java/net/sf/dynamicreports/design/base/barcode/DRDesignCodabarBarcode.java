@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.barcode;
 
 import net.sf.dynamicreports.design.definition.barcode.DRIDesignCodabarBarcode;
@@ -32,29 +31,29 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignCodabarBarcode extends DRDesignBarcode4j implements DRIDesignCodabarBarcode {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Double wideFactor;
+    private Double wideFactor;
 
-	/**
-	 * <p>Constructor for DRDesignCodabarBarcode.</p>
-	 */
-	public DRDesignCodabarBarcode() {
-		super("Codabar");
-	}
+    /**
+     * <p>Constructor for DRDesignCodabarBarcode.</p>
+     */
+    public DRDesignCodabarBarcode() {
+        super("Codabar");
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Double getWideFactor() {
-		return wideFactor;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Double getWideFactor() {
+        return wideFactor;
+    }
 
-	/**
-	 * <p>Setter for the field <code>wideFactor</code>.</p>
-	 *
-	 * @param wideFactor a {@link java.lang.Double} object.
-	 */
-	public void setWideFactor(Double wideFactor) {
-		this.wideFactor = wideFactor;
-	}
+    /**
+     * <p>Setter for the field <code>wideFactor</code>.</p>
+     *
+     * @param wideFactor a {@link java.lang.Double} object.
+     */
+    public void setWideFactor(Double wideFactor) {
+        this.wideFactor = wideFactor;
+    }
 }

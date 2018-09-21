@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.chart.plot;
 
 import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignPiePlot;
@@ -32,54 +31,54 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignPiePlot extends AbstractDesignBasePlot implements DRIDesignPiePlot {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Boolean circular;
-	private String labelFormat;
-	private String legendLabelFormat;
+    private Boolean circular;
+    private String labelFormat;
+    private String legendLabelFormat;
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getCircular() {
-		return circular;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Boolean getCircular() {
+        return circular;
+    }
 
-	/**
-	 * <p>Setter for the field <code>circular</code>.</p>
-	 *
-	 * @param circular a {@link java.lang.Boolean} object.
-	 */
-	public void setCircular(Boolean circular) {
-		this.circular = circular;
-	}
+    /**
+     * <p>Setter for the field <code>circular</code>.</p>
+     *
+     * @param circular a {@link java.lang.Boolean} object.
+     */
+    public void setCircular(Boolean circular) {
+        this.circular = circular;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getLabelFormat() {
-		return labelFormat;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public String getLabelFormat() {
+        return labelFormat;
+    }
 
-	/**
-	 * <p>Setter for the field <code>labelFormat</code>.</p>
-	 *
-	 * @param labelFormat a {@link java.lang.String} object.
-	 */
-	public void setLabelFormat(String labelFormat) {
-		this.labelFormat = labelFormat;
-	}
+    /**
+     * <p>Setter for the field <code>labelFormat</code>.</p>
+     *
+     * @param labelFormat a {@link java.lang.String} object.
+     */
+    public void setLabelFormat(String labelFormat) {
+        this.labelFormat = labelFormat;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getLegendLabelFormat() {
-		return legendLabelFormat;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public String getLegendLabelFormat() {
+        return legendLabelFormat;
+    }
 
-	/**
-	 * <p>Setter for the field <code>legendLabelFormat</code>.</p>
-	 *
-	 * @param legendLabelFormat a {@link java.lang.String} object.
-	 */
-	public void setLegendLabelFormat(String legendLabelFormat) {
-		this.legendLabelFormat = legendLabelFormat;
-	}
+    /**
+     * <p>Setter for the field <code>legendLabelFormat</code>.</p>
+     *
+     * @param legendLabelFormat a {@link java.lang.String} object.
+     */
+    public void setLegendLabelFormat(String legendLabelFormat) {
+        this.legendLabelFormat = legendLabelFormat;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.datatype;
-
-import java.math.BigInteger;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.defaults.Defaults;
+
+import java.math.BigInteger;
 
 /**
  * <p>BigIntegerType class.</p>
@@ -35,23 +34,27 @@ import net.sf.dynamicreports.report.defaults.Defaults;
  * @version $Id: $Id
  */
 public class BigIntegerType extends NumberType<BigInteger> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/** {@inheritDoc} */
-	@Override
-	public String getPattern() {
-		return Defaults.getDefaults().getBigIntegerType().getPattern();
-	}
+    /** {@inheritDoc} */
+    @Override
+    public String getPattern() {
+        return Defaults.getDefaults()
+                       .getBigIntegerType()
+                       .getPattern();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public HorizontalTextAlignment getHorizontalTextAlignment() {
-		return Defaults.getDefaults().getBigIntegerType().getHorizontalTextAlignment();
-	}
+    /** {@inheritDoc} */
+    @Override
+    public HorizontalTextAlignment getHorizontalTextAlignment() {
+        return Defaults.getDefaults()
+                       .getBigIntegerType()
+                       .getHorizontalTextAlignment();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected BigInteger numberToValue(Number number) {
-		return BigInteger.valueOf(number.longValue());
-	}
+    /** {@inheritDoc} */
+    @Override
+    protected BigInteger numberToValue(Number number) {
+        return BigInteger.valueOf(number.longValue());
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.chart.plot;
 
 import net.sf.dynamicreports.design.definition.chart.plot.DRIDesignBar3DPlot;
@@ -32,54 +31,54 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignBar3DPlot extends DRDesignAxisPlot implements DRIDesignBar3DPlot {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Double xOffset;
-	private Double yOffset;
-	private Boolean showLabels;
+    private Double xOffset;
+    private Double yOffset;
+    private Boolean showLabels;
 
-	/**
-	 * <p>Setter for the field <code>xOffset</code>.</p>
-	 *
-	 * @param xOffset a {@link java.lang.Double} object.
-	 */
-	public void setXOffset(Double xOffset) {
-		this.xOffset = xOffset;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Double getXOffset() {
+        return xOffset;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Double getXOffset() {
-		return xOffset;
-	}
+    /**
+     * <p>Setter for the field <code>xOffset</code>.</p>
+     *
+     * @param xOffset a {@link java.lang.Double} object.
+     */
+    public void setXOffset(Double xOffset) {
+        this.xOffset = xOffset;
+    }
 
-	/**
-	 * <p>Setter for the field <code>yOffset</code>.</p>
-	 *
-	 * @param yOffset a {@link java.lang.Double} object.
-	 */
-	public void setYOffset(Double yOffset) {
-		this.yOffset = yOffset;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Double getYOffset() {
+        return yOffset;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Double getYOffset() {
-		return yOffset;
-	}
+    /**
+     * <p>Setter for the field <code>yOffset</code>.</p>
+     *
+     * @param yOffset a {@link java.lang.Double} object.
+     */
+    public void setYOffset(Double yOffset) {
+        this.yOffset = yOffset;
+    }
 
-	/**
-	 * <p>Setter for the field <code>showLabels</code>.</p>
-	 *
-	 * @param showLabels a {@link java.lang.Boolean} object.
-	 */
-	public void setShowLabels(Boolean showLabels) {
-		this.showLabels = showLabels;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Boolean getShowLabels() {
+        return showLabels;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getShowLabels() {
-		return showLabels;
-	}
+    /**
+     * <p>Setter for the field <code>showLabels</code>.</p>
+     *
+     * @param showLabels a {@link java.lang.Boolean} object.
+     */
+    public void setShowLabels(Boolean showLabels) {
+        this.showLabels = showLabels;
+    }
 }

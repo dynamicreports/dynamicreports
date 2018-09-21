@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,40 +28,32 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public enum BooleanComponentType {
-	/**
-	 * Shows a text value (true/false)
-	 */
-	TEXT_TRUE_FALSE,
-	/**
-	 * Shows a text value (yes/no)
-	 */
-	TEXT_YES_NO,
-	/**
-	 * Shows an image
-	 */
-	IMAGE_STYLE_1,
-	/**
-	 * Shows an image
-	 */
-	IMAGE_STYLE_2,
-	/**
-	 * Shows an image
-	 */
-	IMAGE_STYLE_3,
-	/**
-	 * Shows an image
-	 */
-	IMAGE_STYLE_4,
-	/**
-	 * Shows a ball image
-	 */
-	IMAGE_BALL,
-	/**
-	 * Shows a check box image
-	 */
-	IMAGE_CHECKBOX_1,
-	/**
-	 * Shows a check box image
-	 */
-	IMAGE_CHECKBOX_2
+    /**
+     * Shows a text value (true/false)
+     */
+    TEXT_TRUE_FALSE, /**
+     * Shows a text value (yes/no)
+     */
+    TEXT_YES_NO, /**
+     * Shows an image
+     */
+    IMAGE_STYLE_1, /**
+     * Shows an image
+     */
+    IMAGE_STYLE_2, /**
+     * Shows an image
+     */
+    IMAGE_STYLE_3, /**
+     * Shows an image
+     */
+    IMAGE_STYLE_4, /**
+     * Shows a ball image
+     */
+    IMAGE_BALL, /**
+     * Shows a check box image
+     */
+    IMAGE_CHECKBOX_1, /**
+     * Shows a check box image
+     */
+    IMAGE_CHECKBOX_2
 }

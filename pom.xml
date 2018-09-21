@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -81,6 +81,7 @@
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
@@ -89,6 +90,23 @@
         <license-maven-plugin-version>3.0</license-maven-plugin-version>
         <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.0.1</maven-source-plugin-version>
+
+        <!--Mycila License plugin configuration-->
+        <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
+        <license.header.definition>${project.basedir}/src/etc/header_definition.xml</license.header.definition>
+        <license.maven.owner>Ricardo Mariaca and the DynamicReports Contributors</license.maven.owner>
+
+        <!-- Properties for maven-checkstyle-plugin -->
+        <checkstyle.config.location>${project.basedir}/src/etc/checkstyle.xml</checkstyle.config.location>
+        <checkstyle.config.headerLocation>${license.header.location}</checkstyle.config.headerLocation>
+        <checkstyle.config.maxAllowedViolations>40</checkstyle.config.maxAllowedViolations>
+        <checkstyle.config.consoleOutput>true</checkstyle.config.consoleOutput>
+        <checkstyle.config.failsOnError>true</checkstyle.config.failsOnError>
+        <checkstyle.config.includeResources>false</checkstyle.config.includeResources>
+        <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
+        <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
+        <checkstyle.config.includeTestSourceDirectory>false</checkstyle.config.includeTestSourceDirectory>
+        <linkXRef>false</linkXRef>
 
     </properties>
 
@@ -324,7 +342,11 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>${license-maven-plugin-version}</version>
                         <configuration>
-                            <header>src/etc/license_header.txt</header>
+                            <header>${license.header.location}</header>
+                            <headerDefinitions>${license.header.definition}</headerDefinitions>
+                            <properties>
+                                <owner>${license.maven.owner}</owner>
+                            </properties>
                             <includes>
                                 <include>**/*.java</include>
                             </includes>
@@ -345,6 +367,13 @@
         <profile>
             <id>source-10</id>
             <!--Please remember to run this after running compile in core module-->
+            <activation>
+                <property>
+                    <name>profile</name>
+                    <value>source</value>
+                </property>
+                <jdk>[9,)</jdk>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -435,6 +464,101 @@
                             <nosince>false</nosince>
                             <defaultVersion>${project.version}</defaultVersion>
                             <defaultSince>${project.version}</defaultSince>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>checkstyle</id>
+            <activation>
+                <!--Activate automagically when source profile is online-->
+                <property>
+                    <name>profile</name>
+                    <value>source</value>
+                </property>
+            </activation>
+            <!--Attach to validations during build-->
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>${maven-checkstyle-plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <!--Could run with mvn clean verify-->
+                                    <id>validate</id>
+                                    <phase>validate</phase>
+                                    <configuration>
+                                        <encoding>UTF-8</encoding>
+                                    </configuration>
+                                    <goals>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>run-checkstyle</id>
+                                    <phase>process-sources</phase>
+                                    <goals>
+                                        <goal>checkstyle</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <excludes>module-info.java</excludes>
+                                <headerLocation>../src/etc/checkstyle.xml</headerLocation>
+                                <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                                <configLocation>../src/etc/checkstyle.xml</configLocation>
+                                <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                                <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                                <includeResources>${checkstyle.config.includeResources}</includeResources>
+                                <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                                <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                                <linkXRef>${linkXRef}</linkXRef>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <!-- Setup Checkstyle, excluding module-info -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>${maven-checkstyle-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <!--Could run with mvn clean verify-->
+                                <id>validate</id>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <encoding>UTF-8</encoding>
+                                </configuration>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>run-checkstyle</id>
+                                <phase>process-sources</phase>
+                                <goals>
+                                    <goal>checkstyle</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <excludes>module-info.java</excludes>
+                            <headerLocation>${checkstyle.config.headerLocation}</headerLocation>
+                            <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                            <configLocation>${checkstyle.config.location}</configLocation>
+                            <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                            <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                            <includeResources>${checkstyle.config.includeResources}</includeResources>
+                            <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                            <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                            <linkXRef>${linkXRef}</linkXRef>
                         </configuration>
                     </plugin>
                 </plugins>

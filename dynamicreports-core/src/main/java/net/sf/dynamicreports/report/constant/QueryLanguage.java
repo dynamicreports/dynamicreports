@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,16 +28,16 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public class QueryLanguage {
-	/** Constant <code>SQL="sql"</code> */
-	public static final String SQL = "sql";
-	/** Constant <code>HQL="hql"</code> */
-	public static final String HQL = "hql";
-	/** Constant <code>XPATH="xPath"</code> */
-	public static final String XPATH = "xPath";
-	/** Constant <code>MDX="mdx"</code> */
-	public static final String MDX = "mdx";
-	/** Constant <code>EJBQL="ejbql"</code> */
-	public static final String EJBQL = "ejbql";
-	/** Constant <code>CSV="csv"</code> */
-	public static final String CSV = "csv";
+    /** Constant <code>SQL="sql"</code> */
+    public static final String SQL = "sql";
+    /** Constant <code>HQL="hql"</code> */
+    public static final String HQL = "hql";
+    /** Constant <code>XPATH="xPath"</code> */
+    public static final String XPATH = "xPath";
+    /** Constant <code>MDX="mdx"</code> */
+    public static final String MDX = "mdx";
+    /** Constant <code>EJBQL="ejbql"</code> */
+    public static final String EJBQL = "ejbql";
+    /** Constant <code>CSV="csv"</code> */
+    public static final String CSV = "csv";
 }

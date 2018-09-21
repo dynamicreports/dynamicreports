@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
+
+import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 import java.io.Serializable;
 import java.sql.Connection;
 import java.util.List;
-
-import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 
 /**
  * <p>DRIDataset interface.</p>
@@ -36,52 +35,52 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public interface DRIDataset extends Serializable {
 
-	/**
-	 * <p>getFields.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIField<?>> getFields();
+    /**
+     * <p>getFields.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIField<?>> getFields();
 
-	/**
-	 * <p>getVariables.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIVariable<?>> getVariables();
+    /**
+     * <p>getVariables.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIVariable<?>> getVariables();
 
-	/**
-	 * <p>getSorts.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRISort> getSorts();
+    /**
+     * <p>getSorts.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRISort> getSorts();
 
-	/**
-	 * <p>getQuery.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.DRIQuery} object.
-	 */
-	public DRIQuery getQuery();
+    /**
+     * <p>getQuery.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.DRIQuery} object.
+     */
+    public DRIQuery getQuery();
 
-	/**
-	 * <p>getConnectionExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<Connection> getConnectionExpression();
+    /**
+     * <p>getConnectionExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<Connection> getConnectionExpression();
 
-	/**
-	 * <p>getDataSourceExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getDataSourceExpression();
+    /**
+     * <p>getDataSourceExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getDataSourceExpression();
 
-	/**
-	 * <p>getFilterExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<Boolean> getFilterExpression();
+    /**
+     * <p>getFilterExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<Boolean> getFilterExpression();
 }

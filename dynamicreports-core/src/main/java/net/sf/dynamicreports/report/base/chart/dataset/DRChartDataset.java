@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.dataset;
 
 import net.sf.dynamicreports.report.base.DRDataset;
@@ -33,22 +32,22 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset;
  * @version $Id: $Id
  */
 public class DRChartDataset implements DRIChartDataset {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRDataset subDataset;
+    private DRDataset subDataset;
 
-	/** {@inheritDoc} */
-	@Override
-	public DRDataset getSubDataset() {
-		return subDataset;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRDataset getSubDataset() {
+        return subDataset;
+    }
 
-	/**
-	 * <p>Setter for the field <code>subDataset</code>.</p>
-	 *
-	 * @param subDataset a {@link net.sf.dynamicreports.report.base.DRDataset} object.
-	 */
-	public void setSubDataset(DRDataset subDataset) {
-		this.subDataset = subDataset;
-	}
+    /**
+     * <p>Setter for the field <code>subDataset</code>.</p>
+     *
+     * @param subDataset a {@link net.sf.dynamicreports.report.base.DRDataset} object.
+     */
+    public void setSubDataset(DRDataset subDataset) {
+        this.subDataset = subDataset;
+    }
 }

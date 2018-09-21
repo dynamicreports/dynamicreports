@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
+
+import net.sf.dynamicreports.report.constant.RectangleAnchor;
 
 import java.awt.Paint;
 import java.util.List;
-
-import net.sf.dynamicreports.report.constant.RectangleAnchor;
 
 /**
  * <p>DRIXyBlockPlot interface.</p>
@@ -35,53 +34,53 @@ import net.sf.dynamicreports.report.constant.RectangleAnchor;
  */
 public interface DRIXyBlockPlot extends DRIAxisPlot {
 
-	/**
-	 * <p>getBlockWidth.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getBlockWidth();
+    /**
+     * <p>getBlockWidth.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getBlockWidth();
 
-	/**
-	 * <p>getBlockHeight.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getBlockHeight();
+    /**
+     * <p>getBlockHeight.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getBlockHeight();
 
-	/**
-	 * <p>getBlockAnchor.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.RectangleAnchor} object.
-	 */
-	public RectangleAnchor getBlockAnchor();
+    /**
+     * <p>getBlockAnchor.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.RectangleAnchor} object.
+     */
+    public RectangleAnchor getBlockAnchor();
 
-	/**
-	 * <p>getDefaultLowerBound.</p>
-	 *
-	 * @return a double.
-	 */
-	public double getDefaultLowerBound();
+    /**
+     * <p>getDefaultLowerBound.</p>
+     *
+     * @return a double.
+     */
+    public double getDefaultLowerBound();
 
-	/**
-	 * <p>getDefaultUpperBound.</p>
-	 *
-	 * @return a double.
-	 */
-	public double getDefaultUpperBound();
+    /**
+     * <p>getDefaultUpperBound.</p>
+     *
+     * @return a double.
+     */
+    public double getDefaultUpperBound();
 
-	/**
-	 * <p>getDefaultPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getDefaultPaint();
+    /**
+     * <p>getDefaultPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getDefaultPaint();
 
-	/**
-	 * <p>getPaintScales.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIPaintScale> getPaintScales();
+    /**
+     * <p>getPaintScales.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIPaintScale> getPaintScales();
 
 }

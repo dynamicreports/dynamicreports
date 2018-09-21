@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.base.reporthandler;
+
+import net.sf.jasperreports.engine.JasperPrint;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import net.sf.jasperreports.engine.JasperPrint;
 
 /**
  * <p>JasperPrintListHandler class.</p>
@@ -34,25 +33,25 @@ import net.sf.jasperreports.engine.JasperPrint;
  * @version $Id: $Id
  */
 public class JasperPrintListHandler extends AbstractPrintListHandler {
-	private List<JasperPrint> printList;
+    private List<JasperPrint> printList;
 
-	/**
-	 * <p>Constructor for JasperPrintListHandler.</p>
-	 */
-	public JasperPrintListHandler() {
-		printList = new ArrayList<JasperPrint>();
-	}
+    /**
+     * <p>Constructor for JasperPrintListHandler.</p>
+     */
+    public JasperPrintListHandler() {
+        printList = new ArrayList<JasperPrint>();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected void add(JasperPrint jasperPrint) {
-		printList.add(jasperPrint);
-	}
+    /** {@inheritDoc} */
+    @Override
+    protected void add(JasperPrint jasperPrint) {
+        printList.add(jasperPrint);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public List<JasperPrint> getPrintList() {
-		return printList;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public List<JasperPrint> getPrintList() {
+        return printList;
+    }
 
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
 
 import net.sf.dynamicreports.report.base.chart.plot.DRLinePlot;
@@ -33,34 +32,34 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class TimeSeriesChartBuilder extends AbstractTimeSeriesChartBuilder<TimeSeriesChartBuilder, DRLinePlot> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for TimeSeriesChartBuilder.</p>
-	 */
-	protected TimeSeriesChartBuilder() {
-		super(ChartType.TIMESERIES);
-	}
+    /**
+     * <p>Constructor for TimeSeriesChartBuilder.</p>
+     */
+    protected TimeSeriesChartBuilder() {
+        super(ChartType.TIMESERIES);
+    }
 
-	/**
-	 * <p>setShowShapes.</p>
-	 *
-	 * @param showShapes a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
-	 */
-	public TimeSeriesChartBuilder setShowShapes(Boolean showShapes) {
-		getPlot().setShowShapes(showShapes);
-		return this;
-	}
+    /**
+     * <p>setShowShapes.</p>
+     *
+     * @param showShapes a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+     */
+    public TimeSeriesChartBuilder setShowShapes(Boolean showShapes) {
+        getPlot().setShowShapes(showShapes);
+        return this;
+    }
 
-	/**
-	 * <p>setShowLines.</p>
-	 *
-	 * @param showLines a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
-	 */
-	public TimeSeriesChartBuilder setShowLines(Boolean showLines) {
-		getPlot().setShowLines(showLines);
-		return this;
-	}
+    /**
+     * <p>setShowLines.</p>
+     *
+     * @param showLines a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+     */
+    public TimeSeriesChartBuilder setShowLines(Boolean showLines) {
+        getPlot().setShowLines(showLines);
+        return this;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.chart;
-
-import java.awt.Color;
-import java.io.Serializable;
 
 import net.sf.dynamicreports.design.definition.style.DRIDesignFont;
 import net.sf.dynamicreports.report.constant.Position;
+
+import java.awt.Color;
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignChartLegend interface.</p>
@@ -36,38 +35,38 @@ import net.sf.dynamicreports.report.constant.Position;
  */
 public interface DRIDesignChartLegend extends Serializable {
 
-	/**
-	 * <p>getColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getColor();
+    /**
+     * <p>getColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getColor();
 
-	/**
-	 * <p>getBackgroundColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getBackgroundColor();
+    /**
+     * <p>getBackgroundColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getBackgroundColor();
 
-	/**
-	 * <p>getShowLegend.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getShowLegend();
+    /**
+     * <p>getShowLegend.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getShowLegend();
 
-	/**
-	 * <p>getFont.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
-	 */
-	public DRIDesignFont getFont();
+    /**
+     * <p>getFont.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
+     */
+    public DRIDesignFont getFont();
 
-	/**
-	 * <p>getPosition.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Position} object.
-	 */
-	public Position getPosition();
+    /**
+     * <p>getPosition.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Position} object.
+     */
+    public Position getPosition();
 }

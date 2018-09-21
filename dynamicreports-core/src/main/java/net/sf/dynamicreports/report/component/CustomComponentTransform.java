@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.component;
 
 import net.sf.dynamicreports.design.base.DRDesignGroup;
@@ -39,33 +38,33 @@ import net.sf.jasperreports.engine.JRComponentElement;
  */
 public interface CustomComponentTransform<T extends DRIComponent, U extends DRIDesignComponent> {
 
-	/**
-	 * <p>isTransform.</p>
-	 *
-	 * @param component a {@link java.lang.Object} object.
-	 * @return a boolean.
-	 */
-	public boolean isTransform(Object component);
+    /**
+     * <p>isTransform.</p>
+     *
+     * @param component a {@link java.lang.Object} object.
+     * @return a boolean.
+     */
+    public boolean isTransform(Object component);
 
-	/**
-	 * <p>designComponent.</p>
-	 *
-	 * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
-	 * @param component a T object.
-	 * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-	 * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
-	 * @return a U object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public U designComponent(DesignTransformAccessor accessor, T component, ResetType resetType, DRDesignGroup resetGroup) throws DRException;
+    /**
+     * <p>designComponent.</p>
+     *
+     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param component a T object.
+     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @return a U object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public U designComponent(DesignTransformAccessor accessor, T component, ResetType resetType, DRDesignGroup resetGroup) throws DRException;
 
-	/**
-	 * <p>jasperComponent.</p>
-	 *
-	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
-	 * @param component a U object.
-	 * @return a {@link net.sf.jasperreports.engine.JRComponentElement} object.
-	 */
-	public JRComponentElement jasperComponent(JasperTransformAccessor accessor, U component);
+    /**
+     * <p>jasperComponent.</p>
+     *
+     * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+     * @param component a U object.
+     * @return a {@link net.sf.jasperreports.engine.JRComponentElement} object.
+     */
+    public JRComponentElement jasperComponent(JasperTransformAccessor accessor, U component);
 
 }

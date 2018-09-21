@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.style;
 
 import java.util.List;
@@ -32,24 +31,24 @@ import java.util.List;
  */
 public interface DRIDesignStyle extends DRIDesignBaseStyle {
 
-	/**
-	 * <p>getName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getName();
+    /**
+     * <p>getName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getName();
 
-	/**
-	 * <p>getParentStyle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
-	 */
-	public DRIDesignStyle getParentStyle();
+    /**
+     * <p>getParentStyle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
+     */
+    public DRIDesignStyle getParentStyle();
 
-	/**
-	 * <p>getConditionalStyles.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIDesignConditionalStyle> getConditionalStyles();
+    /**
+     * <p>getConditionalStyles.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIDesignConditionalStyle> getConditionalStyles();
 }

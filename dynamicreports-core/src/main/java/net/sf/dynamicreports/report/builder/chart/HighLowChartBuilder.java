@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
 
 import net.sf.dynamicreports.report.base.chart.plot.DRHighLowPlot;
@@ -33,34 +32,34 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class HighLowChartBuilder extends AbstractHighLowChartBuilder<HighLowChartBuilder, DRHighLowPlot> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for HighLowChartBuilder.</p>
-	 */
-	protected HighLowChartBuilder() {
-		super(ChartType.HIGHLOW);
-	}
+    /**
+     * <p>Constructor for HighLowChartBuilder.</p>
+     */
+    protected HighLowChartBuilder() {
+        super(ChartType.HIGHLOW);
+    }
 
-	/**
-	 * <p>setShowOpenTicks.</p>
-	 *
-	 * @param showOpenTicks a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
-	 */
-	public HighLowChartBuilder setShowOpenTicks(Boolean showOpenTicks) {
-		getPlot().setShowOpenTicks(showOpenTicks);
-		return this;
-	}
+    /**
+     * <p>setShowOpenTicks.</p>
+     *
+     * @param showOpenTicks a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
+     */
+    public HighLowChartBuilder setShowOpenTicks(Boolean showOpenTicks) {
+        getPlot().setShowOpenTicks(showOpenTicks);
+        return this;
+    }
 
-	/**
-	 * <p>setShowCloseTicks.</p>
-	 *
-	 * @param showCloseTicks a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
-	 */
-	public HighLowChartBuilder setShowCloseTicks(Boolean showCloseTicks) {
-		getPlot().setShowCloseTicks(showCloseTicks);
-		return this;
-	}
+    /**
+     * <p>setShowCloseTicks.</p>
+     *
+     * @param showCloseTicks a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
+     */
+    public HighLowChartBuilder setShowCloseTicks(Boolean showCloseTicks) {
+        getPlot().setShowCloseTicks(showCloseTicks);
+        return this;
+    }
 }

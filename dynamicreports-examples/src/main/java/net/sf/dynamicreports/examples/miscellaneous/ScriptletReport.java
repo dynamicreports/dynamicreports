@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.miscellaneous;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.base.AbstractScriptlet;
@@ -37,8 +31,16 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
-
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>ScriptletReport class.</p>
@@ -47,98 +49,97 @@ import org.apache.commons.lang3.StringUtils;
  * @version $Id: $Id
  */
 public class ScriptletReport {
-	private Map<String, Integer> itemsCount;
+    private Map<String, Integer> itemsCount;
 
-	/**
-	 * <p>Constructor for ScriptletReport.</p>
-	 */
-	public ScriptletReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ScriptletReport.</p>
+     */
+    public ScriptletReport() {
+        build();
+    }
 
-	private void build() {
-		itemsCount = new HashMap<String, Integer>();
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ScriptletReport();
+    }
 
-		TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
-		CustomSubtotalBuilder<String> itemSbt = sbt.customValue(new ItemSubtotal(), itemColumn);
-		CustomGroupBuilder group = grp.group("country", String.class);
+    private void build() {
+        itemsCount = new HashMap<String, Integer>();
 
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.scriptlets(new ReportScriptlet())
-					.columns(itemColumn)
-					.groupBy(group)
-					.subtotalsAtGroupFooter(group, itemSbt)
-					.title(Templates.createTitleComponent("Scriptlet"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+        CustomSubtotalBuilder<String> itemSbt = sbt.customValue(new ItemSubtotal(), itemColumn);
+        CustomGroupBuilder group = grp.group("country", String.class);
 
-	private class ItemSubtotal extends AbstractSimpleExpression<String> {
-		private static final long serialVersionUID = 1L;
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .scriptlets(new ReportScriptlet())
+                    .columns(itemColumn)
+                    .groupBy(group)
+                    .subtotalsAtGroupFooter(group, itemSbt)
+                    .title(Templates.createTitleComponent("Scriptlet"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		@Override
-		public String evaluate(ReportParameters reportParameters) {
-			String result = "";
-			for (String item : itemsCount.keySet()) {
-				result += item + " = " + itemsCount.get(item) + "\n";
-			}
-			return StringUtils.removeEnd(result, "\n");
-		}
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("country", "item");
+        dataSource.add("USA", "Book");
+        dataSource.add("USA", "DVD");
+        dataSource.add("USA", "Book");
+        dataSource.add("USA", "Book");
+        dataSource.add("USA", "DVD");
+        dataSource.add("USA", "Book");
+        dataSource.add("USA", "DVD");
 
-	private class ReportScriptlet extends AbstractScriptlet {
+        dataSource.add("Canada", "Book");
+        dataSource.add("Canada", "Book");
+        dataSource.add("Canada", "DVD");
+        dataSource.add("Canada", "Book");
+        dataSource.add("Canada", "DVD");
+        dataSource.add("Canada", "Phone");
+        return dataSource;
+    }
 
-		@Override
-		public void afterDetailEval(ReportParameters reportParameters) {
-			super.afterDetailEval(reportParameters);
-			String item = reportParameters.getValue("item");
-			Integer count;
-			if (itemsCount.containsKey(item)) {
-				count = itemsCount.get(item);
-			} else {
-				count = 0;
-			}
-			itemsCount.put(item, ++count);
-		}
+    private class ItemSubtotal extends AbstractSimpleExpression<String> {
+        private static final long serialVersionUID = 1L;
 
-		@Override
-		public void afterGroupInit(String groupName, ReportParameters reportParameters) {
-			super.afterGroupInit(groupName, reportParameters);
-			itemsCount.clear();
-		}
-	}
+        @Override
+        public String evaluate(ReportParameters reportParameters) {
+            String result = "";
+            for (String item : itemsCount.keySet()) {
+                result += item + " = " + itemsCount.get(item) + "\n";
+            }
+            return StringUtils.removeEnd(result, "\n");
+        }
+    }
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("country", "item");
-		dataSource.add("USA", "Book");
-		dataSource.add("USA", "DVD");
-		dataSource.add("USA", "Book");
-		dataSource.add("USA", "Book");
-		dataSource.add("USA", "DVD");
-		dataSource.add("USA", "Book");
-		dataSource.add("USA", "DVD");
+    private class ReportScriptlet extends AbstractScriptlet {
 
-		dataSource.add("Canada", "Book");
-		dataSource.add("Canada", "Book");
-		dataSource.add("Canada", "DVD");
-		dataSource.add("Canada", "Book");
-		dataSource.add("Canada", "DVD");
-		dataSource.add("Canada", "Phone");
-		return dataSource;
-	}
+        @Override
+        public void afterDetailEval(ReportParameters reportParameters) {
+            super.afterDetailEval(reportParameters);
+            String item = reportParameters.getValue("item");
+            Integer count;
+            if (itemsCount.containsKey(item)) {
+                count = itemsCount.get(item);
+            } else {
+                count = 0;
+            }
+            itemsCount.put(item, ++count);
+        }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ScriptletReport();
-	}
+        @Override
+        public void afterGroupInit(String groupName, ReportParameters reportParameters) {
+            super.afterGroupInit(groupName, reportParameters);
+            itemsCount.clear();
+        }
+    }
 }

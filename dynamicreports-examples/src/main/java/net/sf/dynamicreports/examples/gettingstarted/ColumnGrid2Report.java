@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.gettingstarted;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>ColumnGrid2Report class.</p>
@@ -35,66 +40,58 @@ import net.sf.jasperreports.engine.JRDataSource;
  * @version $Id: $Id
  */
 public class ColumnGrid2Report {
-	private final int columns_count = 12;
+    private final int columns_count = 12;
 
-	/**
-	 * <p>Constructor for ColumnGrid2Report.</p>
-	 */
-	public ColumnGrid2Report() {
-		build();
-	}
+    /**
+     * <p>Constructor for ColumnGrid2Report.</p>
+     */
+    public ColumnGrid2Report() {
+        build();
+    }
 
-	private void build() {
-		@SuppressWarnings("unchecked")
-		TextColumnBuilder<String>[] columns = new TextColumnBuilder[columns_count];
-		for (int i = 1; i <= columns_count; i++) {
-			columns[i - 1] = col.column("Column" + i, "column" + i, type.stringType());
-		}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ColumnGrid2Report();
+    }
 
-		try {
-			report()
-					.setTextStyle(stl.style(stl.pen1Point()))
-					.columns(columns)
-					.columnGrid(
-							grid.horizontalColumnGridList(
-									columns[0],
-									grid.verticalColumnGridList(
-											columns[1],
-											grid.horizontalColumnGridList(columns[2], columns[3]),
-											columns[4]),
-									grid.verticalColumnGridList(columns[5], columns[6]))
-									.newRow()
-									.add(columns[7], columns[8], columns[9]))
-					.detail(cmp.verticalGap(10))
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    private void build() {
+        @SuppressWarnings("unchecked") TextColumnBuilder<String>[] columns = new TextColumnBuilder[columns_count];
+        for (int i = 1; i <= columns_count; i++) {
+            columns[i - 1] = col.column("Column" + i, "column" + i, type.stringType());
+        }
 
-	private JRDataSource createDataSource() {
-		String[] columns = new String[columns_count];
-		for (int i = 1; i <= columns_count; i++) {
-			columns[i - 1] = "column" + i;
-		}
-		DRDataSource dataSource = new DRDataSource(columns);
-		for (int i = 1; i <= 5; i++) {
-			Object[] row = new Object[columns_count];
-			for (int j = 0; j < columns_count; j++) {
-				row[j] = "row " + i;
-			}
-			dataSource.add(row);
-		}
-		return dataSource;
-	}
+        try {
+            report().setTextStyle(stl.style(stl.pen1Point()))
+                    .columns(columns)
+                    .columnGrid(grid.horizontalColumnGridList(columns[0], grid.verticalColumnGridList(columns[1], grid.horizontalColumnGridList(columns[2], columns[3]), columns[4]),
+                                                              grid.verticalColumnGridList(columns[5], columns[6]))
+                                    .newRow()
+                                    .add(columns[7], columns[8], columns[9]))
+                    .detail(cmp.verticalGap(10))
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ColumnGrid2Report();
-	}
+    private JRDataSource createDataSource() {
+        String[] columns = new String[columns_count];
+        for (int i = 1; i <= columns_count; i++) {
+            columns[i - 1] = "column" + i;
+        }
+        DRDataSource dataSource = new DRDataSource(columns);
+        for (int i = 1; i <= 5; i++) {
+            Object[] row = new Object[columns_count];
+            for (int j = 0; j < columns_count; j++) {
+                row[j] = "row " + i;
+            }
+            dataSource.add(row);
+        }
+        return dataSource;
+    }
 }

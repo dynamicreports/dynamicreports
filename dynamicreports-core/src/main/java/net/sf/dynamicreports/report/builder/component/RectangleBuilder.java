@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.component;
 
 import net.sf.dynamicreports.report.base.component.DRRectangle;
@@ -33,38 +32,38 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class RectangleBuilder extends DimensionComponentBuilder<RectangleBuilder, DRRectangle> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for RectangleBuilder.</p>
-	 */
-	protected RectangleBuilder() {
-		super(new DRRectangle());
-	}
+    /**
+     * <p>Constructor for RectangleBuilder.</p>
+     */
+    protected RectangleBuilder() {
+        super(new DRRectangle());
+    }
 
-	/**
-	 * <p>setRadius.</p>
-	 *
-	 * @param radius a {@link java.lang.Integer} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
-	 */
-	public RectangleBuilder setRadius(Integer radius) {
-		getObject().setRadius(radius);
-		return this;
-	}
+    /**
+     * <p>setRadius.</p>
+     *
+     * @param radius a {@link java.lang.Integer} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
+     */
+    public RectangleBuilder setRadius(Integer radius) {
+        getObject().setRadius(radius);
+        return this;
+    }
 
-	/**
-	 * <p>setPen.</p>
-	 *
-	 * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
-	 */
-	public RectangleBuilder setPen(PenBuilder pen) {
-		if (pen != null) {
-			getObject().setPen(pen.build());
-		} else {
-			getObject().setPen(null);
-		}
-		return this;
-	}
+    /**
+     * <p>setPen.</p>
+     *
+     * @param pen a {@link net.sf.dynamicreports.report.builder.style.PenBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.RectangleBuilder} object.
+     */
+    public RectangleBuilder setPen(PenBuilder pen) {
+        if (pen != null) {
+            getObject().setPen(pen.build());
+        } else {
+            getObject().setPen(null);
+        }
+        return this;
+    }
 }

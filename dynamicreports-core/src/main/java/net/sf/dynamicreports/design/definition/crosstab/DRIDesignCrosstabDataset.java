@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.crosstab;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.design.constant.ResetType;
 import net.sf.dynamicreports.design.definition.DRIDesignDataset;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignCrosstabDataset interface.</p>
@@ -36,31 +35,31 @@ import net.sf.dynamicreports.design.definition.DRIDesignGroup;
  */
 public interface DRIDesignCrosstabDataset extends Serializable {
 
-	/**
-	 * <p>getSubDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-	 */
-	public DRIDesignDataset getSubDataset();
+    /**
+     * <p>getSubDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     */
+    public DRIDesignDataset getSubDataset();
 
-	/**
-	 * <p>getDataPreSorted.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getDataPreSorted();
+    /**
+     * <p>getDataPreSorted.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getDataPreSorted();
 
-	/**
-	 * <p>getResetType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-	 */
-	public ResetType getResetType();
+    /**
+     * <p>getResetType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     */
+    public ResetType getResetType();
 
-	/**
-	 * <p>getResetGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
-	 */
-	public DRIDesignGroup getResetGroup();
+    /**
+     * <p>getResetGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+     */
+    public DRIDesignGroup getResetGroup();
 }

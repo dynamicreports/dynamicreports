@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,11 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.style;
-
-import java.awt.Color;
-import java.io.Serializable;
 
 import net.sf.dynamicreports.report.constant.HorizontalImageAlignment;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
@@ -33,6 +29,9 @@ import net.sf.dynamicreports.report.constant.Rotation;
 import net.sf.dynamicreports.report.constant.VerticalImageAlignment;
 import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 
+import java.awt.Color;
+import java.io.Serializable;
+
 /**
  * <p>DRIBaseStyle interface.</p>
  *
@@ -41,116 +40,116 @@ import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
  */
 public interface DRIBaseStyle extends Serializable {
 
-	/**
-	 * <p>getForegroundColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getForegroundColor();
+    /**
+     * <p>getForegroundColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getForegroundColor();
 
-	/**
-	 * <p>getBackgroundColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getBackgroundColor();
+    /**
+     * <p>getBackgroundColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getBackgroundColor();
 
-	/**
-	 * <p>getRadius.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getRadius();
+    /**
+     * <p>getRadius.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getRadius();
 
-	/**
-	 * <p>getImageScale.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ImageScale} object.
-	 */
-	public ImageScale getImageScale();
+    /**
+     * <p>getImageScale.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ImageScale} object.
+     */
+    public ImageScale getImageScale();
 
-	/**
-	 * <p>getHorizontalImageAlignment.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
-	 */
-	public HorizontalImageAlignment getHorizontalImageAlignment();
+    /**
+     * <p>getHorizontalImageAlignment.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
+     */
+    public HorizontalImageAlignment getHorizontalImageAlignment();
 
-	/**
-	 * <p>getVerticalImageAlignment.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalImageAlignment} object.
-	 */
-	public VerticalImageAlignment getVerticalImageAlignment();
+    /**
+     * <p>getVerticalImageAlignment.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.VerticalImageAlignment} object.
+     */
+    public VerticalImageAlignment getVerticalImageAlignment();
 
-	/**
-	 * <p>getHorizontalTextAlignment.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
-	 */
-	public HorizontalTextAlignment getHorizontalTextAlignment();
+    /**
+     * <p>getHorizontalTextAlignment.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
+     */
+    public HorizontalTextAlignment getHorizontalTextAlignment();
 
-	/**
-	 * <p>getVerticalTextAlignment.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.VerticalTextAlignment} object.
-	 */
-	public VerticalTextAlignment getVerticalTextAlignment();
+    /**
+     * <p>getVerticalTextAlignment.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.VerticalTextAlignment} object.
+     */
+    public VerticalTextAlignment getVerticalTextAlignment();
 
-	/**
-	 * <p>getBorder.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIBorder} object.
-	 */
-	public DRIBorder getBorder();
+    /**
+     * <p>getBorder.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIBorder} object.
+     */
+    public DRIBorder getBorder();
 
-	/**
-	 * <p>getPadding.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPadding} object.
-	 */
-	public DRIPadding getPadding();
+    /**
+     * <p>getPadding.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPadding} object.
+     */
+    public DRIPadding getPadding();
 
-	/**
-	 * <p>getFont.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
-	 */
-	public DRIFont getFont();
+    /**
+     * <p>getFont.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+     */
+    public DRIFont getFont();
 
-	/**
-	 * <p>getRotation.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Rotation} object.
-	 */
-	public Rotation getRotation();
+    /**
+     * <p>getRotation.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Rotation} object.
+     */
+    public Rotation getRotation();
 
-	/**
-	 * <p>getPattern.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getPattern();
+    /**
+     * <p>getPattern.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getPattern();
 
-	/**
-	 * <p>getMarkup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
-	 */
-	public Markup getMarkup();
+    /**
+     * <p>getMarkup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
+     */
+    public Markup getMarkup();
 
-	/**
-	 * <p>getParagraph.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIParagraph} object.
-	 */
-	public DRIParagraph getParagraph();
+    /**
+     * <p>getParagraph.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIParagraph} object.
+     */
+    public DRIParagraph getParagraph();
 
-	/**
-	 * <p>getLinePen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
-	 */
-	public DRIPen getLinePen();
+    /**
+     * <p>getLinePen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIPen} object.
+     */
+    public DRIPen getLinePen();
 
 }

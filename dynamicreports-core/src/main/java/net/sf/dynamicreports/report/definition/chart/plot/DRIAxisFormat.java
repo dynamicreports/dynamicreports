@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
-
-import java.awt.Color;
-import java.io.Serializable;
 
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.style.DRIFont;
+
+import java.awt.Color;
+import java.io.Serializable;
 
 /**
  * <p>DRIAxisFormat interface.</p>
@@ -36,80 +35,80 @@ import net.sf.dynamicreports.report.definition.style.DRIFont;
  */
 public interface DRIAxisFormat extends Serializable {
 
-	/**
-	 * <p>getLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<String> getLabelExpression();
+    /**
+     * <p>getLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<String> getLabelExpression();
 
-	/**
-	 * <p>getLabelFont.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
-	 */
-	public DRIFont getLabelFont();
+    /**
+     * <p>getLabelFont.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+     */
+    public DRIFont getLabelFont();
 
-	/**
-	 * <p>getLabelColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getLabelColor();
+    /**
+     * <p>getLabelColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getLabelColor();
 
-	/**
-	 * <p>getTickLabelFont.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
-	 */
-	public DRIFont getTickLabelFont();
+    /**
+     * <p>getTickLabelFont.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+     */
+    public DRIFont getTickLabelFont();
 
-	/**
-	 * <p>getTickLabelColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getTickLabelColor();
+    /**
+     * <p>getTickLabelColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getTickLabelColor();
 
-	/**
-	 * <p>getTickLabelMask.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getTickLabelMask();
+    /**
+     * <p>getTickLabelMask.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getTickLabelMask();
 
-	/**
-	 * <p>getVerticalTickLabels.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getVerticalTickLabels();
+    /**
+     * <p>getVerticalTickLabels.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getVerticalTickLabels();
 
-	/**
-	 * <p>getTickLabelRotation.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getTickLabelRotation();
+    /**
+     * <p>getTickLabelRotation.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getTickLabelRotation();
 
-	/**
-	 * <p>getLineColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getLineColor();
+    /**
+     * <p>getLineColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getLineColor();
 
-	/**
-	 * <p>getRangeMinValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<? extends Number> getRangeMinValueExpression();
+    /**
+     * <p>getRangeMinValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<? extends Number> getRangeMinValueExpression();
 
-	/**
-	 * <p>getRangeMaxValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<? extends Number> getRangeMaxValueExpression();
+    /**
+     * <p>getRangeMaxValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<? extends Number> getRangeMaxValueExpression();
 }

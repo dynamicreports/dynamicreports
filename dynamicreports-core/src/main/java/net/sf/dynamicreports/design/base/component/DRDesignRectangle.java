@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.component;
 
 import net.sf.dynamicreports.design.base.style.DRDesignPen;
@@ -33,45 +32,45 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignRectangle extends DRDesignComponent implements DRIDesignRectangle {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Integer radius;
-	private DRDesignPen pen;
+    private Integer radius;
+    private DRDesignPen pen;
 
-	/**
-	 * <p>Constructor for DRDesignRectangle.</p>
-	 */
-	public DRDesignRectangle() {
-		super("rectangle");
-	}
+    /**
+     * <p>Constructor for DRDesignRectangle.</p>
+     */
+    public DRDesignRectangle() {
+        super("rectangle");
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Integer getRadius() {
-		return radius;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public Integer getRadius() {
+        return radius;
+    }
 
-	/**
-	 * <p>Setter for the field <code>radius</code>.</p>
-	 *
-	 * @param radius a {@link java.lang.Integer} object.
-	 */
-	public void setRadius(Integer radius) {
-		this.radius = radius;
-	}
+    /**
+     * <p>Setter for the field <code>radius</code>.</p>
+     *
+     * @param radius a {@link java.lang.Integer} object.
+     */
+    public void setRadius(Integer radius) {
+        this.radius = radius;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRDesignPen getPen() {
-		return pen;
-	}
+    /** {@inheritDoc} */
+    @Override
+    public DRDesignPen getPen() {
+        return pen;
+    }
 
-	/**
-	 * <p>Setter for the field <code>pen</code>.</p>
-	 *
-	 * @param pen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
-	 */
-	public void setPen(DRDesignPen pen) {
-		this.pen = pen;
-	}
+    /**
+     * <p>Setter for the field <code>pen</code>.</p>
+     *
+     * @param pen a {@link net.sf.dynamicreports.design.base.style.DRDesignPen} object.
+     */
+    public void setPen(DRDesignPen pen) {
+        this.pen = pen;
+    }
 }

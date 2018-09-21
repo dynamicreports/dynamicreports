@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report;
 
-import java.lang.reflect.ParameterizedType;
-
 import net.sf.dynamicreports.report.constant.Calculation;
+
+import java.lang.reflect.ParameterizedType;
 
 /**
  * <p>ReportUtils class.</p>
@@ -33,77 +32,76 @@ import net.sf.dynamicreports.report.constant.Calculation;
  * @version $Id: $Id
  */
 public class ReportUtils {
-	private static int counter = 0;
+    private static int counter = 0;
 
-	/**
-	 * <p>generateUniqueName.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 * @return a {@link java.lang.String} object.
-	 */
-	public static String generateUniqueName(String name) {
-		if (counter == Integer.MAX_VALUE) {
-			counter = 0;
-		}
-		return name + "_" + counter++ + "_";
-	}
+    /**
+     * <p>generateUniqueName.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @return a {@link java.lang.String} object.
+     */
+    public static String generateUniqueName(String name) {
+        if (counter == Integer.MAX_VALUE) {
+            counter = 0;
+        }
+        return name + "_" + counter++ + "_";
+    }
 
-	/**
-	 * <p>getVariableValueClass.</p>
-	 *
-	 * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-	 * @param valueClass a {@link java.lang.Class} object.
-	 * @return a {@link java.lang.Class} object.
-	 */
-	public static Class<?> getVariableValueClass(Calculation calculation, Class<?> valueClass) {
-		if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
-			return Long.class;
-		}
-		if (calculation.equals(Calculation.AVERAGE) || calculation.equals(Calculation.STANDARD_DEVIATION) ||
-				calculation.equals(Calculation.VARIANCE)) {
-			return Number.class;
-		}
-		return valueClass;
-	}
+    /**
+     * <p>getVariableValueClass.</p>
+     *
+     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param valueClass a {@link java.lang.Class} object.
+     * @return a {@link java.lang.Class} object.
+     */
+    public static Class<?> getVariableValueClass(Calculation calculation, Class<?> valueClass) {
+        if (calculation.equals(Calculation.COUNT) || calculation.equals(Calculation.DISTINCT_COUNT)) {
+            return Long.class;
+        }
+        if (calculation.equals(Calculation.AVERAGE) || calculation.equals(Calculation.STANDARD_DEVIATION) || calculation.equals(Calculation.VARIANCE)) {
+            return Number.class;
+        }
+        return valueClass;
+    }
 
-	/**
-	 * <p>getGenericClass.</p>
-	 *
-	 * @param object a {@link java.lang.Object} object.
-	 * @param index a int.
-	 * @return a {@link java.lang.Class} object.
-	 */
-	public static Class<?> getGenericClass(Object object, int index) {
-		ParameterizedType genericSuperclass = getParameterizedType(object.getClass());
-		if (genericSuperclass == null) {
-			return String.class;
-		}
-		Class<?> rawType = getRawType(genericSuperclass.getActualTypeArguments()[index]);
-		if (rawType == null) {
-			return String.class;
-		}
-		return rawType;
-	}
+    /**
+     * <p>getGenericClass.</p>
+     *
+     * @param object a {@link java.lang.Object} object.
+     * @param index a int.
+     * @return a {@link java.lang.Class} object.
+     */
+    public static Class<?> getGenericClass(Object object, int index) {
+        ParameterizedType genericSuperclass = getParameterizedType(object.getClass());
+        if (genericSuperclass == null) {
+            return String.class;
+        }
+        Class<?> rawType = getRawType(genericSuperclass.getActualTypeArguments()[index]);
+        if (rawType == null) {
+            return String.class;
+        }
+        return rawType;
+    }
 
-	private static ParameterizedType getParameterizedType(Class<?> classs) {
-		if (classs == null) {
-			return null;
-		}
-		if (classs.getGenericSuperclass() instanceof ParameterizedType) {
-			return (ParameterizedType) classs.getGenericSuperclass();
-		}
-		return getParameterizedType((Class<?>) classs.getGenericSuperclass());
-	}
+    private static ParameterizedType getParameterizedType(Class<?> classs) {
+        if (classs == null) {
+            return null;
+        }
+        if (classs.getGenericSuperclass() instanceof ParameterizedType) {
+            return (ParameterizedType) classs.getGenericSuperclass();
+        }
+        return getParameterizedType((Class<?>) classs.getGenericSuperclass());
+    }
 
-	private static Class<?> getRawType(Object typeArgument) {
-		if (typeArgument instanceof ParameterizedType) {
-			return getRawType(((ParameterizedType) typeArgument).getRawType());
-		} else {
-			if (typeArgument instanceof Class<?>) {
-				return (Class<?>) typeArgument;
-			} else {
-				return null;
-			}
-		}
-	}
+    private static Class<?> getRawType(Object typeArgument) {
+        if (typeArgument instanceof ParameterizedType) {
+            return getRawType(((ParameterizedType) typeArgument).getRawType());
+        } else {
+            if (typeArgument instanceof Class<?>) {
+                return (Class<?>) typeArgument;
+            } else {
+                return null;
+            }
+        }
+    }
 }

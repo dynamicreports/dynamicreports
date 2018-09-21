@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.style;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
@@ -32,37 +27,40 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperStyleTest;
 import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 import net.sf.jasperreports.engine.type.LineStyleEnum;
 
+import java.io.Serializable;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class Style5Test extends AbstractJasperStyleTest implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-				.setTextStyle(stl.style(stl.pen1Point()).setPadding(2))
-				.pageFooter(
-						cmp.pageXofY());
-	}
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
+          .setTextStyle(stl.style(stl.pen1Point())
+                           .setPadding(2))
+          .pageFooter(cmp.pageXofY());
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(1);
+        numberOfPagesTest(1);
 
-		// column1
-		styleTest("pageFooter.textField1", 0, null, null, "Arial", 10f, null, null);
-		horizontalAlignmentTest("pageFooter.textField1", 0, HorizontalTextAlignEnum.RIGHT);
-		paddingTest("pageFooter.textField1", 0, 2, 2, 2, 0);
-		borderTest("pageFooter.textField1", 0, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID,
-				0);
+        // column1
+        styleTest("pageFooter.textField1", 0, null, null, "Arial", 10f, null, null);
+        horizontalAlignmentTest("pageFooter.textField1", 0, HorizontalTextAlignEnum.RIGHT);
+        paddingTest("pageFooter.textField1", 0, 2, 2, 2, 0);
+        borderTest("pageFooter.textField1", 0, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 0);
 
-		styleTest("pageFooter.textField2", 0, null, null, "Arial", 10f, null, null);
-		horizontalAlignmentTest("pageFooter.textField2", 0, HorizontalTextAlignEnum.LEFT);
-		paddingTest("pageFooter.textField2", 0, 2, 2, 0, 2);
-		borderTest("pageFooter.textField2", 0, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 0, null, LineStyleEnum.SOLID,
-				1);
-	}
+        styleTest("pageFooter.textField2", 0, null, null, "Arial", 10f, null, null);
+        horizontalAlignmentTest("pageFooter.textField2", 0, HorizontalTextAlignEnum.LEFT);
+        paddingTest("pageFooter.textField2", 0, 2, 2, 0, 2);
+        borderTest("pageFooter.textField2", 0, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 1, null, LineStyleEnum.SOLID, 0, null, LineStyleEnum.SOLID, 1);
+    }
 }

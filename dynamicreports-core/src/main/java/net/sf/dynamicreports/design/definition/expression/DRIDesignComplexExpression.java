@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.expression;
 
-import java.util.List;
-
 import net.sf.dynamicreports.report.definition.ReportParameters;
+
+import java.util.List;
 
 /**
  * <p>DRIDesignComplexExpression interface.</p>
@@ -34,26 +33,26 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  */
 public interface DRIDesignComplexExpression extends DRIDesignExpression {
 
-	/**
-	 * <p>getExpressions.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIDesignExpression> getExpressions();
+    /**
+     * <p>getExpressions.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIDesignExpression> getExpressions();
 
-	/**
-	 * <p>evaluate.</p>
-	 *
-	 * @param values a {@link java.util.List} object.
-	 * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
-	 * @return a {@link java.lang.Object} object.
-	 */
-	public Object evaluate(List<?> values, ReportParameters reportParameters);
+    /**
+     * <p>evaluate.</p>
+     *
+     * @param values a {@link java.util.List} object.
+     * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+     * @return a {@link java.lang.Object} object.
+     */
+    public Object evaluate(List<?> values, ReportParameters reportParameters);
 
-	/**
-	 * <p>getParameterName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getParameterName();
+    /**
+     * <p>getParameterName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getParameterName();
 }

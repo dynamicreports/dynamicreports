@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,23 +28,23 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public enum WhenResourceMissingType {
-	/**
-	 * Return NULL when a resource is missing.
-	 */
-	NULL,
+    /**
+     * Return NULL when a resource is missing.
+     */
+    NULL,
 
-	/**
-	 * Return empty string when a resource is missing.
-	 */
-	EMPTY,
+    /**
+     * Return empty string when a resource is missing.
+     */
+    EMPTY,
 
-	/**
-	 * Return the key when a resource is missing.
-	 */
-	KEY,
+    /**
+     * Return the key when a resource is missing.
+     */
+    KEY,
 
-	/**
-	 * Throw an exception when a resource is missing.
-	 */
-	ERROR;
+    /**
+     * Throw an exception when a resource is missing.
+     */
+    ERROR;
 }

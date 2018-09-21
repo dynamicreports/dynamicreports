@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.adhoc.report;
 
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
@@ -37,13 +36,13 @@ import net.sf.dynamicreports.report.exception.DRException;
  */
 public interface AdhocReportCustomizer {
 
-	/**
-	 * <p>customize.</p>
-	 *
-	 * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
-	 * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException;
+    /**
+     * <p>customize.</p>
+     *
+     * @param report a {@link net.sf.dynamicreports.report.builder.ReportBuilder} object.
+     * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException;
 
 }

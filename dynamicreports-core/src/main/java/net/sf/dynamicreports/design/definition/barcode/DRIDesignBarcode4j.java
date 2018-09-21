@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.barcode;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
@@ -34,46 +33,46 @@ import net.sf.dynamicreports.report.constant.BarcodeTextPosition;
  */
 public interface DRIDesignBarcode4j extends DRIDesignBarcode {
 
-	/**
-	 * <p>getPatternExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getPatternExpression();
+    /**
+     * <p>getPatternExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getPatternExpression();
 
-	/**
-	 * <p>getModuleWidth.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getModuleWidth();
+    /**
+     * <p>getModuleWidth.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getModuleWidth();
 
-	/**
-	 * <p>getOrientation.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
-	 */
-	public BarcodeOrientation getOrientation();
+    /**
+     * <p>getOrientation.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
+     */
+    public BarcodeOrientation getOrientation();
 
-	/**
-	 * <p>getTextPosition.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.BarcodeTextPosition} object.
-	 */
-	public BarcodeTextPosition getTextPosition();
+    /**
+     * <p>getTextPosition.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.BarcodeTextPosition} object.
+     */
+    public BarcodeTextPosition getTextPosition();
 
-	/**
-	 * <p>getQuietZone.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getQuietZone();
+    /**
+     * <p>getQuietZone.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getQuietZone();
 
-	/**
-	 * <p>getVerticalQuietZone.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getVerticalQuietZone();
+    /**
+     * <p>getVerticalQuietZone.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getVerticalQuietZone();
 
 }

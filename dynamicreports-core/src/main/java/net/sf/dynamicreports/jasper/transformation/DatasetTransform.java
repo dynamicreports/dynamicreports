@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,11 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.transformation;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import net.sf.dynamicreports.design.definition.DRIDesignDataset;
 import net.sf.dynamicreports.jasper.base.JasperCustomValues;
@@ -35,6 +31,9 @@ import net.sf.jasperreports.engine.design.JRDesignDataset;
 import net.sf.jasperreports.engine.design.JRDesignDatasetRun;
 import net.sf.jasperreports.engine.design.JRDesignParameter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>DatasetTransform class.</p>
  *
@@ -42,118 +41,126 @@ import net.sf.jasperreports.engine.design.JRDesignParameter;
  * @version $Id: $Id
  */
 public class DatasetTransform {
-	private JasperTransformAccessor accessor;
-	private Map<DRIDesignDataset, Map<String, Object>> datasetParameters;
-	private Map<DRIDesignDataset, DatasetExpressionTransform> datasetExpressions;
+    private JasperTransformAccessor accessor;
+    private Map<DRIDesignDataset, Map<String, Object>> datasetParameters;
+    private Map<DRIDesignDataset, DatasetExpressionTransform> datasetExpressions;
 
-	/**
-	 * <p>Constructor for DatasetTransform.</p>
-	 *
-	 * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
-	 */
-	public DatasetTransform(JasperTransformAccessor accessor) {
-		this.accessor = accessor;
-		datasetParameters = new HashMap<DRIDesignDataset, Map<String, Object>>();
-		datasetExpressions = new HashMap<DRIDesignDataset, DatasetExpressionTransform>();
-	}
+    /**
+     * <p>Constructor for DatasetTransform.</p>
+     *
+     * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+     */
+    public DatasetTransform(JasperTransformAccessor accessor) {
+        this.accessor = accessor;
+        datasetParameters = new HashMap<DRIDesignDataset, Map<String, Object>>();
+        datasetExpressions = new HashMap<DRIDesignDataset, DatasetExpressionTransform>();
+    }
 
-	/**
-	 * <p>transform.</p>
-	 */
-	public void transform() {
-		for (DRIDesignDataset dataset : accessor.getReport().getDatasets()) {
-			addDataset(dataset);
-		}
-	}
+    /**
+     * <p>transform.</p>
+     */
+    public void transform() {
+        for (DRIDesignDataset dataset : accessor.getReport()
+                                                .getDatasets()) {
+            addDataset(dataset);
+        }
+    }
 
-	private void addDataset(DRIDesignDataset dataset) {
-		try {
-			accessor.getDesign().addDataset(dataset(dataset));
-		} catch (JRException e) {
-			throw new JasperDesignException("Registration failed for dataset \"" + dataset.getName() + "\"", e);
-		}
-	}
+    private void addDataset(DRIDesignDataset dataset) {
+        try {
+            accessor.getDesign()
+                    .addDataset(dataset(dataset));
+        } catch (JRException e) {
+            throw new JasperDesignException("Registration failed for dataset \"" + dataset.getName() + "\"", e);
+        }
+    }
 
-	// dataset
-	private JRDesignDataset dataset(DRIDesignDataset dataset) {
-		Map<String, Object> parameters = new HashMap<String, Object>();
-		datasetParameters.put(dataset, parameters);
-		JRDesignDataset jrDataset = new JRDesignDataset(false);
-		jrDataset.setName(dataset.getName());
-		if (dataset.getQuery() != null) {
-			jrDataset.setQuery(accessor.getReportTransform().query(dataset.getQuery()));
-		}
-		JasperCustomValues customValues = new JasperCustomValues();
-		DatasetExpressionTransform datasetExpressionTransform = new DatasetExpressionTransform(dataset, jrDataset, customValues);
-		datasetExpressionTransform.transform();
-		datasetExpressions.put(dataset, datasetExpressionTransform);
-		if (!customValues.isEmpty()) {
-			addParameter(jrDataset, parameters, JasperCustomValues.NAME, JasperCustomValues.class, customValues);
-			addScriptlet(jrDataset, parameters, JasperScriptlet.NAME);
-		}
-		jrDataset.setFilterExpression(datasetExpressionTransform.getExpression(dataset.getFilterExpression()));
-		return jrDataset;
-	}
+    // dataset
+    private JRDesignDataset dataset(DRIDesignDataset dataset) {
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        datasetParameters.put(dataset, parameters);
+        JRDesignDataset jrDataset = new JRDesignDataset(false);
+        jrDataset.setName(dataset.getName());
+        if (dataset.getQuery() != null) {
+            jrDataset.setQuery(accessor.getReportTransform()
+                                       .query(dataset.getQuery()));
+        }
+        JasperCustomValues customValues = new JasperCustomValues();
+        DatasetExpressionTransform datasetExpressionTransform = new DatasetExpressionTransform(dataset, jrDataset, customValues);
+        datasetExpressionTransform.transform();
+        datasetExpressions.put(dataset, datasetExpressionTransform);
+        if (!customValues.isEmpty()) {
+            addParameter(jrDataset, parameters, JasperCustomValues.NAME, JasperCustomValues.class, customValues);
+            addScriptlet(jrDataset, parameters, JasperScriptlet.NAME);
+        }
+        jrDataset.setFilterExpression(datasetExpressionTransform.getExpression(dataset.getFilterExpression()));
+        return jrDataset;
+    }
 
-	private <T> void addParameter(JRDesignDataset jrDataset, Map<String, Object> parameters, String name, Class<T> parameterClass, T value) {
-		JRDesignParameter jrParameter = new JRDesignParameter();
-		jrParameter.setName(name);
-		jrParameter.setValueClass(parameterClass);
-		try {
-			jrDataset.addParameter(jrParameter);
-		} catch (JRException e) {
-			throw new JasperDesignException("Registration failed for parameter \"" + name + "\"", e);
-		}
-		parameters.put(jrParameter.getName(), value);
-	}
+    private <T> void addParameter(JRDesignDataset jrDataset, Map<String, Object> parameters, String name, Class<T> parameterClass, T value) {
+        JRDesignParameter jrParameter = new JRDesignParameter();
+        jrParameter.setName(name);
+        jrParameter.setValueClass(parameterClass);
+        try {
+            jrDataset.addParameter(jrParameter);
+        } catch (JRException e) {
+            throw new JasperDesignException("Registration failed for parameter \"" + name + "\"", e);
+        }
+        parameters.put(jrParameter.getName(), value);
+    }
 
-	private void addScriptlet(JRDesignDataset jrDataset, Map<String, Object> parameters, String name) {
-		try {
-			jrDataset.addScriptlet(accessor.getReportTransform().scriptlet(name, JasperScriptlet.class));
-		} catch (JRException e) {
-			throw new JasperDesignException("Registration failed for scriptlet \"" + name + "\"", e);
-		}
-	}
+    private void addScriptlet(JRDesignDataset jrDataset, Map<String, Object> parameters, String name) {
+        try {
+            jrDataset.addScriptlet(accessor.getReportTransform()
+                                           .scriptlet(name, JasperScriptlet.class));
+        } catch (JRException e) {
+            throw new JasperDesignException("Registration failed for scriptlet \"" + name + "\"", e);
+        }
+    }
 
-	/**
-	 * <p>datasetRun.</p>
-	 *
-	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-	 * @return a {@link net.sf.jasperreports.engine.design.JRDesignDatasetRun} object.
-	 */
-	public JRDesignDatasetRun datasetRun(DRIDesignDataset dataset) {
-		if (dataset == null) {
-			return null;
-		}
+    /**
+     * <p>datasetRun.</p>
+     *
+     * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     * @return a {@link net.sf.jasperreports.engine.design.JRDesignDatasetRun} object.
+     */
+    public JRDesignDatasetRun datasetRun(DRIDesignDataset dataset) {
+        if (dataset == null) {
+            return null;
+        }
 
-		JRDesignDatasetRun jrDatasetRun = new JRDesignDatasetRun();
-		jrDatasetRun.setDatasetName(dataset.getName());
-		jrDatasetRun.setConnectionExpression(accessor.getExpressionTransform().getExpression(dataset.getConnectionExpression()));
-		jrDatasetRun.setDataSourceExpression(accessor.getExpressionTransform().getExpression(dataset.getDataSourceExpression()));
-		DatasetParametersExpression parametersExpression = new DatasetParametersExpression(datasetParameters.get(dataset));
-		accessor.getExpressionTransform().addSimpleExpression(parametersExpression);
-		jrDatasetRun.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
-		return jrDatasetRun;
-	}
+        JRDesignDatasetRun jrDatasetRun = new JRDesignDatasetRun();
+        jrDatasetRun.setDatasetName(dataset.getName());
+        jrDatasetRun.setConnectionExpression(accessor.getExpressionTransform()
+                                                     .getExpression(dataset.getConnectionExpression()));
+        jrDatasetRun.setDataSourceExpression(accessor.getExpressionTransform()
+                                                     .getExpression(dataset.getDataSourceExpression()));
+        DatasetParametersExpression parametersExpression = new DatasetParametersExpression(datasetParameters.get(dataset));
+        accessor.getExpressionTransform()
+                .addSimpleExpression(parametersExpression);
+        jrDatasetRun.setParametersMapExpression(accessor.getExpressionTransform()
+                                                        .getExpression(parametersExpression));
+        return jrDatasetRun;
+    }
 
-	/**
-	 * <p>Getter for the field <code>datasetParameters</code>.</p>
-	 *
-	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-	 * @return a {@link java.util.Map} object.
-	 */
-	protected Map<String, Object> getDatasetParameters(DRIDesignDataset dataset) {
-		return datasetParameters.get(dataset);
-	}
+    /**
+     * <p>Getter for the field <code>datasetParameters</code>.</p>
+     *
+     * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     * @return a {@link java.util.Map} object.
+     */
+    protected Map<String, Object> getDatasetParameters(DRIDesignDataset dataset) {
+        return datasetParameters.get(dataset);
+    }
 
-	/**
-	 * <p>getDatasetExpressionTransform.</p>
-	 *
-	 * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-	 * @return a {@link net.sf.dynamicreports.jasper.transformation.DatasetExpressionTransform} object.
-	 */
-	public DatasetExpressionTransform getDatasetExpressionTransform(DRIDesignDataset dataset) {
-		return datasetExpressions.get(dataset);
-	}
+    /**
+     * <p>getDatasetExpressionTransform.</p>
+     *
+     * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     * @return a {@link net.sf.dynamicreports.jasper.transformation.DatasetExpressionTransform} object.
+     */
+    public DatasetExpressionTransform getDatasetExpressionTransform(DRIDesignDataset dataset) {
+        return datasetExpressions.get(dataset);
+    }
 
 }

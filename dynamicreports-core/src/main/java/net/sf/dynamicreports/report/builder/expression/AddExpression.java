@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.expression;
-
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.math.BigDecimal;
 
 /**
  * <p>AddExpression class.</p>
@@ -34,21 +33,20 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class AddExpression extends CalculationExpression {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	@SafeVarargs
-	/**
-	 * <p>Constructor for AddExpression.</p>
-	 *
-	 * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public AddExpression(DRIExpression<? extends Number>... expressions) {
-		super(expressions);
-	}
+    @SafeVarargs
+    /**
+     * <p>Constructor for AddExpression.</p>
+     *
+     * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */ public AddExpression(DRIExpression<? extends Number>... expressions) {
+        super(expressions);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
-		return value1.add(value2);
-	}
+    /** {@inheritDoc} */
+    @Override
+    protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
+        return value1.add(value2);
+    }
 }

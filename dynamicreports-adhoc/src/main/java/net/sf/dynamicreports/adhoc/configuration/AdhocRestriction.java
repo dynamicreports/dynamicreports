@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.adhoc.configuration;
 
 import java.io.Serializable;
@@ -31,112 +30,114 @@ import java.io.Serializable;
  * @version $Id: $Id
  */
 public class AdhocRestriction implements Cloneable, Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private String key;
-	private AdhocProperties properties;
+    private String key;
+    private AdhocProperties properties;
 
-	/**
-	 * <p>Constructor for AdhocRestriction.</p>
-	 */
-	public AdhocRestriction() {
-		properties = new AdhocProperties();
-	}
+    /**
+     * <p>Constructor for AdhocRestriction.</p>
+     */
+    public AdhocRestriction() {
+        properties = new AdhocProperties();
+    }
 
-	/**
-	 * <p>Getter for the field <code>key</code>.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getKey() {
-		return key;
-	}
+    /**
+     * <p>Getter for the field <code>key</code>.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getKey() {
+        return key;
+    }
 
-	/**
-	 * <p>Setter for the field <code>key</code>.</p>
-	 *
-	 * @param key a {@link java.lang.String} object.
-	 */
-	public void setKey(String key) {
-		this.key = key;
-	}
+    /**
+     * <p>Setter for the field <code>key</code>.</p>
+     *
+     * @param key a {@link java.lang.String} object.
+     */
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	/**
-	 * <p>Getter for the field <code>properties</code>.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
-	 */
-	public AdhocProperties getProperties() {
-		return properties;
-	}
+    /**
+     * <p>Getter for the field <code>properties</code>.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+     */
+    public AdhocProperties getProperties() {
+        return properties;
+    }
 
-	/**
-	 * <p>getProperty.</p>
-	 *
-	 * @param key a {@link java.lang.String} object.
-	 * @param <T> a T object.
-	 * @return a T object.
-	 */
-	public <T> T getProperty(String key) {
-		return this.properties.getProperty(key);
-	}
+    /**
+     * <p>Setter for the field <code>properties</code>.</p>
+     *
+     * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+     */
+    public void setProperties(AdhocProperties properties) {
+        this.properties = properties;
+    }
 
-	/**
-	 * <p>setProperty.</p>
-	 *
-	 * @param key a {@link java.lang.String} object.
-	 * @param value a {@link java.lang.Object} object.
-	 */
-	public void setProperty(String key, Object value) {
-		this.properties.setProperty(key, value);
-	}
+    /**
+     * <p>getProperty.</p>
+     *
+     * @param key a {@link java.lang.String} object.
+     * @param <T> a T object.
+     * @return a T object.
+     */
+    public <T> T getProperty(String key) {
+        return this.properties.getProperty(key);
+    }
 
-	/**
-	 * <p>Setter for the field <code>properties</code>.</p>
-	 *
-	 * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
-	 */
-	public void setProperties(AdhocProperties properties) {
-		this.properties = properties;
-	}
+    /**
+     * <p>setProperty.</p>
+     *
+     * @param key a {@link java.lang.String} object.
+     * @param value a {@link java.lang.Object} object.
+     */
+    public void setProperty(String key, Object value) {
+        this.properties.setProperty(key, value);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null)
-			return false;
-		if (!(obj instanceof AdhocRestriction))
-			return false;
+    /** {@inheritDoc} */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof AdhocRestriction)) {
+            return false;
+        }
 
-		AdhocRestriction object = (AdhocRestriction) obj;
-		if (!(key == null ? object.getKey() == null : key.equals(object.getKey()))) {
-			return false;
-		}
-		if (!(properties == null ? object.getProperties() == null : properties.equals(object.getProperties()))) {
-			return false;
-		}
+        AdhocRestriction object = (AdhocRestriction) obj;
+        if (!(key == null ? object.getKey() == null : key.equals(object.getKey()))) {
+            return false;
+        }
+        if (!(properties == null ? object.getProperties() == null : properties.equals(object.getProperties()))) {
+            return false;
+        }
 
-		return true;
-	}
+        return true;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public AdhocRestriction clone() {
-		AdhocRestriction clone;
-		try {
-			clone = (AdhocRestriction) super.clone();
-		} catch (CloneNotSupportedException e) {
-			throw new RuntimeException(e);
-		}
+    /** {@inheritDoc} */
+    @Override
+    public AdhocRestriction clone() {
+        AdhocRestriction clone;
+        try {
+            clone = (AdhocRestriction) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
 
-		if (properties != null) {
-			clone.properties = properties.clone();
-		}
+        if (properties != null) {
+            clone.properties = properties.clone();
+        }
 
-		return clone;
-	}
+        return clone;
+    }
 
 }

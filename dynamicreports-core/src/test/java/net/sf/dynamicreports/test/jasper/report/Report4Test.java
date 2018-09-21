@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,10 +19,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.report;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.constant.Language;
@@ -32,40 +30,41 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class Report4Test extends AbstractJasperPositionTest {
-	private TextColumnBuilder<Integer> column1;
+    private TextColumnBuilder<Integer> column1;
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		rb.setPageColumnsPerPage(2)
-				.setPrintOrder(Orientation.HORIZONTAL)
-				.setColumnDirection(RunDirection.RIGHT_TO_LEFT)
-				.setLanguage(Language.GROOVY)
-				.columns(
-						column1 = col.column("Column1", "field1", Integer.class));
-	}
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        rb.setPageColumnsPerPage(2)
+          .setPrintOrder(Orientation.HORIZONTAL)
+          .setColumnDirection(RunDirection.RIGHT_TO_LEFT)
+          .setLanguage(Language.GROOVY)
+          .columns(column1 = col.column("Column1", "field1", Integer.class));
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(1);
+        numberOfPagesTest(1);
 
-		columnDetailPositionTest(column1, 0, 298, 26, 287, 16);
-		columnDetailPositionTest(column1, 1, 11, 26, 287, 16);
-		columnDetailPositionTest(column1, 2, 298, 42, 287, 16);
-		columnDetailPositionTest(column1, 3, 11, 42, 287, 16);
-	}
+        columnDetailPositionTest(column1, 0, 298, 26, 287, 16);
+        columnDetailPositionTest(column1, 1, 11, 26, 287, 16);
+        columnDetailPositionTest(column1, 2, 298, 42, 287, 16);
+        columnDetailPositionTest(column1, 3, 11, 42, 287, 16);
+    }
 
-	@Override
-	protected JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("field1");
-		for (int i = 0; i < 4; i++) {
-			dataSource.add(i);
-		}
-		return dataSource;
-	}
+    @Override
+    protected JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("field1");
+        for (int i = 0; i < 4; i++) {
+            dataSource.add(i);
+        }
+        return dataSource;
+    }
 }

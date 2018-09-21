@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.style;
 
 import java.io.Serializable;
@@ -32,31 +31,31 @@ import java.io.Serializable;
  */
 public interface DRIDesignBorder extends Serializable {
 
-	/**
-	 * <p>getTopPen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
-	 */
-	public DRIDesignPen getTopPen();
+    /**
+     * <p>getTopPen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     */
+    public DRIDesignPen getTopPen();
 
-	/**
-	 * <p>getLeftPen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
-	 */
-	public DRIDesignPen getLeftPen();
+    /**
+     * <p>getLeftPen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     */
+    public DRIDesignPen getLeftPen();
 
-	/**
-	 * <p>getBottomPen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
-	 */
-	public DRIDesignPen getBottomPen();
+    /**
+     * <p>getBottomPen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     */
+    public DRIDesignPen getBottomPen();
 
-	/**
-	 * <p>getRightPen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
-	 */
-	public DRIDesignPen getRightPen();
+    /**
+     * <p>getRightPen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     */
+    public DRIDesignPen getRightPen();
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.style;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
+
+import java.io.Serializable;
 
 /**
  * <p>ReportStyleBuilder interface.</p>
@@ -34,17 +33,17 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
  */
 public interface ReportStyleBuilder extends Serializable {
 
-	/**
-	 * <p>getStyle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 */
-	public DRIReportStyle getStyle();
+    /**
+     * <p>getStyle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     */
+    public DRIReportStyle getStyle();
 
-	/**
-	 * <p>build.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 */
-	public DRIReportStyle build();
+    /**
+     * <p>build.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     */
+    public DRIReportStyle build();
 }

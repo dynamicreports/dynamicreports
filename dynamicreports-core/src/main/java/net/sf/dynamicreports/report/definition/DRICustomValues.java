@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
+
+import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
 
 import java.io.Serializable;
 import java.util.Map;
-
-import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
 
 /**
  * <p>DRICustomValues interface.</p>
@@ -34,45 +33,45 @@ import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
  * @version $Id: $Id
  */
 public interface DRICustomValues extends Serializable {
-	/** Constant <code>NAME="CUSTOM_VALUES"</code> */
-	public static final String NAME = "CUSTOM_VALUES";
+    /** Constant <code>NAME="CUSTOM_VALUES"</code> */
+    public static final String NAME = "CUSTOM_VALUES";
 
-	/**
-	 * <p>setSystemValue.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 * @param value a {@link java.lang.Object} object.
-	 */
-	public void setSystemValue(String name, Object value);
+    /**
+     * <p>setSystemValue.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     * @param value a {@link java.lang.Object} object.
+     */
+    public void setSystemValue(String name, Object value);
 
-	/**
-	 * <p>addTocHeading.</p>
-	 *
-	 * @param level a int.
-	 * @param id a {@link java.lang.String} object.
-	 * @param text a {@link java.lang.String} object.
-	 * @param customValue a {@link java.lang.Object} object.
-	 */
-	public void addTocHeading(int level, String id, String text, Object customValue);
+    /**
+     * <p>addTocHeading.</p>
+     *
+     * @param level a int.
+     * @param id a {@link java.lang.String} object.
+     * @param text a {@link java.lang.String} object.
+     * @param customValue a {@link java.lang.Object} object.
+     */
+    public void addTocHeading(int level, String id, String text, Object customValue);
 
-	/**
-	 * <p>getTocHeadings.</p>
-	 *
-	 * @return a {@link java.util.Map} object.
-	 */
-	public Map<String, JasperTocHeading> getTocHeadings();
+    /**
+     * <p>getTocHeadings.</p>
+     *
+     * @return a {@link java.util.Map} object.
+     */
+    public Map<String, JasperTocHeading> getTocHeadings();
 
-	/**
-	 * <p>setTocHeadings.</p>
-	 *
-	 * @param tocHeadings a {@link java.util.Map} object.
-	 */
-	public void setTocHeadings(Map<String, JasperTocHeading> tocHeadings);
+    /**
+     * <p>setTocHeadings.</p>
+     *
+     * @param tocHeadings a {@link java.util.Map} object.
+     */
+    public void setTocHeadings(Map<String, JasperTocHeading> tocHeadings);
 
-	/**
-	 * <p>setSubreportWidth.</p>
-	 *
-	 * @param subreportWidth a {@link java.lang.Integer} object.
-	 */
-	public void setSubreportWidth(Integer subreportWidth);
+    /**
+     * <p>setSubreportWidth.</p>
+     *
+     * @param subreportWidth a {@link java.lang.Integer} object.
+     */
+    public void setSubreportWidth(Integer subreportWidth);
 }

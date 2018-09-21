@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,16 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.chart;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.lang.reflect.Field;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -37,84 +28,93 @@ import net.sf.dynamicreports.report.constant.ValueLocation;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.ThermometerPlot;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.lang.reflect.Field;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class ThermometerChartTest extends AbstractJasperChartTest {
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		rb.setLocale(Locale.ENGLISH)
-				.summary(
-						cht.thermometerChart()
-								.setValue(DynamicReports.<Number>field("field1", Integer.class))
-								.setDataRangeLowExpression(3)
-								.setDataRangeHighExpression(30)
-								.setValueColor(Color.BLUE)
-								.setValueMask("#,###.0")
-								.setValueFont(stl.fontArial())
-								.setValueLocation(ValueLocation.BULB)
-								.setMercuryColor(Color.LIGHT_GRAY)
-								.setLowDataRangeLowExpression(8)
-								.setLowDataRangeHighExpression(10)
-								.setMediumDataRangeLowExpression(18)
-								.setMediumDataRangeHighExpression(20)
-								.setHighDataRangeLowExpression(28)
-								.setHighDataRangeHighExpression(30),
-						cht.thermometerChart()
-								.setValue(DynamicReports.<Number>field("field1", Integer.class)));
-	}
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        rb.setLocale(Locale.ENGLISH)
+          .summary(cht.thermometerChart()
+                      .setValue(DynamicReports.<Number>field("field1", Integer.class))
+                      .setDataRangeLowExpression(3)
+                      .setDataRangeHighExpression(30)
+                      .setValueColor(Color.BLUE)
+                      .setValueMask("#,###.0")
+                      .setValueFont(stl.fontArial())
+                      .setValueLocation(ValueLocation.BULB)
+                      .setMercuryColor(Color.LIGHT_GRAY)
+                      .setLowDataRangeLowExpression(8)
+                      .setLowDataRangeHighExpression(10)
+                      .setMediumDataRangeLowExpression(18)
+                      .setMediumDataRangeHighExpression(20)
+                      .setHighDataRangeLowExpression(28)
+                      .setHighDataRangeHighExpression(30), cht.thermometerChart()
+                                                              .setValue(DynamicReports.<Number>field("field1", Integer.class)));
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(1);
+        numberOfPagesTest(1);
 
-		JFreeChart chart = getChart("summary.chart1", 0);
-		Plot plot = chart.getPlot();
-		Assert.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
-		ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
-		Assert.assertEquals("value", 15, thermometerPlot.getDataset().getValue());
-		Assert.assertEquals("data range low", 3d, thermometerPlot.getLowerBound());
-		Assert.assertEquals("data range high", 30d, thermometerPlot.getUpperBound());
-		Assert.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
-		try {
-			Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
-			field.setAccessible(true);
-			Assert.assertEquals("value mask", "15.0", ((NumberFormat) field.get(thermometerPlot)).format(15));
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-		Assert.assertEquals("value font", new Font("Arial", Font.PLAIN, 10), thermometerPlot.getValueFont());
-		Assert.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
-		Assert.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
-		try {
-			Field field = thermometerPlot.getClass().getDeclaredField("subrangeInfo");
-			field.setAccessible(true);
-			double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
-			Assert.assertEquals("low data range low", 8d, subrangeInfo[2][0]);
-			Assert.assertEquals("low data range high", 10d, subrangeInfo[2][1]);
-			Assert.assertEquals("medium data range low", 18d, subrangeInfo[1][0]);
-			Assert.assertEquals("medium data range high", 20d, subrangeInfo[1][1]);
-			Assert.assertEquals("high data range low", 28d, subrangeInfo[0][0]);
-			Assert.assertEquals("high data range high", 30d, subrangeInfo[0][1]);
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-	}
+        JFreeChart chart = getChart("summary.chart1", 0);
+        Plot plot = chart.getPlot();
+        Assert.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
+        ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
+        Assert.assertEquals("value", 15, thermometerPlot.getDataset()
+                                                        .getValue());
+        Assert.assertEquals("data range low", 3d, thermometerPlot.getLowerBound());
+        Assert.assertEquals("data range high", 30d, thermometerPlot.getUpperBound());
+        Assert.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
+        try {
+            Field field = thermometerPlot.getClass()
+                                         .getDeclaredField("valueFormat");
+            field.setAccessible(true);
+            Assert.assertEquals("value mask", "15.0", ((NumberFormat) field.get(thermometerPlot)).format(15));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(e.getMessage());
+        }
+        Assert.assertEquals("value font", new Font("Arial", Font.PLAIN, 10), thermometerPlot.getValueFont());
+        Assert.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
+        Assert.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
+        try {
+            Field field = thermometerPlot.getClass()
+                                         .getDeclaredField("subrangeInfo");
+            field.setAccessible(true);
+            double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
+            Assert.assertEquals("low data range low", 8d, subrangeInfo[2][0]);
+            Assert.assertEquals("low data range high", 10d, subrangeInfo[2][1]);
+            Assert.assertEquals("medium data range low", 18d, subrangeInfo[1][0]);
+            Assert.assertEquals("medium data range high", 20d, subrangeInfo[1][1]);
+            Assert.assertEquals("high data range low", 28d, subrangeInfo[0][0]);
+            Assert.assertEquals("high data range high", 30d, subrangeInfo[0][1]);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Assert.fail(e.getMessage());
+        }
+    }
 
-	@Override
-	protected JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("field1");
-		dataSource.add(15);
-		return dataSource;
-	}
+    @Override
+    protected JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("field1");
+        dataSource.add(15);
+        return dataSource;
+    }
 }

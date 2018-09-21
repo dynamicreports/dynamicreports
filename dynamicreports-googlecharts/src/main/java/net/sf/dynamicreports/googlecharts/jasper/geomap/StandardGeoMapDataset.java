@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.jasper.geomap;
 
 import net.sf.jasperreports.engine.JRConstants;
@@ -36,104 +35,118 @@ import net.sf.jasperreports.engine.util.JRCloneUtils;
  * @version $Id: $Id
  */
 public class StandardGeoMapDataset extends JRDesignElementDataset implements GeoMapDataset {
-	private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
+    /**
+     * Constant <code>PROPERTY_LOCATION_EXPRESSION="locationExpression"</code>
+     */
+    public static final String PROPERTY_LOCATION_EXPRESSION = "locationExpression";
+    /**
+     * Constant <code>PROPERTY_VALUE_EXPRESSION="valueExpression"</code>
+     */
+    public static final String PROPERTY_VALUE_EXPRESSION = "valueExpression";
+    /**
+     * Constant <code>PROPERTY_LABEL_EXPRESSION="labelExpression"</code>
+     */
+    public static final String PROPERTY_LABEL_EXPRESSION = "labelExpression";
+    private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;
+    private JRExpression locationExpression;
+    private JRExpression valueExpression;
+    private JRExpression labelExpression;
 
-	/** Constant <code>PROPERTY_LOCATION_EXPRESSION="locationExpression"</code> */
-	public static final String PROPERTY_LOCATION_EXPRESSION = "locationExpression";
-	/** Constant <code>PROPERTY_VALUE_EXPRESSION="valueExpression"</code> */
-	public static final String PROPERTY_VALUE_EXPRESSION = "valueExpression";
-	/** Constant <code>PROPERTY_LABEL_EXPRESSION="labelExpression"</code> */
-	public static final String PROPERTY_LABEL_EXPRESSION = "labelExpression";
+    /**
+     * <p>Constructor for StandardGeoMapDataset.</p>
+     */
+    public StandardGeoMapDataset() {
+    }
 
-	private JRExpression locationExpression;
-	private JRExpression valueExpression;
-	private JRExpression labelExpression;
+    /**
+     * <p>Constructor for StandardGeoMapDataset.</p>
+     *
+     * @param dataset a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
+     * @param factory a {@link net.sf.jasperreports.engine.base.JRBaseObjectFactory} object.
+     */
+    public StandardGeoMapDataset(GeoMapDataset dataset, JRBaseObjectFactory factory) {
+        super(dataset, factory);
+        this.locationExpression = factory.getExpression(dataset.getLocationExpression());
+        this.valueExpression = factory.getExpression(dataset.getValueExpression());
+        this.labelExpression = factory.getExpression(dataset.getLabelExpression());
+    }
 
-	/**
-	 * <p>Constructor for StandardGeoMapDataset.</p>
-	 */
-	public StandardGeoMapDataset() {
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void collectExpressions(JRExpressionCollector collector) {
+        GeoMapCompiler.collectExpressions(this, collector);
+    }
 
-	/**
-	 * <p>Constructor for StandardGeoMapDataset.</p>
-	 *
-	 * @param dataset a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
-	 * @param factory a {@link net.sf.jasperreports.engine.base.JRBaseObjectFactory} object.
-	 */
-	public StandardGeoMapDataset(GeoMapDataset dataset, JRBaseObjectFactory factory) {
-		super(dataset, factory);
-		this.locationExpression = factory.getExpression(dataset.getLocationExpression());
-		this.valueExpression = factory.getExpression(dataset.getValueExpression());
-		this.labelExpression = factory.getExpression(dataset.getLabelExpression());
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JRExpression getLocationExpression() {
+        return locationExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public void collectExpressions(JRExpressionCollector collector) {
-		GeoMapCompiler.collectExpressions(this, collector);
-	}
+    /**
+     * <p>Setter for the field <code>locationExpression</code>.</p>
+     *
+     * @param locationExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public void setLocationExpression(JRExpression locationExpression) {
+        Object old = this.locationExpression;
+        this.locationExpression = locationExpression;
+        getEventSupport().firePropertyChange(PROPERTY_LOCATION_EXPRESSION, old, this.locationExpression);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public JRExpression getLocationExpression() {
-		return locationExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JRExpression getValueExpression() {
+        return valueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>locationExpression</code>.</p>
-	 *
-	 * @param locationExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public void setLocationExpression(JRExpression locationExpression) {
-		Object old = this.locationExpression;
-		this.locationExpression = locationExpression;
-		getEventSupport().firePropertyChange(PROPERTY_LOCATION_EXPRESSION, old, this.locationExpression);
-	}
+    /**
+     * <p>Setter for the field <code>valueExpression</code>.</p>
+     *
+     * @param valueExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public void setValueExpression(JRExpression valueExpression) {
+        Object old = this.valueExpression;
+        this.valueExpression = valueExpression;
+        getEventSupport().firePropertyChange(PROPERTY_VALUE_EXPRESSION, old, this.valueExpression);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public JRExpression getValueExpression() {
-		return valueExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JRExpression getLabelExpression() {
+        return labelExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>valueExpression</code>.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public void setValueExpression(JRExpression valueExpression) {
-		Object old = this.valueExpression;
-		this.valueExpression = valueExpression;
-		getEventSupport().firePropertyChange(PROPERTY_VALUE_EXPRESSION, old, this.valueExpression);
-	}
+    /**
+     * <p>Setter for the field <code>labelExpression</code>.</p>
+     *
+     * @param labelExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public void setLabelExpression(JRExpression labelExpression) {
+        this.labelExpression = labelExpression;
 
-	/** {@inheritDoc} */
-	@Override
-	public JRExpression getLabelExpression() {
-		return labelExpression;
-	}
+        Object old = this.labelExpression;
+        this.labelExpression = labelExpression;
+        getEventSupport().firePropertyChange(PROPERTY_LABEL_EXPRESSION, old, this.labelExpression);
+    }
 
-	/**
-	 * <p>Setter for the field <code>labelExpression</code>.</p>
-	 *
-	 * @param labelExpression a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public void setLabelExpression(JRExpression labelExpression) {
-		this.labelExpression = labelExpression;
-
-		Object old = this.labelExpression;
-		this.labelExpression = labelExpression;
-		getEventSupport().firePropertyChange(PROPERTY_LABEL_EXPRESSION, old, this.labelExpression);
-	}
-
-	/** {@inheritDoc} */
-	@Override
-	public Object clone() {
-		StandardGeoMapDataset clone = (StandardGeoMapDataset) super.clone();
-		clone.locationExpression = JRCloneUtils.nullSafeClone(locationExpression);
-		clone.valueExpression = JRCloneUtils.nullSafeClone(valueExpression);
-		clone.labelExpression = JRCloneUtils.nullSafeClone(labelExpression);
-		return clone;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object clone() {
+        StandardGeoMapDataset clone = (StandardGeoMapDataset) super.clone();
+        clone.locationExpression = JRCloneUtils.nullSafeClone(locationExpression);
+        clone.valueExpression = JRCloneUtils.nullSafeClone(valueExpression);
+        clone.labelExpression = JRCloneUtils.nullSafeClone(labelExpression);
+        return clone;
+    }
 }

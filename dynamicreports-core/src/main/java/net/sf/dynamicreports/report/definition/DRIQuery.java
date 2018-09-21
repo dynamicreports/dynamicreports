@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
 
 import java.io.Serializable;
@@ -32,17 +31,17 @@ import java.io.Serializable;
  */
 public interface DRIQuery extends Serializable {
 
-	/**
-	 * <p>getText.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getText();
+    /**
+     * <p>getText.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getText();
 
-	/**
-	 * <p>getLanguage.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getLanguage();
+    /**
+     * <p>getLanguage.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getLanguage();
 }

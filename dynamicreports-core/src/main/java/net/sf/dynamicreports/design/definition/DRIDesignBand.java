@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.design.base.component.DRDesignList;
 import net.sf.dynamicreports.design.definition.component.DRIDesignComponent;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.SplitType;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignBand interface.</p>
@@ -37,45 +36,45 @@ import net.sf.dynamicreports.report.constant.SplitType;
  */
 public interface DRIDesignBand extends Serializable {
 
-	/**
-	 * <p>getName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getName();
+    /**
+     * <p>getName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getName();
 
-	/**
-	 * <p>getSplitType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
-	 */
-	public SplitType getSplitType();
+    /**
+     * <p>getSplitType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+     */
+    public SplitType getSplitType();
 
-	/**
-	 * <p>getBandComponent.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
-	 */
-	public DRIDesignComponent getBandComponent();
+    /**
+     * <p>getBandComponent.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
+     */
+    public DRIDesignComponent getBandComponent();
 
-	/**
-	 * <p>getList.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
-	 */
-	public DRDesignList getList();
+    /**
+     * <p>getList.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+     */
+    public DRDesignList getList();
 
-	/**
-	 * <p>getHeight.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getHeight();
+    /**
+     * <p>getHeight.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getHeight();
 
-	/**
-	 * <p>getPrintWhenExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getPrintWhenExpression();
+    /**
+     * <p>getPrintWhenExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getPrintWhenExpression();
 }

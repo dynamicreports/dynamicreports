@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.complex.salescrosstab;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.awt.Color;
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -44,6 +36,18 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 
+import java.awt.Color;
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cnd;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
 /**
  * <p>SalesCrosstabDesign class.</p>
  *
@@ -51,99 +55,95 @@ import net.sf.dynamicreports.report.exception.DRException;
  * @version $Id: $Id
  */
 public class SalesCrosstabDesign {
-	private SalesCrosstabData data = new SalesCrosstabData();
+    private SalesCrosstabData data = new SalesCrosstabData();
 
-	/**
-	 * <p>build.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public JasperReportBuilder build() throws DRException {
-		JasperReportBuilder report = report();
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        SalesCrosstabDesign design = new SalesCrosstabDesign();
+        try {
+            JasperReportBuilder report = design.build();
+            report.show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		CrosstabRowGroupBuilder<String> rowStateGroup = ctab.rowGroup("state", String.class)
-				.setHeaderWidth(80);
-		CrosstabRowGroupBuilder<String> rowItemGroup = ctab.rowGroup("item", String.class)
-				.setHeaderWidth(80);
+    /**
+     * <p>build.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public JasperReportBuilder build() throws DRException {
+        JasperReportBuilder report = report();
 
-		CrosstabColumnGroupBuilder<Integer> columnYearGroup = ctab.columnGroup(new YearExpression());
-		CrosstabColumnGroupBuilder<String> columnQuarterGroup = ctab.columnGroup(new QuarterExpression());
+        CrosstabRowGroupBuilder<String> rowStateGroup = ctab.rowGroup("state", String.class)
+                                                            .setHeaderWidth(80);
+        CrosstabRowGroupBuilder<String> rowItemGroup = ctab.rowGroup("item", String.class)
+                                                           .setHeaderWidth(80);
 
-		CrosstabMeasureBuilder<Integer> quantityMeasure = ctab.measure("Quantity", "quantity", Integer.class, Calculation.SUM);
-		CrosstabMeasureBuilder<BigDecimal> unitPriceMeasure = ctab.measure("Unit price", "unitprice", BigDecimal.class, Calculation.SUM);
-		unitPriceMeasure.setPattern("#,###");
+        CrosstabColumnGroupBuilder<Integer> columnYearGroup = ctab.columnGroup(new YearExpression());
+        CrosstabColumnGroupBuilder<String> columnQuarterGroup = ctab.columnGroup(new QuarterExpression());
 
-		rowStateGroup.orderBy(quantityMeasure);
+        CrosstabMeasureBuilder<Integer> quantityMeasure = ctab.measure("Quantity", "quantity", Integer.class, Calculation.SUM);
+        CrosstabMeasureBuilder<BigDecimal> unitPriceMeasure = ctab.measure("Unit price", "unitprice", BigDecimal.class, Calculation.SUM);
+        unitPriceMeasure.setPattern("#,###");
 
-		ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 50000))
-				.setForegroundColor(Color.GREEN);
-		ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 300))
-				.setForegroundColor(Color.RED);
+        rowStateGroup.orderBy(quantityMeasure);
 
-		StyleBuilder unitPriceStyle = stl.style()
-				.setBorder(stl.pen1Point().setLineColor(Color.BLACK))
-				.conditionalStyles(condition1, condition2);
-		unitPriceMeasure.setStyle(unitPriceStyle);
+        ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 50000))
+                                                .setForegroundColor(Color.GREEN);
+        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 300))
+                                                .setForegroundColor(Color.RED);
 
-		CrosstabBuilder crosstab = ctab.crosstab()
-				.setCellWidth(110)
-				.headerCell(cmp.text("State / Date").setStyle(Templates.boldCenteredStyle))
-				.rowGroups(
-						rowStateGroup, rowItemGroup)
-				.columnGroups(
-						columnYearGroup, columnQuarterGroup)
-				.measures(
-						quantityMeasure, unitPriceMeasure);
+        StyleBuilder unitPriceStyle = stl.style()
+                                         .setBorder(stl.pen1Point()
+                                                       .setLineColor(Color.BLACK))
+                                         .conditionalStyles(condition1, condition2);
+        unitPriceMeasure.setStyle(unitPriceStyle);
 
-		report
-				.fields(field("orderdate", Date.class))
-				.setPageFormat(PageType.A3, PageOrientation.LANDSCAPE)
-				.setTemplate(Templates.reportTemplate)
-				.title(
-						Templates.createTitleComponent("SalesCrosstab"))
-				.summary(crosstab)
-				.pageFooter(
-						Templates.footerComponent)
-				.setDataSource(data.createDataSource());
+        CrosstabBuilder crosstab = ctab.crosstab()
+                                       .setCellWidth(110)
+                                       .headerCell(cmp.text("State / Date")
+                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .rowGroups(rowStateGroup, rowItemGroup)
+                                       .columnGroups(columnYearGroup, columnQuarterGroup)
+                                       .measures(quantityMeasure, unitPriceMeasure);
 
-		return report;
-	}
+        report.fields(field("orderdate", Date.class))
+              .setPageFormat(PageType.A3, PageOrientation.LANDSCAPE)
+              .setTemplate(Templates.reportTemplate)
+              .title(Templates.createTitleComponent("SalesCrosstab"))
+              .summary(crosstab)
+              .pageFooter(Templates.footerComponent)
+              .setDataSource(data.createDataSource());
 
-	private class YearExpression extends AbstractSimpleExpression<Integer> {
-		private static final long serialVersionUID = 1L;
+        return report;
+    }
 
-		@Override
-		public Integer evaluate(ReportParameters reportParameters) {
-			Calendar c = Calendar.getInstance();
-			c.setTime((Date) reportParameters.getValue("orderdate"));
-			return c.get(Calendar.YEAR);
-		}
-	}
+    private class YearExpression extends AbstractSimpleExpression<Integer> {
+        private static final long serialVersionUID = 1L;
 
-	private class QuarterExpression extends AbstractSimpleExpression<String> {
-		private static final long serialVersionUID = 1L;
+        @Override
+        public Integer evaluate(ReportParameters reportParameters) {
+            Calendar c = Calendar.getInstance();
+            c.setTime((Date) reportParameters.getValue("orderdate"));
+            return c.get(Calendar.YEAR);
+        }
+    }
 
-		@Override
-		public String evaluate(ReportParameters reportParameters) {
-			Calendar c = Calendar.getInstance();
-			c.setTime((Date) reportParameters.getValue("orderdate"));
-			return "Q" + (c.get(Calendar.MONTH) / 3 + 1);
-		}
-	}
+    private class QuarterExpression extends AbstractSimpleExpression<String> {
+        private static final long serialVersionUID = 1L;
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		SalesCrosstabDesign design = new SalesCrosstabDesign();
-		try {
-			JasperReportBuilder report = design.build();
-			report.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        @Override
+        public String evaluate(ReportParameters reportParameters) {
+            Calendar c = Calendar.getInstance();
+            c.setTime((Date) reportParameters.getValue("orderdate"));
+            return "Q" + (c.get(Calendar.MONTH) / 3 + 1);
+        }
+    }
 }
