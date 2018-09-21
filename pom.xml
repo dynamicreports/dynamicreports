@@ -368,10 +368,11 @@
             <id>source-10</id>
             <!--Please remember to run this after running compile in core module-->
             <activation>
-                <property>
+                <!--This does not apply on the same pom-->
+                <!--<property>
                     <name>profile</name>
                     <value>source</value>
-                </property>
+                </property>-->
                 <jdk>[9,)</jdk>
             </activation>
             <build>
