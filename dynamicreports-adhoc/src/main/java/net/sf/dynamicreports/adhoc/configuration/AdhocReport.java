@@ -330,8 +330,7 @@ public class AdhocReport implements Cloneable, Serializable {
         }
 
         for (AdhocColumn column : columns) {
-            if (column.getName()
-                      .equals(name)) {
+            if (column.getName().equals(name)) {
                 return column;
             }
         }
@@ -477,7 +476,7 @@ public class AdhocReport implements Cloneable, Serializable {
     /**
      * <p>setComponent.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key       a {@link java.lang.String} object.
      * @param component a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
      */
     public void setComponent(String key, AdhocComponent component) {
@@ -527,14 +526,16 @@ public class AdhocReport implements Cloneable, Serializable {
     /**
      * <p>setProperty.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key   a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      */
     public void setProperty(String key, Object value) {
         this.properties.setProperty(key, value);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -609,7 +610,9 @@ public class AdhocReport implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocReport clone() {
         AdhocReport clone;

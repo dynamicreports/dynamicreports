@@ -50,7 +50,9 @@ public class AdhocTextField extends AdhocComponent {
         this.text = text;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         boolean equals = super.equals(obj);
@@ -72,7 +74,9 @@ public class AdhocTextField extends AdhocComponent {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocTextField clone() {
         AdhocTextField clone = (AdhocTextField) super.clone();

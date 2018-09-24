@@ -29,9 +29,8 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStream;
 
 /**
- * This exception is thrown when a JAXB Marshaller fails while marshalling {@link JAXBElement} containing
- * and {@link XmlAdhocConfiguration} into the output stream provided.
- * This exception may arise in situations such as the one shown below:
+ * This exception is thrown when a JAXB Marshaller fails while marshalling {@link JAXBElement} containing and {@link XmlAdhocConfiguration} into the output stream provided. This exception may arise in
+ * situations such as the one shown below:
  * <pre>
  *     {@code
  *     try {
@@ -44,16 +43,14 @@ import java.io.OutputStream;
  * 		}
  *     }
  * </pre>
- * The constructor only accepts two parameters being the {@link JAXBElement} that was being marshalled and the
- * {@link OutputStream} into which we are marshalling the element.
+ * The constructor only accepts two parameters being the {@link JAXBElement} that was being marshalled and the {@link OutputStream} into which we are marshalling the element.
  */
 public class ConfigurationMarshallerException extends DRException {
 
     /**
-     * Creates a DRException when the client encounters an exceptional event while marshalling an
-     * element into an assigned outputStream
+     * Creates a DRException when the client encounters an exceptional event while marshalling an element into an assigned outputStream
      *
-     * @param element The element being marshalled into XML when exception is encountered
+     * @param element      The element being marshalled into XML when exception is encountered
      * @param outputStream The output stream into which we are marshalling the element
      */
     public ConfigurationMarshallerException(final JAXBElement<XmlAdhocConfiguration> element, final OutputStream outputStream) {

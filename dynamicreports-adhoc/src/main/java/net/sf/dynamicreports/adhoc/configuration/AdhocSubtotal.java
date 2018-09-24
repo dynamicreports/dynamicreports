@@ -166,7 +166,9 @@ public class AdhocSubtotal implements Cloneable, Serializable {
         this.groupName = groupName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -205,7 +207,9 @@ public class AdhocSubtotal implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocSubtotal clone() {
         AdhocSubtotal clone;

@@ -107,7 +107,9 @@ public class AdhocValueRestriction extends AdhocRestriction {
         this.values.add(value);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         boolean equals = super.equals(obj);
@@ -135,7 +137,9 @@ public class AdhocValueRestriction extends AdhocRestriction {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocValueRestriction clone() {
         AdhocValueRestriction clone = (AdhocValueRestriction) super.clone();

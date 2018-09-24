@@ -224,7 +224,9 @@ public class AdhocStyle implements Cloneable, Serializable {
         this.pattern = pattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -272,7 +274,9 @@ public class AdhocStyle implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocStyle clone() {
         AdhocStyle clone;

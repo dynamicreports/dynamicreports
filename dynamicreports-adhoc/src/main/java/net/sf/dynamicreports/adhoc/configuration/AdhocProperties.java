@@ -32,17 +32,29 @@ import java.util.Map;
  * @version $Id: $Id
  */
 public class AdhocProperties implements Cloneable, Serializable {
-    /** Constant <code>PROPERTY_PREFIX="net.sf.dynamicreports."</code> */
+    /**
+     * Constant <code>PROPERTY_PREFIX="net.sf.dynamicreports."</code>
+     */
     public static final String PROPERTY_PREFIX = "net.sf.dynamicreports.";
-    /** Constant <code>CHART_USE_SERIES_AS_CATEGORY="PROPERTY_PREFIX + chart.useseriesascate"{trunked}</code> */
+    /**
+     * Constant <code>CHART_USE_SERIES_AS_CATEGORY="PROPERTY_PREFIX + chart.useseriesascate"{trunked}</code>
+     */
     public static final String CHART_USE_SERIES_AS_CATEGORY = PROPERTY_PREFIX + "chart.useseriesascategory";
-    /** Constant <code>CHART_SHOW_VALUES="PROPERTY_PREFIX + chart.showvalues"</code> */
+    /**
+     * Constant <code>CHART_SHOW_VALUES="PROPERTY_PREFIX + chart.showvalues"</code>
+     */
     public static final String CHART_SHOW_VALUES = PROPERTY_PREFIX + "chart.showvalues";
-    /** Constant <code>CHART_SHOW_PERCENTAGES="PROPERTY_PREFIX + chart.showpercentages"</code> */
+    /**
+     * Constant <code>CHART_SHOW_PERCENTAGES="PROPERTY_PREFIX + chart.showpercentages"</code>
+     */
     public static final String CHART_SHOW_PERCENTAGES = PROPERTY_PREFIX + "chart.showpercentages";
-    /** Constant <code>CHART_TIME_PERIOD="PROPERTY_PREFIX + chart.timeperiod"</code> */
+    /**
+     * Constant <code>CHART_TIME_PERIOD="PROPERTY_PREFIX + chart.timeperiod"</code>
+     */
     public static final String CHART_TIME_PERIOD = PROPERTY_PREFIX + "chart.timeperiod";
-    /** Constant <code>CHART_SERIES_GROUP="PROPERTY_PREFIX + chart.seriesgroup"</code> */
+    /**
+     * Constant <code>CHART_SERIES_GROUP="PROPERTY_PREFIX + chart.seriesgroup"</code>
+     */
     public static final String CHART_SERIES_GROUP = PROPERTY_PREFIX + "chart.seriesgroup";
     private static final long serialVersionUID = 1L;
     private Map<String, Object> properties;
@@ -87,7 +99,7 @@ public class AdhocProperties implements Cloneable, Serializable {
     /**
      * <p>setProperty.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key   a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      */
     public void setProperty(String key, Object value) {
@@ -103,7 +115,9 @@ public class AdhocProperties implements Cloneable, Serializable {
         return properties.isEmpty();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -124,7 +138,9 @@ public class AdhocProperties implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocProperties clone() {
         AdhocProperties clone;

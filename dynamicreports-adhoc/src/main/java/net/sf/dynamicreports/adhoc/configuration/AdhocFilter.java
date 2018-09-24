@@ -92,7 +92,7 @@ public class AdhocFilter implements Cloneable, Serializable {
     /**
      * <p>setRestriction.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key         a {@link java.lang.String} object.
      * @param restriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
      */
     public void setRestriction(String key, AdhocRestriction restriction) {
@@ -110,7 +110,9 @@ public class AdhocFilter implements Cloneable, Serializable {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -131,7 +133,9 @@ public class AdhocFilter implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocFilter clone() {
         AdhocFilter clone;

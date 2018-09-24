@@ -72,7 +72,9 @@ public class AdhocPen implements Cloneable, Serializable {
         this.lineColor = lineColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -96,7 +98,9 @@ public class AdhocPen implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocPen clone() {
         AdhocPen clone;

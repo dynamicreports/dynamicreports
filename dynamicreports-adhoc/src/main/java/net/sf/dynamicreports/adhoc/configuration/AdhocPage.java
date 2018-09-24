@@ -185,7 +185,9 @@ public class AdhocPage implements Cloneable, Serializable {
         this.ignorePageWidth = ignorePageWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -227,7 +229,9 @@ public class AdhocPage implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocPage clone() {
         AdhocPage clone;

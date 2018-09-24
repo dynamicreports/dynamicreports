@@ -48,19 +48,17 @@ import java.io.OutputStream;
 
 /**
  * <p>AdhocManager class.</p>
- * Provides methods for creating {@link JasperReportBuilder} given an {@link AdhocReportCustomizer} and the
- * {@link AdhocReport} itself.
+ * Provides methods for creating {@link JasperReportBuilder} given an {@link AdhocReportCustomizer} and the {@link AdhocReport} itself.
  * <pre>
  *     {@code
  *      JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
  *     }
  * </pre>
- * The {@link JasperReportBuilder} may also be created using the {@link #createReport(AdhocReport)} without providing an
- * an implementation for {@link AdhocReportCustomizer} relying on the {@link DefaultAdhocReportCustomizer} object instead.
+ * The {@link JasperReportBuilder} may also be created using the {@link #createReport(AdhocReport)} without providing an an implementation for {@link AdhocReportCustomizer} relying on the {@link
+ * DefaultAdhocReportCustomizer} object instead.
  * <br>
- * The {@link AdhocManager} also provides {@link #saveConfiguration(AdhocConfiguration, OutputStream)} and the
- * {@link #loadConfiguration(InputStream)} methods for marshalling configuration and unmarshalling configuration
- * to and from the outputStream and inputStream respectively.
+ * The {@link AdhocManager} also provides {@link #saveConfiguration(AdhocConfiguration, OutputStream)} and the {@link #loadConfiguration(InputStream)} methods for marshalling configuration and
+ * unmarshalling configuration to and from the outputStream and inputStream respectively.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -93,8 +91,7 @@ public class AdhocManager {
 
     /**
      * <p>createReport.</p>
-     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to
-     * create a report like shown here:
+     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
      * <pre>
      *     {@link
      *     AdhocConfiguration configuration = new AdhocConfiguration();
@@ -113,15 +110,13 @@ public class AdhocManager {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
-        log.debug("Creating JasperReportBuilder from adhocReport: {} using defaultAdhocReportCustomizer", adhocReport.getProperties()
-                                                                                                                     .getProperties());
+        log.debug("Creating JasperReportBuilder from adhocReport: {} using defaultAdhocReportCustomizer", adhocReport.getProperties().getProperties());
         return createReport(adhocReport, new DefaultAdhocReportCustomizer());
     }
 
     /**
      * <p>createReport.</p>
-     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to
-     * create a report like shown here:
+     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
      * <pre>
      *     {@link
      *     AdhocConfiguration configuration = new AdhocConfiguration();
@@ -134,14 +129,13 @@ public class AdhocManager {
      *     }
      * </pre>
      *
-     * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
+     * @param adhocReport           a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
      * @param adhocReportCustomizer a {@link net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
-        log.debug("Creating JasperReportBuilder from adhocReport: {} and adhocReportCustomizer : {}", adhocReport.getProperties()
-                                                                                                                 .getProperties(), adhocReportCustomizer);
+        log.debug("Creating JasperReportBuilder from adhocReport: {} and adhocReportCustomizer : {}", adhocReport.getProperties().getProperties(), adhocReportCustomizer);
         JasperReportBuilder report = DynamicReports.report();
         adhocReportCustomizer.customize(report, adhocReport);
         return report;
@@ -167,18 +161,15 @@ public class AdhocManager {
      * </pre>
      *
      * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
-     * @param os a {@link java.io.OutputStream} object.
+     * @param os                 a {@link java.io.OutputStream} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
-        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport()
-                                                                                                                             .getProperties()
-                                                                                                                             .getProperties(), os.toString());
+        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os.toString());
         XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
         JAXBElement<XmlAdhocConfiguration> element = null;
         try {
-            Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class)
-                                               .createMarshaller();
+            Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
             marshaller.marshal(element, new StreamResult(os));
@@ -189,8 +180,7 @@ public class AdhocManager {
 
     /**
      * <p>loadConfiguration.</p>
-     * This method enables a client to read {@link AdhocConfiguration} from an {@link InputStream}
-     * The method may be applied as shown:
+     * This method enables a client to read {@link AdhocConfiguration} from an {@link InputStream} The method may be applied as shown:
      * <pre>
      *     {@link
      * 			AdhocConfiguration loadedConfiguration = AdhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
@@ -203,8 +193,7 @@ public class AdhocManager {
      */
     public AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
         try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class)
-                                                   .createUnmarshaller();
+            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
             JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
             XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
             return xmlToAdhocTransform.transform(xmlAdhocConfiguration);

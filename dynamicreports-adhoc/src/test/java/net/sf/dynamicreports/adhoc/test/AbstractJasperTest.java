@@ -116,8 +116,7 @@ public abstract class AbstractJasperTest extends AdhocTests {
     }
 
     private int getNumberOfPages() {
-        return jasperPrint.getPages()
-                          .size();
+        return jasperPrint.getPages().size();
     }
 
     protected JRPrintElement getElementAt(String key, int index) {
@@ -132,12 +131,10 @@ public abstract class AbstractJasperTest extends AdhocTests {
     protected List<JRPrintElement> findElement(String key) {
         List<JRPrintElement> elements = new ArrayList<JRPrintElement>();
         for (
-            Iterator<?> iterator = jasperPrint.getPages()
-                                              .iterator(); iterator.hasNext(); ) {
+            Iterator<?> iterator = jasperPrint.getPages().iterator(); iterator.hasNext(); ) {
             JRPrintPage page = (JRPrintPage) iterator.next();
             for (
-                Iterator<?> iterator2 = page.getElements()
-                                            .iterator(); iterator2.hasNext(); ) {
+                Iterator<?> iterator2 = page.getElements().iterator(); iterator2.hasNext(); ) {
                 JRPrintElement element = (JRPrintElement) iterator2.next();
                 findElement(key, elements, element);
             }
@@ -151,8 +148,7 @@ public abstract class AbstractJasperTest extends AdhocTests {
         }
         if (element instanceof JRPrintFrame) {
             for (
-                Iterator<?> iterator = ((JRPrintFrame) element).getElements()
-                                                               .iterator(); iterator.hasNext(); ) {
+                Iterator<?> iterator = ((JRPrintFrame) element).getElements().iterator(); iterator.hasNext(); ) {
                 JRPrintElement element2 = (JRPrintElement) iterator.next();
                 findElement(key, elements, element2);
             }
@@ -168,16 +164,14 @@ public abstract class AbstractJasperTest extends AdhocTests {
         Assert.assertTrue(values.length <= elements.size());
         for (int i = 0; i < values.length; i++) {
             JRPrintText textElement = (JRPrintText) elements.get(i);
-            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                           .getTruncatedText(textElement);
+            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
             Assert.assertEquals("element value " + name, values[i], value);
         }
     }
 
     private String getElementValue(String key, int index) {
         JRPrintText textElement = (JRPrintText) getElementAt(key, index);
-        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                       .getTruncatedText(textElement);
+        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
         return value;
     }
 

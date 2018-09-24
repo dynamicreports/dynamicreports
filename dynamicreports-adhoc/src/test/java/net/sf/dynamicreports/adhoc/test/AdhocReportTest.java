@@ -94,10 +94,7 @@ public class AdhocReportTest extends AbstractJasperTest {
         JasperReportBuilder report = adhocManager.createReport(adhocConfiguration.getReport());
         report.setLocale(Locale.ENGLISH);
 
-        groupName = report.getReport()
-                          .getGroups()
-                          .get(0)
-                          .getName();
+        groupName = report.getReport().getGroups().get(0).getName();
 
         return report;
     }
@@ -126,8 +123,7 @@ public class AdhocReportTest extends AbstractJasperTest {
         elementValueTest("groupHeaderTitleAndValue.group_" + groupName + "1", "test");
 
         JRStyle style = getElementAt("columnHeader.column_field1.title1", 0).getStyle();
-        JRBoxPen pen = style.getLineBox()
-                            .getLeftPen();
+        JRBoxPen pen = style.getLineBox().getLeftPen();
         Assert.assertEquals(2f, pen.getLineWidth());
         style = getElementAt("detail.column_field11", 0).getStyle();
         Assert.assertEquals("foreColor", Color.BLUE, style.getForecolor());
