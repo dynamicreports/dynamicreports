@@ -102,6 +102,9 @@ public class AdhocReportLoadTest extends AbstractJasperTest {
 
     @Test
     public void test9() {
+
+        org.junit.Assume.assumeThat(System.getProperty("java.specification.version"), is("9"));
+
         numberOfPagesTest(1);
 
         elementValueTest("columnHeader.column_field1.title1", 0, "Column1 && C<a>aa</a> \"a\" 'c'");

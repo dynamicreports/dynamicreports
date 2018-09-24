@@ -30,6 +30,8 @@ import org.junit.Test;
 
 import java.awt.Color;
 
+import static org.hamcrest.core.Is.is;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
@@ -61,6 +63,8 @@ public class GeoMapTest extends AbstractJasperTest {
     @Override
     @Test
     public void test() {
+        //skip test in java 9+ environment
+        org.junit.Assume.assumeThat(System.getProperty("java.specification.version"), is("1.8"));
 
         numberOfPagesTest(1);
 
@@ -76,6 +80,34 @@ public class GeoMapTest extends AbstractJasperTest {
         containsHtml("values", "data.setValue(2, 0, 'FR');");
         containsHtml("values", "data.setValue(2, 1, 120);");
         containsHtml("values", "data.setValue(2, 2, 'FR');");
+
+        containsHtml("width", "options['width'] = '575px';");
+        containsHtml("height", "options['height'] = '300px';");
+        containsHtml("dataMode", "options['dataMode'] = 'regions';");
+        containsHtml("showLegend", "options['showLegend'] = false;");
+        containsHtml("region", "options['region'] = 'world';");
+        containsHtml("colors", "options['colors'] = [0xFF8747,0xFFB581,0xC06000];");
+    }
+
+    @Test
+    public void test9() {
+
+        org.junit.Assume.assumeThat(System.getProperty("java.specification.version"), is("9"));
+
+        numberOfPagesTest(1);
+
+        containsHtml("data rows", "data.addRows(3);");
+        containsHtml("value label", "data.addColumn('number', 'Quantity');");
+
+        containsHtml("values", "data.setValue(0, 0, 'GB');");
+        containsHtml("values", "data.setValue(0, 1, 170);");
+        //containsHtml("values", "data.setValue(0, 2, 'United Kingdom');");
+        containsHtml("values", "data.setValue(1, 0, 'DE');");
+        containsHtml("values", "data.setValue(1, 1, 90);");
+        //containsHtml("values", "data.setValue(1, 2, 'Germany');");
+        containsHtml("values", "data.setValue(2, 0, 'FR');");
+        containsHtml("values", "data.setValue(2, 1, 120);");
+        //containsHtml("values", "data.setValue(2, 2, 'FR');");
 
         containsHtml("width", "options['width'] = '575px';");
         containsHtml("height", "options['height'] = '300px';");
