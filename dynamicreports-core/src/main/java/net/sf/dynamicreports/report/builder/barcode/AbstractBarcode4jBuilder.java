@@ -41,7 +41,7 @@ public abstract class AbstractBarcode4jBuilder<T extends AbstractBarcode4jBuilde
     /**
      * <p>Constructor for AbstractBarcode4jBuilder.</p>
      *
-     * @param code a {@link java.lang.String} object.
+     * @param code    a {@link java.lang.String} object.
      * @param barcode a U object.
      */
     protected AbstractBarcode4jBuilder(String code, U barcode) {
@@ -52,7 +52,7 @@ public abstract class AbstractBarcode4jBuilder<T extends AbstractBarcode4jBuilde
      * <p>Constructor for AbstractBarcode4jBuilder.</p>
      *
      * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param barcode a U object.
+     * @param barcode        a U object.
      */
     protected AbstractBarcode4jBuilder(DRIExpression<String> codeExpression, U barcode) {
         super(codeExpression, barcode);

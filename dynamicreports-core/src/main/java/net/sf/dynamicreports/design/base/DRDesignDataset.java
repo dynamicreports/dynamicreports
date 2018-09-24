@@ -62,7 +62,9 @@ public class DRDesignDataset implements DRIDesignDataset {
         this.name = ReportUtils.generateUniqueName("dataset");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
@@ -77,49 +79,65 @@ public class DRDesignDataset implements DRIDesignDataset {
         return datasetExpressionTransform;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignField> getFields() {
         return datasetExpressionTransform.getFields();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignVariable> getVariables() {
         return datasetExpressionTransform.getVariables();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignSystemExpression> getSystemExpressions() {
         return datasetExpressionTransform.getSystemExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignJasperExpression> getJasperExpressions() {
         return datasetExpressionTransform.getJasperExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignSimpleExpression> getSimpleExpressions() {
         return datasetExpressionTransform.getSimpleExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignComplexExpression> getComplexExpressions() {
         return datasetExpressionTransform.getComplexExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Collection<DRIDesignSort> getSorts() {
         return datasetExpressionTransform.getSorts();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignQuery getQuery() {
         return query;
@@ -134,7 +152,9 @@ public class DRDesignDataset implements DRIDesignDataset {
         this.query = query;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getConnectionExpression() {
         return connectionExpression;
@@ -149,7 +169,9 @@ public class DRDesignDataset implements DRIDesignDataset {
         this.connectionExpression = connectionExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getDataSourceExpression() {
         return dataSourceExpression;
@@ -164,7 +186,9 @@ public class DRDesignDataset implements DRIDesignDataset {
         this.dataSourceExpression = dataSourceExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getFilterExpression() {
         return filterExpression;

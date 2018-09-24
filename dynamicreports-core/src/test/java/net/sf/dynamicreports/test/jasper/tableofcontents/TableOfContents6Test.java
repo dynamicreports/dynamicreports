@@ -53,23 +53,19 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setTableOfContents(new CustomTableOfContentsCustomizer())
-          .title(cmp.subreport(createSubreport1()))
-          .columns(column4 = col.column("Column4", "field4", type.stringType()));
+        rb.setTableOfContents(new CustomTableOfContentsCustomizer()).title(cmp.subreport(createSubreport1())).columns(column4 = col.column("Column4", "field4", type.stringType()));
     }
 
     private JasperReportBuilder createSubreport1() {
         column1 = col.column("Column1", "field1", type.stringType());
 
-        DRTextField<String> columnComponent = (DRTextField<String>) column1.getColumn()
-                                                                           .getComponent();
+        DRTextField<String> columnComponent = (DRTextField<String>) column1.getColumn().getComponent();
         TableOfContentsHeadingBuilder tocHeading = tableOfContentsHeading();
         tocHeading.setCustomValue(new TocCustomValueExpression());
         columnComponent.setTableOfContentsHeading(tocHeading.getTableOfContentsHeading());
 
         JasperReportBuilder report = report();
-        report.columns(column1, col.column("Column2", "field2", type.stringType()), col.column("Column3", "field3", type.stringType()))
-              .setDataSource(createSubreportDataSource1());
+        report.columns(column1, col.column("Column2", "field2", type.stringType()), col.column("Column3", "field3", type.stringType())).setDataSource(createSubreportDataSource1());
 
         return report;
     }
@@ -133,10 +129,7 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
 
         private JasperReportBuilder createSubreport2(CustomGroupBuilder group) {
             JasperReportBuilder subreport = report();
-            subreport.fields(levelField, textField, referenceField, pageIndexField)
-                     .groupBy(group)
-                     .detail(detailComponent())
-                     .setDataSource(new JRBeanCollectionDataSource(headingList));
+            subreport.fields(levelField, textField, referenceField, pageIndexField).groupBy(group).detail(detailComponent()).setDataSource(new JRBeanCollectionDataSource(headingList));
 
             return subreport;
         }

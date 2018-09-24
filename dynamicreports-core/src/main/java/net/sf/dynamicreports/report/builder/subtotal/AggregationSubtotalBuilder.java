@@ -53,7 +53,7 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
     /**
      * <p>Constructor for AggregationSubtotalBuilder.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected AggregationSubtotalBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -65,9 +65,9 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
     /**
      * <p>Constructor for AggregationSubtotalBuilder.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param calculation  a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected AggregationSubtotalBuilder(FieldBuilder<?> field, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
         this(field.build(), showInColumn, calculation);
@@ -78,9 +78,9 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
     /**
      * <p>Constructor for AggregationSubtotalBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param calculation  a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected AggregationSubtotalBuilder(DRIExpression<?> expression, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
         super(showInColumn);
@@ -91,10 +91,8 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
         } else if (calculation.equals(Calculation.AVERAGE) || calculation.equals(Calculation.STANDARD_DEVIATION) || calculation.equals(Calculation.VARIANCE)) {
             setDataType(DataTypes.doubleType());
         } else if (expression instanceof DRIValueColumn) {
-            setDataType(((DRIValueColumn<?>) expression).getComponent()
-                                                        .getDataType());
-            setPattern(((DRIValueColumn<?>) expression).getComponent()
-                                                       .getPattern());
+            setDataType(((DRIValueColumn<?>) expression).getComponent().getDataType());
+            setPattern(((DRIValueColumn<?>) expression).getComponent().getPattern());
         } else if (expression instanceof DRIField) {
             setDataType(((DRIField<?>) expression).getDataType());
         }
@@ -126,7 +124,9 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         DRVariable<T> subtotalVariable = new DRVariable<T>(expression, calculation);
@@ -138,7 +138,9 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
         super.configure();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getSubtotal().getName();

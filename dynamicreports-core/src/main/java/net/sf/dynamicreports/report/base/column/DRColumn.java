@@ -74,13 +74,17 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T getComponent() {
         return component;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getTitleExpression() {
         return titleExpression;
@@ -95,7 +99,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleExpression = titleExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getTitleStyle() {
         return titleStyle;
@@ -110,7 +116,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleStyle = titleStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getTitleHeight() {
         return titleHeight;
@@ -128,7 +136,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleHeight = titleHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getTitleHeightType() {
         return titleHeightType;
@@ -143,7 +153,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleHeightType = titleHeightType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getTitleRows() {
         return titleRows;
@@ -161,7 +173,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleRows = titleRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getTitleStretchWithOverflow() {
         return titleStretchWithOverflow;
@@ -176,7 +190,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titleStretchWithOverflow = titleStretchWithOverflow;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIPropertyExpression> getTitlePropertyExpressions() {
         return titlePropertyExpressions;
@@ -201,7 +217,9 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
         this.titlePropertyExpressions.add(propertyExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;

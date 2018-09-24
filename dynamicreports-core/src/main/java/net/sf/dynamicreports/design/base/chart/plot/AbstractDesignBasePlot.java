@@ -40,7 +40,9 @@ public abstract class AbstractDesignBasePlot implements DRIDesignBasePlot {
     private Orientation orientation;
     private List<Color> seriesColors;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Orientation getOrientation() {
         return orientation;
@@ -55,7 +57,9 @@ public abstract class AbstractDesignBasePlot implements DRIDesignBasePlot {
         this.orientation = orientation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Color> getSeriesColors() {
         return seriesColors;

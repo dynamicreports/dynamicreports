@@ -297,15 +297,11 @@ public class AdhocConfigurationTest extends AdhocTests {
         Assert.assertTrue("equals", adhocConfiguration.equals(adhocConfiguration2));
         AdhocColumn adhocColumn = new AdhocColumn();
         adhocColumn.setName("field3");
-        adhocConfiguration2.getReport()
-                           .addColumn(adhocColumn);
+        adhocConfiguration2.getReport().addColumn(adhocColumn);
         Assert.assertFalse("equals", adhocConfiguration.equals(adhocConfiguration2));
         AdhocConfiguration adhocConfiguration3 = adhocConfiguration2.clone();
         Assert.assertTrue("equals", adhocConfiguration2.equals(adhocConfiguration3));
-        adhocConfiguration3.getReport()
-                           .getColumns()
-                           .get(0)
-                           .setName("c");
+        adhocConfiguration3.getReport().getColumns().get(0).setName("c");
         Assert.assertFalse("equals", adhocConfiguration2.equals(adhocConfiguration3));
     }
 
@@ -320,8 +316,7 @@ public class AdhocConfigurationTest extends AdhocTests {
             Assert.fail(e.getMessage());
         }
 
-        Assert.assertEquals("report property", "property value", adhocConfiguration.getReport()
-                                                                                   .getProperty("report"));
+        Assert.assertEquals("report property", "property value", adhocConfiguration.getReport().getProperty("report"));
 
         Assert.assertNotNull("text style", report.getTextStyle());
         Assert.assertNotNull("column style", report.getColumnStyle());
@@ -335,32 +330,18 @@ public class AdhocConfigurationTest extends AdhocTests {
         Assert.assertTrue("highlight detail even rows", report.getHighlightDetailEvenRows());
 
         DRIStyle style = (DRIStyle) report.getTextStyle();
-        Assert.assertEquals("font name", "a", style.getFont()
-                                                   .getFontName());
-        Assert.assertEquals("font size", 5, style.getFont()
-                                                 .getFontSize());
-        Assert.assertTrue("bold", style.getFont()
-                                       .getBold());
-        Assert.assertTrue("italic", style.getFont()
-                                         .getItalic());
-        Assert.assertTrue("underline", style.getFont()
-                                            .getUnderline());
-        Assert.assertTrue("strike through", style.getFont()
-                                                 .getStrikeThrough());
-        Assert.assertNotNull("top border", style.getBorder()
-                                                .getTopPen());
-        Assert.assertNotNull("left border", style.getBorder()
-                                                 .getLeftPen());
-        Assert.assertNotNull("bottom border", style.getBorder()
-                                                   .getBottomPen());
-        Assert.assertNotNull("right border", style.getBorder()
-                                                  .getRightPen());
-        Assert.assertEquals("pen line width", 2f, style.getBorder()
-                                                       .getTopPen()
-                                                       .getLineWidth());
-        Assert.assertEquals("pen line color", Color.CYAN, style.getBorder()
-                                                               .getTopPen()
-                                                               .getLineColor());
+        Assert.assertEquals("font name", "a", style.getFont().getFontName());
+        Assert.assertEquals("font size", Integer.valueOf(5), style.getFont().getFontSize());
+        Assert.assertTrue("bold", style.getFont().getBold());
+        Assert.assertTrue("italic", style.getFont().getItalic());
+        Assert.assertTrue("underline", style.getFont().getUnderline());
+        Assert.assertTrue("strike through", style.getFont().getStrikeThrough());
+        Assert.assertNotNull("top border", style.getBorder().getTopPen());
+        Assert.assertNotNull("left border", style.getBorder().getLeftPen());
+        Assert.assertNotNull("bottom border", style.getBorder().getBottomPen());
+        Assert.assertNotNull("right border", style.getBorder().getRightPen());
+        Assert.assertEquals("pen line width", 2f, style.getBorder().getTopPen().getLineWidth(), 0);
+        Assert.assertEquals("pen line color", Color.CYAN, style.getBorder().getTopPen().getLineColor());
         Assert.assertEquals("foreground color", Color.WHITE, style.getForegroundColor());
         Assert.assertEquals("background color", Color.DARK_GRAY, style.getBackgroundColor());
         Assert.assertEquals("horizontal alignment", HorizontalTextAlignment.CENTER, style.getHorizontalTextAlignment());
@@ -368,229 +349,149 @@ public class AdhocConfigurationTest extends AdhocTests {
         Assert.assertEquals("pattern", "#,###.00", style.getPattern());
 
         DRPage page = report.getPage();
-        Assert.assertEquals("page width", 100, page.getWidth());
-        Assert.assertEquals("page height", 200, page.getHeight());
+        Assert.assertEquals("page width", Integer.valueOf(100), page.getWidth());
+        Assert.assertEquals("page height", Integer.valueOf(200), page.getHeight());
         Assert.assertEquals("page orientation", PageOrientation.PORTRAIT, page.getOrientation());
-        Assert.assertEquals("top margin", 1, page.getMargin()
-                                                 .getTop());
-        Assert.assertEquals("bottom margin", 2, page.getMargin()
-                                                    .getBottom());
-        Assert.assertEquals("left margin", 3, page.getMargin()
-                                                  .getLeft());
-        Assert.assertEquals("right margin", 4, page.getMargin()
-                                                   .getRight());
+        Assert.assertEquals("top margin", 1, page.getMargin().getTop());
+        Assert.assertEquals("bottom margin", 2, page.getMargin().getBottom());
+        Assert.assertEquals("left margin", 3, page.getMargin().getLeft());
+        Assert.assertEquals("right margin", 4, page.getMargin().getRight());
         Assert.assertTrue("ignore page width", page.getIgnorePageWidth());
 
-        Assert.assertEquals("columns", 3, report.getColumns()
-                                                .size());
-        DRColumn<?> column = report.getColumns()
-                                   .get(0);
+        Assert.assertEquals("columns", 3, report.getColumns().size());
+        DRColumn<?> column = report.getColumns().get(0);
         Assert.assertEquals("column name", "field1", column.getName());
         Assert.assertNotNull("column title", column.getTitleExpression());
-        Assert.assertNotNull("column style", column.getComponent()
-                                                   .getStyle());
+        Assert.assertNotNull("column style", column.getComponent().getStyle());
         Assert.assertNotNull("column title style", column.getTitleStyle());
-        Assert.assertEquals("column width", 50, ((DRDimensionComponent) column.getComponent()).getWidth());
+        Assert.assertEquals("column width", Integer.valueOf(50), ((DRDimensionComponent) column.getComponent()).getWidth());
         Assert.assertEquals("column width type", ComponentDimensionType.FIXED, ((DRDimensionComponent) column.getComponent()).getWidthType());
-        Assert.assertEquals("column property", "integer", adhocConfiguration.getReport()
-                                                                            .getColumn("field1")
-                                                                            .getProperty("type"));
+        Assert.assertEquals("column property", "integer", adhocConfiguration.getReport().getColumn("field1").getProperty("type"));
 
-        column = report.getColumns()
-                       .get(2);
+        column = report.getColumns().get(2);
         Assert.assertEquals("column name", "field3", column.getName());
         Assert.assertNotNull("column title", column.getTitleExpression());
-        Assert.assertNull("column style", column.getComponent()
-                                                .getStyle());
+        Assert.assertNull("column style", column.getComponent().getStyle());
         Assert.assertNull("column title style", column.getTitleStyle());
         Assert.assertNull("column width", ((DRDimensionComponent) column.getComponent()).getWidth());
         Assert.assertNull("column width type", ((DRDimensionComponent) column.getComponent()).getWidthType());
 
-        Assert.assertEquals("groups", 2, report.getGroups()
-                                               .size());
-        DRGroup group = report.getGroups()
-                              .get(0);
+        Assert.assertEquals("groups", 2, report.getGroups().size());
+        DRGroup group = report.getGroups().get(0);
         Assert.assertTrue("group start in new page", group.getStartInNewPage());
         Assert.assertEquals("group header layout", GroupHeaderLayout.TITLE_AND_VALUE, group.getHeaderLayout());
-        Assert.assertNotNull("group style", group.getValueField()
-                                                 .getStyle());
+        Assert.assertNotNull("group style", group.getValueField().getStyle());
         Assert.assertNotNull("group title style", group.getTitleStyle());
 
-        group = report.getGroups()
-                      .get(1);
+        group = report.getGroups().get(1);
         Assert.assertNull("group start in new page", group.getStartInNewPage());
         Assert.assertNull("group header layout", group.getHeaderLayout());
-        Assert.assertNull("group style", group.getValueField()
-                                              .getStyle());
+        Assert.assertNull("group style", group.getValueField().getStyle());
         Assert.assertNull("group title style", group.getTitleStyle());
 
-        Assert.assertEquals("sorts", 2, report.getSorts()
-                                              .size());
-        DRSort sort = report.getSorts()
-                            .get(0);
+        Assert.assertEquals("sorts", 2, report.getSorts().size());
+        DRSort sort = report.getSorts().get(0);
         Assert.assertNotNull("sort name", sort.getExpression());
         Assert.assertEquals("sort order", OrderType.DESCENDING, sort.getOrderType());
 
-        Assert.assertEquals("subtotals", 3, report.getSubtotals()
-                                                  .size());
-        DRSubtotal<?> subtotal = report.getSubtotals()
-                                       .get(0);
+        Assert.assertEquals("subtotals", 3, report.getSubtotals().size());
+        DRSubtotal<?> subtotal = report.getSubtotals().get(0);
         Assert.assertNull("subtotal label", subtotal.getLabelExpression());
-        Assert.assertNull("subtotal style", subtotal.getValueField()
-                                                    .getStyle());
+        Assert.assertNull("subtotal style", subtotal.getValueField().getStyle());
         Assert.assertNull("subtotal label style", subtotal.getLabelStyle());
         Assert.assertEquals("subtotal position", SubtotalPosition.GROUP_FOOTER, subtotal.getPosition());
-        Assert.assertEquals("subtotal group", report.getGroups()
-                                                    .get(1), subtotal.getGroup());
-        subtotal = report.getSubtotals()
-                         .get(1);
+        Assert.assertEquals("subtotal group", report.getGroups().get(1), subtotal.getGroup());
+        subtotal = report.getSubtotals().get(1);
         Assert.assertNotNull("subtotal label", subtotal.getLabelExpression());
-        Assert.assertNotNull("subtotal style", subtotal.getValueField()
-                                                       .getStyle());
+        Assert.assertNotNull("subtotal style", subtotal.getValueField().getStyle());
         Assert.assertNotNull("subtotal label style", subtotal.getLabelStyle());
-        subtotal = report.getSubtotals()
-                         .get(2);
+        subtotal = report.getSubtotals().get(2);
         Assert.assertNull("subtotal label", subtotal.getLabelExpression());
-        Assert.assertNull("subtotal style", subtotal.getValueField()
-                                                    .getStyle());
+        Assert.assertNull("subtotal style", subtotal.getValueField().getStyle());
         Assert.assertNull("subtotal label style", subtotal.getLabelStyle());
 
-        Assert.assertEquals("components", 3, customizer.getComponents()
-                                                       .size());
-        Assert.assertTrue("component", adhocConfiguration.getReport()
-                                                         .getComponent("textField") instanceof AdhocTextField);
-        Assert.assertTrue("component", adhocConfiguration.getReport()
-                                                         .getComponent("chart1") instanceof AdhocChart);
-        Assert.assertTrue("component", adhocConfiguration.getReport()
-                                                         .getComponent("chart2") instanceof AdhocChart);
+        Assert.assertEquals("components", 3, customizer.getComponents().size());
+        Assert.assertTrue("component", adhocConfiguration.getReport().getComponent("textField") instanceof AdhocTextField);
+        Assert.assertTrue("component", adhocConfiguration.getReport().getComponent("chart1") instanceof AdhocChart);
+        Assert.assertTrue("component", adhocConfiguration.getReport().getComponent("chart2") instanceof AdhocChart);
 
-        DRComponent component = customizer.getComponents()
-                                          .get(0)
-                                          .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(0), adhocConfiguration.getReport()
-                                                                                          .getComponent("textField"));
+        DRComponent component = customizer.getComponents().get(0).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(0), adhocConfiguration.getReport().getComponent("textField"));
         Assert.assertNotNull("component style", component.getStyle());
-        Assert.assertEquals("component width", 150, ((DRDimensionComponent) component).getWidth());
+        Assert.assertEquals("component width", Integer.valueOf(150), ((DRDimensionComponent) component).getWidth());
         Assert.assertEquals("component width type", ComponentDimensionType.FIXED, ((DRDimensionComponent) component).getWidthType());
-        Assert.assertEquals("component height", 200, ((DRDimensionComponent) component).getHeight());
+        Assert.assertEquals("component height", Integer.valueOf(200), ((DRDimensionComponent) component).getHeight());
         Assert.assertEquals("component height type", ComponentDimensionType.FIXED, ((DRDimensionComponent) component).getHeightType());
         DRTextField<?> textField = (DRTextField<?>) component;
         Assert.assertNotNull("textField text", textField.getValueExpression());
 
-        DRChart chart = (DRChart) customizer.getComponents()
-                                            .get(1)
-                                            .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(1), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart1"));
+        DRChart chart = (DRChart) customizer.getComponents().get(1).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(1), adhocConfiguration.getReport().getComponent("chart1"));
         Assert.assertEquals("chart type", ChartType.AREA, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart category", ((DRCategoryDataset) chart.getDataset()).getValueExpression());
-        DRICategoryChartSerie chartSerie = (DRICategoryChartSerie) ((DRCategoryDataset) chart.getDataset()).getSeries()
-                                                                                                           .get(0);
+        DRICategoryChartSerie chartSerie = (DRICategoryChartSerie) ((DRCategoryDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", chartSerie.getValueExpression());
         Assert.assertNotNull("chart serie label", chartSerie.getLabelExpression());
-        AdhocChart adhocChart = (AdhocChart) adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(1);
-        Assert.assertEquals("property", "series_value", adhocChart.getSeries()
-                                                                  .get(0)
-                                                                  .getProperty("series_key"));
-        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                                  .get(0));
+        AdhocChart adhocChart = (AdhocChart) adhocConfiguration.getReport().getComponents().get(1);
+        Assert.assertEquals("property", "series_value", adhocChart.getSeries().get(0).getProperty("series_key"));
+        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors().get(0));
         Assert.assertNotNull("chart category axis format", ((DRAxisPlot) chart.getPlot()).getXAxisFormat());
         Assert.assertNotNull("chart value axis format", ((DRAxisPlot) chart.getPlot()).getYAxisFormat());
-        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                .getLabelExpression());
-        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                     .getLabelFont());
-        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                                 .getLabelColor());
+        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertEquals("chart orientation", Orientation.VERTICAL, ((DRAxisPlot) chart.getPlot()).getOrientation());
         Assert.assertTrue("chart use series as category", ((DRCategoryDataset) chart.getDataset()).getUseSeriesAsCategory());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(2)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(2), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart2"));
+        chart = (DRChart) customizer.getComponents().get(2).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(2), adhocConfiguration.getReport().getComponent("chart2"));
         Assert.assertNull("component style", chart.getStyle());
         Assert.assertNull("component width", chart.getWidth());
         Assert.assertNull("component width type", chart.getWidthType());
         Assert.assertNull("component height", chart.getHeight());
         Assert.assertNull("component height type", chart.getHeightType());
-        Assert.assertNull("chart title", chart.getTitle()
-                                              .getTitle());
-        Assert.assertNull("chart title font", chart.getTitle()
-                                                   .getFont());
-        Assert.assertNull("chart title color", chart.getTitle()
-                                                    .getColor());
-        Assert.assertNull("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNull("chart title font", chart.getTitle().getFont());
+        Assert.assertNull("chart title color", chart.getTitle().getColor());
+        Assert.assertNull("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart category", ((DRCategoryDataset) chart.getDataset()).getValueExpression());
-        chartSerie = (DRICategoryChartSerie) ((DRCategoryDataset) chart.getDataset()).getSeries()
-                                                                                     .get(0);
+        chartSerie = (DRICategoryChartSerie) ((DRCategoryDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", chartSerie.getValueExpression());
         Assert.assertNotNull("chart serie label", chartSerie.getLabelExpression());
-        Assert.assertEquals("chart series color", 0, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                   .size());
-        Assert.assertNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                             .getLabelExpression());
-        Assert.assertNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                  .getLabelFont());
-        Assert.assertNull("axis format label color", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                   .getLabelColor());
+        Assert.assertEquals("chart series color", 0, ((DRAxisPlot) chart.getPlot()).getSeriesColors().size());
+        Assert.assertNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertNull("axis format label color", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertNull("chart orientation", ((DRAxisPlot) chart.getPlot()).getOrientation());
         Assert.assertNull("chart use series as category", ((DRCategoryDataset) chart.getDataset()).getUseSeriesAsCategory());
 
-        AdhocGroup adhocGroup = adhocConfiguration.getReport()
-                                                  .getGroups()
-                                                  .get(1);
+        AdhocGroup adhocGroup = adhocConfiguration.getReport().getGroups().get(1);
         Assert.assertEquals("property", "value<a>&&</a>1", adhocGroup.getProperty("key1"));
         Assert.assertEquals("property", "value<a>&&</a>2", adhocGroup.getProperty("key2"));
 
-        Assert.assertEquals("restrictions", 2, adhocConfiguration.getFilter()
-                                                                 .getRestrictions()
-                                                                 .size());
-        AdhocRestriction adhocRestriction = adhocConfiguration.getFilter()
-                                                              .getRestrictions()
-                                                              .get(0);
-        Assert.assertEquals("restriction key", adhocRestriction, adhocConfiguration.getFilter()
-                                                                                   .getRestriction("restriction1"));
+        Assert.assertEquals("restrictions", 2, adhocConfiguration.getFilter().getRestrictions().size());
+        AdhocRestriction adhocRestriction = adhocConfiguration.getFilter().getRestrictions().get(0);
+        Assert.assertEquals("restriction key", adhocRestriction, adhocConfiguration.getFilter().getRestriction("restriction1"));
         Assert.assertEquals("restriction key", "restriction1", adhocRestriction.getKey());
         Assert.assertEquals("restriction property", "value", adhocRestriction.getProperty("key"));
         Assert.assertNull("restriction property", adhocRestriction.getProperty("key_empty"));
         Assert.assertTrue("restriction property", (Boolean) adhocRestriction.getProperty("key_boolean"));
-        Assert.assertEquals("restriction property", 100, adhocRestriction.getProperty("key_int"));
+        Assert.assertEquals("restriction property", Integer.valueOf(100), adhocRestriction.getProperty("key_int"));
 
-        AdhocValueRestriction adhocValueRestriction = (AdhocValueRestriction) adhocConfiguration.getFilter()
-                                                                                                .getRestrictions()
-                                                                                                .get(1);
-        Assert.assertEquals("restriction key", adhocValueRestriction, adhocConfiguration.getFilter()
-                                                                                        .getRestriction("restriction2"));
+        AdhocValueRestriction adhocValueRestriction = (AdhocValueRestriction) adhocConfiguration.getFilter().getRestrictions().get(1);
+        Assert.assertEquals("restriction key", adhocValueRestriction, adhocConfiguration.getFilter().getRestriction("restriction2"));
         Assert.assertEquals("restriction key", "restriction2", adhocValueRestriction.getKey());
-        Assert.assertTrue("restriction property", adhocValueRestriction.getProperties()
-                                                                       .isEmpty());
+        Assert.assertTrue("restriction property", adhocValueRestriction.getProperties().isEmpty());
         Assert.assertEquals("restriction name", "aa", adhocValueRestriction.getName());
         Assert.assertEquals("restriction operator", AdhocValueOperator.IN, adhocValueRestriction.getOperator());
-        Assert.assertEquals("restriction value", "value1", adhocValueRestriction.getValues()
-                                                                                .get(0));
-        Assert.assertEquals("restriction value", "value2", adhocValueRestriction.getValues()
-                                                                                .get(1));
+        Assert.assertEquals("restriction value", "value1", adhocValueRestriction.getValues().get(0));
+        Assert.assertEquals("restriction value", "value2", adhocValueRestriction.getValues().get(1));
 
     }
 

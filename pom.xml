@@ -66,10 +66,13 @@
         <groovyVersion>1.7.5</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
         <jasperreportsVersion>6.7.0</jasperreportsVersion>
-        <jaxbVersion>2.3.0</jaxbVersion>
+        <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
+        <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
+        <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
+        <jaxbVersion>2.3.0.1</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
-        <junitVersion>4.0</junitVersion>
+        <junitVersion>4.12</junitVersion>
         <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
         <poiVersion>3.15</poiVersion>
@@ -365,16 +368,22 @@
         </profile>
 
         <profile>
-            <id>source-10</id>
-            <!--Please remember to run this after running compile in core module-->
-            <activation>
-                <property>
-                    <name>profile</name>
-                    <value>source</value>
-                </property>
-                <jdk>[9,)</jdk>
-            </activation>
+            <id>java9</id>
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>${maven-compiler-plugin-version}</version>
+                            <configuration>
+                                <source>1.8</source>
+                                <target>1.8</target>
+                                <encoding>${encoding}</encoding>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -410,23 +419,61 @@
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
+                    <!--To ensure consistent API for java 9 usage-->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>animal-sniffer-maven-plugin</artifactId>
+                        <version>1.16</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <signature>
+                                        <groupId>org.codehaus.mojo.signature</groupId>
+                                        <!--We are "trying" to be jre 8 compatible-->
+                                        <artifactId>java18</artifactId>
+                                        <version>1.0</version>
+                                    </signature>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
             <dependencies>
                 <dependency>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>1.16</version>
+                    <optional>true</optional>
+                    <scope>provided</scope>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+                <dependency>
                     <groupId>javax.xml.bind</groupId>
                     <artifactId>jaxb-api</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-apiVersion}</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-core</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-coreVersion}</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+                <dependency>
+                    <groupId>org.glassfish.jaxb</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>${jaxb-coreVersion}</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-impl</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-implVersion}</version>
                 </dependency>
             </dependencies>
         </profile>

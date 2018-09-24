@@ -75,14 +75,12 @@ public class Column3Test extends AbstractJasperValueTest implements Serializable
         columnTitleValueTest(column1, "Column1");
         // column2
         columnDetailCountTest(column2, 10);
-        columnDetailValueTest(column2, 1, new SimpleDateFormat(type.dateType()
-                                                                   .getPattern()).format(new Date()));
+        columnDetailValueTest(column2, 1, new SimpleDateFormat(type.dateType().getPattern()).format(new Date()));
         columnTitleCountTest(column2, 1);
         columnTitleValueTest(column2, "Column2");
         // column3
         columnDetailCountTest(column3, 10);
-        columnDetailValueTest(column3, 1, new SimpleDateFormat(type.dateYearToMinuteType()
-                                                                   .getPattern()).format(new Date()));
+        columnDetailValueTest(column3, 1, new SimpleDateFormat(type.dateYearToMinuteType().getPattern()).format(new Date()));
         columnTitleCountTest(column3, 1);
         columnTitleValueTest(column3, "Column3");
         // column4

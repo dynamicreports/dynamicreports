@@ -63,8 +63,7 @@ public class SvgRendererReport {
 
             report().setTemplate(Templates.reportTemplate)
                     .setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-                    .title(Templates.createTitleComponent("SvgRenderer"), cmp.image(image)
-                                                                             .setHeight(500))
+                    .title(Templates.createTitleComponent("SvgRenderer"), cmp.image(image).setHeight(500))
                     .show();
         } catch (DRException e) {
             e.printStackTrace();

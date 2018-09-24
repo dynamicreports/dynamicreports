@@ -60,37 +60,15 @@ public class ValueChartDataTest extends AbstractJasperChartTest implements Seria
 
         rb.addProperty("net.sf.jasperreports.chart.pie.ignore.duplicated.key", "true")
           .setPageFormat(PageType.A2, PageOrientation.PORTRAIT)
-          .setTemplate(template().setChartValuePattern("#,##0.#")
-                                 .setChartPercentValuePattern("#,##0.###"))
+          .setTemplate(template().setChartValuePattern("#,##0.#").setChartPercentValuePattern("#,##0.###"))
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class))
-          .summary(cmp.horizontalList(cht.barChart()
-                                         .setShowValues(true)
-                                         .setShowPercentages(true)
-                                         .setPercentValuePattern("#,##0.##")
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3)), cht.bar3DChart()
-                                                                                             .setShowValues(true)
-                                                                                             .setShowPercentages(true)
-                                                                                             .setCategory(column1)
-                                                                                             .series(cht.serie(column2), cht.serie(column3)), cht.barChart()
-                                                                                                                                                 .setShowValues(true)
-                                                                                                                                                 .setValuePattern("#,##0.##")
-                                                                                                                                                 .setCategory(column1)
-                                                                                                                                                 .series(cht.serie(column2), cht.serie(column3)),
-                                      cht.bar3DChart()
-                                         .setShowValues(true)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3))), cmp.horizontalList(cht.pieChart()
-                                                                                                                 .setShowValues(true)
-                                                                                                                 .setValuePattern("#,##0.##")
-                                                                                                                 .setShowPercentages(true)
-                                                                                                                 .setPercentValuePattern("#,##0.##")
-                                                                                                                 .setKey(column1)
-                                                                                                                 .series(cht.serie(column2)), cht.pieChart()
-                                                                                                                                                 .setShowValues(true)
-                                                                                                                                                 .setShowPercentages(true)
-                                                                                                                                                 .setKey(column1)
-                                                                                                                                                 .series(cht.serie(column2))));
+          .summary(
+              cmp.horizontalList(cht.barChart().setShowValues(true).setShowPercentages(true).setPercentValuePattern("#,##0.##").setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                 cht.bar3DChart().setShowValues(true).setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                 cht.barChart().setShowValues(true).setValuePattern("#,##0.##").setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                 cht.bar3DChart().setShowValues(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3))),
+              cmp.horizontalList(cht.pieChart().setShowValues(true).setValuePattern("#,##0.##").setShowPercentages(true).setPercentValuePattern("#,##0.##").setKey(column1).series(cht.serie(column2)),
+                                 cht.pieChart().setShowValues(true).setShowPercentages(true).setKey(column1).series(cht.serie(column2))));
     }
 
     @Override
@@ -103,32 +81,24 @@ public class ValueChartDataTest extends AbstractJasperChartTest implements Seria
         categoryDataset.addValue(1.191, "row", "column");
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot()
-                                              .getRenderer();
+        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator()
-                                             .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart2", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.191", renderer1.getBaseItemLabelGenerator()
-                                              .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.191", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart3", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator()
-                                             .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart4", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator()
-                                            .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         DefaultPieDataset dataset = new DefaultPieDataset();
         dataset.setValue("key1", 1.191);

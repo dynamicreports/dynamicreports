@@ -65,8 +65,7 @@ public class ExpressionCrosstabTest extends AbstractJasperCrosstabValueTest impl
                                        .variables(variable1)
                                        .measures(measure1, measure2, measure3);
 
-        rb.setLocale(Locale.ENGLISH)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
 
     @Override

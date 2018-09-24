@@ -34,7 +34,9 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 public class CrosstabPrintInOddRow extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         return reportParameters.getCrosstabRowNumber() % 2 != 0;

@@ -21,13 +21,13 @@
  */
 package net.sf.dynamicreports.googlecharts.report.geomap;
 
-import java.awt.Color;
-import java.util.List;
-
 import net.sf.dynamicreports.design.constant.EvaluationTime;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.component.DRIDesignCustomComponent;
+
+import java.awt.Color;
+import java.util.List;
 
 /**
  * <p>DRIDesignGeoMap interface.</p>
@@ -37,59 +37,59 @@ import net.sf.dynamicreports.report.component.DRIDesignCustomComponent;
  */
 public interface DRIDesignGeoMap extends DRIDesignCustomComponent {
 
-	/**
-	 * <p>getEvaluationTime.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
-	 */
-	public EvaluationTime getEvaluationTime();
+    /**
+     * <p>getEvaluationTime.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
+     */
+    public EvaluationTime getEvaluationTime();
 
-	/**
-	 * <p>getEvaluationGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
-	 */
-	public DRIDesignGroup getEvaluationGroup();
+    /**
+     * <p>getEvaluationGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+     */
+    public DRIDesignGroup getEvaluationGroup();
 
-	/**
-	 * <p>getShowLegend.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getShowLegend();
+    /**
+     * <p>getShowLegend.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getShowLegend();
 
-	/**
-	 * <p>getDataMode.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
-	 */
-	public GeoMapDataMode getDataMode();
+    /**
+     * <p>getDataMode.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
+     */
+    public GeoMapDataMode getDataMode();
 
-	/**
-	 * <p>getRegionExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getRegionExpression();
+    /**
+     * <p>getRegionExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getRegionExpression();
 
-	/**
-	 * <p>getValueLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getValueLabelExpression();
+    /**
+     * <p>getValueLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getValueLabelExpression();
 
-	/**
-	 * <p>getColors.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<Color> getColors();
+    /**
+     * <p>getColors.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<Color> getColors();
 
-	/**
-	 * <p>getDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIDesignGeoMapDataset} object.
-	 */
-	public DRIDesignGeoMapDataset getDataset();
+    /**
+     * <p>getDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIDesignGeoMapDataset} object.
+     */
+    public DRIDesignGeoMapDataset getDataset();
 }

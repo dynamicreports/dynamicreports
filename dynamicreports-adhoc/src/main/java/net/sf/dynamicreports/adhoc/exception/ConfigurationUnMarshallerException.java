@@ -32,9 +32,8 @@ public class ConfigurationUnMarshallerException extends DRException {
 
 
     /**
-     * Constructs a ConfigurationUnMarshallerException using the inputStream from which we are
-     * reading configurations when the exceptional event occurs. For instance it is used in the
-     * adhocManager to capture exceptions when loading data from an xml file like so:
+     * Constructs a ConfigurationUnMarshallerException using the inputStream from which we are reading configurations when the exceptional event occurs. For instance it is used in the adhocManager to
+     * capture exceptions when loading data from an xml file like so:
      * <pre>
      *     {@code
      *     try {

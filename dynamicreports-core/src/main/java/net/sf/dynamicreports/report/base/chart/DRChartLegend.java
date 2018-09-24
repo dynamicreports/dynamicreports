@@ -49,7 +49,9 @@ public class DRChartLegend implements DRIChartLegend {
     public DRChartLegend() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getColor() {
         return color;
@@ -64,7 +66,9 @@ public class DRChartLegend implements DRIChartLegend {
         this.color = color;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getBackgroundColor() {
         return backgroundColor;
@@ -79,7 +83,9 @@ public class DRChartLegend implements DRIChartLegend {
         this.backgroundColor = backgroundColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowLegend() {
         return showLegend;
@@ -94,7 +100,9 @@ public class DRChartLegend implements DRIChartLegend {
         this.showLegend = showLegend;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRFont getFont() {
         return font;
@@ -109,7 +117,9 @@ public class DRChartLegend implements DRIChartLegend {
         this.font = font;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position getPosition() {
         return position;

@@ -68,8 +68,7 @@ public class ColumnSubreportDataReport {
     }
 
     private void build() {
-        SubreportBuilder subreport = cmp.subreport(new SubreportDesign())
-                                        .setDataSource(new SubreportData());
+        SubreportBuilder subreport = cmp.subreport(new SubreportDesign()).setDataSource(new SubreportData());
         try {
             report().setTemplate(Templates.reportTemplate)
                     .fields(field("comments", List.class))

@@ -41,7 +41,9 @@ public class DRDesignPen implements DRIDesignPen {
     private LineStyle lineStyle;
     private Color lineColor;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Float getLineWidth() {
         return lineWidth;
@@ -56,7 +58,9 @@ public class DRDesignPen implements DRIDesignPen {
         this.lineWidth = lineWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public LineStyle getLineStyle() {
         return lineStyle;
@@ -71,7 +75,9 @@ public class DRDesignPen implements DRIDesignPen {
         this.lineStyle = lineStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getLineColor() {
         return lineColor;
@@ -86,7 +92,9 @@ public class DRDesignPen implements DRIDesignPen {
         this.lineColor = lineColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -100,9 +108,7 @@ public class DRDesignPen implements DRIDesignPen {
         }
 
         DRDesignPen o = (DRDesignPen) obj;
-        EqualsBuilder equalsBuilder = new EqualsBuilder().append(lineWidth, o.lineWidth)
-                                                         .append(lineStyle, o.lineStyle)
-                                                         .append(lineColor, o.lineColor);
+        EqualsBuilder equalsBuilder = new EqualsBuilder().append(lineWidth, o.lineWidth).append(lineStyle, o.lineStyle).append(lineColor, o.lineColor);
         return equalsBuilder.isEquals();
     }
 }

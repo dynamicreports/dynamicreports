@@ -62,16 +62,11 @@ public class ExcelReport2 {
 
     private void build() {
         try {
-            JasperXlsExporterBuilder xlsExporter = export.xlsExporter("c:/report.xls")
-                                                         .setDetectCellType(true)
-                                                         .setIgnorePageMargins(true)
-                                                         .setWhitePageBackground(false)
-                                                         .setRemoveEmptySpaceBetweenColumns(true);
+            JasperXlsExporterBuilder xlsExporter =
+                export.xlsExporter("c:/report.xls").setDetectCellType(true).setIgnorePageMargins(true).setWhitePageBackground(false).setRemoveEmptySpaceBetweenColumns(true);
 
-            TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                      .setFixedWidth(30)
-                                                      .setStretchWithOverflow(false)
-                                                      .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
+            TextColumnBuilder<String> itemColumn =
+                col.column("Item", "item", type.stringType()).setFixedWidth(30).setStretchWithOverflow(false).addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
 
             report().setColumnTitleStyle(Templates.columnTitleStyle)
                     .addProperty(JasperProperty.EXPORT_XLS_FREEZE_ROW, "2")

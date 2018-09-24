@@ -36,7 +36,9 @@ public class CrosstabRowCounter extends AbstractSimpleExpression<CrosstabRowCoun
 
     private int rowNumber = 1;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CrosstabRowCounter evaluate(ReportParameters reportParameters) {
         return this;
@@ -58,7 +60,9 @@ public class CrosstabRowCounter extends AbstractSimpleExpression<CrosstabRowCoun
         return rowNumber;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return ReportParameters.CROSSTAB_ROW_COUNTER;

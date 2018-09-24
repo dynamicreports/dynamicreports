@@ -61,14 +61,18 @@ public class DRList extends DRDimensionComponent implements DRIList {
         setType(type);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void init() {
         super.init();
         this.listCells = new ArrayList<DRListCell>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRListCell> getListCells() {
         return listCells;
@@ -97,14 +101,16 @@ public class DRList extends DRDimensionComponent implements DRIList {
      * <p>addComponent.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
      */
     public void addComponent(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRComponent component) {
         listCells.add(new DRListCell(horizontalAlignment, verticalAlignment, component));
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ListType getType() {
         return type;
@@ -120,7 +126,9 @@ public class DRList extends DRDimensionComponent implements DRIList {
         this.type = type;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getGap() {
         return gap;
@@ -138,7 +146,9 @@ public class DRList extends DRDimensionComponent implements DRIList {
         this.gap = gap;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRComponent getBackgroundComponent() {
         return backgroundComponent;

@@ -43,7 +43,7 @@ public class TocReferenceLinkExpression extends AbstractComplexExpression<String
     /**
      * <p>Constructor for TocReferenceLinkExpression.</p>
      *
-     * @param expressionName a {@link java.lang.String} object.
+     * @param expressionName       a {@link java.lang.String} object.
      * @param anchorNameExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     public TocReferenceLinkExpression(String expressionName, DRIExpression<String> anchorNameExpression) {
@@ -54,7 +54,9 @@ public class TocReferenceLinkExpression extends AbstractComplexExpression<String
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String id;

@@ -48,7 +48,9 @@ public class DRMultiAxisPlot extends DRAxisPlot implements DRIMultiAxisPlot {
         axes = new ArrayList<DRIChartAxis>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIChartAxis> getAxes() {
         return axes;
@@ -77,7 +79,7 @@ public class DRMultiAxisPlot extends DRAxisPlot implements DRIMultiAxisPlot {
     /**
      * <p>addChart.</p>
      *
-     * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+     * @param chart    a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
      * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
      */
     public void addChart(DRIChart chart, AxisPosition position) {

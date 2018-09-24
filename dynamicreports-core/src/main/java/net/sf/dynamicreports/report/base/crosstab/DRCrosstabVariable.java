@@ -47,7 +47,7 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
      * <p>Constructor for DRCrosstabVariable.</p>
      *
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param calculation     a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     public DRCrosstabVariable(DRIExpression<?> valueExpression, Calculation calculation) {
         Validate.notNull(valueExpression, "valueExpression must not be null");
@@ -57,25 +57,33 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
         this.name = ReportUtils.generateUniqueName("crosstabMeasure");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Calculation getCalculation() {
         return calculation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CrosstabPercentageType getPercentageType() {
         return percentageType;
@@ -90,7 +98,9 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
         this.percentageType = percentageType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {

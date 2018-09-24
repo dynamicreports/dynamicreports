@@ -141,8 +141,7 @@ public class ExporterTransform {
         } else if (jasperExporter instanceof JasperIPptxExporter) {
             jrExporter = pptx((JasperIPptxExporter) jasperExporter);
         } else {
-            throw new JasperDesignException("Exporter " + jasperExporter.getClass()
-                                                                        .getName() + " not supported");
+            throw new JasperDesignException("Exporter " + jasperExporter.getClass().getName() + " not supported");
         }
 
         return jrExporter;
@@ -302,15 +301,13 @@ public class ExporterTransform {
         if (jasperExporter.getCharacterWidth() != null) {
             reportExportConfiguration.setCharWidth(jasperExporter.getCharacterWidth());
         } else {
-            DRFont font = Defaults.getDefaults()
-                                  .getFont();
+            DRFont font = Defaults.getDefaults().getFont();
             reportExportConfiguration.setCharWidth(new Float(StyleResolver.getFontWidth(font)));
         }
         if (jasperExporter.getCharacterHeight() != null) {
             reportExportConfiguration.setCharHeight(jasperExporter.getCharacterHeight());
         } else {
-            DRFont font = Defaults.getDefaults()
-                                  .getFont();
+            DRFont font = Defaults.getDefaults().getFont();
             reportExportConfiguration.setCharHeight(new Float(StyleResolver.getFontHeight(font)));
         }
         if (jasperExporter.getPageWidthInChars() != null) {
@@ -391,8 +388,7 @@ public class ExporterTransform {
         if (jasperExporter.getOwnerPassword() != null) {
             exporterConfiguration.setOwnerPassword(jasperExporter.getOwnerPassword());
         }
-        if (jasperExporter.getPermissions() != null && !jasperExporter.getPermissions()
-                                                                      .isEmpty()) {
+        if (jasperExporter.getPermissions() != null && !jasperExporter.getPermissions().isEmpty()) {
             exporterConfiguration.setPermissions(ConstantTransform.pdfPermission(jasperExporter.getPermissions()));
         }
         if (jasperExporter.getPdfVersion() != null) {
@@ -572,11 +568,8 @@ public class ExporterTransform {
         if (jasperExporter.getDetectCellType() != null) {
             reportExportConfiguration.setDetectCellType(jasperExporter.getDetectCellType());
         }
-        if (jasperExporter.getSheetNames() != null && !jasperExporter.getSheetNames()
-                                                                     .isEmpty()) {
-            String[] sheetNames = jasperExporter.getSheetNames()
-                                                .toArray(new String[jasperExporter.getSheetNames()
-                                                                                  .size()]);
+        if (jasperExporter.getSheetNames() != null && !jasperExporter.getSheetNames().isEmpty()) {
+            String[] sheetNames = jasperExporter.getSheetNames().toArray(new String[jasperExporter.getSheetNames().size()]);
             reportExportConfiguration.setSheetNames(sheetNames);
         }
         if (jasperExporter.getFontSizeFixEnabled() != null) {

@@ -58,10 +58,7 @@ public class JasperTemplateDesignReport3 {
         InputStream is = JasperTemplateDesignReport3.class.getResourceAsStream("templatedesign3.jrxml");
 
         try {
-            report().setTemplateDesign(is)
-                    .title(Templates.createTitleComponent("JasperTemplateDesign3"))
-                    .setDataSource(createDataSource())
-                    .show();
+            report().setTemplateDesign(is).title(Templates.createTitleComponent("JasperTemplateDesign3")).setDataSource(createDataSource()).show();
         } catch (DRException e) {
             e.printStackTrace();
         }

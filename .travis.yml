@@ -3,7 +3,13 @@ install: true
 
 jdk:
   - oraclejdk8
- # - oraclejdk9 -> this is not working yet
+  script:
+    - mvn clean install -B
+
+  - oraclejdk9
+  script:
+    - mvn clean install -B -P java9
+    
  # - oraclejdk10 -> this is not working yet
 
 cache:
@@ -17,9 +23,6 @@ addons:
 before_install:
   - echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
   - sudo apt-get install ttf-mscorefonts-installer
-
-script:
-  - mvn clean install -B
 
 after_success:
   - "[[ $TRAVIS_BRANCH == \"development\" ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]] && [[ ${TRAVIS_TAG} == '' ]] && mvn deploy -B -DskipTests -s settings.xml"

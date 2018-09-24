@@ -55,8 +55,7 @@ public class Image1Test extends AbstractJasperTest {
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .setImageStyle(stl.style()
-                            .setImageScale(ImageScale.CLIP))
+          .setImageStyle(stl.style().setImageScale(ImageScale.CLIP))
           .title(cmp.image(image = new TestImage()), cmp.image(Image1Test.class.getResource("noimage")));
     }
 
@@ -67,8 +66,7 @@ public class Image1Test extends AbstractJasperTest {
         numberOfPagesTest(1);
 
         try {
-            byte[] imageData = JRImageLoader.getInstance(DefaultJasperReportsContext.getInstance())
-                                            .loadBytesFromAwtImage(image, ImageTypeEnum.JPEG);
+            byte[] imageData = JRImageLoader.getInstance(DefaultJasperReportsContext.getInstance()).loadBytesFromAwtImage(image, ImageTypeEnum.JPEG);
             JRPrintImage jrImage = (JRPrintImage) getElementAt("title.image1", 0);
             Assert.assertTrue("image data", Arrays.equals(imageData, ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance())));
             Assert.assertEquals("scale image", ScaleImageEnum.CLIP, jrImage.getScaleImageValue());

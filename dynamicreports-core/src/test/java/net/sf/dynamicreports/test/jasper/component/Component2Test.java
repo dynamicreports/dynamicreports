@@ -38,23 +38,11 @@ public class Component2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.horizontalList(cmp.line(), cmp.filler()
-                                                   .setFixedWidth(10), cmp.line()), cmp.horizontalList(cmp.line()
-                                                                                                          .setFixedDimension(1, 50), cmp.line()
-                                                                                                                                        .setDirection(LineDirection.TOP_DOWN), cmp.line()
-                                                                                                                                                                                  .setDirection(
-                                                                                                                                                                                      LineDirection
-                                                                                                                                                                                          .BOTTOM_UP)),
-                 cmp.ellipse(), cmp.rectangle(), cmp.roundRectangle(), cmp.roundRectangle(20), cmp.verticalGap(30), cmp.horizontalList(cmp.text(""), cmp.horizontalGap(10), cmp.text("")),
-                 cmp.centerHorizontal(cmp.text("")
-                                         .setFixedWidth(50)), cmp.centerHorizontal(cmp.text("")
-                                                                                      .setFixedWidth(50))
-                                                                 .setFixedWidth(250), cmp.horizontalList(cmp.centerVertical(cmp.text("")
-                                                                                                                               .setFixedRows(1)), cmp.text("")
-                                                                                                                                                     .setFixedRows(3)), cmp.centerVertical(cmp.text("")
-                                                                                                                                                                                              .setFixedRows(
-                                                                                                                                                                                                  1))
-                                                                                                                                                                           .setFixedHeight(50));
+        rb.title(cmp.horizontalList(cmp.line(), cmp.filler().setFixedWidth(10), cmp.line()),
+                 cmp.horizontalList(cmp.line().setFixedDimension(1, 50), cmp.line().setDirection(LineDirection.TOP_DOWN), cmp.line().setDirection(LineDirection.BOTTOM_UP)), cmp.ellipse(),
+                 cmp.rectangle(), cmp.roundRectangle(), cmp.roundRectangle(20), cmp.verticalGap(30), cmp.horizontalList(cmp.text(""), cmp.horizontalGap(10), cmp.text("")),
+                 cmp.centerHorizontal(cmp.text("").setFixedWidth(50)), cmp.centerHorizontal(cmp.text("").setFixedWidth(50)).setFixedWidth(250),
+                 cmp.horizontalList(cmp.centerVertical(cmp.text("").setFixedRows(1)), cmp.text("").setFixedRows(3)), cmp.centerVertical(cmp.text("").setFixedRows(1)).setFixedHeight(50));
     }
 
     @Override

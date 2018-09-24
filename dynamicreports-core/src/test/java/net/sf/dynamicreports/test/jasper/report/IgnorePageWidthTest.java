@@ -47,11 +47,9 @@ public class IgnorePageWidthTest extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.ignorePageWidth()
           .title(cmp.text("text"))
-          .columns(column1 = col.column("Column2", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", String.class), column4 =
-                       col.column("Column4", "field4", String.class)
-                          .setWidth(150), column5 = col.column("Column5", "field5", String.class)
-                                                       .setFixedWidth(50), column6 = col.column("Column6", "field6", String.class), column7 = col.column("Column7", "field7", String.class),
-                   column8 = col.column("Column8", "field8", String.class));
+          .columns(column1 = col.column("Column2", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", String.class),
+                   column4 = col.column("Column4", "field4", String.class).setWidth(150), column5 = col.column("Column5", "field5", String.class).setFixedWidth(50),
+                   column6 = col.column("Column6", "field6", String.class), column7 = col.column("Column7", "field7", String.class), column8 = col.column("Column8", "field8", String.class));
     }
 
     @Override

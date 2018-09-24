@@ -66,13 +66,17 @@ public class DRDesignGroup implements DRIDesignGroup {
         footerBands = new ArrayList<DRDesignBand>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getGroupExpression() {
         return groupExpression;
@@ -87,7 +91,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.groupExpression = groupExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRDesignBand> getHeaderBands() {
         return headerBands;
@@ -111,7 +117,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.headerBands.add(headerBand);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRDesignBand> getFooterBands() {
         return footerBands;
@@ -138,14 +146,16 @@ public class DRDesignGroup implements DRIDesignGroup {
     /**
      * <p>addFooterBand.</p>
      *
-     * @param index a int.
+     * @param index      a int.
      * @param footerBand a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
      */
     public void addFooterBand(int index, DRDesignBand footerBand) {
         this.footerBands.add(index, footerBand);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isStartInNewPage() {
         return startInNewPage;
@@ -160,7 +170,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.startInNewPage = startInNewPage;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isStartInNewColumn() {
         return startInNewColumn;
@@ -175,7 +187,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.startInNewColumn = startInNewColumn;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isReprintHeaderOnEachPage() {
         return reprintHeaderOnEachPage;
@@ -190,7 +204,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.reprintHeaderOnEachPage = reprintHeaderOnEachPage;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isResetPageNumber() {
         return resetPageNumber;
@@ -205,7 +221,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.resetPageNumber = resetPageNumber;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMinHeightToStartNewPage() {
         return minHeightToStartNewPage;
@@ -220,7 +238,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.minHeightToStartNewPage = minHeightToStartNewPage;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public GroupFooterPosition getFooterPosition() {
         return footerPosition;
@@ -235,7 +255,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.footerPosition = footerPosition;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isKeepTogether() {
         return keepTogether;
@@ -250,7 +272,9 @@ public class DRDesignGroup implements DRIDesignGroup {
         this.keepTogether = keepTogether;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isHeaderWithSubtotal() {
         return headerWithSubtotal;

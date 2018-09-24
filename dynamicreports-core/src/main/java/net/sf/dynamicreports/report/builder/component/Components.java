@@ -183,8 +183,8 @@ public class Components {
     /**
      * <p>xyListCell.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.XyListCellBuilder} object.
      */
@@ -196,10 +196,10 @@ public class Components {
     /**
      * <p>xyListCell.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
-     * @param width a {@link java.lang.Integer} object.
-     * @param height a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
+     * @param width     a {@link java.lang.Integer} object.
+     * @param height    a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.XyListCellBuilder} object.
      */
@@ -300,7 +300,7 @@ public class Components {
      * <p>text.</p>
      *
      * @param number a T object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     public static <T extends Number> TextFieldBuilder<T> text(T number) {
@@ -311,7 +311,7 @@ public class Components {
      * <p>text.</p>
      *
      * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-     * @param <T> a T object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     public static <T> TextFieldBuilder<T> text(FieldBuilder<T> field) {
@@ -322,7 +322,7 @@ public class Components {
      * <p>text.</p>
      *
      * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-     * @param <T> a T object.
+     * @param <T>      a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     public static <T> TextFieldBuilder<T> text(VariableBuilder<T> variable) {
@@ -333,7 +333,7 @@ public class Components {
      * <p>text.</p>
      *
      * @param textExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     public static <T> TextFieldBuilder<T> text(DRIExpression<T> textExpression) {
@@ -374,7 +374,7 @@ public class Components {
     /**
      * <p>gap.</p>
      *
-     * @param width a int.
+     * @param width  a int.
      * @param height a int.
      * @return a {@link net.sf.dynamicreports.report.builder.component.FillerBuilder} object.
      */
@@ -447,9 +447,9 @@ public class Components {
     /**
      * <p>image.</p>
      *
-     * @deprecated use image(net.sf.jasperreports.renderers.Renderable image) instead
      * @param image a {@link net.sf.jasperreports.engine.Renderable} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.ImageBuilder} object.
+     * @deprecated use image(net.sf.jasperreports.renderers.Renderable image) instead
      */
     @Deprecated
     public static ImageBuilder image(net.sf.jasperreports.engine.Renderable image) {
@@ -533,7 +533,7 @@ public class Components {
      * <p>genericElement.</p>
      *
      * @param namespace a {@link java.lang.String} object.
-     * @param name a {@link java.lang.String} object.
+     * @param name      a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
      */
     public static GenericElementBuilder genericElement(String namespace, String name) {
@@ -627,9 +627,9 @@ public class Components {
     /**
      * <p>map.</p>
      *
-     * @param latitude a {@link java.lang.Float} object.
+     * @param latitude  a {@link java.lang.Float} object.
      * @param longitude a {@link java.lang.Float} object.
-     * @param zoom a {@link java.lang.Integer} object.
+     * @param zoom      a {@link java.lang.Integer} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.MapBuilder} object.
      */
     public static MapBuilder map(Float latitude, Float longitude, Integer zoom) {

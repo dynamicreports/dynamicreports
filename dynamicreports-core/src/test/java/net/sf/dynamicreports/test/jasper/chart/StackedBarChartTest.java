@@ -58,36 +58,35 @@ public class StackedBarChartTest extends AbstractJasperChartTest implements Seri
 
         rb.setLocale(Locale.ENGLISH)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .summary(cht.stackedBarChart()
+          .summary(cht.stackedBarChart().setCategory(column1).series(cht.serie(column2)).setShowLabels(true).setShowTickLabels(false).setShowTickMarks(false), cht.stackedBarChart()
+                                                                                                                                                                  .setCategory(column1)
+                                                                                                                                                                  .series(cht.serie(column2))
+                                                                                                                                                                  .setCategoryAxisFormat(
+                                                                                                                                                                      cht.axisFormat()
+                                                                                                                                                                         .setLabel("category")
+                                                                                                                                                                         .setLabelColor(Color.BLUE)
+                                                                                                                                                                         .setLabelFont(
+                                                                                                                                                                             stl.fontArialBold())
+                                                                                                                                                                         .setTickLabelFont(
+                                                                                                                                                                             stl.fontArial()
+                                                                                                                                                                                .setItalic(true))
+                                                                                                                                                                         .setTickLabelColor(Color.CYAN)
+                                                                                                                                                                         .setTickLabelRotation(45d)
+                                                                                                                                                                         .setLineColor(
+                                                                                                                                                                             Color.LIGHT_GRAY)),
+                   cht.stackedBarChart()
                       .setCategory(column1)
                       .series(cht.serie(column2))
-                      .setShowLabels(true)
-                      .setShowTickLabels(false)
-                      .setShowTickMarks(false), cht.stackedBarChart()
-                                                   .setCategory(column1)
-                                                   .series(cht.serie(column2))
-                                                   .setCategoryAxisFormat(cht.axisFormat()
-                                                                             .setLabel("category")
-                                                                             .setLabelColor(Color.BLUE)
-                                                                             .setLabelFont(stl.fontArialBold())
-                                                                             .setTickLabelFont(stl.fontArial()
-                                                                                                  .setItalic(true))
-                                                                             .setTickLabelColor(Color.CYAN)
-                                                                             .setTickLabelRotation(45d)
-                                                                             .setLineColor(Color.LIGHT_GRAY)), cht.stackedBarChart()
-                                                                                                                  .setCategory(column1)
-                                                                                                                  .series(cht.serie(column2))
-                                                                                                                  .setValueAxisFormat(cht.axisFormat()
-                                                                                                                                         .setLabel("value")
-                                                                                                                                         .setLabelColor(Color.BLUE)
-                                                                                                                                         .setLabelFont(stl.fontArialBold())
-                                                                                                                                         .setTickLabelFont(stl.fontArial()
-                                                                                                                                                              .setItalic(true))
-                                                                                                                                         .setTickLabelColor(Color.CYAN)
-                                                                                                                                         .setTickLabelMask("#,##0.00")
-                                                                                                                                         .setLineColor(Color.LIGHT_GRAY)
-                                                                                                                                         .setRangeMinValueExpression(1)
-                                                                                                                                         .setRangeMaxValueExpression(15)));
+                      .setValueAxisFormat(cht.axisFormat()
+                                             .setLabel("value")
+                                             .setLabelColor(Color.BLUE)
+                                             .setLabelFont(stl.fontArialBold())
+                                             .setTickLabelFont(stl.fontArial().setItalic(true))
+                                             .setTickLabelColor(Color.CYAN)
+                                             .setTickLabelMask("#,##0.00")
+                                             .setLineColor(Color.LIGHT_GRAY)
+                                             .setRangeMinValueExpression(1)
+                                             .setRangeMaxValueExpression(15)));
     }
 
     @Override
@@ -98,40 +97,30 @@ public class StackedBarChartTest extends AbstractJasperChartTest implements Seri
 
         JFreeChart chart = getChart("summary.chart1", 0);
         CategoryPlot categoryPlot = chart.getCategoryPlot();
-        Assert.assertEquals("renderer", StackedBarRenderer.class, categoryPlot.getRenderer()
-                                                                              .getClass());
-        Assert.assertTrue("show labels", categoryPlot.getRenderer()
-                                                     .getBaseItemLabelsVisible());
-        Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis()
-                                                           .isTickMarksVisible());
-        Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis()
-                                                          .isTickLabelsVisible());
+        Assert.assertEquals("renderer", StackedBarRenderer.class, categoryPlot.getRenderer().getClass());
+        Assert.assertTrue("show labels", categoryPlot.getRenderer().getBaseItemLabelsVisible());
+        Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
+        Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
 
         chart = getChart("summary.chart2", 0);
-        Axis axis = chart.getCategoryPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getCategoryPlot().getDomainAxis();
         Assert.assertEquals("category label", "category", axis.getLabel());
         Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("category label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        CategoryLabelPosition labelPosition = chart.getCategoryPlot()
-                                                   .getDomainAxis()
-                                                   .getCategoryLabelPositions()
-                                                   .getLabelPosition(RectangleEdge.LEFT);
+        CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis().getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
         Assert.assertEquals("plot label rotation", (45d / 180) * Math.PI, labelPosition.getAngle());
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
         chart = getChart("summary.chart3", 0);
-        axis = chart.getCategoryPlot()
-                    .getRangeAxis();
+        axis = chart.getCategoryPlot().getRangeAxis();
         Assert.assertEquals("value label", "value", axis.getLabel());
         Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("value label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride()
-                                                                           .format(10));
+        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride().format(10));
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
         Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound());
         Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound());

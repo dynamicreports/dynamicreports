@@ -83,9 +83,7 @@ public class GeoMapCompiler implements ComponentCompiler {
             String evaluationGroup = geoMap.getEvaluationGroup();
             if (evaluationGroup == null || evaluationGroup.length() == 0) {
                 verifier.addBrokenRule("No evaluation group set for geo map", geoMap);
-            } else if (!verifier.getReportDesign()
-                                .getGroupsMap()
-                                .containsKey(evaluationGroup)) {
+            } else if (!verifier.getReportDesign().getGroupsMap().containsKey(evaluationGroup)) {
                 verifier.addBrokenRule("Map evalution group \"" + evaluationGroup + " not found", geoMap);
             }
         }

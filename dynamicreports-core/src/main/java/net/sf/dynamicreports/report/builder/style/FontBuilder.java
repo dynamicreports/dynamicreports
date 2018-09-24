@@ -45,8 +45,8 @@ public class FontBuilder extends AbstractBuilder<FontBuilder, DRFont> {
      * <p>Constructor for FontBuilder.</p>
      *
      * @param fontName a {@link java.lang.String} object.
-     * @param bold a {@link java.lang.Boolean} object.
-     * @param italic a {@link java.lang.Boolean} object.
+     * @param bold     a {@link java.lang.Boolean} object.
+     * @param italic   a {@link java.lang.Boolean} object.
      * @param fontSize a {@link java.lang.Integer} object.
      */
     protected FontBuilder(String fontName, Boolean bold, Boolean italic, Integer fontSize) {

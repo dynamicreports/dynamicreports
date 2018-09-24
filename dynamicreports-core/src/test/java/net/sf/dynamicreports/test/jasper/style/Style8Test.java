@@ -51,17 +51,12 @@ public class Style8Test extends AbstractJasperStyleTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setColumnStyle(stl.style(stl.pen1Point())
-                             .bold())
-          .columns(column1 = col.booleanColumn("field1"), column2 = col.booleanColumn("field2")
-                                                                       .setComponentType(BooleanComponentType.IMAGE_STYLE_1)
-                                                                       .setHorizontalImageAlignment(HorizontalImageAlignment.RIGHT), column3 = col.booleanColumn("field3")
-                                                                                                                                                  .setComponentType(BooleanComponentType.IMAGE_STYLE_1)
-                                                                                                                                                  .setStyle(stl.style(stl.pen2Point())
-                                                                                                                                                               .setHorizontalImageAlignment(
-                                                                                                                                                                   HorizontalImageAlignment.CENTER)
-                                                                                                                                                               .setVerticalImageAlignment(
-                                                                                                                                                                   VerticalImageAlignment.MIDDLE)),
+        rb.setColumnStyle(stl.style(stl.pen1Point()).bold())
+          .columns(column1 = col.booleanColumn("field1"),
+                   column2 = col.booleanColumn("field2").setComponentType(BooleanComponentType.IMAGE_STYLE_1).setHorizontalImageAlignment(HorizontalImageAlignment.RIGHT), column3 =
+                       col.booleanColumn("field3")
+                          .setComponentType(BooleanComponentType.IMAGE_STYLE_1)
+                          .setStyle(stl.style(stl.pen2Point()).setHorizontalImageAlignment(HorizontalImageAlignment.CENTER).setVerticalImageAlignment(VerticalImageAlignment.MIDDLE)),
                    column4 = col.column("field4", type.stringType()));
     }
 

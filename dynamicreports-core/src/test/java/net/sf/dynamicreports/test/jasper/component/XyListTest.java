@@ -42,29 +42,18 @@ public class XyListTest extends AbstractJasperPositionTest {
         list1.add(10, 10, cmp.text(""));
         list1.add(50, 15, cmp.text(""));
 
-        XyListBuilder list2 = cmp.xyList()
-                                 .setStyle(style);
+        XyListBuilder list2 = cmp.xyList().setStyle(style);
         list2.add(10, 10, cmp.text(""));
         list2.add(50, 15, cmp.text(""));
-        list2.add(200, 5, cmp.horizontalList(cmp.text(""), cmp.text(""))
-                             .setWidth(100));
-        list2.add(350, 5, cmp.verticalList(cmp.text(""), cmp.text(""))
-                             .setWidth(150));
+        list2.add(200, 5, cmp.horizontalList(cmp.text(""), cmp.text("")).setWidth(100));
+        list2.add(350, 5, cmp.verticalList(cmp.text(""), cmp.text("")).setWidth(150));
 
         XyListBuilder list3 = cmp.xyList();
-        list3.add(10, 10, cmp.horizontalList(cmp.text("")
-                                                .setWidth(50), cmp.text(""))
-                             .newRow()
-                             .add(cmp.text("")));
-        list3.add(200, 10, cmp.xyList()
-                              .add(5, 5, cmp.horizontalList(cmp.text(""), cmp.text(""))));
+        list3.add(10, 10, cmp.horizontalList(cmp.text("").setWidth(50), cmp.text("")).newRow().add(cmp.text("")));
+        list3.add(200, 10, cmp.xyList().add(5, 5, cmp.horizontalList(cmp.text(""), cmp.text(""))));
 
-        XyListBuilder list4 = cmp.xyList()
-                                 .setStyle(style)
-                                 .setFixedWidth(250);
-        list4.add(100, 10, cmp.xyList()
-                              .setStyle(style)
-                              .add(5, 5, cmp.verticalList(cmp.text(""), cmp.text(""))));
+        XyListBuilder list4 = cmp.xyList().setStyle(style).setFixedWidth(250);
+        list4.add(100, 10, cmp.xyList().setStyle(style).add(5, 5, cmp.verticalList(cmp.text(""), cmp.text(""))));
 
         rb.title(list1, list2, list3, list4);
     }

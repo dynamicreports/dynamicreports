@@ -59,16 +59,13 @@ public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRID
     @Override
     public DRIDesignGeoMap designComponent(DesignTransformAccessor accessor, DRIGeoMap geoMap, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignGeoMap designGeoMap = new DRDesignGeoMap();
-        designGeoMap.setEvaluationTime(accessor.getComponentTransform()
-                                               .evaluationTimeFromResetType(resetType));
+        designGeoMap.setEvaluationTime(accessor.getComponentTransform().evaluationTimeFromResetType(resetType));
         designGeoMap.setEvaluationGroup(resetGroup);
 
         designGeoMap.setShowLegend(geoMap.getShowLegend());
         designGeoMap.setDataMode(geoMap.getDataMode());
-        designGeoMap.setRegionExpression(accessor.getExpressionTransform()
-                                                 .transformExpression(geoMap.getRegionExpression()));
-        designGeoMap.setValueLabelExpression(accessor.getExpressionTransform()
-                                                     .transformExpression(geoMap.getValueLabelExpression()));
+        designGeoMap.setRegionExpression(accessor.getExpressionTransform().transformExpression(geoMap.getRegionExpression()));
+        designGeoMap.setValueLabelExpression(accessor.getExpressionTransform().transformExpression(geoMap.getValueLabelExpression()));
         designGeoMap.setColors(geoMap.getColors());
         designGeoMap.setDataset(dataset(accessor, geoMap.getDataset(), resetType, resetGroup));
 
@@ -78,15 +75,11 @@ public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRID
     private DRDesignGeoMapDataset dataset(DesignTransformAccessor accessor, DRIGeoMapDataset dataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignGeoMapDataset designDataset = new DRDesignGeoMapDataset();
 
-        designDataset.setSubDataset(accessor.getDatasetTransform()
-                                            .transform(dataset.getSubDataset()));
+        designDataset.setSubDataset(accessor.getDatasetTransform().transform(dataset.getSubDataset()));
         accessor.transformToDataset(dataset.getSubDataset());
-        designDataset.setLocationExpression(accessor.getExpressionTransform()
-                                                    .transformExpression(dataset.getLocationExpression()));
-        designDataset.setValueExpression(accessor.getExpressionTransform()
-                                                 .transformExpression(dataset.getValueExpression()));
-        designDataset.setLabelExpression(accessor.getExpressionTransform()
-                                                 .transformExpression(dataset.getLabelExpression()));
+        designDataset.setLocationExpression(accessor.getExpressionTransform().transformExpression(dataset.getLocationExpression()));
+        designDataset.setValueExpression(accessor.getExpressionTransform().transformExpression(dataset.getValueExpression()));
+        designDataset.setLabelExpression(accessor.getExpressionTransform().transformExpression(dataset.getLabelExpression()));
         if (resetType != null && resetType.equals(ResetType.NONE)) {
             designDataset.setResetType(ResetType.REPORT);
         } else {
@@ -107,16 +100,12 @@ public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRID
         EvaluationTime evaluationTime = geoMap.getEvaluationTime();
         jrGeoMap.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && geoMap.getEvaluationGroup() != null) {
-            jrGeoMap.setEvaluationGroup(accessor.getGroupTransform()
-                                                .getGroup(geoMap.getEvaluationGroup())
-                                                .getName());
+            jrGeoMap.setEvaluationGroup(accessor.getGroupTransform().getGroup(geoMap.getEvaluationGroup()).getName());
         }
         jrGeoMap.setShowLegend(geoMap.getShowLegend());
         jrGeoMap.setDataMode(geoMap.getDataMode());
-        jrGeoMap.setRegionExpression(accessor.getExpressionTransform()
-                                             .getExpression(geoMap.getRegionExpression()));
-        jrGeoMap.setValueLabelExpression(accessor.getExpressionTransform()
-                                                 .getExpression(geoMap.getValueLabelExpression()));
+        jrGeoMap.setRegionExpression(accessor.getExpressionTransform().getExpression(geoMap.getRegionExpression()));
+        jrGeoMap.setValueLabelExpression(accessor.getExpressionTransform().getExpression(geoMap.getValueLabelExpression()));
         jrGeoMap.setColors(geoMap.getColors());
         StandardGeoMapDataset jrDataset = new StandardGeoMapDataset();
         dataset(accessor, geoMap.getDataset(), jrDataset);
@@ -130,22 +119,17 @@ public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRID
     }
 
     private void dataset(JasperTransformAccessor accessor, DRIDesignGeoMapDataset dataset, StandardGeoMapDataset jrDataset) {
-        jrDataset.setDatasetRun(accessor.getDatasetTransform()
-                                        .datasetRun(dataset.getSubDataset()));
+        jrDataset.setDatasetRun(accessor.getDatasetTransform().datasetRun(dataset.getSubDataset()));
         ResetType resetType = dataset.getResetType();
         jrDataset.setResetType(ConstantTransform.variableResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
-            jrDataset.setResetGroup(accessor.getGroupTransform()
-                                            .getGroup(dataset.getResetGroup()));
+            jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
         }
 
         accessor.transformToDataset(dataset.getSubDataset());
-        jrDataset.setLocationExpression(accessor.getExpressionTransform()
-                                                .getExpression(dataset.getLocationExpression()));
-        jrDataset.setValueExpression(accessor.getExpressionTransform()
-                                             .getExpression(dataset.getValueExpression()));
-        jrDataset.setLabelExpression(accessor.getExpressionTransform()
-                                             .getExpression(dataset.getLabelExpression()));
+        jrDataset.setLocationExpression(accessor.getExpressionTransform().getExpression(dataset.getLocationExpression()));
+        jrDataset.setValueExpression(accessor.getExpressionTransform().getExpression(dataset.getValueExpression()));
+        jrDataset.setLabelExpression(accessor.getExpressionTransform().getExpression(dataset.getLabelExpression()));
         accessor.transformToMainDataset();
     }
 }

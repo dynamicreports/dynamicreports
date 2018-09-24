@@ -49,11 +49,9 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport())
-                                              .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
 
-        rb.title(cmp.subreport(titleSubreport()))
-          .detail(detailSubreport);
+        rb.title(cmp.subreport(titleSubreport())).detail(detailSubreport);
     }
 
     @Override
@@ -82,16 +80,14 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
     private JasperReportBuilder titleSubreport() {
         JasperReportBuilder report = report();
         column1 = col.column("Column1", "field1", type.stringType());
-        report.columns(column1)
-              .setDataSource(titleSubreportDataSource());
+        report.columns(column1).setDataSource(titleSubreportDataSource());
         return report;
     }
 
     private JasperReportBuilder detailSubreport() {
         JasperReportBuilder report = report();
         column2 = col.column(new ValueExpression());
-        report.columns(column2)
-              .title(cmp.text(new SubreportTitleExpression()));
+        report.columns(column2).title(cmp.text(new SubreportTitleExpression()));
         return report;
     }
 
@@ -117,8 +113,7 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return "Subreport" + reportParameters.getMasterParameters()
-                                                 .getReportRowNumber();
+            return "Subreport" + reportParameters.getMasterParameters().getReportRowNumber();
         }
     }
 
@@ -127,8 +122,7 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return reportParameters.getMasterParameters()
-                                   .getReportRowNumber() + "_" + reportParameters.getReportRowNumber();
+            return reportParameters.getMasterParameters().getReportRowNumber() + "_" + reportParameters.getReportRowNumber();
         }
     }
 }

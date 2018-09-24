@@ -61,10 +61,8 @@ public class TemplateStyleFileReport {
     }
 
     private void build() {
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setStyle(stl.templateStyle("style1"));
-        TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType())
-                                                     .setStyle(stl.templateStyle("style2"));
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(stl.templateStyle("style1"));
+        TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType()).setStyle(stl.templateStyle("style2"));
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 

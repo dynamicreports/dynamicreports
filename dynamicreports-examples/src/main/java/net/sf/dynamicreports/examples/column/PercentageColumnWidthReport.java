@@ -59,19 +59,11 @@ public class PercentageColumnWidthReport {
 
     private void build() {
         try {
-            report().setTemplate(Templates.reportTemplate)
-                    .columns(col.column("Item", "item", type.stringType())
-                                .setWidth(50), // 50%
-                             col.column("Quantity", "quantity", type.integerType())
-                                .setWidth(10), // 10%
-                             col.column("Unit price", "unitprice", type.bigDecimalType())
-                                .setWidth(15), // 15%
-                             col.column("Order date", "orderdate", type.dateType())
-                                .setWidth(25)) // 25%
-                    .title(Templates.createTitleComponent("PercentageColumnWidth"))
-                    .pageFooter(Templates.footerComponent)
-                    .setDataSource(createDataSource())
-                    .show();
+            report().setTemplate(Templates.reportTemplate).columns(col.column("Item", "item", type.stringType()).setWidth(50), // 50%
+                                                                   col.column("Quantity", "quantity", type.integerType()).setWidth(10), // 10%
+                                                                   col.column("Unit price", "unitprice", type.bigDecimalType()).setWidth(15), // 15%
+                                                                   col.column("Order date", "orderdate", type.dateType()).setWidth(25)) // 25%
+                    .title(Templates.createTitleComponent("PercentageColumnWidth")).pageFooter(Templates.footerComponent).setDataSource(createDataSource()).show();
         } catch (DRException e) {
             e.printStackTrace();
         }

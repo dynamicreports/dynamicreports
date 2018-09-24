@@ -73,27 +73,19 @@ public class SubtotalTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public void transform() throws DRException {
-        ColumnGrid title = accessor.getColumnGridTransform()
-                                   .createColumnGrid();
-        ColumnGrid pageHeader = accessor.getColumnGridTransform()
-                                        .createColumnGrid();
-        ColumnGrid pageFooter = accessor.getColumnGridTransform()
-                                        .createColumnGrid();
-        ColumnGrid columnHeader = accessor.getColumnGridTransform()
-                                          .createColumnGrid();
-        ColumnGrid columnFooter = accessor.getColumnGridTransform()
-                                          .createColumnGrid();
+        ColumnGrid title = accessor.getColumnGridTransform().createColumnGrid();
+        ColumnGrid pageHeader = accessor.getColumnGridTransform().createColumnGrid();
+        ColumnGrid pageFooter = accessor.getColumnGridTransform().createColumnGrid();
+        ColumnGrid columnHeader = accessor.getColumnGridTransform().createColumnGrid();
+        ColumnGrid columnFooter = accessor.getColumnGridTransform().createColumnGrid();
         Map<DRIGroup, ColumnGrid> groupHeader = new HashMap<DRIGroup, ColumnGrid>();
         Map<DRIGroup, ColumnGrid> groupFooter = new HashMap<DRIGroup, ColumnGrid>();
-        ColumnGrid lastPageFooter = accessor.getColumnGridTransform()
-                                            .createColumnGrid();
-        ColumnGrid summary = accessor.getColumnGridTransform()
-                                     .createColumnGrid();
+        ColumnGrid lastPageFooter = accessor.getColumnGridTransform().createColumnGrid();
+        ColumnGrid summary = accessor.getColumnGridTransform().createColumnGrid();
 
         HorizontalCellComponentAlignment horizontalAlignment = HorizontalCellComponentAlignment.FLOAT;
         VerticalCellComponentAlignment verticalAlignment = VerticalCellComponentAlignment.TOP;
-        for (DRISubtotal<?> subtotal : accessor.getReport()
-                                               .getSubtotals()) {
+        for (DRISubtotal<?> subtotal : accessor.getReport().getSubtotals()) {
             SubtotalPosition position = subtotal.getPosition();
             DRIColumn<?> showInColumn = subtotal.getShowInColumn();
             DRDesignTextField subtotalValueComponent = valueComponent(subtotal);
@@ -118,43 +110,35 @@ public class SubtotalTransform {
                     columnFooter.addComponent(showInColumn, horizontalAlignment, verticalAlignment, subtotalComponent);
                     break;
                 case GROUP_HEADER:
-                    EvaluationTime evaluationTime = accessor.getComponentTransform()
-                                                            .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                    EvaluationTime evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                     if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                         subtotalValueComponent.setEvaluationTime(EvaluationTime.GROUP);
-                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform()
-                                                                          .getGroup(subtotal.getGroup()));
+                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform().getGroup(subtotal.getGroup()));
                     }
                     getGroupGrid(subtotal.getGroup(), groupHeader).addComponent(showInColumn, horizontalAlignment, verticalAlignment, subtotalComponent);
                     break;
                 case GROUP_FOOTER:
-                    evaluationTime = accessor.getComponentTransform()
-                                             .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                    evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                     if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                         subtotalValueComponent.setEvaluationTime(EvaluationTime.NOW);
                     }
                     getGroupGrid(subtotal.getGroup(), groupFooter).addComponent(showInColumn, horizontalAlignment, verticalAlignment, subtotalComponent);
                     break;
                 case FIRST_GROUP_HEADER:
-                    DRIGroup firstGroup = accessor.getGroupTransform()
-                                                  .getFirstGroup();
-                    evaluationTime = accessor.getComponentTransform()
-                                             .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                    DRIGroup firstGroup = accessor.getGroupTransform().getFirstGroup();
+                    evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                     if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                         subtotalValueComponent.setEvaluationTime(EvaluationTime.GROUP);
-                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform()
-                                                                          .getGroup(firstGroup));
+                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform().getGroup(firstGroup));
                     }
                     if (firstGroup != null) {
                         getGroupGrid(firstGroup, groupHeader).addComponent(showInColumn, horizontalAlignment, verticalAlignment, subtotalComponent);
                     }
                     break;
                 case FIRST_GROUP_FOOTER:
-                    firstGroup = accessor.getGroupTransform()
-                                         .getFirstGroup();
+                    firstGroup = accessor.getGroupTransform().getFirstGroup();
                     if (firstGroup != null) {
-                        evaluationTime = accessor.getComponentTransform()
-                                                 .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                        evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                         if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                             subtotalValueComponent.setEvaluationTime(EvaluationTime.NOW);
                         }
@@ -162,25 +146,20 @@ public class SubtotalTransform {
                     }
                     break;
                 case LAST_GROUP_HEADER:
-                    DRIGroup lastGroup = accessor.getGroupTransform()
-                                                 .getLastGroup();
-                    evaluationTime = accessor.getComponentTransform()
-                                             .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                    DRIGroup lastGroup = accessor.getGroupTransform().getLastGroup();
+                    evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                     if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                         subtotalValueComponent.setEvaluationTime(EvaluationTime.GROUP);
-                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform()
-                                                                          .getGroup(lastGroup));
+                        subtotalValueComponent.setEvaluationGroup(accessor.getGroupTransform().getGroup(lastGroup));
                     }
                     if (lastGroup != null) {
                         getGroupGrid(lastGroup, groupHeader).addComponent(showInColumn, horizontalAlignment, verticalAlignment, subtotalComponent);
                     }
                     break;
                 case LAST_GROUP_FOOTER:
-                    lastGroup = accessor.getGroupTransform()
-                                        .getLastGroup();
+                    lastGroup = accessor.getGroupTransform().getLastGroup();
                     if (lastGroup != null) {
-                        evaluationTime = accessor.getComponentTransform()
-                                                 .detectEvaluationTime(subtotalValueComponent.getValueExpression());
+                        evaluationTime = accessor.getComponentTransform().detectEvaluationTime(subtotalValueComponent.getValueExpression());
                         if (evaluationTime == null || !evaluationTime.equals(EvaluationTime.AUTO)) {
                             subtotalValueComponent.setEvaluationTime(EvaluationTime.NOW);
                         }
@@ -202,29 +181,20 @@ public class SubtotalTransform {
         DRFiller filler = null;
         TemplateTransform templateTransform = accessor.getTemplateTransform();
         if (templateTransform.getPageColumnsPerPage() > 1) {
-            int fillerWidth = accessor.getPageTransform()
-                                      .getMaxBandWidth() - accessor.getPageTransform()
-                                                                   .getPage()
-                                                                   .getColumnWidth();
+            int fillerWidth = accessor.getPageTransform().getMaxBandWidth() - accessor.getPageTransform().getPage().getColumnWidth();
             filler = new DRFiller();
             filler.setWidth(fillerWidth);
         }
 
-        addAfterBandComponent(accessor.getBandTransform()
-                                      .getTitleBand(), title, filler);
-        addAfterBandComponent(accessor.getBandTransform()
-                                      .getPageHeaderBand(), pageHeader, filler);
-        addBeforeBandComponent(accessor.getBandTransform()
-                                       .getPageFooterBand(), pageFooter, filler);
-        addAfterBandComponent(accessor.getBandTransform()
-                                      .getColumnHeaderBand(), columnHeader, null);
-        addBeforeBandComponent(accessor.getBandTransform()
-                                       .getColumnFooterBand(), columnFooter, null);
+        addAfterBandComponent(accessor.getBandTransform().getTitleBand(), title, filler);
+        addAfterBandComponent(accessor.getBandTransform().getPageHeaderBand(), pageHeader, filler);
+        addBeforeBandComponent(accessor.getBandTransform().getPageFooterBand(), pageFooter, filler);
+        addAfterBandComponent(accessor.getBandTransform().getColumnHeaderBand(), columnHeader, null);
+        addBeforeBandComponent(accessor.getBandTransform().getColumnFooterBand(), columnFooter, null);
         for (Entry<DRIGroup, ColumnGrid> entry : groupHeader.entrySet()) {
             DRIGroup group = entry.getKey();
             DRIBand bnd = group.getHeaderBand();
-            DRDesignGroup designGroup = accessor.getGroupTransform()
-                                                .getGroup(group);
+            DRDesignGroup designGroup = accessor.getGroupTransform().getGroup(group);
             DRDesignBand band = accessor.getBandTransform()
                                         .band("subtotalGroupHeader", bnd, templateTransform.getGroupHeaderSplitType(bnd), templateTransform.getGroupHeaderStyle(bnd),
                                               templateTransform.getGroupHeaderBackgroundComponent(bnd));
@@ -235,8 +205,7 @@ public class SubtotalTransform {
         for (Entry<DRIGroup, ColumnGrid> entry : groupFooter.entrySet()) {
             DRIGroup group = entry.getKey();
             DRIBand bnd = group.getFooterBand();
-            DRDesignGroup designGroup = accessor.getGroupTransform()
-                                                .getGroup(group);
+            DRDesignGroup designGroup = accessor.getGroupTransform().getGroup(group);
             DRDesignBand band = accessor.getBandTransform()
                                         .band("subtotalGroupFooter", bnd, templateTransform.getGroupFooterSplitType(bnd), templateTransform.getGroupFooterStyle(bnd),
                                               templateTransform.getGroupFooterBackgroundComponent(bnd));
@@ -244,10 +213,8 @@ public class SubtotalTransform {
             setPrintGroupSubtotalsWhenExpression(group, entry.getValue());
             designGroup.addFooterBand(0, band);
         }
-        addBeforeBandComponent(accessor.getBandTransform()
-                                       .getLastPageFooterBand(), lastPageFooter, filler);
-        addBeforeBandComponent(accessor.getBandTransform()
-                                       .getSummaryBand(), summary, filler);
+        addBeforeBandComponent(accessor.getBandTransform().getLastPageFooterBand(), lastPageFooter, filler);
+        addBeforeBandComponent(accessor.getBandTransform().getSummaryBand(), summary, filler);
     }
 
     private DRDesignComponent subtotalWithLabelComponent(DRISubtotal<?> subtotal, DRDesignComponent subtotalComponent) throws DRException {
@@ -255,8 +222,7 @@ public class SubtotalTransform {
         VerticalCellComponentAlignment verticalAlignment = VerticalCellComponentAlignment.TOP;
         DRDesignList list = new DRDesignList();
 
-        Position labelPosition = accessor.getTemplateTransform()
-                                         .getSubtotalLabelPosition(subtotal);
+        Position labelPosition = accessor.getTemplateTransform().getSubtotalLabelPosition(subtotal);
         switch (labelPosition) {
             case TOP:
                 list.setType(ListType.VERTICAL);
@@ -303,8 +269,7 @@ public class SubtotalTransform {
 
     private ColumnGrid getGroupGrid(DRIGroup group, Map<DRIGroup, ColumnGrid> groupList) throws DRException {
         if (!groupList.containsKey(group)) {
-            groupList.put(group, accessor.getColumnGridTransform()
-                                         .createColumnGrid());
+            groupList.put(group, accessor.getColumnGridTransform().createColumnGrid());
         }
         return groupList.get(group);
     }
@@ -314,9 +279,7 @@ public class SubtotalTransform {
         if (grid.isEmpty() || printSubtotalsWhenExpression == null) {
             return;
         }
-        grid.getList()
-            .setPrintWhenExpression(accessor.getExpressionTransform()
-                                            .transformExpression(printSubtotalsWhenExpression));
+        grid.getList().setPrintWhenExpression(accessor.getExpressionTransform().transformExpression(printSubtotalsWhenExpression));
     }
 
     private void addAfterBandComponent(DRDesignBand band, ColumnGrid grid, DRFiller filler) throws DRException {
@@ -327,8 +290,7 @@ public class SubtotalTransform {
         if (filler != null) {
             list = new DRDesignList();
             list.addComponent(grid.getList());
-            list.addComponent(HorizontalCellComponentAlignment.LEFT, null, accessor.getComponentTransform()
-                                                                                   .filler(filler));
+            list.addComponent(HorizontalCellComponentAlignment.LEFT, null, accessor.getComponentTransform().filler(filler));
         }
 
         band.addComponent(list);
@@ -342,8 +304,7 @@ public class SubtotalTransform {
         if (filler != null) {
             list = new DRDesignList();
             list.addComponent(grid.getList());
-            list.addComponent(HorizontalCellComponentAlignment.LEFT, null, accessor.getComponentTransform()
-                                                                                   .filler(filler));
+            list.addComponent(HorizontalCellComponentAlignment.LEFT, null, accessor.getComponentTransform().filler(filler));
         }
         band.addComponent(0, list);
     }
@@ -354,25 +315,17 @@ public class SubtotalTransform {
         @SuppressWarnings("rawtypes") DRTextField labelField = new DRTextField();
         labelField.setValueExpression(subtotal.getLabelExpression());
         labelField.setStyle(subtotal.getLabelStyle());
-        labelField.setWidth(accessor.getTemplateTransform()
-                                    .getColumnWidth(subtotal.getShowInColumn(), accessor.getStyleTransform()
-                                                                                        .getDefaultStyle(DefaultStyleType.COLUMN)));
-        DRDesignTextField designLabelField = accessor.getComponentTransform()
-                                                     .textField(labelField, DefaultStyleType.TEXT);
-        designLabelField.setUniqueName("column_" + subtotal.getShowInColumn()
-                                                           .getName() + ".subtotal.label");
+        labelField.setWidth(accessor.getTemplateTransform().getColumnWidth(subtotal.getShowInColumn(), accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN)));
+        DRDesignTextField designLabelField = accessor.getComponentTransform().textField(labelField, DefaultStyleType.TEXT);
+        designLabelField.setUniqueName("column_" + subtotal.getShowInColumn().getName() + ".subtotal.label");
         return designLabelField;
     }
 
     // value
     private DRDesignTextField valueComponent(DRISubtotal<?> subtotal) throws DRException {
-        DRDesignTextField designValueField = accessor.getComponentTransform()
-                                                     .textField(subtotal.getValueField(), DefaultStyleType.SUBTOTAL);
-        designValueField.setUniqueName("column_" + subtotal.getShowInColumn()
-                                                           .getName() + ".subtotal");
-        designValueField.setWidth(accessor.getTemplateTransform()
-                                          .getColumnWidth(subtotal.getShowInColumn(), accessor.getStyleTransform()
-                                                                                              .getDefaultStyle(DefaultStyleType.COLUMN)));
+        DRDesignTextField designValueField = accessor.getComponentTransform().textField(subtotal.getValueField(), DefaultStyleType.SUBTOTAL);
+        designValueField.setUniqueName("column_" + subtotal.getShowInColumn().getName() + ".subtotal");
+        designValueField.setWidth(accessor.getTemplateTransform().getColumnWidth(subtotal.getShowInColumn(), accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN)));
         return designValueField;
     }
 }

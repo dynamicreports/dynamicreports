@@ -50,10 +50,10 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
     /**
      * <p>Constructor for BooleanImageExpression.</p>
      *
-     * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
+     * @param booleanField       a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
      * @param emptyWhenNullValue a boolean.
-     * @param width a int.
-     * @param height a int.
+     * @param width              a int.
+     * @param height             a int.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public BooleanImageExpression(DRIBooleanField booleanField, boolean emptyWhenNullValue, int width, int height) throws DRException {
@@ -91,8 +91,7 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
                 fileNameFalse = "ball_red";
                 break;
             default:
-                throw new DRDesignReportException("BooleanComponentType " + booleanField.getComponentType()
-                                                                                        .name() + " not supported");
+                throw new DRDesignReportException("BooleanComponentType " + booleanField.getComponentType().name() + " not supported");
         }
         try {
             imageTrue = new CustomBatikRenderer(ReportUtils.class.getResource("images/" + fileNameTrue + ".svg"), width, height);
@@ -102,7 +101,9 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Renderable evaluate(List<?> values, ReportParameters reportParameters) {
         Boolean value = (Boolean) values.get(0);

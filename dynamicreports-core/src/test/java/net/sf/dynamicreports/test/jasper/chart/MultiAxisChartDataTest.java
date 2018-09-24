@@ -55,28 +55,13 @@ public class MultiAxisChartDataTest extends AbstractJasperChartTest implements S
         FieldBuilder<Integer> field2 = field("field2", type.integerType());
         FieldBuilder<Integer> field3 = field("field3", type.integerType());
 
-        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart()
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field2)
-                                                      .setLabel("serie1"));
+        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
 
-        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart()
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field3)
-                                                      .setLabel("serie2"));
+        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field3).setLabel("serie2"));
 
-        TimeSeriesChartBuilder chart3 = cht.timeSeriesChart()
-                                           .setDataSource(createDataSource2())
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field2)
-                                                      .setLabel("serie1"));
+        TimeSeriesChartBuilder chart3 = cht.timeSeriesChart().setDataSource(createDataSource2()).setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
 
-        rb.summary(cht.multiAxisChart(chart1, chart2)
-                      .setDataSource(createDataSource1()), cht.multiAxisChart(chart3, chart2)
-                                                              .setDataSource(createDataSource1()));
+        rb.summary(cht.multiAxisChart(chart1, chart2).setDataSource(createDataSource1()), cht.multiAxisChart(chart3, chart2).setDataSource(createDataSource1()));
     }
 
     @Override
@@ -86,62 +71,36 @@ public class MultiAxisChartDataTest extends AbstractJasperChartTest implements S
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot()
-                                       .getRenderer();
+        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-        TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                                                   .getDataset(0);
-        TimeSeries serie = (TimeSeries) dataset.getSeries()
-                                               .get(0);
-        Assert.assertEquals("value", 1d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 2d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 3d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(3)
-                                              .getValue());
-        dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                              .getDataset(1);
-        serie = (TimeSeries) dataset.getSeries()
-                                    .get(0);
-        Assert.assertEquals("value", 0d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 1d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 9d, serie.getDataItem(3)
-                                              .getValue());
+        TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
+        TimeSeries serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 1d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 2d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 3d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(3).getValue());
+        dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(1);
+        serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 0d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 1d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 9d, serie.getDataItem(3).getValue());
 
         chart = getChart("summary.chart2", 0);
-        renderer = chart.getXYPlot()
-                        .getRenderer();
+        renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-        dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                              .getDataset(0);
-        serie = (TimeSeries) dataset.getSeries()
-                                    .get(0);
-        Assert.assertEquals("value", 2d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 3d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 5d, serie.getDataItem(3)
-                                              .getValue());
-        dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                              .getDataset(1);
-        serie = (TimeSeries) dataset.getSeries()
-                                    .get(0);
-        Assert.assertEquals("value", 0d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 1d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 9d, serie.getDataItem(3)
-                                              .getValue());
+        dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
+        serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 2d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 3d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 5d, serie.getDataItem(3).getValue());
+        dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(1);
+        serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 0d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 1d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 9d, serie.getDataItem(3).getValue());
     }
 
     public JRDataSource createDataSource1() {

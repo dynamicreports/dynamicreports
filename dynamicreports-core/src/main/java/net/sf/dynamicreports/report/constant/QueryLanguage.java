@@ -28,16 +28,28 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public class QueryLanguage {
-    /** Constant <code>SQL="sql"</code> */
+    /**
+     * Constant <code>SQL="sql"</code>
+     */
     public static final String SQL = "sql";
-    /** Constant <code>HQL="hql"</code> */
+    /**
+     * Constant <code>HQL="hql"</code>
+     */
     public static final String HQL = "hql";
-    /** Constant <code>XPATH="xPath"</code> */
+    /**
+     * Constant <code>XPATH="xPath"</code>
+     */
     public static final String XPATH = "xPath";
-    /** Constant <code>MDX="mdx"</code> */
+    /**
+     * Constant <code>MDX="mdx"</code>
+     */
     public static final String MDX = "mdx";
-    /** Constant <code>EJBQL="ejbql"</code> */
+    /**
+     * Constant <code>EJBQL="ejbql"</code>
+     */
     public static final String EJBQL = "ejbql";
-    /** Constant <code>CSV="csv"</code> */
+    /**
+     * Constant <code>CSV="csv"</code>
+     */
     public static final String CSV = "csv";
 }

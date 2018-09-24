@@ -150,8 +150,7 @@ public abstract class AbstractJasperTest {
     }
 
     private int getNumberOfPages() {
-        return jasperPrint.getPages()
-                          .size();
+        return jasperPrint.getPages().size();
     }
 
     protected JRPrintElement getElementAt(String key, int index) {
@@ -166,12 +165,10 @@ public abstract class AbstractJasperTest {
     protected List<JRPrintElement> findElement(String key) {
         List<JRPrintElement> elements = new ArrayList<JRPrintElement>();
         for (
-            Iterator<?> iterator = jasperPrint.getPages()
-                                              .iterator(); iterator.hasNext(); ) {
+            Iterator<?> iterator = jasperPrint.getPages().iterator(); iterator.hasNext(); ) {
             JRPrintPage page = (JRPrintPage) iterator.next();
             for (
-                Iterator<?> iterator2 = page.getElements()
-                                            .iterator(); iterator2.hasNext(); ) {
+                Iterator<?> iterator2 = page.getElements().iterator(); iterator2.hasNext(); ) {
                 JRPrintElement element = (JRPrintElement) iterator2.next();
                 findElement(key, elements, element);
             }
@@ -185,8 +182,7 @@ public abstract class AbstractJasperTest {
         }
         if (element instanceof JRPrintFrame) {
             for (
-                Iterator<?> iterator = ((JRPrintFrame) element).getElements()
-                                                               .iterator(); iterator.hasNext(); ) {
+                Iterator<?> iterator = ((JRPrintFrame) element).getElements().iterator(); iterator.hasNext(); ) {
                 JRPrintElement element2 = (JRPrintElement) iterator.next();
                 findElement(key, elements, element2);
             }
@@ -195,11 +191,9 @@ public abstract class AbstractJasperTest {
 
     protected void containsElement(String key, int pageIndex) {
         List<JRPrintElement> elements = new ArrayList<JRPrintElement>();
-        JRPrintPage page = getJasperPrint().getPages()
-                                           .get(pageIndex);
+        JRPrintPage page = getJasperPrint().getPages().get(pageIndex);
         for (
-            Iterator<?> iterator = page.getElements()
-                                       .iterator(); iterator.hasNext(); ) {
+            Iterator<?> iterator = page.getElements().iterator(); iterator.hasNext(); ) {
             JRPrintElement element = (JRPrintElement) iterator.next();
             findElement(key, elements, element);
         }

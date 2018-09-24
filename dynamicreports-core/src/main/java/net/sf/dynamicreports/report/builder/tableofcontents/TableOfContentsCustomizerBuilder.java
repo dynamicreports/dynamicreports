@@ -58,8 +58,7 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setTitleStyle(ReportStyleBuilder titleStyle) {
-        this.getObject()
-            .setTitleStyle(titleStyle);
+        this.getObject().setTitleStyle(titleStyle);
         return this;
     }
 
@@ -70,21 +69,19 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setHeadingStyle(ReportStyleBuilder headingStyle) {
-        this.getObject()
-            .setHeadingStyle(headingStyle);
+        this.getObject().setHeadingStyle(headingStyle);
         return this;
     }
 
     /**
      * <p>setHeadingStyle.</p>
      *
-     * @param level a int.
+     * @param level        a int.
      * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setHeadingStyle(int level, ReportStyleBuilder headingStyle) {
-        this.getObject()
-            .setHeadingStyle(level, headingStyle);
+        this.getObject().setHeadingStyle(level, headingStyle);
         return this;
     }
 
@@ -95,8 +92,7 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setTextFixedWidth(Integer textFixedWidth) {
-        this.getObject()
-            .setTextFixedWidth(textFixedWidth);
+        this.getObject().setTextFixedWidth(textFixedWidth);
         return this;
     }
 
@@ -107,8 +103,7 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setDotsFixedWidth(Integer dotsFixedWidth) {
-        this.getObject()
-            .setDotsFixedWidth(dotsFixedWidth);
+        this.getObject().setDotsFixedWidth(dotsFixedWidth);
         return this;
     }
 
@@ -119,8 +114,7 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setPageIndexFixedWidth(Integer pageIndexFixedWidth) {
-        this.getObject()
-            .setPageIndexFixedWidth(pageIndexFixedWidth);
+        this.getObject().setPageIndexFixedWidth(pageIndexFixedWidth);
         return this;
     }
 
@@ -131,8 +125,7 @@ public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfCon
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
      */
     public TableOfContentsCustomizerBuilder setPosition(TableOfContentsPosition position) {
-        this.getObject()
-            .setPosition(position);
+        this.getObject().setPosition(position);
         return this;
     }
 }

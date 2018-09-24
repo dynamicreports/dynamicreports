@@ -78,30 +78,17 @@ public class ShippingLabelDesign {
 
         ShippingLabel shippingLabel = data.getShippingLabel();
 
-        StyleBuilder textStyle = stl.style()
-                                    .setFontSize(12);
-        bold14Style = stl.style(Templates.boldStyle)
-                         .setFontSize(14);
-        StyleBuilder boldCentered30Style = stl.style(bold14Style)
-                                              .setFontSize(30)
-                                              .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder boldCentered100Style = stl.style(boldCentered30Style)
-                                               .setFontSize(100);
+        StyleBuilder textStyle = stl.style().setFontSize(12);
+        bold14Style = stl.style(Templates.boldStyle).setFontSize(14);
+        StyleBuilder boldCentered30Style = stl.style(bold14Style).setFontSize(30).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder boldCentered100Style = stl.style(boldCentered30Style).setFontSize(100);
 
-        Ean128BarcodeBuilder shippingContainerCode = bcode.ean128("100264835710351")
-                                                          .setModuleWidth(2.5)
-                                                          .setStyle(bold14Style);
-        Code128BarcodeBuilder shipToPostalCode = bcode.code128("09820")
-                                                      .setModuleWidth(3d)
-                                                      .setStyle(bold14Style);
-        TextFieldBuilder<Integer> priority = cmp.text(shippingLabel.getPriority())
-                                                .setStyle(boldCentered100Style);
-        TextFieldBuilder<String> pod = cmp.text(shippingLabel.getPod())
-                                          .setStyle(boldCentered30Style);
-        TextFieldBuilder<Date> dateShipped = cmp.text(exp.date(shippingLabel.getDateShipped()))
-                                                .setDataType(type.dateType());
-        TextFieldBuilder<String> po = cmp.text(shippingLabel.getPo())
-                                         .setStyle(boldCentered30Style);
+        Ean128BarcodeBuilder shippingContainerCode = bcode.ean128("100264835710351").setModuleWidth(2.5).setStyle(bold14Style);
+        Code128BarcodeBuilder shipToPostalCode = bcode.code128("09820").setModuleWidth(3d).setStyle(bold14Style);
+        TextFieldBuilder<Integer> priority = cmp.text(shippingLabel.getPriority()).setStyle(boldCentered100Style);
+        TextFieldBuilder<String> pod = cmp.text(shippingLabel.getPod()).setStyle(boldCentered30Style);
+        TextFieldBuilder<Date> dateShipped = cmp.text(exp.date(shippingLabel.getDateShipped())).setDataType(type.dateType());
+        TextFieldBuilder<String> po = cmp.text(shippingLabel.getPo()).setStyle(boldCentered30Style);
 
         report.setTemplate(Templates.reportTemplate)
               .setPageFormat(PageType.A5)
@@ -124,8 +111,7 @@ public class ShippingLabelDesign {
     }
 
     private ComponentBuilder<?, ?> createCellComponent(String label, ComponentBuilder<?, ?> content) {
-        VerticalListBuilder cell = cmp.verticalList(cmp.text(label)
-                                                       .setStyle(bold14Style), cmp.horizontalList(cmp.horizontalGap(20), content, cmp.horizontalGap(5)));
+        VerticalListBuilder cell = cmp.verticalList(cmp.text(label).setStyle(bold14Style), cmp.horizontalList(cmp.horizontalGap(20), content, cmp.horizontalGap(5)));
         cell.setStyle(stl.style(stl.pen2Point()));
         return cell;
     }

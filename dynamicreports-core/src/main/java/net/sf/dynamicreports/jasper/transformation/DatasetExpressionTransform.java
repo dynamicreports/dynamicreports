@@ -52,8 +52,8 @@ public class DatasetExpressionTransform extends AbstractExpressionTransform {
     /**
      * <p>Constructor for DatasetExpressionTransform.</p>
      *
-     * @param dataset a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-     * @param jrDataset a {@link net.sf.jasperreports.engine.design.JRDesignDataset} object.
+     * @param dataset      a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     * @param jrDataset    a {@link net.sf.jasperreports.engine.design.JRDesignDataset} object.
      * @param customValues a {@link net.sf.dynamicreports.jasper.base.JasperCustomValues} object.
      */
     public DatasetExpressionTransform(DRIDesignDataset dataset, JRDesignDataset jrDataset, JasperCustomValues customValues) {
@@ -62,67 +62,89 @@ public class DatasetExpressionTransform extends AbstractExpressionTransform {
         this.customValues = customValues;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected JasperCustomValues getCustomValues() {
         return customValues;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignField> getFields() {
         return dataset.getFields();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignVariable> getVariables() {
         return dataset.getVariables();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignSystemExpression> getSystemExpressions() {
         return dataset.getSystemExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignJasperExpression> getJasperExpressions() {
         return dataset.getJasperExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignSimpleExpression> getSimpleExpressions() {
         return dataset.getSimpleExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignComplexExpression> getComplexExpressions() {
         return dataset.getComplexExpressions();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Collection<DRIDesignSort> getSorts() {
         return dataset.getSorts();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void addField(JRDesignField field) throws JRException {
         jrDataset.addField(field);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void addVariable(JRDesignVariable variable) throws JRException {
         jrDataset.addVariable(variable);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void addSort(JRDesignSortField sort) throws JRException {
         jrDataset.addSortField(sort);

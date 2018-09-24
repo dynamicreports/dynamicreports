@@ -55,34 +55,21 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style()
-                                    .setForegroundColor(Color.BLACK)
-                                    .setPadding(2);
-        StyleBuilder columnStyle = stl.style(textStyle)
-                                      .italic();
+        StyleBuilder textStyle = stl.style().setForegroundColor(Color.BLACK).setPadding(2);
+        StyleBuilder columnStyle = stl.style(textStyle).italic();
 
         StyleBuilder columnStyle1 = stl.style(columnStyle)
-                                       .conditionalStyles(stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7))
-                                                             .bold(), stl.conditionalStyle(new ConditionExpression(16))
-                                                                         .setBackgroundColor(Color.ORANGE));
+                                       .conditionalStyles(stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7)).bold(),
+                                                          stl.conditionalStyle(new ConditionExpression(16)).setBackgroundColor(Color.ORANGE));
 
-        StyleBuilder columnStyle2 = stl.style(columnStyle)
-                                       .bold();
-        StyleBuilder titleStyle0 = stl.style(textStyle)
-                                      .bold();
-        StyleBuilder titleStyle = stl.style(titleStyle0)
-                                     .setBottomBorder(stl.pen2Point());
-        StyleBuilder columnTitleStyle3 = stl.style(titleStyle)
-                                            .setBorder(stl.pen2Point());
-        StyleBuilder subtotalStyle = stl.style(textStyle)
-                                        .bold()
-                                        .setTopBorder(stl.pen1Point())
-                                        .setBackgroundColor(Color.YELLOW);
+        StyleBuilder columnStyle2 = stl.style(columnStyle).bold();
+        StyleBuilder titleStyle0 = stl.style(textStyle).bold();
+        StyleBuilder titleStyle = stl.style(titleStyle0).setBottomBorder(stl.pen2Point());
+        StyleBuilder columnTitleStyle3 = stl.style(titleStyle).setBorder(stl.pen2Point());
+        StyleBuilder subtotalStyle = stl.style(textStyle).bold().setTopBorder(stl.pen1Point()).setBackgroundColor(Color.YELLOW);
 
-        rb.columns(column1 = col.column("Column1", "field1", Integer.class)
-                                .setStyle(columnStyle1), column2 = col.column("Column2", "field2", Integer.class)
-                                                                      .setStyle(columnStyle2), column3 = col.column("Column3", "field3", Integer.class)
-                                                                                                            .setTitleStyle(columnTitleStyle3))
+        rb.columns(column1 = col.column("Column1", "field1", Integer.class).setStyle(columnStyle1), column2 = col.column("Column2", "field2", Integer.class).setStyle(columnStyle2),
+                   column3 = col.column("Column3", "field3", Integer.class).setTitleStyle(columnTitleStyle3))
           .setTextStyle(textStyle)
           .setColumnTitleStyle(titleStyle)
           .setColumnStyle(columnStyle)
@@ -90,16 +77,8 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
           .setHighlightDetailOddRows(true)
           .setHighlightDetailEvenRows(true)
           .subtotalsAtSummary(subtotal1 = sbt.sum(column1))
-          .detailRowHighlighters(stl.conditionalStyle(new ConditionExpression(5, 16))
-                                    .setBackgroundColor(Color.RED), stl.conditionalStyle(new ConditionExpression(2, 9))
-                                                                       .setForegroundColor(Color.RED))
-          .title(cmp.horizontalList()
-                    .setStyle(stl.style(stl.pen1Point()))
-                    .add(cmp.text("text")
-                            .setStyle(stl.style(textStyle)
-                                         .setBold(true)
-                                         .setFontSize(15)))
-                    .add(cmp.text("text")));
+          .detailRowHighlighters(stl.conditionalStyle(new ConditionExpression(5, 16)).setBackgroundColor(Color.RED), stl.conditionalStyle(new ConditionExpression(2, 9)).setForegroundColor(Color.RED))
+          .title(cmp.horizontalList().setStyle(stl.style(stl.pen1Point())).add(cmp.text("text").setStyle(stl.style(textStyle).setBold(true).setFontSize(15))).add(cmp.text("text")));
     }
 
     @Override

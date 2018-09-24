@@ -38,7 +38,7 @@ public class FieldBuilder<T> extends AbstractBuilder<FieldBuilder<T>, DRField<T>
     /**
      * <p>Constructor for FieldBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     protected FieldBuilder(String name, Class<? super T> valueClass) {
@@ -76,7 +76,9 @@ public class FieldBuilder<T> extends AbstractBuilder<FieldBuilder<T>, DRField<T>
         return build();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getField().getName();

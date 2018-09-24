@@ -73,13 +73,10 @@ public class DatasetTransform {
         datasetExpressionTransform.transform();
         DRDesignDataset designDataset = new DRDesignDataset(datasetExpressionTransform);
         if (dataset.getQuery() != null) {
-            designDataset.setQuery(accessor.getReportTransform()
-                                           .query(dataset.getQuery()));
+            designDataset.setQuery(accessor.getReportTransform().query(dataset.getQuery()));
         }
-        designDataset.setConnectionExpression(accessor.getExpressionTransform()
-                                                      .transformExpression(dataset.getConnectionExpression()));
-        designDataset.setDataSourceExpression(accessor.getExpressionTransform()
-                                                      .transformExpression(dataset.getDataSourceExpression()));
+        designDataset.setConnectionExpression(accessor.getExpressionTransform().transformExpression(dataset.getConnectionExpression()));
+        designDataset.setDataSourceExpression(accessor.getExpressionTransform().transformExpression(dataset.getDataSourceExpression()));
         designDataset.setFilterExpression(datasetExpressionTransform.transformExpression(dataset.getFilterExpression(), JasperScriptlet.SCRIPTLET_NAME));
 
         addDataset(dataset, designDataset);
@@ -94,8 +91,7 @@ public class DatasetTransform {
      * @return a {@link net.sf.dynamicreports.design.transformation.DatasetExpressionTransform} object.
      */
     public DatasetExpressionTransform getDatasetExpressionTransform(DRIDataset dataset) {
-        return designDatasets.get(dataset)
-                             .getDatasetExpressionTransform();
+        return designDatasets.get(dataset).getDatasetExpressionTransform();
     }
 
     /**

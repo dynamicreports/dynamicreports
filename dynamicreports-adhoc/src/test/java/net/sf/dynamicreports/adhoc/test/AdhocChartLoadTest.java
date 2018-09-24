@@ -70,187 +70,111 @@ public class AdhocChartLoadTest extends AdhocTests {
             Assert.fail(e.getMessage());
         }
 
-        DRChart chart = (DRChart) customizer.getComponents()
-                                            .get(0)
-                                            .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(0), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart1"));
+        DRChart chart = (DRChart) customizer.getComponents().get(0).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(0), adhocConfiguration.getReport().getComponent("chart1"));
         Assert.assertEquals("chart type", ChartType.AREA, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart category", ((DRCategoryDataset) chart.getDataset()).getValueExpression());
-        DRIChartSerie chartSerie = ((DRCategoryDataset) chart.getDataset()).getSeries()
-                                                                           .get(0);
+        DRIChartSerie chartSerie = ((DRCategoryDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRICategoryChartSerie) chartSerie).getValueExpression());
         Assert.assertNotNull("chart serie label", ((DRICategoryChartSerie) chartSerie).getLabelExpression());
-        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                                  .get(0));
+        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors().get(0));
         Assert.assertNotNull("chart category axis format", ((DRAxisPlot) chart.getPlot()).getXAxisFormat());
         Assert.assertNotNull("chart value axis format", ((DRAxisPlot) chart.getPlot()).getYAxisFormat());
-        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                .getLabelExpression());
-        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                     .getLabelFont());
-        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                                 .getLabelColor());
+        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertEquals("chart orientation", Orientation.VERTICAL, ((DRAxisPlot) chart.getPlot()).getOrientation());
         Assert.assertTrue("chart use series as category", ((DRCategoryDataset) chart.getDataset()).getUseSeriesAsCategory());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(1)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(1), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart2"));
+        chart = (DRChart) customizer.getComponents().get(1).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(1), adhocConfiguration.getReport().getComponent("chart2"));
         Assert.assertEquals("chart type", ChartType.TIMESERIES, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart time value", ((DRTimeSeriesDataset) chart.getDataset()).getValueExpression());
-        chartSerie = ((DRTimeSeriesDataset) chart.getDataset()).getSeries()
-                                                               .get(0);
+        chartSerie = ((DRTimeSeriesDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRICategoryChartSerie) chartSerie).getValueExpression());
         Assert.assertNotNull("chart serie label", ((DRICategoryChartSerie) chartSerie).getLabelExpression());
-        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                                  .get(0));
+        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors().get(0));
         Assert.assertNotNull("chart category axis format", ((DRAxisPlot) chart.getPlot()).getXAxisFormat());
         Assert.assertNotNull("chart value axis format", ((DRAxisPlot) chart.getPlot()).getYAxisFormat());
-        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                .getLabelExpression());
-        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                     .getLabelFont());
-        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                                 .getLabelColor());
+        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertEquals("chart orientation", Orientation.VERTICAL, ((DRAxisPlot) chart.getPlot()).getOrientation());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(2)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(2), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart3"));
+        chart = (DRChart) customizer.getComponents().get(2).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(2), adhocConfiguration.getReport().getComponent("chart3"));
         Assert.assertEquals("chart type", ChartType.PIE, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart key value", ((DRSeriesDataset) chart.getDataset()).getValueExpression());
-        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries()
-                                                           .get(0);
+        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRICategoryChartSerie) chartSerie).getValueExpression());
         Assert.assertNotNull("chart serie label", ((DRICategoryChartSerie) chartSerie).getLabelExpression());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(3)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(3), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart4"));
+        chart = (DRChart) customizer.getComponents().get(3).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(3), adhocConfiguration.getReport().getComponent("chart4"));
         Assert.assertEquals("chart type", ChartType.XYBAR, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart time value", ((DRSeriesDataset) chart.getDataset()).getValueExpression());
-        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries()
-                                                           .get(0);
+        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRIXyChartSerie) chartSerie).getYValueExpression());
         Assert.assertNotNull("chart serie label", ((DRIXyChartSerie) chartSerie).getLabelExpression());
-        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                                  .get(0));
+        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors().get(0));
         Assert.assertNotNull("chart category axis format", ((DRAxisPlot) chart.getPlot()).getXAxisFormat());
         Assert.assertNotNull("chart value axis format", ((DRAxisPlot) chart.getPlot()).getYAxisFormat());
-        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                .getLabelExpression());
-        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                     .getLabelFont());
-        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                                 .getLabelColor());
+        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertEquals("chart orientation", Orientation.VERTICAL, ((DRAxisPlot) chart.getPlot()).getOrientation());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(4)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(4), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart5"));
+        chart = (DRChart) customizer.getComponents().get(4).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(4), adhocConfiguration.getReport().getComponent("chart5"));
         Assert.assertEquals("chart type", ChartType.SPIDER, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart time value", ((DRCategoryDataset) chart.getDataset()).getValueExpression());
-        chartSerie = ((DRCategoryDataset) chart.getDataset()).getSeries()
-                                                             .get(0);
+        chartSerie = ((DRCategoryDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRICategoryChartSerie) chartSerie).getValueExpression());
         Assert.assertNotNull("chart serie label", ((DRICategoryChartSerie) chartSerie).getLabelExpression());
 
-        chart = (DRChart) customizer.getComponents()
-                                    .get(5)
-                                    .getComponent();
-        Assert.assertEquals("component key", adhocConfiguration.getReport()
-                                                               .getComponents()
-                                                               .get(5), adhocConfiguration.getReport()
-                                                                                          .getComponent("chart6"));
+        chart = (DRChart) customizer.getComponents().get(5).getComponent();
+        Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(5), adhocConfiguration.getReport().getComponent("chart6"));
         Assert.assertEquals("chart type", ChartType.BUBBLE, chart.getChartType());
-        Assert.assertNotNull("chart title", chart.getTitle()
-                                                 .getTitle());
-        Assert.assertNotNull("chart title font", chart.getTitle()
-                                                      .getFont());
-        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle()
-                                                                     .getColor());
-        Assert.assertTrue("chart show legend", chart.getLegend()
-                                                    .getShowLegend());
+        Assert.assertNotNull("chart title", chart.getTitle().getTitle());
+        Assert.assertNotNull("chart title font", chart.getTitle().getFont());
+        Assert.assertEquals("chart title color", Color.MAGENTA, chart.getTitle().getColor());
+        Assert.assertTrue("chart show legend", chart.getLegend().getShowLegend());
         Assert.assertNotNull("chart time value", ((DRSeriesDataset) chart.getDataset()).getValueExpression());
-        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries()
-                                                           .get(0);
+        chartSerie = ((DRSeriesDataset) chart.getDataset()).getSeries().get(0);
         Assert.assertNotNull("chart serie series", chartSerie.getSeriesExpression());
         Assert.assertNotNull("chart serie value", ((DRIXyzChartSerie) chartSerie).getYValueExpression());
         Assert.assertNotNull("chart serie label", ((DRIXyzChartSerie) chartSerie).getZValueExpression());
-        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors()
-                                                                                                  .get(0));
+        Assert.assertEquals("chart series color", Color.LIGHT_GRAY, ((DRAxisPlot) chart.getPlot()).getSeriesColors().get(0));
         Assert.assertNotNull("chart category axis format", ((DRAxisPlot) chart.getPlot()).getXAxisFormat());
         Assert.assertNotNull("chart value axis format", ((DRAxisPlot) chart.getPlot()).getYAxisFormat());
-        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                .getLabelExpression());
-        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                     .getLabelFont());
-        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat()
-                                                                                                 .getLabelColor());
+        Assert.assertNotNull("axis format label", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelExpression());
+        Assert.assertNotNull("axis format label font", ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelFont());
+        Assert.assertEquals("axis format label color", Color.BLUE, ((DRAxisPlot) chart.getPlot()).getXAxisFormat().getLabelColor());
         Assert.assertEquals("chart orientation", Orientation.VERTICAL, ((DRAxisPlot) chart.getPlot()).getOrientation());
     }
 

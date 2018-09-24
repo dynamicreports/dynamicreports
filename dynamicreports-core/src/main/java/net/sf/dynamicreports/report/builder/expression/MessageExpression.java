@@ -49,7 +49,7 @@ public class MessageExpression extends AbstractSimpleExpression<String> {
     /**
      * <p>Constructor for MessageExpression.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key       a {@link java.lang.String} object.
      * @param arguments an array of {@link java.lang.Object} objects.
      */
     public MessageExpression(String key, Object[] arguments) {
@@ -57,7 +57,9 @@ public class MessageExpression extends AbstractSimpleExpression<String> {
         this.arguments = arguments;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String evaluate(ReportParameters reportParameters) {
         return reportParameters.getMessage(key, arguments);

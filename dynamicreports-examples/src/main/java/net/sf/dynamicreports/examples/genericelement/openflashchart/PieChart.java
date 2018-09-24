@@ -38,7 +38,9 @@ public class PieChart implements ChartGenerator {
     private String[] valueColors = {"fadf12", "ed262a", "006f3c", "fa6112", "409dcf", "e5018c", "eaab35"};
     private JSONArray values = new JSONArray();
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String generateChart() {
         try {

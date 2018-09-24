@@ -86,8 +86,7 @@ public class StyleTransform {
     private void init() {
         styles = new LinkedHashMap<String, DRIDesignStyle>();
         designStyles = new HashMap<String, DRDesignStyle>();
-        templateStyles = accessor.getTemplateTransform()
-                                 .getTemplateStyles();
+        templateStyles = accessor.getTemplateTransform().getTemplateStyles();
     }
 
     private DRDesignStyle transformStyle(DRIReportStyle style, boolean textStyle) throws DRException {
@@ -97,8 +96,8 @@ public class StyleTransform {
     /**
      * <p>transformStyle.</p>
      *
-     * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-     * @param textStyle a boolean.
+     * @param style            a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @param textStyle        a boolean.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
      * @return a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -115,49 +114,31 @@ public class StyleTransform {
         DRDesignStyle designStyle = style(getStyle(style), textStyle, defaultStyleType);
         if (textStyle) {
             if (StyleResolver.getFontName(designStyle) == null) {
-                designStyle.getFont()
-                           .setFontName(accessor.getTemplateTransform()
-                                                .getDefaultFontName());
+                designStyle.getFont().setFontName(accessor.getTemplateTransform().getDefaultFontName());
             }
             if (StyleResolver.getFontSize(designStyle) == null) {
-                designStyle.getFont()
-                           .setFontSize(accessor.getTemplateTransform()
-                                                .getDefaultFontSize());
+                designStyle.getFont().setFontSize(accessor.getTemplateTransform().getDefaultFontSize());
             }
             if (StyleResolver.getFontBold(designStyle) == null) {
-                designStyle.getFont()
-                           .setBold(accessor.getTemplateTransform()
-                                            .getDefaultFontBold());
+                designStyle.getFont().setBold(accessor.getTemplateTransform().getDefaultFontBold());
             }
             if (StyleResolver.getFontItalic(designStyle) == null) {
-                designStyle.getFont()
-                           .setItalic(accessor.getTemplateTransform()
-                                              .getDefaultFontItalic());
+                designStyle.getFont().setItalic(accessor.getTemplateTransform().getDefaultFontItalic());
             }
             if (StyleResolver.getFontUnderline(designStyle) == null) {
-                designStyle.getFont()
-                           .setUnderline(accessor.getTemplateTransform()
-                                                 .getDefaultFontUnderline());
+                designStyle.getFont().setUnderline(accessor.getTemplateTransform().getDefaultFontUnderline());
             }
             if (StyleResolver.getFontStrikeThrough(designStyle) == null) {
-                designStyle.getFont()
-                           .setStrikeThrough(accessor.getTemplateTransform()
-                                                     .getDefaultFontStrikeThrough());
+                designStyle.getFont().setStrikeThrough(accessor.getTemplateTransform().getDefaultFontStrikeThrough());
             }
             if (StyleResolver.getPdfFontName(designStyle) == null) {
-                designStyle.getFont()
-                           .setPdfFontName(accessor.getTemplateTransform()
-                                                   .getDefaultFontPdfFontName());
+                designStyle.getFont().setPdfFontName(accessor.getTemplateTransform().getDefaultFontPdfFontName());
             }
             if (StyleResolver.getPdfEncoding(designStyle) == null) {
-                designStyle.getFont()
-                           .setPdfEncoding(accessor.getTemplateTransform()
-                                                   .getDefaultFontPdfEncoding());
+                designStyle.getFont().setPdfEncoding(accessor.getTemplateTransform().getDefaultFontPdfEncoding());
             }
             if (StyleResolver.getPdfEmbedded(designStyle) == null) {
-                designStyle.getFont()
-                           .setPdfEmbedded(accessor.getTemplateTransform()
-                                                   .getDefaultFontPdfEmbedded());
+                designStyle.getFont().setPdfEmbedded(accessor.getTemplateTransform().getDefaultFontPdfEmbedded());
             }
         }
         addStyle(styleName, designStyle);
@@ -226,8 +207,7 @@ public class StyleTransform {
             }
             return style;
         }
-        throw new DRDesignReportException("Style " + reportStyle.getClass()
-                                                                .getName() + " not supported");
+        throw new DRDesignReportException("Style " + reportStyle.getClass().getName() + " not supported");
     }
 
     /**
@@ -247,10 +227,8 @@ public class StyleTransform {
     private DRDesignConditionalStyle conditionalStyle(DRIConditionalStyle conditionalStyle) throws DRException {
         DRDesignConditionalStyle designConditionalStyle = new DRDesignConditionalStyle();
         baseStyle(designConditionalStyle, conditionalStyle);
-        designConditionalStyle.setConditionExpression(accessor.getExpressionTransform()
-                                                              .transformExpression(conditionalStyle.getConditionExpression()));
-        designConditionalStyle.setDataset(accessor.getExpressionTransform()
-                                                  .getDataset());
+        designConditionalStyle.setConditionExpression(accessor.getExpressionTransform().transformExpression(conditionalStyle.getConditionExpression()));
+        designConditionalStyle.setDataset(accessor.getExpressionTransform().getDataset());
         return designConditionalStyle;
     }
 
@@ -369,8 +347,7 @@ public class StyleTransform {
             return;
         }
         if (styles.containsKey(designStyle.getName())) {
-            if (!styles.get(designStyle.getName())
-                       .equals(designStyle)) {
+            if (!styles.get(designStyle.getName()).equals(designStyle)) {
                 throw new DRDesignReportException("Duplicate declaration of style \"" + designStyle.getName() + "\"");
             }
             return;
@@ -382,7 +359,7 @@ public class StyleTransform {
     /**
      * <p>copyStyle.</p>
      *
-     * @param toStyle a {@link net.sf.dynamicreports.report.base.style.DRBaseStyle} object.
+     * @param toStyle   a {@link net.sf.dynamicreports.report.base.style.DRBaseStyle} object.
      * @param fromStyle a {@link net.sf.dynamicreports.report.definition.style.DRIBaseStyle} object.
      */
     public void copyStyle(DRBaseStyle toStyle, DRIBaseStyle fromStyle) {

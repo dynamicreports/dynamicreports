@@ -67,36 +67,22 @@ public class SimpleReport_Step07 {
     }
 
     private void build() {
-        StyleBuilder boldStyle = stl.style()
-                                    .bold();
-        StyleBuilder boldCenteredStyle = stl.style(boldStyle)
-                                            .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle)
-                                           .setBorder(stl.pen1Point())
-                                           .setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder boldStyle = stl.style().bold();
+        StyleBuilder boldCenteredStyle = stl.style(boldStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
 
         // title, field name data type
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setStyle(boldStyle);
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
         // price = unitPrice * quantity
-        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn)
-                                                                   .setTitle("Price");
+        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn).setTitle("Price");
         PercentageColumnBuilder pricePercColumn = col.percentageColumn("Price %", priceColumn);
         TextColumnBuilder<Integer> rowNumberColumn = col.reportRowNumberColumn("No.")
                                                         // sets the fixed width of a column, width = 2 * character width
-                                                        .setFixedColumns(2)
-                                                        .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        Bar3DChartBuilder itemChart = cht.bar3DChart()
-                                         .setTitle("Sales by item")
-                                         .setCategory(itemColumn)
-                                         .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
-        Bar3DChartBuilder itemChart2 = cht.bar3DChart()
-                                          .setTitle("Sales by item")
-                                          .setCategory(itemColumn)
-                                          .setUseSeriesAsCategory(true)
-                                          .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+                                                        .setFixedColumns(2).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        Bar3DChartBuilder itemChart = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+        Bar3DChartBuilder itemChart2 = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).setUseSeriesAsCategory(true).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
@@ -108,10 +94,8 @@ public class SimpleReport_Step07 {
                     .groupBy(itemColumn)
                     .subtotalsAtSummary(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
-                    .title(cmp.text("Getting started")
-                              .setStyle(boldCenteredStyle))// shows report title
-                    .pageFooter(cmp.pageXofY()
-                                   .setStyle(boldCenteredStyle))// shows number of page at page footer
+                    .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
+                    .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .summary(cmp.horizontalList(itemChart, itemChart2))
                     .setDataSource(createDataSource())// set datasource
                     .show();// create and show report

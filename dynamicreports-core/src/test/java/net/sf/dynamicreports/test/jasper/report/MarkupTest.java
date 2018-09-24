@@ -45,16 +45,12 @@ public class MarkupTest extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style()
-                                .setMarkup(Markup.HTML);
+        StyleBuilder style = stl.style().setMarkup(Markup.HTML);
 
         rb.setColumnStyle(style)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column2)
-                                             .setLabel("subtotal <b>subtotal</b> subtotal")
-                                             .setLabelStyle(style))
-          .title(cmp.text("title <b>title</b> title")
-                    .setMarkup(Markup.HTML));
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column2).setLabel("subtotal <b>subtotal</b> subtotal").setLabelStyle(style))
+          .title(cmp.text("title <b>title</b> title").setMarkup(Markup.HTML));
     }
 
     @Override

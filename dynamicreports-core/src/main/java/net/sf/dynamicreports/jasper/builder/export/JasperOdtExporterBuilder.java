@@ -47,8 +47,7 @@ public class JasperOdtExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
      */
     public JasperOdtExporterBuilder setFlexibleRowHeight(Boolean flexibleRowHeight) {
-        this.getObject()
-            .setFlexibleRowHeight(flexibleRowHeight);
+        this.getObject().setFlexibleRowHeight(flexibleRowHeight);
         return this;
     }
 
@@ -59,8 +58,7 @@ public class JasperOdtExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder} object.
      */
     public JasperOdtExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return this;
     }
 }

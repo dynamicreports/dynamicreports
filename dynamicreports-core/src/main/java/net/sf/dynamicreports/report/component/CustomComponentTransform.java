@@ -49,9 +49,9 @@ public interface CustomComponentTransform<T extends DRIComponent, U extends DRID
     /**
      * <p>designComponent.</p>
      *
-     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
-     * @param component a T object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param accessor   a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param component  a T object.
+     * @param resetType  a {@link net.sf.dynamicreports.design.constant.ResetType} object.
      * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a U object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -61,7 +61,7 @@ public interface CustomComponentTransform<T extends DRIComponent, U extends DRID
     /**
      * <p>jasperComponent.</p>
      *
-     * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
+     * @param accessor  a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
      * @param component a U object.
      * @return a {@link net.sf.jasperreports.engine.JRComponentElement} object.
      */

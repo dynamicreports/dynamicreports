@@ -35,8 +35,7 @@ public interface DRISimpleExpression<T> extends DRIValue<T>, DRIExpression<T> {
     /**
      * Evaluates the expression.
      *
-     * @param reportParameters
-     *          access to report fields, variables, parameters, expressions, and other report values
+     * @param reportParameters access to report fields, variables, parameters, expressions, and other report values
      * @return the result of the expression evaluation
      */
     public T evaluate(ReportParameters reportParameters);

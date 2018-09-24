@@ -81,10 +81,8 @@ public class SalesCrosstabDesign {
     public JasperReportBuilder build() throws DRException {
         JasperReportBuilder report = report();
 
-        CrosstabRowGroupBuilder<String> rowStateGroup = ctab.rowGroup("state", String.class)
-                                                            .setHeaderWidth(80);
-        CrosstabRowGroupBuilder<String> rowItemGroup = ctab.rowGroup("item", String.class)
-                                                           .setHeaderWidth(80);
+        CrosstabRowGroupBuilder<String> rowStateGroup = ctab.rowGroup("state", String.class).setHeaderWidth(80);
+        CrosstabRowGroupBuilder<String> rowItemGroup = ctab.rowGroup("item", String.class).setHeaderWidth(80);
 
         CrosstabColumnGroupBuilder<Integer> columnYearGroup = ctab.columnGroup(new YearExpression());
         CrosstabColumnGroupBuilder<String> columnQuarterGroup = ctab.columnGroup(new QuarterExpression());
@@ -95,21 +93,15 @@ public class SalesCrosstabDesign {
 
         rowStateGroup.orderBy(quantityMeasure);
 
-        ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 50000))
-                                                .setForegroundColor(Color.GREEN);
-        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 300))
-                                                .setForegroundColor(Color.RED);
+        ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 50000)).setForegroundColor(Color.GREEN);
+        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 300)).setForegroundColor(Color.RED);
 
-        StyleBuilder unitPriceStyle = stl.style()
-                                         .setBorder(stl.pen1Point()
-                                                       .setLineColor(Color.BLACK))
-                                         .conditionalStyles(condition1, condition2);
+        StyleBuilder unitPriceStyle = stl.style().setBorder(stl.pen1Point().setLineColor(Color.BLACK)).conditionalStyles(condition1, condition2);
         unitPriceMeasure.setStyle(unitPriceStyle);
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setCellWidth(110)
-                                       .headerCell(cmp.text("State / Date")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Date").setStyle(Templates.boldCenteredStyle))
                                        .rowGroups(rowStateGroup, rowItemGroup)
                                        .columnGroups(columnYearGroup, columnQuarterGroup)
                                        .measures(quantityMeasure, unitPriceMeasure);

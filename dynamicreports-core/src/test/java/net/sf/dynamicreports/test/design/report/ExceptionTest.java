@@ -45,8 +45,7 @@ public class ExceptionTest {
     @Test
     public void testComponentFixedWidth() {
         ReportBuilder<?> rb1 = new DesignReportBuilder();
-        rb1.title(cmp.text("")
-                     .setFixedWidth(600));
+        rb1.title(cmp.text("").setFixedWidth(600));
         try {
             new DRDesignReport(rb1.getReport());
             Assert.fail("component fixed width exception");
@@ -54,8 +53,7 @@ public class ExceptionTest {
         }
 
         ReportBuilder<?> rb2 = new DesignReportBuilder();
-        rb2.title(cmp.horizontalList(cmp.text("")
-                                        .setFixedWidth(600)));
+        rb2.title(cmp.horizontalList(cmp.text("").setFixedWidth(600)));
         try {
             new DRDesignReport(rb2.getReport());
             Assert.fail("component fixed width exception");
@@ -63,8 +61,7 @@ public class ExceptionTest {
         }
 
         ReportBuilder<?> rb3 = new DesignReportBuilder();
-        rb3.title(cmp.horizontalFlowList(cmp.text("")
-                                            .setFixedWidth(600)));
+        rb3.title(cmp.horizontalFlowList(cmp.text("").setFixedWidth(600)));
         try {
             new DRDesignReport(rb3.getReport());
             Assert.fail("component fixed width exception");
@@ -75,8 +72,7 @@ public class ExceptionTest {
     @Test
     public void testComponentMinimumWidth() {
         ReportBuilder<?> rb1 = new DesignReportBuilder();
-        rb1.title(cmp.text("")
-                     .setMinWidth(600));
+        rb1.title(cmp.text("").setMinWidth(600));
         try {
             new DRDesignReport(rb1.getReport());
             Assert.fail("component minimum width exception");
@@ -84,8 +80,7 @@ public class ExceptionTest {
         }
 
         ReportBuilder<?> rb2 = new DesignReportBuilder();
-        rb2.title(cmp.horizontalList(cmp.text("")
-                                        .setMinWidth(600)));
+        rb2.title(cmp.horizontalList(cmp.text("").setMinWidth(600)));
         try {
             new DRDesignReport(rb2.getReport());
             Assert.fail("component fixed width exception");
@@ -93,8 +88,7 @@ public class ExceptionTest {
         }
 
         ReportBuilder<?> rb3 = new DesignReportBuilder();
-        rb3.title(cmp.horizontalFlowList(cmp.text("")
-                                            .setMinWidth(600)));
+        rb3.title(cmp.horizontalFlowList(cmp.text("").setMinWidth(600)));
         try {
             new DRDesignReport(rb3.getReport());
             Assert.fail("component fixed width exception");
@@ -106,19 +100,15 @@ public class ExceptionTest {
     public void testVariable() {
         TextColumnBuilder<Object> column = col.column("fieldName", Object.class);
         ColumnGroupBuilder group = grp.group(column);
-        ReportBuilder<?> rb1 = new DesignReportBuilder().columns(column)
-                                                        .groupBy(group)
-                                                        .variables(variable("fieldName", Object.class, Calculation.SUM).setResetGroup(group)
-                                                                                                                       .setResetType(Evaluation.REPORT));
+        ReportBuilder<?> rb1 =
+            new DesignReportBuilder().columns(column).groupBy(group).variables(variable("fieldName", Object.class, Calculation.SUM).setResetGroup(group).setResetType(Evaluation.REPORT));
         try {
             new DRDesignReport(rb1.getReport());
             Assert.fail("variable exception");
         } catch (DRException e) {
         }
 
-        ReportBuilder<?> rb2 = new DesignReportBuilder().columns(column)
-                                                        .groupBy(group)
-                                                        .variables(variable("fieldName", Object.class, Calculation.SUM).setResetType(Evaluation.GROUP));
+        ReportBuilder<?> rb2 = new DesignReportBuilder().columns(column).groupBy(group).variables(variable("fieldName", Object.class, Calculation.SUM).setResetType(Evaluation.GROUP));
         try {
             new DRDesignReport(rb2.getReport());
             Assert.fail("variable exception");

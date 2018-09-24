@@ -33,9 +33,7 @@ public class ListFixedComponents1Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.horizontalList(cmp.text("")
-                                       .setFixedWidth(50), cmp.text("")
-                                                              .setFixedWidth(100)));
+        rb.title(cmp.horizontalList(cmp.text("").setFixedWidth(50), cmp.text("").setFixedWidth(100)));
     }
 
     @Override

@@ -58,7 +58,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** Constant <code>dots=""</code> */
+    /**
+     * Constant <code>dots=""</code>
+     */
     protected static String dots;
 
     static {
@@ -107,50 +109,53 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         referenceHyperLink.setAnchor(new ReferenceExpression());
         referenceHyperLink.setType(HyperLinkType.LOCAL_ANCHOR);
 
-        pageIndexDigits = String.valueOf(headings)
-                                .length();
+        pageIndexDigits = String.valueOf(headings).length();
 
         if (titleStyle == null) {
-            titleStyle = stl.style()
-                            .bold()
-                            .setFontSize(16)
-                            .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+            titleStyle = stl.style().bold().setFontSize(16).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setReport(ReportBuilder<?> report) {
         this.report = report;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setHeadingList(List<JasperTocHeading> headingList) {
         this.headingList = headingList;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setHeadings(int headings) {
         this.headings = headings;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setLevels(int levels) {
         this.levels = levels;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize() {
         init();
 
-        report.title(title(), cmp.filler()
-                                 .setFixedHeight(20))
-              .fields(levelField, textField, referenceField, pageIndexField)
-              .detail(detailComponent());
+        report.title(title(), cmp.filler().setFixedHeight(20)).fields(levelField, textField, referenceField, pageIndexField).detail(detailComponent());
     }
 
     /**
@@ -159,8 +164,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      */
     protected ComponentBuilder<?, ?> title() {
-        return cmp.text(new SystemMessageExpression("table_of_contents"))
-                  .setStyle(titleStyle);
+        return cmp.text(new SystemMessageExpression("table_of_contents")).setStyle(titleStyle);
     }
 
     /**
@@ -189,32 +193,26 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         HorizontalListBuilder headingComponent = cmp.horizontalList();
 
         if (level > 0) {
-            headingComponent.add(cmp.filler()
-                                    .setFixedWidth(level * 10));
+            headingComponent.add(cmp.filler().setFixedWidth(level * 10));
         }
 
-        TextFieldBuilder<String> textComponent = cmp.text(textField)
-                                                    .setHyperLink(referenceHyperLink);
+        TextFieldBuilder<String> textComponent = cmp.text(textField).setHyperLink(referenceHyperLink);
         if (textFixedWidth != null) {
             textComponent.setFixedWidth(textFixedWidth);
         }
         headingComponent.add(textComponent);
 
         if (level > 0) {
-            headingComponent.add(cmp.filler()
-                                    .setFixedWidth(level * 10));
+            headingComponent.add(cmp.filler().setFixedWidth(level * 10));
         }
 
-        TextFieldBuilder<String> dotsComponent = cmp.text(dots.toString())
-                                                    .setStretchWithOverflow(false)
-                                                    .setHyperLink(referenceHyperLink);
+        TextFieldBuilder<String> dotsComponent = cmp.text(dots.toString()).setStretchWithOverflow(false).setHyperLink(referenceHyperLink);
         if (dotsFixedWidth != null) {
             dotsComponent.setFixedWidth(dotsFixedWidth);
         }
         headingComponent.add(dotsComponent);
 
-        TextFieldBuilder<Integer> pageIndexComponent = cmp.text(pageIndexField)
-                                                          .setHyperLink(referenceHyperLink);
+        TextFieldBuilder<Integer> pageIndexComponent = cmp.text(pageIndexField).setHyperLink(referenceHyperLink);
         if (pageIndexFixedWidth != null) {
             pageIndexComponent.setFixedWidth(pageIndexFixedWidth);
         } else {
@@ -256,7 +254,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
     /**
      * <p>Setter for the field <code>headingStyle</code>.</p>
      *
-     * @param level a int.
+     * @param level        a int.
      * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      */
     public void setHeadingStyle(int level, ReportStyleBuilder headingStyle) {
@@ -290,7 +288,9 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         this.pageIndexFixedWidth = pageIndexFixedWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TableOfContentsPosition getPosition() {
         return position;

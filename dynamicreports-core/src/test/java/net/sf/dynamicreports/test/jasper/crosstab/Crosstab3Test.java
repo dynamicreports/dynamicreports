@@ -54,14 +54,11 @@ public class Crosstab3Test extends AbstractJasperCrosstabValueTest implements Se
         measure1.setValueFormatter(new ValueFormatter1());
 
         CrosstabBuilder crosstab = ctab.crosstab()
-                                       .rowGroups(rowGroup = ctab.rowGroup("field1", String.class)
-                                                                 .setHeaderValueFormatter(new ValueFormatter2()))
-                                       .columnGroups(columnGroup = ctab.columnGroup("field2", String.class)
-                                                                       .setHeaderValueFormatter(new ValueFormatter2()))
+                                       .rowGroups(rowGroup = ctab.rowGroup("field1", String.class).setHeaderValueFormatter(new ValueFormatter2()))
+                                       .columnGroups(columnGroup = ctab.columnGroup("field2", String.class).setHeaderValueFormatter(new ValueFormatter2()))
                                        .measures(measure1);
 
-        rb.setLocale(Locale.ENGLISH)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
 
     @Override

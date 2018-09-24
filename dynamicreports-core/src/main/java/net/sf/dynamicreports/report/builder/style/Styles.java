@@ -54,8 +54,8 @@ public class Styles {
      * <p>font.</p>
      *
      * @param fontName a {@link java.lang.String} object.
-     * @param bold a boolean.
-     * @param italic a boolean.
+     * @param bold     a boolean.
+     * @param italic   a boolean.
      * @param fontSize a int.
      * @return a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
      */

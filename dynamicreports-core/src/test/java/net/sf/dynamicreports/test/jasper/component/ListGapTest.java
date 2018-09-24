@@ -35,10 +35,7 @@ public class ListGapTest extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setPageFormat(PageType.A5)
-          .setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .title(cmp.horizontalList(cmp.text("a"), cmp.text("a"))
-                    .setGap(250));
+        rb.setPageFormat(PageType.A5).setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).title(cmp.horizontalList(cmp.text("a"), cmp.text("a")).setGap(250));
     }
 
     @Override

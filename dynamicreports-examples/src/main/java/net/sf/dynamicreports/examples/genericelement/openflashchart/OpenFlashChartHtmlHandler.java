@@ -37,13 +37,17 @@ import java.awt.Color;
  */
 public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean toExport(JRGenericPrintElement element) {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
         String divID = "ofc" + System.identityHashCode(element);
@@ -78,7 +82,8 @@ public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
         result.append("width=\"" + width + "\" ");
         result.append("height=\"" + height + "\" ");
         result.append(
-            "name=\"open-flash-chart\" align=\"middle\" allowScriptAccess=\"sameDomain\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" /> </object> ");
+            "name=\"open-flash-chart\" align=\"middle\" allowScriptAccess=\"sameDomain\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" /> " +
+                "</object> ");
 
         return result.toString();
     }

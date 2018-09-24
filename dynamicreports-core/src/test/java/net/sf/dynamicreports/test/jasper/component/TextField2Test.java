@@ -38,14 +38,8 @@ public class TextField2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("test test", "field1", String.class)
-                                .setFixedWidth(25)
-                                .setStretchWithOverflow(false)
-                                .setTitleStretchWithOverflow(false))
-          .title(cmp.text("test test")
-                    .setFixedWidth(25)
-                    .setStretchWithOverflow(false), cmp.text("test test")
-                                                       .setFixedWidth(25));
+        rb.columns(column1 = col.column("test test", "field1", String.class).setFixedWidth(25).setStretchWithOverflow(false).setTitleStretchWithOverflow(false))
+          .title(cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false), cmp.text("test test").setFixedWidth(25));
     }
 
     @Override

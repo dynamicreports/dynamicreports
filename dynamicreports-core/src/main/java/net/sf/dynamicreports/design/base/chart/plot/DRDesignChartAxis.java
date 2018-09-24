@@ -38,7 +38,9 @@ public class DRDesignChartAxis implements DRIDesignChartAxis {
     private AxisPosition position;
     private DRIDesignChart chart;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AxisPosition getPosition() {
         return position;
@@ -53,7 +55,9 @@ public class DRDesignChartAxis implements DRIDesignChartAxis {
         this.position = position;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignChart getChart() {
         return chart;

@@ -65,8 +65,8 @@ public class DRFont implements DRIFont {
      * <p>Constructor for DRFont.</p>
      *
      * @param fontName a {@link java.lang.String} object.
-     * @param bold a boolean.
-     * @param italic a boolean.
+     * @param bold     a boolean.
+     * @param italic   a boolean.
      * @param fontSize a int.
      */
     public DRFont(String fontName, boolean bold, boolean italic, int fontSize) {
@@ -76,7 +76,9 @@ public class DRFont implements DRIFont {
         this.setFontSize(fontSize);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getFontName() {
         return fontName;
@@ -91,7 +93,9 @@ public class DRFont implements DRIFont {
         this.fontName = fontName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getBold() {
         return bold;
@@ -106,7 +110,9 @@ public class DRFont implements DRIFont {
         this.bold = bold;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getItalic() {
         return italic;
@@ -121,7 +127,9 @@ public class DRFont implements DRIFont {
         this.italic = italic;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getUnderline() {
         return underline;
@@ -136,7 +144,9 @@ public class DRFont implements DRIFont {
         this.underline = underline;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getStrikeThrough() {
         return strikeThrough;
@@ -151,7 +161,9 @@ public class DRFont implements DRIFont {
         this.strikeThrough = strikeThrough;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getFontSize() {
         return fontSize;
@@ -169,7 +181,9 @@ public class DRFont implements DRIFont {
         this.fontSize = fontSize;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPdfFontName() {
         return pdfFontName;
@@ -185,7 +199,9 @@ public class DRFont implements DRIFont {
         this.pdfFontName = pdfFontName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPdfEncoding() {
         return pdfEncoding;
@@ -201,7 +217,9 @@ public class DRFont implements DRIFont {
         this.pdfEncoding = pdfEncoding;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getPdfEmbedded() {
         return pdfEmbedded;

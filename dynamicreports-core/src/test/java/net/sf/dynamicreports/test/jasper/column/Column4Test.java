@@ -43,9 +43,8 @@ public class Column4Test extends AbstractJasperValueTest implements Serializable
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", type.stringType())
-                                .setPrintRepeatedDetailValues(false)
-                                .setPrintInFirstWholeBand(true), column2 = col.column("Column2", "field2", type.integerType()));
+        rb.columns(column1 = col.column("Column1", "field1", type.stringType()).setPrintRepeatedDetailValues(false).setPrintInFirstWholeBand(true),
+                   column2 = col.column("Column2", "field2", type.integerType()));
     }
 
     @Override

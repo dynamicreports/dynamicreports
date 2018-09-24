@@ -61,8 +61,7 @@ public class Pie3DChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
@@ -72,11 +71,7 @@ public class Pie3DChartReport {
             report().setTemplate(Templates.reportTemplate)
                     .columns(itemColumn, quantityColumn, unitPriceColumn)
                     .title(Templates.createTitleComponent("Pie3DChart"))
-                    .summary(cht.pie3DChart()
-                                .setTitle("Pie 3D chart")
-                                .setTitleFont(boldFont)
-                                .setKey(itemColumn)
-                                .series(cht.serie(unitPriceColumn)))
+                    .summary(cht.pie3DChart().setTitle("Pie 3D chart").setTitleFont(boldFont).setKey(itemColumn).series(cht.serie(unitPriceColumn)))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

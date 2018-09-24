@@ -62,8 +62,7 @@ public class CandlestickChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> seriesColumn = col.column("Series", "series", type.stringType());
         TextColumnBuilder<Date> dateColumn = col.column("Date", "date", type.dateType());
@@ -87,10 +86,8 @@ public class CandlestickChartReport {
                                 .setOpen(openColumn)
                                 .setClose(closeColumn)
                                 .setVolume(volumeColumn)
-                                .setTimeAxisFormat(cht.axisFormat()
-                                                      .setLabel("Date"))
-                                .setValueAxisFormat(cht.axisFormat()
-                                                       .setLabel("Value")))
+                                .setTimeAxisFormat(cht.axisFormat().setLabel("Date"))
+                                .setValueAxisFormat(cht.axisFormat().setLabel("Value")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

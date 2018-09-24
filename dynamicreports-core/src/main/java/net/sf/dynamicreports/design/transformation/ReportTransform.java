@@ -75,8 +75,7 @@ public class ReportTransform {
         for (DRIParameter<?> parameter : report.getParameters()) {
             parameters.add(parameter(parameter));
         }
-        filterExpression = accessor.getExpressionTransform()
-                                   .transformExpression(report.getFilterExpression(), JasperScriptlet.SCRIPTLET_NAME);
+        filterExpression = accessor.getExpressionTransform().transformExpression(report.getFilterExpression(), JasperScriptlet.SCRIPTLET_NAME);
     }
 
     /**
@@ -97,9 +96,7 @@ public class ReportTransform {
         designParameter.setName(parameter.getName());
         designParameter.setValueClass(parameter.getValueClass());
         designParameter.setValue(parameter.getValue());
-        designParameter.setExternal(accessor.getReport()
-                                            .getTemplateDesign()
-                                            .isDefinedParameter(parameter.getName()));
+        designParameter.setExternal(accessor.getReport().getTemplateDesign().isDefinedParameter(parameter.getName()));
         return designParameter;
     }
 
@@ -116,14 +113,10 @@ public class ReportTransform {
         }
 
         DRDesignHyperLink designHyperLink = new DRDesignHyperLink();
-        designHyperLink.setAnchorExpression(accessor.getExpressionTransform()
-                                                    .transformExpression(hyperLink.getAnchorExpression()));
-        designHyperLink.setPageExpression(accessor.getExpressionTransform()
-                                                  .transformExpression(hyperLink.getPageExpression()));
-        designHyperLink.setReferenceExpression(accessor.getExpressionTransform()
-                                                       .transformExpression(hyperLink.getReferenceExpression()));
-        designHyperLink.setTooltipExpression(accessor.getExpressionTransform()
-                                                     .transformExpression(hyperLink.getTooltipExpression()));
+        designHyperLink.setAnchorExpression(accessor.getExpressionTransform().transformExpression(hyperLink.getAnchorExpression()));
+        designHyperLink.setPageExpression(accessor.getExpressionTransform().transformExpression(hyperLink.getPageExpression()));
+        designHyperLink.setReferenceExpression(accessor.getExpressionTransform().transformExpression(hyperLink.getReferenceExpression()));
+        designHyperLink.setTooltipExpression(accessor.getExpressionTransform().transformExpression(hyperLink.getTooltipExpression()));
         designHyperLink.setType(hyperLink.getType());
         designHyperLink.setTarget(hyperLink.getTarget());
 

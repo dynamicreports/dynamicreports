@@ -44,9 +44,7 @@ public class ValueTypeNamesTest extends AbstractJasperValueTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(col.column("Column1", new ColumnExpression()))
-          .fields(field("field1", type.stringType()))
-          .parameters(parameter("field1", "parameterValue"));
+        rb.columns(col.column("Column1", new ColumnExpression())).fields(field("field1", type.stringType())).parameters(parameter("field1", "parameterValue"));
     }
 
     @Override

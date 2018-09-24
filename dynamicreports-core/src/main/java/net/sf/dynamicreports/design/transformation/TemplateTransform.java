@@ -144,8 +144,7 @@ public class TemplateTransform {
         if (templateDesign.getReportName() != null) {
             return templateDesign.getReportName();
         }
-        return Defaults.getDefaults()
-                       .getReportName();
+        return Defaults.getDefaults().getReportName();
     }
 
     /**
@@ -160,8 +159,7 @@ public class TemplateTransform {
         if (template.getLocale() != null) {
             return template.getLocale();
         }
-        return Defaults.getDefaults()
-                       .getLocale();
+        return Defaults.getDefaults().getLocale();
     }
 
     /**
@@ -176,8 +174,7 @@ public class TemplateTransform {
         if (template.getShowColumnTitle() != null) {
             return template.getShowColumnTitle();
         }
-        return Defaults.getDefaults()
-                       .isShowColumnTitle();
+        return Defaults.getDefaults().isShowColumnTitle();
     }
 
     /**
@@ -192,8 +189,7 @@ public class TemplateTransform {
         if (template.getShowColumnValues() != null) {
             return template.getShowColumnValues();
         }
-        return Defaults.getDefaults()
-                       .isShowColumnValues();
+        return Defaults.getDefaults().isShowColumnValues();
     }
 
     /**
@@ -226,15 +222,14 @@ public class TemplateTransform {
         if (template.getIgnorePagination() != null) {
             return template.getIgnorePagination();
         }
-        return Defaults.getDefaults()
-                       .isIgnorePagination();
+        return Defaults.getDefaults().isIgnorePagination();
     }
 
     /**
      * <p>getWhenNoDataType.</p>
      *
      * @param emptyDetail a boolean.
-     * @param noDataBand a {@link net.sf.dynamicreports.design.definition.DRIDesignBand} object.
+     * @param noDataBand  a {@link net.sf.dynamicreports.design.definition.DRIDesignBand} object.
      * @return a {@link net.sf.dynamicreports.report.constant.WhenNoDataType} object.
      */
     public WhenNoDataType getWhenNoDataType(boolean emptyDetail, DRIDesignBand noDataBand) {
@@ -253,8 +248,7 @@ public class TemplateTransform {
         if (emptyDetail) {
             return WhenNoDataType.ALL_SECTIONS_NO_DETAIL;
         }
-        return Defaults.getDefaults()
-                       .getWhenNoDataType();
+        return Defaults.getDefaults().getWhenNoDataType();
     }
 
     /**
@@ -272,8 +266,7 @@ public class TemplateTransform {
         if (template.getWhenResourceMissingType() != null) {
             return template.getWhenResourceMissingType();
         }
-        return Defaults.getDefaults()
-                       .getWhenResourceMissingType();
+        return Defaults.getDefaults().getWhenResourceMissingType();
     }
 
     /**
@@ -291,8 +284,7 @@ public class TemplateTransform {
         if (template.getTitleOnANewPage() != null) {
             return template.getTitleOnANewPage();
         }
-        return Defaults.getDefaults()
-                       .isTitleOnANewPage();
+        return Defaults.getDefaults().isTitleOnANewPage();
     }
 
     /**
@@ -310,8 +302,7 @@ public class TemplateTransform {
         if (template.getSummaryOnANewPage() != null) {
             return template.getSummaryOnANewPage();
         }
-        return Defaults.getDefaults()
-                       .isSummaryOnANewPage();
+        return Defaults.getDefaults().isSummaryOnANewPage();
     }
 
     /**
@@ -329,8 +320,7 @@ public class TemplateTransform {
         if (template.getSummaryWithPageHeaderAndFooter() != null) {
             return template.getSummaryWithPageHeaderAndFooter();
         }
-        return Defaults.getDefaults()
-                       .isSummaryWithPageHeaderAndFooter();
+        return Defaults.getDefaults().isSummaryWithPageHeaderAndFooter();
     }
 
     /**
@@ -348,8 +338,7 @@ public class TemplateTransform {
         if (template.getFloatColumnFooter() != null) {
             return template.getFloatColumnFooter();
         }
-        return Defaults.getDefaults()
-                       .isFloatColumnFooter();
+        return Defaults.getDefaults().isFloatColumnFooter();
     }
 
     /**
@@ -364,8 +353,7 @@ public class TemplateTransform {
         if (template.getPrintOrder() != null) {
             return template.getPrintOrder();
         }
-        return Defaults.getDefaults()
-                       .getPrintOrder();
+        return Defaults.getDefaults().getPrintOrder();
     }
 
     /**
@@ -380,8 +368,7 @@ public class TemplateTransform {
         if (template.getColumnDirection() != null) {
             return template.getColumnDirection();
         }
-        return Defaults.getDefaults()
-                       .getColumnDirection();
+        return Defaults.getDefaults().getColumnDirection();
     }
 
     /**
@@ -396,8 +383,7 @@ public class TemplateTransform {
         if (template.getLanguage() != null) {
             return template.getLanguage();
         }
-        return Defaults.getDefaults()
-                       .getLanguage();
+        return Defaults.getDefaults().getLanguage();
     }
 
     /**
@@ -423,8 +409,7 @@ public class TemplateTransform {
         if (template.getUseFieldNameAsDescription() != null) {
             return template.getUseFieldNameAsDescription();
         }
-        return Defaults.getDefaults()
-                       .isUseFieldNameAsDescription();
+        return Defaults.getDefaults().isUseFieldNameAsDescription();
     }
 
     // table of contents
@@ -445,8 +430,7 @@ public class TemplateTransform {
         if (template.getTableOfContents() != null) {
             return template.getTableOfContents();
         }
-        return Defaults.getDefaults()
-                       .isTableOfContents();
+        return Defaults.getDefaults().isTableOfContents();
     }
 
     /**
@@ -461,8 +445,7 @@ public class TemplateTransform {
         if (template.getTableOfContentsCustomizer() != null) {
             return template.getTableOfContentsCustomizer();
         }
-        return Defaults.getDefaults()
-                       .getTableOfContentsCustomizer();
+        return Defaults.getDefaults().getTableOfContentsCustomizer();
     }
 
     /**
@@ -475,8 +458,7 @@ public class TemplateTransform {
         if (group.getAddToTableOfContents() != null) {
             return group.getAddToTableOfContents();
         }
-        return Defaults.getDefaults()
-                       .isAddGroupToTableOfContents();
+        return Defaults.getDefaults().isAddGroupToTableOfContents();
     }
 
     // style
@@ -494,8 +476,7 @@ public class TemplateTransform {
             if (template.getDetailOddRowStyle() != null) {
                 return template.getDetailOddRowStyle();
             }
-            return Defaults.getDefaults()
-                           .getDetailOddRowStyle();
+            return Defaults.getDefaults().getDetailOddRowStyle();
         }
         return null;
     }
@@ -513,8 +494,7 @@ public class TemplateTransform {
             if (template.getDetailEvenRowStyle() != null) {
                 return template.getDetailEvenRowStyle();
             }
-            return Defaults.getDefaults()
-                           .getDetailEvenRowStyle();
+            return Defaults.getDefaults().getDetailEvenRowStyle();
         }
         return null;
     }
@@ -526,8 +506,7 @@ public class TemplateTransform {
         if (template.getHighlightDetailOddRows() != null) {
             return template.getHighlightDetailOddRows();
         }
-        return Defaults.getDefaults()
-                       .isHighlightDetailOddRows();
+        return Defaults.getDefaults().isHighlightDetailOddRows();
     }
 
     private boolean isHighlightDetailEvenRows() {
@@ -537,8 +516,7 @@ public class TemplateTransform {
         if (template.getHighlightDetailEvenRows() != null) {
             return template.getHighlightDetailEvenRows();
         }
-        return Defaults.getDefaults()
-                       .isHighlightDetailEvenRows();
+        return Defaults.getDefaults().isHighlightDetailEvenRows();
     }
 
     /**
@@ -547,19 +525,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.String} object.
      */
     protected String getDefaultFontName() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getFontName() != null) {
-            return report.getDefaultFont()
-                         .getFontName();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getFontName() != null) {
+            return report.getDefaultFont().getFontName();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getFontName() != null) {
-            return template.getDefaultFont()
-                           .getFontName();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getFontName() != null) {
+            return template.getDefaultFont().getFontName();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getFontName();
+        return Defaults.getDefaults().getFont().getFontName();
     }
 
     /**
@@ -568,19 +540,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Integer} object.
      */
     protected Integer getDefaultFontSize() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getFontSize() != null) {
-            return report.getDefaultFont()
-                         .getFontSize();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getFontSize() != null) {
+            return report.getDefaultFont().getFontSize();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getFontSize() != null) {
-            return template.getDefaultFont()
-                           .getFontSize();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getFontSize() != null) {
+            return template.getDefaultFont().getFontSize();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getFontSize();
+        return Defaults.getDefaults().getFont().getFontSize();
     }
 
     /**
@@ -589,19 +555,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Boolean} object.
      */
     protected Boolean getDefaultFontBold() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getBold() != null) {
-            return report.getDefaultFont()
-                         .getBold();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getBold() != null) {
+            return report.getDefaultFont().getBold();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getBold() != null) {
-            return template.getDefaultFont()
-                           .getBold();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getBold() != null) {
+            return template.getDefaultFont().getBold();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getBold();
+        return Defaults.getDefaults().getFont().getBold();
     }
 
     /**
@@ -610,19 +570,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Boolean} object.
      */
     protected Boolean getDefaultFontItalic() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getItalic() != null) {
-            return report.getDefaultFont()
-                         .getItalic();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getItalic() != null) {
+            return report.getDefaultFont().getItalic();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getItalic() != null) {
-            return template.getDefaultFont()
-                           .getItalic();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getItalic() != null) {
+            return template.getDefaultFont().getItalic();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getItalic();
+        return Defaults.getDefaults().getFont().getItalic();
     }
 
     /**
@@ -631,19 +585,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Boolean} object.
      */
     protected Boolean getDefaultFontUnderline() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getUnderline() != null) {
-            return report.getDefaultFont()
-                         .getUnderline();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getUnderline() != null) {
+            return report.getDefaultFont().getUnderline();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getUnderline() != null) {
-            return template.getDefaultFont()
-                           .getUnderline();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getUnderline() != null) {
+            return template.getDefaultFont().getUnderline();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getUnderline();
+        return Defaults.getDefaults().getFont().getUnderline();
     }
 
     /**
@@ -652,19 +600,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Boolean} object.
      */
     protected Boolean getDefaultFontStrikeThrough() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getStrikeThrough() != null) {
-            return report.getDefaultFont()
-                         .getStrikeThrough();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getStrikeThrough() != null) {
+            return report.getDefaultFont().getStrikeThrough();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getStrikeThrough() != null) {
-            return template.getDefaultFont()
-                           .getStrikeThrough();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getStrikeThrough() != null) {
+            return template.getDefaultFont().getStrikeThrough();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getStrikeThrough();
+        return Defaults.getDefaults().getFont().getStrikeThrough();
     }
 
     /**
@@ -673,19 +615,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.String} object.
      */
     protected String getDefaultFontPdfFontName() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getPdfFontName() != null) {
-            return report.getDefaultFont()
-                         .getPdfFontName();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getPdfFontName() != null) {
+            return report.getDefaultFont().getPdfFontName();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getPdfFontName() != null) {
-            return template.getDefaultFont()
-                           .getPdfFontName();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getPdfFontName() != null) {
+            return template.getDefaultFont().getPdfFontName();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getPdfFontName();
+        return Defaults.getDefaults().getFont().getPdfFontName();
     }
 
     /**
@@ -694,19 +630,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.String} object.
      */
     protected String getDefaultFontPdfEncoding() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getPdfEncoding() != null) {
-            return report.getDefaultFont()
-                         .getPdfEncoding();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getPdfEncoding() != null) {
+            return report.getDefaultFont().getPdfEncoding();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getPdfEncoding() != null) {
-            return template.getDefaultFont()
-                           .getPdfEncoding();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getPdfEncoding() != null) {
+            return template.getDefaultFont().getPdfEncoding();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getPdfEncoding();
+        return Defaults.getDefaults().getFont().getPdfEncoding();
     }
 
     /**
@@ -715,19 +645,13 @@ public class TemplateTransform {
      * @return a {@link java.lang.Boolean} object.
      */
     protected Boolean getDefaultFontPdfEmbedded() {
-        if (report.getDefaultFont() != null && report.getDefaultFont()
-                                                     .getPdfEmbedded() != null) {
-            return report.getDefaultFont()
-                         .getPdfEmbedded();
+        if (report.getDefaultFont() != null && report.getDefaultFont().getPdfEmbedded() != null) {
+            return report.getDefaultFont().getPdfEmbedded();
         }
-        if (template.getDefaultFont() != null && template.getDefaultFont()
-                                                         .getPdfEmbedded() != null) {
-            return template.getDefaultFont()
-                           .getPdfEmbedded();
+        if (template.getDefaultFont() != null && template.getDefaultFont().getPdfEmbedded() != null) {
+            return template.getDefaultFont().getPdfEmbedded();
         }
-        return Defaults.getDefaults()
-                       .getFont()
-                       .getPdfEmbedded();
+        return Defaults.getDefaults().getFont().getPdfEmbedded();
     }
 
     /**
@@ -742,8 +666,7 @@ public class TemplateTransform {
         if (template.getTextStyle() != null) {
             return template.getTextStyle();
         }
-        return Defaults.getDefaults()
-                       .getTextStyle();
+        return Defaults.getDefaults().getTextStyle();
     }
 
     /**
@@ -758,10 +681,8 @@ public class TemplateTransform {
         if (template.getColumnTitleStyle() != null) {
             return template.getColumnTitleStyle();
         }
-        if (Defaults.getDefaults()
-                    .getColumnTitleStyle() != null) {
-            return Defaults.getDefaults()
-                           .getColumnTitleStyle();
+        if (Defaults.getDefaults().getColumnTitleStyle() != null) {
+            return Defaults.getDefaults().getColumnTitleStyle();
         }
         return getTextStyle();
     }
@@ -779,10 +700,8 @@ public class TemplateTransform {
         if (template.getColumnStyle() != null) {
             return template.getColumnStyle();
         }
-        if (Defaults.getDefaults()
-                    .getColumnStyle() != null) {
-            return Defaults.getDefaults()
-                           .getColumnStyle();
+        if (Defaults.getDefaults().getColumnStyle() != null) {
+            return Defaults.getDefaults().getColumnStyle();
         }
         if (textStyle) {
             return getTextStyle();
@@ -802,10 +721,8 @@ public class TemplateTransform {
         if (template.getGroupTitleStyle() != null) {
             return template.getGroupTitleStyle();
         }
-        if (Defaults.getDefaults()
-                    .getGroupTitleStyle() != null) {
-            return Defaults.getDefaults()
-                           .getGroupTitleStyle();
+        if (Defaults.getDefaults().getGroupTitleStyle() != null) {
+            return Defaults.getDefaults().getGroupTitleStyle();
         }
         return getTextStyle();
     }
@@ -822,10 +739,8 @@ public class TemplateTransform {
         if (template.getGroupStyle() != null) {
             return template.getGroupStyle();
         }
-        if (Defaults.getDefaults()
-                    .getGroupStyle() != null) {
-            return Defaults.getDefaults()
-                           .getGroupStyle();
+        if (Defaults.getDefaults().getGroupStyle() != null) {
+            return Defaults.getDefaults().getGroupStyle();
         }
         return getTextStyle();
     }
@@ -842,10 +757,8 @@ public class TemplateTransform {
         if (template.getSubtotalStyle() != null) {
             return template.getSubtotalStyle();
         }
-        if (Defaults.getDefaults()
-                    .getSubtotalStyle() != null) {
-            return Defaults.getDefaults()
-                           .getSubtotalStyle();
+        if (Defaults.getDefaults().getSubtotalStyle() != null) {
+            return Defaults.getDefaults().getSubtotalStyle();
         }
         return getTextStyle();
     }
@@ -862,8 +775,7 @@ public class TemplateTransform {
         if (template.getImageStyle() != null) {
             return template.getImageStyle();
         }
-        return Defaults.getDefaults()
-                       .getImageStyle();
+        return Defaults.getDefaults().getImageStyle();
     }
 
     /**
@@ -878,8 +790,7 @@ public class TemplateTransform {
         if (template.getChartStyle() != null) {
             return template.getChartStyle();
         }
-        return Defaults.getDefaults()
-                       .getChartStyle();
+        return Defaults.getDefaults().getChartStyle();
     }
 
     /**
@@ -894,8 +805,7 @@ public class TemplateTransform {
         if (template.getBarcodeStyle() != null) {
             return template.getBarcodeStyle();
         }
-        return Defaults.getDefaults()
-                       .getBarcodeStyle();
+        return Defaults.getDefaults().getBarcodeStyle();
     }
 
     // page
@@ -915,36 +825,25 @@ public class TemplateTransform {
     }
 
     private boolean isIgnorePageWidth() {
-        if (report.getPage()
-                  .getIgnorePageWidth() != null) {
-            return report.getPage()
-                         .getIgnorePageWidth();
+        if (report.getPage().getIgnorePageWidth() != null) {
+            return report.getPage().getIgnorePageWidth();
         }
         if (template.getIgnorePageWidth() != null) {
             return template.getIgnorePageWidth();
         }
-        return Defaults.getDefaults()
-                       .isIgnorePageWidth();
+        return Defaults.getDefaults().isIgnorePageWidth();
     }
 
     private int getDynamicPageWidth() throws DRException {
         int maxPageWidth = 0;
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getTitleBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getPageHeaderBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getPageFooterBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getColumnHeaderBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getColumnFooterBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getDetailBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getLastPageFooterBand(), maxPageWidth);
-        maxPageWidth = getMaxBandWidth(accessor.getBandTransform()
-                                               .getSummaryBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getTitleBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getPageHeaderBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getPageFooterBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getColumnHeaderBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getColumnFooterBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getDetailBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getLastPageFooterBand(), maxPageWidth);
+        maxPageWidth = getMaxBandWidth(accessor.getBandTransform().getSummaryBand(), maxPageWidth);
 
         return maxPageWidth + getPageMargin().getLeft() + getPageMargin().getRight();
     }
@@ -965,10 +864,8 @@ public class TemplateTransform {
         if (accessor.getPageWidth() != null) {
             return accessor.getPageWidth();
         }
-        if (report.getPage()
-                  .getWidth() != null) {
-            return report.getPage()
-                         .getWidth();
+        if (report.getPage().getWidth() != null) {
+            return report.getPage().getWidth();
         }
         if (templateDesign.getPageWidth() != null) {
             return templateDesign.getPageWidth();
@@ -976,8 +873,7 @@ public class TemplateTransform {
         if (template.getPageWidth() != null) {
             return template.getPageWidth();
         }
-        return Defaults.getDefaults()
-                       .getPageWidth();
+        return Defaults.getDefaults().getPageWidth();
     }
 
     /**
@@ -987,10 +883,8 @@ public class TemplateTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected int getPageHeight() throws DRException {
-        if (report.getPage()
-                  .getHeight() != null) {
-            return report.getPage()
-                         .getHeight();
+        if (report.getPage().getHeight() != null) {
+            return report.getPage().getHeight();
         }
         if (templateDesign.getPageHeight() != null) {
             return templateDesign.getPageHeight();
@@ -998,8 +892,7 @@ public class TemplateTransform {
         if (template.getPageHeight() != null) {
             return template.getPageHeight();
         }
-        return Defaults.getDefaults()
-                       .getPageHeight();
+        return Defaults.getDefaults().getPageHeight();
     }
 
     /**
@@ -1009,10 +902,8 @@ public class TemplateTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected PageOrientation getPageOrientation() throws DRException {
-        if (report.getPage()
-                  .getOrientation() != null) {
-            return report.getPage()
-                         .getOrientation();
+        if (report.getPage().getOrientation() != null) {
+            return report.getPage().getOrientation();
         }
         if (templateDesign.getPageOrientation() != null) {
             return templateDesign.getPageOrientation();
@@ -1020,8 +911,7 @@ public class TemplateTransform {
         if (template.getPageOrientation() != null) {
             return template.getPageOrientation();
         }
-        return Defaults.getDefaults()
-                       .getPageOrientation();
+        return Defaults.getDefaults().getPageOrientation();
     }
 
     /**
@@ -1031,23 +921,19 @@ public class TemplateTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected DRIMargin getPageMargin() throws DRException {
-        if (report.getPage()
-                  .getMargin() != null) {
-            return report.getPage()
-                         .getMargin();
+        if (report.getPage().getMargin() != null) {
+            return report.getPage().getMargin();
         }
         if (templateDesign.getPageMargin() != null) {
             return templateDesign.getPageMargin();
         }
         if (accessor.getPageWidth() != null) {
-            return Defaults.getDefaults()
-                           .getSubreportPageMargin();
+            return Defaults.getDefaults().getSubreportPageMargin();
         }
         if (template.getPageMargin() != null) {
             return template.getPageMargin();
         }
-        return Defaults.getDefaults()
-                       .getPageMargin();
+        return Defaults.getDefaults().getPageMargin();
     }
 
     /**
@@ -1057,10 +943,8 @@ public class TemplateTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected int getPageColumnsPerPage() throws DRException {
-        if (report.getPage()
-                  .getColumnsPerPage() != null) {
-            return report.getPage()
-                         .getColumnsPerPage();
+        if (report.getPage().getColumnsPerPage() != null) {
+            return report.getPage().getColumnsPerPage();
         }
         if (templateDesign.getPageColumnsPerPage() != null) {
             return templateDesign.getPageColumnsPerPage();
@@ -1068,8 +952,7 @@ public class TemplateTransform {
         if (template.getPageColumnsPerPage() != null) {
             return template.getPageColumnsPerPage();
         }
-        return Defaults.getDefaults()
-                       .getPageColumnsPerPage();
+        return Defaults.getDefaults().getPageColumnsPerPage();
     }
 
     /**
@@ -1079,10 +962,8 @@ public class TemplateTransform {
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected int getPageColumnSpace() throws DRException {
-        if (report.getPage()
-                  .getColumnSpace() != null) {
-            return report.getPage()
-                         .getColumnSpace();
+        if (report.getPage().getColumnSpace() != null) {
+            return report.getPage().getColumnSpace();
         }
         if (templateDesign.getPageColumnSpace() != null) {
             return templateDesign.getPageColumnSpace();
@@ -1090,8 +971,7 @@ public class TemplateTransform {
         if (template.getPageColumnSpace() != null) {
             return template.getPageColumnSpace();
         }
-        return Defaults.getDefaults()
-                       .getPageColumnSpace();
+        return Defaults.getDefaults().getPageColumnSpace();
     }
 
     /**
@@ -1101,9 +981,7 @@ public class TemplateTransform {
      * @return a int.
      */
     protected int getPageColumnWidth(DRIDesignPage page) {
-        int columnWidth = page.getWidth() - page.getMargin()
-                                                .getLeft() - page.getMargin()
-                                                                 .getRight();
+        int columnWidth = page.getWidth() - page.getMargin().getLeft() - page.getMargin().getRight();
         columnWidth -= page.getColumnSpace() * (page.getColumnsPerPage() - 1);
         columnWidth = columnWidth / page.getColumnsPerPage();
         if (templateDesign.getPageColumnWidth() != null && templateDesign.getPageColumnWidth() > 0 && templateDesign.getPageColumnWidth() < columnWidth && !isIgnorePageWidth()) {
@@ -1127,25 +1005,22 @@ public class TemplateTransform {
         if (template.getColumnPrintRepeatedDetailValues() != null) {
             return template.getColumnPrintRepeatedDetailValues();
         }
-        return Defaults.getDefaults()
-                       .isColumnPrintRepeatedDetailValues();
+        return Defaults.getDefaults().isColumnPrintRepeatedDetailValues();
     }
 
     /**
      * <p>getColumnWidth.</p>
      *
      * @param column a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style  a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected int getColumnWidth(DRIColumn<?> column, DRDesignStyle style) throws DRException {
-        DRIComponent component = accessor.getColumnTransform()
-                                         .getColumnComponent(column);
+        DRIComponent component = accessor.getColumnTransform().getColumnComponent(column);
         if (component != null) {
             if (component instanceof DRIList) {
-                DRDesignList list = accessor.getComponentTransform()
-                                            .list((DRIList) component, DefaultStyleType.COLUMN, null, null);
+                DRDesignList list = accessor.getComponentTransform().list((DRIList) component, DefaultStyleType.COLUMN, null, null);
                 return detectWidth(list);
             } else if (component instanceof DRIDimensionComponent) {
                 if (((DRIDimensionComponent) component).getWidth() != null) {
@@ -1157,8 +1032,7 @@ public class TemplateTransform {
                     }
                 }
             } else {
-                throw new DRDesignReportException("Component " + component.getClass()
-                                                                          .getName() + " not supported");
+                throw new DRDesignReportException("Component " + component.getClass().getName() + " not supported");
             }
         }
         return getColumnWidth();
@@ -1173,8 +1047,7 @@ public class TemplateTransform {
         if (template.getColumnWidth() != null) {
             return template.getColumnWidth();
         }
-        return Defaults.getDefaults()
-                       .getColumnWidth();
+        return Defaults.getDefaults().getColumnWidth();
     }
 
     // component
@@ -1189,8 +1062,7 @@ public class TemplateTransform {
         if (component.getRemoveLineWhenBlank() != null) {
             return component.getRemoveLineWhenBlank();
         }
-        return Defaults.getDefaults()
-                       .isRemoveLineWhenBlank();
+        return Defaults.getDefaults().isRemoveLineWhenBlank();
     }
 
     /**
@@ -1229,8 +1101,7 @@ public class TemplateTransform {
         if (component instanceof DRIDimensionComponent && ((DRIDimensionComponent) component).getPrintInFirstWholeBand() != null) {
             return ((DRIDimensionComponent) component).getPrintInFirstWholeBand();
         }
-        return Defaults.getDefaults()
-                       .isPrintInFirstWholeBand();
+        return Defaults.getDefaults().isPrintInFirstWholeBand();
     }
 
     /**
@@ -1243,8 +1114,7 @@ public class TemplateTransform {
         if (component instanceof DRIDimensionComponent && ((DRIDimensionComponent) component).getPrintWhenDetailOverflows() != null) {
             return ((DRIDimensionComponent) component).getPrintWhenDetailOverflows();
         }
-        return Defaults.getDefaults()
-                       .isPrintWhenDetailOverflows();
+        return Defaults.getDefaults().isPrintWhenDetailOverflows();
     }
 
     /**
@@ -1255,8 +1125,7 @@ public class TemplateTransform {
      */
     protected DRIDesignGroup getPrintWhenGroupChanges(DRIComponent component) {
         if (component instanceof DRIDimensionComponent && ((DRIDimensionComponent) component).getPrintWhenGroupChanges() != null) {
-            return accessor.getGroupTransform()
-                           .getGroup(((DRIDimensionComponent) component).getPrintWhenGroupChanges());
+            return accessor.getGroupTransform().getGroup(((DRIDimensionComponent) component).getPrintWhenGroupChanges());
         }
         return null;
     }
@@ -1276,8 +1145,7 @@ public class TemplateTransform {
         if (template.getGroupHeaderLayout() != null) {
             return template.getGroupHeaderLayout();
         }
-        return Defaults.getDefaults()
-                       .getGroupHeaderLayout();
+        return Defaults.getDefaults().getGroupHeaderLayout();
     }
 
     /**
@@ -1293,8 +1161,7 @@ public class TemplateTransform {
         if (template.getGroupHideColumn() != null) {
             return template.getGroupHideColumn();
         }
-        return Defaults.getDefaults()
-                       .isGroupHideColumn();
+        return Defaults.getDefaults().isGroupHideColumn();
     }
 
     /**
@@ -1310,8 +1177,7 @@ public class TemplateTransform {
         if (template.getGroupShowColumnHeaderAndFooter() != null) {
             return template.getGroupShowColumnHeaderAndFooter();
         }
-        return Defaults.getDefaults()
-                       .isGroupShowColumnHeaderAndFooter();
+        return Defaults.getDefaults().isGroupShowColumnHeaderAndFooter();
     }
 
     /**
@@ -1327,8 +1193,7 @@ public class TemplateTransform {
         if (template.getGroupPadding() != null) {
             return template.getGroupPadding();
         }
-        return Defaults.getDefaults()
-                       .getGroupPadding();
+        return Defaults.getDefaults().getGroupPadding();
     }
 
     /**
@@ -1344,8 +1209,7 @@ public class TemplateTransform {
         if (template.getGroupStartInNewPage() != null) {
             return template.getGroupStartInNewPage();
         }
-        return Defaults.getDefaults()
-                       .isGroupStartInNewPage();
+        return Defaults.getDefaults().isGroupStartInNewPage();
     }
 
     /**
@@ -1361,8 +1225,7 @@ public class TemplateTransform {
         if (template.getGroupStartInNewColumn() != null) {
             return template.getGroupStartInNewColumn();
         }
-        return Defaults.getDefaults()
-                       .isGroupStartInNewColumn();
+        return Defaults.getDefaults().isGroupStartInNewColumn();
     }
 
     /**
@@ -1378,8 +1241,7 @@ public class TemplateTransform {
         if (template.getGroupReprintHeaderOnEachPage() != null) {
             return template.getGroupReprintHeaderOnEachPage();
         }
-        return Defaults.getDefaults()
-                       .isGroupReprintHeaderOnEachPage();
+        return Defaults.getDefaults().isGroupReprintHeaderOnEachPage();
     }
 
     /**
@@ -1395,8 +1257,7 @@ public class TemplateTransform {
         if (template.getGroupResetPageNumber() != null) {
             return template.getGroupResetPageNumber();
         }
-        return Defaults.getDefaults()
-                       .isGroupResetPageNumber();
+        return Defaults.getDefaults().isGroupResetPageNumber();
     }
 
     /**
@@ -1409,8 +1270,7 @@ public class TemplateTransform {
         if (group.getMinHeightToStartNewPage() != null) {
             return group.getMinHeightToStartNewPage();
         }
-        return Defaults.getDefaults()
-                       .getGroupMinHeightToStartNewPage();
+        return Defaults.getDefaults().getGroupMinHeightToStartNewPage();
     }
 
     /**
@@ -1426,8 +1286,7 @@ public class TemplateTransform {
         if (template.getGroupFooterPosition() != null) {
             return template.getGroupFooterPosition();
         }
-        return Defaults.getDefaults()
-                       .getGroupFooterPosition();
+        return Defaults.getDefaults().getGroupFooterPosition();
     }
 
     /**
@@ -1443,8 +1302,7 @@ public class TemplateTransform {
         if (template.getGroupKeepTogether() != null) {
             return template.getGroupKeepTogether();
         }
-        return Defaults.getDefaults()
-                       .isGroupKeepTogether();
+        return Defaults.getDefaults().isGroupKeepTogether();
     }
 
     /**
@@ -1460,8 +1318,7 @@ public class TemplateTransform {
         if (template.getGroupHeaderWithSubtotal() != null) {
             return template.getGroupHeaderWithSubtotal();
         }
-        return Defaults.getDefaults()
-                       .isGroupHeaderWithSubtotal();
+        return Defaults.getDefaults().isGroupHeaderWithSubtotal();
     }
 
     /**
@@ -1474,8 +1331,7 @@ public class TemplateTransform {
         if (group.getGroupByDataType() != null) {
             return group.getGroupByDataType();
         }
-        return Defaults.getDefaults()
-                       .isGroupByDataType();
+        return Defaults.getDefaults().isGroupByDataType();
     }
 
     // subtotal
@@ -1493,8 +1349,7 @@ public class TemplateTransform {
         if (template.getSubtotalLabelPosition() != null) {
             return template.getSubtotalLabelPosition();
         }
-        return Defaults.getDefaults()
-                       .getSubtotalLabelPosition();
+        return Defaults.getDefaults().getSubtotalLabelPosition();
     }
 
     // text field
@@ -1503,7 +1358,7 @@ public class TemplateTransform {
      * <p>getTextFieldWidth.</p>
      *
      * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style     a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getTextFieldWidth(DRITextField<?> textField, DRDesignStyle style) {
@@ -1516,15 +1371,14 @@ public class TemplateTransform {
         if (template.getTextFieldWidth() != null) {
             return template.getTextFieldWidth();
         }
-        return Defaults.getDefaults()
-                       .getTextFieldWidth();
+        return Defaults.getDefaults().getTextFieldWidth();
     }
 
     /**
      * <p>getTextFieldHeight.</p>
      *
      * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style     a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getTextFieldHeight(DRITextField<?> textField, DRDesignStyle style) {
@@ -1541,7 +1395,7 @@ public class TemplateTransform {
      * <p>getTextFieldPattern.</p>
      *
      * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style     a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a {@link java.lang.String} object.
      */
     protected String getTextFieldPattern(DRITextField<?> textField, DRDesignStyle style) {
@@ -1552,8 +1406,7 @@ public class TemplateTransform {
             return null;// StyleResolver.getPattern(style);
         }
         if (textField.getDataType() != null) {
-            return textField.getDataType()
-                            .getPattern();
+            return textField.getDataType().getPattern();
         }
         return null;
     }
@@ -1562,7 +1415,7 @@ public class TemplateTransform {
      * <p>getTextFieldHorizontalTextAlignment.</p>
      *
      * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style     a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
     protected HorizontalTextAlignment getTextFieldHorizontalTextAlignment(DRITextField<?> textField, DRDesignStyle style) {
@@ -1573,8 +1426,7 @@ public class TemplateTransform {
             return null;// StyleResolver.getHorizontalTextAlignment(style);
         }
         if (textField.getDataType() != null) {
-            return textField.getDataType()
-                            .getHorizontalTextAlignment();
+            return textField.getDataType().getHorizontalTextAlignment();
         }
         return null;
     }
@@ -1590,8 +1442,7 @@ public class TemplateTransform {
             return textField.getValueFormatter();
         }
         if (textField.getDataType() != null) {
-            return textField.getDataType()
-                            .getValueFormatter();
+            return textField.getDataType().getValueFormatter();
         }
         return null;
     }
@@ -1606,8 +1457,7 @@ public class TemplateTransform {
         if (textField.getStretchWithOverflow() != null) {
             return textField.getStretchWithOverflow();
         }
-        return Defaults.getDefaults()
-                       .isTextFieldStretchWithOverflow();
+        return Defaults.getDefaults().isTextFieldStretchWithOverflow();
     }
 
     /**
@@ -1620,8 +1470,7 @@ public class TemplateTransform {
         if (textField.getPrintRepeatedValues() != null) {
             return textField.getPrintRepeatedValues();
         }
-        return Defaults.getDefaults()
-                       .isTextFieldPrintRepeatedValues();
+        return Defaults.getDefaults().isTextFieldPrintRepeatedValues();
     }
 
     // text field
@@ -1630,7 +1479,7 @@ public class TemplateTransform {
      * <p>getBooleanFieldWidth.</p>
      *
      * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style        a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getBooleanFieldWidth(DRIBooleanField booleanField, DRDesignStyle style) {
@@ -1640,15 +1489,14 @@ public class TemplateTransform {
         if (template.getTextFieldWidth() != null) {
             return template.getTextFieldWidth();
         }
-        return Defaults.getDefaults()
-                       .getTextFieldWidth();
+        return Defaults.getDefaults().getTextFieldWidth();
     }
 
     /**
      * <p>getBooleanFieldHeight.</p>
      *
      * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style        a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getBooleanFieldHeight(DRIBooleanField booleanField, DRDesignStyle style) {
@@ -1673,15 +1521,14 @@ public class TemplateTransform {
         if (template.getTextFieldWidth() != null) {
             return template.getTextFieldWidth();
         }
-        return Defaults.getDefaults()
-                       .getTextFieldWidth();
+        return Defaults.getDefaults().getTextFieldWidth();
     }
 
     /**
      * <p>getPageXofYHeight.</p>
      *
      * @param pageXofY a {@link net.sf.dynamicreports.report.definition.component.DRIPageXofY} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style    a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getPageXofYHeight(DRIPageXofY pageXofY, DRDesignStyle style) {
@@ -1695,7 +1542,7 @@ public class TemplateTransform {
      * <p>getPageXofYHorizontalTextAlignment.</p>
      *
      * @param pageXofY a {@link net.sf.dynamicreports.report.definition.component.DRIPageXofY} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style    a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
     protected HorizontalTextAlignment getPageXofYHorizontalTextAlignment(DRIPageXofY pageXofY, DRDesignStyle style) {
@@ -1705,8 +1552,7 @@ public class TemplateTransform {
         if (StyleResolver.getHorizontalTextAlignment(style) != null) {
             return StyleResolver.getHorizontalTextAlignment(style);
         }
-        return Defaults.getDefaults()
-                       .getPageXofYHorizontalTextAlignment();
+        return Defaults.getDefaults().getPageXofYHorizontalTextAlignment();
     }
 
     // image
@@ -1724,16 +1570,15 @@ public class TemplateTransform {
         if (template.getImageWidth() != null) {
             return template.getImageWidth();
         }
-        return Defaults.getDefaults()
-                       .getImageWidth();
+        return Defaults.getDefaults().getImageWidth();
     }
 
     /**
      * <p>getImageHeight.</p>
      *
-     * @param image a {@link net.sf.dynamicreports.report.definition.component.DRIImage} object.
+     * @param image       a {@link net.sf.dynamicreports.report.definition.component.DRIImage} object.
      * @param imageHeight a {@link java.lang.Integer} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style       a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */
     protected int getImageHeight(DRIImage image, Integer imageHeight, DRDesignStyle style) {
@@ -1746,8 +1591,7 @@ public class TemplateTransform {
         if (template.getImageHeight() != null) {
             return template.getImageHeight();
         }
-        return Defaults.getDefaults()
-                       .getImageHeight();
+        return Defaults.getDefaults().getImageHeight();
     }
 
     // filler
@@ -1762,8 +1606,7 @@ public class TemplateTransform {
         if (filler.getWidth() != null) {
             return filler.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getFillerWidth();
+        return Defaults.getDefaults().getFillerWidth();
     }
 
     /**
@@ -1776,8 +1619,7 @@ public class TemplateTransform {
         if (filler.getHeight() != null) {
             return filler.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getFillerHeight();
+        return Defaults.getDefaults().getFillerHeight();
     }
 
     // line
@@ -1792,8 +1634,7 @@ public class TemplateTransform {
         if (line.getWidth() != null) {
             return line.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getLineWidth();
+        return Defaults.getDefaults().getLineWidth();
     }
 
     /**
@@ -1806,8 +1647,7 @@ public class TemplateTransform {
         if (line.getHeight() != null) {
             return line.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getLineHeight();
+        return Defaults.getDefaults().getLineHeight();
     }
 
     // ellipse
@@ -1822,8 +1662,7 @@ public class TemplateTransform {
         if (ellipse.getWidth() != null) {
             return ellipse.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getEllipseWidth();
+        return Defaults.getDefaults().getEllipseWidth();
     }
 
     /**
@@ -1836,8 +1675,7 @@ public class TemplateTransform {
         if (ellipse.getHeight() != null) {
             return ellipse.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getEllipseHeight();
+        return Defaults.getDefaults().getEllipseHeight();
     }
 
     // rectangle
@@ -1852,8 +1690,7 @@ public class TemplateTransform {
         if (rectangle.getRadius() != null) {
             return rectangle.getRadius();
         }
-        return Defaults.getDefaults()
-                       .getRectangleRadius();
+        return Defaults.getDefaults().getRectangleRadius();
     }
 
     /**
@@ -1866,8 +1703,7 @@ public class TemplateTransform {
         if (rectangle.getWidth() != null) {
             return rectangle.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getRectangleWidth();
+        return Defaults.getDefaults().getRectangleWidth();
     }
 
     /**
@@ -1880,8 +1716,7 @@ public class TemplateTransform {
         if (rectangle.getHeight() != null) {
             return rectangle.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getRectangleHeight();
+        return Defaults.getDefaults().getRectangleHeight();
     }
 
     // map
@@ -1896,8 +1731,7 @@ public class TemplateTransform {
         if (map.getWidth() != null) {
             return map.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getMapWidth();
+        return Defaults.getDefaults().getMapWidth();
     }
 
     /**
@@ -1910,8 +1744,7 @@ public class TemplateTransform {
         if (map.getHeight() != null) {
             return map.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getMapHeight();
+        return Defaults.getDefaults().getMapHeight();
     }
 
     // custom component
@@ -1926,8 +1759,7 @@ public class TemplateTransform {
         if (component.getWidth() != null) {
             return component.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getCustomComponentWidth();
+        return Defaults.getDefaults().getCustomComponentWidth();
     }
 
     /**
@@ -1940,8 +1772,7 @@ public class TemplateTransform {
         if (component.getHeight() != null) {
             return component.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getCustomComponentHeight();
+        return Defaults.getDefaults().getCustomComponentHeight();
     }
 
     // break
@@ -1953,8 +1784,7 @@ public class TemplateTransform {
      * @return a int.
      */
     protected int getBreakWidth(DRIBreak breakComponent) {
-        return Defaults.getDefaults()
-                       .getBreakWidth();
+        return Defaults.getDefaults().getBreakWidth();
     }
 
     /**
@@ -1964,8 +1794,7 @@ public class TemplateTransform {
      * @return a int.
      */
     protected int getBreakHeight(DRIBreak breakComponent) {
-        return Defaults.getDefaults()
-                       .getBreakHeight();
+        return Defaults.getDefaults().getBreakHeight();
     }
 
     // generic element
@@ -1980,8 +1809,7 @@ public class TemplateTransform {
         if (genericElement.getWidth() != null) {
             return genericElement.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getGenericElementWidth();
+        return Defaults.getDefaults().getGenericElementWidth();
     }
 
     /**
@@ -1994,8 +1822,7 @@ public class TemplateTransform {
         if (genericElement.getHeight() != null) {
             return genericElement.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getGenericElementHeight();
+        return Defaults.getDefaults().getGenericElementHeight();
     }
 
     // list
@@ -2010,8 +1837,7 @@ public class TemplateTransform {
         if (list.getWidth() != null) {
             return list.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getListWidth();
+        return Defaults.getDefaults().getListWidth();
     }
 
     /**
@@ -2024,8 +1850,7 @@ public class TemplateTransform {
         if (list.getHeight() != null) {
             return list.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getListHeight();
+        return Defaults.getDefaults().getListHeight();
     }
 
     /**
@@ -2041,8 +1866,7 @@ public class TemplateTransform {
         if (template.getListgap() != null) {
             return template.getListgap();
         }
-        return Defaults.getDefaults()
-                       .getListgap();
+        return Defaults.getDefaults().getListgap();
     }
 
     // xy list
@@ -2057,8 +1881,7 @@ public class TemplateTransform {
         if (xyList.getWidth() != null) {
             return xyList.getWidth();
         }
-        return Defaults.getDefaults()
-                       .getListWidth();
+        return Defaults.getDefaults().getListWidth();
     }
 
     /**
@@ -2071,8 +1894,7 @@ public class TemplateTransform {
         if (xyList.getHeight() != null) {
             return xyList.getHeight();
         }
-        return Defaults.getDefaults()
-                       .getListHeight();
+        return Defaults.getDefaults().getListHeight();
     }
 
     // multi page list
@@ -2090,8 +1912,7 @@ public class TemplateTransform {
         if (template.getMultiPageListWidth() != null) {
             return template.getMultiPageListWidth();
         }
-        return Defaults.getDefaults()
-                       .getMultiPageListWidth();
+        return Defaults.getDefaults().getMultiPageListWidth();
     }
 
     /**
@@ -2107,8 +1928,7 @@ public class TemplateTransform {
         if (template.getMultiPageListHeight() != null) {
             return template.getMultiPageListHeight();
         }
-        return Defaults.getDefaults()
-                       .getMultiPageListHeight();
+        return Defaults.getDefaults().getMultiPageListHeight();
     }
 
     // chart
@@ -2126,8 +1946,7 @@ public class TemplateTransform {
         if (template.getChartWidth() != null) {
             return template.getChartWidth();
         }
-        return Defaults.getDefaults()
-                       .getChartWidth();
+        return Defaults.getDefaults().getChartWidth();
     }
 
     /**
@@ -2143,8 +1962,7 @@ public class TemplateTransform {
         if (template.getChartHeight() != null) {
             return template.getChartHeight();
         }
-        return Defaults.getDefaults()
-                       .getChartHeight();
+        return Defaults.getDefaults().getChartHeight();
     }
 
     /**
@@ -2154,16 +1972,13 @@ public class TemplateTransform {
      * @return a {@link java.util.List} object.
      */
     protected List<Color> getChartSeriesColors(DRIBasePlot plot) {
-        if (plot.getSeriesColors() != null && !plot.getSeriesColors()
-                                                   .isEmpty()) {
+        if (plot.getSeriesColors() != null && !plot.getSeriesColors().isEmpty()) {
             return plot.getSeriesColors();
         }
-        if (template.getChartSeriesColors() != null && !template.getChartSeriesColors()
-                                                                .isEmpty()) {
+        if (template.getChartSeriesColors() != null && !template.getChartSeriesColors().isEmpty()) {
             return template.getChartSeriesColors();
         }
-        return Defaults.getDefaults()
-                       .getChartSeriesColors();
+        return Defaults.getDefaults().getChartSeriesColors();
     }
 
     /**
@@ -2179,8 +1994,7 @@ public class TemplateTransform {
         if (template.getChartValuePattern() != null) {
             return template.getChartValuePattern();
         }
-        return Defaults.getDefaults()
-                       .getChartValuePattern();
+        return Defaults.getDefaults().getChartValuePattern();
     }
 
     /**
@@ -2196,8 +2010,7 @@ public class TemplateTransform {
         if (template.getChartValuePattern() != null) {
             return template.getChartValuePattern();
         }
-        return Defaults.getDefaults()
-                       .getChartValuePattern();
+        return Defaults.getDefaults().getChartValuePattern();
     }
 
     /**
@@ -2213,8 +2026,7 @@ public class TemplateTransform {
         if (template.getChartPercentValuePattern() != null) {
             return template.getChartPercentValuePattern();
         }
-        return Defaults.getDefaults()
-                       .getChartPercentValuePattern();
+        return Defaults.getDefaults().getChartPercentValuePattern();
     }
 
     /**
@@ -2230,8 +2042,7 @@ public class TemplateTransform {
         if (template.getChartPercentValuePattern() != null) {
             return template.getChartPercentValuePattern();
         }
-        return Defaults.getDefaults()
-                       .getChartPercentValuePattern();
+        return Defaults.getDefaults().getChartPercentValuePattern();
     }
 
     /**
@@ -2244,8 +2055,7 @@ public class TemplateTransform {
         if (dataset.getUseSeriesAsCategory() != null) {
             return dataset.getUseSeriesAsCategory();
         }
-        return Defaults.getDefaults()
-                       .isChartCategoryDatasetUseSeriesAsCategory();
+        return Defaults.getDefaults().isChartCategoryDatasetUseSeriesAsCategory();
     }
 
     /**
@@ -2258,8 +2068,7 @@ public class TemplateTransform {
         if (dataset.getTimePeriodType() != null) {
             return dataset.getTimePeriodType();
         }
-        return Defaults.getDefaults()
-                       .getChartTimeSeriesDatasetTimePeriodType();
+        return Defaults.getDefaults().getChartTimeSeriesDatasetTimePeriodType();
     }
 
     /**
@@ -2272,8 +2081,7 @@ public class TemplateTransform {
         if (plot.getValueLocation() != null) {
             return plot.getValueLocation();
         }
-        return Defaults.getDefaults()
-                       .getChartThermometerPlotValueLocation();
+        return Defaults.getDefaults().getChartThermometerPlotValueLocation();
     }
 
     /**
@@ -2289,8 +2097,7 @@ public class TemplateTransform {
         if (template.getChartTheme() != null) {
             return template.getChartTheme();
         }
-        return Defaults.getDefaults()
-                       .getChartTheme();
+        return Defaults.getDefaults().getChartTheme();
     }
 
     // barcode
@@ -2308,8 +2115,7 @@ public class TemplateTransform {
         if (template.getBarcodeWidth() != null) {
             return template.getBarcodeWidth();
         }
-        return Defaults.getDefaults()
-                       .getBarcodeWidth();
+        return Defaults.getDefaults().getBarcodeWidth();
     }
 
     /**
@@ -2325,8 +2131,7 @@ public class TemplateTransform {
         if (template.getBarcodeHeight() != null) {
             return template.getBarcodeHeight();
         }
-        return Defaults.getDefaults()
-                       .getBarcodeHeight();
+        return Defaults.getDefaults().getBarcodeHeight();
     }
 
     // barbecue
@@ -2344,8 +2149,7 @@ public class TemplateTransform {
         if (template.getBarcodeWidth() != null) {
             return template.getBarcodeWidth();
         }
-        return Defaults.getDefaults()
-                       .getBarcodeWidth();
+        return Defaults.getDefaults().getBarcodeWidth();
     }
 
     /**
@@ -2361,8 +2165,7 @@ public class TemplateTransform {
         if (template.getBarcodeHeight() != null) {
             return template.getBarcodeHeight();
         }
-        return Defaults.getDefaults()
-                       .getBarcodeHeight();
+        return Defaults.getDefaults().getBarcodeHeight();
     }
 
     // subreport
@@ -2380,8 +2183,7 @@ public class TemplateTransform {
         if (template.getSubreportWidth() != null) {
             return template.getSubreportWidth();
         }
-        return Defaults.getDefaults()
-                       .getSubreportWidth();
+        return Defaults.getDefaults().getSubreportWidth();
     }
 
     /**
@@ -2397,8 +2199,7 @@ public class TemplateTransform {
         if (template.getSubreportHeight() != null) {
             return template.getSubreportHeight();
         }
-        return Defaults.getDefaults()
-                       .getSubreportHeight();
+        return Defaults.getDefaults().getSubreportHeight();
     }
 
     // crosstab
@@ -2416,14 +2217,13 @@ public class TemplateTransform {
         if (template.getCrosstabWidth() != null) {
             return template.getCrosstabWidth();
         }
-        return Defaults.getDefaults()
-                       .getCrosstabWidth();
+        return Defaults.getDefaults().getCrosstabWidth();
     }
 
     /**
      * <p>getCrosstabHeight.</p>
      *
-     * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+     * @param crosstab       a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
      * @param whenNoDataCell a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstabCellContent} object.
      * @return a int.
      */
@@ -2434,8 +2234,7 @@ public class TemplateTransform {
         } else if (template.getCrosstabHeight() != null) {
             height = template.getCrosstabHeight();
         } else {
-            height = Defaults.getDefaults()
-                             .getCrosstabHeight();
+            height = Defaults.getDefaults().getCrosstabHeight();
         }
         int whenNoDataCellHeight = getCrosstabWhenNoDataCellHeight(whenNoDataCell);
         if (height == 0 && whenNoDataCellHeight > 0) {
@@ -2457,8 +2256,7 @@ public class TemplateTransform {
         if (columnGroup.getTotalPosition() != null) {
             return columnGroup.getTotalPosition();
         }
-        return Defaults.getDefaults()
-                       .getCrosstabColumnGroupTotalPosition();
+        return Defaults.getDefaults().getCrosstabColumnGroupTotalPosition();
     }
 
     /**
@@ -2474,8 +2272,7 @@ public class TemplateTransform {
         if (rowGroup.getTotalPosition() != null) {
             return rowGroup.getTotalPosition();
         }
-        return Defaults.getDefaults()
-                       .getCrosstabRowGroupTotalPosition();
+        return Defaults.getDefaults().getCrosstabRowGroupTotalPosition();
     }
 
     /**
@@ -2488,8 +2285,7 @@ public class TemplateTransform {
         if (columnGroup.getShowTotal() != null) {
             return columnGroup.getShowTotal();
         }
-        return Defaults.getDefaults()
-                       .isCrosstabColumnGroupShowTotal();
+        return Defaults.getDefaults().isCrosstabColumnGroupShowTotal();
     }
 
     /**
@@ -2502,15 +2298,14 @@ public class TemplateTransform {
         if (rowGroup.getShowTotal() != null) {
             return rowGroup.getShowTotal();
         }
-        return Defaults.getDefaults()
-                       .isCrosstabRowGroupShowTotal();
+        return Defaults.getDefaults().isCrosstabRowGroupShowTotal();
     }
 
     /**
      * <p>getCrosstabColumnGroupHeaderHeight.</p>
      *
-     * @param columnGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
-     * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
+     * @param columnGroup     a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
+     * @param designCrosstab  a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @param availableHeight a int.
      * @return a int.
      */
@@ -2520,16 +2315,13 @@ public class TemplateTransform {
         }
         int maxHeight = 0;
         for (DRDesignCrosstabColumnGroup designColumnGroup : designCrosstab.getColumnGroups()) {
-            if (designColumnGroup.getName()
-                                 .equals(columnGroup.getName())) {
-                int height = detectHeight(designColumnGroup.getHeader()
-                                                           .getList());
+            if (designColumnGroup.getName().equals(columnGroup.getName())) {
+                int height = detectHeight(designColumnGroup.getHeader().getList());
                 if (maxHeight < height) {
                     maxHeight = height;
                 }
                 if (designColumnGroup.getTotalHeader() != null) {
-                    height = detectHeight(designColumnGroup.getTotalHeader()
-                                                           .getList());
+                    height = detectHeight(designColumnGroup.getTotalHeader().getList());
                     if (maxHeight < height && height > availableHeight) {
                         maxHeight = height;
                     }
@@ -2543,8 +2335,8 @@ public class TemplateTransform {
     /**
      * <p>getCrosstabColumnGroupTotalHeaderWidth.</p>
      *
-     * @param columnGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
-     * @param cellWidth a {@link java.lang.Integer} object.
+     * @param columnGroup    a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
+     * @param cellWidth      a {@link java.lang.Integer} object.
      * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @return a int.
      */
@@ -2557,11 +2349,9 @@ public class TemplateTransform {
         }
         int maxWidth = 0;
         for (DRDesignCrosstabColumnGroup designColumnGroup : designCrosstab.getColumnGroups()) {
-            if (designColumnGroup.getName()
-                                 .equals(columnGroup.getName())) {
+            if (designColumnGroup.getName().equals(columnGroup.getName())) {
                 if (designColumnGroup.getTotalHeader() != null) {
-                    int height = detectWidth(designColumnGroup.getTotalHeader()
-                                                              .getList());
+                    int height = detectWidth(designColumnGroup.getTotalHeader().getList());
                     if (maxWidth < height) {
                         maxWidth = height;
                     }
@@ -2571,17 +2361,14 @@ public class TemplateTransform {
         }
         for (DRDesignCrosstabCell designCell : designCrosstab.getCells()) {
             if (designCell.getColumnTotalGroup() == columnGroup.getName()) {
-                int height = detectWidth(designCell.getContent()
-                                                   .getList());
+                int height = detectWidth(designCell.getContent().getList());
                 if (maxWidth < height) {
                     maxWidth = height;
                 }
             }
         }
-        if (maxWidth > Defaults.getDefaults()
-                               .getCrosstabColumnGroupTotalHeaderMaxWidth()) {
-            return Defaults.getDefaults()
-                           .getCrosstabColumnGroupTotalHeaderMaxWidth();
+        if (maxWidth > Defaults.getDefaults().getCrosstabColumnGroupTotalHeaderMaxWidth()) {
+            return Defaults.getDefaults().getCrosstabColumnGroupTotalHeaderMaxWidth();
         }
         return maxWidth;
     }
@@ -2589,7 +2376,7 @@ public class TemplateTransform {
     /**
      * <p>getCrosstabRowGroupHeaderWidth.</p>
      *
-     * @param rowGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
+     * @param rowGroup       a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
      * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @return a int.
      */
@@ -2599,16 +2386,13 @@ public class TemplateTransform {
         }
         int maxWidth = 0;
         for (DRDesignCrosstabRowGroup designRowGroup : designCrosstab.getRowGroups()) {
-            if (designRowGroup.getName()
-                              .equals(rowGroup.getName())) {
-                int width = detectWidth(designRowGroup.getHeader()
-                                                      .getList());
+            if (designRowGroup.getName().equals(rowGroup.getName())) {
+                int width = detectWidth(designRowGroup.getHeader().getList());
                 if (maxWidth < width) {
                     maxWidth = width;
                 }
                 if (designRowGroup.getTotalHeader() != null) {
-                    width = detectWidth(designRowGroup.getTotalHeader()
-                                                      .getList());
+                    width = detectWidth(designRowGroup.getTotalHeader().getList());
                     if (maxWidth < width) {
                         maxWidth = width;
                     }
@@ -2616,10 +2400,8 @@ public class TemplateTransform {
                 break;
             }
         }
-        if (maxWidth > Defaults.getDefaults()
-                               .getCrosstabRowGroupHeaderMaxWidth()) {
-            return Defaults.getDefaults()
-                           .getCrosstabRowGroupHeaderMaxWidth();
+        if (maxWidth > Defaults.getDefaults().getCrosstabRowGroupHeaderMaxWidth()) {
+            return Defaults.getDefaults().getCrosstabRowGroupHeaderMaxWidth();
         }
         return maxWidth;
     }
@@ -2627,8 +2409,8 @@ public class TemplateTransform {
     /**
      * <p>getCrosstabRowGroupTotalHeaderHeight.</p>
      *
-     * @param rowGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
-     * @param cellHeight a {@link java.lang.Integer} object.
+     * @param rowGroup       a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
+     * @param cellHeight     a {@link java.lang.Integer} object.
      * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @return a int.
      */
@@ -2641,11 +2423,9 @@ public class TemplateTransform {
         }
         int maxHeight = 0;
         for (DRDesignCrosstabRowGroup designRowGroup : designCrosstab.getRowGroups()) {
-            if (designRowGroup.getName()
-                              .equals(rowGroup.getName())) {
+            if (designRowGroup.getName().equals(rowGroup.getName())) {
                 if (designRowGroup.getTotalHeader() != null) {
-                    int height = detectHeight(designRowGroup.getTotalHeader()
-                                                            .getList());
+                    int height = detectHeight(designRowGroup.getTotalHeader().getList());
                     if (maxHeight < height) {
                         maxHeight = height;
                     }
@@ -2655,8 +2435,7 @@ public class TemplateTransform {
         }
         for (DRDesignCrosstabCell designCell : designCrosstab.getCells()) {
             if (designCell.getRowTotalGroup() == rowGroup.getName()) {
-                int height = detectHeight(designCell.getContent()
-                                                    .getList());
+                int height = detectHeight(designCell.getContent().getList());
                 if (maxHeight < height) {
                     maxHeight = height;
                 }
@@ -2668,7 +2447,7 @@ public class TemplateTransform {
     /**
      * <p>getCrosstabCellWidth.</p>
      *
-     * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+     * @param crosstab       a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
      * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @return a int.
      */
@@ -2679,24 +2458,20 @@ public class TemplateTransform {
         int maxWidth = 0;
         for (DRDesignCrosstabCell designCell : designCrosstab.getCells()) {
             if (designCell.getColumnTotalGroup() == null) {
-                int width = detectWidth(designCell.getContent()
-                                                  .getList());
+                int width = detectWidth(designCell.getContent().getList());
                 if (maxWidth < width) {
                     maxWidth = width;
                 }
             }
         }
         for (DRDesignCrosstabColumnGroup designColumnGroup : designCrosstab.getColumnGroups()) {
-            int width = detectWidth(designColumnGroup.getHeader()
-                                                     .getList());
+            int width = detectWidth(designColumnGroup.getHeader().getList());
             if (maxWidth < width) {
                 maxWidth = width;
             }
         }
-        if (maxWidth > Defaults.getDefaults()
-                               .getCrosstabCellMaxWidth()) {
-            return Defaults.getDefaults()
-                           .getCrosstabCellMaxWidth();
+        if (maxWidth > Defaults.getDefaults().getCrosstabCellMaxWidth()) {
+            return Defaults.getDefaults().getCrosstabCellMaxWidth();
         }
         return maxWidth;
     }
@@ -2704,7 +2479,7 @@ public class TemplateTransform {
     /**
      * <p>getCrosstabCellHeight.</p>
      *
-     * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+     * @param crosstab       a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
      * @param designCrosstab a {@link net.sf.dynamicreports.design.base.crosstab.DRDesignCrosstab} object.
      * @return a int.
      */
@@ -2715,16 +2490,14 @@ public class TemplateTransform {
         int maxHeight = 0;
         for (DRDesignCrosstabCell designCell : designCrosstab.getCells()) {
             if (designCell.getRowTotalGroup() == null) {
-                int height = detectHeight(designCell.getContent()
-                                                    .getList());
+                int height = detectHeight(designCell.getContent().getList());
                 if (maxHeight < height) {
                     maxHeight = height;
                 }
             }
         }
         for (DRDesignCrosstabRowGroup designRowGroup : designCrosstab.getRowGroups()) {
-            int height = detectHeight(designRowGroup.getHeader()
-                                                    .getList());
+            int height = detectHeight(designRowGroup.getHeader().getList());
             if (maxHeight < height) {
                 maxHeight = height;
             }
@@ -2756,8 +2529,7 @@ public class TemplateTransform {
             if (template.getCrosstabOddRowStyle() != null) {
                 return template.getCrosstabOddRowStyle();
             }
-            return Defaults.getDefaults()
-                           .getCrosstabOddRowStyle();
+            return Defaults.getDefaults().getCrosstabOddRowStyle();
         }
         return null;
     }
@@ -2776,8 +2548,7 @@ public class TemplateTransform {
             if (template.getCrosstabEvenRowStyle() != null) {
                 return template.getCrosstabEvenRowStyle();
             }
-            return Defaults.getDefaults()
-                           .getCrosstabEvenRowStyle();
+            return Defaults.getDefaults().getCrosstabEvenRowStyle();
         }
         return null;
     }
@@ -2789,8 +2560,7 @@ public class TemplateTransform {
         if (template.getCrosstabHighlightOddRows() != null) {
             return template.getCrosstabHighlightOddRows();
         }
-        return Defaults.getDefaults()
-                       .isCrosstabHighlightOddRows();
+        return Defaults.getDefaults().isCrosstabHighlightOddRows();
     }
 
     private boolean isCrosstabHighlightEvenRows(DRICrosstab crosstab) {
@@ -2800,8 +2570,7 @@ public class TemplateTransform {
         if (template.getCrosstabHighlightEvenRows() != null) {
             return template.getCrosstabHighlightEvenRows();
         }
-        return Defaults.getDefaults()
-                       .isCrosstabHighlightEvenRows();
+        return Defaults.getDefaults().isCrosstabHighlightEvenRows();
     }
 
     /**
@@ -2817,10 +2586,8 @@ public class TemplateTransform {
         if (template.getCrosstabGroupStyle() != null) {
             return template.getCrosstabGroupStyle();
         }
-        if (Defaults.getDefaults()
-                    .getCrosstabGroupStyle() != null) {
-            return Defaults.getDefaults()
-                           .getCrosstabGroupStyle();
+        if (Defaults.getDefaults().getCrosstabGroupStyle() != null) {
+            return Defaults.getDefaults().getCrosstabGroupStyle();
         }
         return getTextStyle();
     }
@@ -2838,10 +2605,8 @@ public class TemplateTransform {
         if (template.getCrosstabGroupTotalStyle() != null) {
             return template.getCrosstabGroupTotalStyle();
         }
-        if (Defaults.getDefaults()
-                    .getCrosstabGroupTotalStyle() != null) {
-            return Defaults.getDefaults()
-                           .getCrosstabGroupTotalStyle();
+        if (Defaults.getDefaults().getCrosstabGroupTotalStyle() != null) {
+            return Defaults.getDefaults().getCrosstabGroupTotalStyle();
         }
         return getTextStyle();
     }
@@ -2859,10 +2624,8 @@ public class TemplateTransform {
         if (template.getCrosstabGrandTotalStyle() != null) {
             return template.getCrosstabGrandTotalStyle();
         }
-        if (Defaults.getDefaults()
-                    .getCrosstabGrandTotalStyle() != null) {
-            return Defaults.getDefaults()
-                           .getCrosstabGrandTotalStyle();
+        if (Defaults.getDefaults().getCrosstabGrandTotalStyle() != null) {
+            return Defaults.getDefaults().getCrosstabGrandTotalStyle();
         }
         return getTextStyle();
     }
@@ -2880,10 +2643,8 @@ public class TemplateTransform {
         if (template.getCrosstabCellStyle() != null) {
             return template.getCrosstabCellStyle();
         }
-        if (Defaults.getDefaults()
-                    .getCrosstabCellStyle() != null) {
-            return Defaults.getDefaults()
-                           .getCrosstabCellStyle();
+        if (Defaults.getDefaults().getCrosstabCellStyle() != null) {
+            return Defaults.getDefaults().getCrosstabCellStyle();
         }
         return getTextStyle();
     }
@@ -2892,7 +2653,7 @@ public class TemplateTransform {
      * <p>getCrosstabMeasureTitleStyle.</p>
      *
      * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
-     * @param measure a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabMeasure} object.
+     * @param measure  a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabMeasure} object.
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
     public DRIReportStyle getCrosstabMeasureTitleStyle(DRICrosstab crosstab, DRICrosstabMeasure<?> measure) {
@@ -2905,8 +2666,7 @@ public class TemplateTransform {
         if (template.getCrosstabMeasureTitleStyle() != null) {
             return template.getCrosstabMeasureTitleStyle();
         }
-        return Defaults.getDefaults()
-                       .getCrosstabMeasureTitleStyle();
+        return Defaults.getDefaults().getCrosstabMeasureTitleStyle();
     }
 
     /**
@@ -2919,8 +2679,7 @@ public class TemplateTransform {
         if (variable.getPercentageType() != null) {
             return variable.getPercentageType();
         }
-        return Defaults.getDefaults()
-                       .getCrosstabPercentageType();
+        return Defaults.getDefaults().getCrosstabPercentageType();
     }
 
     /**
@@ -2936,8 +2695,7 @@ public class TemplateTransform {
         if (template.getBooleanComponentType() != null) {
             return template.getBooleanComponentType();
         }
-        return Defaults.getDefaults()
-                       .getBooleanComponentType();
+        return Defaults.getDefaults().getBooleanComponentType();
     }
 
     /**
@@ -2953,8 +2711,7 @@ public class TemplateTransform {
         if (template.getBooleanEmptyWhenNullValue() != null) {
             return template.getBooleanEmptyWhenNullValue();
         }
-        return Defaults.getDefaults()
-                       .isBooleanEmptyWhenNullValue();
+        return Defaults.getDefaults().isBooleanEmptyWhenNullValue();
     }
 
     /**
@@ -2970,8 +2727,7 @@ public class TemplateTransform {
         if (template.getBooleanImageWidth() != null) {
             return template.getBooleanImageWidth();
         }
-        return Defaults.getDefaults()
-                       .getBooleanImageWidth();
+        return Defaults.getDefaults().getBooleanImageWidth();
     }
 
     /**
@@ -2987,15 +2743,14 @@ public class TemplateTransform {
         if (template.getBooleanImageHeight() != null) {
             return template.getBooleanImageHeight();
         }
-        return Defaults.getDefaults()
-                       .getBooleanImageHeight();
+        return Defaults.getDefaults().getBooleanImageHeight();
     }
 
     /**
      * <p>getBooleanHorizontalImageAlignment.</p>
      *
      * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style        a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
      */
     protected HorizontalImageAlignment getBooleanHorizontalImageAlignment(DRIBooleanField booleanField, DRDesignStyle style) {
@@ -3005,8 +2760,7 @@ public class TemplateTransform {
         if (StyleResolver.getHorizontalImageAlignment(style) != null) {
             return null;// StyleResolver.getHorizontalAlignment(style);
         }
-        return Defaults.getDefaults()
-                       .getBooleanHorizontalImageAlignment();
+        return Defaults.getDefaults().getBooleanHorizontalImageAlignment();
     }
 
     /**
@@ -3016,16 +2770,13 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
     public DRIReportStyle getBooleanColumnStyle(DRIBooleanColumn column) {
-        if (column.getComponent()
-                  .getStyle() != null) {
-            return column.getComponent()
-                         .getStyle();
+        if (column.getComponent().getStyle() != null) {
+            return column.getComponent().getStyle();
         }
         if (template.getBooleanColumnStyle() != null) {
             return template.getBooleanColumnStyle();
         }
-        return Defaults.getDefaults()
-                       .getBooleanColumnStyle();
+        return Defaults.getDefaults().getBooleanColumnStyle();
     }
 
     /**
@@ -3053,8 +2804,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getTitleSplitType(DRIBand band) {
-        return getSplitType(band, template.getTitleSplitType(), Defaults.getDefaults()
-                                                                        .getTitleSplitType());
+        return getSplitType(band, template.getTitleSplitType(), Defaults.getDefaults().getTitleSplitType());
     }
 
     /**
@@ -3064,8 +2814,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getPageHeaderSplitType(DRIBand band) {
-        return getSplitType(band, template.getPageHeaderSplitType(), Defaults.getDefaults()
-                                                                             .getPageHeaderSplitType());
+        return getSplitType(band, template.getPageHeaderSplitType(), Defaults.getDefaults().getPageHeaderSplitType());
     }
 
     /**
@@ -3075,8 +2824,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getPageFooterSplitType(DRIBand band) {
-        return getSplitType(band, template.getPageFooterSplitType(), Defaults.getDefaults()
-                                                                             .getPageFooterSplitType());
+        return getSplitType(band, template.getPageFooterSplitType(), Defaults.getDefaults().getPageFooterSplitType());
     }
 
     /**
@@ -3086,8 +2834,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getColumnHeaderSplitType(DRIBand band) {
-        return getSplitType(band, template.getColumnHeaderSplitType(), Defaults.getDefaults()
-                                                                               .getColumnHeaderSplitType());
+        return getSplitType(band, template.getColumnHeaderSplitType(), Defaults.getDefaults().getColumnHeaderSplitType());
     }
 
     /**
@@ -3097,8 +2844,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getColumnFooterSplitType(DRIBand band) {
-        return getSplitType(band, template.getColumnFooterSplitType(), Defaults.getDefaults()
-                                                                               .getColumnFooterSplitType());
+        return getSplitType(band, template.getColumnFooterSplitType(), Defaults.getDefaults().getColumnFooterSplitType());
     }
 
     /**
@@ -3108,8 +2854,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getGroupHeaderSplitType(DRIBand band) {
-        return getSplitType(band, template.getGroupHeaderSplitType(), Defaults.getDefaults()
-                                                                              .getGroupHeaderSplitType());
+        return getSplitType(band, template.getGroupHeaderSplitType(), Defaults.getDefaults().getGroupHeaderSplitType());
     }
 
     /**
@@ -3119,8 +2864,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getGroupFooterSplitType(DRIBand band) {
-        return getSplitType(band, template.getGroupFooterSplitType(), Defaults.getDefaults()
-                                                                              .getGroupFooterSplitType());
+        return getSplitType(band, template.getGroupFooterSplitType(), Defaults.getDefaults().getGroupFooterSplitType());
     }
 
     /**
@@ -3130,8 +2874,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getDetailHeaderSplitType(DRIBand band) {
-        return getSplitType(band, template.getDetailHeaderSplitType(), Defaults.getDefaults()
-                                                                               .getDetailHeaderSplitType());
+        return getSplitType(band, template.getDetailHeaderSplitType(), Defaults.getDefaults().getDetailHeaderSplitType());
     }
 
     /**
@@ -3141,8 +2884,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getDetailSplitType(DRIBand band) {
-        return getSplitType(band, template.getDetailSplitType(), Defaults.getDefaults()
-                                                                         .getDetailSplitType());
+        return getSplitType(band, template.getDetailSplitType(), Defaults.getDefaults().getDetailSplitType());
     }
 
     /**
@@ -3152,8 +2894,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getDetailFooterSplitType(DRIBand band) {
-        return getSplitType(band, template.getDetailFooterSplitType(), Defaults.getDefaults()
-                                                                               .getDetailFooterSplitType());
+        return getSplitType(band, template.getDetailFooterSplitType(), Defaults.getDefaults().getDetailFooterSplitType());
     }
 
     /**
@@ -3163,8 +2904,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getLastPageFooterSplitType(DRIBand band) {
-        return getSplitType(band, template.getLastPageFooterSplitType(), Defaults.getDefaults()
-                                                                                 .getLastPageFooterSplitType());
+        return getSplitType(band, template.getLastPageFooterSplitType(), Defaults.getDefaults().getLastPageFooterSplitType());
     }
 
     /**
@@ -3174,8 +2914,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getSummarySplitType(DRIBand band) {
-        return getSplitType(band, template.getSummarySplitType(), Defaults.getDefaults()
-                                                                          .getSummarySplitType());
+        return getSplitType(band, template.getSummarySplitType(), Defaults.getDefaults().getSummarySplitType());
     }
 
     /**
@@ -3185,8 +2924,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getNoDataSplitType(DRIBand band) {
-        return getSplitType(band, template.getNoDataSplitType(), Defaults.getDefaults()
-                                                                         .getNoDataSplitType());
+        return getSplitType(band, template.getNoDataSplitType(), Defaults.getDefaults().getNoDataSplitType());
     }
 
     /**
@@ -3196,8 +2934,7 @@ public class TemplateTransform {
      * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      */
     protected SplitType getBackgroundSplitType(DRIBand band) {
-        return getSplitType(band, template.getBackgroundSplitType(), Defaults.getDefaults()
-                                                                             .getBackgroundSplitType());
+        return getSplitType(band, template.getBackgroundSplitType(), Defaults.getDefaults().getBackgroundSplitType());
     }
 
     private SplitType getSplitType(DRIBand band, SplitType templateSplitType, SplitType splitType) {
@@ -3213,8 +2950,7 @@ public class TemplateTransform {
         if (template.getDefaultSplitType() != null) {
             return template.getDefaultSplitType();
         }
-        return Defaults.getDefaults()
-                       .getDefaultSplitType();
+        return Defaults.getDefaults().getDefaultSplitType();
     }
 
     // band style
@@ -3360,16 +3096,13 @@ public class TemplateTransform {
     }
 
     private DRIReportStyle getBandStyle(DRIBand band, DRIReportStyle templateStyle) {
-        if (band.getList()
-                .getStyle() != null) {
-            return band.getList()
-                       .getStyle();
+        if (band.getList().getStyle() != null) {
+            return band.getList().getStyle();
         }
         if (templateStyle != null) {
             return templateStyle;
         }
-        return Defaults.getDefaults()
-                       .getBandStyle();
+        return Defaults.getDefaults().getBandStyle();
     }
 
     // band background component
@@ -3515,16 +3248,13 @@ public class TemplateTransform {
     }
 
     private DRIComponent getBandBackgroundComponent(DRIBand band, DRIComponent templateBackgroundComponent) {
-        if (band.getList()
-                .getBackgroundComponent() != null) {
-            return band.getList()
-                       .getBackgroundComponent();
+        if (band.getList().getBackgroundComponent() != null) {
+            return band.getList().getBackgroundComponent();
         }
         if (templateBackgroundComponent != null) {
             return templateBackgroundComponent;
         }
-        return Defaults.getDefaults()
-                       .getBandBackgroundComponent();
+        return Defaults.getDefaults().getBandBackgroundComponent();
     }
 
     private int detectWidth(DRDesignList designList) {

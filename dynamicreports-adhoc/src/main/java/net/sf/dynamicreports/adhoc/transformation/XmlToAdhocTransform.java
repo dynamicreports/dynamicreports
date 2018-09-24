@@ -91,9 +91,8 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * <p>XmlToAdhocTransform class.</p>
- * Used by the library to convert {@code XmlAdhocConfiguration} which is an JAXB generated type, that contains data that
- * is unmarshalled from an xml datasource at runtime, into {@code AdhocConfiguration}, a POJO which is internally used by
- * the library to maintain configurations. This is applied in the AdhocManager like so:
+ * Used by the library to convert {@code XmlAdhocConfiguration} which is an JAXB generated type, that contains data that is unmarshalled from an xml datasource at runtime, into {@code
+ * AdhocConfiguration}, a POJO which is internally used by the library to maintain configurations. This is applied in the AdhocManager like so:
  * <pre>
  *     {@code
  *          Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
@@ -129,7 +128,7 @@ public class XmlToAdhocTransform {
      * <p>properties.</p>
      *
      * @param xmlAdhocProperties a {@link java.util.List} object.
-     * @param properties a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
+     * @param properties         a {@link net.sf.dynamicreports.adhoc.configuration.AdhocProperties} object.
      */
     protected void properties(List<XmlAdhocProperty> xmlAdhocProperties, AdhocProperties properties) {
         for (XmlAdhocProperty xmlAdhocProperty : xmlAdhocProperties) {
@@ -141,7 +140,7 @@ public class XmlToAdhocTransform {
     /**
      * <p>propertyStringToValue.</p>
      *
-     * @param value a {@link java.lang.String} object.
+     * @param value      a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.String} object.
      * @return a {@link java.lang.Object} object.
      */
@@ -190,38 +189,32 @@ public class XmlToAdhocTransform {
         adhocReport.setIgnorePagination(xmlAdhocReport.isIgnorePagination());
         adhocReport.setTableOfContents(xmlAdhocReport.isTableOfContents());
         adhocReport.setPage(page(xmlAdhocReport.getPage()));
-        if (xmlAdhocReport.getColumn() != null && !xmlAdhocReport.getColumn()
-                                                                 .isEmpty()) {
+        if (xmlAdhocReport.getColumn() != null && !xmlAdhocReport.getColumn().isEmpty()) {
             for (XmlAdhocColumn xmlAdhocColumn : xmlAdhocReport.getColumn()) {
                 adhocReport.addColumn(column(xmlAdhocColumn));
             }
         }
-        if (xmlAdhocReport.getGroup() != null && !xmlAdhocReport.getGroup()
-                                                                .isEmpty()) {
+        if (xmlAdhocReport.getGroup() != null && !xmlAdhocReport.getGroup().isEmpty()) {
             for (XmlAdhocGroup xmlAdhocGroup : xmlAdhocReport.getGroup()) {
                 adhocReport.addGroup(group(xmlAdhocGroup));
             }
         }
-        if (xmlAdhocReport.getSort() != null && !xmlAdhocReport.getSort()
-                                                               .isEmpty()) {
+        if (xmlAdhocReport.getSort() != null && !xmlAdhocReport.getSort().isEmpty()) {
             for (XmlAdhocSort xmlAdhocSort : xmlAdhocReport.getSort()) {
                 adhocReport.addSort(sort(xmlAdhocSort));
             }
         }
-        if (xmlAdhocReport.getSubtotal() != null && !xmlAdhocReport.getSubtotal()
-                                                                   .isEmpty()) {
+        if (xmlAdhocReport.getSubtotal() != null && !xmlAdhocReport.getSubtotal().isEmpty()) {
             for (XmlAdhocSubtotal xmlAdhocSubtotal : xmlAdhocReport.getSubtotal()) {
                 adhocReport.addSubtotal(subtotal(xmlAdhocSubtotal));
             }
         }
-        if (xmlAdhocReport.getComponent() != null && !xmlAdhocReport.getComponent()
-                                                                    .isEmpty()) {
+        if (xmlAdhocReport.getComponent() != null && !xmlAdhocReport.getComponent().isEmpty()) {
             for (XmlAdhocComponent xmlAdhocComponent : xmlAdhocReport.getComponent()) {
                 adhocReport.addComponent(component(xmlAdhocComponent));
             }
         }
-        if (xmlAdhocReport.getProperty() != null && !xmlAdhocReport.getProperty()
-                                                                   .isEmpty()) {
+        if (xmlAdhocReport.getProperty() != null && !xmlAdhocReport.getProperty().isEmpty()) {
             properties(xmlAdhocReport.getProperty(), adhocReport.getProperties());
         }
         log.debug("XmlAdhocReport : {} has been converted to AdhocReport: {}", xmlAdhocReport, adhocReport);
@@ -241,8 +234,7 @@ public class XmlToAdhocTransform {
         adhocColumn.setWidth(xmlAdhocColumn.getWidth());
         adhocColumn.setStyle(style(xmlAdhocColumn.getStyle()));
         adhocColumn.setTitleStyle(style(xmlAdhocColumn.getTitleStyle()));
-        if (xmlAdhocColumn.getProperty() != null && !xmlAdhocColumn.getProperty()
-                                                                   .isEmpty()) {
+        if (xmlAdhocColumn.getProperty() != null && !xmlAdhocColumn.getProperty().isEmpty()) {
             properties(xmlAdhocColumn.getProperty(), adhocColumn.getProperties());
         }
         return adhocColumn;
@@ -261,8 +253,7 @@ public class XmlToAdhocTransform {
         adhocGroup.setHeaderLayout(groupHeaderLayout(xmlAdhocGroup.getHeaderLayout()));
         adhocGroup.setStyle(style(xmlAdhocGroup.getStyle()));
         adhocGroup.setTitleStyle(style(xmlAdhocGroup.getTitleStyle()));
-        if (xmlAdhocGroup.getProperty() != null && !xmlAdhocGroup.getProperty()
-                                                                 .isEmpty()) {
+        if (xmlAdhocGroup.getProperty() != null && !xmlAdhocGroup.getProperty().isEmpty()) {
             properties(xmlAdhocGroup.getProperty(), adhocGroup.getProperties());
         }
         return adhocGroup;
@@ -620,15 +611,14 @@ public class XmlToAdhocTransform {
      * <p>component.</p>
      *
      * @param xmlAdhocComponent a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocComponent} object.
-     * @param adhocComponent a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
+     * @param adhocComponent    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocComponent} object.
      */
     protected void component(XmlAdhocComponent xmlAdhocComponent, AdhocComponent adhocComponent) {
         adhocComponent.setKey(xmlAdhocComponent.getKey());
         adhocComponent.setStyle(style(xmlAdhocComponent.getStyle()));
         adhocComponent.setWidth(xmlAdhocComponent.getWidth());
         adhocComponent.setHeight(xmlAdhocComponent.getHeight());
-        if (xmlAdhocComponent.getProperty() != null && !xmlAdhocComponent.getProperty()
-                                                                         .isEmpty()) {
+        if (xmlAdhocComponent.getProperty() != null && !xmlAdhocComponent.getProperty().isEmpty()) {
             properties(xmlAdhocComponent.getProperty(), adhocComponent.getProperties());
         }
     }
@@ -637,7 +627,7 @@ public class XmlToAdhocTransform {
      * <p>textField.</p>
      *
      * @param xmlAdhocTextField a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocTextField} object.
-     * @param adhocTextField a {@link net.sf.dynamicreports.adhoc.configuration.AdhocTextField} object.
+     * @param adhocTextField    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocTextField} object.
      */
     protected void textField(XmlAdhocTextField xmlAdhocTextField, AdhocTextField adhocTextField) {
         component(xmlAdhocTextField, adhocTextField);
@@ -648,7 +638,7 @@ public class XmlToAdhocTransform {
      * <p>chart.</p>
      *
      * @param xmlAdhocChart a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocChart} object.
-     * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
+     * @param adhocChart    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      */
     protected void chart(XmlAdhocChart xmlAdhocChart, AdhocChart adhocChart) {
         component(xmlAdhocChart, adhocChart);
@@ -658,14 +648,12 @@ public class XmlToAdhocTransform {
         adhocChart.setTitleColor(color(xmlAdhocChart.getTitleColor()));
         adhocChart.setShowLegend(xmlAdhocChart.isShowLegend());
         adhocChart.setXValue(xmlAdhocChart.getXValue());
-        if (xmlAdhocChart.getSerie() != null && !xmlAdhocChart.getSerie()
-                                                              .isEmpty()) {
+        if (xmlAdhocChart.getSerie() != null && !xmlAdhocChart.getSerie().isEmpty()) {
             for (XmlAdhocChartSerie xmlAdhocChartSerie : xmlAdhocChart.getSerie()) {
                 adhocChart.addSerie(chartSerie(xmlAdhocChartSerie));
             }
         }
-        if (xmlAdhocChart.getSeriesColors() != null && !xmlAdhocChart.getSeriesColors()
-                                                                     .isEmpty()) {
+        if (xmlAdhocChart.getSeriesColors() != null && !xmlAdhocChart.getSeriesColors().isEmpty()) {
             for (String xmlAdhocSeriesColor : xmlAdhocChart.getSeriesColors()) {
                 adhocChart.addSeriesColor(color(xmlAdhocSeriesColor));
             }
@@ -727,8 +715,7 @@ public class XmlToAdhocTransform {
         adhocChartSerie.setYValue(xmlAdhocChartSerie.getYValue());
         adhocChartSerie.setZValue(xmlAdhocChartSerie.getZValue());
         adhocChartSerie.setLabel(xmlAdhocChartSerie.getLabel());
-        if (xmlAdhocChartSerie.getProperty() != null && !xmlAdhocChartSerie.getProperty()
-                                                                           .isEmpty()) {
+        if (xmlAdhocChartSerie.getProperty() != null && !xmlAdhocChartSerie.getProperty().isEmpty()) {
             properties(xmlAdhocChartSerie.getProperty(), adhocChartSerie.getProperties());
         }
         return adhocChartSerie;
@@ -806,8 +793,7 @@ public class XmlToAdhocTransform {
         }
 
         AdhocFilter adhocFilter = new AdhocFilter();
-        if (xmlAdhocFilter.getRestriction() != null && !xmlAdhocFilter.getRestriction()
-                                                                      .isEmpty()) {
+        if (xmlAdhocFilter.getRestriction() != null && !xmlAdhocFilter.getRestriction().isEmpty()) {
             for (XmlAdhocRestriction xmlAdhocRestriction : xmlAdhocFilter.getRestriction()) {
                 adhocFilter.addRestriction(restriction(xmlAdhocRestriction));
             }
@@ -838,12 +824,11 @@ public class XmlToAdhocTransform {
      * <p>restriction.</p>
      *
      * @param xmlAdhocRestriction a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocRestriction} object.
-     * @param adhocRestriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
+     * @param adhocRestriction    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocRestriction} object.
      */
     protected void restriction(XmlAdhocRestriction xmlAdhocRestriction, AdhocRestriction adhocRestriction) {
         adhocRestriction.setKey(xmlAdhocRestriction.getKey());
-        if (xmlAdhocRestriction.getProperty() != null && !xmlAdhocRestriction.getProperty()
-                                                                             .isEmpty()) {
+        if (xmlAdhocRestriction.getProperty() != null && !xmlAdhocRestriction.getProperty().isEmpty()) {
             properties(xmlAdhocRestriction.getProperty(), adhocRestriction.getProperties());
         }
     }
@@ -852,14 +837,13 @@ public class XmlToAdhocTransform {
      * <p>valueRestriction.</p>
      *
      * @param xmlAdhocValueRestriction a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocValueRestriction} object.
-     * @param adhocValueRestriction a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction} object.
+     * @param adhocValueRestriction    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocValueRestriction} object.
      */
     protected void valueRestriction(XmlAdhocValueRestriction xmlAdhocValueRestriction, AdhocValueRestriction adhocValueRestriction) {
         restriction(xmlAdhocValueRestriction, adhocValueRestriction);
         adhocValueRestriction.setName(xmlAdhocValueRestriction.getName());
         adhocValueRestriction.setOperator(valueOperator(xmlAdhocValueRestriction.getOperator()));
-        if (xmlAdhocValueRestriction.getValue() != null && !xmlAdhocValueRestriction.getValue()
-                                                                                    .isEmpty()) {
+        if (xmlAdhocValueRestriction.getValue() != null && !xmlAdhocValueRestriction.getValue().isEmpty()) {
             for (String value : xmlAdhocValueRestriction.getValue()) {
                 adhocValueRestriction.addValue(value);
             }

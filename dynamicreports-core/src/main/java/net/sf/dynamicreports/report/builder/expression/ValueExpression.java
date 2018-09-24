@@ -52,7 +52,7 @@ public class ValueExpression<T> extends AbstractSimpleExpression<T> {
     /**
      * <p>Constructor for ValueExpression.</p>
      *
-     * @param value a T object.
+     * @param value      a T object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     public ValueExpression(T value, Class<? super T> valueClass) {
@@ -61,13 +61,17 @@ public class ValueExpression<T> extends AbstractSimpleExpression<T> {
         this.valueClass = valueClass;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T evaluate(ReportParameters reportParameters) {
         return value;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<? super T> getValueClass() {
         return valueClass;

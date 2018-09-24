@@ -119,8 +119,7 @@ public class BarcodeTransform {
         } else if (barcode instanceof DRIQrCode) {
             return qrCode((DRIQrCode) barcode);
         } else {
-            throw new DRDesignReportException("Barcode " + barcode.getClass()
-                                                                  .getName() + " not supported");
+            throw new DRDesignReportException("Barcode " + barcode.getClass().getName() + " not supported");
         }
     }
 
@@ -133,15 +132,11 @@ public class BarcodeTransform {
      */
     protected DRDesignBarbecue transform(DRIBarbecue barbecue) throws DRException {
         DRDesignBarbecue designBarbecue = new DRDesignBarbecue();
-        designBarbecue.setWidth(accessor.getTemplateTransform()
-                                        .getBarbecueWidth(barbecue));
-        designBarbecue.setHeight(accessor.getTemplateTransform()
-                                         .getBarbecueHeight(barbecue));
+        designBarbecue.setWidth(accessor.getTemplateTransform().getBarbecueWidth(barbecue));
+        designBarbecue.setHeight(accessor.getTemplateTransform().getBarbecueHeight(barbecue));
         designBarbecue.setType(barbecue.getType());
-        designBarbecue.setCodeExpression(accessor.getExpressionTransform()
-                                                 .transformExpression(barbecue.getCodeExpression()));
-        designBarbecue.setApplicationIdentifierExpression(accessor.getExpressionTransform()
-                                                                  .transformExpression(barbecue.getApplicationIdentifierExpression()));
+        designBarbecue.setCodeExpression(accessor.getExpressionTransform().transformExpression(barbecue.getCodeExpression()));
+        designBarbecue.setApplicationIdentifierExpression(accessor.getExpressionTransform().transformExpression(barbecue.getApplicationIdentifierExpression()));
         designBarbecue.setDrawText(barbecue.getDrawText());
         designBarbecue.setChecksumRequired(barbecue.getChecksumRequired());
         designBarbecue.setBarWidth(barbecue.getBarWidth());
@@ -151,18 +146,14 @@ public class BarcodeTransform {
     }
 
     private void barcode(DRDesignBarcode designBarcode, DRIBarcode barcode) throws DRException {
-        designBarcode.setWidth(accessor.getTemplateTransform()
-                                       .getBarcodeWidth(barcode));
-        designBarcode.setHeight(accessor.getTemplateTransform()
-                                        .getBarcodeHeight(barcode));
-        designBarcode.setCodeExpression(accessor.getExpressionTransform()
-                                                .transformExpression(barcode.getCodeExpression()));
+        designBarcode.setWidth(accessor.getTemplateTransform().getBarcodeWidth(barcode));
+        designBarcode.setHeight(accessor.getTemplateTransform().getBarcodeHeight(barcode));
+        designBarcode.setCodeExpression(accessor.getExpressionTransform().transformExpression(barcode.getCodeExpression()));
     }
 
     private void barcode4j(DRDesignBarcode4j designBarcode4j, DRIBarcode4j barcode4j) throws DRException {
         barcode(designBarcode4j, barcode4j);
-        designBarcode4j.setPatternExpression(accessor.getExpressionTransform()
-                                                     .transformExpression(barcode4j.getPatternExpression()));
+        designBarcode4j.setPatternExpression(accessor.getExpressionTransform().transformExpression(barcode4j.getPatternExpression()));
         designBarcode4j.setModuleWidth(barcode4j.getModuleWidth());
         designBarcode4j.setOrientation(barcode4j.getOrientation());
         designBarcode4j.setTextPosition(barcode4j.getTextPosition());

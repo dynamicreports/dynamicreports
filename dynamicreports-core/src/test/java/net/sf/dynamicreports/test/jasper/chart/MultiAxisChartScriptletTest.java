@@ -61,32 +61,15 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         FieldBuilder<Integer> field3 = field("field3", type.integerType());
         FieldBuilder<String> field4 = field("field4", type.stringType());
 
-        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart()
-                                           .customizers(new Customizer1())
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field2)
-                                                      .setLabel("serie1"));
+        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart().customizers(new Customizer1()).setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
 
-        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart()
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field3)
-                                                      .setLabel("serie2"));
+        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field3).setLabel("serie2"));
 
-        BarChartBuilder chart3 = cht.barChart()
-                                    .customizers(new Customizer3())
-                                    .setCategory(field4)
-                                    .series(cht.serie(field2));
+        BarChartBuilder chart3 = cht.barChart().customizers(new Customizer3()).setCategory(field4).series(cht.serie(field2));
 
-        LineChartBuilder chart4 = cht.lineChart()
-                                     .customizers(new Customizer4())
-                                     .setCategory(field4)
-                                     .series(cht.serie(field3));
+        LineChartBuilder chart4 = cht.lineChart().customizers(new Customizer4()).setCategory(field4).series(cht.serie(field3));
 
-        rb.summary(cht.multiAxisChart(chart1, chart2)
-                      .customizers(new Customizer2()), cht.multiAxisChart(chart3, chart4)
-                                                          .customizers(new Customizer5()));
+        rb.summary(cht.multiAxisChart(chart1, chart2).customizers(new Customizer2()), cht.multiAxisChart(chart3, chart4).customizers(new Customizer5()));
     }
 
     @Override
@@ -114,8 +97,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            XYItemRenderer renderer = chart.getXYPlot()
-                                           .getRenderer();
+            XYItemRenderer renderer = chart.getXYPlot().getRenderer();
             Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
         }
     }
@@ -125,11 +107,9 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            XYItemRenderer renderer = chart.getXYPlot()
-                                           .getRenderer(0);
+            XYItemRenderer renderer = chart.getXYPlot().getRenderer(0);
             Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-            renderer = chart.getXYPlot()
-                            .getRenderer(1);
+            renderer = chart.getXYPlot().getRenderer(1);
             Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
         }
     }
@@ -139,8 +119,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot()
-                                                 .getRenderer();
+            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
             Assert.assertEquals("renderer", BarRenderer.class, renderer.getClass());
         }
     }
@@ -150,8 +129,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot()
-                                                 .getRenderer();
+            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
             Assert.assertEquals("renderer", LineAndShapeRenderer.class, renderer.getClass());
         }
     }
@@ -161,11 +139,9 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot()
-                                                 .getRenderer(0);
+            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer(0);
             Assert.assertEquals("renderer", BarRenderer.class, renderer.getClass());
-            renderer = chart.getCategoryPlot()
-                            .getRenderer(1);
+            renderer = chart.getCategoryPlot().getRenderer(1);
             Assert.assertEquals("renderer", LineAndShapeRenderer.class, renderer.getClass());
         }
     }

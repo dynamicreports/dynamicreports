@@ -34,19 +34,19 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 public class DateYearToMonthType extends DateType {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getDateYearToMonthType()
-                       .getPattern();
+        return Defaults.getDefaults().getDateYearToMonthType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getDateYearToMonthType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getDateYearToMonthType().getHorizontalTextAlignment();
     }
 }

@@ -43,7 +43,7 @@ public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariable
     /**
      * <p>Constructor for CrosstabVariableBuilder.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected CrosstabVariableBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -53,7 +53,7 @@ public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariable
     /**
      * <p>Constructor for CrosstabVariableBuilder.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field       a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected CrosstabVariableBuilder(FieldBuilder<?> field, Calculation calculation) {
@@ -63,7 +63,7 @@ public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariable
     /**
      * <p>Constructor for CrosstabVariableBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected CrosstabVariableBuilder(DRIExpression<?> expression, Calculation calculation) {
@@ -81,7 +81,9 @@ public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariable
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getObject().getName();

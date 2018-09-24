@@ -168,14 +168,16 @@ public class AdhocColumn implements Cloneable, Serializable {
     /**
      * <p>setProperty.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key   a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      */
     public void setProperty(String key, Object value) {
         this.properties.setProperty(key, value);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -211,7 +213,9 @@ public class AdhocColumn implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocColumn clone() {
         AdhocColumn clone;

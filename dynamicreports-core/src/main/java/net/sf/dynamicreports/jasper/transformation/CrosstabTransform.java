@@ -79,8 +79,7 @@ public class CrosstabTransform {
         JRDesignCrosstab jrCrosstab = new JRDesignCrosstab();
 
         dataset(crosstab.getDataset(), jrCrosstab.getDesignDataset());
-        accessor.transformToDataset(crosstab.getDataset()
-                                            .getSubDataset());
+        accessor.transformToDataset(crosstab.getDataset().getSubDataset());
         if (crosstab.isRepeatColumnHeaders() != null) {
             jrCrosstab.setRepeatColumnHeaders(crosstab.isRepeatColumnHeaders());
         }
@@ -111,19 +110,14 @@ public class CrosstabTransform {
         accessor.transformToMainDataset();
 
         Map<String, Object> crosstabParameters;
-        if (crosstab.getDataset()
-                    .getSubDataset() == null) {
+        if (crosstab.getDataset().getSubDataset() == null) {
             crosstabParameters = accessor.getParameters();
         } else {
-            crosstabParameters = accessor.getDatasetTransform()
-                                         .getDatasetParameters(crosstab.getDataset()
-                                                                       .getSubDataset());
+            crosstabParameters = accessor.getDatasetTransform().getDatasetParameters(crosstab.getDataset().getSubDataset());
         }
         CrosstabParametersExpression parametersExpression = new CrosstabParametersExpression(crosstabParameters);
-        accessor.getExpressionTransform()
-                .addSimpleExpression(parametersExpression);
-        jrCrosstab.setParametersMapExpression(accessor.getExpressionTransform()
-                                                      .getExpression(parametersExpression));
+        accessor.getExpressionTransform().addSimpleExpression(parametersExpression);
+        jrCrosstab.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
 
         return jrCrosstab;
     }
@@ -142,16 +136,14 @@ public class CrosstabTransform {
 
     // dataset
     private void dataset(DRIDesignCrosstabDataset dataset, JRDesignCrosstabDataset jrDataset) {
-        jrDataset.setDatasetRun(accessor.getDatasetTransform()
-                                        .datasetRun(dataset.getSubDataset()));
+        jrDataset.setDatasetRun(accessor.getDatasetTransform().datasetRun(dataset.getSubDataset()));
         if (dataset.getDataPreSorted() != null) {
             jrDataset.setDataPreSorted(dataset.getDataPreSorted());
         }
         ResetType resetType = dataset.getResetType();
         jrDataset.setResetType(ConstantTransform.variableResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
-            jrDataset.setResetGroup(accessor.getGroupTransform()
-                                            .getGroup(dataset.getResetGroup()));
+            jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
         }
     }
 
@@ -161,13 +153,11 @@ public class CrosstabTransform {
         }
 
         JRDesignCellContents jrCellContents = new JRDesignCellContents();
-        JRDesignElement[] jrElements = accessor.getComponentTransform()
-                                               .component(cellContent.getComponent(), ListType.VERTICAL);
+        JRDesignElement[] jrElements = accessor.getComponentTransform().component(cellContent.getComponent(), ListType.VERTICAL);
         for (JRDesignElement jrElement : jrElements) {
             jrCellContents.addElement(jrElement);
         }
-        jrCellContents.setStyle(accessor.getStyleTransform()
-                                        .getStyle(cellContent.getStyle()));
+        jrCellContents.setStyle(accessor.getStyleTransform().getStyle(cellContent.getStyle()));
         return jrCellContents;
     }
 
@@ -184,15 +174,10 @@ public class CrosstabTransform {
         if (group.getOrderType() != null) {
             jrBucket.setOrder(ConstantTransform.bucketOrderType(group.getOrderType()));
         }
-        jrBucket.setExpression(accessor.getExpressionTransform()
-                                       .getExpression(group.getExpression()));
-        jrBucket.setOrderByExpression(accessor.getExpressionTransform()
-                                              .getExpression(group.getOrderByExpression()));
-        jrBucket.setComparatorExpression(accessor.getExpressionTransform()
-                                                 .getExpression(group.getComparatorExpression()));
-        jrBucket.setValueClassName(group.getExpression()
-                                        .getValueClass()
-                                        .getName());
+        jrBucket.setExpression(accessor.getExpressionTransform().getExpression(group.getExpression()));
+        jrBucket.setOrderByExpression(accessor.getExpressionTransform().getExpression(group.getOrderByExpression()));
+        jrBucket.setComparatorExpression(accessor.getExpressionTransform().getExpression(group.getComparatorExpression()));
+        jrBucket.setValueClassName(group.getExpression().getValueClass().getName());
         return jrBucket;
     }
 
@@ -224,10 +209,8 @@ public class CrosstabTransform {
 
     private void addCell(JRDesignCrosstab jrCrosstab, DRIDesignCrosstabCell cell) {
         JRDesignCrosstabCell jrCell = new JRDesignCrosstabCell();
-        jrCell.setWidth(cell.getContent()
-                            .getWidth());
-        jrCell.setHeight(cell.getContent()
-                             .getHeight());
+        jrCell.setWidth(cell.getContent().getWidth());
+        jrCell.setHeight(cell.getContent().getHeight());
         jrCell.setRowTotalGroup(cell.getRowTotalGroup());
         jrCell.setColumnTotalGroup(cell.getColumnTotalGroup());
         jrCell.setContents(cellContent(cell.getContent()));
@@ -242,10 +225,8 @@ public class CrosstabTransform {
     private void addMeasure(JRDesignCrosstab jrCrosstab, DRIDesignCrosstabMeasure measure) {
         JRDesignCrosstabMeasure jrMeasure = new JRDesignCrosstabMeasure();
         jrMeasure.setName(measure.getName());
-        jrMeasure.setValueExpression(accessor.getExpressionTransform()
-                                             .getExpression(measure.getValueExpression()));
-        jrMeasure.setValueClassName(measure.getValueClass()
-                                           .getName());
+        jrMeasure.setValueExpression(accessor.getExpressionTransform().getExpression(measure.getValueExpression()));
+        jrMeasure.setValueClassName(measure.getValueClass().getName());
         jrMeasure.setCalculation(ConstantTransform.calculation(measure.getCalculation()));
         jrMeasure.setPercentageType(ConstantTransform.crosstabPercentageType(measure.getPercentageType()));
 

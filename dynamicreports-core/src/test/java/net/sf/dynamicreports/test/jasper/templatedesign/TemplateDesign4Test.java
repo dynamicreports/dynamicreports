@@ -48,8 +48,7 @@ public class TemplateDesign4Test extends AbstractJasperValueTest implements Seri
         rb.setTemplateDesign(is)
           .ignorePageWidth()
           .addParameter("parameter", "parametertest")
-          .columns(column1 = col.column("Column1", "field1", String.class)
-                                .setFixedWidth(1000), column2 = col.column("Column2", "field2", Integer.class));
+          .columns(column1 = col.column("Column1", "field1", String.class).setFixedWidth(1000), column2 = col.column("Column2", "field2", Integer.class));
     }
 
     @Override

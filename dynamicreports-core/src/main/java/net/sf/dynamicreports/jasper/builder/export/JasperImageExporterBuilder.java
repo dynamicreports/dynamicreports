@@ -48,8 +48,7 @@ public class JasperImageExporterBuilder extends AbstractJasperExporterBuilder<Ja
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public JasperImageExporterBuilder setPageGap(Integer pageGap) {
-        this.getObject()
-            .setPageGap(pageGap);
+        this.getObject().setPageGap(pageGap);
         return this;
     }
 
@@ -60,17 +59,16 @@ public class JasperImageExporterBuilder extends AbstractJasperExporterBuilder<Ja
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public JasperImageExporterBuilder setImageType(ImageType imageType) {
-        this.getObject()
-            .setImageType(imageType);
+        this.getObject().setImageType(imageType);
         return this;
     }
 
     /**
      * <p>setZoom.</p>
      *
-     * @deprecated To be removed. Use setZoomRatio instead.
      * @param zoom a {@link java.lang.Float} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
+     * @deprecated To be removed. Use setZoomRatio instead.
      */
     @Deprecated
     public JasperImageExporterBuilder setZoom(Float zoom) {
@@ -84,8 +82,7 @@ public class JasperImageExporterBuilder extends AbstractJasperExporterBuilder<Ja
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public JasperImageExporterBuilder setZoomRatio(Float zoom) {
-        this.getObject()
-            .setZoomRatio(zoom);
+        this.getObject().setZoomRatio(zoom);
         return this;
     }
 }

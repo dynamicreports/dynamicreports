@@ -81,8 +81,7 @@ public interface DRIScriptlet {
     /**
      * Called before a group is initialized.
      *
-     * @param groupName
-     *          the group name
+     * @param groupName        the group name
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      */
     public void beforeGroupInit(String groupName, ReportParameters reportParameters);
@@ -90,8 +89,7 @@ public interface DRIScriptlet {
     /**
      * Called after a group is initialized.
      *
-     * @param groupName
-     *          the group name
+     * @param groupName        the group name
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      */
     public void afterGroupInit(String groupName, ReportParameters reportParameters);

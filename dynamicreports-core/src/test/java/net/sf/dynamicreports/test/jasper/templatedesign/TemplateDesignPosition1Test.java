@@ -45,8 +45,7 @@ public class TemplateDesignPosition1Test extends AbstractJasperPositionTest impl
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
         InputStream is = TemplateDesignPosition1Test.class.getResourceAsStream("templatedesign1.jrxml");
-        rb.setTemplateDesign(is)
-          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
+        rb.setTemplateDesign(is).columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
     }
 
     @Override

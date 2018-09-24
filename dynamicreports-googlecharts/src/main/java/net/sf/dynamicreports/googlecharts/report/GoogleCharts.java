@@ -31,12 +31,12 @@ import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder;
  */
 public class GoogleCharts {
 
-	/**
-	 * <p>geoMap.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
-	 */
-	public static GeoMapBuilder geoMap() {
-		return new GeoMapBuilder();
-	}
+    /**
+     * <p>geoMap.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
+     */
+    public static GeoMapBuilder geoMap() {
+        return new GeoMapBuilder();
+    }
 }

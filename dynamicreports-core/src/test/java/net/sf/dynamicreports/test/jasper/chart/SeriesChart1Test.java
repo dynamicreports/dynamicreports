@@ -45,10 +45,7 @@ public class SeriesChart1Test extends AbstractJasperChartTest implements Seriali
         TextColumnBuilder<Integer> column3;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", Integer.class))
-          .summary(cht.barChart()
-                      .setCategory(column1)
-                      .series(cht.serie(column3)
-                                 .setSeries(column2)));
+          .summary(cht.barChart().setCategory(column1).series(cht.serie(column3).setSeries(column2)));
     }
 
     @Override

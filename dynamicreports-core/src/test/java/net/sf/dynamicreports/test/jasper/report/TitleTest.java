@@ -43,8 +43,7 @@ public class TitleTest extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setResourceBundle("net.sf.dynamicreports.test.jasper.report.test")
           .columns(col.column("Column1", "field1", Integer.class))
-          .title(cmp.text("title 1")
-                    .setHyperLink(hyperLink("link").setTooltip("tooltip")), cmp.text("title 2"), cmp.text("title 3"), cmp.text(exp.message("title")),
+          .title(cmp.text("title 1").setHyperLink(hyperLink("link").setTooltip("tooltip")), cmp.text("title 2"), cmp.text("title 3"), cmp.text(exp.message("title")),
                  cmp.multiPageList(cmp.text(exp.message("title"))));
     }
 

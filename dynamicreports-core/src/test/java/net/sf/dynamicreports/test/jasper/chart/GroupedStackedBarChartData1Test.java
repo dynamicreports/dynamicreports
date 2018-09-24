@@ -50,33 +50,14 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", String.class),
                    column4 = col.column("Column4", "field4", Integer.class), column5 = col.column("Column5", "field5", Integer.class))
-          .summary(cmp.horizontalList(cht.groupedStackedBarChart()
+          .summary(cmp.horizontalList(cht.groupedStackedBarChart().setCategory(column1).series(cht.groupedSerie(column4).setSeries(column2).setGroup(column3)),
+                                      cht.groupedStackedBarChart().setCategory(column1).series(cht.groupedSerie(column4).setGroup(column3), cht.groupedSerie(column5).setGroup(column3))),
+                   cmp.horizontalList(cht.groupedStackedBarChart().setShowPercentages(true).setCategory(column1).series(cht.groupedSerie(column4).setSeries(column2).setGroup(column3)),
+                                      cht.groupedStackedBarChart()
+                                         .setShowPercentages(true)
                                          .setCategory(column1)
-                                         .series(cht.groupedSerie(column4)
-                                                    .setSeries(column2)
-                                                    .setGroup(column3)), cht.groupedStackedBarChart()
-                                                                            .setCategory(column1)
-                                                                            .series(cht.groupedSerie(column4)
-                                                                                       .setGroup(column3), cht.groupedSerie(column5)
-                                                                                                              .setGroup(column3))), cmp.horizontalList(cht.groupedStackedBarChart()
-                                                                                                                                                          .setShowPercentages(true)
-                                                                                                                                                          .setCategory(column1)
-                                                                                                                                                          .series(cht.groupedSerie(column4)
-                                                                                                                                                                     .setSeries(column2)
-                                                                                                                                                                     .setGroup(column3)),
-                                                                                                                                                       cht.groupedStackedBarChart()
-                                                                                                                                                          .setShowPercentages(true)
-                                                                                                                                                          .setCategory(column1)
-                                                                                                                                                          .series(cht.groupedSerie(column4)
-                                                                                                                                                                     .setGroup(column3),
-                                                                                                                                                                  cht.groupedSerie(column5)
-                                                                                                                                                                     .setGroup(column3))),
-                   cht.groupedStackedBarChart()
-                      .setDataSource(createDataSource1())
-                      .setCategory(column1)
-                      .series(cht.groupedSerie(column4)
-                                 .setSeries(column2)
-                                 .setGroup(column3)));
+                                         .series(cht.groupedSerie(column4).setGroup(column3), cht.groupedSerie(column5).setGroup(column3))),
+                   cht.groupedStackedBarChart().setDataSource(createDataSource1()).setCategory(column1).series(cht.groupedSerie(column4).setSeries(column2).setGroup(column3)));
     }
 
     @Override
@@ -106,8 +87,7 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
         chartSeriesCountTest("summary.chart5", 0, 4);
         chartDataTest("summary.chart5", 0, categories, series, values);
         JFreeChart chart = getChart("summary.chart5", 0);
-        CategoryDataset dataset = chart.getCategoryPlot()
-                                       .getDataset();
+        CategoryDataset dataset = chart.getCategoryPlot().getDataset();
         Assert.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(0));
         Assert.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", dataset.getRowKey(1));
         Assert.assertEquals("row key", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(2));

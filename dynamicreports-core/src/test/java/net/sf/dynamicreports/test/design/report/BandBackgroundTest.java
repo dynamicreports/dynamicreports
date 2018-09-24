@@ -72,8 +72,7 @@ public class BandBackgroundTest {
         rb.setTemplate(template)
           .setPageColumnsPerPage(2)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1)
-                               .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE))
+          .groupBy(group1 = grp.group(column1).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE))
           .subtotalsAtGroupHeader(group1, sbt.sum(column2))
           .subtotalsAtGroupFooter(group1, sbt.sum(column2))
           .title(cmp.verticalGap(10))
@@ -113,50 +112,32 @@ public class BandBackgroundTest {
         try {
             DRDesignReport report = new DRDesignReport(rb.getReport());
 
-            DRDesignRectangle rectangle = (DRDesignRectangle) ((DRDesignList) report.getTitleBand()
-                                                                                    .getBandComponent()).getBackgroundComponent();
+            DRDesignRectangle rectangle = (DRDesignRectangle) ((DRDesignList) report.getTitleBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("title background component", radius[0], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getPageHeaderBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getPageHeaderBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("pageHeader background component", radius[1], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getPageFooterBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getPageFooterBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("pageFooter background component", radius[2], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getColumnHeaderBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getColumnHeaderBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("columnHeader background component", radius[3], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getColumnFooterBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getColumnFooterBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("columnFooter background component", radius[4], rectangle.getRadius());
             DRDesignGroup group = new ArrayList<DRDesignGroup>(report.getGroups()).get(0);
-            rectangle = (DRDesignRectangle) ((DRDesignList) group.getHeaderBands()
-                                                                 .get(0)
-                                                                 .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) group.getHeaderBands().get(0).getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("groupHeader background component", radius[5], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) group.getFooterBands()
-                                                                 .get(0)
-                                                                 .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) group.getFooterBands().get(0).getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("groupFooter background component", radius[6], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands()
-                                                                  .get(0)
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("detailHeader background component", radius[7], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands()
-                                                                  .get(1)
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands().get(1).getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("detail background component", radius[8], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands()
-                                                                  .get(2)
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getDetailBands().get(2).getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("detailFooter background component", radius[9], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getLastPageFooterBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getLastPageFooterBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("lastPageFooter background component", radius[10], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getSummaryBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getSummaryBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("summary background component", radius[11], rectangle.getRadius());
-            rectangle = (DRDesignRectangle) ((DRDesignList) report.getBackgroundBand()
-                                                                  .getBandComponent()).getBackgroundComponent();
+            rectangle = (DRDesignRectangle) ((DRDesignList) report.getBackgroundBand().getBandComponent()).getBackgroundComponent();
             Assert.assertEquals("background background component", radius[12], rectangle.getRadius());
         } catch (DRException e) {
             e.printStackTrace();

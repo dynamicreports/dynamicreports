@@ -64,8 +64,7 @@ import java.io.OutputStream;
 import java.io.Serializable;
 
 /**
- * This report builder allows concatenating several separated reports into one single document.
- * Each report starts on a new page with its own page dimension.
+ * This report builder allows concatenating several separated reports into one single document. Each report starts on a new page with its own page dimension.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -119,7 +118,7 @@ public class JasperConcatenatedReportBuilder implements Serializable {
      * <p>toPng.</p>
      *
      * @param outputStream a {@link java.io.OutputStream} object.
-     * @param zoom a float.
+     * @param zoom         a float.
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -131,8 +130,7 @@ public class JasperConcatenatedReportBuilder implements Serializable {
         int maxHeight = 0;
 
         for (JasperPrint jasperPrint : jasperReportHandler.getPrintList()) {
-            int pages = jasperPrint.getPages()
-                                   .size();
+            int pages = jasperPrint.getPages().size();
             int pageWidth = (int) (jasperPrint.getPageWidth() * zoom);
             maxWidth += pageWidth * pages + pages - 1 + 2;
             int height = (int) (jasperPrint.getPageHeight() * zoom) + 2;
@@ -150,8 +148,8 @@ public class JasperConcatenatedReportBuilder implements Serializable {
         for (JasperPrint jasperPrint : jasperReportHandler.getPrintList()) {
             int pageWidth = (int) (jasperPrint.getPageWidth() * zoom);
             int pageHeight = (int) (jasperPrint.getPageHeight() * zoom);
-            for (int i = 0; i < jasperPrint.getPages()
-                                           .size(); i++) {
+            for (
+                int i = 0; i < jasperPrint.getPages().size(); i++) {
                 try {
                     SimpleExporterInput exporterInput = new SimpleExporterInput(jasperPrint);
                     SimpleGraphics2DExporterOutput exporterOutput = new SimpleGraphics2DExporterOutput();

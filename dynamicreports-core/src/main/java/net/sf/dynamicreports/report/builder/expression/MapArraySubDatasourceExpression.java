@@ -53,7 +53,9 @@ public class MapArraySubDatasourceExpression extends AbstractSubDatasourceExpres
         super(expression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected JRDataSource createSubDatasource(Object[] data) {
         return new JRMapArrayDataSource(data);

@@ -42,13 +42,17 @@ public class JasperPrintListHandler extends AbstractPrintListHandler {
         printList = new ArrayList<JasperPrint>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void add(JasperPrint jasperPrint) {
         printList.add(jasperPrint);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<JasperPrint> getPrintList() {
         return printList;

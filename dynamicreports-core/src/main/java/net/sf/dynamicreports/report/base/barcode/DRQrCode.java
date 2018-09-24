@@ -37,7 +37,9 @@ public class DRQrCode extends DRBarcode implements DRIQrCode {
     private Integer margin;
     private QrCodeErrorCorrectionLevel errorCorrectionLevel;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMargin() {
         return margin;
@@ -52,7 +54,9 @@ public class DRQrCode extends DRBarcode implements DRIQrCode {
         this.margin = margin;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public QrCodeErrorCorrectionLevel getErrorCorrectionLevel() {
         return errorCorrectionLevel;

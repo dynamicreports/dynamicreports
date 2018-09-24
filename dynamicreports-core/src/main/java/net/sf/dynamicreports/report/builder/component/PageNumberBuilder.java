@@ -41,7 +41,9 @@ public class PageNumberBuilder extends AbstractFormatFieldBuilder<PageNumberBuil
         super(new DRPageNumber());
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         if (getObject().getFormatExpression() == null) {

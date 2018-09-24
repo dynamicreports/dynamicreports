@@ -85,8 +85,7 @@ public class ReportTransform {
             if (tocHeadings == null) {
                 tocHeadings = new LinkedHashMap<String, JasperTocHeading>();
             }
-            accessor.getCustomValues()
-                    .setTocHeadings(tocHeadings);
+            accessor.getCustomValues().setTocHeadings(tocHeadings);
         }
 
         design.setName(report.getReportName());
@@ -115,8 +114,7 @@ public class ReportTransform {
 
         if (accessor.getStartPageNumber() != null) {
             addScriptlet("startPageNumber", StartPageNumberScriptlet.class);
-            accessor.getCustomValues()
-                    .setStartPageNumber(accessor.getStartPageNumber());
+            accessor.getCustomValues().setStartPageNumber(accessor.getStartPageNumber());
         }
 
         for (DRIScriptlet scriptlet : report.getScriptlets()) {
@@ -128,10 +126,7 @@ public class ReportTransform {
      * <p>transformExpressions.</p>
      */
     public void transformExpressions() {
-        accessor.getDesign()
-                .setFilterExpression(accessor.getExpressionTransform()
-                                             .getExpression(accessor.getReport()
-                                                                    .getFilterExpression()));
+        accessor.getDesign().setFilterExpression(accessor.getExpressionTransform().getExpression(accessor.getReport().getFilterExpression()));
     }
 
     /**
@@ -139,60 +134,46 @@ public class ReportTransform {
      */
     public void addDependencies() {
         DRIDesignReport report = accessor.getReport();
-        if (!accessor.getCustomValues()
-                     .isEmpty() || !report.getScriptlets()
-                                          .isEmpty() || accessor.getCustomValues()
-                                                                .getStartPageNumber() != null || report.isTableOfContents()) {
+        if (!accessor.getCustomValues().isEmpty() || !report.getScriptlets().isEmpty() || accessor.getCustomValues().getStartPageNumber() != null || report.isTableOfContents()) {
             addParameter(JasperCustomValues.NAME, JasperCustomValues.class, accessor.getCustomValues());
         }
         if (accessor.getMasterReportParameters() != null) {
             addParameter(JasperReportParameters.MASTER_REPORT_PARAMETERS, ReportParameters.class, accessor.getMasterReportParameters());
         }
-        if (!accessor.getCustomValues()
-                     .isEmpty() || !report.getScriptlets()
-                                          .isEmpty()) {
+        if (!accessor.getCustomValues().isEmpty() || !report.getScriptlets().isEmpty()) {
             addScriptlet(JasperScriptlet.NAME, JasperScriptlet.class);
         }
     }
 
     private <T> void addParameter(String name, Class<T> parameterClass, T value) {
-        if (!accessor.getDesign()
-                     .getParametersMap()
-                     .containsKey(name)) {
+        if (!accessor.getDesign().getParametersMap().containsKey(name)) {
             try {
                 JRDesignParameter jrParameter = new JRDesignParameter();
                 jrParameter.setName(name);
                 jrParameter.setValueClass(parameterClass);
-                accessor.getDesign()
-                        .addParameter(jrParameter);
+                accessor.getDesign().addParameter(jrParameter);
             } catch (JRException e) {
                 throw new JasperDesignException("Registration failed for parameter \"" + name + "\"", e);
             }
         } else {
-            JRParameter jrParameter = accessor.getDesign()
-                                              .getParametersMap()
-                                              .get(name);
+            JRParameter jrParameter = accessor.getDesign().getParametersMap().get(name);
             if (!parameterClass.isAssignableFrom(jrParameter.getValueClass())) {
                 throw new JasperDesignException("Registration failed for parameter \"" + name + "\", parameter is not instance of " + parameterClass.getName());
             }
         }
         if (value != null) {
-            accessor.getParameters()
-                    .put(name, value);
+            accessor.getParameters().put(name, value);
         }
     }
 
     private void addParameter(DRIDesignParameter parameter) {
         try {
             if (!parameter.isExternal()) {
-                accessor.getDesign()
-                        .addParameter(parameter(parameter));
+                accessor.getDesign().addParameter(parameter(parameter));
             }
-            accessor.getCustomValues()
-                    .addValueType(parameter.getName(), ValueType.PARAMETER);
+            accessor.getCustomValues().addValueType(parameter.getName(), ValueType.PARAMETER);
             if (parameter.getValue() != null) {
-                accessor.getParameters()
-                        .put(parameter.getName(), parameter.getValue());
+                accessor.getParameters().put(parameter.getName(), parameter.getValue());
             }
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for parameter \"" + parameter.getName() + "\"", e);
@@ -201,25 +182,21 @@ public class ReportTransform {
 
     private void setProperties(Properties properties) {
         for (
-            Iterator<Object> iterator = properties.keySet()
-                                                  .iterator(); iterator.hasNext(); ) {
+            Iterator<Object> iterator = properties.keySet().iterator(); iterator.hasNext(); ) {
             String key = (String) iterator.next();
-            accessor.getDesign()
-                    .setProperty(key, properties.getProperty(key));
+            accessor.getDesign().setProperty(key, properties.getProperty(key));
         }
     }
 
     private void addScriptlet(DRIScriptlet scriptlet) {
         CustomScriptlet customScriptlet = new CustomScriptlet(scriptlet);
         addScriptlet(scriptlet.getName(), customScriptlet.getClass());
-        accessor.getParameters()
-                .put(scriptlet.getName() + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX, customScriptlet);
+        accessor.getParameters().put(scriptlet.getName() + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX, customScriptlet);
     }
 
     private void addScriptlet(String name, Class<? extends JRAbstractScriptlet> scriptletClass) {
         try {
-            accessor.getDesign()
-                    .addScriptlet(scriptlet(name, scriptletClass));
+            accessor.getDesign().addScriptlet(scriptlet(name, scriptletClass));
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for scriptlet \"" + name + "\"", e);
         }
@@ -237,14 +214,10 @@ public class ReportTransform {
         }
 
         JRDesignHyperlink jrHyperLink = new JRDesignHyperlink();
-        jrHyperLink.setHyperlinkAnchorExpression(accessor.getExpressionTransform()
-                                                         .getExpression(hyperLink.getAnchorExpression()));
-        jrHyperLink.setHyperlinkPageExpression(accessor.getExpressionTransform()
-                                                       .getExpression(hyperLink.getPageExpression()));
-        jrHyperLink.setHyperlinkReferenceExpression(accessor.getExpressionTransform()
-                                                            .getExpression(hyperLink.getReferenceExpression()));
-        jrHyperLink.setHyperlinkTooltipExpression(accessor.getExpressionTransform()
-                                                          .getExpression(hyperLink.getTooltipExpression()));
+        jrHyperLink.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
+        jrHyperLink.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
+        jrHyperLink.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
+        jrHyperLink.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
         if (hyperLink.getType() != null) {
             HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
             if (hyperLinkType != null) {
@@ -267,8 +240,7 @@ public class ReportTransform {
 
     // page
     private void page() {
-        DRIDesignPage page = accessor.getReport()
-                                     .getPage();
+        DRIDesignPage page = accessor.getReport().getPage();
         DRIDesignMargin margin = page.getMargin();
         JasperDesign design = accessor.getDesign();
 
@@ -297,7 +269,7 @@ public class ReportTransform {
     /**
      * <p>scriptlet.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name           a {@link java.lang.String} object.
      * @param scriptletClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignScriptlet} object.
      */

@@ -108,10 +108,8 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
     /**
      * Sets the boolean image dimension. Has effect only when the boolean value is presented as an image.
      *
-     * @param width
-     *          the image width
-     * @param height
-     *          the image height
+     * @param width  the image width
+     * @param height the image height
      * @return a column builder
      */
     public BooleanFieldBuilder setImageDimension(Integer width, Integer height) {
@@ -123,8 +121,7 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
     /**
      * Sets the boolean image width. Has effect only when the boolean value is presented as an image.
      *
-     * @param width
-     *          the image width
+     * @param width the image width
      * @return a column builder
      */
     public BooleanFieldBuilder setImageWidth(Integer width) {
@@ -135,8 +132,7 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
     /**
      * Sets the boolean image height. Has effect only when the boolean value is presented as an image.
      *
-     * @param height
-     *          the image height
+     * @param height the image height
      * @return a column builder
      */
     public BooleanFieldBuilder setImageHeight(Integer height) {
@@ -158,9 +154,9 @@ public class BooleanFieldBuilder extends HyperLinkComponentBuilder<BooleanFieldB
     /**
      * <p>setHorizontalAlignment.</p>
      *
-     * @deprecated use setHorizontalImageAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.BooleanFieldBuilder} object.
+     * @deprecated use setHorizontalImageAlignment instead
      */
     @Deprecated
     public BooleanFieldBuilder setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {

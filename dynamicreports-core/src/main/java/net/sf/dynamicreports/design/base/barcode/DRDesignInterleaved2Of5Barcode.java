@@ -43,7 +43,9 @@ public class DRDesignInterleaved2Of5Barcode extends DRDesignChecksumBarcode impl
         super("Interleaved2Of5");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getDisplayChecksum() {
         return displayChecksum;
@@ -58,7 +60,9 @@ public class DRDesignInterleaved2Of5Barcode extends DRDesignChecksumBarcode impl
         this.displayChecksum = displayChecksum;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getWideFactor() {
         return wideFactor;

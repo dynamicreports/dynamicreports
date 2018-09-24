@@ -47,7 +47,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         super("PDF417");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMinColumns() {
         return minColumns;
@@ -62,7 +64,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         this.minColumns = minColumns;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMaxColumns() {
         return maxColumns;
@@ -77,7 +81,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         this.maxColumns = maxColumns;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMinRows() {
         return minRows;
@@ -92,7 +98,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         this.minRows = minRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMaxRows() {
         return maxRows;
@@ -107,7 +115,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         this.maxRows = maxRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getWidthToHeightRatio() {
         return widthToHeightRatio;
@@ -122,7 +132,9 @@ public class DRDesignPdf417Barcode extends DRDesignBarcode4j implements DRIDesig
         this.widthToHeightRatio = widthToHeightRatio;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getErrorCorrectionLevel() {
         return errorCorrectionLevel;

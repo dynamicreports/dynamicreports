@@ -69,30 +69,13 @@ public class ChartShowValuesReport {
         TextColumnBuilder<Integer> stock2Column = col.column("Stock 2", "stock2", type.integerType());
         TextColumnBuilder<Integer> stock3Column = col.column("Stock 3", "stock3", type.integerType());
 
-        BarChartBuilder barChart = cht.barChart()
-                                      .setShowValues(true)
-                                      .setCategory(itemColumn)
-                                      .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        StackedBarChartBuilder stackedBarChart = cht.stackedBarChart()
-                                                    .setShowValues(true)
-                                                    .setCategory(itemColumn)
-                                                    .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        LineChartBuilder lineChart = cht.lineChart()
-                                        .setShowValues(true)
-                                        .setCategory(itemColumn)
-                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        AreaChartBuilder areaChart = cht.areaChart()
-                                        .setShowValues(true)
-                                        .setCategory(itemColumn)
-                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        StackedBar3DChartBuilder stackedBar3DChart = cht.stackedBar3DChart()
-                                                        .setShowValues(true)
-                                                        .setCategory(itemColumn)
-                                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        PieChartBuilder pieChart = cht.pieChart()
-                                      .setShowValues(true)
-                                      .setKey(itemColumn)
-                                      .series(cht.serie(stock1Column));
+        BarChartBuilder barChart = cht.barChart().setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        StackedBarChartBuilder stackedBarChart = cht.stackedBarChart().setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        LineChartBuilder lineChart = cht.lineChart().setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        AreaChartBuilder areaChart = cht.areaChart().setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        StackedBar3DChartBuilder stackedBar3DChart =
+            cht.stackedBar3DChart().setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        PieChartBuilder pieChart = cht.pieChart().setShowValues(true).setKey(itemColumn).series(cht.serie(stock1Column));
 
         try {
             report().setTemplate(Templates.reportTemplate)

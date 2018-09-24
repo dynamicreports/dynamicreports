@@ -71,8 +71,7 @@ public class MeasureExpressionCrosstabReport {
     }
 
     private void build() {
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
@@ -87,8 +86,7 @@ public class MeasureExpressionCrosstabReport {
         priceMeasure2.setDataType(type.bigDecimalType());
 
         CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
                                        .setCellWidth(180)
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnGroup)
@@ -98,9 +96,8 @@ public class MeasureExpressionCrosstabReport {
         try {
             report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
                     .setTemplate(Templates.reportTemplate)
-                    .title(Templates.createTitleComponent("MeasureExpressionCrosstab"), cmp.text("Price1 = SUM(quantity) * SUM(unitPrice)")
-                                                                                           .setStyle(Templates.boldStyle), cmp.text("Price2 = SUM(quantity * unitPrice)")
-                                                                                                                              .setStyle(Templates.boldStyle))
+                    .title(Templates.createTitleComponent("MeasureExpressionCrosstab"), cmp.text("Price1 = SUM(quantity) * SUM(unitPrice)").setStyle(Templates.boldStyle),
+                           cmp.text("Price2 = SUM(quantity * unitPrice)").setStyle(Templates.boldStyle))
                     .summary(crosstab)
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())

@@ -549,7 +549,7 @@ public class ReportTemplateBuilder extends AbstractBuilder<ReportTemplateBuilder
     /**
      * <p>setPageFormat.</p>
      *
-     * @param pageType a {@link net.sf.dynamicreports.report.constant.PageType} object.
+     * @param pageType    a {@link net.sf.dynamicreports.report.constant.PageType} object.
      * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
      * @return a {@link net.sf.dynamicreports.report.builder.ReportTemplateBuilder} object.
      */

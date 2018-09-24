@@ -43,7 +43,7 @@ public class DRField<T> implements DRIField<T> {
     /**
      * <p>Constructor for DRField.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     public DRField(String name, Class<? super T> valueClass) {
@@ -53,7 +53,9 @@ public class DRField<T> implements DRIField<T> {
         this.valueClass = valueClass;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDataType<? super T, T> getDataType() {
         return dataType;
@@ -68,19 +70,25 @@ public class DRField<T> implements DRIField<T> {
         this.dataType = dataType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<? super T> getValueClass() {
         return valueClass;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getDescription() {
         return description;

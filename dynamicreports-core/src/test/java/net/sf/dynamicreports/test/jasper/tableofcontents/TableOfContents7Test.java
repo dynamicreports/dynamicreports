@@ -41,12 +41,9 @@ public class TableOfContents7Test extends AbstractJasperValueTest {
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
-        group1 = grp.group(column1)
-                    .setReprintHeaderOnEachPage(true);
+        group1 = grp.group(column1).setReprintHeaderOnEachPage(true);
 
-        rb.tableOfContents()
-          .columns(column1, col.column("Column2", "field2", type.stringType()))
-          .groupBy(group1);
+        rb.tableOfContents().columns(column1, col.column("Column2", "field2", type.stringType())).groupBy(group1);
     }
 
     @Override

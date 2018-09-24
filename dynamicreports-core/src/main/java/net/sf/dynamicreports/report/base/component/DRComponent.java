@@ -61,7 +61,9 @@ public abstract class DRComponent implements DRIComponent {
         propertyExpressions = new ArrayList<DRIPropertyExpression>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getStyle() {
         return style;
@@ -76,7 +78,9 @@ public abstract class DRComponent implements DRIComponent {
         this.style = style;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Boolean> getPrintWhenExpression() {
         return printWhenExpression;
@@ -91,7 +95,9 @@ public abstract class DRComponent implements DRIComponent {
         this.printWhenExpression = printWhenExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getRemoveLineWhenBlank() {
         return removeLineWhenBlank;
@@ -106,7 +112,9 @@ public abstract class DRComponent implements DRIComponent {
         this.removeLineWhenBlank = removeLineWhenBlank;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIPropertyExpression> getPropertyExpressions() {
         return propertyExpressions;
@@ -131,7 +139,9 @@ public abstract class DRComponent implements DRIComponent {
         this.propertyExpressions.add(propertyExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRTableOfContentsHeading getTableOfContentsHeading() {
         return tableOfContentsHeading;

@@ -34,9 +34,7 @@ public class PrintWhenExpressionTest extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.text("title1")
-                    .setPrintWhenExpression(exp.value(true)), cmp.text("title2")
-                                                                 .setPrintWhenExpression(exp.value(false)))
+        rb.title(cmp.text("title1").setPrintWhenExpression(exp.value(true)), cmp.text("title2").setPrintWhenExpression(exp.value(false)))
           .summary(cmp.text("summary1"))
           .setSummaryPrintWhenExpression(exp.value(true))
           .pageFooter(cmp.text("pageFooter1"))

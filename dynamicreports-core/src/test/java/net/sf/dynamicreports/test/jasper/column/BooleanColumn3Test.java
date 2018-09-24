@@ -74,8 +74,7 @@ public class BooleanColumn3Test {
         JasperReportBuilder rb = report();
         rb.columns(col.booleanColumn("Column1", "field1")
                       .setComponentType(BooleanComponentType.IMAGE_CHECKBOX_1)
-                      .setStyle(stl.style()
-                                   .setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.TOP)));
+                      .setStyle(stl.style().setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.TOP)));
         return rb;
     }
 

@@ -54,25 +54,20 @@ public class ChartData1Test extends AbstractJasperChartTest implements Serializa
           .summary(cht.barChart()
                       .setTitle(new TitleExpression())
                       .setCategory(column1)
-                      .series(cht.serie(column2), cht.serie("field3", Integer.class)
-                                                     .setLabel("f3"), cht.serie(column2.multiply(2)
-                                                                                       .add(1))
-                                                                         .setLabel("exp")), cht.barChart()
-                                                                                               .setCategory("field1", String.class)
-                                                                                               .customizers(new Customizer1(), new Customizer2())
-                                                                                               .setUseSeriesAsCategory(true)
-                                                                                               .series(cht.serie(column2), cht.serie("field3", Integer.class)
-                                                                                                                              .setLabel("f3"), cht.serie(new ValueExpression())
-                                                                                                                                                  .setLabel("exp")), cht.barChart()
-                                                                                                                                                                        .setCategory(
-                                                                                                                                                                            new CategoryExpression())
-                                                                                                                                                                        .series(cht.serie(column2),
-                                                                                                                                                                                cht.serie("field3",
-                                                                                                                                                                                          Integer.class)
-                                                                                                                                                                                   .setLabel("f3"),
-                                                                                                                                                                                cht.serie(
-                                                                                                                                                                                    new ValueExpression())
-                                                                                                                                                                                   .setLabel("exp")));
+                      .series(cht.serie(column2), cht.serie("field3", Integer.class).setLabel("f3"), cht.serie(column2.multiply(2).add(1)).setLabel("exp")), cht.barChart()
+                                                                                                                                                                .setCategory("field1", String.class)
+                                                                                                                                                                .customizers(new Customizer1(),
+                                                                                                                                                                             new Customizer2())
+                                                                                                                                                                .setUseSeriesAsCategory(true)
+                                                                                                                                                                .series(cht.serie(column2),
+                                                                                                                                                                        cht.serie("field3",
+                                                                                                                                                                                  Integer.class)
+                                                                                                                                                                           .setLabel("f3"),
+                                                                                                                                                                        cht.serie(new ValueExpression())
+                                                                                                                                                                           .setLabel("exp")),
+                   cht.barChart()
+                      .setCategory(new CategoryExpression())
+                      .series(cht.serie(column2), cht.serie("field3", Integer.class).setLabel("f3"), cht.serie(new ValueExpression()).setLabel("exp")));
     }
 
     @Override
@@ -158,8 +153,7 @@ public class ChartData1Test extends AbstractJasperChartTest implements Serializa
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            chart.setTitle(chart.getTitle()
-                                .getText() + " customizer2");
+            chart.setTitle(chart.getTitle().getText() + " customizer2");
         }
     }
 }

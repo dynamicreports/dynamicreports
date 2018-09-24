@@ -60,11 +60,12 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
         this.negativeBarPaint = waterfallBarPlot.getNegativeBarPaint();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot()
-                                                          .getRenderer();
+        BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
         WaterfallBarRenderer renderer = new WaterfallBarRenderer();
 
         renderer.setBaseItemLabelsVisible(categoryRenderer.getBaseItemLabelsVisible());
@@ -72,8 +73,7 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
         renderer.setBaseItemLabelPaint(categoryRenderer.getBaseItemLabelPaint());
         renderer.setBaseItemLabelGenerator(categoryRenderer.getBaseItemLabelGenerator());
         renderer.setShadowVisible(categoryRenderer.getShadowsVisible());
-        CategoryDataset categoryDataset = chart.getCategoryPlot()
-                                               .getDataset();
+        CategoryDataset categoryDataset = chart.getCategoryPlot().getDataset();
         if (categoryDataset != null) {
             for (int i = 0; i < categoryDataset.getRowCount(); i++) {
                 Paint seriesOutlinePaint = categoryRenderer.getSeriesOutlinePaint(i);
@@ -105,8 +105,7 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
             renderer.setNegativeBarPaint(negativeBarPaint);
         }
 
-        chart.getCategoryPlot()
-             .setRenderer(renderer);
+        chart.getCategoryPlot().setRenderer(renderer);
     }
 
 }

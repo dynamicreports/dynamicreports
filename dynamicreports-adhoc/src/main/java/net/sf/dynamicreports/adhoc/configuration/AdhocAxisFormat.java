@@ -91,7 +91,9 @@ public class AdhocAxisFormat implements Cloneable, Serializable {
         this.labelColor = labelColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -118,7 +120,9 @@ public class AdhocAxisFormat implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocAxisFormat clone() {
         AdhocAxisFormat clone;

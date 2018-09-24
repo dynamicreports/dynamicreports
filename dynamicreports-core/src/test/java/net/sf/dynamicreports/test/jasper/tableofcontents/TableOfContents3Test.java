@@ -50,11 +50,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         TextFieldBuilder<String> textField1 = cmp.text("text1");
-        labelExpression1 = textField1.getComponent()
-                                     .getValueExpression();
+        labelExpression1 = textField1.getComponent().getValueExpression();
         TextFieldBuilder<String> textField6 = cmp.text("text6");
-        labelExpression6 = textField6.getComponent()
-                                     .getValueExpression();
+        labelExpression6 = textField6.getComponent().getValueExpression();
 
         rb.tableOfContents()
           .title(textField1.setTableOfContentsHeading(tableOfContentsHeading()), cmp.subreport(createSubreport1()))
@@ -63,11 +61,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
 
     private JasperReportBuilder createSubreport1() {
         TextFieldBuilder<String> textField2 = cmp.text("text2");
-        labelExpression2 = textField2.getComponent()
-                                     .getValueExpression();
+        labelExpression2 = textField2.getComponent().getValueExpression();
         TextFieldBuilder<String> textField4 = cmp.text("text4");
-        labelExpression4 = textField4.getComponent()
-                                     .getValueExpression();
+        labelExpression4 = textField4.getComponent().getValueExpression();
 
         JasperReportBuilder report = report();
         report.title(textField2.setTableOfContentsHeading(tableOfContentsHeading()));
@@ -80,8 +76,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
 
     private JasperReportBuilder createSubreport2() {
         TextFieldBuilder<String> textField3 = cmp.text("text3");
-        labelExpression3 = textField3.getComponent()
-                                     .getValueExpression();
+        labelExpression3 = textField3.getComponent().getValueExpression();
 
         JasperReportBuilder report = report();
         report.title(textField3.setTableOfContentsHeading(tableOfContentsHeading()));
@@ -92,8 +87,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
 
     private JasperReportBuilder createSubreport3() {
         TextFieldBuilder<String> textField5 = cmp.text("text5");
-        labelExpression5 = textField5.getComponent()
-                                     .getValueExpression();
+        labelExpression5 = textField5.getComponent().getValueExpression();
 
         JasperReportBuilder report = report();
         report.title(textField5.setTableOfContentsHeading(tableOfContentsHeading()));
@@ -122,8 +116,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         JRPrintText text = (JRPrintText) getElementAt("detail.textField1", 0);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         JRPrintText dots = (JRPrintText) getElementAt("detail.textField2", 0);
-        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                       .getTruncatedText(dots);
+        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         JRPrintText pageIndex = (JRPrintText) getElementAt("detail.textField3", 0);
@@ -134,8 +127,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         text = (JRPrintText) getElementAt("detail.textField1", 1);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 1);
-        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                .getTruncatedText(dots);
+        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 1);
@@ -146,8 +138,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         text = (JRPrintText) getElementAt("detail.textField1", 2);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 2);
-        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                .getTruncatedText(dots);
+        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 2);
@@ -158,8 +149,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         text = (JRPrintText) getElementAt("detail.textField1", 3);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 3);
-        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                .getTruncatedText(dots);
+        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 3);
@@ -170,8 +160,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         text = (JRPrintText) getElementAt("detail.textField1", 4);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 4);
-        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                .getTruncatedText(dots);
+        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 4);
@@ -182,8 +171,7 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         text = (JRPrintText) getElementAt("detail.textField1", 5);
         Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 5);
-        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                .getTruncatedText(dots);
+        value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
         Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 5);

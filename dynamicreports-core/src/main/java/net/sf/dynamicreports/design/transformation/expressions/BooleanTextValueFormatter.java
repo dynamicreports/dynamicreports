@@ -43,8 +43,8 @@ public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Bo
     /**
      * <p>Constructor for BooleanTextValueFormatter.</p>
      *
-     * @param keyTrue a {@link java.lang.String} object.
-     * @param keyFalse a {@link java.lang.String} object.
+     * @param keyTrue            a {@link java.lang.String} object.
+     * @param keyFalse           a {@link java.lang.String} object.
      * @param emptyWhenNullValue a boolean.
      */
     public BooleanTextValueFormatter(String keyTrue, String keyFalse, boolean emptyWhenNullValue) {
@@ -53,7 +53,9 @@ public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Bo
         this.emptyWhenNullValue = emptyWhenNullValue;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String format(Boolean value, ReportParameters reportParameters) {
         if (emptyWhenNullValue && value == null) {
@@ -65,7 +67,6 @@ public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Bo
         } else {
             key = keyFalse;
         }
-        return ResourceBundle.getBundle(Constants.RESOURCE_BUNDLE_NAME, reportParameters.getLocale())
-                             .getString(key);
+        return ResourceBundle.getBundle(Constants.RESOURCE_BUNDLE_NAME, reportParameters.getLocale()).getString(key);
     }
 }

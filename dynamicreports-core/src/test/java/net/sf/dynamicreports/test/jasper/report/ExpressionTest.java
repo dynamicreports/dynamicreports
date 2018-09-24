@@ -41,9 +41,7 @@ public class ExpressionTest extends AbstractJasperValueTest implements Serializa
     @SuppressWarnings("unchecked")
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setLocale(Locale.ENGLISH)
-          .title(cmp.text(new Expression1()), cmp.text(new Expression2<String>("text2")), cmp.text(new Expression4())
-                                                                                             .setDataType(type.integerType()));
+        rb.setLocale(Locale.ENGLISH).title(cmp.text(new Expression1()), cmp.text(new Expression2<String>("text2")), cmp.text(new Expression4()).setDataType(type.integerType()));
     }
 
     @Override

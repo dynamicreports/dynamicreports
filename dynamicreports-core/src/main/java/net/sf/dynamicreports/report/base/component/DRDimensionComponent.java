@@ -48,7 +48,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
     private Boolean printWhenDetailOverflows;
     private DRIGroup printWhenGroupChanges;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getWidth() {
         return width;
@@ -66,7 +68,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.width = width;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getHeight() {
         return height;
@@ -84,7 +88,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.height = height;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getWidthType() {
         return widthType;
@@ -99,7 +105,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.widthType = widthType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getHeightType() {
         return heightType;
@@ -114,7 +122,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.heightType = heightType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentPositionType getPositionType() {
         return positionType;
@@ -129,7 +139,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.positionType = positionType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public StretchType getStretchType() {
         return stretchType;
@@ -144,7 +156,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.stretchType = stretchType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getPrintInFirstWholeBand() {
         return printInFirstWholeBand;
@@ -159,7 +173,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.printInFirstWholeBand = printInFirstWholeBand;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getPrintWhenDetailOverflows() {
         return printWhenDetailOverflows;
@@ -174,7 +190,9 @@ public abstract class DRDimensionComponent extends DRComponent implements DRIDim
         this.printWhenDetailOverflows = printWhenDetailOverflows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIGroup getPrintWhenGroupChanges() {
         return printWhenGroupChanges;

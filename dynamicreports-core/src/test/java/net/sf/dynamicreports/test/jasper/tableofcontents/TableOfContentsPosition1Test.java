@@ -81,8 +81,7 @@ public class TableOfContentsPosition1Test extends AbstractJasperPositionTest {
             elementPositionTest("detail.list5", i, 10, 193 + 16 * index++, 575, 16);
         }
 
-        String name = "groupHeaderTitleAndValue.group_" + group1.getGroup()
-                                                                .getName() + ".tocReference1";
+        String name = "groupHeaderTitleAndValue.group_" + group1.getGroup().getName() + ".tocReference1";
         for (int i = 0; i < 3; i++) {
             elementPositionTest(name, i, 0, 0, 0, 16);
             groupHeaderPositionTest(group1, i, 0, 0, 575, 16);
@@ -92,8 +91,7 @@ public class TableOfContentsPosition1Test extends AbstractJasperPositionTest {
         elementPositionTest(name, 1, 10, 474, 575, 16);
         elementPositionTest(name, 2, 10, 122, 575, 16);
 
-        name = "groupHeaderTitleAndValue.group_" + group2.getGroup()
-                                                         .getName() + ".tocReference1";
+        name = "groupHeaderTitleAndValue.group_" + group2.getGroup().getName() + ".tocReference1";
         for (int i = 0; i < 9; i++) {
             elementPositionTest(name, i, 0, 0, 0, 16);
             groupHeaderPositionTest(group2, i, 10, 0, 565, 16);

@@ -55,7 +55,7 @@ public class DRParameter<T> implements DRIParameter<T> {
     /**
      * <p>Constructor for DRParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     public DRParameter(String name, Class<T> valueClass) {
@@ -65,19 +65,25 @@ public class DRParameter<T> implements DRIParameter<T> {
         this.valueClass = valueClass;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<T> getValueClass() {
         return valueClass;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T getValue() {
         return value;

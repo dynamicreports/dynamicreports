@@ -41,8 +41,7 @@ public class TableOfContentsPosition2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TableOfContentsCustomizerBuilder tableOfContentsCustomizer = tableOfContentsCustomizer().setTextFixedWidth(100)
-                                                                                                .setPageIndexFixedWidth(30);
+        TableOfContentsCustomizerBuilder tableOfContentsCustomizer = tableOfContentsCustomizer().setTextFixedWidth(100).setPageIndexFixedWidth(30);
 
         rb.tableOfContents(tableOfContentsCustomizer)
           .columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()), col.column("Column3", "field3", type.stringType()))

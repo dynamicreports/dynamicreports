@@ -46,7 +46,9 @@ public class SubreportWidthExpression extends AbstractDesignSimpleExpression {
         this.pageWidth = pageWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object evaluate(ReportParameters reportParameters) {
         DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
@@ -54,7 +56,9 @@ public class SubreportWidthExpression extends AbstractDesignSimpleExpression {
         return pageWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return Integer.class;

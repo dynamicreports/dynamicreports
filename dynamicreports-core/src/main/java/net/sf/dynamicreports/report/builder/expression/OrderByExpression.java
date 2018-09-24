@@ -46,7 +46,9 @@ public class OrderByExpression extends AbstractSimpleExpression<Comparable<?>> {
         this.measure = measure;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Comparable<?> evaluate(ReportParameters reportParameters) {
         return reportParameters.getValue(measure);

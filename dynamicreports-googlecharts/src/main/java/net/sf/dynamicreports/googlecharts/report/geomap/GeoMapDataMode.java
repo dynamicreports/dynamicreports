@@ -28,5 +28,5 @@ package net.sf.dynamicreports.googlecharts.report.geomap;
  * @version $Id: $Id
  */
 public enum GeoMapDataMode {
-	REGIONS, MARKERS
+    REGIONS, MARKERS
 }

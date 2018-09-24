@@ -47,8 +47,7 @@ public class JasperXmlExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperXmlExporterBuilder} object.
      */
     public JasperXmlExporterBuilder setEmbeddingImages(Boolean embeddingImages) {
-        this.getObject()
-            .setEmbeddingImages(embeddingImages);
+        this.getObject().setEmbeddingImages(embeddingImages);
         return this;
     }
 }

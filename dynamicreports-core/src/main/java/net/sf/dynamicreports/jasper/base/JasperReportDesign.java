@@ -52,7 +52,7 @@ public class JasperReportDesign implements Serializable {
     /**
      * <p>Constructor for JasperReportDesign.</p>
      *
-     * @param report a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
+     * @param report          a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
      * @param startPageNumber a {@link java.lang.Integer} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -63,9 +63,9 @@ public class JasperReportDesign implements Serializable {
     /**
      * <p>Constructor for JasperReportDesign.</p>
      *
-     * @param report a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
+     * @param report                 a {@link net.sf.dynamicreports.design.definition.DRIDesignReport} object.
      * @param masterReportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
-     * @param startPageNumber a {@link java.lang.Integer} object.
+     * @param startPageNumber        a {@link java.lang.Integer} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     public JasperReportDesign(DRIDesignReport report, ReportParameters masterReportParameters, Integer startPageNumber) throws DRException {
@@ -75,8 +75,7 @@ public class JasperReportDesign implements Serializable {
     }
 
     private void init(DRIDesignReport report) throws DRException {
-        this.design = (JasperDesign) report.getTemplateDesign()
-                                           .getDesign();
+        this.design = (JasperDesign) report.getTemplateDesign().getDesign();
         this.tableOfContents = report.isTableOfContents();
         this.tableOfContentsCustomizer = report.getTableOfContentsCustomizer();
         this.customValues = new JasperCustomValues();

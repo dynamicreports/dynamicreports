@@ -71,19 +71,15 @@ public class TableOfContentsReport2 {
         FieldBuilder<BigDecimal> unitPriceField = field("unitprice", type.bigDecimalType());
 
         TableOfContentsHeadingBuilder tocHeading1 = tableOfContentsHeading();
-        TextFieldBuilder<String> title1 = cmp.text("Title1")
-                                             .setTableOfContentsHeading(tocHeading1);
+        TextFieldBuilder<String> title1 = cmp.text("Title1").setTableOfContentsHeading(tocHeading1);
 
         TableOfContentsHeadingBuilder tocHeading2 = tableOfContentsHeading().setParentHeading(tocHeading1);
-        TextFieldBuilder<String> title2 = cmp.text("Title2")
-                                             .setTableOfContentsHeading(tocHeading2);
+        TextFieldBuilder<String> title2 = cmp.text("Title2").setTableOfContentsHeading(tocHeading2);
 
         BarChartBuilder chart = cht.barChart()
                                    .setDataSource(createChartDataSource())
                                    .setCategory(itemField)
-                                   .series(cht.serie(quantityField)
-                                              .setLabel("Quantity"), cht.serie(unitPriceField)
-                                                                        .setLabel("Unit price"))
+                                   .series(cht.serie(quantityField).setLabel("Quantity"), cht.serie(unitPriceField).setLabel("Unit price"))
                                    .setTableOfContentsHeading("Chart");
 
         try {
@@ -98,9 +94,7 @@ public class TableOfContentsReport2 {
     }
 
     private JasperReportBuilder createSubreport(int index) {
-        TextFieldBuilder<String> title = cmp.text("Subreport" + index)
-                                            .setStyle(Templates.bold12CenteredStyle)
-                                            .setTableOfContentsHeading(tableOfContentsHeading());
+        TextFieldBuilder<String> title = cmp.text("Subreport" + index).setStyle(Templates.bold12CenteredStyle).setTableOfContentsHeading(tableOfContentsHeading());
 
         JasperReportBuilder report = report();
         report.setTemplate(Templates.reportTemplate)

@@ -60,7 +60,9 @@ public abstract class AbstractBasePlot implements DRIBasePlot {
         this.seriesColorsByName = new HashMap<String, Color>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Orientation getOrientation() {
         return orientation;
@@ -85,7 +87,9 @@ public abstract class AbstractBasePlot implements DRIBasePlot {
         this.seriesColors.add(color);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Color> getSeriesColors() {
         return seriesColors;
@@ -106,7 +110,7 @@ public abstract class AbstractBasePlot implements DRIBasePlot {
      * <p>addSeriesColorByName.</p>
      *
      * @param seriesName a {@link java.lang.String} object.
-     * @param color a {@link java.awt.Color} object.
+     * @param color      a {@link java.awt.Color} object.
      */
     public void addSeriesColorByName(String seriesName, Color color) {
         Validate.notNull(seriesName, "seriesName must not be null");
@@ -114,7 +118,9 @@ public abstract class AbstractBasePlot implements DRIBasePlot {
         this.seriesColorsByName.put(seriesName, color);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Map<String, Color> getSeriesColorsByName() {
         return seriesColorsByName;

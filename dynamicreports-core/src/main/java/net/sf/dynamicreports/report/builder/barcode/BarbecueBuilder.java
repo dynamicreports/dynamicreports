@@ -53,7 +53,7 @@ public class BarbecueBuilder extends DimensionComponentBuilder<BarbecueBuilder, 
     /**
      * <p>Constructor for BarbecueBuilder.</p>
      *
-     * @param type a {@link net.sf.dynamicreports.report.constant.BarbecueType} object.
+     * @param type           a {@link net.sf.dynamicreports.report.constant.BarbecueType} object.
      * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     protected BarbecueBuilder(BarbecueType type, DRIExpression<String> codeExpression) {

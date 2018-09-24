@@ -54,13 +54,7 @@ public class GroupChartTest extends AbstractJasperChartTest implements Serializa
 
         rb.columns(column1, column2, column3)
           .groupBy(column1)
-          .summary(cht.barChart()
-                      .setCategory(column1)
-                      .series(cht.serie(exp.number(1))
-                                 .setLabel("")), cht.barChart()
-                                                    .setCategory(column1)
-                                                    .series(cht.serie(column2Variable)
-                                                               .setLabel("")));
+          .summary(cht.barChart().setCategory(column1).series(cht.serie(exp.number(1)).setLabel("")), cht.barChart().setCategory(column1).series(cht.serie(column2Variable).setLabel("")));
     }
 
     @Override

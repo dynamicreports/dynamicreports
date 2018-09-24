@@ -111,7 +111,7 @@ public abstract class ComponentBuilder<T extends ComponentBuilder<T, U>, U exten
     /**
      * <p>addProperty.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name            a {@link java.lang.String} object.
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
@@ -123,7 +123,7 @@ public abstract class ComponentBuilder<T extends ComponentBuilder<T, U>, U exten
     /**
      * <p>addProperty.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.String} object.
      * @return a T object.
      */

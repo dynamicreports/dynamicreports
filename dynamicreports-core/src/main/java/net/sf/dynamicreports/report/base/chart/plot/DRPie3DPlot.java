@@ -35,7 +35,9 @@ public class DRPie3DPlot extends DRPiePlot implements DRIPie3DPlot {
 
     private Double depthFactor;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getDepthFactor() {
         return depthFactor;

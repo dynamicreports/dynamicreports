@@ -65,9 +65,7 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
         rb.tableOfContents()
           .columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()),
                    column3 = col.column("Column3", "field3", type.stringType()))
-          .groupBy(group1 = grp.group(column1)
-                               .footer(cmp.text("group footer")
-                                          .setTableOfContentsHeading(tocHeading)), group2 = grp.group(column2));
+          .groupBy(group1 = grp.group(column1).footer(cmp.text("group footer").setTableOfContentsHeading(tocHeading)), group2 = grp.group(column2));
     }
 
     @Override
@@ -81,16 +79,14 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
         elementCountTest("detail.textField1", 6);
         int index = 0;
         for (int i = 0; i < 3; i++) {
-            String anchorName = group1.getGroup()
-                                      .getName() + "_" + i * 24;
+            String anchorName = group1.getGroup().getName() + "_" + i * 24;
 
             elementValueTest("detail.textField1", index, "value" + (i + 1));
             JRPrintText text = (JRPrintText) getElementAt("detail.textField1", index);
             Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
 
             JRPrintText dots = (JRPrintText) getElementAt("detail.textField2", index);
-            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                           .getTruncatedText(dots);
+            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
             Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
 
@@ -105,8 +101,7 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
             Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
 
             dots = (JRPrintText) getElementAt("detail.textField2", index);
-            value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                    .getTruncatedText(dots);
+            value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
             Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
 
@@ -118,15 +113,13 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
 
         elementCountTest("detail.textField4", 9);
         for (int i = 0; i < 9; i++) {
-            String anchorName = group2.getGroup()
-                                      .getName() + "_" + i * 8;
+            String anchorName = group2.getGroup().getName() + "_" + i * 8;
 
             JRPrintText text = (JRPrintText) getElementAt("detail.textField4", i);
             Assert.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
 
             JRPrintText dots = (JRPrintText) getElementAt("detail.textField5", i);
-            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                           .getTruncatedText(dots);
+            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assert.assertTrue("dots", StringUtils.containsOnly(value, "."));
             Assert.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
 
@@ -136,14 +129,11 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
         elementValueTest("detail.textField4", "value1", "value2", "value3", "value1", "value2", "value3", "value1", "value2", "value3");
         elementValueTest("detail.textField6", "1", "1", "1", "1", "1", "1", "2", "2", "2");
 
-        String name1 = "groupHeaderTitleAndValue.group_" + group1.getGroup()
-                                                                 .getName() + ".tocReference1";
-        String name2 = "groupHeaderTitleAndValue.group_" + group1.getGroup()
-                                                                 .getName() + "1";
+        String name1 = "groupHeaderTitleAndValue.group_" + group1.getGroup().getName() + ".tocReference1";
+        String name2 = "groupHeaderTitleAndValue.group_" + group1.getGroup().getName() + "1";
         elementCountTest(name1, 3);
         for (int i = 0; i < 3; i++) {
-            String anchorName = group1.getGroup()
-                                      .getName() + "_" + i * 24;
+            String anchorName = group1.getGroup().getName() + "_" + i * 24;
 
             elementValueTest(name1, i, "");
             JRPrintText reference = (JRPrintText) getElementAt(name1, i);
@@ -169,14 +159,11 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
             Assert.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
         }
 
-        name1 = "groupHeaderTitleAndValue.group_" + group2.getGroup()
-                                                          .getName() + ".tocReference1";
-        name2 = "groupHeaderTitleAndValue.group_" + group2.getGroup()
-                                                          .getName() + "1";
+        name1 = "groupHeaderTitleAndValue.group_" + group2.getGroup().getName() + ".tocReference1";
+        name2 = "groupHeaderTitleAndValue.group_" + group2.getGroup().getName() + "1";
         elementCountTest(name1, 9);
         for (int i = 0; i < 9; i++) {
-            String anchorName = group2.getGroup()
-                                      .getName() + "_" + i * 8;
+            String anchorName = group2.getGroup().getName() + "_" + i * 8;
 
             elementValueTest(name1, i, "");
             JRPrintText reference = (JRPrintText) getElementAt(name1, i);

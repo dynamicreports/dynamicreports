@@ -72,12 +72,7 @@ public class SpiderChartTest extends AbstractJasperChartTest implements Serializ
                                          .setAxisLineWidth(2f)
                                          .setLabelColor(Color.BLUE)
                                          .setLabelGap(2d)
-                                         .setLabelFont(stl.font()
-                                                          .bold()), cht.spiderChart()
-                                                                       .setCategory(column1)
-                                                                       .series(cht.serie(column2))
-                                                                       .setTitle("title")
-                                                                       .setSubtitle("subtitle")));
+                                         .setLabelFont(stl.font().bold()), cht.spiderChart().setCategory(column1).series(cht.serie(column2)).setTitle("title").setSubtitle("subtitle")));
     }
 
     @Override
@@ -88,8 +83,7 @@ public class SpiderChartTest extends AbstractJasperChartTest implements Serializ
 
         JRPrintFrame printFrame = (JRPrintFrame) getElementAt("summary.list1", 0);
 
-        JRPrintImage image = (JRPrintImage) printFrame.getElements()
-                                                      .get(0);
+        JRPrintImage image = (JRPrintImage) printFrame.getElements().get(0);
         JFreeChart chart = getChart(image);
         SpiderWebPlot plot = (SpiderWebPlot) chart.getPlot();
         Assert.assertEquals("max value", 10d, plot.getMaxValue());
@@ -103,15 +97,12 @@ public class SpiderChartTest extends AbstractJasperChartTest implements Serializ
         Assert.assertEquals("interior gap", 2f, ((BasicStroke) plot.getAxisLineStroke()).getLineWidth());
         Assert.assertEquals("label color", Color.BLUE, plot.getLabelPaint());
         Assert.assertEquals("label gap", 2d, plot.getAxisLabelGap());
-        Assert.assertTrue("label font", plot.getLabelFont()
-                                            .isBold());
+        Assert.assertTrue("label font", plot.getLabelFont().isBold());
 
-        image = (JRPrintImage) printFrame.getElements()
-                                         .get(1);
+        image = (JRPrintImage) printFrame.getElements().get(1);
         chart = getChart(image);
         plot = (SpiderWebPlot) chart.getPlot();
-        Assert.assertEquals("title", "title", chart.getTitle()
-                                                   .getText());
+        Assert.assertEquals("title", "title", chart.getTitle().getText());
         Assert.assertEquals("subtitle", "subtitle", ((TextTitle) chart.getSubtitle(1)).getText());
     }
 

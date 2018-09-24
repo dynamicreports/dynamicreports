@@ -75,40 +75,23 @@ public class SimpleReport_Step10 {
     private void build() {
         CurrencyType currencyType = new CurrencyType();
 
-        StyleBuilder boldStyle = stl.style()
-                                    .bold();
-        StyleBuilder boldCenteredStyle = stl.style(boldStyle)
-                                            .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle)
-                                           .setBorder(stl.pen1Point())
-                                           .setBackgroundColor(Color.LIGHT_GRAY);
-        StyleBuilder titleStyle = stl.style(boldCenteredStyle)
-                                     .setVerticalTextAlignment(VerticalTextAlignment.MIDDLE)
-                                     .setFontSize(15);
+        StyleBuilder boldStyle = stl.style().bold();
+        StyleBuilder boldCenteredStyle = stl.style(boldStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder titleStyle = stl.style(boldCenteredStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE).setFontSize(15);
 
         // title, field name data type
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setStyle(boldStyle);
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", currencyType);
         // price = unitPrice * quantity
-        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn)
-                                                                   .setTitle("Price")
-                                                                   .setDataType(currencyType);
+        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn).setTitle("Price").setDataType(currencyType);
         PercentageColumnBuilder pricePercColumn = col.percentageColumn("Price %", priceColumn);
         TextColumnBuilder<Integer> rowNumberColumn = col.reportRowNumberColumn("No.")
                                                         // sets the fixed width of a column, width = 2 * character width
-                                                        .setFixedColumns(2)
-                                                        .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        Bar3DChartBuilder itemChart = cht.bar3DChart()
-                                         .setTitle("Sales by item")
-                                         .setCategory(itemColumn)
-                                         .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
-        Bar3DChartBuilder itemChart2 = cht.bar3DChart()
-                                          .setTitle("Sales by item")
-                                          .setCategory(itemColumn)
-                                          .setUseSeriesAsCategory(true)
-                                          .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+                                                        .setFixedColumns(2).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        Bar3DChartBuilder itemChart = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+        Bar3DChartBuilder itemChart2 = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).setUseSeriesAsCategory(true).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
         ColumnGroupBuilder itemGroup = grp.group(itemColumn);
         itemGroup.setPrintSubtotalsWhenExpression(exp.printWhenGroupHasMoreThanOneRow(itemGroup));
         try {
@@ -124,19 +107,12 @@ public class SimpleReport_Step10 {
                     .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .title(// shows report title
                            cmp.horizontalList()
-                              .add(cmp.image(Templates.class.getResource("images/dynamicreports.png"))
-                                      .setFixedDimension(80, 80), cmp.text("DynamicReports")
-                                                                     .setStyle(titleStyle)
-                                                                     .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT), cmp.text("Getting started")
-                                                                                                                                   .setStyle(titleStyle)
-                                                                                                                                   .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT))
+                              .add(cmp.image(Templates.class.getResource("images/dynamicreports.png")).setFixedDimension(80, 80),
+                                   cmp.text("DynamicReports").setStyle(titleStyle).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT),
+                                   cmp.text("Getting started").setStyle(titleStyle).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT))
                               .newRow()
-                              .add(cmp.filler()
-                                      .setStyle(stl.style()
-                                                   .setTopBorder(stl.pen2Point()))
-                                      .setFixedHeight(10)))
-                    .pageFooter(cmp.pageXofY()
-                                   .setStyle(boldCenteredStyle))// shows number of page at page footer
+                              .add(cmp.filler().setStyle(stl.style().setTopBorder(stl.pen2Point())).setFixedHeight(10)))
+                    .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .summary(cmp.horizontalList(itemChart, itemChart2))
                     .setDataSource(createDataSource())// set datasource
                     .show();// create and show report

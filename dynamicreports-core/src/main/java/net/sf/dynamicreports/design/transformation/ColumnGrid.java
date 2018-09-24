@@ -50,7 +50,7 @@ class ColumnGrid {
      * <p>addList.</p>
      *
      * @param column a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
-     * @param list a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
+     * @param list   a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
      */
     public void addList(DRIColumn<?> column, DRDesignList list) {
         columnsLists.put(column, list);
@@ -59,28 +59,26 @@ class ColumnGrid {
     /**
      * <p>addComponent.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
+     * @param column    a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
      * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(DRIColumn<?> column, DRDesignComponent component) {
         if (columnsLists.containsKey(column)) {
-            columnsLists.get(column)
-                        .addComponent(component);
+            columnsLists.get(column).addComponent(component);
         }
     }
 
     /**
      * <p>addComponent.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
+     * @param column              a {@link net.sf.dynamicreports.report.definition.column.DRIColumn} object.
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(DRIColumn<?> column, HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRDesignComponent component) {
         if (columnsLists.containsKey(column)) {
-            columnsLists.get(column)
-                        .addComponent(horizontalAlignment, verticalAlignment, component);
+            columnsLists.get(column).addComponent(horizontalAlignment, verticalAlignment, component);
         }
     }
 

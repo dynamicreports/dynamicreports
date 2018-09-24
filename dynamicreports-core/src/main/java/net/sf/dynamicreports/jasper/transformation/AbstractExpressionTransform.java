@@ -178,8 +178,7 @@ public abstract class AbstractExpressionTransform {
         try {
             addSort(sort(sort));
         } catch (JRException e) {
-            throw new JasperDesignException("Registration failed for sort \"" + sort.getExpression()
-                                                                                    .getName() + "\"", e);
+            throw new JasperDesignException("Registration failed for sort \"" + sort.getExpression().getName() + "\"", e);
         }
     }
 
@@ -258,8 +257,7 @@ public abstract class AbstractExpressionTransform {
         } else if (expression instanceof DRIDesignJasperExpression) {
             return ((DRIDesignJasperExpression) expression).getExpression();
         } else {
-            throw new JasperDesignException("Expression " + expression.getClass()
-                                                                      .getName() + " not supported");
+            throw new JasperDesignException("Expression " + expression.getClass().getName() + " not supported");
         }
     }
 

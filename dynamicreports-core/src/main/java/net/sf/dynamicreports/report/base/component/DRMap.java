@@ -38,7 +38,9 @@ public class DRMap extends DRDimensionComponent implements DRIMap {
     public DRIExpression<Float> longitudeExpression;
     public DRIExpression<Integer> zoomExpression;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Float> getLatitudeExpression() {
         return latitudeExpression;
@@ -53,7 +55,9 @@ public class DRMap extends DRDimensionComponent implements DRIMap {
         this.latitudeExpression = latitudeExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Float> getLongitudeExpression() {
         return longitudeExpression;
@@ -68,7 +72,9 @@ public class DRMap extends DRDimensionComponent implements DRIMap {
         this.longitudeExpression = longitudeExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Integer> getZoomExpression() {
         return zoomExpression;

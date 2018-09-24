@@ -64,9 +64,7 @@ public class StyleNamesTest {
         final ByteArrayInputStream is = new ByteArrayInputStream(jrtxStr.getBytes(Charset.forName("UTF-8")));
         // name defined in style template:
         final TemplateStyleBuilder templateStyle = stl.templateStyle("MyBoldStyle2");
-        final JasperReportBuilder builder = report().addTemplateStyle(stl.loadStyles(is))
-                                                    .title(cmp.text("Some title")
-                                                              .setStyle(templateStyle));
+        final JasperReportBuilder builder = report().addTemplateStyle(stl.loadStyles(is)).title(cmp.text("Some title").setStyle(templateStyle));
         final JasperDesign design = builder.toJasperDesign();
         assertContainsStyleWithName("MyBoldStyle2", design.getStylesList());
     }
@@ -75,12 +73,8 @@ public class StyleNamesTest {
     public void testStyleName() throws DRException {
         final String styleName = "MyBoldStyle";
         // name explicitly set:
-        final StyleBuilder tucne = stl.style()
-                                      .setName(styleName)
-                                      .setFont(stl.font()
-                                                  .bold());
-        final JasperReportBuilder builder = report().title(cmp.text("Some title")
-                                                              .setStyle(tucne));
+        final StyleBuilder tucne = stl.style().setName(styleName).setFont(stl.font().bold());
+        final JasperReportBuilder builder = report().title(cmp.text("Some title").setStyle(tucne));
         final JasperDesign design = builder.toJasperDesign();
         assertContainsStyleWithName(styleName, design.getStylesList());
     }

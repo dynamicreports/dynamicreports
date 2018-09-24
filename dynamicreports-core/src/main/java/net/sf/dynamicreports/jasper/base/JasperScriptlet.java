@@ -46,9 +46,13 @@ import java.util.Map;
  * @version $Id: $Id
  */
 public class JasperScriptlet extends JRDefaultScriptlet {
-    /** Constant <code>NAME="DYNAMICREPORTS"</code> */
+    /**
+     * Constant <code>NAME="DYNAMICREPORTS"</code>
+     */
     public static final String NAME = "DYNAMICREPORTS";
-    /** Constant <code>SCRIPTLET_NAME="NAME + JRScriptlet.SCRIPTLET_PARAMETER_"{trunked}</code> */
+    /**
+     * Constant <code>SCRIPTLET_NAME="NAME + JRScriptlet.SCRIPTLET_PARAMETER_"{trunked}</code>
+     */
     public static final String SCRIPTLET_NAME = NAME + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX;
 
     private JasperReportParameters reportParameters;
@@ -66,7 +70,7 @@ public class JasperScriptlet extends JRDefaultScriptlet {
     /**
      * <p>getValue.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name   a {@link java.lang.String} object.
      * @param values an array of {@link java.lang.Object} objects.
      * @return a {@link java.lang.Object} object.
      */
@@ -177,14 +181,18 @@ public class JasperScriptlet extends JRDefaultScriptlet {
         return getCustomValues().getSubreportWidth();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setData(Map<String, JRFillParameter> parsm, Map<String, JRFillField> fldsm, Map<String, JRFillVariable> varsm, JRFillGroup[] grps) {
         super.setData(parsm, fldsm, varsm, grps);
         reportParameters = new JasperReportParameters(this);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void afterReportInit() throws JRScriptletException {
         super.afterReportInit();

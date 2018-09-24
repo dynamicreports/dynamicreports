@@ -45,7 +45,7 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -55,8 +55,8 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(String name, ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -68,7 +68,7 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field       a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(FieldBuilder<?> field, Calculation calculation) {
@@ -78,8 +78,8 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param field       a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(String name, FieldBuilder<?> field, Calculation calculation) {
@@ -91,7 +91,7 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(DRIExpression<?> expression, Calculation calculation) {
@@ -101,8 +101,8 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
     /**
      * <p>Constructor for VariableBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param expression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
      */
     protected VariableBuilder(String name, DRIExpression<?> expression, Calculation calculation) {
@@ -156,7 +156,9 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
         return build();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getVariable().getName();

@@ -43,15 +43,9 @@ public class Component1Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .columns(col.column("Column1", "field1", Integer.class))
-          .pageFooter(cmp.pageXofY(), cmp.pageXslashY(), cmp.currentDate()
-                                                            .setPattern("dd.MM.yyyy"), cmp.totalPages(), cmp.pageNumber(), cmp.totalPages()
-                                                                                                                              .setFormatExpression("total pages {0}"), cmp.pageNumber()
-                                                                                                                                                                          .setFormatExpression(
-                                                                                                                                                                              "page number {0}"),
-                      cmp.currentDate()
-                         .setFormatExpression("current date {0}"), cmp.currentDate()
-                                                                      .setFormatExpression("current date {0}")
-                                                                      .setPattern("dd.MM.yyyy"));
+          .pageFooter(cmp.pageXofY(), cmp.pageXslashY(), cmp.currentDate().setPattern("dd.MM.yyyy"), cmp.totalPages(), cmp.pageNumber(), cmp.totalPages().setFormatExpression("total pages {0}"),
+                      cmp.pageNumber().setFormatExpression("page number {0}"), cmp.currentDate().setFormatExpression("current date {0}"),
+                      cmp.currentDate().setFormatExpression("current date {0}").setPattern("dd.MM.yyyy"));
     }
 
     @Override
@@ -88,8 +82,7 @@ public class Component1Test extends AbstractJasperValueTest {
         elementValueTest("pageFooter.textField9", "page number 1", "page number 2", "page number 3");
 
         elementCountTest("pageFooter.textField10", 3);
-        date = type.dateType()
-                   .valueToString(new Date(), Locale.ENGLISH);
+        date = type.dateType().valueToString(new Date(), Locale.ENGLISH);
         elementValueTest("pageFooter.textField10", "current date " + date, "current date " + date, "current date " + date);
 
         elementCountTest("pageFooter.textField11", 3);

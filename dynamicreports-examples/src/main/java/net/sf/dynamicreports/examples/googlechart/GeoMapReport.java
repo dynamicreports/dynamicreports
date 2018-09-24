@@ -40,10 +40,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
  * <p>GeoMapReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- *
- *         GeoMap component works only for html export.
- *         Visit the following link for more information about geo map parameters
- *         http://code.google.com/apis/chart/interactive/docs/gallery/geomap.html
+ * <p>
+ * GeoMap component works only for html export. Visit the following link for more information about geo map parameters http://code.google.com/apis/chart/interactive/docs/gallery/geomap.html
  * @version $Id: $Id
  */
 public class GeoMapReport {
@@ -83,14 +81,9 @@ public class GeoMapReport {
                                             .setFixedHeight(300);
 
         try {
-            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html")
-                                                           .setImagesDirName("c:/images")
-                                                           .setOutputImagesToDir(true);
+            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html").setImagesDirName("c:/images").setOutputImagesToDir(true);
 
-            report().setTemplate(Templates.reportTemplate)
-                    .title(Templates.createTitleComponent("GeoMap"))
-                    .summary(geoMap1, cmp.verticalGap(10), geoMap2)
-                    .toHtml(htmlExporter);
+            report().setTemplate(Templates.reportTemplate).title(Templates.createTitleComponent("GeoMap")).summary(geoMap1, cmp.verticalGap(10), geoMap2).toHtml(htmlExporter);
         } catch (DRException e) {
             e.printStackTrace();
         }

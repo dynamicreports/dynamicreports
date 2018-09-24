@@ -65,12 +65,8 @@ public class BandReport {
     }
 
     private void build() {
-        boldCenteredStyle = stl.style()
-                               .bold()
-                               .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder backgroundStyle = stl.style(boldCenteredStyle)
-                                          .setVerticalTextAlignment(VerticalTextAlignment.MIDDLE)
-                                          .setRotation(Rotation.LEFT);
+        boldCenteredStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder backgroundStyle = stl.style(boldCenteredStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE).setRotation(Rotation.LEFT);
 
         TextColumnBuilder<String> column1 = col.column("Column1", "column1", type.stringType());
         TextColumnBuilder<String> column2 = col.column("Column2", "column2", type.stringType());
@@ -94,8 +90,7 @@ public class BandReport {
                     // .detailFooter(createTextField("This is a detail footer band"))
                     .groupHeader(columnGroup, createTextField("This is a group header band"))
                     .groupFooter(columnGroup, createTextField("This is a group footer band"))
-                    .background(createTextField("This is a background band").setHeight(800)
-                                                                            .setStyle(backgroundStyle))
+                    .background(createTextField("This is a background band").setHeight(800).setStyle(backgroundStyle))
 
                     .setDataSource(createDataSource())// set datasource
                     .show();// create and show report
@@ -105,8 +100,7 @@ public class BandReport {
     }
 
     private TextFieldBuilder<String> createTextField(String label) {
-        return cmp.text(label)
-                  .setStyle(boldCenteredStyle);
+        return cmp.text(label).setStyle(boldCenteredStyle);
     }
 
     private JRDataSource createDataSource() {

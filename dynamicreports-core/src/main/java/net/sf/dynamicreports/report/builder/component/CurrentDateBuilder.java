@@ -52,7 +52,9 @@ public class CurrentDateBuilder extends AbstractFormatFieldBuilder<CurrentDateBu
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         if (getObject().getFormatExpression() == null) {

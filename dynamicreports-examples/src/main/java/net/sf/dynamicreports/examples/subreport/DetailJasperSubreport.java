@@ -65,8 +65,7 @@ public class DetailJasperSubreport {
 
     private void build() {
         try {
-            SubreportBuilder subreport = cmp.subreport(getJasperSubreport())
-                                            .setDataSource(new SubreportDataSourceExpression());
+            SubreportBuilder subreport = cmp.subreport(getJasperSubreport()).setDataSource(new SubreportDataSourceExpression());
 
             report().title(Templates.createTitleComponent("DetailJasperSubreport"))
                     .detail(subreport, cmp.verticalGap(20))

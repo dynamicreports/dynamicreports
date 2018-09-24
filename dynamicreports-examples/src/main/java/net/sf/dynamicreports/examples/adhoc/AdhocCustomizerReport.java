@@ -123,8 +123,7 @@ public class AdhocCustomizerReport {
     private class ReportCustomizer extends DefaultAdhocReportCustomizer {
 
         /**
-         * If you want to add some fixed content to a report that is not needed to store in the xml file.
-         * For example you can add default page header, footer, default fonts,...
+         * If you want to add some fixed content to a report that is not needed to store in the xml file. For example you can add default page header, footer, default fonts,...
          */
         @Override
         public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException {

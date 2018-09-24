@@ -52,19 +52,13 @@ public class CrosstabPosition8Test extends AbstractJasperCrosstabPositionTest {
         TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
         TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
 
-        rowGroup1 = ctab.rowGroup(column1)
-                        .setHeaderWidth(22);
+        rowGroup1 = ctab.rowGroup(column1).setHeaderWidth(22);
         measure1 = ctab.measure("measure1", column3, Calculation.SUM);
         measure2 = ctab.measure("measure2", column3, Calculation.SUM);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .setCellWidth(100)
-                                       .rowGroups(rowGroup1)
-                                       .columnGroups(columnGroup1 = ctab.columnGroup(column2))
-                                       .measures(measure1, measure2);
+        CrosstabBuilder crosstab = ctab.crosstab().setCellWidth(100).rowGroups(rowGroup1).columnGroups(columnGroup1 = ctab.columnGroup(column2)).measures(measure1, measure2);
 
-        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-          .summary(crosstab);
+        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).summary(crosstab);
     }
 
     @Override

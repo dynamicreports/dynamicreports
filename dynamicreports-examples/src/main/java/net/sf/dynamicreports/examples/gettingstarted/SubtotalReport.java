@@ -65,9 +65,7 @@ public class SubtotalReport {
     }
 
     private void build() {
-        boldStyle = stl.style()
-                       .bold()
-                       .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
+        boldStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
 
         TextColumnBuilder<String> column1 = col.column("Column1", "column1", type.stringType());
         column2 = col.column("Column2", "column2", type.integerType());
@@ -101,15 +99,11 @@ public class SubtotalReport {
     }
 
     private AggregationSubtotalBuilder<Integer> createSubtotal(String label) {
-        return sbt.sum(column2)
-                  .setLabel(label)
-                  .setLabelStyle(boldStyle);
+        return sbt.sum(column2).setLabel(label).setLabelStyle(boldStyle);
     }
 
     private PercentageSubtotalBuilder createPercSubtotal(String label) {
-        return sbt.percentage(column2)
-                  .setLabel(label)
-                  .setLabelStyle(boldStyle);
+        return sbt.percentage(column2).setLabel(label).setLabelStyle(boldStyle);
     }
 
     private JRDataSource createDataSource() {

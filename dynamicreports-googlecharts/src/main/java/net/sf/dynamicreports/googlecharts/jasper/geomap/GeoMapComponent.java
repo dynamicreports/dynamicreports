@@ -21,14 +21,14 @@
  */
 package net.sf.dynamicreports.googlecharts.jasper.geomap;
 
-import java.awt.Color;
-import java.util.List;
-
 import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode;
 import net.sf.jasperreports.engine.JRCloneable;
 import net.sf.jasperreports.engine.JRExpression;
 import net.sf.jasperreports.engine.component.Component;
 import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
+
+import java.awt.Color;
+import java.util.List;
 
 /**
  * <p>GeoMapComponent interface.</p>
@@ -38,59 +38,59 @@ import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
  */
 public interface GeoMapComponent extends Component, JRCloneable {
 
-	/**
-	 * <p>getEvaluationTime.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.type.EvaluationTimeEnum} object.
-	 */
-	public EvaluationTimeEnum getEvaluationTime();
+    /**
+     * <p>getEvaluationTime.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.type.EvaluationTimeEnum} object.
+     */
+    public EvaluationTimeEnum getEvaluationTime();
 
-	/**
-	 * <p>getEvaluationGroup.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getEvaluationGroup();
+    /**
+     * <p>getEvaluationGroup.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getEvaluationGroup();
 
-	/**
-	 * <p>getShowLegend.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getShowLegend();
+    /**
+     * <p>getShowLegend.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getShowLegend();
 
-	/**
-	 * <p>getDataMode.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
-	 */
-	public GeoMapDataMode getDataMode();
+    /**
+     * <p>getDataMode.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
+     */
+    public GeoMapDataMode getDataMode();
 
-	/**
-	 * <p>getRegionExpression.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public JRExpression getRegionExpression();
+    /**
+     * <p>getRegionExpression.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public JRExpression getRegionExpression();
 
-	/**
-	 * <p>getValueLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public JRExpression getValueLabelExpression();
+    /**
+     * <p>getValueLabelExpression.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public JRExpression getValueLabelExpression();
 
-	/**
-	 * <p>getColors.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<Color> getColors();
+    /**
+     * <p>getColors.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<Color> getColors();
 
-	/**
-	 * <p>getDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
-	 */
-	public GeoMapDataset getDataset();
+    /**
+     * <p>getDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
+     */
+    public GeoMapDataset getDataset();
 }

@@ -53,13 +53,17 @@ public class DRDesignBand implements DRIDesignBand {
         this.name = name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SplitType getSplitType() {
         return splitType;
@@ -74,7 +78,9 @@ public class DRDesignBand implements DRIDesignBand {
         this.splitType = splitType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignList getList() {
         return list;
@@ -101,14 +107,16 @@ public class DRDesignBand implements DRIDesignBand {
     /**
      * <p>addComponent.</p>
      *
-     * @param index a int.
+     * @param index     a int.
      * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(int index, DRDesignComponent component) {
         list.addComponent(index, component);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignComponent getBandComponent() {
         return bandComponent;
@@ -123,7 +131,9 @@ public class DRDesignBand implements DRIDesignBand {
         this.bandComponent = component;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getHeight() {
         return height;
@@ -138,7 +148,9 @@ public class DRDesignBand implements DRIDesignBand {
         this.height = height;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getPrintWhenExpression() {
         return printWhenExpression;

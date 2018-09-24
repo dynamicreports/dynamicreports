@@ -46,8 +46,7 @@ public class ColumnTitleGroup1Test extends AbstractJasperValueTest {
         column3 = col.column("Column3", "field3", String.class);
         column4 = col.column("Column4", "field4", String.class);
 
-        rb.columnGrid(column1, grid.titleGroup("Group1", column2, grid.titleGroup("Group2", column3, column4)))
-          .columns(column1, column2, column3, column4);
+        rb.columnGrid(column1, grid.titleGroup("Group1", column2, grid.titleGroup("Group2", column3, column4))).columns(column1, column2, column3, column4);
     }
 
     @Override

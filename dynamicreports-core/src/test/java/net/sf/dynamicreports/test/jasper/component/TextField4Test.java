@@ -50,10 +50,7 @@ public class TextField4Test extends AbstractJasperValueTest implements Serializa
         TextColumnBuilder<Integer> column1 = col.column("Column1", "field1", type.integerType());
         VariableBuilder<Integer> variable1 = variable("variable1", column1, Calculation.SUM);
 
-        rb.columns(column1)
-          .variables(variable1)
-          .title(cmp.text(new TextExpression())
-                    .setEvaluationTime(Evaluation.REPORT));
+        rb.columns(column1).variables(variable1).title(cmp.text(new TextExpression()).setEvaluationTime(Evaluation.REPORT));
     }
 
     @Override

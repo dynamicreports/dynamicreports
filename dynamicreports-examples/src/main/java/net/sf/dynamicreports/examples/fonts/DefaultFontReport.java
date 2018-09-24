@@ -34,9 +34,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
  * <p>DefaultFontReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- *
- *         This report is working properly only when the font "FreeUniversal" is registered.
- *         The font is registered in these files: customfonts.xml and jasperreports_extension.properties. The files are located in the root of the classpath.
+ * <p>
+ * This report is working properly only when the font "FreeUniversal" is registered. The font is registered in these files: customfonts.xml and jasperreports_extension.properties. The files are
+ * located in the root of the classpath.
  * @version $Id: $Id
  */
 public class DefaultFontReport {
@@ -58,22 +58,15 @@ public class DefaultFontReport {
     }
 
     private void build() {
-        FontBuilder defaultFont = stl.font()
-                                     .setFontName("FreeUniversal");
-        StyleBuilder boldStyle = stl.style()
-                                    .bold();
-        StyleBuilder italicStyle = stl.style()
-                                      .italic();
-        StyleBuilder boldItalicStyle = stl.style()
-                                          .boldItalic();
+        FontBuilder defaultFont = stl.font().setFontName("FreeUniversal");
+        StyleBuilder boldStyle = stl.style().bold();
+        StyleBuilder italicStyle = stl.style().italic();
+        StyleBuilder boldItalicStyle = stl.style().boldItalic();
 
         try {
             report().setDefaultFont(defaultFont)
-                    .title(Templates.createTitleComponent("DefaultFont"), cmp.text("FreeUniversal font - plain"), cmp.text("FreeUniversal font - bold")
-                                                                                                                     .setStyle(boldStyle), cmp.text("FreeUniversal font - italic")
-                                                                                                                                              .setStyle(italicStyle),
-                           cmp.text("FreeUniversal font - bolditalic")
-                              .setStyle(boldItalicStyle))
+                    .title(Templates.createTitleComponent("DefaultFont"), cmp.text("FreeUniversal font - plain"), cmp.text("FreeUniversal font - bold").setStyle(boldStyle),
+                           cmp.text("FreeUniversal font - italic").setStyle(italicStyle), cmp.text("FreeUniversal font - bolditalic").setStyle(boldItalicStyle))
                     .show();
         } catch (DRException e) {
             e.printStackTrace();

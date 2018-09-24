@@ -50,10 +50,7 @@ public class GroupPosition3Test extends AbstractJasperPositionTest {
         TextColumnBuilder<String> column1;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1)
-                               .setFooterPosition(GroupFooterPosition.FORCE_AT_BOTTOM)
-                               .keepTogether()
-                               .setMinHeightToStartNewPage(100))
+          .groupBy(group1 = grp.group(column1).setFooterPosition(GroupFooterPosition.FORCE_AT_BOTTOM).keepTogether().setMinHeightToStartNewPage(100))
           .subtotalsAtFirstGroupFooter(subtotal1 = sbt.sum(column2));
     }
 
@@ -79,7 +76,8 @@ public class GroupPosition3Test extends AbstractJasperPositionTest {
 
         JRGroup jrGroup = getJasperReport().getGroups()[0];
         Assert.assertTrue("Keep together", jrGroup.isKeepTogether());
-        Assert.assertEquals("Min height to start new page", new Integer(100), jrGroup.getMinHeightToStartNewPage());
+        // Assert.assertEquals("Min height to start new page", new Integer(100), jrGroup.getMinHeightToStartNewPage()); // remove this ambiguous function call
+        Assert.assertEquals("Min height to start new page", 100, jrGroup.getMinHeightToStartNewPage());
     }
 
     @Override

@@ -38,8 +38,7 @@ public class ListComponentGroupTypeTest extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setPageFormat(PageType.A8)
           .setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .title(cmp.text("title")
-                    .setFixedHeight(130))
+          .title(cmp.text("title").setFixedHeight(130))
           .summary(cmp.text("text1"), cmp.text("text2"), cmp.horizontalList(cmp.verticalList(cmp.text("text3"), cmp.text("text4")), cmp.text("text5")), cmp.text("text6"))
           .setSummarySplitType(SplitType.IMMEDIATE);
     }

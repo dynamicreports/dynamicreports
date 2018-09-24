@@ -40,10 +40,7 @@ public class Style5Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .setTextStyle(stl.style(stl.pen1Point())
-                           .setPadding(2))
-          .pageFooter(cmp.pageXofY());
+        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).setTextStyle(stl.style(stl.pen1Point()).setPadding(2)).pageFooter(cmp.pageXofY());
     }
 
     @Override

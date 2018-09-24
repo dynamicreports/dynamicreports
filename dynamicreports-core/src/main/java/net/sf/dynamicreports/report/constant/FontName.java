@@ -28,10 +28,16 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public class FontName {
-    /** Constant <code>ARIAL="Arial"</code> */
+    /**
+     * Constant <code>ARIAL="Arial"</code>
+     */
     public static final String ARIAL = "Arial";
-    /** Constant <code>TIMES_NEW_ROMAN="Times New Roman"</code> */
+    /**
+     * Constant <code>TIMES_NEW_ROMAN="Times New Roman"</code>
+     */
     public static final String TIMES_NEW_ROMAN = "Times New Roman";
-    /** Constant <code>COURIER_NEW="Courier New"</code> */
+    /**
+     * Constant <code>COURIER_NEW="Courier New"</code>
+     */
     public static final String COURIER_NEW = "Courier New";
 }

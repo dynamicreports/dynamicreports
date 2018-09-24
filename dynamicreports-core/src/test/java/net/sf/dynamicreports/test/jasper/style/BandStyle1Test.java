@@ -66,8 +66,7 @@ public class BandStyle1Test extends AbstractJasperStyleTest implements Serializa
 
         rb.setPageColumnsPerPage(2)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1)
-                               .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE))
+          .groupBy(group1 = grp.group(column1).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE))
 
           .subtotalsAtTitle(sbt.sum(column2))
           .subtotalsAtPageHeader(sbt.sum(column2))
@@ -80,56 +79,43 @@ public class BandStyle1Test extends AbstractJasperStyleTest implements Serializa
           .subtotalsAtSummary(sbt.sum(column2))
 
           .title(cmp.text("title"))
-          .setTitleStyle(stl.style()
-                            .setBackgroundColor(color1))
+          .setTitleStyle(stl.style().setBackgroundColor(color1))
 
           .pageHeader(cmp.text("pageHeader"))
-          .setPageHeaderStyle(stl.style()
-                                 .setBackgroundColor(color2))
+          .setPageHeaderStyle(stl.style().setBackgroundColor(color2))
 
           .pageFooter(cmp.text("pageFooter"))
-          .setPageFooterStyle(stl.style()
-                                 .setBackgroundColor(color3))
+          .setPageFooterStyle(stl.style().setBackgroundColor(color3))
 
           .columnHeader(cmp.text("columnHeader"))
-          .setColumnHeaderStyle(stl.style()
-                                   .setBackgroundColor(color4))
+          .setColumnHeaderStyle(stl.style().setBackgroundColor(color4))
 
           .columnFooter(cmp.text("columnFooter"))
-          .setColumnFooterStyle(stl.style()
-                                   .setBackgroundColor(color5))
+          .setColumnFooterStyle(stl.style().setBackgroundColor(color5))
 
           .groupHeader(group1, cmp.text("groupHeader"))
-          .setGroupHeaderStyle(group1, stl.style()
-                                          .setBackgroundColor(color6))
+          .setGroupHeaderStyle(group1, stl.style().setBackgroundColor(color6))
 
           .groupFooter(group1, cmp.text("groupFooter"))
-          .setGroupFooterStyle(group1, stl.style()
-                                          .setBackgroundColor(color7))
+          .setGroupFooterStyle(group1, stl.style().setBackgroundColor(color7))
 
           .detailHeader(cmp.text("detailHeader"))
-          .setDetailHeaderStyle(stl.style()
-                                   .setBackgroundColor(color8))
+          .setDetailHeaderStyle(stl.style().setBackgroundColor(color8))
 
           .detail(cmp.text("detail"))
-          .setDetailStyle(stl.style()
-                             .setBackgroundColor(color9))
+          .setDetailStyle(stl.style().setBackgroundColor(color9))
 
           .detailFooter(cmp.text("detailFooter"))
-          .setDetailFooterStyle(stl.style()
-                                   .setBackgroundColor(color10))
+          .setDetailFooterStyle(stl.style().setBackgroundColor(color10))
 
           .lastPageFooter(cmp.text("lastPageFooter"))
-          .setLastPageFooterStyle(stl.style()
-                                     .setBackgroundColor(color11))
+          .setLastPageFooterStyle(stl.style().setBackgroundColor(color11))
 
           .summary(cmp.text("summary"))
-          .setSummaryStyle(stl.style()
-                              .setBackgroundColor(color12))
+          .setSummaryStyle(stl.style().setBackgroundColor(color12))
 
           .background(cmp.text("background"))
-          .setBackgroundStyle(stl.style()
-                                 .setBackgroundColor(color13));
+          .setBackgroundStyle(stl.style().setBackgroundColor(color13));
     }
 
     @Override

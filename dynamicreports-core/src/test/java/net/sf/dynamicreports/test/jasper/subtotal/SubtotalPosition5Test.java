@@ -48,28 +48,12 @@ public class SubtotalPosition5Test extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         TextColumnBuilder<Integer> column1;
 
-        rb.columns(column1 = col.column("Column1", "field1", Integer.class)
-                                .setWidth(600))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1)
-                                             .setLabel("subtotal"), subtotal2 = sbt.sum(column1)
-                                                                                   .setLabel("subtotal")
-                                                                                   .setLabelPosition(Position.TOP), subtotal3 = sbt.sum(column1)
-                                                                                                                                   .setLabel("subtotal")
-                                                                                                                                   .setLabelPosition(Position.BOTTOM), subtotal4 = sbt.sum(column1)
-                                                                                                                                                                                      .setLabel(
-                                                                                                                                                                                          "subtotal")
-                                                                                                                                                                                      .setLabelPosition(
-                                                                                                                                                                                          Position
-                                                                                                                                                                                              .LEFT),
-                              subtotal5 = sbt.sum(column1)
-                                             .setLabel("subtotal")
-                                             .setLabelPosition(Position.RIGHT), subtotal6 = sbt.sum(column1)
-                                                                                               .setLabel("subtotal")
-                                                                                               .setLabelPosition(Position.LEFT)
-                                                                                               .setLabelFixedWidth(100), subtotal7 = sbt.sum(column1)
-                                                                                                                                        .setLabel("subtotal")
-                                                                                                                                        .setLabelPosition(Position.RIGHT)
-                                                                                                                                        .setLabelFixedWidth(150));
+        rb.columns(column1 = col.column("Column1", "field1", Integer.class).setWidth(600))
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column1).setLabel("subtotal"), subtotal2 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.TOP),
+                              subtotal3 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.BOTTOM), subtotal4 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.LEFT),
+                              subtotal5 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.RIGHT),
+                              subtotal6 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.LEFT).setLabelFixedWidth(100),
+                              subtotal7 = sbt.sum(column1).setLabel("subtotal").setLabelPosition(Position.RIGHT).setLabelFixedWidth(150));
     }
 
     @Override

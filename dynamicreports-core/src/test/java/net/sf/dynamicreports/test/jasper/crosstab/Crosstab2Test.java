@@ -69,10 +69,7 @@ public class Crosstab2Test extends AbstractJasperCrosstabValueTest {
                                        .columnGroups(columnGroup1 = ctab.columnGroup(column3), columnGroup2 = ctab.columnGroup(column4))
                                        .measures(measure1, measure2);
 
-        rb.setLocale(Locale.ENGLISH)
-          .setPageFormat(PageType.A3, PageOrientation.LANDSCAPE)
-          .columns(column1, column2, column3, column4, column5)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).setPageFormat(PageType.A3, PageOrientation.LANDSCAPE).columns(column1, column2, column3, column4, column5).summary(crosstab);
     }
 
     @Override

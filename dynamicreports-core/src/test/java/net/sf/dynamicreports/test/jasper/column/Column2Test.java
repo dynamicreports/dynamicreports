@@ -45,10 +45,7 @@ public class Column2Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setPageColumnsPerPage(2)
           .fields(field("field1", Integer.class))
-          .columns(column1 = col.reportRowNumberColumn("Column1")
-                                .setWidth(50), column2 = col.pageRowNumberColumn("Column2")
-                                                            .setWidth(50), column3 = col.columnRowNumberColumn("Column3")
-                                                                                        .setWidth(50));
+          .columns(column1 = col.reportRowNumberColumn("Column1").setWidth(50), column2 = col.pageRowNumberColumn("Column2").setWidth(50), column3 = col.columnRowNumberColumn("Column3").setWidth(50));
     }
 
     @Override

@@ -65,10 +65,8 @@ public class ComponentColumnReport {
 
     private void build() {
         try {
-            ImageBuilder image = cmp.image(new ImageExpression())
-                                    .setFixedDimension(48, 48);
-            HorizontalListBuilder itemComponent = cmp.horizontalList(image, cmp.verticalList(cmp.text(new ItemExpression()), bcode.ean128(new BarcodeExpression())
-                                                                                                                                  .setFixedHeight(24)));
+            ImageBuilder image = cmp.image(new ImageExpression()).setFixedDimension(48, 48);
+            HorizontalListBuilder itemComponent = cmp.horizontalList(image, cmp.verticalList(cmp.text(new ItemExpression()), bcode.ean128(new BarcodeExpression()).setFixedHeight(24)));
 
             report().setTemplate(Templates.reportTemplate)
                     .fields(field("image", String.class), field("barcode", String.class))

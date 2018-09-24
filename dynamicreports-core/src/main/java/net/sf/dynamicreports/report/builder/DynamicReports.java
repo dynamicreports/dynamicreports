@@ -57,8 +57,7 @@ import org.apache.commons.lang3.Validate;
  */
 public class DynamicReports {
     /**
-     * A set of methods of creating report columns.<br/>
-     * It is used to display data in a multi-column layout.
+     * A set of methods of creating report columns.<br/> It is used to display data in a multi-column layout.
      */
     public static final ColumnBuilders col = new ColumnBuilders();
     /**
@@ -82,8 +81,7 @@ public class DynamicReports {
      */
     public static final ComponentBuilders cmp = new ComponentBuilders();
     /**
-     * A set of build in expressions.<br/>
-     * Expressions are used to define various calculations, conditions, text field content, specific report groups, etc.
+     * A set of build in expressions.<br/> Expressions are used to define various calculations, conditions, text field content, specific report groups, etc.
      */
     public static final ExpressionBuilders exp = new ExpressionBuilders();
     /**
@@ -112,8 +110,7 @@ public class DynamicReports {
     public static final CrosstabBuilders ctab = new CrosstabBuilders();
 
     /**
-     * Creates a new report builder.
-     * The most used report builder for creating reports. It allows constructing and customizing the whole report content.
+     * Creates a new report builder. The most used report builder for creating reports. It allows constructing and customizing the whole report content.
      *
      * @return a report builder
      */
@@ -122,8 +119,7 @@ public class DynamicReports {
     }
 
     /**
-     * Creates a new concatenated report builder.
-     * This report builder allows concatenating several separated reports into one single document.
+     * Creates a new concatenated report builder. This report builder allows concatenating several separated reports into one single document.
      *
      * @return a report builder
      */
@@ -132,11 +128,10 @@ public class DynamicReports {
     }
 
     /**
-     * Creates a new concatenated report builder.
-     * This report builder allows concatenating several separated reports into one single document.
+     * Creates a new concatenated report builder. This report builder allows concatenating several separated reports into one single document.
      *
-     * @return a report builder
      * @param jasperReportHandler a {@link net.sf.dynamicreports.jasper.definition.JasperReportHandler} object.
+     * @return a report builder
      */
     public static JasperConcatenatedReportBuilder concatenatedReport(JasperReportHandler jasperReportHandler) {
         return new JasperConcatenatedReportBuilder(jasperReportHandler);
@@ -147,9 +142,9 @@ public class DynamicReports {
     /**
      * <p>field.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
-     * @param <T> a T object.
+     * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      */
     public static <T> FieldBuilder<T> field(String name, Class valueClass) {
@@ -165,9 +160,9 @@ public class DynamicReports {
     /**
      * <p>field.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name     a {@link java.lang.String} object.
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
-     * @param <T> a T object.
+     * @param <T>      a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      */
     public static <T> FieldBuilder<T> field(String name, DRIDataType dataType) {
@@ -182,9 +177,9 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -195,10 +190,10 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param column      a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(String name, ValueColumnBuilder<?, ?> column, Calculation calculation) {
@@ -209,9 +204,9 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field       a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(FieldBuilder<T> field, Calculation calculation) {
@@ -222,10 +217,10 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param field       a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(String name, FieldBuilder<T> field, Calculation calculation) {
@@ -235,10 +230,10 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName   a {@link java.lang.String} object.
+     * @param valueClass  a {@link java.lang.Class} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(String fieldName, Class<?> valueClass, Calculation calculation) {
@@ -248,11 +243,11 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param fieldName   a {@link java.lang.String} object.
+     * @param valueClass  a {@link java.lang.Class} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(String name, String fieldName, Class<?> valueClass, Calculation calculation) {
@@ -262,9 +257,9 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(DRIExpression<?> expression, Calculation calculation) {
@@ -274,10 +269,10 @@ public class DynamicReports {
     /**
      * <p>variable.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param name        a {@link java.lang.String} object.
+     * @param expression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     public static <T> VariableBuilder<T> variable(String name, DRIExpression<?> expression, Calculation calculation) {
@@ -309,7 +304,7 @@ public class DynamicReports {
     /**
      * <p>asc.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
@@ -360,7 +355,7 @@ public class DynamicReports {
     /**
      * <p>desc.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
@@ -445,9 +440,9 @@ public class DynamicReports {
     /**
      * <p>parameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a T object.
-     * @param <T> a T object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
      */
     public static <T> ParameterBuilder<T> parameter(String name, T value) {
@@ -457,9 +452,9 @@ public class DynamicReports {
     /**
      * <p>parameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
-     * @param <T> a T object.
+     * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
      */
     public static <T> ParameterBuilder<T> parameter(String name, Class<T> valueClass) {
@@ -471,7 +466,7 @@ public class DynamicReports {
     /**
      * <p>query.</p>
      *
-     * @param text a {@link java.lang.String} object.
+     * @param text     a {@link java.lang.String} object.
      * @param language a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
      */

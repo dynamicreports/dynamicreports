@@ -49,10 +49,7 @@ public class GroupPosition2Test extends AbstractJasperPositionTest {
         TextColumnBuilder<String> column1, column2;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", Integer.class))
-          .groupBy(group1 = grp.group(column1), group2 = grp.group(column2)
-                                                            .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE)
-                                                            .header(cmp.text("header"))
-                                                            .footer(cmp.text("footer")))
+          .groupBy(group1 = grp.group(column1), group2 = grp.group(column2).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE).header(cmp.text("header")).footer(cmp.text("footer")))
           .subtotalsAtGroupFooter(group2, subtotal1 = sbt.sum(column3));
     }
 

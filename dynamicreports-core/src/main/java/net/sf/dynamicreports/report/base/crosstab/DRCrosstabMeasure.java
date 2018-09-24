@@ -72,19 +72,25 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         propertyExpressions = new ArrayList<DRIPropertyExpression>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getExpression() {
         return expression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDataType<? super T, T> getDataType() {
         return dataType;
@@ -99,7 +105,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.dataType = dataType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
         return pattern;
@@ -114,7 +122,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.pattern = pattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;
@@ -129,7 +139,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIValueFormatter<?, ? super T> getValueFormatter() {
         return valueFormatter;
@@ -144,7 +156,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.valueFormatter = valueFormatter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getStretchWithOverflow() {
         return stretchWithOverflow;
@@ -159,7 +173,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.stretchWithOverflow = stretchWithOverflow;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRHyperLink getHyperLink() {
         return hyperLink;
@@ -174,7 +190,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.hyperLink = hyperLink;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIPropertyExpression> getPropertyExpressions() {
         return propertyExpressions;
@@ -199,7 +217,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.propertyExpressions.add(propertyExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRICrosstabCellStyle> getStyles() {
         return styles;
@@ -214,7 +234,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.styles = styles;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getTitleExpression() {
         return titleExpression;
@@ -229,7 +251,9 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.titleExpression = titleExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getTitleStyle() {
         return titleStyle;

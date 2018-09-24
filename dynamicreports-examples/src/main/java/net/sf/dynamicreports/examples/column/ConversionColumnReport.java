@@ -68,14 +68,10 @@ public class ConversionColumnReport {
 
     private void build() {
         try {
-            TextColumnBuilder<Date> orderDateColumn1 = col.column("Order date", new OrderDateColumn1())
-                                                          .setDataType(type.dateType());
-            TextColumnBuilder<Date> orderDateColumn2 = col.column("Order date", new OrderDateColumn2())
-                                                          .setDataType(type.dateType());
-            TextColumnBuilder<BigDecimal> quantityColumn1 = col.column("Quantity", new QuantityColumn1())
-                                                               .setDataType(type.bigDecimalType());
-            TextColumnBuilder<BigDecimal> quantityColumn2 = col.column("Quantity", new QuantityColumn2())
-                                                               .setDataType(type.bigDecimalType());
+            TextColumnBuilder<Date> orderDateColumn1 = col.column("Order date", new OrderDateColumn1()).setDataType(type.dateType());
+            TextColumnBuilder<Date> orderDateColumn2 = col.column("Order date", new OrderDateColumn2()).setDataType(type.dateType());
+            TextColumnBuilder<BigDecimal> quantityColumn1 = col.column("Quantity", new QuantityColumn1()).setDataType(type.bigDecimalType());
+            TextColumnBuilder<BigDecimal> quantityColumn2 = col.column("Quantity", new QuantityColumn2()).setDataType(type.bigDecimalType());
 
             report().setTemplate(Templates.reportTemplate)
                     .fields(field("orderdate", String.class), field("quantity", String.class))
@@ -118,8 +114,7 @@ public class ConversionColumnReport {
         @Override
         public Date evaluate(ReportParameters reportParameters) {
             try {
-                return type.dateType()
-                           .stringToValue("orderdate", reportParameters);
+                return type.dateType().stringToValue("orderdate", reportParameters);
             } catch (DRException e) {
                 e.printStackTrace();
             }
@@ -149,8 +144,7 @@ public class ConversionColumnReport {
         @Override
         public BigDecimal evaluate(ReportParameters reportParameters) {
             try {
-                return type.bigDecimalType()
-                           .stringToValue("quantity", reportParameters);
+                return type.bigDecimalType().stringToValue("quantity", reportParameters);
             } catch (DRException e) {
                 e.printStackTrace();
             }

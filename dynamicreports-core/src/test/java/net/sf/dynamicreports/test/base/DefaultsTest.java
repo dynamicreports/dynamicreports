@@ -45,8 +45,7 @@ public class DefaultsTest {
     private Default load() {
         InputStream is = DefaultsTest.class.getResourceAsStream("dynamicreports-defaults.xml");
         try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlDynamicReports.class)
-                                                   .createUnmarshaller();
+            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlDynamicReports.class).createUnmarshaller();
             JAXBElement<XmlDynamicReports> root = unmarshaller.unmarshal(new StreamSource(is), XmlDynamicReports.class);
             return DefaultBinder.bind(root.getValue());
         } catch (JAXBException e) {

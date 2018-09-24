@@ -45,11 +45,8 @@ public class Image2Test extends AbstractJasperTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        ImageBuilder image = cmp.image(Image2Test.class.getResourceAsStream("dynamicreports.png"))
-                                .setHorizontalImageAlignment(HorizontalImageAlignment.CENTER);
-        rb.pageHeader(image)
-          .detail(cmp.filler()
-                     .setFixedHeight(20));
+        ImageBuilder image = cmp.image(Image2Test.class.getResourceAsStream("dynamicreports.png")).setHorizontalImageAlignment(HorizontalImageAlignment.CENTER);
+        rb.pageHeader(image).detail(cmp.filler().setFixedHeight(20));
     }
 
     @Override

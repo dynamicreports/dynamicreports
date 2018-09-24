@@ -53,7 +53,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
     private Boolean ignoreHyperLink;
     private Boolean flushOutput;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getOutputImagesToDir() {
         return outputImagesToDir;
@@ -68,7 +70,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.outputImagesToDir = outputImagesToDir;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getImagesDirName() {
         return imagesDirName;
@@ -83,7 +87,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.imagesDirName = imagesDirName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getImagesURI() {
         return imagesURI;
@@ -98,7 +104,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.imagesURI = imagesURI;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getHtmlHeader() {
         return htmlHeader;
@@ -113,7 +121,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.htmlHeader = htmlHeader;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getBetweenPagesHtml() {
         return betweenPagesHtml;
@@ -128,7 +138,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.betweenPagesHtml = betweenPagesHtml;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getHtmlFooter() {
         return htmlFooter;
@@ -143,7 +155,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.htmlFooter = htmlFooter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getRemoveEmptySpaceBetweenRows() {
         return removeEmptySpaceBetweenRows;
@@ -158,7 +172,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.removeEmptySpaceBetweenRows = removeEmptySpaceBetweenRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getWhitePageBackground() {
         return whitePageBackground;
@@ -173,7 +189,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.whitePageBackground = whitePageBackground;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getUsingImagesToAlign() {
         return usingImagesToAlign;
@@ -188,7 +206,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.usingImagesToAlign = usingImagesToAlign;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getWrapBreakWord() {
         return wrapBreakWord;
@@ -203,7 +223,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.wrapBreakWord = wrapBreakWord;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SizeUnit getSizeUnit() {
         return sizeUnit;
@@ -218,7 +240,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.sizeUnit = sizeUnit;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getFramesAsNestedTables() {
         return framesAsNestedTables;
@@ -233,7 +257,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.framesAsNestedTables = framesAsNestedTables;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnorePageMargins() {
         return ignorePageMargins;
@@ -248,7 +274,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.ignorePageMargins = ignorePageMargins;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getBorderCollapse() {
         return borderCollapse;
@@ -263,7 +291,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.borderCollapse = borderCollapse;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getAccessibleHtml() {
         return accessibleHtml;
@@ -278,7 +308,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.accessibleHtml = accessibleHtml;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Float getZoomRatio() {
         return zoomRatio;
@@ -293,7 +325,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.zoomRatio = zoomRatio;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;
@@ -308,7 +342,9 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
         this.ignoreHyperLink = ignoreHyperLink;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getFlushOutput() {
         return flushOutput;

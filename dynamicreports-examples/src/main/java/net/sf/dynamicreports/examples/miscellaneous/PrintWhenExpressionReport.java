@@ -69,23 +69,15 @@ public class PrintWhenExpressionReport {
     private void build() {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-        ColumnGroupBuilder itemGroup = grp.group("itemGroup", itemColumn)
-                                          .setHeaderLayout(GroupHeaderLayout.EMPTY);
+        ColumnGroupBuilder itemGroup = grp.group("itemGroup", itemColumn).setHeaderLayout(GroupHeaderLayout.EMPTY);
 
-        TextFieldBuilder<String> groupHeader = cmp.text(new GroupHeaderExpression())
-                                                  .setStyle(Templates.groupStyle)
-                                                  .setPrintWhenExpression(new PrintGroupHeaderExpression())
-                                                  .removeLineWhenBlank();
+        TextFieldBuilder<String> groupHeader = cmp.text(new GroupHeaderExpression()).setStyle(Templates.groupStyle).setPrintWhenExpression(new PrintGroupHeaderExpression()).removeLineWhenBlank();
 
-        VerticalListBuilder oddPageHeader = cmp.verticalList()
-                                               .add(cmp.text("Odd page header")
-                                                       .setStyle(Templates.bold12CenteredStyle), cmp.line())
-                                               .setPrintWhenExpression(new PrintInOddPageExpression())
-                                               .removeLineWhenBlank();
+        VerticalListBuilder oddPageHeader =
+            cmp.verticalList().add(cmp.text("Odd page header").setStyle(Templates.bold12CenteredStyle), cmp.line()).setPrintWhenExpression(new PrintInOddPageExpression()).removeLineWhenBlank();
 
         VerticalListBuilder evenPageHeader = cmp.verticalList()
-                                                .add(cmp.line(), cmp.text("Even page header")
-                                                                    .setStyle(Templates.bold12CenteredStyle), cmp.line())
+                                                .add(cmp.line(), cmp.text("Even page header").setStyle(Templates.bold12CenteredStyle), cmp.line())
                                                 .setPrintWhenExpression(new PrintInEvenPageExpression())
                                                 .removeLineWhenBlank();
 
@@ -96,8 +88,7 @@ public class PrintWhenExpressionReport {
                     .columns(itemColumn, col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
                     .groupBy(itemGroup)
                     .title(Templates.createTitleComponent("PrintWhenExpression"))
-                    .detailHeader(cmp.columnBreak()
-                                     .setPrintWhenExpression(new PrintGroupHeaderColumnBreakExpression()), groupHeader)
+                    .detailHeader(cmp.columnBreak().setPrintWhenExpression(new PrintGroupHeaderColumnBreakExpression()), groupHeader)
                     .pageHeader(oddPageHeader, evenPageHeader, cmp.verticalGap(10))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
@@ -150,8 +141,7 @@ public class PrintWhenExpressionReport {
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            return reportParameters.getPageNumber()
-                                   .doubleValue() % 2 != 0;
+            return reportParameters.getPageNumber().doubleValue() % 2 != 0;
         }
     }
 
@@ -160,8 +150,7 @@ public class PrintWhenExpressionReport {
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            return reportParameters.getPageNumber()
-                                   .doubleValue() % 2 == 0;
+            return reportParameters.getPageNumber().doubleValue() % 2 == 0;
         }
     }
 }

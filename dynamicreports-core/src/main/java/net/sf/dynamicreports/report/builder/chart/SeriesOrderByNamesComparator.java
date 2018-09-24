@@ -52,7 +52,9 @@ public class SeriesOrderByNamesComparator implements Comparator<String>, Seriali
         this.seriesNames = seriesNames;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int compare(String o1, String o2) {
         String row1;

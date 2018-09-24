@@ -55,8 +55,7 @@ public class Crosstab4Test extends AbstractJasperCrosstabValueTest implements Se
                                        .columnGroups(columnGroup = ctab.columnGroup("field2", String.class))
                                        .measures(measure1 = ctab.measure("field3", Integer.class, Calculation.SUM));
 
-        rb.setLocale(Locale.ENGLISH)
-          .summary(crosstab, crosstab);
+        rb.setLocale(Locale.ENGLISH).summary(crosstab, crosstab);
     }
 
     @Override

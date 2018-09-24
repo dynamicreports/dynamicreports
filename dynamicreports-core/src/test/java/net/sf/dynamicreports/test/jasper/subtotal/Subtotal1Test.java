@@ -66,26 +66,16 @@ public class Subtotal1Test extends AbstractJasperValueTest implements Serializab
 
         rb.setLocale(Locale.ENGLISH)
           .setPageColumnsPerPage(2)
-          .columns(column1 = col.column("Column1", "field1", type.bigDecimalType()), column2 = col.column("Column2", "field2", String.class)
-                                                                                                  .setValueFormatter(new ColumnValueFormatter()))
-          .subtotalsAtTitle(subtotal1 = sbt.sum(column1)
-                                           .setLabel("title sum"))
-          .subtotalsAtPageHeader(subtotal2 = sbt.sum(column1)
-                                                .setLabel("page header sum"))
-          .subtotalsAtPageFooter(subtotal3 = sbt.sum(column1)
-                                                .setLabel("page footer sum"))
-          .subtotalsAtColumnHeader(subtotal4 = sbt.sum(column1)
-                                                  .setLabel("column header sum"))
-          .subtotalsAtColumnFooter(subtotal5 = sbt.sum(column1)
-                                                  .setLabel("column footer sum"))
-          .subtotalsAtLastPageFooter(subtotal6 = sbt.sum(column1)
-                                                    .setLabel("last page footer sum"))
-          .subtotalsAtSummary(subtotal7 = sbt.sum(column1)
-                                             .setLabel("summary sum"), (subtotal8 = sbt.aggregate(column1, Calculation.LOWEST)).setLabel("summary lowest"), subtotal9 =
-                                  sbt.sum(new ColumnCalculationExpression(), column2)
-                                     .setLabel("summary sum")
-                                     .setValueFormatter(new ColumnValueFormatter2()), subtotal10 = sbt.aggregate(column1, Calculation.COUNT), subtotal11 = sbt.aggregate(column2, Calculation.COUNT),
-                              subtotal12 = sbt.text("total", column1));
+          .columns(column1 = col.column("Column1", "field1", type.bigDecimalType()), column2 = col.column("Column2", "field2", String.class).setValueFormatter(new ColumnValueFormatter()))
+          .subtotalsAtTitle(subtotal1 = sbt.sum(column1).setLabel("title sum"))
+          .subtotalsAtPageHeader(subtotal2 = sbt.sum(column1).setLabel("page header sum"))
+          .subtotalsAtPageFooter(subtotal3 = sbt.sum(column1).setLabel("page footer sum"))
+          .subtotalsAtColumnHeader(subtotal4 = sbt.sum(column1).setLabel("column header sum"))
+          .subtotalsAtColumnFooter(subtotal5 = sbt.sum(column1).setLabel("column footer sum"))
+          .subtotalsAtLastPageFooter(subtotal6 = sbt.sum(column1).setLabel("last page footer sum"))
+          .subtotalsAtSummary(subtotal7 = sbt.sum(column1).setLabel("summary sum"), (subtotal8 = sbt.aggregate(column1, Calculation.LOWEST)).setLabel("summary lowest"),
+                              subtotal9 = sbt.sum(new ColumnCalculationExpression(), column2).setLabel("summary sum").setValueFormatter(new ColumnValueFormatter2()),
+                              subtotal10 = sbt.aggregate(column1, Calculation.COUNT), subtotal11 = sbt.aggregate(column2, Calculation.COUNT), subtotal12 = sbt.text("total", column1));
     }
 
     @Override

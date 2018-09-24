@@ -44,7 +44,9 @@ public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {
         super("QRCode");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMargin() {
         return margin;
@@ -59,7 +61,9 @@ public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {
         this.margin = margin;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public QrCodeErrorCorrectionLevel getErrorCorrectionLevel() {
         return errorCorrectionLevel;

@@ -33,13 +33,15 @@ import java.util.Map;
  * @version $Id: $Id
  */
 public interface DRICustomValues extends Serializable {
-    /** Constant <code>NAME="CUSTOM_VALUES"</code> */
+    /**
+     * Constant <code>NAME="CUSTOM_VALUES"</code>
+     */
     public static final String NAME = "CUSTOM_VALUES";
 
     /**
      * <p>setSystemValue.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      */
     public void setSystemValue(String name, Object value);
@@ -47,9 +49,9 @@ public interface DRICustomValues extends Serializable {
     /**
      * <p>addTocHeading.</p>
      *
-     * @param level a int.
-     * @param id a {@link java.lang.String} object.
-     * @param text a {@link java.lang.String} object.
+     * @param level       a int.
+     * @param id          a {@link java.lang.String} object.
+     * @param text        a {@link java.lang.String} object.
      * @param customValue a {@link java.lang.Object} object.
      */
     public void addTocHeading(int level, String id, String text, Object customValue);

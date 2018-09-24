@@ -166,7 +166,7 @@ public class GridBuilders {
     /**
      * <p>titleGroup.</p>
      *
-     * @param title a {@link java.lang.String} object.
+     * @param title      a {@link java.lang.String} object.
      * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
      */

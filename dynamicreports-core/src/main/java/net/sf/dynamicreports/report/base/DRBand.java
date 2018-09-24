@@ -49,7 +49,9 @@ public class DRBand implements DRIBand {
         this.list = new DRList(ListType.VERTICAL);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SplitType getSplitType() {
         return splitType;
@@ -64,7 +66,9 @@ public class DRBand implements DRIBand {
         this.splitType = splitType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRList getList() {
         return list;
@@ -79,7 +83,9 @@ public class DRBand implements DRIBand {
         list.addComponent(component);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Boolean> getPrintWhenExpression() {
         return printWhenExpression;

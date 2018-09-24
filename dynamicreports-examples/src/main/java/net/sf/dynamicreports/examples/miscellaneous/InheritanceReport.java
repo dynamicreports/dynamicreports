@@ -65,8 +65,7 @@ public class InheritanceReport {
 
     private void build() {
         try {
-            concatenatedReport().concatenate(new ReportA().report, new ReportB().report)
-                                .toPdf(Exporters.pdfExporter("c:/report.pdf"));
+            concatenatedReport().concatenate(new ReportA().report, new ReportB().report).toPdf(Exporters.pdfExporter("c:/report.pdf"));
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -107,9 +106,7 @@ public class InheritanceReport {
         protected void configure() {
             super.configure();
             TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
-            report.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
-                  .addColumn(unitPriceColumn)
-                  .subtotalsAtSummary(sbt.sum(unitPriceColumn));
+            report.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE).addColumn(unitPriceColumn).subtotalsAtSummary(sbt.sum(unitPriceColumn));
         }
 
         @Override

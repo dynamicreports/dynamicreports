@@ -89,8 +89,7 @@ public class TableOfContentsTransform {
             referenceField.setValueExpression(new TocReferenceExpression(level, expressionName, labelExpression, anchorNameExpression, customValueExpression));
             referenceField.setAnchorNameExpression(new TocReferenceLinkExpression(expressionName, anchorNameExpression));
             referenceField.setPrintWhenExpression(component.getPrintWhenExpression());
-            DRDesignTextField designReferenceField = accessor.getComponentTransform()
-                                                             .textField(referenceField, DefaultStyleType.TEXT);
+            DRDesignTextField designReferenceField = accessor.getComponentTransform().textField(referenceField, DefaultStyleType.TEXT);
             designReferenceField.setWidth(1);
             designReferenceField.setHeight(1);
             designReferenceField.setUniqueName(expressionName + ".tocReference");
@@ -125,16 +124,14 @@ public class TableOfContentsTransform {
      */
     protected DRDesignTableOfContentsHeading groupHeading(DRIGroup group, int level) throws DRException {
         boolean tableOfContents = accessor.isTableOfContents();
-        boolean isAddGroupToTableOfContents = accessor.getTemplateTransform()
-                                                      .isAddGroupToTableOfContents(group);
+        boolean isAddGroupToTableOfContents = accessor.getTemplateTransform().isAddGroupToTableOfContents(group);
         if (tableOfContents && isAddGroupToTableOfContents) {
             DRTextField<String> referenceField = new DRTextField<String>();
             DRITextField<?> valueField = group.getValueField();
             referenceField.setValueExpression(new TocReferenceExpression(level, group.getName(), valueField.getValueExpression(), valueField.getAnchorNameExpression(), null));
             referenceField.setAnchorNameExpression(new TocReferenceLinkExpression(group.getName(), valueField.getAnchorNameExpression()));
             referenceField.setPrintWhenExpression(new TocPrintWhenExpression(valueField.getValueExpression()));
-            DRDesignTextField designReferenceField = accessor.getComponentTransform()
-                                                             .textField(referenceField, DefaultStyleType.TEXT);
+            DRDesignTextField designReferenceField = accessor.getComponentTransform().textField(referenceField, DefaultStyleType.TEXT);
             designReferenceField.setWidth(0);
             designReferenceField.setHeight(0);
             designReferenceField.setUniqueName("group_" + group.getName() + ".tocReference");

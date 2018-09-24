@@ -47,12 +47,9 @@ public class SubreportPositionTest extends AbstractJasperPositionTest implements
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression())
-                                               .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
-        rb.detail(subreport, cmp.filler()
-                                .setFixedHeight(20))
-          .summary(cmp.subreport(subreport2()));
+        rb.detail(subreport, cmp.filler().setFixedHeight(20)).summary(cmp.subreport(subreport2()));
     }
 
     @Override

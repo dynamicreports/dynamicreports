@@ -55,8 +55,8 @@ public class DRColumnGridListCell implements DRIColumnGridListCell {
      * <p>Constructor for DRColumnGridListCell.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
      */
     public DRColumnGridListCell(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRIColumnGridComponent component) {
         this(component);
@@ -64,7 +64,9 @@ public class DRColumnGridListCell implements DRIColumnGridListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalCellComponentAlignment getHorizontalAlignment() {
         return horizontalAlignment;
@@ -79,7 +81,9 @@ public class DRColumnGridListCell implements DRIColumnGridListCell {
         this.horizontalAlignment = horizontalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VerticalCellComponentAlignment getVerticalAlignment() {
         return verticalAlignment;
@@ -94,7 +98,9 @@ public class DRColumnGridListCell implements DRIColumnGridListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIColumnGridComponent getComponent() {
         return component;

@@ -143,10 +143,10 @@ public class ComponentTransform {
     /**
      * <p>component.</p>
      *
-     * @param component a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
+     * @param component        a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType        a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup       a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -220,42 +220,27 @@ public class ComponentTransform {
         if (component instanceof DRICustomComponent) {
             return customComponent((DRICustomComponent) component, resetType, resetGroup);
         }
-        throw new DRDesignReportException("Component " + component.getClass()
-                                                                  .getName() + " not supported");
+        throw new DRDesignReportException("Component " + component.getClass().getName() + " not supported");
     }
 
     private void component(DRDesignComponent designComponent, DRIComponent component, DRIReportStyle style, boolean textStyle, DefaultStyleType defaultStyleType) throws DRException {
-        designComponent.setStyle(accessor.getStyleTransform()
-                                         .transformStyle(style, textStyle, defaultStyleType));
-        designComponent.setPrintWhenExpression(accessor.getExpressionTransform()
-                                                       .transformExpression(component.getPrintWhenExpression()));
-        designComponent.setRemoveLineWhenBlank(accessor.getTemplateTransform()
-                                                       .getRemoveLineWhenBlank(component));
-        designComponent.setPositionType(accessor.getTemplateTransform()
-                                                .getPositionType(component));
-        designComponent.setStretchType(accessor.getTemplateTransform()
-                                               .getStretchType(component));
-        designComponent.setPrintInFirstWholeBand(accessor.getTemplateTransform()
-                                                         .getPrintInFirstWholeBand(component));
-        designComponent.setPrintWhenDetailOverflows(accessor.getTemplateTransform()
-                                                            .getPrintWhenDetailOverflows(component));
-        designComponent.setPrintWhenGroupChanges(accessor.getTemplateTransform()
-                                                         .getPrintWhenGroupChanges(component));
+        designComponent.setStyle(accessor.getStyleTransform().transformStyle(style, textStyle, defaultStyleType));
+        designComponent.setPrintWhenExpression(accessor.getExpressionTransform().transformExpression(component.getPrintWhenExpression()));
+        designComponent.setRemoveLineWhenBlank(accessor.getTemplateTransform().getRemoveLineWhenBlank(component));
+        designComponent.setPositionType(accessor.getTemplateTransform().getPositionType(component));
+        designComponent.setStretchType(accessor.getTemplateTransform().getStretchType(component));
+        designComponent.setPrintInFirstWholeBand(accessor.getTemplateTransform().getPrintInFirstWholeBand(component));
+        designComponent.setPrintWhenDetailOverflows(accessor.getTemplateTransform().getPrintWhenDetailOverflows(component));
+        designComponent.setPrintWhenGroupChanges(accessor.getTemplateTransform().getPrintWhenGroupChanges(component));
         for (DRIPropertyExpression propertyExpression : component.getPropertyExpressions()) {
-            designComponent.getPropertyExpressions()
-                           .add(accessor.getExpressionTransform()
-                                        .transformPropertyExpression(propertyExpression));
+            designComponent.getPropertyExpressions().add(accessor.getExpressionTransform().transformPropertyExpression(propertyExpression));
         }
-        DRDesignTableOfContentsHeading designTocHeading = accessor.getTableOfContentsTransform()
-                                                                  .componentHeading(component);
+        DRDesignTableOfContentsHeading designTocHeading = accessor.getTableOfContentsTransform().componentHeading(component);
         if (designTocHeading != null) {
             designComponent.setTableOfContentsHeading(designTocHeading);
-            DRIDesignExpression anchorNameExpression = designTocHeading.getReferenceField()
-                                                                       .getAnchorNameExpression();
-            Integer bookmarkLevel = designTocHeading.getReferenceField()
-                                                    .getBookmarkLevel();
-            DRDesignHyperLink designHyperLink = designTocHeading.getReferenceField()
-                                                                .getHyperLink();
+            DRIDesignExpression anchorNameExpression = designTocHeading.getReferenceField().getAnchorNameExpression();
+            Integer bookmarkLevel = designTocHeading.getReferenceField().getBookmarkLevel();
+            DRDesignHyperLink designHyperLink = designTocHeading.getReferenceField().getHyperLink();
             if (designComponent instanceof DRDesignHyperlinkComponent) {
                 ((DRDesignHyperlinkComponent) designComponent).setAnchorNameExpression(anchorNameExpression);
                 ((DRDesignHyperlinkComponent) designComponent).setBookmarkLevel(bookmarkLevel);
@@ -269,16 +254,14 @@ public class ComponentTransform {
         component(designHyperlinkComponent, hyperlinkComponent, style, textStyle, defaultStyleType);
 
         if (hyperlinkComponent.getAnchorNameExpression() != null) {
-            designHyperlinkComponent.setAnchorNameExpression(accessor.getExpressionTransform()
-                                                                     .transformExpression(hyperlinkComponent.getAnchorNameExpression()));
+            designHyperlinkComponent.setAnchorNameExpression(accessor.getExpressionTransform().transformExpression(hyperlinkComponent.getAnchorNameExpression()));
         }
         if (hyperlinkComponent.getBookmarkLevel() != null) {
             designHyperlinkComponent.setBookmarkLevel(hyperlinkComponent.getBookmarkLevel());
         }
 
         DRIHyperLink hyperLink = hyperlinkComponent.getHyperLink();
-        DRDesignHyperLink designHyperLink = accessor.getReportTransform()
-                                                    .hyperlink(hyperLink);
+        DRDesignHyperLink designHyperLink = accessor.getReportTransform().hyperlink(hyperLink);
         if (designHyperLink != null) {
             designHyperlinkComponent.setHyperLink(designHyperLink);
         }
@@ -289,10 +272,10 @@ public class ComponentTransform {
     /**
      * <p>list.</p>
      *
-     * @param list a {@link net.sf.dynamicreports.report.definition.component.DRIList} object.
+     * @param list             a {@link net.sf.dynamicreports.report.definition.component.DRIList} object.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType        a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup       a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -300,12 +283,9 @@ public class ComponentTransform {
         DRDesignList designList = new DRDesignList();
         component(designList, list, list.getStyle(), false, DefaultStyleType.NONE);
         designList.setType(list.getType());
-        designList.setGap(accessor.getTemplateTransform()
-                                  .getListGap(list));
-        designList.setWidth(accessor.getTemplateTransform()
-                                    .getListWidth(list));
-        designList.setHeight(accessor.getTemplateTransform()
-                                     .getListHeight(list));
+        designList.setGap(accessor.getTemplateTransform().getListGap(list));
+        designList.setWidth(accessor.getTemplateTransform().getListWidth(list));
+        designList.setHeight(accessor.getTemplateTransform().getListHeight(list));
         designList.setCalculateComponents(designList.getWidth() == null && designList.getHeight() == null);
         for (DRIListCell innerComponent : list.getListCells()) {
             DRIComponent component = innerComponent.getComponent();
@@ -330,20 +310,18 @@ public class ComponentTransform {
     /**
      * <p>xyList.</p>
      *
-     * @param xyList a {@link net.sf.dynamicreports.report.definition.component.DRIXyList} object.
+     * @param xyList           a {@link net.sf.dynamicreports.report.definition.component.DRIXyList} object.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType        a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup       a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignList} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected DRDesignList xyList(DRIXyList xyList, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignList designList = new DRDesignList(null);
         component(designList, xyList, xyList.getStyle(), false, DefaultStyleType.NONE);
-        designList.setWidth(accessor.getTemplateTransform()
-                                    .getXyListWidth(xyList));
-        designList.setHeight(accessor.getTemplateTransform()
-                                     .getXyListHeight(xyList));
+        designList.setWidth(accessor.getTemplateTransform().getXyListWidth(xyList));
+        designList.setHeight(accessor.getTemplateTransform().getXyListHeight(xyList));
         designList.setCalculateComponents(designList.getWidth() == null && designList.getHeight() == null);
         designList.setRemovable(true);
         for (DRIXyListCell innerComponent : xyList.getXyListCells()) {
@@ -360,9 +338,9 @@ public class ComponentTransform {
      * <p>listBackgroundComponent.</p>
      *
      * @param backgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
-     * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param defaultStyleType    a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
+     * @param resetType           a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup          a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -381,22 +359,16 @@ public class ComponentTransform {
     private DRDesignSubreport multiPageList(DRIMultiPageList multiPageList) throws DRException {
         DRDesignSubreport designSubreport = new DRDesignSubreport();
         component(designSubreport, multiPageList, multiPageList.getStyle(), false, DefaultStyleType.NONE);
-        designSubreport.setWidth(accessor.getTemplateTransform()
-                                         .getMultiPageListWidth(multiPageList));
-        designSubreport.setHeight(accessor.getTemplateTransform()
-                                          .getMultiPageListHeight(multiPageList));
+        designSubreport.setWidth(accessor.getTemplateTransform().getMultiPageListWidth(multiPageList));
+        designSubreport.setHeight(accessor.getTemplateTransform().getMultiPageListHeight(multiPageList));
         JasperReportBuilder multiPageReport = DynamicReports.report();
         MultiPageListSubreportExpression subreportExpression =
             new MultiPageListSubreportExpression(accessor.getLocale(), accessor.getResourceBundle(), accessor.getResourceBundleName(), accessor.getWhenResourceMissingType(),
-                                                 multiPageList.getComponents(), accessor.getTemplateTransform()
-                                                                                        .getTemplateStyles());
+                                                 multiPageList.getComponents(), accessor.getTemplateTransform().getTemplateStyles());
         multiPageReport.detail(Components.subreport(subreportExpression));
         multiPageReport.setDetailSplitType(multiPageList.getSplitType());
-        DRIDesignExpression reportExpression = accessor.getExpressionTransform()
-                                                       .transformExpression(Expressions.value(multiPageReport));
-        DRIDesignExpression dataSourceExpression = accessor.getExpressionTransform()
-                                                           .transformExpression(new MultiPageListDataSourceExpression(multiPageList.getComponents()
-                                                                                                                                   .size()));
+        DRIDesignExpression reportExpression = accessor.getExpressionTransform().transformExpression(Expressions.value(multiPageReport));
+        DRIDesignExpression dataSourceExpression = accessor.getExpressionTransform().transformExpression(new MultiPageListDataSourceExpression(multiPageList.getComponents().size()));
         designSubreport.setReportExpression(reportExpression);
         designSubreport.setDataSourceExpression(dataSourceExpression);
         return designSubreport;
@@ -407,7 +379,7 @@ public class ComponentTransform {
     /**
      * <p>textField.</p>
      *
-     * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
+     * @param textField        a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignTextField} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -422,16 +394,14 @@ public class ComponentTransform {
         designTextField.setWidth(templateTransform.getTextFieldWidth(textField, style));
         designTextField.setHeight(templateTransform.getTextFieldHeight(textField, style));
         designTextField.setPattern(templateTransform.getTextFieldPattern(textField, style));
-        designTextField.setPatternExpression(accessor.getExpressionTransform()
-                                                     .transformExpression(textField.getPatternExpression()));
+        designTextField.setPatternExpression(accessor.getExpressionTransform().transformExpression(textField.getPatternExpression()));
         designTextField.setHorizontalTextAlignment(templateTransform.getTextFieldHorizontalTextAlignment(textField, style));
-        designTextField.setValueExpression(accessor.getExpressionTransform()
-                                                   .transformExpression(textField.getValueExpression(), templateTransform.getTextFieldValueFormatter(textField), null));
+        designTextField.setValueExpression(accessor.getExpressionTransform().transformExpression(textField.getValueExpression(), templateTransform.getTextFieldValueFormatter(textField), null));
         designTextField.setMarkup(textField.getMarkup());
         if (textField.getEvaluationTime() != null) {
             designTextField.setEvaluationTime(ConstantTransform.textFieldEvaluationTime(textField.getEvaluationTime(), textField.getEvaluationGroup(), accessor));
-            designTextField.setEvaluationGroup(accessor.getGroupTransform()
-                                                       .getGroup(ConstantTransform.textFieldEvaluationGroup(textField.getEvaluationTime(), textField.getEvaluationGroup(), accessor)));
+            designTextField.setEvaluationGroup(
+                accessor.getGroupTransform().getGroup(ConstantTransform.textFieldEvaluationGroup(textField.getEvaluationTime(), textField.getEvaluationGroup(), accessor)));
         } else {
             if (textField.getEvaluationGroup() != null) {
                 throw new DRException("Evaluation group for textField is required only for evaluation time BEFORE_GROUP or GROUP");
@@ -455,10 +425,8 @@ public class ComponentTransform {
     protected DRDesignFiller filler(DRIFiller filler) throws DRException {
         DRDesignFiller designFiller = new DRDesignFiller();
         component(designFiller, filler, filler.getStyle(), false, DefaultStyleType.NONE);
-        designFiller.setWidth(accessor.getTemplateTransform()
-                                      .getFillerWidth(filler));
-        designFiller.setHeight(accessor.getTemplateTransform()
-                                       .getFillerHeight(filler));
+        designFiller.setWidth(accessor.getTemplateTransform().getFillerWidth(filler));
+        designFiller.setHeight(accessor.getTemplateTransform().getFillerHeight(filler));
         return designFiller;
     }
 
@@ -471,23 +439,19 @@ public class ComponentTransform {
         DRDesignImage designImage = new DRDesignImage();
         hyperlink(designImage, image, image.getStyle(), false, defaultStyleType);
         designImage.setImageScale(image.getImageScale());
-        designImage.setImageExpression(accessor.getExpressionTransform()
-                                               .transformExpression(image.getImageExpression()));
+        designImage.setImageExpression(accessor.getExpressionTransform().transformExpression(image.getImageExpression()));
         designImage.setUsingCache(image.getUsingCache());
         designImage.setLazy(image.getLazy());
         designImage.setHorizontalImageAlignment(image.getHorizontalImageAlignment());
-        designImage.setWidth(accessor.getTemplateTransform()
-                                     .getImageWidth(image));
+        designImage.setWidth(accessor.getTemplateTransform().getImageWidth(image));
         DRDesignStyle style = designImage.getStyle();
-        designImage.setHeight(accessor.getTemplateTransform()
-                                      .getImageHeight(image, imageHeight, style));
+        designImage.setHeight(accessor.getTemplateTransform().getImageHeight(image, imageHeight, style));
         return designImage;
     }
 
     // chart
     private DRDesignChart chart(DRIChart chart, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        DRDesignChart designChart = accessor.getChartTransform()
-                                            .transform(chart, resetType, resetGroup);
+        DRDesignChart designChart = accessor.getChartTransform().transform(chart, resetType, resetGroup);
         hyperlink(designChart, chart, chart.getStyle(), false, DefaultStyleType.CHART);
         designChart.setEvaluationTime(evaluationTimeFromResetType(resetType));
         designChart.setEvaluationGroup(resetGroup);
@@ -496,8 +460,7 @@ public class ComponentTransform {
 
     // barcode
     private DRDesignBarcode barcode(DRIBarcode barcode, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        DRDesignBarcode designBarcode = accessor.getBarcodeTransform()
-                                                .transform(barcode);
+        DRDesignBarcode designBarcode = accessor.getBarcodeTransform().transform(barcode);
         component(designBarcode, barcode, barcode.getStyle(), false, DefaultStyleType.BARCODE);
         designBarcode.setEvaluationTime(evaluationTimeFromResetType(resetType));
         designBarcode.setEvaluationGroup(resetGroup);
@@ -506,8 +469,7 @@ public class ComponentTransform {
 
     // barbecue
     private DRDesignBarbecue barbecue(DRIBarbecue barbecue, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        DRDesignBarbecue designBarbecue = accessor.getBarcodeTransform()
-                                                  .transform(barbecue);
+        DRDesignBarbecue designBarbecue = accessor.getBarcodeTransform().transform(barbecue);
         component(designBarbecue, barbecue, barbecue.getStyle(), false, DefaultStyleType.BARCODE);
         designBarbecue.setEvaluationTime(evaluationTimeFromResetType(resetType));
         designBarbecue.setEvaluationGroup(resetGroup);
@@ -518,18 +480,12 @@ public class ComponentTransform {
     private DRDesignSubreport subreport(DRISubreport subreport) throws DRException {
         DRDesignSubreport designSubreport = new DRDesignSubreport();
         component(designSubreport, subreport, subreport.getStyle(), false, DefaultStyleType.NONE);
-        designSubreport.setWidth(accessor.getTemplateTransform()
-                                         .getSubreportWidth(subreport));
-        designSubreport.setHeight(accessor.getTemplateTransform()
-                                          .getSubreportHeight(subreport));
-        designSubreport.setReportExpression(accessor.getExpressionTransform()
-                                                    .transformExpression(subreport.getReportExpression()));
-        designSubreport.setParametersExpression(accessor.getExpressionTransform()
-                                                        .transformExpression(subreport.getParametersExpression()));
-        designSubreport.setConnectionExpression(accessor.getExpressionTransform()
-                                                        .transformExpression(subreport.getConnectionExpression()));
-        designSubreport.setDataSourceExpression(accessor.getExpressionTransform()
-                                                        .transformExpression(subreport.getDataSourceExpression()));
+        designSubreport.setWidth(accessor.getTemplateTransform().getSubreportWidth(subreport));
+        designSubreport.setHeight(accessor.getTemplateTransform().getSubreportHeight(subreport));
+        designSubreport.setReportExpression(accessor.getExpressionTransform().transformExpression(subreport.getReportExpression()));
+        designSubreport.setParametersExpression(accessor.getExpressionTransform().transformExpression(subreport.getParametersExpression()));
+        designSubreport.setConnectionExpression(accessor.getExpressionTransform().transformExpression(subreport.getConnectionExpression()));
+        designSubreport.setDataSourceExpression(accessor.getExpressionTransform().transformExpression(subreport.getDataSourceExpression()));
         designSubreport.setRunToBottom(subreport.getRunToBottom());
         return designSubreport;
     }
@@ -539,28 +495,22 @@ public class ComponentTransform {
         TemplateTransform templateTransform = accessor.getTemplateTransform();
         DRIReportStyle pageXofYStyle = pageXofY.getStyle();
         if (pageXofYStyle == null) {
-            pageXofYStyle = accessor.getTemplateTransform()
-                                    .getTextStyle();
+            pageXofYStyle = accessor.getTemplateTransform().getTextStyle();
         }
-        DRDesignStyle style = accessor.getStyleTransform()
-                                      .transformStyle(pageXofYStyle, true, defaultStyleType);
+        DRDesignStyle style = accessor.getStyleTransform().transformStyle(pageXofYStyle, true, defaultStyleType);
         Integer height = templateTransform.getPageXofYHeight(pageXofY, style);
         HorizontalTextAlignment horizontalTextAlignment = templateTransform.getPageXofYHorizontalTextAlignment(pageXofY, style);
 
         DRStyle newStylePageX = new DRStyle();
         newStylePageX.setParentStyle(pageXofYStyle);
-        newStylePageX.getPadding()
-                     .setRight(0);
+        newStylePageX.getPadding().setRight(0);
         DRPen pen = new DRPen();
         pen.setLineWidth(0f);
-        newStylePageX.getBorder()
-                     .setRightPen(pen);
+        newStylePageX.getBorder().setRightPen(pen);
         DRStyle newStylePageY = new DRStyle();
         newStylePageY.setParentStyle(pageXofYStyle);
-        newStylePageY.getPadding()
-                     .setLeft(0);
-        newStylePageY.getBorder()
-                     .setLeftPen(pen);
+        newStylePageY.getPadding().setLeft(0);
+        newStylePageY.getBorder().setLeftPen(pen);
 
         DRTextField<String> pageXField = new DRTextField<String>();
         pageXField.setAnchorNameExpression(pageXofY.getAnchorNameExpression());
@@ -583,8 +533,7 @@ public class ComponentTransform {
         pageYField.setHeightType(pageXofY.getHeightType());
         pageYField.setHorizontalTextAlignment(HorizontalTextAlignment.LEFT);
         pageYField.setValueExpression(new PageXofYNumberExpression(pageXofY.getFormatExpression(), 1));
-        DRIGroup pageYEvaluationGroup = accessor.getGroupTransform()
-                                                .getFirstResetPageNumberGroup();
+        DRIGroup pageYEvaluationGroup = accessor.getGroupTransform().getFirstResetPageNumberGroup();
         if (pageYEvaluationGroup == null) {
             pageYField.setEvaluationTime(Evaluation.REPORT);
         } else {
@@ -647,8 +596,7 @@ public class ComponentTransform {
     private DRDesignTextField totalPages(DRITotalPages totalPages, DefaultStyleType defaultStyleType) throws DRException {
         PageNumberExpression expression = new PageNumberExpression(totalPages.getFormatExpression());
         DRTextField<String> totalPagesField = formatField(totalPages, expression);
-        DRIGroup pageEvaluationGroup = accessor.getGroupTransform()
-                                               .getFirstResetPageNumberGroup();
+        DRIGroup pageEvaluationGroup = accessor.getGroupTransform().getFirstResetPageNumberGroup();
         if (pageEvaluationGroup == null) {
             totalPagesField.setEvaluationTime(Evaluation.REPORT);
         } else {
@@ -701,12 +649,9 @@ public class ComponentTransform {
         DRDesignLine designLine = new DRDesignLine();
         component(designLine, line, line.getStyle(), false, DefaultStyleType.NONE);
         designLine.setDirection(line.getDirection());
-        designLine.setPen(accessor.getStyleTransform()
-                                  .pen(line.getPen()));
-        designLine.setWidth(accessor.getTemplateTransform()
-                                    .getLineWidth(line));
-        designLine.setHeight(accessor.getTemplateTransform()
-                                     .getLineHeight(line));
+        designLine.setPen(accessor.getStyleTransform().pen(line.getPen()));
+        designLine.setWidth(accessor.getTemplateTransform().getLineWidth(line));
+        designLine.setHeight(accessor.getTemplateTransform().getLineHeight(line));
         return designLine;
     }
 
@@ -722,12 +667,9 @@ public class ComponentTransform {
     protected DRDesignEllipse ellipse(DRIEllipse ellipse) throws DRException {
         DRDesignEllipse designEllipse = new DRDesignEllipse();
         component(designEllipse, ellipse, ellipse.getStyle(), false, DefaultStyleType.NONE);
-        designEllipse.setPen(accessor.getStyleTransform()
-                                     .pen(ellipse.getPen()));
-        designEllipse.setWidth(accessor.getTemplateTransform()
-                                       .getEllipseWidth(ellipse));
-        designEllipse.setHeight(accessor.getTemplateTransform()
-                                        .getEllipseHeight(ellipse));
+        designEllipse.setPen(accessor.getStyleTransform().pen(ellipse.getPen()));
+        designEllipse.setWidth(accessor.getTemplateTransform().getEllipseWidth(ellipse));
+        designEllipse.setHeight(accessor.getTemplateTransform().getEllipseHeight(ellipse));
         return designEllipse;
     }
 
@@ -743,14 +685,10 @@ public class ComponentTransform {
     protected DRDesignRectangle rectangle(DRIRectangle rectangle) throws DRException {
         DRDesignRectangle designRectangle = new DRDesignRectangle();
         component(designRectangle, rectangle, rectangle.getStyle(), false, DefaultStyleType.NONE);
-        designRectangle.setRadius(accessor.getTemplateTransform()
-                                          .getRectangleRadius(rectangle));
-        designRectangle.setPen(accessor.getStyleTransform()
-                                       .pen(rectangle.getPen()));
-        designRectangle.setWidth(accessor.getTemplateTransform()
-                                         .getRectangleWidth(rectangle));
-        designRectangle.setHeight(accessor.getTemplateTransform()
-                                          .getRectangleHeight(rectangle));
+        designRectangle.setRadius(accessor.getTemplateTransform().getRectangleRadius(rectangle));
+        designRectangle.setPen(accessor.getStyleTransform().pen(rectangle.getPen()));
+        designRectangle.setWidth(accessor.getTemplateTransform().getRectangleWidth(rectangle));
+        designRectangle.setHeight(accessor.getTemplateTransform().getRectangleHeight(rectangle));
         return designRectangle;
     }
 
@@ -759,18 +697,16 @@ public class ComponentTransform {
     /**
      * <p>booleanField.</p>
      *
-     * @param booleanField a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
+     * @param booleanField     a {@link net.sf.dynamicreports.report.definition.component.DRIBooleanField} object.
      * @param defaultStyleType a {@link net.sf.dynamicreports.design.constant.DefaultStyleType} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType        a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup       a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
     protected DRDesignComponent booleanField(DRIBooleanField booleanField, DefaultStyleType defaultStyleType, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        BooleanComponentType componentType = accessor.getTemplateTransform()
-                                                     .getBooleanComponentType(booleanField);
-        boolean emptyWhenNullValue = accessor.getTemplateTransform()
-                                             .getBooleanEmptyWhenNullValue(booleanField);
+        BooleanComponentType componentType = accessor.getTemplateTransform().getBooleanComponentType(booleanField);
+        boolean emptyWhenNullValue = accessor.getTemplateTransform().getBooleanEmptyWhenNullValue(booleanField);
         ;
         DRHyperLinkComponent component = null;
 
@@ -802,10 +738,8 @@ public class ComponentTransform {
             case IMAGE_BALL:
                 DRImage image = new DRImage();
                 image.setImageScale(ImageScale.CLIP);
-                int width = accessor.getTemplateTransform()
-                                    .getBooleanImageWidth(booleanField);
-                int height = accessor.getTemplateTransform()
-                                     .getBooleanImageHeight(booleanField);
+                int width = accessor.getTemplateTransform().getBooleanImageWidth(booleanField);
+                int height = accessor.getTemplateTransform().getBooleanImageHeight(booleanField);
                 image.setImageExpression(new BooleanImageExpression(booleanField, emptyWhenNullValue, width, height));
                 component = image;
                 break;
@@ -826,8 +760,7 @@ public class ComponentTransform {
 
         DRDesignComponent designComponent;
         if (component instanceof DRIImage) {
-            int imageHeight = accessor.getTemplateTransform()
-                                      .getBooleanImageHeight(booleanField);
+            int imageHeight = accessor.getTemplateTransform().getBooleanImageHeight(booleanField);
             designComponent = image((DRIImage) component, imageHeight, defaultStyleType);
             TemplateTransform templateTransform = accessor.getTemplateTransform();
             ((DRDesignImage) designComponent).setHorizontalImageAlignment(templateTransform.getBooleanHorizontalImageAlignment(booleanField, designComponent.getStyle()));
@@ -850,10 +783,8 @@ public class ComponentTransform {
         DRDesignBreak designBreak = new DRDesignBreak();
         component(designBreak, breakComponent, null, false, DefaultStyleType.NONE);
         designBreak.setType(breakComponent.getType());
-        designBreak.setWidth(accessor.getTemplateTransform()
-                                     .getBreakWidth(breakComponent));
-        designBreak.setHeight(accessor.getTemplateTransform()
-                                      .getBreakHeight(breakComponent));
+        designBreak.setWidth(accessor.getTemplateTransform().getBreakWidth(breakComponent));
+        designBreak.setHeight(accessor.getTemplateTransform().getBreakHeight(breakComponent));
         return designBreak;
     }
 
@@ -863,8 +794,8 @@ public class ComponentTransform {
      * <p>genericElement.</p>
      *
      * @param genericElement a {@link net.sf.dynamicreports.report.definition.component.DRIGenericElement} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType      a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup     a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.component.DRDesignGenericElement} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -875,22 +806,17 @@ public class ComponentTransform {
         designGenericElement.setGenericElementName(genericElement.getGenericElementName());
         designGenericElement.setEvaluationTime(evaluationTimeFromResetType(resetType));
         designGenericElement.setEvaluationGroup(resetGroup);
-        designGenericElement.setWidth(accessor.getTemplateTransform()
-                                              .getGenericElementWidth(genericElement));
-        designGenericElement.setHeight(accessor.getTemplateTransform()
-                                               .getGenericElementHeight(genericElement));
+        designGenericElement.setWidth(accessor.getTemplateTransform().getGenericElementWidth(genericElement));
+        designGenericElement.setHeight(accessor.getTemplateTransform().getGenericElementHeight(genericElement));
         for (DRIParameterExpression parameterExpression : genericElement.getParameterExpressions()) {
-            designGenericElement.getParameterExpressions()
-                                .add(accessor.getExpressionTransform()
-                                             .transformParameterExpression(parameterExpression));
+            designGenericElement.getParameterExpressions().add(accessor.getExpressionTransform().transformParameterExpression(parameterExpression));
         }
         return designGenericElement;
     }
 
     // crosstab
     private DRDesignCrosstab crosstab(DRICrosstab crosstab, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        DRDesignCrosstab designCrosstab = accessor.getCrosstabTransform()
-                                                  .transform(crosstab, resetType, resetGroup);
+        DRDesignCrosstab designCrosstab = accessor.getCrosstabTransform().transform(crosstab, resetType, resetGroup);
         component(designCrosstab, crosstab, crosstab.getStyle(), false, DefaultStyleType.NONE);
         return designCrosstab;
     }
@@ -899,16 +825,11 @@ public class ComponentTransform {
     private DRDesignMap map(DRIMap map, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignMap designMap = new DRDesignMap();
         component(designMap, map, map.getStyle(), false, DefaultStyleType.NONE);
-        designMap.setLatitudeExpression(accessor.getExpressionTransform()
-                                                .transformExpression(map.getLatitudeExpression()));
-        designMap.setLongitudeExpression(accessor.getExpressionTransform()
-                                                 .transformExpression(map.getLongitudeExpression()));
-        designMap.setZoomExpression(accessor.getExpressionTransform()
-                                            .transformExpression(map.getZoomExpression()));
-        designMap.setWidth(accessor.getTemplateTransform()
-                                   .getMapWidth(map));
-        designMap.setHeight(accessor.getTemplateTransform()
-                                    .getMapHeight(map));
+        designMap.setLatitudeExpression(accessor.getExpressionTransform().transformExpression(map.getLatitudeExpression()));
+        designMap.setLongitudeExpression(accessor.getExpressionTransform().transformExpression(map.getLongitudeExpression()));
+        designMap.setZoomExpression(accessor.getExpressionTransform().transformExpression(map.getZoomExpression()));
+        designMap.setWidth(accessor.getTemplateTransform().getMapWidth(map));
+        designMap.setHeight(accessor.getTemplateTransform().getMapHeight(map));
         designMap.setEvaluationTime(evaluationTimeFromResetType(resetType));
         designMap.setEvaluationGroup(resetGroup);
         return designMap;
@@ -918,19 +839,16 @@ public class ComponentTransform {
     private DRDesignComponent customComponent(DRICustomComponent component, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         @SuppressWarnings("rawtypes") CustomComponentTransform componentTransfom = CustomComponents.getComponentTransform(component);
         if (componentTransfom == null) {
-            throw new DRDesignReportException("Component " + component.getClass()
-                                                                      .getName() + " not supported");
+            throw new DRDesignReportException("Component " + component.getClass().getName() + " not supported");
         }
         @SuppressWarnings("unchecked") DRDesignComponent designComponent = (DRDesignComponent) componentTransfom.designComponent(accessor, component, resetType, resetGroup);
         component(designComponent, component, component.getStyle(), false, DefaultStyleType.NONE);
         DRIDimensionComponent dimensionComponent = component;
         if (designComponent.getWidth() == null) {
-            designComponent.setWidth(accessor.getTemplateTransform()
-                                             .getCustomComponentWidth(dimensionComponent));
+            designComponent.setWidth(accessor.getTemplateTransform().getCustomComponentWidth(dimensionComponent));
         }
         if (designComponent.getHeight() == null) {
-            designComponent.setHeight(accessor.getTemplateTransform()
-                                              .getCustomComponentHeight(dimensionComponent));
+            designComponent.setHeight(accessor.getTemplateTransform().getCustomComponentHeight(dimensionComponent));
         }
         return designComponent;
     }
@@ -956,8 +874,7 @@ public class ComponentTransform {
         if (expression instanceof DRIDesignComplexExpression) {
             return detectComplexExpressionEvaluationTime((DRIDesignComplexExpression) expression);
         }
-        throw new DRDesignReportException("Expression " + expression.getClass()
-                                                                    .getName() + " not supported");
+        throw new DRDesignReportException("Expression " + expression.getClass().getName() + " not supported");
     }
 
     /**
@@ -1021,8 +938,7 @@ public class ComponentTransform {
         if (expression instanceof DRIDesignComplexExpression) {
             return detectComplexExpressionEvaluationGroup((DRIDesignComplexExpression) expression);
         }
-        throw new DRDesignReportException("Expression " + expression.getClass()
-                                                                    .getName() + " not supported");
+        throw new DRDesignReportException("Expression " + expression.getClass().getName() + " not supported");
     }
 
     private DRDesignGroup detectComplexExpressionEvaluationGroup(DRIDesignComplexExpression complexExpression) {

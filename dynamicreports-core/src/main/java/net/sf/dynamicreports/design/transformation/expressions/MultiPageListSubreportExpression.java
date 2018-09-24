@@ -57,12 +57,12 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
     /**
      * <p>Constructor for MultiPageListSubreportExpression.</p>
      *
-     * @param locale a {@link java.util.Locale} object.
-     * @param resourceBundle a {@link java.util.ResourceBundle} object.
-     * @param resourceBundleName a {@link java.lang.String} object.
+     * @param locale                  a {@link java.util.Locale} object.
+     * @param resourceBundle          a {@link java.util.ResourceBundle} object.
+     * @param resourceBundleName      a {@link java.lang.String} object.
      * @param whenResourceMissingType a {@link net.sf.dynamicreports.report.constant.WhenResourceMissingType} object.
-     * @param detailComponents a {@link java.util.List} object.
-     * @param templateStyles a {@link java.util.Map} object.
+     * @param detailComponents        a {@link java.util.List} object.
+     * @param templateStyles          a {@link java.util.Map} object.
      */
     public MultiPageListSubreportExpression(Locale locale, ResourceBundle resourceBundle, String resourceBundleName, WhenResourceMissingType whenResourceMissingType,
                                             List<DRIComponent> detailComponents, Map<String, DRIStyle> templateStyles) {
@@ -74,7 +74,9 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
         this.templateStyles = templateStyles;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JasperReportBuilder evaluate(ReportParameters reportParameters) {
         JasperReportBuilder report = report();
@@ -83,11 +85,9 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
         report.setResourceBundle(resourceBundleName);
         report.setWhenResourceMissingType(whenResourceMissingType);
         for (DRIStyle style : templateStyles.values()) {
-            report.getReport()
-                  .addTemplateStyle(style);
+            report.getReport().addTemplateStyle(style);
         }
-        DRBand titleBand = report.getReport()
-                                 .getTitleBand();
+        DRBand titleBand = report.getReport().getTitleBand();
         DRComponent detailComponent = (DRComponent) detailComponents.get(reportParameters.getReportRowNumber() - 1);
         titleBand.addComponent(detailComponent);
         return report;

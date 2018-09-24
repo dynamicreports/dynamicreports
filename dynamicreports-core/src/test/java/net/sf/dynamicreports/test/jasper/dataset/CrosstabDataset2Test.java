@@ -56,15 +56,11 @@ public class CrosstabDataset2Test extends AbstractJasperCrosstabValueTest implem
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setDataSource(createCrosstabDataSource())
-                                       .rowGroups(rowGroup = ctab.rowGroup("field1", String.class)
-                                                                 .setHeaderValueFormatter(new ValueFormatter2()))
-                                       .columnGroups(columnGroup = ctab.columnGroup("field2", String.class)
-                                                                       .setHeaderValueFormatter(new ValueFormatter2()))
+                                       .rowGroups(rowGroup = ctab.rowGroup("field1", String.class).setHeaderValueFormatter(new ValueFormatter2()))
+                                       .columnGroups(columnGroup = ctab.columnGroup("field2", String.class).setHeaderValueFormatter(new ValueFormatter2()))
                                        .measures(measure1);
 
-        rb.setLocale(Locale.ENGLISH)
-          .addParameter("parameter", "parameter_value")
-          .title(crosstab);
+        rb.setLocale(Locale.ENGLISH).addParameter("parameter", "parameter_value").title(crosstab);
     }
 
     @Override
@@ -122,8 +118,7 @@ public class CrosstabDataset2Test extends AbstractJasperCrosstabValueTest implem
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             return "value = " + value;
         }
     }
@@ -139,8 +134,7 @@ public class CrosstabDataset2Test extends AbstractJasperCrosstabValueTest implem
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             return "value = " + value;
         }
     }

@@ -39,7 +39,9 @@ public class DRPageXofY extends DRFormatField implements DRIPageXofY {
     private Integer pageYWidth;
     private ComponentDimensionType pageYWidthType;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getPageXWidth() {
         return pageXWidth;
@@ -54,7 +56,9 @@ public class DRPageXofY extends DRFormatField implements DRIPageXofY {
         this.pageXWidth = pageXWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getPageXWidthType() {
         return pageXWidthType;
@@ -69,7 +73,9 @@ public class DRPageXofY extends DRFormatField implements DRIPageXofY {
         this.pageXWidthType = pageXWidthType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getPageYWidth() {
         return pageYWidth;
@@ -84,7 +90,9 @@ public class DRPageXofY extends DRFormatField implements DRIPageXofY {
         this.pageYWidth = pageYWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getPageYWidthType() {
         return pageYWidthType;

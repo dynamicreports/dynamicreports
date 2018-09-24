@@ -130,12 +130,10 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
     /**
      * Sets the label component preferred width.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the label component preferred width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the label component preferred width >= 0
      * @return a T object.
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelWidth(Integer width) {
         getObject().setLabelWidth(width);
@@ -145,12 +143,10 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
     /**
      * Sets the label component fixed width.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the label component fixed width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the label component fixed width >= 0
      * @return a T object.
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelFixedWidth(Integer width) {
         getObject().setLabelWidth(width);
@@ -161,12 +157,10 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
     /**
      * Sets the label component minimum width.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the label component minimum width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the label component minimum width >= 0
      * @return a T object.
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelMinWidth(Integer width) {
         getObject().setLabelWidth(width);
@@ -181,8 +175,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setPattern(String pattern) {
-        getObject().getValueField()
-                   .setPattern(pattern);
+        getObject().getValueField().setPattern(pattern);
         return (T) this;
     }
 
@@ -193,8 +186,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setPattern(DRIExpression<String> patternExpression) {
-        getObject().getValueField()
-                   .setPatternExpression(patternExpression);
+        getObject().getValueField().setPatternExpression(patternExpression);
         return (T) this;
     }
 
@@ -205,8 +197,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setValueFormatter(DRIValueFormatter<?, ? super U> valueFormatter) {
-        getObject().getValueField()
-                   .setValueFormatter(valueFormatter);
+        getObject().getValueField().setValueFormatter(valueFormatter);
         return (T) this;
     }
 
@@ -218,8 +209,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      */
     @SuppressWarnings("rawtypes")
     public T setDataType(DRIDataType dataType) {
-        getObject().getValueField()
-                   .setDataType(dataType);
+        getObject().getValueField().setDataType(dataType);
         return (T) this;
     }
 
@@ -230,8 +220,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setAnchorName(String anchorName) {
-        getObject().getValueField()
-                   .setAnchorNameExpression(Expressions.text(anchorName));
+        getObject().getValueField().setAnchorNameExpression(Expressions.text(anchorName));
         return (T) this;
     }
 
@@ -242,8 +231,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setAnchorName(DRIExpression<String> anchorNameExpression) {
-        getObject().getValueField()
-                   .setAnchorNameExpression(anchorNameExpression);
+        getObject().getValueField().setAnchorNameExpression(anchorNameExpression);
         return (T) this;
     }
 
@@ -254,8 +242,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setBookmarkLevel(Integer bookmarkLevel) {
-        getObject().getValueField()
-                   .setBookmarkLevel(bookmarkLevel);
+        getObject().getValueField().setBookmarkLevel(bookmarkLevel);
         return (T) this;
     }
 
@@ -267,11 +254,9 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      */
     public T setHyperLink(HyperLinkBuilder hyperLink) {
         if (hyperLink != null) {
-            getObject().getValueField()
-                       .setHyperLink(hyperLink.getHyperLink());
+            getObject().getValueField().setHyperLink(hyperLink.getHyperLink());
         } else {
-            getObject().getValueField()
-                       .setHyperLink(null);
+            getObject().getValueField().setHyperLink(null);
         }
         return (T) this;
     }
@@ -283,8 +268,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setRows(Integer rows) {
-        getObject().getValueField()
-                   .setRows(rows);
+        getObject().getValueField().setRows(rows);
         return (T) this;
     }
 
@@ -295,10 +279,8 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setFixedRows(Integer rows) {
-        getObject().getValueField()
-                   .setRows(rows);
-        getObject().getValueField()
-                   .setHeightType(ComponentDimensionType.FIXED);
+        getObject().getValueField().setRows(rows);
+        getObject().getValueField().setHeightType(ComponentDimensionType.FIXED);
         return (T) this;
     }
 
@@ -309,10 +291,8 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setMinRows(Integer rows) {
-        getObject().getValueField()
-                   .setRows(rows);
-        getObject().getValueField()
-                   .setHeightType(ComponentDimensionType.EXPAND);
+        getObject().getValueField().setRows(rows);
+        getObject().getValueField().setHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
     }
 
@@ -323,8 +303,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setHeight(Integer height) {
-        getObject().getValueField()
-                   .setHeight(height);
+        getObject().getValueField().setHeight(height);
         return (T) this;
     }
 
@@ -335,10 +314,8 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setFixedHeight(Integer height) {
-        getObject().getValueField()
-                   .setHeight(height);
-        getObject().getValueField()
-                   .setHeightType(ComponentDimensionType.FIXED);
+        getObject().getValueField().setHeight(height);
+        getObject().getValueField().setHeightType(ComponentDimensionType.FIXED);
         return (T) this;
     }
 
@@ -349,10 +326,8 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setMinHeight(Integer height) {
-        getObject().getValueField()
-                   .setHeight(height);
-        getObject().getValueField()
-                   .setHeightType(ComponentDimensionType.EXPAND);
+        getObject().getValueField().setHeight(height);
+        getObject().getValueField().setHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
     }
 
@@ -364,11 +339,9 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      */
     public T setStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getValueField()
-                       .setStyle(style.getStyle());
+            getObject().getValueField().setStyle(style.getStyle());
         } else {
-            getObject().getValueField()
-                       .setStyle(null);
+            getObject().getValueField().setStyle(null);
         }
         return (T) this;
     }
@@ -380,8 +353,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      * @return a T object.
      */
     public T setPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getValueField()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getValueField().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
@@ -411,12 +383,13 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
         return (T) this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         super.configure();
-        getObject().getValueField()
-                   .setValueExpression(valueExpression);
+        getObject().getValueField().setValueExpression(valueExpression);
     }
 
     /**

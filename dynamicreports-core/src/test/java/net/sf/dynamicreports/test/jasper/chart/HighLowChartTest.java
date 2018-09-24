@@ -87,8 +87,7 @@ public class HighLowChartTest extends AbstractJasperChartTest {
                                                                          .setLabel("time")
                                                                          .setLabelColor(Color.BLUE)
                                                                          .setLabelFont(stl.fontArialBold())
-                                                                         .setTickLabelFont(stl.fontArial()
-                                                                                              .setItalic(true))
+                                                                         .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                          .setTickLabelColor(Color.CYAN)
                                                                          .setLineColor(Color.LIGHT_GRAY)
                                                                          .setVerticalTickLabels(true)), cht.highLowChart()
@@ -103,8 +102,7 @@ public class HighLowChartTest extends AbstractJasperChartTest {
                                                                                                                                   .setLabel("value")
                                                                                                                                   .setLabelColor(Color.BLUE)
                                                                                                                                   .setLabelFont(stl.fontArialBold())
-                                                                                                                                  .setTickLabelFont(stl.fontArial()
-                                                                                                                                                       .setItalic(true))
+                                                                                                                                  .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                                                                                   .setTickLabelColor(Color.CYAN)
                                                                                                                                   .setTickLabelMask("#,##0.00")
                                                                                                                                   .setLineColor(Color.LIGHT_GRAY)
@@ -120,16 +118,14 @@ public class HighLowChartTest extends AbstractJasperChartTest {
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot()
-                                       .getRenderer();
+        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", HighLowRenderer.class, renderer.getClass());
         Assert.assertEquals("show open ticks", true, ((HighLowRenderer) renderer).getDrawOpenTicks());
         Assert.assertEquals("show close ticks", true, ((HighLowRenderer) renderer).getDrawCloseTicks());
         highLowChartDataTest(chart, 0, new Object[][] {{"serie", date1, 50d, 35d, 40d, 47d, 70d}, {"serie", date2, 55d, 40d, 50d, 45d, 120d}, {"serie", date3, 48d, 41d, 42d, 47d, 90d}});
 
         chart = getChart("summary.chart2", 0);
-        Axis axis = chart.getXYPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getXYPlot().getDomainAxis();
         Assert.assertEquals("category label", "time", axis.getLabel());
         Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("category label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
@@ -139,15 +135,13 @@ public class HighLowChartTest extends AbstractJasperChartTest {
         Assert.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
 
         chart = getChart("summary.chart3", 0);
-        axis = chart.getXYPlot()
-                    .getRangeAxis();
+        axis = chart.getXYPlot().getRangeAxis();
         Assert.assertEquals("value label", "value", axis.getLabel());
         Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("value label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride()
-                                                                           .format(10));
+        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride().format(10));
         // Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
         Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound());
         Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound());

@@ -38,23 +38,25 @@ import java.util.Locale;
 public class StringType extends AbstractDataType<String, String> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getStringType()
-                       .getPattern();
+        return Defaults.getDefaults().getStringType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getStringType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getStringType().getHorizontalTextAlignment();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String stringToValue(String value, Locale locale) throws DRException {
         return value;

@@ -73,18 +73,9 @@ public class ChartTest extends AbstractJasperChartTest implements Serializable {
                                                       .setOrientation(Orientation.HORIZONTAL)
                                                       .seriesColors(Color.BLUE, Color.GREEN, Color.RED)
                                                       .setCategory(column1)
-                                                      .series(cht.serie(column2), cht.serie(column2)
-                                                                                     .setLabel("2"), cht.serie(column2)
-                                                                                                        .setLabel("3")), cht.multiAxisChart(cht.lineChart()
-                                                                                                                                               .setCategory(column1)
-                                                                                                                                               .series(cht.serie(column2)), cht.barChart()
-                                                                                                                                                                               .setCategory(column1)
-                                                                                                                                                                               .series(
-                                                                                                                                                                                   cht.serie(column2))
-                                                                                                                                                                               .setStyle(stl.style()
-                                                                                                                                                                                            .setForegroundColor(
-                                                                                                                                                                                                Color
-                                                                                                                                                                                                    .BLUE))));
+                                                      .series(cht.serie(column2), cht.serie(column2).setLabel("2"), cht.serie(column2).setLabel("3")),
+                   cht.multiAxisChart(cht.lineChart().setCategory(column1).series(cht.serie(column2)),
+                                      cht.barChart().setCategory(column1).series(cht.serie(column2)).setStyle(stl.style().setForegroundColor(Color.BLUE))));
     }
 
     @Override
@@ -116,25 +107,14 @@ public class ChartTest extends AbstractJasperChartTest implements Serializable {
         chartCountTest("summary.chart2", 1);
         chart = getChart("summary.chart2", 0);
         Assert.assertNull("legend", chart.getLegend());
-        Assert.assertEquals("plot orientation", PlotOrientation.HORIZONTAL, chart.getCategoryPlot()
-                                                                                 .getOrientation());
-        Assert.assertEquals("plot series colors", Color.BLUE, chart.getPlot()
-                                                                   .getDrawingSupplier()
-                                                                   .getNextPaint());
-        Assert.assertEquals("plot series colors", Color.GREEN, chart.getPlot()
-                                                                    .getDrawingSupplier()
-                                                                    .getNextPaint());
-        Assert.assertEquals("plot series colors", Color.RED, chart.getPlot()
-                                                                  .getDrawingSupplier()
-                                                                  .getNextPaint());
+        Assert.assertEquals("plot orientation", PlotOrientation.HORIZONTAL, chart.getCategoryPlot().getOrientation());
+        Assert.assertEquals("plot series colors", Color.BLUE, chart.getPlot().getDrawingSupplier().getNextPaint());
+        Assert.assertEquals("plot series colors", Color.GREEN, chart.getPlot().getDrawingSupplier().getNextPaint());
+        Assert.assertEquals("plot series colors", Color.RED, chart.getPlot().getDrawingSupplier().getNextPaint());
 
         chart = getChart("summary.chart3", 0);
-        Assert.assertEquals("axis color", Color.BLACK, chart.getCategoryPlot()
-                                                            .getRangeAxis(0)
-                                                            .getAxisLinePaint());
-        Assert.assertEquals("axis color", Color.BLUE, chart.getCategoryPlot()
-                                                           .getRangeAxis(1)
-                                                           .getAxisLinePaint());
+        Assert.assertEquals("axis color", Color.BLACK, chart.getCategoryPlot().getRangeAxis(0).getAxisLinePaint());
+        Assert.assertEquals("axis color", Color.BLUE, chart.getCategoryPlot().getRangeAxis(1).getAxisLinePaint());
     }
 
     @Override

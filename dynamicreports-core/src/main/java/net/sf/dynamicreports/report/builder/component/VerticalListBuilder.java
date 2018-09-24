@@ -60,16 +60,14 @@ public class VerticalListBuilder extends DimensionComponentBuilder<VerticalListB
     /**
      * <p>add.</p>
      *
-     * @param gap a {@link java.lang.Integer} object.
+     * @param gap        a {@link java.lang.Integer} object.
      * @param components a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.VerticalListBuilder} object.
      */
     public VerticalListBuilder add(Integer gap, ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         for (ComponentBuilder<?, ?> component : components) {
-            add(Components.vListCell(Components.filler()
-                                               .setHeight(gap))
-                          .heightFixed());
+            add(Components.vListCell(Components.filler().setHeight(gap)).heightFixed());
             add(component);
         }
         return this;
@@ -93,16 +91,14 @@ public class VerticalListBuilder extends DimensionComponentBuilder<VerticalListB
     /**
      * <p>add.</p>
      *
-     * @param gap a {@link java.lang.Integer} object.
+     * @param gap   a {@link java.lang.Integer} object.
      * @param cells a {@link net.sf.dynamicreports.report.builder.component.VerticalListCellBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.VerticalListBuilder} object.
      */
     public VerticalListBuilder add(Integer gap, VerticalListCellBuilder... cells) {
         Validate.notNull(cells, "cells must not be null");
         for (VerticalListCellBuilder cell : cells) {
-            add(Components.vListCell(Components.filler()
-                                               .setHeight(gap))
-                          .heightFixed(), cell);
+            add(Components.vListCell(Components.filler().setHeight(gap)).heightFixed(), cell);
         }
         return this;
     }

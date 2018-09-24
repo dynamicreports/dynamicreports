@@ -75,8 +75,7 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
         CustomGroupBuilder group = grp.group(field("field4", Integer.class));
         group.footer(subreport);
 
-        rb.groupBy(group)
-          .setDataSource("SELECT * FROM test_table2", connection);
+        rb.groupBy(group).setDataSource("SELECT * FROM test_table2", connection);
     }
 
     @Override

@@ -43,12 +43,9 @@ public class ConcatenatedReport4Test {
 
     @Before
     public void init() {
-        JasperReportBuilder report1 = report().title(cmp.text("text1"))
-                                              .pageFooter(cmp.pageNumber());
-        JasperReportBuilder report2 = report().title(cmp.text("text2"))
-                                              .pageFooter(cmp.pageNumber());
-        JasperReportBuilder report3 = report().title(cmp.text("text3"))
-                                              .pageFooter(cmp.pageNumber());
+        JasperReportBuilder report1 = report().title(cmp.text("text1")).pageFooter(cmp.pageNumber());
+        JasperReportBuilder report2 = report().title(cmp.text("text2")).pageFooter(cmp.pageNumber());
+        JasperReportBuilder report3 = report().title(cmp.text("text3")).pageFooter(cmp.pageNumber());
 
         concatenatedReport = concatenatedReport(new JasperPrintListHandler());
         concatenatedReport.continuousPageNumbering();

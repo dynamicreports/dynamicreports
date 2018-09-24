@@ -47,7 +47,7 @@ public class DRPage implements DRIPage {
     /**
      * <p>setPageFormat.</p>
      *
-     * @param pageType a {@link net.sf.dynamicreports.report.constant.PageType} object.
+     * @param pageType    a {@link net.sf.dynamicreports.report.constant.PageType} object.
      * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
      */
     public void setPageFormat(PageType pageType, PageOrientation orientation) {
@@ -58,8 +58,8 @@ public class DRPage implements DRIPage {
     /**
      * <p>setPageFormat.</p>
      *
-     * @param width a {@link java.lang.Integer} object.
-     * @param height a {@link java.lang.Integer} object.
+     * @param width       a {@link java.lang.Integer} object.
+     * @param height      a {@link java.lang.Integer} object.
      * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
      */
     public void setPageFormat(Integer width, Integer height, PageOrientation orientation) {
@@ -78,7 +78,7 @@ public class DRPage implements DRIPage {
 
     /**
      * {@inheritDoc}
-     *
+     * <p>
      * Returns the page width.
      */
     @Override
@@ -89,11 +89,9 @@ public class DRPage implements DRIPage {
     /**
      * Sets the page width.
      *
+     * @param width the page width >= 0
+     * @throws IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the page width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
      */
     public void setWidth(Integer width) {
         if (width != null) {
@@ -104,7 +102,7 @@ public class DRPage implements DRIPage {
 
     /**
      * {@inheritDoc}
-     *
+     * <p>
      * Returns the page height.
      */
     @Override
@@ -115,11 +113,9 @@ public class DRPage implements DRIPage {
     /**
      * Sets the page height.
      *
+     * @param height the page height >= 0
+     * @throws IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the page height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
      */
     public void setHeight(Integer height) {
         if (height != null) {
@@ -128,7 +124,9 @@ public class DRPage implements DRIPage {
         this.height = height;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public PageOrientation getOrientation() {
         return orientation;
@@ -143,7 +141,9 @@ public class DRPage implements DRIPage {
         this.orientation = orientation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRMargin getMargin() {
         return margin;
@@ -158,7 +158,9 @@ public class DRPage implements DRIPage {
         this.margin = margin;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getColumnsPerPage() {
         return columnsPerPage;
@@ -176,7 +178,9 @@ public class DRPage implements DRIPage {
         this.columnsPerPage = columnsPerPage;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getColumnSpace() {
         return columnSpace;
@@ -194,7 +198,9 @@ public class DRPage implements DRIPage {
         this.columnSpace = columnSpace;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnorePageWidth() {
         return ignorePageWidth;

@@ -34,23 +34,25 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 public class LongType extends NumberType<Long> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getLongType()
-                       .getPattern();
+        return Defaults.getDefaults().getLongType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getLongType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getLongType().getHorizontalTextAlignment();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Long numberToValue(Number number) {
         return new Long(number.longValue());

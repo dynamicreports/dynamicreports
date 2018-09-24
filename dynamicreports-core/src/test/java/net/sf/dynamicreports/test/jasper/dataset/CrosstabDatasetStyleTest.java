@@ -60,9 +60,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest im
         FieldBuilder<String> field1 = field("field1", String.class);
         FieldBuilder<String> field2 = field("field2", String.class);
 
-        StyleBuilder cellStyle = stl.style()
-                                    .conditionalStyles(stl.conditionalStyle(new ConditionExpression(10, 15, 14, 36))
-                                                          .setBackgroundColor(Color.ORANGE));
+        StyleBuilder cellStyle = stl.style().conditionalStyles(stl.conditionalStyle(new ConditionExpression(10, 15, 14, 36)).setBackgroundColor(Color.ORANGE));
 
         rowGroup = ctab.rowGroup(field1);
         columnGroup = ctab.columnGroup(field2);
@@ -70,15 +68,9 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest im
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure1.setStyle(cellStyle);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .setDataSource(createCrosstabDataSource())
-                                       .highlightEvenRows()
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(measure1);
+        CrosstabBuilder crosstab = ctab.crosstab().setDataSource(createCrosstabDataSource()).highlightEvenRows().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure1);
 
-        rb.addParameter("parameter", "parameter_value")
-          .title(crosstab);
+        rb.addParameter("parameter", "parameter_value").title(crosstab);
     }
 
     @Override
@@ -136,8 +128,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest im
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             Integer value = reportParameters.getValue(measure1);
             return values.contains(value);
         }

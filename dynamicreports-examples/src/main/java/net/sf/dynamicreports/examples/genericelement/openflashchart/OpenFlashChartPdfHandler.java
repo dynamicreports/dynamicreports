@@ -54,13 +54,17 @@ public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {
 
     private final ReferenceMap existingContexts = new ReferenceMap(ReferenceMap.WEAK, ReferenceMap.HARD);
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean toExport(JRGenericPrintElement element) {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void exportElement(JRPdfExporterContext exporterContext, JRGenericPrintElement element) {
         try {
@@ -73,8 +77,7 @@ public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {
                 adobeExtension.put(new PdfName("BaseVersion"), PdfWriter.PDF_VERSION_1_7);
                 adobeExtension.put(new PdfName("ExtensionLevel"), new PdfNumber(3));
                 extensions.put(new PdfName("ADBE"), adobeExtension);
-                writer.getExtraCatalog()
-                      .put(new PdfName("Extensions"), extensions);
+                writer.getExtraCatalog().put(new PdfName("Extensions"), extensions);
 
                 byte[] swfData = getChartSwf();
                 PdfFileSpecification swfFile = PdfFileSpecification.fileEmbedded(writer, null, "Open Flash Chart", swfData);
@@ -84,11 +87,9 @@ public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {
                 swfRef = (PdfIndirectObject) existingContexts.get(exporterContext);
             }
 
-            Rectangle rect = new Rectangle(element.getX() + exporterContext.getOffsetX(), exporterContext.getExportedReport()
-                                                                                                         .getPageHeight() - element.getY() - exporterContext.getOffsetY(),
-                                           element.getX() + exporterContext.getOffsetX() + element.getWidth(), exporterContext.getExportedReport()
-                                                                                                                              .getPageHeight() - element.getY() - exporterContext.getOffsetY() -
-                                               element.getHeight());
+            Rectangle rect = new Rectangle(element.getX() + exporterContext.getOffsetX(), exporterContext.getExportedReport().getPageHeight() - element.getY() - exporterContext.getOffsetY(),
+                                           element.getX() + exporterContext.getOffsetX() + element.getWidth(),
+                                           exporterContext.getExportedReport().getPageHeight() - element.getY() - exporterContext.getOffsetY() - element.getHeight());
             PdfAnnotation ann = new PdfAnnotation(writer, rect);
             ann.put(PdfName.SUBTYPE, new PdfName("RichMedia"));
 

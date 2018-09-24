@@ -151,13 +151,9 @@ public class BandTransform {
      */
     public void prepareBands() throws DRException {
         BandComponentsTransform bandComponents = new BandComponentsTransform(accessor);
-        DRITemplateDesign<?> templateDesign = accessor.getReport()
-                                                      .getTemplateDesign();
-        int maxWidth = accessor.getPageTransform()
-                               .getMaxBandWidth();
-        int maxColumnWidth = accessor.getPageTransform()
-                                     .getPage()
-                                     .getColumnWidth();
+        DRITemplateDesign<?> templateDesign = accessor.getReport().getTemplateDesign();
+        int maxWidth = accessor.getPageTransform().getMaxBandWidth();
+        int maxColumnWidth = accessor.getPageTransform().getPage().getColumnWidth();
 
         titleBand = bandComponents.prepareBand(titleBand, maxWidth, templateDesign.getTitleComponentsCount());
         pageHeaderBand = bandComponents.prepareBand(pageHeaderBand, maxWidth, templateDesign.getPageHeaderComponentsCount());
@@ -175,38 +171,25 @@ public class BandTransform {
         summaryBand = bandComponents.prepareBand(summaryBand, maxWidth, templateDesign.getSummaryComponentsCount());
         noDataBand = bandComponents.prepareBand(noDataBand, maxWidth, templateDesign.getNoDataComponentsCount());
 
-        if (backgroundBand.getList() != null && backgroundBand.getList()
-                                                              .isEmpty() && (backgroundBand.getList()
-                                                                                           .getStyle() != null || backgroundBand.getList()
-                                                                                                                                .getBackgroundComponent() != null)) {
+        if (backgroundBand.getList() != null && backgroundBand.getList().isEmpty() && (backgroundBand.getList().getStyle() != null || backgroundBand.getList().getBackgroundComponent() != null)) {
             DRDesignFiller component = new DRDesignFiller();
             component.setWidth(1);
             component.setHeight(1);
-            backgroundBand.getList()
-                          .addComponent(component);
+            backgroundBand.getList().addComponent(component);
         }
         backgroundBand = bandComponents.prepareBand(backgroundBand, maxWidth, templateDesign.getBackgroundComponentsCount());
-        if (backgroundBand != null && backgroundBand.getBandComponent() != null && backgroundBand.getList() != null && (backgroundBand.getList()
-                                                                                                                                      .getStyle() != null || backgroundBand.getList()
-                                                                                                                                                                           .getBackgroundComponent() !=
-            null)) {
+        if (backgroundBand != null && backgroundBand.getBandComponent() != null && backgroundBand.getList() != null &&
+            (backgroundBand.getList().getStyle() != null || backgroundBand.getList().getBackgroundComponent() != null)) {
             DRIDesignPage page = accessor.getPage();
-            int height = page.getHeight() - page.getMargin()
-                                                .getTop() - page.getMargin()
-                                                                .getBottom();
-            backgroundBand.getList()
-                          .setHeight(height);
-            if (backgroundBand.getList()
-                              .getBackgroundComponent() != null) {
-                backgroundBand.getList()
-                              .getBackgroundComponent()
-                              .setHeight(height);
+            int height = page.getHeight() - page.getMargin().getTop() - page.getMargin().getBottom();
+            backgroundBand.getList().setHeight(height);
+            if (backgroundBand.getList().getBackgroundComponent() != null) {
+                backgroundBand.getList().getBackgroundComponent().setHeight(height);
             }
             backgroundBand.setHeight(height);
         }
 
-        for (DRDesignGroup group : accessor.getGroupTransform()
-                                           .getGroups()) {
+        for (DRDesignGroup group : accessor.getGroupTransform().getGroups()) {
             List<DRDesignBand> bands = new ArrayList<DRDesignBand>();
             for (DRDesignBand band : group.getHeaderBands()) {
                 DRDesignBand newBand = bandComponents.prepareBand(band, maxColumnWidth, 0);
@@ -231,13 +214,13 @@ public class BandTransform {
     /**
      * <p>band.</p>
      *
-     * @param bandName a {@link java.lang.String} object.
-     * @param band a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
-     * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
-     * @param defaultStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @param bandName                   a {@link java.lang.String} object.
+     * @param band                       a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
+     * @param splitType                  a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+     * @param defaultStyle               a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      * @param defaultBackgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param resetType                  a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup                 a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -245,22 +228,14 @@ public class BandTransform {
         throws DRException {
         DRDesignBand designBand = new DRDesignBand(bandName);
         designBand.setSplitType(splitType);
-        designBand.setList(accessor.getComponentTransform()
-                                   .list(band.getList(), DefaultStyleType.TEXT, resetType, resetGroup));
-        designBand.setPrintWhenExpression(accessor.getExpressionTransform()
-                                                  .transformExpression(band.getPrintWhenExpression()));
+        designBand.setList(accessor.getComponentTransform().list(band.getList(), DefaultStyleType.TEXT, resetType, resetGroup));
+        designBand.setPrintWhenExpression(accessor.getExpressionTransform().transformExpression(band.getPrintWhenExpression()));
 
-        if (designBand.getList()
-                      .getStyle() == null && defaultStyle != null) {
-            designBand.getList()
-                      .setStyle(accessor.getStyleTransform()
-                                        .transformStyle(defaultStyle, false, DefaultStyleType.NONE));
+        if (designBand.getList().getStyle() == null && defaultStyle != null) {
+            designBand.getList().setStyle(accessor.getStyleTransform().transformStyle(defaultStyle, false, DefaultStyleType.NONE));
         }
-        if (designBand.getList()
-                      .getBackgroundComponent() == null && defaultBackgroundComponent != null) {
-            designBand.getList()
-                      .setBackgroundComponent(accessor.getComponentTransform()
-                                                      .listBackgroundComponent(defaultBackgroundComponent, DefaultStyleType.TEXT, resetType, resetGroup));
+        if (designBand.getList().getBackgroundComponent() == null && defaultBackgroundComponent != null) {
+            designBand.getList().setBackgroundComponent(accessor.getComponentTransform().listBackgroundComponent(defaultBackgroundComponent, DefaultStyleType.TEXT, resetType, resetGroup));
         }
 
         return designBand;
@@ -269,10 +244,10 @@ public class BandTransform {
     /**
      * <p>band.</p>
      *
-     * @param bandName a {@link java.lang.String} object.
-     * @param band a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
-     * @param splitType a {@link net.sf.dynamicreports.report.constant.SplitType} object.
-     * @param defaultStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @param bandName                   a {@link java.lang.String} object.
+     * @param band                       a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
+     * @param splitType                  a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+     * @param defaultStyle               a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      * @param defaultBackgroundComponent a {@link net.sf.dynamicreports.report.definition.component.DRIComponent} object.
      * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -281,29 +256,18 @@ public class BandTransform {
         DRDesignBand designBand = new DRDesignBand(bandName);
         designBand.setSplitType(splitType);
         DRDesignList list = new DRDesignList();
-        list.setType(band.getList()
-                         .getType());
-        list.setGap(accessor.getTemplateTransform()
-                            .getListGap(band.getList()));
-        list.setStretchType(accessor.getTemplateTransform()
-                                    .getStretchType(band.getList()));
-        list.setPrintWhenExpression(accessor.getExpressionTransform()
-                                            .transformExpression(band.getList()
-                                                                     .getPrintWhenExpression()));
-        list.setStyle(accessor.getStyleTransform()
-                              .transformStyle(band.getList()
-                                                  .getStyle(), false, DefaultStyleType.NONE));
+        list.setType(band.getList().getType());
+        list.setGap(accessor.getTemplateTransform().getListGap(band.getList()));
+        list.setStretchType(accessor.getTemplateTransform().getStretchType(band.getList()));
+        list.setPrintWhenExpression(accessor.getExpressionTransform().transformExpression(band.getList().getPrintWhenExpression()));
+        list.setStyle(accessor.getStyleTransform().transformStyle(band.getList().getStyle(), false, DefaultStyleType.NONE));
         designBand.setList(list);
 
         if (list.getStyle() == null && defaultStyle != null) {
-            list.setStyle(accessor.getStyleTransform()
-                                  .transformStyle(defaultStyle, false, DefaultStyleType.NONE));
+            list.setStyle(accessor.getStyleTransform().transformStyle(defaultStyle, false, DefaultStyleType.NONE));
         }
-        if (designBand.getList()
-                      .getBackgroundComponent() == null && defaultBackgroundComponent != null) {
-            designBand.getList()
-                      .setBackgroundComponent(accessor.getComponentTransform()
-                                                      .listBackgroundComponent(defaultBackgroundComponent, DefaultStyleType.TEXT, ResetType.NONE, null));
+        if (designBand.getList().getBackgroundComponent() == null && defaultBackgroundComponent != null) {
+            designBand.getList().setBackgroundComponent(accessor.getComponentTransform().listBackgroundComponent(defaultBackgroundComponent, DefaultStyleType.TEXT, ResetType.NONE, null));
         }
 
         return designBand;

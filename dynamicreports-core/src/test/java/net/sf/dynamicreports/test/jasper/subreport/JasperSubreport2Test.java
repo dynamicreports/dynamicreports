@@ -47,14 +47,11 @@ public class JasperSubreport2Test extends AbstractJasperValueTest implements Ser
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport())
-                                              .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
 
-        SubreportBuilder titleSubreport = cmp.subreport(titleSubreport())
-                                             .setDataSource(titleSubreportDataSource());
+        SubreportBuilder titleSubreport = cmp.subreport(titleSubreport()).setDataSource(titleSubreportDataSource());
 
-        rb.title(titleSubreport)
-          .detail(detailSubreport);
+        rb.title(titleSubreport).detail(detailSubreport);
     }
 
     @Override

@@ -66,8 +66,7 @@ public class TableOfContentsReport3 {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
         ColumnGroupBuilder countryGroup = grp.group(countryColumn);
-        ColumnGroupBuilder itemGroup = grp.group(itemColumn)
-                                          .setAddToTableOfContents(false);
+        ColumnGroupBuilder itemGroup = grp.group(itemColumn).setAddToTableOfContents(false);
 
         try {
             report().setTemplate(Templates.reportTemplate)

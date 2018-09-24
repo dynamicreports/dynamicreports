@@ -46,61 +46,81 @@ public class DRDesignTemplateDesign implements DRIDesignTemplateDesign {
         this.templateDesign = templateDesign;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getTitleComponentsCount() {
         return templateDesign.getTitleComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getPageHeaderComponentsCount() {
         return templateDesign.getPageHeaderComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getPageFooterComponentsCount() {
         return templateDesign.getPageFooterComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getColumnHeaderComponentsCount() {
         return templateDesign.getColumnHeaderComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getColumnFooterComponentsCount() {
         return templateDesign.getColumnFooterComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getLastPageFooterComponentsCount() {
         return templateDesign.getLastPageFooterComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getSummaryComponentsCount() {
         return templateDesign.getSummaryComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getNoDataComponentsCount() {
         return templateDesign.getNoDataComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getBackgroundComponentsCount() {
         return templateDesign.getBackgroundComponentsCount();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object getDesign() throws DRException {
         return templateDesign.getDesign();

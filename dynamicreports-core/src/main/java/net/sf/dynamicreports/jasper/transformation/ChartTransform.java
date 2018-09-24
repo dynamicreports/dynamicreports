@@ -146,8 +146,7 @@ public class ChartTransform {
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
      */
     protected JRDesignElement transform(DRIDesignChart chart) {
-        if (chart.getChartType()
-                 .equals(ChartType.SPIDER)) {
+        if (chart.getChartType().equals(ChartType.SPIDER)) {
             return spiderChart(chart);
         } else {
             return chart(chart);
@@ -159,32 +158,25 @@ public class ChartTransform {
         EvaluationTime evaluationTime = chart.getEvaluationTime();
         jrChart.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && chart.getEvaluationGroup() != null) {
-            jrChart.setEvaluationGroup(accessor.getGroupTransform()
-                                               .getGroup(chart.getEvaluationGroup()));
+            jrChart.setEvaluationGroup(accessor.getGroupTransform().getGroup(chart.getEvaluationGroup()));
         }
 
-        if (chart.getChartType()
-                 .equals(ChartType.XYBAR)) {
+        if (chart.getChartType().equals(ChartType.XYBAR)) {
             jrChart.setDataset(new JRDesignXyDataset(null));
         }
         jrChart.setTheme(chart.getTheme());
 
-        jrChart.setAnchorNameExpression(accessor.getExpressionTransform()
-                                                .getExpression(chart.getAnchorNameExpression()));
+        jrChart.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(chart.getAnchorNameExpression()));
         if (chart.getBookmarkLevel() != null) {
             jrChart.setBookmarkLevel(chart.getBookmarkLevel());
         }
 
         DRIDesignHyperLink hyperLink = chart.getHyperLink();
         if (hyperLink != null) {
-            jrChart.setHyperlinkAnchorExpression(accessor.getExpressionTransform()
-                                                         .getExpression(hyperLink.getAnchorExpression()));
-            jrChart.setHyperlinkPageExpression(accessor.getExpressionTransform()
-                                                       .getExpression(hyperLink.getPageExpression()));
-            jrChart.setHyperlinkReferenceExpression(accessor.getExpressionTransform()
-                                                            .getExpression(hyperLink.getReferenceExpression()));
-            jrChart.setHyperlinkTooltipExpression(accessor.getExpressionTransform()
-                                                          .getExpression(hyperLink.getTooltipExpression()));
+            jrChart.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
+            jrChart.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
+            jrChart.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
+            jrChart.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
                 HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
@@ -206,34 +198,28 @@ public class ChartTransform {
         DRIDesignChartTitle title = chart.getTitle();
         jrChart.setTitleColor(title.getColor());
         if (title.getFont() != null) {
-            jrChart.setTitleFont(accessor.getStyleTransform()
-                                         .font(title.getFont()));
+            jrChart.setTitleFont(accessor.getStyleTransform().font(title.getFont()));
         }
-        jrChart.setTitleExpression(accessor.getExpressionTransform()
-                                           .getExpression(title.getTitle()));
+        jrChart.setTitleExpression(accessor.getExpressionTransform().getExpression(title.getTitle()));
         jrChart.setTitlePosition(ConstantTransform.chartPosition(title.getPosition()));
 
         DRIDesignChartSubtitle subtitle = chart.getSubtitle();
         jrChart.setSubtitleColor(subtitle.getColor());
         if (subtitle.getFont() != null) {
-            jrChart.setSubtitleFont(accessor.getStyleTransform()
-                                            .font(subtitle.getFont()));
+            jrChart.setSubtitleFont(accessor.getStyleTransform().font(subtitle.getFont()));
         }
-        jrChart.setSubtitleExpression(accessor.getExpressionTransform()
-                                              .getExpression(subtitle.getTitle()));
+        jrChart.setSubtitleExpression(accessor.getExpressionTransform().getExpression(subtitle.getTitle()));
 
         DRIDesignChartLegend legend = chart.getLegend();
         jrChart.setLegendColor(legend.getColor());
         jrChart.setLegendBackgroundColor(legend.getBackgroundColor());
         jrChart.setShowLegend(legend.getShowLegend());
         if (legend.getFont() != null) {
-            jrChart.setLegendFont(accessor.getStyleTransform()
-                                          .font(legend.getFont()));
+            jrChart.setLegendFont(accessor.getStyleTransform().font(legend.getFont()));
         }
         jrChart.setLegendPosition(ConstantTransform.chartPosition(legend.getPosition()));
 
-        if (!chart.getCustomizers()
-                  .isEmpty()) {
+        if (!chart.getCustomizers().isEmpty()) {
             jrChart.setCustomizerClass(JasperChartCustomizer.class.getName());
             jrChart.setKey(chart.getUniqueName());
             addChartCustomizer(chart.getUniqueName(), chart.getCustomizers());
@@ -251,9 +237,7 @@ public class ChartTransform {
         EvaluationTime evaluationTime = chart.getEvaluationTime();
         jrChart.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && chart.getEvaluationGroup() != null) {
-            jrChart.setEvaluationGroup(accessor.getGroupTransform()
-                                               .getGroup(chart.getEvaluationGroup())
-                                               .getName());
+            jrChart.setEvaluationGroup(accessor.getGroupTransform().getGroup(chart.getEvaluationGroup()).getName());
         }
 
         jrChart.setChartSettings(spiderSettings(chart));
@@ -272,8 +256,7 @@ public class ChartTransform {
     }
 
     private void addChartCustomizer(String name, List<DRIChartCustomizer> chartCustomizers) {
-        accessor.getCustomValues()
-                .addChartCustomizers(name, chartCustomizers);
+        accessor.getCustomValues().addChartCustomizers(name, chartCustomizers);
     }
 
     // dataset
@@ -282,13 +265,11 @@ public class ChartTransform {
             return;
         }
 
-        jrDataset.setDatasetRun(accessor.getDatasetTransform()
-                                        .datasetRun(dataset.getSubDataset()));
+        jrDataset.setDatasetRun(accessor.getDatasetTransform().datasetRun(dataset.getSubDataset()));
         ResetType resetType = dataset.getResetType();
         jrDataset.setResetType(ConstantTransform.variableResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
-            jrDataset.setResetGroup(accessor.getGroupTransform()
-                                            .getGroup(dataset.getResetGroup()));
+            jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
         }
 
         accessor.transformToDataset(dataset.getSubDataset());
@@ -311,8 +292,7 @@ public class ChartTransform {
         } else if (jrDataset instanceof JRDesignValueDataset) {
             valueDataset((DRIDesignValueDataset) dataset, (JRDesignValueDataset) jrDataset);
         } else {
-            throw new JasperDesignException("Dataset " + dataset.getClass()
-                                                                .getName() + " not supported");
+            throw new JasperDesignException("Dataset " + dataset.getClass().getName() + " not supported");
         }
         accessor.transformToMainDataset();
     }
@@ -332,8 +312,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignCategoryChartSerie categorySerie = (DRIDesignCategoryChartSerie) serie;
             JRDesignCategorySeries jrSerie = new JRDesignCategorySeries();
-            jrSerie.setItemHyperlink(accessor.getReportTransform()
-                                             .hyperLink(categorySerie.getItemHyperLink()));
+            jrSerie.setItemHyperlink(accessor.getReportTransform().hyperLink(categorySerie.getItemHyperLink()));
             jrSerie.setValueExpression(expressionTransform.getExpression(categorySerie.getValueExpression()));
 
             JRDesignExpression exp2 = expressionTransform.getExpression(categorySerie.getLabelExpression());
@@ -367,8 +346,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignCategoryChartSerie categorySerie = (DRIDesignCategoryChartSerie) serie;
             JRDesignPieSeries jrSerie = new JRDesignPieSeries();
-            jrSerie.setSectionHyperlink(accessor.getReportTransform()
-                                                .hyperLink(categorySerie.getItemHyperLink()));
+            jrSerie.setSectionHyperlink(accessor.getReportTransform().hyperLink(categorySerie.getItemHyperLink()));
             jrSerie.setKeyExpression(exp1);
             jrSerie.setValueExpression(expressionTransform.getExpression(categorySerie.getValueExpression()));
             jrDataset.addPieSeries(jrSerie);
@@ -385,8 +363,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignCategoryChartSerie categorySerie = (DRIDesignCategoryChartSerie) serie;
             JRDesignTimeSeries jrSerie = new JRDesignTimeSeries();
-            jrSerie.setItemHyperlink(accessor.getReportTransform()
-                                             .hyperLink(categorySerie.getItemHyperLink()));
+            jrSerie.setItemHyperlink(accessor.getReportTransform().hyperLink(categorySerie.getItemHyperLink()));
             jrSerie.setTimePeriodExpression(exp1);
             jrSerie.setValueExpression(expressionTransform.getExpression(categorySerie.getValueExpression()));
             JRDesignExpression seriesExpression = expressionTransform.getExpression(serie.getSeriesExpression());
@@ -406,8 +383,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignXyChartSerie xySerie = (DRIDesignXyChartSerie) serie;
             JRDesignXySeries jrSerie = new JRDesignXySeries();
-            jrSerie.setItemHyperlink(accessor.getReportTransform()
-                                             .hyperLink(xySerie.getItemHyperLink()));
+            jrSerie.setItemHyperlink(accessor.getReportTransform().hyperLink(xySerie.getItemHyperLink()));
             if (xySerie.getXValueExpression() != null) {
                 jrSerie.setXValueExpression(expressionTransform.getExpression(xySerie.getXValueExpression()));
             } else {
@@ -431,8 +407,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignXyzChartSerie xyzSerie = (DRIDesignXyzChartSerie) serie;
             JRDesignXyzSeries jrSerie = new JRDesignXyzSeries();
-            jrSerie.setItemHyperlink(accessor.getReportTransform()
-                                             .hyperLink(xyzSerie.getItemHyperLink()));
+            jrSerie.setItemHyperlink(accessor.getReportTransform().hyperLink(xyzSerie.getItemHyperLink()));
             if (xyzSerie.getXValueExpression() != null) {
                 jrSerie.setXValueExpression(expressionTransform.getExpression(xyzSerie.getXValueExpression()));
             } else {
@@ -451,8 +426,7 @@ public class ChartTransform {
         for (DRIDesignChartSerie serie : dataset.getSeries()) {
             DRIDesignGanttChartSerie ganttSerie = (DRIDesignGanttChartSerie) serie;
             JRDesignGanttSeries jrSerie = new JRDesignGanttSeries();
-            jrSerie.setItemHyperlink(accessor.getReportTransform()
-                                             .hyperLink(ganttSerie.getItemHyperLink()));
+            jrSerie.setItemHyperlink(accessor.getReportTransform().hyperLink(ganttSerie.getItemHyperLink()));
             jrSerie.setTaskExpression(taskExpression);
             jrSerie.setSubtaskExpression(taskExpression);
             jrSerie.setStartDateExpression(expressionTransform.getExpression(ganttSerie.getStartDateExpression()));
@@ -473,8 +447,7 @@ public class ChartTransform {
 
     private void highLowDataset(DRIDesignHighLowDataset dataset, JRDesignHighLowDataset jrDataset) {
         AbstractExpressionTransform expressionTransform = accessor.getExpressionTransform();
-        jrDataset.setItemHyperlink(accessor.getReportTransform()
-                                           .hyperLink(dataset.getItemHyperLink()));
+        jrDataset.setItemHyperlink(accessor.getReportTransform().hyperLink(dataset.getItemHyperLink()));
         jrDataset.setSeriesExpression(expressionTransform.getExpression(dataset.getSeriesExpression()));
         jrDataset.setDateExpression(expressionTransform.getExpression(dataset.getDateExpression()));
         jrDataset.setHighExpression(expressionTransform.getExpression(dataset.getHighExpression()));
@@ -539,103 +512,82 @@ public class ChartTransform {
         } else if (jrPlot instanceof JRDesignThermometerPlot) {
             thermometerPlot((DRIDesignThermometerPlot) plot, (JRDesignThermometerPlot) jrPlot, jrChart);
         } else {
-            throw new JasperDesignException("Plot " + plot.getClass()
-                                                          .getName() + " not supported");
+            throw new JasperDesignException("Plot " + plot.getClass().getName() + " not supported");
         }
     }
 
     private void areaPlot(DRIDesignAxisPlot plot, JRDesignAreaPlot jrPlot) {
         // category
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform()
-                                                      .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setCategoryAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setCategoryAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setCategoryAxisTickLabelRotation(categoryAxisFormat.getTickLabelRotation());
         jrPlot.setCategoryAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setCategoryAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setCategoryAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform()
-                                                        .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
     }
 
     private void bar3DPlot(DRIDesignBar3DPlot plot, JRDesignBar3DPlot jrPlot) {
         // category
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform()
-                                                      .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setCategoryAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setCategoryAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setCategoryAxisTickLabelRotation(categoryAxisFormat.getTickLabelRotation());
         jrPlot.setCategoryAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setCategoryAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setCategoryAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform()
-                                                        .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowLabels(plot.getShowLabels());
         jrPlot.setXOffset(plot.getXOffset());
@@ -645,48 +597,38 @@ public class ChartTransform {
     private void barPlot(DRIDesignBarPlot plot, JRDesignBarPlot jrPlot) {
         // category
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform()
-                                                      .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setCategoryAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setCategoryAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setCategoryAxisTickLabelRotation(categoryAxisFormat.getTickLabelRotation());
         jrPlot.setCategoryAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setCategoryAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setCategoryAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform()
-                                                        .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowLabels(plot.getShowLabels());
         jrPlot.setShowTickLabels(plot.getShowTickLabels());
@@ -696,48 +638,38 @@ public class ChartTransform {
     private void linePlot(DRIDesignLinePlot plot, JRDesignLinePlot jrPlot) {
         // category
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform()
-                                                      .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setCategoryAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setCategoryAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setCategoryAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setCategoryAxisTickLabelRotation(categoryAxisFormat.getTickLabelRotation());
         jrPlot.setCategoryAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setCategoryAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setCategoryAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setCategoryAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform()
-                                                        .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setCategoryAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowShapes(plot.getShowShapes());
         jrPlot.setShowLines(plot.getShowLines());
@@ -759,47 +691,37 @@ public class ChartTransform {
     private void scatterPlot(DRIDesignLinePlot plot, JRDesignScatterPlot jrPlot) {
         // x
         DRIDesignAxisFormat xAxisFormat = plot.getXAxisFormat();
-        jrPlot.setXAxisLabelExpression(accessor.getExpressionTransform()
-                                               .getExpression(xAxisFormat.getLabelExpression()));
+        jrPlot.setXAxisLabelExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getLabelExpression()));
         jrPlot.setXAxisTickLabelMask(xAxisFormat.getTickLabelMask());
         jrPlot.setXAxisVerticalTickLabels(xAxisFormat.getVerticalTickLabels());
         jrPlot.setXAxisLabelColor(xAxisFormat.getLabelColor());
         if (xAxisFormat.getLabelFont() != null) {
-            jrPlot.setXAxisLabelFont(accessor.getStyleTransform()
-                                             .font(xAxisFormat.getLabelFont()));
+            jrPlot.setXAxisLabelFont(accessor.getStyleTransform().font(xAxisFormat.getLabelFont()));
         }
         jrPlot.setXAxisLineColor(xAxisFormat.getLineColor());
         jrPlot.setXAxisTickLabelColor(xAxisFormat.getTickLabelColor());
         if (xAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setXAxisTickLabelFont(accessor.getStyleTransform()
-                                                 .font(xAxisFormat.getTickLabelFont()));
+            jrPlot.setXAxisTickLabelFont(accessor.getStyleTransform().font(xAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(xAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(xAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getRangeMaxValueExpression()));
 
         // y
         DRIDesignAxisFormat yAxisFormat = plot.getYAxisFormat();
-        jrPlot.setYAxisLabelExpression(accessor.getExpressionTransform()
-                                               .getExpression(yAxisFormat.getLabelExpression()));
+        jrPlot.setYAxisLabelExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getLabelExpression()));
         jrPlot.setYAxisTickLabelMask(yAxisFormat.getTickLabelMask());
         jrPlot.setYAxisVerticalTickLabels(yAxisFormat.getVerticalTickLabels());
         jrPlot.setYAxisLabelColor(yAxisFormat.getLabelColor());
         if (yAxisFormat.getLabelFont() != null) {
-            jrPlot.setYAxisLabelFont(accessor.getStyleTransform()
-                                             .font(yAxisFormat.getLabelFont()));
+            jrPlot.setYAxisLabelFont(accessor.getStyleTransform().font(yAxisFormat.getLabelFont()));
         }
         jrPlot.setYAxisLineColor(yAxisFormat.getLineColor());
         jrPlot.setYAxisTickLabelColor(yAxisFormat.getTickLabelColor());
         if (yAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setYAxisTickLabelFont(accessor.getStyleTransform()
-                                                 .font(yAxisFormat.getTickLabelFont()));
+            jrPlot.setYAxisTickLabelFont(accessor.getStyleTransform().font(yAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(yAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(yAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowShapes(plot.getShowShapes());
         jrPlot.setShowLines(plot.getShowLines());
@@ -808,47 +730,37 @@ public class ChartTransform {
     private void timeSeriesPlot(DRIDesignLinePlot plot, JRDesignTimeSeriesPlot jrPlot) {
         // time
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform()
-                                                  .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setTimeAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setTimeAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setTimeAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform()
-                                                .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setTimeAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setTimeAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowShapes(plot.getShowShapes());
         jrPlot.setShowLines(plot.getShowLines());
@@ -857,47 +769,37 @@ public class ChartTransform {
     private void candlestickPlot(DRIDesignCandlestickPlot plot, JRDesignCandlestickPlot jrPlot) {
         // time
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform()
-                                                  .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setTimeAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setTimeAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setTimeAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform()
-                                                .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setTimeAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setTimeAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowVolume(plot.getShowVolume());
     }
@@ -905,47 +807,37 @@ public class ChartTransform {
     private void highLowPlot(DRIDesignHighLowPlot plot, JRDesignHighLowPlot jrPlot) {
         // time
         DRIDesignAxisFormat categoryAxisFormat = plot.getXAxisFormat();
-        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform()
-                                                  .getExpression(categoryAxisFormat.getLabelExpression()));
+        jrPlot.setTimeAxisLabelExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getLabelExpression()));
         jrPlot.setTimeAxisTickLabelMask(categoryAxisFormat.getTickLabelMask());
         jrPlot.setTimeAxisVerticalTickLabels(categoryAxisFormat.getVerticalTickLabels());
         jrPlot.setTimeAxisLabelColor(categoryAxisFormat.getLabelColor());
         if (categoryAxisFormat.getLabelFont() != null) {
-            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform()
-                                                .font(categoryAxisFormat.getLabelFont()));
+            jrPlot.setTimeAxisLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getLabelFont()));
         }
         jrPlot.setTimeAxisLineColor(categoryAxisFormat.getLineColor());
         jrPlot.setTimeAxisTickLabelColor(categoryAxisFormat.getTickLabelColor());
         if (categoryAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform()
-                                                    .font(categoryAxisFormat.getTickLabelFont()));
+            jrPlot.setTimeAxisTickLabelFont(accessor.getStyleTransform().font(categoryAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(categoryAxisFormat.getRangeMaxValueExpression()));
 
         // value
         DRIDesignAxisFormat valueAxisFormat = plot.getYAxisFormat();
-        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform()
-                                                   .getExpression(valueAxisFormat.getLabelExpression()));
+        jrPlot.setValueAxisLabelExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getLabelExpression()));
         jrPlot.setValueAxisTickLabelMask(valueAxisFormat.getTickLabelMask());
         jrPlot.setValueAxisVerticalTickLabels(valueAxisFormat.getVerticalTickLabels());
         jrPlot.setValueAxisLabelColor(valueAxisFormat.getLabelColor());
         if (valueAxisFormat.getLabelFont() != null) {
-            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform()
-                                                 .font(valueAxisFormat.getLabelFont()));
+            jrPlot.setValueAxisLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getLabelFont()));
         }
         jrPlot.setValueAxisLineColor(valueAxisFormat.getLineColor());
         jrPlot.setValueAxisTickLabelColor(valueAxisFormat.getTickLabelColor());
         if (valueAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform()
-                                                     .font(valueAxisFormat.getTickLabelFont()));
+            jrPlot.setValueAxisTickLabelFont(accessor.getStyleTransform().font(valueAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(valueAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(valueAxisFormat.getRangeMaxValueExpression()));
 
         jrPlot.setShowOpenTicks(plot.getShowOpenTicks());
         jrPlot.setShowCloseTicks(plot.getShowCloseTicks());
@@ -953,10 +845,8 @@ public class ChartTransform {
 
     private void meterPlot(DRIDesignMeterPlot plot, JRDesignMeterPlot jrPlot, JRDesignChart jrChart) {
         JRDesignDataRange jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(plot.getDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(plot.getDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(plot.getDataRangeHighExpression()));
         try {
             jrPlot.setDataRange(jrDataRange);
         } catch (JRException e) {
@@ -966,8 +856,7 @@ public class ChartTransform {
         JRDesignValueDisplay jrValueDisplay = new JRDesignValueDisplay(null, jrChart);
         jrValueDisplay.setColor(plot.getValueColor());
         jrValueDisplay.setMask(plot.getValueMask());
-        jrValueDisplay.setFont(accessor.getStyleTransform()
-                                       .font(plot.getValueFont()));
+        jrValueDisplay.setFont(accessor.getStyleTransform().font(plot.getValueFont()));
         jrPlot.setValueDisplay(jrValueDisplay);
 
         List<JRMeterInterval> intervals = new ArrayList<>();
@@ -986,53 +875,42 @@ public class ChartTransform {
         jrPlot.setTickInterval(plot.getTickInterval());
         jrPlot.setMeterBackgroundColor(plot.getMeterBackgroundColor());
         jrPlot.setNeedleColor(plot.getNeedleColor());
-        if (plot.getTickColor() == null && plot.getShape() != null && plot.getShape()
-                                                                          .equals(MeterShape.DIAL)) {
+        if (plot.getTickColor() == null && plot.getShape() != null && plot.getShape().equals(MeterShape.DIAL)) {
             jrPlot.setTickColor(Color.BLACK);
         } else {
             jrPlot.setTickColor(plot.getTickColor());
         }
-        jrPlot.setTickLabelFont(accessor.getStyleTransform()
-                                        .font(plot.getTickLabelFont()));
+        jrPlot.setTickLabelFont(accessor.getStyleTransform().font(plot.getTickLabelFont()));
     }
 
     private void thermometerPlot(DRIDesignThermometerPlot plot, JRDesignThermometerPlot jrPlot, JRDesignChart jrChart) {
         JRDesignDataRange jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(plot.getDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(plot.getDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(plot.getDataRangeHighExpression()));
         jrPlot.setDataRange(jrDataRange);
 
         JRDesignValueDisplay jrValueDisplay = new JRDesignValueDisplay(null, jrChart);
         jrValueDisplay.setColor(plot.getValueColor());
         jrValueDisplay.setMask(plot.getValueMask());
-        jrValueDisplay.setFont(accessor.getStyleTransform()
-                                       .font(plot.getValueFont()));
+        jrValueDisplay.setFont(accessor.getStyleTransform().font(plot.getValueFont()));
         jrPlot.setValueDisplay(jrValueDisplay);
 
         jrPlot.setValueLocation(ConstantTransform.valueLocation(plot.getValueLocation()));
         jrPlot.setMercuryColor(plot.getMercuryColor());
 
         jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getLowDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(plot.getLowDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(plot.getLowDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(plot.getLowDataRangeHighExpression()));
         jrPlot.setLowRange(jrDataRange);
 
         jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getMediumDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(plot.getMediumDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(plot.getMediumDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(plot.getMediumDataRangeHighExpression()));
         jrPlot.setMediumRange(jrDataRange);
 
         jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getHighDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(plot.getHighDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(plot.getHighDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(plot.getHighDataRangeHighExpression()));
         jrPlot.setHighRange(jrDataRange);
     }
 
@@ -1043,10 +921,8 @@ public class ChartTransform {
         jrMeterInterval.setAlpha(meterInterval.getAlpha());
 
         JRDesignDataRange jrDataRange = new JRDesignDataRange(null);
-        jrDataRange.setLowExpression(accessor.getExpressionTransform()
-                                             .getExpression(meterInterval.getDataRangeLowExpression()));
-        jrDataRange.setHighExpression(accessor.getExpressionTransform()
-                                              .getExpression(meterInterval.getDataRangeHighExpression()));
+        jrDataRange.setLowExpression(accessor.getExpressionTransform().getExpression(meterInterval.getDataRangeLowExpression()));
+        jrDataRange.setHighExpression(accessor.getExpressionTransform().getExpression(meterInterval.getDataRangeHighExpression()));
         jrMeterInterval.setDataRange(jrDataRange);
 
         return jrMeterInterval;
@@ -1058,11 +934,8 @@ public class ChartTransform {
             JRDesignChartAxis jrAxis = new JRDesignChartAxis(jrChart);
             jrAxis.setPosition(ConstantTransform.chartAxisPosition(axis.getPosition()));
             JRDesignChart chart = chart(axis.getChart());
-            if (axis.getChart()
-                    .getStyle() != null) {
-                chart.setStyle(accessor.getStyleTransform()
-                                       .getStyle(axis.getChart()
-                                                     .getStyle()));
+            if (axis.getChart().getStyle() != null) {
+                chart.setStyle(accessor.getStyleTransform().getStyle(axis.getChart().getStyle()));
             }
             jrAxis.setChart(chart);
             jrPlot.addAxis(jrAxis);
@@ -1072,47 +945,37 @@ public class ChartTransform {
     private void bubblePlot(DRIDesignBubblePlot plot, JRDesignBubblePlot jrPlot) {
         // x
         DRIDesignAxisFormat xAxisFormat = plot.getXAxisFormat();
-        jrPlot.setXAxisLabelExpression(accessor.getExpressionTransform()
-                                               .getExpression(xAxisFormat.getLabelExpression()));
+        jrPlot.setXAxisLabelExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getLabelExpression()));
         jrPlot.setXAxisTickLabelMask(xAxisFormat.getTickLabelMask());
         jrPlot.setXAxisVerticalTickLabels(xAxisFormat.getVerticalTickLabels());
         jrPlot.setXAxisLabelColor(xAxisFormat.getLabelColor());
         if (xAxisFormat.getLabelFont() != null) {
-            jrPlot.setXAxisLabelFont(accessor.getStyleTransform()
-                                             .font(xAxisFormat.getLabelFont()));
+            jrPlot.setXAxisLabelFont(accessor.getStyleTransform().font(xAxisFormat.getLabelFont()));
         }
         jrPlot.setXAxisLineColor(xAxisFormat.getLineColor());
         jrPlot.setXAxisTickLabelColor(xAxisFormat.getTickLabelColor());
         if (xAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setXAxisTickLabelFont(accessor.getStyleTransform()
-                                                 .font(xAxisFormat.getTickLabelFont()));
+            jrPlot.setXAxisTickLabelFont(accessor.getStyleTransform().font(xAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(xAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                       .getExpression(xAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setDomainAxisMinValueExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setDomainAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(xAxisFormat.getRangeMaxValueExpression()));
 
         // y
         DRIDesignAxisFormat yAxisFormat = plot.getYAxisFormat();
-        jrPlot.setYAxisLabelExpression(accessor.getExpressionTransform()
-                                               .getExpression(yAxisFormat.getLabelExpression()));
+        jrPlot.setYAxisLabelExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getLabelExpression()));
         jrPlot.setYAxisTickLabelMask(yAxisFormat.getTickLabelMask());
         jrPlot.setYAxisVerticalTickLabels(yAxisFormat.getVerticalTickLabels());
         jrPlot.setYAxisLabelColor(yAxisFormat.getLabelColor());
         if (yAxisFormat.getLabelFont() != null) {
-            jrPlot.setYAxisLabelFont(accessor.getStyleTransform()
-                                             .font(yAxisFormat.getLabelFont()));
+            jrPlot.setYAxisLabelFont(accessor.getStyleTransform().font(yAxisFormat.getLabelFont()));
         }
         jrPlot.setYAxisLineColor(yAxisFormat.getLineColor());
         jrPlot.setYAxisTickLabelColor(yAxisFormat.getTickLabelColor());
         if (yAxisFormat.getTickLabelFont() != null) {
-            jrPlot.setYAxisTickLabelFont(accessor.getStyleTransform()
-                                                 .font(yAxisFormat.getTickLabelFont()));
+            jrPlot.setYAxisTickLabelFont(accessor.getStyleTransform().font(yAxisFormat.getTickLabelFont()));
         }
-        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(yAxisFormat.getRangeMinValueExpression()));
-        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform()
-                                                      .getExpression(yAxisFormat.getRangeMaxValueExpression()));
+        jrPlot.setRangeAxisMinValueExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getRangeMinValueExpression()));
+        jrPlot.setRangeAxisMaxValueExpression(accessor.getExpressionTransform().getExpression(yAxisFormat.getRangeMaxValueExpression()));
 
         if (plot.getScaleType() != null) {
             jrPlot.setScaleType(ConstantTransform.scaleType(plot.getScaleType()));
@@ -1123,22 +986,17 @@ public class ChartTransform {
     private ChartSettings spiderSettings(DRIDesignChart chart) {
         StandardChartSettings settings = new StandardChartSettings();
 
-        settings.setAnchorNameExpression(accessor.getExpressionTransform()
-                                                 .getExpression(chart.getAnchorNameExpression()));
+        settings.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(chart.getAnchorNameExpression()));
         if (chart.getBookmarkLevel() != null) {
             settings.setBookmarkLevel(chart.getBookmarkLevel());
         }
 
         DRIDesignHyperLink hyperLink = chart.getHyperLink();
         if (hyperLink != null) {
-            settings.setHyperlinkAnchorExpression(accessor.getExpressionTransform()
-                                                          .getExpression(hyperLink.getAnchorExpression()));
-            settings.setHyperlinkPageExpression(accessor.getExpressionTransform()
-                                                        .getExpression(hyperLink.getPageExpression()));
-            settings.setHyperlinkReferenceExpression(accessor.getExpressionTransform()
-                                                             .getExpression(hyperLink.getReferenceExpression()));
-            settings.setHyperlinkTooltipExpression(accessor.getExpressionTransform()
-                                                           .getExpression(hyperLink.getTooltipExpression()));
+            settings.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
+            settings.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
+            settings.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
+            settings.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
                 HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
@@ -1160,34 +1018,28 @@ public class ChartTransform {
         DRIDesignChartTitle title = chart.getTitle();
         settings.setTitleColor(title.getColor());
         if (title.getFont() != null) {
-            settings.setTitleFont(accessor.getStyleTransform()
-                                          .font(title.getFont()));
+            settings.setTitleFont(accessor.getStyleTransform().font(title.getFont()));
         }
-        settings.setTitleExpression(accessor.getExpressionTransform()
-                                            .getExpression(title.getTitle()));
+        settings.setTitleExpression(accessor.getExpressionTransform().getExpression(title.getTitle()));
         settings.setTitlePosition(ConstantTransform.chartPosition(title.getPosition()));
 
         DRIDesignChartSubtitle subtitle = chart.getSubtitle();
         settings.setSubtitleColor(subtitle.getColor());
         if (subtitle.getFont() != null) {
-            settings.setSubtitleFont(accessor.getStyleTransform()
-                                             .font(subtitle.getFont()));
+            settings.setSubtitleFont(accessor.getStyleTransform().font(subtitle.getFont()));
         }
-        settings.setSubtitleExpression(accessor.getExpressionTransform()
-                                               .getExpression(subtitle.getTitle()));
+        settings.setSubtitleExpression(accessor.getExpressionTransform().getExpression(subtitle.getTitle()));
 
         DRIDesignChartLegend legend = chart.getLegend();
         settings.setLegendColor(legend.getColor());
         settings.setLegendBackgroundColor(legend.getBackgroundColor());
         settings.setShowLegend(legend.getShowLegend());
         if (legend.getFont() != null) {
-            settings.setLegendFont(accessor.getStyleTransform()
-                                           .font(legend.getFont()));
+            settings.setLegendFont(accessor.getStyleTransform().font(legend.getFont()));
         }
         settings.setLegendPosition(ConstantTransform.chartPosition(legend.getPosition()));
 
-        if (!chart.getCustomizers()
-                  .isEmpty()) {
+        if (!chart.getCustomizers().isEmpty()) {
             settings.setCustomizerClass(JasperChartCustomizer.class.getName());
             addChartCustomizer(chart.getUniqueName(), chart.getCustomizers());
         }
@@ -1196,8 +1048,7 @@ public class ChartTransform {
     }
 
     private void spiderPlot(DRIDesignSpiderPlot plot, StandardSpiderPlot jrPlot) {
-        jrPlot.setMaxValueExpression(accessor.getExpressionTransform()
-                                             .getExpression(plot.getMaxValueExpression()));
+        jrPlot.setMaxValueExpression(accessor.getExpressionTransform().getExpression(plot.getMaxValueExpression()));
         jrPlot.setRotation(ConstantTransform.spiderRotation(plot.getRotation()));
         jrPlot.setTableOrder(ConstantTransform.tableOrder(plot.getTableOrder()));
         jrPlot.setWebFilled(plot.getWebFilled());
@@ -1207,8 +1058,7 @@ public class ChartTransform {
         jrPlot.setAxisLineColor(plot.getAxisLineColor());
         jrPlot.setAxisLineWidth(plot.getAxisLineWidth());
         if (plot.getLabelFont() != null) {
-            jrPlot.setLabelFont(accessor.getStyleTransform()
-                                        .font(plot.getLabelFont()));
+            jrPlot.setLabelFont(accessor.getStyleTransform().font(plot.getLabelFont()));
         }
         jrPlot.setLabelGap(plot.getLabelGap());
         jrPlot.setLabelColor(plot.getLabelColor());

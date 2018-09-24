@@ -80,14 +80,9 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
         measure5 = ctab.measure(new PercentageExpression2());
         measure5.setDataType(type.doubleType());
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .variables(variable1)
-                                       .measures(measure1, measure2, measure3, measure4, measure5);
+        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).variables(variable1).measures(measure1, measure2, measure3, measure4, measure5);
 
-        rb.setLocale(Locale.ENGLISH)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
 
     @Override
@@ -187,8 +182,7 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
         public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
             Integer value1 = (Integer) values.get(0);
             Integer value2 = (Integer) values.get(1);
-            return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP)
-                                         .multiply(new BigDecimal(100));
+            return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }
 
@@ -208,8 +202,7 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
             Integer measure1Value = reportParameters.getValue(measure1);
             Assert.assertEquals("measure value", value1, measure1Value);
             Assert.assertEquals("measure value", value2, values.get(2));
-            return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP)
-                                         .multiply(new BigDecimal(100));
+            return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }
 }

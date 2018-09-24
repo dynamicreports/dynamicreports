@@ -67,8 +67,8 @@ public class DataTypes {
      * <p>detectType.</p>
      *
      * @param dataType a {@link java.lang.Class} object.
-     * @param <U> a U object.
-     * @param <T> a T object.
+     * @param <U>      a U object.
+     * @param <T>      a T object.
      * @return a T object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -80,7 +80,7 @@ public class DataTypes {
      * <p>detectType.</p>
      *
      * @param dataType a {@link java.lang.String} object.
-     * @param <T> a T object.
+     * @param <T>      a T object.
      * @return a T object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -88,8 +88,7 @@ public class DataTypes {
     public static <T extends DRIDataType<?, ?>> T detectType(String dataType) throws DRException {
         Validate.notNull(dataType, "dataType must not be null");
 
-        String dataTypeLC = dataType.toLowerCase()
-                                    .trim();
+        String dataTypeLC = dataType.toLowerCase().trim();
         if (dataTypeLC.equals("bigdecimal") || dataType.equals(BigDecimal.class.getName())) {
             return (T) bigDecimalType;
         }

@@ -43,14 +43,10 @@ public class TextField1Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", Integer.class), column2 = col.column("Column2", "field2", Integer.class)
-                                                                                          .setColumns(20), column3 = col.column("Column3", "field3", Integer.class)
-                                                                                                                        .setRows(2))
+        rb.columns(column1 = col.column("Column1", "field1", Integer.class), column2 = col.column("Column2", "field2", Integer.class).setColumns(20),
+                   column3 = col.column("Column3", "field3", Integer.class).setRows(2))
           .subtotalsAtSummary(subtotal1 = sbt.sum(column2))
-          .title(cmp.horizontalList(cmp.hListCell(cmp.text("")
-                                                     .setColumns(10)
-                                                     .setRows(5))
-                                       .widthFixed()));
+          .title(cmp.horizontalList(cmp.hListCell(cmp.text("").setColumns(10).setRows(5)).widthFixed()));
     }
 
     @Override

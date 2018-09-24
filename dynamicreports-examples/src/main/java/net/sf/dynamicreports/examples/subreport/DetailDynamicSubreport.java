@@ -61,8 +61,7 @@ public class DetailDynamicSubreport {
     }
 
     private void build() {
-        SubreportBuilder subreport = cmp.subreport(new SubreportExpression())
-                                        .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = cmp.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         try {
             report().title(Templates.createTitleComponent("DetailDynamicSubreport"))
@@ -86,9 +85,7 @@ public class DetailDynamicSubreport {
         public JasperReportBuilder evaluate(ReportParameters reportParameters) {
             int masterRowNumber = reportParameters.getReportRowNumber();
             JasperReportBuilder report = report();
-            report.setTemplate(Templates.reportTemplate)
-                  .title(cmp.text("Subreport" + masterRowNumber)
-                            .setStyle(Templates.bold12CenteredStyle));
+            report.setTemplate(Templates.reportTemplate).title(cmp.text("Subreport" + masterRowNumber).setStyle(Templates.bold12CenteredStyle));
 
             for (int i = 1; i <= masterRowNumber; i++) {
                 report.addColumn(col.column("Column" + i, "column" + i, type.stringType()));

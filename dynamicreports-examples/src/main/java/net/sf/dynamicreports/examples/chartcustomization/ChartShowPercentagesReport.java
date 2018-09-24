@@ -75,31 +75,15 @@ public class ChartShowPercentagesReport {
                                       .setPercentValuePattern("#,##0")
                                       .setCategory(itemColumn)
                                       .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        StackedBarChartBuilder stackedBarChart = cht.stackedBarChart()
-                                                    .setShowPercentages(true)
-                                                    .setShowValues(true)
-                                                    .setCategory(itemColumn)
-                                                    .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        LineChartBuilder lineChart = cht.lineChart()
-                                        .setShowPercentages(true)
-                                        .setShowValues(true)
-                                        .setCategory(itemColumn)
-                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        AreaChartBuilder areaChart = cht.areaChart()
-                                        .setShowPercentages(true)
-                                        .setShowValues(true)
-                                        .setCategory(itemColumn)
-                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        StackedBar3DChartBuilder stackedBar3DChart = cht.stackedBar3DChart()
-                                                        .setShowPercentages(true)
-                                                        .setShowValues(true)
-                                                        .setCategory(itemColumn)
-                                                        .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
-        PieChartBuilder pieChart = cht.pieChart()
-                                      .setShowPercentages(true)
-                                      .setShowValues(true)
-                                      .setKey(itemColumn)
-                                      .series(cht.serie(stock1Column));
+        StackedBarChartBuilder stackedBarChart =
+            cht.stackedBarChart().setShowPercentages(true).setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        LineChartBuilder lineChart =
+            cht.lineChart().setShowPercentages(true).setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        AreaChartBuilder areaChart =
+            cht.areaChart().setShowPercentages(true).setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        StackedBar3DChartBuilder stackedBar3DChart =
+            cht.stackedBar3DChart().setShowPercentages(true).setShowValues(true).setCategory(itemColumn).series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column));
+        PieChartBuilder pieChart = cht.pieChart().setShowPercentages(true).setShowValues(true).setKey(itemColumn).series(cht.serie(stock1Column));
 
         try {
             report().setTemplate(Templates.reportTemplate)

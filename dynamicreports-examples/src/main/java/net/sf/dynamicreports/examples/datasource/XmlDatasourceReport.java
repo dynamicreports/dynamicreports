@@ -70,11 +70,7 @@ public class XmlDatasourceReport {
             FieldBuilder<Integer> quantityField = field("quantity", type.integerType());
             FieldBuilder<BigDecimal> unitPriceField = field("unitprice", type.bigDecimalType());
 
-            BarChartBuilder barChart = cht.barChart()
-                                          .setDataSource(chartDataSource)
-                                          .setCategory(itemField)
-                                          .series(cht.serie(quantityField)
-                                                     .setLabel("Quantity"));
+            BarChartBuilder barChart = cht.barChart().setDataSource(chartDataSource).setCategory(itemField).series(cht.serie(quantityField).setLabel("Quantity"));
 
             report().setTemplate(Templates.reportTemplate)
                     .columns(col.column("Id", idField), col.column("Item", itemField), col.column("Quantity", quantityField), col.column("Unit price", unitPriceField))

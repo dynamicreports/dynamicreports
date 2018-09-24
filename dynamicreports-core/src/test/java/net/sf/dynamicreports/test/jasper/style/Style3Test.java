@@ -52,27 +52,15 @@ public class Style3Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder titleStyle = stl.style()
-                                     .setForegroundColor(Color.RED);
-        StyleBuilder columnStyle = stl.style()
-                                      .setForegroundColor(Color.BLUE);
+        StyleBuilder titleStyle = stl.style().setForegroundColor(Color.RED);
+        StyleBuilder columnStyle = stl.style().setForegroundColor(Color.BLUE);
 
         rb.setColumnTitleStyle(titleStyle)
           .setColumnStyle(columnStyle)
-          .columns(column1 = col.column("Column1", "field1", type.stringType())
-                                .setStyle(stl.style()
-                                             .italic())
-                                .setTitleStyle(stl.style()
-                                                  .bold()), column2 = col.column("Column2", "field2", type.stringType()), column3 = col.column("Column3", "field3", type.stringType())
-                                                                                                                                       .setStyle(stl.style()
-                                                                                                                                                    .bold()), column4 =
-                       col.column("Column4", "field4", type.stringType())
-                          .setStyle(stl.style(columnStyle)
-                                       .bold())
-                          .setTitleStyle(stl.style()
-                                            .italic()))
-          .groupBy(group1 = grp.group(column1)
-                               .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE));
+          .columns(column1 = col.column("Column1", "field1", type.stringType()).setStyle(stl.style().italic()).setTitleStyle(stl.style().bold()),
+                   column2 = col.column("Column2", "field2", type.stringType()), column3 = col.column("Column3", "field3", type.stringType()).setStyle(stl.style().bold()),
+                   column4 = col.column("Column4", "field4", type.stringType()).setStyle(stl.style(columnStyle).bold()).setTitleStyle(stl.style().italic()))
+          .groupBy(group1 = grp.group(column1).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE));
     }
 
     @Override

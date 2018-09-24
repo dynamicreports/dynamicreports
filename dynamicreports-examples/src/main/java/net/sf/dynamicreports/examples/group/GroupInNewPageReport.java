@@ -62,11 +62,9 @@ public class GroupInNewPageReport {
     }
 
     private void build() {
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setWidth(30);
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setWidth(30);
 
-        ColumnGroupBuilder itemGroup = grp.group(itemColumn)
-                                          .startInNewPage();
+        ColumnGroupBuilder itemGroup = grp.group(itemColumn).startInNewPage();
 
         try {
             report().setTemplate(Templates.reportTemplate)

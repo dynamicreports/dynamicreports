@@ -71,71 +71,52 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         rb.setPageFormat(PageType.A3, PageOrientation.PORTRAIT)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", Integer.class),
                    column4 = col.column("Column4", "field4", String.class))
-          .summary(cmp.horizontalList(cht.barChart()
+          .summary(cmp.horizontalList(cht.barChart().seriesColorsByName(colors).setSeriesOrderType(OrderType.ASCENDING).setCategory(column1).series(cht.serie(column3).setSeries(column2)),
+                                      cht.groupedStackedBarChart()
                                          .seriesColorsByName(colors)
                                          .setSeriesOrderType(OrderType.ASCENDING)
                                          .setCategory(column1)
-                                         .series(cht.serie(column3)
-                                                    .setSeries(column2)), cht.groupedStackedBarChart()
-                                                                             .seriesColorsByName(colors)
-                                                                             .setSeriesOrderType(OrderType.ASCENDING)
-                                                                             .setCategory(column1)
-                                                                             .series(cht.groupedSerie(column3)
-                                                                                        .setSeries(column2)
-                                                                                        .setGroup(column4))), cmp.horizontalList(cht.barChart()
-                                                                                                                                    .seriesColorsByName(colors)
-                                                                                                                                    .setSeriesOrderType(OrderType.DESCENDING)
-                                                                                                                                    .setCategory(column1)
-                                                                                                                                    .series(cht.serie(column3)
-                                                                                                                                               .setSeries(column2)), cht.groupedStackedBarChart()
-                                                                                                                                                                        .seriesColorsByName(colors)
-                                                                                                                                                                        .setSeriesOrderType(
-                                                                                                                                                                            OrderType.DESCENDING)
-                                                                                                                                                                        .setCategory(column1)
-                                                                                                                                                                        .series(
-                                                                                                                                                                            cht.groupedSerie(column3)
-                                                                                                                                                                               .setSeries(column2)
-                                                                                                                                                                               .setGroup(column4))),
-                   cmp.horizontalList(cht.barChart()
+                                         .series(cht.groupedSerie(column3).setSeries(column2).setGroup(column4))),
+                   cmp.horizontalList(cht.barChart().seriesColorsByName(colors).setSeriesOrderType(OrderType.DESCENDING).setCategory(column1).series(cht.serie(column3).setSeries(column2)),
+                                      cht.groupedStackedBarChart()
+                                         .seriesColorsByName(colors)
+                                         .setSeriesOrderType(OrderType.DESCENDING)
+                                         .setCategory(column1)
+                                         .series(cht.groupedSerie(column3).setSeries(column2).setGroup(column4))),
+                   cmp.horizontalList(cht.barChart().seriesColorsByName(colors).setSeriesOrderBy(Arrays.asList("c", "b", "a", "d")).setCategory(column1).series(cht.serie(column3).setSeries(column2)),
+                                      cht.groupedStackedBarChart()
                                          .seriesColorsByName(colors)
                                          .setSeriesOrderBy(Arrays.asList("c", "b", "a", "d"))
                                          .setCategory(column1)
-                                         .series(cht.serie(column3)
-                                                    .setSeries(column2)), cht.groupedStackedBarChart()
-                                                                             .seriesColorsByName(colors)
-                                                                             .setSeriesOrderBy(Arrays.asList("c", "b", "a", "d"))
-                                                                             .setCategory(column1)
-                                                                             .series(cht.groupedSerie(column3)
-                                                                                        .setSeries(column2)
-                                                                                        .setGroup(column4))), cmp.horizontalList(cht.barChart()
-                                                                                                                                    .seriesColorsByName(colors)
-                                                                                                                                    .seriesOrderBy("c", "b", "a", "d")
-                                                                                                                                    .setSeriesOrderType(OrderType.DESCENDING)
-                                                                                                                                    .setCategory(column1)
-                                                                                                                                    .series(cht.serie(column3)
-                                                                                                                                               .setSeries(column2)), cht.groupedStackedBarChart()
-                                                                                                                                                                        .seriesColorsByName(colors)
-                                                                                                                                                                        .seriesOrderBy("c", "b", "a",
-                                                                                                                                                                                       "d")
-                                                                                                                                                                        .setSeriesOrderType(
-                                                                                                                                                                            OrderType.DESCENDING)
-                                                                                                                                                                        .setCategory(column1)
-                                                                                                                                                                        .series(
-                                                                                                                                                                            cht.groupedSerie(column3)
-                                                                                                                                                                               .setSeries(column2)
-                                                                                                                                                                               .setGroup(column4))),
-                   cmp.horizontalList(cht.barChart()
-                                         .seriesColorsByName(colors)
-                                         .seriesOrderBy("c", "e", "d")
-                                         .setCategory(column1)
-                                         .series(cht.serie(column3)
-                                                    .setSeries(column2)), cht.barChart()
-                                                                             .seriesColorsByName(colors)
-                                                                             .seriesOrderBy("g", "e", "d")
-                                                                             .setSeriesOrderType(OrderType.DESCENDING)
-                                                                             .setCategory(column1)
-                                                                             .series(cht.serie(column3)
-                                                                                        .setSeries(column2))));
+                                         .series(cht.groupedSerie(column3).setSeries(column2).setGroup(column4))), cmp.horizontalList(cht.barChart()
+                                                                                                                                         .seriesColorsByName(colors)
+                                                                                                                                         .seriesOrderBy("c", "b", "a", "d")
+                                                                                                                                         .setSeriesOrderType(OrderType.DESCENDING)
+                                                                                                                                         .setCategory(column1)
+                                                                                                                                         .series(cht.serie(column3).setSeries(column2)),
+                                                                                                                                      cht.groupedStackedBarChart()
+                                                                                                                                         .seriesColorsByName(colors)
+                                                                                                                                         .seriesOrderBy("c", "b", "a", "d")
+                                                                                                                                         .setSeriesOrderType(OrderType.DESCENDING)
+                                                                                                                                         .setCategory(column1)
+                                                                                                                                         .series(cht.groupedSerie(column3)
+                                                                                                                                                    .setSeries(column2)
+                                                                                                                                                    .setGroup(column4))),
+                   cmp.horizontalList(cht.barChart().seriesColorsByName(colors).seriesOrderBy("c", "e", "d").setCategory(column1).series(cht.serie(column3).setSeries(column2)), cht.barChart()
+                                                                                                                                                                                    .seriesColorsByName(
+                                                                                                                                                                                        colors)
+                                                                                                                                                                                    .seriesOrderBy("g",
+                                                                                                                                                                                                   "e",
+                                                                                                                                                                                                   "d")
+                                                                                                                                                                                    .setSeriesOrderType(
+                                                                                                                                                                                        OrderType
+                                                                                                                                                                                            .DESCENDING)
+                                                                                                                                                                                    .setCategory(
+                                                                                                                                                                                        column1)
+                                                                                                                                                                                    .series(cht.serie(
+                                                                                                                                                                                        column3)
+                                                                                                                                                                                               .setSeries(
+                                                                                                                                                                                                   column2))));
     }
 
     @Override
@@ -146,10 +127,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart1", 1);
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot()
-                                              .getRenderer();
-        CategoryDataset dataset1 = chart.getCategoryPlot()
-                                        .getDataset();
+        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
+        CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -166,22 +145,17 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart2", 1);
         chart = getChart("summary.chart2", 0);
-        CategoryItemRenderer renderer2 = chart.getCategoryPlot()
-                                              .getRenderer();
-        CategoryDataset dataset2 = chart.getCategoryPlot()
-                                        .getDataset();
+        CategoryItemRenderer renderer2 = chart.getCategoryPlot().getRenderer();
+        CategoryDataset dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
             Assert.assertNotNull("null series color", colors.get(key));
             Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
-        for (int i = 0; i < chart.getCategoryPlot()
-                                 .getFixedLegendItems()
-                                 .getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot()
-                                         .getFixedLegendItems()
-                                         .get(i);
+        for (
+            int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
+            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
             Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
             Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
@@ -197,10 +171,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart3", 1);
         chart = getChart("summary.chart3", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset1 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer1 = chart.getCategoryPlot().getRenderer();
+        dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -217,22 +189,17 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart4", 1);
         chart = getChart("summary.chart4", 0);
-        renderer2 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset2 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer2 = chart.getCategoryPlot().getRenderer();
+        dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
             Assert.assertNotNull("null series color", colors.get(key));
             Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
-        for (int i = 0; i < chart.getCategoryPlot()
-                                 .getFixedLegendItems()
-                                 .getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot()
-                                         .getFixedLegendItems()
-                                         .get(i);
+        for (
+            int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
+            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
             Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
             Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
@@ -249,10 +216,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart5", 1);
         chart = getChart("summary.chart5", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset1 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer1 = chart.getCategoryPlot().getRenderer();
+        dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -269,22 +234,17 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart6", 1);
         chart = getChart("summary.chart6", 0);
-        renderer2 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset2 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer2 = chart.getCategoryPlot().getRenderer();
+        dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
             Assert.assertNotNull("null series color", colors.get(key));
             Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
-        for (int i = 0; i < chart.getCategoryPlot()
-                                 .getFixedLegendItems()
-                                 .getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot()
-                                         .getFixedLegendItems()
-                                         .get(i);
+        for (
+            int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
+            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
             Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
             Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
@@ -300,10 +260,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart7", 1);
         chart = getChart("summary.chart7", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset1 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer1 = chart.getCategoryPlot().getRenderer();
+        dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -320,22 +278,17 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart8", 1);
         chart = getChart("summary.chart8", 0);
-        renderer2 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset2 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer2 = chart.getCategoryPlot().getRenderer();
+        dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
             Assert.assertNotNull("null series color", colors.get(key));
             Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
-        for (int i = 0; i < chart.getCategoryPlot()
-                                 .getFixedLegendItems()
-                                 .getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot()
-                                         .getFixedLegendItems()
-                                         .get(i);
+        for (
+            int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
+            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
             Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
             Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
@@ -352,10 +305,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart9", 1);
         chart = getChart("summary.chart9", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset1 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer1 = chart.getCategoryPlot().getRenderer();
+        dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -372,10 +323,8 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
         chartCountTest("summary.chart10", 1);
         chart = getChart("summary.chart10", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
-        dataset1 = chart.getCategoryPlot()
-                        .getDataset();
+        renderer1 = chart.getCategoryPlot().getRenderer();
+        dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -393,8 +342,7 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
     @Override
     protected void chartDataTest(String name, int index, String[] categories, String[] series, Number[][] values) {
-        CategoryDataset dataset = getChart(name, index).getCategoryPlot()
-                                                       .getDataset();
+        CategoryDataset dataset = getChart(name, index).getCategoryPlot().getDataset();
         for (int i = 0; i < categories.length; i++) {
             for (int j = 0; j < series.length; j++) {
                 Assert.assertEquals("chart data", values[i][j], dataset.getValue(j, i));

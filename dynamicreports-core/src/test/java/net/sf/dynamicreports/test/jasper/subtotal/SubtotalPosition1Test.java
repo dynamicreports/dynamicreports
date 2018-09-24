@@ -43,9 +43,7 @@ public class SubtotalPosition1Test extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         TextColumnBuilder<Integer> column1;
 
-        rb.columns(column1 = col.column("Column1", "field1", Integer.class)
-                                .setWidth(600))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1), subtotal2 = sbt.aggregate(column1, Calculation.AVERAGE));
+        rb.columns(column1 = col.column("Column1", "field1", Integer.class).setWidth(600)).subtotalsAtSummary(subtotal1 = sbt.sum(column1), subtotal2 = sbt.aggregate(column1, Calculation.AVERAGE));
     }
 
     @Override

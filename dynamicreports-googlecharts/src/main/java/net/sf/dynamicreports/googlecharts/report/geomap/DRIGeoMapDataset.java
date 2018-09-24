@@ -21,10 +21,10 @@
  */
 package net.sf.dynamicreports.googlecharts.report.geomap;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.report.definition.DRIDataset;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIGeoMapDataset interface.</p>
@@ -34,31 +34,31 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public interface DRIGeoMapDataset extends Serializable {
 
-	/**
-	 * <p>getSubDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
-	 */
-	public DRIDataset getSubDataset();
+    /**
+     * <p>getSubDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
+     */
+    public DRIDataset getSubDataset();
 
-	/**
-	 * <p>getLocationExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getLocationExpression();
+    /**
+     * <p>getLocationExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getLocationExpression();
 
-	/**
-	 * <p>getValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getValueExpression();
+    /**
+     * <p>getValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getValueExpression();
 
-	/**
-	 * <p>getLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getLabelExpression();
+    /**
+     * <p>getLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getLabelExpression();
 }

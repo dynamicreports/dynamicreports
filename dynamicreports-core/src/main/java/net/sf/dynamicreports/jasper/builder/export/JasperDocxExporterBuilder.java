@@ -47,8 +47,7 @@ public class JasperDocxExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
      */
     public JasperDocxExporterBuilder setFramesAsNestedTables(Boolean framesAsNestedTables) {
-        this.getObject()
-            .setFramesAsNestedTables(framesAsNestedTables);
+        this.getObject().setFramesAsNestedTables(framesAsNestedTables);
         return this;
     }
 
@@ -59,8 +58,7 @@ public class JasperDocxExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
      */
     public JasperDocxExporterBuilder setFlexibleRowHeight(Boolean flexibleRowHeight) {
-        this.getObject()
-            .setFlexibleRowHeight(flexibleRowHeight);
+        this.getObject().setFlexibleRowHeight(flexibleRowHeight);
         return this;
     }
 
@@ -71,8 +69,7 @@ public class JasperDocxExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder} object.
      */
     public JasperDocxExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return this;
     }
 }

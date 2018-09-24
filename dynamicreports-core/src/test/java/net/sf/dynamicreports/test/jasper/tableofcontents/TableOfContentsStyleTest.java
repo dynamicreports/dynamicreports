@@ -47,24 +47,13 @@ public class TableOfContentsStyleTest extends AbstractJasperStyleTest {
         TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
         TextColumnBuilder<String> column2 = col.column("Column2", "field2", type.stringType());
 
-        StyleBuilder titleTocStyle = stl.style()
-                                        .setForegroundColor(Color.BLUE)
-                                        .setFontSize(18)
-                                        .bold()
-                                        .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder headingTocStyle = stl.style()
-                                          .setFontSize(12)
-                                          .bold();
-        StyleBuilder headingToc1Style = stl.style()
-                                           .italic();
+        StyleBuilder titleTocStyle = stl.style().setForegroundColor(Color.BLUE).setFontSize(18).bold().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder headingTocStyle = stl.style().setFontSize(12).bold();
+        StyleBuilder headingToc1Style = stl.style().italic();
 
-        TableOfContentsCustomizerBuilder tableOfContentsCustomizer = tableOfContentsCustomizer().setTitleStyle(titleTocStyle)
-                                                                                                .setHeadingStyle(headingTocStyle)
-                                                                                                .setHeadingStyle(1, headingToc1Style);
+        TableOfContentsCustomizerBuilder tableOfContentsCustomizer = tableOfContentsCustomizer().setTitleStyle(titleTocStyle).setHeadingStyle(headingTocStyle).setHeadingStyle(1, headingToc1Style);
 
-        rb.setTableOfContents(tableOfContentsCustomizer)
-          .columns(column1, column2, col.column("Column3", "field3", type.stringType()))
-          .groupBy(column1, column2);
+        rb.setTableOfContents(tableOfContentsCustomizer).columns(column1, column2, col.column("Column3", "field3", type.stringType())).groupBy(column1, column2);
     }
 
     @Override

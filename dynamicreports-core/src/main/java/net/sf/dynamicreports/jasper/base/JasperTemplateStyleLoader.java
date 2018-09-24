@@ -152,8 +152,7 @@ public class JasperTemplateStyleLoader {
     }
 
     private static DRConditionalStyle conditionalStyle(JRConditionalStyle jrConditionalStyle) {
-        DRIExpression<Boolean> expression = Expressions.jasperSyntax(jrConditionalStyle.getConditionExpression()
-                                                                                       .getText(), Boolean.class);
+        DRIExpression<Boolean> expression = Expressions.jasperSyntax(jrConditionalStyle.getConditionExpression().getText(), Boolean.class);
         DRConditionalStyle conditionalStyle = new DRConditionalStyle(expression);
         abstractStyle(jrConditionalStyle, conditionalStyle);
         return conditionalStyle;
@@ -192,8 +191,7 @@ public class JasperTemplateStyleLoader {
                 DRTabStop tabStop = new DRTabStop();
                 tabStop.setPosition(jrTabStop.getPosition());
                 tabStop.setAlignment(tabStopAlignment(jrTabStop.getAlignment()));
-                paragraph.getTabStops()
-                         .add(tabStop);
+                paragraph.getTabStops().add(tabStop);
             }
         }
     }
@@ -202,7 +200,7 @@ public class JasperTemplateStyleLoader {
      * <p>pen.</p>
      *
      * @param jrPen a {@link net.sf.jasperreports.engine.JRPen} object.
-     * @param pen a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
+     * @param pen   a {@link net.sf.dynamicreports.report.base.style.DRPen} object.
      */
     protected static void pen(JRPen jrPen, DRPen pen) {
         pen.setLineColor(jrPen.getOwnLineColor());

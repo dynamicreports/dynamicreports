@@ -36,41 +36,31 @@ public class PageNumber6Test {
     @Test
     public void test() {
         try {
-            report().summary(cmp.pageXofY()
-                                .setFormatExpression("{1} {0}"))
-                    .toJasperPrint();
+            report().summary(cmp.pageXofY().setFormatExpression("{1} {0}")).toJasperPrint();
             Assert.fail("Wrong page number");
         } catch (DRException e) {
         }
 
         try {
-            report().summary(cmp.pageXofY()
-                                .setFormatExpression("{1} {1}"))
-                    .toJasperPrint();
+            report().summary(cmp.pageXofY().setFormatExpression("{1} {1}")).toJasperPrint();
             Assert.fail("Wrong page number");
         } catch (DRException e) {
         }
 
         try {
-            report().summary(cmp.pageXofY()
-                                .setFormatExpression("{0} {0}"))
-                    .toJasperPrint();
+            report().summary(cmp.pageXofY().setFormatExpression("{0} {0}")).toJasperPrint();
             Assert.fail("Wrong page number");
         } catch (DRException e) {
         }
 
         try {
-            report().summary(cmp.pageXofY()
-                                .setFormatExpression("{0}"))
-                    .toJasperPrint();
+            report().summary(cmp.pageXofY().setFormatExpression("{0}")).toJasperPrint();
             Assert.fail("Wrong page number");
         } catch (DRException e) {
         }
 
         try {
-            report().summary(cmp.pageXofY()
-                                .setFormatExpression("{1}"))
-                    .toJasperPrint();
+            report().summary(cmp.pageXofY().setFormatExpression("{1}")).toJasperPrint();
             Assert.fail("Wrong page number");
         } catch (DRException e) {
         }

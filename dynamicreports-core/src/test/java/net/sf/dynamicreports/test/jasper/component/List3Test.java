@@ -66,14 +66,12 @@ public class List3Test extends AbstractJasperPositionTest {
         list6.setFixedHeight(40);
 
         HorizontalListBuilder list7 = cmp.horizontalList();
-        list7.add(cmp.text("")
-                     .setFixedWidth(30));
+        list7.add(cmp.text("").setFixedWidth(30));
         list7.add(cmp.text(""));
         list7.setFixedWidth(150);
 
         VerticalListBuilder list8 = cmp.verticalList();
-        list8.add(cmp.text("")
-                     .setFixedHeight(20));
+        list8.add(cmp.text("").setFixedHeight(20));
         list8.add(cmp.text(""));
         list8.setFixedHeight(50);
 

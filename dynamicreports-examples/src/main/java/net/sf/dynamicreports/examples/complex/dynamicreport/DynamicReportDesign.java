@@ -76,8 +76,7 @@ public class DynamicReportDesign {
     public JasperReportBuilder build() throws DRException {
         JasperReportBuilder report = report();
 
-        report.setTemplate(Templates.reportTemplate)
-              .title(Templates.createTitleComponent("DynamicReport"));
+        report.setTemplate(Templates.reportTemplate).title(Templates.createTitleComponent("DynamicReport"));
 
         DynamicReport dynamicReport = data.getDynamicReport();
         List<DynamicColumn> columns = dynamicReport.getColumns();
@@ -109,14 +108,11 @@ public class DynamicReportDesign {
         }
 
         if (dynamicReport.getTitle() != null) {
-            TextFieldBuilder<String> title = cmp.text(dynamicReport.getTitle())
-                                                .setStyle(Templates.bold12CenteredStyle)
-                                                .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+            TextFieldBuilder<String> title = cmp.text(dynamicReport.getTitle()).setStyle(Templates.bold12CenteredStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
             report.addTitle(title);
         }
         if (dynamicReport.isShowPageNumber()) {
-            PageXofYBuilder pageXofY = cmp.pageXofY()
-                                          .setStyle(Templates.boldCenteredStyle);
+            PageXofYBuilder pageXofY = cmp.pageXofY().setStyle(Templates.boldCenteredStyle);
             report.addPageFooter(pageXofY);
         }
         report.setDataSource(data.createDataSource());

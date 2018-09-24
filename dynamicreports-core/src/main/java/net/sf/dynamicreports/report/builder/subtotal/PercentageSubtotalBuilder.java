@@ -65,7 +65,7 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
     /**
      * <p>Constructor for PercentageSubtotalBuilder.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      */
     protected PercentageSubtotalBuilder(FieldBuilder<? extends Number> field, ColumnBuilder<?, ?> showInColumn) {
@@ -77,7 +77,7 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
     /**
      * <p>Constructor for PercentageSubtotalBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      */
     protected PercentageSubtotalBuilder(DRIExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -112,13 +112,13 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
-        if (getObject().getValueField()
-                       .getDataType() == null) {
-            getObject().getValueField()
-                       .setDataType(DataTypes.percentageType());
+        if (getObject().getValueField().getDataType() == null) {
+            getObject().getValueField().setDataType(DataTypes.percentageType());
         }
 
         DRVariable<Number> actualExpression = new DRVariable<Number>(expression, Calculation.SUM);

@@ -42,7 +42,9 @@ public class StartPageNumberScriptlet extends JRDefaultScriptlet {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void afterReportInit() throws JRScriptletException {
         super.afterReportInit();

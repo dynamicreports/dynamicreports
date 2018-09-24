@@ -48,7 +48,9 @@ public class DivideExpression extends CalculationExpression {
         this.scale = scale;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.divide(value2, scale, BigDecimal.ROUND_HALF_UP);

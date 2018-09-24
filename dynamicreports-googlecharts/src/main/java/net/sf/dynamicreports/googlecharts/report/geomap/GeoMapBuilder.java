@@ -313,8 +313,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
      */
     public GeoMapBuilder setSubDataset(DatasetBuilder subDataset) {
         Validate.notNull(subDataset, "subDataset must not be null");
-        getObject().getDataset()
-                   .setSubDataset(subDataset.build());
+        getObject().getDataset().setSubDataset(subDataset.build());
         return this;
     }
 

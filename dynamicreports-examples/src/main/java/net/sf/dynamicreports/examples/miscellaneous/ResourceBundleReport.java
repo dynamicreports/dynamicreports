@@ -68,17 +68,12 @@ public class ResourceBundleReport {
 
     private void build() {
         try {
-            TextColumnBuilder<String> itemColumn = col.column("item", type.stringType())
-                                                      .setTitle(exp.message("item_title"));
-            TextColumnBuilder<Integer> quantityColumn = col.column("quantity", type.integerType())
-                                                           .setTitle(exp.message("quantity_title"));
-            TextColumnBuilder<BigDecimal> priceColumn = col.column("unitprice", type.bigDecimalType())
-                                                           .setTitle(exp.message("unitprice_title"));
+            TextColumnBuilder<String> itemColumn = col.column("item", type.stringType()).setTitle(exp.message("item_title"));
+            TextColumnBuilder<Integer> quantityColumn = col.column("quantity", type.integerType()).setTitle(exp.message("quantity_title"));
+            TextColumnBuilder<BigDecimal> priceColumn = col.column("unitprice", type.bigDecimalType()).setTitle(exp.message("unitprice_title"));
 
-            TextFieldBuilder<String> title = cmp.text(exp.message("report_title"))
-                                                .setStyle(Templates.bold12CenteredStyle);
-            TextFieldBuilder<String> subtitle = cmp.text(new SubtitleExpression())
-                                                   .setStyle(Templates.bold12CenteredStyle);
+            TextFieldBuilder<String> title = cmp.text(exp.message("report_title")).setStyle(Templates.bold12CenteredStyle);
+            TextFieldBuilder<String> subtitle = cmp.text(new SubtitleExpression()).setStyle(Templates.bold12CenteredStyle);
 
             report().setTemplate(Templates.reportTemplate)
                     .setResourceBundle(ResourceBundleReport.class.getName())

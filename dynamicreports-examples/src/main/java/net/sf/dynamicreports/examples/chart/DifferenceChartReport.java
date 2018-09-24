@@ -62,8 +62,7 @@ public class DifferenceChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -73,11 +72,9 @@ public class DifferenceChartReport {
                                 .setTitleFont(boldFont)
                                 .setTimePeriod(DynamicReports.<Date>field("date", type.dateType()))
                                 .setTimePeriodType(TimePeriod.DAY)
-                                .series(cht.serie(DynamicReports.<Number>field("value1", type.doubleType()))
-                                           .setLabel("Value1"), cht.serie(DynamicReports.<Number>field("value2", type.doubleType()))
-                                                                   .setLabel("Value2"))
-                                .setTimeAxisFormat(cht.axisFormat()
-                                                      .setLabel("Date")))
+                                .series(cht.serie(DynamicReports.<Number>field("value1", type.doubleType())).setLabel("Value1"),
+                                        cht.serie(DynamicReports.<Number>field("value2", type.doubleType())).setLabel("Value2"))
+                                .setTimeAxisFormat(cht.axisFormat().setLabel("Date")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

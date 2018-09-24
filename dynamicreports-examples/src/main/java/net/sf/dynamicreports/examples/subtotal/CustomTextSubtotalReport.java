@@ -86,16 +86,11 @@ public class CustomTextSubtotalReport {
         VariableBuilder<BigDecimal> priceGrpSum = variable(priceColumn, Calculation.SUM);
         priceGrpSum.setResetType(Evaluation.FIRST_GROUP);
 
-        StyleBuilder subtotalStyle = stl.style()
-                                        .bold()
-                                        .setTopBorder(stl.pen1Point())
-                                        .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder subtotalStyle = stl.style().bold().setTopBorder(stl.pen1Point()).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
 
-        TextFieldBuilder<String> summarySbt = cmp.text(new CustomTextSubtotal(quantitySum, priceSum))
-                                                 .setStyle(subtotalStyle);
+        TextFieldBuilder<String> summarySbt = cmp.text(new CustomTextSubtotal(quantitySum, priceSum)).setStyle(subtotalStyle);
 
-        TextFieldBuilder<String> groupSbt = cmp.text(new CustomTextSubtotal(quantityGrpSum, priceGrpSum))
-                                               .setStyle(subtotalStyle);
+        TextFieldBuilder<String> groupSbt = cmp.text(new CustomTextSubtotal(quantityGrpSum, priceGrpSum)).setStyle(subtotalStyle);
 
         countryGroup.footer(groupSbt);
 
@@ -143,11 +138,8 @@ public class CustomTextSubtotalReport {
             Integer quantitySumValue = reportParameters.getValue(quantitySum);
             BigDecimal priceSumValue = reportParameters.getValue(priceSum);
             BigDecimal unitPriceSbt = priceSumValue.divide(new BigDecimal(quantitySumValue), 2, BigDecimal.ROUND_HALF_UP);
-            return "sum(quantity) = " + type.integerType()
-                                            .valueToString(quantitySum, reportParameters) + ", " + "sum(price) = " + type.bigDecimalType()
-                                                                                                                         .valueToString(priceSum, reportParameters) + ", " +
-                "sum(price) / sum(quantity) = " + type.bigDecimalType()
-                                                      .valueToString(unitPriceSbt, reportParameters.getLocale());
+            return "sum(quantity) = " + type.integerType().valueToString(quantitySum, reportParameters) + ", " + "sum(price) = " + type.bigDecimalType().valueToString(priceSum, reportParameters) +
+                ", " + "sum(price) / sum(quantity) = " + type.bigDecimalType().valueToString(unitPriceSbt, reportParameters.getLocale());
         }
     }
 }

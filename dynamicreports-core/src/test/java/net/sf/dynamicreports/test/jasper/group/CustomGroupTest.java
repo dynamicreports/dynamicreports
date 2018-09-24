@@ -48,8 +48,7 @@ public class CustomGroupTest extends AbstractJasperValueTest implements Serializ
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         YearExpression yearExpression = new YearExpression();
-        rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", yearExpression))
-          .groupBy(group1 = grp.group(yearExpression));
+        rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", yearExpression)).groupBy(group1 = grp.group(yearExpression));
     }
 
     @Override

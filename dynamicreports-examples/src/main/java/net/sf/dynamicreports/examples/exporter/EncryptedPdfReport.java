@@ -60,9 +60,7 @@ public class EncryptedPdfReport {
 
     private void build() {
         try {
-            JasperPdfExporterBuilder pdfExporter = export.pdfExporter("c:/report.pdf")
-                                                         .setEncrypted(true)
-                                                         .setUserPassword("1234");
+            JasperPdfExporterBuilder pdfExporter = export.pdfExporter("c:/report.pdf").setEncrypted(true).setUserPassword("1234");
 
             report().setTemplate(Templates.reportTemplate)
                     .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))

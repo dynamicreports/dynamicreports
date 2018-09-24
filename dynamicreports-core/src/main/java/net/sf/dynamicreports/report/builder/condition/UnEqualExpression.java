@@ -53,7 +53,9 @@ public class UnEqualExpression extends AbstractSimpleExpression<Boolean> {
         this.values = values;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Object actualValue = reportParameters.getValue(value);
@@ -65,7 +67,9 @@ public class UnEqualExpression extends AbstractSimpleExpression<Boolean> {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

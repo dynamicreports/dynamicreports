@@ -48,8 +48,7 @@ public class GroupTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignGroup group : accessor.getReport()
-                                            .getGroups()) {
+        for (DRIDesignGroup group : accessor.getReport().getGroups()) {
             addGroup(group);
         }
     }
@@ -57,8 +56,7 @@ public class GroupTransform {
     private void addGroup(DRIDesignGroup group) {
         try {
             JRDesignGroup jrGroup = group(group);
-            accessor.getDesign()
-                    .addGroup(jrGroup);
+            accessor.getDesign().addGroup(jrGroup);
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for group \"" + group.getName() + "\"", e);
         }
@@ -83,10 +81,8 @@ public class GroupTransform {
      * <p>transformExpressions.</p>
      */
     public void transformExpressions() {
-        for (DRIDesignGroup group : accessor.getReport()
-                                            .getGroups()) {
-            getGroup(group).setExpression(accessor.getExpressionTransform()
-                                                  .getExpression(group.getGroupExpression()));
+        for (DRIDesignGroup group : accessor.getReport().getGroups()) {
+            getGroup(group).setExpression(accessor.getExpressionTransform().getExpression(group.getGroupExpression()));
         }
     }
 
@@ -97,9 +93,7 @@ public class GroupTransform {
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignGroup} object.
      */
     public JRDesignGroup getGroup(DRIDesignGroup group) {
-        JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign()
-                                                        .getGroupsMap()
-                                                        .get(group.getName());
+        JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign().getGroupsMap().get(group.getName());
         if (jrGroup == null) {
             throw new JasperDesignException("Group " + group.getName() + " is not registered");
         }

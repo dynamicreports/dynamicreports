@@ -38,7 +38,9 @@ public class HorizontalFlowColumnGridListBuilder extends HorizontalColumnGridLis
     protected HorizontalFlowColumnGridListBuilder() {
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void init() {
         newFlowRow();

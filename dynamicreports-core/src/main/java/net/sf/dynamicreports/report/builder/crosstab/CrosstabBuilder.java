@@ -293,8 +293,7 @@ public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, 
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getWhenNoDataCell()
-                       .addComponent(component.build());
+            getObject().getWhenNoDataCell().addComponent(component.build());
         }
         return this;
     }
@@ -319,8 +318,7 @@ public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, 
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getHeaderCell()
-                       .addComponent(component.build());
+            getObject().getHeaderCell().addComponent(component.build());
         }
         return this;
     }
@@ -435,8 +433,7 @@ public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, 
      */
     public CrosstabBuilder setSubDataset(DatasetBuilder subDataset) {
         Validate.notNull(subDataset, "subDataset must not be null");
-        getObject().getDataset()
-                   .setSubDataset(subDataset.build());
+        getObject().getDataset().setSubDataset(subDataset.build());
         return this;
     }
 
@@ -455,7 +452,7 @@ public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, 
     /**
      * <p>setDataSource.</p>
      *
-     * @param sql a {@link java.lang.String} object.
+     * @param sql        a {@link java.lang.String} object.
      * @param connection a {@link java.sql.Connection} object.
      * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder} object.
      */
@@ -472,8 +469,7 @@ public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, 
      * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder} object.
      */
     public CrosstabBuilder setDataPreSorted(Boolean dataPreSorted) {
-        getObject().getDataset()
-                   .setDataPreSorted(dataPreSorted);
+        getObject().getDataset().setDataPreSorted(dataPreSorted);
         return this;
     }
 }

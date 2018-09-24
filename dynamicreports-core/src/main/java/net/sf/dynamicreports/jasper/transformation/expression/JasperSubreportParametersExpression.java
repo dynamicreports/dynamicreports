@@ -53,7 +53,9 @@ public class JasperSubreportParametersExpression extends AbstractDesignComplexEx
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
@@ -67,7 +69,9 @@ public class JasperSubreportParametersExpression extends AbstractDesignComplexEx
         return parameters;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return Map.class;

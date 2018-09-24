@@ -59,8 +59,7 @@ public class GroupedStackedBarChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> yearColumn = col.column("Year", "year", type.stringType());
         TextColumnBuilder<String> quarterColumn = col.column("Quarter", "quarter", type.stringType());
@@ -76,10 +75,8 @@ public class GroupedStackedBarChartReport {
                                 .setTitle("Grouped stacked bar chart")
                                 .setTitleFont(boldFont)
                                 .setCategory(yearColumn)
-                                .series(cht.groupedSerie(stock1Column)
-                                           .setGroup(quarterColumn), cht.groupedSerie(stock2Column)
-                                                                        .setGroup(quarterColumn), cht.groupedSerie(stock3Column)
-                                                                                                     .setGroup(quarterColumn)))
+                                .series(cht.groupedSerie(stock1Column).setGroup(quarterColumn), cht.groupedSerie(stock2Column).setGroup(quarterColumn),
+                                        cht.groupedSerie(stock3Column).setGroup(quarterColumn)))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

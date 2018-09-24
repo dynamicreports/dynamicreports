@@ -72,7 +72,7 @@ public class MultiAxisChartBuilder extends AbstractBaseChartBuilder<MultiAxisCha
     /**
      * <p>addChart.</p>
      *
-     * @param chart a {@link net.sf.dynamicreports.report.builder.chart.AbstractBaseChartBuilder} object.
+     * @param chart    a {@link net.sf.dynamicreports.report.builder.chart.AbstractBaseChartBuilder} object.
      * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.MultiAxisChartBuilder} object.
      */

@@ -68,10 +68,7 @@ public class MultiPageList3Test extends AbstractJasperValueTest {
 
     private JasperReportBuilder createSubreport(int numberOfRecords) {
         JasperReportBuilder report = report();
-        report.title(cmp.verticalGap(6))
-              .setPageColumnsPerPage(2)
-              .columns(column1)
-              .setDataSource(createSubreportDataSource(numberOfRecords));
+        report.title(cmp.verticalGap(6)).setPageColumnsPerPage(2).columns(column1).setDataSource(createSubreportDataSource(numberOfRecords));
 
         return report;
     }

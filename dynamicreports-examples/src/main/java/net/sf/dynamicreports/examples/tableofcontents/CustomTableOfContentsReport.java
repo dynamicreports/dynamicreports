@@ -71,16 +71,9 @@ public class CustomTableOfContentsReport {
         TextColumnBuilder<String> countryColumn = col.column("Country", "country", type.stringType());
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-        StyleBuilder titleTocStyle = stl.style()
-                                        .setForegroundColor(Color.BLUE)
-                                        .setFontSize(18)
-                                        .bold()
-                                        .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder headingToc0Style = stl.style(Templates.rootStyle)
-                                           .setFontSize(12)
-                                           .bold();
-        StyleBuilder headingToc1Style = stl.style(Templates.rootStyle)
-                                           .italic();
+        StyleBuilder titleTocStyle = stl.style().setForegroundColor(Color.BLUE).setFontSize(18).bold().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder headingToc0Style = stl.style(Templates.rootStyle).setFontSize(12).bold();
+        StyleBuilder headingToc1Style = stl.style(Templates.rootStyle).italic();
 
         CustomTableOfContentsCustomizer tableOfContentsCustomizer = new CustomTableOfContentsCustomizer();
         tableOfContentsCustomizer.setTitleStyle(titleTocStyle);

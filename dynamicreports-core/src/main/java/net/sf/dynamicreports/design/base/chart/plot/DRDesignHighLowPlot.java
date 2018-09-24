@@ -36,7 +36,9 @@ public class DRDesignHighLowPlot extends DRDesignAxisPlot implements DRIDesignHi
     private Boolean showOpenTicks;
     private Boolean showCloseTicks;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowOpenTicks() {
         return showOpenTicks;
@@ -51,7 +53,9 @@ public class DRDesignHighLowPlot extends DRDesignAxisPlot implements DRIDesignHi
         this.showOpenTicks = showOpenTicks;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowCloseTicks() {
         return showCloseTicks;

@@ -59,8 +59,7 @@ public class BubbleChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<Double> xColumn = col.column("X", "x", type.doubleType());
         TextColumnBuilder<Double> y1Column = col.column("Y1", "y1", type.doubleType());
@@ -76,15 +75,9 @@ public class BubbleChartReport {
                                 .setTitle("Bubble chart")
                                 .setTitleFont(boldFont)
                                 .setXValue(xColumn)
-                                .series(cht.xyzSerie()
-                                           .setYValue(y1Column)
-                                           .setZValue(z1Column), cht.xyzSerie()
-                                                                    .setYValue(y2Column)
-                                                                    .setZValue(z2Column))
-                                .setXAxisFormat(cht.axisFormat()
-                                                   .setLabel("X"))
-                                .setYAxisFormat(cht.axisFormat()
-                                                   .setLabel("Y")))
+                                .series(cht.xyzSerie().setYValue(y1Column).setZValue(z1Column), cht.xyzSerie().setYValue(y2Column).setZValue(z2Column))
+                                .setXAxisFormat(cht.axisFormat().setLabel("X"))
+                                .setYAxisFormat(cht.axisFormat().setLabel("Y")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

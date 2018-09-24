@@ -36,23 +36,25 @@ import java.math.BigInteger;
 public class BigIntegerType extends NumberType<BigInteger> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getBigIntegerType()
-                       .getPattern();
+        return Defaults.getDefaults().getBigIntegerType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getBigIntegerType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getBigIntegerType().getHorizontalTextAlignment();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected BigInteger numberToValue(Number number) {
         return BigInteger.valueOf(number.longValue());

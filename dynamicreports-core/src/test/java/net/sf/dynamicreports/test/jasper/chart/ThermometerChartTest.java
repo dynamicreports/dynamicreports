@@ -63,8 +63,7 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
                       .setMediumDataRangeLowExpression(18)
                       .setMediumDataRangeHighExpression(20)
                       .setHighDataRangeLowExpression(28)
-                      .setHighDataRangeHighExpression(30), cht.thermometerChart()
-                                                              .setValue(DynamicReports.<Number>field("field1", Integer.class)));
+                      .setHighDataRangeHighExpression(30), cht.thermometerChart().setValue(DynamicReports.<Number>field("field1", Integer.class)));
     }
 
     @Override
@@ -77,14 +76,12 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
         Plot plot = chart.getPlot();
         Assert.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
         ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
-        Assert.assertEquals("value", 15, thermometerPlot.getDataset()
-                                                        .getValue());
+        Assert.assertEquals("value", 15, thermometerPlot.getDataset().getValue());
         Assert.assertEquals("data range low", 3d, thermometerPlot.getLowerBound());
         Assert.assertEquals("data range high", 30d, thermometerPlot.getUpperBound());
         Assert.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
         try {
-            Field field = thermometerPlot.getClass()
-                                         .getDeclaredField("valueFormat");
+            Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
             field.setAccessible(true);
             Assert.assertEquals("value mask", "15.0", ((NumberFormat) field.get(thermometerPlot)).format(15));
         } catch (Exception e) {
@@ -95,8 +92,7 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
         Assert.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
         Assert.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
         try {
-            Field field = thermometerPlot.getClass()
-                                         .getDeclaredField("subrangeInfo");
+            Field field = thermometerPlot.getClass().getDeclaredField("subrangeInfo");
             field.setAccessible(true);
             double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
             Assert.assertEquals("low data range low", 8d, subrangeInfo[2][0]);

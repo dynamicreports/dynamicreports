@@ -55,7 +55,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         paintScales = new ArrayList<DRIPaintScale>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getBlockWidth() {
         return blockWidth;
@@ -70,7 +72,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.blockWidth = blockWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getBlockHeight() {
         return blockHeight;
@@ -85,7 +89,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.blockHeight = blockHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public RectangleAnchor getBlockAnchor() {
         return blockAnchor;
@@ -100,7 +106,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.blockAnchor = blockAnchor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double getDefaultLowerBound() {
         return defaultLowerBound;
@@ -115,7 +123,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.defaultLowerBound = defaultLowerBound;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double getDefaultUpperBound() {
         return defaultUpperBound;
@@ -130,7 +140,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.defaultUpperBound = defaultUpperBound;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Paint getDefaultPaint() {
         return defaultPaint;
@@ -146,7 +158,9 @@ public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {
         this.defaultPaint = defaultPaint;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIPaintScale> getPaintScales() {
         return paintScales;

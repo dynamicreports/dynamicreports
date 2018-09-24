@@ -39,7 +39,9 @@ public abstract class DRHyperLinkComponent extends DRDimensionComponent implemen
     private Integer bookmarkLevel;
     private DRHyperLink hyperLink;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<String> getAnchorNameExpression() {
         return anchorNameExpression;
@@ -54,7 +56,9 @@ public abstract class DRHyperLinkComponent extends DRDimensionComponent implemen
         this.anchorNameExpression = anchorNameExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getBookmarkLevel() {
         return bookmarkLevel;
@@ -69,7 +73,9 @@ public abstract class DRHyperLinkComponent extends DRDimensionComponent implemen
         this.bookmarkLevel = bookmarkLevel;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRHyperLink getHyperLink() {
         return hyperLink;

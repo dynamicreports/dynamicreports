@@ -147,7 +147,9 @@ public class AdhocFont implements Cloneable, Serializable {
         this.strikeThrough = strikeThrough;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -183,7 +185,9 @@ public class AdhocFont implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocFont clone() {
         AdhocFont clone;

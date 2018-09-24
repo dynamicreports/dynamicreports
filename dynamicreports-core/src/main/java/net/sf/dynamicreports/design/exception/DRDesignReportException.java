@@ -45,7 +45,7 @@ public class DRDesignReportException extends RuntimeException {
      * <p>Constructor for DRDesignReportException.</p>
      *
      * @param message a {@link java.lang.String} object.
-     * @param cause a {@link java.lang.Throwable} object.
+     * @param cause   a {@link java.lang.Throwable} object.
      */
     public DRDesignReportException(String message, Throwable cause) {
         super(message, cause);

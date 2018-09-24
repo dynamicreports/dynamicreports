@@ -64,15 +64,10 @@ public class FieldGroupReport {
     }
 
     private void build() {
-        StyleBuilder groupStyle = stl.style()
-                                     .bold();
+        StyleBuilder groupStyle = stl.style().bold();
 
-        CustomGroupBuilder itemGroup = grp.group("item", String.class)
-                                          .setStyle(groupStyle)
-                                          .setTitle("Item")
-                                          .setTitleStyle(groupStyle)
-                                          .setTitleWidth(30)
-                                          .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE);
+        CustomGroupBuilder itemGroup =
+            grp.group("item", String.class).setStyle(groupStyle).setTitle("Item").setTitleStyle(groupStyle).setTitleWidth(30).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE);
 
         try {
             report().setTemplate(Templates.reportTemplate)

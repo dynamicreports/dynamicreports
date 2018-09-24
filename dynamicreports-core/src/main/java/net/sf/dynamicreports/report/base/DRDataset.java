@@ -60,7 +60,9 @@ public class DRDataset implements DRIDataset {
         this.sorts = new ArrayList<DRSort>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRField<?>> getFields() {
         return fields;
@@ -87,7 +89,9 @@ public class DRDataset implements DRIDataset {
         this.fields.add(field);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRVariable<?>> getVariables() {
         return variables;
@@ -114,7 +118,9 @@ public class DRDataset implements DRIDataset {
         this.variables.add(variable);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRSort> getSorts() {
         return sorts;
@@ -141,7 +147,9 @@ public class DRDataset implements DRIDataset {
         this.sorts.add(sort);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRQuery getQuery() {
         return query;
@@ -156,7 +164,9 @@ public class DRDataset implements DRIDataset {
         this.query = query;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Connection> getConnectionExpression() {
         return connectionExpression;
@@ -171,7 +181,9 @@ public class DRDataset implements DRIDataset {
         this.connectionExpression = connectionExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getDataSourceExpression() {
         return dataSourceExpression;
@@ -186,7 +198,9 @@ public class DRDataset implements DRIDataset {
         this.dataSourceExpression = dataSourceExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Boolean> getFilterExpression() {
         return filterExpression;

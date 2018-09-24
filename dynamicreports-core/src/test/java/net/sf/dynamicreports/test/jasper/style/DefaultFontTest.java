@@ -46,13 +46,9 @@ public class DefaultFontTest extends AbstractJasperStyleTest implements Serializ
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        FontBuilder defaultFont = stl.font()
-                                     .setFontSize(12);
+        FontBuilder defaultFont = stl.font().setFontSize(12);
 
-        rb.setDefaultFont(defaultFont)
-          .columns(column1 = col.column("Column1", "field1", type.stringType())
-                                .setStyle(stl.style()
-                                             .bold()), column2 = col.column("Column2", "field2", type.stringType()));
+        rb.setDefaultFont(defaultFont).columns(column1 = col.column("Column1", "field1", type.stringType()).setStyle(stl.style().bold()), column2 = col.column("Column2", "field2", type.stringType()));
     }
 
     @Override

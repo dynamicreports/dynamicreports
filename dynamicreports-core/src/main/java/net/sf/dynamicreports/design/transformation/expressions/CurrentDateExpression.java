@@ -48,14 +48,16 @@ public class CurrentDateExpression extends AbstractComplexExpression<String> {
      * <p>Constructor for CurrentDateExpression.</p>
      *
      * @param currentDateExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param datePattern a {@link java.lang.String} object.
+     * @param datePattern           a {@link java.lang.String} object.
      */
     public CurrentDateExpression(DRIExpression<String> currentDateExpression, String datePattern) {
         this.datePattern = datePattern;
         addExpression(currentDateExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String pattern = (String) values.get(0);
@@ -63,8 +65,7 @@ public class CurrentDateExpression extends AbstractComplexExpression<String> {
         MessageFormat format = new MessageFormat(pattern, locale);
         String date;
         if (datePattern == null) {
-            date = DataTypes.dateType()
-                            .valueToString(new Date(), locale);
+            date = DataTypes.dateType().valueToString(new Date(), locale);
         } else {
             date = new SimpleDateFormat(datePattern, locale).format(new Date());
         }

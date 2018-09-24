@@ -71,7 +71,9 @@ public class AdhocSort implements Cloneable, Serializable {
         this.orderType = orderType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -95,7 +97,9 @@ public class AdhocSort implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocSort clone() {
         AdhocSort clone;

@@ -42,8 +42,7 @@ public class IgnorePaginationTest extends AbstractJasperValueTest implements Ser
     @Override
     protected void configureReport(JasperReportBuilder rb) {
 
-        rb.columns(col.column("Column1", "field1", Integer.class))
-          .setIgnorePagination(true);
+        rb.columns(col.column("Column1", "field1", Integer.class)).setIgnorePagination(true);
     }
 
     @Override

@@ -52,8 +52,7 @@ public class GroupSubtotal2Test extends AbstractJasperValueTest {
 
         rb.setLocale(Locale.ENGLISH)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1)
-                               .headerWithSubtotal())
+          .groupBy(group1 = grp.group(column1).headerWithSubtotal())
           .subtotalsAtFirstGroupHeader(subtotal1 = sbt.aggregate(column2, Calculation.AVERAGE))
           .subtotalsAtGroupHeader(group1, subtotal2 = sbt.sum(column2))
           .subtotalsAtSummary(subtotal3 = sbt.sum(column2));

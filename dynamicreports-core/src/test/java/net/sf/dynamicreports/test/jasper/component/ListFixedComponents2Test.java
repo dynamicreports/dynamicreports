@@ -34,10 +34,7 @@ public class ListFixedComponents2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.horizontalList(cmp.text(""))
-                    .setFixedWidth(300)
-                    .setBaseStyle(stl.style()
-                                     .setPadding(5)));
+        rb.title(cmp.horizontalList(cmp.text("")).setFixedWidth(300).setBaseStyle(stl.style().setPadding(5)));
     }
 
     @Override

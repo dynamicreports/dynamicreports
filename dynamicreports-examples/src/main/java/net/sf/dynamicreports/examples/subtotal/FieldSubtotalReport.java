@@ -65,10 +65,8 @@ public class FieldSubtotalReport {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Date> orderDateColumn = col.column("Order Date", "orderdate", type.dateType());
 
-        AggregationSubtotalBuilder<Integer> quantitySum = sbt.sum("quantity", Integer.class, itemColumn)
-                                                             .setLabel("quantity sum");
-        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum("unitprice", BigDecimal.class, itemColumn)
-                                                                 .setLabel("unitPrice sum");
+        AggregationSubtotalBuilder<Integer> quantitySum = sbt.sum("quantity", Integer.class, itemColumn).setLabel("quantity sum");
+        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum("unitprice", BigDecimal.class, itemColumn).setLabel("unitPrice sum");
 
         try {
             report().setTemplate(Templates.reportTemplate)

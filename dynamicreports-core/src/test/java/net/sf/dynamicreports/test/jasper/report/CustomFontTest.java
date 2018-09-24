@@ -47,12 +47,9 @@ public class CustomFontTest extends AbstractJasperPositionTest implements Serial
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style()
-                                .setFontName("FreeUniversal");
+        StyleBuilder style = stl.style().setFontName("FreeUniversal");
 
-        rb.columns(column1 = col.column("Column1", "field1", type.stringType()))
-          .subtotalsAtColumnFooter(subtotal1 = sbt.text("text", column1)
-                                                  .setStyle(style));
+        rb.columns(column1 = col.column("Column1", "field1", type.stringType())).subtotalsAtColumnFooter(subtotal1 = sbt.text("text", column1).setStyle(style));
     }
 
     @Override

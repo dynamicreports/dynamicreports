@@ -40,9 +40,7 @@ public class TextField5Test extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.detail(cmp.horizontalList(cmp.text(field("field1", type.stringType()))
-                                        .setPrintRepeatedValues(false)
-                                        .setPrintInFirstWholeBand(true), cmp.text(field("field2", type.integerType()))));
+        rb.detail(cmp.horizontalList(cmp.text(field("field1", type.stringType())).setPrintRepeatedValues(false).setPrintInFirstWholeBand(true), cmp.text(field("field2", type.integerType()))));
     }
 
     @Override

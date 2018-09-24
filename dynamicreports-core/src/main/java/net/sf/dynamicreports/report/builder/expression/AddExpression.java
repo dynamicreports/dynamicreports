@@ -44,7 +44,9 @@ public class AddExpression extends CalculationExpression {
         super(expressions);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.add(value2);

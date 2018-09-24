@@ -57,11 +57,8 @@ public class Style6Test extends AbstractJasperStyleTest implements Serializable 
         style.conditionalStyles(conditionalStyle);
 
         rb.highlightDetailEvenRows()
-          .columns(column1 = col.column("Column1", "field1", type.stringType())
-                                .setStyle(stl.style()
-                                             .setBackgroundColor(Color.BLUE)), column2 = col.column("Column2", "field2", type.stringType()), column3 =
-                       col.column("Column3", "field3", type.stringType())
-                          .setStyle(style));
+          .columns(column1 = col.column("Column1", "field1", type.stringType()).setStyle(stl.style().setBackgroundColor(Color.BLUE)), column2 = col.column("Column2", "field2", type.stringType()),
+                   column3 = col.column("Column3", "field3", type.stringType()).setStyle(style));
     }
 
     @Override

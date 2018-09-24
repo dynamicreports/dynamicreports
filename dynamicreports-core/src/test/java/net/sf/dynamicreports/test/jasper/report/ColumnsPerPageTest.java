@@ -55,31 +55,17 @@ public class ColumnsPerPageTest extends AbstractJasperPositionTest implements Se
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setTextStyle(stl.style()
-                           .setPadding(1))
+        rb.setTextStyle(stl.style().setPadding(1))
           .setPageColumnSpace(10)
           .setPageColumnsPerPage(3)
           .columnGrid(ListType.HORIZONTAL_FLOW)
-          .columns(column1 = col.column("Column1", "field1", Integer.class)
-                                .setWidth(50), column2 = col.column("Column2", "field2", Integer.class)
-                                                            .setWidth(50), column3 = col.column("Column3", "field3", Integer.class)
-                                                                                        .setWidth(50), column4 = col.column("Column4", "field4", Integer.class)
-                                                                                                                    .setWidth(50), column5 = col.column("Column5", "field5", Integer.class)
-                                                                                                                                                .setWidth(50))
-          .subtotalsAtColumnFooter(subtotal1 = sbt.sum(column1)
-                                                  .setLabel("sum"), subtotal2 = sbt.sum(column3)
-                                                                                   .setLabel("sum"), subtotal3 = sbt.aggregate(column3, Calculation.AVERAGE)
-                                                                                                                    .setLabel("avg"), subtotal4 = sbt.sum(column4)
-                                                                                                                                                     .setLabel("sum"), subtotal5 =
-                                       sbt.aggregate(column4, Calculation.AVERAGE)
-                                          .setLabel("avg"))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1)
-                                             .setLabel("sum"), subtotal2 = sbt.sum(column3)
-                                                                              .setLabel("sum"), subtotal3 = sbt.aggregate(column3, Calculation.AVERAGE)
-                                                                                                               .setLabel("avg"), subtotal4 = sbt.sum(column4)
-                                                                                                                                                .setLabel("sum"), subtotal5 =
-                                  sbt.aggregate(column4, Calculation.AVERAGE)
-                                     .setLabel("avg"));
+          .columns(column1 = col.column("Column1", "field1", Integer.class).setWidth(50), column2 = col.column("Column2", "field2", Integer.class).setWidth(50),
+                   column3 = col.column("Column3", "field3", Integer.class).setWidth(50), column4 = col.column("Column4", "field4", Integer.class).setWidth(50),
+                   column5 = col.column("Column5", "field5", Integer.class).setWidth(50))
+          .subtotalsAtColumnFooter(subtotal1 = sbt.sum(column1).setLabel("sum"), subtotal2 = sbt.sum(column3).setLabel("sum"), subtotal3 = sbt.aggregate(column3, Calculation.AVERAGE).setLabel("avg"),
+                                   subtotal4 = sbt.sum(column4).setLabel("sum"), subtotal5 = sbt.aggregate(column4, Calculation.AVERAGE).setLabel("avg"))
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column1).setLabel("sum"), subtotal2 = sbt.sum(column3).setLabel("sum"), subtotal3 = sbt.aggregate(column3, Calculation.AVERAGE).setLabel("avg"),
+                              subtotal4 = sbt.sum(column4).setLabel("sum"), subtotal5 = sbt.aggregate(column4, Calculation.AVERAGE).setLabel("avg"));
     }
 
     @Override

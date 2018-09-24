@@ -37,8 +37,8 @@ public class XyListCellBuilder extends AbstractBuilder<XyListCellBuilder, DRXyLi
     /**
      * <p>Constructor for XyListCellBuilder.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      */
     protected XyListCellBuilder(Integer x, Integer y, ComponentBuilder<?, ?> component) {
@@ -48,10 +48,10 @@ public class XyListCellBuilder extends AbstractBuilder<XyListCellBuilder, DRXyLi
     /**
      * <p>Constructor for XyListCellBuilder.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
-     * @param width a {@link java.lang.Integer} object.
-     * @param height a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
+     * @param width     a {@link java.lang.Integer} object.
+     * @param height    a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      */
     protected XyListCellBuilder(Integer x, Integer y, Integer width, Integer height, ComponentBuilder<?, ?> component) {

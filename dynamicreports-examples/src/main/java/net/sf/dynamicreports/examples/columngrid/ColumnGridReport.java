@@ -62,8 +62,7 @@ public class ColumnGridReport {
     }
 
     private void build() {
-        StyleBuilder textStyle = stl.style(Templates.columnStyle)
-                                    .setBorder(stl.pen1Point());
+        StyleBuilder textStyle = stl.style(Templates.columnStyle).setBorder(stl.pen1Point());
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());

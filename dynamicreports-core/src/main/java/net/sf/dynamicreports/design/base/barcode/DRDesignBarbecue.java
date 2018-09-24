@@ -57,7 +57,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         super("barbecue");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BarbecueType getType() {
         return type;
@@ -72,7 +74,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.type = type;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getCodeExpression() {
         return codeExpression;
@@ -87,7 +91,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.codeExpression = codeExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getApplicationIdentifierExpression() {
         return applicationIdentifierExpression;
@@ -102,7 +108,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.applicationIdentifierExpression = applicationIdentifierExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getDrawText() {
         return drawText;
@@ -117,7 +125,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.drawText = drawText;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getChecksumRequired() {
         return checksumRequired;
@@ -132,7 +142,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.checksumRequired = checksumRequired;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getBarWidth() {
         return barWidth;
@@ -147,7 +159,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.barWidth = barWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getBarHeight() {
         return barHeight;
@@ -162,7 +176,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.barHeight = barHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BarcodeOrientation getOrientation() {
         return orientation;
@@ -177,7 +193,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.orientation = orientation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public EvaluationTime getEvaluationTime() {
         return evaluationTime;
@@ -192,7 +210,9 @@ public class DRDesignBarbecue extends DRDesignComponent implements DRIDesignBarb
         this.evaluationTime = evaluationTime;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignGroup getEvaluationGroup() {
         return evaluationGroup;

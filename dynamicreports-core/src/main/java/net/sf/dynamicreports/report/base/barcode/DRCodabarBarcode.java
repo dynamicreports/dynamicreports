@@ -35,7 +35,9 @@ public class DRCodabarBarcode extends DRBarcode4j implements DRICodabarBarcode {
 
     private Double wideFactor;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getWideFactor() {
         return wideFactor;

@@ -60,13 +60,17 @@ public class DRDesignStyle extends DRDesignBaseStyle implements DRIDesignStyle {
         this.conditionalStyles = new ArrayList<DRDesignConditionalStyle>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignStyle getParentStyle() {
         return parentStyle;
@@ -81,7 +85,9 @@ public class DRDesignStyle extends DRDesignBaseStyle implements DRIDesignStyle {
         this.parentStyle = parentStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRDesignConditionalStyle> getConditionalStyles() {
         return conditionalStyles;
@@ -105,19 +111,18 @@ public class DRDesignStyle extends DRDesignBaseStyle implements DRIDesignStyle {
         this.conditionalStyles.add(conditionalStyle);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         EqualsBuilder equalsBuilder = new EqualsBuilder().appendSuper(super.equals(obj));
         if (equalsBuilder.isEquals()) {
             DRDesignStyle o = (DRDesignStyle) obj;
-            if (!(parentStyle == null ? o.getParentStyle() == null : parentStyle.getName()
-                                                                                .equals(o.getParentStyle()
-                                                                                         .getName()))) {
+            if (!(parentStyle == null ? o.getParentStyle() == null : parentStyle.getName().equals(o.getParentStyle().getName()))) {
                 return false;
             }
-            equalsBuilder.append(name, o.name)
-                         .append(conditionalStyles, o.conditionalStyles);
+            equalsBuilder.append(name, o.name).append(conditionalStyles, o.conditionalStyles);
         }
         return equalsBuilder.isEquals();
     }

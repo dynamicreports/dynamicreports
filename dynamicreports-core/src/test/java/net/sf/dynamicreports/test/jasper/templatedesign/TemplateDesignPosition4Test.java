@@ -53,8 +53,7 @@ public class TemplateDesignPosition4Test extends AbstractJasperPositionTest impl
               .setPageMargin(margin(25))
               .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
               .setDataSource(createSubreportDataSource());
-        rb.setPageMargin(margin(25))
-          .title(cmp.subreport(report));
+        rb.setPageMargin(margin(25)).title(cmp.subreport(report));
     }
 
     @Override

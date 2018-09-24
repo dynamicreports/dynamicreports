@@ -59,11 +59,9 @@ public class BarcodeReport {
     private void build() {
         try {
             report().setTemplate(template().setBarcodeHeight(40))
-                    .title(Templates.createTitleComponent("Barcode"), cmp.text("Barcode4j")
-                                                                         .setStyle(Templates.bold18CenteredStyle), barcode4j(), cmp.verticalGap(10), cmp.text("ZXing")
-                                                                                                                                                        .setStyle(Templates.bold18CenteredStyle),
-                           barcode("QrCode", bcode.qrCode("12345678")), cmp.verticalGap(10), cmp.text("Barbecue")
-                                                                                                .setStyle(Templates.bold18CenteredStyle), barbecue())
+                    .title(Templates.createTitleComponent("Barcode"), cmp.text("Barcode4j").setStyle(Templates.bold18CenteredStyle), barcode4j(), cmp.verticalGap(10),
+                           cmp.text("ZXing").setStyle(Templates.bold18CenteredStyle), barcode("QrCode", bcode.qrCode("12345678")), cmp.verticalGap(10),
+                           cmp.text("Barbecue").setStyle(Templates.bold18CenteredStyle), barbecue())
                     .show();
         } catch (DRException e) {
             e.printStackTrace();
@@ -92,15 +90,13 @@ public class BarcodeReport {
                  barcode("Monarch", bcode.barbecue_monarch("12345678")), barcode("Nw7", bcode.barbecue_nw7("12345678")), barcode("Pdf417", bcode.barbecue_pdf417("12345678")),
                  barcode("Postnet", bcode.barbecue_postnet("12345678")), barcode("RandomWeightUpca", bcode.barbecue_randomWeightUpca("12345678901")),
                  barcode("Scc14ShippingCode", bcode.barbecue_scc14ShippingCode("12345678")), barcode("ShipmentIdentificationNumber", bcode.barbecue_shipmentIdentificationNumber("12345678")),
-                 barcode("Sscc18", bcode.barbecue_sscc18("12345678")), barcode("Std2of5", bcode.barbecue_std2of5("12345678")), barcode("Ucc128", bcode.barbecue_ucc128("12345678")
-                                                                                                                                                      .setApplicationIdentifierExpression("123")),
-                 barcode("Upca", bcode.barbecue_upca("12345678901")), barcode("Usd3", bcode.barbecue_usd3("12345678")), barcode("Usd4", bcode.barbecue_usd4("12345678")),
-                 barcode("Usps", bcode.barbecue_usps("12345678")));
+                 barcode("Sscc18", bcode.barbecue_sscc18("12345678")), barcode("Std2of5", bcode.barbecue_std2of5("12345678")),
+                 barcode("Ucc128", bcode.barbecue_ucc128("12345678").setApplicationIdentifierExpression("123")), barcode("Upca", bcode.barbecue_upca("12345678901")),
+                 barcode("Usd3", bcode.barbecue_usd3("12345678")), barcode("Usd4", bcode.barbecue_usd4("12345678")), barcode("Usps", bcode.barbecue_usps("12345678")));
         return list;
     }
 
     private ComponentBuilder<?, ?> barcode(String label, DimensionComponentBuilder<?, ?> barcode) {
-        return cmp.verticalList(cmp.text(label)
-                                   .setStyle(Templates.bold12CenteredStyle), barcode);
+        return cmp.verticalList(cmp.text(label).setStyle(Templates.bold12CenteredStyle), barcode);
     }
 }

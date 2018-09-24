@@ -47,8 +47,7 @@ public class SubreportTest extends AbstractJasperValueTest implements Serializab
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression())
-                                               .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport);
     }
@@ -114,8 +113,7 @@ public class SubreportTest extends AbstractJasperValueTest implements Serializab
         public JasperReportBuilder evaluate(ReportParameters reportParameters) {
             int masterRowNumber = reportParameters.getReportRowNumber();
             JasperReportBuilder report = report();
-            report.parameters(parameter("masterRowNumber", masterRowNumber))
-                  .title(cmp.text("Subreport" + masterRowNumber), cmp.text(new SubreportTitleExpression()));
+            report.parameters(parameter("masterRowNumber", masterRowNumber)).title(cmp.text("Subreport" + masterRowNumber), cmp.text(new SubreportTitleExpression()));
 
             for (int i = 1; i <= masterRowNumber; i++) {
                 report.addColumn(col.column("Column" + i, "column" + i, type.stringType()));

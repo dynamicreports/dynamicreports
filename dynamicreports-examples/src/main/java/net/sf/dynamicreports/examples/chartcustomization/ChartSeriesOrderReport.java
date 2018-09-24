@@ -70,11 +70,9 @@ public class ChartSeriesOrderReport {
 
         BarChartBuilder chart = cht.barChart()
                                    .setCategory(new CategoryExpression())
-                                   .series(cht.serie(valueColumn)
-                                              .setSeries(stockColumn))
+                                   .series(cht.serie(valueColumn).setSeries(stockColumn))
                                    .setSeriesOrderType(OrderType.ASCENDING)
-                                   .setValueAxisFormat(cht.axisFormat()
-                                                          .setLabel("Stock"));
+                                   .setValueAxisFormat(cht.axisFormat().setLabel("Stock"));
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -118,8 +116,7 @@ public class ChartSeriesOrderReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return type.dateYearToMonthType()
-                       .valueToString("date", reportParameters);
+            return type.dateYearToMonthType().valueToString("date", reportParameters);
         }
     }
 }

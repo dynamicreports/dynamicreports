@@ -54,7 +54,7 @@ public class DRException extends Exception {
      * <p>Constructor for DRException.</p>
      *
      * @param message a {@link java.lang.String} object.
-     * @param cause a {@link java.lang.Throwable} object.
+     * @param cause   a {@link java.lang.Throwable} object.
      */
     public DRException(String message, Throwable cause) {
         super(message, cause);

@@ -61,21 +61,11 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
         FieldBuilder<Integer> field2 = field("field2", type.integerType());
         FieldBuilder<Integer> field3 = field("field3", type.integerType());
 
-        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart()
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field2)
-                                                      .setLabel("serie1"));
+        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
 
-        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart()
-                                           .setTimePeriod(field1)
-                                           .setTimePeriodType(TimePeriod.DAY)
-                                           .series(cht.serie(field3)
-                                                      .setLabel("serie2"));
+        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field3).setLabel("serie2"));
 
-        rb.summary(cht.multiAxisChart(chart1, chart2), cht.multiAxisChart()
-                                                          .addChart(chart1, AxisPosition.LEFT_OR_TOP)
-                                                          .addChart(chart2, AxisPosition.RIGHT_OR_BOTTOM));
+        rb.summary(cht.multiAxisChart(chart1, chart2), cht.multiAxisChart().addChart(chart1, AxisPosition.LEFT_OR_TOP).addChart(chart2, AxisPosition.RIGHT_OR_BOTTOM));
     }
 
     @Override
@@ -85,51 +75,32 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot()
-                                       .getRenderer();
+        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-        TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                                                   .getDataset(0);
-        TimeSeries serie = (TimeSeries) dataset.getSeries()
-                                               .get(0);
-        Assert.assertEquals("value", 1d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 2d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 3d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(3)
-                                              .getValue());
-        dataset = (TimeSeriesCollection) chart.getXYPlot()
-                                              .getDataset(1);
-        serie = (TimeSeries) dataset.getSeries()
-                                    .get(0);
-        Assert.assertEquals("value", 0d, serie.getDataItem(0)
-                                              .getValue());
-        Assert.assertEquals("value", 1d, serie.getDataItem(1)
-                                              .getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(2)
-                                              .getValue());
-        Assert.assertEquals("value", 9d, serie.getDataItem(3)
-                                              .getValue());
+        TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
+        TimeSeries serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 1d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 2d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 3d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(3).getValue());
+        dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(1);
+        serie = (TimeSeries) dataset.getSeries().get(0);
+        Assert.assertEquals("value", 0d, serie.getDataItem(0).getValue());
+        Assert.assertEquals("value", 1d, serie.getDataItem(1).getValue());
+        Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
+        Assert.assertEquals("value", 9d, serie.getDataItem(3).getValue());
 
-        JRChart chart2 = (JRChart) getJasperReport().getSummary()
-                                                    .getElementByKey("summary.chart2");
+        JRChart chart2 = (JRChart) getJasperReport().getSummary().getElementByKey("summary.chart2");
         JRChartPlot plot = chart2.getPlot();
         Assert.assertTrue("plot", plot instanceof JRMultiAxisPlot);
         JRMultiAxisPlot multiAxisPlot = (JRMultiAxisPlot) plot;
-        Assert.assertEquals("axes", 2, multiAxisPlot.getAxes()
-                                                    .size());
-        JRChartAxis chartAxis = multiAxisPlot.getAxes()
-                                             .get(0);
+        Assert.assertEquals("axes", 2, multiAxisPlot.getAxes().size());
+        JRChartAxis chartAxis = multiAxisPlot.getAxes().get(0);
         Assert.assertEquals("position", AxisPositionEnum.LEFT_OR_TOP, chartAxis.getPositionValue());
-        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart()
-                                                                             .getChartType());
-        chartAxis = multiAxisPlot.getAxes()
-                                 .get(1);
+        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart().getChartType());
+        chartAxis = multiAxisPlot.getAxes().get(1);
         Assert.assertEquals("position", AxisPositionEnum.RIGHT_OR_BOTTOM, chartAxis.getPositionValue());
-        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart()
-                                                                             .getChartType());
+        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart().getChartType());
     }
 
     @Override

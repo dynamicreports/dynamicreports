@@ -71,7 +71,9 @@ public class AdhocConfiguration implements Cloneable, Serializable {
         this.filter = filter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -95,7 +97,9 @@ public class AdhocConfiguration implements Cloneable, Serializable {
         return true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public AdhocConfiguration clone() {
         AdhocConfiguration clone;

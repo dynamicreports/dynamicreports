@@ -70,17 +70,14 @@ public class ChartLayoutReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
         JasperReportBuilder subreport = report();
-        subreport.setTemplate(Templates.reportTemplate)
-                 .columns(itemColumn, quantityColumn, unitPriceColumn)
-                 .setDataSource(createDataSource());
+        subreport.setTemplate(Templates.reportTemplate).columns(itemColumn, quantityColumn, unitPriceColumn).setDataSource(createDataSource());
 
         BarChartBuilder chart = cht.barChart()
                                    .customizers(new ChartCustomizer())
@@ -88,10 +85,8 @@ public class ChartLayoutReport {
                                    .setTitleFont(boldFont)
                                    .setCategory(itemColumn)
                                    .series(cht.serie(quantityColumn), cht.serie(unitPriceColumn))
-                                   .setValueAxisFormat(cht.axisFormat()
-                                                          .setRangeMaxValueExpression(500))
-                                   .setCategoryAxisFormat(cht.axisFormat()
-                                                             .setLabel("Item"));
+                                   .setValueAxisFormat(cht.axisFormat().setRangeMaxValueExpression(500))
+                                   .setCategoryAxisFormat(cht.axisFormat().setLabel("Item"));
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -118,8 +113,7 @@ public class ChartLayoutReport {
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot()
-                                                      .getRenderer();
+            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
             renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
             renderer.setBaseItemLabelsVisible(true);
         }

@@ -70,29 +70,18 @@ public class MultiAxisChartReport {
         FieldBuilder<Integer> stock1Field = field("stock1", type.integerType());
         FieldBuilder<Integer> stock2Field = field("stock2", type.integerType());
 
-        CategoryChartSerieBuilder stock1Serie = cht.serie(stock1Field)
-                                                   .setLabel("Stock1");
-        CategoryChartSerieBuilder stock2Serie = cht.serie(stock2Field)
-                                                   .setLabel("Stock2");
+        CategoryChartSerieBuilder stock1Serie = cht.serie(stock1Field).setLabel("Stock1");
+        CategoryChartSerieBuilder stock2Serie = cht.serie(stock2Field).setLabel("Stock2");
 
-        LineChartBuilder chart1 = cht.lineChart()
-                                     .setCategory(new CategoryExpression())
-                                     .series(stock1Serie)
-                                     .setValueAxisFormat(cht.axisFormat()
-                                                            .setLabel("Stock1"));
+        LineChartBuilder chart1 = cht.lineChart().setCategory(new CategoryExpression()).series(stock1Serie).setValueAxisFormat(cht.axisFormat().setLabel("Stock1"));
 
-        BarChartBuilder chart2 = cht.barChart()
-                                    .setCategory(new CategoryExpression())
-                                    .series(stock2Serie)
-                                    .setValueAxisFormat(cht.axisFormat()
-                                                           .setLabel("Stock2"));
+        BarChartBuilder chart2 = cht.barChart().setCategory(new CategoryExpression()).series(stock2Serie).setValueAxisFormat(cht.axisFormat().setLabel("Stock2"));
 
         try {
             report().setTemplate(Templates.reportTemplate)
                     .fields(dateField)
-                    .title(Templates.createTitleComponent("MultiAxisChart"), cht.multiAxisChart(chart1, chart2), cht.multiAxisChart()
-                                                                                                                    .addChart(chart1, AxisPosition.LEFT_OR_TOP)
-                                                                                                                    .addChart(chart2, AxisPosition.RIGHT_OR_BOTTOM))
+                    .title(Templates.createTitleComponent("MultiAxisChart"), cht.multiAxisChart(chart1, chart2),
+                           cht.multiAxisChart().addChart(chart1, AxisPosition.LEFT_OR_TOP).addChart(chart2, AxisPosition.RIGHT_OR_BOTTOM))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();
@@ -126,8 +115,7 @@ public class MultiAxisChartReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return type.dateYearToMonthType()
-                       .valueToString("date", reportParameters);
+            return type.dateYearToMonthType().valueToString("date", reportParameters);
         }
     }
 }

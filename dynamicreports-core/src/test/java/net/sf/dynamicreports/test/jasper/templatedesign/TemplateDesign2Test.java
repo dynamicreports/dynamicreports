@@ -47,13 +47,10 @@ public class TemplateDesign2Test extends AbstractJasperValueTest implements Seri
 
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
-        SubreportBuilder titleSubreport = cmp.subreport(titleSubreport())
-                                             .setDataSource(titleSubreportDataSource());
+        SubreportBuilder titleSubreport = cmp.subreport(titleSubreport()).setDataSource(titleSubreportDataSource());
 
         InputStream is = TemplateDesign2Test.class.getResourceAsStream("templatedesign2.jrxml");
-        rb.setTemplateDesign(is)
-          .title(titleSubreport)
-          .columns(column1 = col.column("Column1", "field1", String.class));
+        rb.setTemplateDesign(is).title(titleSubreport).columns(column1 = col.column("Column1", "field1", String.class));
     }
 
     @Override
@@ -83,9 +80,7 @@ public class TemplateDesign2Test extends AbstractJasperValueTest implements Seri
     private JasperReportBuilder titleSubreport() throws DRException {
         InputStream is = TemplateDesign2Test.class.getResourceAsStream("templatedesign3.jrxml");
         JasperReportBuilder report = report();
-        report.setTemplateDesign(is)
-              .title(cmp.text("subreport"))
-              .columns(column2 = col.column("Column2", "field2", String.class));
+        report.setTemplateDesign(is).title(cmp.text("subreport")).columns(column2 = col.column("Column2", "field2", String.class));
         return report;
     }
 

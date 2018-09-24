@@ -28,10 +28,16 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public class Language {
-    /** Constant <code>JAVA="java"</code> */
+    /**
+     * Constant <code>JAVA="java"</code>
+     */
     public static final String JAVA = "java";
-    /** Constant <code>GROOVY="groovy"</code> */
+    /**
+     * Constant <code>GROOVY="groovy"</code>
+     */
     public static final String GROOVY = "groovy";
-    /** Constant <code>JAVA_SCRIPT="javascript"</code> */
+    /**
+     * Constant <code>JAVA_SCRIPT="javascript"</code>
+     */
     public static final String JAVA_SCRIPT = "javascript";
 }

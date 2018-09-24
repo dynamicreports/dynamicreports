@@ -37,7 +37,9 @@ public class JasperDocxExporter extends AbstractJasperExporter implements Jasper
     private Boolean flexibleRowHeight;
     private Boolean ignoreHyperLink;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getFramesAsNestedTables() {
         return framesAsNestedTables;
@@ -52,7 +54,9 @@ public class JasperDocxExporter extends AbstractJasperExporter implements Jasper
         this.framesAsNestedTables = framesAsNestedTables;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getFlexibleRowHeight() {
         return flexibleRowHeight;
@@ -67,7 +71,9 @@ public class JasperDocxExporter extends AbstractJasperExporter implements Jasper
         this.flexibleRowHeight = flexibleRowHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;

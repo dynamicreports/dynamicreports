@@ -36,14 +36,16 @@ public class SmallerOrEqualsValueExpression<T extends Number> extends AbstractVa
     /**
      * <p>Constructor for SmallerOrEqualsValueExpression.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
      */
     public SmallerOrEqualsValueExpression(DRIValue<T> value, Number number) {
         super(value, number);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Boolean compare(Number actualValue, Number number) {
         return actualValue.doubleValue() <= number.doubleValue();

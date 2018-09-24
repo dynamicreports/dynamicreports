@@ -41,19 +41,10 @@ public class HorizontalListPositionTest extends AbstractBandTest {
     @Override
     public void configureReport(ReportBuilder<?> rb) {
         rb.setPageFormat(PageType.A2)
-          .title(cmp.horizontalList(cmp.hListCell(cmp.text("")
-                                                     .setHeight(23)), cmp.hListCell(cmp.text("")), cmp.hListCell(cmp.text(""))
-                                                                                                      .widthFixed(), cmp.hListCell(cmp.text(""))
-                                                                                                                        .widthFixed()
-                                                                                                                        .heightFixedOnTop(), cmp.hListCell(cmp.text(""))
-                                                                                                                                                .heightFixedOnTop(), cmp.hListCell(cmp.text(""))
-                                                                                                                                                                        .widthFixed()
-                                                                                                                                                                        .heightFixedOnMiddle(),
-                                    cmp.hListCell(cmp.text(""))
-                                       .heightFixedOnMiddle(), cmp.hListCell(cmp.text(""))
-                                                                  .widthFixed()
-                                                                  .heightFixedOnBottom(), cmp.hListCell(cmp.text(""))
-                                                                                             .heightFixedOnBottom()));
+          .title(cmp.horizontalList(cmp.hListCell(cmp.text("").setHeight(23)), cmp.hListCell(cmp.text("")), cmp.hListCell(cmp.text("")).widthFixed(),
+                                    cmp.hListCell(cmp.text("")).widthFixed().heightFixedOnTop(), cmp.hListCell(cmp.text("")).heightFixedOnTop(),
+                                    cmp.hListCell(cmp.text("")).widthFixed().heightFixedOnMiddle(), cmp.hListCell(cmp.text("")).heightFixedOnMiddle(),
+                                    cmp.hListCell(cmp.text("")).widthFixed().heightFixedOnBottom(), cmp.hListCell(cmp.text("")).heightFixedOnBottom()));
     }
 
     @Override
@@ -62,31 +53,20 @@ public class HorizontalListPositionTest extends AbstractBandTest {
         Assert.assertTrue(component instanceof DRDesignList);
         DRDesignList list = (DRDesignList) component;
         Assert.assertEquals(ListType.HORIZONTAL, list.getType());
-        Assert.assertEquals(9, list.getComponents()
-                                   .size());
+        Assert.assertEquals(9, list.getComponents().size());
         componentPositionTest(list, 0, 0, 1170, 23);
         for (int i = 0; i < 9; i++) {
-            Assert.assertTrue(list.getComponents()
-                                  .get(i) instanceof DRDesignTextField);
+            Assert.assertTrue(list.getComponents().get(i) instanceof DRDesignTextField);
         }
 
-        componentPositionTest(list.getComponents()
-                                  .get(0), 0, 0, 154, 23);
-        componentPositionTest(list.getComponents()
-                                  .get(1), 154, 0, 154, 23);
-        componentPositionTest(list.getComponents()
-                                  .get(2), 308, 0, 100, 23);
-        componentPositionTest(list.getComponents()
-                                  .get(3), 408, 0, 100, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(4), 508, 0, 154, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(5), 662, 3, 100, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(6), 762, 3, 154, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(7), 916, 7, 100, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(8), 1016, 7, 154, 16);
+        componentPositionTest(list.getComponents().get(0), 0, 0, 154, 23);
+        componentPositionTest(list.getComponents().get(1), 154, 0, 154, 23);
+        componentPositionTest(list.getComponents().get(2), 308, 0, 100, 23);
+        componentPositionTest(list.getComponents().get(3), 408, 0, 100, 16);
+        componentPositionTest(list.getComponents().get(4), 508, 0, 154, 16);
+        componentPositionTest(list.getComponents().get(5), 662, 3, 100, 16);
+        componentPositionTest(list.getComponents().get(6), 762, 3, 154, 16);
+        componentPositionTest(list.getComponents().get(7), 916, 7, 100, 16);
+        componentPositionTest(list.getComponents().get(8), 1016, 7, 154, 16);
     }
 }

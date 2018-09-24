@@ -51,13 +51,10 @@ public class Subreport4Test extends AbstractJasperValueTest {
         Map<String, Object> parameters2 = new HashMap<String, Object>();
         parameters2.put("parameter5", "value7");
 
-        SubreportBuilder subreport1 = cmp.subreport(subreport1())
-                                         .setParameters(parameters1);
-        SubreportBuilder subreport2 = cmp.subreport(subreport2())
-                                         .setParameters(parameters2);
+        SubreportBuilder subreport1 = cmp.subreport(subreport1()).setParameters(parameters1);
+        SubreportBuilder subreport2 = cmp.subreport(subreport2()).setParameters(parameters2);
 
-        rb.addParameter("parameter4", "value4")
-          .title(subreport1, subreport2);
+        rb.addParameter("parameter4", "value4").title(subreport1, subreport2);
     }
 
     @Override

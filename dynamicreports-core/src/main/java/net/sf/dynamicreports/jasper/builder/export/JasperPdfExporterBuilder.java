@@ -52,8 +52,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setCreatingBatchModeBookmarks(Boolean creatingBatchModeBookmarks) {
-        this.getObject()
-            .setCreatingBatchModeBookmarks(creatingBatchModeBookmarks);
+        this.getObject().setCreatingBatchModeBookmarks(creatingBatchModeBookmarks);
         return this;
     }
 
@@ -64,8 +63,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setCompressed(Boolean compressed) {
-        this.getObject()
-            .setCompressed(compressed);
+        this.getObject().setCompressed(compressed);
         return this;
     }
 
@@ -76,8 +74,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setEncrypted(Boolean encrypted) {
-        this.getObject()
-            .setEncrypted(encrypted);
+        this.getObject().setEncrypted(encrypted);
         return this;
     }
 
@@ -88,8 +85,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setBitKey128(Boolean bitKey128) {
-        this.getObject()
-            .setBitKey128(bitKey128);
+        this.getObject().setBitKey128(bitKey128);
         return this;
     }
 
@@ -100,8 +96,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setUserPassword(String userPassword) {
-        this.getObject()
-            .setUserPassword(userPassword);
+        this.getObject().setUserPassword(userPassword);
         return this;
     }
 
@@ -112,8 +107,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setOwnerPassword(String ownerPassword) {
-        this.getObject()
-            .setOwnerPassword(ownerPassword);
+        this.getObject().setOwnerPassword(ownerPassword);
         return this;
     }
 
@@ -137,8 +131,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
         Validate.notNull(permissions, "permissions must not be null");
         Validate.noNullElements(permissions, "permissions must not contains null permission");
         for (PdfPermission permission : permissions) {
-            this.getObject()
-                .addPermission(permission);
+            this.getObject().addPermission(permission);
         }
         return this;
     }
@@ -150,8 +143,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setPdfVersion(PdfVersion pdfVersion) {
-        this.getObject()
-            .setPdfVersion(pdfVersion);
+        this.getObject().setPdfVersion(pdfVersion);
         return this;
     }
 
@@ -162,8 +154,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setMetadataTitle(String metadataTitle) {
-        this.getObject()
-            .setMetadataTitle(metadataTitle);
+        this.getObject().setMetadataTitle(metadataTitle);
         return this;
     }
 
@@ -174,8 +165,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setMetadataAuthor(String metadataAuthor) {
-        this.getObject()
-            .setMetadataAuthor(metadataAuthor);
+        this.getObject().setMetadataAuthor(metadataAuthor);
         return this;
     }
 
@@ -186,8 +176,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setMetadataSubject(String metadataSubject) {
-        this.getObject()
-            .setMetadataSubject(metadataSubject);
+        this.getObject().setMetadataSubject(metadataSubject);
         return this;
     }
 
@@ -198,8 +187,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setMetadataKeyWords(String metadataKeyWords) {
-        this.getObject()
-            .setMetadataKeyWords(metadataKeyWords);
+        this.getObject().setMetadataKeyWords(metadataKeyWords);
         return this;
     }
 
@@ -210,8 +198,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setMetadataCreator(String metadataCreator) {
-        this.getObject()
-            .setMetadataCreator(metadataCreator);
+        this.getObject().setMetadataCreator(metadataCreator);
         return this;
     }
 
@@ -222,8 +209,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setForceSvgShapes(Boolean forceSvgShapes) {
-        this.getObject()
-            .setForceSvgShapes(forceSvgShapes);
+        this.getObject().setForceSvgShapes(forceSvgShapes);
         return this;
     }
 
@@ -234,8 +220,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setPdfJavaScript(String pdfJavaScript) {
-        this.getObject()
-            .setPdfJavaScript(pdfJavaScript);
+        this.getObject().setPdfJavaScript(pdfJavaScript);
         return this;
     }
 
@@ -246,8 +231,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setTagged(Boolean tagged) {
-        this.getObject()
-            .setTagged(tagged);
+        this.getObject().setTagged(tagged);
         return this;
     }
 
@@ -258,8 +242,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setTagLanguage(String tagLanguage) {
-        this.getObject()
-            .setTagLanguage(tagLanguage);
+        this.getObject().setTagLanguage(tagLanguage);
         return this;
     }
 
@@ -270,8 +253,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setCollapseMissingBookmarkLevels(Boolean collapseMissingBookmarkLevels) {
-        this.getObject()
-            .setCollapseMissingBookmarkLevels(collapseMissingBookmarkLevels);
+        this.getObject().setCollapseMissingBookmarkLevels(collapseMissingBookmarkLevels);
         return this;
     }
 
@@ -282,8 +264,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setSizePageToContent(Boolean sizePageToContent) {
-        this.getObject()
-            .setSizePageToContent(sizePageToContent);
+        this.getObject().setSizePageToContent(sizePageToContent);
         return this;
     }
 
@@ -294,8 +275,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return this;
     }
 
@@ -306,8 +286,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setForceLineBreakPolicy(Boolean forceLineBreakPolicy) {
-        this.getObject()
-            .setForceLineBreakPolicy(forceLineBreakPolicy);
+        this.getObject().setForceLineBreakPolicy(forceLineBreakPolicy);
         return this;
     }
 
@@ -318,8 +297,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setPrintScaling(PdfPrintScaling printScaling) {
-        this.getObject()
-            .setPrintScaling(printScaling);
+        this.getObject().setPrintScaling(printScaling);
         return this;
     }
 
@@ -330,8 +308,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setPdfaConformance(PdfaConformance pdfaConformance) {
-        this.getObject()
-            .setPdfaConformance(pdfaConformance);
+        this.getObject().setPdfaConformance(pdfaConformance);
         return this;
     }
 
@@ -342,8 +319,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setIccProfilePath(String iccProfilePath) {
-        this.getObject()
-            .setIccProfilePath(iccProfilePath);
+        this.getObject().setIccProfilePath(iccProfilePath);
         return this;
     }
 
@@ -354,8 +330,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setAllowedPermissionsHint(String allowedPermissionsHint) {
-        this.getObject()
-            .setAllowedPermissionsHint(allowedPermissionsHint);
+        this.getObject().setAllowedPermissionsHint(allowedPermissionsHint);
         return this;
     }
 
@@ -366,8 +341,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setDeniedPermissionsHint(String deniedPermissionsHint) {
-        this.getObject()
-            .setDeniedPermissionsHint(deniedPermissionsHint);
+        this.getObject().setDeniedPermissionsHint(deniedPermissionsHint);
         return this;
     }
 
@@ -378,8 +352,7 @@ public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder} object.
      */
     public JasperPdfExporterBuilder setDisplayMetadataTitle(Boolean displayMetadataTitle) {
-        this.getObject()
-            .setDisplayMetadataTitle(displayMetadataTitle);
+        this.getObject().setDisplayMetadataTitle(displayMetadataTitle);
         return this;
     }
 }

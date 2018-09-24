@@ -98,18 +98,14 @@ public class GroupTransform {
     }
 
     private void addGroup(DRIGroup group, DRDesignGroup designGroup) {
-        if (accessor.getTemplateTransform()
-                    .isGroupHideColumn(group) && group.getValueField()
-                                                      .getValueExpression() instanceof DRIValueColumn<?>) {
-            hideGroupColumns.add((DRIValueColumn<?>) group.getValueField()
-                                                          .getValueExpression());
+        if (accessor.getTemplateTransform().isGroupHideColumn(group) && group.getValueField().getValueExpression() instanceof DRIValueColumn<?>) {
+            hideGroupColumns.add((DRIValueColumn<?>) group.getValueField().getValueExpression());
         }
         designGroups.put(group, designGroup);
         if (firstResetPageNumberGroup == null && designGroup.isResetPageNumber()) {
             firstResetPageNumberGroup = group;
         }
-        groupPadding += accessor.getTemplateTransform()
-                                .getGroupPadding(group);
+        groupPadding += accessor.getTemplateTransform().getGroupPadding(group);
     }
 
     /**
@@ -122,8 +118,7 @@ public class GroupTransform {
         int level = 0;
         for (DRIGroup group : groups) {
             headerAndFooter(group, designGroups.get(group), groupPadding, level++);
-            groupPadding += accessor.getTemplateTransform()
-                                    .getGroupPadding(group);
+            groupPadding += accessor.getTemplateTransform().getGroupPadding(group);
         }
     }
 
@@ -131,8 +126,7 @@ public class GroupTransform {
         DRDesignList header = new DRDesignList();
         TemplateTransform templateTransform = accessor.getTemplateTransform();
 
-        DRDesignTableOfContentsHeading designTocHeading = accessor.getTableOfContentsTransform()
-                                                                  .groupHeading(group, level);
+        DRDesignTableOfContentsHeading designTocHeading = accessor.getTableOfContentsTransform().groupHeading(group, level);
         if (designTocHeading != null) {
             header.addComponent(designTocHeading.getReferenceField());
         }
@@ -151,12 +145,9 @@ public class GroupTransform {
                 DRDesignTextField valueComponent = valueComponent(group);
                 header.addComponent(valueComponent);
                 if (designTocHeading != null) {
-                    valueComponent.setAnchorNameExpression(designTocHeading.getReferenceField()
-                                                                           .getAnchorNameExpression());
-                    valueComponent.setBookmarkLevel(designTocHeading.getReferenceField()
-                                                                    .getBookmarkLevel());
-                    valueComponent.setHyperLink(designTocHeading.getReferenceField()
-                                                                .getHyperLink());
+                    valueComponent.setAnchorNameExpression(designTocHeading.getReferenceField().getAnchorNameExpression());
+                    valueComponent.setBookmarkLevel(designTocHeading.getReferenceField().getBookmarkLevel());
+                    valueComponent.setHyperLink(designTocHeading.getReferenceField().getHyperLink());
                 }
                 break;
             case VALUE:
@@ -169,17 +160,13 @@ public class GroupTransform {
                 valueComponent = valueComponent(group);
                 header.addComponent(valueComponent);
                 if (designTocHeading != null) {
-                    valueComponent.setAnchorNameExpression(designTocHeading.getReferenceField()
-                                                                           .getAnchorNameExpression());
-                    valueComponent.setBookmarkLevel(designTocHeading.getReferenceField()
-                                                                    .getBookmarkLevel());
-                    valueComponent.setHyperLink(designTocHeading.getReferenceField()
-                                                                .getHyperLink());
+                    valueComponent.setAnchorNameExpression(designTocHeading.getReferenceField().getAnchorNameExpression());
+                    valueComponent.setBookmarkLevel(designTocHeading.getReferenceField().getBookmarkLevel());
+                    valueComponent.setHyperLink(designTocHeading.getReferenceField().getHyperLink());
                 }
                 break;
             default:
-                throw new DRDesignReportException("Group header layout " + templateTransform.getGroupHeaderLayout(group)
-                                                                                            .name() + " not supported");
+                throw new DRDesignReportException("Group header layout " + templateTransform.getGroupHeaderLayout(group).name() + " not supported");
         }
         if (!header.isEmpty()) {
             DRIBand bnd = group.getHeaderBand();
@@ -199,17 +186,14 @@ public class GroupTransform {
             groupBand("groupFooter", band, templateTransform.getGroupFooterSplitType(band), templateTransform.getGroupFooterStyle(band), templateTransform.getGroupFooterBackgroundComponent(band),
                       groupPadding, designGroup));
         if (templateTransform.isGroupShowColumnHeaderAndFooter(group)) {
-            designGroup.addHeaderBand(accessor.getBandTransform()
-                                              .getColumnHeaderForGroupBand());
-            designGroup.addFooterBand(accessor.getBandTransform()
-                                              .getColumnFooterBand());
+            designGroup.addHeaderBand(accessor.getBandTransform().getColumnHeaderForGroupBand());
+            designGroup.addFooterBand(accessor.getBandTransform().getColumnFooterBand());
         }
     }
 
     private DRDesignBand groupBand(String name, DRIBand band, SplitType splitType, DRIReportStyle defaultStyle, DRIComponent defaultBackgroundComponent, int groupPadding, DRDesignGroup resetGroup)
         throws DRException {
-        DRDesignBand designBand = accessor.getBandTransform()
-                                          .band(name, band, splitType, defaultStyle, defaultBackgroundComponent, ResetType.GROUP, resetGroup);
+        DRDesignBand designBand = accessor.getBandTransform().band(name, band, splitType, defaultStyle, defaultBackgroundComponent, ResetType.GROUP, resetGroup);
         if (groupPadding > 0) {
             DRDesignFiller filler = new DRDesignFiller();
             filler.setWidth(groupPadding);
@@ -229,16 +213,14 @@ public class GroupTransform {
         titleField.setValueExpression(group.getTitleExpression());
         titleField.setStyle(group.getTitleStyle());
         titleField.setWidth(group.getTitleWidth());
-        DRDesignTextField designTitleField = accessor.getComponentTransform()
-                                                     .textField(titleField, DefaultStyleType.GROUP_TITLE);
+        DRDesignTextField designTitleField = accessor.getComponentTransform().textField(titleField, DefaultStyleType.GROUP_TITLE);
         designTitleField.setUniqueName("group_" + group.getName() + ".title");
         return designTitleField;
     }
 
     // value
     private DRDesignTextField valueComponent(DRIGroup group) throws DRException {
-        DRDesignTextField designValueField = accessor.getComponentTransform()
-                                                     .textField(group.getValueField(), DefaultStyleType.GROUP);
+        DRDesignTextField designValueField = accessor.getComponentTransform().textField(group.getValueField(), DefaultStyleType.GROUP);
         designValueField.setUniqueName("group_" + group.getName());
         return designValueField;
     }
@@ -256,19 +238,14 @@ public class GroupTransform {
         designGroup.setFooterPosition(templateTransform.getGroupFooterPosition(group));
         designGroup.setKeepTogether(templateTransform.isGroupKeepTogether(group));
         designGroup.setHeaderWithSubtotal(templateTransform.isGroupHeaderWithSubtotal(group));
-        DRIExpression<?> groupExpression = group.getValueField()
-                                                .getValueExpression();
-        if (templateTransform.isGroupByDataType(group) && group.getValueField()
-                                                               .getDataType() != null) {
-            accessor.getExpressionTransform()
-                    .transformExpression(groupExpression);
-            DRIDataType<?, ?> dataType = group.getValueField()
-                                              .getDataType();
+        DRIExpression<?> groupExpression = group.getValueField().getValueExpression();
+        if (templateTransform.isGroupByDataType(group) && group.getValueField().getDataType() != null) {
+            accessor.getExpressionTransform().transformExpression(groupExpression);
+            DRIDataType<?, ?> dataType = group.getValueField().getDataType();
             groupExpression = new GroupByDataTypeExpression(groupExpression, dataType);
         }
         groupExpression = new DRVariable(groupExpression, Calculation.NOTHING);
-        designGroup.setGroupExpression(accessor.getExpressionTransform()
-                                               .transformExpression(groupExpression));
+        designGroup.setGroupExpression(accessor.getExpressionTransform().transformExpression(groupExpression));
         return designGroup;
     }
 

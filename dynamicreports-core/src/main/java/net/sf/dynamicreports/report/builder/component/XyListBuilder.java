@@ -44,8 +44,8 @@ public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXy
     /**
      * <p>add.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.XyListBuilder} object.
      */
@@ -60,10 +60,10 @@ public class XyListBuilder extends DimensionComponentBuilder<XyListBuilder, DRXy
     /**
      * <p>add.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
-     * @param width a {@link java.lang.Integer} object.
-     * @param height a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
+     * @param width     a {@link java.lang.Integer} object.
+     * @param height    a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.XyListBuilder} object.
      */

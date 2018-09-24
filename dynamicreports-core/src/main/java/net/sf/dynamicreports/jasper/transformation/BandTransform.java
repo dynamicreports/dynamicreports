@@ -78,13 +78,11 @@ public class BandTransform {
                 JRDesignBand jrTitleAndValueBand = null;
                 for (DRIDesignBand band : group.getHeaderBands()) {
                     JRDesignBand jrBand = band(band);
-                    if (band.getName() != null && band.getName()
-                                                      .equals("groupHeaderTitleAndValue")) {
+                    if (band.getName() != null && band.getName().equals("groupHeaderTitleAndValue")) {
                         jrTitleAndValueBand = jrBand;
                     }
                     if (jrBand != null) {
-                        if (band.getName() != null && band.getName()
-                                                          .equals("subtotalGroupHeader") && jrTitleAndValueBand != null && group.isHeaderWithSubtotal()) {
+                        if (band.getName() != null && band.getName().equals("subtotalGroupHeader") && jrTitleAndValueBand != null && group.isHeaderWithSubtotal()) {
                             if (jrTitleAndValueBand.getHeight() < jrBand.getHeight()) {
                                 jrTitleAndValueBand.setHeight(jrBand.getHeight());
                             }
@@ -93,9 +91,7 @@ public class BandTransform {
                             }
                             continue;
                         }
-                        ((JRDesignSection) accessor.getGroupTransform()
-                                                   .getGroup(group)
-                                                   .getGroupHeaderSection()).addBand(jrBand);
+                        ((JRDesignSection) accessor.getGroupTransform().getGroup(group).getGroupHeaderSection()).addBand(jrBand);
                     }
                 }
             }
@@ -103,9 +99,7 @@ public class BandTransform {
                 for (DRIDesignBand band : group.getFooterBands()) {
                     JRDesignBand jrBand = band(band);
                     if (jrBand != null) {
-                        ((JRDesignSection) accessor.getGroupTransform()
-                                                   .getGroup(group)
-                                                   .getGroupFooterSection()).addBand(jrBand);
+                        ((JRDesignSection) accessor.getGroupTransform().getGroup(group).getGroupFooterSection()).addBand(jrBand);
                     }
                 }
             }
@@ -138,16 +132,12 @@ public class BandTransform {
         JRDesignBand jrBand = new JRDesignBand();
         if (band.getBandComponent() != null) {
             if (band.getPrintWhenExpression() != null) {
-                jrBand.setPrintWhenExpression(accessor.getExpressionTransform()
-                                                      .getExpression(band.getPrintWhenExpression()));
+                jrBand.setPrintWhenExpression(accessor.getExpressionTransform().getExpression(band.getPrintWhenExpression()));
             } else {
-                jrBand.setPrintWhenExpression(accessor.getExpressionTransform()
-                                                      .getExpression(band.getBandComponent()
-                                                                         .getPrintWhenExpression()));
+                jrBand.setPrintWhenExpression(accessor.getExpressionTransform().getExpression(band.getBandComponent().getPrintWhenExpression()));
             }
             jrBand.setSplitType(ConstantTransform.splitType(band.getSplitType()));
-            JRDesignElement[] jrElements = accessor.getComponentTransform()
-                                                   .component(band.getBandComponent(), ListType.VERTICAL);
+            JRDesignElement[] jrElements = accessor.getComponentTransform().component(band.getBandComponent(), ListType.VERTICAL);
             for (JRDesignElement jrElement : jrElements) {
                 jrBand.addElement(jrElement);
             }

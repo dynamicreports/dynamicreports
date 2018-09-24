@@ -36,9 +36,7 @@ public class ReportBackground1Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-          .background(cmp.text("text"))
-          .setBackgroundStyle(stl.style());
+        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).background(cmp.text("text")).setBackgroundStyle(stl.style());
     }
 
     @Override

@@ -45,13 +45,8 @@ public class TextField3Test extends AbstractJasperValueTest {
                                 .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
                                 .setTitleStretchWithOverflow(false)
                                 .addTitleProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"))
-          .title(cmp.text("test test")
-                    .setFixedWidth(25)
-                    .setStretchWithOverflow(false)
-                    .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"), cmp.text("test test")
-                                                                                  .setFixedWidth(25), cmp.text("test test")
-                                                                                                         .setFixedWidth(25)
-                                                                                                         .setStretchWithOverflow(false));
+          .title(cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false).addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"), cmp.text("test test").setFixedWidth(25),
+                 cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false));
     }
 
     @Override

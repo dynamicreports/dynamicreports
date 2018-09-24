@@ -38,14 +38,12 @@ public class JasperTestUtils {
 
     // column detail
     public static String getColumnDetailName(ColumnBuilder<?, ?> column) {
-        return "detail.column_" + column.build()
-                                        .getName() + "1";
+        return "detail.column_" + column.build().getName() + "1";
     }
 
     // column title
     public static String getColumnTitleName(ColumnBuilder<?, ?> column) {
-        return "columnHeader.column_" + column.build()
-                                              .getName() + ".title1";
+        return "columnHeader.column_" + column.build().getName() + ".title1";
     }
 
     // subtotal
@@ -85,12 +83,10 @@ public class JasperTestUtils {
                 band = "summary";
                 break;
             default:
-                Assert.fail("Subtotal position " + subtl.getPosition()
-                                                        .name() + " not found");
+                Assert.fail("Subtotal position " + subtl.getPosition().name() + " not found");
                 return null;
         }
-        return band + ".column_" + subtl.getShowInColumn()
-                                        .getName() + ".subtotal";
+        return band + ".column_" + subtl.getShowInColumn().getName() + ".subtotal";
     }
 
     public static String getSubtotalLabelName(BaseSubtotalBuilder<?, ?> subtotal, int subtotalIndex) {
@@ -103,53 +99,42 @@ public class JasperTestUtils {
 
     // group header title
     public static String getHeaderTitleGroupName(GroupBuilder<?> group) {
-        return "groupHeaderTitleAndValue.group_" + group.getGroup()
-                                                        .getName() + ".title1";
+        return "groupHeaderTitleAndValue.group_" + group.getGroup().getName() + ".title1";
     }
 
     // group header
     public static String getHeaderGroupName(GroupBuilder<?> group) {
-        return "groupHeaderTitleAndValue.group_" + group.getGroup()
-                                                        .getName() + "1";
+        return "groupHeaderTitleAndValue.group_" + group.getGroup().getName() + "1";
     }
 
     // crosstab group header
     public static String getCrosstabGroupHeaderName(AbstractCrosstabGroupBuilder<?, ?, ?> group) {
-        return "group_" + group.build()
-                               .getName() + ".header1";
+        return "group_" + group.build().getName() + ".header1";
     }
 
     // crosstab group total header
     public static String getCrosstabGroupTotalHeaderName(AbstractCrosstabGroupBuilder<?, ?, ?> group) {
-        return "group_" + group.build()
-                               .getName() + ".totalheader1";
+        return "group_" + group.build().getName() + ".totalheader1";
     }
 
     // crosstab group title header
     public static String getCrosstabGroupTitleHeaderName(AbstractCrosstabGroupBuilder<?, ?, ?> group, CrosstabMeasureBuilder<?> measure) {
-        return "group_" + group.build()
-                               .getName() + ".titleheader." + measure.build()
-                                                                     .getName() + "1";
+        return "group_" + group.build().getName() + ".titleheader." + measure.build().getName() + "1";
     }
 
     // crosstab group title total header
     public static String getCrosstabGroupTitleTotalHeaderName(AbstractCrosstabGroupBuilder<?, ?, ?> group, CrosstabMeasureBuilder<?> measure) {
-        return "group_" + group.build()
-                               .getName() + ".titletotalheader." + measure.build()
-                                                                          .getName() + "1";
+        return "group_" + group.build().getName() + ".titletotalheader." + measure.build().getName() + "1";
     }
 
     // crosstab cell
     public static String getCrosstabCellName(CrosstabMeasureBuilder<?> measure, CrosstabRowGroupBuilder<?> rowGroup, CrosstabColumnGroupBuilder<?> columnGroup) {
-        String name = "cell_measure[" + measure.build()
-                                               .getName() + "]";
+        String name = "cell_measure[" + measure.build().getName() + "]";
         if (rowGroup != null) {
-            name += "_rowgroup[" + rowGroup.build()
-                                           .getName() + "]";
+            name += "_rowgroup[" + rowGroup.build().getName() + "]";
         }
         if (columnGroup != null) {
-            name += "_columngroup[" + columnGroup.build()
-                                                 .getName() + "]";
+            name += "_columngroup[" + columnGroup.build().getName() + "]";
         }
         return name + "1";
     }

@@ -81,8 +81,7 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
                                                                                  .setLabel("time")
                                                                                  .setLabelColor(Color.BLUE)
                                                                                  .setLabelFont(stl.fontArialBold())
-                                                                                 .setTickLabelFont(stl.fontArial()
-                                                                                                      .setItalic(true))
+                                                                                 .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                                  .setTickLabelColor(Color.CYAN)
                                                                                  .setLineColor(Color.LIGHT_GRAY)
                                                                                  .setVerticalTickLabels(true)), cht.differenceChart()
@@ -92,8 +91,7 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
                                                                                                                                           .setLabel("value")
                                                                                                                                           .setLabelColor(Color.BLUE)
                                                                                                                                           .setLabelFont(stl.fontArialBold())
-                                                                                                                                          .setTickLabelFont(stl.fontArial()
-                                                                                                                                                               .setItalic(true))
+                                                                                                                                          .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                                                                                           .setTickLabelColor(Color.CYAN)
                                                                                                                                           .setTickLabelMask("#,##0.00")
                                                                                                                                           .setLineColor(Color.LIGHT_GRAY)
@@ -109,16 +107,14 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot()
-                                       .getRenderer();
+        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYDifferenceRenderer.class, renderer.getClass());
         Assert.assertFalse("show shapes", ((XYDifferenceRenderer) renderer).getShapesVisible());
         Assert.assertEquals("positive paint", Color.BLUE, ((XYDifferenceRenderer) renderer).getPositivePaint());
         Assert.assertEquals("negative paint", Color.MAGENTA, ((XYDifferenceRenderer) renderer).getNegativePaint());
 
         chart = getChart("summary.chart2", 0);
-        Axis axis = chart.getXYPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getXYPlot().getDomainAxis();
         Assert.assertEquals("category label", "time", axis.getLabel());
         Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("category label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
@@ -128,15 +124,13 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
         Assert.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
 
         chart = getChart("summary.chart3", 0);
-        axis = chart.getXYPlot()
-                    .getRangeAxis();
+        axis = chart.getXYPlot().getRangeAxis();
         Assert.assertEquals("value label", "value", axis.getLabel());
         Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("value label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride()
-                                                                           .format(10));
+        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride().format(10));
         // Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
         Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound());
         Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound());
@@ -161,8 +155,7 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             XYPlot xyPlot = chart.getXYPlot();
-            Assert.assertEquals("renderer", XYDifferenceRenderer.class, xyPlot.getRenderer()
-                                                                              .getClass());
+            Assert.assertEquals("renderer", XYDifferenceRenderer.class, xyPlot.getRenderer().getClass());
         }
     }
 }

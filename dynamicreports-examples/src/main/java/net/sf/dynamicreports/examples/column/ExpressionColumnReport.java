@@ -87,12 +87,8 @@ public class ExpressionColumnReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return "Item = " + reportParameters.getValue("item") + ", " + "Order date = " + type.dateType()
-                                                                                                .valueToString("orderdate", reportParameters) + ", " + "Quantity = " + type.integerType()
-                                                                                                                                                                           .valueToString(quantityField,
-                                                                                                                                                                                          reportParameters) +
-                ", " + "Unit price = " + type.bigDecimalType()
-                                             .valueToString("unitprice", reportParameters);
+            return "Item = " + reportParameters.getValue("item") + ", " + "Order date = " + type.dateType().valueToString("orderdate", reportParameters) + ", " + "Quantity = " +
+                type.integerType().valueToString(quantityField, reportParameters) + ", " + "Unit price = " + type.bigDecimalType().valueToString("unitprice", reportParameters);
         }
     }
 }

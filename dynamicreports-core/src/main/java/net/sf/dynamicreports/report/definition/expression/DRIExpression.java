@@ -24,8 +24,8 @@ package net.sf.dynamicreports.report.definition.expression;
 import java.io.Serializable;
 
 /**
- * Expressions are used to define various calculations, conditions, text field content, specific report groups, etc.
- * Every expression can access the declared report fields, variables and other expressions and get their values to calculate the expression value.
+ * Expressions are used to define various calculations, conditions, text field content, specific report groups, etc. Every expression can access the declared report fields, variables and other
+ * expressions and get their values to calculate the expression value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id

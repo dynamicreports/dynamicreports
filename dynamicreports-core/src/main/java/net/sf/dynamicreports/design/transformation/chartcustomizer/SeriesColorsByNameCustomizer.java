@@ -63,14 +63,14 @@ public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {
         this.seriesColorsByName = seriesColorsByName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot()
-                                                 .getRenderer();
-            CategoryDataset dataset = chart.getCategoryPlot()
-                                           .getDataset();
+            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
+            CategoryDataset dataset = chart.getCategoryPlot().getDataset();
             Set<String> legend = new LinkedHashSet<String>();
             if (dataset != null) {
                 for (int i = 0; i < dataset.getRowCount(); i++) {
@@ -87,8 +87,7 @@ public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {
                 for (String item : legend) {
                     legendItems.add(new LegendItem(item, seriesColorsByName.get(item)));
                 }
-                chart.getCategoryPlot()
-                     .setFixedLegendItems(legendItems);
+                chart.getCategoryPlot().setFixedLegendItems(legendItems);
             }
         } else if (chart.getPlot() instanceof PiePlot) {
             PiePlot plot = (PiePlot) chart.getPlot();
@@ -98,10 +97,8 @@ public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {
                 plot.setSectionPaint(key, seriesColorsByName.get(key));
             }
         } else if (chart.getPlot() instanceof XYPlot) {
-            XYItemRenderer renderer = chart.getXYPlot()
-                                           .getRenderer();
-            XYDataset dataset = chart.getXYPlot()
-                                     .getDataset();
+            XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+            XYDataset dataset = chart.getXYPlot().getDataset();
             for (int i = 0; i < dataset.getSeriesCount(); i++) {
                 String key = (String) dataset.getSeriesKey(i);
                 renderer.setSeriesPaint(i, seriesColorsByName.get(key));

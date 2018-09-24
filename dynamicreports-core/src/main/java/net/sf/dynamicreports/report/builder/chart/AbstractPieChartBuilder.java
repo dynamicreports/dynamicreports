@@ -68,7 +68,7 @@ public abstract class AbstractPieChartBuilder<T extends AbstractPieChartBuilder<
     /**
      * <p>setKey.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a T object.
      */

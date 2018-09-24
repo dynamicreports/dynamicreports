@@ -41,32 +41,40 @@ public class DRDesignSimpleExpression extends AbstractDesignSimpleExpression {
      * <p>Constructor for DRDesignSimpleExpression.</p>
      *
      * @param simpleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISimpleExpression} object.
-     * @param parameterName a {@link java.lang.String} object.
+     * @param parameterName    a {@link java.lang.String} object.
      */
     public DRDesignSimpleExpression(DRISimpleExpression<?> simpleExpression, String parameterName) {
         this.simpleExpression = simpleExpression;
         this.parameterName = parameterName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object evaluate(ReportParameters reportParameters) {
         return simpleExpression.evaluate(reportParameters);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return simpleExpression.getValueClass();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return simpleExpression.getName();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getParameterName() {
         return parameterName;

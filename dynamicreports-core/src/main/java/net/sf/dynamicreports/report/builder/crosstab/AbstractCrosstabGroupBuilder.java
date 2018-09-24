@@ -57,7 +57,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * <p>Constructor for AbstractCrosstabGroupBuilder.</p>
      *
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column        a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param crosstabGroup a U object.
      */
     protected AbstractCrosstabGroupBuilder(ValueColumnBuilder<?, V> column, U crosstabGroup) {
@@ -65,30 +65,27 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
         Validate.notNull(column, "column must not be null");
         DRValueColumn<V> col = column.getColumn();
         getObject().setExpression(col);
-        getObject().setDataType(col.getComponent()
-                                   .getDataType());
-        getObject().setHeaderPattern(col.getComponent()
-                                        .getPattern());
+        getObject().setDataType(col.getComponent().getDataType());
+        getObject().setHeaderPattern(col.getComponent().getPattern());
     }
 
     /**
      * <p>Constructor for AbstractCrosstabGroupBuilder.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field         a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param crosstabGroup a U object.
      */
     protected AbstractCrosstabGroupBuilder(FieldBuilder<V> field, U crosstabGroup) {
         super(crosstabGroup);
         Validate.notNull(field, "field must not be null");
         getObject().setExpression(field.getField());
-        getObject().setDataType(field.getField()
-                                     .getDataType());
+        getObject().setDataType(field.getField().getDataType());
     }
 
     /**
      * <p>Constructor for AbstractCrosstabGroupBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression    a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param crosstabGroup a U object.
      */
     protected AbstractCrosstabGroupBuilder(DRIExpression<V> expression, U crosstabGroup) {
@@ -113,9 +110,9 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * <p>setHeaderHorizontalAlignment.</p>
      *
-     * @deprecated use setHeaderHorizontalTextAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a T object.
+     * @deprecated use setHeaderHorizontalTextAlignment instead
      */
     @Deprecated
     public T setHeaderHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
@@ -163,8 +160,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Sets the crosstab group header hyperlink.
      *
-     * @param hyperLink
-     *          the group header hyperlink
+     * @param hyperLink the group header hyperlink
      * @return a crosstab group builder
      */
     public T setHeaderHyperLink(HyperLinkBuilder hyperLink) {
@@ -194,8 +190,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the header group.
      *
-     * @param propertyExpression
-     *          the property expression
+     * @param propertyExpression the property expression
      * @return a crosstab group builder
      */
     public T addHeaderProperty(DRIPropertyExpression propertyExpression) {
@@ -206,10 +201,8 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the header group.
      *
-     * @param name
-     *          the property name
-     * @param valueExpression
-     *          the property value expression
+     * @param name            the property name
+     * @param valueExpression the property value expression
      * @return a crosstab group builder
      */
     public T addHeaderProperty(String name, DRIExpression<String> valueExpression) {
@@ -220,10 +213,8 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the header group.
      *
-     * @param name
-     *          the property name
-     * @param value
-     *          the property value
+     * @param name  the property name
+     * @param value the property value
      * @return a crosstab group builder
      */
     public T addHeaderProperty(String name, String value) {
@@ -304,8 +295,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the total header group.
      *
-     * @param propertyExpression
-     *          the property expression
+     * @param propertyExpression the property expression
      * @return a crosstab group builder
      */
     public T addTotalHeaderProperty(DRIPropertyExpression propertyExpression) {
@@ -316,10 +306,8 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the total header group.
      *
-     * @param name
-     *          the property name
-     * @param valueExpression
-     *          the property value expression
+     * @param name            the property name
+     * @param valueExpression the property value expression
      * @return a crosstab group builder
      */
     public T addTotalHeaderProperty(String name, DRIExpression<String> valueExpression) {
@@ -330,10 +318,8 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     /**
      * Adds a jasper property to the total header group.
      *
-     * @param name
-     *          the property name
-     * @param value
-     *          the property value
+     * @param name  the property name
+     * @param value the property value
      * @return a crosstab group builder
      */
     public T addTotalHeaderProperty(String name, String value) {
@@ -405,7 +391,9 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
         return (T) this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getObject().getName();

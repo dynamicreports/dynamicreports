@@ -103,11 +103,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      */
     public T setTopBorder(PenBuilder topPen) {
         if (topPen != null) {
-            getObject().getBorder()
-                       .setTopPen(topPen.build());
+            getObject().getBorder().setTopPen(topPen.build());
         } else {
-            getObject().getBorder()
-                       .setTopPen(null);
+            getObject().getBorder().setTopPen(null);
         }
         return (T) this;
     }
@@ -120,11 +118,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      */
     public T setLeftBorder(PenBuilder leftPen) {
         if (leftPen != null) {
-            getObject().getBorder()
-                       .setLeftPen(leftPen.build());
+            getObject().getBorder().setLeftPen(leftPen.build());
         } else {
-            getObject().getBorder()
-                       .setLeftPen(null);
+            getObject().getBorder().setLeftPen(null);
         }
         return (T) this;
     }
@@ -137,11 +133,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      */
     public T setBottomBorder(PenBuilder bottomPen) {
         if (bottomPen != null) {
-            getObject().getBorder()
-                       .setBottomPen(bottomPen.build());
+            getObject().getBorder().setBottomPen(bottomPen.build());
         } else {
-            getObject().getBorder()
-                       .setBottomPen(null);
+            getObject().getBorder().setBottomPen(null);
         }
         return (T) this;
     }
@@ -154,11 +148,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      */
     public T setRightBorder(PenBuilder rightPen) {
         if (rightPen != null) {
-            getObject().getBorder()
-                       .setRightPen(rightPen.build());
+            getObject().getBorder().setRightPen(rightPen.build());
         } else {
-            getObject().getBorder()
-                       .setRightPen(null);
+            getObject().getBorder().setRightPen(null);
         }
         return (T) this;
     }
@@ -194,8 +186,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setBold(Boolean bold) {
-        getObject().getFont()
-                   .setBold(bold);
+        getObject().getFont().setBold(bold);
         return (T) this;
     }
 
@@ -206,8 +197,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setFontName(String fontName) {
-        getObject().getFont()
-                   .setFontName(fontName);
+        getObject().getFont().setFontName(fontName);
         return (T) this;
     }
 
@@ -218,8 +208,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setFontSize(Integer fontSize) {
-        getObject().getFont()
-                   .setFontSize(fontSize);
+        getObject().getFont().setFontSize(fontSize);
         return (T) this;
     }
 
@@ -239,8 +228,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setItalic(Boolean italic) {
-        getObject().getFont()
-                   .setItalic(italic);
+        getObject().getFont().setItalic(italic);
         return (T) this;
     }
 
@@ -261,8 +249,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @param pdfEmbedded a {@link java.lang.Boolean} object.
      * @return a T object.
      */ public T setPdfEmbedded(Boolean pdfEmbedded) {
-        getObject().getFont()
-                   .setPdfEmbedded(pdfEmbedded);
+        getObject().getFont().setPdfEmbedded(pdfEmbedded);
         return (T) this;
     }
 
@@ -273,8 +260,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @param pdfEncoding a {@link java.lang.String} object.
      * @return a T object.
      */ public T setPdfEncoding(String pdfEncoding) {
-        getObject().getFont()
-                   .setPdfEncoding(pdfEncoding);
+        getObject().getFont().setPdfEncoding(pdfEncoding);
         return (T) this;
     }
 
@@ -285,8 +271,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @param pdfFontName a {@link java.lang.String} object.
      * @return a T object.
      */ public T setPdfFontName(String pdfFontName) {
-        getObject().getFont()
-                   .setPdfFontName(pdfFontName);
+        getObject().getFont().setPdfFontName(pdfFontName);
         return (T) this;
     }
 
@@ -306,8 +291,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setStrikeThrough(Boolean strikeThrough) {
-        getObject().getFont()
-                   .setStrikeThrough(strikeThrough);
+        getObject().getFont().setStrikeThrough(strikeThrough);
         return (T) this;
     }
 
@@ -327,8 +311,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setUnderline(Boolean underline) {
-        getObject().getFont()
-                   .setUnderline(underline);
+        getObject().getFont().setUnderline(underline);
         return (T) this;
     }
 
@@ -346,9 +329,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
     /**
      * <p>setHorizontalAlignment.</p>
      *
-     * @deprecated use setHorizontalTextAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a T object.
+     * @deprecated use setHorizontalTextAlignment instead
      */
     @Deprecated
     public T setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
@@ -425,8 +408,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setTopPadding(Integer top) {
-        getObject().getPadding()
-                   .setTop(top);
+        getObject().getPadding().setTop(top);
         return (T) this;
     }
 
@@ -437,8 +419,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setLeftPadding(Integer left) {
-        getObject().getPadding()
-                   .setLeft(left);
+        getObject().getPadding().setLeft(left);
         return (T) this;
     }
 
@@ -449,8 +430,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setBottomPadding(Integer bottom) {
-        getObject().getPadding()
-                   .setBottom(bottom);
+        getObject().getPadding().setBottom(bottom);
         return (T) this;
     }
 
@@ -461,8 +441,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setRightPadding(Integer right) {
-        getObject().getPadding()
-                   .setRight(right);
+        getObject().getPadding().setRight(right);
         return (T) this;
     }
 
@@ -502,10 +481,10 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
     /**
      * <p>setAlignment.</p>
      *
-     * @deprecated use setTextAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalAlignment} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalAlignment} object.
      * @return a T object.
+     * @deprecated use setTextAlignment instead
      */
     @Deprecated
     public T setAlignment(HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment) {
@@ -526,7 +505,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * <p>setTextAlignment.</p>
      *
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
-     * @param verticalTextAlignment a {@link net.sf.dynamicreports.report.constant.VerticalTextAlignment} object.
+     * @param verticalTextAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalTextAlignment} object.
      * @return a T object.
      */
     public T setTextAlignment(HorizontalTextAlignment horizontalTextAlignment, VerticalTextAlignment verticalTextAlignment) {
@@ -539,7 +518,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * <p>setImageAlignment.</p>
      *
      * @param horizontalImageAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalImageAlignment} object.
-     * @param verticalImageAlignment a {@link net.sf.dynamicreports.report.constant.VerticalImageAlignment} object.
+     * @param verticalImageAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalImageAlignment} object.
      * @return a T object.
      */
     public T setImageAlignment(HorizontalImageAlignment horizontalImageAlignment, VerticalImageAlignment verticalImageAlignment) {
@@ -551,9 +530,9 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
     /**
      * <p>setVerticalAlignment.</p>
      *
-     * @deprecated use setVerticalTextAlignment instead
      * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalAlignment} object.
      * @return a T object.
+     * @deprecated use setVerticalTextAlignment instead
      */
     @Deprecated
     public T setVerticalAlignment(VerticalAlignment verticalAlignment) {
@@ -605,8 +584,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setLineSpacing(LineSpacing lineSpacing) {
-        getObject().getParagraph()
-                   .setLineSpacing(lineSpacing);
+        getObject().getParagraph().setLineSpacing(lineSpacing);
         return (T) this;
     }
 
@@ -617,8 +595,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setLineSpacingSize(Float lineSpacingSize) {
-        getObject().getParagraph()
-                   .setLineSpacingSize(lineSpacingSize);
+        getObject().getParagraph().setLineSpacingSize(lineSpacingSize);
         return (T) this;
     }
 
@@ -629,8 +606,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setFirstLineIndent(Integer firstLineIndent) {
-        getObject().getParagraph()
-                   .setFirstLineIndent(firstLineIndent);
+        getObject().getParagraph().setFirstLineIndent(firstLineIndent);
         return (T) this;
     }
 
@@ -641,8 +617,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setLeftIndent(Integer leftIndent) {
-        getObject().getParagraph()
-                   .setLeftIndent(leftIndent);
+        getObject().getParagraph().setLeftIndent(leftIndent);
         return (T) this;
     }
 
@@ -653,8 +628,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setRightIndent(Integer rightIndent) {
-        getObject().getParagraph()
-                   .setRightIndent(rightIndent);
+        getObject().getParagraph().setRightIndent(rightIndent);
         return (T) this;
     }
 
@@ -665,8 +639,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setSpacingBefore(Integer spacingBefore) {
-        getObject().getParagraph()
-                   .setSpacingBefore(spacingBefore);
+        getObject().getParagraph().setSpacingBefore(spacingBefore);
         return (T) this;
     }
 
@@ -677,8 +650,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setSpacingAfter(Integer spacingAfter) {
-        getObject().getParagraph()
-                   .setSpacingAfter(spacingAfter);
+        getObject().getParagraph().setSpacingAfter(spacingAfter);
         return (T) this;
     }
 
@@ -689,15 +661,14 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      * @return a T object.
      */
     public T setTabStopWidth(Integer tabStopWidth) {
-        getObject().getParagraph()
-                   .setTabStopWidth(tabStopWidth);
+        getObject().getParagraph().setTabStopWidth(tabStopWidth);
         return (T) this;
     }
 
     /**
      * <p>addTabStop.</p>
      *
-     * @param position a int.
+     * @param position  a int.
      * @param alignment a {@link net.sf.dynamicreports.report.constant.TabStopAlignment} object.
      * @return a T object.
      */
@@ -706,9 +677,7 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
         DRTabStop tabStop = new DRTabStop();
         tabStop.setPosition(position);
         tabStop.setAlignment(alignment);
-        getObject().getParagraph()
-                   .getTabStops()
-                   .add(tabStop);
+        getObject().getParagraph().getTabStops().add(tabStop);
         return (T) this;
     }
 

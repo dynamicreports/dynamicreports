@@ -62,7 +62,7 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
     /**
      * <p>Constructor for JasperPrintListFileHandler.</p>
      *
-     * @param directory a {@link java.lang.String} object.
+     * @param directory   a {@link java.lang.String} object.
      * @param virtualizer a {@link net.sf.jasperreports.engine.JRVirtualizer} object.
      */
     public JasperPrintListFileHandler(String directory, JRVirtualizer virtualizer) {
@@ -74,7 +74,9 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
         tempFiles = new ArrayList<File>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void add(JasperPrint jasperPrint) {
         try {
@@ -88,13 +90,17 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<JasperPrint> getPrintList() {
         return printList;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void finalize() throws Throwable {
         for (File tempFile : tempFiles) {

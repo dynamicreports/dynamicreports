@@ -36,7 +36,9 @@ public class DRDesignChartTitle extends DRDesignChartSubtitle implements DRIDesi
 
     private Position position;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position getPosition() {
         return position;

@@ -58,8 +58,7 @@ public class ColumnGridTest extends AbstractJasperPositionTest implements Serial
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setTextStyle(stl.style()
-                           .setPadding(1))
+        rb.setTextStyle(stl.style().setPadding(1))
           .columnGrid(ListType.HORIZONTAL_FLOW)
           .columns(column1 = col.column("Column1", "field1", Integer.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class),
                    column4 = col.column("Column4", "field4", Integer.class), column5 = col.column("Column5", "field5", Integer.class), column6 = col.column("Column6", "field6", Integer.class),
