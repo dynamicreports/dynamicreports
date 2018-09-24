@@ -186,16 +186,16 @@
                         <version>0.14.0</version>
                         <configuration>
                             <schemaIncludes>
-                                <schemaInclude>**/dynamicreports.xsd</schemaInclude>
+                                <schemaInclude>**/adhocconfiguration.xsd</schemaInclude>
                             </schemaIncludes>
                             <bindingIncludes>
-                                <bindingInclude>**/dynamicreports.xjb</bindingInclude>
+                                <bindingInclude>**/adhocconfiguration.xjb</bindingInclude>
                             </bindingIncludes>
                             <removeOldOutput>true</removeOldOutput>
                         </configuration>
                         <executions>
                             <execution>
-                                <id>jaxb</id>
+                                <id>jaxb23</id>
                                 <phase>generate-sources</phase>
                                 <goals>
                                     <goal>generate</goal>
@@ -210,10 +210,10 @@
                         <version>0.13.1</version>
                         <configuration>
                             <schemaIncludes>
-                                <schemaInclude>**/dynamicreports.xsd</schemaInclude>
+                                <schemaInclude>**/adhocconfiguration.xsd</schemaInclude>
                             </schemaIncludes>
                             <bindingIncludes>
-                                <bindingInclude>**/dynamicreports.xjb</bindingInclude>
+                                <bindingInclude>**/adhocconfiguration.xjb</bindingInclude>
                             </bindingIncludes>
                             <removeOldOutput>true</removeOldOutput>
                         </configuration>
