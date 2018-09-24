@@ -52,13 +52,10 @@ public class ListBackgroundComponentTest extends AbstractJasperPositionTest {
         rb.setTemplate(template)
           .setTitleBackgroundComponent(background)
           .setSummaryBackgroundComponent(background)
-          .title(cmp.text("title")
-                    .setFixedHeight(300))
+          .title(cmp.text("title").setFixedHeight(300))
           .columns(column = col.column("field1", String.class))
-          .summary(cmp.text("text\ntext"), cmp.horizontalList(cmp.text("text"), cmp.horizontalList(cmp.text("text"), cmp.text("text"))
-                                                                                   .setBackgroundComponent(background), cmp.text("text")), cmp.verticalList(cmp.text("text"), cmp.text("text"))
-                                                                                                                                              .setStyle(stl.style(5))
-                                                                                                                                              .setBackgroundComponent(background));
+          .summary(cmp.text("text\ntext"), cmp.horizontalList(cmp.text("text"), cmp.horizontalList(cmp.text("text"), cmp.text("text")).setBackgroundComponent(background), cmp.text("text")),
+                   cmp.verticalList(cmp.text("text"), cmp.text("text")).setStyle(stl.style(5)).setBackgroundComponent(background));
     }
 
     @Override

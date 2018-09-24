@@ -47,8 +47,7 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
         SubreportBuilder subreport1 = cmp.subreport(subreport1());
         subreport1.setDataSource(createSubreport1DataSource());
 
-        rb.fields(field("f1", Integer.class))
-          .detail(subreport1);
+        rb.fields(field("f1", Integer.class)).detail(subreport1);
     }
 
     @Override
@@ -73,9 +72,7 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
         SubreportBuilder subreport2 = cmp.subreport(subreport2());
 
         JasperReportBuilder report = report();
-        report.fields(field("f2", Integer.class))
-              .setPageMargin(margin(0))
-              .detail(subreport2);
+        report.fields(field("f2", Integer.class)).setPageMargin(margin(0)).detail(subreport2);
         return report;
     }
 
@@ -89,8 +86,7 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
 
     private JasperReportBuilder subreport2() {
         JasperReportBuilder report = report();
-        report.setPageMargin(margin(0))
-              .title(cmp.text(new SubreportTitle()));
+        report.setPageMargin(margin(0)).title(cmp.text(new SubreportTitle()));
         return report;
     }
 
@@ -100,12 +96,9 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
         @Override
         public String evaluate(ReportParameters reportParameters) {
             String result = "";
-            result += reportParameters.getMasterParameters()
-                                      .getMasterParameters()
-                                      .getValue("f1");
+            result += reportParameters.getMasterParameters().getMasterParameters().getValue("f1");
             result += " ";
-            result += reportParameters.getMasterParameters()
-                                      .getValue("f2");
+            result += reportParameters.getMasterParameters().getValue("f2");
             return result;
         }
 

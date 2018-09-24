@@ -45,9 +45,7 @@ public class ChartData2Test extends AbstractJasperChartTest implements Serializa
         TextColumnBuilder<Integer> column3;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class))
-          .summary(cht.barChart()
-                      .setCategory(column1)
-                      .series(cht.serie(column2), cht.serie(column3)));
+          .summary(cht.barChart().setCategory(column1).series(cht.serie(column2), cht.serie(column3)));
     }
 
     @Override

@@ -49,12 +49,8 @@ public class ChartVariableTest extends AbstractJasperChartTest implements Serial
 
         VariableBuilder<Integer> variable = variable(column2, Calculation.SUM);
         rb.columns(column1, column2)
-          .summary(cht.barChart()
-                      .setCategory(exp.text("category"))
-                      .series(cht.serie(column2), cht.serie(variable), cht.serie(variable)), cht.barChart()
-                                                                                                .setCategory(exp.text("category"))
-                                                                                                .setUseSeriesAsCategory(true)
-                                                                                                .series(cht.serie(column2), cht.serie(variable), cht.serie(variable)));
+          .summary(cht.barChart().setCategory(exp.text("category")).series(cht.serie(column2), cht.serie(variable), cht.serie(variable)),
+                   cht.barChart().setCategory(exp.text("category")).setUseSeriesAsCategory(true).series(cht.serie(column2), cht.serie(variable), cht.serie(variable)));
     }
 
     @Override

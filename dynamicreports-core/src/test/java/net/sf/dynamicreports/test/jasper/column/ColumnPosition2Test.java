@@ -43,12 +43,8 @@ public class ColumnPosition2Test extends AbstractJasperPositionTest {
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         rb.columns(column1 = col.column("Column1", "field1", Integer.class), column2 = col.column("Very very very very very very long Column2 title", "field2", String.class),
-                   column3 = col.column("Column3", "field3", Integer.class), column4 = col.column("Column4", "field4", Integer.class)
-                                                                                          .setWidth(50), column5 = col.column("Column5", "field5", Integer.class))
-          .columnGrid(column1, grid.horizontalColumnGridList()
-                                   .add(column2, column3)
-                                   .newRow()
-                                   .add(column4, column5));
+                   column3 = col.column("Column3", "field3", Integer.class), column4 = col.column("Column4", "field4", Integer.class).setWidth(50),
+                   column5 = col.column("Column5", "field5", Integer.class)).columnGrid(column1, grid.horizontalColumnGridList().add(column2, column3).newRow().add(column4, column5));
     }
 
     @Override

@@ -41,20 +41,10 @@ public class HyperLinkTest extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        HyperLinkBuilder hyperLink1 = hyperLink().setReference("reference")
-                                                 .setTooltip("tooltip")
-                                                 .setAnchor("anchor")
-                                                 .setPage(1)
-                                                 .setType(HyperLinkType.LOCAL_ANCHOR)
-                                                 .setTarget(HyperLinkTarget.TOP);
-        HyperLinkBuilder hyperLink2 = hyperLink().setType("customType")
-                                                 .setTarget("customTarget");
+        HyperLinkBuilder hyperLink1 = hyperLink().setReference("reference").setTooltip("tooltip").setAnchor("anchor").setPage(1).setType(HyperLinkType.LOCAL_ANCHOR).setTarget(HyperLinkTarget.TOP);
+        HyperLinkBuilder hyperLink2 = hyperLink().setType("customType").setTarget("customTarget");
 
-        rb.title(cmp.text("title 1")
-                    .setHyperLink(hyperLink1)
-                    .setAnchorName("anchorName")
-                    .setBookmarkLevel(1), cmp.text("title 2")
-                                             .setHyperLink(hyperLink2));
+        rb.title(cmp.text("title 1").setHyperLink(hyperLink1).setAnchorName("anchorName").setBookmarkLevel(1), cmp.text("title 2").setHyperLink(hyperLink2));
     }
 
     @Override

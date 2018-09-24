@@ -81,20 +81,15 @@ public class DataTypeTest {
 
     public <U, T extends U> void detectTypeTest(DRIDataType<U, T> dataType, Class<T> valueClass) throws DRException {
         detectTypeTest(dataType, valueClass.getSimpleName());
-        Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(valueClass.getName())
-                                                                         .getClass());
-        Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(valueClass)
-                                                                         .getClass());
+        Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(valueClass.getName()).getClass());
+        Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(valueClass).getClass());
     }
 
     public <U, T extends U> void detectTypeTest(DRIDataType<U, T> dataType, String... dataTypes) throws DRException {
         for (String stringDataType : dataTypes) {
-            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType)
-                                                                             .getClass());
-            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType.toLowerCase())
-                                                                             .getClass());
-            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType.toUpperCase())
-                                                                             .getClass());
+            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType).getClass());
+            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType.toLowerCase()).getClass());
+            Assert.assertEquals("Detect data type", dataType.getClass(), type.detectType(stringDataType.toUpperCase()).getClass());
         }
     }
 
@@ -138,8 +133,7 @@ public class DataTypeTest {
         try {
             String stringResult = dataType.valueToString(value, Locale.ENGLISH);
             U stringToValue = dataType.stringToValue(stringValue, Locale.ENGLISH);
-            Assert.assertTrue(name + " stringToValue class ", stringToValue.getClass()
-                                                                           .equals(dataType.getValueClass()));
+            Assert.assertTrue(name + " stringToValue class ", stringToValue.getClass().equals(dataType.getValueClass()));
             Assert.assertEquals(name + " stringToValue", stringResult, dataType.valueToString(stringToValue, Locale.ENGLISH));
         } catch (DRException e) {
             Assert.fail(e.getMessage());

@@ -54,22 +54,13 @@ public class CrosstabStyle5Test extends AbstractJasperCrosstabStyleTest {
         FieldBuilder<String> field1 = field("field1", String.class);
         FieldBuilder<String> field2 = field("field2", String.class);
 
-        StyleBuilder headerStyle = stl.style()
-                                      .setBackgroundColor(Color.LIGHT_GRAY);
-        StyleBuilder cellStyle = stl.style()
-                                    .bold();
-        StyleBuilder titleStyle = stl.style(cellStyle)
-                                     .setBackgroundColor(Color.BLUE);
+        StyleBuilder headerStyle = stl.style().setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder cellStyle = stl.style().bold();
+        StyleBuilder titleStyle = stl.style(cellStyle).setBackgroundColor(Color.BLUE);
 
-        rowGroup = ctab.rowGroup(field1)
-                       .setHeaderStyle(headerStyle)
-                       .setTotalHeaderStyle(headerStyle);
-        columnGroup1 = ctab.columnGroup(field1)
-                           .setHeaderStyle(headerStyle)
-                           .setTotalHeaderStyle(headerStyle);
-        columnGroup2 = ctab.columnGroup(field2)
-                           .setHeaderStyle(headerStyle)
-                           .setTotalHeaderStyle(headerStyle);
+        rowGroup = ctab.rowGroup(field1).setHeaderStyle(headerStyle).setTotalHeaderStyle(headerStyle);
+        columnGroup1 = ctab.columnGroup(field1).setHeaderStyle(headerStyle).setTotalHeaderStyle(headerStyle);
+        columnGroup2 = ctab.columnGroup(field2).setHeaderStyle(headerStyle).setTotalHeaderStyle(headerStyle);
 
         measure1 = ctab.measure("m1", "field3", Integer.class, Calculation.SUM);
         measure1.setTitleStyle(titleStyle);
@@ -78,8 +69,7 @@ public class CrosstabStyle5Test extends AbstractJasperCrosstabStyleTest {
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setCellWidth(50)
                                        .highlightEvenRows()
-                                       .setGroupTotalStyle(stl.style()
-                                                              .setBackgroundColor(Color.RED))
+                                       .setGroupTotalStyle(stl.style().setBackgroundColor(Color.RED))
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnGroup1, columnGroup2)
                                        .measures(measure1, measure2);

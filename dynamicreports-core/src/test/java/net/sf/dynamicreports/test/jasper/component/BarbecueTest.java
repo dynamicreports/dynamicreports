@@ -41,8 +41,7 @@ public class BarbecueTest extends AbstractJasperTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setTemplate(template().setBarcodeHeight(20)
-                                 .setBarcodeStyle(stl.style(2)))
+        rb.setTemplate(template().setBarcodeHeight(20).setBarcodeStyle(stl.style(2)))
           .title(bcode.barbecue_2of7(exp.jasperSyntaxText("12345678")), bcode.barbecue_3of9(exp.jasperSyntaxText("12345678")), bcode.barbecue_bookland(exp.jasperSyntaxText("1234567890")),
                  bcode.barbecue_codabar(exp.jasperSyntaxText("12345678")), bcode.barbecue_code128(exp.jasperSyntaxText("12345678")), bcode.barbecue_code128A(exp.jasperSyntaxText("12345678")),
                  bcode.barbecue_code128B(exp.jasperSyntaxText("12345678")), bcode.barbecue_code128C(exp.jasperSyntaxText("12345678")), bcode.barbecue_code39(exp.jasperSyntaxText("12345678")),
@@ -51,10 +50,9 @@ public class BarbecueTest extends AbstractJasperTest {
                  bcode.barbecue_monarch(exp.jasperSyntaxText("12345678")), bcode.barbecue_nw7(exp.jasperSyntaxText("12345678")), bcode.barbecue_pdf417(exp.jasperSyntaxText("12345678")),
                  bcode.barbecue_postnet(exp.jasperSyntaxText("12345678")), bcode.barbecue_randomWeightUpca(exp.jasperSyntaxText("12345678901")),
                  bcode.barbecue_scc14ShippingCode(exp.jasperSyntaxText("12345678")), bcode.barbecue_shipmentIdentificationNumber(exp.jasperSyntaxText("12345678")),
-                 bcode.barbecue_sscc18(exp.jasperSyntaxText("12345678")), bcode.barbecue_std2of5(exp.jasperSyntaxText("12345678")), bcode.barbecue_ucc128(exp.jasperSyntaxText("12345678"))
-                                                                                                                                         .setApplicationIdentifierExpression("1"),
-                 bcode.barbecue_upca(exp.jasperSyntaxText("12345678901")), bcode.barbecue_usd3(exp.jasperSyntaxText("12345678")), bcode.barbecue_usd4(exp.jasperSyntaxText("12345678")),
-                 bcode.barbecue_usps(exp.jasperSyntaxText("12345678")),
+                 bcode.barbecue_sscc18(exp.jasperSyntaxText("12345678")), bcode.barbecue_std2of5(exp.jasperSyntaxText("12345678")),
+                 bcode.barbecue_ucc128(exp.jasperSyntaxText("12345678")).setApplicationIdentifierExpression("1"), bcode.barbecue_upca(exp.jasperSyntaxText("12345678901")),
+                 bcode.barbecue_usd3(exp.jasperSyntaxText("12345678")), bcode.barbecue_usd4(exp.jasperSyntaxText("12345678")), bcode.barbecue_usps(exp.jasperSyntaxText("12345678")),
 
                  bcode.barbecue_ucc128("12345678")
                       .setFixedHeight(50)
@@ -106,11 +104,9 @@ public class BarbecueTest extends AbstractJasperTest {
         testBarbecue(27, "USD4");
         testBarbecue(28, "USPS");
 
-        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle()
-                                                                                   .getElementByKey("title.barbecue29");
+        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue29");
         BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
-        Assert.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression()
-                                                                                 .getText());
+        Assert.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
         Assert.assertTrue("Barbecue draw text", component.isDrawText());
         Assert.assertTrue("Barbecue checksum required", component.isChecksumRequired());
         Assert.assertEquals("Barbecue bar width", new Integer(2), component.getBarWidth());
@@ -119,12 +115,9 @@ public class BarbecueTest extends AbstractJasperTest {
     }
 
     private void testBarbecue(int index, String type) {
-        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle()
-                                                                                   .getElementByKey("title.barbecue" + index);
+        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue" + index);
         BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
         Assert.assertEquals("Barbecue type ", type, component.getType());
-        Assert.assertTrue("Barbecue code ", component.getCodeExpression()
-                                                     .getText()
-                                                     .contains("12345678"));
+        Assert.assertTrue("Barbecue code ", component.getCodeExpression().getText().contains("12345678"));
     }
 }

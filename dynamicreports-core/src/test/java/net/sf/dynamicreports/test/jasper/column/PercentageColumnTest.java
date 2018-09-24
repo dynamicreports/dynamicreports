@@ -54,9 +54,8 @@ public class PercentageColumnTest extends AbstractJasperValueTest implements Ser
 
         rb.setLocale(Locale.ENGLISH)
           .fields(field("field1", Integer.class))
-          .columns(column2 = col.column("field2", Integer.class), percentage1 = col.percentageColumn("field1", Integer.class), percentage2 = col.percentageColumn(column2), percentage3 =
-              col.percentageColumn("field3", Integer.class)
-                 .setValueFormatter(new ColumnValueFormatter()));
+          .columns(column2 = col.column("field2", Integer.class), percentage1 = col.percentageColumn("field1", Integer.class), percentage2 = col.percentageColumn(column2),
+                   percentage3 = col.percentageColumn("field3", Integer.class).setValueFormatter(new ColumnValueFormatter()));
     }
 
     @Override

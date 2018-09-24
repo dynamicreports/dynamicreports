@@ -37,11 +37,9 @@ public class BooleanColumnPosition5Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setColumnStyle(stl.style()
-                             .setPadding(2))
+        rb.setColumnStyle(stl.style().setPadding(2))
           .highlightDetailEvenRows()
-          .columns(col.booleanColumn("1", "field1"), col.booleanColumn("1", "field1")
-                                                        .setComponentType(BooleanComponentType.IMAGE_STYLE_1));
+          .columns(col.booleanColumn("1", "field1"), col.booleanColumn("1", "field1").setComponentType(BooleanComponentType.IMAGE_STYLE_1));
     }
 
     @Override

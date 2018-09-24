@@ -55,28 +55,19 @@ public class TemplateStyle4Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textFieldStyle1 = stl.style(stl.templateStyle("boldStyle"))
-                                          .setName("textFieldStyle1")
-                                          .setFontSize(15);
-        StyleBuilder textFieldStyle2 = stl.style(stl.templateStyle("boldStyle"))
-                                          .setFontSize(10);
+        StyleBuilder textFieldStyle1 = stl.style(stl.templateStyle("boldStyle")).setName("textFieldStyle1").setFontSize(15);
+        StyleBuilder textFieldStyle2 = stl.style(stl.templateStyle("boldStyle")).setFontSize(10);
 
-        ReportTemplateBuilder template = template().addTemplateStyle(textFieldStyle1)
-                                                   .templateStyles(stl.loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate2.jrtx")));
+        ReportTemplateBuilder template = template().addTemplateStyle(textFieldStyle1).templateStyles(stl.loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate2.jrtx")));
 
         rb.setTemplate(template)
           .setTextStyle(stl.templateStyle("textStyle"))
           .setColumnTitleStyle(stl.templateStyle("titleStyle"))
           .setSubtotalStyle(stl.templateStyle("subtotalStyle"))
-          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType())
-                                                                                               .setStyle(stl.templateStyle("boldStyle")))
-          .title(cmp.text("text")
-                    .setStyle(stl.templateStyle("textFieldStyle1")), cmp.text("text")
-                                                                        .setStyle(textFieldStyle2))
+          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType()).setStyle(stl.templateStyle("boldStyle")))
+          .title(cmp.text("text").setStyle(stl.templateStyle("textFieldStyle1")), cmp.text("text").setStyle(textFieldStyle2))
           .groupBy(group1 = grp.group(column2))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1)
-                                             .setLabel("total")
-                                             .setLabelStyle(stl.templateStyle("boldStyle")));
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column1).setLabel("total").setLabelStyle(stl.templateStyle("boldStyle")));
     }
 
     @Override

@@ -62,18 +62,14 @@ public class MultiPageList4Test extends AbstractJasperValueTest {
         numberOfPagesTest(2);
 
         int count = 0;
-        for (JRPrintElement element : getJasperPrint().getPages()
-                                                      .get(0)
-                                                      .getElements()) {
+        for (JRPrintElement element : getJasperPrint().getPages().get(0).getElements()) {
             if (element instanceof JRPrintText) {
                 count++;
             }
         }
         Assert.assertEquals("MultipageList split type", 3, count);
         count = 0;
-        for (JRPrintElement element : getJasperPrint().getPages()
-                                                      .get(1)
-                                                      .getElements()) {
+        for (JRPrintElement element : getJasperPrint().getPages().get(1).getElements()) {
             if (element instanceof JRPrintText) {
                 count++;
             }
@@ -83,8 +79,7 @@ public class MultiPageList4Test extends AbstractJasperValueTest {
 
     private JasperReportBuilder createSubreport() {
         JasperReportBuilder report = report();
-        report.columns(column1)
-              .setDataSource(createSubreportDataSource());
+        report.columns(column1).setDataSource(createSubreportDataSource());
 
         return report;
     }

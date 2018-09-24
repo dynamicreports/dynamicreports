@@ -66,76 +66,27 @@ public class ShowValuesChartDataTest extends AbstractJasperChartTest implements 
         rb.setPageFormat(PageType.A2, PageOrientation.PORTRAIT)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class),
                    column4 = col.column("Column4", "field4", Date.class))
-          .summary(cmp.horizontalList(cht.barChart()
-                                         .setShowValues(true)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3)), cht.bar3DChart()
-                                                                                             .setShowValues(true)
-                                                                                             .setValuePattern("#,##0.#")
-                                                                                             .setCategory(column1)
-                                                                                             .series(cht.serie(column2), cht.serie(column3))
-                                                                                             .setValueAxisFormat(cht.axisFormat()
-                                                                                                                    .setRangeMaxValueExpression(6)), cht.stackedBarChart()
-                                                                                                                                                        .setShowValues(true)
-                                                                                                                                                        .setCategory(column1)
-                                                                                                                                                        .series(cht.serie(column2), cht.serie(column3)),
-                                      cht.stackedBar3DChart()
-                                         .setShowValues(true)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3))), cmp.horizontalList(cht.areaChart()
-                                                                                                                 .setShowValues(true)
-                                                                                                                 .setCategory(column1)
-                                                                                                                 .series(cht.serie(column3), cht.serie(column2)), cht.lineChart()
-                                                                                                                                                                     .setShowValues(true)
-                                                                                                                                                                     .setCategory(column1)
-                                                                                                                                                                     .series(cht.serie(column2),
-                                                                                                                                                                             cht.serie(column3)),
-                                                                                                              cht.groupedStackedBarChart()
-                                                                                                                 .setShowValues(true)
-                                                                                                                 .setCategory(column1)
-                                                                                                                 .series(cht.groupedSerie(column2)
-                                                                                                                            .setGroup(column1)
-                                                                                                                            .setSeries(column1))), cmp.horizontalList(cht.pieChart()
-                                                                                                                                                                         .setShowValues(true)
-                                                                                                                                                                         .setKey(column1)
-                                                                                                                                                                         .series(cht.serie(column2)),
-                                                                                                                                                                      cht.pie3DChart()
-                                                                                                                                                                         .setShowValues(true)
-                                                                                                                                                                         .setValuePattern("#,##0.#")
-                                                                                                                                                                         .setKey(column1)
-                                                                                                                                                                         .series(cht.serie(column2))),
-                   cmp.horizontalList(cht.xyBarChart()
-                                         .setShowValues(true)
-                                         .setXValue(column2)
-                                         .series(cht.xySerie(column3)), cht.xyLineChart()
-                                                                           .setShowValues(true)
-                                                                           .setValuePattern("#,##0.#")
-                                                                           .setXValue(column2)
-                                                                           .series(cht.xySerie(column3)), cht.scatterChart()
-                                                                                                             .setShowValues(true)
-                                                                                                             .setXValue(column2)
-                                                                                                             .series(cht.xySerie(column3))), cmp.horizontalList(cht.timeSeriesChart()
-                                                                                                                                                                   .setShowValues(true)
-                                                                                                                                                                   .setTimePeriod(column4)
-                                                                                                                                                                   .series(cht.serie(column2),
-                                                                                                                                                                           cht.serie(column3))
-                                                                                                                                                                   .setTimePeriodType(TimePeriod.DAY),
-                                                                                                                                                                cht.differenceChart()
-                                                                                                                                                                   .setShowValues(true)
-                                                                                                                                                                   .setTimePeriod(column4)
-                                                                                                                                                                   .series(cht.serie(column2),
-                                                                                                                                                                           cht.serie(column3))
-                                                                                                                                                                   .setTimePeriodType(TimePeriod.DAY),
-                                                                                                                                                                cht.xyStepChart()
-                                                                                                                                                                   .setShowValues(true)
-                                                                                                                                                                   .setValuePattern("#,##0.#")
-                                                                                                                                                                   .setXValue(column2)
-                                                                                                                                                                   .series(cht.xySerie(column3)),
-                                                                                                                                                                cht.waterfallBarChart()
-                                                                                                                                                                   .setShowValues(true)
-                                                                                                                                                                   .setValuePattern("#,##0.#")
-                                                                                                                                                                   .setCategory(column1)
-                                                                                                                                                                   .series(cht.serie(column2))));
+          .summary(cmp.horizontalList(cht.barChart().setShowValues(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)), cht.bar3DChart()
+                                                                                                                                                 .setShowValues(true)
+                                                                                                                                                 .setValuePattern("#,##0.#")
+                                                                                                                                                 .setCategory(column1)
+                                                                                                                                                 .series(cht.serie(column2), cht.serie(column3))
+                                                                                                                                                 .setValueAxisFormat(
+                                                                                                                                                     cht.axisFormat().setRangeMaxValueExpression(6)),
+                                      cht.stackedBarChart().setShowValues(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.stackedBar3DChart().setShowValues(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3))),
+                   cmp.horizontalList(cht.areaChart().setShowValues(true).setCategory(column1).series(cht.serie(column3), cht.serie(column2)),
+                                      cht.lineChart().setShowValues(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.groupedStackedBarChart().setShowValues(true).setCategory(column1).series(cht.groupedSerie(column2).setGroup(column1).setSeries(column1))),
+                   cmp.horizontalList(cht.pieChart().setShowValues(true).setKey(column1).series(cht.serie(column2)),
+                                      cht.pie3DChart().setShowValues(true).setValuePattern("#,##0.#").setKey(column1).series(cht.serie(column2))),
+                   cmp.horizontalList(cht.xyBarChart().setShowValues(true).setXValue(column2).series(cht.xySerie(column3)),
+                                      cht.xyLineChart().setShowValues(true).setValuePattern("#,##0.#").setXValue(column2).series(cht.xySerie(column3)),
+                                      cht.scatterChart().setShowValues(true).setXValue(column2).series(cht.xySerie(column3))),
+                   cmp.horizontalList(cht.timeSeriesChart().setShowValues(true).setTimePeriod(column4).series(cht.serie(column2), cht.serie(column3)).setTimePeriodType(TimePeriod.DAY),
+                                      cht.differenceChart().setShowValues(true).setTimePeriod(column4).series(cht.serie(column2), cht.serie(column3)).setTimePeriodType(TimePeriod.DAY),
+                                      cht.xyStepChart().setShowValues(true).setValuePattern("#,##0.#").setXValue(column2).series(cht.xySerie(column3)),
+                                      cht.waterfallBarChart().setShowValues(true).setValuePattern("#,##0.#").setCategory(column1).series(cht.serie(column2))));
     }
 
     @Override
@@ -148,56 +99,41 @@ public class ShowValuesChartDataTest extends AbstractJasperChartTest implements 
         categoryDataset.addValue(1.191, "row", "column");
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot()
-                                              .getRenderer();
+        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator()
-                                             .generateLabel(categoryDataset, 0, 0));
-        Assert.assertEquals(5.775d, chart.getCategoryPlot()
-                                         .getRangeAxis()
-                                         .getRange()
-                                         .getUpperBound());
+        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals(5.775d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart2", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator()
-                                            .generateLabel(categoryDataset, 0, 0));
-        Assert.assertEquals(6d, chart.getCategoryPlot()
-                                     .getRangeAxis()
-                                     .getRange()
-                                     .getUpperBound());
+        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals(6d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart3", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart4", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart5", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart6", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart7", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
@@ -217,53 +153,42 @@ public class ShowValuesChartDataTest extends AbstractJasperChartTest implements 
         xyDataset.addSeries("key", new double[][] {new double[] {1d}, new double[] {1.191d}});
 
         chart = getChart("summary.chart10", 0);
-        XYItemRenderer renderer2 = chart.getXYPlot()
-                                        .getRenderer();
+        XYItemRenderer renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer2.getBaseItemLabelGenerator()
-                                             .generateLabel(xyDataset, 0, 0));
+        Assert.assertEquals("1.19", renderer2.getBaseItemLabelGenerator().generateLabel(xyDataset, 0, 0));
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart11", 0);
-        renderer2 = chart.getXYPlot()
-                         .getRenderer();
+        renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer2.getBaseItemLabelGenerator()
-                                            .generateLabel(xyDataset, 0, 0));
+        Assert.assertEquals("1.2", renderer2.getBaseItemLabelGenerator().generateLabel(xyDataset, 0, 0));
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart12", 0);
-        renderer2 = chart.getXYPlot()
-                         .getRenderer();
+        renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart13", 0);
-        renderer2 = chart.getXYPlot()
-                         .getRenderer();
+        renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart14", 0);
-        renderer2 = chart.getXYPlot()
-                         .getRenderer();
+        renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart15", 0);
-        renderer2 = chart.getXYPlot()
-                         .getRenderer();
+        renderer2 = chart.getXYPlot().getRenderer();
         Assert.assertNotNull(renderer2.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer2.getBaseItemLabelGenerator()
-                                            .generateLabel(xyDataset, 0, 0));
+        Assert.assertEquals("1.2", renderer2.getBaseItemLabelGenerator().generateLabel(xyDataset, 0, 0));
         Assert.assertTrue(renderer2.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart16", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator()
-                                            .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
     }
 

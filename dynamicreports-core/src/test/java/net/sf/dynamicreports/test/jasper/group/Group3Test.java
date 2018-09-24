@@ -41,8 +41,7 @@ public class Group3Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setShowColumnTitle(false)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class))
-          .groupBy(grp.group(column1)
-                      .setShowColumnHeaderAndFooter(true));
+          .groupBy(grp.group(column1).setShowColumnHeaderAndFooter(true));
     }
 
     @Override

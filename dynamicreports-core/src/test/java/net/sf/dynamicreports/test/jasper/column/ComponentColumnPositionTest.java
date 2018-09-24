@@ -49,9 +49,7 @@ public class ComponentColumnPositionTest extends AbstractJasperPositionTest impl
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", type.stringType()), col.componentColumn(cmp.filler()
-                                                                                                        .setFixedWidth(5)), col.componentColumn(cmp.filler())
-                                                                                                                               .setFixedWidth(5),
+        rb.columns(column1 = col.column("Column1", "field1", type.stringType()), col.componentColumn(cmp.filler().setFixedWidth(5)), col.componentColumn(cmp.filler()).setFixedWidth(5),
                    column3 = col.componentColumn("Column3", cmp.verticalList(cmp.horizontalList(cmp.text("aa"), cmp.text("cc")), cmp.text("aa"))))
           .subtotalsAtSummary(subtotal1 = sbt.customValue(exp.text("subtotal"), column3));
     }

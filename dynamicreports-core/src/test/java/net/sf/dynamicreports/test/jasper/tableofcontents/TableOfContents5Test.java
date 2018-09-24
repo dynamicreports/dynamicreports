@@ -42,8 +42,7 @@ public class TableOfContents5Test extends AbstractJasperValueTest {
 
         rb.tableOfContents()
           .columns(column1 = col.column("Column1", "field1", type.stringType()), col.column("Column2", "field2", type.stringType()))
-          .groupBy(grp.group(column1)
-                      .setAddToTableOfContents(false));
+          .groupBy(grp.group(column1).setAddToTableOfContents(false));
     }
 
     @Override

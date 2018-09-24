@@ -43,8 +43,7 @@ public class GroupPosition1Test extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         TextColumnBuilder<String> column1;
 
-        rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1));
+        rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class)).groupBy(group1 = grp.group(column1));
     }
 
     @Override

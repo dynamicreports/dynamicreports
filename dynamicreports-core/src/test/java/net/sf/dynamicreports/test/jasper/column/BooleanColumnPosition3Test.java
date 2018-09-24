@@ -36,12 +36,8 @@ public class BooleanColumnPosition3Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(col.booleanColumn("C1", "field1")
-                      .setComponentType(BooleanComponentType.TEXT_TRUE_FALSE)
-                      .setFixedWidth(100), col.booleanColumn("C2", "field1")
-                                              .setComponentType(BooleanComponentType.IMAGE_STYLE_1)
-                                              .setFixedWidth(110)
-                                              .setFixedHeight(40));
+        rb.columns(col.booleanColumn("C1", "field1").setComponentType(BooleanComponentType.TEXT_TRUE_FALSE).setFixedWidth(100),
+                   col.booleanColumn("C2", "field1").setComponentType(BooleanComponentType.IMAGE_STYLE_1).setFixedWidth(110).setFixedHeight(40));
     }
 
     @Override

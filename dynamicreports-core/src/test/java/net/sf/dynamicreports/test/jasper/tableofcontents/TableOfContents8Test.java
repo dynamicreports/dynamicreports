@@ -44,10 +44,7 @@ public class TableOfContents8Test extends AbstractJasperValueTest implements Ser
     protected void configureReport(JasperReportBuilder rb) {
         rb.tableOfContents()
           .columns(col.column("Column1", "field1", type.stringType()))
-          .detail(cmp.text("detail")
-                     .setTableOfContentsHeading("detailToc")
-                     .removeLineWhenBlank()
-                     .setPrintWhenExpression(new PrintWhenExpression()));
+          .detail(cmp.text("detail").setTableOfContentsHeading("detailToc").removeLineWhenBlank().setPrintWhenExpression(new PrintWhenExpression()));
     }
 
     @Override

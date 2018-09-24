@@ -38,30 +38,15 @@ public class PageNumberPositionTest extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style()
-                                .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT);
-        PageXofYBuilder pageXofYLeft = cmp.pageXofY()
-                                          .setStyle(stl.style(style));
-        PageXofYBuilder pageXofYRight = cmp.pageXofY()
-                                           .setStyle(stl.style(style)
-                                                        .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT));
+        StyleBuilder style = stl.style().setHorizontalTextAlignment(HorizontalTextAlignment.LEFT);
+        PageXofYBuilder pageXofYLeft = cmp.pageXofY().setStyle(stl.style(style));
+        PageXofYBuilder pageXofYRight = cmp.pageXofY().setStyle(stl.style(style).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT));
 
         rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .pageFooter(cmp.pageXofY(), cmp.pageXofY()
-                                         .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT), cmp.pageXofY()
-                                                                                                       .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT), cmp.pageXofY()
-                                                                                                                                                                      .setHorizontalTextAlignment(
-                                                                                                                                                                          HorizontalTextAlignment
-                                                                                                                                                                              .JUSTIFIED),
-                      cmp.pageXofY()
-                         .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER), cmp.horizontalList(pageXofYLeft, pageXofYRight, pageXofYLeft, pageXofYRight), cmp.pageXofY()
-                                                                                                                                                                       .setPageXFixedWidth(20),
-                      cmp.pageXofY()
-                         .setPageYFixedWidth(25), cmp.pageXslashY()
-                                                     .setPageXFixedWidth(30), cmp.pageXslashY()
-                                                                                 .setPageYFixedWidth(35), cmp.pageXofY()
-                                                                                                             .setPageXFixedWidth(18)
-                                                                                                             .setPageYFixedWidth(22));
+          .pageFooter(cmp.pageXofY(), cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.LEFT), cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT),
+                      cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.JUSTIFIED), cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER),
+                      cmp.horizontalList(pageXofYLeft, pageXofYRight, pageXofYLeft, pageXofYRight), cmp.pageXofY().setPageXFixedWidth(20), cmp.pageXofY().setPageYFixedWidth(25),
+                      cmp.pageXslashY().setPageXFixedWidth(30), cmp.pageXslashY().setPageYFixedWidth(35), cmp.pageXofY().setPageXFixedWidth(18).setPageYFixedWidth(22));
     }
 
     @Override

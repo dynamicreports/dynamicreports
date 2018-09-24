@@ -51,9 +51,7 @@ public class ColumnTitleGroupPosition4Test extends AbstractJasperPositionTest {
         column4 = col.column("Col4", "field4", String.class);
         column5 = col.column("Col5", "field5", String.class);
 
-        rb.columnGrid(column1, grid.titleGroup("Group1", column2, column3)
-                                   .setTitleFixedWidth(400), grid.titleGroup("Group2", column4, column5)
-                                                                 .setTitleFixedWidth(80))
+        rb.columnGrid(column1, grid.titleGroup("Group1", column2, column3).setTitleFixedWidth(400), grid.titleGroup("Group2", column4, column5).setTitleFixedWidth(80))
           .columns(column1, column2, column3, column4, column5)
           .subtotalsAtSummary(subtotal1 = sbt.sum(column2));
     }

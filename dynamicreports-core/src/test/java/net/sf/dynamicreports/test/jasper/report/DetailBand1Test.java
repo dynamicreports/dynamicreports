@@ -42,9 +42,7 @@ public class DetailBand1Test extends AbstractJasperValueTest implements Serializ
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", String.class))
-          .detailHeader(cmp.text("detailHeader"))
-          .detailFooter(cmp.text("detailFooter"));
+        rb.columns(column1 = col.column("Column1", "field1", String.class)).detailHeader(cmp.text("detailHeader")).detailFooter(cmp.text("detailFooter"));
 
     }
 

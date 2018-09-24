@@ -56,8 +56,7 @@ public class GenericElementTest {
 
             JasperReportBuilder reportBuilder = DynamicReports.report();
             configureReport(reportBuilder);
-            reportBuilder.setDataSource(createDataSource())
-                         .toHtml(htmlExporter);
+            reportBuilder.setDataSource(createDataSource()).toHtml(htmlExporter);
 
             output = outputStream.toString();
         } catch (Exception e) {
@@ -67,13 +66,9 @@ public class GenericElementTest {
     }
 
     protected void configureReport(JasperReportBuilder rb) {
-        GenericElementBuilder genericElement = cmp.genericElement("http://www.dynamicreports.org/custom", "custom")
-                                                  .addParameter("id", "10")
-                                                  .addParameter("data", new ParameterExpression());
+        GenericElementBuilder genericElement = cmp.genericElement("http://www.dynamicreports.org/custom", "custom").addParameter("id", "10").addParameter("data", new ParameterExpression());
 
-        rb.scriptlets(new ReportScriptlet())
-          .fields(field("field1", type.stringType()))
-          .summary(genericElement);
+        rb.scriptlets(new ReportScriptlet()).fields(field("field1", type.stringType())).summary(genericElement);
     }
 
     @Test

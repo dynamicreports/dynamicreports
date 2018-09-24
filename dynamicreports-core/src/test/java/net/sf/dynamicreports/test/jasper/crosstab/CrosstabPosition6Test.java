@@ -58,14 +58,11 @@ public class CrosstabPosition6Test extends AbstractJasperCrosstabPositionTest {
         measure = ctab.measure("measure", column5, Calculation.SUM);
 
         CrosstabBuilder crosstab = ctab.crosstab()
-                                       .rowGroups(rowGroup1 = ctab.rowGroup(column1), rowGroup2 = ctab.rowGroup(column2)
-                                                                                                      .setShowTotal(false))
-                                       .columnGroups(columnGroup1 = ctab.columnGroup(column3), columnGroup2 = ctab.columnGroup(column4)
-                                                                                                                  .setShowTotal(false))
+                                       .rowGroups(rowGroup1 = ctab.rowGroup(column1), rowGroup2 = ctab.rowGroup(column2).setShowTotal(false))
+                                       .columnGroups(columnGroup1 = ctab.columnGroup(column3), columnGroup2 = ctab.columnGroup(column4).setShowTotal(false))
                                        .measures(measure);
 
-        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-          .summary(crosstab);
+        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).summary(crosstab);
     }
 
     @Override

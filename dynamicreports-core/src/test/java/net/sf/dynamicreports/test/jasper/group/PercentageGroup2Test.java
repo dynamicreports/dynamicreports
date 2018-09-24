@@ -63,17 +63,12 @@ public class PercentageGroup2Test extends AbstractJasperValueTest {
         ColumnGroupBuilder group3 = grp.group(column3);
 
         rb.setLocale(Locale.ENGLISH)
-          .columns(column1, column2, column3, column4, percentage1 = col.percentageColumn(column4), percentage2 = col.percentageColumn(column4)
-                                                                                                                     .setTotalGroup(group2), percentage3 = col.percentageColumn(column4)
-                                                                                                                                                              .setTotalGroup(group1), percentage4 =
-                       col.percentageColumn(column4)
-                          .setTotalType(PercentageTotalType.REPORT))
+          .columns(column1, column2, column3, column4, percentage1 = col.percentageColumn(column4), percentage2 = col.percentageColumn(column4).setTotalGroup(group2),
+                   percentage3 = col.percentageColumn(column4).setTotalGroup(group1), percentage4 = col.percentageColumn(column4).setTotalType(PercentageTotalType.REPORT))
           .groupBy(group1, group2, group3)
-          .subtotalsOfPercentageAtGroupFooter(group3, subtotal1 = sbt.percentage(column4), subtotal2 = sbt.percentage(column4)
-                                                                                                          .setTotalGroup(group1), subtotal3 = sbt.percentage(column4)
-                                                                                                                                                 .setTotalType(PercentageTotalType.REPORT))
-          .subtotalsOfPercentageAtGroupFooter(group2, subtotal4 = sbt.percentage(column4), subtotal5 = sbt.percentage(column4)
-                                                                                                          .setTotalType(PercentageTotalType.REPORT))
+          .subtotalsOfPercentageAtGroupFooter(group3, subtotal1 = sbt.percentage(column4), subtotal2 = sbt.percentage(column4).setTotalGroup(group1),
+                                              subtotal3 = sbt.percentage(column4).setTotalType(PercentageTotalType.REPORT))
+          .subtotalsOfPercentageAtGroupFooter(group2, subtotal4 = sbt.percentage(column4), subtotal5 = sbt.percentage(column4).setTotalType(PercentageTotalType.REPORT))
           .subtotalsOfPercentageAtGroupFooter(group1, subtotal6 = sbt.percentage(column4));
     }
 

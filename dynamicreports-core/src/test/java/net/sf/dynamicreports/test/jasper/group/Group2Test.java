@@ -54,15 +54,12 @@ public class Group2Test extends AbstractJasperValueTest {
         rb.setLocale(Locale.ENGLISH)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class),
                    column4 = col.column("Column4", "field4", Integer.class))
-          .groupBy(grp.group(column1)
-                      .setStartInNewPage(true)
-                      .header(cmp.text("header1"))
-                      .footer(cmp.text("footer1")), group1 = grp.group(column1)
-                                                                .header(cmp.text("header2"))
-                                                                .footer(cmp.text("footer2"))
-                                                                .setShowColumnHeaderAndFooter(true)
-                                                                .setReprintHeaderOnEachPage(true)
-                                                                .setPrintSubtotalsWhenExpression(exp.printNotInFirstPage()))
+          .groupBy(grp.group(column1).setStartInNewPage(true).header(cmp.text("header1")).footer(cmp.text("footer1")), group1 = grp.group(column1)
+                                                                                                                                   .header(cmp.text("header2"))
+                                                                                                                                   .footer(cmp.text("footer2"))
+                                                                                                                                   .setShowColumnHeaderAndFooter(true)
+                                                                                                                                   .setReprintHeaderOnEachPage(true)
+                                                                                                                                   .setPrintSubtotalsWhenExpression(exp.printNotInFirstPage()))
           .subtotalsAtGroupFooter(group1, subtotal1 = sbt.sum(column4));
     }
 

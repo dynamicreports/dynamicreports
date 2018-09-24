@@ -52,25 +52,16 @@ public class Style2Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style()
-                                    .setPadding(2);
-        StyleBuilder titleStyle = stl.style(textStyle)
-                                     .bold();
-        StyleBuilder subtotalStyle = stl.style(2)
-                                        .setTopBorder(stl.pen1Point())
-                                        .bold();
+        StyleBuilder textStyle = stl.style().setPadding(2);
+        StyleBuilder titleStyle = stl.style(textStyle).bold();
+        StyleBuilder subtotalStyle = stl.style(2).setTopBorder(stl.pen1Point()).bold();
 
         rb.setTextStyle(textStyle)
           .setColumnTitleStyle(titleStyle)
           .setSubtotalStyle(subtotalStyle)
-          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType())
-                                                                                               .setStyle(stl.style()
-                                                                                                            .bold()))
+          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType()).setStyle(stl.style().bold()))
           .groupBy(group1 = grp.group(column2))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1)
-                                             .setLabel("total")
-                                             .setLabelStyle(stl.style()
-                                                               .bold()));
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column1).setLabel("total").setLabelStyle(stl.style().bold()));
     }
 
     @Override

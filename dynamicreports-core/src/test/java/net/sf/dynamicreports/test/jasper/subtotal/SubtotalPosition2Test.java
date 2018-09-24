@@ -53,25 +53,16 @@ public class SubtotalPosition2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style(stl.pen1Point())
-                                    .setPadding(2);
-        StyleBuilder columnStyle = stl.style(textStyle)
-                                      .setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
+        StyleBuilder textStyle = stl.style(stl.pen1Point()).setPadding(2);
+        StyleBuilder columnStyle = stl.style(textStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
 
         rb.setTextStyle(textStyle)
           .setColumnStyle(columnStyle)
-          .columns(column1 = col.column("", "field1", type.stringType())
-                                .setFixedWidth(200), column2 = col.column("", "field2", type.stringType()), column3 = col.column("", "field3", type.stringType()), column4 =
-                       col.column("", "field4", type.integerType())
-                          .setRows(2), column5 = col.column("", "field5", type.integerType()), column6 = col.column("", "field6", type.stringType())
-                                                                                                            .setFixedColumns(3), column7 = col.column("", "field7", type.integerType())
-                                                                                                                                              .setTitleRows(2))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column4), subtotal2 = sbt.sum(column5)
-                                                                           .setRows(2), subtotal3 = sbt.sum(column7))
-          .columnGrid(column1, column2, column3, grid.horizontalColumnGridList()
-                                                     .add(column4)
-                                                     .newRow()
-                                                     .add(column5, column6, column7));
+          .columns(column1 = col.column("", "field1", type.stringType()).setFixedWidth(200), column2 = col.column("", "field2", type.stringType()),
+                   column3 = col.column("", "field3", type.stringType()), column4 = col.column("", "field4", type.integerType()).setRows(2), column5 = col.column("", "field5", type.integerType()),
+                   column6 = col.column("", "field6", type.stringType()).setFixedColumns(3), column7 = col.column("", "field7", type.integerType()).setTitleRows(2))
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column4), subtotal2 = sbt.sum(column5).setRows(2), subtotal3 = sbt.sum(column7))
+          .columnGrid(column1, column2, column3, grid.horizontalColumnGridList().add(column4).newRow().add(column5, column6, column7));
     }
 
     @Override

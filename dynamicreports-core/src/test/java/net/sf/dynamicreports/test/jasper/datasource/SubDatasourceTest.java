@@ -50,8 +50,7 @@ public class SubDatasourceTest extends AbstractJasperValueTest implements Serial
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         rb.columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()))
-          .detailFooter(cmp.subreport(createSubreport())
-                           .setDataSource(exp.subDatasourceBeanCollection("field3")));
+          .detailFooter(cmp.subreport(createSubreport()).setDataSource(exp.subDatasourceBeanCollection("field3")));
     }
 
     @Override

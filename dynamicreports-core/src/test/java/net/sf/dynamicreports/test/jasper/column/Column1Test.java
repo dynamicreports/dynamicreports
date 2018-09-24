@@ -58,12 +58,10 @@ public class Column1Test extends AbstractJasperValueTest implements Serializable
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .addField("field1", Integer.class)
-          .columns(column2 = col.column("Column2\nColumn2", "field2", String.class), column3 = col.column("Column3", "field3", Date.class)
-                                                                                                  .setPattern("dd.MM.yyyy"), column4 = col.column("Column4", "field4", Double.class)
-                                                                                                                                          .setPattern("#,###.00"), column5 =
-                       col.column("Column5", "field5", BigDecimal.class)
-                          .setValueFormatter(new ColumnValueFormatter()), column6 = col.column("Column6", "field6", Double.class)
-                                                                                       .setPattern(new PatternExpression()), column7 = col.column("Column7", field("field7", Date.class).build()));
+          .columns(column2 = col.column("Column2\nColumn2", "field2", String.class), column3 = col.column("Column3", "field3", Date.class).setPattern("dd.MM.yyyy"),
+                   column4 = col.column("Column4", "field4", Double.class).setPattern("#,###.00"),
+                   column5 = col.column("Column5", "field5", BigDecimal.class).setValueFormatter(new ColumnValueFormatter()),
+                   column6 = col.column("Column6", "field6", Double.class).setPattern(new PatternExpression()), column7 = col.column("Column7", field("field7", Date.class).build()));
     }
 
     @Override

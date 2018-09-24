@@ -64,19 +64,9 @@ public class MeterChartTest extends AbstractJasperChartTest {
                       .setNeedleColor(Color.CYAN)
                       .setTickColor(Color.MAGENTA)
                       .setTickLabelFont(stl.fontCourierNew())
-                      .intervals(cht.meterInterval()
-                                    .setLabel("red")
-                                    .setAlpha(0.8)
-                                    .setBackgroundColor(Color.RED)
-                                    .setDataRangeLowExpression(25)
-                                    .setDataRangeHighExpression(30), cht.meterInterval()
-                                                                        .setLabel("yellow")
-                                                                        .setAlpha(0.5)
-                                                                        .setBackgroundColor(Color.YELLOW)
-                                                                        .setDataRangeLowExpression(20)
-                                                                        .setDataRangeHighExpression(25)), cht.meterChart()
-                                                                                                             .setValue(5)
-                                                                                                             .setShape(MeterShape.DIAL));
+                      .intervals(cht.meterInterval().setLabel("red").setAlpha(0.8).setBackgroundColor(Color.RED).setDataRangeLowExpression(25).setDataRangeHighExpression(30),
+                                 cht.meterInterval().setLabel("yellow").setAlpha(0.5).setBackgroundColor(Color.YELLOW).setDataRangeLowExpression(20).setDataRangeHighExpression(25)),
+                   cht.meterChart().setValue(5).setShape(MeterShape.DIAL));
     }
 
     @Override
@@ -89,15 +79,11 @@ public class MeterChartTest extends AbstractJasperChartTest {
         Plot plot = chart.getPlot();
         Assert.assertEquals("renderer", MeterPlot.class, plot.getClass());
         MeterPlot meterPlot = (MeterPlot) plot;
-        Assert.assertEquals("value", 15, meterPlot.getDataset()
-                                                  .getValue());
-        Assert.assertEquals("data range low", 3d, meterPlot.getRange()
-                                                           .getLowerBound());
-        Assert.assertEquals("data range high", 30d, meterPlot.getRange()
-                                                             .getUpperBound());
+        Assert.assertEquals("value", 15, meterPlot.getDataset().getValue());
+        Assert.assertEquals("data range low", 3d, meterPlot.getRange().getLowerBound());
+        Assert.assertEquals("data range high", 30d, meterPlot.getRange().getUpperBound());
         Assert.assertEquals("value color", Color.BLUE, meterPlot.getValuePaint());
-        Assert.assertEquals("value mask", "15.0", meterPlot.getTickLabelFormat()
-                                                           .format(15));
+        Assert.assertEquals("value mask", "15.0", meterPlot.getTickLabelFormat().format(15));
         Assert.assertEquals("value font", new Font("Arial", Font.PLAIN, 10), meterPlot.getValueFont());
         Assert.assertEquals("shape", DialShape.CIRCLE, meterPlot.getDialShape());
         Assert.assertEquals("meter angle", 270, meterPlot.getMeterAngle());
@@ -107,21 +93,16 @@ public class MeterChartTest extends AbstractJasperChartTest {
         Assert.assertEquals("needle color", Color.CYAN, meterPlot.getNeedlePaint());
         Assert.assertEquals("tick color", Color.MAGENTA, meterPlot.getTickPaint());
         Assert.assertEquals("tick label font", new Font("Courier New", Font.PLAIN, 10), meterPlot.getTickLabelFont());
-        Assert.assertEquals("intervals size", 2, meterPlot.getIntervals()
-                                                          .size());
-        intervalTest((MeterInterval) meterPlot.getIntervals()
-                                              .get(0), "red", new Color(1f, 0f, 0f, 0.8f), 25d, 30d);
-        intervalTest((MeterInterval) meterPlot.getIntervals()
-                                              .get(1), "yellow", new Color(1f, 1f, 0f, 0.5f), 20d, 25d);
+        Assert.assertEquals("intervals size", 2, meterPlot.getIntervals().size());
+        intervalTest((MeterInterval) meterPlot.getIntervals().get(0), "red", new Color(1f, 0f, 0f, 0.8f), 25d, 30d);
+        intervalTest((MeterInterval) meterPlot.getIntervals().get(1), "yellow", new Color(1f, 1f, 0f, 0.5f), 20d, 25d);
     }
 
     private void intervalTest(MeterInterval interval, String label, Color backgroundColor, double rangeLow, double rangeHigh) {
         Assert.assertEquals("interval label", label, interval.getLabel());
         Assert.assertEquals("interval background color", backgroundColor, interval.getBackgroundPaint());
-        Assert.assertEquals("interval data range low", rangeLow, interval.getRange()
-                                                                         .getLowerBound());
-        Assert.assertEquals("interval data range high", rangeHigh, interval.getRange()
-                                                                           .getUpperBound());
+        Assert.assertEquals("interval data range low", rangeLow, interval.getRange().getLowerBound());
+        Assert.assertEquals("interval data range high", rangeHigh, interval.getRange().getUpperBound());
     }
 
     @Override

@@ -47,8 +47,7 @@ public class DataTypeGroupTest extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .columns(column1 = col.column("Column1", "field1", type.dateMonthType()), column2 = col.column("Column2", "field1", type.dateType()))
-          .groupBy(group1 = grp.group(column1)
-                               .groupByDataType());
+          .groupBy(group1 = grp.group(column1).groupByDataType());
     }
 
     @Override

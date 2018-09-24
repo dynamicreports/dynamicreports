@@ -60,15 +60,11 @@ public class CrosstabPosition1Test extends AbstractJasperCrosstabPositionTest {
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .headerCell(cmp.text("Header"))
                                        .setCellWidth(200)
-                                       .rowGroups(rowGroup = ctab.rowGroup(column1)
-                                                                 .setHeaderWidth(50))
-                                       .columnGroups(columnGroup = ctab.columnGroup(column2)
-                                                                       .setTotalHeaderWidth(210))
+                                       .rowGroups(rowGroup = ctab.rowGroup(column1).setHeaderWidth(50))
+                                       .columnGroups(columnGroup = ctab.columnGroup(column2).setTotalHeaderWidth(210))
                                        .measures(measure1, measure2);
 
-        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-          .columns(column1, column2, column3, column4)
-          .summary(crosstab);
+        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).columns(column1, column2, column3, column4).summary(crosstab);
     }
 
     @Override

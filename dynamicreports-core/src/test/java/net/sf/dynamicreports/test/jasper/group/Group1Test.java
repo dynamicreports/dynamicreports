@@ -62,15 +62,11 @@ public class Group1Test extends AbstractJasperValueTest implements Serializable 
         TextColumnBuilder<String> column1;
 
         rb.setLocale(Locale.ENGLISH)
-          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field4", String.class), column4 =
-              col.column("Column4", "field5", Integer.class)
-                 .setPattern("#,###.00"))
-          .groupBy(group1 = grp.group(column1), group2 = grp.group(column3)
-                                                            .setHeaderLayout(GroupHeaderLayout.EMPTY)
-                                                            .setHideColumn(false), group3 = grp.group(column1)
-                                                                                               .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE),
-                   group4 = grp.group(field3 = field("field3", String.class)), group5 = grp.group(new ValueExpression())
-                                                                                           .setTitle("Expression"), group6 = grp.group(column4));
+          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field4", String.class),
+                   column4 = col.column("Column4", "field5", Integer.class).setPattern("#,###.00"))
+          .groupBy(group1 = grp.group(column1), group2 = grp.group(column3).setHeaderLayout(GroupHeaderLayout.EMPTY).setHideColumn(false),
+                   group3 = grp.group(column1).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE), group4 = grp.group(field3 = field("field3", String.class)),
+                   group5 = grp.group(new ValueExpression()).setTitle("Expression"), group6 = grp.group(column4));
     }
 
     @Override

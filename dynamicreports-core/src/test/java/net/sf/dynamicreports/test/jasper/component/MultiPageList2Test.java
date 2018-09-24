@@ -47,8 +47,7 @@ public class MultiPageList2Test extends AbstractJasperPositionTest {
                 multiPageList2.add(cmp.text("text"));
             }
         }
-        rb.title(multiPageList1)
-          .columns(column1 = col.column("Column1", "field1", Integer.class));
+        rb.title(multiPageList1).columns(column1 = col.column("Column1", "field1", Integer.class));
     }
 
     @Override

@@ -46,8 +46,7 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression())
-                                               .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport);
     }

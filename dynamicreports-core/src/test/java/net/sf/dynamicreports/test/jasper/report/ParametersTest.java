@@ -44,8 +44,7 @@ public class ParametersTest extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.text(new TitleExpression()))
-          .addParameter("title", String.class);
+        rb.title(cmp.text(new TitleExpression())).addParameter("title", String.class);
     }
 
     @Override

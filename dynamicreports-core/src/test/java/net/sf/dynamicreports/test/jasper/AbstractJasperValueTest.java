@@ -54,8 +54,7 @@ public abstract class AbstractJasperValueTest extends AbstractJasperTest {
         Assert.assertTrue(values.length <= elements.size());
         for (int i = 0; i < values.length; i++) {
             JRPrintText textElement = (JRPrintText) elements.get(i);
-            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                           .getTruncatedText(textElement);
+            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
             Assert.assertEquals("element value " + name, values[i], value);
         }
     }
@@ -71,8 +70,7 @@ public abstract class AbstractJasperValueTest extends AbstractJasperTest {
 
     private String getElementValue(String key, int index) {
         JRPrintText textElement = (JRPrintText) getElementAt(key, index);
-        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance())
-                                       .getTruncatedText(textElement);
+        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
         return value;
     }
 

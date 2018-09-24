@@ -56,39 +56,28 @@ public class GanttChartTest extends AbstractJasperChartTest {
         FieldBuilder<Double> field4 = field("field4", Double.class);
         rb.summary(cht.ganttChart()
                       .setTask(field1)
-                      .series(cht.ganttSerie()
-                                 .setStartDate(field2)
-                                 .setEndDate(field3)
-                                 .setPercent(field4)
-                                 .setLabel("label"), cht.ganttSerie()
-                                                        .setStartDate(DynamicReports.<Date>field("field5", Date.class))
-                                                        .setEndDate(DynamicReports.<Date>field("field6", Date.class)))
+                      .series(cht.ganttSerie().setStartDate(field2).setEndDate(field3).setPercent(field4).setLabel("label"),
+                              cht.ganttSerie().setStartDate(DynamicReports.<Date>field("field5", Date.class)).setEndDate(DynamicReports.<Date>field("field6", Date.class)))
                       .setShowLabels(true)
                       .setShowTickLabels(false)
                       .setShowTickMarks(false), cht.ganttChart()
                                                    .setTask(field1)
-                                                   .series(cht.ganttSerie()
-                                                              .setStartDate(field2)
-                                                              .setEndDate(field3))
+                                                   .series(cht.ganttSerie().setStartDate(field2).setEndDate(field3))
                                                    .setTaskAxisFormat(cht.axisFormat()
                                                                          .setLabel("task")
                                                                          .setLabelColor(Color.BLUE)
                                                                          .setLabelFont(stl.fontArialBold())
-                                                                         .setTickLabelFont(stl.fontArial()
-                                                                                              .setItalic(true))
+                                                                         .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                          .setTickLabelColor(Color.CYAN)
                                                                          .setTickLabelRotation(45d)
                                                                          .setLineColor(Color.LIGHT_GRAY)), cht.ganttChart()
                                                                                                               .setTask(field1)
-                                                                                                              .series(cht.ganttSerie()
-                                                                                                                         .setStartDate(field2)
-                                                                                                                         .setEndDate(field3))
+                                                                                                              .series(cht.ganttSerie().setStartDate(field2).setEndDate(field3))
                                                                                                               .setTimeAxisFormat(cht.axisFormat()
                                                                                                                                     .setLabel("time")
                                                                                                                                     .setLabelColor(Color.BLUE)
                                                                                                                                     .setLabelFont(stl.fontArialBold())
-                                                                                                                                    .setTickLabelFont(stl.fontArial()
-                                                                                                                                                         .setItalic(true))
+                                                                                                                                    .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                                                                                     .setTickLabelColor(Color.CYAN)
                                                                                                                                     .setLineColor(Color.LIGHT_GRAY)));
     }
@@ -101,37 +90,28 @@ public class GanttChartTest extends AbstractJasperChartTest {
 
         JFreeChart chart = getChart("summary.chart1", 0);
         CategoryPlot categoryPlot = chart.getCategoryPlot();
-        Assert.assertEquals("renderer", GanttRenderer.class, categoryPlot.getRenderer()
-                                                                         .getClass());
-        Assert.assertTrue("show labels", categoryPlot.getRenderer()
-                                                     .getBaseItemLabelsVisible());
-        Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis()
-                                                           .isTickMarksVisible());
-        Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis()
-                                                          .isTickLabelsVisible());
+        Assert.assertEquals("renderer", GanttRenderer.class, categoryPlot.getRenderer().getClass());
+        Assert.assertTrue("show labels", categoryPlot.getRenderer().getBaseItemLabelsVisible());
+        Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
+        Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
         ganttChartDataTest(chart, "label", new String[] {"task1", "task2", "task3"},
                            new Object[][] {{toDate(2011, 1, 1), toDate(2011, 1, 8), 1d}, {toDate(2011, 1, 10), toDate(2011, 1, 15), 0.5d}, {toDate(2011, 1, 15), toDate(2011, 1, 25), 0.8d}});
         ganttChartDataTest(chart, "serie1", new String[] {"task1", "task2", "task3"},
                            new Object[][] {{toDate(2011, 1, 2), toDate(2011, 1, 9), null}, {toDate(2011, 1, 8), toDate(2011, 1, 14), null}, {toDate(2011, 1, 16), toDate(2011, 1, 20), null}});
 
         chart = getChart("summary.chart2", 0);
-        Axis axis = chart.getCategoryPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getCategoryPlot().getDomainAxis();
         Assert.assertEquals("task label", "task", axis.getLabel());
         Assert.assertEquals("task label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("task label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        CategoryLabelPosition labelPosition = chart.getCategoryPlot()
-                                                   .getDomainAxis()
-                                                   .getCategoryLabelPositions()
-                                                   .getLabelPosition(RectangleEdge.LEFT);
+        CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis().getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
         Assert.assertEquals("plot label rotation", (45d / 180) * Math.PI, labelPosition.getAngle());
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
         chart = getChart("summary.chart3", 0);
-        axis = chart.getCategoryPlot()
-                    .getRangeAxis();
+        axis = chart.getCategoryPlot().getRangeAxis();
         Assert.assertEquals("time label", "time", axis.getLabel());
         Assert.assertEquals("time label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("time label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());

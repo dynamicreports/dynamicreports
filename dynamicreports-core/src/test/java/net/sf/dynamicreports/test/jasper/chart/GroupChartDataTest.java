@@ -59,26 +59,15 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
                                           .setTitle(new TitleExpression())
                                           .customizers(customizer)
                                           .setCategory(column2)
-                                          .series(cht.serie(column3), cht.serie("field4", Integer.class)
-                                                                         .setLabel("f4"), cht.serie(new ValueExpression())
-                                                                                             .setLabel("exp")))
+                                          .series(cht.serie(column3), cht.serie("field4", Integer.class).setLabel("f4"), cht.serie(new ValueExpression()).setLabel("exp")))
                                .footer(cht.barChart()
                                           .setTitle(new TitleExpression())
                                           .customizers(customizer)
                                           .setCategory(column2)
-                                          .series(cht.serie(column3), cht.serie("field4", Integer.class)
-                                                                         .setLabel("f4"), cht.serie(new ValueExpression())
-                                                                                             .setLabel("exp"))))
+                                          .series(cht.serie(column3), cht.serie("field4", Integer.class).setLabel("f4"), cht.serie(new ValueExpression()).setLabel("exp"))))
           .variables(variable("var1", "field4", Integer.class, Calculation.SUM).setResetGroup(group1))
-          .summary(cht.barChart()
-                      .setCategory(column1)
-                      .series(cht.serie(column3), cht.serie("field4", Integer.class)
-                                                     .setLabel("f4"), cht.serie(new ValueExpression())
-                                                                         .setLabel("exp")), cht.barChart()
-                                                                                               .setCategory(column2)
-                                                                                               .series(cht.serie(column3), cht.serie("field4", Integer.class)
-                                                                                                                              .setLabel("f4"), cht.serie(new ValueExpression())
-                                                                                                                                                  .setLabel("exp")));
+          .summary(cht.barChart().setCategory(column1).series(cht.serie(column3), cht.serie("field4", Integer.class).setLabel("f4"), cht.serie(new ValueExpression()).setLabel("exp")),
+                   cht.barChart().setCategory(column2).series(cht.serie(column3), cht.serie("field4", Integer.class).setLabel("f4"), cht.serie(new ValueExpression()).setLabel("exp")));
     }
 
     @Override
@@ -159,9 +148,7 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            chart.getTitle()
-                 .setText(chart.getTitle()
-                               .getText() + " customizer" + reportParameters.getPageNumber());
+            chart.getTitle().setText(chart.getTitle().getText() + " customizer" + reportParameters.getPageNumber());
         }
     }
 }

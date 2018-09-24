@@ -53,19 +53,12 @@ public class CrosstabStyle3Test extends AbstractJasperCrosstabStyleTest implemen
         FieldBuilder<String> field1 = field("field1", String.class);
         FieldBuilder<String> field2 = field("field2", String.class);
 
-        rowGroup = ctab.rowGroup(field1)
-                       .setShowTotal(false);
-        columnGroup = ctab.columnGroup(field2)
-                          .setShowTotal(false);
+        rowGroup = ctab.rowGroup(field1).setShowTotal(false);
+        columnGroup = ctab.columnGroup(field2).setShowTotal(false);
 
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .highlightEvenRows()
-                                       .highlightOddRows()
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(measure1);
+        CrosstabBuilder crosstab = ctab.crosstab().highlightEvenRows().highlightOddRows().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure1);
 
         rb.summary(crosstab);
     }

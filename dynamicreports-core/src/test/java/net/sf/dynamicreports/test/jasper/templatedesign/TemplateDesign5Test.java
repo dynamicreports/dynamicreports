@@ -52,8 +52,7 @@ public class TemplateDesign5Test extends AbstractJasperValueTest {
         report.setDataSource(new JREmptyDataSource(1));
         report.setPageFormat(575, 842, PageOrientation.PORTRAIT);
 
-        rb.title(cmp.subreport(report))
-          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
+        rb.title(cmp.subreport(report)).columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
     }
 
     @Override

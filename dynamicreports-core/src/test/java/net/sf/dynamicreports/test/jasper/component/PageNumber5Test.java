@@ -41,8 +41,7 @@ public class PageNumber5Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .columns(col.column("Column1", "field1", Integer.class))
-          .groupBy(grp.group("field2", String.class)
-                      .setResetPageNumber(true))
+          .groupBy(grp.group("field2", String.class).setResetPageNumber(true))
           .pageFooter(cmp.pageXofY(), cmp.pageXslashY(), cmp.totalPages(), cmp.pageNumber());
     }
 

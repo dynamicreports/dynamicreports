@@ -55,10 +55,7 @@ public class Component3Test extends AbstractJasperTest {
                                                 .setPrintInFirstWholeBand(true)
                                                 .setPrintWhenDetailOverflows(true)
                                                 .setPrintWhenGroupChanges(group);
-        rb.title(textField)
-          .columns(col.column("column1", type.stringType())
-                      .setPrintWhenDetailOverflows(true))
-          .groupBy(group);
+        rb.title(textField).columns(col.column("column1", type.stringType()).setPrintWhenDetailOverflows(true)).groupBy(group);
     }
 
     @Override
@@ -67,17 +64,14 @@ public class Component3Test extends AbstractJasperTest {
 
         numberOfPagesTest(1);
 
-        JRElement textField = getJasperReport().getTitle()
-                                               .getElementByKey("title.textField1");
+        JRElement textField = getJasperReport().getTitle().getElementByKey("title.textField1");
         Assert.assertEquals("position type", PositionTypeEnum.FIX_RELATIVE_TO_TOP, textField.getPositionTypeValue());
         Assert.assertEquals("stretch type", StretchTypeEnum.NO_STRETCH, textField.getStretchTypeValue());
         Assert.assertTrue("print in first whole band", textField.isPrintInFirstWholeBand());
         Assert.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());
-        Assert.assertEquals("print when group changes", "group1", textField.getPrintWhenGroupChanges()
-                                                                           .getName());
+        Assert.assertEquals("print when group changes", "group1", textField.getPrintWhenGroupChanges().getName());
 
-        textField = getJasperReport().getDetailSection()
-                                     .getBands()[0].getElementByKey("detail.column_column11");
+        textField = getJasperReport().getDetailSection().getBands()[0].getElementByKey("detail.column_column11");
         Assert.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());
     }
 

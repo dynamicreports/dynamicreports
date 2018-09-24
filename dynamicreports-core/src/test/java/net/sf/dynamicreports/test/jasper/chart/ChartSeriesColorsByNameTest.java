@@ -72,38 +72,42 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         rb.addProperty("net.sf.jasperreports.chart.pie.ignore.duplicated.key", "true")
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", Integer.class),
                    column4 = col.column("Column4", "field4", String.class), column5 = col.column("Column5", "field5", Integer.class))
-          .summary(cmp.horizontalList(cht.barChart()
-                                         .seriesColorsByName(colors)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column3)
-                                                    .setSeries(column2)), cht.groupedStackedBarChart()
-                                                                             .seriesColorsByName(colors)
-                                                                             .setCategory(column1)
-                                                                             .series(cht.groupedSerie(column3)
-                                                                                        .setSeries(column2)
-                                                                                        .setGroup(column4))), cmp.horizontalList(cht.pieChart()
-                                                                                                                                    .seriesColorsByName(colors)
-                                                                                                                                    .setKey(column2)
-                                                                                                                                    .series(cht.serie(column3)), cht.xyBarChart()
-                                                                                                                                                                    .seriesColorsByName(colors)
-                                                                                                                                                                    .setXValue(column5)
-                                                                                                                                                                    .series(cht.xySerie(column3)
-                                                                                                                                                                               .setSeries(column2))),
-                   cmp.horizontalList(cht.barChart()
-                                         .setDataSource(new DRDataSource("field1", "field2", "field3", "field4", "field5"))
-                                         .seriesColorsByName(colors)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column3)
-                                                    .setSeries(column2)), cht.pieChart()
-                                                                             .setDataSource(new DRDataSource("field1", "field2", "field3", "field4", "field5"))
-                                                                             .seriesColorsByName(colors)
-                                                                             .setKey(column2)
-                                                                             .series(cht.serie(column3)), cht.xyBarChart()
-                                                                                                             .setDataSource(new DRDataSource("field1", "field2", "field3", "field4", "field5"))
-                                                                                                             .seriesColorsByName(colors)
-                                                                                                             .setXValue(column5)
-                                                                                                             .series(cht.xySerie(column3)
-                                                                                                                        .setSeries(column2))));
+          .summary(cmp.horizontalList(cht.barChart().seriesColorsByName(colors).setCategory(column1).series(cht.serie(column3).setSeries(column2)),
+                                      cht.groupedStackedBarChart().seriesColorsByName(colors).setCategory(column1).series(cht.groupedSerie(column3).setSeries(column2).setGroup(column4))),
+                   cmp.horizontalList(cht.pieChart().seriesColorsByName(colors).setKey(column2).series(cht.serie(column3)),
+                                      cht.xyBarChart().seriesColorsByName(colors).setXValue(column5).series(cht.xySerie(column3).setSeries(column2))), cmp.horizontalList(cht.barChart()
+                                                                                                                                                                             .setDataSource(
+                                                                                                                                                                                 new DRDataSource(
+                                                                                                                                                                                     "field1", "field2",
+                                                                                                                                                                                     "field3", "field4",
+                                                                                                                                                                                     "field5"))
+                                                                                                                                                                             .seriesColorsByName(colors)
+                                                                                                                                                                             .setCategory(column1)
+                                                                                                                                                                             .series(cht.serie(column3)
+                                                                                                                                                                                        .setSeries(
+                                                                                                                                                                                            column2)),
+                                                                                                                                                                          cht.pieChart()
+                                                                                                                                                                             .setDataSource(
+                                                                                                                                                                                 new DRDataSource(
+                                                                                                                                                                                     "field1", "field2",
+                                                                                                                                                                                     "field3", "field4",
+                                                                                                                                                                                     "field5"))
+                                                                                                                                                                             .seriesColorsByName(colors)
+                                                                                                                                                                             .setKey(column2)
+                                                                                                                                                                             .series(
+                                                                                                                                                                                 cht.serie(column3)),
+                                                                                                                                                                          cht.xyBarChart()
+                                                                                                                                                                             .setDataSource(
+                                                                                                                                                                                 new DRDataSource(
+                                                                                                                                                                                     "field1", "field2",
+                                                                                                                                                                                     "field3", "field4",
+                                                                                                                                                                                     "field5"))
+                                                                                                                                                                             .seriesColorsByName(colors)
+                                                                                                                                                                             .setXValue(column5)
+                                                                                                                                                                             .series(
+                                                                                                                                                                                 cht.xySerie(column3)
+                                                                                                                                                                                    .setSeries(
+                                                                                                                                                                                        column2))));
     }
 
     @Override
@@ -114,10 +118,8 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
 
         chartCountTest("summary.chart1", 1);
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot()
-                                              .getRenderer();
-        CategoryDataset dataset1 = chart.getCategoryPlot()
-                                        .getDataset();
+        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
+        CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             String key = (String) dataset1.getRowKey(i);
             Assert.assertNotNull("null series color", colors.get(key));
@@ -126,22 +128,17 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
 
         chartCountTest("summary.chart2", 1);
         chart = getChart("summary.chart2", 0);
-        CategoryItemRenderer renderer2 = chart.getCategoryPlot()
-                                              .getRenderer();
-        CategoryDataset dataset2 = chart.getCategoryPlot()
-                                        .getDataset();
+        CategoryItemRenderer renderer2 = chart.getCategoryPlot().getRenderer();
+        CategoryDataset dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
             Assert.assertNotNull("null series color", colors.get(key));
             Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
-        for (int i = 0; i < chart.getCategoryPlot()
-                                 .getFixedLegendItems()
-                                 .getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot()
-                                         .getFixedLegendItems()
-                                         .get(i);
+        for (
+            int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
+            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
             Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
             Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
@@ -158,10 +155,8 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
 
         chartCountTest("summary.chart4", 1);
         chart = getChart("summary.chart4", 0);
-        XYItemRenderer renderer4 = chart.getXYPlot()
-                                        .getRenderer();
-        XYDataset dataset4 = chart.getXYPlot()
-                                  .getDataset();
+        XYItemRenderer renderer4 = chart.getXYPlot().getRenderer();
+        XYDataset dataset4 = chart.getXYPlot().getDataset();
         for (int i = 0; i < dataset4.getSeriesCount(); i++) {
             String key = (String) dataset4.getSeriesKey(i);
             Assert.assertNotNull("null series color", colors.get(key));

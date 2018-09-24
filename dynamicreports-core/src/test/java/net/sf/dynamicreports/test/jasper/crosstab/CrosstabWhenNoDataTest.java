@@ -50,9 +50,7 @@ public class CrosstabWhenNoDataTest extends AbstractJasperCrosstabPositionTest {
                                        .columnGroups(ctab.columnGroup(column2))
                                        .measures(ctab.measure(column3, Calculation.SUM), ctab.measure(column4, Calculation.SUM));
 
-        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .columns(column1, column2, column3, column4)
-          .summary(crosstab);
+        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).columns(column1, column2, column3, column4).summary(crosstab);
     }
 
     @Override

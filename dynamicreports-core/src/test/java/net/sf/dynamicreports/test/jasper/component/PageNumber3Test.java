@@ -46,18 +46,12 @@ public class PageNumber3Test extends AbstractJasperValueTest implements Serializ
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = cmp.subreport(titleSubreport())
-                                        .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = cmp.subreport(titleSubreport()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport)
-          .pageFooter(cmp.pageNumber(), cmp.totalPages(), cmp.pageXslashY(), cmp.pageXofY(), cmp.pageXofY()
-                                                                                                .setFormatExpression("Page {0} of {1}"), cmp.pageXofY()
-                                                                                                                                            .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT),
-                      cmp.pageXofY()
-                         .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT), cmp.pageXofY()
-                                                                                        .setHorizontalTextAlignment(HorizontalTextAlignment.JUSTIFIED), cmp.pageXofY()
-                                                                                                                                                           .setHorizontalTextAlignment(
-                                                                                                                                                               HorizontalTextAlignment.CENTER));
+          .pageFooter(cmp.pageNumber(), cmp.totalPages(), cmp.pageXslashY(), cmp.pageXofY(), cmp.pageXofY().setFormatExpression("Page {0} of {1}"),
+                      cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.LEFT), cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT),
+                      cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.JUSTIFIED), cmp.pageXofY().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER));
     }
 
     @Override
@@ -116,8 +110,7 @@ public class PageNumber3Test extends AbstractJasperValueTest implements Serializ
 
     private JasperReportBuilder titleSubreport() {
         JasperReportBuilder report = report();
-        report.columns(col.column("Column1", "field1", type.integerType()))
-              .setDataSource(titleSubreportDataSource());
+        report.columns(col.column("Column1", "field1", type.integerType())).setDataSource(titleSubreportDataSource());
         return report;
     }
 

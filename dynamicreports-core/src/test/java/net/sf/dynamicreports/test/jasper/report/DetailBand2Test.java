@@ -42,11 +42,7 @@ public class DetailBand2Test extends AbstractJasperPositionTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", String.class))
-          .detailHeader(cmp.filler()
-                           .setFixedHeight(10))
-          .detailFooter(cmp.filler()
-                           .setFixedHeight(15));
+        rb.columns(column1 = col.column("Column1", "field1", String.class)).detailHeader(cmp.filler().setFixedHeight(10)).detailFooter(cmp.filler().setFixedHeight(15));
 
     }
 

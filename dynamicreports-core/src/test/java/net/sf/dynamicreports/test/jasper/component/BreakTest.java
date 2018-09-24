@@ -43,9 +43,8 @@ public class BreakTest extends AbstractJasperPositionTest implements Serializabl
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         rb.setPageColumnsPerPage(2)
-          .columns(col.componentColumn("Column1", cmp.verticalList(cmp.text("value"), cmp.pageBreak()
-                                                                                         .setPrintWhenExpression(new Expression1()), cmp.columnBreak()
-                                                                                                                                        .setPrintWhenExpression(new Expression2()))))
+          .columns(col.componentColumn("Column1",
+                                       cmp.verticalList(cmp.text("value"), cmp.pageBreak().setPrintWhenExpression(new Expression1()), cmp.columnBreak().setPrintWhenExpression(new Expression2()))))
           .title(cmp.text("text1"), cmp.pageBreak(), cmp.text("text1"));
     }
 

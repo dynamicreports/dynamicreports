@@ -61,26 +61,22 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
                               LineStyleEnum leftLineStyle, float left, Color rightColor, LineStyleEnum rightLineStyle, float right) {
         JRStyle style = getElementAt(name, index).getStyle();
 
-        JRBoxPen pen = style.getLineBox()
-                            .getTopPen();
+        JRBoxPen pen = style.getLineBox().getTopPen();
         Assert.assertEquals(new Float(top), pen.getLineWidth());
         Assert.assertEquals(topColor, pen.getLineColor());
         Assert.assertEquals(topLineStyle, pen.getLineStyleValue());
 
-        pen = style.getLineBox()
-                   .getBottomPen();
+        pen = style.getLineBox().getBottomPen();
         Assert.assertEquals(new Float(bottom), pen.getLineWidth());
         Assert.assertEquals(bottomColor, pen.getLineColor());
         Assert.assertEquals(bottomLineStyle, pen.getLineStyleValue());
 
-        pen = style.getLineBox()
-                   .getLeftPen();
+        pen = style.getLineBox().getLeftPen();
         Assert.assertEquals(new Float(left), pen.getLineWidth());
         Assert.assertEquals(leftColor, pen.getLineColor());
         Assert.assertEquals(leftLineStyle, pen.getLineStyleValue());
 
-        pen = style.getLineBox()
-                   .getRightPen();
+        pen = style.getLineBox().getRightPen();
         Assert.assertEquals(new Float(right), pen.getLineWidth());
         Assert.assertEquals(rightColor, pen.getLineColor());
         Assert.assertEquals(rightLineStyle, pen.getLineStyleValue());
@@ -88,14 +84,10 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
     protected void paddingTest(String name, int index, Integer top, Integer bottom, Integer left, Integer right) {
         JRStyle style = getElementAt(name, index).getStyle();
-        Assert.assertEquals(top, style.getLineBox()
-                                      .getTopPadding());
-        Assert.assertEquals(bottom, style.getLineBox()
-                                         .getBottomPadding());
-        Assert.assertEquals(left, style.getLineBox()
-                                       .getLeftPadding());
-        Assert.assertEquals(right, style.getLineBox()
-                                        .getRightPadding());
+        Assert.assertEquals(top, style.getLineBox().getTopPadding());
+        Assert.assertEquals(bottom, style.getLineBox().getBottomPadding());
+        Assert.assertEquals(left, style.getLineBox().getLeftPadding());
+        Assert.assertEquals(right, style.getLineBox().getRightPadding());
     }
 
     protected void horizontalAlignmentTest(String name, int index, HorizontalImageAlignEnum horizontalAlignment) {

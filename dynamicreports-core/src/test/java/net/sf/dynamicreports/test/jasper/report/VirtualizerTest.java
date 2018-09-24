@@ -36,8 +36,7 @@ public class VirtualizerTest extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.title(cmp.text("title"))
-          .setVirtualizer(new JRFileVirtualizer(2));
+        rb.title(cmp.text("title")).setVirtualizer(new JRFileVirtualizer(2));
     }
 
     @Override

@@ -51,16 +51,8 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
 
         rb.addProperty("net.sf.jasperreports.chart.pie.ignore.duplicated.key", "true")
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .summary(cht.pie3DChart()
-                      .setKey(column1)
-                      .series(cht.serie(column2))
-                      .setCircular(true)
-                      .setLabelFormat("label {0}")
-                      .setLegendLabelFormat("legend label {0}")
-                      .setDepthFactor(0.5), cht.pie3DChart()
-                                               .setKey(column1)
-                                               .series(cht.serie(column2))
-                                               .setShowLabels(false));
+          .summary(cht.pie3DChart().setKey(column1).series(cht.serie(column2)).setCircular(true).setLabelFormat("label {0}").setLegendLabelFormat("legend label {0}").setDepthFactor(0.5),
+                   cht.pie3DChart().setKey(column1).series(cht.serie(column2)).setShowLabels(false));
     }
 
     @Override

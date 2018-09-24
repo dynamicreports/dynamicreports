@@ -65,8 +65,7 @@ public class StackedAreaChartTest extends AbstractJasperChartTest implements Ser
                                                 .setLabel("category")
                                                 .setLabelColor(Color.BLUE)
                                                 .setLabelFont(stl.fontArialBold())
-                                                .setTickLabelFont(stl.fontArial()
-                                                                     .setItalic(true))
+                                                .setTickLabelFont(stl.fontArial().setItalic(true))
                                                 .setTickLabelColor(Color.CYAN)
                                                 .setTickLabelRotation(45d)
                                                 .setLineColor(Color.LIGHT_GRAY)), cht.stackedAreaChart()
@@ -76,8 +75,7 @@ public class StackedAreaChartTest extends AbstractJasperChartTest implements Ser
                                                                                                             .setLabel("value")
                                                                                                             .setLabelColor(Color.BLUE)
                                                                                                             .setLabelFont(stl.fontArialBold())
-                                                                                                            .setTickLabelFont(stl.fontArial()
-                                                                                                                                 .setItalic(true))
+                                                                                                            .setTickLabelFont(stl.fontArial().setItalic(true))
                                                                                                             .setTickLabelColor(Color.CYAN)
                                                                                                             .setTickLabelMask("#,##0.00")
                                                                                                             .setLineColor(Color.LIGHT_GRAY)
@@ -92,33 +90,26 @@ public class StackedAreaChartTest extends AbstractJasperChartTest implements Ser
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        Axis axis = chart.getCategoryPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getCategoryPlot().getDomainAxis();
         CategoryPlot categoryPlot = chart.getCategoryPlot();
-        Assert.assertEquals("renderer", StackedAreaRenderer.class, categoryPlot.getRenderer()
-                                                                               .getClass());
+        Assert.assertEquals("renderer", StackedAreaRenderer.class, categoryPlot.getRenderer().getClass());
         Assert.assertEquals("category label", "category", axis.getLabel());
         Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("category label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        CategoryLabelPosition labelPosition = chart.getCategoryPlot()
-                                                   .getDomainAxis()
-                                                   .getCategoryLabelPositions()
-                                                   .getLabelPosition(RectangleEdge.LEFT);
+        CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis().getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
         Assert.assertEquals("plot label rotation", (45d / 180) * Math.PI, labelPosition.getAngle());
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
         chart = getChart("summary.chart2", 0);
-        axis = chart.getCategoryPlot()
-                    .getRangeAxis();
+        axis = chart.getCategoryPlot().getRangeAxis();
         Assert.assertEquals("value label", "value", axis.getLabel());
         Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("value label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride()
-                                                                           .format(10));
+        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride().format(10));
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
         Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound());
         Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound());

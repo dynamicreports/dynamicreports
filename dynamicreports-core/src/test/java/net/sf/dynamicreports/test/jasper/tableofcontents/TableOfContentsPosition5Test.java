@@ -39,10 +39,7 @@ public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
     protected void configureReport(JasperReportBuilder rb) {
         tocHeading1 = tableOfContentsHeading().setLabel("title2");
 
-        rb.tableOfContents()
-          .title(cmp.text("text")
-                    .setTableOfContentsHeading("title1"), cmp.text("text")
-                                                             .setTableOfContentsHeading(tocHeading1), cmp.subreport(createSubreport()));
+        rb.tableOfContents().title(cmp.text("text").setTableOfContentsHeading("title1"), cmp.text("text").setTableOfContentsHeading(tocHeading1), cmp.subreport(createSubreport()));
     }
 
     private JasperReportBuilder createSubreport() {
@@ -51,12 +48,9 @@ public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
         TableOfContentsHeadingBuilder tocHeading3 = tableOfContentsHeading();
         tocHeading3.setParentHeading(tocHeading2);
         JasperReportBuilder report = report();
-        report.title(cmp.text("text3")
-                        .setTableOfContentsHeading(tocHeading2));
-        report.title(cmp.text("text4")
-                        .setTableOfContentsHeading(tocHeading3));
-        report.title(cmp.text("text5")
-                        .setTableOfContentsHeading(tableOfContentsHeading()));
+        report.title(cmp.text("text3").setTableOfContentsHeading(tocHeading2));
+        report.title(cmp.text("text4").setTableOfContentsHeading(tocHeading3));
+        report.title(cmp.text("text5").setTableOfContentsHeading(tableOfContentsHeading()));
         return report;
     }
 

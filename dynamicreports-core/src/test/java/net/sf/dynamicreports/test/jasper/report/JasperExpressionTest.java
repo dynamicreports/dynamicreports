@@ -48,9 +48,8 @@ public class JasperExpressionTest extends AbstractJasperValueTest implements Ser
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("field1", Integer.class)
-                                .setTitle(exp.jasperSyntaxText("Column1\n\"Column1\"")), column2 = col.column("field2", Integer.class)
-                                                                                                      .setTitle(exp.jasperSyntax("\"Column2\"", String.class)),
+        rb.columns(column1 = col.column("field1", Integer.class).setTitle(exp.jasperSyntaxText("Column1\n\"Column1\"")),
+                   column2 = col.column("field2", Integer.class).setTitle(exp.jasperSyntax("\"Column2\"", String.class)),
                    column3 = col.column(exp.jasperSyntax("$F{field1} - $F{field2}", Integer.class)));
     }
 

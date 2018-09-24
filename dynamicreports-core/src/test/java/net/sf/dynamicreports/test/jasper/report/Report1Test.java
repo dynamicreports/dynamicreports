@@ -83,8 +83,7 @@ public class Report1Test extends AbstractJasperValueTest {
         elementValueTest("title.textField1", "bundleKey3", "bundleKey3", "bundleValue");
 
         FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
-        Assert.assertFalse("fonts", fontUtil.getFontFamilyNames()
-                                            .isEmpty());
+        Assert.assertFalse("fonts", fontUtil.getFontFamilyNames().isEmpty());
 
         JasperPrint jasperPrint = getJasperPrint();
         Assert.assertEquals("Report", jasperPrint.getName());

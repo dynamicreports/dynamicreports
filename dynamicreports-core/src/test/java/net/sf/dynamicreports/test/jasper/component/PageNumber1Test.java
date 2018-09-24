@@ -34,8 +34,7 @@ public class PageNumber1Test extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL)
-          .pageFooter(cmp.pageNumber(), cmp.totalPages(), cmp.pageXslashY(), cmp.pageXofY());
+        rb.setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).pageFooter(cmp.pageNumber(), cmp.totalPages(), cmp.pageXslashY(), cmp.pageXofY());
     }
 
     @Override

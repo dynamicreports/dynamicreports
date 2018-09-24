@@ -42,18 +42,12 @@ public class TemplateStyle6Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style()
-                                    .setName("textStyle")
-                                    .setPadding(2);
-        StyleBuilder boldStyle = stl.style(textStyle)
-                                    .setName("boldStyle")
-                                    .bold();
+        StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
+        StyleBuilder boldStyle = stl.style(textStyle).setName("boldStyle").bold();
 
         ReportTemplateBuilder template = template().templateStyles(textStyle, boldStyle);
 
-        rb.setTemplate(template)
-          .title(cmp.multiPageList(cmp.text("title")
-                                      .setStyle(stl.templateStyle("boldStyle"))));
+        rb.setTemplate(template).title(cmp.multiPageList(cmp.text("title").setStyle(stl.templateStyle("boldStyle"))));
     }
 
     @Override

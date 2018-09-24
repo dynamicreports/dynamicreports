@@ -47,10 +47,7 @@ public class MapTest extends AbstractJasperChartTest implements Serializable {
 
         numberOfPagesTest(1);
 
-        JRTemplateGenericPrintElement map = (JRTemplateGenericPrintElement) getJasperPrint().getPages()
-                                                                                            .get(0)
-                                                                                            .getElements()
-                                                                                            .get(0);
+        JRTemplateGenericPrintElement map = (JRTemplateGenericPrintElement) getJasperPrint().getPages().get(0).getElements().get(0);
         Assert.assertEquals("latitude", map.getParameterValue("latitude"), 40.7f);
         Assert.assertEquals("longitude", map.getParameterValue("longitude"), -74f);
         Assert.assertEquals("zoom", map.getParameterValue("zoom"), 12);

@@ -45,15 +45,11 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void chartCategoryCountTest(String name, int index, int expectedNumberOfCategories) {
-        Assert.assertEquals("chart category count " + name, expectedNumberOfCategories, getChart(name, index).getCategoryPlot()
-                                                                                                             .getDataset()
-                                                                                                             .getColumnCount());
+        Assert.assertEquals("chart category count " + name, expectedNumberOfCategories, getChart(name, index).getCategoryPlot().getDataset().getColumnCount());
     }
 
     protected void chartSeriesCountTest(String name, int index, int expectedNumberOfSeries) {
-        Assert.assertEquals("chart series count " + name, expectedNumberOfSeries, getChart(name, index).getCategoryPlot()
-                                                                                                       .getDataset()
-                                                                                                       .getRowCount());
+        Assert.assertEquals("chart series count " + name, expectedNumberOfSeries, getChart(name, index).getCategoryPlot().getDataset().getRowCount());
     }
 
     protected void chartTitleTest(String name, int index, String title) {
@@ -66,8 +62,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void chartDataTest(String name, int index, String[] categories, String[] series, Number[][] values) {
-        CategoryDataset dataset = getChart(name, index).getCategoryPlot()
-                                                       .getDataset();
+        CategoryDataset dataset = getChart(name, index).getCategoryPlot().getDataset();
         for (int i = 0; i < categories.length; i++) {
             for (int j = 0; j < series.length; j++) {
                 Assert.assertEquals("chart data", values[i][j], dataset.getValue(series[j], categories[i]));
@@ -76,8 +71,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void xyChartDataTest(JFreeChart chart, int series, String seriesName, Number[][] values) {
-        XYDataset dataset = chart.getXYPlot()
-                                 .getDataset();
+        XYDataset dataset = chart.getXYPlot().getDataset();
         int index = 0;
         for (Number[] numbers : values) {
             Assert.assertEquals("chart data series name", seriesName, dataset.getSeriesKey(series));
@@ -88,8 +82,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void xyzChartDataTest(JFreeChart chart, int series, String seriesName, Number[][] values) {
-        XYZDataset dataset = (XYZDataset) chart.getXYPlot()
-                                               .getDataset();
+        XYZDataset dataset = (XYZDataset) chart.getXYPlot().getDataset();
         int index = 0;
         for (Number[] numbers : values) {
             Assert.assertEquals("chart data series name", seriesName, dataset.getSeriesKey(series));
@@ -101,8 +94,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void highLowChartDataTest(JFreeChart chart, int series, Object[][] values) {
-        DefaultHighLowDataset dataset = (DefaultHighLowDataset) chart.getXYPlot()
-                                                                     .getDataset();
+        DefaultHighLowDataset dataset = (DefaultHighLowDataset) chart.getXYPlot().getDataset();
         int index = 0;
         for (Object[] value : values) {
             Assert.assertEquals("chart data series", value[0], dataset.getSeriesKey(series));
@@ -117,8 +109,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     }
 
     protected void ganttChartDataTest(JFreeChart chart, String serie, String[] tasks, Object[][] values) {
-        GanttCategoryDataset dataset = (GanttCategoryDataset) chart.getCategoryPlot()
-                                                                   .getDataset();
+        GanttCategoryDataset dataset = (GanttCategoryDataset) chart.getCategoryPlot().getDataset();
         for (int i = 0; i < tasks.length; i++) {
             Assert.assertEquals("chart data start value", ((Date) values[i][0]).getTime(), dataset.getStartValue(serie, tasks[i]));
             Assert.assertEquals("chart data end value", ((Date) values[i][1]).getTime(), dataset.getEndValue(serie, tasks[i]));
@@ -134,8 +125,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     protected JFreeChart getChart(JRPrintImage image) {
         DrawChartRendererImpl renderer = (DrawChartRendererImpl) image.getRenderer();
         try {
-            Field field = renderer.getClass()
-                                  .getDeclaredField("chart");
+            Field field = renderer.getClass().getDeclaredField("chart");
             field.setAccessible(true);
             return (JFreeChart) field.get(renderer);
         } catch (Exception e) {

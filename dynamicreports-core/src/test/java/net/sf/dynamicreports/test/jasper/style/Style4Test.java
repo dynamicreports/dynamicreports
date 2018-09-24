@@ -51,19 +51,13 @@ public class Style4Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder groupStyle = stl.style()
-                                     .bold()
-                                     .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT);
+        StyleBuilder groupStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.LEFT);
 
         column1 = col.column("field1", type.dateYearType());
 
-        group1 = grp.group(column1)
-                    .setHideColumn(false)
-                    .groupByDataType()
-                    .setStyle(groupStyle);
+        group1 = grp.group(column1).setHideColumn(false).groupByDataType().setStyle(groupStyle);
 
-        rb.columns(column1)
-          .groupBy(group1);
+        rb.columns(column1).groupBy(group1);
     }
 
     @Override

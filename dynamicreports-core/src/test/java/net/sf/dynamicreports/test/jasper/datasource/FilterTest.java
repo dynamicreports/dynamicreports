@@ -63,11 +63,8 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
         dataset.setDataSource(createCrosstabDataSource());
         dataset.setFilterExpression(new CrosstabFilterExpression());
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .setSubDataset(dataset)
-                                       .rowGroups(rowGroup = ctab.rowGroup("field1", String.class))
-                                       .columnGroups(columnGroup = ctab.columnGroup("field2", String.class))
-                                       .measures(measure1);
+        CrosstabBuilder crosstab =
+            ctab.crosstab().setSubDataset(dataset).rowGroups(rowGroup = ctab.rowGroup("field1", String.class)).columnGroups(columnGroup = ctab.columnGroup("field2", String.class)).measures(measure1);
 
         rb.columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()))
           .title(crosstab)

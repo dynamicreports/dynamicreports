@@ -48,13 +48,9 @@ public class Report5Test extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport())
-                                              .setParameters(new SubreportParametersExpression());
+        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setParameters(new SubreportParametersExpression());
 
-        rb.title(cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class)))
-          .detail(detailSubreport)
-          .setLocale(Locale.ENGLISH)
-          .setResourceBundle(new ResourceBundle());
+        rb.title(cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class))).detail(detailSubreport).setLocale(Locale.ENGLISH).setResourceBundle(new ResourceBundle());
     }
 
     @Override

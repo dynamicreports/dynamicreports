@@ -45,12 +45,9 @@ public class ConcatenatedReport3Test {
 
     @Before
     public void init() {
-        JasperReportBuilder report1 = report().title(cmp.text("text1"))
-                                              .pageFooter(cmp.pageNumber());
-        JasperReportBuilder report2 = report().title(cmp.text("text2"))
-                                              .pageFooter(cmp.pageNumber());
-        JasperReportBuilder report3 = report().title(cmp.text("text3"))
-                                              .pageFooter(cmp.pageNumber());
+        JasperReportBuilder report1 = report().title(cmp.text("text1")).pageFooter(cmp.pageNumber());
+        JasperReportBuilder report2 = report().title(cmp.text("text2")).pageFooter(cmp.pageNumber());
+        JasperReportBuilder report3 = report().title(cmp.text("text3")).pageFooter(cmp.pageNumber());
 
         JRSwapFile swapFile = new JRSwapFile(System.getProperty("java.io.tmpdir"), 2000, 5000);
         concatenatedReport = concatenatedReport(new JasperPrintListFileHandler(System.getProperty("java.io.tmpdir"), new JRSwapFileVirtualizer(3, swapFile)));

@@ -39,27 +39,23 @@ public class List2Test extends AbstractJasperPositionTest {
 
         VerticalListBuilder list2 = cmp.verticalList();
         list2.add(cmp.text(""));
-        list2.add(cmp.filler()
-                     .setFixedWidth(500));
+        list2.add(cmp.filler().setFixedWidth(500));
 
         VerticalListBuilder list3 = cmp.verticalList();
         list3.add(cmp.text(""));
 
         VerticalListBuilder list4 = cmp.verticalList();
         list4.add(cmp.text(""));
-        list4.add(cmp.filler()
-                     .setFixedWidth(50));
+        list4.add(cmp.filler().setFixedWidth(50));
 
         VerticalListBuilder list5 = cmp.verticalList();
         list5.add(cmp.text(""));
 
         VerticalListBuilder list6 = cmp.verticalList();
         list6.add(cmp.text(""));
-        list6.add(cmp.filler()
-                     .setFixedWidth(200));
+        list6.add(cmp.filler().setFixedWidth(200));
         list6.add(cmp.text(""));
-        list6.add(cmp.filler()
-                     .setFixedWidth(500));
+        list6.add(cmp.filler().setFixedWidth(500));
 
         rb.title(cmp.horizontalList(list1, list2), cmp.horizontalList(list3, list4), cmp.horizontalList(list5, list6));
     }

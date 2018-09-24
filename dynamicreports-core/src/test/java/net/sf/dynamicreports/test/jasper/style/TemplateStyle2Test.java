@@ -54,19 +54,10 @@ public class TemplateStyle2Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style()
-                                    .setName("textStyle")
-                                    .setPadding(2);
-        StyleBuilder titleStyle = stl.style(textStyle)
-                                     .setName("titleStyle")
-                                     .bold();
-        StyleBuilder subtotalStyle = stl.style(2)
-                                        .setName("subtotalStyle")
-                                        .setTopBorder(stl.pen1Point())
-                                        .bold();
-        StyleBuilder boldStyle = stl.style()
-                                    .setName("boldStyle")
-                                    .bold();
+        StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
+        StyleBuilder titleStyle = stl.style(textStyle).setName("titleStyle").bold();
+        StyleBuilder subtotalStyle = stl.style(2).setName("subtotalStyle").setTopBorder(stl.pen1Point()).bold();
+        StyleBuilder boldStyle = stl.style().setName("boldStyle").bold();
 
         ReportTemplateBuilder template = template().templateStyles(textStyle, titleStyle, subtotalStyle, boldStyle);
 
@@ -74,12 +65,9 @@ public class TemplateStyle2Test extends AbstractJasperStyleTest implements Seria
           .setTextStyle(stl.templateStyle("textStyle"))
           .setColumnTitleStyle(stl.templateStyle("titleStyle"))
           .setSubtotalStyle(stl.templateStyle("subtotalStyle"))
-          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType())
-                                                                                               .setStyle(stl.templateStyle("boldStyle")))
+          .columns(column1 = col.column("Column1", "field1", type.integerType()), column2 = col.column("Column2", "field2", type.stringType()).setStyle(stl.templateStyle("boldStyle")))
           .groupBy(group1 = grp.group(column2))
-          .subtotalsAtSummary(subtotal1 = sbt.sum(column1)
-                                             .setLabel("total")
-                                             .setLabelStyle(stl.templateStyle("boldStyle")));
+          .subtotalsAtSummary(subtotal1 = sbt.sum(column1).setLabel("total").setLabelStyle(stl.templateStyle("boldStyle")));
     }
 
     @Override

@@ -48,15 +48,10 @@ public class BooleanColumn2Test extends AbstractJasperValueTest implements Seria
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .setTemplate(template().setBooleanEmptyWhenNullValue(true))
-          .columns(col.booleanColumn("field1")
-                      .setComponentType(BooleanComponentType.TEXT_TRUE_FALSE), col.booleanColumn("field1")
-                                                                                  .setComponentType(BooleanComponentType.TEXT_TRUE_FALSE)
-                                                                                  .setEmptyWhenNullValue(false), col.booleanColumn("field1")
-                                                                                                                    .setComponentType(BooleanComponentType.IMAGE_STYLE_1), col.booleanColumn("field1")
-                                                                                                                                                                              .setComponentType(
-                                                                                                                                                                                  BooleanComponentType.IMAGE_STYLE_1)
-                                                                                                                                                                              .setEmptyWhenNullValue(
-                                                                                                                                                                                  false));
+          .columns(col.booleanColumn("field1").setComponentType(BooleanComponentType.TEXT_TRUE_FALSE),
+                   col.booleanColumn("field1").setComponentType(BooleanComponentType.TEXT_TRUE_FALSE).setEmptyWhenNullValue(false),
+                   col.booleanColumn("field1").setComponentType(BooleanComponentType.IMAGE_STYLE_1),
+                   col.booleanColumn("field1").setComponentType(BooleanComponentType.IMAGE_STYLE_1).setEmptyWhenNullValue(false));
     }
 
     @Override

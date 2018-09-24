@@ -71,26 +71,14 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
                     .setSubDataset(dataset1)
                     .setTitle(new TitleExpression())
                     .setCategory("field1", String.class)
-                    .series(cht.serie("field3", Integer.class)
-                               .setLabel("f3"), cht.serie(new ValueExpression())
-                                                   .setLabel("exp")), cht.barChart()
-                                                                         .setSubDataset(dataset2)
-                                                                         .customizers(new Customizer())
-                                                                         .setCategory(new CategoryExpression())
-                                                                         .series(cht.serie(col.column("Column2", "field2", Integer.class)), cht.serie("field3", Integer.class)
-                                                                                                                                               .setLabel("f3"), cht.serie(new ValueExpression())
-                                                                                                                                                                   .setLabel("exp")), cht.barChart()
-                                                                                                                                                                                         .setSubDataset(
-                                                                                                                                                                                             dataset3)
-                                                                                                                                                                                         .setCategory(
-                                                                                                                                                                                             "field1",
-                                                                                                                                                                                             String
-                                                                                                                                                                                                 .class)
-                                                                                                                                                                                         .series(
-                                                                                                                                                                                             cht.serie(
-                                                                                                                                                                                                 variable)
-                                                                                                                                                                                                .setLabel(
-                                                                                                                                                                                                    "exp")));
+                    .series(cht.serie("field3", Integer.class).setLabel("f3"), cht.serie(new ValueExpression()).setLabel("exp")), cht.barChart()
+                                                                                                                                     .setSubDataset(dataset2)
+                                                                                                                                     .customizers(new Customizer())
+                                                                                                                                     .setCategory(new CategoryExpression())
+                                                                                                                                     .series(cht.serie(col.column("Column2", "field2", Integer.class)),
+                                                                                                                                             cht.serie("field3", Integer.class).setLabel("f3"),
+                                                                                                                                             cht.serie(new ValueExpression()).setLabel("exp")),
+                 cht.barChart().setSubDataset(dataset3).setCategory("field1", String.class).series(cht.serie(variable).setLabel("exp")));
     }
 
     @Override
@@ -151,8 +139,7 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
 
             double f1 = ((Number) reportParameters.getValue("field2")).doubleValue();
             double f2 = ((Number) reportParameters.getValue("field3")).doubleValue();
@@ -171,8 +158,7 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             return (String) reportParameters.getValue("field1") + "_exp";
         }
     }

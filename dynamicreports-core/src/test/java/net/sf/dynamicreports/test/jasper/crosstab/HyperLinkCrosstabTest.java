@@ -64,13 +64,9 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
         measure = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure.setHyperLink(hyperLink(new HyperLinkExpression2(rowGroup, columnGroup, measure)));
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(measure);
+        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure);
 
-        rb.setLocale(Locale.ENGLISH)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
 
     @Override

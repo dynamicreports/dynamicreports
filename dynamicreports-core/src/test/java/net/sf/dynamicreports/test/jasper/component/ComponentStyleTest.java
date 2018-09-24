@@ -43,16 +43,9 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style()
-                                .setLinePen(stl.penDotted());
-        rb.title(cmp.line()
-                    .setStyle(style), cmp.filler()
-                                         .setFixedHeight(10), cmp.line()
-                                                                 .setPen(stl.pen2Point()), cmp.ellipse()
-                                                                                              .setStyle(style), cmp.ellipse()
-                                                                                                                   .setPen(stl.pen2Point()), cmp.rectangle()
-                                                                                                                                                .setStyle(style), cmp.rectangle()
-                                                                                                                                                                     .setPen(stl.pen2Point()));
+        StyleBuilder style = stl.style().setLinePen(stl.penDotted());
+        rb.title(cmp.line().setStyle(style), cmp.filler().setFixedHeight(10), cmp.line().setPen(stl.pen2Point()), cmp.ellipse().setStyle(style), cmp.ellipse().setPen(stl.pen2Point()),
+                 cmp.rectangle().setStyle(style), cmp.rectangle().setPen(stl.pen2Point()));
     }
 
     @Override
@@ -62,21 +55,18 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
         numberOfPagesTest(1);
 
         JRPrintLine line = (JRPrintLine) getElementAt("title.line1", 0);
-        penTest(line.getStyle()
-                    .getLinePen(), 1f, null, LineStyleEnum.DOTTED);
+        penTest(line.getStyle().getLinePen(), 1f, null, LineStyleEnum.DOTTED);
 
         line = (JRPrintLine) getElementAt("title.line2", 0);
         penTest(line.getLinePen(), 2f, Color.BLACK, LineStyleEnum.SOLID);
 
         JRPrintEllipse ellipse = (JRPrintEllipse) getElementAt("title.ellipse1", 0);
-        penTest(ellipse.getStyle()
-                       .getLinePen(), 1f, null, LineStyleEnum.DOTTED);
+        penTest(ellipse.getStyle().getLinePen(), 1f, null, LineStyleEnum.DOTTED);
         ellipse = (JRPrintEllipse) getElementAt("title.ellipse2", 0);
         penTest(ellipse.getLinePen(), 2f, Color.BLACK, LineStyleEnum.SOLID);
 
         JRPrintRectangle rectangle = (JRPrintRectangle) getElementAt("title.rectangle1", 0);
-        penTest(rectangle.getStyle()
-                         .getLinePen(), 1f, null, LineStyleEnum.DOTTED);
+        penTest(rectangle.getStyle().getLinePen(), 1f, null, LineStyleEnum.DOTTED);
         rectangle = (JRPrintRectangle) getElementAt("title.rectangle2", 0);
         penTest(rectangle.getLinePen(), 2f, Color.BLACK, LineStyleEnum.SOLID);
 

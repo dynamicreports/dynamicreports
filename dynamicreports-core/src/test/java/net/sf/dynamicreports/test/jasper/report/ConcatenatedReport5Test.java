@@ -46,15 +46,9 @@ public class ConcatenatedReport5Test {
 
     @Before
     public void init() {
-        JasperReportBuilder report1 = report().title(cmp.text("text1"))
-                                              .setWhenNoDataType(WhenNoDataType.BLANK_PAGE)
-                                              .setDataSource(new DataSource());
-        JasperReportBuilder report2 = report().title(cmp.text("text2"))
-                                              .setWhenNoDataType(WhenNoDataType.BLANK_PAGE)
-                                              .setDataSource(new DataSource());
-        JasperReportBuilder report3 = report().title(cmp.text("text3"))
-                                              .setWhenNoDataType(WhenNoDataType.BLANK_PAGE)
-                                              .setDataSource(new DataSource());
+        JasperReportBuilder report1 = report().title(cmp.text("text1")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
+        JasperReportBuilder report2 = report().title(cmp.text("text2")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
+        JasperReportBuilder report3 = report().title(cmp.text("text3")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
 
         concatenatedReport = concatenatedReport();
         concatenatedReport.concatenate(report1, report2, report3);

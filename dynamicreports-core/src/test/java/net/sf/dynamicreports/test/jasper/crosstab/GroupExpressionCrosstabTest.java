@@ -64,10 +64,7 @@ public class GroupExpressionCrosstabTest extends AbstractJasperCrosstabValueTest
                                        .columnGroups(columnGroup1 = ctab.columnGroup(new GroupExpression1()), columnGroup2 = ctab.columnGroup(new GroupExpression2()))
                                        .measures(measure1);
 
-        rb.setLocale(Locale.ENGLISH)
-          .setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-          .fields(field("field2", Date.class))
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).fields(field("field2", Date.class)).summary(crosstab);
     }
 
     @Override

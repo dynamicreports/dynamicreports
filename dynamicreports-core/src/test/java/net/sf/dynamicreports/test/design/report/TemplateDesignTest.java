@@ -76,10 +76,7 @@ public class TemplateDesignTest {
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         MarginBuilder margin = margin();
-        margin.setLeft(10)
-              .setRight(6)
-              .setTop(7)
-              .setBottom(8);
+        margin.setLeft(10).setRight(6).setTop(7).setBottom(8);
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
@@ -89,10 +86,7 @@ public class TemplateDesignTest {
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         margin = margin();
-        margin.setLeft(5)
-              .setRight(10)
-              .setTop(7)
-              .setBottom(8);
+        margin.setLeft(5).setRight(10).setTop(7).setBottom(8);
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
@@ -102,10 +96,7 @@ public class TemplateDesignTest {
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         margin = margin();
-        margin.setLeft(5)
-              .setRight(6)
-              .setTop(10)
-              .setBottom(8);
+        margin.setLeft(5).setRight(6).setTop(10).setBottom(8);
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
@@ -115,10 +106,7 @@ public class TemplateDesignTest {
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         margin = margin();
-        margin.setLeft(5)
-              .setRight(6)
-              .setTop(7)
-              .setBottom(10);
+        margin.setLeft(5).setRight(6).setTop(7).setBottom(10);
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());

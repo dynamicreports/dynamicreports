@@ -56,17 +56,13 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         StyleBuilder columnStyle1 = stl.style(stl.templateStyle("columnStyle"))
-                                       .conditionalStyles(stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7))
-                                                             .bold(), stl.conditionalStyle(new ConditionExpression(16))
-                                                                         .setBackgroundColor(Color.ORANGE));
-        StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle"))
-                                       .bold();
+                                       .conditionalStyles(stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7)).bold(),
+                                                          stl.conditionalStyle(new ConditionExpression(16)).setBackgroundColor(Color.ORANGE));
+        StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle")).bold();
 
         rb.addTemplateStyle(stl.loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate1.jrtx")))
-          .columns(column1 = col.column("Column1", "field1", Integer.class)
-                                .setStyle(columnStyle1), column2 = col.column("Column2", "field2", Integer.class)
-                                                                      .setStyle(columnStyle2), column3 = col.column("Column3", "field3", Integer.class)
-                                                                                                            .setTitleStyle(stl.templateStyle("columnTitleStyle3")))
+          .columns(column1 = col.column("Column1", "field1", Integer.class).setStyle(columnStyle1), column2 = col.column("Column2", "field2", Integer.class).setStyle(columnStyle2),
+                   column3 = col.column("Column3", "field3", Integer.class).setTitleStyle(stl.templateStyle("columnTitleStyle3")))
           .setTextStyle(stl.templateStyle("textStyle"))
           .setColumnTitleStyle(stl.templateStyle("titleStyle"))
           .setColumnStyle(stl.templateStyle("columnStyle"))
@@ -74,14 +70,8 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
           .setHighlightDetailOddRows(true)
           .setHighlightDetailEvenRows(true)
           .subtotalsAtSummary(subtotal1 = sbt.sum(column1))
-          .detailRowHighlighters(stl.conditionalStyle(new ConditionExpression(5, 16))
-                                    .setBackgroundColor(Color.RED), stl.conditionalStyle(new ConditionExpression(2, 9))
-                                                                       .setForegroundColor(Color.RED))
-          .title(cmp.horizontalList()
-                    .setStyle(stl.style(stl.pen1Point()))
-                    .add(cmp.text("text")
-                            .setStyle(stl.templateStyle("textFieldStyle")))
-                    .add(cmp.text("text")));
+          .detailRowHighlighters(stl.conditionalStyle(new ConditionExpression(5, 16)).setBackgroundColor(Color.RED), stl.conditionalStyle(new ConditionExpression(2, 9)).setForegroundColor(Color.RED))
+          .title(cmp.horizontalList().setStyle(stl.style(stl.pen1Point())).add(cmp.text("text").setStyle(stl.templateStyle("textFieldStyle"))).add(cmp.text("text")));
     }
 
     @Override

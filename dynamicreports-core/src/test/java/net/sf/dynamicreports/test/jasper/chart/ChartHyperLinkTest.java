@@ -54,16 +54,17 @@ public class ChartHyperLinkTest extends AbstractJasperChartTest implements Seria
         TextColumnBuilder<Integer> column2;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .summary(cht.barChart()
-                      .setCategory(column1)
-                      .setItemHyperLink(hyperLink().setTooltip(new TooltipExpression("1")))
-                      .series(cht.serie(column2)), cht.barChart()
-                                                      .setCategory(column1)
-                                                      .series(cht.serie(column2)
-                                                                 .setLabel("1")
-                                                                 .setItemHyperLink(hyperLink().setTooltip(new TooltipExpression("2"))), cht.serie(column2)
-                                                                                                                                           .setLabel("2"))
-                                                      .setItemHyperLink(hyperLink().setTooltip(new TooltipExpression("3"))));
+          .summary(cht.barChart().setCategory(column1).setItemHyperLink(hyperLink().setTooltip(new TooltipExpression("1"))).series(cht.serie(column2)), cht.barChart()
+                                                                                                                                                           .setCategory(column1)
+                                                                                                                                                           .series(cht.serie(column2)
+                                                                                                                                                                      .setLabel("1")
+                                                                                                                                                                      .setItemHyperLink(
+                                                                                                                                                                          hyperLink().setTooltip(
+                                                                                                                                                                              new TooltipExpression(
+                                                                                                                                                                                  "2"))),
+                                                                                                                                                                   cht.serie(column2).setLabel("2"))
+                                                                                                                                                           .setItemHyperLink(hyperLink().setTooltip(
+                                                                                                                                                               new TooltipExpression("3"))));
     }
 
     @Override
@@ -82,18 +83,10 @@ public class ChartHyperLinkTest extends AbstractJasperChartTest implements Seria
         Rectangle renderingArea = new Rectangle(0, 0, image.getWidth(), image.getHeight());
         try {
             List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
-            Assert.assertEquals("1_value1_1", imageAreaHyperlinks.get(0)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("1_value2_2", imageAreaHyperlinks.get(1)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("1_value3_3", imageAreaHyperlinks.get(2)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("1_value4_4", imageAreaHyperlinks.get(3)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
+            Assert.assertEquals("1_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("1_value2_2", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("1_value3_3", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("1_value4_4", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
         } catch (JRException e) {
             e.printStackTrace();
             Assert.fail(e.getMessage());
@@ -104,30 +97,14 @@ public class ChartHyperLinkTest extends AbstractJasperChartTest implements Seria
         renderingArea = new Rectangle(0, 0, image.getWidth(), image.getHeight());
         try {
             List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
-            Assert.assertEquals("2_value1_1", imageAreaHyperlinks.get(0)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("3_value1_1", imageAreaHyperlinks.get(1)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("2_value2_2", imageAreaHyperlinks.get(2)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("3_value2_2", imageAreaHyperlinks.get(3)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("2_value3_3", imageAreaHyperlinks.get(4)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("3_value3_3", imageAreaHyperlinks.get(5)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("2_value4_4", imageAreaHyperlinks.get(6)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
-            Assert.assertEquals("3_value4_4", imageAreaHyperlinks.get(7)
-                                                                 .getHyperlink()
-                                                                 .getHyperlinkTooltip());
+            Assert.assertEquals("2_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("3_value1_1", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("2_value2_2", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("3_value2_2", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("2_value3_3", imageAreaHyperlinks.get(4).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("3_value3_3", imageAreaHyperlinks.get(5).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("2_value4_4", imageAreaHyperlinks.get(6).getHyperlink().getHyperlinkTooltip());
+            Assert.assertEquals("3_value4_4", imageAreaHyperlinks.get(7).getHyperlink().getHyperlinkTooltip());
         } catch (JRException e) {
             e.printStackTrace();
             Assert.fail(e.getMessage());

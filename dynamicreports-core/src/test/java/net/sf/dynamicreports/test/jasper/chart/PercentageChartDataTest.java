@@ -60,50 +60,22 @@ public class PercentageChartDataTest extends AbstractJasperChartTest implements 
         rb.addProperty("net.sf.jasperreports.chart.pie.ignore.duplicated.key", "true")
           .setPageFormat(PageType.A2, PageOrientation.PORTRAIT)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class))
-          .summary(cmp.horizontalList(cht.barChart()
-                                         .setShowValues(true)
-                                         .setShowPercentages(true)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3)), cht.bar3DChart()
-                                                                                             .setShowValues(true)
-                                                                                             .setShowPercentages(true)
-                                                                                             .setPercentValuePattern("#,##0.#")
-                                                                                             .setCategory(column1)
-                                                                                             .series(cht.serie(column2), cht.serie(column3)), cht.stackedBarChart()
-                                                                                                                                                 .setShowPercentages(true)
-                                                                                                                                                 .setCategory(column1)
-                                                                                                                                                 .series(cht.serie(column2), cht.serie(column3)),
-                                      cht.stackedBar3DChart()
-                                         .setShowPercentages(true)
-                                         .setCategory(column1)
-                                         .series(cht.serie(column2), cht.serie(column3)), cht.areaChart()
-                                                                                             .setShowPercentages(true)
-                                                                                             .setCategory(column1)
-                                                                                             .series(cht.serie(column2), cht.serie(column3))), cmp.horizontalList(cht.stackedAreaChart()
-                                                                                                                                                                     .setShowPercentages(true)
-                                                                                                                                                                     .setCategory(column1)
-                                                                                                                                                                     .series(cht.serie(column2),
-                                                                                                                                                                             cht.serie(column3)),
-                                                                                                                                                                  cht.layeredBarChart()
-                                                                                                                                                                     .setShowPercentages(true)
-                                                                                                                                                                     .setCategory(column1)
-                                                                                                                                                                     .series(cht.serie(column2),
-                                                                                                                                                                             cht.serie(column3)),
-                                                                                                                                                                  cht.lineChart()
-                                                                                                                                                                     .setShowPercentages(true)
-                                                                                                                                                                     .setCategory(column1)
-                                                                                                                                                                     .series(cht.serie(column2),
-                                                                                                                                                                             cht.serie(column3))),
-                   cht.pieChart()
-                      .setShowPercentages(true)
-                      .setPercentValuePattern("#,##0.#")
-                      .setKey(column1)
-                      .series(cht.serie(column2)), cht.barChart()
-                                                      .setShowValues(true)
-                                                      .setShowPercentages(true)
-                                                      .setCategory(column1)
-                                                      .series(cht.serie(column2))
-                                                      .setDataSource(new DRDataSource()));
+          .summary(cmp.horizontalList(cht.barChart().setShowValues(true).setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)), cht.bar3DChart()
+                                                                                                                                                                          .setShowValues(true)
+                                                                                                                                                                          .setShowPercentages(true)
+                                                                                                                                                                          .setPercentValuePattern(
+                                                                                                                                                                              "#,##0.#")
+                                                                                                                                                                          .setCategory(column1)
+                                                                                                                                                                          .series(cht.serie(column2),
+                                                                                                                                                                                  cht.serie(column3)),
+                                      cht.stackedBarChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.stackedBar3DChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.areaChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3))),
+                   cmp.horizontalList(cht.stackedAreaChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.layeredBarChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3)),
+                                      cht.lineChart().setShowPercentages(true).setCategory(column1).series(cht.serie(column2), cht.serie(column3))),
+                   cht.pieChart().setShowPercentages(true).setPercentValuePattern("#,##0.#").setKey(column1).series(cht.serie(column2)),
+                   cht.barChart().setShowValues(true).setShowPercentages(true).setCategory(column1).series(cht.serie(column2)).setDataSource(new DRDataSource()));
     }
 
     @Override
@@ -125,11 +97,9 @@ public class PercentageChartDataTest extends AbstractJasperChartTest implements 
         categoryDataset.addValue(1.191, "row", "column");
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot()
-                                              .getRenderer();
+        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator()
-                                             .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chartCountTest("summary.chart2", 1);
@@ -138,11 +108,9 @@ public class PercentageChartDataTest extends AbstractJasperChartTest implements 
         chartDataTest("summary.chart2", 0, categories, series, values);
 
         chart = getChart("summary.chart2", 0);
-        renderer1 = chart.getCategoryPlot()
-                         .getRenderer();
+        renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator()
-                                            .generateLabel(categoryDataset, 0, 0));
+        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chartCountTest("summary.chart3", 1);

@@ -57,16 +57,14 @@ public class CrosstabTest extends AbstractJasperTest {
                                        .columnGroups(ctab.columnGroup(column2))
                                        .measures(ctab.measure(column3, Calculation.SUM));
 
-        rb.columns(column1, column2, column3)
-          .summary(crosstab);
+        rb.columns(column1, column2, column3).summary(crosstab);
     }
 
     @Override
     public void test() {
         super.test();
 
-        JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary()
-                                                                    .getElementByKey("summary.crosstab1");
+        JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary().getElementByKey("summary.crosstab1");
         Assert.assertFalse("Crosstab repeatColumnHeaders", crosstab.isRepeatColumnHeaders());
         Assert.assertFalse("Crosstab repeatRowHeaders", crosstab.isRepeatRowHeaders());
         Assert.assertEquals("Crosstab columnBreakOffset", 100, crosstab.getColumnBreakOffset());

@@ -55,29 +55,16 @@ public class CrosstabStyle1Test extends AbstractJasperCrosstabStyleTest {
         FieldBuilder<String> field1 = field("field1", String.class);
         FieldBuilder<String> field2 = field("field2", String.class);
 
-        StyleBuilder titleStyle1 = stl.style()
-                                      .setFontSize(12)
-                                      .bold();
-        StyleBuilder titleStyle2 = stl.style(titleStyle1)
-                                      .setBackgroundColor(Color.LIGHT_GRAY);
-        StyleBuilder titleStyle3 = stl.style(titleStyle2)
-                                      .setBorder(stl.pen1Point())
-                                      .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder cellStyle = stl.style()
-                                    .bold();
-        StyleBuilder rowGroupCellStyle = stl.style(cellStyle)
-                                            .setBackgroundColor(Color.BLUE);
-        StyleBuilder columnGroupCellStyle = stl.style(cellStyle)
-                                               .setBackgroundColor(Color.ORANGE);
-        StyleBuilder rowColumnGroupCellStyle = stl.style(cellStyle)
-                                                  .setBackgroundColor(Color.RED);
+        StyleBuilder titleStyle1 = stl.style().setFontSize(12).bold();
+        StyleBuilder titleStyle2 = stl.style(titleStyle1).setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder titleStyle3 = stl.style(titleStyle2).setBorder(stl.pen1Point()).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder cellStyle = stl.style().bold();
+        StyleBuilder rowGroupCellStyle = stl.style(cellStyle).setBackgroundColor(Color.BLUE);
+        StyleBuilder columnGroupCellStyle = stl.style(cellStyle).setBackgroundColor(Color.ORANGE);
+        StyleBuilder rowColumnGroupCellStyle = stl.style(cellStyle).setBackgroundColor(Color.RED);
 
-        rowGroup = ctab.rowGroup(field1)
-                       .setHeaderStyle(titleStyle2)
-                       .setTotalHeaderStyle(titleStyle3);
-        columnGroup = ctab.columnGroup(field2)
-                          .setHeaderStyle(titleStyle2)
-                          .setTotalHeaderStyle(titleStyle3);
+        rowGroup = ctab.rowGroup(field1).setHeaderStyle(titleStyle2).setTotalHeaderStyle(titleStyle3);
+        columnGroup = ctab.columnGroup(field2).setHeaderStyle(titleStyle2).setTotalHeaderStyle(titleStyle3);
 
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure1.setStyle(cellStyle);
@@ -85,12 +72,7 @@ public class CrosstabStyle1Test extends AbstractJasperCrosstabStyleTest {
         measure1.setStyle(columnGroupCellStyle, columnGroup);
         measure1.setStyle(rowColumnGroupCellStyle, rowGroup, columnGroup);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("Header")
-                                                      .setStyle(titleStyle1))
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(measure1);
+        CrosstabBuilder crosstab = ctab.crosstab().headerCell(cmp.text("Header").setStyle(titleStyle1)).rowGroups(rowGroup).columnGroups(columnGroup).measures(measure1);
 
         rb.summary(crosstab);
     }

@@ -61,11 +61,10 @@ public class ExpressionColumnTest extends AbstractJasperValueTest implements Ser
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .fields(field1 = field("field1", Double.class))
-          .columns(column2 = col.column("Column2", "field2", Double.class)
-                                .setValueFormatter(new ColumnValueFormatter()), expression1 = col.column("Expression", new ValueExpression1()), calcExpression1 = expression1.multiply(column2),
-                   calcExpression2 = calcExpression1.multiply(5), calcExpression3 = calcExpression2.subtract(calcExpression1), calcExpression4 = calcExpression3.subtract(5),
-                   calcExpression5 = calcExpression4.add(calcExpression1), calcExpression6 = calcExpression5.add(5), calcExpression7 = calcExpression6.divide(2, expression1),
-                   calcExpression8 = calcExpression7.divide(2, 3), expression2 = col.column("Expression", new ValueExpression2()));
+          .columns(column2 = col.column("Column2", "field2", Double.class).setValueFormatter(new ColumnValueFormatter()), expression1 = col.column("Expression", new ValueExpression1()),
+                   calcExpression1 = expression1.multiply(column2), calcExpression2 = calcExpression1.multiply(5), calcExpression3 = calcExpression2.subtract(calcExpression1),
+                   calcExpression4 = calcExpression3.subtract(5), calcExpression5 = calcExpression4.add(calcExpression1), calcExpression6 = calcExpression5.add(5),
+                   calcExpression7 = calcExpression6.divide(2, expression1), calcExpression8 = calcExpression7.divide(2, 3), expression2 = col.column("Expression", new ValueExpression2()));
     }
 
     @Override
@@ -126,8 +125,7 @@ public class ExpressionColumnTest extends AbstractJasperValueTest implements Ser
         @Override
         public Double evaluate(ReportParameters reportParameters) {
             double f1 = reportParameters.getValue(expression1);
-            double f2 = reportParameters.getValue(calcExpression8)
-                                        .doubleValue();
+            double f2 = reportParameters.getValue(calcExpression8).doubleValue();
             return f1 + f2;
         }
     }

@@ -49,15 +49,9 @@ public class GroupedStackedBarChartData2Test extends AbstractJasperChartTest {
         TextColumnBuilder<String> column4 = col.column("Column4", "field4", String.class);
         TextColumnBuilder<Integer> column5 = col.column("Column5", "field5", Integer.class);
 
-        ColumnGroupBuilder group = grp.group(column1)
-                                      .footer(cht.groupedStackedBarChart()
-                                                 .setCategory(column2)
-                                                 .series(cht.groupedSerie(column5)
-                                                            .setSeries(column3)
-                                                            .setGroup(column4)));
+        ColumnGroupBuilder group = grp.group(column1).footer(cht.groupedStackedBarChart().setCategory(column2).series(cht.groupedSerie(column5).setSeries(column3).setGroup(column4)));
 
-        rb.columns(column1, column2, column3, column4, column5)
-          .groupBy(group);
+        rb.columns(column1, column2, column3, column4, column5).groupBy(group);
     }
 
     @Override
@@ -75,14 +69,10 @@ public class GroupedStackedBarChartData2Test extends AbstractJasperChartTest {
         chartSeriesCountTest("groupFooter.chart1", 0, 3);
         chartDataTest("groupFooter.chart1", 0, categories, series, values);
         JFreeChart chart = getChart("groupFooter.chart1", 0);
-        LegendItemCollection fixedLegendItems = chart.getCategoryPlot()
-                                                     .getFixedLegendItems();
-        Assert.assertEquals("series name", "series1", fixedLegendItems.get(0)
-                                                                      .getLabel());
-        Assert.assertEquals("series name", "series3", fixedLegendItems.get(1)
-                                                                      .getLabel());
-        Assert.assertEquals("series name", "series4", fixedLegendItems.get(2)
-                                                                      .getLabel());
+        LegendItemCollection fixedLegendItems = chart.getCategoryPlot().getFixedLegendItems();
+        Assert.assertEquals("series name", "series1", fixedLegendItems.get(0).getLabel());
+        Assert.assertEquals("series name", "series3", fixedLegendItems.get(1).getLabel());
+        Assert.assertEquals("series name", "series4", fixedLegendItems.get(2).getLabel());
 
         series = new String[] {"group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2",
             "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series3", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series4"};
@@ -91,16 +81,11 @@ public class GroupedStackedBarChartData2Test extends AbstractJasperChartTest {
         chartSeriesCountTest("groupFooter.chart1", 1, 4);
         chartDataTest("groupFooter.chart1", 1, categories, series, values);
         chart = getChart("groupFooter.chart1", 1);
-        fixedLegendItems = chart.getCategoryPlot()
-                                .getFixedLegendItems();
-        Assert.assertEquals("series name", "series1", fixedLegendItems.get(0)
-                                                                      .getLabel());
-        Assert.assertEquals("series name", "series2", fixedLegendItems.get(1)
-                                                                      .getLabel());
-        Assert.assertEquals("series name", "series3", fixedLegendItems.get(2)
-                                                                      .getLabel());
-        Assert.assertEquals("series name", "series4", fixedLegendItems.get(3)
-                                                                      .getLabel());
+        fixedLegendItems = chart.getCategoryPlot().getFixedLegendItems();
+        Assert.assertEquals("series name", "series1", fixedLegendItems.get(0).getLabel());
+        Assert.assertEquals("series name", "series2", fixedLegendItems.get(1).getLabel());
+        Assert.assertEquals("series name", "series3", fixedLegendItems.get(2).getLabel());
+        Assert.assertEquals("series name", "series4", fixedLegendItems.get(3).getLabel());
     }
 
     @Override

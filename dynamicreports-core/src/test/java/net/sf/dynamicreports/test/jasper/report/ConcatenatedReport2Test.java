@@ -45,15 +45,9 @@ public class ConcatenatedReport2Test {
 
     @Before
     public void init() {
-        JasperReportBuilder report1 = report().columns(col.column("field1", String.class))
-                                              .pageFooter(cmp.pageNumber())
-                                              .setDataSource(createDataSource("text1"));
-        JasperReportBuilder report2 = report().columns(col.column("field1", String.class))
-                                              .pageFooter(cmp.pageNumber())
-                                              .setDataSource(createDataSource("text2"));
-        JasperReportBuilder report3 = report().columns(col.column("field1", String.class))
-                                              .pageFooter(cmp.pageNumber())
-                                              .setDataSource(createDataSource("text3"));
+        JasperReportBuilder report1 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text1"));
+        JasperReportBuilder report2 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text2"));
+        JasperReportBuilder report3 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text3"));
 
         concatenatedReport = concatenatedReport();
         concatenatedReport.concatenate(report1, report2, report3);

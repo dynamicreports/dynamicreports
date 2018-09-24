@@ -50,10 +50,7 @@ public class GroupPosition3Test extends AbstractJasperPositionTest {
         TextColumnBuilder<String> column1;
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
-          .groupBy(group1 = grp.group(column1)
-                               .setFooterPosition(GroupFooterPosition.FORCE_AT_BOTTOM)
-                               .keepTogether()
-                               .setMinHeightToStartNewPage(100))
+          .groupBy(group1 = grp.group(column1).setFooterPosition(GroupFooterPosition.FORCE_AT_BOTTOM).keepTogether().setMinHeightToStartNewPage(100))
           .subtotalsAtFirstGroupFooter(subtotal1 = sbt.sum(column2));
     }
 

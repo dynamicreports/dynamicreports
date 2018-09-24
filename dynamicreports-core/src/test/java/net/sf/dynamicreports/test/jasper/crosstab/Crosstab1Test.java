@@ -74,14 +74,11 @@ public class Crosstab1Test extends AbstractJasperCrosstabValueTest {
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .headerCell(cmp.text("Header"))
-                                       .rowGroups(rowGroup = ctab.rowGroup(column1)
-                                                                 .setTotalHeader("Total for rowgroup"))
+                                       .rowGroups(rowGroup = ctab.rowGroup(column1).setTotalHeader("Total for rowgroup"))
                                        .columnGroups(columnGroup = ctab.columnGroup(column2))
                                        .measures(measure1, measure2, measure3, measure4, measure5, measure6, measure7);
 
-        rb.setLocale(Locale.ENGLISH)
-          .columns(column1, column2, column3, column4, column5)
-          .summary(crosstab);
+        rb.setLocale(Locale.ENGLISH).columns(column1, column2, column3, column4, column5).summary(crosstab);
     }
 
     @Override

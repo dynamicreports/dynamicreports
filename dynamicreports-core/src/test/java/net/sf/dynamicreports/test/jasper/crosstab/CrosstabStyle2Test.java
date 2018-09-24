@@ -59,9 +59,7 @@ public class CrosstabStyle2Test extends AbstractJasperCrosstabStyleTest implemen
         FieldBuilder<String> field1 = field("field1", String.class);
         FieldBuilder<String> field2 = field("field2", String.class);
 
-        StyleBuilder cellStyle = stl.style()
-                                    .conditionalStyles(stl.conditionalStyle(new ConditionExpression(10, 15, 14, 36))
-                                                          .setBackgroundColor(Color.ORANGE));
+        StyleBuilder cellStyle = stl.style().conditionalStyles(stl.conditionalStyle(new ConditionExpression(10, 15, 14, 36)).setBackgroundColor(Color.ORANGE));
 
         rowGroup = ctab.rowGroup(field1);
         columnGroup = ctab.columnGroup(field2);
@@ -69,10 +67,7 @@ public class CrosstabStyle2Test extends AbstractJasperCrosstabStyleTest implemen
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure1.setStyle(cellStyle);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(measure1);
+        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure1);
 
         rb.summary(crosstab);
     }

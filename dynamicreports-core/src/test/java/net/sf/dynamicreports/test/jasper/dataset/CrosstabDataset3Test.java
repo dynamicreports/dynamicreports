@@ -67,9 +67,7 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
                                        .variables(variable1)
                                        .measures(measure1, measure2, measure3);
 
-        rb.setLocale(Locale.ENGLISH)
-          .addParameter("parameter", "parameter_value")
-          .title(crosstab);
+        rb.setLocale(Locale.ENGLISH).addParameter("parameter", "parameter_value").title(crosstab);
     }
 
     @Override
@@ -147,8 +145,7 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             Integer value1 = reportParameters.getValue("field3");
             Integer value2 = reportParameters.getValue("field4");
             return value1.doubleValue() / value2.doubleValue();
@@ -166,8 +163,7 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
                 Assert.fail("parameter is not null");
             } catch (Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters()
-                                                                   .getValue("parameter"));
+            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             Integer value1 = reportParameters.getValue(measure1);
             Integer value2 = reportParameters.getValue(variable1);
             return value1.doubleValue() / value2.doubleValue();

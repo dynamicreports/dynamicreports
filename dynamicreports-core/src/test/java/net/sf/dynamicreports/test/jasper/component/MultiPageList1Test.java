@@ -43,8 +43,7 @@ public class MultiPageList1Test extends AbstractJasperValueTest {
         for (int i = 0; i < 150; i++) {
             multiPageList.add(cmp.text("text" + i));
         }
-        rb.title(multiPageList)
-          .columns(column1 = col.column("Column1", "field1", Integer.class));
+        rb.title(multiPageList).columns(column1 = col.column("Column1", "field1", Integer.class));
     }
 
     @Override

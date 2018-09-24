@@ -50,8 +50,7 @@ public class Subreport5Test extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression())
-                                               .setDataSource(new SubreportDataSourceExpression());
+        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport);
     }
@@ -88,8 +87,7 @@ public class Subreport5Test extends AbstractJasperValueTest implements Serializa
         @Override
         public JasperReportBuilder evaluate(List<?> values, ReportParameters reportParameters) {
             JasperReportBuilder report = report();
-            report.title(cmp.text("Subreport " + values.get(0)))
-                  .columns(column1);
+            report.title(cmp.text("Subreport " + values.get(0))).columns(column1);
 
             return report;
         }

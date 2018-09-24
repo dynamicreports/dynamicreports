@@ -46,9 +46,8 @@ public class PercentageGroup1Test extends AbstractJasperValueTest {
         TextColumnBuilder<Integer> column2;
 
         rb.setLocale(Locale.ENGLISH)
-          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), percentage1 = col.percentageColumn(column2), percentage2 =
-              col.percentageColumn(column2)
-                 .setTotalType(PercentageTotalType.REPORT))
+          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class), percentage1 = col.percentageColumn(column2),
+                   percentage2 = col.percentageColumn(column2).setTotalType(PercentageTotalType.REPORT))
           .groupBy(column1);
     }
 

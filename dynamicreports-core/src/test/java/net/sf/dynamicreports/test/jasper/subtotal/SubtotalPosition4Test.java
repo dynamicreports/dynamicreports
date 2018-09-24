@@ -46,10 +46,8 @@ public class SubtotalPosition4Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", type.stringType())
-                                .setFixedWidth(540), column2 = col.column("Column2", "field2", type.integerType()))
-          .groupBy(group1 = grp.group(column1)
-                               .setHeaderWithSubtotal(true))
+        rb.columns(column1 = col.column("Column1", "field1", type.stringType()).setFixedWidth(540), column2 = col.column("Column2", "field2", type.integerType()))
+          .groupBy(group1 = grp.group(column1).setHeaderWithSubtotal(true))
           .subtotalsAtFirstGroupHeader(subtotal1 = sbt.sum(column2))
           .subtotalsAtSummary(subtotal2 = sbt.sum(column2));
     }

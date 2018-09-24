@@ -59,9 +59,7 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
           .columns(column1 = col.column("Column1", "field1", Integer.class), column2 = col.column("Column2", "field2", Integer.class), column3 = col.column("Column3", "field3", Integer.class))
           .summary(cht.xyBlockChart(0.1, 5, Color.WHITE)
                       .setXValue(column1)
-                      .series(cht.xyzSerie()
-                                 .setYValue(column2)
-                                 .setZValue(column3))
+                      .series(cht.xyzSerie().setYValue(column2).setZValue(column3))
                       .setBlockWidth(1.1)
                       .setBlockHeight(0.9)
                       .setBlockAnchor(RectangleAnchor.BOTTOM_LEFT)
@@ -81,15 +79,12 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
                                                                                                                                                                       .setLineColor(Color.LIGHT_GRAY)),
                    cht.xyBlockChart(0, 5, Color.WHITE)
                       .setXValue(column1)
-                      .series(cht.xyzSerie()
-                                 .setYValue(column2)
-                                 .setZValue(column3))
+                      .series(cht.xyzSerie().setYValue(column2).setZValue(column3))
                       .setYAxisFormat(cht.axisFormat()
                                          .setLabel("value")
                                          .setLabelColor(Color.BLUE)
                                          .setLabelFont(stl.fontArialBold())
-                                         .setTickLabelFont(stl.fontArial()
-                                                              .setItalic(true))
+                                         .setTickLabelFont(stl.fontArial().setItalic(true))
                                          .setTickLabelColor(Color.CYAN)
                                          .setTickLabelMask("#,##0.00")
                                          .setLineColor(Color.LIGHT_GRAY)));
@@ -102,15 +97,13 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
         numberOfPagesTest(1);
 
         JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot()
-                                       .getRenderer();
+        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYBlockRenderer.class, renderer.getClass());
         Assert.assertEquals("block width", 1.1, ((XYBlockRenderer) renderer).getBlockWidth());
         Assert.assertEquals("block height", 0.9, ((XYBlockRenderer) renderer).getBlockHeight());
         Assert.assertEquals("block anchor", org.jfree.ui.RectangleAnchor.BOTTOM_LEFT, ((XYBlockRenderer) renderer).getBlockAnchor());
 
-        Assert.assertEquals("paintScale", LookupPaintScale.class, ((XYBlockRenderer) renderer).getPaintScale()
-                                                                                              .getClass());
+        Assert.assertEquals("paintScale", LookupPaintScale.class, ((XYBlockRenderer) renderer).getPaintScale().getClass());
         LookupPaintScale paintScale = (LookupPaintScale) ((XYBlockRenderer) renderer).getPaintScale();
         Assert.assertEquals("paintScale default lower bound", 0.1, paintScale.getLowerBound());
         Assert.assertEquals("paintScale default upper bound", 5d, paintScale.getUpperBound());
@@ -119,26 +112,18 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
         Assert.assertEquals("paintScale paint 2", Color.GREEN, paintScale.getPaint(2));
         Assert.assertEquals("paintScale paint 3", Color.BLUE, paintScale.getPaint(3));
 
-        LegendItemCollection legendItems = chart.getXYPlot()
-                                                .getLegendItems();
-        Assert.assertEquals("legend item 1 label", "1", legendItems.get(0)
-                                                                   .getLabel());
-        Assert.assertEquals("legend item 1 paint", Color.RED, legendItems.get(0)
-                                                                         .getFillPaint());
-        Assert.assertEquals("legend item 2 label", "2", legendItems.get(1)
-                                                                   .getLabel());
-        Assert.assertEquals("legend item 2 paint", Color.GREEN, legendItems.get(1)
-                                                                           .getFillPaint());
-        Assert.assertEquals("legend item 3 label", "3", legendItems.get(2)
-                                                                   .getLabel());
-        Assert.assertEquals("legend item 3 paint", Color.BLUE, legendItems.get(2)
-                                                                          .getFillPaint());
+        LegendItemCollection legendItems = chart.getXYPlot().getLegendItems();
+        Assert.assertEquals("legend item 1 label", "1", legendItems.get(0).getLabel());
+        Assert.assertEquals("legend item 1 paint", Color.RED, legendItems.get(0).getFillPaint());
+        Assert.assertEquals("legend item 2 label", "2", legendItems.get(1).getLabel());
+        Assert.assertEquals("legend item 2 paint", Color.GREEN, legendItems.get(1).getFillPaint());
+        Assert.assertEquals("legend item 3 label", "3", legendItems.get(2).getLabel());
+        Assert.assertEquals("legend item 3 paint", Color.BLUE, legendItems.get(2).getFillPaint());
 
         xyzChartDataTest(chart, 0, "serie0", new Number[][] {{1d, 2d, 0d}, {2d, 3d, 1d}, {3d, 4d, 2d}, {4d, 5d, 3d}});
 
         chart = getChart("summary.chart2", 0);
-        Axis axis = chart.getXYPlot()
-                         .getDomainAxis();
+        Axis axis = chart.getXYPlot().getDomainAxis();
         Assert.assertEquals("category label", "category", axis.getLabel());
         Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("category label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
@@ -147,15 +132,13 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
         chart = getChart("summary.chart3", 0);
-        axis = chart.getXYPlot()
-                    .getRangeAxis();
+        axis = chart.getXYPlot().getRangeAxis();
         Assert.assertEquals("value label", "value", axis.getLabel());
         Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
         Assert.assertEquals("value label font", new Font("Arial", Font.BOLD, 10), axis.getLabelFont());
         Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
         Assert.assertEquals("tick label font", new Font("Arial", Font.ITALIC, 10), axis.getTickLabelFont());
-        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride()
-                                                                           .format(10));
+        Assert.assertEquals("tick label mask", "10.00", ((NumberAxis) axis).getNumberFormatOverride().format(10));
         Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
     }
 

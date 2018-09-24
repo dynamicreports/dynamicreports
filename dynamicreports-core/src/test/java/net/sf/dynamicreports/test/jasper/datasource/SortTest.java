@@ -51,11 +51,7 @@ public class SortTest extends AbstractJasperChartTest {
         dataset.sortBy(desc(field1));
 
         rb.columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()))
-          .summary(cht.barChart()
-                      .setSubDataset(dataset)
-                      .setCategory(field1)
-                      .series(cht.serie("field2", Integer.class)
-                                 .setLabel("f2")))
+          .summary(cht.barChart().setSubDataset(dataset).setCategory(field1).series(cht.serie("field2", Integer.class).setLabel("f2")))
           .sortBy(column1, column2);
     }
 

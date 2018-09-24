@@ -96,28 +96,20 @@ public class SubtotalPositionTest extends AbstractBandTest {
         Assert.assertTrue(component instanceof DRDesignList);
         DRDesignList list = (DRDesignList) component;
         Assert.assertEquals(ListType.HORIZONTAL, list.getType());
-        Assert.assertEquals(1, list.getComponents()
-                                   .size());
+        Assert.assertEquals(1, list.getComponents().size());
         componentPositionTest(list, 0, 0, 575, 32);
-        Assert.assertTrue(list.getComponents()
-                              .get(0) instanceof DRDesignList);
+        Assert.assertTrue(list.getComponents().get(0) instanceof DRDesignList);
 
-        list = (DRDesignList) list.getComponents()
-                                  .get(0);
+        list = (DRDesignList) list.getComponents().get(0);
         Assert.assertEquals(ListType.VERTICAL, list.getType());
-        Assert.assertEquals(2, list.getComponents()
-                                   .size());
+        Assert.assertEquals(2, list.getComponents().size());
         componentPositionTest(list, 383, 0, 192, 32);
-        Assert.assertTrue(list.getComponents()
-                              .get(0) instanceof DRDesignTextField);
-        Assert.assertTrue(list.getComponents()
-                              .get(1) instanceof DRDesignTextField);
+        Assert.assertTrue(list.getComponents().get(0) instanceof DRDesignTextField);
+        Assert.assertTrue(list.getComponents().get(1) instanceof DRDesignTextField);
 
         // column3
-        componentPositionTest(list.getComponents()
-                                  .get(0), 383, 0, 192, 16);
-        componentPositionTest(list.getComponents()
-                                  .get(1), 383, 16, 192, 16);
+        componentPositionTest(list.getComponents().get(0), 383, 0, 192, 16);
+        componentPositionTest(list.getComponents().get(1), 383, 16, 192, 16);
     }
 
     protected void testBand(DRDesignBand band) {
@@ -125,14 +117,11 @@ public class SubtotalPositionTest extends AbstractBandTest {
         Assert.assertTrue(component instanceof DRDesignList);
         DRDesignList list = (DRDesignList) component;
         Assert.assertEquals(ListType.HORIZONTAL, list.getType());
-        Assert.assertEquals(1, list.getComponents()
-                                   .size());
+        Assert.assertEquals(1, list.getComponents().size());
         componentPositionTest(list, 0, 0, 575, 16);
-        Assert.assertTrue(list.getComponents()
-                              .get(0) instanceof DRDesignTextField);
+        Assert.assertTrue(list.getComponents().get(0) instanceof DRDesignTextField);
 
         // column3
-        componentPositionTest(list.getComponents()
-                                  .get(0), 383, 0, 192, 16);
+        componentPositionTest(list.getComponents().get(0), 383, 0, 192, 16);
     }
 }

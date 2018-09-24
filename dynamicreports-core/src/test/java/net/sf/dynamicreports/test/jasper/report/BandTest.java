@@ -59,8 +59,7 @@ public class BandTest extends AbstractJasperPositionTest implements Serializable
         TextColumnBuilder<String> column1;
 
         rb.setPageColumnsPerPage(2)
-          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class)
-                                                                                         .setWidth(500))
+          .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class).setWidth(500))
           .groupBy(group1 = grp.group(column1))
 
           .subtotalsAtTitle(subtotal1 = sbt.sum(column2))
