@@ -102,14 +102,14 @@ public class ShowValuesChartDataTest extends AbstractJasperChartTest implements 
         CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
-        Assert.assertEquals(5.775d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound());
+        Assert.assertEquals(5.775d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound(), 0);
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart2", 0);
         renderer1 = chart.getCategoryPlot().getRenderer();
         Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
         Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
-        Assert.assertEquals(6d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound());
+        Assert.assertEquals(6d, chart.getCategoryPlot().getRangeAxis().getRange().getUpperBound(), 0);
         Assert.assertTrue(renderer1.getBaseItemLabelsVisible());
 
         chart = getChart("summary.chart3", 0);
