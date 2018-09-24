@@ -103,7 +103,7 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
 
         DRIStyle style = (DRIStyle) report.getTextStyle();
         Assert.assertEquals("font name", "a", style.getFont().getFontName());
-        Assert.assertEquals("font size", 5, style.getFont().getFontSize());
+        Assert.assertEquals("font size", Integer.valueOf(5), style.getFont().getFontSize());
         Assert.assertTrue("bold", style.getFont().getBold());
         Assert.assertTrue("italic", style.getFont().getItalic());
         Assert.assertTrue("underline", style.getFont().getUnderline());
@@ -112,7 +112,7 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
         Assert.assertNotNull("left border", style.getBorder().getLeftPen());
         Assert.assertNotNull("bottom border", style.getBorder().getBottomPen());
         Assert.assertNotNull("right border", style.getBorder().getRightPen());
-        Assert.assertEquals("pen line width", 2f, style.getBorder().getTopPen().getLineWidth());
+        Assert.assertEquals("pen line width", 2f, style.getBorder().getTopPen().getLineWidth(),0);
         Assert.assertEquals("pen line color", Color.CYAN, style.getBorder().getTopPen().getLineColor());
         Assert.assertEquals("foreground color", Color.WHITE, style.getForegroundColor());
         Assert.assertEquals("background color", Color.DARK_GRAY, style.getBackgroundColor());
@@ -121,8 +121,8 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
         Assert.assertEquals("pattern", "#,###.00", style.getPattern());
 
         DRPage page = report.getPage();
-        Assert.assertEquals("page width", 100, page.getWidth());
-        Assert.assertEquals("page height", 200, page.getHeight());
+        Assert.assertEquals("page width", Integer.valueOf(100), page.getWidth());
+        Assert.assertEquals("page height", Integer.valueOf(200), page.getHeight());
         Assert.assertEquals("page orientation", PageOrientation.PORTRAIT, page.getOrientation());
         Assert.assertEquals("top margin", 1, page.getMargin().getTop());
         Assert.assertEquals("bottom margin", 2, page.getMargin().getBottom());
@@ -136,7 +136,7 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
         Assert.assertNotNull("column title", column.getTitleExpression());
         Assert.assertNotNull("column style", column.getComponent().getStyle());
         Assert.assertNotNull("column title style", column.getTitleStyle());
-        Assert.assertEquals("column width", 50, ((DRDimensionComponent) column.getComponent()).getWidth());
+        Assert.assertEquals("column width", Integer.valueOf(50), ((DRDimensionComponent) column.getComponent()).getWidth());
         Assert.assertEquals("column width type", ComponentDimensionType.FIXED, ((DRDimensionComponent) column.getComponent()).getWidthType());
 
         column = report.getColumns().get(2);
@@ -183,9 +183,9 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
         DRComponent component = customizer.getComponents().get(0).getComponent();
         Assert.assertEquals("component key", adhocConfiguration.getReport().getComponents().get(0), adhocConfiguration.getReport().getComponent("textField"));
         Assert.assertNotNull("component style", component.getStyle());
-        Assert.assertEquals("component width", 150, ((DRDimensionComponent) component).getWidth());
+        Assert.assertEquals("component width", Integer.valueOf(150), ((DRDimensionComponent) component).getWidth());
         Assert.assertEquals("component width type", ComponentDimensionType.FIXED, ((DRDimensionComponent) component).getWidthType());
-        Assert.assertEquals("component height", 200, ((DRDimensionComponent) component).getHeight());
+        Assert.assertEquals("component height", Integer.valueOf(200), ((DRDimensionComponent) component).getHeight());
         Assert.assertEquals("component height type", ComponentDimensionType.FIXED, ((DRDimensionComponent) component).getHeightType());
         DRTextField<?> textField = (DRTextField<?>) component;
         Assert.assertNotNull("textField text", textField.getValueExpression());
@@ -245,7 +245,7 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
         Assert.assertEquals("restriction property", "value", adhocRestriction.getProperty("key"));
         Assert.assertNull("restriction property", adhocRestriction.getProperty("key_empty"));
         Assert.assertTrue("restriction property", (Boolean) adhocRestriction.getProperty("key_boolean"));
-        Assert.assertEquals("restriction property", 100, adhocRestriction.getProperty("key_int"));
+        Assert.assertEquals("restriction property", Integer.valueOf(100), adhocRestriction.getProperty("key_int"));
 
         AdhocValueRestriction adhocValueRestriction = (AdhocValueRestriction) adhocConfiguration.getFilter().getRestrictions().get(1);
         Assert.assertEquals("restriction key", adhocValueRestriction, adhocConfiguration.getFilter().getRestriction("restriction2"));
