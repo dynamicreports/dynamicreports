@@ -377,8 +377,8 @@
                             <artifactId>maven-compiler-plugin</artifactId>
                             <version>${maven-compiler-plugin-version}</version>
                             <configuration>
-                                <source>9</source>
-                                <target>9</target>
+                                <source>1.8</source>
+                                <target>1.8</target>
                                 <encoding>${encoding}</encoding>
                             </configuration>
                         </plugin>
@@ -419,9 +419,38 @@
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
+                    <!--To ensure consistent API for java 9 usage-->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>animal-sniffer-maven-plugin</artifactId>
+                        <version>1.16</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <signature>
+                                        <groupId>org.codehaus.mojo.signature</groupId>
+                                        <!--We are "trying" to be jre 8 compatible-->
+                                        <artifactId>java18</artifactId>
+                                        <version>1.0</version>
+                                    </signature>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
             <dependencies>
+                <dependency>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>1.16</version>
+                    <optional>true</optional>
+                    <scope>provided</scope>
+                </dependency>
                 <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
                 <dependency>
                     <groupId>javax.xml.bind</groupId>
