@@ -72,7 +72,7 @@
         <jaxbVersion>2.3.0.1</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
-        <junitVersion>4.0</junitVersion>
+        <junitVersion>4.12</junitVersion>
         <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
         <poiVersion>3.15</poiVersion>
@@ -419,7 +419,7 @@
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
-                    <!--To ensure consistent API for java 9 usage-->
+                    <!--&lt;!&ndash;To ensure consistent API for java 9 usage&ndash;&gt;
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -433,14 +433,14 @@
                                 <configuration>
                                     <signature>
                                         <groupId>org.codehaus.mojo.signature</groupId>
-                                        <!--We are "trying" to be jre 8 compatible-->
+                                        &lt;!&ndash;We are "trying" to be jre 8 compatible&ndash;&gt;
                                         <artifactId>java18</artifactId>
                                         <version>1.0</version>
                                     </signature>
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin>-->
                 </plugins>
             </build>
             <dependencies>
