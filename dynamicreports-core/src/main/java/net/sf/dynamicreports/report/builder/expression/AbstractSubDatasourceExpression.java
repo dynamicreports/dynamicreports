@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,18 +19,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.expression;
-
-import java.util.List;
 
 import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.jasperreports.engine.JRDataSource;
-
 import org.apache.commons.lang3.Validate;
+
+import java.util.List;
 
 /**
  * <p>Abstract AbstractSubDatasourceExpression class.</p>
@@ -39,55 +37,59 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public abstract class AbstractSubDatasourceExpression<T> extends AbstractComplexExpression<JRDataSource> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for AbstractSubDatasourceExpression.</p>
-	 *
-	 * @param fieldName a {@link java.lang.String} object.
-	 */
-	protected AbstractSubDatasourceExpression(String fieldName) {
-		Validate.notNull(fieldName, "fieldName must not be null");
-		addExpression(fieldName, getSubDatasourceDataClass());
-	}
+    /**
+     * <p>Constructor for AbstractSubDatasourceExpression.</p>
+     *
+     * @param fieldName a {@link java.lang.String} object.
+     */
+    protected AbstractSubDatasourceExpression(String fieldName) {
+        Validate.notNull(fieldName, "fieldName must not be null");
+        addExpression(fieldName, getSubDatasourceDataClass());
+    }
 
-	/**
-	 * <p>Constructor for AbstractSubDatasourceExpression.</p>
-	 *
-	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	protected AbstractSubDatasourceExpression(DRIExpression<? extends T> expression) {
-		addExpression(expression);
-	}
+    /**
+     * <p>Constructor for AbstractSubDatasourceExpression.</p>
+     *
+     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    protected AbstractSubDatasourceExpression(DRIExpression<? extends T> expression) {
+        addExpression(expression);
+    }
 
-	/** {@inheritDoc} */
-	@SuppressWarnings("unchecked")
-	@Override
-	public JRDataSource evaluate(List<?> values, ReportParameters reportParameters) {
-		return createSubDatasource((T) values.get(0));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public JRDataSource evaluate(List<?> values, ReportParameters reportParameters) {
+        return createSubDatasource((T) values.get(0));
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<? super JRDataSource> getValueClass() {
-		return JRDataSource.class;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<? super JRDataSource> getValueClass() {
+        return JRDataSource.class;
+    }
 
-	/**
-	 * <p>getSubDatasourceDataClass.</p>
-	 *
-	 * @return a {@link java.lang.Class} object.
-	 */
-	@SuppressWarnings("unchecked")
-	protected Class<T> getSubDatasourceDataClass() {
-		return (Class<T>) ReportUtils.getGenericClass(this, 0);
-	}
+    /**
+     * <p>getSubDatasourceDataClass.</p>
+     *
+     * @return a {@link java.lang.Class} object.
+     */
+    @SuppressWarnings("unchecked")
+    protected Class<T> getSubDatasourceDataClass() {
+        return (Class<T>) ReportUtils.getGenericClass(this, 0);
+    }
 
-	/**
-	 * <p>createSubDatasource.</p>
-	 *
-	 * @param data a T object.
-	 * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
-	 */
-	protected abstract JRDataSource createSubDatasource(T data);
+    /**
+     * <p>createSubDatasource.</p>
+     *
+     * @param data a T object.
+     * @return a {@link net.sf.jasperreports.engine.JRDataSource} object.
+     */
+    protected abstract JRDataSource createSubDatasource(T data);
 }

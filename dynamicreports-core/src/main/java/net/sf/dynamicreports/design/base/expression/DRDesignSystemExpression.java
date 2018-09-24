@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.expression;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignSystemExpression;
@@ -33,28 +32,32 @@ import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
  * @version $Id: $Id
  */
 public class DRDesignSystemExpression implements DRIDesignSystemExpression {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRISystemExpression<?> systemExpression;
+    private DRISystemExpression<?> systemExpression;
 
-	/**
-	 * <p>Constructor for DRDesignSystemExpression.</p>
-	 *
-	 * @param systemExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISystemExpression} object.
-	 */
-	public DRDesignSystemExpression(DRISystemExpression<?> systemExpression) {
-		this.systemExpression = systemExpression;
-	}
+    /**
+     * <p>Constructor for DRDesignSystemExpression.</p>
+     *
+     * @param systemExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISystemExpression} object.
+     */
+    public DRDesignSystemExpression(DRISystemExpression<?> systemExpression) {
+        this.systemExpression = systemExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<?> getValueClass() {
-		return systemExpression.getValueClass();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<?> getValueClass() {
+        return systemExpression.getValueClass();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getName() {
-		return systemExpression.getName();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getName() {
+        return systemExpression.getName();
+    }
 }

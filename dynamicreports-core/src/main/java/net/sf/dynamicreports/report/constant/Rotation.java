@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,20 +28,17 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public enum Rotation {
-	/**
-	 * Constant useful for displaying the text without rotating it
-	 */
-	NONE,
-	/**
-	 * Constant useful for rotating the text 90 degrees counter clockwise.
-	 */
-	LEFT,
-	/**
-	 * Constant useful for rotating the text 90 degrees clockwise.
-	 */
-	RIGHT,
-	/**
-	 * Constant useful for rotating the text 180 degrees.
-	 */
-	UPSIDE_DOWN
+    /**
+     * Constant useful for displaying the text without rotating it
+     */
+    NONE, /**
+     * Constant useful for rotating the text 90 degrees counter clockwise.
+     */
+    LEFT, /**
+     * Constant useful for rotating the text 90 degrees clockwise.
+     */
+    RIGHT, /**
+     * Constant useful for rotating the text 180 degrees.
+     */
+    UPSIDE_DOWN
 }

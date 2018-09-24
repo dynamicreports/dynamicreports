@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.component;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -32,22 +31,24 @@ import net.sf.dynamicreports.report.definition.component.DRICurrentDate;
  * @version $Id: $Id
  */
 public class DRCurrentDate extends DRFormatField implements DRICurrentDate {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private String pattern;
+    private String pattern;
 
-	/** {@inheritDoc} */
-	@Override
-	public String getPattern() {
-		return pattern;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getPattern() {
+        return pattern;
+    }
 
-	/**
-	 * <p>Setter for the field <code>pattern</code>.</p>
-	 *
-	 * @param pattern a {@link java.lang.String} object.
-	 */
-	public void setPattern(String pattern) {
-		this.pattern = pattern;
-	}
+    /**
+     * <p>Setter for the field <code>pattern</code>.</p>
+     *
+     * @param pattern a {@link java.lang.String} object.
+     */
+    public void setPattern(String pattern) {
+        this.pattern = pattern;
+    }
 }

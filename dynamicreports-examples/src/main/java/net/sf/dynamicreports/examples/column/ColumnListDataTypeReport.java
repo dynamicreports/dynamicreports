@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,18 +19,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.column;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>ColumnListDataTypeReport class.</p>
@@ -40,91 +41,87 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
  */
 public class ColumnListDataTypeReport {
 
-	/**
-	 * <p>Constructor for ColumnListDataTypeReport.</p>
-	 */
-	public ColumnListDataTypeReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ColumnListDataTypeReport.</p>
+     */
+    public ColumnListDataTypeReport() {
+        build();
+    }
 
-	private void build() {
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.columns(
-							col.column("Item", "item", type.stringType()),
-							col.column("Quantity", "quantity", type.integerType()),
-							col.column("Comments", "comments", type.listType()))
-					.title(Templates.createTitleComponent("ColumnListDataType"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ColumnListDataTypeReport();
+    }
 
-	private JRDataSource createDataSource() {
-		List<ReportData> datasource = new ArrayList<ReportData>();
+    private void build() {
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Comments", "comments", type.listType()))
+                    .title(Templates.createTitleComponent("ColumnListDataType"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		ReportData data = new ReportData();
-		List<String> comments = new ArrayList<String>();
-		comments.add("comment1");
-		comments.add("comment2");
-		comments.add("comment3");
-		data.setItem("Book");
-		data.setQuantity(new Integer(10));
-		data.setComments(comments);
-		datasource.add(data);
+    private JRDataSource createDataSource() {
+        List<ReportData> datasource = new ArrayList<ReportData>();
 
-		data = new ReportData();
-		comments = new ArrayList<String>();
-		comments.add("comment1");
-		comments.add("comment2");
-		data.setItem("Notebook");
-		data.setQuantity(new Integer(20));
-		data.setComments(comments);
-		datasource.add(data);
+        ReportData data = new ReportData();
+        List<String> comments = new ArrayList<String>();
+        comments.add("comment1");
+        comments.add("comment2");
+        comments.add("comment3");
+        data.setItem("Book");
+        data.setQuantity(new Integer(10));
+        data.setComments(comments);
+        datasource.add(data);
 
-		return new JRBeanCollectionDataSource(datasource);
-	}
+        data = new ReportData();
+        comments = new ArrayList<String>();
+        comments.add("comment1");
+        comments.add("comment2");
+        data.setItem("Notebook");
+        data.setQuantity(new Integer(20));
+        data.setComments(comments);
+        datasource.add(data);
 
-	public class ReportData {
-		private String item;
-		private Integer quantity;
-		private List<String> comments;
+        return new JRBeanCollectionDataSource(datasource);
+    }
 
-		public String getItem() {
-			return item;
-		}
+    public class ReportData {
+        private String item;
+        private Integer quantity;
+        private List<String> comments;
 
-		public void setItem(String item) {
-			this.item = item;
-		}
+        public String getItem() {
+            return item;
+        }
 
-		public Integer getQuantity() {
-			return quantity;
-		}
+        public void setItem(String item) {
+            this.item = item;
+        }
 
-		public void setQuantity(Integer quantity) {
-			this.quantity = quantity;
-		}
+        public Integer getQuantity() {
+            return quantity;
+        }
 
-		public List<String> getComments() {
-			return comments;
-		}
+        public void setQuantity(Integer quantity) {
+            this.quantity = quantity;
+        }
 
-		public void setComments(List<String> comments) {
-			this.comments = comments;
-		}
-	}
+        public List<String> getComments() {
+            return comments;
+        }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ColumnListDataTypeReport();
-	}
+        public void setComments(List<String> comments) {
+            this.comments = comments;
+        }
+    }
 }

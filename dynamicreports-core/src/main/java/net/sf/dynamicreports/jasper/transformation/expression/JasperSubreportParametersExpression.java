@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.transformation.expression;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import net.sf.dynamicreports.design.base.expression.AbstractDesignComplexExpression;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
@@ -33,6 +28,10 @@ import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>JasperSubreportParametersExpression class.</p>
  *
@@ -40,37 +39,41 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * @version $Id: $Id
  */
 public class JasperSubreportParametersExpression extends AbstractDesignComplexExpression {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for JasperSubreportParametersExpression.</p>
-	 *
-	 * @param parametersExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public JasperSubreportParametersExpression(DRIDesignExpression parametersExpression) {
-		super(ReportUtils.generateUniqueName("jasperSubreportParametersExpression"));
-		if (parametersExpression != null) {
-			addExpression(parametersExpression);
-		}
-	}
+    /**
+     * <p>Constructor for JasperSubreportParametersExpression.</p>
+     *
+     * @param parametersExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public JasperSubreportParametersExpression(DRIDesignExpression parametersExpression) {
+        super(ReportUtils.generateUniqueName("jasperSubreportParametersExpression"));
+        if (parametersExpression != null) {
+            addExpression(parametersExpression);
+        }
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object evaluate(List<?> values, ReportParameters reportParameters) {
-		Map<String, Object> parameters = null;
-		if (!values.isEmpty()) {
-			parameters = (Map<String, Object>) values.get(0);
-		} else {
-			parameters = new HashMap<String, Object>();
-		}
-		parameters.put(JasperReportParameters.MASTER_REPORT_PARAMETERS, reportParameters);
-		return parameters;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    public Object evaluate(List<?> values, ReportParameters reportParameters) {
+        Map<String, Object> parameters = null;
+        if (!values.isEmpty()) {
+            parameters = (Map<String, Object>) values.get(0);
+        } else {
+            parameters = new HashMap<String, Object>();
+        }
+        parameters.put(JasperReportParameters.MASTER_REPORT_PARAMETERS, reportParameters);
+        return parameters;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<?> getValueClass() {
-		return Map.class;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<?> getValueClass() {
+        return Map.class;
+    }
 }

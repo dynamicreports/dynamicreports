@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
 
 import net.sf.dynamicreports.report.base.chart.plot.DRLinePlot;
@@ -33,67 +32,67 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class LineChartBuilder extends AbstractCategoryChartBuilder<LineChartBuilder, DRLinePlot> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for LineChartBuilder.</p>
-	 */
-	protected LineChartBuilder() {
-		super(ChartType.LINE);
-	}
+    /**
+     * <p>Constructor for LineChartBuilder.</p>
+     */
+    protected LineChartBuilder() {
+        super(ChartType.LINE);
+    }
 
-	/**
-	 * <p>setShowShapes.</p>
-	 *
-	 * @param showShapes a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder setShowShapes(Boolean showShapes) {
-		getPlot().setShowShapes(showShapes);
-		return this;
-	}
+    /**
+     * <p>setShowShapes.</p>
+     *
+     * @param showShapes a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder setShowShapes(Boolean showShapes) {
+        getPlot().setShowShapes(showShapes);
+        return this;
+    }
 
-	/**
-	 * <p>setShowLines.</p>
-	 *
-	 * @param showLines a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder setShowLines(Boolean showLines) {
-		getPlot().setShowLines(showLines);
-		return this;
-	}
+    /**
+     * <p>setShowLines.</p>
+     *
+     * @param showLines a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder setShowLines(Boolean showLines) {
+        getPlot().setShowLines(showLines);
+        return this;
+    }
 
-	/**
-	 * <p>setShowValues.</p>
-	 *
-	 * @param showValues a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder setShowValues(Boolean showValues) {
-		getPlot().setShowValues(showValues);
-		return this;
-	}
+    /**
+     * <p>setShowValues.</p>
+     *
+     * @param showValues a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder setShowValues(Boolean showValues) {
+        getPlot().setShowValues(showValues);
+        return this;
+    }
 
-	/**
-	 * <p>setValuePattern.</p>
-	 *
-	 * @param valuePattern a {@link java.lang.String} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder setValuePattern(String valuePattern) {
-		getPlot().setValuePattern(valuePattern);
-		return this;
-	}
+    /**
+     * <p>setValuePattern.</p>
+     *
+     * @param valuePattern a {@link java.lang.String} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder setValuePattern(String valuePattern) {
+        getPlot().setValuePattern(valuePattern);
+        return this;
+    }
 
-	/**
-	 * <p>setPercentValuePattern.</p>
-	 *
-	 * @param percentValuePattern a {@link java.lang.String} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder setPercentValuePattern(String percentValuePattern) {
-		getPlot().setPercentValuePattern(percentValuePattern);
-		return this;
-	}
+    /**
+     * <p>setPercentValuePattern.</p>
+     *
+     * @param percentValuePattern a {@link java.lang.String} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder setPercentValuePattern(String percentValuePattern) {
+        getPlot().setPercentValuePattern(percentValuePattern);
+        return this;
+    }
 }

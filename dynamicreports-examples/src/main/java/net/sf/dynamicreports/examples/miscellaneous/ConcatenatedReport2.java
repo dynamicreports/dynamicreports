@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.miscellaneous;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -34,6 +29,14 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.math.BigDecimal;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedReport;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>ConcatenatedReport2 class.</p>
  *
@@ -42,59 +45,47 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class ConcatenatedReport2 {
 
-	/**
-	 * <p>Constructor for ConcatenatedReport2.</p>
-	 */
-	public ConcatenatedReport2() {
-		build();
-	}
+    /**
+     * <p>Constructor for ConcatenatedReport2.</p>
+     */
+    public ConcatenatedReport2() {
+        build();
+    }
 
-	private void build() {
-		try {
-			concatenatedReport()
-					.continuousPageNumbering()
-					.concatenate(
-							createReport(PageType.A4),
-							createReport(PageType.A3),
-							createReport(PageType.A5))
-					.toPdf(Exporters.pdfExporter("c:/report.pdf"));
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ConcatenatedReport2();
+    }
 
-	private JasperReportBuilder createReport(PageType pageType) {
-		JasperReportBuilder report = report();
-		report
-				.setTemplate(Templates.reportTemplate)
-				.setPageFormat(pageType)
-				.columns(
-						col.column("Item", "item", type.stringType()),
-						col.column("Quantity", "quantity", type.integerType()),
-						col.column("Unit price", "unitprice", type.bigDecimalType()))
-				.title(Templates.createTitleComponent(pageType.name() + "Report"))
-				.pageFooter(
-						cmp.line(),
-						cmp.pageNumber().setStyle(Templates.boldCenteredStyle))
-				.setDataSource(createDataSource());
+    private void build() {
+        try {
+            concatenatedReport().continuousPageNumbering().concatenate(createReport(PageType.A4), createReport(PageType.A3), createReport(PageType.A5)).toPdf(Exporters.pdfExporter("c:/report.pdf"));
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		return report;
-	}
+    private JasperReportBuilder createReport(PageType pageType) {
+        JasperReportBuilder report = report();
+        report.setTemplate(Templates.reportTemplate)
+              .setPageFormat(pageType)
+              .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
+              .title(Templates.createTitleComponent(pageType.name() + "Report"))
+              .pageFooter(cmp.line(), cmp.pageNumber().setStyle(Templates.boldCenteredStyle))
+              .setDataSource(createDataSource());
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-		for (int i = 0; i < 20; i++) {
-			dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-		}
-		return dataSource;
-	}
+        return report;
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ConcatenatedReport2();
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        for (int i = 0; i < 20; i++) {
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+        }
+        return dataSource;
+    }
 }

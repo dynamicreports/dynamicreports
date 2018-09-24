@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.plot;
 
 import net.sf.dynamicreports.report.constant.AxisPosition;
@@ -34,39 +33,43 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIChartAxis;
  * @version $Id: $Id
  */
 public class DRChartAxis implements DRIChartAxis {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private AxisPosition position;
-	private DRIChart chart;
+    private AxisPosition position;
+    private DRIChart chart;
 
-	/** {@inheritDoc} */
-	@Override
-	public AxisPosition getPosition() {
-		return position;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public AxisPosition getPosition() {
+        return position;
+    }
 
-	/**
-	 * <p>Setter for the field <code>position</code>.</p>
-	 *
-	 * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
-	 */
-	public void setPosition(AxisPosition position) {
-		this.position = position;
-	}
+    /**
+     * <p>Setter for the field <code>position</code>.</p>
+     *
+     * @param position a {@link net.sf.dynamicreports.report.constant.AxisPosition} object.
+     */
+    public void setPosition(AxisPosition position) {
+        this.position = position;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIChart getChart() {
-		return chart;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIChart getChart() {
+        return chart;
+    }
 
-	/**
-	 * <p>Setter for the field <code>chart</code>.</p>
-	 *
-	 * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
-	 */
-	public void setChart(DRIChart chart) {
-		this.chart = chart;
-	}
+    /**
+     * <p>Setter for the field <code>chart</code>.</p>
+     *
+     * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+     */
+    public void setChart(DRIChart chart) {
+        this.chart = chart;
+    }
 
 }

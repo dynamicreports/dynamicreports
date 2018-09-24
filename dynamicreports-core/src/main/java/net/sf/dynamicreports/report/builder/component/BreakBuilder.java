@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.component;
 
 import net.sf.dynamicreports.report.base.component.DRBreak;
@@ -33,23 +32,23 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class BreakBuilder extends ComponentBuilder<BreakBuilder, DRBreak> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for BreakBuilder.</p>
-	 */
-	protected BreakBuilder() {
-		super(new DRBreak());
-	}
+    /**
+     * <p>Constructor for BreakBuilder.</p>
+     */
+    protected BreakBuilder() {
+        super(new DRBreak());
+    }
 
-	/**
-	 * <p>setType.</p>
-	 *
-	 * @param breakType a {@link net.sf.dynamicreports.report.constant.BreakType} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.BreakBuilder} object.
-	 */
-	public BreakBuilder setType(BreakType breakType) {
-		getObject().setType(breakType);
-		return this;
-	}
+    /**
+     * <p>setType.</p>
+     *
+     * @param breakType a {@link net.sf.dynamicreports.report.constant.BreakType} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.BreakBuilder} object.
+     */
+    public BreakBuilder setType(BreakType breakType) {
+        getObject().setType(breakType);
+        return this;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.jasper.geomap;
 
 import net.sf.dynamicreports.googlecharts.jasper.GoogleChartsExtensionsRegistryFactory;
@@ -32,21 +31,37 @@ import net.sf.jasperreports.engine.JRGenericElementType;
  * @version $Id: $Id
  */
 public class GeoMapPrintElement {
-	/** Constant <code>GEOMAP_ELEMENT_NAME="geoMap"</code> */
-	public static final String GEOMAP_ELEMENT_NAME = "geoMap";
-	/** Constant <code>GEOMAP_ELEMENT_TYPE</code> */
-	public static final JRGenericElementType GEOMAP_ELEMENT_TYPE = new JRGenericElementType(GoogleChartsExtensionsRegistryFactory.NAMESPACE, GEOMAP_ELEMENT_NAME);
+    /**
+     * Constant <code>GEOMAP_ELEMENT_NAME="geoMap"</code>
+     */
+    public static final String GEOMAP_ELEMENT_NAME = "geoMap";
+    /**
+     * Constant <code>GEOMAP_ELEMENT_TYPE</code>
+     */
+    public static final JRGenericElementType GEOMAP_ELEMENT_TYPE = new JRGenericElementType(GoogleChartsExtensionsRegistryFactory.NAMESPACE, GEOMAP_ELEMENT_NAME);
 
-	/** Constant <code>PARAMETER_SHOW_LEGEND="showLegend"</code> */
-	public static final String PARAMETER_SHOW_LEGEND = "showLegend";
-	/** Constant <code>PARAMETER_DATA_MODE="dataMode"</code> */
-	public static final String PARAMETER_DATA_MODE = "dataMode";
-	/** Constant <code>PARAMETER_REGION="region"</code> */
-	public static final String PARAMETER_REGION = "region";
-	/** Constant <code>PARAMETER_VALUE_LABEL="valueLabel"</code> */
-	public static final String PARAMETER_VALUE_LABEL = "valueLabel";
-	/** Constant <code>PARAMETER_COLORS="colors"</code> */
-	public static final String PARAMETER_COLORS = "colors";
-	/** Constant <code>PARAMETER_DATASET="dataset"</code> */
-	public static final String PARAMETER_DATASET = "dataset";
+    /**
+     * Constant <code>PARAMETER_SHOW_LEGEND="showLegend"</code>
+     */
+    public static final String PARAMETER_SHOW_LEGEND = "showLegend";
+    /**
+     * Constant <code>PARAMETER_DATA_MODE="dataMode"</code>
+     */
+    public static final String PARAMETER_DATA_MODE = "dataMode";
+    /**
+     * Constant <code>PARAMETER_REGION="region"</code>
+     */
+    public static final String PARAMETER_REGION = "region";
+    /**
+     * Constant <code>PARAMETER_VALUE_LABEL="valueLabel"</code>
+     */
+    public static final String PARAMETER_VALUE_LABEL = "valueLabel";
+    /**
+     * Constant <code>PARAMETER_COLORS="colors"</code>
+     */
+    public static final String PARAMETER_COLORS = "colors";
+    /**
+     * Constant <code>PARAMETER_DATASET="dataset"</code>
+     */
+    public static final String PARAMETER_DATASET = "dataset";
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.report;
 
 import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder;
@@ -32,12 +31,12 @@ import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder;
  */
 public class GoogleCharts {
 
-	/**
-	 * <p>geoMap.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
-	 */
-	public static GeoMapBuilder geoMap() {
-		return new GeoMapBuilder();
-	}
+    /**
+     * <p>geoMap.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
+     */
+    public static GeoMapBuilder geoMap() {
+        return new GeoMapBuilder();
+    }
 }

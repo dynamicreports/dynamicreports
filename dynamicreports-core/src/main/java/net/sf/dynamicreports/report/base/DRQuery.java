@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIQuery;
-
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -34,33 +32,37 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public class DRQuery implements DRIQuery {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private String text;
-	private String language;
+    private String text;
+    private String language;
 
-	/**
-	 * <p>Constructor for DRQuery.</p>
-	 *
-	 * @param text a {@link java.lang.String} object.
-	 * @param language a {@link java.lang.String} object.
-	 */
-	public DRQuery(String text, String language) {
-		Validate.notNull(text, "text must not be null");
-		Validate.notNull(language, "language must not be null");
-		this.text = text;
-		this.language = language;
-	}
+    /**
+     * <p>Constructor for DRQuery.</p>
+     *
+     * @param text     a {@link java.lang.String} object.
+     * @param language a {@link java.lang.String} object.
+     */
+    public DRQuery(String text, String language) {
+        Validate.notNull(text, "text must not be null");
+        Validate.notNull(language, "language must not be null");
+        this.text = text;
+        this.language = language;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getText() {
-		return text;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getText() {
+        return text;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getLanguage() {
-		return language;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getLanguage() {
+        return language;
+    }
 }

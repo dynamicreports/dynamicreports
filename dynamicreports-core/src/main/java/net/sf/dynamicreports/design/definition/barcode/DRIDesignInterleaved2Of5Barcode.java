@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.barcode;
 
 /**
@@ -30,17 +29,17 @@ package net.sf.dynamicreports.design.definition.barcode;
  */
 public interface DRIDesignInterleaved2Of5Barcode extends DRIDesignChecksumBarcode {
 
-	/**
-	 * <p>getDisplayChecksum.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getDisplayChecksum();
+    /**
+     * <p>getDisplayChecksum.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getDisplayChecksum();
 
-	/**
-	 * <p>getWideFactor.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getWideFactor();
+    /**
+     * <p>getWideFactor.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getWideFactor();
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
 
 import java.io.Serializable;
@@ -32,21 +31,23 @@ import java.io.Serializable;
  */
 public interface DRIParameter<T> extends DRIValue<T>, Serializable {
 
-	/** {@inheritDoc} */
-	@Override
-	public String getName();
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getName();
 
-	/**
-	 * <p>getValueClass.</p>
-	 *
-	 * @return a {@link java.lang.Class} object.
-	 */
-	public Class<T> getValueClass();
+    /**
+     * <p>getValueClass.</p>
+     *
+     * @return a {@link java.lang.Class} object.
+     */
+    public Class<T> getValueClass();
 
-	/**
-	 * <p>getValue.</p>
-	 *
-	 * @return a T object.
-	 */
-	public T getValue();
+    /**
+     * <p>getValue.</p>
+     *
+     * @return a T object.
+     */
+    public T getValue();
 }

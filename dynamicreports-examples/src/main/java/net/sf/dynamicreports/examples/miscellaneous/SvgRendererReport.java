@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,10 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.miscellaneous;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.constant.PageOrientation;
@@ -33,6 +30,9 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.renderers.Renderable;
 import net.sf.jasperreports.renderers.SimpleDataRenderer;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
 /**
  * <p>SvgRendererReport class.</p>
  *
@@ -41,37 +41,34 @@ import net.sf.jasperreports.renderers.SimpleDataRenderer;
  */
 public class SvgRendererReport {
 
-	/**
-	 * <p>Constructor for SvgRendererReport.</p>
-	 */
-	public SvgRendererReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for SvgRendererReport.</p>
+     */
+    public SvgRendererReport() {
+        build();
+    }
 
-	private void build() {
-		try {
-			Renderable image = new SimpleDataRenderer(JRLoader.loadBytes(Templates.class.getResource("images/map.svg")), null);
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new SvgRendererReport();
+    }
 
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-					.title(
-							Templates.createTitleComponent("SvgRenderer"),
-							cmp.image(image).setHeight(500))
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		} catch (JRException e) {
-			e.printStackTrace();
-		}
-	}
+    private void build() {
+        try {
+            Renderable image = new SimpleDataRenderer(JRLoader.loadBytes(Templates.class.getResource("images/map.svg")), null);
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new SvgRendererReport();
-	}
+            report().setTemplate(Templates.reportTemplate)
+                    .setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
+                    .title(Templates.createTitleComponent("SvgRenderer"), cmp.image(image).setHeight(500))
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
 }

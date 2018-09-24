@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,38 +19,34 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.expression;
-
-import java.util.List;
 
 import net.sf.dynamicreports.report.definition.ReportParameters;
 
+import java.util.List;
+
 /**
- * A complex implementation of an expression.<br/>
- * The difference between a simple and complex expression is that a complex expression allows registering additional
- * fields or variables that are not defined in the report and are needed for calculating the value.
+ * A complex implementation of an expression.<br/> The difference between a simple and complex expression is that a complex expression allows registering additional fields or variables that are not
+ * defined in the report and are needed for calculating the value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
 public interface DRIComplexExpression<T> extends DRIExpression<T> {
 
-	/**
-	 * <p>getExpressions.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIExpression<?>> getExpressions();
+    /**
+     * <p>getExpressions.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIExpression<?>> getExpressions();
 
-	/**
-	 * Evaluates the expression.
-	 *
-	 * @param values
-	 *          the values of the registered expressions
-	 * @param reportParameters
-	 *          access to report fields, variables, parameters, expressions, and other report values
-	 * @return the result of the expression evaluation
-	 */
-	public T evaluate(List<?> values, ReportParameters reportParameters);
+    /**
+     * Evaluates the expression.
+     *
+     * @param values           the values of the registered expressions
+     * @param reportParameters access to report fields, variables, parameters, expressions, and other report values
+     * @return the result of the expression evaluation
+     */
+    public T evaluate(List<?> values, ReportParameters reportParameters);
 }

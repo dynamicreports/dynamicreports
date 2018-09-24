@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
 
 import net.sf.dynamicreports.report.base.chart.plot.DRCandlestickPlot;
@@ -33,23 +32,23 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class CandlestickChartBuilder extends AbstractHighLowChartBuilder<CandlestickChartBuilder, DRCandlestickPlot> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for CandlestickChartBuilder.</p>
-	 */
-	protected CandlestickChartBuilder() {
-		super(ChartType.CANDLESTICK);
-	}
+    /**
+     * <p>Constructor for CandlestickChartBuilder.</p>
+     */
+    protected CandlestickChartBuilder() {
+        super(ChartType.CANDLESTICK);
+    }
 
-	/**
-	 * <p>setShowVolume.</p>
-	 *
-	 * @param showVolume a {@link java.lang.Boolean} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CandlestickChartBuilder} object.
-	 */
-	public CandlestickChartBuilder setShowVolume(Boolean showVolume) {
-		getPlot().setShowVolume(showVolume);
-		return this;
-	}
+    /**
+     * <p>setShowVolume.</p>
+     *
+     * @param showVolume a {@link java.lang.Boolean} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CandlestickChartBuilder} object.
+     */
+    public CandlestickChartBuilder setShowVolume(Boolean showVolume) {
+        getPlot().setShowVolume(showVolume);
+        return this;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.component;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.export;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 /**
  * <p>MapReport class.</p>
@@ -35,36 +38,29 @@ import net.sf.dynamicreports.report.exception.DRException;
  */
 public class MapReport {
 
-	/**
-	 * <p>Constructor for MapReport.</p>
-	 */
-	public MapReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for MapReport.</p>
+     */
+    public MapReport() {
+        build();
+    }
 
-	private void build() {
-		try {
-			JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html")
-					.setImagesDirName("c:/images")
-					.setOutputImagesToDir(true);
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new MapReport();
+    }
 
-			report()
-					.setTemplate(template())
-					.title(
-							Templates.createTitleComponent("Map"),
-							cmp.map(40.7f, -74f, 12).setFixedHeight(750))
-					.toHtml(htmlExporter);
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    private void build() {
+        try {
+            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html").setImagesDirName("c:/images").setOutputImagesToDir(true);
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new MapReport();
-	}
+            report().setTemplate(template()).title(Templates.createTitleComponent("Map"), cmp.map(40.7f, -74f, 12).setFixedHeight(750)).toHtml(htmlExporter);
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 }

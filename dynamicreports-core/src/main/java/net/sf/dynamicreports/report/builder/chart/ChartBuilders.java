@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.chart;
-
-import java.awt.Paint;
 
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
 import net.sf.dynamicreports.report.builder.column.ValueColumnBuilder;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.awt.Paint;
 
 /**
  * A set of methods of creating and customizing charts
@@ -37,475 +36,481 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public class ChartBuilders {
 
-	/**
-	 * <p>axisFormat.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AxisFormatBuilder} object.
-	 */
-	public AxisFormatBuilder axisFormat() {
-		return Charts.axisFormat();
-	}
+    /**
+     * <p>axisFormat.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.AxisFormatBuilder} object.
+     */
+    public AxisFormatBuilder axisFormat() {
+        return Charts.axisFormat();
+    }
 
-	/**
-	 * <p>paintScale.</p>
-	 *
-	 * @param label a {@link java.lang.String} object.
-	 * @param value a double.
-	 * @param paint a {@link java.awt.Paint} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.PaintScaleBuilder} object.
-	 */
-	public PaintScaleBuilder paintScale(String label, double value, Paint paint) {
-		return Charts.paintScale(label, value, paint);
-	}
+    /**
+     * <p>paintScale.</p>
+     *
+     * @param label a {@link java.lang.String} object.
+     * @param value a double.
+     * @param paint a {@link java.awt.Paint} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.PaintScaleBuilder} object.
+     */
+    public PaintScaleBuilder paintScale(String label, double value, Paint paint) {
+        return Charts.paintScale(label, value, paint);
+    }
 
-	// category serie
-	/**
-	 * <p>serie.</p>
-	 *
-	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
-	 */
-	public CategoryChartSerieBuilder serie(ValueColumnBuilder<?, ? extends Number> column) {
-		return Charts.serie(column);
-	}
+    // category serie
 
-	/**
-	 * <p>serie.</p>
-	 *
-	 * @param fieldName a {@link java.lang.String} object.
-	 * @param valueClass a {@link java.lang.Class} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
-	 */
-	public CategoryChartSerieBuilder serie(String fieldName, Class<? extends Number> valueClass) {
-		return Charts.serie(fieldName, valueClass);
-	}
+    /**
+     * <p>serie.</p>
+     *
+     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+     */
+    public CategoryChartSerieBuilder serie(ValueColumnBuilder<?, ? extends Number> column) {
+        return Charts.serie(column);
+    }
 
-	/**
-	 * <p>serie.</p>
-	 *
-	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
-	 */
-	public CategoryChartSerieBuilder serie(FieldBuilder<? extends Number> field) {
-		return Charts.serie(field);
-	}
+    /**
+     * <p>serie.</p>
+     *
+     * @param fieldName  a {@link java.lang.String} object.
+     * @param valueClass a {@link java.lang.Class} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+     */
+    public CategoryChartSerieBuilder serie(String fieldName, Class<? extends Number> valueClass) {
+        return Charts.serie(fieldName, valueClass);
+    }
 
-	/**
-	 * <p>serie.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
-	 */
-	public CategoryChartSerieBuilder serie(DRIExpression<? extends Number> valueExpression) {
-		return Charts.serie(valueExpression);
-	}
+    /**
+     * <p>serie.</p>
+     *
+     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+     */
+    public CategoryChartSerieBuilder serie(FieldBuilder<? extends Number> field) {
+        return Charts.serie(field);
+    }
 
-	/**
-	 * <p>serie.</p>
-	 *
-	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
-	 */
-	public CategoryChartSerieBuilder serie(VariableBuilder<? extends Number> variable) {
-		return Charts.serie(variable);
-	}
+    /**
+     * <p>serie.</p>
+     *
+     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+     */
+    public CategoryChartSerieBuilder serie(DRIExpression<? extends Number> valueExpression) {
+        return Charts.serie(valueExpression);
+    }
 
-	// grouped category serie
-	/**
-	 * <p>groupedSerie.</p>
-	 *
-	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
-	 */
-	public GroupedCategoryChartSerieBuilder groupedSerie(ValueColumnBuilder<?, ? extends Number> column) {
-		return Charts.groupedSerie(column);
-	}
+    /**
+     * <p>serie.</p>
+     *
+     * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
+     */
+    public CategoryChartSerieBuilder serie(VariableBuilder<? extends Number> variable) {
+        return Charts.serie(variable);
+    }
 
-	/**
-	 * <p>groupedSerie.</p>
-	 *
-	 * @param fieldName a {@link java.lang.String} object.
-	 * @param valueClass a {@link java.lang.Class} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
-	 */
-	public GroupedCategoryChartSerieBuilder groupedSerie(String fieldName, Class<? extends Number> valueClass) {
-		return Charts.groupedSerie(fieldName, valueClass);
-	}
+    // grouped category serie
 
-	/**
-	 * <p>groupedSerie.</p>
-	 *
-	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
-	 */
-	public GroupedCategoryChartSerieBuilder groupedSerie(FieldBuilder<? extends Number> field) {
-		return Charts.groupedSerie(field);
-	}
+    /**
+     * <p>groupedSerie.</p>
+     *
+     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+     */
+    public GroupedCategoryChartSerieBuilder groupedSerie(ValueColumnBuilder<?, ? extends Number> column) {
+        return Charts.groupedSerie(column);
+    }
 
-	/**
-	 * <p>groupedSerie.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
-	 */
-	public GroupedCategoryChartSerieBuilder groupedSerie(DRIExpression<? extends Number> valueExpression) {
-		return Charts.groupedSerie(valueExpression);
-	}
+    /**
+     * <p>groupedSerie.</p>
+     *
+     * @param fieldName  a {@link java.lang.String} object.
+     * @param valueClass a {@link java.lang.Class} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+     */
+    public GroupedCategoryChartSerieBuilder groupedSerie(String fieldName, Class<? extends Number> valueClass) {
+        return Charts.groupedSerie(fieldName, valueClass);
+    }
 
-	/**
-	 * <p>groupedSerie.</p>
-	 *
-	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
-	 */
-	public GroupedCategoryChartSerieBuilder groupedSerie(VariableBuilder<? extends Number> variable) {
-		return Charts.groupedSerie(variable);
-	}
+    /**
+     * <p>groupedSerie.</p>
+     *
+     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+     */
+    public GroupedCategoryChartSerieBuilder groupedSerie(FieldBuilder<? extends Number> field) {
+        return Charts.groupedSerie(field);
+    }
 
-	// xy serie
-	/**
-	 * <p>xySerie.</p>
-	 *
-	 * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
-	 */
-	public XyChartSerieBuilder xySerie(ValueColumnBuilder<?, ? extends Number> column) {
-		return Charts.xySerie(column);
-	}
+    /**
+     * <p>groupedSerie.</p>
+     *
+     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+     */
+    public GroupedCategoryChartSerieBuilder groupedSerie(DRIExpression<? extends Number> valueExpression) {
+        return Charts.groupedSerie(valueExpression);
+    }
 
-	/**
-	 * <p>xySerie.</p>
-	 *
-	 * @param fieldName a {@link java.lang.String} object.
-	 * @param valueClass a {@link java.lang.Class} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
-	 */
-	public XyChartSerieBuilder xySerie(String fieldName, Class<? extends Number> valueClass) {
-		return Charts.xySerie(fieldName, valueClass);
-	}
+    /**
+     * <p>groupedSerie.</p>
+     *
+     * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
+     */
+    public GroupedCategoryChartSerieBuilder groupedSerie(VariableBuilder<? extends Number> variable) {
+        return Charts.groupedSerie(variable);
+    }
 
-	/**
-	 * <p>xySerie.</p>
-	 *
-	 * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
-	 */
-	public XyChartSerieBuilder xySerie(FieldBuilder<? extends Number> field) {
-		return Charts.xySerie(field);
-	}
+    // xy serie
 
-	/**
-	 * <p>xySerie.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
-	 */
-	public XyChartSerieBuilder xySerie(DRIExpression<? extends Number> valueExpression) {
-		return Charts.xySerie(valueExpression);
-	}
+    /**
+     * <p>xySerie.</p>
+     *
+     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+     */
+    public XyChartSerieBuilder xySerie(ValueColumnBuilder<?, ? extends Number> column) {
+        return Charts.xySerie(column);
+    }
 
-	/**
-	 * <p>xySerie.</p>
-	 *
-	 * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
-	 */
-	public XyChartSerieBuilder xySerie(VariableBuilder<? extends Number> variable) {
-		return Charts.xySerie(variable);
-	}
+    /**
+     * <p>xySerie.</p>
+     *
+     * @param fieldName  a {@link java.lang.String} object.
+     * @param valueClass a {@link java.lang.Class} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+     */
+    public XyChartSerieBuilder xySerie(String fieldName, Class<? extends Number> valueClass) {
+        return Charts.xySerie(fieldName, valueClass);
+    }
 
-	// xyz serie
-	/**
-	 * <p>xyzSerie.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
-	 */
-	public XyzChartSerieBuilder xyzSerie() {
-		return Charts.xyzSerie();
-	}
+    /**
+     * <p>xySerie.</p>
+     *
+     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+     */
+    public XyChartSerieBuilder xySerie(FieldBuilder<? extends Number> field) {
+        return Charts.xySerie(field);
+    }
 
-	// gantt serie
-	/**
-	 * <p>ganttSerie.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartSerieBuilder} object.
-	 */
-	public GanttChartSerieBuilder ganttSerie() {
-		return Charts.ganttSerie();
-	}
+    /**
+     * <p>xySerie.</p>
+     *
+     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+     */
+    public XyChartSerieBuilder xySerie(DRIExpression<? extends Number> valueExpression) {
+        return Charts.xySerie(valueExpression);
+    }
 
-	// charts
-	/**
-	 * <p>areaChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
-	 */
-	public AreaChartBuilder areaChart() {
-		return Charts.areaChart();
-	}
+    /**
+     * <p>xySerie.</p>
+     *
+     * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
+     */
+    public XyChartSerieBuilder xySerie(VariableBuilder<? extends Number> variable) {
+        return Charts.xySerie(variable);
+    }
 
-	/**
-	 * <p>stackedAreaChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedAreaChartBuilder} object.
-	 */
-	public StackedAreaChartBuilder stackedAreaChart() {
-		return Charts.stackedAreaChart();
-	}
+    // xyz serie
 
-	/**
-	 * <p>barChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.BarChartBuilder} object.
-	 */
-	public BarChartBuilder barChart() {
-		return Charts.barChart();
-	}
+    /**
+     * <p>xyzSerie.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
+     */
+    public XyzChartSerieBuilder xyzSerie() {
+        return Charts.xyzSerie();
+    }
 
-	/**
-	 * <p>layeredBarChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
-	 */
-	public LayeredBarChartBuilder layeredBarChart() {
-		return Charts.layeredBarChart();
-	}
+    // gantt serie
 
-	/**
-	 * <p>waterfallBarChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.WaterfallBarChartBuilder} object.
-	 */
-	public WaterfallBarChartBuilder waterfallBarChart() {
-		return Charts.waterfallBarChart();
-	}
+    /**
+     * <p>ganttSerie.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartSerieBuilder} object.
+     */
+    public GanttChartSerieBuilder ganttSerie() {
+        return Charts.ganttSerie();
+    }
 
-	/**
-	 * <p>stackedBarChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
-	 */
-	public StackedBarChartBuilder stackedBarChart() {
-		return Charts.stackedBarChart();
-	}
+    // charts
 
-	/**
-	 * <p>groupedStackedBarChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedStackedBarChartBuilder} object.
-	 */
-	public GroupedStackedBarChartBuilder groupedStackedBarChart() {
-		return Charts.groupedStackedBarChart();
-	}
+    /**
+     * <p>areaChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.AreaChartBuilder} object.
+     */
+    public AreaChartBuilder areaChart() {
+        return Charts.areaChart();
+    }
 
-	/**
-	 * <p>bar3DChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.Bar3DChartBuilder} object.
-	 */
-	public Bar3DChartBuilder bar3DChart() {
-		return Charts.bar3DChart();
-	}
+    /**
+     * <p>stackedAreaChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedAreaChartBuilder} object.
+     */
+    public StackedAreaChartBuilder stackedAreaChart() {
+        return Charts.stackedAreaChart();
+    }
 
-	/**
-	 * <p>stackedBar3DChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBar3DChartBuilder} object.
-	 */
-	public StackedBar3DChartBuilder stackedBar3DChart() {
-		return Charts.stackedBar3DChart();
-	}
+    /**
+     * <p>barChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.BarChartBuilder} object.
+     */
+    public BarChartBuilder barChart() {
+        return Charts.barChart();
+    }
 
-	/**
-	 * <p>lineChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
-	 */
-	public LineChartBuilder lineChart() {
-		return Charts.lineChart();
-	}
+    /**
+     * <p>layeredBarChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LayeredBarChartBuilder} object.
+     */
+    public LayeredBarChartBuilder layeredBarChart() {
+        return Charts.layeredBarChart();
+    }
 
-	/**
-	 * <p>pieChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.PieChartBuilder} object.
-	 */
-	public PieChartBuilder pieChart() {
-		return Charts.pieChart();
-	}
+    /**
+     * <p>waterfallBarChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.WaterfallBarChartBuilder} object.
+     */
+    public WaterfallBarChartBuilder waterfallBarChart() {
+        return Charts.waterfallBarChart();
+    }
 
-	/**
-	 * <p>pie3DChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.Pie3DChartBuilder} object.
-	 */
-	public Pie3DChartBuilder pie3DChart() {
-		return Charts.pie3DChart();
-	}
+    /**
+     * <p>stackedBarChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBarChartBuilder} object.
+     */
+    public StackedBarChartBuilder stackedBarChart() {
+        return Charts.stackedBarChart();
+    }
 
-	/**
-	 * <p>timeSeriesChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
-	 */
-	public TimeSeriesChartBuilder timeSeriesChart() {
-		return Charts.timeSeriesChart();
-	}
+    /**
+     * <p>groupedStackedBarChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedStackedBarChartBuilder} object.
+     */
+    public GroupedStackedBarChartBuilder groupedStackedBarChart() {
+        return Charts.groupedStackedBarChart();
+    }
 
-	/**
-	 * <p>differenceChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
-	 */
-	public DifferenceChartBuilder differenceChart() {
-		return Charts.differenceChart();
-	}
+    /**
+     * <p>bar3DChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.Bar3DChartBuilder} object.
+     */
+    public Bar3DChartBuilder bar3DChart() {
+        return Charts.bar3DChart();
+    }
 
-	/**
-	 * <p>xyAreaChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyAreaChartBuilder} object.
-	 */
-	public XyAreaChartBuilder xyAreaChart() {
-		return Charts.xyAreaChart();
-	}
+    /**
+     * <p>stackedBar3DChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.StackedBar3DChartBuilder} object.
+     */
+    public StackedBar3DChartBuilder stackedBar3DChart() {
+        return Charts.stackedBar3DChart();
+    }
 
-	/**
-	 * <p>xyBarChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
-	 */
-	public XyBarChartBuilder xyBarChart() {
-		return Charts.xyBarChart();
-	}
+    /**
+     * <p>lineChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.LineChartBuilder} object.
+     */
+    public LineChartBuilder lineChart() {
+        return Charts.lineChart();
+    }
 
-	/**
-	 * <p>xyLineChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
-	 */
-	public XyLineChartBuilder xyLineChart() {
-		return Charts.xyLineChart();
-	}
+    /**
+     * <p>pieChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.PieChartBuilder} object.
+     */
+    public PieChartBuilder pieChart() {
+        return Charts.pieChart();
+    }
 
-	/**
-	 * <p>xyStepChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
-	 */
-	public XyStepChartBuilder xyStepChart() {
-		return Charts.xyStepChart();
-	}
+    /**
+     * <p>pie3DChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.Pie3DChartBuilder} object.
+     */
+    public Pie3DChartBuilder pie3DChart() {
+        return Charts.pie3DChart();
+    }
 
-	/**
-	 * <p>scatterChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
-	 */
-	public ScatterChartBuilder scatterChart() {
-		return Charts.scatterChart();
-	}
+    /**
+     * <p>timeSeriesChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder} object.
+     */
+    public TimeSeriesChartBuilder timeSeriesChart() {
+        return Charts.timeSeriesChart();
+    }
 
-	/**
-	 * <p>spiderChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.SpiderChartBuilder} object.
-	 */
-	public SpiderChartBuilder spiderChart() {
-		return Charts.spiderChart();
-	}
+    /**
+     * <p>differenceChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.DifferenceChartBuilder} object.
+     */
+    public DifferenceChartBuilder differenceChart() {
+        return Charts.differenceChart();
+    }
 
-	/**
-	 * <p>multiAxisChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MultiAxisChartBuilder} object.
-	 */
-	public MultiAxisChartBuilder multiAxisChart() {
-		return Charts.multiAxisChart();
-	}
+    /**
+     * <p>xyAreaChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyAreaChartBuilder} object.
+     */
+    public XyAreaChartBuilder xyAreaChart() {
+        return Charts.xyAreaChart();
+    }
 
-	/**
-	 * <p>multiAxisChart.</p>
-	 *
-	 * @param charts a {@link net.sf.dynamicreports.report.builder.chart.AbstractBaseChartBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MultiAxisChartBuilder} object.
-	 */
-	public MultiAxisChartBuilder multiAxisChart(AbstractBaseChartBuilder<?, ?, ?>... charts) {
-		return Charts.multiAxisChart(charts);
-	}
+    /**
+     * <p>xyBarChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBarChartBuilder} object.
+     */
+    public XyBarChartBuilder xyBarChart() {
+        return Charts.xyBarChart();
+    }
 
-	/**
-	 * <p>xyBlockChart.</p>
-	 *
-	 * @param defaultLowerBound a double.
-	 * @param defaultUpperBound a double.
-	 * @param defaultPaint a {@link java.awt.Paint} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBlockChartBuilder} object.
-	 */
-	public XyBlockChartBuilder xyBlockChart(double defaultLowerBound, double defaultUpperBound, Paint defaultPaint) {
-		return Charts.xyBlockChart(defaultLowerBound, defaultUpperBound, defaultPaint);
-	}
+    /**
+     * <p>xyLineChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyLineChartBuilder} object.
+     */
+    public XyLineChartBuilder xyLineChart() {
+        return Charts.xyLineChart();
+    }
 
-	/**
-	 * <p>bubbleChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
-	 */
-	public BubbleChartBuilder bubbleChart() {
-		return Charts.bubbleChart();
-	}
+    /**
+     * <p>xyStepChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyStepChartBuilder} object.
+     */
+    public XyStepChartBuilder xyStepChart() {
+        return Charts.xyStepChart();
+    }
 
-	/**
-	 * <p>candlestickChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.CandlestickChartBuilder} object.
-	 */
-	public CandlestickChartBuilder candlestickChart() {
-		return Charts.candlestickChart();
-	}
+    /**
+     * <p>scatterChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.ScatterChartBuilder} object.
+     */
+    public ScatterChartBuilder scatterChart() {
+        return Charts.scatterChart();
+    }
 
-	/**
-	 * <p>highLowChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
-	 */
-	public HighLowChartBuilder highLowChart() {
-		return Charts.highLowChart();
-	}
+    /**
+     * <p>spiderChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.SpiderChartBuilder} object.
+     */
+    public SpiderChartBuilder spiderChart() {
+        return Charts.spiderChart();
+    }
 
-	/**
-	 * <p>meterChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterChartBuilder} object.
-	 */
-	public MeterChartBuilder meterChart() {
-		return Charts.meterChart();
-	}
+    /**
+     * <p>multiAxisChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.MultiAxisChartBuilder} object.
+     */
+    public MultiAxisChartBuilder multiAxisChart() {
+        return Charts.multiAxisChart();
+    }
 
-	/**
-	 * <p>meterInterval.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
-	 */
-	public MeterIntervalBuilder meterInterval() {
-		return Charts.meterInterval();
-	}
+    /**
+     * <p>multiAxisChart.</p>
+     *
+     * @param charts a {@link net.sf.dynamicreports.report.builder.chart.AbstractBaseChartBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.MultiAxisChartBuilder} object.
+     */
+    public MultiAxisChartBuilder multiAxisChart(AbstractBaseChartBuilder<?, ?, ?>... charts) {
+        return Charts.multiAxisChart(charts);
+    }
 
-	/**
-	 * <p>thermometerChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.ThermometerChartBuilder} object.
-	 */
-	public ThermometerChartBuilder thermometerChart() {
-		return Charts.thermometerChart();
-	}
+    /**
+     * <p>xyBlockChart.</p>
+     *
+     * @param defaultLowerBound a double.
+     * @param defaultUpperBound a double.
+     * @param defaultPaint      a {@link java.awt.Paint} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBlockChartBuilder} object.
+     */
+    public XyBlockChartBuilder xyBlockChart(double defaultLowerBound, double defaultUpperBound, Paint defaultPaint) {
+        return Charts.xyBlockChart(defaultLowerBound, defaultUpperBound, defaultPaint);
+    }
 
-	/**
-	 * <p>ganttChart.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
-	 */
-	public GanttChartBuilder ganttChart() {
-		return Charts.ganttChart();
-	}
+    /**
+     * <p>bubbleChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
+     */
+    public BubbleChartBuilder bubbleChart() {
+        return Charts.bubbleChart();
+    }
+
+    /**
+     * <p>candlestickChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.CandlestickChartBuilder} object.
+     */
+    public CandlestickChartBuilder candlestickChart() {
+        return Charts.candlestickChart();
+    }
+
+    /**
+     * <p>highLowChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.HighLowChartBuilder} object.
+     */
+    public HighLowChartBuilder highLowChart() {
+        return Charts.highLowChart();
+    }
+
+    /**
+     * <p>meterChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterChartBuilder} object.
+     */
+    public MeterChartBuilder meterChart() {
+        return Charts.meterChart();
+    }
+
+    /**
+     * <p>meterInterval.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.MeterIntervalBuilder} object.
+     */
+    public MeterIntervalBuilder meterInterval() {
+        return Charts.meterInterval();
+    }
+
+    /**
+     * <p>thermometerChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.ThermometerChartBuilder} object.
+     */
+    public ThermometerChartBuilder thermometerChart() {
+        return Charts.thermometerChart();
+    }
+
+    /**
+     * <p>ganttChart.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.chart.GanttChartBuilder} object.
+     */
+    public GanttChartBuilder ganttChart() {
+        return Charts.ganttChart();
+    }
 }

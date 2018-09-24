@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.style;
+
+import net.sf.dynamicreports.report.constant.LineSpacing;
 
 import java.io.Serializable;
 import java.util.List;
-
-import net.sf.dynamicreports.report.constant.LineSpacing;
 
 /**
  * <p>DRIParagraph interface.</p>
@@ -35,66 +34,66 @@ import net.sf.dynamicreports.report.constant.LineSpacing;
  */
 public interface DRIParagraph extends Serializable {
 
-	/**
-	 * <p>getLineSpacing.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.LineSpacing} object.
-	 */
-	public LineSpacing getLineSpacing();
+    /**
+     * <p>getLineSpacing.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.LineSpacing} object.
+     */
+    public LineSpacing getLineSpacing();
 
-	/**
-	 * <p>getLineSpacingSize.</p>
-	 *
-	 * @return a {@link java.lang.Float} object.
-	 */
-	public Float getLineSpacingSize();
+    /**
+     * <p>getLineSpacingSize.</p>
+     *
+     * @return a {@link java.lang.Float} object.
+     */
+    public Float getLineSpacingSize();
 
-	/**
-	 * <p>getFirstLineIndent.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getFirstLineIndent();
+    /**
+     * <p>getFirstLineIndent.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getFirstLineIndent();
 
-	/**
-	 * <p>getLeftIndent.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getLeftIndent();
+    /**
+     * <p>getLeftIndent.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getLeftIndent();
 
-	/**
-	 * <p>getRightIndent.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getRightIndent();
+    /**
+     * <p>getRightIndent.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getRightIndent();
 
-	/**
-	 * <p>getSpacingBefore.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getSpacingBefore();
+    /**
+     * <p>getSpacingBefore.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getSpacingBefore();
 
-	/**
-	 * <p>getSpacingAfter.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getSpacingAfter();
+    /**
+     * <p>getSpacingAfter.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getSpacingAfter();
 
-	/**
-	 * <p>getTabStopWidth.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getTabStopWidth();
+    /**
+     * <p>getTabStopWidth.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getTabStopWidth();
 
-	/**
-	 * <p>getTabStops.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRITabStop> getTabStops();
+    /**
+     * <p>getTabStops.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRITabStop> getTabStops();
 }

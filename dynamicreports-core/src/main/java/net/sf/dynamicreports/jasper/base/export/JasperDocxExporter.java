@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.base.export;
 
 import net.sf.dynamicreports.jasper.definition.export.JasperIDocxExporter;
@@ -32,55 +31,61 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class JasperDocxExporter extends AbstractJasperExporter implements JasperIDocxExporter {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Boolean framesAsNestedTables;
-	private Boolean flexibleRowHeight;
-	private Boolean ignoreHyperLink;
+    private Boolean framesAsNestedTables;
+    private Boolean flexibleRowHeight;
+    private Boolean ignoreHyperLink;
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getFramesAsNestedTables() {
-		return framesAsNestedTables;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getFramesAsNestedTables() {
+        return framesAsNestedTables;
+    }
 
-	/**
-	 * <p>Setter for the field <code>framesAsNestedTables</code>.</p>
-	 *
-	 * @param framesAsNestedTables a {@link java.lang.Boolean} object.
-	 */
-	public void setFramesAsNestedTables(Boolean framesAsNestedTables) {
-		this.framesAsNestedTables = framesAsNestedTables;
-	}
+    /**
+     * <p>Setter for the field <code>framesAsNestedTables</code>.</p>
+     *
+     * @param framesAsNestedTables a {@link java.lang.Boolean} object.
+     */
+    public void setFramesAsNestedTables(Boolean framesAsNestedTables) {
+        this.framesAsNestedTables = framesAsNestedTables;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getFlexibleRowHeight() {
-		return flexibleRowHeight;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getFlexibleRowHeight() {
+        return flexibleRowHeight;
+    }
 
-	/**
-	 * <p>Setter for the field <code>flexibleRowHeight</code>.</p>
-	 *
-	 * @param flexibleRowHeight a {@link java.lang.Boolean} object.
-	 */
-	public void setFlexibleRowHeight(Boolean flexibleRowHeight) {
-		this.flexibleRowHeight = flexibleRowHeight;
-	}
+    /**
+     * <p>Setter for the field <code>flexibleRowHeight</code>.</p>
+     *
+     * @param flexibleRowHeight a {@link java.lang.Boolean} object.
+     */
+    public void setFlexibleRowHeight(Boolean flexibleRowHeight) {
+        this.flexibleRowHeight = flexibleRowHeight;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getIgnoreHyperLink() {
-		return ignoreHyperLink;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getIgnoreHyperLink() {
+        return ignoreHyperLink;
+    }
 
-	/**
-	 * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
-	 *
-	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
-	 */
-	public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
-		this.ignoreHyperLink = ignoreHyperLink;
-	}
+    /**
+     * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
+     *
+     * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+     */
+    public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
+        this.ignoreHyperLink = ignoreHyperLink;
+    }
 
 }

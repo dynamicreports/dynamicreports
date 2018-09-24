@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.expression;
-
-import java.util.List;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
+
+import java.util.List;
 
 /**
  * <p>DRDesignValueFormatter class.</p>
@@ -36,31 +35,34 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
  * @version $Id: $Id
  */
 public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIValueFormatter<?, Object> valueFormatter;
+    private DRIValueFormatter<?, Object> valueFormatter;
 
-	@SuppressWarnings("unchecked")
-	/**
-	 * <p>Constructor for DRDesignValueFormatter.</p>
-	 *
-	 * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
-	 * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRDesignValueFormatter(DRIValueFormatter<?, ?> valueFormatter, DRIDesignExpression valueExpression) {
-		this.valueFormatter = (DRIValueFormatter<?, Object>) valueFormatter;
-		addExpression(valueExpression);
-	}
+    @SuppressWarnings("unchecked")
+    /**
+     * <p>Constructor for DRDesignValueFormatter.</p>
+     *
+     * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
+     * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */ public DRDesignValueFormatter(DRIValueFormatter<?, ?> valueFormatter, DRIDesignExpression valueExpression) {
+        this.valueFormatter = (DRIValueFormatter<?, Object>) valueFormatter;
+        addExpression(valueExpression);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Object evaluate(List<?> values, ReportParameters reportParameters) {
-		return valueFormatter.format(values.get(0), reportParameters);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object evaluate(List<?> values, ReportParameters reportParameters) {
+        return valueFormatter.format(values.get(0), reportParameters);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<?> getValueClass() {
-		return valueFormatter.getValueClass();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<?> getValueClass() {
+        return valueFormatter.getValueClass();
+    }
 }

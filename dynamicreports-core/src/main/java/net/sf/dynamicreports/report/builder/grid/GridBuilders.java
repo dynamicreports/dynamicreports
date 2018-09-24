@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.grid;
 
 /**
@@ -30,144 +29,148 @@ package net.sf.dynamicreports.report.builder.grid;
  */
 public class GridBuilders {
 
-	// horizontal
-	/**
-	 * <p>horizontalColumnGridList.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalColumnGridList() {
-		return Grids.horizontalColumnGridList();
-	}
+    // horizontal
 
-	/**
-	 * <p>horizontalColumnGridList.</p>
-	 *
-	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalColumnGridList(ColumnGridComponentBuilder... components) {
-		return Grids.horizontalColumnGridList(components);
-	}
+    /**
+     * <p>horizontalColumnGridList.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalColumnGridList() {
+        return Grids.horizontalColumnGridList();
+    }
 
-	/**
-	 * <p>horizontalColumnGridList.</p>
-	 *
-	 * @param cells a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalColumnGridList(HorizontalColumnGridListCellBuilder... cells) {
-		return Grids.horizontalColumnGridList(cells);
-	}
+    /**
+     * <p>horizontalColumnGridList.</p>
+     *
+     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalColumnGridList(ColumnGridComponentBuilder... components) {
+        return Grids.horizontalColumnGridList(components);
+    }
 
-	/**
-	 * <p>hColumnGridListCell.</p>
-	 *
-	 * @param component a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
-	 */
-	public HorizontalColumnGridListCellBuilder hColumnGridListCell(ColumnGridComponentBuilder component) {
-		return Grids.hColumnGridListCell(component);
-	}
+    /**
+     * <p>horizontalColumnGridList.</p>
+     *
+     * @param cells a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalColumnGridList(HorizontalColumnGridListCellBuilder... cells) {
+        return Grids.horizontalColumnGridList(cells);
+    }
 
-	// horizontal flow
-	/**
-	 * <p>horizontalFlowColumnGridList.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalFlowColumnGridList() {
-		return Grids.horizontalFlowColumnGridList();
-	}
+    /**
+     * <p>hColumnGridListCell.</p>
+     *
+     * @param component a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
+     */
+    public HorizontalColumnGridListCellBuilder hColumnGridListCell(ColumnGridComponentBuilder component) {
+        return Grids.hColumnGridListCell(component);
+    }
 
-	/**
-	 * <p>horizontalFlowColumnGridList.</p>
-	 *
-	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalFlowColumnGridList(ColumnGridComponentBuilder... components) {
-		return Grids.horizontalFlowColumnGridList(components);
-	}
+    // horizontal flow
 
-	/**
-	 * <p>horizontalFlowColumnGridList.</p>
-	 *
-	 * @param cells a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
-	 */
-	public HorizontalColumnGridListBuilder horizontalFlowColumnGridList(HorizontalColumnGridListCellBuilder... cells) {
-		return Grids.horizontalFlowColumnGridList(cells);
-	}
+    /**
+     * <p>horizontalFlowColumnGridList.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalFlowColumnGridList() {
+        return Grids.horizontalFlowColumnGridList();
+    }
 
-	// vertical
-	/**
-	 * <p>verticalColumnGridList.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
-	 */
-	public VerticalColumnGridListBuilder verticalColumnGridList() {
-		return Grids.verticalColumnGridList();
-	}
+    /**
+     * <p>horizontalFlowColumnGridList.</p>
+     *
+     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalFlowColumnGridList(ColumnGridComponentBuilder... components) {
+        return Grids.horizontalFlowColumnGridList(components);
+    }
 
-	/**
-	 * <p>verticalColumnGridList.</p>
-	 *
-	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
-	 */
-	public VerticalColumnGridListBuilder verticalColumnGridList(ColumnGridComponentBuilder... components) {
-		return Grids.verticalColumnGridList(components);
-	}
+    /**
+     * <p>horizontalFlowColumnGridList.</p>
+     *
+     * @param cells a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListCellBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.HorizontalColumnGridListBuilder} object.
+     */
+    public HorizontalColumnGridListBuilder horizontalFlowColumnGridList(HorizontalColumnGridListCellBuilder... cells) {
+        return Grids.horizontalFlowColumnGridList(cells);
+    }
 
-	/**
-	 * <p>verticalColumnGridList.</p>
-	 *
-	 * @param cells a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
-	 */
-	public VerticalColumnGridListBuilder verticalColumnGridList(VerticalColumnGridListCellBuilder... cells) {
-		return Grids.verticalColumnGridList(cells);
-	}
+    // vertical
 
-	/**
-	 * <p>vColumnGridListCell.</p>
-	 *
-	 * @param component a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
-	 */
-	public VerticalColumnGridListCellBuilder vColumnGridListCell(ColumnGridComponentBuilder component) {
-		return Grids.vColumnGridListCell(component);
-	}
+    /**
+     * <p>verticalColumnGridList.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+     */
+    public VerticalColumnGridListBuilder verticalColumnGridList() {
+        return Grids.verticalColumnGridList();
+    }
 
-	// title group
-	/**
-	 * <p>titleGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
-	 */
-	public ColumnTitleGroupBuilder titleGroup() {
-		return Grids.titleGroup();
-	}
+    /**
+     * <p>verticalColumnGridList.</p>
+     *
+     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+     */
+    public VerticalColumnGridListBuilder verticalColumnGridList(ColumnGridComponentBuilder... components) {
+        return Grids.verticalColumnGridList(components);
+    }
 
-	/**
-	 * <p>titleGroup.</p>
-	 *
-	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
-	 */
-	public ColumnTitleGroupBuilder titleGroup(ColumnGridComponentBuilder... components) {
-		return Grids.titleGroup(components);
-	}
+    /**
+     * <p>verticalColumnGridList.</p>
+     *
+     * @param cells a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListBuilder} object.
+     */
+    public VerticalColumnGridListBuilder verticalColumnGridList(VerticalColumnGridListCellBuilder... cells) {
+        return Grids.verticalColumnGridList(cells);
+    }
 
-	/**
-	 * <p>titleGroup.</p>
-	 *
-	 * @param title a {@link java.lang.String} object.
-	 * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
-	 */
-	public ColumnTitleGroupBuilder titleGroup(String title, ColumnGridComponentBuilder... components) {
-		return Grids.titleGroup(title, components);
-	}
+    /**
+     * <p>vColumnGridListCell.</p>
+     *
+     * @param component a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.VerticalColumnGridListCellBuilder} object.
+     */
+    public VerticalColumnGridListCellBuilder vColumnGridListCell(ColumnGridComponentBuilder component) {
+        return Grids.vColumnGridListCell(component);
+    }
+
+    // title group
+
+    /**
+     * <p>titleGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+     */
+    public ColumnTitleGroupBuilder titleGroup() {
+        return Grids.titleGroup();
+    }
+
+    /**
+     * <p>titleGroup.</p>
+     *
+     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+     */
+    public ColumnTitleGroupBuilder titleGroup(ColumnGridComponentBuilder... components) {
+        return Grids.titleGroup(components);
+    }
+
+    /**
+     * <p>titleGroup.</p>
+     *
+     * @param title      a {@link java.lang.String} object.
+     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
+     */
+    public ColumnTitleGroupBuilder titleGroup(String title, ColumnGridComponentBuilder... components) {
+        return Grids.titleGroup(title, components);
+    }
 }

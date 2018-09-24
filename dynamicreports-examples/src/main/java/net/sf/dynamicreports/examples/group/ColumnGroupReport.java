@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.group;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -36,6 +29,15 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>ColumnGroupReport class.</p>
  *
@@ -44,67 +46,60 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class ColumnGroupReport {
 
-	/**
-	 * <p>Constructor for ColumnGroupReport.</p>
-	 */
-	public ColumnGroupReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ColumnGroupReport.</p>
+     */
+    public ColumnGroupReport() {
+        build();
+    }
 
-	private void build() {
-		TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ColumnGroupReport();
+    }
 
-		ColumnGroupBuilder itemGroup = grp.group(itemColumn)
-				.setTitleWidth(30)
-				.setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE)
-				.showColumnHeaderAndFooter();
+    private void build() {
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.setShowColumnTitle(false)
-					.columns(
-							itemColumn,
-							col.column("Order date", "orderdate", type.dateType()),
-							col.column("Quantity", "quantity", type.integerType()),
-							col.column("Unit price", "unitprice", type.bigDecimalType()))
-					.groupBy(itemGroup)
-					.title(Templates.createTitleComponent("Group"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        ColumnGroupBuilder itemGroup = grp.group(itemColumn).setTitleWidth(30).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE).showColumnHeaderAndFooter();
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-		dataSource.add("Tablet", toDate(2010, 1, 1), 5, new BigDecimal(300));
-		dataSource.add("Tablet", toDate(2010, 1, 3), 1, new BigDecimal(280));
-		dataSource.add("Tablet", toDate(2010, 1, 19), 5, new BigDecimal(320));
-		dataSource.add("Laptop", toDate(2010, 1, 5), 3, new BigDecimal(580));
-		dataSource.add("Laptop", toDate(2010, 1, 8), 1, new BigDecimal(620));
-		dataSource.add("Laptop", toDate(2010, 1, 15), 5, new BigDecimal(600));
-		dataSource.add("Smartphone", toDate(2010, 1, 18), 8, new BigDecimal(150));
-		dataSource.add("Smartphone", toDate(2010, 1, 20), 8, new BigDecimal(210));
-		return dataSource;
-	}
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .setShowColumnTitle(false)
+                    .columns(itemColumn, col.column("Order date", "orderdate", type.dateType()), col.column("Quantity", "quantity", type.integerType()),
+                             col.column("Unit price", "unitprice", type.bigDecimalType()))
+                    .groupBy(itemGroup)
+                    .title(Templates.createTitleComponent("Group"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	private Date toDate(int year, int month, int day) {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, year);
-		c.set(Calendar.MONTH, month - 1);
-		c.set(Calendar.DAY_OF_MONTH, day);
-		return c.getTime();
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
+        dataSource.add("Tablet", toDate(2010, 1, 1), 5, new BigDecimal(300));
+        dataSource.add("Tablet", toDate(2010, 1, 3), 1, new BigDecimal(280));
+        dataSource.add("Tablet", toDate(2010, 1, 19), 5, new BigDecimal(320));
+        dataSource.add("Laptop", toDate(2010, 1, 5), 3, new BigDecimal(580));
+        dataSource.add("Laptop", toDate(2010, 1, 8), 1, new BigDecimal(620));
+        dataSource.add("Laptop", toDate(2010, 1, 15), 5, new BigDecimal(600));
+        dataSource.add("Smartphone", toDate(2010, 1, 18), 8, new BigDecimal(150));
+        dataSource.add("Smartphone", toDate(2010, 1, 20), 8, new BigDecimal(210));
+        return dataSource;
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ColumnGroupReport();
-	}
+    private Date toDate(int year, int month, int day) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month - 1);
+        c.set(Calendar.DAY_OF_MONTH, day);
+        return c.getTime();
+    }
 }

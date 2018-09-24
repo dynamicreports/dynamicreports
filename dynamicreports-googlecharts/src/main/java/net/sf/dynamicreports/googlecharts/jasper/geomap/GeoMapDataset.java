@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.jasper.geomap;
-
-import java.io.Serializable;
 
 import net.sf.jasperreports.engine.JRElementDataset;
 import net.sf.jasperreports.engine.JRExpression;
+
+import java.io.Serializable;
 
 /**
  * <p>GeoMapDataset interface.</p>
@@ -35,25 +34,25 @@ import net.sf.jasperreports.engine.JRExpression;
  */
 public interface GeoMapDataset extends JRElementDataset, Serializable {
 
-	/**
-	 * <p>getLocationExpression.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public JRExpression getLocationExpression();
+    /**
+     * <p>getLocationExpression.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public JRExpression getLocationExpression();
 
-	/**
-	 * <p>getValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public JRExpression getValueExpression();
+    /**
+     * <p>getValueExpression.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public JRExpression getValueExpression();
 
-	/**
-	 * <p>getLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
-	 */
-	public JRExpression getLabelExpression();
+    /**
+     * <p>getLabelExpression.</p>
+     *
+     * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
+     */
+    public JRExpression getLabelExpression();
 
 }

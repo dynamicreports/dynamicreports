@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.condition;
 
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.ReportParameters;
-
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -36,46 +34,50 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public abstract class AbstractValuesExpression<T extends Number> extends AbstractSimpleExpression<Boolean> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIValue<T> value;
-	private Number[] numbers;
+    private DRIValue<T> value;
+    private Number[] numbers;
 
-	/**
-	 * <p>Constructor for AbstractValuesExpression.</p>
-	 *
-	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-	 * @param numbers a {@link java.lang.Number} object.
-	 */
-	public AbstractValuesExpression(DRIValue<T> value, Number... numbers) {
-		Validate.notNull(value, "value must not be null");
-		Validate.noNullElements(numbers, "numbers must not contains null number");
-		this.value = value;
-		this.numbers = numbers;
-	}
+    /**
+     * <p>Constructor for AbstractValuesExpression.</p>
+     *
+     * @param value   a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param numbers a {@link java.lang.Number} object.
+     */
+    public AbstractValuesExpression(DRIValue<T> value, Number... numbers) {
+        Validate.notNull(value, "value must not be null");
+        Validate.noNullElements(numbers, "numbers must not contains null number");
+        this.value = value;
+        this.numbers = numbers;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean evaluate(ReportParameters reportParameters) {
-		Number actualValue = reportParameters.getValue(value);
-		if (actualValue != null) {
-			return compare(actualValue, numbers);
-		}
-		return false;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean evaluate(ReportParameters reportParameters) {
+        Number actualValue = reportParameters.getValue(value);
+        if (actualValue != null) {
+            return compare(actualValue, numbers);
+        }
+        return false;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<Boolean> getValueClass() {
-		return Boolean.class;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<Boolean> getValueClass() {
+        return Boolean.class;
+    }
 
-	/**
-	 * <p>compare.</p>
-	 *
-	 * @param actualValue a {@link java.lang.Number} object.
-	 * @param numbers an array of {@link java.lang.Number} objects.
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	protected abstract Boolean compare(Number actualValue, Number[] numbers);
+    /**
+     * <p>compare.</p>
+     *
+     * @param actualValue a {@link java.lang.Number} object.
+     * @param numbers     an array of {@link java.lang.Number} objects.
+     * @return a {@link java.lang.Boolean} object.
+     */
+    protected abstract Boolean compare(Number actualValue, Number[] numbers);
 }

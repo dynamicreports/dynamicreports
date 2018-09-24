@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.crosstab;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -39,6 +34,13 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.math.BigDecimal;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
 /**
  * <p>PercentageCrosstabReport class.</p>
  *
@@ -47,81 +49,78 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class PercentageCrosstabReport {
 
-	/**
-	 * <p>Constructor for PercentageCrosstabReport.</p>
-	 */
-	public PercentageCrosstabReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for PercentageCrosstabReport.</p>
+     */
+    public PercentageCrosstabReport() {
+        build();
+    }
 
-	private void build() {
-		CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-				.setTotalHeader("Total for state");
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new PercentageCrosstabReport();
+    }
 
-		CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
+    private void build() {
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
-		FieldBuilder<BigDecimal> unitPriceField = field("unitprice", BigDecimal.class);
+        CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
-		CrosstabBuilder crosstab = ctab.crosstab()
-				.headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
-				.rowGroups(rowGroup)
-				.columnGroups(columnGroup)
-				.measures(
-						ctab.measure("Unit price", unitPriceField, Calculation.SUM),
-						ctab.measure("%", unitPriceField, Calculation.SUM).setPercentageType(CrosstabPercentageType.GRAND_TOTAL));
+        FieldBuilder<BigDecimal> unitPriceField = field("unitprice", BigDecimal.class);
 
-		try {
-			report()
-					.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
-					.setTemplate(Templates.reportTemplate)
-					.title(Templates.createTitleComponent("PercentageCrosstab"))
-					.summary(crosstab)
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        CrosstabBuilder crosstab = ctab.crosstab()
+                                       .headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
+                                       .rowGroups(rowGroup)
+                                       .columnGroups(columnGroup)
+                                       .measures(ctab.measure("Unit price", unitPriceField, Calculation.SUM),
+                                                 ctab.measure("%", unitPriceField, Calculation.SUM).setPercentageType(CrosstabPercentageType.GRAND_TOTAL));
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("state", "item", "unitprice");
-		dataSource.add("New York", "Notebook", new BigDecimal(500));
-		dataSource.add("New York", "DVD", new BigDecimal(30));
-		dataSource.add("New York", "DVD", new BigDecimal(45.6));
-		dataSource.add("New York", "DVD", new BigDecimal(36));
-		dataSource.add("New York", "DVD", new BigDecimal(41));
-		dataSource.add("New York", "Book", new BigDecimal(11));
-		dataSource.add("New York", "Book", new BigDecimal(9));
-		dataSource.add("New York", "Book", new BigDecimal(14.8));
+        try {
+            report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
+                    .setTemplate(Templates.reportTemplate)
+                    .title(Templates.createTitleComponent("PercentageCrosstab"))
+                    .summary(crosstab)
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		dataSource.add("Washington", "Notebook", new BigDecimal(610));
-		dataSource.add("Washington", "DVD", new BigDecimal(40));
-		dataSource.add("Washington", "DVD", new BigDecimal(35));
-		dataSource.add("Washington", "DVD", new BigDecimal(46.4));
-		dataSource.add("Washington", "DVD", new BigDecimal(42));
-		dataSource.add("Washington", "Book", new BigDecimal(12));
-		dataSource.add("Washington", "Book", new BigDecimal(8));
-		dataSource.add("Washington", "Book", new BigDecimal(14));
-		dataSource.add("Washington", "Book", new BigDecimal(10));
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("state", "item", "unitprice");
+        dataSource.add("New York", "Notebook", new BigDecimal(500));
+        dataSource.add("New York", "DVD", new BigDecimal(30));
+        dataSource.add("New York", "DVD", new BigDecimal(45.6));
+        dataSource.add("New York", "DVD", new BigDecimal(36));
+        dataSource.add("New York", "DVD", new BigDecimal(41));
+        dataSource.add("New York", "Book", new BigDecimal(11));
+        dataSource.add("New York", "Book", new BigDecimal(9));
+        dataSource.add("New York", "Book", new BigDecimal(14.8));
 
-		dataSource.add("Florida", "Notebook", new BigDecimal(460.7));
-		dataSource.add("Florida", "DVD", new BigDecimal(49));
-		dataSource.add("Florida", "DVD", new BigDecimal(32));
-		dataSource.add("Florida", "DVD", new BigDecimal(47));
-		dataSource.add("Florida", "Book", new BigDecimal(11));
-		dataSource.add("Florida", "Book", new BigDecimal(6.1));
-		dataSource.add("Florida", "Book", new BigDecimal(16));
-		dataSource.add("Florida", "Book", new BigDecimal(18));
-		return dataSource;
-	}
+        dataSource.add("Washington", "Notebook", new BigDecimal(610));
+        dataSource.add("Washington", "DVD", new BigDecimal(40));
+        dataSource.add("Washington", "DVD", new BigDecimal(35));
+        dataSource.add("Washington", "DVD", new BigDecimal(46.4));
+        dataSource.add("Washington", "DVD", new BigDecimal(42));
+        dataSource.add("Washington", "Book", new BigDecimal(12));
+        dataSource.add("Washington", "Book", new BigDecimal(8));
+        dataSource.add("Washington", "Book", new BigDecimal(14));
+        dataSource.add("Washington", "Book", new BigDecimal(10));
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new PercentageCrosstabReport();
-	}
+        dataSource.add("Florida", "Notebook", new BigDecimal(460.7));
+        dataSource.add("Florida", "DVD", new BigDecimal(49));
+        dataSource.add("Florida", "DVD", new BigDecimal(32));
+        dataSource.add("Florida", "DVD", new BigDecimal(47));
+        dataSource.add("Florida", "Book", new BigDecimal(11));
+        dataSource.add("Florida", "Book", new BigDecimal(6.1));
+        dataSource.add("Florida", "Book", new BigDecimal(16));
+        dataSource.add("Florida", "Book", new BigDecimal(18));
+        return dataSource;
+    }
 }

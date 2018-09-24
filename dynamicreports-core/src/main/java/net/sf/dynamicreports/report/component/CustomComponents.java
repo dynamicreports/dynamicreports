@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.component;
 
-import java.util.List;
-
 import net.sf.jasperreports.extensions.ExtensionsEnvironment;
+
+import java.util.List;
 
 /**
  * <p>CustomComponents class.</p>
@@ -34,20 +33,20 @@ import net.sf.jasperreports.extensions.ExtensionsEnvironment;
  */
 public class CustomComponents {
 
-	/**
-	 * <p>getComponentTransform.</p>
-	 *
-	 * @param component a {@link java.lang.Object} object.
-	 * @return a {@link net.sf.dynamicreports.report.component.CustomComponentTransform} object.
-	 */
-	@SuppressWarnings("rawtypes")
-	public static CustomComponentTransform<?, ?> getComponentTransform(Object component) {
-		List<CustomComponentTransform> transforms = ExtensionsEnvironment.getExtensionsRegistry().getExtensions(CustomComponentTransform.class);
-		for (CustomComponentTransform transform : transforms) {
-			if (transform.isTransform(component)) {
-				return transform;
-			}
-		}
-		return null;
-	}
+    /**
+     * <p>getComponentTransform.</p>
+     *
+     * @param component a {@link java.lang.Object} object.
+     * @return a {@link net.sf.dynamicreports.report.component.CustomComponentTransform} object.
+     */
+    @SuppressWarnings("rawtypes")
+    public static CustomComponentTransform<?, ?> getComponentTransform(Object component) {
+        List<CustomComponentTransform> transforms = ExtensionsEnvironment.getExtensionsRegistry().getExtensions(CustomComponentTransform.class);
+        for (CustomComponentTransform transform : transforms) {
+            if (transform.isTransform(component)) {
+                return transform;
+            }
+        }
+        return null;
+    }
 }

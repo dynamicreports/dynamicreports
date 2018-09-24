@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.component;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
@@ -32,38 +31,38 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  */
 public interface DRIDesignSubreport extends DRIDesignComponent {
 
-	/**
-	 * <p>getReportExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getReportExpression();
+    /**
+     * <p>getReportExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getReportExpression();
 
-	/**
-	 * <p>getParametersExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getParametersExpression();
+    /**
+     * <p>getParametersExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getParametersExpression();
 
-	/**
-	 * <p>getConnectionExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getConnectionExpression();
+    /**
+     * <p>getConnectionExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getConnectionExpression();
 
-	/**
-	 * <p>getDataSourceExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getDataSourceExpression();
+    /**
+     * <p>getDataSourceExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getDataSourceExpression();
 
-	/**
-	 * <p>getRunToBottom.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getRunToBottom();
+    /**
+     * <p>getRunToBottom.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getRunToBottom();
 }

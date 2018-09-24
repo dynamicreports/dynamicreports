@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,16 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.column;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -40,6 +31,18 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>ColumnSubreportDataReport class.</p>
  *
@@ -48,125 +51,119 @@ import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
  */
 public class ColumnSubreportDataReport {
 
-	/**
-	 * <p>Constructor for ColumnSubreportDataReport.</p>
-	 */
-	public ColumnSubreportDataReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ColumnSubreportDataReport.</p>
+     */
+    public ColumnSubreportDataReport() {
+        build();
+    }
 
-	private void build() {
-		SubreportBuilder subreport = cmp.subreport(new SubreportDesign())
-				.setDataSource(new SubreportData());
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.fields(field("comments", List.class))
-					.columns(
-							col.column("Item", "item", type.stringType()),
-							col.column("Quantity", "quantity", type.integerType()),
-							col.componentColumn("Comments", subreport))
-					.title(Templates.createTitleComponent("ColumnSubreportData"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ColumnSubreportDataReport();
+    }
 
-	private class SubreportDesign extends AbstractSimpleExpression<JasperReportBuilder> {
-		private static final long serialVersionUID = 1L;
+    private void build() {
+        SubreportBuilder subreport = cmp.subreport(new SubreportDesign()).setDataSource(new SubreportData());
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .fields(field("comments", List.class))
+                    .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.componentColumn("Comments", subreport))
+                    .title(Templates.createTitleComponent("ColumnSubreportData"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		@Override
-		public JasperReportBuilder evaluate(ReportParameters reportParameters) {
-			JasperReportBuilder report = report()
-					.columns(col.column("comment", type.stringType()));
-			return report;
-		}
-	}
+    private JRDataSource createDataSource() {
+        List<ReportData> datasource = new ArrayList<ReportData>();
 
-	private class SubreportData extends AbstractSimpleExpression<JRDataSource> {
-		private static final long serialVersionUID = 1L;
+        ReportData data = new ReportData();
+        List<Map<String, Object>> comments = new ArrayList<Map<String, Object>>();
+        Map<String, Object> values = new HashMap<String, Object>();
+        values.put("comment", "comment1");
+        comments.add(values);
+        values = new HashMap<String, Object>();
+        values.put("comment", "comment2");
+        comments.add(values);
+        values = new HashMap<String, Object>();
+        values.put("comment", "comment3");
+        comments.add(values);
+        data.setItem("Book");
+        data.setQuantity(new Integer(10));
+        data.setComments(comments);
+        datasource.add(data);
 
-		@Override
-		public JRDataSource evaluate(ReportParameters reportParameters) {
-			Collection<Map<String, ?>> value = reportParameters.getValue("comments");
-			return new JRMapCollectionDataSource(value);
-		}
-	}
+        data = new ReportData();
+        comments = new ArrayList<Map<String, Object>>();
+        values = new HashMap<String, Object>();
+        values.put("comment", "comment1");
+        comments.add(values);
+        values = new HashMap<String, Object>();
+        values.put("comment", "comment2");
+        comments.add(values);
+        data.setItem("Notebook");
+        data.setQuantity(new Integer(20));
+        data.setComments(comments);
+        datasource.add(data);
 
-	private JRDataSource createDataSource() {
-		List<ReportData> datasource = new ArrayList<ReportData>();
+        return new JRBeanCollectionDataSource(datasource);
+    }
 
-		ReportData data = new ReportData();
-		List<Map<String, Object>> comments = new ArrayList<Map<String, Object>>();
-		Map<String, Object> values = new HashMap<String, Object>();
-		values.put("comment", "comment1");
-		comments.add(values);
-		values = new HashMap<String, Object>();
-		values.put("comment", "comment2");
-		comments.add(values);
-		values = new HashMap<String, Object>();
-		values.put("comment", "comment3");
-		comments.add(values);
-		data.setItem("Book");
-		data.setQuantity(new Integer(10));
-		data.setComments(comments);
-		datasource.add(data);
+    private class SubreportDesign extends AbstractSimpleExpression<JasperReportBuilder> {
+        private static final long serialVersionUID = 1L;
 
-		data = new ReportData();
-		comments = new ArrayList<Map<String, Object>>();
-		values = new HashMap<String, Object>();
-		values.put("comment", "comment1");
-		comments.add(values);
-		values = new HashMap<String, Object>();
-		values.put("comment", "comment2");
-		comments.add(values);
-		data.setItem("Notebook");
-		data.setQuantity(new Integer(20));
-		data.setComments(comments);
-		datasource.add(data);
+        @Override
+        public JasperReportBuilder evaluate(ReportParameters reportParameters) {
+            JasperReportBuilder report = report().columns(col.column("comment", type.stringType()));
+            return report;
+        }
+    }
 
-		return new JRBeanCollectionDataSource(datasource);
-	}
+    private class SubreportData extends AbstractSimpleExpression<JRDataSource> {
+        private static final long serialVersionUID = 1L;
 
-	public class ReportData {
-		private String item;
-		private Integer quantity;
-		private List<Map<String, Object>> comments;
+        @Override
+        public JRDataSource evaluate(ReportParameters reportParameters) {
+            Collection<Map<String, ?>> value = reportParameters.getValue("comments");
+            return new JRMapCollectionDataSource(value);
+        }
+    }
 
-		public String getItem() {
-			return item;
-		}
+    public class ReportData {
+        private String item;
+        private Integer quantity;
+        private List<Map<String, Object>> comments;
 
-		public void setItem(String item) {
-			this.item = item;
-		}
+        public String getItem() {
+            return item;
+        }
 
-		public Integer getQuantity() {
-			return quantity;
-		}
+        public void setItem(String item) {
+            this.item = item;
+        }
 
-		public void setQuantity(Integer quantity) {
-			this.quantity = quantity;
-		}
+        public Integer getQuantity() {
+            return quantity;
+        }
 
-		public List<Map<String, Object>> getComments() {
-			return comments;
-		}
+        public void setQuantity(Integer quantity) {
+            this.quantity = quantity;
+        }
 
-		public void setComments(List<Map<String, Object>> comments) {
-			this.comments = comments;
-		}
-	}
+        public List<Map<String, Object>> getComments() {
+            return comments;
+        }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ColumnSubreportDataReport();
-	}
+        public void setComments(List<Map<String, Object>> comments) {
+            this.comments = comments;
+        }
+    }
 }

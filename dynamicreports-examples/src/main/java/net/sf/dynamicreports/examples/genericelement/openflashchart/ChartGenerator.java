@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.genericelement.openflashchart;
 
 /**
@@ -29,14 +28,16 @@ package net.sf.dynamicreports.examples.genericelement.openflashchart;
  * @version $Id: $Id
  */
 public interface ChartGenerator {
-	/** Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code> */
-	public static final String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
+    /**
+     * Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code>
+     */
+    public static final String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
 
-	/**
-	 * <p>generateChart.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String generateChart();
+    /**
+     * <p>generateChart.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String generateChart();
 
 }

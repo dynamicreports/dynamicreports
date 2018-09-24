@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.complex.salestableofcontents;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
@@ -56,6 +48,21 @@ import net.sf.dynamicreports.report.definition.DRICustomValues;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
 /**
  * <p>SalesTableOfContentsDesign class.</p>
  *
@@ -63,187 +70,160 @@ import net.sf.dynamicreports.report.exception.DRException;
  * @version $Id: $Id
  */
 public class SalesTableOfContentsDesign {
-	private SalesTableOfContentsData data = new SalesTableOfContentsData();
+    private SalesTableOfContentsData data = new SalesTableOfContentsData();
 
-	/**
-	 * <p>build.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public JasperReportBuilder build() throws DRException {
-		JasperReportBuilder report = report();
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        SalesTableOfContentsDesign design = new SalesTableOfContentsDesign();
+        try {
+            JasperReportBuilder report = design.build();
+            report.show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		TextColumnBuilder<String> countryColumn = col.column("Country", "country", type.stringType());
-		TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+    /**
+     * <p>build.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public JasperReportBuilder build() throws DRException {
+        JasperReportBuilder report = report();
 
-		StyleBuilder headingToc1Style = stl.style(Templates.rootStyle)
-				.italic();
+        TextColumnBuilder<String> countryColumn = col.column("Country", "country", type.stringType());
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-		CustomTableOfContentsCustomizer tableOfContentsCustomizer = new CustomTableOfContentsCustomizer();
-		tableOfContentsCustomizer.setHeadingStyle(1, headingToc1Style);
-		tableOfContentsCustomizer.setTextFixedWidth(100);
-		tableOfContentsCustomizer.setPageIndexFixedWidth(30);
+        StyleBuilder headingToc1Style = stl.style(Templates.rootStyle).italic();
 
-		TextFieldBuilder<String> pageHeader = cmp.text(new PageHeaderExpression())
-				.setStyle(Templates.bold12CenteredStyle)
-				.setEvaluationTime(Evaluation.PAGE);
+        CustomTableOfContentsCustomizer tableOfContentsCustomizer = new CustomTableOfContentsCustomizer();
+        tableOfContentsCustomizer.setHeadingStyle(1, headingToc1Style);
+        tableOfContentsCustomizer.setTextFixedWidth(100);
+        tableOfContentsCustomizer.setPageIndexFixedWidth(30);
 
-		report
-				.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
-				.setTemplate(Templates.reportTemplate)
-				.setTableOfContents(tableOfContentsCustomizer)
-				.columns(
-						countryColumn,
-						itemColumn,
-						col.column("Order date", "orderdate", type.dateType()),
-						col.column("Quantity", "quantity", type.integerType()),
-						col.column("Unit price", "unitprice", type.bigDecimalType()))
-				.groupBy(countryColumn, itemColumn)
-				.pageHeader(pageHeader)
-				.title(
-						Templates.createTitleComponent("SalesTableOfContents"))
-				.pageFooter(
-						Templates.footerComponent)
-				.setDataSource(data.createDataSource());
+        TextFieldBuilder<String> pageHeader = cmp.text(new PageHeaderExpression()).setStyle(Templates.bold12CenteredStyle).setEvaluationTime(Evaluation.PAGE);
 
-		return report;
-	}
+        report.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
+              .setTemplate(Templates.reportTemplate)
+              .setTableOfContents(tableOfContentsCustomizer)
+              .columns(countryColumn, itemColumn, col.column("Order date", "orderdate", type.dateType()), col.column("Quantity", "quantity", type.integerType()),
+                       col.column("Unit price", "unitprice", type.bigDecimalType()))
+              .groupBy(countryColumn, itemColumn)
+              .pageHeader(pageHeader)
+              .title(Templates.createTitleComponent("SalesTableOfContents"))
+              .pageFooter(Templates.footerComponent)
+              .setDataSource(data.createDataSource());
 
-	private class PageHeaderExpression extends AbstractSimpleExpression<String> {
-		private static final long serialVersionUID = 1L;
+        return report;
+    }
 
-		@Override
-		public String evaluate(ReportParameters reportParameters) {
-			DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
-			Map<String, JasperTocHeading> tocHeadings = customValues.getTocHeadings();
-			if (tocHeadings.isEmpty()) {
-				return "";
-			}
-			List<JasperTocHeading> headings = new ArrayList<JasperTocHeading>(tocHeadings.values());
-			for (int i = headings.size() - 1; i >= 0; i--) {
-				JasperTocHeading jasperTocHeading = headings.get(i);
-				if (jasperTocHeading.getLevel() == 0) {
-					return "Country: " + jasperTocHeading.getText();
-				}
-			}
-			return "";
-		}
-	}
+    private class PageHeaderExpression extends AbstractSimpleExpression<String> {
+        private static final long serialVersionUID = 1L;
 
-	private class CustomTableOfContentsCustomizer extends TableOfContentsCustomizer {
-		private static final long serialVersionUID = 1L;
+        @Override
+        public String evaluate(ReportParameters reportParameters) {
+            DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
+            Map<String, JasperTocHeading> tocHeadings = customValues.getTocHeadings();
+            if (tocHeadings.isEmpty()) {
+                return "";
+            }
+            List<JasperTocHeading> headings = new ArrayList<JasperTocHeading>(tocHeadings.values());
+            for (int i = headings.size() - 1; i >= 0; i--) {
+                JasperTocHeading jasperTocHeading = headings.get(i);
+                if (jasperTocHeading.getLevel() == 0) {
+                    return "Country: " + jasperTocHeading.getText();
+                }
+            }
+            return "";
+        }
+    }
 
-		@Override
-		public void customize() {
-			super.customize();
+    private class CustomTableOfContentsCustomizer extends TableOfContentsCustomizer {
+        private static final long serialVersionUID = 1L;
 
-			CustomGroupBuilder countryGroup = grp.group(new CountryExpression(textField))
-					.setHeaderLayout(GroupHeaderLayout.EMPTY)
-					.header(countryHeadingComponent())
-					.footer(cmp.verticalGap(5));
+        @Override
+        public void customize() {
+            super.customize();
 
-			report
-					.setPageColumnsPerPage(2)
-					.setPageColumnSpace(10)
-					.groupBy(countryGroup);
-		}
+            CustomGroupBuilder countryGroup = grp.group(new CountryExpression(textField)).setHeaderLayout(GroupHeaderLayout.EMPTY).header(countryHeadingComponent()).footer(cmp.verticalGap(5));
 
-		private ComponentBuilder<?, ?> countryHeadingComponent() {
-			HorizontalListBuilder headingComponent = cmp.horizontalList();
+            report.setPageColumnsPerPage(2).setPageColumnSpace(10).groupBy(countryGroup);
+        }
 
-			HyperLinkBuilder countryReferenceHyperLink = hyperLink();
-			countryReferenceHyperLink.setAnchor(new CountryExpression(referenceField));
-			countryReferenceHyperLink.setType(HyperLinkType.LOCAL_ANCHOR);
+        private ComponentBuilder<?, ?> countryHeadingComponent() {
+            HorizontalListBuilder headingComponent = cmp.horizontalList();
 
-			StyleBuilder style = stl.style(Templates.rootStyle)
-					.setFontSize(12)
-					.bold()
-					.setBackgroundColor(Color.LIGHT_GRAY);
+            HyperLinkBuilder countryReferenceHyperLink = hyperLink();
+            countryReferenceHyperLink.setAnchor(new CountryExpression(referenceField));
+            countryReferenceHyperLink.setType(HyperLinkType.LOCAL_ANCHOR);
 
-			TextFieldBuilder<String> textComponent = cmp.text(textField)
-					.setHyperLink(countryReferenceHyperLink)
-					.setStyle(style);
-			headingComponent.add(textComponent);
+            StyleBuilder style = stl.style(Templates.rootStyle).setFontSize(12).bold().setBackgroundColor(Color.LIGHT_GRAY);
 
-			TextFieldBuilder<String> pageIndexComponent = cmp.text(new CountryHeadingExpression())
-					.setHyperLink(countryReferenceHyperLink)
-					.setStyle(style)
-					.setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
-			headingComponent.add(pageIndexComponent);
+            TextFieldBuilder<String> textComponent = cmp.text(textField).setHyperLink(countryReferenceHyperLink).setStyle(style);
+            headingComponent.add(textComponent);
 
-			return headingComponent;
-		}
+            TextFieldBuilder<String> pageIndexComponent =
+                cmp.text(new CountryHeadingExpression()).setHyperLink(countryReferenceHyperLink).setStyle(style).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
+            headingComponent.add(pageIndexComponent);
 
-		@Override
-		protected ComponentBuilder<?, ?> headingComponent(int level) {
-			if (level == 0) {
-				return cmp.filler();
-			}
+            return headingComponent;
+        }
 
-			ComponentBuilder<?, ?> headingComponent = super.headingComponent(level);
+        @Override
+        protected ComponentBuilder<?, ?> headingComponent(int level) {
+            if (level == 0) {
+                return cmp.filler();
+            }
 
-			ConditionalStyleBuilder conditionalStyle = stl.conditionalStyle(exp.printInOddRow())
-					.setBackgroundColor(new Color(245, 245, 245));
-			StyleBuilder rowStyle = stl.style()
-					.conditionalStyles(conditionalStyle);
-			headingComponent.setStyle(rowStyle);
+            ComponentBuilder<?, ?> headingComponent = super.headingComponent(level);
 
-			return headingComponent;
-		}
+            ConditionalStyleBuilder conditionalStyle = stl.conditionalStyle(exp.printInOddRow()).setBackgroundColor(new Color(245, 245, 245));
+            StyleBuilder rowStyle = stl.style().conditionalStyles(conditionalStyle);
+            headingComponent.setStyle(rowStyle);
 
-		private class CountryExpression extends AbstractComplexExpression<String> {
-			private static final long serialVersionUID = 1L;
+            return headingComponent;
+        }
 
-			private String value;
+        private class CountryExpression extends AbstractComplexExpression<String> {
+            private static final long serialVersionUID = 1L;
 
-			private CountryExpression(FieldBuilder<String> field) {
-				addExpression(levelField);
-				addExpression(field);
-			}
+            private String value;
 
-			@Override
-			public String evaluate(List<?> values, ReportParameters reportParameters) {
-				int level = (Integer) values.get(0);
-				if (level == 0) {
-					value = (String) values.get(1);
-				}
-				return value;
-			}
-		}
+            private CountryExpression(FieldBuilder<String> field) {
+                addExpression(levelField);
+                addExpression(field);
+            }
 
-		private class CountryHeadingExpression extends AbstractComplexExpression<String> {
-			private static final long serialVersionUID = 1L;
+            @Override
+            public String evaluate(List<?> values, ReportParameters reportParameters) {
+                int level = (Integer) values.get(0);
+                if (level == 0) {
+                    value = (String) values.get(1);
+                }
+                return value;
+            }
+        }
 
-			private CountryHeadingExpression() {
-				VariableBuilder<Integer> minCountryPage = variable(pageIndexField, Calculation.LOWEST)
-						.setResetType(Evaluation.FIRST_GROUP);
-				addExpression(minCountryPage);
+        private class CountryHeadingExpression extends AbstractComplexExpression<String> {
+            private static final long serialVersionUID = 1L;
 
-				VariableBuilder<Integer> maxCountryPage = variable(pageIndexField, Calculation.HIGHEST)
-						.setResetType(Evaluation.FIRST_GROUP);
-				addExpression(maxCountryPage);
-			}
+            private CountryHeadingExpression() {
+                VariableBuilder<Integer> minCountryPage = variable(pageIndexField, Calculation.LOWEST).setResetType(Evaluation.FIRST_GROUP);
+                addExpression(minCountryPage);
 
-			@Override
-			public String evaluate(List<?> values, ReportParameters reportParameters) {
-				return values.get(0) + " - " + values.get(1);
-			}
-		}
-	}
+                VariableBuilder<Integer> maxCountryPage = variable(pageIndexField, Calculation.HIGHEST).setResetType(Evaluation.FIRST_GROUP);
+                addExpression(maxCountryPage);
+            }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		SalesTableOfContentsDesign design = new SalesTableOfContentsDesign();
-		try {
-			JasperReportBuilder report = design.build();
-			report.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+            @Override
+            public String evaluate(List<?> values, ReportParameters reportParameters) {
+                return values.get(0) + " - " + values.get(1);
+            }
+        }
+    }
 }

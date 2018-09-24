@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.OrderType;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignSort interface.</p>
@@ -35,17 +34,17 @@ import net.sf.dynamicreports.report.constant.OrderType;
  */
 public interface DRIDesignSort extends Serializable {
 
-	/**
-	 * <p>getExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getExpression();
+    /**
+     * <p>getExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getExpression();
 
-	/**
-	 * <p>getOrderType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
-	 */
-	public OrderType getOrderType();
+    /**
+     * <p>getOrderType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
+     */
+    public OrderType getOrderType();
 }

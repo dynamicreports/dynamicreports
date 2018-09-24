@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.expression;
-
-import java.util.Collection;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
+import java.util.Collection;
 
 /**
  * <p>BeanCollectionSubDatasourceExpression class.</p>
@@ -36,29 +35,31 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
  * @version $Id: $Id
  */
 public class BeanCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<?>> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
-	 *
-	 * @param fieldName a {@link java.lang.String} object.
-	 */
-	public BeanCollectionSubDatasourceExpression(String fieldName) {
-		super(fieldName);
-	}
+    /**
+     * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
+     *
+     * @param fieldName a {@link java.lang.String} object.
+     */
+    public BeanCollectionSubDatasourceExpression(String fieldName) {
+        super(fieldName);
+    }
 
-	/**
-	 * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
-	 *
-	 * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public BeanCollectionSubDatasourceExpression(DRIExpression<? extends Collection<?>> expression) {
-		super(expression);
-	}
+    /**
+     * <p>Constructor for BeanCollectionSubDatasourceExpression.</p>
+     *
+     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public BeanCollectionSubDatasourceExpression(DRIExpression<? extends Collection<?>> expression) {
+        super(expression);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected JRDataSource createSubDatasource(Collection<?> data) {
-		return new JRBeanCollectionDataSource(data);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected JRDataSource createSubDatasource(Collection<?> data) {
+        return new JRBeanCollectionDataSource(data);
+    }
 }

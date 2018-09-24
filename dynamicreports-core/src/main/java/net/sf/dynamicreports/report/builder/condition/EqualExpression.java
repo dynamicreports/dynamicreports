@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,13 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.condition;
-
-import org.apache.commons.lang3.Validate;
 
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.ReportParameters;
+import org.apache.commons.lang3.Validate;
 
 /**
  * <p>EqualExpression class.</p>
@@ -36,41 +34,44 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * @version $Id: $Id
  */
 public class EqualExpression extends AbstractSimpleExpression<Boolean> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIValue<?> value;
-	private Object[] values;
+    private DRIValue<?> value;
+    private Object[] values;
 
-	@SafeVarargs
-	/**
-	 * <p>Constructor for EqualExpression.</p>
-	 *
-	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-	 * @param values a T object.
-	 * @param <T> a T object.
-	 */
-	public <T> EqualExpression(DRIValue<T> value, T... values) {
-		Validate.notNull(value, "value must not be null");
-		Validate.noNullElements(values, "values must not contains null value");
-		this.value = value;
-		this.values = values;
-	}
+    @SafeVarargs
+    /**
+     * <p>Constructor for EqualExpression.</p>
+     *
+     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param values a T object.
+     * @param <T> a T object.
+     */ public <T> EqualExpression(DRIValue<T> value, T... values) {
+        Validate.notNull(value, "value must not be null");
+        Validate.noNullElements(values, "values must not contains null value");
+        this.value = value;
+        this.values = values;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean evaluate(ReportParameters reportParameters) {
-		Object actualValue = reportParameters.getValue(value);
-		for (Object value : values) {
-			if (value.equals(actualValue)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean evaluate(ReportParameters reportParameters) {
+        Object actualValue = reportParameters.getValue(value);
+        for (Object value : values) {
+            if (value.equals(actualValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<Boolean> getValueClass() {
-		return Boolean.class;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<Boolean> getValueClass() {
+        return Boolean.class;
+    }
 }

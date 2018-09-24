@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.barcode;
 
 import net.sf.dynamicreports.report.base.barcode.DRDataMatrixBarcode;
@@ -34,34 +33,34 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class DataMatrixBarcodeBuilder extends AbstractBarcode4jBuilder<DataMatrixBarcodeBuilder, DRDataMatrixBarcode> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for DataMatrixBarcodeBuilder.</p>
-	 *
-	 * @param code a {@link java.lang.String} object.
-	 */
-	protected DataMatrixBarcodeBuilder(String code) {
-		super(code, new DRDataMatrixBarcode());
-	}
+    /**
+     * <p>Constructor for DataMatrixBarcodeBuilder.</p>
+     *
+     * @param code a {@link java.lang.String} object.
+     */
+    protected DataMatrixBarcodeBuilder(String code) {
+        super(code, new DRDataMatrixBarcode());
+    }
 
-	/**
-	 * <p>Constructor for DataMatrixBarcodeBuilder.</p>
-	 *
-	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	protected DataMatrixBarcodeBuilder(DRIExpression<String> codeExpression) {
-		super(codeExpression, new DRDataMatrixBarcode());
-	}
+    /**
+     * <p>Constructor for DataMatrixBarcodeBuilder.</p>
+     *
+     * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    protected DataMatrixBarcodeBuilder(DRIExpression<String> codeExpression) {
+        super(codeExpression, new DRDataMatrixBarcode());
+    }
 
-	/**
-	 * <p>setShape.</p>
-	 *
-	 * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.DataMatrixBarcodeBuilder} object.
-	 */
-	public DataMatrixBarcodeBuilder setShape(BarcodeShape shape) {
-		getObject().setShape(shape);
-		return this;
-	}
+    /**
+     * <p>setShape.</p>
+     *
+     * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.barcode.DataMatrixBarcodeBuilder} object.
+     */
+    public DataMatrixBarcodeBuilder setShape(BarcodeShape shape) {
+        getObject().setShape(shape);
+        return this;
+    }
 }

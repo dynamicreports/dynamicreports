@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.component;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -33,54 +32,60 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class DRMap extends DRDimensionComponent implements DRIMap {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	public DRIExpression<Float> latitudeExpression;
-	public DRIExpression<Float> longitudeExpression;
-	public DRIExpression<Integer> zoomExpression;
+    public DRIExpression<Float> latitudeExpression;
+    public DRIExpression<Float> longitudeExpression;
+    public DRIExpression<Integer> zoomExpression;
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<Float> getLatitudeExpression() {
-		return latitudeExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIExpression<Float> getLatitudeExpression() {
+        return latitudeExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>latitudeExpression</code>.</p>
-	 *
-	 * @param latitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setLatitudeExpression(DRIExpression<Float> latitudeExpression) {
-		this.latitudeExpression = latitudeExpression;
-	}
+    /**
+     * <p>Setter for the field <code>latitudeExpression</code>.</p>
+     *
+     * @param latitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setLatitudeExpression(DRIExpression<Float> latitudeExpression) {
+        this.latitudeExpression = latitudeExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<Float> getLongitudeExpression() {
-		return longitudeExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIExpression<Float> getLongitudeExpression() {
+        return longitudeExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>longitudeExpression</code>.</p>
-	 *
-	 * @param longitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setLongitudeExpression(DRIExpression<Float> longitudeExpression) {
-		this.longitudeExpression = longitudeExpression;
-	}
+    /**
+     * <p>Setter for the field <code>longitudeExpression</code>.</p>
+     *
+     * @param longitudeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setLongitudeExpression(DRIExpression<Float> longitudeExpression) {
+        this.longitudeExpression = longitudeExpression;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<Integer> getZoomExpression() {
-		return zoomExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIExpression<Integer> getZoomExpression() {
+        return zoomExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>zoomExpression</code>.</p>
-	 *
-	 * @param zoomExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setZoomExpression(DRIExpression<Integer> zoomExpression) {
-		this.zoomExpression = zoomExpression;
-	}
+    /**
+     * <p>Setter for the field <code>zoomExpression</code>.</p>
+     *
+     * @param zoomExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setZoomExpression(DRIExpression<Integer> zoomExpression) {
+        this.zoomExpression = zoomExpression;
+    }
 }

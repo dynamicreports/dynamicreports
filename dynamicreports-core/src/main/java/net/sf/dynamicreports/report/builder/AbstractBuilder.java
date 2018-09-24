@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.report.constant.Constants;
+
+import java.io.Serializable;
 
 /**
  * <p>Abstract AbstractBuilder class.</p>
@@ -33,46 +32,45 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implements Serializable {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    protected boolean builded;
+    private U object;
 
-	private U object;
-	protected boolean builded;
+    /**
+     * <p>Constructor for AbstractBuilder.</p>
+     *
+     * @param object a U object.
+     */
+    protected AbstractBuilder(U object) {
+        this.object = object;
+        this.builded = false;
+    }
 
-	/**
-	 * <p>Constructor for AbstractBuilder.</p>
-	 *
-	 * @param object a U object.
-	 */
-	protected AbstractBuilder(U object) {
-		this.object = object;
-		this.builded = false;
-	}
+    /**
+     * <p>build.</p>
+     *
+     * @return a U object.
+     */
+    public U build() {
+        if (!builded) {
+            configure();
+            builded = true;
+        }
+        return object;
+    }
 
-	/**
-	 * <p>build.</p>
-	 *
-	 * @return a U object.
-	 */
-	public U build() {
-		if (!builded) {
-			configure();
-			builded = true;
-		}
-		return object;
-	}
+    /**
+     * <p>Getter for the field <code>object</code>.</p>
+     *
+     * @return a U object.
+     */
+    protected U getObject() {
+        return object;
+    }
 
-	/**
-	 * <p>Getter for the field <code>object</code>.</p>
-	 *
-	 * @return a U object.
-	 */
-	protected U getObject() {
-		return object;
-	}
-
-	/**
-	 * <p>configure.</p>
-	 */
-	protected void configure() {
-	}
+    /**
+     * <p>configure.</p>
+     */
+    protected void configure() {
+    }
 }

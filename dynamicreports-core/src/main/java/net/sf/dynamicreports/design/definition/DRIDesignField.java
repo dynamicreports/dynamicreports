@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
 
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
@@ -32,17 +31,17 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  */
 public interface DRIDesignField extends DRIDesignExpression {
 
-	/**
-	 * <p>isExternal.</p>
-	 *
-	 * @return a boolean.
-	 */
-	public boolean isExternal();
+    /**
+     * <p>isExternal.</p>
+     *
+     * @return a boolean.
+     */
+    public boolean isExternal();
 
-	/**
-	 * <p>getDescription.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getDescription();
+    /**
+     * <p>getDescription.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getDescription();
 }

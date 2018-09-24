@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.jasper;
 
 import net.sf.jasperreports.engine.JRComponentElement;
@@ -38,16 +37,18 @@ import net.sf.jasperreports.engine.util.JRImageLoader;
  */
 public class GoogleChartsDesignConverter extends ElementIconConverter implements ComponentDesignConverter {
 
-	/**
-	 * <p>Constructor for GoogleChartsDesignConverter.</p>
-	 */
-	public GoogleChartsDesignConverter() {
-		super(JRImageLoader.SUBREPORT_IMAGE_RESOURCE);
-	}
+    /**
+     * <p>Constructor for GoogleChartsDesignConverter.</p>
+     */
+    public GoogleChartsDesignConverter() {
+        super(JRImageLoader.SUBREPORT_IMAGE_RESOURCE);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public JRPrintElement convert(ReportConverter reportConverter, JRComponentElement element) {
-		return convert(reportConverter, (JRElement) element);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JRPrintElement convert(ReportConverter reportConverter, JRComponentElement element) {
+        return convert(reportConverter, (JRElement) element);
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,10 +19,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.gettingstarted;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -33,6 +31,13 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>SubtotalReport class.</p>
  *
@@ -40,75 +45,75 @@ import net.sf.jasperreports.engine.JRDataSource;
  * @version $Id: $Id
  */
 public class SubtotalReport {
-	private StyleBuilder boldStyle;
-	private TextColumnBuilder<Integer> column2;
+    private StyleBuilder boldStyle;
+    private TextColumnBuilder<Integer> column2;
 
-	/**
-	 * <p>Constructor for SubtotalReport.</p>
-	 */
-	public SubtotalReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for SubtotalReport.</p>
+     */
+    public SubtotalReport() {
+        build();
+    }
 
-	private void build() {
-		boldStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new SubtotalReport();
+    }
 
-		TextColumnBuilder<String> column1 = col.column("Column1", "column1", type.stringType());
-		column2 = col.column("Column2", "column2", type.integerType());
-		ColumnGroupBuilder columnGroup = grp.group(column1);
+    private void build() {
+        boldStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
 
-		try {
-			report()// create new report design
-					.setPageColumnsPerPage(2)
-					.setSubtotalStyle(boldStyle)
-					.columns(column1, column2)
-					.groupBy(columnGroup)
+        TextColumnBuilder<String> column1 = col.column("Column1", "column1", type.stringType());
+        column2 = col.column("Column2", "column2", type.integerType());
+        ColumnGroupBuilder columnGroup = grp.group(column1);
 
-					// subtotals
-					.subtotalsAtTitle(createSubtotal("This is a title sum"))
-					.subtotalsAtPageHeader(createSubtotal("This is a page header sum"))
-					.subtotalsAtPageFooter(createSubtotal("This is a page footer sum"))
-					.subtotalsAtColumnHeader(createSubtotal("This is a column header sum"))
-					.subtotalsAtColumnFooter(createSubtotal("This is a column footer sum"))
-					.subtotalsAtLastPageFooter(createSubtotal("This is a last page footer sum"))
-					.subtotalsAtSummary(createSubtotal("This is a summary sum"))
-					.subtotalsAtGroupHeader(columnGroup, createSubtotal("This is a group header sum"))
-					.subtotalsAtGroupFooter(columnGroup, createSubtotal("This is a group footer sum"))
-					.subtotalsOfPercentageAtGroupHeader(columnGroup, createPercSubtotal("This is a group header perc."))
-					.subtotalsOfPercentageAtGroupFooter(columnGroup, createPercSubtotal("This is a group footer perc."))
+        try {
+            report()// create new report design
+                    .setPageColumnsPerPage(2)
+                    .setSubtotalStyle(boldStyle)
+                    .columns(column1, column2)
+                    .groupBy(columnGroup)
 
-					.setDataSource(createDataSource())// set datasource
-					.show();// create and show report
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+                    // subtotals
+                    .subtotalsAtTitle(createSubtotal("This is a title sum"))
+                    .subtotalsAtPageHeader(createSubtotal("This is a page header sum"))
+                    .subtotalsAtPageFooter(createSubtotal("This is a page footer sum"))
+                    .subtotalsAtColumnHeader(createSubtotal("This is a column header sum"))
+                    .subtotalsAtColumnFooter(createSubtotal("This is a column footer sum"))
+                    .subtotalsAtLastPageFooter(createSubtotal("This is a last page footer sum"))
+                    .subtotalsAtSummary(createSubtotal("This is a summary sum"))
+                    .subtotalsAtGroupHeader(columnGroup, createSubtotal("This is a group header sum"))
+                    .subtotalsAtGroupFooter(columnGroup, createSubtotal("This is a group footer sum"))
+                    .subtotalsOfPercentageAtGroupHeader(columnGroup, createPercSubtotal("This is a group header perc."))
+                    .subtotalsOfPercentageAtGroupFooter(columnGroup, createPercSubtotal("This is a group footer perc."))
 
-	private AggregationSubtotalBuilder<Integer> createSubtotal(String label) {
-		return sbt.sum(column2).setLabel(label).setLabelStyle(boldStyle);
-	}
+                    .setDataSource(createDataSource())// set datasource
+                    .show();// create and show report
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	private PercentageSubtotalBuilder createPercSubtotal(String label) {
-		return sbt.percentage(column2).setLabel(label).setLabelStyle(boldStyle);
-	}
+    private AggregationSubtotalBuilder<Integer> createSubtotal(String label) {
+        return sbt.sum(column2).setLabel(label).setLabelStyle(boldStyle);
+    }
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("column1", "column2");
-		int row = 1;
-		for (int i = 1; i <= 2; i++) {
-			for (int j = 0; j < 50; j++) {
-				dataSource.add("group" + i, row++);
-			}
-		}
-		return dataSource;
-	}
+    private PercentageSubtotalBuilder createPercSubtotal(String label) {
+        return sbt.percentage(column2).setLabel(label).setLabelStyle(boldStyle);
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new SubtotalReport();
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("column1", "column2");
+        int row = 1;
+        for (int i = 1; i <= 2; i++) {
+            for (int j = 0; j < 50; j++) {
+                dataSource.add("group" + i, row++);
+            }
+        }
+        return dataSource;
+    }
 }

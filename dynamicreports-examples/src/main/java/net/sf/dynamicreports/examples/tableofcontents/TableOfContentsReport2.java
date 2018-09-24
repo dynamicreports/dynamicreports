@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.tableofcontents;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -36,6 +31,16 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.math.BigDecimal;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.tableOfContentsHeading;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>TableOfContentsReport2 class.</p>
  *
@@ -44,92 +49,75 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class TableOfContentsReport2 {
 
-	/**
-	 * <p>Constructor for TableOfContentsReport2.</p>
-	 */
-	public TableOfContentsReport2() {
-		build();
-	}
+    /**
+     * <p>Constructor for TableOfContentsReport2.</p>
+     */
+    public TableOfContentsReport2() {
+        build();
+    }
 
-	private void build() {
-		FieldBuilder<String> itemField = field("item", type.stringType());
-		FieldBuilder<Integer> quantityField = field("quantity", type.integerType());
-		FieldBuilder<BigDecimal> unitPriceField = field("unitprice", type.bigDecimalType());
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new TableOfContentsReport2();
+    }
 
-		TableOfContentsHeadingBuilder tocHeading1 = tableOfContentsHeading();
-		TextFieldBuilder<String> title1 = cmp.text("Title1")
-				.setTableOfContentsHeading(tocHeading1);
+    private void build() {
+        FieldBuilder<String> itemField = field("item", type.stringType());
+        FieldBuilder<Integer> quantityField = field("quantity", type.integerType());
+        FieldBuilder<BigDecimal> unitPriceField = field("unitprice", type.bigDecimalType());
 
-		TableOfContentsHeadingBuilder tocHeading2 = tableOfContentsHeading()
-				.setParentHeading(tocHeading1);
-		TextFieldBuilder<String> title2 = cmp.text("Title2")
-				.setTableOfContentsHeading(tocHeading2);
+        TableOfContentsHeadingBuilder tocHeading1 = tableOfContentsHeading();
+        TextFieldBuilder<String> title1 = cmp.text("Title1").setTableOfContentsHeading(tocHeading1);
 
-		BarChartBuilder chart = cht.barChart()
-				.setDataSource(createChartDataSource())
-				.setCategory(itemField)
-				.series(
-						cht.serie(quantityField).setLabel("Quantity"),
-						cht.serie(unitPriceField).setLabel("Unit price"))
-				.setTableOfContentsHeading("Chart");
+        TableOfContentsHeadingBuilder tocHeading2 = tableOfContentsHeading().setParentHeading(tocHeading1);
+        TextFieldBuilder<String> title2 = cmp.text("Title2").setTableOfContentsHeading(tocHeading2);
 
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.tableOfContents()
-					.title(
-							Templates.createTitleComponent("TableOfContents2"),
-							title1, title2,
-							cmp.subreport(createSubreport(1)),
-							cmp.subreport(createSubreport(2)),
-							chart)
-					.pageFooter(Templates.footerComponent)
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        BarChartBuilder chart = cht.barChart()
+                                   .setDataSource(createChartDataSource())
+                                   .setCategory(itemField)
+                                   .series(cht.serie(quantityField).setLabel("Quantity"), cht.serie(unitPriceField).setLabel("Unit price"))
+                                   .setTableOfContentsHeading("Chart");
 
-	private JasperReportBuilder createSubreport(int index) {
-		TextFieldBuilder<String> title = cmp.text("Subreport" + index)
-				.setStyle(Templates.bold12CenteredStyle)
-				.setTableOfContentsHeading(tableOfContentsHeading());
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .tableOfContents()
+                    .title(Templates.createTitleComponent("TableOfContents2"), title1, title2, cmp.subreport(createSubreport(1)), cmp.subreport(createSubreport(2)), chart)
+                    .pageFooter(Templates.footerComponent)
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		JasperReportBuilder report = report();
-		report
-				.setTemplate(Templates.reportTemplate)
-				.title(title)
-				.columns(
-						col.column("Item", "item", type.stringType()),
-						col.column("Quantity", "quantity", type.integerType()),
-						col.column("Unit price", "unitprice", type.bigDecimalType()))
-				.setDataSource(createSubreportDataSource());
+    private JasperReportBuilder createSubreport(int index) {
+        TextFieldBuilder<String> title = cmp.text("Subreport" + index).setStyle(Templates.bold12CenteredStyle).setTableOfContentsHeading(tableOfContentsHeading());
 
-		return report;
-	}
+        JasperReportBuilder report = report();
+        report.setTemplate(Templates.reportTemplate)
+              .title(title)
+              .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
+              .setDataSource(createSubreportDataSource());
 
-	private JRDataSource createSubreportDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-		for (int i = 0; i < 30; i++) {
-			dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-		}
-		return dataSource;
-	}
+        return report;
+    }
 
-	private JRDataSource createChartDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-		dataSource.add("Book", 170, new BigDecimal(100));
-		dataSource.add("Notebook", 90, new BigDecimal(450));
-		dataSource.add("PDA", 120, new BigDecimal(250));
-		return dataSource;
-	}
+    private JRDataSource createSubreportDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        for (int i = 0; i < 30; i++) {
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+        }
+        return dataSource;
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new TableOfContentsReport2();
-	}
+    private JRDataSource createChartDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        dataSource.add("Book", 170, new BigDecimal(100));
+        dataSource.add("Notebook", 90, new BigDecimal(450));
+        dataSource.add("PDA", 120, new BigDecimal(250));
+        return dataSource;
+    }
 }

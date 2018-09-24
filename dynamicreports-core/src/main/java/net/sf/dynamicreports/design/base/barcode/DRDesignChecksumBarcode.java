@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.barcode;
 
 import net.sf.dynamicreports.design.definition.barcode.DRIDesignChecksumBarcode;
@@ -33,31 +32,33 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public abstract class DRDesignChecksumBarcode extends DRDesignBarcode4j implements DRIDesignChecksumBarcode {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private BarcodeChecksumMode checksumMode;
+    private BarcodeChecksumMode checksumMode;
 
-	/**
-	 * <p>Constructor for DRDesignChecksumBarcode.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 */
-	public DRDesignChecksumBarcode(String name) {
-		super(name);
-	}
+    /**
+     * <p>Constructor for DRDesignChecksumBarcode.</p>
+     *
+     * @param name a {@link java.lang.String} object.
+     */
+    public DRDesignChecksumBarcode(String name) {
+        super(name);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public BarcodeChecksumMode getChecksumMode() {
-		return checksumMode;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public BarcodeChecksumMode getChecksumMode() {
+        return checksumMode;
+    }
 
-	/**
-	 * <p>Setter for the field <code>checksumMode</code>.</p>
-	 *
-	 * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
-	 */
-	public void setChecksumMode(BarcodeChecksumMode checksumMode) {
-		this.checksumMode = checksumMode;
-	}
+    /**
+     * <p>Setter for the field <code>checksumMode</code>.</p>
+     *
+     * @param checksumMode a {@link net.sf.dynamicreports.report.constant.BarcodeChecksumMode} object.
+     */
+    public void setChecksumMode(BarcodeChecksumMode checksumMode) {
+        this.checksumMode = checksumMode;
+    }
 }

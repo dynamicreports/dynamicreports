@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.style;
+
+import net.sf.dynamicreports.report.constant.LineStyle;
 
 import java.awt.Color;
 import java.io.Serializable;
-
-import net.sf.dynamicreports.report.constant.LineStyle;
 
 /**
  * <p>DRIPen interface.</p>
@@ -35,24 +34,24 @@ import net.sf.dynamicreports.report.constant.LineStyle;
  */
 public interface DRIPen extends Serializable {
 
-	/**
-	 * <p>getLineWidth.</p>
-	 *
-	 * @return a {@link java.lang.Float} object.
-	 */
-	public Float getLineWidth();
+    /**
+     * <p>getLineWidth.</p>
+     *
+     * @return a {@link java.lang.Float} object.
+     */
+    public Float getLineWidth();
 
-	/**
-	 * <p>getLineStyle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
-	 */
-	public LineStyle getLineStyle();
+    /**
+     * <p>getLineStyle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+     */
+    public LineStyle getLineStyle();
 
-	/**
-	 * <p>getLineColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getLineColor();
+    /**
+     * <p>getLineColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getLineColor();
 }

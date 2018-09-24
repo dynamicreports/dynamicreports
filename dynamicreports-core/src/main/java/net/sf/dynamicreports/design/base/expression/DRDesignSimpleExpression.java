@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.expression;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -33,43 +32,51 @@ import net.sf.dynamicreports.report.definition.expression.DRISimpleExpression;
  * @version $Id: $Id
  */
 public class DRDesignSimpleExpression extends AbstractDesignSimpleExpression {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRISimpleExpression<?> simpleExpression;
-	private String parameterName;
+    private DRISimpleExpression<?> simpleExpression;
+    private String parameterName;
 
-	/**
-	 * <p>Constructor for DRDesignSimpleExpression.</p>
-	 *
-	 * @param simpleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISimpleExpression} object.
-	 * @param parameterName a {@link java.lang.String} object.
-	 */
-	public DRDesignSimpleExpression(DRISimpleExpression<?> simpleExpression, String parameterName) {
-		this.simpleExpression = simpleExpression;
-		this.parameterName = parameterName;
-	}
+    /**
+     * <p>Constructor for DRDesignSimpleExpression.</p>
+     *
+     * @param simpleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRISimpleExpression} object.
+     * @param parameterName    a {@link java.lang.String} object.
+     */
+    public DRDesignSimpleExpression(DRISimpleExpression<?> simpleExpression, String parameterName) {
+        this.simpleExpression = simpleExpression;
+        this.parameterName = parameterName;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Object evaluate(ReportParameters reportParameters) {
-		return simpleExpression.evaluate(reportParameters);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object evaluate(ReportParameters reportParameters) {
+        return simpleExpression.evaluate(reportParameters);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<?> getValueClass() {
-		return simpleExpression.getValueClass();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<?> getValueClass() {
+        return simpleExpression.getValueClass();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getName() {
-		return simpleExpression.getName();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getName() {
+        return simpleExpression.getName();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public String getParameterName() {
-		return parameterName;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getParameterName() {
+        return parameterName;
+    }
 }

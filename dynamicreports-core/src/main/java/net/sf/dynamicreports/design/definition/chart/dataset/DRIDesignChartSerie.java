@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.chart.dataset;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.design.definition.DRIDesignHyperLink;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignChartSerie interface.</p>
@@ -35,17 +34,17 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  */
 public interface DRIDesignChartSerie extends Serializable {
 
-	/**
-	 * <p>getSeriesExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getSeriesExpression();
+    /**
+     * <p>getSeriesExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getSeriesExpression();
 
-	/**
-	 * <p>getItemHyperLink.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignHyperLink} object.
-	 */
-	public DRIDesignHyperLink getItemHyperLink();
+    /**
+     * <p>getItemHyperLink.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignHyperLink} object.
+     */
+    public DRIDesignHyperLink getItemHyperLink();
 }

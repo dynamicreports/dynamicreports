@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,16 +19,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
  * <p>HorizontalAlignment class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @deprecated use HorizontalTextAligment for texts or HorizontalImageAligment for images instead
  * @version $Id: $Id
+ * @deprecated use HorizontalTextAligment for texts or HorizontalImageAligment for images instead
  */
 public enum HorizontalAlignment {
-	LEFT, CENTER, RIGHT, JUSTIFIED
+    LEFT, CENTER, RIGHT, JUSTIFIED
 }

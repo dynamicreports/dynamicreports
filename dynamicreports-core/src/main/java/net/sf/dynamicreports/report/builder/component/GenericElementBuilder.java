@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.component;
 
 import net.sf.dynamicreports.report.base.component.DRGenericElement;
@@ -35,50 +34,50 @@ import net.sf.dynamicreports.report.definition.expression.DRIParameterExpression
  * @version $Id: $Id
  */
 public class GenericElementBuilder extends DimensionComponentBuilder<GenericElementBuilder, DRGenericElement> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for GenericElementBuilder.</p>
-	 *
-	 * @param namespace a {@link java.lang.String} object.
-	 * @param name a {@link java.lang.String} object.
-	 */
-	protected GenericElementBuilder(String namespace, String name) {
-		super(new DRGenericElement(namespace, name));
-	}
+    /**
+     * <p>Constructor for GenericElementBuilder.</p>
+     *
+     * @param namespace a {@link java.lang.String} object.
+     * @param name      a {@link java.lang.String} object.
+     */
+    protected GenericElementBuilder(String namespace, String name) {
+        super(new DRGenericElement(namespace, name));
+    }
 
-	/**
-	 * <p>addParameter.</p>
-	 *
-	 * @param parameterExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIParameterExpression} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
-	 */
-	public GenericElementBuilder addParameter(DRIParameterExpression parameterExpression) {
-		getComponent().addParameterExpression(parameterExpression);
-		return this;
-	}
+    /**
+     * <p>addParameter.</p>
+     *
+     * @param parameterExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIParameterExpression} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
+     */
+    public GenericElementBuilder addParameter(DRIParameterExpression parameterExpression) {
+        getComponent().addParameterExpression(parameterExpression);
+        return this;
+    }
 
-	/**
-	 * <p>addParameter.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
-	 */
-	public GenericElementBuilder addParameter(String name, DRIExpression<?> valueExpression) {
-		getComponent().addParameterExpression(Expressions.parameter(name, valueExpression));
-		return this;
-	}
+    /**
+     * <p>addParameter.</p>
+     *
+     * @param name            a {@link java.lang.String} object.
+     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
+     */
+    public GenericElementBuilder addParameter(String name, DRIExpression<?> valueExpression) {
+        getComponent().addParameterExpression(Expressions.parameter(name, valueExpression));
+        return this;
+    }
 
-	/**
-	 * <p>addParameter.</p>
-	 *
-	 * @param name a {@link java.lang.String} object.
-	 * @param value a {@link java.lang.Object} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
-	 */
-	public GenericElementBuilder addParameter(String name, Object value) {
-		getComponent().addParameterExpression(Expressions.parameter(name, value));
-		return this;
-	}
+    /**
+     * <p>addParameter.</p>
+     *
+     * @param name  a {@link java.lang.String} object.
+     * @param value a {@link java.lang.Object} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
+     */
+    public GenericElementBuilder addParameter(String name, Object value) {
+        getComponent().addParameterExpression(Expressions.parameter(name, value));
+        return this;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.chart.dataset;
 
 import net.sf.dynamicreports.report.constant.TimePeriod;
@@ -32,10 +31,10 @@ import net.sf.dynamicreports.report.constant.TimePeriod;
  */
 public interface DRIDesignTimeSeriesDataset extends DRIDesignSeriesDataset {
 
-	/**
-	 * <p>getTimePeriodType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
-	 */
-	public TimePeriod getTimePeriodType();
+    /**
+     * <p>getTimePeriodType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
+     */
+    public TimePeriod getTimePeriodType();
 }

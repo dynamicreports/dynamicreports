@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 import java.awt.Color;
@@ -32,25 +31,25 @@ import java.awt.Color;
  */
 public interface DRIDifferencePlot extends DRIAxisPlot {
 
-	/**
-	 * <p>getPositiveColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getPositiveColor();
+    /**
+     * <p>getPositiveColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getPositiveColor();
 
-	/**
-	 * <p>getNegativeColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getNegativeColor();
+    /**
+     * <p>getNegativeColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getNegativeColor();
 
-	/**
-	 * <p>getShowShapes.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getShowShapes();
+    /**
+     * <p>getShowShapes.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getShowShapes();
 
 }

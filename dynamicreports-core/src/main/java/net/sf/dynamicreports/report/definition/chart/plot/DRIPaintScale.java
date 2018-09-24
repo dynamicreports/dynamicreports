@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
 
 import java.awt.Paint;
@@ -33,25 +32,25 @@ import java.io.Serializable;
  */
 public interface DRIPaintScale extends Serializable {
 
-	/**
-	 * <p>getLabel.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getLabel();
+    /**
+     * <p>getLabel.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getLabel();
 
-	/**
-	 * <p>getValue.</p>
-	 *
-	 * @return a double.
-	 */
-	public double getValue();
+    /**
+     * <p>getValue.</p>
+     *
+     * @return a double.
+     */
+    public double getValue();
 
-	/**
-	 * <p>getPaint.</p>
-	 *
-	 * @return a {@link java.awt.Paint} object.
-	 */
-	public Paint getPaint();
+    /**
+     * <p>getPaint.</p>
+     *
+     * @return a {@link java.awt.Paint} object.
+     */
+    public Paint getPaint();
 
 }

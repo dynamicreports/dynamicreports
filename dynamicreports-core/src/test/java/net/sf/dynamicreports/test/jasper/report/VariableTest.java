@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,43 +19,44 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.report;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
 import net.sf.dynamicreports.report.constant.Calculation;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 
+import java.io.Serializable;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class VariableTest extends AbstractJasperValueTest implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		VariableBuilder<Integer> variable1 = variable("field1", Integer.class, Calculation.SUM);
-		VariableBuilder<Integer> variable2 = variable(exp.number(5), Calculation.SUM);
-		variable2.setInitialValueExpression(exp.jasperSyntax("new Integer(10)"));
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        VariableBuilder<Integer> variable1 = variable("field1", Integer.class, Calculation.SUM);
+        VariableBuilder<Integer> variable2 = variable(exp.number(5), Calculation.SUM);
+        variable2.setInitialValueExpression(exp.jasperSyntax("new Integer(10)"));
 
-		rb.summary(cmp.text(variable1), cmp.text(variable2));
-	}
+        rb.summary(cmp.text(variable1), cmp.text(variable2));
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(1);
+        numberOfPagesTest(1);
 
-		// summary
-		elementCountTest("summary.textField1", 1);
-		elementValueTest("summary.textField1", "");
-		elementCountTest("summary.textField2", 1);
-		elementValueTest("summary.textField2", "10");
-	}
+        // summary
+        elementCountTest("summary.textField1", 1);
+        elementValueTest("summary.textField1", "");
+        elementCountTest("summary.textField2", 1);
+        elementValueTest("summary.textField2", "10");
+    }
 }

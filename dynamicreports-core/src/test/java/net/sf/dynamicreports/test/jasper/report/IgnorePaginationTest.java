@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.report;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.io.Serializable;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -34,38 +29,40 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.type.OrientationEnum;
 
+import java.io.Serializable;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class IgnorePaginationTest extends AbstractJasperValueTest implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
 
-		rb.columns(
-				col.column("Column1", "field1", Integer.class))
-				.setIgnorePagination(true);
-	}
+        rb.columns(col.column("Column1", "field1", Integer.class)).setIgnorePagination(true);
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(1);
+        numberOfPagesTest(1);
 
-		JasperPrint jasperPrint = getJasperPrint();
-		Assert.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientationValue());
-		Assert.assertEquals(595, jasperPrint.getPageWidth());
-		Assert.assertEquals(1636, jasperPrint.getPageHeight());
-	}
+        JasperPrint jasperPrint = getJasperPrint();
+        Assert.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientationValue());
+        Assert.assertEquals(595, jasperPrint.getPageWidth());
+        Assert.assertEquals(1636, jasperPrint.getPageHeight());
+    }
 
-	@Override
-	protected JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("field1");
-		for (int i = 0; i < 100; i++) {
-			dataSource.add(i);
-		}
-		return dataSource;
-	}
+    @Override
+    protected JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("field1");
+        for (int i = 0; i < 100; i++) {
+            dataSource.add(i);
+        }
+        return dataSource;
+    }
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.plot;
-
-import java.awt.Color;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIDifferencePlot;
+
+import java.awt.Color;
 
 /**
  * <p>DRDifferencePlot class.</p>
@@ -34,55 +33,61 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIDifferencePlot;
  * @version $Id: $Id
  */
 public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Color positiveColor;
-	private Color negativeColor;
-	private Boolean showShapes;
+    private Color positiveColor;
+    private Color negativeColor;
+    private Boolean showShapes;
 
-	/** {@inheritDoc} */
-	@Override
-	public Color getPositiveColor() {
-		return positiveColor;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Color getPositiveColor() {
+        return positiveColor;
+    }
 
-	/**
-	 * <p>Setter for the field <code>positiveColor</code>.</p>
-	 *
-	 * @param positiveColor a {@link java.awt.Color} object.
-	 */
-	public void setPositiveColor(Color positiveColor) {
-		this.positiveColor = positiveColor;
-	}
+    /**
+     * <p>Setter for the field <code>positiveColor</code>.</p>
+     *
+     * @param positiveColor a {@link java.awt.Color} object.
+     */
+    public void setPositiveColor(Color positiveColor) {
+        this.positiveColor = positiveColor;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Color getNegativeColor() {
-		return negativeColor;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Color getNegativeColor() {
+        return negativeColor;
+    }
 
-	/**
-	 * <p>Setter for the field <code>negativeColor</code>.</p>
-	 *
-	 * @param negativeColor a {@link java.awt.Color} object.
-	 */
-	public void setNegativeColor(Color negativeColor) {
-		this.negativeColor = negativeColor;
-	}
+    /**
+     * <p>Setter for the field <code>negativeColor</code>.</p>
+     *
+     * @param negativeColor a {@link java.awt.Color} object.
+     */
+    public void setNegativeColor(Color negativeColor) {
+        this.negativeColor = negativeColor;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getShowShapes() {
-		return showShapes;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getShowShapes() {
+        return showShapes;
+    }
 
-	/**
-	 * <p>Setter for the field <code>showShapes</code>.</p>
-	 *
-	 * @param showShapes a {@link java.lang.Boolean} object.
-	 */
-	public void setShowShapes(Boolean showShapes) {
-		this.showShapes = showShapes;
-	}
+    /**
+     * <p>Setter for the field <code>showShapes</code>.</p>
+     *
+     * @param showShapes a {@link java.lang.Boolean} object.
+     */
+    public void setShowShapes(Boolean showShapes) {
+        this.showShapes = showShapes;
+    }
 
 }

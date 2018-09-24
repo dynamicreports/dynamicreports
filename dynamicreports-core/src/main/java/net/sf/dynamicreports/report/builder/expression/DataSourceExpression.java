@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.expression;
 
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -36,36 +35,40 @@ import net.sf.jasperreports.engine.JRRewindableDataSource;
  * @version $Id: $Id
  */
 public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private JRDataSource dataSource;
-	private boolean moveFirst = false;
+    private JRDataSource dataSource;
+    private boolean moveFirst = false;
 
-	/**
-	 * <p>Constructor for DataSourceExpression.</p>
-	 *
-	 * @param dataSource a {@link net.sf.jasperreports.engine.JRDataSource} object.
-	 */
-	public DataSourceExpression(JRDataSource dataSource) {
-		this.dataSource = dataSource;
-	}
+    /**
+     * <p>Constructor for DataSourceExpression.</p>
+     *
+     * @param dataSource a {@link net.sf.jasperreports.engine.JRDataSource} object.
+     */
+    public DataSourceExpression(JRDataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public JRDataSource evaluate(ReportParameters reportParameters) {
-		if (moveFirst && dataSource != null && dataSource instanceof JRRewindableDataSource) {
-			try {
-				((JRRewindableDataSource) dataSource).moveFirst();
-			} catch (JRException e) {
-			}
-		}
-		moveFirst = true;
-		return dataSource;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JRDataSource evaluate(ReportParameters reportParameters) {
+        if (moveFirst && dataSource != null && dataSource instanceof JRRewindableDataSource) {
+            try {
+                ((JRRewindableDataSource) dataSource).moveFirst();
+            } catch (JRException e) {
+            }
+        }
+        moveFirst = true;
+        return dataSource;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Class<JRDataSource> getValueClass() {
-		return JRDataSource.class;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Class<JRDataSource> getValueClass() {
+        return JRDataSource.class;
+    }
 }

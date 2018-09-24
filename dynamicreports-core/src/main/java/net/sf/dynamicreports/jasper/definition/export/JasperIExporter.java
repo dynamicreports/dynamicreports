@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.definition.export;
 
 import java.io.File;
@@ -35,74 +34,74 @@ import java.io.Writer;
  */
 public interface JasperIExporter extends Serializable {
 
-	/**
-	 * <p>getOutputWriter.</p>
-	 *
-	 * @return a {@link java.io.Writer} object.
-	 */
-	public Writer getOutputWriter();
+    /**
+     * <p>getOutputWriter.</p>
+     *
+     * @return a {@link java.io.Writer} object.
+     */
+    public Writer getOutputWriter();
 
-	/**
-	 * <p>getOutputStream.</p>
-	 *
-	 * @return a {@link java.io.OutputStream} object.
-	 */
-	public OutputStream getOutputStream();
+    /**
+     * <p>getOutputStream.</p>
+     *
+     * @return a {@link java.io.OutputStream} object.
+     */
+    public OutputStream getOutputStream();
 
-	/**
-	 * <p>getOutputFile.</p>
-	 *
-	 * @return a {@link java.io.File} object.
-	 */
-	public File getOutputFile();
+    /**
+     * <p>getOutputFile.</p>
+     *
+     * @return a {@link java.io.File} object.
+     */
+    public File getOutputFile();
 
-	/**
-	 * <p>getOutputFileName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getOutputFileName();
+    /**
+     * <p>getOutputFileName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getOutputFileName();
 
-	/**
-	 * <p>getPageIndex.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getPageIndex();
+    /**
+     * <p>getPageIndex.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getPageIndex();
 
-	/**
-	 * <p>getStartPageIndex.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getStartPageIndex();
+    /**
+     * <p>getStartPageIndex.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getStartPageIndex();
 
-	/**
-	 * <p>getEndPageIndex.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getEndPageIndex();
+    /**
+     * <p>getEndPageIndex.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getEndPageIndex();
 
-	/**
-	 * <p>getCharacterEncoding.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getCharacterEncoding();
+    /**
+     * <p>getCharacterEncoding.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getCharacterEncoding();
 
-	/**
-	 * <p>getOffsetX.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getOffsetX();
+    /**
+     * <p>getOffsetX.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getOffsetX();
 
-	/**
-	 * <p>getOffsetY.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getOffsetY();
+    /**
+     * <p>getOffsetY.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getOffsetY();
 
 }

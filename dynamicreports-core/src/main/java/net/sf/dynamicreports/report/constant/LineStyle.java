@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.constant;
 
 /**
@@ -29,20 +28,17 @@ package net.sf.dynamicreports.report.constant;
  * @version $Id: $Id
  */
 public enum LineStyle {
-	/**
-	 * Constant useful for specifying solid line style.
-	 */
-	SOLID,
-	/**
-	 * Constant useful for specifying dashed line style.
-	 */
-	DASHED,
-	/**
-	 * Constant useful for specifying dotted line style.
-	 */
-	DOTTED,
-	/**
-	 * Constant useful for specifying double line style.
-	 */
-	DOUBLE
+    /**
+     * Constant useful for specifying solid line style.
+     */
+    SOLID, /**
+     * Constant useful for specifying dashed line style.
+     */
+    DASHED, /**
+     * Constant useful for specifying dotted line style.
+     */
+    DOTTED, /**
+     * Constant useful for specifying double line style.
+     */
+    DOUBLE
 }

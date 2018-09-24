@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.grid;
 
-import java.util.List;
-
 import net.sf.dynamicreports.report.constant.ListType;
+
+import java.util.List;
 
 /**
  * <p>DRIColumnGridList interface.</p>
@@ -34,24 +33,24 @@ import net.sf.dynamicreports.report.constant.ListType;
  */
 public interface DRIColumnGridList extends DRIColumnGridComponent {
 
-	/**
-	 * <p>getListCells.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIColumnGridListCell> getListCells();
+    /**
+     * <p>getListCells.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIColumnGridListCell> getListCells();
 
-	/**
-	 * <p>getType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ListType} object.
-	 */
-	public ListType getType();
+    /**
+     * <p>getType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ListType} object.
+     */
+    public ListType getType();
 
-	/**
-	 * <p>getGap.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getGap();
+    /**
+     * <p>getGap.</p>
+     *
+     * @return a int.
+     */
+    public int getGap();
 }

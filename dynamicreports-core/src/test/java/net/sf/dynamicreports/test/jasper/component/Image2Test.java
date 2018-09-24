@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.component;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.util.Arrays;
 
 import junit.framework.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -39,45 +34,47 @@ import net.sf.jasperreports.engine.JRPrintImage;
 import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
 import net.sf.jasperreports.renderers.SimpleDataRenderer;
 
+import java.util.Arrays;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class Image2Test extends AbstractJasperTest {
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		ImageBuilder image = cmp.image(Image2Test.class.getResourceAsStream("dynamicreports.png"))
-				.setHorizontalImageAlignment(HorizontalImageAlignment.CENTER);
-		rb.pageHeader(image)
-				.detail(cmp.filler().setFixedHeight(20));
-	}
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        ImageBuilder image = cmp.image(Image2Test.class.getResourceAsStream("dynamicreports.png")).setHorizontalImageAlignment(HorizontalImageAlignment.CENTER);
+        rb.pageHeader(image).detail(cmp.filler().setFixedHeight(20));
+    }
 
-	@Override
-	public void test() {
-		super.test();
+    @Override
+    public void test() {
+        super.test();
 
-		numberOfPagesTest(2);
+        numberOfPagesTest(2);
 
-		try {
-			JRPrintImage jrImage = (JRPrintImage) getElementAt("pageHeader.image1", 0);
-			byte[] imageData1 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
-			jrImage = (JRPrintImage) getElementAt("pageHeader.image1", 1);
-			byte[] imageData2 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
-			Assert.assertTrue("image data", Arrays.equals(imageData1, imageData2));
-			Assert.assertEquals("image horizontal alignment", HorizontalImageAlignEnum.CENTER, jrImage.getHorizontalImageAlign());
-		} catch (JRException e) {
-			e.printStackTrace();
-			Assert.fail(e.getMessage());
-		}
-	}
+        try {
+            JRPrintImage jrImage = (JRPrintImage) getElementAt("pageHeader.image1", 0);
+            byte[] imageData1 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
+            jrImage = (JRPrintImage) getElementAt("pageHeader.image1", 1);
+            byte[] imageData2 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
+            Assert.assertTrue("image data", Arrays.equals(imageData1, imageData2));
+            Assert.assertEquals("image horizontal alignment", HorizontalImageAlignEnum.CENTER, jrImage.getHorizontalImageAlign());
+        } catch (JRException e) {
+            e.printStackTrace();
+            Assert.fail(e.getMessage());
+        }
+    }
 
-	@Override
-	protected boolean serializableTest() {
-		return false;
-	}
+    @Override
+    protected boolean serializableTest() {
+        return false;
+    }
 
-	@Override
-	protected JRDataSource createDataSource() {
-		return new JREmptyDataSource(50);
-	}
+    @Override
+    protected JRDataSource createDataSource() {
+        return new JREmptyDataSource(50);
+    }
 }

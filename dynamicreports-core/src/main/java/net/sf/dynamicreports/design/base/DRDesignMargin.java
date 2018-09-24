@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base;
 
 import net.sf.dynamicreports.design.definition.DRIDesignMargin;
@@ -32,70 +31,78 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class DRDesignMargin implements DRIDesignMargin {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private int top;
-	private int left;
-	private int bottom;
-	private int right;
+    private int top;
+    private int left;
+    private int bottom;
+    private int right;
 
-	/** {@inheritDoc} */
-	@Override
-	public int getTop() {
-		return top;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getTop() {
+        return top;
+    }
 
-	/**
-	 * <p>Setter for the field <code>top</code>.</p>
-	 *
-	 * @param top a int.
-	 */
-	public void setTop(int top) {
-		this.top = top;
-	}
+    /**
+     * <p>Setter for the field <code>top</code>.</p>
+     *
+     * @param top a int.
+     */
+    public void setTop(int top) {
+        this.top = top;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public int getLeft() {
-		return left;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getLeft() {
+        return left;
+    }
 
-	/**
-	 * <p>Setter for the field <code>left</code>.</p>
-	 *
-	 * @param left a int.
-	 */
-	public void setLeft(int left) {
-		this.left = left;
-	}
+    /**
+     * <p>Setter for the field <code>left</code>.</p>
+     *
+     * @param left a int.
+     */
+    public void setLeft(int left) {
+        this.left = left;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public int getBottom() {
-		return bottom;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getBottom() {
+        return bottom;
+    }
 
-	/**
-	 * <p>Setter for the field <code>bottom</code>.</p>
-	 *
-	 * @param bottom a int.
-	 */
-	public void setBottom(int bottom) {
-		this.bottom = bottom;
-	}
+    /**
+     * <p>Setter for the field <code>bottom</code>.</p>
+     *
+     * @param bottom a int.
+     */
+    public void setBottom(int bottom) {
+        this.bottom = bottom;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public int getRight() {
-		return right;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int getRight() {
+        return right;
+    }
 
-	/**
-	 * <p>Setter for the field <code>right</code>.</p>
-	 *
-	 * @param right a int.
-	 */
-	public void setRight(int right) {
-		this.right = right;
-	}
+    /**
+     * <p>Setter for the field <code>right</code>.</p>
+     *
+     * @param right a int.
+     */
+    public void setRight(int right) {
+        this.right = right;
+    }
 }

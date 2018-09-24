@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart;
-
-import java.util.List;
 
 import net.sf.dynamicreports.report.constant.ChartType;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset;
 import net.sf.dynamicreports.report.definition.chart.plot.DRIPlot;
 import net.sf.dynamicreports.report.definition.component.DRIHyperLinkComponent;
+
+import java.util.List;
 
 /**
  * <p>DRIChart interface.</p>
@@ -37,59 +36,59 @@ import net.sf.dynamicreports.report.definition.component.DRIHyperLinkComponent;
  */
 public interface DRIChart extends DRIHyperLinkComponent {
 
-	/**
-	 * <p>getChartType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ChartType} object.
-	 */
-	public ChartType getChartType();
+    /**
+     * <p>getChartType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ChartType} object.
+     */
+    public ChartType getChartType();
 
-	/**
-	 * <p>getDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset} object.
-	 */
-	public DRIChartDataset getDataset();
+    /**
+     * <p>getDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset} object.
+     */
+    public DRIChartDataset getDataset();
 
-	/**
-	 * <p>getPlot.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIPlot} object.
-	 */
-	public DRIPlot getPlot();
+    /**
+     * <p>getPlot.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.chart.plot.DRIPlot} object.
+     */
+    public DRIPlot getPlot();
 
-	/**
-	 * <p>getCustomizers.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIChartCustomizer> getCustomizers();
+    /**
+     * <p>getCustomizers.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIChartCustomizer> getCustomizers();
 
-	/**
-	 * <p>getTitle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartTitle} object.
-	 */
-	public DRIChartTitle getTitle();
+    /**
+     * <p>getTitle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartTitle} object.
+     */
+    public DRIChartTitle getTitle();
 
-	/**
-	 * <p>getSubtitle.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartSubtitle} object.
-	 */
-	public DRIChartSubtitle getSubtitle();
+    /**
+     * <p>getSubtitle.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartSubtitle} object.
+     */
+    public DRIChartSubtitle getSubtitle();
 
-	/**
-	 * <p>getLegend.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartLegend} object.
-	 */
-	public DRIChartLegend getLegend();
+    /**
+     * <p>getLegend.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.chart.DRIChartLegend} object.
+     */
+    public DRIChartLegend getLegend();
 
-	/**
-	 * <p>getTheme.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getTheme();
+    /**
+     * <p>getTheme.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getTheme();
 }

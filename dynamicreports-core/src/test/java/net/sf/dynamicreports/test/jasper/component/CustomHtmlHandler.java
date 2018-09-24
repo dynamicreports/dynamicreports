@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.component;
 
 import net.sf.jasperreports.engine.JRGenericPrintElement;
@@ -31,17 +30,17 @@ import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
  */
 public class CustomHtmlHandler implements GenericElementHtmlHandler {
 
-	@Override
-	public boolean toExport(JRGenericPrintElement element) {
-		return true;
-	}
+    @Override
+    public boolean toExport(JRGenericPrintElement element) {
+        return true;
+    }
 
-	@Override
-	public String getHtmlFragment(JRHtmlExporterContext context, JRGenericPrintElement element) {
-		String id = (String) element.getParameterValue("id");
-		String data = (String) element.getParameterValue("data");
-		StringBuffer script = new StringBuffer();
-		script.append("<div id=\"" + id + "\">" + data + "</div>");
-		return script.toString();
-	}
+    @Override
+    public String getHtmlFragment(JRHtmlExporterContext context, JRGenericPrintElement element) {
+        String id = (String) element.getParameterValue("id");
+        String data = (String) element.getParameterValue("data");
+        StringBuffer script = new StringBuffer();
+        script.append("<div id=\"" + id + "\">" + data + "</div>");
+        return script.toString();
+    }
 }

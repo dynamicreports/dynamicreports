@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.genericelement.openflashchart;
 
 import net.sf.jasperreports.engine.JRGenericPrintElement;
@@ -33,17 +32,19 @@ import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
  */
 public class OpenFlashChartXhtmlHandler extends OpenFlashChartHtmlHandler {
 
-	/** {@inheritDoc} */
-	@Override
-	public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
-		StringBuilder result = new StringBuilder();
-		result.append("<div style=\"position: absolute; left: ");
-		result.append(element.getX() + "px; top: ");
-		result.append(element.getY() + "px; width: ");
-		result.append(element.getWidth() + "px; height: ");
-		result.append(element.getHeight() + "px;\">");
-		result.append(super.getHtmlFragment(exporterContext, element));
-		result.append("</div>");
-		return result.toString();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
+        StringBuilder result = new StringBuilder();
+        result.append("<div style=\"position: absolute; left: ");
+        result.append(element.getX() + "px; top: ");
+        result.append(element.getY() + "px; width: ");
+        result.append(element.getWidth() + "px; height: ");
+        result.append(element.getHeight() + "px;\">");
+        result.append(super.getHtmlFragment(exporterContext, element));
+        result.append("</div>");
+        return result.toString();
+    }
 }

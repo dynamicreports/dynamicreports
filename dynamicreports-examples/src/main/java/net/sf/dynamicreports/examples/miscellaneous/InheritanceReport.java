@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.miscellaneous;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -36,6 +31,14 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.math.BigDecimal;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedReport;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>InheritanceReport class.</p>
  *
@@ -44,81 +47,71 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class InheritanceReport {
 
-	/**
-	 * <p>Constructor for InheritanceReport.</p>
-	 */
-	public InheritanceReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for InheritanceReport.</p>
+     */
+    public InheritanceReport() {
+        build();
+    }
 
-	private void build() {
-		try {
-			concatenatedReport()
-					.concatenate(
-							new ReportA().report,
-							new ReportB().report)
-					.toPdf(Exporters.pdfExporter("c:/report.pdf"));
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new InheritanceReport();
+    }
 
-	private class ReportA {
-		protected JasperReportBuilder report = report();
+    private void build() {
+        try {
+            concatenatedReport().concatenate(new ReportA().report, new ReportB().report).toPdf(Exporters.pdfExporter("c:/report.pdf"));
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		private ReportA() {
-			configure();
-		}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        for (int i = 0; i < 10; i++) {
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+        }
+        return dataSource;
+    }
 
-		protected void configure() {
-			report
-					.setTemplate(Templates.reportTemplate)
-					.setPageFormat(PageType.A5)
-					.columns(
-							col.column("Item", "item", type.stringType()),
-							col.column("Quantity", "quantity", type.integerType()))
-					.title(Templates.createTitleComponent(getTitle()))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource());
-		}
+    private class ReportA {
+        protected JasperReportBuilder report = report();
 
-		protected String getTitle() {
-			return "Report A";
-		}
-	}
+        private ReportA() {
+            configure();
+        }
 
-	private class ReportB extends ReportA {
+        protected void configure() {
+            report.setTemplate(Templates.reportTemplate)
+                  .setPageFormat(PageType.A5)
+                  .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()))
+                  .title(Templates.createTitleComponent(getTitle()))
+                  .pageFooter(Templates.footerComponent)
+                  .setDataSource(createDataSource());
+        }
 
-		@Override
-		protected void configure() {
-			super.configure();
-			TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
-			report
-					.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
-					.addColumn(unitPriceColumn)
-					.subtotalsAtSummary(sbt.sum(unitPriceColumn));
-		}
+        protected String getTitle() {
+            return "Report A";
+        }
+    }
 
-		@Override
-		protected String getTitle() {
-			return "Report B extends A";
-		}
-	}
+    private class ReportB extends ReportA {
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-		for (int i = 0; i < 10; i++) {
-			dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-		}
-		return dataSource;
-	}
+        @Override
+        protected void configure() {
+            super.configure();
+            TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
+            report.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE).addColumn(unitPriceColumn).subtotalsAtSummary(sbt.sum(unitPriceColumn));
+        }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new InheritanceReport();
-	}
+        @Override
+        protected String getTitle() {
+            return "Report B extends A";
+        }
+    }
 }

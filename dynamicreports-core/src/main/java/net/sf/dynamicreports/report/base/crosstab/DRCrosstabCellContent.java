@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.crosstab;
 
 import net.sf.dynamicreports.report.base.component.DRComponent;
@@ -36,45 +35,49 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
  * @version $Id: $Id
  */
 public class DRCrosstabCellContent implements DRICrosstabCellContent {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRList list;
-	private DRIReportStyle style;
+    private DRList list;
+    private DRIReportStyle style;
 
-	/**
-	 * <p>Constructor for DRCrosstabCellContent.</p>
-	 */
-	public DRCrosstabCellContent() {
-		this.list = new DRList(ListType.VERTICAL);
-	}
+    /**
+     * <p>Constructor for DRCrosstabCellContent.</p>
+     */
+    public DRCrosstabCellContent() {
+        this.list = new DRList(ListType.VERTICAL);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRList getList() {
-		return list;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRList getList() {
+        return list;
+    }
 
-	/**
-	 * <p>addComponent.</p>
-	 *
-	 * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
-	 */
-	public void addComponent(DRComponent component) {
-		list.addComponent(component);
-	}
+    /**
+     * <p>addComponent.</p>
+     *
+     * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+     */
+    public void addComponent(DRComponent component) {
+        list.addComponent(component);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIReportStyle getStyle() {
-		return style;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIReportStyle getStyle() {
+        return style;
+    }
 
-	/**
-	 * <p>Setter for the field <code>style</code>.</p>
-	 *
-	 * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-	 */
-	public void setStyle(DRIReportStyle style) {
-		this.style = style;
-	}
+    /**
+     * <p>Setter for the field <code>style</code>.</p>
+     *
+     * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     */
+    public void setStyle(DRIReportStyle style) {
+        this.style = style;
+    }
 }

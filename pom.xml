@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +12,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.0.0</version>
+    <version>6.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -66,10 +66,13 @@
         <groovyVersion>1.7.5</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
         <jasperreportsVersion>6.7.0</jasperreportsVersion>
-        <jaxbVersion>2.3.0</jaxbVersion>
+        <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
+        <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
+        <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
+        <jaxbVersion>2.3.0.1</jaxbVersion>
         <jsonVersion>20080701</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
-        <junitVersion>4.0</junitVersion>
+        <junitVersion>4.12</junitVersion>
         <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
         <poiVersion>3.15</poiVersion>
@@ -81,6 +84,7 @@
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
@@ -89,6 +93,23 @@
         <license-maven-plugin-version>3.0</license-maven-plugin-version>
         <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.0.1</maven-source-plugin-version>
+
+        <!--Mycila License plugin configuration-->
+        <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
+        <license.header.definition>${project.basedir}/src/etc/header_definition.xml</license.header.definition>
+        <license.maven.owner>Ricardo Mariaca and the DynamicReports Contributors</license.maven.owner>
+
+        <!-- Properties for maven-checkstyle-plugin -->
+        <checkstyle.config.location>${project.basedir}/src/etc/checkstyle.xml</checkstyle.config.location>
+        <checkstyle.config.headerLocation>${license.header.location}</checkstyle.config.headerLocation>
+        <checkstyle.config.maxAllowedViolations>40</checkstyle.config.maxAllowedViolations>
+        <checkstyle.config.consoleOutput>true</checkstyle.config.consoleOutput>
+        <checkstyle.config.failsOnError>true</checkstyle.config.failsOnError>
+        <checkstyle.config.includeResources>false</checkstyle.config.includeResources>
+        <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
+        <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
+        <checkstyle.config.includeTestSourceDirectory>false</checkstyle.config.includeTestSourceDirectory>
+        <linkXRef>false</linkXRef>
 
     </properties>
 
@@ -324,7 +345,11 @@
                         <artifactId>license-maven-plugin</artifactId>
                         <version>${license-maven-plugin-version}</version>
                         <configuration>
-                            <header>src/etc/license_header.txt</header>
+                            <header>${license.header.location}</header>
+                            <headerDefinitions>${license.header.definition}</headerDefinitions>
+                            <properties>
+                                <owner>${license.maven.owner}</owner>
+                            </properties>
                             <includes>
                                 <include>**/*.java</include>
                             </includes>
@@ -343,9 +368,22 @@
         </profile>
 
         <profile>
-            <id>source-10</id>
-            <!--Please remember to run this after running compile in core module-->
+            <id>java9</id>
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>${maven-compiler-plugin-version}</version>
+                            <configuration>
+                                <source>1.8</source>
+                                <target>1.8</target>
+                                <encoding>${encoding}</encoding>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -381,23 +419,61 @@
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
+                    <!--To ensure consistent API for java 9 usage-->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>animal-sniffer-maven-plugin</artifactId>
+                        <version>1.16</version>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <signature>
+                                        <groupId>org.codehaus.mojo.signature</groupId>
+                                        <!--We are "trying" to be jre 8 compatible-->
+                                        <artifactId>java18</artifactId>
+                                        <version>1.0</version>
+                                    </signature>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
             <dependencies>
                 <dependency>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>1.16</version>
+                    <optional>true</optional>
+                    <scope>provided</scope>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+                <dependency>
                     <groupId>javax.xml.bind</groupId>
                     <artifactId>jaxb-api</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-apiVersion}</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-core</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-coreVersion}</version>
                 </dependency>
+                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+                <dependency>
+                    <groupId>org.glassfish.jaxb</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>${jaxb-coreVersion}</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-impl</artifactId>
-                    <version>${jaxbVersion}</version>
+                    <version>${jaxb-implVersion}</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -435,6 +511,101 @@
                             <nosince>false</nosince>
                             <defaultVersion>${project.version}</defaultVersion>
                             <defaultSince>${project.version}</defaultSince>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>checkstyle</id>
+            <activation>
+                <!--Activate automagically when source profile is online-->
+                <property>
+                    <name>profile</name>
+                    <value>source</value>
+                </property>
+            </activation>
+            <!--Attach to validations during build-->
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>${maven-checkstyle-plugin.version}</version>
+                            <executions>
+                                <execution>
+                                    <!--Could run with mvn clean verify-->
+                                    <id>validate</id>
+                                    <phase>validate</phase>
+                                    <configuration>
+                                        <encoding>UTF-8</encoding>
+                                    </configuration>
+                                    <goals>
+                                        <goal>check</goal>
+                                    </goals>
+                                </execution>
+                                <execution>
+                                    <id>run-checkstyle</id>
+                                    <phase>process-sources</phase>
+                                    <goals>
+                                        <goal>checkstyle</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <excludes>module-info.java</excludes>
+                                <headerLocation>../src/etc/checkstyle.xml</headerLocation>
+                                <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                                <configLocation>../src/etc/checkstyle.xml</configLocation>
+                                <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                                <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                                <includeResources>${checkstyle.config.includeResources}</includeResources>
+                                <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                                <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                                <linkXRef>${linkXRef}</linkXRef>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <!-- Setup Checkstyle, excluding module-info -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>${maven-checkstyle-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <!--Could run with mvn clean verify-->
+                                <id>validate</id>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <encoding>UTF-8</encoding>
+                                </configuration>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>run-checkstyle</id>
+                                <phase>process-sources</phase>
+                                <goals>
+                                    <goal>checkstyle</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <excludes>module-info.java</excludes>
+                            <headerLocation>${checkstyle.config.headerLocation}</headerLocation>
+                            <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                            <configLocation>${checkstyle.config.location}</configLocation>
+                            <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                            <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
+                            <includeResources>${checkstyle.config.includeResources}</includeResources>
+                            <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                            <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                            <linkXRef>${linkXRef}</linkXRef>
                         </configuration>
                     </plugin>
                 </plugins>

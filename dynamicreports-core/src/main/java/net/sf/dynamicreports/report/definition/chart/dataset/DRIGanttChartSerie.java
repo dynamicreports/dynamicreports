@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.dataset;
 
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
@@ -32,31 +31,31 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public interface DRIGanttChartSerie extends DRIChartSerie {
 
-	/**
-	 * <p>getStartDateExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getStartDateExpression();
+    /**
+     * <p>getStartDateExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getStartDateExpression();
 
-	/**
-	 * <p>getEndDateExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getEndDateExpression();
+    /**
+     * <p>getEndDateExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getEndDateExpression();
 
-	/**
-	 * <p>getPercentExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getPercentExpression();
+    /**
+     * <p>getPercentExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getPercentExpression();
 
-	/**
-	 * <p>getLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getLabelExpression();
+    /**
+     * <p>getLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getLabelExpression();
 }

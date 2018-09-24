@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.condition;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -32,21 +31,23 @@ import net.sf.dynamicreports.report.definition.DRIValue;
  * @version $Id: $Id
  */
 public class GreaterOrEqualsValueExpression<T extends Number> extends AbstractValueExpression<T> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for GreaterOrEqualsValueExpression.</p>
-	 *
-	 * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-	 * @param number a {@link java.lang.Number} object.
-	 */
-	public GreaterOrEqualsValueExpression(DRIValue<T> value, Number number) {
-		super(value, number);
-	}
+    /**
+     * <p>Constructor for GreaterOrEqualsValueExpression.</p>
+     *
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param number a {@link java.lang.Number} object.
+     */
+    public GreaterOrEqualsValueExpression(DRIValue<T> value, Number number) {
+        super(value, number);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	protected Boolean compare(Number actualValue, Number number) {
-		return actualValue.doubleValue() >= number.doubleValue();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected Boolean compare(Number actualValue, Number number) {
+        return actualValue.doubleValue() >= number.doubleValue();
+    }
 }

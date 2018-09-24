@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.component;
 
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
@@ -32,32 +31,32 @@ import net.sf.dynamicreports.report.constant.ComponentDimensionType;
  */
 public interface DRIPageXofY extends DRIFormatField {
 
-	/**
-	 * <p>getPageXWidth.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getPageXWidth();
+    /**
+     * <p>getPageXWidth.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getPageXWidth();
 
-	/**
-	 * <p>getPageXWidthType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
-	 */
-	public ComponentDimensionType getPageXWidthType();
+    /**
+     * <p>getPageXWidthType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+     */
+    public ComponentDimensionType getPageXWidthType();
 
-	/**
-	 * <p>getPageYWidth.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getPageYWidth();
+    /**
+     * <p>getPageYWidth.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getPageYWidth();
 
-	/**
-	 * <p>getPageYWidthType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
-	 */
-	public ComponentDimensionType getPageYWidthType();
+    /**
+     * <p>getPageYWidthType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
+     */
+    public ComponentDimensionType getPageYWidthType();
 
 }

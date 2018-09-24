@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.barcode;
 
 import net.sf.dynamicreports.report.constant.BarcodeShape;
@@ -33,22 +32,24 @@ import net.sf.dynamicreports.report.definition.barcode.DRIDataMatrixBarcode;
  * @version $Id: $Id
  */
 public class DRDataMatrixBarcode extends DRBarcode4j implements DRIDataMatrixBarcode {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private BarcodeShape shape;
+    private BarcodeShape shape;
 
-	/** {@inheritDoc} */
-	@Override
-	public BarcodeShape getShape() {
-		return shape;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public BarcodeShape getShape() {
+        return shape;
+    }
 
-	/**
-	 * <p>Setter for the field <code>shape</code>.</p>
-	 *
-	 * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
-	 */
-	public void setShape(BarcodeShape shape) {
-		this.shape = shape;
-	}
+    /**
+     * <p>Setter for the field <code>shape</code>.</p>
+     *
+     * @param shape a {@link net.sf.dynamicreports.report.constant.BarcodeShape} object.
+     */
+    public void setShape(BarcodeShape shape) {
+        this.shape = shape;
+    }
 }

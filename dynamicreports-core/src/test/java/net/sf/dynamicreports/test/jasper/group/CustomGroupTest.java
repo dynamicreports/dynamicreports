@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.test.jasper.group;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.io.Serializable;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -35,67 +30,68 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.io.Serializable;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class CustomGroupTest extends AbstractJasperValueTest implements Serializable {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private TextColumnBuilder<String> column1;
-	private TextColumnBuilder<String> column2;
-	private CustomGroupBuilder group1;
+    private TextColumnBuilder<String> column1;
+    private TextColumnBuilder<String> column2;
+    private CustomGroupBuilder group1;
 
-	@Override
-	protected void configureReport(JasperReportBuilder rb) {
-		YearExpression yearExpression = new YearExpression();
-		rb.columns(
-				column1 = col.column("Column1", "field1", String.class),
-				column2 = col.column("Column2", yearExpression))
-				.groupBy(
-						group1 = grp.group(yearExpression));
-	}
+    @Override
+    protected void configureReport(JasperReportBuilder rb) {
+        YearExpression yearExpression = new YearExpression();
+        rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", yearExpression)).groupBy(group1 = grp.group(yearExpression));
+    }
 
-	private class YearExpression extends AbstractSimpleExpression<String> {
-		private static final long serialVersionUID = 1L;
+    @Override
+    public void test() {
+        super.test();
 
-		@Override
-		public String evaluate(ReportParameters reportParameters) {
-			String orderDate = reportParameters.getValue("field1");
-			return orderDate.split("-")[0];
-		}
-	}
+        numberOfPagesTest(1);
 
-	@Override
-	public void test() {
-		super.test();
+        // column1
+        columnTitleCountTest(column1, 1);
+        columnTitleValueTest(column1, "Column1");
+        columnDetailCountTest(column1, 2);
+        columnDetailValueTest(column1, "2009-12-01", "2010-01-01");
 
-		numberOfPagesTest(1);
+        // column2
+        columnTitleCountTest(column2, 1);
+        columnTitleValueTest(column2, "Column2");
+        columnDetailCountTest(column2, 2);
+        columnDetailValueTest(column2, "2009", "2010");
 
-		// column1
-		columnTitleCountTest(column1, 1);
-		columnTitleValueTest(column1, "Column1");
-		columnDetailCountTest(column1, 2);
-		columnDetailValueTest(column1, "2009-12-01", "2010-01-01");
+        // group1
+        groupHeaderTitleCountTest(group1, 0);
+        groupHeaderCountTest(group1, 2);
+        groupHeaderValueTest(group1, "2009", "2010");
+    }
 
-		// column2
-		columnTitleCountTest(column2, 1);
-		columnTitleValueTest(column2, "Column2");
-		columnDetailCountTest(column2, 2);
-		columnDetailValueTest(column2, "2009", "2010");
+    @Override
+    protected JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("field1");
+        for (int i = 0; i < 1; i++) {
+            dataSource.add("2009-12-01");
+            dataSource.add("2010-01-01");
+        }
+        return dataSource;
+    }
 
-		// group1
-		groupHeaderTitleCountTest(group1, 0);
-		groupHeaderCountTest(group1, 2);
-		groupHeaderValueTest(group1, "2009", "2010");
-	}
+    private class YearExpression extends AbstractSimpleExpression<String> {
+        private static final long serialVersionUID = 1L;
 
-	@Override
-	protected JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("field1");
-		for (int i = 0; i < 1; i++) {
-			dataSource.add("2009-12-01");
-			dataSource.add("2010-01-01");
-		}
-		return dataSource;
-	}
+        @Override
+        public String evaluate(ReportParameters reportParameters) {
+            String orderDate = reportParameters.getValue("field1");
+            return orderDate.split("-")[0];
+        }
+    }
 }

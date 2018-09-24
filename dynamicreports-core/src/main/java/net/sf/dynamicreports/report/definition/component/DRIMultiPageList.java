@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.component;
 
-import java.util.List;
-
 import net.sf.dynamicreports.report.constant.SplitType;
+
+import java.util.List;
 
 /**
  * <p>DRIMultiPageList interface.</p>
@@ -34,18 +33,18 @@ import net.sf.dynamicreports.report.constant.SplitType;
  */
 public interface DRIMultiPageList extends DRIDimensionComponent {
 
-	/**
-	 * <p>getComponents.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIComponent> getComponents();
+    /**
+     * <p>getComponents.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIComponent> getComponents();
 
-	/**
-	 * <p>getSplitType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
-	 */
-	public SplitType getSplitType();
+    /**
+     * <p>getSplitType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.SplitType} object.
+     */
+    public SplitType getSplitType();
 
 }

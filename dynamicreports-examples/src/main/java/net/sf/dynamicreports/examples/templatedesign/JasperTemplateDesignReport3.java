@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,17 +19,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.templatedesign;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.io.InputStream;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
+
+import java.io.InputStream;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 
 /**
  * <p>JasperTemplateDesignReport3 class.</p>
@@ -39,37 +38,33 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
  */
 public class JasperTemplateDesignReport3 {
 
-	/**
-	 * <p>Constructor for JasperTemplateDesignReport3.</p>
-	 */
-	public JasperTemplateDesignReport3() {
-		build();
-	}
+    /**
+     * <p>Constructor for JasperTemplateDesignReport3.</p>
+     */
+    public JasperTemplateDesignReport3() {
+        build();
+    }
 
-	private void build() {
-		InputStream is = JasperTemplateDesignReport3.class.getResourceAsStream("templatedesign3.jrxml");
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new JasperTemplateDesignReport3();
+    }
 
-		try {
-			report()
-					.setTemplateDesign(is)
-					.title(Templates.createTitleComponent("JasperTemplateDesign3"))
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    private void build() {
+        InputStream is = JasperTemplateDesignReport3.class.getResourceAsStream("templatedesign3.jrxml");
 
-	private JRDataSource createDataSource() {
-		return new JREmptyDataSource(2);
-	}
+        try {
+            report().setTemplateDesign(is).title(Templates.createTitleComponent("JasperTemplateDesign3")).setDataSource(createDataSource()).show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new JasperTemplateDesignReport3();
-	}
+    private JRDataSource createDataSource() {
+        return new JREmptyDataSource(2);
+    }
 }

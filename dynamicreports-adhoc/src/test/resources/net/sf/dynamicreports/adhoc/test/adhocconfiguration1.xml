@@ -40,7 +40,8 @@
         <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:TextField" text="text" key="textField" width="150" height="200">
             <style foregroundColor="#0000FF"/>
         </component>
-        <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Chart" type="AREA" title="title" titleColor="#FF00FF" showLegend="true" xValue="field2" orientation="VERTICAL" key="chart1">
+        <component xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Chart" type="AREA" title="title" titleColor="#FF00FF" showLegend="true" xValue="field2" orientation="VERTICAL"
+                   key="chart1">
             <property key="net.sf.dynamicreports.chart.useseriesascategory" valueClass="java.lang.Boolean">true</property>
             <titleFont/>
             <serie series="field5" yValue="field1" label="label"/>

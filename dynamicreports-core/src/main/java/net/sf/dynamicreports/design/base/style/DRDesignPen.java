@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,16 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.base.style;
-
-import java.awt.Color;
 
 import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.LineStyle;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
+
+import java.awt.Color;
 
 /**
  * <p>DRDesignPen class.</p>
@@ -37,75 +35,80 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
  * @version $Id: $Id
  */
 public class DRDesignPen implements DRIDesignPen {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Float lineWidth;
-	private LineStyle lineStyle;
-	private Color lineColor;
+    private Float lineWidth;
+    private LineStyle lineStyle;
+    private Color lineColor;
 
-	/** {@inheritDoc} */
-	@Override
-	public Float getLineWidth() {
-		return lineWidth;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Float getLineWidth() {
+        return lineWidth;
+    }
 
-	/**
-	 * <p>Setter for the field <code>lineWidth</code>.</p>
-	 *
-	 * @param lineWidth a {@link java.lang.Float} object.
-	 */
-	public void setLineWidth(Float lineWidth) {
-		this.lineWidth = lineWidth;
-	}
+    /**
+     * <p>Setter for the field <code>lineWidth</code>.</p>
+     *
+     * @param lineWidth a {@link java.lang.Float} object.
+     */
+    public void setLineWidth(Float lineWidth) {
+        this.lineWidth = lineWidth;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public LineStyle getLineStyle() {
-		return lineStyle;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public LineStyle getLineStyle() {
+        return lineStyle;
+    }
 
-	/**
-	 * <p>Setter for the field <code>lineStyle</code>.</p>
-	 *
-	 * @param lineStyle a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
-	 */
-	public void setLineStyle(LineStyle lineStyle) {
-		this.lineStyle = lineStyle;
-	}
+    /**
+     * <p>Setter for the field <code>lineStyle</code>.</p>
+     *
+     * @param lineStyle a {@link net.sf.dynamicreports.report.constant.LineStyle} object.
+     */
+    public void setLineStyle(LineStyle lineStyle) {
+        this.lineStyle = lineStyle;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Color getLineColor() {
-		return lineColor;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Color getLineColor() {
+        return lineColor;
+    }
 
-	/**
-	 * <p>Setter for the field <code>lineColor</code>.</p>
-	 *
-	 * @param lineColor a {@link java.awt.Color} object.
-	 */
-	public void setLineColor(Color lineColor) {
-		this.lineColor = lineColor;
-	}
+    /**
+     * <p>Setter for the field <code>lineColor</code>.</p>
+     *
+     * @param lineColor a {@link java.awt.Color} object.
+     */
+    public void setLineColor(Color lineColor) {
+        this.lineColor = lineColor;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == null) {
-			return false;
-		}
-		if (obj == this) {
-			return true;
-		}
-		if (obj.getClass() != getClass()) {
-			return false;
-		}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (obj.getClass() != getClass()) {
+            return false;
+        }
 
-		DRDesignPen o = (DRDesignPen) obj;
-		EqualsBuilder equalsBuilder = new EqualsBuilder()
-				.append(lineWidth, o.lineWidth)
-				.append(lineStyle, o.lineStyle)
-				.append(lineColor, o.lineColor);
-		return equalsBuilder.isEquals();
-	}
+        DRDesignPen o = (DRDesignPen) obj;
+        EqualsBuilder equalsBuilder = new EqualsBuilder().append(lineWidth, o.lineWidth).append(lineStyle, o.lineStyle).append(lineColor, o.lineColor);
+        return equalsBuilder.isEquals();
+    }
 }

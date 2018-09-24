@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.base.export;
 
 import net.sf.dynamicreports.jasper.definition.export.JasperIRtfExporter;
@@ -32,22 +31,24 @@ import net.sf.dynamicreports.report.constant.Constants;
  * @version $Id: $Id
  */
 public class JasperRtfExporter extends AbstractJasperExporter implements JasperIRtfExporter {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Boolean ignoreHyperLink;
+    private Boolean ignoreHyperLink;
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getIgnoreHyperLink() {
-		return ignoreHyperLink;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getIgnoreHyperLink() {
+        return ignoreHyperLink;
+    }
 
-	/**
-	 * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
-	 *
-	 * @param ignoreHyperLink a {@link java.lang.Boolean} object.
-	 */
-	public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
-		this.ignoreHyperLink = ignoreHyperLink;
-	}
+    /**
+     * <p>Setter for the field <code>ignoreHyperLink</code>.</p>
+     *
+     * @param ignoreHyperLink a {@link java.lang.Boolean} object.
+     */
+    public void setIgnoreHyperLink(Boolean ignoreHyperLink) {
+        this.ignoreHyperLink = ignoreHyperLink;
+    }
 }

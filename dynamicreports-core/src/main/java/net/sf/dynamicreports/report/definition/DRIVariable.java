@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition;
 
 import net.sf.dynamicreports.report.constant.Calculation;
@@ -34,38 +33,38 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public interface DRIVariable<T> extends DRIExpression<T>, DRIValue<T> {
 
-	/**
-	 * <p>getCalculation.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-	 */
-	public Calculation getCalculation();
+    /**
+     * <p>getCalculation.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     */
+    public Calculation getCalculation();
 
-	/**
-	 * <p>getResetType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
-	 */
-	public Evaluation getResetType();
+    /**
+     * <p>getResetType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+     */
+    public Evaluation getResetType();
 
-	/**
-	 * <p>getResetGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
-	 */
-	public DRIGroup getResetGroup();
+    /**
+     * <p>getResetGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+     */
+    public DRIGroup getResetGroup();
 
-	/**
-	 * <p>getValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getValueExpression();
+    /**
+     * <p>getValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getValueExpression();
 
-	/**
-	 * <p>getInitialValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<?> getInitialValueExpression();
+    /**
+     * <p>getInitialValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<?> getInitialValueExpression();
 }

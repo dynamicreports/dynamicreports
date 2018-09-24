@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.builder.barcode;
 
 import net.sf.dynamicreports.report.base.barcode.DRCodabarBarcode;
@@ -33,34 +32,34 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * @version $Id: $Id
  */
 public class CodabarBarcodeBuilder extends AbstractBarcode4jBuilder<CodabarBarcodeBuilder, DRCodabarBarcode> {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	/**
-	 * <p>Constructor for CodabarBarcodeBuilder.</p>
-	 *
-	 * @param code a {@link java.lang.String} object.
-	 */
-	protected CodabarBarcodeBuilder(String code) {
-		super(code, new DRCodabarBarcode());
-	}
+    /**
+     * <p>Constructor for CodabarBarcodeBuilder.</p>
+     *
+     * @param code a {@link java.lang.String} object.
+     */
+    protected CodabarBarcodeBuilder(String code) {
+        super(code, new DRCodabarBarcode());
+    }
 
-	/**
-	 * <p>Constructor for CodabarBarcodeBuilder.</p>
-	 *
-	 * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	protected CodabarBarcodeBuilder(DRIExpression<String> codeExpression) {
-		super(codeExpression, new DRCodabarBarcode());
-	}
+    /**
+     * <p>Constructor for CodabarBarcodeBuilder.</p>
+     *
+     * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    protected CodabarBarcodeBuilder(DRIExpression<String> codeExpression) {
+        super(codeExpression, new DRCodabarBarcode());
+    }
 
-	/**
-	 * <p>setWideFactor.</p>
-	 *
-	 * @param wideFactor a {@link java.lang.Double} object.
-	 * @return a {@link net.sf.dynamicreports.report.builder.barcode.CodabarBarcodeBuilder} object.
-	 */
-	public CodabarBarcodeBuilder setWideFactor(Double wideFactor) {
-		getObject().setWideFactor(wideFactor);
-		return this;
-	}
+    /**
+     * <p>setWideFactor.</p>
+     *
+     * @param wideFactor a {@link java.lang.Double} object.
+     * @return a {@link net.sf.dynamicreports.report.builder.barcode.CodabarBarcodeBuilder} object.
+     */
+    public CodabarBarcodeBuilder setWideFactor(Double wideFactor) {
+        getObject().setWideFactor(wideFactor);
+        return this;
+    }
 }

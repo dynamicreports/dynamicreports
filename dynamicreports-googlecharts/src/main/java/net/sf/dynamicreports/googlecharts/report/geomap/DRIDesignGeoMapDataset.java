@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.googlecharts.report.geomap;
 
 import net.sf.dynamicreports.design.constant.ResetType;
@@ -35,45 +34,45 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  */
 public interface DRIDesignGeoMapDataset {
 
-	/**
-	 * <p>getSubDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
-	 */
-	public DRIDesignDataset getSubDataset();
+    /**
+     * <p>getSubDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignDataset} object.
+     */
+    public DRIDesignDataset getSubDataset();
 
-	/**
-	 * <p>getLocationExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getLocationExpression();
+    /**
+     * <p>getLocationExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getLocationExpression();
 
-	/**
-	 * <p>getValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getValueExpression();
+    /**
+     * <p>getValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getValueExpression();
 
-	/**
-	 * <p>getLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getLabelExpression();
+    /**
+     * <p>getLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getLabelExpression();
 
-	/**
-	 * <p>getResetType.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-	 */
-	public ResetType getResetType();
+    /**
+     * <p>getResetType.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     */
+    public ResetType getResetType();
 
-	/**
-	 * <p>getResetGroup.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
-	 */
-	public DRIDesignGroup getResetGroup();
+    /**
+     * <p>getResetGroup.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
+     */
+    public DRIDesignGroup getResetGroup();
 }

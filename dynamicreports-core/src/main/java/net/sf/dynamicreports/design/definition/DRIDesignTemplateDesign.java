@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.report.exception.DRException;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignTemplateDesign interface.</p>
@@ -34,74 +33,74 @@ import net.sf.dynamicreports.report.exception.DRException;
  */
 public interface DRIDesignTemplateDesign extends Serializable {
 
-	/**
-	 * <p>getTitleComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getTitleComponentsCount();
+    /**
+     * <p>getTitleComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getTitleComponentsCount();
 
-	/**
-	 * <p>getPageHeaderComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getPageHeaderComponentsCount();
+    /**
+     * <p>getPageHeaderComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getPageHeaderComponentsCount();
 
-	/**
-	 * <p>getPageFooterComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getPageFooterComponentsCount();
+    /**
+     * <p>getPageFooterComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getPageFooterComponentsCount();
 
-	/**
-	 * <p>getColumnHeaderComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getColumnHeaderComponentsCount();
+    /**
+     * <p>getColumnHeaderComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getColumnHeaderComponentsCount();
 
-	/**
-	 * <p>getColumnFooterComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getColumnFooterComponentsCount();
+    /**
+     * <p>getColumnFooterComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getColumnFooterComponentsCount();
 
-	/**
-	 * <p>getLastPageFooterComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getLastPageFooterComponentsCount();
+    /**
+     * <p>getLastPageFooterComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getLastPageFooterComponentsCount();
 
-	/**
-	 * <p>getSummaryComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getSummaryComponentsCount();
+    /**
+     * <p>getSummaryComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getSummaryComponentsCount();
 
-	/**
-	 * <p>getNoDataComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getNoDataComponentsCount();
+    /**
+     * <p>getNoDataComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getNoDataComponentsCount();
 
-	/**
-	 * <p>getBackgroundComponentsCount.</p>
-	 *
-	 * @return a int.
-	 */
-	public int getBackgroundComponentsCount();
+    /**
+     * <p>getBackgroundComponentsCount.</p>
+     *
+     * @return a int.
+     */
+    public int getBackgroundComponentsCount();
 
-	/**
-	 * <p>getDesign.</p>
-	 *
-	 * @return a {@link java.lang.Object} object.
-	 * @throws net.sf.dynamicreports.report.exception.DRException if any.
-	 */
-	public Object getDesign() throws DRException;
+    /**
+     * <p>getDesign.</p>
+     *
+     * @return a {@link java.lang.Object} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public Object getDesign() throws DRException;
 }

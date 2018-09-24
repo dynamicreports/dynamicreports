@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.plot;
 
 import net.sf.dynamicreports.report.constant.Constants;
@@ -32,38 +31,42 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIHighLowPlot;
  * @version $Id: $Id
  */
 public class DRHighLowPlot extends DRAxisPlot implements DRIHighLowPlot {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private Boolean showOpenTicks;
-	private Boolean showCloseTicks;
+    private Boolean showOpenTicks;
+    private Boolean showCloseTicks;
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getShowOpenTicks() {
-		return showOpenTicks;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getShowOpenTicks() {
+        return showOpenTicks;
+    }
 
-	/**
-	 * <p>Setter for the field <code>showOpenTicks</code>.</p>
-	 *
-	 * @param showOpenTicks a {@link java.lang.Boolean} object.
-	 */
-	public void setShowOpenTicks(Boolean showOpenTicks) {
-		this.showOpenTicks = showOpenTicks;
-	}
+    /**
+     * <p>Setter for the field <code>showOpenTicks</code>.</p>
+     *
+     * @param showOpenTicks a {@link java.lang.Boolean} object.
+     */
+    public void setShowOpenTicks(Boolean showOpenTicks) {
+        this.showOpenTicks = showOpenTicks;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public Boolean getShowCloseTicks() {
-		return showCloseTicks;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getShowCloseTicks() {
+        return showCloseTicks;
+    }
 
-	/**
-	 * <p>Setter for the field <code>showCloseTicks</code>.</p>
-	 *
-	 * @param showCloseTicks a {@link java.lang.Boolean} object.
-	 */
-	public void setShowCloseTicks(Boolean showCloseTicks) {
-		this.showCloseTicks = showCloseTicks;
-	}
+    /**
+     * <p>Setter for the field <code>showCloseTicks</code>.</p>
+     *
+     * @param showCloseTicks a {@link java.lang.Boolean} object.
+     */
+    public void setShowCloseTicks(Boolean showCloseTicks) {
+        this.showCloseTicks = showCloseTicks;
+    }
 }

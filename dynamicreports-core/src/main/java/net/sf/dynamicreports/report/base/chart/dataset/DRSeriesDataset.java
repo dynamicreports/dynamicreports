@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,19 +19,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.base.chart.dataset;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartSerie;
 import net.sf.dynamicreports.report.definition.chart.dataset.DRISeriesDataset;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
-
 import org.apache.commons.lang3.Validate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>DRSeriesDataset class.</p>
@@ -40,64 +38,70 @@ import org.apache.commons.lang3.Validate;
  * @version $Id: $Id
  */
 public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset {
-	private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
+    private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-	private DRIExpression<?> valueExpression;
-	private List<DRIChartSerie> series;
-	private DRIHyperLink itemHyperLink;
+    private DRIExpression<?> valueExpression;
+    private List<DRIChartSerie> series;
+    private DRIHyperLink itemHyperLink;
 
-	/**
-	 * <p>Constructor for DRSeriesDataset.</p>
-	 */
-	public DRSeriesDataset() {
-		series = new ArrayList<DRIChartSerie>();
-	}
+    /**
+     * <p>Constructor for DRSeriesDataset.</p>
+     */
+    public DRSeriesDataset() {
+        series = new ArrayList<DRIChartSerie>();
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIExpression<?> getValueExpression() {
-		return valueExpression;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIExpression<?> getValueExpression() {
+        return valueExpression;
+    }
 
-	/**
-	 * <p>Setter for the field <code>valueExpression</code>.</p>
-	 *
-	 * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public void setValueExpression(DRIExpression<?> valueExpression) {
-		Validate.notNull(valueExpression, "valueExpression must not be null");
-		this.valueExpression = valueExpression;
-	}
+    /**
+     * <p>Setter for the field <code>valueExpression</code>.</p>
+     *
+     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public void setValueExpression(DRIExpression<?> valueExpression) {
+        Validate.notNull(valueExpression, "valueExpression must not be null");
+        this.valueExpression = valueExpression;
+    }
 
-	/**
-	 * <p>addSerie.</p>
-	 *
-	 * @param serie a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartSerie} object.
-	 */
-	public void addSerie(DRIChartSerie serie) {
-		Validate.notNull(serie, "serie must not be null");
-		series.add(serie);
-	}
+    /**
+     * <p>addSerie.</p>
+     *
+     * @param serie a {@link net.sf.dynamicreports.report.definition.chart.dataset.DRIChartSerie} object.
+     */
+    public void addSerie(DRIChartSerie serie) {
+        Validate.notNull(serie, "serie must not be null");
+        series.add(serie);
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public List<DRIChartSerie> getSeries() {
-		return series;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<DRIChartSerie> getSeries() {
+        return series;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public DRIHyperLink getItemHyperLink() {
-		return itemHyperLink;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DRIHyperLink getItemHyperLink() {
+        return itemHyperLink;
+    }
 
-	/**
-	 * <p>Setter for the field <code>itemHyperLink</code>.</p>
-	 *
-	 * @param itemHyperLink a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
-	 */
-	public void setItemHyperLink(DRIHyperLink itemHyperLink) {
-		this.itemHyperLink = itemHyperLink;
-	}
+    /**
+     * <p>Setter for the field <code>itemHyperLink</code>.</p>
+     *
+     * @param itemHyperLink a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
+     */
+    public void setItemHyperLink(DRIHyperLink itemHyperLink) {
+        this.itemHyperLink = itemHyperLink;
+    }
 
 }

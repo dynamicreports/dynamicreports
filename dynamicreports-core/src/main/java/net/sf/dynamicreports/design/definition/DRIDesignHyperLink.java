@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,12 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition;
 
-import java.io.Serializable;
-
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
+
+import java.io.Serializable;
 
 /**
  * <p>DRIDesignHyperLink interface.</p>
@@ -34,45 +33,45 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  */
 public interface DRIDesignHyperLink extends Serializable {
 
-	/**
-	 * <p>getAnchorExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getAnchorExpression();
+    /**
+     * <p>getAnchorExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getAnchorExpression();
 
-	/**
-	 * <p>getPageExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getPageExpression();
+    /**
+     * <p>getPageExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getPageExpression();
 
-	/**
-	 * <p>getReferenceExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getReferenceExpression();
+    /**
+     * <p>getReferenceExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getReferenceExpression();
 
-	/**
-	 * <p>getTooltipExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-	 */
-	public DRIDesignExpression getTooltipExpression();
+    /**
+     * <p>getTooltipExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     */
+    public DRIDesignExpression getTooltipExpression();
 
-	/**
-	 * <p>getType.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getType();
+    /**
+     * <p>getType.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getType();
 
-	/**
-	 * <p>getTarget.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getTarget();
+    /**
+     * <p>getTarget.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getTarget();
 }

@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.expression;
 
 import net.sf.dynamicreports.report.definition.ReportParameters;
@@ -32,18 +31,18 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  */
 public interface DRIDesignSimpleExpression extends DRIDesignExpression {
 
-	/**
-	 * <p>evaluate.</p>
-	 *
-	 * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
-	 * @return a {@link java.lang.Object} object.
-	 */
-	public Object evaluate(ReportParameters reportParameters);
+    /**
+     * <p>evaluate.</p>
+     *
+     * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
+     * @return a {@link java.lang.Object} object.
+     */
+    public Object evaluate(ReportParameters reportParameters);
 
-	/**
-	 * <p>getParameterName.</p>
-	 *
-	 * @return a {@link java.lang.String} object.
-	 */
-	public String getParameterName();
+    /**
+     * <p>getParameterName.</p>
+     *
+     * @return a {@link java.lang.String} object.
+     */
+    public String getParameterName();
 }

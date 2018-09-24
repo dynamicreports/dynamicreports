@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.style;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.awt.Color;
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -39,6 +31,17 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.awt.Color;
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cnd;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 /**
  * <p>ConditionalStyleReport class.</p>
  *
@@ -47,83 +50,77 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class ConditionalStyleReport {
 
-	/**
-	 * <p>Constructor for ConditionalStyleReport.</p>
-	 */
-	public ConditionalStyleReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ConditionalStyleReport.</p>
+     */
+    public ConditionalStyleReport() {
+        build();
+    }
 
-	private void build() {
-		TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
-		TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType());
-		TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
-		TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ConditionalStyleReport();
+    }
 
-		ConditionalStyleBuilder condition1 = stl.conditionalStyle(new OrderDateConditionExpression())
-				.setBackgroundColor(new Color(255, 210, 210));
-		ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.greater(unitPriceColumn, 20))
-				.setBackgroundColor(new Color(210, 255, 210));
+    private void build() {
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+        TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType());
+        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
+        TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-		StyleBuilder orderDateStyle = stl.style()
-				.conditionalStyles(condition1);
-		orderDateColumn.setStyle(orderDateStyle);
+        ConditionalStyleBuilder condition1 = stl.conditionalStyle(new OrderDateConditionExpression()).setBackgroundColor(new Color(255, 210, 210));
+        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.greater(unitPriceColumn, 20)).setBackgroundColor(new Color(210, 255, 210));
 
-		StyleBuilder unitPriceStyle = stl.style()
-				.conditionalStyles(condition2);
-		unitPriceColumn.setStyle(unitPriceStyle);
+        StyleBuilder orderDateStyle = stl.style().conditionalStyles(condition1);
+        orderDateColumn.setStyle(orderDateStyle);
 
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.columns(
-							itemColumn, orderDateColumn, quantityColumn, unitPriceColumn)
-					.title(Templates.createTitleComponent("ConditionalStyle"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        StyleBuilder unitPriceStyle = stl.style().conditionalStyles(condition2);
+        unitPriceColumn.setStyle(unitPriceStyle);
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-		dataSource.add("DVD", toDate(2010, 1, 1), 5, new BigDecimal(30));
-		dataSource.add("DVD", toDate(2010, 1, 3), 1, new BigDecimal(28));
-		dataSource.add("DVD", toDate(2010, 1, 19), 5, new BigDecimal(32));
-		dataSource.add("Book", toDate(2010, 1, 5), 3, new BigDecimal(11));
-		dataSource.add("Book", toDate(2010, 1, 11), 1, new BigDecimal(15));
-		dataSource.add("Book", toDate(2010, 1, 15), 5, new BigDecimal(10));
-		dataSource.add("Book", toDate(2010, 1, 20), 8, new BigDecimal(9));
-		return dataSource;
-	}
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .columns(itemColumn, orderDateColumn, quantityColumn, unitPriceColumn)
+                    .title(Templates.createTitleComponent("ConditionalStyle"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	private Date toDate(int year, int month, int day) {
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.YEAR, year);
-		c.set(Calendar.MONTH, month - 1);
-		c.set(Calendar.DAY_OF_MONTH, day);
-		return c.getTime();
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
+        dataSource.add("DVD", toDate(2010, 1, 1), 5, new BigDecimal(30));
+        dataSource.add("DVD", toDate(2010, 1, 3), 1, new BigDecimal(28));
+        dataSource.add("DVD", toDate(2010, 1, 19), 5, new BigDecimal(32));
+        dataSource.add("Book", toDate(2010, 1, 5), 3, new BigDecimal(11));
+        dataSource.add("Book", toDate(2010, 1, 11), 1, new BigDecimal(15));
+        dataSource.add("Book", toDate(2010, 1, 15), 5, new BigDecimal(10));
+        dataSource.add("Book", toDate(2010, 1, 20), 8, new BigDecimal(9));
+        return dataSource;
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ConditionalStyleReport();
-	}
+    private Date toDate(int year, int month, int day) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month - 1);
+        c.set(Calendar.DAY_OF_MONTH, day);
+        return c.getTime();
+    }
 
-	private class OrderDateConditionExpression extends AbstractSimpleExpression<Boolean> {
-		private static final long serialVersionUID = 1L;
+    private class OrderDateConditionExpression extends AbstractSimpleExpression<Boolean> {
+        private static final long serialVersionUID = 1L;
 
-		@Override
-		public Boolean evaluate(ReportParameters reportParameters) {
-			Date orderDate = reportParameters.getValue("orderdate");
-			Integer quantity = reportParameters.getValue("quantity");
-			return orderDate.after(toDate(2010, 1, 10)) && quantity > 1;
-		}
-	}
+        @Override
+        public Boolean evaluate(ReportParameters reportParameters) {
+            Date orderDate = reportParameters.getValue("orderdate");
+            Integer quantity = reportParameters.getValue("quantity");
+            return orderDate.after(toDate(2010, 1, 10)) && quantity > 1;
+        }
+    }
 }

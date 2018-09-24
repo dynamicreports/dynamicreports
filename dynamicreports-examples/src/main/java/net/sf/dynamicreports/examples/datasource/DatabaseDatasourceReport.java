@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,18 +19,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.datasource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
+import net.sf.dynamicreports.examples.Templates;
+import net.sf.dynamicreports.report.exception.DRException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import net.sf.dynamicreports.examples.Templates;
-import net.sf.dynamicreports.report.exception.DRException;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>DatabaseDatasourceReport class.</p>
@@ -39,53 +40,49 @@ import net.sf.dynamicreports.report.exception.DRException;
  * @version $Id: $Id
  */
 public class DatabaseDatasourceReport {
-	private Connection connection;
+    private Connection connection;
 
-	/**
-	 * <p>Constructor for DatabaseDatasourceReport.</p>
-	 */
-	public DatabaseDatasourceReport() {
-		try {
-			Class.forName("org.hsqldb.jdbcDriver");
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:test");
-			createTable();
-			build();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>Constructor for DatabaseDatasourceReport.</p>
+     */
+    public DatabaseDatasourceReport() {
+        try {
+            Class.forName("org.hsqldb.jdbcDriver");
+            connection = DriverManager.getConnection("jdbc:hsqldb:mem:test");
+            createTable();
+            build();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-	private void build() {
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.columns(
-							col.column("Item", "item", type.stringType()),
-							col.column("Quantity", "quantity", type.integerType()),
-							col.column("Unit price", "unitprice", type.bigDecimalType()))
-					.title(Templates.createTitleComponent("DatabaseDatasource"))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource("SELECT * FROM sales", connection)
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new DatabaseDatasourceReport();
+    }
 
-	private void createTable() throws SQLException {
-		Statement st = connection.createStatement();
-		st.execute("CREATE TABLE sales (item VARCHAR(50), quantity INTEGER, unitprice DECIMAL)");
-		st.execute("INSERT INTO sales VALUES ('Book', 5, 100)");
-	}
+    private void build() {
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
+                    .title(Templates.createTitleComponent("DatabaseDatasource"))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource("SELECT * FROM sales", connection)
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new DatabaseDatasourceReport();
-	}
+    private void createTable() throws SQLException {
+        Statement st = connection.createStatement();
+        st.execute("CREATE TABLE sales (item VARCHAR(50), quantity INTEGER, unitprice DECIMAL)");
+        st.execute("INSERT INTO sales VALUES ('Book', 5, 100)");
+    }
 }

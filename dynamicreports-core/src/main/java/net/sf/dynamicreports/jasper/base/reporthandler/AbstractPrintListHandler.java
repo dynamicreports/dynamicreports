@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.jasper.base.reporthandler;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -33,47 +32,51 @@ import net.sf.jasperreports.engine.JasperPrint;
  * @version $Id: $Id
  */
 public abstract class AbstractPrintListHandler implements JasperReportHandler {
-	private boolean continuousPageNumbering;
-	private int pageNumber;
+    private boolean continuousPageNumbering;
+    private int pageNumber;
 
-	/**
-	 * <p>Constructor for AbstractPrintListHandler.</p>
-	 */
-	public AbstractPrintListHandler() {
-		continuousPageNumbering = false;
-		pageNumber = 1;
-	}
+    /**
+     * <p>Constructor for AbstractPrintListHandler.</p>
+     */
+    public AbstractPrintListHandler() {
+        continuousPageNumbering = false;
+        pageNumber = 1;
+    }
 
-	/** {@inheritDoc} */
-	@Override
-	public void concatenate(JasperReportBuilder... jasperReportBuilders) {
-		for (JasperReportBuilder jasperReportBuilder : jasperReportBuilders) {
-			try {
-				if (continuousPageNumbering) {
-					jasperReportBuilder.setStartPageNumber(pageNumber);
-				} else {
-					jasperReportBuilder.setStartPageNumber(null);
-				}
-				JasperPrint jasperPrint = jasperReportBuilder.toJasperPrint();
-				add(jasperPrint);
-				pageNumber += jasperPrint.getPages().size();
-				jasperReportBuilder.rebuild();
-			} catch (Exception e) {
-			}
-		}
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void concatenate(JasperReportBuilder... jasperReportBuilders) {
+        for (JasperReportBuilder jasperReportBuilder : jasperReportBuilders) {
+            try {
+                if (continuousPageNumbering) {
+                    jasperReportBuilder.setStartPageNumber(pageNumber);
+                } else {
+                    jasperReportBuilder.setStartPageNumber(null);
+                }
+                JasperPrint jasperPrint = jasperReportBuilder.toJasperPrint();
+                add(jasperPrint);
+                pageNumber += jasperPrint.getPages().size();
+                jasperReportBuilder.rebuild();
+            } catch (Exception e) {
+            }
+        }
+    }
 
-	/**
-	 * <p>add.</p>
-	 *
-	 * @param jasperPrint a {@link net.sf.jasperreports.engine.JasperPrint} object.
-	 */
-	protected abstract void add(JasperPrint jasperPrint);
+    /**
+     * <p>add.</p>
+     *
+     * @param jasperPrint a {@link net.sf.jasperreports.engine.JasperPrint} object.
+     */
+    protected abstract void add(JasperPrint jasperPrint);
 
-	/** {@inheritDoc} */
-	@Override
-	public void setContinuousPageNumbering(boolean continuousPageNumbering) {
-		this.continuousPageNumbering = continuousPageNumbering;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setContinuousPageNumbering(boolean continuousPageNumbering) {
+        this.continuousPageNumbering = continuousPageNumbering;
+    }
 
 }

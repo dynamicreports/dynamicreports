@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.component;
 
 import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
@@ -33,18 +32,18 @@ import net.sf.dynamicreports.report.constant.LineDirection;
  */
 public interface DRIDesignLine extends DRIDesignComponent {
 
-	/**
-	 * <p>getDirection.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
-	 */
-	public LineDirection getDirection();
+    /**
+     * <p>getDirection.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.LineDirection} object.
+     */
+    public LineDirection getDirection();
 
-	/**
-	 * <p>getPen.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
-	 */
-	public DRIDesignPen getPen();
+    /**
+     * <p>getPen.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     */
+    public DRIDesignPen getPen();
 
 }

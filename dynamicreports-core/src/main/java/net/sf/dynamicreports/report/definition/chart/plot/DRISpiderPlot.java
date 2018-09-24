@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,15 +19,14 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.report.definition.chart.plot;
-
-import java.awt.Color;
 
 import net.sf.dynamicreports.report.constant.SpiderRotation;
 import net.sf.dynamicreports.report.constant.TableOrder;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.style.DRIFont;
+
+import java.awt.Color;
 
 /**
  * <p>DRISpiderPlot interface.</p>
@@ -37,87 +36,87 @@ import net.sf.dynamicreports.report.definition.style.DRIFont;
  */
 public interface DRISpiderPlot extends DRIPlot {
 
-	/**
-	 * <p>getMaxValueExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<Double> getMaxValueExpression();
+    /**
+     * <p>getMaxValueExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<Double> getMaxValueExpression();
 
-	/**
-	 * <p>getRotation.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.SpiderRotation} object.
-	 */
-	public SpiderRotation getRotation();
+    /**
+     * <p>getRotation.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.SpiderRotation} object.
+     */
+    public SpiderRotation getRotation();
 
-	/**
-	 * <p>getTableOrder.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.TableOrder} object.
-	 */
-	public TableOrder getTableOrder();
+    /**
+     * <p>getTableOrder.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TableOrder} object.
+     */
+    public TableOrder getTableOrder();
 
-	/**
-	 * <p>getWebFilled.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getWebFilled();
+    /**
+     * <p>getWebFilled.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getWebFilled();
 
-	/**
-	 * <p>getStartAngle.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getStartAngle();
+    /**
+     * <p>getStartAngle.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getStartAngle();
 
-	/**
-	 * <p>getHeadPercent.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getHeadPercent();
+    /**
+     * <p>getHeadPercent.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getHeadPercent();
 
-	/**
-	 * <p>getInteriorGap.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getInteriorGap();
+    /**
+     * <p>getInteriorGap.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getInteriorGap();
 
-	/**
-	 * <p>getAxisLineColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getAxisLineColor();
+    /**
+     * <p>getAxisLineColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getAxisLineColor();
 
-	/**
-	 * <p>getAxisLineWidth.</p>
-	 *
-	 * @return a {@link java.lang.Float} object.
-	 */
-	public Float getAxisLineWidth();
+    /**
+     * <p>getAxisLineWidth.</p>
+     *
+     * @return a {@link java.lang.Float} object.
+     */
+    public Float getAxisLineWidth();
 
-	/**
-	 * <p>getLabelFont.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
-	 */
-	public DRIFont getLabelFont();
+    /**
+     * <p>getLabelFont.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.style.DRIFont} object.
+     */
+    public DRIFont getLabelFont();
 
-	/**
-	 * <p>getLabelGap.</p>
-	 *
-	 * @return a {@link java.lang.Double} object.
-	 */
-	public Double getLabelGap();
+    /**
+     * <p>getLabelGap.</p>
+     *
+     * @return a {@link java.lang.Double} object.
+     */
+    public Double getLabelGap();
 
-	/**
-	 * <p>getLabelColor.</p>
-	 *
-	 * @return a {@link java.awt.Color} object.
-	 */
-	public Color getLabelColor();
+    /**
+     * <p>getLabelColor.</p>
+     *
+     * @return a {@link java.awt.Color} object.
+     */
+    public Color getLabelColor();
 }

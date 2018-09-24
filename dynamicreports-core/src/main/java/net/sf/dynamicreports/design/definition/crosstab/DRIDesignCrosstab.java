@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,13 +19,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.design.definition.crosstab;
-
-import java.util.List;
 
 import net.sf.dynamicreports.design.definition.component.DRIDesignComponent;
 import net.sf.dynamicreports.report.constant.RunDirection;
+
+import java.util.List;
 
 /**
  * <p>DRIDesignCrosstab interface.</p>
@@ -35,87 +34,87 @@ import net.sf.dynamicreports.report.constant.RunDirection;
  */
 public interface DRIDesignCrosstab extends DRIDesignComponent {
 
-	/**
-	 * <p>getDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabDataset} object.
-	 */
-	public DRIDesignCrosstabDataset getDataset();
+    /**
+     * <p>getDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabDataset} object.
+     */
+    public DRIDesignCrosstabDataset getDataset();
 
-	/**
-	 * <p>isRepeatColumnHeaders.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean isRepeatColumnHeaders();
+    /**
+     * <p>isRepeatColumnHeaders.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean isRepeatColumnHeaders();
 
-	/**
-	 * <p>isRepeatRowHeaders.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean isRepeatRowHeaders();
+    /**
+     * <p>isRepeatRowHeaders.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean isRepeatRowHeaders();
 
-	/**
-	 * <p>getColumnBreakOffset.</p>
-	 *
-	 * @return a {@link java.lang.Integer} object.
-	 */
-	public Integer getColumnBreakOffset();
+    /**
+     * <p>getColumnBreakOffset.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getColumnBreakOffset();
 
-	/**
-	 * <p>getIgnoreWidth.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getIgnoreWidth();
+    /**
+     * <p>getIgnoreWidth.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getIgnoreWidth();
 
-	/**
-	 * <p>getRunDirection.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.constant.RunDirection} object.
-	 */
-	public RunDirection getRunDirection();
+    /**
+     * <p>getRunDirection.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.RunDirection} object.
+     */
+    public RunDirection getRunDirection();
 
-	/**
-	 * <p>getWhenNoDataCell.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
-	 */
-	public DRIDesignCrosstabCellContent getWhenNoDataCell();
+    /**
+     * <p>getWhenNoDataCell.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
+     */
+    public DRIDesignCrosstabCellContent getWhenNoDataCell();
 
-	/**
-	 * <p>getHeaderCell.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
-	 */
-	public DRIDesignCrosstabCellContent getHeaderCell();
+    /**
+     * <p>getHeaderCell.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.design.definition.crosstab.DRIDesignCrosstabCellContent} object.
+     */
+    public DRIDesignCrosstabCellContent getHeaderCell();
 
-	/**
-	 * <p>getColumnGroups.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIDesignCrosstabColumnGroup> getColumnGroups();
+    /**
+     * <p>getColumnGroups.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIDesignCrosstabColumnGroup> getColumnGroups();
 
-	/**
-	 * <p>getRowGroups.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIDesignCrosstabRowGroup> getRowGroups();
+    /**
+     * <p>getRowGroups.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIDesignCrosstabRowGroup> getRowGroups();
 
-	/**
-	 * <p>getCells.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<? extends DRIDesignCrosstabCell> getCells();
+    /**
+     * <p>getCells.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<? extends DRIDesignCrosstabCell> getCells();
 
-	/**
-	 * <p>getMeasures.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<DRIDesignCrosstabMeasure> getMeasures();
+    /**
+     * <p>getMeasures.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<DRIDesignCrosstabMeasure> getMeasures();
 }

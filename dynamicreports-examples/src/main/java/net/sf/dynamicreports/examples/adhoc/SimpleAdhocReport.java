@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.adhoc;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.math.BigDecimal;
-import java.util.Date;
 
 import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
@@ -39,6 +32,12 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
  * <p>SimpleAdhocReport class.</p>
  *
@@ -47,60 +46,60 @@ import net.sf.jasperreports.engine.JRDataSource;
  */
 public class SimpleAdhocReport {
 
-	/**
-	 * <p>Constructor for SimpleAdhocReport.</p>
-	 */
-	public SimpleAdhocReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for SimpleAdhocReport.</p>
+     */
+    public SimpleAdhocReport() {
+        build();
+    }
 
-	private void build() {
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new SimpleAdhocReport();
+    }
 
-		AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+    private void build() {
 
-		AdhocConfiguration configuration = new AdhocConfiguration();
-		AdhocReport report = new AdhocReport();
-		configuration.setReport(report);
+        AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
 
-		AdhocColumn column = new AdhocColumn();
-		column.setName("item");
-		report.addColumn(column);
+        AdhocConfiguration configuration = new AdhocConfiguration();
+        AdhocReport report = new AdhocReport();
+        configuration.setReport(report);
 
-		column = new AdhocColumn();
-		column.setName("quantity");
-		report.addColumn(column);
+        AdhocColumn column = new AdhocColumn();
+        column.setName("item");
+        report.addColumn(column);
 
-		try {
-			// The following code stores the configuration to an xml file
-			adhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
-			@SuppressWarnings("unused")
-			// The following code loads a configuration from an xml file
-			AdhocConfiguration loadedConfiguration = adhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
+        column = new AdhocColumn();
+        column.setName("quantity");
+        report.addColumn(column);
 
-			JasperReportBuilder reportBuilder = adhocManager.createReport(configuration.getReport());
-			reportBuilder.setDataSource(createDataSource());
-			reportBuilder.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+        try {
+            // The following code stores the configuration to an xml file
+            adhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
+            @SuppressWarnings("unused")
+            // The following code loads a configuration from an xml file
+                AdhocConfiguration loadedConfiguration = adhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-		for (int i = 0; i < 20; i++) {
-			dataSource.add("Book", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-		}
-		return dataSource;
-	}
+            JasperReportBuilder reportBuilder = adhocManager.createReport(configuration.getReport());
+            reportBuilder.setDataSource(createDataSource());
+            reportBuilder.show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new SimpleAdhocReport();
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
+        for (int i = 0; i < 20; i++) {
+            dataSource.add("Book", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+        }
+        return dataSource;
+    }
 }

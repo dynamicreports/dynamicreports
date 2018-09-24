@@ -1,7 +1,7 @@
-/**
+/*
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -19,14 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package net.sf.dynamicreports.examples.chartcustomization;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.*;
-
-import java.awt.Color;
-import java.io.Serializable;
-import java.math.BigDecimal;
 
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -36,11 +29,20 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.renderer.category.BarRenderer;
+
+import java.awt.Color;
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>ChartCustomizerReport class.</p>
@@ -50,70 +52,66 @@ import org.jfree.chart.renderer.category.BarRenderer;
  */
 public class ChartCustomizerReport {
 
-	/**
-	 * <p>Constructor for ChartCustomizerReport.</p>
-	 */
-	public ChartCustomizerReport() {
-		build();
-	}
+    /**
+     * <p>Constructor for ChartCustomizerReport.</p>
+     */
+    public ChartCustomizerReport() {
+        build();
+    }
 
-	private void build() {
-		FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
+    public static void main(String[] args) {
+        new ChartCustomizerReport();
+    }
 
-		TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
-		TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
-		TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
+    private void build() {
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
-		try {
-			report()
-					.setTemplate(Templates.reportTemplate)
-					.columns(itemColumn, quantityColumn, unitPriceColumn)
-					.title(Templates.createTitleComponent("ChartCustomizer"))
-					.summary(
-							cht.barChart()
-									.customizers(new ChartCustomizer())
-									.setTitle("Bar chart")
-									.setTitleFont(boldFont)
-									.setCategory(itemColumn)
-									.series(
-											cht.serie(quantityColumn), cht.serie(unitPriceColumn))
-									.setCategoryAxisFormat(
-											cht.axisFormat().setLabel("Item")))
-					.pageFooter(Templates.footerComponent)
-					.setDataSource(createDataSource())
-					.show();
-		} catch (DRException e) {
-			e.printStackTrace();
-		}
-	}
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
+        TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-	private class ChartCustomizer implements DRIChartCustomizer, Serializable {
-		private static final long serialVersionUID = 1L;
+        try {
+            report().setTemplate(Templates.reportTemplate)
+                    .columns(itemColumn, quantityColumn, unitPriceColumn)
+                    .title(Templates.createTitleComponent("ChartCustomizer"))
+                    .summary(cht.barChart()
+                                .customizers(new ChartCustomizer())
+                                .setTitle("Bar chart")
+                                .setTitleFont(boldFont)
+                                .setCategory(itemColumn)
+                                .series(cht.serie(quantityColumn), cht.serie(unitPriceColumn))
+                                .setCategoryAxisFormat(cht.axisFormat().setLabel("Item")))
+                    .pageFooter(Templates.footerComponent)
+                    .setDataSource(createDataSource())
+                    .show();
+        } catch (DRException e) {
+            e.printStackTrace();
+        }
+    }
 
-		@Override
-		public void customize(JFreeChart chart, ReportParameters reportParameters) {
-			BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
-			renderer.setShadowPaint(Color.LIGHT_GRAY);
-			renderer.setShadowVisible(true);
-			CategoryAxis domainAxis = chart.getCategoryPlot().getDomainAxis();
-			domainAxis.setCategoryLabelPositions(CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0));
-		}
-	}
+    private JRDataSource createDataSource() {
+        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        dataSource.add("Tablet", 350, new BigDecimal(300));
+        dataSource.add("Laptop", 300, new BigDecimal(500));
+        dataSource.add("Smartphone", 450, new BigDecimal(250));
+        return dataSource;
+    }
 
-	private JRDataSource createDataSource() {
-		DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-		dataSource.add("Tablet", 350, new BigDecimal(300));
-		dataSource.add("Laptop", 300, new BigDecimal(500));
-		dataSource.add("Smartphone", 450, new BigDecimal(250));
-		return dataSource;
-	}
+    private class ChartCustomizer implements DRIChartCustomizer, Serializable {
+        private static final long serialVersionUID = 1L;
 
-	/**
-	 * <p>main.</p>
-	 *
-	 * @param args an array of {@link java.lang.String} objects.
-	 */
-	public static void main(String[] args) {
-		new ChartCustomizerReport();
-	}
+        @Override
+        public void customize(JFreeChart chart, ReportParameters reportParameters) {
+            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
+            renderer.setShadowPaint(Color.LIGHT_GRAY);
+            renderer.setShadowVisible(true);
+            CategoryAxis domainAxis = chart.getCategoryPlot().getDomainAxis();
+            domainAxis.setCategoryLabelPositions(CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0));
+        }
+    }
 }
