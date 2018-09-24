@@ -419,7 +419,7 @@
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
-                    <!--&lt;!&ndash;To ensure consistent API for java 9 usage&ndash;&gt;
+                    <!--To ensure consistent API for java 9 usage-->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>animal-sniffer-maven-plugin</artifactId>
@@ -433,14 +433,14 @@
                                 <configuration>
                                     <signature>
                                         <groupId>org.codehaus.mojo.signature</groupId>
-                                        &lt;!&ndash;We are "trying" to be jre 8 compatible&ndash;&gt;
+                                        <!--We are "trying" to be jre 8 compatible-->
                                         <artifactId>java18</artifactId>
                                         <version>1.0</version>
                                     </signature>
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>-->
+                    </plugin>
                 </plugins>
             </build>
             <dependencies>
