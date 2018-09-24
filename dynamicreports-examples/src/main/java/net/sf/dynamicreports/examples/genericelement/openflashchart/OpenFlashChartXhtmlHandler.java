@@ -32,7 +32,9 @@ import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
  */
 public class OpenFlashChartXhtmlHandler extends OpenFlashChartHtmlHandler {
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getHtmlFragment(JRHtmlExporterContext exporterContext, JRGenericPrintElement element) {
         StringBuilder result = new StringBuilder();

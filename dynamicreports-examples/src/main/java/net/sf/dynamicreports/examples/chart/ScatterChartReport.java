@@ -59,8 +59,7 @@ public class ScatterChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<Integer> xColumn = col.column("X", "x", type.integerType());
         TextColumnBuilder<Integer> y1Column = col.column("Y1", "y1", type.integerType());
@@ -76,10 +75,8 @@ public class ScatterChartReport {
                                 .setShowLines(false)
                                 .setXValue(xColumn)
                                 .series(cht.xySerie(y1Column), cht.xySerie(y2Column))
-                                .setXAxisFormat(cht.axisFormat()
-                                                   .setLabel("X"))
-                                .setYAxisFormat(cht.axisFormat()
-                                                   .setLabel("Y")))
+                                .setXAxisFormat(cht.axisFormat().setLabel("X"))
+                                .setYAxisFormat(cht.axisFormat().setLabel("Y")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

@@ -70,29 +70,16 @@ public class GanttChartReport {
 
         GanttChartBuilder chart1 = cht.ganttChart()
                                       .setTask(taskColumn)
-                                      .series(cht.ganttSerie()
-                                                 .setStartDate(scheduledStartDateColumn)
-                                                 .setEndDate(scheduledEndDateColumn)
-                                                 .setLabel("Scheduled"), cht.ganttSerie()
-                                                                            .setStartDate(actualStartDateColumn)
-                                                                            .setEndDate(actualEndDateColumn)
-                                                                            .setLabel("Actual"))
-                                      .setTimeAxisFormat(cht.axisFormat()
-                                                            .setLabel("Time"))
-                                      .setTaskAxisFormat(cht.axisFormat()
-                                                            .setLabel("Task"));
+                                      .series(cht.ganttSerie().setStartDate(scheduledStartDateColumn).setEndDate(scheduledEndDateColumn).setLabel("Scheduled"),
+                                              cht.ganttSerie().setStartDate(actualStartDateColumn).setEndDate(actualEndDateColumn).setLabel("Actual"))
+                                      .setTimeAxisFormat(cht.axisFormat().setLabel("Time"))
+                                      .setTaskAxisFormat(cht.axisFormat().setLabel("Task"));
 
         GanttChartBuilder chart2 = cht.ganttChart()
                                       .setTask(taskColumn)
-                                      .series(cht.ganttSerie()
-                                                 .setStartDate(scheduledStartDateColumn)
-                                                 .setEndDate(scheduledEndDateColumn)
-                                                 .setPercent(actualColumn)
-                                                 .setLabel("Scheduled"))
-                                      .setTimeAxisFormat(cht.axisFormat()
-                                                            .setLabel("Time"))
-                                      .setTaskAxisFormat(cht.axisFormat()
-                                                            .setLabel("Task"));
+                                      .series(cht.ganttSerie().setStartDate(scheduledStartDateColumn).setEndDate(scheduledEndDateColumn).setPercent(actualColumn).setLabel("Scheduled"))
+                                      .setTimeAxisFormat(cht.axisFormat().setLabel("Time"))
+                                      .setTaskAxisFormat(cht.axisFormat().setLabel("Task"));
 
         try {
             report().setTemplate(Templates.reportTemplate)

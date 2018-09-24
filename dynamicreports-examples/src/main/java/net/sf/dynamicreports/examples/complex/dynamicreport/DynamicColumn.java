@@ -40,8 +40,8 @@ public class DynamicColumn {
      * <p>Constructor for DynamicColumn.</p>
      *
      * @param title a {@link java.lang.String} object.
-     * @param name a {@link java.lang.String} object.
-     * @param type a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
+     * @param type  a {@link java.lang.String} object.
      */
     public DynamicColumn(String title, String name, String type) {
         this.name = name;

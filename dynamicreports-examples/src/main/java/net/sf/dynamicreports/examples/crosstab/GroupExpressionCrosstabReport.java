@@ -75,8 +75,7 @@ public class GroupExpressionCrosstabReport {
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setCellWidth(50)
-                                       .headerCell(cmp.text("State / Date")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Date").setStyle(Templates.boldCenteredStyle))
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnYearGroup, columnQuarterGroup)
                                        .measures(ctab.measure("quantity", Integer.class, Calculation.SUM));

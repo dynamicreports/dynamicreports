@@ -66,8 +66,7 @@ public class FlowColumnPairsReport {
     }
 
     private void build() {
-        StyleBuilder textStyle = stl.style(Templates.columnStyle)
-                                    .setBorder(stl.pen1Point());
+        StyleBuilder textStyle = stl.style(Templates.columnStyle).setBorder(stl.pen1Point());
 
         FieldBuilder<Integer> idField = field("id", type.integerType());
         FieldBuilder<String> itemField = field("item", type.stringType());
@@ -98,8 +97,7 @@ public class FlowColumnPairsReport {
     }
 
     private VerticalListBuilder columnPair(String title, FieldBuilder<?> value) {
-        TextFieldBuilder<String> titleCmp = cmp.text(title)
-                                               .setStyle(Templates.columnTitleStyle);
+        TextFieldBuilder<String> titleCmp = cmp.text(title).setStyle(Templates.columnTitleStyle);
         TextFieldBuilder<?> valueCmp = cmp.text(value);
         return cmp.verticalList(titleCmp, valueCmp);
     }

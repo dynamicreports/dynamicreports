@@ -21,11 +21,11 @@
  */
 package net.sf.dynamicreports.googlecharts.report.geomap;
 
-import java.awt.Color;
-import java.util.List;
-
 import net.sf.dynamicreports.report.component.DRICustomComponent;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
+
+import java.awt.Color;
+import java.util.List;
 
 /**
  * <p>DRIGeoMap interface.</p>
@@ -35,45 +35,45 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  */
 public interface DRIGeoMap extends DRICustomComponent {
 
-	/**
-	 * <p>getShowLegend.</p>
-	 *
-	 * @return a {@link java.lang.Boolean} object.
-	 */
-	public Boolean getShowLegend();
+    /**
+     * <p>getShowLegend.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getShowLegend();
 
-	/**
-	 * <p>getDataMode.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
-	 */
-	public GeoMapDataMode getDataMode();
+    /**
+     * <p>getDataMode.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
+     */
+    public GeoMapDataMode getDataMode();
 
-	/**
-	 * <p>getRegionExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<String> getRegionExpression();
+    /**
+     * <p>getRegionExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<String> getRegionExpression();
 
-	/**
-	 * <p>getValueLabelExpression.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-	 */
-	public DRIExpression<String> getValueLabelExpression();
+    /**
+     * <p>getValueLabelExpression.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     */
+    public DRIExpression<String> getValueLabelExpression();
 
-	/**
-	 * <p>getColors.</p>
-	 *
-	 * @return a {@link java.util.List} object.
-	 */
-	public List<Color> getColors();
+    /**
+     * <p>getColors.</p>
+     *
+     * @return a {@link java.util.List} object.
+     */
+    public List<Color> getColors();
 
-	/**
-	 * <p>getDataset.</p>
-	 *
-	 * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIGeoMapDataset} object.
-	 */
-	public DRIGeoMapDataset getDataset();
+    /**
+     * <p>getDataset.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIGeoMapDataset} object.
+     */
+    public DRIGeoMapDataset getDataset();
 }

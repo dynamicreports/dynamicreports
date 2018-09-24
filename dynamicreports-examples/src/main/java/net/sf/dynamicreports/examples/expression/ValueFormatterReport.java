@@ -63,8 +63,8 @@ public class ValueFormatterReport {
         try {
             report().setTemplate(Templates.reportTemplate)
                     .fields(field("unitprice", BigDecimal.class))
-                    .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType())
-                                                                                                                                       .setValueFormatter(new ValueFormatter()))
+                    .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()),
+                             col.column("Unit price", "unitprice", type.bigDecimalType()).setValueFormatter(new ValueFormatter()))
                     .title(Templates.createTitleComponent("ValueFormatter"))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
@@ -85,8 +85,7 @@ public class ValueFormatterReport {
 
         @Override
         public String format(Number value, ReportParameters reportParameters) {
-            return type.bigDecimalType()
-                       .valueToString(value, reportParameters.getLocale()) + " EUR";
+            return type.bigDecimalType().valueToString(value, reportParameters.getLocale()) + " EUR";
         }
     }
 }

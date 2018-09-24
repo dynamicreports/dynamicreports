@@ -66,20 +66,18 @@ public class PercentageCrosstabReport {
     }
 
     private void build() {
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
         FieldBuilder<BigDecimal> unitPriceField = field("unitprice", BigDecimal.class);
 
         CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnGroup)
-                                       .measures(ctab.measure("Unit price", unitPriceField, Calculation.SUM), ctab.measure("%", unitPriceField, Calculation.SUM)
-                                                                                                                  .setPercentageType(CrosstabPercentageType.GRAND_TOTAL));
+                                       .measures(ctab.measure("Unit price", unitPriceField, Calculation.SUM),
+                                                 ctab.measure("%", unitPriceField, Calculation.SUM).setPercentageType(CrosstabPercentageType.GRAND_TOTAL));
 
         try {
             report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)

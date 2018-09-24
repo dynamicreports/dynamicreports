@@ -84,17 +84,10 @@ public class ApplicationFormDesign {
 
         ApplicationForm applicationForm = data.getApplicationForm();
 
-        textStyle = stl.style()
-                       .setFontSize(12)
-                       .setPadding(2);
-        centeredStyle = stl.style(textStyle)
-                           .setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
-        labelStyle = stl.style(textStyle)
-                        .setHorizontalTextAlignment(HorizontalTextAlignment.LEFT)
-                        .bold();
-        cellStyle = stl.style(textStyle)
-                       .setBorder(stl.pen1Point())
-                       .setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
+        textStyle = stl.style().setFontSize(12).setPadding(2);
+        centeredStyle = stl.style(textStyle).setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
+        labelStyle = stl.style(textStyle).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT).bold();
+        cellStyle = stl.style(textStyle).setBorder(stl.pen1Point()).setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
 
         HorizontalListBuilder applicant = cmp.horizontalList()
                                              .add(label("First name", 14), emptyCell(1), label("Last name", 16))
@@ -128,8 +121,8 @@ public class ApplicationFormDesign {
         report.setTemplate(Templates.reportTemplate)
               .setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
               .setTextStyle(textStyle)
-              .title(Templates.createTitleComponent("ApplicationForm"), cmp.text("APPLICATION FORM")
-                                                                           .setStyle(Templates.bold18CenteredStyle), applicant, cmp.verticalGap(10), address, cmp.verticalGap(10), contact);
+              .title(Templates.createTitleComponent("ApplicationForm"), cmp.text("APPLICATION FORM").setStyle(Templates.bold18CenteredStyle), applicant, cmp.verticalGap(10), address,
+                     cmp.verticalGap(10), contact);
 
         return report;
     }
@@ -170,9 +163,7 @@ public class ApplicationFormDesign {
         String cellText = StringUtils.rightPad(text, size);
         cellText = StringUtils.left(cellText, size);
         for (char character : cellText.toCharArray()) {
-            TextFieldBuilder<String> cell = cmp.text(String.valueOf(character))
-                                               .setStyle(cellStyle)
-                                               .setFixedDimension(cellWidth, cellHeight);
+            TextFieldBuilder<String> cell = cmp.text(String.valueOf(character)).setStyle(cellStyle).setFixedDimension(cellWidth, cellHeight);
             list.add(cell);
         }
         return list;
@@ -183,8 +174,7 @@ public class ApplicationFormDesign {
     }
 
     private TextFieldBuilder<String> label(String text, int size, StyleBuilder style) {
-        TextFieldBuilder<String> label = cmp.text(text)
-                                            .setFixedWidth(cellWidth * size);
+        TextFieldBuilder<String> label = cmp.text(text).setFixedWidth(cellWidth * size);
         if (style != null) {
             label.setStyle(style);
         }

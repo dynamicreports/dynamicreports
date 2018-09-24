@@ -71,8 +71,7 @@ public class CustomPercentageCrosstabReport {
     }
 
     private void build() {
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
@@ -81,12 +80,8 @@ public class CustomPercentageCrosstabReport {
         CrosstabMeasureBuilder<BigDecimal> unitPriceMeasure = ctab.measure("Unit price", quantityField, Calculation.SUM);
         CrosstabMeasureBuilder<BigDecimal> percentageMeasure = ctab.measure("%", new PercentageExpression(unitPriceMeasure, columnGroup));
         percentageMeasure.setDataType(type.doubleType());
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(unitPriceMeasure, percentageMeasure);
+        CrosstabBuilder crosstab =
+            ctab.crosstab().headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle)).rowGroups(rowGroup).columnGroups(columnGroup).measures(unitPriceMeasure, percentageMeasure);
 
         try {
             report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
@@ -145,8 +140,7 @@ public class CustomPercentageCrosstabReport {
         public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
             BigDecimal unitPrice = (BigDecimal) values.get(0);
             BigDecimal unitPriceTotal = (BigDecimal) values.get(1);
-            return unitPrice.divide(unitPriceTotal, 4, BigDecimal.ROUND_HALF_UP)
-                            .multiply(new BigDecimal(100));
+            return unitPrice.divide(unitPriceTotal, 4, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }
 }

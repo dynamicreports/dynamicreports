@@ -61,13 +61,9 @@ public class SimpleReport_Step02 {
     }
 
     private void build() {
-        StyleBuilder boldStyle = stl.style()
-                                    .bold();
-        StyleBuilder boldCenteredStyle = stl.style(boldStyle)
-                                            .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle)
-                                           .setBorder(stl.pen1Point())
-                                           .setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder boldStyle = stl.style().bold();
+        StyleBuilder boldCenteredStyle = stl.style(boldStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
@@ -75,10 +71,8 @@ public class SimpleReport_Step02 {
                     .columns(// add columns
                              // title, field name data type
                              col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
-                    .title(cmp.text("Getting started")
-                              .setStyle(boldCenteredStyle))// shows report title
-                    .pageFooter(cmp.pageXofY()
-                                   .setStyle(boldCenteredStyle))// shows number of page at page footer
+                    .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
+                    .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .setDataSource(createDataSource())// set datasource
                     .show();// create and show report
         } catch (DRException e) {

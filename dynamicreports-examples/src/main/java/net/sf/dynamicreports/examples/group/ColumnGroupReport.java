@@ -65,10 +65,7 @@ public class ColumnGroupReport {
     private void build() {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-        ColumnGroupBuilder itemGroup = grp.group(itemColumn)
-                                          .setTitleWidth(30)
-                                          .setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE)
-                                          .showColumnHeaderAndFooter();
+        ColumnGroupBuilder itemGroup = grp.group(itemColumn).setTitleWidth(30).setHeaderLayout(GroupHeaderLayout.TITLE_AND_VALUE).showColumnHeaderAndFooter();
 
         try {
             report().setTemplate(Templates.reportTemplate)

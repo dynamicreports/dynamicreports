@@ -60,9 +60,7 @@ public class HtmlReport {
 
     private void build() {
         try {
-            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html")
-                                                           .setImagesDirName("c:/images")
-                                                           .setOutputImagesToDir(true);
+            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html").setImagesDirName("c:/images").setOutputImagesToDir(true);
 
             report().setTemplate(Templates.reportTemplate)
                     .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))

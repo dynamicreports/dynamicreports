@@ -69,12 +69,8 @@ public class GroupSubtotalsReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        ColumnGroupBuilder yearGroup = grp.group(yearColumn)
-                                          .groupByDataType();
-        ColumnGroupBuilder monthGroup = grp.group(monthColumn)
-                                           .groupByDataType()
-                                           .setHeaderLayout(GroupHeaderLayout.EMPTY)
-                                           .setHideColumn(false);
+        ColumnGroupBuilder yearGroup = grp.group(yearColumn).groupByDataType();
+        ColumnGroupBuilder monthGroup = grp.group(monthColumn).groupByDataType().setHeaderLayout(GroupHeaderLayout.EMPTY).setHideColumn(false);
 
         try {
             report().setTemplate(Templates.reportTemplate)

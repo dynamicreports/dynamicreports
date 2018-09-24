@@ -55,8 +55,7 @@ public class ConcatenatedReport1 {
 
     private void build() {
         try {
-            concatenatedReport().concatenate(invoiceReport(), salesReport())
-                                .toPdf(Exporters.pdfExporter("c:/report.pdf"));
+            concatenatedReport().concatenate(invoiceReport(), salesReport()).toPdf(Exporters.pdfExporter("c:/report.pdf"));
         } catch (DRException e) {
             e.printStackTrace();
         }

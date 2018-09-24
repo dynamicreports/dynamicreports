@@ -61,9 +61,7 @@ public class MeterChartReport {
     }
 
     private void build() {
-        MeterChartBuilder chart1 = cht.meterChart()
-                                      .setValue(DynamicReports.<Number>field("value", type.integerType()))
-                                      .setShape(MeterShape.DIAL);
+        MeterChartBuilder chart1 = cht.meterChart().setValue(DynamicReports.<Number>field("value", type.integerType())).setShape(MeterShape.DIAL);
 
         MeterChartBuilder chart2 = cht.meterChart()
                                       .setValue(18)
@@ -73,19 +71,9 @@ public class MeterChartReport {
                                       .setNeedleColor(Color.BLACK)
                                       .setValueColor(Color.BLACK)
                                       .setMeterBackgroundColor(Color.LIGHT_GRAY)
-                                      .intervals(cht.meterInterval()
-                                                    .setLabel("Normal")
-                                                    .setBackgroundColor(new Color(150, 255, 150))
-                                                    .setDataRangeLowExpression(0)
-                                                    .setDataRangeHighExpression(20), cht.meterInterval()
-                                                                                        .setLabel("Warning")
-                                                                                        .setBackgroundColor(new Color(255, 255, 150))
-                                                                                        .setDataRangeLowExpression(20)
-                                                                                        .setDataRangeHighExpression(25), cht.meterInterval()
-                                                                                                                            .setLabel("Critical")
-                                                                                                                            .setBackgroundColor(new Color(255, 150, 150))
-                                                                                                                            .setDataRangeLowExpression(25)
-                                                                                                                            .setDataRangeHighExpression(30));
+                                      .intervals(cht.meterInterval().setLabel("Normal").setBackgroundColor(new Color(150, 255, 150)).setDataRangeLowExpression(0).setDataRangeHighExpression(20),
+                                                 cht.meterInterval().setLabel("Warning").setBackgroundColor(new Color(255, 255, 150)).setDataRangeLowExpression(20).setDataRangeHighExpression(25),
+                                                 cht.meterInterval().setLabel("Critical").setBackgroundColor(new Color(255, 150, 150)).setDataRangeLowExpression(25).setDataRangeHighExpression(30));
 
         try {
             report().setTemplate(Templates.reportTemplate)

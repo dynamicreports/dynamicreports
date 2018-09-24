@@ -67,20 +67,14 @@ public class OpenFlashChartReport {
     private void build() {
         pieChart1 = new PieChart();
         pieChart1.setTitle("Quantity");
-        GenericElementBuilder chart1 = cmp.genericElement("http://www.dynamicreports.org/openflashchart", "openflashchart")
-                                          .setHeight(200)
-                                          .addParameter(PieChart.PARAMETER_CHART_GENERATOR, pieChart1);
+        GenericElementBuilder chart1 = cmp.genericElement("http://www.dynamicreports.org/openflashchart", "openflashchart").setHeight(200).addParameter(PieChart.PARAMETER_CHART_GENERATOR, pieChart1);
 
         pieChart2 = new PieChart();
         pieChart2.setTitle("Unit price");
-        GenericElementBuilder chart2 = cmp.genericElement("http://www.dynamicreports.org/openflashchart", "openflashchart")
-                                          .setHeight(200)
-                                          .addParameter(PieChart.PARAMETER_CHART_GENERATOR, pieChart2);
+        GenericElementBuilder chart2 = cmp.genericElement("http://www.dynamicreports.org/openflashchart", "openflashchart").setHeight(200).addParameter(PieChart.PARAMETER_CHART_GENERATOR, pieChart2);
 
         try {
-            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html")
-                                                           .setImagesDirName("c:/images")
-                                                           .setOutputImagesToDir(true);
+            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html").setImagesDirName("c:/images").setOutputImagesToDir(true);
 
             report().setTemplate(Templates.reportTemplate)
                     .scriptlets(new ReportScriptlet())

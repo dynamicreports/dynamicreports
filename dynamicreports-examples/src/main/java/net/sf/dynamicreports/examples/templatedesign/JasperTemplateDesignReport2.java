@@ -95,15 +95,10 @@ public class JasperTemplateDesignReport2 {
     }
 
     private JasperReportBuilder createSubreport(String title) {
-        StyleBuilder style = stl.style()
-                                .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)
-                                .setVerticalTextAlignment(VerticalTextAlignment.MIDDLE)
-                                .setBorder(stl.pen1Point());
+        StyleBuilder style = stl.style().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE).setBorder(stl.pen1Point());
 
         JasperReportBuilder report = report();
-        report.setTemplate(Templates.reportTemplate)
-              .title(cmp.horizontalList(cmp.gap(30, 47), cmp.text(title)
-                                                            .setStyle(style), cmp.gap(30, 47)));
+        report.setTemplate(Templates.reportTemplate).title(cmp.horizontalList(cmp.gap(30, 47), cmp.text(title).setStyle(style), cmp.gap(30, 47)));
 
         return report;
     }

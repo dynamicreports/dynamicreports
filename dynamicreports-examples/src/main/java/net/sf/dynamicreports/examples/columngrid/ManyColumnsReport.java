@@ -61,8 +61,7 @@ public class ManyColumnsReport {
     }
 
     private void build() {
-        StyleBuilder textStyle = stl.style(Templates.columnStyle)
-                                    .setBorder(stl.pen1Point());
+        StyleBuilder textStyle = stl.style(Templates.columnStyle).setBorder(stl.pen1Point());
 
         try {
             report().setTemplate(Templates.reportTemplate)

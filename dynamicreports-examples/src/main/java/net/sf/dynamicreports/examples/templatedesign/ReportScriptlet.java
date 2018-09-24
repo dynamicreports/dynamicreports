@@ -49,7 +49,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 public class ReportScriptlet extends JRDefaultScriptlet {
     private JasperReportBuilder dynamicSubreport;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void beforeDetailEval() throws JRScriptletException {
         super.beforeDetailEval();
@@ -58,8 +60,7 @@ public class ReportScriptlet extends JRDefaultScriptlet {
                         .setPageFormat(515, PageType.A4.getHeight(), PageOrientation.PORTRAIT)
                         .setPageMargin(margin(0))
                         .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.integerType()))
-                        .title(cmp.text("Dynamic subreport")
-                                  .setStyle(Templates.bold12CenteredStyle));
+                        .title(cmp.text("Dynamic subreport").setStyle(Templates.bold12CenteredStyle));
     }
 
     private JRDataSource createDataSource() {

@@ -99,17 +99,14 @@ public class SalesTableOfContentsDesign {
         TextColumnBuilder<String> countryColumn = col.column("Country", "country", type.stringType());
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-        StyleBuilder headingToc1Style = stl.style(Templates.rootStyle)
-                                           .italic();
+        StyleBuilder headingToc1Style = stl.style(Templates.rootStyle).italic();
 
         CustomTableOfContentsCustomizer tableOfContentsCustomizer = new CustomTableOfContentsCustomizer();
         tableOfContentsCustomizer.setHeadingStyle(1, headingToc1Style);
         tableOfContentsCustomizer.setTextFixedWidth(100);
         tableOfContentsCustomizer.setPageIndexFixedWidth(30);
 
-        TextFieldBuilder<String> pageHeader = cmp.text(new PageHeaderExpression())
-                                                 .setStyle(Templates.bold12CenteredStyle)
-                                                 .setEvaluationTime(Evaluation.PAGE);
+        TextFieldBuilder<String> pageHeader = cmp.text(new PageHeaderExpression()).setStyle(Templates.bold12CenteredStyle).setEvaluationTime(Evaluation.PAGE);
 
         report.setPageFormat(PageType.A5, PageOrientation.LANDSCAPE)
               .setTemplate(Templates.reportTemplate)
@@ -153,14 +150,9 @@ public class SalesTableOfContentsDesign {
         public void customize() {
             super.customize();
 
-            CustomGroupBuilder countryGroup = grp.group(new CountryExpression(textField))
-                                                 .setHeaderLayout(GroupHeaderLayout.EMPTY)
-                                                 .header(countryHeadingComponent())
-                                                 .footer(cmp.verticalGap(5));
+            CustomGroupBuilder countryGroup = grp.group(new CountryExpression(textField)).setHeaderLayout(GroupHeaderLayout.EMPTY).header(countryHeadingComponent()).footer(cmp.verticalGap(5));
 
-            report.setPageColumnsPerPage(2)
-                  .setPageColumnSpace(10)
-                  .groupBy(countryGroup);
+            report.setPageColumnsPerPage(2).setPageColumnSpace(10).groupBy(countryGroup);
         }
 
         private ComponentBuilder<?, ?> countryHeadingComponent() {
@@ -170,20 +162,13 @@ public class SalesTableOfContentsDesign {
             countryReferenceHyperLink.setAnchor(new CountryExpression(referenceField));
             countryReferenceHyperLink.setType(HyperLinkType.LOCAL_ANCHOR);
 
-            StyleBuilder style = stl.style(Templates.rootStyle)
-                                    .setFontSize(12)
-                                    .bold()
-                                    .setBackgroundColor(Color.LIGHT_GRAY);
+            StyleBuilder style = stl.style(Templates.rootStyle).setFontSize(12).bold().setBackgroundColor(Color.LIGHT_GRAY);
 
-            TextFieldBuilder<String> textComponent = cmp.text(textField)
-                                                        .setHyperLink(countryReferenceHyperLink)
-                                                        .setStyle(style);
+            TextFieldBuilder<String> textComponent = cmp.text(textField).setHyperLink(countryReferenceHyperLink).setStyle(style);
             headingComponent.add(textComponent);
 
-            TextFieldBuilder<String> pageIndexComponent = cmp.text(new CountryHeadingExpression())
-                                                             .setHyperLink(countryReferenceHyperLink)
-                                                             .setStyle(style)
-                                                             .setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
+            TextFieldBuilder<String> pageIndexComponent =
+                cmp.text(new CountryHeadingExpression()).setHyperLink(countryReferenceHyperLink).setStyle(style).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT);
             headingComponent.add(pageIndexComponent);
 
             return headingComponent;
@@ -197,10 +182,8 @@ public class SalesTableOfContentsDesign {
 
             ComponentBuilder<?, ?> headingComponent = super.headingComponent(level);
 
-            ConditionalStyleBuilder conditionalStyle = stl.conditionalStyle(exp.printInOddRow())
-                                                          .setBackgroundColor(new Color(245, 245, 245));
-            StyleBuilder rowStyle = stl.style()
-                                       .conditionalStyles(conditionalStyle);
+            ConditionalStyleBuilder conditionalStyle = stl.conditionalStyle(exp.printInOddRow()).setBackgroundColor(new Color(245, 245, 245));
+            StyleBuilder rowStyle = stl.style().conditionalStyles(conditionalStyle);
             headingComponent.setStyle(rowStyle);
 
             return headingComponent;

@@ -83,8 +83,7 @@ public class CustomChartReport {
                     .scriptlets(new ReportScriptlet())
                     .columns(seriesColumn, categoryColumn, meanColumn, medianColumn, q1Column, q3Column, minRegularValueColumn, maxRegularValueColumn, minOutlierColumn, maxOutlierColumn)
                     .title(Templates.createTitleComponent("CustomChart"))
-                    .summary(cmp.image(new ChartExpression())
-                                .setFixedHeight(300))
+                    .summary(cmp.image(new ChartExpression()).setFixedHeight(300))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

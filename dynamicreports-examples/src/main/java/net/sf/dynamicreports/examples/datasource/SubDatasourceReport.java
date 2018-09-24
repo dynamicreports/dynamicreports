@@ -71,41 +71,26 @@ public class SubDatasourceReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         FieldBuilder<String> itemField = field("item", type.stringType());
         FieldBuilder<Integer> quantityField = field("quantity", type.integerType());
         FieldBuilder<BigDecimal> unitPriceField = field("unitprice", type.bigDecimalType());
 
-        CategoryChartSerieBuilder quantitySerie = cht.serie(quantityField)
-                                                     .setLabel("Quantity");
-        CategoryChartSerieBuilder unitPriceSerie = cht.serie(unitPriceField)
-                                                      .setLabel("Unit price");
+        CategoryChartSerieBuilder quantitySerie = cht.serie(quantityField).setLabel("Quantity");
+        CategoryChartSerieBuilder unitPriceSerie = cht.serie(unitPriceField).setLabel("Unit price");
 
-        BarChartBuilder chart1 = cht.barChart()
-                                    .setDataSource(createDataSource1())
-                                    .setTitle("SubDatasource 1")
-                                    .setTitleFont(boldFont)
-                                    .setCategory(itemField)
-                                    .series(quantitySerie, unitPriceSerie);
+        BarChartBuilder chart1 = cht.barChart().setDataSource(createDataSource1()).setTitle("SubDatasource 1").setTitleFont(boldFont).setCategory(itemField).series(quantitySerie, unitPriceSerie);
 
-        BarChartBuilder chart2 = cht.barChart()
-                                    .setDataSource(createDataSource2())
-                                    .setTitle("SubDatasource 2")
-                                    .setTitleFont(boldFont)
-                                    .setCategory(itemField)
-                                    .series(quantitySerie, unitPriceSerie);
+        BarChartBuilder chart2 = cht.barChart().setDataSource(createDataSource2()).setTitle("SubDatasource 2").setTitleFont(boldFont).setCategory(itemField).series(quantitySerie, unitPriceSerie);
 
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setDataSource(createDataSource3())
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnGroup)
                                        .measures(ctab.measure("Quantity", "quantity", Integer.class, Calculation.SUM), ctab.measure("Unit price", "unitprice", BigDecimal.class, Calculation.SUM));
@@ -113,8 +98,7 @@ public class SubDatasourceReport {
         try {
             report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)
                     .setTemplate(Templates.reportTemplate)
-                    .title(Templates.createTitleComponent("SubDatasource"), cmp.horizontalList(chart1, chart2), cmp.text("SubDatasource 3")
-                                                                                                                   .setStyle(Templates.bold12CenteredStyle), crosstab)
+                    .title(Templates.createTitleComponent("SubDatasource"), cmp.horizontalList(chart1, chart2), cmp.text("SubDatasource 3").setStyle(Templates.bold12CenteredStyle), crosstab)
                     .pageFooter(Templates.footerComponent)
                     .show();
         } catch (DRException e) {

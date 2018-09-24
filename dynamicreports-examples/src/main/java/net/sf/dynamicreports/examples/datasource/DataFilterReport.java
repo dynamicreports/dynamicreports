@@ -89,8 +89,7 @@ public class DataFilterReport {
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            return reportParameters.getValue("item")
-                                   .equals("Book");
+            return reportParameters.getValue("item").equals("Book");
         }
     }
 }

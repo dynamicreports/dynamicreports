@@ -69,28 +69,18 @@ public class GroupChartReport2 {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> yearColumn = col.column("Year", "year", type.stringType());
         TextColumnBuilder<String> stockColumn = col.column("Stock", "stock", type.stringType());
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
 
-        BarChartBuilder chart1 = cht.barChart()
-                                    .setTitle(new ChartTitleExpression(stockColumn))
-                                    .setTitleFont(boldFont)
-                                    .setCategory(yearColumn)
-                                    .series(cht.serie(quantityColumn)
-                                               .setSeries(itemColumn));
+        BarChartBuilder chart1 = cht.barChart().setTitle(new ChartTitleExpression(stockColumn)).setTitleFont(boldFont).setCategory(yearColumn).series(cht.serie(quantityColumn).setSeries(itemColumn));
 
-        ColumnGroupBuilder stockGroup = grp.group(stockColumn)
-                                           .setHeaderLayout(GroupHeaderLayout.EMPTY)
-                                           .footer(chart1);
+        ColumnGroupBuilder stockGroup = grp.group(stockColumn).setHeaderLayout(GroupHeaderLayout.EMPTY).footer(chart1);
 
-        JasperReportBuilder subReport = report().sortBy(stockColumn)
-                                                .groupBy(stockGroup)
-                                                .setDataSource(createDataSource());
+        JasperReportBuilder subReport = report().sortBy(stockColumn).groupBy(stockGroup).setDataSource(createDataSource());
 
         try {
             report().setTemplate(Templates.reportTemplate)

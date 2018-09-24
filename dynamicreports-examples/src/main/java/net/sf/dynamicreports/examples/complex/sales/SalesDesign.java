@@ -84,29 +84,21 @@ public class SalesDesign {
 
         // init columns
         TextColumnBuilder<String> stateColumn = col.column("State", "state", type.stringType());
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setPrintRepeatedDetailValues(false);
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setPrintRepeatedDetailValues(false);
         TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", Templates.currencyType);
         // price = unitPrice * quantity
-        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn)
-                                                                   .setTitle("Price")
-                                                                   .setDataType(Templates.currencyType);
+        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn).setTitle("Price").setDataType(Templates.currencyType);
         PercentageColumnBuilder pricePercColumn = col.percentageColumn("Price %", priceColumn);
 
         // init groups
         ColumnGroupBuilder stateGroup = grp.group(stateColumn);
 
         // init subtotals
-        AggregationSubtotalBuilder<Number> priceAvg = sbt.avg(priceColumn)
-                                                         .setValueFormatter(Templates.createCurrencyValueFormatter("avg = "));
-        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum(unitPriceColumn)
-                                                                 .setLabel("Total:")
-                                                                 .setLabelStyle(Templates.boldStyle);
-        AggregationSubtotalBuilder<BigDecimal> priceSum = sbt.sum(priceColumn)
-                                                             .setLabel("")
-                                                             .setLabelStyle(Templates.boldStyle);
+        AggregationSubtotalBuilder<Number> priceAvg = sbt.avg(priceColumn).setValueFormatter(Templates.createCurrencyValueFormatter("avg = "));
+        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum(unitPriceColumn).setLabel("Total:").setLabelStyle(Templates.boldStyle);
+        AggregationSubtotalBuilder<BigDecimal> priceSum = sbt.sum(priceColumn).setLabel("").setLabelStyle(Templates.boldStyle);
 
         // init charts
         Bar3DChartBuilder itemChart = cht.bar3DChart()
@@ -115,19 +107,9 @@ public class SalesDesign {
                                          .setOrientation(Orientation.HORIZONTAL)
                                          .setCategory(itemColumn)
                                          .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
-        TimeSeriesChartBuilder dateChart = cht.timeSeriesChart()
-                                              .setTitle("Sales by date")
-                                              .setTitleFont(boldFont)
-                                              .setFixedHeight(150)
-                                              .setTimePeriod(orderDateColumn)
-                                              .addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
-        PieChartBuilder stateChart = cht.pieChart()
-                                        .setTitle("Sales by state")
-                                        .setTitleFont(boldFont)
-                                        .setFixedHeight(100)
-                                        .setShowLegend(false)
-                                        .setKey(stateColumn)
-                                        .addSerie(cht.serie(priceColumn));
+        TimeSeriesChartBuilder dateChart =
+            cht.timeSeriesChart().setTitle("Sales by date").setTitleFont(boldFont).setFixedHeight(150).setTimePeriod(orderDateColumn).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+        PieChartBuilder stateChart = cht.pieChart().setTitle("Sales by state").setTitleFont(boldFont).setFixedHeight(100).setShowLegend(false).setKey(stateColumn).addSerie(cht.serie(priceColumn));
 
         // configure report
         report.addProperty("net.sf.jasperreports.chart.pie.ignore.duplicated.key", "true")
@@ -138,8 +120,7 @@ public class SalesDesign {
               .groupBy(stateGroup)
               // subtotals
               .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
-              .subtotalsOfPercentageAtGroupFooter(stateGroup, sbt.percentage(priceColumn)
-                                                                 .setShowInColumn(pricePercColumn))
+              .subtotalsOfPercentageAtGroupFooter(stateGroup, sbt.percentage(priceColumn).setShowInColumn(pricePercColumn))
               .subtotalsAtSummary(unitPriceSum, priceSum, priceAvg)
               // band components
               .title(Templates.createTitleComponent("Sales"), cmp.horizontalList(itemChart, cmp.verticalList(dateChart, stateChart)), cmp.verticalGap(10))

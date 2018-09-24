@@ -79,12 +79,9 @@ public class VariableReport {
             report().setTemplate(Templates.reportTemplate)
                     .variables(quantitySum)
                     .columns(itemColumn, quantityColumn, unitPriceColumn)
-                    .title(Templates.createTitleComponent("Variable"), cmp.horizontalList(cmp.text("Item count =")
-                                                                                             .setFixedWidth(80), cmp.text(itemCount)), cmp.text(new QuantitySumTextExpression())
-                                                                                                                                          .setEvaluationTime(Evaluation.REPORT),
-                           cmp.text(new UnitPriceSumTextExpression(unitPriceColumn)), cmp.horizontalList(cmp.text("SUM(quantity * unit price) =")
-                                                                                                            .setFixedWidth(150), cmp.text(priceSum)
-                                                                                                                                    .setPattern("#,###.00")))
+                    .title(Templates.createTitleComponent("Variable"), cmp.horizontalList(cmp.text("Item count =").setFixedWidth(80), cmp.text(itemCount)),
+                           cmp.text(new QuantitySumTextExpression()).setEvaluationTime(Evaluation.REPORT), cmp.text(new UnitPriceSumTextExpression(unitPriceColumn)),
+                           cmp.horizontalList(cmp.text("SUM(quantity * unit price) =").setFixedWidth(150), cmp.text(priceSum).setPattern("#,###.00")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();
@@ -121,8 +118,7 @@ public class VariableReport {
         @Override
         public String evaluate(List<?> values, ReportParameters reportParameters) {
             BigDecimal unitPriceSum = (BigDecimal) values.get(0);
-            return "Unit price sum = " + type.bigDecimalType()
-                                             .valueToString(unitPriceSum, reportParameters.getLocale());
+            return "Unit price sum = " + type.bigDecimalType().valueToString(unitPriceSum, reportParameters.getLocale());
         }
     }
 

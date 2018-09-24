@@ -66,11 +66,7 @@ public class CardReport {
         }
 
         try {
-            report().setTemplate(Templates.reportTemplate)
-                    .setTextStyle(stl.style())
-                    .setPageFormat(PageType.A5)
-                    .title(Templates.createTitleComponent("Card"), cards)
-                    .show();
+            report().setTemplate(Templates.reportTemplate).setTextStyle(stl.style()).setPageFormat(PageType.A5).title(Templates.createTitleComponent("Card"), cards).show();
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -78,23 +74,17 @@ public class CardReport {
 
     private ComponentBuilder<?, ?> createCardComponent() {
         HorizontalListBuilder cardComponent = cmp.horizontalList();
-        StyleBuilder cardStyle = stl.style(stl.pen1Point())
-                                    .setPadding(10);
+        StyleBuilder cardStyle = stl.style(stl.pen1Point()).setPadding(10);
         cardComponent.setStyle(cardStyle);
 
-        ImageBuilder image = cmp.image(Templates.class.getResource("images/user_male.png"))
-                                .setFixedDimension(60, 60);
-        cardComponent.add(cmp.hListCell(image)
-                             .heightFixedOnMiddle());
+        ImageBuilder image = cmp.image(Templates.class.getResource("images/user_male.png")).setFixedDimension(60, 60);
+        cardComponent.add(cmp.hListCell(image).heightFixedOnMiddle());
         cardComponent.add(cmp.horizontalGap(10));
 
-        StyleBuilder boldStyle = stl.style()
-                                    .bold();
-        VerticalListBuilder content = cmp.verticalList(cmp.text("Name:")
-                                                          .setStyle(boldStyle), cmp.text("Peter Marsh"), cmp.text("Address:")
-                                                                                                            .setStyle(boldStyle), cmp.text("23 Baden Av."), cmp.text("City:")
-                                                                                                                                                               .setStyle(boldStyle),
-                                                       cmp.text("New York"));
+        StyleBuilder boldStyle = stl.style().bold();
+        VerticalListBuilder content =
+            cmp.verticalList(cmp.text("Name:").setStyle(boldStyle), cmp.text("Peter Marsh"), cmp.text("Address:").setStyle(boldStyle), cmp.text("23 Baden Av."), cmp.text("City:").setStyle(boldStyle),
+                             cmp.text("New York"));
 
         cardComponent.add(content);
         return cardComponent;

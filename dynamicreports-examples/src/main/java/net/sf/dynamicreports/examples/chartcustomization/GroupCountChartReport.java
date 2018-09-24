@@ -72,10 +72,8 @@ public class GroupCountChartReport {
         Bar3DChartBuilder chart1 = cht.bar3DChart()
                                       .setFixedHeight(180)
                                       .setCategory(countryColumn)
-                                      .series(cht.serie(exp.number(1))
-                                                 .setLabel("Items (group count)"))
-                                      .setCategoryAxisFormat(cht.axisFormat()
-                                                                .setLabel("Country"));
+                                      .series(cht.serie(exp.number(1)).setLabel("Items (group count)"))
+                                      .setCategoryAxisFormat(cht.axisFormat().setLabel("Country"));
 
         VariableBuilder<Integer> itemVariable = variable(itemColumn, Calculation.DISTINCT_COUNT);
         itemVariable.setResetType(Evaluation.FIRST_GROUP);
@@ -83,10 +81,8 @@ public class GroupCountChartReport {
         Bar3DChartBuilder chart2 = cht.bar3DChart()
                                       .setFixedHeight(180)
                                       .setCategory(countryColumn)
-                                      .series(cht.serie(itemVariable)
-                                                 .setLabel("Items (group distinct count)"))
-                                      .setCategoryAxisFormat(cht.axisFormat()
-                                                                .setLabel("Country"));
+                                      .series(cht.serie(itemVariable).setLabel("Items (group distinct count)"))
+                                      .setCategoryAxisFormat(cht.axisFormat().setLabel("Country"));
 
         try {
             report().setTemplate(Templates.reportTemplate)

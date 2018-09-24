@@ -65,10 +65,8 @@ public class DateGroupReport {
         TextColumnBuilder<Date> yearColumn = col.column("Order year", "orderdate", type.dateYearType());
         TextColumnBuilder<Date> monthColumn = col.column("Order month", "orderdate", type.dateMonthType());
 
-        ColumnGroupBuilder yearGroup = grp.group(yearColumn)
-                                          .groupByDataType();
-        ColumnGroupBuilder monthGroup = grp.group(monthColumn)
-                                           .groupByDataType();
+        ColumnGroupBuilder yearGroup = grp.group(yearColumn).groupByDataType();
+        ColumnGroupBuilder monthGroup = grp.group(monthColumn).groupByDataType();
 
         try {
             report().setTemplate(Templates.reportTemplate)

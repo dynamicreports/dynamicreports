@@ -62,8 +62,7 @@ public class XyBlockChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<Integer> xColumn = col.column("X", "x", type.integerType());
         TextColumnBuilder<Integer> yColumn = col.column("Y", "y", type.integerType());
@@ -79,13 +78,9 @@ public class XyBlockChartReport {
                                 .setBlockAnchor(RectangleAnchor.BOTTOM_LEFT)
                                 .paintScales(cht.paintScale("Value 1", 1, Color.RED), cht.paintScale("Value 2", 2, Color.GREEN), cht.paintScale("Value 3", 3, Color.BLUE))
                                 .setXValue(xColumn)
-                                .series(cht.xyzSerie()
-                                           .setYValue(yColumn)
-                                           .setZValue(zColumn))
-                                .setXAxisFormat(cht.axisFormat()
-                                                   .setLabel("X"))
-                                .setYAxisFormat(cht.axisFormat()
-                                                   .setLabel("Y")))
+                                .series(cht.xyzSerie().setYValue(yColumn).setZValue(zColumn))
+                                .setXAxisFormat(cht.axisFormat().setLabel("X"))
+                                .setYAxisFormat(cht.axisFormat().setLabel("Y")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

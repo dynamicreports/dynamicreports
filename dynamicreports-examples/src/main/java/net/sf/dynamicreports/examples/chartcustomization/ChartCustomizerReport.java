@@ -69,8 +69,7 @@ public class ChartCustomizerReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
@@ -86,8 +85,7 @@ public class ChartCustomizerReport {
                                 .setTitleFont(boldFont)
                                 .setCategory(itemColumn)
                                 .series(cht.serie(quantityColumn), cht.serie(unitPriceColumn))
-                                .setCategoryAxisFormat(cht.axisFormat()
-                                                          .setLabel("Item")))
+                                .setCategoryAxisFormat(cht.axisFormat().setLabel("Item")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();
@@ -109,12 +107,10 @@ public class ChartCustomizerReport {
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot()
-                                                      .getRenderer();
+            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
             renderer.setShadowPaint(Color.LIGHT_GRAY);
             renderer.setShadowVisible(true);
-            CategoryAxis domainAxis = chart.getCategoryPlot()
-                                           .getDomainAxis();
+            CategoryAxis domainAxis = chart.getCategoryPlot().getDomainAxis();
             domainAxis.setCategoryLabelPositions(CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 6.0));
         }
     }

@@ -65,8 +65,7 @@ public class CollectionDatasourceReport {
     }
 
     private void build() {
-        SubreportBuilder subreport = cmp.subreport(createSubreport())
-                                        .setDataSource(exp.subDatasourceBeanCollection("subData"));
+        SubreportBuilder subreport = cmp.subreport(createSubreport()).setDataSource(exp.subDatasourceBeanCollection("subData"));
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -84,8 +83,7 @@ public class CollectionDatasourceReport {
     private JasperReportBuilder createSubreport() {
         JasperReportBuilder report = report();
         report.setTemplate(Templates.reportTemplate)
-              .title(cmp.text("SubData")
-                        .setStyle(Templates.boldCenteredStyle))
+              .title(cmp.text("SubData").setStyle(Templates.boldCenteredStyle))
               .columns(col.column("Order date", "orderDate", type.dateType()), col.column("Quantity", "quantity", type.integerType()));
 
         return report;

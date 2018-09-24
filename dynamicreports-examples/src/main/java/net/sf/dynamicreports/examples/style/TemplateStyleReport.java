@@ -67,26 +67,15 @@ public class TemplateStyleReport {
     }
 
     private void build() {
-        StyleBuilder style1 = stl.style()
-                                 .setName("style1")
-                                 .bold();
-        StyleBuilder style2 = stl.style(style1)
-                                 .setName("style2")
-                                 .italic();
-        StyleBuilder columnStyle = stl.style()
-                                      .setName("columnStyle")
-                                      .setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
-        StyleBuilder columnTitleStyle = stl.style(columnStyle)
-                                           .setName("columnTitleStyle")
-                                           .setBorder(stl.pen1Point())
-                                           .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER)
-                                           .setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder style1 = stl.style().setName("style1").bold();
+        StyleBuilder style2 = stl.style(style1).setName("style2").italic();
+        StyleBuilder columnStyle = stl.style().setName("columnStyle").setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
+        StyleBuilder columnTitleStyle =
+            stl.style(columnStyle).setName("columnTitleStyle").setBorder(stl.pen1Point()).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER).setBackgroundColor(Color.LIGHT_GRAY);
         ReportTemplateBuilder template = template().templateStyles(style1, style2, columnStyle, columnTitleStyle);
 
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setStyle(stl.templateStyle("style1"));
-        TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType())
-                                                     .setStyle(stl.templateStyle("style2"));
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(stl.templateStyle("style1"));
+        TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType()).setStyle(stl.templateStyle("style2"));
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 

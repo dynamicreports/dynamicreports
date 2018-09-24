@@ -65,25 +65,15 @@ public class UnitsReport {
     }
 
     private void build() {
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType())
-                                                  .setFixedWidth(cm(10));
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setFixedWidth(cm(10));
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> priceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        StyleBuilder style = stl.style(Templates.bold12CenteredStyle)
-                                .setBorder(stl.pen1Point());
-        TextFieldBuilder<String> text1 = cmp.text("width = 120 pixels")
-                                            .setFixedWidth(120)
-                                            .setStyle(style);
-        TextFieldBuilder<String> text2 = cmp.text("width = 10cm")
-                                            .setFixedWidth(cm(10))
-                                            .setStyle(style);
-        TextFieldBuilder<String> text3 = cmp.text("width = 5 inches")
-                                            .setFixedWidth(inch(5))
-                                            .setStyle(style);
-        TextFieldBuilder<String> text4 = cmp.text("width = 150mm")
-                                            .setFixedWidth(mm(150))
-                                            .setStyle(style);
+        StyleBuilder style = stl.style(Templates.bold12CenteredStyle).setBorder(stl.pen1Point());
+        TextFieldBuilder<String> text1 = cmp.text("width = 120 pixels").setFixedWidth(120).setStyle(style);
+        TextFieldBuilder<String> text2 = cmp.text("width = 10cm").setFixedWidth(cm(10)).setStyle(style);
+        TextFieldBuilder<String> text3 = cmp.text("width = 5 inches").setFixedWidth(inch(5)).setStyle(style);
+        TextFieldBuilder<String> text4 = cmp.text("width = 150mm").setFixedWidth(mm(150)).setStyle(style);
 
         try {
             report().setTemplate(Templates.reportTemplate)

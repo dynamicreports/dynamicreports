@@ -64,8 +64,7 @@ public class TimeSeriesChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateYearToMonthType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
@@ -81,8 +80,7 @@ public class TimeSeriesChartReport {
                                 .setTimePeriod(orderDateColumn)
                                 .setTimePeriodType(TimePeriod.MONTH)
                                 .series(cht.serie(quantityColumn), cht.serie(priceColumn))
-                                .setTimeAxisFormat(cht.axisFormat()
-                                                      .setLabel("Date")))
+                                .setTimeAxisFormat(cht.axisFormat().setLabel("Date")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

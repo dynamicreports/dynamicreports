@@ -63,9 +63,7 @@ public class ConcatenatedReport2 {
 
     private void build() {
         try {
-            concatenatedReport().continuousPageNumbering()
-                                .concatenate(createReport(PageType.A4), createReport(PageType.A3), createReport(PageType.A5))
-                                .toPdf(Exporters.pdfExporter("c:/report.pdf"));
+            concatenatedReport().continuousPageNumbering().concatenate(createReport(PageType.A4), createReport(PageType.A3), createReport(PageType.A5)).toPdf(Exporters.pdfExporter("c:/report.pdf"));
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -77,8 +75,7 @@ public class ConcatenatedReport2 {
               .setPageFormat(pageType)
               .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
               .title(Templates.createTitleComponent(pageType.name() + "Report"))
-              .pageFooter(cmp.line(), cmp.pageNumber()
-                                         .setStyle(Templates.boldCenteredStyle))
+              .pageFooter(cmp.line(), cmp.pageNumber().setStyle(Templates.boldCenteredStyle))
               .setDataSource(createDataSource());
 
         return report;

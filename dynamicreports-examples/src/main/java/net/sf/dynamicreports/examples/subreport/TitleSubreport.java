@@ -60,9 +60,7 @@ public class TitleSubreport {
 
     private void build() {
         try {
-            report().title(Templates.createTitleComponent("TitleSubreport"), cmp.subreport(createSubreport()))
-                    .pageFooter(Templates.footerComponent)
-                    .show();
+            report().title(Templates.createTitleComponent("TitleSubreport"), cmp.subreport(createSubreport())).pageFooter(Templates.footerComponent).show();
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -71,8 +69,7 @@ public class TitleSubreport {
     private JasperReportBuilder createSubreport() {
         JasperReportBuilder report = report();
         report.setTemplate(Templates.reportTemplate)
-              .title(cmp.text("Subreport in title")
-                        .setStyle(Templates.bold12CenteredStyle))
+              .title(cmp.text("Subreport in title").setStyle(Templates.bold12CenteredStyle))
               .columns(col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
               .setDataSource(createSubreportDataSource());
 

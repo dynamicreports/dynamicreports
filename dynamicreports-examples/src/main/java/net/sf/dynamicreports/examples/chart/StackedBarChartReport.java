@@ -59,8 +59,7 @@ public class StackedBarChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> stock1Column = col.column("Stock 1", "stock1", type.integerType());
@@ -76,8 +75,7 @@ public class StackedBarChartReport {
                                 .setTitleFont(boldFont)
                                 .setCategory(itemColumn)
                                 .series(cht.serie(stock1Column), cht.serie(stock2Column), cht.serie(stock3Column))
-                                .setCategoryAxisFormat(cht.axisFormat()
-                                                          .setLabel("Item")))
+                                .setCategoryAxisFormat(cht.axisFormat().setLabel("Item")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

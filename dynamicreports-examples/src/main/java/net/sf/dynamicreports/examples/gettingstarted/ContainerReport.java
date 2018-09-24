@@ -60,9 +60,7 @@ public class ContainerReport {
     }
 
     private void build() {
-        boldCenteredStyle = stl.style()
-                               .bold()
-                               .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        boldCenteredStyle = stl.style().bold().setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         borderedStyle = stl.style(stl.pen1Point());
 
         try {
@@ -70,23 +68,20 @@ public class ContainerReport {
                     .title(createTextField("Horizontal list (contains 10 textfields)"), createHorizontalList(), cmp.verticalGap(20),
                            createTextField("Multi row horizontal list (contains 10 textfields)"), createMultiRowHorizontalList(), cmp.verticalGap(20),
                            createTextField("Horizontal flow list (contains 9 textfields)"), createHorizontalFlowList(), cmp.verticalGap(20), createTextField("Vertical list (contains 4 textfields)"),
-                           createVerticalList(), cmp.verticalGap(20), createTextField("Nested list (contains 1 horizontal and 3 vertical lists)"), createNestedList())
-                    .show();// create and show report
+                           createVerticalList(), cmp.verticalGap(20), createTextField("Nested list (contains 1 horizontal and 3 vertical lists)"), createNestedList()).show();// create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }
     }
 
     private TextFieldBuilder<String> createTextField(String label) {
-        return cmp.text(label)
-                  .setStyle(boldCenteredStyle);
+        return cmp.text(label).setStyle(boldCenteredStyle);
     }
 
     private ComponentBuilder<?, ?> createHorizontalList() {
         HorizontalListBuilder horizontalList = cmp.horizontalList();
         for (int i = 0; i < 10; i++) {
-            horizontalList.add(cmp.text("")
-                                  .setStyle(borderedStyle));
+            horizontalList.add(cmp.text("").setStyle(borderedStyle));
         }
         return horizontalList;
     }
@@ -94,13 +89,11 @@ public class ContainerReport {
     private ComponentBuilder<?, ?> createMultiRowHorizontalList() {
         HorizontalListBuilder horizontalList = cmp.horizontalList();
         for (int i = 0; i < 3; i++) {
-            horizontalList.add(cmp.text("")
-                                  .setStyle(borderedStyle));
+            horizontalList.add(cmp.text("").setStyle(borderedStyle));
         }
         horizontalList.newRow();
         for (int i = 0; i < 7; i++) {
-            horizontalList.add(cmp.text("")
-                                  .setStyle(borderedStyle));
+            horizontalList.add(cmp.text("").setStyle(borderedStyle));
         }
         return horizontalList;
     }
@@ -108,8 +101,7 @@ public class ContainerReport {
     private ComponentBuilder<?, ?> createHorizontalFlowList() {
         HorizontalListBuilder horizontalList = cmp.horizontalFlowList();
         for (int i = 0; i < 9; i++) {
-            horizontalList.add(cmp.text("")
-                                  .setStyle(borderedStyle));
+            horizontalList.add(cmp.text("").setStyle(borderedStyle));
         }
         return horizontalList;
     }
@@ -117,8 +109,7 @@ public class ContainerReport {
     private ComponentBuilder<?, ?> createVerticalList() {
         VerticalListBuilder verticalList = cmp.verticalList();
         for (int i = 0; i < 4; i++) {
-            verticalList.add(cmp.text("")
-                                .setStyle(borderedStyle));
+            verticalList.add(cmp.text("").setStyle(borderedStyle));
         }
         return verticalList;
     }

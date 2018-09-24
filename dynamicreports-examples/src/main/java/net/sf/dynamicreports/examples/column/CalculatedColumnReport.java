@@ -60,19 +60,12 @@ public class CalculatedColumnReport {
     private void build() {
         TextColumnBuilder<Integer> column1 = col.column("A", "field1", type.integerType());
         TextColumnBuilder<Integer> column2 = col.column("B", "field2", type.integerType());
-        TextColumnBuilder<BigDecimal> column3 = column1.multiply(column2)
-                                                       .setTitle("A * B");
-        TextColumnBuilder<BigDecimal> column4 = column1.divide(2, column2)
-                                                       .setTitle("A / B");
-        TextColumnBuilder<BigDecimal> column5 = column1.add(column2)
-                                                       .setTitle("A + B");
-        TextColumnBuilder<BigDecimal> column6 = column1.subtract(column2)
-                                                       .setTitle("A - B");
-        TextColumnBuilder<BigDecimal> column7 = column3.add(6)
-                                                       .setTitle("A * B + 6");
-        TextColumnBuilder<BigDecimal> column8 = column7.divide(2, 5)
-                                                       .add(1)
-                                                       .setTitle("(A*B+6) / 5 + 1");
+        TextColumnBuilder<BigDecimal> column3 = column1.multiply(column2).setTitle("A * B");
+        TextColumnBuilder<BigDecimal> column4 = column1.divide(2, column2).setTitle("A / B");
+        TextColumnBuilder<BigDecimal> column5 = column1.add(column2).setTitle("A + B");
+        TextColumnBuilder<BigDecimal> column6 = column1.subtract(column2).setTitle("A - B");
+        TextColumnBuilder<BigDecimal> column7 = column3.add(6).setTitle("A * B + 6");
+        TextColumnBuilder<BigDecimal> column8 = column7.divide(2, 5).add(1).setTitle("(A*B+6) / 5 + 1");
 
         try {
             report().setTemplate(Templates.reportTemplate)

@@ -68,9 +68,7 @@ public class ColumnGrid2Report {
             report().setTextStyle(stl.style(stl.pen1Point()))
                     .columns(columns)
                     .columnGrid(grid.horizontalColumnGridList(columns[0], grid.verticalColumnGridList(columns[1], grid.horizontalColumnGridList(columns[2], columns[3]), columns[4]),
-                                                              grid.verticalColumnGridList(columns[5], columns[6]))
-                                    .newRow()
-                                    .add(columns[7], columns[8], columns[9]))
+                                                              grid.verticalColumnGridList(columns[5], columns[6])).newRow().add(columns[7], columns[8], columns[9]))
                     .detail(cmp.verticalGap(10))
                     .setDataSource(createDataSource())
                     .show();

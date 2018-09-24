@@ -76,10 +76,7 @@ public class GroupLayoutReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        CustomGroupBuilder yearGroup = grp.group(new YearExpression())
-                                          .groupByDataType()
-                                          .setHeaderLayout(GroupHeaderLayout.EMPTY)
-                                          .setPadding(0);
+        CustomGroupBuilder yearGroup = grp.group(new YearExpression()).groupByDataType().setHeaderLayout(GroupHeaderLayout.EMPTY).setPadding(0);
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -124,8 +121,7 @@ public class GroupLayoutReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return type.dateYearType()
-                       .valueToString("orderdate", reportParameters);
+            return type.dateYearType().valueToString("orderdate", reportParameters);
         }
     }
 }

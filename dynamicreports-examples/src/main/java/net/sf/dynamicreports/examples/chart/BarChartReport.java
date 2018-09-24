@@ -61,8 +61,7 @@ public class BarChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
@@ -77,8 +76,7 @@ public class BarChartReport {
                                 .setTitleFont(boldFont)
                                 .setCategory(itemColumn)
                                 .series(cht.serie(quantityColumn), cht.serie(unitPriceColumn))
-                                .setCategoryAxisFormat(cht.axisFormat()
-                                                          .setLabel("Item")))
+                                .setCategoryAxisFormat(cht.axisFormat().setLabel("Item")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

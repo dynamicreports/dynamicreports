@@ -68,11 +68,7 @@ public class ColumnDetectDataTypeReport {
             for (Column column : createColumns()) {
                 report.addColumn(col.column(column.title, column.field, (DRIDataType) type.detectType(column.dataType)));
             }
-            report.setTemplate(Templates.reportTemplate)
-                  .title(Templates.createTitleComponent("ColumnDetectDataTypes"))
-                  .pageFooter(Templates.footerComponent)
-                  .setDataSource(createDataSource())
-                  .show();
+            report.setTemplate(Templates.reportTemplate).title(Templates.createTitleComponent("ColumnDetectDataTypes")).pageFooter(Templates.footerComponent).setDataSource(createDataSource()).show();
         } catch (DRException e) {
             e.printStackTrace();
         }

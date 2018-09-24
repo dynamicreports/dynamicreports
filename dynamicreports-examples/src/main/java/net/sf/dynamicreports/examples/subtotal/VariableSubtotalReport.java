@@ -72,9 +72,7 @@ public class VariableSubtotalReport {
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
 
-        CustomSubtotalBuilder<BigDecimal> unitPriceSbt = sbt.customValue(new UnitPriceSubtotal(), itemColumn)
-                                                            .setLabel("sum(price) / sum(quantity)")
-                                                            .setDataType(type.bigDecimalType());
+        CustomSubtotalBuilder<BigDecimal> unitPriceSbt = sbt.customValue(new UnitPriceSubtotal(), itemColumn).setLabel("sum(price) / sum(quantity)").setDataType(type.bigDecimalType());
 
         try {
             report().setTemplate(Templates.reportTemplate)

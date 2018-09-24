@@ -63,14 +63,12 @@ public class CrosstabReport {
     }
 
     private void build() {
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
         CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
+                                       .headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle))
                                        .rowGroups(rowGroup)
                                        .columnGroups(columnGroup)
                                        .measures(ctab.measure("Quantity", "quantity", Integer.class, Calculation.SUM), ctab.measure("Unit price", "unitprice", BigDecimal.class, Calculation.SUM));

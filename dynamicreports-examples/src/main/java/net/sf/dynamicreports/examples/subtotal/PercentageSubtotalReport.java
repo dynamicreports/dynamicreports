@@ -73,34 +73,18 @@ public class PercentageSubtotalReport {
         ColumnGroupBuilder countryGroup = grp.group(countryColumn);
         ColumnGroupBuilder itemGroup = grp.group(itemColumn);
 
-        StyleBuilder countryLabelStyle = stl.style()
-                                            .setForegroundColor(Color.RED);
-        StyleBuilder countryStyle = stl.style(countryLabelStyle)
-                                       .setTopBorder(stl.pen1Point());
-        StyleBuilder itemInCountryLabelStyle = stl.style()
-                                                  .setForegroundColor(Color.GREEN);
-        StyleBuilder itemInCountryStyle = stl.style(itemInCountryLabelStyle)
-                                             .setTopBorder(stl.pen1Point());
-        StyleBuilder itemLabelStyle = stl.style()
-                                         .setForegroundColor(Color.BLUE);
-        StyleBuilder itemStyle = stl.style(itemLabelStyle)
-                                    .setTopBorder(stl.pen1Point());
+        StyleBuilder countryLabelStyle = stl.style().setForegroundColor(Color.RED);
+        StyleBuilder countryStyle = stl.style(countryLabelStyle).setTopBorder(stl.pen1Point());
+        StyleBuilder itemInCountryLabelStyle = stl.style().setForegroundColor(Color.GREEN);
+        StyleBuilder itemInCountryStyle = stl.style(itemInCountryLabelStyle).setTopBorder(stl.pen1Point());
+        StyleBuilder itemLabelStyle = stl.style().setForegroundColor(Color.BLUE);
+        StyleBuilder itemStyle = stl.style(itemLabelStyle).setTopBorder(stl.pen1Point());
 
-        PercentageSubtotalBuilder countryPercentage = sbt.percentage(priceColumn)
-                                                         .setLabel("country price [%]")
-                                                         .setLabelStyle(countryLabelStyle)
-                                                         .setStyle(countryStyle);
+        PercentageSubtotalBuilder countryPercentage = sbt.percentage(priceColumn).setLabel("country price [%]").setLabelStyle(countryLabelStyle).setStyle(countryStyle);
 
-        PercentageSubtotalBuilder itemInCountryPercentage = sbt.percentage(priceColumn)
-                                                               .setLabel("item in country price[%]")
-                                                               .setLabelStyle(itemInCountryLabelStyle)
-                                                               .setStyle(itemInCountryStyle);
+        PercentageSubtotalBuilder itemInCountryPercentage = sbt.percentage(priceColumn).setLabel("item in country price[%]").setLabelStyle(itemInCountryLabelStyle).setStyle(itemInCountryStyle);
 
-        PercentageSubtotalBuilder itemPercentage = sbt.percentage(priceColumn)
-                                                      .setLabel("item price[%]")
-                                                      .setLabelStyle(itemLabelStyle)
-                                                      .setStyle(itemStyle)
-                                                      .setTotalType(PercentageTotalType.REPORT);
+        PercentageSubtotalBuilder itemPercentage = sbt.percentage(priceColumn).setLabel("item price[%]").setLabelStyle(itemLabelStyle).setStyle(itemStyle).setTotalType(PercentageTotalType.REPORT);
 
         try {
             report().setTemplate(Templates.reportTemplate)

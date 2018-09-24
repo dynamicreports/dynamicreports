@@ -114,8 +114,7 @@ public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
 
     private String getColorString(Color color) {
         int colorMask = Integer.parseInt("FFFFFF", 16);
-        String hex = Integer.toHexString(color.getRGB() & colorMask)
-                            .toUpperCase();
+        String hex = Integer.toHexString(color.getRGB() & colorMask).toUpperCase();
         return "0x" + ("000000" + hex).substring(hex.length());
     }
 

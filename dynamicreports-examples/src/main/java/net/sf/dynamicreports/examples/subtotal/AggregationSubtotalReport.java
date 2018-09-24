@@ -67,50 +67,29 @@ public class AggregationSubtotalReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        AggregationSubtotalBuilder<Long> itemCount = sbt.count(itemColumn)
-                                                        .setLabel("count");
-        AggregationSubtotalBuilder<Long> itemDistCount = sbt.distinctCount(itemColumn)
-                                                            .setLabel("distinct count");
-        AggregationSubtotalBuilder<BigDecimal> itemSum = sbt.sum(unitPriceColumn)
-                                                            .setLabel("unit price sum")
-                                                            .setShowInColumn(itemColumn);
+        AggregationSubtotalBuilder<Long> itemCount = sbt.count(itemColumn).setLabel("count");
+        AggregationSubtotalBuilder<Long> itemDistCount = sbt.distinctCount(itemColumn).setLabel("distinct count");
+        AggregationSubtotalBuilder<BigDecimal> itemSum = sbt.sum(unitPriceColumn).setLabel("unit price sum").setShowInColumn(itemColumn);
 
-        AggregationSubtotalBuilder<Long> orderDateCount = sbt.count(orderDateColumn)
-                                                             .setLabel("count");
-        AggregationSubtotalBuilder<Long> orderDateDistCount = sbt.distinctCount(orderDateColumn)
-                                                                 .setLabel("distinct count");
-        AggregationSubtotalBuilder<Date> orderDateMin = sbt.min(orderDateColumn)
-                                                           .setLabel("min value");
-        AggregationSubtotalBuilder<Date> orderDateMax = sbt.max(orderDateColumn)
-                                                           .setLabel("max value");
+        AggregationSubtotalBuilder<Long> orderDateCount = sbt.count(orderDateColumn).setLabel("count");
+        AggregationSubtotalBuilder<Long> orderDateDistCount = sbt.distinctCount(orderDateColumn).setLabel("distinct count");
+        AggregationSubtotalBuilder<Date> orderDateMin = sbt.min(orderDateColumn).setLabel("min value");
+        AggregationSubtotalBuilder<Date> orderDateMax = sbt.max(orderDateColumn).setLabel("max value");
 
-        AggregationSubtotalBuilder<Integer> quantitySum = sbt.sum(quantityColumn)
-                                                             .setLabel("sum");
-        AggregationSubtotalBuilder<Number> quantityAvg = sbt.avg(quantityColumn)
-                                                            .setLabel("avg");
-        AggregationSubtotalBuilder<Long> quantityCount = sbt.count(quantityColumn)
-                                                            .setLabel("count");
-        AggregationSubtotalBuilder<Long> quantityDistCount = sbt.distinctCount(quantityColumn)
-                                                                .setLabel("distinct count");
-        AggregationSubtotalBuilder<Integer> quantityMin = sbt.min(quantityColumn)
-                                                             .setLabel("min value");
-        AggregationSubtotalBuilder<Integer> quantityMax = sbt.max(quantityColumn)
-                                                             .setLabel("max value");
+        AggregationSubtotalBuilder<Integer> quantitySum = sbt.sum(quantityColumn).setLabel("sum");
+        AggregationSubtotalBuilder<Number> quantityAvg = sbt.avg(quantityColumn).setLabel("avg");
+        AggregationSubtotalBuilder<Long> quantityCount = sbt.count(quantityColumn).setLabel("count");
+        AggregationSubtotalBuilder<Long> quantityDistCount = sbt.distinctCount(quantityColumn).setLabel("distinct count");
+        AggregationSubtotalBuilder<Integer> quantityMin = sbt.min(quantityColumn).setLabel("min value");
+        AggregationSubtotalBuilder<Integer> quantityMax = sbt.max(quantityColumn).setLabel("max value");
 
-        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum(unitPriceColumn)
-                                                                 .setLabel("sum");
-        AggregationSubtotalBuilder<Number> unitPriceAvg = sbt.avg(unitPriceColumn)
-                                                             .setLabel("avg");
-        AggregationSubtotalBuilder<Long> unitPriceCount = sbt.count(unitPriceColumn)
-                                                             .setLabel("count");
-        AggregationSubtotalBuilder<Long> unitPriceDistCount = sbt.distinctCount(unitPriceColumn)
-                                                                 .setLabel("distinct count");
-        AggregationSubtotalBuilder<BigDecimal> unitPriceFirst = sbt.first(unitPriceColumn)
-                                                                   .setLabel("first value");
-        AggregationSubtotalBuilder<Number> unitPriceStdDev = sbt.stdDev(unitPriceColumn)
-                                                                .setLabel("standard deviation");
-        AggregationSubtotalBuilder<Number> unitPriceVar = sbt.var(unitPriceColumn)
-                                                             .setLabel("variance");
+        AggregationSubtotalBuilder<BigDecimal> unitPriceSum = sbt.sum(unitPriceColumn).setLabel("sum");
+        AggregationSubtotalBuilder<Number> unitPriceAvg = sbt.avg(unitPriceColumn).setLabel("avg");
+        AggregationSubtotalBuilder<Long> unitPriceCount = sbt.count(unitPriceColumn).setLabel("count");
+        AggregationSubtotalBuilder<Long> unitPriceDistCount = sbt.distinctCount(unitPriceColumn).setLabel("distinct count");
+        AggregationSubtotalBuilder<BigDecimal> unitPriceFirst = sbt.first(unitPriceColumn).setLabel("first value");
+        AggregationSubtotalBuilder<Number> unitPriceStdDev = sbt.stdDev(unitPriceColumn).setLabel("standard deviation");
+        AggregationSubtotalBuilder<Number> unitPriceVar = sbt.var(unitPriceColumn).setLabel("variance");
 
         try {
             report().setTemplate(Templates.reportTemplate)

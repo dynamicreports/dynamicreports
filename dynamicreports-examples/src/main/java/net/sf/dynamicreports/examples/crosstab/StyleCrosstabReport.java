@@ -69,40 +69,24 @@ public class StyleCrosstabReport {
     }
 
     private void build() {
-        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class)
-                                                       .setTotalHeader("Total for state");
+        CrosstabRowGroupBuilder<String> rowGroup = ctab.rowGroup("state", String.class).setTotalHeader("Total for state");
 
         CrosstabColumnGroupBuilder<String> columnGroup = ctab.columnGroup("item", String.class);
 
         CrosstabMeasureBuilder<Integer> quantityMeasure = ctab.measure("Quantity", "quantity", Integer.class, Calculation.SUM);
         CrosstabMeasureBuilder<BigDecimal> unitPriceMeasure = ctab.measure("Unit price", "unitprice", BigDecimal.class, Calculation.SUM);
 
-        ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 600))
-                                                .setBackgroundColor(new Color(210, 255, 210))
-                                                .setBorder(stl.pen1Point());
-        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 150))
-                                                .setBackgroundColor(new Color(255, 210, 210))
-                                                .setBorder(stl.pen1Point());
+        ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(unitPriceMeasure, 600)).setBackgroundColor(new Color(210, 255, 210)).setBorder(stl.pen1Point());
+        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(unitPriceMeasure, 150)).setBackgroundColor(new Color(255, 210, 210)).setBorder(stl.pen1Point());
 
-        StyleBuilder unitPriceStyle = stl.style()
-                                         .conditionalStyles(condition1, condition2)
-                                         .setBorder(stl.pen1Point());
-        StyleBuilder totalCellStyle = stl.style()
-                                         .setBackgroundColor(new Color(200, 200, 255))
-                                         .setBorder(stl.pen1Point());
+        StyleBuilder unitPriceStyle = stl.style().conditionalStyles(condition1, condition2).setBorder(stl.pen1Point());
+        StyleBuilder totalCellStyle = stl.style().setBackgroundColor(new Color(200, 200, 255)).setBorder(stl.pen1Point());
 
-        unitPriceMeasure.setStyle(unitPriceStyle)
-                        .setStyle(totalCellStyle, rowGroup)
-                        .setStyle(totalCellStyle, rowGroup, columnGroup);
-        quantityMeasure.setStyle(totalCellStyle, rowGroup)
-                       .setStyle(totalCellStyle, rowGroup, columnGroup);
+        unitPriceMeasure.setStyle(unitPriceStyle).setStyle(totalCellStyle, rowGroup).setStyle(totalCellStyle, rowGroup, columnGroup);
+        quantityMeasure.setStyle(totalCellStyle, rowGroup).setStyle(totalCellStyle, rowGroup, columnGroup);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
-                                       .headerCell(cmp.text("State / Item")
-                                                      .setStyle(Templates.boldCenteredStyle))
-                                       .rowGroups(rowGroup)
-                                       .columnGroups(columnGroup)
-                                       .measures(quantityMeasure, unitPriceMeasure);
+        CrosstabBuilder crosstab =
+            ctab.crosstab().headerCell(cmp.text("State / Item").setStyle(Templates.boldCenteredStyle)).rowGroups(rowGroup).columnGroups(columnGroup).measures(quantityMeasure, unitPriceMeasure);
 
         try {
             report().setPageFormat(PageType.A4, PageOrientation.LANDSCAPE)

@@ -72,17 +72,13 @@ public class ConditionalStyleReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        ConditionalStyleBuilder condition1 = stl.conditionalStyle(new OrderDateConditionExpression())
-                                                .setBackgroundColor(new Color(255, 210, 210));
-        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.greater(unitPriceColumn, 20))
-                                                .setBackgroundColor(new Color(210, 255, 210));
+        ConditionalStyleBuilder condition1 = stl.conditionalStyle(new OrderDateConditionExpression()).setBackgroundColor(new Color(255, 210, 210));
+        ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.greater(unitPriceColumn, 20)).setBackgroundColor(new Color(210, 255, 210));
 
-        StyleBuilder orderDateStyle = stl.style()
-                                         .conditionalStyles(condition1);
+        StyleBuilder orderDateStyle = stl.style().conditionalStyles(condition1);
         orderDateColumn.setStyle(orderDateStyle);
 
-        StyleBuilder unitPriceStyle = stl.style()
-                                         .conditionalStyles(condition2);
+        StyleBuilder unitPriceStyle = stl.style().conditionalStyles(condition2);
         unitPriceColumn.setStyle(unitPriceStyle);
 
         try {

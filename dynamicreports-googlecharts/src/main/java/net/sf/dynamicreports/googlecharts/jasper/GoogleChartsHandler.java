@@ -60,16 +60,18 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
     /**
      * <p>add.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name           a {@link java.lang.String} object.
      * @param componentClass a {@link java.lang.Class} object.
-     * @param handler a {@link net.sf.jasperreports.engine.export.GenericElementHandler} object.
+     * @param handler        a {@link net.sf.jasperreports.engine.export.GenericElementHandler} object.
      */
     public void add(String name, Class<? extends Component> componentClass, GenericElementHandler handler) {
         components.put(name, componentClass);
         handlers.put(name, handler);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void configureDigester(Digester digester) {
         for (String name : components.keySet()) {
@@ -78,42 +80,43 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isToWrite(JRComponentElement componentElement, JRXmlWriter reportWriter) {
         return false;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void writeToXml(JRComponentElement componentElement, JRXmlWriter reportWriter) throws IOException {
-        if (components.containsKey(componentElement.getComponentKey()
-                                                   .getName())) {
+        if (components.containsKey(componentElement.getComponentKey().getName())) {
             JRXmlWriteHelper writer = reportWriter.getXmlWriteHelper();
 
-            String namespaceURI = componentElement.getComponentKey()
-                                                  .getNamespace();
-            String schemaLocation = ComponentsEnvironment.getInstance(DefaultJasperReportsContext.getInstance())
-                                                         .getBundle(namespaceURI)
-                                                         .getXmlParser()
-                                                         .getPublicSchemaLocation();
-            XmlNamespace namespace = new XmlNamespace(namespaceURI, componentElement.getComponentKey()
-                                                                                    .getNamespacePrefix(), schemaLocation);
+            String namespaceURI = componentElement.getComponentKey().getNamespace();
+            String schemaLocation = ComponentsEnvironment.getInstance(DefaultJasperReportsContext.getInstance()).getBundle(namespaceURI).getXmlParser().getPublicSchemaLocation();
+            XmlNamespace namespace = new XmlNamespace(namespaceURI, componentElement.getComponentKey().getNamespacePrefix(), schemaLocation);
 
-            writer.startElement(componentElement.getComponentKey()
-                                                .getName(), namespace);
+            writer.startElement(componentElement.getComponentKey().getName(), namespace);
 
             writer.closeElement();
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getNamespace() {
         return GoogleChartsExtensionsRegistryFactory.NAMESPACE;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public GenericElementHandler getHandler(String elementName, String exporterKey) {
         if (handlers.containsKey(elementName)) {

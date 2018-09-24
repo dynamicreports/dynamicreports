@@ -59,8 +59,7 @@ public class SeriesBarChartReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold()
-                                  .setFontSize(12);
+        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
         TextColumnBuilder<String> stateColumn = col.column("State", "state", type.stringType());
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
@@ -74,10 +73,8 @@ public class SeriesBarChartReport {
                                 .setTitle("Bar chart")
                                 .setTitleFont(boldFont)
                                 .setCategory(stateColumn)
-                                .series(cht.serie(quantityColumn)
-                                           .setSeries(itemColumn))
-                                .setCategoryAxisFormat(cht.axisFormat()
-                                                          .setLabel("Item")))
+                                .series(cht.serie(quantityColumn).setSeries(itemColumn))
+                                .setCategoryAxisFormat(cht.axisFormat().setLabel("Item")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

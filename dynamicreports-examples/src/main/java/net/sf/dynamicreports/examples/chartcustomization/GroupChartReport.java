@@ -68,23 +68,17 @@ public class GroupChartReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> salesColumn = col.column("Sales", "sales", type.bigDecimalType());
 
-        Bar3DChartBuilder chart = cht.bar3DChart()
-                                     .setFixedHeight(180)
-                                     .setCategory(itemColumn)
-                                     .series(cht.serie(quantityColumn), cht.serie(salesColumn))
-                                     .setCategoryAxisFormat(cht.axisFormat()
-                                                               .setLabel("Item"));
+        Bar3DChartBuilder chart =
+            cht.bar3DChart().setFixedHeight(180).setCategory(itemColumn).series(cht.serie(quantityColumn), cht.serie(salesColumn)).setCategoryAxisFormat(cht.axisFormat().setLabel("Item"));
 
-        ColumnGroupBuilder countryGroup = grp.group(countryColumn)
-                                             .footer(chart);
+        ColumnGroupBuilder countryGroup = grp.group(countryColumn).footer(chart);
 
         try {
             report().setTemplate(Templates.reportTemplate)
                     .columns(countryColumn, itemColumn, quantityColumn, salesColumn)
                     .title(Templates.createTitleComponent("GroupChart"))
                     .groupBy(countryGroup)
-                    .summary(cmp.text("All countries")
-                                .setStyle(Templates.bold12CenteredStyle), chart)
+                    .summary(cmp.text("All countries").setStyle(Templates.bold12CenteredStyle), chart)
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();

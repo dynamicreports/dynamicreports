@@ -56,14 +56,9 @@ public class MapReport {
 
     private void build() {
         try {
-            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html")
-                                                           .setImagesDirName("c:/images")
-                                                           .setOutputImagesToDir(true);
+            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter("c:/report.html").setImagesDirName("c:/images").setOutputImagesToDir(true);
 
-            report().setTemplate(template())
-                    .title(Templates.createTitleComponent("Map"), cmp.map(40.7f, -74f, 12)
-                                                                     .setFixedHeight(750))
-                    .toHtml(htmlExporter);
+            report().setTemplate(template()).title(Templates.createTitleComponent("Map"), cmp.map(40.7f, -74f, 12).setFixedHeight(750)).toHtml(htmlExporter);
         } catch (DRException e) {
             e.printStackTrace();
         }

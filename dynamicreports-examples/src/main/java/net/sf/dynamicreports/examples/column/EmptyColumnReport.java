@@ -60,11 +60,9 @@ public class EmptyColumnReport {
     private void build() {
         try {
             report().setTemplate(Templates.reportTemplate)
-                    .columns(col.column("Item", "item", type.stringType()), col.emptyColumn()
-                                                                               .setFixedWidth(30), col.column("Quantity", "quantity", type.integerType()), col.emptyColumn(false, true)
-                                                                                                                                                              .setFixedWidth(20),
-                             col.column("Unit price", "unitprice", type.bigDecimalType()), col.emptyColumn(true, true)
-                                                                                              .setFixedWidth(20), col.column("Order date", "orderdate", type.dateType()))
+                    .columns(col.column("Item", "item", type.stringType()), col.emptyColumn().setFixedWidth(30), col.column("Quantity", "quantity", type.integerType()),
+                             col.emptyColumn(false, true).setFixedWidth(20), col.column("Unit price", "unitprice", type.bigDecimalType()), col.emptyColumn(true, true).setFixedWidth(20),
+                             col.column("Order date", "orderdate", type.dateType()))
                     .title(Templates.createTitleComponent("EmptyColumn"))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())

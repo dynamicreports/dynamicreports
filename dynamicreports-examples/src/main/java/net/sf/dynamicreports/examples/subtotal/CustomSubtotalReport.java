@@ -68,16 +68,11 @@ public class CustomSubtotalReport {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> priceColumn = col.column("Price", "price", type.bigDecimalType());
-        TextColumnBuilder<BigDecimal> unitPriceColumn = priceColumn.divide(2, quantityColumn)
-                                                                   .setTitle("Price / Quantity");
+        TextColumnBuilder<BigDecimal> unitPriceColumn = priceColumn.divide(2, quantityColumn).setTitle("Price / Quantity");
 
-        quantitySum = sbt.sum(quantityColumn)
-                         .setLabel("sum");
-        priceSum = sbt.sum(priceColumn)
-                      .setLabel("sum");
-        CustomSubtotalBuilder<BigDecimal> unitPriceSbt = sbt.customValue(new UnitPriceSubtotal(), unitPriceColumn)
-                                                            .setLabel("sum(price) / sum(quantity)")
-                                                            .setDataType(type.bigDecimalType());
+        quantitySum = sbt.sum(quantityColumn).setLabel("sum");
+        priceSum = sbt.sum(priceColumn).setLabel("sum");
+        CustomSubtotalBuilder<BigDecimal> unitPriceSbt = sbt.customValue(new UnitPriceSubtotal(), unitPriceColumn).setLabel("sum(price) / sum(quantity)").setDataType(type.bigDecimalType());
 
         try {
             report().setTemplate(Templates.reportTemplate)

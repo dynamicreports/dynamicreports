@@ -63,13 +63,11 @@ public class ColumnTitleGroupReport {
     private void build() {
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Date> orderDateColumn = col.column("Order date", "orderdate", type.dateType());
-        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType())
-                                                       .setFixedWidth(50);
+        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType()).setFixedWidth(50);
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
         ColumnTitleGroupBuilder titleGroup2 = grid.titleGroup("Group 2", quantityColumn, unitPriceColumn);
-        ColumnTitleGroupBuilder titleGroup1 = grid.titleGroup("Group 1", orderDateColumn, titleGroup2)
-                                                  .setTitleFixedWidth(450);
+        ColumnTitleGroupBuilder titleGroup1 = grid.titleGroup("Group 1", orderDateColumn, titleGroup2).setTitleFixedWidth(450);
 
         try {
             report().setTemplate(Templates.reportTemplate)

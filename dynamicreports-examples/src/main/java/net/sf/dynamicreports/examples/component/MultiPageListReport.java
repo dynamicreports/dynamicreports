@@ -58,23 +58,16 @@ public class MultiPageListReport {
     }
 
     private void build() {
-        StyleBuilder style = stl.style(stl.pen1Point())
-                                .setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
+        StyleBuilder style = stl.style(stl.pen1Point()).setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.MIDDLE);
 
         MultiPageListBuilder multiPageList = cmp.multiPageList();
         for (int i = 0; i < 10; i++) {
-            TextFieldBuilder<String> textField = cmp.text("Title component " + (i + 1))
-                                                    .setFixedHeight(100)
-                                                    .setStyle(style);
+            TextFieldBuilder<String> textField = cmp.text("Title component " + (i + 1)).setFixedHeight(100).setStyle(style);
             multiPageList.add(textField);
         }
 
         try {
-            report().setTemplate(Templates.reportTemplate)
-                    .title(Templates.createTitleComponent("MultiPageList"))
-                    .summary(multiPageList)
-                    .pageFooter(Templates.footerComponent)
-                    .show();
+            report().setTemplate(Templates.reportTemplate).title(Templates.createTitleComponent("MultiPageList")).summary(multiPageList).pageFooter(Templates.footerComponent).show();
         } catch (DRException e) {
             e.printStackTrace();
         }

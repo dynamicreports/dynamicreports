@@ -28,7 +28,9 @@ package net.sf.dynamicreports.examples.genericelement.openflashchart;
  * @version $Id: $Id
  */
 public interface ChartGenerator {
-    /** Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code> */
+    /**
+     * Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code>
+     */
     public static final String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
 
     /**

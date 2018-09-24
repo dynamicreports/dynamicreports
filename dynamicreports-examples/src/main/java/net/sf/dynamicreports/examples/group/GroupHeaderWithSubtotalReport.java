@@ -75,9 +75,7 @@ public class GroupHeaderWithSubtotalReport {
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        CustomGroupBuilder yearGroup = grp.group(new YearExpression())
-                                          .groupByDataType()
-                                          .headerWithSubtotal();
+        CustomGroupBuilder yearGroup = grp.group(new YearExpression()).groupByDataType().headerWithSubtotal();
 
         try {
             report().setTemplate(Templates.reportTemplate)
@@ -122,8 +120,7 @@ public class GroupHeaderWithSubtotalReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            return type.dateYearType()
-                       .valueToString("orderdate", reportParameters);
+            return type.dateYearType().valueToString("orderdate", reportParameters);
         }
     }
 }
