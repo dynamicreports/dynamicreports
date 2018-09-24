@@ -40,14 +40,16 @@ public class PercentageExpression extends AbstractComplexExpression<Double> {
      * <p>Constructor for PercentageExpression.</p>
      *
      * @param actualExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param totalExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param totalExpression  a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     public PercentageExpression(DRIExpression<? extends Number> actualExpression, DRIExpression<? extends Number> totalExpression) {
         addExpression(actualExpression);
         addExpression(totalExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double evaluate(List<?> values, ReportParameters reportParameters) {
         return ((Number) values.get(0)).doubleValue() / ((Number) values.get(1)).doubleValue();

@@ -44,8 +44,8 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
      * <p>Constructor for AbstractBetweenValueExpression.</p>
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-     * @param min a {@link java.lang.Number} object.
-     * @param max a {@link java.lang.Number} object.
+     * @param min   a {@link java.lang.Number} object.
+     * @param max   a {@link java.lang.Number} object.
      */
     public AbstractBetweenValueExpression(DRIValue<T> value, Number min, Number max) {
         Validate.notNull(value, "value must not be null");
@@ -57,7 +57,9 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
         this.max = max;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Number actualValue = reportParameters.getValue(value);
@@ -67,7 +69,9 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
         return false;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;
@@ -77,8 +81,8 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
      * <p>compare.</p>
      *
      * @param actualValue a {@link java.lang.Number} object.
-     * @param min a {@link java.lang.Number} object.
-     * @param max a {@link java.lang.Number} object.
+     * @param min         a {@link java.lang.Number} object.
+     * @param max         a {@link java.lang.Number} object.
      * @return a {@link java.lang.Boolean} object.
      */
     protected abstract Boolean compare(Number actualValue, Number min, Number max);

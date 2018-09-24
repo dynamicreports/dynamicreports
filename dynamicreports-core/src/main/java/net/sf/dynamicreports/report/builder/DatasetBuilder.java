@@ -64,7 +64,7 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     /**
      * <p>addField.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
      */
@@ -75,9 +75,9 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     /**
      * <p>addField.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name     a {@link java.lang.String} object.
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
-     * @param <U> a U object.
+     * @param <U>      a U object.
      * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
      */
     public <U> DatasetBuilder addField(String name, DRIDataType<? super U, U> dataType) {
@@ -173,7 +173,7 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     /**
      * <p>setQuery.</p>
      *
-     * @param text a {@link java.lang.String} object.
+     * @param text     a {@link java.lang.String} object.
      * @param language a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
      */
@@ -270,7 +270,7 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     /**
      * <p>setDataSource.</p>
      *
-     * @param sql a {@link java.lang.String} object.
+     * @param sql        a {@link java.lang.String} object.
      * @param connection a {@link java.sql.Connection} object.
      * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
      */
@@ -282,7 +282,7 @@ public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     /**
      * <p>setDataSource.</p>
      *
-     * @param query a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
+     * @param query      a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
      * @param connection a {@link java.sql.Connection} object.
      * @return a {@link net.sf.dynamicreports.report.builder.DatasetBuilder} object.
      */

@@ -74,16 +74,14 @@ public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalL
     /**
      * <p>add.</p>
      *
-     * @param gap a int.
+     * @param gap        a int.
      * @param components a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.HorizontalListBuilder} object.
      */
     public HorizontalListBuilder add(int gap, ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         for (ComponentBuilder<?, ?> component : components) {
-            add(Components.hListCell(Components.filler()
-                                               .setWidth(gap))
-                          .widthFixed());
+            add(Components.hListCell(Components.filler().setWidth(gap)).widthFixed());
             add(component);
         }
         return this;
@@ -107,16 +105,14 @@ public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalL
     /**
      * <p>add.</p>
      *
-     * @param gap a int.
+     * @param gap   a int.
      * @param cells a {@link net.sf.dynamicreports.report.builder.component.HorizontalListCellBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.HorizontalListBuilder} object.
      */
     public HorizontalListBuilder add(int gap, HorizontalListCellBuilder... cells) {
         Validate.notNull(cells, "cells must not be null");
         for (HorizontalListCellBuilder cell : cells) {
-            add(Components.hListCell(Components.filler()
-                                               .setWidth(gap))
-                          .widthFixed(), cell);
+            add(Components.hListCell(Components.filler().setWidth(gap)).widthFixed(), cell);
         }
         return this;
     }
@@ -164,9 +160,7 @@ public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalL
             Validate.isTrue(verticalGap >= 0, "verticalGap must be >= 0");
         }
         if (verticalGap != null && verticalGap > 0) {
-            getObject().addComponent(HorizontalCellComponentAlignment.CENTER, VerticalCellComponentAlignment.TOP, Components.filler()
-                                                                                                                            .setHeight(verticalGap)
-                                                                                                                            .build());
+            getObject().addComponent(HorizontalCellComponentAlignment.CENTER, VerticalCellComponentAlignment.TOP, Components.filler().setHeight(verticalGap).build());
         }
         row = new DRList(listType);
         getObject().addComponent(row);
@@ -184,7 +178,9 @@ public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalL
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalListBuilder setStyle(ReportStyleBuilder style) {
         if (style != null) {

@@ -54,9 +54,9 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
      *
      * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      * @param serieExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
-     * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
-     * @param key a {@link java.lang.String} object.
+     * @param resetType       a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param resetGroup      a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
+     * @param key             a {@link java.lang.String} object.
      */
     public SerieValueExpression(DRIDesignExpression valueExpression, DRIDesignExpression serieExpression, ResetType resetType, DRDesignGroup resetGroup, String key) {
         this.valueExpression = valueExpression;
@@ -66,7 +66,9 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
         this.key = key;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Number evaluate(ReportParameters reportParameters) {
         if (reportParameters.getReportRowNumber() <= 1) {
@@ -86,8 +88,7 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
                 resetValue = reportParameters.getColumnNumber();
                 break;
             case GROUP:
-                resetValue = reportParameters.getValue(resetGroup.getGroupExpression()
-                                                                 .getName());
+                resetValue = reportParameters.getValue(resetGroup.getGroupExpression().getName());
                 break;
             default:
                 throw new DRDesignReportException("Reset type " + resetType.name() + " not supported");

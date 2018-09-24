@@ -42,7 +42,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
     private String labelFormat;
     private String legendLabelFormat;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getCircular() {
         return circular;
@@ -57,7 +59,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.circular = circular;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowLabels() {
         return showLabels;
@@ -72,7 +76,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.showLabels = showLabels;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowValues() {
         return showValues;
@@ -87,7 +93,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.showValues = showValues;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getValuePattern() {
         return valuePattern;
@@ -102,7 +110,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.valuePattern = valuePattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowPercentages() {
         return showPercentages;
@@ -117,7 +127,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.showPercentages = showPercentages;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPercentValuePattern() {
         return percentValuePattern;
@@ -132,7 +144,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.percentValuePattern = percentValuePattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getLabelFormat() {
         return labelFormat;
@@ -147,7 +161,9 @@ public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {
         this.labelFormat = labelFormat;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getLegendLabelFormat() {
         return legendLabelFormat;

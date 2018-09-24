@@ -60,16 +60,14 @@ public class DatasetTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignDataset dataset : accessor.getReport()
-                                                .getDatasets()) {
+        for (DRIDesignDataset dataset : accessor.getReport().getDatasets()) {
             addDataset(dataset);
         }
     }
 
     private void addDataset(DRIDesignDataset dataset) {
         try {
-            accessor.getDesign()
-                    .addDataset(dataset(dataset));
+            accessor.getDesign().addDataset(dataset(dataset));
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for dataset \"" + dataset.getName() + "\"", e);
         }
@@ -82,8 +80,7 @@ public class DatasetTransform {
         JRDesignDataset jrDataset = new JRDesignDataset(false);
         jrDataset.setName(dataset.getName());
         if (dataset.getQuery() != null) {
-            jrDataset.setQuery(accessor.getReportTransform()
-                                       .query(dataset.getQuery()));
+            jrDataset.setQuery(accessor.getReportTransform().query(dataset.getQuery()));
         }
         JasperCustomValues customValues = new JasperCustomValues();
         DatasetExpressionTransform datasetExpressionTransform = new DatasetExpressionTransform(dataset, jrDataset, customValues);
@@ -111,8 +108,7 @@ public class DatasetTransform {
 
     private void addScriptlet(JRDesignDataset jrDataset, Map<String, Object> parameters, String name) {
         try {
-            jrDataset.addScriptlet(accessor.getReportTransform()
-                                           .scriptlet(name, JasperScriptlet.class));
+            jrDataset.addScriptlet(accessor.getReportTransform().scriptlet(name, JasperScriptlet.class));
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for scriptlet \"" + name + "\"", e);
         }
@@ -131,15 +127,11 @@ public class DatasetTransform {
 
         JRDesignDatasetRun jrDatasetRun = new JRDesignDatasetRun();
         jrDatasetRun.setDatasetName(dataset.getName());
-        jrDatasetRun.setConnectionExpression(accessor.getExpressionTransform()
-                                                     .getExpression(dataset.getConnectionExpression()));
-        jrDatasetRun.setDataSourceExpression(accessor.getExpressionTransform()
-                                                     .getExpression(dataset.getDataSourceExpression()));
+        jrDatasetRun.setConnectionExpression(accessor.getExpressionTransform().getExpression(dataset.getConnectionExpression()));
+        jrDatasetRun.setDataSourceExpression(accessor.getExpressionTransform().getExpression(dataset.getDataSourceExpression()));
         DatasetParametersExpression parametersExpression = new DatasetParametersExpression(datasetParameters.get(dataset));
-        accessor.getExpressionTransform()
-                .addSimpleExpression(parametersExpression);
-        jrDatasetRun.setParametersMapExpression(accessor.getExpressionTransform()
-                                                        .getExpression(parametersExpression));
+        accessor.getExpressionTransform().addSimpleExpression(parametersExpression);
+        jrDatasetRun.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
         return jrDatasetRun;
     }
 

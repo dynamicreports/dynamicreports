@@ -36,7 +36,9 @@ public class DRTimeSeriesDataset extends DRSeriesDataset implements DRITimeSerie
 
     private TimePeriod timePeriodType;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TimePeriod getTimePeriodType() {
         return timePeriodType;

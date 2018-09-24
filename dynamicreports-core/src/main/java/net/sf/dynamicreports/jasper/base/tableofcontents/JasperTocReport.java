@@ -64,10 +64,10 @@ public class JasperTocReport {
      * <p>createTocReport.</p>
      *
      * @param jasperReportDesign a {@link net.sf.dynamicreports.jasper.base.JasperReportDesign} object.
-     * @param jasperPrint a {@link net.sf.jasperreports.engine.JasperPrint} object.
-     * @param parameters a {@link java.util.Map} object.
+     * @param jasperPrint        a {@link net.sf.jasperreports.engine.JasperPrint} object.
+     * @param parameters         a {@link java.util.Map} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
-     * @throws net.sf.jasperreports.engine.JRException if any.
+     * @throws net.sf.jasperreports.engine.JRException            if any.
      */
     public static void createTocReport(JasperReportDesign jasperReportDesign, JasperPrint jasperPrint, Map<String, Object> parameters) throws DRException, JRException {
         JasperCustomValues customValues = jasperReportDesign.getCustomValues();
@@ -92,23 +92,15 @@ public class JasperTocReport {
             }
             levels++;
 
-            DRPage tocPage = tocReport.getReport()
-                                      .getPage();
-            tocPage.setWidth(jasperReportDesign.getDesign()
-                                               .getPageWidth());
-            tocPage.setHeight(jasperReportDesign.getDesign()
-                                                .getPageHeight());
-            tocPage.setOrientation(ConstantTransform.pageOrientation(jasperReportDesign.getDesign()
-                                                                                       .getOrientationValue()));
+            DRPage tocPage = tocReport.getReport().getPage();
+            tocPage.setWidth(jasperReportDesign.getDesign().getPageWidth());
+            tocPage.setHeight(jasperReportDesign.getDesign().getPageHeight());
+            tocPage.setOrientation(ConstantTransform.pageOrientation(jasperReportDesign.getDesign().getOrientationValue()));
             MarginBuilder tocMargin = margin();
-            tocMargin.setTop(jasperReportDesign.getDesign()
-                                               .getTopMargin());
-            tocMargin.setLeft(jasperReportDesign.getDesign()
-                                                .getLeftMargin());
-            tocMargin.setBottom(jasperReportDesign.getDesign()
-                                                  .getBottomMargin());
-            tocMargin.setRight(jasperReportDesign.getDesign()
-                                                 .getRightMargin());
+            tocMargin.setTop(jasperReportDesign.getDesign().getTopMargin());
+            tocMargin.setLeft(jasperReportDesign.getDesign().getLeftMargin());
+            tocMargin.setBottom(jasperReportDesign.getDesign().getBottomMargin());
+            tocMargin.setRight(jasperReportDesign.getDesign().getRightMargin());
             tocReport.setLocale((Locale) parameters.get(JRParameter.REPORT_LOCALE));
             tocReport.setResourceBundle((ResourceBundle) parameters.get(JRParameter.REPORT_RESOURCE_BUNDLE));
             tocReport.setPageMargin(tocMargin);
@@ -123,14 +115,12 @@ public class JasperTocReport {
 
             TableOfContentsPosition tableOfContentsPosition = tableOfContents.getPosition();
             if (tableOfContentsPosition == null) {
-                tableOfContentsPosition = Defaults.getDefaults()
-                                                  .getTableOfContentsPosition();
+                tableOfContentsPosition = Defaults.getDefaults().getTableOfContentsPosition();
             }
             JasperPrint tocJasperPrint = tocReport.toJasperPrint();
-            for (int i = 0; i < tocJasperPrint.getPages()
-                                              .size(); i++) {
-                JRPrintPage page = tocJasperPrint.getPages()
-                                                 .get(i);
+            for (
+                int i = 0; i < tocJasperPrint.getPages().size(); i++) {
+                JRPrintPage page = tocJasperPrint.getPages().get(i);
                 switch (tableOfContentsPosition) {
                     case TOP:
                         jasperPrint.addPage(i, page);

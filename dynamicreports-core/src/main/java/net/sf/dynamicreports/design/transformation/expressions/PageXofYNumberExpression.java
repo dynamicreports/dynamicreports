@@ -46,14 +46,16 @@ public class PageXofYNumberExpression extends AbstractComplexExpression<String> 
      * <p>Constructor for PageXofYNumberExpression.</p>
      *
      * @param pageNumberFormatExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param index a int.
+     * @param index                      a int.
      */
     public PageXofYNumberExpression(DRIExpression<String> pageNumberFormatExpression, int index) {
         addExpression(pageNumberFormatExpression);
         this.index = index;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String pattern = (String) values.get(0);

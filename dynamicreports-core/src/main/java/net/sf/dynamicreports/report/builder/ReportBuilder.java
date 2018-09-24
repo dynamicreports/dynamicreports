@@ -158,27 +158,25 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>setPageFormat.</p>
      *
-     * @param pageType a {@link net.sf.dynamicreports.report.constant.PageType} object.
+     * @param pageType    a {@link net.sf.dynamicreports.report.constant.PageType} object.
      * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
      * @return a T object.
      */
     public T setPageFormat(PageType pageType, PageOrientation orientation) {
-        getObject().getPage()
-                   .setPageFormat(pageType, orientation);
+        getObject().getPage().setPageFormat(pageType, orientation);
         return (T) this;
     }
 
     /**
      * <p>setPageFormat.</p>
      *
-     * @param width a {@link java.lang.Integer} object.
-     * @param height a {@link java.lang.Integer} object.
+     * @param width       a {@link java.lang.Integer} object.
+     * @param height      a {@link java.lang.Integer} object.
      * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
      * @return a T object.
      */
     public T setPageFormat(Integer width, Integer height, PageOrientation orientation) {
-        getObject().getPage()
-                   .setPageFormat(width, height, orientation);
+        getObject().getPage().setPageFormat(width, height, orientation);
         return (T) this;
     }
 
@@ -190,8 +188,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setPageMargin(MarginBuilder margin) {
         Validate.notNull(margin, "margin must not be null");
-        getObject().getPage()
-                   .setMargin(margin.build());
+        getObject().getPage().setMargin(margin.build());
         return (T) this;
     }
 
@@ -202,8 +199,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setPageColumnsPerPage(Integer columnsPerPage) {
-        getObject().getPage()
-                   .setColumnsPerPage(columnsPerPage);
+        getObject().getPage().setColumnsPerPage(columnsPerPage);
         return (T) this;
     }
 
@@ -214,8 +210,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setPageColumnSpace(Integer columnSpace) {
-        getObject().getPage()
-                   .setColumnSpace(columnSpace);
+        getObject().getPage().setColumnSpace(columnSpace);
         return (T) this;
     }
 
@@ -235,8 +230,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setIgnorePageWidth(Boolean ignorePageWidth) {
-        getObject().getPage()
-                   .setIgnorePageWidth(ignorePageWidth);
+        getObject().getPage().setIgnorePageWidth(ignorePageWidth);
         return (T) this;
     }
 
@@ -294,8 +288,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Sets whether or not the title band is printed on a separate page.
      *
-     * @param titleOnANewPage
-     *          print the title band on a separate page
+     * @param titleOnANewPage print the title band on a separate page
      * @return a report builder
      */
     public T setTitleOnANewPage(Boolean titleOnANewPage) {
@@ -315,8 +308,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Sets whether or not the summary band is printed on a separate page.
      *
-     * @param summaryOnANewPage
-     *          print the summary band on a separate page
+     * @param summaryOnANewPage print the summary band on a separate page
      * @return a report builder
      */
     public T setSummaryOnANewPage(Boolean summaryOnANewPage) {
@@ -336,8 +328,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Sets whether or not the summary band is printed with the page header and footer.
      *
-     * @param summaryWithPageHeaderAndFooter
-     *          print the summary band with the page header and footer
+     * @param summaryWithPageHeaderAndFooter print the summary band with the page header and footer
      * @return a report builder
      */
     public T setSummaryWithPageHeaderAndFooter(Boolean summaryWithPageHeaderAndFooter) {
@@ -357,8 +348,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Sets whether or not the column footer band is printed at the bottom of the column
      *
-     * @param floatColumnFooter
-     *          print the column footer at the bottom of the column
+     * @param floatColumnFooter print the column footer at the bottom of the column
      * @return a report builder
      */
     public T setFloatColumnFooter(Boolean floatColumnFooter) {
@@ -449,7 +439,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addProperty.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key   a {@link java.lang.String} object.
      * @param value a {@link java.lang.String} object.
      * @return a T object.
      */
@@ -461,7 +451,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>setQuery.</p>
      *
-     * @param text a {@link java.lang.String} object.
+     * @param text     a {@link java.lang.String} object.
      * @param language a {@link java.lang.String} object.
      * @return a T object.
      */
@@ -518,7 +508,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>columnGrid.</p>
      *
-     * @param type a {@link net.sf.dynamicreports.report.constant.ListType} object.
+     * @param type       a {@link net.sf.dynamicreports.report.constant.ListType} object.
      * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
      * @return a T object.
      */
@@ -616,7 +606,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      * @return a T object.
      */
@@ -627,7 +617,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a T object.
      */
@@ -653,7 +643,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>setParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      * @return a T object.
      */
@@ -688,7 +678,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addField.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a T object.
      */
@@ -699,9 +689,9 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addField.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name     a {@link java.lang.String} object.
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
-     * @param <U> a U object.
+     * @param <U>      a U object.
      * @return a T object.
      */
     public <U> T addField(String name, DRIDataType<? super U, U> dataType) {
@@ -753,8 +743,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Adds a sort field to the dataset
      *
-     * @param sortColumns
-     *          columns to be sorted
+     * @param sortColumns columns to be sorted
      * @return a report builder
      */
     public T sortBy(TextColumnBuilder<?>... sortColumns) {
@@ -769,8 +758,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Adds a sort field to the dataset
      *
-     * @param sorts
-     *          the sort definitions
+     * @param sorts the sort definitions
      * @return a report builder
      */
     public T sortBy(SortBuilder... sorts) {
@@ -780,8 +768,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * Adds a sort field to the dataset
      *
-     * @param sorts
-     *          the sort definitions
+     * @param sorts the sort definitions
      * @return a report builder
      */
     public T addSort(SortBuilder... sorts) {
@@ -1091,8 +1078,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.TITLE)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.TITLE).build());
         }
         return (T) this;
     }
@@ -1117,8 +1103,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.PAGE_HEADER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.PAGE_HEADER).build());
         }
         return (T) this;
     }
@@ -1143,8 +1128,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.PAGE_FOOTER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.PAGE_FOOTER).build());
         }
         return (T) this;
     }
@@ -1169,8 +1153,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.COLUMN_HEADER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.COLUMN_HEADER).build());
         }
         return (T) this;
     }
@@ -1195,8 +1178,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.COLUMN_FOOTER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.COLUMN_FOOTER).build());
         }
         return (T) this;
     }
@@ -1204,7 +1186,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>subtotalsAtGroupHeader.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
      * @return a T object.
      */
@@ -1215,7 +1197,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addSubtotalAtGroupHeader.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
      * @return a T object.
      */
@@ -1224,9 +1206,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_HEADER)
-                                            .setGroup(group)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_HEADER).setGroup(group).build());
         }
         return (T) this;
     }
@@ -1234,7 +1214,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>subtotalsAtGroupFooter.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
      * @return a T object.
      */
@@ -1245,7 +1225,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addSubtotalAtGroupFooter.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
      * @return a T object.
      */
@@ -1254,9 +1234,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_FOOTER)
-                                            .setGroup(group)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_FOOTER).setGroup(group).build());
         }
         return (T) this;
     }
@@ -1281,8 +1259,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.FIRST_GROUP_HEADER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.FIRST_GROUP_HEADER).build());
         }
         return (T) this;
     }
@@ -1307,8 +1284,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.FIRST_GROUP_FOOTER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.FIRST_GROUP_FOOTER).build());
         }
         return (T) this;
     }
@@ -1333,8 +1309,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_GROUP_HEADER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_GROUP_HEADER).build());
         }
         return (T) this;
     }
@@ -1359,8 +1334,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_GROUP_FOOTER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_GROUP_FOOTER).build());
         }
         return (T) this;
     }
@@ -1385,8 +1359,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_PAGE_FOOTER)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.LAST_PAGE_FOOTER).build());
         }
         return (T) this;
     }
@@ -1411,8 +1384,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (SubtotalBuilder<?, ?> subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.SUMMARY)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.SUMMARY).build());
         }
         return (T) this;
     }
@@ -1420,7 +1392,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>subtotalsOfPercentageAtGroupHeader.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      * @return a T object.
      */
@@ -1431,7 +1403,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addSubtotalOfPercentageAtGroupHeader.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      * @return a T object.
      */
@@ -1440,9 +1412,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (PercentageSubtotalBuilder subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_HEADER)
-                                            .setGroup(group)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_HEADER).setGroup(group).build());
         }
         return (T) this;
     }
@@ -1450,7 +1420,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>subtotalsOfPercentageAtGroupFooter.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      * @return a T object.
      */
@@ -1461,7 +1431,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>addSubtotalOfPercentageAtGroupFooter.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      * @return a T object.
      */
@@ -1470,9 +1440,7 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
         for (PercentageSubtotalBuilder subtotal : subtotals) {
-            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_FOOTER)
-                                            .setGroup(group)
-                                            .build());
+            getObject().addSubtotal(subtotal.setPosition(SubtotalPosition.GROUP_FOOTER).setGroup(group).build());
         }
         return (T) this;
     }
@@ -1584,11 +1552,9 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Sets a dataset filter expression.
-     * The expression must be a type of Boolean
+     * Sets a dataset filter expression. The expression must be a type of Boolean
      *
-     * @param filterExpression
-     *          the filter expression
+     * @param filterExpression the filter expression
      * @return a report builder
      */
     public T setFilterExpression(DRIExpression<Boolean> filterExpression) {
@@ -1604,13 +1570,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the title split type
+     * @param splitType the title split type
      * @return a report builder
      */
     public T setTitleSplitType(SplitType splitType) {
-        getObject().getTitleBand()
-                   .setSplitType(splitType);
+        getObject().getTitleBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -1621,27 +1585,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setTitlePrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getTitleBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getTitleBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a title band style
      *
-     * @param style
-     *          the title band style
+     * @param style the title band style
      * @return a report builder
      */
     public T setTitleStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getTitleBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getTitleBand().getList().setStyle(style.build());
         } else {
-            getObject().getTitleBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getTitleBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -1654,18 +1612,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setTitleBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getTitleBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getTitleBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the title band.
-     * The band is printed on the first page and only once.
+     * Adds components to the title band. The band is printed on the first page and only once.
      *
-     * @param components
-     *          the title components
+     * @param components the title components
      * @return a report builder
      */
     public T title(ComponentBuilder<?, ?>... components) {
@@ -1673,19 +1627,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the title band.
-     * The band is printed on the first page and only once.
+     * Adds components to the title band. The band is printed on the first page and only once.
      *
-     * @param components
-     *          the title components
+     * @param components the title components
      * @return a report builder
      */
     public T addTitle(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getTitleBand()
-                       .addComponent(component.build());
+            getObject().getTitleBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -1698,13 +1649,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the page header split type
+     * @param splitType the page header split type
      * @return a report builder
      */
     public T setPageHeaderSplitType(SplitType splitType) {
-        getObject().getPageHeaderBand()
-                   .setSplitType(splitType);
+        getObject().getPageHeaderBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -1715,27 +1664,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setPageHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getPageHeaderBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getPageHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a page header band style
      *
-     * @param style
-     *          the page header band style
+     * @param style the page header band style
      * @return a report builder
      */
     public T setPageHeaderStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getPageHeaderBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getPageHeaderBand().getList().setStyle(style.build());
         } else {
-            getObject().getPageHeaderBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getPageHeaderBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -1748,18 +1691,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setPageHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getPageHeaderBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getPageHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the page header band.
-     * The band is printed on each page at the top of the page.
+     * Adds components to the page header band. The band is printed on each page at the top of the page.
      *
-     * @param components
-     *          the page header components
+     * @param components the page header components
      * @return a report builder
      */
     public T pageHeader(ComponentBuilder<?, ?>... components) {
@@ -1767,19 +1706,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page header band.
-     * The band is printed on each page at the top of the page.
+     * Adds components to the page header band. The band is printed on each page at the top of the page.
      *
-     * @param components
-     *          the page header components
+     * @param components the page header components
      * @return a report builder
      */
     public T addPageHeader(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getPageHeaderBand()
-                       .addComponent(component.build());
+            getObject().getPageHeaderBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -1792,13 +1728,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the page footer split type
+     * @param splitType the page footer split type
      * @return a report builder
      */
     public T setPageFooterSplitType(SplitType splitType) {
-        getObject().getPageFooterBand()
-                   .setSplitType(splitType);
+        getObject().getPageFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -1809,27 +1743,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setPageFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getPageFooterBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getPageFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a page footer band style
      *
-     * @param style
-     *          the page footer band style
+     * @param style the page footer band style
      * @return a report builder
      */
     public T setPageFooterStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getPageFooterBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getPageFooterBand().getList().setStyle(style.build());
         } else {
-            getObject().getPageFooterBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getPageFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -1842,18 +1770,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setPageFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getPageFooterBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getPageFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the page footer band.
-     * The band is printed on each page at the bottom of the page.
+     * Adds components to the page footer band. The band is printed on each page at the bottom of the page.
      *
-     * @param components
-     *          the page footer components
+     * @param components the page footer components
      * @return a report builder
      */
     public T pageFooter(ComponentBuilder<?, ?>... components) {
@@ -1861,19 +1785,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page footer band.
-     * The band is printed on each page at the bottom of the page.
+     * Adds components to the page footer band. The band is printed on each page at the bottom of the page.
      *
-     * @param components
-     *          the page footer components
+     * @param components the page footer components
      * @return a report builder
      */
     public T addPageFooter(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getPageFooterBand()
-                       .addComponent(component.build());
+            getObject().getPageFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -1886,13 +1807,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the column header split type
+     * @param splitType the column header split type
      * @return a report builder
      */
     public T setColumnHeaderSplitType(SplitType splitType) {
-        getObject().getColumnHeaderBand()
-                   .setSplitType(splitType);
+        getObject().getColumnHeaderBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -1903,27 +1822,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setColumnHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getColumnHeaderBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getColumnHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a column header band style
      *
-     * @param style
-     *          the column header band style
+     * @param style the column header band style
      * @return a report builder
      */
     public T setColumnHeaderStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getColumnHeaderBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getColumnHeaderBand().getList().setStyle(style.build());
         } else {
-            getObject().getColumnHeaderBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getColumnHeaderBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -1936,18 +1849,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setColumnHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getColumnHeaderBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getColumnHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the column header band.
-     * The band is printed on each page at the top of the page and it's placed below the page header band.
+     * Adds components to the column header band. The band is printed on each page at the top of the page and it's placed below the page header band.
      *
-     * @param components
-     *          the column header components
+     * @param components the column header components
      * @return a report builder
      */
     public T columnHeader(ComponentBuilder<?, ?>... components) {
@@ -1955,19 +1864,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column header band.
-     * The band is printed on each page at the top of the page and it's placed below the page header band.
+     * Adds components to the column header band. The band is printed on each page at the top of the page and it's placed below the page header band.
      *
-     * @param components
-     *          the column header components
+     * @param components the column header components
      * @return a report builder
      */
     public T addColumnHeader(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getColumnHeaderBand()
-                       .addComponent(component.build());
+            getObject().getColumnHeaderBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -1980,13 +1886,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the column footer split type
+     * @param splitType the column footer split type
      * @return a report builder
      */
     public T setColumnFooterSplitType(SplitType splitType) {
-        getObject().getColumnFooterBand()
-                   .setSplitType(splitType);
+        getObject().getColumnFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -1997,27 +1901,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setColumnFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getColumnFooterBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getColumnFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a column footer band style
      *
-     * @param style
-     *          the column footer band style
+     * @param style the column footer band style
      * @return a report builder
      */
     public T setColumnFooterStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getColumnFooterBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getColumnFooterBand().getList().setStyle(style.build());
         } else {
-            getObject().getColumnFooterBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getColumnFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2030,18 +1928,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setColumnFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getColumnFooterBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getColumnFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the column footer band.
-     * The band is printed on each page at the bottom of the page and it's placed above the page footer band.
+     * Adds components to the column footer band. The band is printed on each page at the bottom of the page and it's placed above the page footer band.
      *
-     * @param components
-     *          the column footer components
+     * @param components the column footer components
      * @return a report builder
      */
     public T columnFooter(ComponentBuilder<?, ?>... components) {
@@ -2049,19 +1943,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column footer band.
-     * The band is printed on each page at the bottom of the page and it's placed above the page footer band.
+     * Adds components to the column footer band. The band is printed on each page at the bottom of the page and it's placed above the page footer band.
      *
-     * @param components
-     *          the column footer components
+     * @param components the column footer components
      * @return a report builder
      */
     public T addColumnFooter(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getColumnFooterBand()
-                       .addComponent(component.build());
+            getObject().getColumnFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2074,67 +1965,51 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param group
-     *          the group to which to apply the split type
-     * @param splitType
-     *          the group header split type
+     * @param group     the group to which to apply the split type
+     * @param splitType the group header split type
      * @return a report builder
      */
     public T setGroupHeaderSplitType(GroupBuilder<?> group, SplitType splitType) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getHeaderBand()
-               .setSplitType(splitType);
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getHeaderBand().setSplitType(splitType);
         return (T) this;
     }
 
     /**
      * <p>setGroupHeaderPrintWhenExpression.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
     public T setGroupHeaderPrintWhenExpression(GroupBuilder<?> group, DRIExpression<Boolean> printWhenExpression) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getHeaderBand()
-               .setPrintWhenExpression(printWhenExpression);
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a group header band style
      *
-     * @param group
-     *          the group to which to apply the style
-     * @param style
-     *          the group header band style
+     * @param group the group to which to apply the style
+     * @param style the group header band style
      * @return a report builder
      */
     public T setGroupHeaderStyle(GroupBuilder<?> group, ReportStyleBuilder style) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
+        DRGroup drGroup = getObject().getGroups().get(index);
         if (style != null) {
-            drGroup.getHeaderBand()
-                   .getList()
-                   .setStyle(style.build());
+            drGroup.getHeaderBand().getList().setStyle(style.build());
         } else {
-            drGroup.getHeaderBand()
-                   .getList()
-                   .setStyle(null);
+            drGroup.getHeaderBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2142,32 +2017,25 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>setGroupHeaderBackgroundComponent.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a T object.
      */
     public T setGroupHeaderBackgroundComponent(GroupBuilder<?> group, ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getHeaderBand()
-               .getList()
-               .setBackgroundComponent(backgroundComponent.build());
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the group header band.
-     * The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
+     * Adds components to the group header band. The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
      *
-     * @param group
-     *          the group to which to add the components
-     * @param components
-     *          the group header components
+     * @param group      the group to which to add the components
+     * @param components the group header components
      * @return a report builder
      */
     public T groupHeader(GroupBuilder<?> group, ComponentBuilder<?, ?>... components) {
@@ -2175,27 +2043,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group header band.
-     * The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
+     * Adds components to the group header band. The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
      *
-     * @param group
-     *          the group to which to add the components
-     * @param components
-     *          the group header components
+     * @param group      the group to which to add the components
+     * @param components the group header components
      * @return a report builder
      */
     public T addGroupHeader(GroupBuilder<?> group, ComponentBuilder<?, ?>... components) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
+        DRGroup drGroup = getObject().getGroups().get(index);
         for (ComponentBuilder<?, ?> component : components) {
-            drGroup.getHeaderBand()
-                   .addComponent(component.build());
+            drGroup.getHeaderBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2208,67 +2070,51 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param group
-     *          the group to which to apply the split type
-     * @param splitType
-     *          the group footer split type
+     * @param group     the group to which to apply the split type
+     * @param splitType the group footer split type
      * @return a report builder
      */
     public T setGroupFooterSplitType(GroupBuilder<?> group, SplitType splitType) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getFooterBand()
-               .setSplitType(splitType);
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
     /**
      * <p>setGroupFooterPrintWhenExpression.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
     public T setGroupFooterPrintWhenExpression(GroupBuilder<?> group, DRIExpression<Boolean> printWhenExpression) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getFooterBand()
-               .setPrintWhenExpression(printWhenExpression);
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a group footer band style
      *
-     * @param group
-     *          the group to which to apply the style
-     * @param style
-     *          the group footer band style
+     * @param group the group to which to apply the style
+     * @param style the group footer band style
      * @return a report builder
      */
     public T setGroupFooterStyle(GroupBuilder<?> group, ReportStyleBuilder style) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
+        DRGroup drGroup = getObject().getGroups().get(index);
         if (style != null) {
-            drGroup.getFooterBand()
-                   .getList()
-                   .setStyle(style.build());
+            drGroup.getFooterBand().getList().setStyle(style.build());
         } else {
-            drGroup.getFooterBand()
-                   .getList()
-                   .setStyle(null);
+            drGroup.getFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2276,32 +2122,25 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     /**
      * <p>setGroupFooterBackgroundComponent.</p>
      *
-     * @param group a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
+     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      * @return a T object.
      */
     public T setGroupFooterBackgroundComponent(GroupBuilder<?> group, ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
-        drGroup.getFooterBand()
-               .getList()
-               .setBackgroundComponent(backgroundComponent.build());
+        DRGroup drGroup = getObject().getGroups().get(index);
+        drGroup.getFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the group footer band.
-     * The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
+     * Adds components to the group footer band. The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
      *
-     * @param group
-     *          the group to which to add the components
-     * @param components
-     *          the group footer components
+     * @param group      the group to which to add the components
+     * @param components the group footer components
      * @return a report builder
      */
     public T groupFooter(GroupBuilder<?> group, ComponentBuilder<?, ?>... components) {
@@ -2309,27 +2148,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group footer band.
-     * The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
+     * Adds components to the group footer band. The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
      *
-     * @param group
-     *          the group to which to add the components
-     * @param components
-     *          the group footer components
+     * @param group      the group to which to add the components
+     * @param components the group footer components
      * @return a report builder
      */
     public T addGroupFooter(GroupBuilder<?> group, ComponentBuilder<?, ?>... components) {
         Validate.notNull(group, "group must not be null");
-        int index = getObject().getGroups()
-                               .indexOf(group.getGroup());
+        int index = getObject().getGroups().indexOf(group.getGroup());
         Validate.isTrue(index >= 0, "group must be registered");
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
-        DRGroup drGroup = getObject().getGroups()
-                                     .get(index);
+        DRGroup drGroup = getObject().getGroups().get(index);
         for (ComponentBuilder<?, ?> component : components) {
-            drGroup.getFooterBand()
-                   .addComponent(component.build());
+            drGroup.getFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2342,13 +2175,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the detail split type
+     * @param splitType the detail split type
      * @return a report builder
      */
     public T setDetailSplitType(SplitType splitType) {
-        getObject().getDetailBand()
-                   .setSplitType(splitType);
+        getObject().getDetailBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2359,27 +2190,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setDetailPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getDetailBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getDetailBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a detail band style
      *
-     * @param style
-     *          the detail band style
+     * @param style the detail band style
      * @return a report builder
      */
     public T setDetailStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getDetailBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getDetailBand().getList().setStyle(style.build());
         } else {
-            getObject().getDetailBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getDetailBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2392,18 +2217,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setDetailBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getDetailBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getDetailBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the detail band.
-     * The band is printed for each record row in the data source and it's placed between the column header and footer band.
+     * Adds components to the detail band. The band is printed for each record row in the data source and it's placed between the column header and footer band.
      *
-     * @param components
-     *          the detail components
+     * @param components the detail components
      * @return a report builder
      */
     public T detail(ComponentBuilder<?, ?>... components) {
@@ -2411,19 +2232,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail band.
-     * The band is printed for each record row in the data source and it's placed between the column header and footer band.
+     * Adds components to the detail band. The band is printed for each record row in the data source and it's placed between the column header and footer band.
      *
-     * @param components
-     *          the detail components
+     * @param components the detail components
      * @return a report builder
      */
     public T addDetail(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getDetailBand()
-                       .addComponent(component.build());
+            getObject().getDetailBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2436,13 +2254,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the detail header split type
+     * @param splitType the detail header split type
      * @return a report builder
      */
     public T setDetailHeaderSplitType(SplitType splitType) {
-        getObject().getDetailHeaderBand()
-                   .setSplitType(splitType);
+        getObject().getDetailHeaderBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2453,27 +2269,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setDetailHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getDetailHeaderBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getDetailHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a detail header band style
      *
-     * @param style
-     *          the detail header band style
+     * @param style the detail header band style
      * @return a report builder
      */
     public T setDetailHeaderStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getDetailHeaderBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getDetailHeaderBand().getList().setStyle(style.build());
         } else {
-            getObject().getDetailHeaderBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getDetailHeaderBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2486,18 +2296,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setDetailHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getDetailHeaderBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getDetailHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the detail header band.
-     * The band is printed for each record row in the data source and it's placed above the detail band.
+     * Adds components to the detail header band. The band is printed for each record row in the data source and it's placed above the detail band.
      *
-     * @param components
-     *          the detail header components
+     * @param components the detail header components
      * @return a report builder
      */
     public T detailHeader(ComponentBuilder<?, ?>... components) {
@@ -2505,19 +2311,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail header band.
-     * The band is printed for each record row in the data source and it's placed above the detail band.
+     * Adds components to the detail header band. The band is printed for each record row in the data source and it's placed above the detail band.
      *
-     * @param components
-     *          the detail header components
+     * @param components the detail header components
      * @return a report builder
      */
     public T addDetailHeader(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getDetailHeaderBand()
-                       .addComponent(component.build());
+            getObject().getDetailHeaderBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2530,13 +2333,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the detail footer split type
+     * @param splitType the detail footer split type
      * @return a report builder
      */
     public T setDetailFooterSplitType(SplitType splitType) {
-        getObject().getDetailFooterBand()
-                   .setSplitType(splitType);
+        getObject().getDetailFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2547,27 +2348,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setDetailFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getDetailFooterBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getDetailFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a detail footer band style
      *
-     * @param style
-     *          the detail footer band style
+     * @param style the detail footer band style
      * @return a report builder
      */
     public T setDetailFooterStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getDetailFooterBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getDetailFooterBand().getList().setStyle(style.build());
         } else {
-            getObject().getDetailFooterBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getDetailFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2580,18 +2375,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setDetailFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getDetailFooterBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getDetailFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the detail footer band.
-     * The band is printed for each record row in the data source and it's placed below the detail band.
+     * Adds components to the detail footer band. The band is printed for each record row in the data source and it's placed below the detail band.
      *
-     * @param components
-     *          the detail footer components
+     * @param components the detail footer components
      * @return a report builder
      */
     public T detailFooter(ComponentBuilder<?, ?>... components) {
@@ -2599,19 +2390,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail footer band.
-     * The band is printed for each record row in the data source and it's placed below the detail band.
+     * Adds components to the detail footer band. The band is printed for each record row in the data source and it's placed below the detail band.
      *
-     * @param components
-     *          the detail footer components
+     * @param components the detail footer components
      * @return a report builder
      */
     public T addDetailFooter(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getDetailFooterBand()
-                       .addComponent(component.build());
+            getObject().getDetailFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2624,13 +2412,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the last page footer split type
+     * @param splitType the last page footer split type
      * @return a report builder
      */
     public T setLastPageFooterSplitType(SplitType splitType) {
-        getObject().getLastPageFooterBand()
-                   .setSplitType(splitType);
+        getObject().getLastPageFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2641,27 +2427,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setLastPageFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getLastPageFooterBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getLastPageFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a last page footer band style
      *
-     * @param style
-     *          the last page footer band style
+     * @param style the last page footer band style
      * @return a report builder
      */
     public T setLastPageFooterStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getLastPageFooterBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getLastPageFooterBand().getList().setStyle(style.build());
         } else {
-            getObject().getLastPageFooterBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getLastPageFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2674,18 +2454,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setLastPageFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getLastPageFooterBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getLastPageFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the last page footer band.
-     * The band is printed only on the last page at the bottom of the page.
+     * Adds components to the last page footer band. The band is printed only on the last page at the bottom of the page.
      *
-     * @param components
-     *          the last page footer components
+     * @param components the last page footer components
      * @return a report builder
      */
     public T lastPageFooter(ComponentBuilder<?, ?>... components) {
@@ -2693,19 +2469,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the last page footer band.
-     * The band is printed only on the last page at the bottom of the page.
+     * Adds components to the last page footer band. The band is printed only on the last page at the bottom of the page.
      *
-     * @param components
-     *          the last page footer components
+     * @param components the last page footer components
      * @return a report builder
      */
     public T addLastPageFooter(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getLastPageFooterBand()
-                       .addComponent(component.build());
+            getObject().getLastPageFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2718,13 +2491,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the summary split type
+     * @param splitType the summary split type
      * @return a report builder
      */
     public T setSummarySplitType(SplitType splitType) {
-        getObject().getSummaryBand()
-                   .setSplitType(splitType);
+        getObject().getSummaryBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2735,27 +2506,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setSummaryPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getSummaryBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getSummaryBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a summary band style
      *
-     * @param style
-     *          the summary band style
+     * @param style the summary band style
      * @return a report builder
      */
     public T setSummaryStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getSummaryBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getSummaryBand().getList().setStyle(style.build());
         } else {
-            getObject().getSummaryBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getSummaryBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2768,18 +2533,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setSummaryBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getSummaryBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getSummaryBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the summary band.
-     * The band is printed on the last page and only once.
+     * Adds components to the summary band. The band is printed on the last page and only once.
      *
-     * @param components
-     *          the summary components
+     * @param components the summary components
      * @return a report builder
      */
     public T summary(ComponentBuilder<?, ?>... components) {
@@ -2787,19 +2548,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the summary band.
-     * The band is printed on the last page and only once.
+     * Adds components to the summary band. The band is printed on the last page and only once.
      *
-     * @param components
-     *          the summary components
+     * @param components the summary components
      * @return a report builder
      */
     public T addSummary(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getSummaryBand()
-                       .addComponent(component.build());
+            getObject().getSummaryBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2812,13 +2570,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the no data split type
+     * @param splitType the no data split type
      * @return a report builder
      */
     public T setNoDataSplitType(SplitType splitType) {
-        getObject().getNoDataBand()
-                   .setSplitType(splitType);
+        getObject().getNoDataBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2829,27 +2585,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setNoDataPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getNoDataBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getNoDataBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a no data band style
      *
-     * @param style
-     *          the no data band style
+     * @param style the no data band style
      * @return a report builder
      */
     public T setNoDataStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getNoDataBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getNoDataBand().getList().setStyle(style.build());
         } else {
-            getObject().getNoDataBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getNoDataBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2862,18 +2612,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setNoDataBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getNoDataBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getNoDataBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the no data band.
-     * The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
+     * Adds components to the no data band. The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
      *
-     * @param components
-     *          the no data components
+     * @param components the no data components
      * @return a report builder
      */
     public T noData(ComponentBuilder<?, ?>... components) {
@@ -2881,19 +2627,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the no data band.
-     * The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
+     * Adds components to the no data band. The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
      *
-     * @param components
-     *          the no data components
+     * @param components the no data components
      * @return a report builder
      */
     public T addNoData(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getNoDataBand()
-                       .addComponent(component.build());
+            getObject().getNoDataBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -2906,13 +2649,11 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * <i>SplitType.STRETCH</i> - the band can be split, but never within its declared height<br/>
      * <i>SplitType.IMMEDIATE</i> - the band can be split
      *
-     * @param splitType
-     *          the background split type
+     * @param splitType the background split type
      * @return a report builder
      */
     public T setBackgroundSplitType(SplitType splitType) {
-        getObject().getBackgroundBand()
-                   .setSplitType(splitType);
+        getObject().getBackgroundBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -2923,27 +2664,21 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      * @return a T object.
      */
     public T setBackgroundPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getBackgroundBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getBackgroundBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
     /**
      * Sets a background band style
      *
-     * @param style
-     *          the background band style
+     * @param style the background band style
      * @return a report builder
      */
     public T setBackgroundStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getBackgroundBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getBackgroundBand().getList().setStyle(style.build());
         } else {
-            getObject().getBackgroundBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getBackgroundBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -2956,18 +2691,14 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
      */
     public T setBackgroundBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getBackgroundBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getBackgroundBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
     /**
-     * Adds components to the background band.
-     * The band is printed on each page. It's mostly used for adding watermarks to the report.
+     * Adds components to the background band. The band is printed on each page. It's mostly used for adding watermarks to the report.
      *
-     * @param components
-     *          the background components
+     * @param components the background components
      * @return a report builder
      */
     public T background(ComponentBuilder<?, ?>... components) {
@@ -2975,19 +2706,16 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the background band.
-     * The band is printed on each page. It's mostly used for adding watermarks to the report.
+     * Adds components to the background band. The band is printed on each page. It's mostly used for adding watermarks to the report.
      *
-     * @param components
-     *          the background components
+     * @param components the background components
      * @return a report builder
      */
     public T addBackground(ComponentBuilder<?, ?>... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getBackgroundBand()
-                       .addComponent(component.build());
+            getObject().getBackgroundBand().addComponent(component.build());
         }
         return (T) this;
     }

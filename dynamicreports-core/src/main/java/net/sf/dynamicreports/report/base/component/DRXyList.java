@@ -39,14 +39,18 @@ public class DRXyList extends DRDimensionComponent implements DRIXyList {
 
     private List<DRXyListCell> xyListCells;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void init() {
         super.init();
         this.xyListCells = new ArrayList<DRXyListCell>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRXyListCell> getXyListCells() {
         return xyListCells;
@@ -65,8 +69,8 @@ public class DRXyList extends DRDimensionComponent implements DRIXyList {
     /**
      * <p>addComponent.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
      */
     public void addComponent(Integer x, Integer y, DRComponent component) {

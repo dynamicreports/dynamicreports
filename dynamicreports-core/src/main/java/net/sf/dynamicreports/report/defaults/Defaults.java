@@ -51,8 +51,7 @@ public class Defaults {
         String resource = "dynamicreports-defaults.xml";
         InputStream is = null;
 
-        ClassLoader classLoader = Thread.currentThread()
-                                        .getContextClassLoader();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         if (classLoader != null) {
             is = classLoader.getResourceAsStream(resource);
         }
@@ -70,8 +69,7 @@ public class Defaults {
         }
 
         try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlDynamicReports.class)
-                                                   .createUnmarshaller();
+            Unmarshaller unmarshaller = JAXBContext.newInstance(XmlDynamicReports.class).createUnmarshaller();
             JAXBElement<XmlDynamicReports> root = unmarshaller.unmarshal(new StreamSource(is), XmlDynamicReports.class);
             return root.getValue();
         } catch (JAXBException e) {

@@ -47,8 +47,7 @@ public class JasperRtfExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperRtfExporterBuilder} object.
      */
     public JasperRtfExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return this;
     }
 }

@@ -49,7 +49,9 @@ public class DRAxisFormat implements DRIAxisFormat {
     private DRIExpression<? extends Number> rangeMinValueExpression;
     private DRIExpression<? extends Number> rangeMaxValueExpression;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<String> getLabelExpression() {
         return labelExpression;
@@ -64,7 +66,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.labelExpression = labelExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRFont getLabelFont() {
         return labelFont;
@@ -79,7 +83,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.labelFont = labelFont;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getLabelColor() {
         return labelColor;
@@ -94,7 +100,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.labelColor = labelColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRFont getTickLabelFont() {
         return tickLabelFont;
@@ -109,7 +117,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.tickLabelFont = tickLabelFont;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getTickLabelColor() {
         return tickLabelColor;
@@ -124,7 +134,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.tickLabelColor = tickLabelColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getTickLabelMask() {
         return tickLabelMask;
@@ -139,7 +151,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.tickLabelMask = tickLabelMask;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getVerticalTickLabels() {
         return verticalTickLabels;
@@ -154,7 +168,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.verticalTickLabels = verticalTickLabels;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getTickLabelRotation() {
         return tickLabelRotation;
@@ -169,7 +185,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.tickLabelRotation = tickLabelRotation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getLineColor() {
         return lineColor;
@@ -184,7 +202,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.lineColor = lineColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<? extends Number> getRangeMinValueExpression() {
         return rangeMinValueExpression;
@@ -199,7 +219,9 @@ public class DRAxisFormat implements DRIAxisFormat {
         this.rangeMinValueExpression = rangeMinValueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<? extends Number> getRangeMaxValueExpression() {
         return rangeMaxValueExpression;

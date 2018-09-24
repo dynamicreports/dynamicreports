@@ -104,22 +104,19 @@ public class ComponentTransform {
      * <p>component.</p>
      *
      * @param component a {@link net.sf.dynamicreports.design.definition.component.DRIDesignComponent} object.
-     * @param listType a {@link net.sf.dynamicreports.report.constant.ListType} object.
+     * @param listType  a {@link net.sf.dynamicreports.report.constant.ListType} object.
      * @return an array of {@link net.sf.jasperreports.engine.design.JRDesignElement} objects.
      */
     protected JRDesignElement[] component(DRIDesignComponent component, ListType listType) {
         JRDesignElement[] jrElements;
         if (component instanceof DRIDesignChart) {
-            JRDesignElement jrElement = accessor.getChartTransform()
-                                                .transform((DRIDesignChart) component);
+            JRDesignElement jrElement = accessor.getChartTransform().transform((DRIDesignChart) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignBarcode) {
-            JRDesignElement jrElement = accessor.getBarcodeTransform()
-                                                .transform((DRIDesignBarcode) component);
+            JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarcode) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignBarbecue) {
-            JRDesignElement jrElement = accessor.getBarcodeTransform()
-                                                .transform((DRIDesignBarbecue) component);
+            JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarbecue) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignList) {
             jrElements = list((DRIDesignList) component);
@@ -151,8 +148,7 @@ public class ComponentTransform {
             JRDesignElement jrElement = genericElement((DRIDesignGenericElement) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignCrosstab) {
-            JRDesignElement jrElement = accessor.getCrosstabTransform()
-                                                .transform((DRIDesignCrosstab) component);
+            JRDesignElement jrElement = accessor.getCrosstabTransform().transform((DRIDesignCrosstab) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignMap) {
             JRDesignElement jrElement = map((DRIDesignMap) component);
@@ -161,8 +157,7 @@ public class ComponentTransform {
             JRDesignElement jrElement = customComponent(component);
             jrElements = component(jrElement, component, listType);
         } else {
-            throw new JasperDesignException("Component " + component.getClass()
-                                                                    .getName() + " not supported");
+            throw new JasperDesignException("Component " + component.getClass().getName() + " not supported");
         }
 
         return jrElements;
@@ -189,8 +184,7 @@ public class ComponentTransform {
         jrElement.setPrintInFirstWholeBand(component.isPrintInFirstWholeBand());
         jrElement.setPrintWhenDetailOverflows(component.isPrintWhenDetailOverflows());
         if (component.getPrintWhenGroupChanges() != null) {
-            jrElement.setPrintWhenGroupChanges(accessor.getGroupTransform()
-                                                       .getGroup(component.getPrintWhenGroupChanges()));
+            jrElement.setPrintWhenGroupChanges(accessor.getGroupTransform().getGroup(component.getPrintWhenGroupChanges()));
         }
         jrElement.setKey(component.getUniqueName());
         jrElement.setX(component.getX());
@@ -199,16 +193,13 @@ public class ComponentTransform {
         jrElement.setHeight(component.getHeight());
 
         if (component.getStyle() != null) {
-            jrElement.setStyle(accessor.getStyleTransform()
-                                       .getStyle(component.getStyle()));
+            jrElement.setStyle(accessor.getStyleTransform().getStyle(component.getStyle()));
         }
-        jrElement.setPrintWhenExpression(accessor.getExpressionTransform()
-                                                 .getExpression(component.getPrintWhenExpression()));
+        jrElement.setPrintWhenExpression(accessor.getExpressionTransform().getExpression(component.getPrintWhenExpression()));
         jrElement.setRemoveLineWhenBlank(component.isRemoveLineWhenBlank());
 
         for (DRIDesignPropertyExpression propertyExpression : component.getPropertyExpressions()) {
-            jrElement.addPropertyExpression(accessor.getExpressionTransform()
-                                                    .getPropertyExpression(propertyExpression));
+            jrElement.addPropertyExpression(accessor.getExpressionTransform().getPropertyExpression(propertyExpression));
         }
 
         DRIDesignTableOfContentsHeading tocHeading = component.getTableOfContentsHeading();
@@ -262,9 +253,7 @@ public class ComponentTransform {
                 }
                 return jrElementList.toArray(new JRDesignElement[jrElementList.size()]);
             default:
-                throw new JasperDesignException("ComponentGroupType " + list.getComponentGroupType()
-                                                                            .getClass()
-                                                                            .getName() + " not supported");
+                throw new JasperDesignException("ComponentGroupType " + list.getComponentGroupType().getClass().getName() + " not supported");
         }
     }
 
@@ -272,22 +261,17 @@ public class ComponentTransform {
     private JRDesignElement textField(DRIDesignTextField textField) {
         JRDesignTextField jrTextField = new JRDesignTextField();
 
-        jrTextField.setAnchorNameExpression(accessor.getExpressionTransform()
-                                                    .getExpression(textField.getAnchorNameExpression()));
+        jrTextField.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(textField.getAnchorNameExpression()));
         if (textField.getBookmarkLevel() != null) {
             jrTextField.setBookmarkLevel(textField.getBookmarkLevel());
         }
 
         DRIDesignHyperLink hyperLink = textField.getHyperLink();
         if (hyperLink != null) {
-            jrTextField.setHyperlinkAnchorExpression(accessor.getExpressionTransform()
-                                                             .getExpression(hyperLink.getAnchorExpression()));
-            jrTextField.setHyperlinkPageExpression(accessor.getExpressionTransform()
-                                                           .getExpression(hyperLink.getPageExpression()));
-            jrTextField.setHyperlinkReferenceExpression(accessor.getExpressionTransform()
-                                                                .getExpression(hyperLink.getReferenceExpression()));
-            jrTextField.setHyperlinkTooltipExpression(accessor.getExpressionTransform()
-                                                              .getExpression(hyperLink.getTooltipExpression()));
+            jrTextField.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
+            jrTextField.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
+            jrTextField.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
+            jrTextField.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
                 HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
@@ -309,8 +293,7 @@ public class ComponentTransform {
         EvaluationTime evaluationTime = textField.getEvaluationTime();
         jrTextField.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && textField.getEvaluationGroup() != null) {
-            jrTextField.setEvaluationGroup(accessor.getGroupTransform()
-                                                   .getGroup(textField.getEvaluationGroup()));
+            jrTextField.setEvaluationGroup(accessor.getGroupTransform().getGroup(textField.getEvaluationGroup()));
         }
 
         jrTextField.setStretchWithOverflow(textField.isStretchWithOverflow());
@@ -319,11 +302,9 @@ public class ComponentTransform {
         if (!StringUtils.isBlank(pattern)) {
             jrTextField.setPattern(pattern);
         }
-        jrTextField.setPatternExpression(accessor.getExpressionTransform()
-                                                 .getExpression(textField.getPatternExpression()));
+        jrTextField.setPatternExpression(accessor.getExpressionTransform().getExpression(textField.getPatternExpression()));
         jrTextField.setHorizontalTextAlign(ConstantTransform.horizontalTextAlignment(textField.getHorizontalTextAlignment()));
-        jrTextField.setExpression(accessor.getExpressionTransform()
-                                          .getExpression(textField.getValueExpression()));
+        jrTextField.setExpression(accessor.getExpressionTransform().getExpression(textField.getValueExpression()));
         jrTextField.setPrintRepeatedValues(textField.isPrintRepeatedValues());
         jrTextField.setMarkup(ConstantTransform.markup(textField.getMarkup()));
         jrTextField.setBlankWhenNull(true);
@@ -341,22 +322,17 @@ public class ComponentTransform {
     private JRDesignElement image(DRIDesignImage image) {
         JRDesignImage jrImage = new JRDesignImage(new JRDesignStyle().getDefaultStyleProvider());
 
-        jrImage.setAnchorNameExpression(accessor.getExpressionTransform()
-                                                .getExpression(image.getAnchorNameExpression()));
+        jrImage.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(image.getAnchorNameExpression()));
         if (image.getBookmarkLevel() != null) {
             jrImage.setBookmarkLevel(image.getBookmarkLevel());
         }
 
         DRIDesignHyperLink hyperLink = image.getHyperLink();
         if (hyperLink != null) {
-            jrImage.setHyperlinkAnchorExpression(accessor.getExpressionTransform()
-                                                         .getExpression(hyperLink.getAnchorExpression()));
-            jrImage.setHyperlinkPageExpression(accessor.getExpressionTransform()
-                                                       .getExpression(hyperLink.getPageExpression()));
-            jrImage.setHyperlinkReferenceExpression(accessor.getExpressionTransform()
-                                                            .getExpression(hyperLink.getReferenceExpression()));
-            jrImage.setHyperlinkTooltipExpression(accessor.getExpressionTransform()
-                                                          .getExpression(hyperLink.getTooltipExpression()));
+            jrImage.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
+            jrImage.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
+            jrImage.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
+            jrImage.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
                 HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
@@ -378,8 +354,7 @@ public class ComponentTransform {
         jrImage.setOnErrorType(OnErrorTypeEnum.BLANK);
         jrImage.setScaleImage(ConstantTransform.imageScale(image.getImageScale()));
         jrImage.setHorizontalImageAlign(ConstantTransform.horizontalImageAlignment(image.getHorizontalImageAlignment()));
-        jrImage.setExpression(accessor.getExpressionTransform()
-                                      .getExpression(image.getImageExpression()));
+        jrImage.setExpression(accessor.getExpressionTransform().getExpression(image.getImageExpression()));
         if (image.getUsingCache() != null) {
             jrImage.setUsingCache(image.getUsingCache());
         }
@@ -393,37 +368,26 @@ public class ComponentTransform {
     // subreport
     private JRDesignElement subreport(DRIDesignSubreport subreport, Integer width) {
         JRDesignSubreport jrSubreport = new JRDesignSubreport(new JRDesignStyle().getDefaultStyleProvider());
-        jrSubreport.setConnectionExpression(accessor.getExpressionTransform()
-                                                    .getExpression(subreport.getConnectionExpression()));
-        jrSubreport.setDataSourceExpression(accessor.getExpressionTransform()
-                                                    .getExpression(subreport.getDataSourceExpression()));
+        jrSubreport.setConnectionExpression(accessor.getExpressionTransform().getExpression(subreport.getConnectionExpression()));
+        jrSubreport.setDataSourceExpression(accessor.getExpressionTransform().getExpression(subreport.getDataSourceExpression()));
         jrSubreport.setRunToBottom(subreport.getRunToBottom());
 
-        if (ReportBuilder.class.isAssignableFrom(subreport.getReportExpression()
-                                                          .getValueClass())) {
+        if (ReportBuilder.class.isAssignableFrom(subreport.getReportExpression().getValueClass())) {
             SubreportWidthExpression pageWidthExpression = new SubreportWidthExpression(width);
-            accessor.getExpressionTransform()
-                    .addSimpleExpression(pageWidthExpression);
+            accessor.getExpressionTransform().addSimpleExpression(pageWidthExpression);
             SubreportExpression subreportExpression = new SubreportExpression(pageWidthExpression, subreport.getReportExpression(), width);
-            accessor.getExpressionTransform()
-                    .addComplexExpression(subreportExpression);
-            jrSubreport.setExpression(accessor.getExpressionTransform()
-                                              .getExpression(subreportExpression));
+            accessor.getExpressionTransform().addComplexExpression(subreportExpression);
+            jrSubreport.setExpression(accessor.getExpressionTransform().getExpression(subreportExpression));
 
             SubreportParametersExpression parametersExpression = new SubreportParametersExpression(subreportExpression, subreport.getParametersExpression());
-            accessor.getExpressionTransform()
-                    .addComplexExpression(parametersExpression);
-            jrSubreport.setParametersMapExpression(accessor.getExpressionTransform()
-                                                           .getExpression(parametersExpression));
+            accessor.getExpressionTransform().addComplexExpression(parametersExpression);
+            jrSubreport.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
         } else {
-            jrSubreport.setExpression(accessor.getExpressionTransform()
-                                              .getExpression(subreport.getReportExpression()));
+            jrSubreport.setExpression(accessor.getExpressionTransform().getExpression(subreport.getReportExpression()));
 
             JasperSubreportParametersExpression parametersExpression = new JasperSubreportParametersExpression(subreport.getParametersExpression());
-            accessor.getExpressionTransform()
-                    .addComplexExpression(parametersExpression);
-            jrSubreport.setParametersMapExpression(accessor.getExpressionTransform()
-                                                           .getExpression(parametersExpression));
+            accessor.getExpressionTransform().addComplexExpression(parametersExpression);
+            jrSubreport.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
         }
 
         return jrSubreport;
@@ -433,16 +397,14 @@ public class ComponentTransform {
     private JRDesignElement line(DRIDesignLine line) {
         JRDesignLine jrDesignLine = new JRDesignLine();
         jrDesignLine.setDirection(ConstantTransform.lineDirection(line.getDirection()));
-        accessor.getStyleTransform()
-                .pen(jrDesignLine.getLinePen(), line.getPen());
+        accessor.getStyleTransform().pen(jrDesignLine.getLinePen(), line.getPen());
         return jrDesignLine;
     }
 
     // ellipse
     private JRDesignElement ellipse(DRIDesignEllipse ellipse) {
         JRDesignEllipse jrDesignEllipse = new JRDesignEllipse(new JRDesignStyle().getDefaultStyleProvider());
-        accessor.getStyleTransform()
-                .pen(jrDesignEllipse.getLinePen(), ellipse.getPen());
+        accessor.getStyleTransform().pen(jrDesignEllipse.getLinePen(), ellipse.getPen());
         return jrDesignEllipse;
     }
 
@@ -450,8 +412,7 @@ public class ComponentTransform {
     private JRDesignElement rectangle(DRIDesignRectangle rectangle) {
         JRDesignRectangle jrDesignRectangle = new JRDesignRectangle();
         jrDesignRectangle.setRadius(rectangle.getRadius());
-        accessor.getStyleTransform()
-                .pen(jrDesignRectangle.getLinePen(), rectangle.getPen());
+        accessor.getStyleTransform().pen(jrDesignRectangle.getLinePen(), rectangle.getPen());
         return jrDesignRectangle;
     }
 
@@ -470,13 +431,10 @@ public class ComponentTransform {
         EvaluationTime evaluationTime = genericElement.getEvaluationTime();
         jrDesignGenericElement.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && genericElement.getEvaluationGroup() != null) {
-            jrDesignGenericElement.setEvaluationGroupName(accessor.getGroupTransform()
-                                                                  .getGroup(genericElement.getEvaluationGroup())
-                                                                  .getName());
+            jrDesignGenericElement.setEvaluationGroupName(accessor.getGroupTransform().getGroup(genericElement.getEvaluationGroup()).getName());
         }
         for (DRIDesignParameterExpression parameterExpression : genericElement.getParameterExpressions()) {
-            jrDesignGenericElement.addParameter(accessor.getExpressionTransform()
-                                                        .getGenericElementParameterExpression(parameterExpression));
+            jrDesignGenericElement.addParameter(accessor.getExpressionTransform().getGenericElementParameterExpression(parameterExpression));
         }
         return jrDesignGenericElement;
     }
@@ -487,16 +445,11 @@ public class ComponentTransform {
         EvaluationTime evaluationTime = map.getEvaluationTime();
         jrMap.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && map.getEvaluationGroup() != null) {
-            jrMap.setEvaluationGroup(accessor.getGroupTransform()
-                                             .getGroup(map.getEvaluationGroup())
-                                             .getName());
+            jrMap.setEvaluationGroup(accessor.getGroupTransform().getGroup(map.getEvaluationGroup()).getName());
         }
-        jrMap.setLatitudeExpression(accessor.getExpressionTransform()
-                                            .getExpression(map.getLatitudeExpression()));
-        jrMap.setLongitudeExpression(accessor.getExpressionTransform()
-                                             .getExpression(map.getLongitudeExpression()));
-        jrMap.setZoomExpression(accessor.getExpressionTransform()
-                                        .getExpression(map.getZoomExpression()));
+        jrMap.setLatitudeExpression(accessor.getExpressionTransform().getExpression(map.getLatitudeExpression()));
+        jrMap.setLongitudeExpression(accessor.getExpressionTransform().getExpression(map.getLongitudeExpression()));
+        jrMap.setZoomExpression(accessor.getExpressionTransform().getExpression(map.getZoomExpression()));
 
         JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(jrMap);
@@ -509,8 +462,7 @@ public class ComponentTransform {
     private JRDesignElement customComponent(DRIDesignComponent component) {
         @SuppressWarnings("rawtypes") CustomComponentTransform componentTransfom = CustomComponents.getComponentTransform(component);
         if (componentTransfom == null) {
-            throw new DRDesignReportException("Component " + component.getClass()
-                                                                      .getName() + " not supported");
+            throw new DRDesignReportException("Component " + component.getClass().getName() + " not supported");
         }
         @SuppressWarnings("unchecked") JRDesignComponentElement jrComponent = (JRDesignComponentElement) componentTransfom.jasperComponent(accessor, component);
         return jrComponent;

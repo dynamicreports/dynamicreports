@@ -37,14 +37,16 @@ public class BetweenValueExpression<T extends Number> extends AbstractBetweenVal
      * <p>Constructor for BetweenValueExpression.</p>
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-     * @param min a {@link java.lang.Number} object.
-     * @param max a {@link java.lang.Number} object.
+     * @param min   a {@link java.lang.Number} object.
+     * @param max   a {@link java.lang.Number} object.
      */
     public BetweenValueExpression(DRIValue<T> value, Number min, Number max) {
         super(value, min, max);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Boolean compare(Number actualValue, Number min, Number max) {
         return actualValue.doubleValue() >= min.doubleValue() && actualValue.doubleValue() <= max.doubleValue();

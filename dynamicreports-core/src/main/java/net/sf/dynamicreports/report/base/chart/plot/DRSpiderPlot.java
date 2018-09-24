@@ -52,7 +52,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
     private Double labelGap;
     private Color labelColor;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<Double> getMaxValueExpression() {
         return maxValueExpression;
@@ -67,7 +69,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.maxValueExpression = maxValueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SpiderRotation getRotation() {
         return rotation;
@@ -82,7 +86,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.rotation = rotation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TableOrder getTableOrder() {
         return tableOrder;
@@ -97,7 +103,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.tableOrder = tableOrder;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getWebFilled() {
         return webFilled;
@@ -112,7 +120,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.webFilled = webFilled;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getStartAngle() {
         return startAngle;
@@ -127,7 +137,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.startAngle = startAngle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getHeadPercent() {
         return headPercent;
@@ -142,7 +154,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.headPercent = headPercent;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getInteriorGap() {
         return interiorGap;
@@ -157,7 +171,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.interiorGap = interiorGap;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getAxisLineColor() {
         return axisLineColor;
@@ -172,7 +188,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.axisLineColor = axisLineColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Float getAxisLineWidth() {
         return axisLineWidth;
@@ -187,7 +205,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.axisLineWidth = axisLineWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRFont getLabelFont() {
         return labelFont;
@@ -202,7 +222,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.labelFont = labelFont;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getLabelGap() {
         return labelGap;
@@ -217,7 +239,9 @@ public class DRSpiderPlot implements DRISpiderPlot {
         this.labelGap = labelGap;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getLabelColor() {
         return labelColor;

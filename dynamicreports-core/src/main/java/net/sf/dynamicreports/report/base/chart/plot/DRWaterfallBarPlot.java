@@ -40,7 +40,9 @@ public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot
     private Paint positiveBarPaint;
     private Paint negativeBarPaint;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Paint getFirstBarPaint() {
         return firstBarPaint;
@@ -55,7 +57,9 @@ public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot
         this.firstBarPaint = firstBarPaint;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Paint getLastBarPaint() {
         return lastBarPaint;
@@ -70,7 +74,9 @@ public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot
         this.lastBarPaint = lastBarPaint;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Paint getPositiveBarPaint() {
         return positiveBarPaint;
@@ -85,7 +91,9 @@ public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot
         this.positiveBarPaint = positiveBarPaint;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Paint getNegativeBarPaint() {
         return negativeBarPaint;

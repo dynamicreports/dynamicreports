@@ -59,7 +59,7 @@ public final class CrosstabValueExpression<T> extends AbstractSystemExpression<T
      * <p>Constructor for CrosstabValueExpression.</p>
      *
      * @param measure a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
-     * @param group a {@link net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder} object.
+     * @param group   a {@link net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder} object.
      */
     protected CrosstabValueExpression(DRICrosstabValue<T> measure, AbstractCrosstabGroupBuilder<?, ?, ?> group) {
         super(measure.getName() + "_" + group.getName() + "_ALL");
@@ -68,8 +68,8 @@ public final class CrosstabValueExpression<T> extends AbstractSystemExpression<T
     /**
      * <p>Constructor for CrosstabValueExpression.</p>
      *
-     * @param measure a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
-     * @param rowGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
+     * @param measure     a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
+     * @param rowGroup    a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
      * @param columnGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabColumnGroupBuilder} object.
      */
     protected CrosstabValueExpression(DRICrosstabValue<T> measure, CrosstabRowGroupBuilder<?> rowGroup, CrosstabColumnGroupBuilder<?> columnGroup) {

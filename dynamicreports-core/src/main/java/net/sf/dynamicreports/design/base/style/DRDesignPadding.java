@@ -39,7 +39,9 @@ public class DRDesignPadding implements DRIDesignPadding {
     private Integer bottom;
     private Integer right;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getTop() {
         return top;
@@ -54,7 +56,9 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.top = top;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getLeft() {
         return left;
@@ -69,7 +73,9 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.left = left;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getBottom() {
         return bottom;
@@ -84,7 +90,9 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.bottom = bottom;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getRight() {
         return right;
@@ -99,7 +107,9 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.right = right;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -113,10 +123,7 @@ public class DRDesignPadding implements DRIDesignPadding {
         }
 
         DRDesignPadding o = (DRDesignPadding) obj;
-        EqualsBuilder equalsBuilder = new EqualsBuilder().append(top, o.top)
-                                                         .append(left, o.left)
-                                                         .append(bottom, o.bottom)
-                                                         .append(right, o.right);
+        EqualsBuilder equalsBuilder = new EqualsBuilder().append(top, o.top).append(left, o.left).append(bottom, o.bottom).append(right, o.right);
         return equalsBuilder.isEquals();
     }
 }

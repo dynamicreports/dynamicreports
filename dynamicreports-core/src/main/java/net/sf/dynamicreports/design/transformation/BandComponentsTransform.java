@@ -62,8 +62,8 @@ class BandComponentsTransform {
     /**
      * <p>prepareBand.</p>
      *
-     * @param band a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
-     * @param maxWidth a int.
+     * @param band                     a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
+     * @param maxWidth                 a int.
      * @param templateDesignComponents a int.
      * @return a {@link net.sf.dynamicreports.design.base.DRDesignBand} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -78,14 +78,11 @@ class BandComponentsTransform {
 
         DRDesignComponent component = prepareList(band.getName(), band.getList(), maxWidth);
         if (component == null) {
-            if (band.getList() == null || band.getList()
-                                              .getHeight() == null || band.getList()
-                                                                          .getHeight() == 0) {
+            if (band.getList() == null || band.getList().getHeight() == null || band.getList().getHeight() == 0) {
                 return null;
             }
         }
-        band.setHeight(band.getList()
-                           .getHeight());
+        band.setHeight(band.getList().getHeight());
         band.setBandComponent(component);
 
         if (band.getBandComponent() != null && templateDesignComponents > 0) {
@@ -137,8 +134,7 @@ class BandComponentsTransform {
                 generateComponentNames(lComponent, bandName);
             }
             if (list.getBackgroundComponent() != null) {
-                list.getBackgroundComponent()
-                    .setUniqueName(component.getUniqueName() + ".background");
+                list.getBackgroundComponent().setUniqueName(component.getUniqueName() + ".background");
             }
         }
     }
@@ -146,18 +142,14 @@ class BandComponentsTransform {
     private DRDesignComponent removeEmptyComponents(DRDesignComponent component) {
         if (component instanceof DRDesignList) {
             DRDesignList list = (DRDesignList) component;
-            if (list.getComponents()
-                    .isEmpty()) {
+            if (list.getComponents().isEmpty()) {
                 return null;
-            } else if (list.getComponents()
-                           .size() == 1) {
-                DRDesignComponent lComponent = list.getComponents()
-                                                   .get(0);
+            } else if (list.getComponents().size() == 1) {
+                DRDesignComponent lComponent = list.getComponents().get(0);
                 DRDesignComponent elm = removeEmptyComponents(lComponent);
                 if (elm == null) {
                     if (list.getWidth() > 0 && list.getHeight() > 0 && (list.getStyle() != null || list.getBackgroundComponent() != null)) {
-                        list.getComponents()
-                            .clear();
+                        list.getComponents().clear();
                         return list;
                     }
                     return null;
@@ -173,10 +165,8 @@ class BandComponentsTransform {
                     elm.setY(list.getY() + elm.getY());
                     return elm;
                 } else {
-                    list.getComponents()
-                        .clear();
-                    list.getComponents()
-                        .add(elm);
+                    list.getComponents().clear();
+                    list.getComponents().add(elm);
                     return list;
                 }
             } else {
@@ -189,16 +179,13 @@ class BandComponentsTransform {
                 }
                 if (components.isEmpty()) {
                     if (list.getWidth() > 0 && list.getHeight() > 0 && (list.getStyle() != null || list.getBackgroundComponent() != null)) {
-                        list.getComponents()
-                            .clear();
+                        list.getComponents().clear();
                         return list;
                     }
                     return null;
                 }
-                list.getComponents()
-                    .clear();
-                list.getComponents()
-                    .addAll(components);
+                list.getComponents().clear();
+                list.getComponents().addAll(components);
                 return list;
             }
         } else if (component instanceof DRDesignFiller && component.getStyle() == null && component.getPrintWhenExpression() == null) {
@@ -288,8 +275,7 @@ class BandComponentsTransform {
 
         DRDesignCrosstabCellContent headerCell = crosstab.getHeaderCell();
         if (headerCell != null) {
-            crosstab.getHeaderCell()
-                    .setComponent(prepareCrosstabCell(crosstab.getUniqueName() + ".headercell", headerCell));
+            crosstab.getHeaderCell().setComponent(prepareCrosstabCell(crosstab.getUniqueName() + ".headercell", headerCell));
         }
 
         for (DRDesignCrosstabCell cell : crosstab.getCells()) {
@@ -305,12 +291,9 @@ class BandComponentsTransform {
     }
 
     private void calculateCellDimensions(DRDesignCrosstab designCrosstab) {
-        DRICrosstab crosstab = accessor.getCrosstabTransform()
-                                       .getCrosstab(designCrosstab);
-        int cellWidth = accessor.getTemplateTransform()
-                                .getCrosstabCellWidth(crosstab, designCrosstab);
-        int cellHeight = accessor.getTemplateTransform()
-                                 .getCrosstabCellHeight(crosstab, designCrosstab);
+        DRICrosstab crosstab = accessor.getCrosstabTransform().getCrosstab(designCrosstab);
+        int cellWidth = accessor.getTemplateTransform().getCrosstabCellWidth(crosstab, designCrosstab);
+        int cellHeight = accessor.getTemplateTransform().getCrosstabCellHeight(crosstab, designCrosstab);
         Map<String, GroupCellDimension> columnGroups = new HashMap<String, GroupCellDimension>();
         Map<String, GroupCellDimension> rowGroups = new HashMap<String, GroupCellDimension>();
         int groupWidth = 0;
@@ -318,10 +301,8 @@ class BandComponentsTransform {
 
         GroupCellDimension previousCellDimension = null;
         for (
-            int i = crosstab.getColumnGroups()
-                            .size() - 1; i >= 0; i--) {
-            DRICrosstabColumnGroup<?> columnGroup = crosstab.getColumnGroups()
-                                                            .get(i);
+            int i = crosstab.getColumnGroups().size() - 1; i >= 0; i--) {
+            DRICrosstabColumnGroup<?> columnGroup = crosstab.getColumnGroups().get(i);
             int headerWidth = 0;
             int headerHeight = 0;
             int totalHeaderWidth = 0;
@@ -332,13 +313,10 @@ class BandComponentsTransform {
             } else {
                 headerWidth = previousCellDimension.getHeaderWidth() + previousCellDimension.getTotalHeaderWidth();
             }
-            headerHeight = accessor.getTemplateTransform()
-                                   .getCrosstabColumnGroupHeaderHeight(columnGroup, designCrosstab, groupHeight);
+            headerHeight = accessor.getTemplateTransform().getCrosstabColumnGroupHeaderHeight(columnGroup, designCrosstab, groupHeight);
 
-            if (accessor.getTemplateTransform()
-                        .isCrosstabColumnGroupShowTotal(columnGroup)) {
-                totalHeaderWidth = accessor.getTemplateTransform()
-                                           .getCrosstabColumnGroupTotalHeaderWidth(columnGroup, crosstab.getCellWidth(), designCrosstab);
+            if (accessor.getTemplateTransform().isCrosstabColumnGroupShowTotal(columnGroup)) {
+                totalHeaderWidth = accessor.getTemplateTransform().getCrosstabColumnGroupTotalHeaderWidth(columnGroup, crosstab.getCellWidth(), designCrosstab);
             }
             totalHeaderHeight = headerHeight;
             if (previousCellDimension != null) {
@@ -358,17 +336,14 @@ class BandComponentsTransform {
 
         previousCellDimension = null;
         for (
-            int i = crosstab.getRowGroups()
-                            .size() - 1; i >= 0; i--) {
-            DRICrosstabRowGroup<?> rowGroup = crosstab.getRowGroups()
-                                                      .get(i);
+            int i = crosstab.getRowGroups().size() - 1; i >= 0; i--) {
+            DRICrosstabRowGroup<?> rowGroup = crosstab.getRowGroups().get(i);
             int headerWidth = 0;
             int headerHeight = 0;
             int totalHeaderWidth = 0;
             int totalHeaderHeight = 0;
 
-            headerWidth = accessor.getTemplateTransform()
-                                  .getCrosstabRowGroupHeaderWidth(rowGroup, designCrosstab);
+            headerWidth = accessor.getTemplateTransform().getCrosstabRowGroupHeaderWidth(rowGroup, designCrosstab);
             if (previousCellDimension == null) {
                 headerHeight = cellHeight;
             } else {
@@ -379,10 +354,8 @@ class BandComponentsTransform {
             if (previousCellDimension != null) {
                 totalHeaderWidth += previousCellDimension.getTotalHeaderWidth();
             }
-            if (accessor.getTemplateTransform()
-                        .isCrosstabRowGroupShowTotal(rowGroup)) {
-                totalHeaderHeight = accessor.getTemplateTransform()
-                                            .getCrosstabRowGroupTotalHeaderHeight(rowGroup, crosstab.getCellHeight(), designCrosstab);
+            if (accessor.getTemplateTransform().isCrosstabRowGroupShowTotal(rowGroup)) {
+                totalHeaderHeight = accessor.getTemplateTransform().getCrosstabRowGroupTotalHeaderHeight(rowGroup, crosstab.getCellHeight(), designCrosstab);
             }
 
             GroupCellDimension groupCellDimension = new GroupCellDimension();
@@ -396,70 +369,50 @@ class BandComponentsTransform {
             groupWidth += groupCellDimension.getHeaderWidth();
         }
 
-        designCrosstab.getWhenNoDataCell()
-                      .setWidth(designCrosstab.getWidth());
-        designCrosstab.getWhenNoDataCell()
-                      .setHeight(designCrosstab.getHeight());
-        designCrosstab.getHeaderCell()
-                      .setWidth(groupWidth);
-        designCrosstab.getHeaderCell()
-                      .setHeight(groupHeight);
+        designCrosstab.getWhenNoDataCell().setWidth(designCrosstab.getWidth());
+        designCrosstab.getWhenNoDataCell().setHeight(designCrosstab.getHeight());
+        designCrosstab.getHeaderCell().setWidth(groupWidth);
+        designCrosstab.getHeaderCell().setHeight(groupHeight);
 
         for (DRDesignCrosstabColumnGroup designColumnGroup : designCrosstab.getColumnGroups()) {
             GroupCellDimension groupCellDimension = columnGroups.get(designColumnGroup.getName());
             designColumnGroup.setHeight(groupCellDimension.getHeaderHeight());
-            designColumnGroup.getHeader()
-                             .setWidth(groupCellDimension.getHeaderWidth());
-            designColumnGroup.getHeader()
-                             .setHeight(groupCellDimension.getHeaderHeight());
+            designColumnGroup.getHeader().setWidth(groupCellDimension.getHeaderWidth());
+            designColumnGroup.getHeader().setHeight(groupCellDimension.getHeaderHeight());
             if (designColumnGroup.getTotalHeader() != null) {
-                designColumnGroup.getTotalHeader()
-                                 .setWidth(groupCellDimension.getTotalHeaderWidth());
-                designColumnGroup.getTotalHeader()
-                                 .setHeight(groupCellDimension.getTotalHeaderHeight());
+                designColumnGroup.getTotalHeader().setWidth(groupCellDimension.getTotalHeaderWidth());
+                designColumnGroup.getTotalHeader().setHeight(groupCellDimension.getTotalHeaderHeight());
             }
         }
 
         for (DRDesignCrosstabRowGroup designRowGroup : designCrosstab.getRowGroups()) {
             GroupCellDimension groupCellDimension = rowGroups.get(designRowGroup.getName());
             designRowGroup.setWidth(groupCellDimension.getHeaderWidth());
-            designRowGroup.getHeader()
-                          .setWidth(groupCellDimension.getHeaderWidth());
-            designRowGroup.getHeader()
-                          .setHeight(groupCellDimension.getHeaderHeight());
+            designRowGroup.getHeader().setWidth(groupCellDimension.getHeaderWidth());
+            designRowGroup.getHeader().setHeight(groupCellDimension.getHeaderHeight());
             if (designRowGroup.getTotalHeader() != null) {
-                designRowGroup.getTotalHeader()
-                              .setWidth(groupCellDimension.getTotalHeaderWidth());
-                designRowGroup.getTotalHeader()
-                              .setHeight(groupCellDimension.getTotalHeaderHeight());
+                designRowGroup.getTotalHeader().setWidth(groupCellDimension.getTotalHeaderWidth());
+                designRowGroup.getTotalHeader().setHeight(groupCellDimension.getTotalHeaderHeight());
             }
         }
 
         for (DRDesignCrosstabCell designCell : designCrosstab.getCells()) {
             if (designCell.getColumnTotalGroup() == null && designCell.getRowTotalGroup() == null) {
-                designCell.getContent()
-                          .setWidth(cellWidth);
-                designCell.getContent()
-                          .setHeight(cellHeight);
+                designCell.getContent().setWidth(cellWidth);
+                designCell.getContent().setHeight(cellHeight);
             } else if (designCell.getColumnTotalGroup() != null && designCell.getRowTotalGroup() == null) {
                 GroupCellDimension groupCellDimension = columnGroups.get(designCell.getColumnTotalGroup());
-                designCell.getContent()
-                          .setWidth(groupCellDimension.getTotalHeaderWidth());
-                designCell.getContent()
-                          .setHeight(cellHeight);
+                designCell.getContent().setWidth(groupCellDimension.getTotalHeaderWidth());
+                designCell.getContent().setHeight(cellHeight);
             } else if (designCell.getColumnTotalGroup() == null && designCell.getRowTotalGroup() != null) {
                 GroupCellDimension groupCellDimension = rowGroups.get(designCell.getRowTotalGroup());
-                designCell.getContent()
-                          .setWidth(cellWidth);
-                designCell.getContent()
-                          .setHeight(groupCellDimension.getTotalHeaderHeight());
+                designCell.getContent().setWidth(cellWidth);
+                designCell.getContent().setHeight(groupCellDimension.getTotalHeaderHeight());
             } else {
                 GroupCellDimension groupCellDimension = columnGroups.get(designCell.getColumnTotalGroup());
-                designCell.getContent()
-                          .setWidth(groupCellDimension.getTotalHeaderWidth());
+                designCell.getContent().setWidth(groupCellDimension.getTotalHeaderWidth());
                 groupCellDimension = rowGroups.get(designCell.getRowTotalGroup());
-                designCell.getContent()
-                          .setHeight(groupCellDimension.getTotalHeaderHeight());
+                designCell.getContent().setHeight(groupCellDimension.getTotalHeaderHeight());
             }
         }
     }

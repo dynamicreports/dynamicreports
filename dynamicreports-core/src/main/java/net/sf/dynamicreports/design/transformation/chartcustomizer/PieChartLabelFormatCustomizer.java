@@ -47,8 +47,8 @@ public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serial
     /**
      * <p>Constructor for PieChartLabelFormatCustomizer.</p>
      *
-     * @param labelFormat a {@link java.lang.String} object.
-     * @param valuePattern a {@link java.lang.String} object.
+     * @param labelFormat         a {@link java.lang.String} object.
+     * @param valuePattern        a {@link java.lang.String} object.
      * @param percentValuePattern a {@link java.lang.String} object.
      */
     public PieChartLabelFormatCustomizer(String labelFormat, String valuePattern, String percentValuePattern) {
@@ -57,7 +57,9 @@ public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serial
         this.percentValuePattern = percentValuePattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         PiePlot plot = (PiePlot) chart.getPlot();

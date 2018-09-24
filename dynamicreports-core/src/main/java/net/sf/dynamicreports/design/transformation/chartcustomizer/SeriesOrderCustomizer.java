@@ -47,7 +47,7 @@ public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {
     /**
      * <p>Constructor for SeriesOrderCustomizer.</p>
      *
-     * @param seriesOrderBy a {@link java.util.Comparator} object.
+     * @param seriesOrderBy   a {@link java.util.Comparator} object.
      * @param seriesOrderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
      */
     public SeriesOrderCustomizer(Comparator<String> seriesOrderBy, OrderType seriesOrderType) {
@@ -55,14 +55,14 @@ public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {
         this.seriesOrderType = seriesOrderType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {
-            CategoryDataset dataset = new SeriesOrderCategoryDataset(chart.getCategoryPlot()
-                                                                          .getDataset(), seriesOrderBy, seriesOrderType);
-            chart.getCategoryPlot()
-                 .setDataset(dataset);
+            CategoryDataset dataset = new SeriesOrderCategoryDataset(chart.getCategoryPlot().getDataset(), seriesOrderBy, seriesOrderType);
+            chart.getCategoryPlot().setDataset(dataset);
         }
     }
 }

@@ -36,14 +36,16 @@ public class UnEqualValueExpression<T extends Number> extends AbstractValuesExpr
     /**
      * <p>Constructor for UnEqualValueExpression.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value   a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param numbers a {@link java.lang.Number} object.
      */
     public UnEqualValueExpression(DRIValue<T> value, Number... numbers) {
         super(value, numbers);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Boolean compare(Number actualValue, Number[] numbers) {
         for (Number number : numbers) {

@@ -25,8 +25,8 @@ package net.sf.dynamicreports.report.constant;
  * <p>HorizontalAlignment class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @deprecated use HorizontalTextAligment for texts or HorizontalImageAligment for images instead
  * @version $Id: $Id
+ * @deprecated use HorizontalTextAligment for texts or HorizontalImageAligment for images instead
  */
 public enum HorizontalAlignment {
     LEFT, CENTER, RIGHT, JUSTIFIED

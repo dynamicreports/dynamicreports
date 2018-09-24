@@ -44,21 +44,20 @@ public class AbstractCategoryChartSerieBuilder<T extends AbstractCategoryChartSe
      * <p>Constructor for AbstractCategoryChartSerieBuilder.</p>
      *
      * @param categoryChartSerie a U object.
-     * @param column a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
+     * @param column             a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      */
     protected AbstractCategoryChartSerieBuilder(U categoryChartSerie, ValueColumnBuilder<?, ? extends Number> column) {
         super(categoryChartSerie);
         Validate.notNull(column, "column must not be null");
         getObject().setValueExpression(column.getColumn());
-        getObject().setLabelExpression(column.getColumn()
-                                             .getTitleExpression());
+        getObject().setLabelExpression(column.getColumn().getTitleExpression());
     }
 
     /**
      * <p>Constructor for AbstractCategoryChartSerieBuilder.</p>
      *
      * @param categoryChartSerie a U object.
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field              a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      */
     protected AbstractCategoryChartSerieBuilder(U categoryChartSerie, FieldBuilder<? extends Number> field) {
         super(categoryChartSerie);
@@ -70,7 +69,7 @@ public class AbstractCategoryChartSerieBuilder<T extends AbstractCategoryChartSe
      * <p>Constructor for AbstractCategoryChartSerieBuilder.</p>
      *
      * @param categoryChartSerie a U object.
-     * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param valueExpression    a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     protected AbstractCategoryChartSerieBuilder(U categoryChartSerie, DRIExpression<? extends Number> valueExpression) {
         super(categoryChartSerie);
@@ -81,7 +80,7 @@ public class AbstractCategoryChartSerieBuilder<T extends AbstractCategoryChartSe
      * <p>Constructor for AbstractCategoryChartSerieBuilder.</p>
      *
      * @param categoryChartSerie a U object.
-     * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
+     * @param variable           a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
     protected AbstractCategoryChartSerieBuilder(U categoryChartSerie, VariableBuilder<? extends Number> variable) {
         super(categoryChartSerie);

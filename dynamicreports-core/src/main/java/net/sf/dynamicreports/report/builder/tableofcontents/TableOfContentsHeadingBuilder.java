@@ -65,8 +65,7 @@ public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfConten
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
      */
     public TableOfContentsHeadingBuilder setLabel(String label) {
-        this.getObject()
-            .setLabelExpression(Expressions.text(label));
+        this.getObject().setLabelExpression(Expressions.text(label));
         return this;
     }
 
@@ -77,8 +76,7 @@ public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfConten
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
      */
     public TableOfContentsHeadingBuilder setLabel(DRIExpression<String> labelExpression) {
-        this.getObject()
-            .setLabelExpression(labelExpression);
+        this.getObject().setLabelExpression(labelExpression);
         return this;
     }
 
@@ -89,8 +87,7 @@ public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfConten
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
      */
     public TableOfContentsHeadingBuilder setCustomValue(Object customValue) {
-        this.getObject()
-            .setCustomValueExpression(Expressions.value(customValue));
+        this.getObject().setCustomValueExpression(Expressions.value(customValue));
         return this;
     }
 
@@ -101,8 +98,7 @@ public class TableOfContentsHeadingBuilder extends AbstractBuilder<TableOfConten
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
      */
     public TableOfContentsHeadingBuilder setCustomValue(DRIExpression<?> customValueExpression) {
-        this.getObject()
-            .setCustomValueExpression(customValueExpression);
+        this.getObject().setCustomValueExpression(customValueExpression);
         return this;
     }
 

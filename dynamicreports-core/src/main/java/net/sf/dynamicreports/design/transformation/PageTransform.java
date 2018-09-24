@@ -85,9 +85,7 @@ public class PageTransform {
      */
     public void transformPageWidth() throws DRException {
         int pageWidth = templateTransform.getPageWidth();
-        maxBandWidth = pageWidth - getPage().getMargin()
-                                            .getLeft() - getPage().getMargin()
-                                                                  .getRight();
+        maxBandWidth = pageWidth - getPage().getMargin().getLeft() - getPage().getMargin().getRight();
         this.page.setWidth(pageWidth);
         this.page.setColumnWidth(templateTransform.getPageColumnWidth(this.page));
     }

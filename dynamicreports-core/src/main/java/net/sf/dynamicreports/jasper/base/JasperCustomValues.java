@@ -91,7 +91,7 @@ public class JasperCustomValues implements DRICustomValues {
     /**
      * <p>addChartCustomizers.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name             a {@link java.lang.String} object.
      * @param chartCustomizers a {@link java.util.List} object.
      */
     public void addChartCustomizers(String name, List<DRIChartCustomizer> chartCustomizers) {
@@ -101,7 +101,7 @@ public class JasperCustomValues implements DRICustomValues {
     /**
      * <p>addValueType.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name      a {@link java.lang.String} object.
      * @param valueType a {@link net.sf.dynamicreports.jasper.constant.ValueType} object.
      */
     public void addValueType(String name, ValueType valueType) {
@@ -182,7 +182,7 @@ public class JasperCustomValues implements DRICustomValues {
     /**
      * <p>getValue.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name   a {@link java.lang.String} object.
      * @param values an array of {@link java.lang.Object} objects.
      * @return a {@link java.lang.Object} object.
      */
@@ -190,7 +190,9 @@ public class JasperCustomValues implements DRICustomValues {
         return jasperScriptlet.getValue(name, values);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setSystemValue(String name, Object value) {
         systemValues.put(name, value);
@@ -242,7 +244,9 @@ public class JasperCustomValues implements DRICustomValues {
         this.startPageNumber = startPageNumber;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addTocHeading(int level, String id, String text, Object customValue) {
         JasperTocHeading heading = new JasperTocHeading();
@@ -253,13 +257,17 @@ public class JasperCustomValues implements DRICustomValues {
         tocHeadings.put(id, heading);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Map<String, JasperTocHeading> getTocHeadings() {
         return tocHeadings;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setTocHeadings(Map<String, JasperTocHeading> tocHeadings) {
         this.tocHeadings = tocHeadings;
@@ -274,19 +282,22 @@ public class JasperCustomValues implements DRICustomValues {
         return subreportWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setSubreportWidth(Integer subreportWidth) {
         this.subreportWidth = subreportWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (String name : valueTypes.keySet()) {
-            result.append(valueTypes.get(name)
-                                    .name() + ":" + name);
+            result.append(valueTypes.get(name).name() + ":" + name);
             result.append(", ");
         }
         return "{" + StringUtils.removeEnd(result.toString(), ", ") + "}";

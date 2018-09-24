@@ -67,12 +67,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the preferred width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column preferred width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column preferred width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setWidth(Integer width) {
         getComponent().setWidth(width);
@@ -82,12 +80,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the fixed width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column fixed width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column fixed width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setFixedWidth(Integer width) {
         getComponent().setWidth(width);
@@ -98,12 +94,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the minimum width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column minimum width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column minimum width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setMinWidth(Integer width) {
         getComponent().setWidth(width);
@@ -114,12 +108,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the preferred height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column preferred height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column preferred height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setHeight(Integer height) {
         getComponent().setHeight(height);
@@ -129,12 +121,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the fixed height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column fixed height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column fixed height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setFixedHeight(Integer height) {
         getComponent().setHeight(height);
@@ -145,12 +135,10 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the minimum height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column minimum height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column minimum height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setMinHeight(Integer height) {
         getComponent().setHeight(height);
@@ -163,8 +151,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      * <i>BooleanComponentType.TEXT_*</i> - shows a text value<br/>
      * <i>BooleanComponentType.IMAGE_*</i> - shows an image
      *
-     * @param booleanComponentType
-     *          the component type
+     * @param booleanComponentType the component type
      * @return a column builder
      */
     public BooleanColumnBuilder setComponentType(BooleanComponentType booleanComponentType) {
@@ -186,10 +173,8 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the boolean image dimension. Has effect only when the boolean value is presented as an image.
      *
-     * @param width
-     *          the image width
-     * @param height
-     *          the image height
+     * @param width  the image width
+     * @param height the image height
      * @return a column builder
      */
     public BooleanColumnBuilder setImageDimension(Integer width, Integer height) {
@@ -201,8 +186,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the boolean image width. Has effect only when the boolean value is presented as an image.
      *
-     * @param width
-     *          the image width
+     * @param width the image width
      * @return a column builder
      */
     public BooleanColumnBuilder setImageWidth(Integer width) {
@@ -213,8 +197,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
     /**
      * Sets the boolean image height. Has effect only when the boolean value is presented as an image.
      *
-     * @param height
-     *          the image height
+     * @param height the image height
      * @return a column builder
      */
     public BooleanColumnBuilder setImageHeight(Integer height) {
@@ -261,7 +244,9 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected DRBooleanField getComponent() {
         return (DRBooleanField) getObject().getComponent();

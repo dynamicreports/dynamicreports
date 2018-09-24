@@ -34,19 +34,19 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 public class DateYearToFractionType extends DateType {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getDateYearToFractionType()
-                       .getPattern();
+        return Defaults.getDefaults().getDateYearToFractionType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getDateYearToFractionType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getDateYearToFractionType().getHorizontalTextAlignment();
     }
 }

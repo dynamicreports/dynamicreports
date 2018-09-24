@@ -55,15 +55,13 @@ public class XyBlockRendererCustomizer implements DRIChartCustomizer, Serializab
         this.xyBlockPlot = xyBlockPlot;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        chart.getXYPlot()
-             .getDomainAxis()
-             .setUpperMargin(0);
-        chart.getXYPlot()
-             .getRangeAxis()
-             .setUpperMargin(0);
+        chart.getXYPlot().getDomainAxis().setUpperMargin(0);
+        chart.getXYPlot().getRangeAxis().setUpperMargin(0);
 
         XYBlockRenderer renderer = new XYBlockRenderer();
         if (xyBlockPlot.getBlockWidth() != null) {
@@ -81,14 +79,12 @@ public class XyBlockRendererCustomizer implements DRIChartCustomizer, Serializab
         }
         renderer.setPaintScale(paintScale);
 
-        chart.getXYPlot()
-             .setRenderer(renderer);
+        chart.getXYPlot().setRenderer(renderer);
 
         LegendItemCollection legendItems = new LegendItemCollection();
         for (DRIPaintScale scale : xyBlockPlot.getPaintScales()) {
             legendItems.add(new LegendItem(scale.getLabel(), scale.getPaint()));
         }
-        chart.getXYPlot()
-             .setFixedLegendItems(legendItems);
+        chart.getXYPlot().setFixedLegendItems(legendItems);
     }
 }

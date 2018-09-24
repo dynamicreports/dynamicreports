@@ -51,7 +51,7 @@ public class ReportUtils {
      * <p>getVariableValueClass.</p>
      *
      * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param valueClass  a {@link java.lang.Class} object.
      * @return a {@link java.lang.Class} object.
      */
     public static Class<?> getVariableValueClass(Calculation calculation, Class<?> valueClass) {
@@ -68,7 +68,7 @@ public class ReportUtils {
      * <p>getGenericClass.</p>
      *
      * @param object a {@link java.lang.Object} object.
-     * @param index a int.
+     * @param index  a int.
      * @return a {@link java.lang.Class} object.
      */
     public static Class<?> getGenericClass(Object object, int index) {

@@ -87,8 +87,7 @@ public class MultiPageListBuilder extends DimensionComponentBuilder<MultiPageLis
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            return reportParameters.getMasterParameters()
-                                   .getPageRowNumber() > 0;
+            return reportParameters.getMasterParameters().getPageRowNumber() > 0;
         }
 
     }

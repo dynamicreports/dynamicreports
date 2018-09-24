@@ -49,7 +49,7 @@ public class Groups {
     /**
      * <p>group.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name        a {@link java.lang.String} object.
      * @param groupColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder} object.
      */
@@ -62,7 +62,7 @@ public class Groups {
     /**
      * <p>group.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.group.CustomGroupBuilder} object.
      */
@@ -73,8 +73,8 @@ public class Groups {
     /**
      * <p>group.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param fieldName a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.group.CustomGroupBuilder} object.
      */
@@ -95,7 +95,7 @@ public class Groups {
     /**
      * <p>group.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.group.CustomGroupBuilder} object.
      */
@@ -116,7 +116,7 @@ public class Groups {
     /**
      * <p>group.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.group.CustomGroupBuilder} object.
      */

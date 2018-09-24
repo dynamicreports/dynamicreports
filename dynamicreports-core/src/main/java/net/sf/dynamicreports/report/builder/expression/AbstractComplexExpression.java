@@ -57,7 +57,9 @@ public abstract class AbstractComplexExpression<T> implements DRIComplexExpressi
         this.expressions = new ArrayList<DRIExpression<?>>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
@@ -76,7 +78,7 @@ public abstract class AbstractComplexExpression<T> implements DRIComplexExpressi
     /**
      * <p>addExpression.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     protected void addExpression(String fieldName, Class<?> valueClass) {
@@ -134,20 +136,26 @@ public abstract class AbstractComplexExpression<T> implements DRIComplexExpressi
         this.expressions.add(Expressions.crosstabValue(crosstabMeasure));
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIExpression<?>> getExpressions() {
         return expressions;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {
         return (Class<? super T>) ReportUtils.getGenericClass(this, 0);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public abstract T evaluate(List<?> values, ReportParameters reportParameters);
 }

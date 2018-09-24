@@ -34,10 +34,11 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 public class PrintInEvenRowExpression extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
-        return reportParameters.getReportRowNumber()
-                               .doubleValue() % 2 != 0;
+        return reportParameters.getReportRowNumber().doubleValue() % 2 != 0;
     }
 }

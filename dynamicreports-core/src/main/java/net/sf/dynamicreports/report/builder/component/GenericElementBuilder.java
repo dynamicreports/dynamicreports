@@ -40,7 +40,7 @@ public class GenericElementBuilder extends DimensionComponentBuilder<GenericElem
      * <p>Constructor for GenericElementBuilder.</p>
      *
      * @param namespace a {@link java.lang.String} object.
-     * @param name a {@link java.lang.String} object.
+     * @param name      a {@link java.lang.String} object.
      */
     protected GenericElementBuilder(String namespace, String name) {
         super(new DRGenericElement(namespace, name));
@@ -60,7 +60,7 @@ public class GenericElementBuilder extends DimensionComponentBuilder<GenericElem
     /**
      * <p>addParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name            a {@link java.lang.String} object.
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
      */
@@ -72,7 +72,7 @@ public class GenericElementBuilder extends DimensionComponentBuilder<GenericElem
     /**
      * <p>addParameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.
      */

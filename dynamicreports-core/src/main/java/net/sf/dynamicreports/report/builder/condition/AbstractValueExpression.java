@@ -42,7 +42,7 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
     /**
      * <p>Constructor for AbstractValueExpression.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
      */
     public AbstractValueExpression(DRIValue<T> value, Number number) {
@@ -52,7 +52,9 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
         this.number = number;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Number actualValue = reportParameters.getValue(value);
@@ -62,7 +64,9 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
         return false;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;
@@ -72,7 +76,7 @@ public abstract class AbstractValueExpression<T extends Number> extends Abstract
      * <p>compare.</p>
      *
      * @param actualValue a {@link java.lang.Number} object.
-     * @param number a {@link java.lang.Number} object.
+     * @param number      a {@link java.lang.Number} object.
      * @return a {@link java.lang.Boolean} object.
      */
     protected abstract Boolean compare(Number actualValue, Number number);

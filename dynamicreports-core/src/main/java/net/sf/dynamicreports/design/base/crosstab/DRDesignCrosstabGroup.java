@@ -45,7 +45,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
     private DRDesignCrosstabCellContent header;
     private DRDesignCrosstabCellContent totalHeader;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
@@ -60,7 +62,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.name = name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public CrosstabTotalPosition getTotalPosition() {
         return totalPosition;
@@ -75,7 +79,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.totalPosition = totalPosition;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OrderType getOrderType() {
         return orderType;
@@ -90,7 +96,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.orderType = orderType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getExpression() {
         return expression;
@@ -105,7 +113,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.expression = expression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getOrderByExpression() {
         return orderByExpression;
@@ -120,7 +130,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.orderByExpression = orderByExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getComparatorExpression() {
         return comparatorExpression;
@@ -135,7 +147,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.comparatorExpression = comparatorExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignCrosstabCellContent getHeader() {
         return header;
@@ -150,7 +164,9 @@ public abstract class DRDesignCrosstabGroup implements DRIDesignCrosstabGroup {
         this.header = header;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignCrosstabCellContent getTotalHeader() {
         return totalHeader;

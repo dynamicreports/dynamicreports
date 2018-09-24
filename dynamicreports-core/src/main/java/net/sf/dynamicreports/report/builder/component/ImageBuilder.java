@@ -145,9 +145,9 @@ public class ImageBuilder extends HyperLinkComponentBuilder<ImageBuilder, DRImag
     /**
      * <p>setHorizontalAlignment.</p>
      *
-     * @deprecated use setHorizontalImageAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.ImageBuilder} object.
+     * @deprecated use setHorizontalImageAlignment instead
      */
     @Deprecated
     public ImageBuilder setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {

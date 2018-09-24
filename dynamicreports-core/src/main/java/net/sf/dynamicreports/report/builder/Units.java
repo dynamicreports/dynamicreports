@@ -32,8 +32,7 @@ public class Units {
     /**
      * Converts a value in centimeters to pixels.
      *
-     * @param value
-     *          - the value in centimeters
+     * @param value - the value in centimeters
      * @return pixels
      */
     public static int cm(Number value) {
@@ -43,8 +42,7 @@ public class Units {
     /**
      * Converts a value in inches to pixels.
      *
-     * @param value
-     *          - the value in inches
+     * @param value - the value in inches
      * @return pixels
      */
     public static int inch(Number value) {
@@ -54,8 +52,7 @@ public class Units {
     /**
      * Converts a value in milimeters to pixels.
      *
-     * @param value
-     *          - the value in milimeters
+     * @param value - the value in milimeters
      * @return pixels
      */
     public static int mm(Number value) {

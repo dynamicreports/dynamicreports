@@ -44,7 +44,9 @@ public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode 
         super("USPSIntelligentMail");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getAscenderHeight() {
         return ascenderHeight;
@@ -59,7 +61,9 @@ public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode 
         this.ascenderHeight = ascenderHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getIntercharGapWidth() {
         return intercharGapWidth;
@@ -74,7 +78,9 @@ public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode 
         this.intercharGapWidth = intercharGapWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getTrackHeight() {
         return trackHeight;

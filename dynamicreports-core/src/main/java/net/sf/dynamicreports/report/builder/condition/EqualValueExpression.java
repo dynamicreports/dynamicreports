@@ -36,14 +36,16 @@ public class EqualValueExpression<T extends Number> extends AbstractValuesExpres
     /**
      * <p>Constructor for EqualValueExpression.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value   a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param numbers a {@link java.lang.Number} object.
      */
     public EqualValueExpression(DRIValue<T> value, Number... numbers) {
         super(value, numbers);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Boolean compare(Number actualValue, Number[] numbers) {
         for (Number number : numbers) {

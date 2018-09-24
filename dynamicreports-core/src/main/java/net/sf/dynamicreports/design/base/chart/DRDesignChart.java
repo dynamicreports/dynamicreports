@@ -62,7 +62,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         customizers = new ArrayList<DRIChartCustomizer>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ChartType getChartType() {
         return chartType;
@@ -77,7 +79,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.chartType = chartType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignChartDataset getDataset() {
         return dataset;
@@ -92,7 +96,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.dataset = dataset;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignPlot getPlot() {
         return plot;
@@ -107,7 +113,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.plot = plot;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIChartCustomizer> getCustomizers() {
         return customizers;
@@ -122,7 +130,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.customizers = customizers;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignChartTitle getTitle() {
         return title;
@@ -137,7 +147,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.title = title;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignChartSubtitle getSubtitle() {
         return subtitle;
@@ -152,7 +164,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.subtitle = subtitle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignChartLegend getLegend() {
         return legend;
@@ -167,7 +181,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.legend = legend;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public EvaluationTime getEvaluationTime() {
         return evaluationTime;
@@ -182,7 +198,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.evaluationTime = evaluationTime;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignGroup getEvaluationGroup() {
         return evaluationGroup;
@@ -197,7 +215,9 @@ public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesi
         this.evaluationGroup = evaluationGroup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getTheme() {
         return theme;

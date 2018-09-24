@@ -52,13 +52,17 @@ public abstract class AbstractDesignSimpleExpression implements DRIDesignSimpleE
         this.name = name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getParameterName() {
         return null;

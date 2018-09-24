@@ -36,7 +36,9 @@ public class DRBreak extends DRComponent implements DRIBreak {
 
     private BreakType breakType;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BreakType getType() {
         return breakType;

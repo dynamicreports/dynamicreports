@@ -48,7 +48,9 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
         BigDecimal result = null;

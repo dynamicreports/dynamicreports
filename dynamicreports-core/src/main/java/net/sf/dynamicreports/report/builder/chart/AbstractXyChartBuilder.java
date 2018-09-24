@@ -68,7 +68,7 @@ public abstract class AbstractXyChartBuilder<T extends AbstractXyChartBuilder<T,
     /**
      * <p>setXValue.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a T object.
      */

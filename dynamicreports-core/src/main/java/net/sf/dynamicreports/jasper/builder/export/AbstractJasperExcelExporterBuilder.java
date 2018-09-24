@@ -55,8 +55,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setOnePagePerSheet(Boolean onePagePerSheet) {
-        this.getObject()
-            .setOnePagePerSheet(onePagePerSheet);
+        this.getObject().setOnePagePerSheet(onePagePerSheet);
         return (T) this;
     }
 
@@ -67,8 +66,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setRemoveEmptySpaceBetweenRows(Boolean removeEmptySpaceBetweenRows) {
-        this.getObject()
-            .setRemoveEmptySpaceBetweenRows(removeEmptySpaceBetweenRows);
+        this.getObject().setRemoveEmptySpaceBetweenRows(removeEmptySpaceBetweenRows);
         return (T) this;
     }
 
@@ -79,8 +77,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setRemoveEmptySpaceBetweenColumns(Boolean removeEmptySpaceBetweenColumns) {
-        this.getObject()
-            .setRemoveEmptySpaceBetweenColumns(removeEmptySpaceBetweenColumns);
+        this.getObject().setRemoveEmptySpaceBetweenColumns(removeEmptySpaceBetweenColumns);
         return (T) this;
     }
 
@@ -91,8 +88,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setWhitePageBackground(Boolean whitePageBackground) {
-        this.getObject()
-            .setWhitePageBackground(whitePageBackground);
+        this.getObject().setWhitePageBackground(whitePageBackground);
         return (T) this;
     }
 
@@ -103,8 +99,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setDetectCellType(Boolean detectCellType) {
-        this.getObject()
-            .setDetectCellType(detectCellType);
+        this.getObject().setDetectCellType(detectCellType);
         return (T) this;
     }
 
@@ -128,8 +123,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
         Validate.notNull(sheetNames, "sheetNames must not be null");
         Validate.noNullElements(sheetNames, "sheetNames must not contains null sheetName");
         for (String sheetName : sheetNames) {
-            this.getObject()
-                .addSheetName(sheetName);
+            this.getObject().addSheetName(sheetName);
         }
         return (T) this;
     }
@@ -141,8 +135,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setFontSizeFixEnabled(Boolean fontSizeFixEnabled) {
-        this.getObject()
-            .setFontSizeFixEnabled(fontSizeFixEnabled);
+        this.getObject().setFontSizeFixEnabled(fontSizeFixEnabled);
         return (T) this;
     }
 
@@ -153,8 +146,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setImageBorderFixEnabled(Boolean imageBorderFixEnabled) {
-        this.getObject()
-            .setImageBorderFixEnabled(imageBorderFixEnabled);
+        this.getObject().setImageBorderFixEnabled(imageBorderFixEnabled);
         return (T) this;
     }
 
@@ -165,8 +157,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setMaxRowsPerSheet(Integer maxRowsPerSheet) {
-        this.getObject()
-            .setMaxRowsPerSheet(maxRowsPerSheet);
+        this.getObject().setMaxRowsPerSheet(maxRowsPerSheet);
         return (T) this;
     }
 
@@ -177,8 +168,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnoreGraphics(Boolean ignoreGraphics) {
-        this.getObject()
-            .setIgnoreGraphics(ignoreGraphics);
+        this.getObject().setIgnoreGraphics(ignoreGraphics);
         return (T) this;
     }
 
@@ -189,8 +179,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setCollapseRowSpan(Boolean collapseRowSpan) {
-        this.getObject()
-            .setCollapseRowSpan(collapseRowSpan);
+        this.getObject().setCollapseRowSpan(collapseRowSpan);
         return (T) this;
     }
 
@@ -201,8 +190,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnoreCellBorder(Boolean ignoreCellBorder) {
-        this.getObject()
-            .setIgnoreCellBorder(ignoreCellBorder);
+        this.getObject().setIgnoreCellBorder(ignoreCellBorder);
         return (T) this;
     }
 
@@ -213,8 +201,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnoreCellBackground(Boolean ignoreCellBackground) {
-        this.getObject()
-            .setIgnoreCellBackground(ignoreCellBackground);
+        this.getObject().setIgnoreCellBackground(ignoreCellBackground);
         return (T) this;
     }
 
@@ -225,8 +212,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setPassword(String password) {
-        this.getObject()
-            .setPassword(password);
+        this.getObject().setPassword(password);
         return (T) this;
     }
 
@@ -237,8 +223,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnorePageMargins(Boolean ignorePageMargins) {
-        this.getObject()
-            .setIgnorePageMargins(ignorePageMargins);
+        this.getObject().setIgnorePageMargins(ignorePageMargins);
         return (T) this;
     }
 
@@ -249,8 +234,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setWrapText(Boolean wrapText) {
-        this.getObject()
-            .setWrapText(wrapText);
+        this.getObject().setWrapText(wrapText);
         return (T) this;
     }
 
@@ -261,8 +245,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setCellLocked(Boolean cellLocked) {
-        this.getObject()
-            .setCellLocked(cellLocked);
+        this.getObject().setCellLocked(cellLocked);
         return (T) this;
     }
 
@@ -273,8 +256,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setCellHidden(Boolean cellHidden) {
-        this.getObject()
-            .setCellHidden(cellHidden);
+        this.getObject().setCellHidden(cellHidden);
         return (T) this;
     }
 
@@ -285,8 +267,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetHeaderLeft(String sheetHeaderLeft) {
-        this.getObject()
-            .setSheetHeaderLeft(sheetHeaderLeft);
+        this.getObject().setSheetHeaderLeft(sheetHeaderLeft);
         return (T) this;
     }
 
@@ -297,8 +278,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetHeaderCenter(String sheetHeaderCenter) {
-        this.getObject()
-            .setSheetHeaderCenter(sheetHeaderCenter);
+        this.getObject().setSheetHeaderCenter(sheetHeaderCenter);
         return (T) this;
     }
 
@@ -309,8 +289,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetHeaderRight(String sheetHeaderRight) {
-        this.getObject()
-            .setSheetHeaderRight(sheetHeaderRight);
+        this.getObject().setSheetHeaderRight(sheetHeaderRight);
         return (T) this;
     }
 
@@ -321,8 +300,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetFooterLeft(String sheetFooterLeft) {
-        this.getObject()
-            .setSheetFooterLeft(sheetFooterLeft);
+        this.getObject().setSheetFooterLeft(sheetFooterLeft);
         return (T) this;
     }
 
@@ -333,8 +311,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetFooterCenter(String sheetFooterCenter) {
-        this.getObject()
-            .setSheetFooterCenter(sheetFooterCenter);
+        this.getObject().setSheetFooterCenter(sheetFooterCenter);
         return (T) this;
     }
 
@@ -345,8 +322,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetFooterRight(String sheetFooterRight) {
-        this.getObject()
-            .setSheetFooterRight(sheetFooterRight);
+        this.getObject().setSheetFooterRight(sheetFooterRight);
         return (T) this;
     }
 
@@ -357,8 +333,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setFormatPatternsMap(Map<String, String> formatPatternsMap) {
-        this.getObject()
-            .setFormatPatternsMap(formatPatternsMap);
+        this.getObject().setFormatPatternsMap(formatPatternsMap);
         return (T) this;
     }
 
@@ -369,8 +344,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return (T) this;
     }
 
@@ -381,8 +355,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setIgnoreAnchors(Boolean ignoreAnchors) {
-        this.getObject()
-            .setIgnoreAnchors(ignoreAnchors);
+        this.getObject().setIgnoreAnchors(ignoreAnchors);
         return (T) this;
     }
 
@@ -393,8 +366,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setFitWidth(Integer fitWidth) {
-        this.getObject()
-            .setFitWidth(fitWidth);
+        this.getObject().setFitWidth(fitWidth);
         return (T) this;
     }
 
@@ -405,8 +377,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setFitHeight(Integer fitHeight) {
-        this.getObject()
-            .setFitHeight(fitHeight);
+        this.getObject().setFitHeight(fitHeight);
         return (T) this;
     }
 
@@ -417,8 +388,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setPageScale(Integer pageScale) {
-        this.getObject()
-            .setPageScale(pageScale);
+        this.getObject().setPageScale(pageScale);
         return (T) this;
     }
 
@@ -429,8 +399,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setSheetDirection(RunDirection sheetDirection) {
-        this.getObject()
-            .setSheetDirection(sheetDirection);
+        this.getObject().setSheetDirection(sheetDirection);
         return (T) this;
     }
 
@@ -441,8 +410,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setColumnWidthRatio(Float columnWidthRatio) {
-        this.getObject()
-            .setColumnWidthRatio(columnWidthRatio);
+        this.getObject().setColumnWidthRatio(columnWidthRatio);
         return (T) this;
     }
 
@@ -453,8 +421,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setUseTimeZone(Boolean useTimeZone) {
-        this.getObject()
-            .setUseTimeZone(useTimeZone);
+        this.getObject().setUseTimeZone(useTimeZone);
         return (T) this;
     }
 
@@ -465,8 +432,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setFirstPageNumber(Integer firstPageNumber) {
-        this.getObject()
-            .setFirstPageNumber(firstPageNumber);
+        this.getObject().setFirstPageNumber(firstPageNumber);
         return (T) this;
     }
 
@@ -477,8 +443,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setShowGridLines(Boolean showGridLines) {
-        this.getObject()
-            .setShowGridLines(showGridLines);
+        this.getObject().setShowGridLines(showGridLines);
         return (T) this;
     }
 
@@ -489,8 +454,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setImageAnchorType(ImageAnchorType imageAnchorType) {
-        this.getObject()
-            .setImageAnchorType(imageAnchorType);
+        this.getObject().setImageAnchorType(imageAnchorType);
         return (T) this;
     }
 
@@ -501,8 +465,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setCreateCustomPalette(Boolean createCustomPalette) {
-        this.getObject()
-            .setCreateCustomPalette(createCustomPalette);
+        this.getObject().setCreateCustomPalette(createCustomPalette);
         return (T) this;
     }
 
@@ -513,8 +476,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setWorkbookTemplate(String workbookTemplate) {
-        this.getObject()
-            .setWorkbookTemplate(workbookTemplate);
+        this.getObject().setWorkbookTemplate(workbookTemplate);
         return (T) this;
     }
 
@@ -525,8 +487,7 @@ public abstract class AbstractJasperExcelExporterBuilder<T extends AbstractJaspe
      * @return a T object.
      */
     public T setKeepWorkbookTemplateSheets(Boolean keepWorkbookTemplateSheets) {
-        this.getObject()
-            .setKeepWorkbookTemplateSheets(keepWorkbookTemplateSheets);
+        this.getObject().setKeepWorkbookTemplateSheets(keepWorkbookTemplateSheets);
         return (T) this;
     }
 }

@@ -41,8 +41,7 @@ public class CustomComponents {
      */
     @SuppressWarnings("rawtypes")
     public static CustomComponentTransform<?, ?> getComponentTransform(Object component) {
-        List<CustomComponentTransform> transforms = ExtensionsEnvironment.getExtensionsRegistry()
-                                                                         .getExtensions(CustomComponentTransform.class);
+        List<CustomComponentTransform> transforms = ExtensionsEnvironment.getExtensionsRegistry().getExtensions(CustomComponentTransform.class);
         for (CustomComponentTransform transform : transforms) {
             if (transform.isTransform(component)) {
                 return transform;

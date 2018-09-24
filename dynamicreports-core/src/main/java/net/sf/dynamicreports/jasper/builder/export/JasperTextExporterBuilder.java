@@ -43,9 +43,9 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
     /**
      * <p>setCharacterWidth.</p>
      *
-     * @deprecated To be removed. Use setCharacterWidth(Float characterWidth) instead.
      * @param characterWidth a {@link java.lang.Integer} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+     * @deprecated To be removed. Use setCharacterWidth(Float characterWidth) instead.
      */
     @Deprecated
     public JasperTextExporterBuilder setCharacterWidth(Integer characterWidth) {
@@ -59,17 +59,16 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setCharacterWidth(Float characterWidth) {
-        this.getObject()
-            .setCharacterWidth(characterWidth);
+        this.getObject().setCharacterWidth(characterWidth);
         return this;
     }
 
     /**
      * <p>setCharacterHeight.</p>
      *
-     * @deprecated To be removed. Use setCharacterHeight(Float characterHeight) instead.
      * @param characterHeight a {@link java.lang.Integer} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+     * @deprecated To be removed. Use setCharacterHeight(Float characterHeight) instead.
      */
     @Deprecated
     public JasperTextExporterBuilder setCharacterHeight(Integer characterHeight) {
@@ -83,17 +82,16 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setCharacterHeight(Float characterHeight) {
-        this.getObject()
-            .setCharacterHeight(characterHeight);
+        this.getObject().setCharacterHeight(characterHeight);
         return this;
     }
 
     /**
      * <p>setPageWidth.</p>
      *
-     * @deprecated To be removed. Use setPageWidthInChars instead.
      * @param pageWidth a {@link java.lang.Integer} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+     * @deprecated To be removed. Use setPageWidthInChars instead.
      */
     @Deprecated
     public JasperTextExporterBuilder setPageWidth(Integer pageWidth) {
@@ -107,17 +105,16 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setPageWidthInChars(Integer pageWidth) {
-        this.getObject()
-            .setPageWidthInChars(pageWidth);
+        this.getObject().setPageWidthInChars(pageWidth);
         return this;
     }
 
     /**
      * <p>setPageHeight.</p>
      *
-     * @deprecated To be removed. Use setPageHeightInChars instead.
      * @param pageHeight a {@link java.lang.Integer} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+     * @deprecated To be removed. Use setPageHeightInChars instead.
      */
     @Deprecated
     public JasperTextExporterBuilder setPageHeight(Integer pageHeight) {
@@ -131,17 +128,16 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setPageHeightInChars(Integer pageHeight) {
-        this.getObject()
-            .setPageHeightInChars(pageHeight);
+        this.getObject().setPageHeightInChars(pageHeight);
         return this;
     }
 
     /**
      * <p>setBetweenPagesText.</p>
      *
-     * @deprecated To be removed. Use setPageSeparator instead.
      * @param betweenPagesText a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
+     * @deprecated To be removed. Use setPageSeparator instead.
      */
     @Deprecated
     public JasperTextExporterBuilder setBetweenPagesText(String betweenPagesText) {
@@ -155,8 +151,7 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setPageSeparator(String pageSeparator) {
-        this.getObject()
-            .setPageSeparator(pageSeparator);
+        this.getObject().setPageSeparator(pageSeparator);
         return this;
     }
 
@@ -167,8 +162,7 @@ public class JasperTextExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder} object.
      */
     public JasperTextExporterBuilder setLineSeparator(String lineSeparator) {
-        this.getObject()
-            .setLineSeparator(lineSeparator);
+        this.getObject().setLineSeparator(lineSeparator);
         return this;
     }
 }

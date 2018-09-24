@@ -47,7 +47,7 @@ public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {
      * <p>Constructor for CustomBatikRenderer.</p>
      *
      * @param svgURL a {@link java.net.URL} object.
-     * @param width a int.
+     * @param width  a int.
      * @param height a int.
      * @throws net.sf.jasperreports.engine.JRException if any.
      */
@@ -56,7 +56,9 @@ public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {
         this.dimension = new Dimension(width, height);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Dimension2D getDimension(JasperReportsContext jasperReportsContext) {
         return dimension;

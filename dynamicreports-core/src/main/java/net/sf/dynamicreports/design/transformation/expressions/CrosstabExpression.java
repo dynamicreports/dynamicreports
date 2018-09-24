@@ -48,7 +48,7 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
     /**
      * <p>Constructor for CrosstabExpression.</p>
      *
-     * @param crosstab a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
+     * @param crosstab   a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstab} object.
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -69,14 +69,15 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @SuppressWarnings("unchecked")
     @Override
     public T evaluate(List<?> values, ReportParameters reportParameters) {
         DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
         for (int i = 0; i < getExpressions().size(); i++) {
-            customValues.setSystemValue(getExpressions().get(i)
-                                                        .getName(), values.get(i));
+            customValues.setSystemValue(getExpressions().get(i).getName(), values.get(i));
         }
         if (expression instanceof DRIComplexExpression) {
             DRIComplexExpression<?> express = (DRIComplexExpression<?>) expression;
@@ -86,7 +87,9 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @SuppressWarnings( {"rawtypes", "unchecked"})
     @Override
     public Class getValueClass() {

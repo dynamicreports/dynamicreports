@@ -47,8 +47,7 @@ public class JasperCsvExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
      */
     public JasperCsvExporterBuilder setFieldDelimiter(String fieldDelimiter) {
-        this.getObject()
-            .setFieldDelimiter(fieldDelimiter);
+        this.getObject().setFieldDelimiter(fieldDelimiter);
         return this;
     }
 
@@ -59,8 +58,7 @@ public class JasperCsvExporterBuilder extends AbstractJasperExporterBuilder<Jasp
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder} object.
      */
     public JasperCsvExporterBuilder setRecordDelimiter(String recordDelimiter) {
-        this.getObject()
-            .setRecordDelimiter(recordDelimiter);
+        this.getObject().setRecordDelimiter(recordDelimiter);
         return this;
     }
 }

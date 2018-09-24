@@ -306,11 +306,9 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getValueField()
-                       .setStyle(style.getStyle());
+            getObject().getValueField().setStyle(style.getStyle());
         } else {
-            getObject().getValueField()
-                       .setStyle(null);
+            getObject().getValueField().setStyle(null);
         }
         return (T) this;
     }
@@ -318,18 +316,16 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
     /**
      * <p>setHorizontalAlignment.</p>
      *
-     * @deprecated use setHorizontalTextAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a T object.
+     * @deprecated use setHorizontalTextAlignment instead
      */
     @Deprecated
     public T setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
         if (horizontalAlignment != null) {
-            getObject().getValueField()
-                       .setHorizontalTextAlignment(HorizontalTextAlignment.valueOf(horizontalAlignment.name()));
+            getObject().getValueField().setHorizontalTextAlignment(HorizontalTextAlignment.valueOf(horizontalAlignment.name()));
         } else {
-            getObject().getValueField()
-                       .setHorizontalTextAlignment(null);
+            getObject().getValueField().setHorizontalTextAlignment(null);
         }
         return (T) this;
     }
@@ -341,8 +337,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      * @return a T object.
      */
     public T setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
-        getObject().getValueField()
-                   .setHorizontalTextAlignment(horizontalTextAlignment);
+        getObject().getValueField().setHorizontalTextAlignment(horizontalTextAlignment);
         return (T) this;
     }
 
@@ -381,8 +376,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      * @return a T object.
      */
     public T setHeaderSplitType(SplitType splitType) {
-        getObject().getHeaderBand()
-                   .setSplitType(splitType);
+        getObject().getHeaderBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -393,8 +387,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      * @return a T object.
      */
     public T setHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getHeaderBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
@@ -406,13 +399,9 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setHeaderStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getHeaderBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getHeaderBand().getList().setStyle(style.build());
         } else {
-            getObject().getHeaderBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getHeaderBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -425,9 +414,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getHeaderBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
@@ -441,8 +428,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getHeaderBand()
-                       .addComponent(component.build());
+            getObject().getHeaderBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -466,8 +452,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      * @return a T object.
      */
     public T setFooterSplitType(SplitType splitType) {
-        getObject().getFooterBand()
-                   .setSplitType(splitType);
+        getObject().getFooterBand().setSplitType(splitType);
         return (T) this;
     }
 
@@ -478,8 +463,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      * @return a T object.
      */
     public T setFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
-        getObject().getFooterBand()
-                   .setPrintWhenExpression(printWhenExpression);
+        getObject().getFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
 
@@ -491,13 +475,9 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setFooterStyle(ReportStyleBuilder style) {
         if (style != null) {
-            getObject().getFooterBand()
-                       .getList()
-                       .setStyle(style.build());
+            getObject().getFooterBand().getList().setStyle(style.build());
         } else {
-            getObject().getFooterBand()
-                       .getList()
-                       .setStyle(null);
+            getObject().getFooterBand().getList().setStyle(null);
         }
         return (T) this;
     }
@@ -510,9 +490,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
-        getObject().getFooterBand()
-                   .getList()
-                   .setBackgroundComponent(backgroundComponent.build());
+        getObject().getFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
         return (T) this;
     }
 
@@ -526,8 +504,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
         for (ComponentBuilder<?, ?> component : components) {
-            getObject().getFooterBand()
-                       .addComponent(component.build());
+            getObject().getFooterBand().addComponent(component.build());
         }
         return (T) this;
     }
@@ -542,12 +519,13 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
         return addFooterComponent(components);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         super.configure();
-        getObject().getValueField()
-                   .setValueExpression(valueExpression);
+        getObject().getValueField().setValueExpression(valueExpression);
     }
 
     /**

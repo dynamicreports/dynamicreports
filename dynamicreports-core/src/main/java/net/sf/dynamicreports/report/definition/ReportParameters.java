@@ -31,14 +31,16 @@ import java.util.Locale;
  * @version $Id: $Id
  */
 public interface ReportParameters {
-    /** Constant <code>CROSSTAB_ROW_COUNTER="CROSSTAB_ROW_NUMBER"</code> */
+    /**
+     * Constant <code>CROSSTAB_ROW_COUNTER="CROSSTAB_ROW_NUMBER"</code>
+     */
     public static final String CROSSTAB_ROW_COUNTER = "CROSSTAB_ROW_NUMBER";
 
     /**
      * <p>getValue.</p>
      *
      * @param name a {@link java.lang.String} object.
-     * @param <T> a T object.
+     * @param <T>  a T object.
      * @return a T object.
      */
     public <T> T getValue(String name);
@@ -47,7 +49,7 @@ public interface ReportParameters {
      * <p>getValue.</p>
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-     * @param <T> a T object.
+     * @param <T>   a T object.
      * @return a T object.
      */
     public <T> T getValue(DRIValue<T> value);
@@ -56,7 +58,7 @@ public interface ReportParameters {
      * <p>getFieldValue.</p>
      *
      * @param name a {@link java.lang.String} object.
-     * @param <T> a T object.
+     * @param <T>  a T object.
      * @return a T object.
      */
     public <T> T getFieldValue(String name);
@@ -65,7 +67,7 @@ public interface ReportParameters {
      * <p>getVariableValue.</p>
      *
      * @param name a {@link java.lang.String} object.
-     * @param <T> a T object.
+     * @param <T>  a T object.
      * @return a T object.
      */
     public <T> T getVariableValue(String name);
@@ -74,7 +76,7 @@ public interface ReportParameters {
      * <p>getParameterValue.</p>
      *
      * @param name a {@link java.lang.String} object.
-     * @param <T> a T object.
+     * @param <T>  a T object.
      * @return a T object.
      */
     public <T> T getParameterValue(String name);
@@ -162,7 +164,7 @@ public interface ReportParameters {
     /**
      * <p>getMessage.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key       a {@link java.lang.String} object.
      * @param arguments an array of {@link java.lang.Object} objects.
      * @return a {@link java.lang.String} object.
      */

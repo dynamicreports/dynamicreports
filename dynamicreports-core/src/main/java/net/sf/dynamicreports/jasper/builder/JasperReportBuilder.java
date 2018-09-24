@@ -97,9 +97,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * The most used report builder for creating reports. It allows constructing and customizing the whole report content.
- * A report consists of bands, columns, subtotals, groups, and other parts.
- * Each part is created and configured using a particular builder method and it's passed to the report builder instance.
+ * The most used report builder for creating reports. It allows constructing and customizing the whole report content. A report consists of bands, columns, subtotals, groups, and other parts. Each
+ * part is created and configured using a particular builder method and it's passed to the report builder instance.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -141,11 +140,9 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     }
 
     /**
-     * Sets a data source object.
-     * Creates a new JRBeanCollectionDataSource data source object.
+     * Sets a data source object. Creates a new JRBeanCollectionDataSource data source object.
      *
-     * @param collection
-     *          - the collection values
+     * @param collection - the collection values
      * @return a report builder
      */
     public JasperReportBuilder setDataSource(Collection<?> collection) {
@@ -153,11 +150,9 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     }
 
     /**
-     * Sets a database data source.
-     * In this type of data source, data are retrieved from a database.
+     * Sets a database data source. In this type of data source, data are retrieved from a database.
      *
-     * @param resultSet
-     *          - the resultSet object
+     * @param resultSet - the resultSet object
      * @return a report builder
      */
     public JasperReportBuilder setDataSource(ResultSet resultSet) {
@@ -165,13 +160,10 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     }
 
     /**
-     * Sets a database data source.
-     * In this type of data source, data are retrieved from a database.
+     * Sets a database data source. In this type of data source, data are retrieved from a database.
      *
-     * @param sql
-     *          - the sql query
-     * @param connection
-     *          - the database connection
+     * @param sql        - the sql query
+     * @param connection - the database connection
      * @return a report builder
      */
     public JasperReportBuilder setDataSource(String sql, Connection connection) {
@@ -180,13 +172,10 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     }
 
     /**
-     * Sets a database data source.
-     * In this type of data source, data are retrieved from a database.
+     * Sets a database data source. In this type of data source, data are retrieved from a database.
      *
-     * @param query
-     *          - the query definition
-     * @param connection
-     *          - the database connection
+     * @param query      - the query definition
+     * @param connection - the database connection
      * @return a report builder
      */
     public JasperReportBuilder setDataSource(QueryBuilder query, Connection connection) {
@@ -260,7 +249,9 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JasperReportBuilder setParameter(String name, Object value) {
         super.setParameter(name, value);
@@ -269,7 +260,9 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JasperReportBuilder setParameters(Map<String, Object> parameters) {
         super.setParameters(parameters);
@@ -488,7 +481,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
      * <p>toImage.</p>
      *
      * @param outputStream a {@link java.io.OutputStream} object.
-     * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+     * @param imageType    a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -512,9 +505,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         Integer fromPage = null;
         Integer toPage = null;
         float zoom = 1;
-        String imageType = imageExporter.getImageType()
-                                        .name()
-                                        .toLowerCase();
+        String imageType = imageExporter.getImageType().name().toLowerCase();
         int offsetX = 0;
         int offsetY = 0;
         int pageGap = 0;
@@ -547,8 +538,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
             fromPage = 0;
         }
         if (toPage == null) {
-            toPage = jasperPrint.getPages()
-                                .size();
+            toPage = jasperPrint.getPages().size();
         }
 
         int pages = toPage - fromPage;
@@ -944,8 +934,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     /**
      * Sets a data source object.
      *
-     * @param dataSource
-     *          - the JRDataSource object
+     * @param dataSource - the JRDataSource object
      * @return a report builder
      */
     public JasperReportBuilder setDataSource(JRDataSource dataSource) {

@@ -41,30 +41,23 @@ import java.io.Serializable;
 public class ShowPercentagesCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {
-            if (chart.getCategoryPlot()
-                     .getDataset() != null) {
+            if (chart.getCategoryPlot().getDataset() != null) {
                 CategoryDataset dataset;
-                if (!(chart.getCategoryPlot()
-                           .getRenderer() instanceof GroupedStackedBarRenderer)) {
-                    dataset = new PercentageCategoryDataset(chart.getCategoryPlot()
-                                                                 .getDataset());
+                if (!(chart.getCategoryPlot().getRenderer() instanceof GroupedStackedBarRenderer)) {
+                    dataset = new PercentageCategoryDataset(chart.getCategoryPlot().getDataset());
                 } else {
-                    dataset = new PercentageGroupedCategoryDataset(chart.getCategoryPlot()
-                                                                        .getDataset());
+                    dataset = new PercentageGroupedCategoryDataset(chart.getCategoryPlot().getDataset());
                 }
-                chart.getCategoryPlot()
-                     .setDataset(dataset);
+                chart.getCategoryPlot().setDataset(dataset);
             }
-            if (StringUtils.isBlank(chart.getCategoryPlot()
-                                         .getRangeAxis()
-                                         .getLabel())) {
-                chart.getCategoryPlot()
-                     .getRangeAxis()
-                     .setLabel("%");
+            if (StringUtils.isBlank(chart.getCategoryPlot().getRangeAxis().getLabel())) {
+                chart.getCategoryPlot().getRangeAxis().setLabel("%");
             }
         }
     }

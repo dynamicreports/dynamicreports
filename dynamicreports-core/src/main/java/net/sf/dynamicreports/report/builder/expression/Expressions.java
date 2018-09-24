@@ -40,8 +40,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * A set of build in expressions.<br/>
- * Expressions are used to define various calculations, conditions, text field content, specific report groups, etc.
+ * A set of build in expressions.<br/> Expressions are used to define various calculations, conditions, text field content, specific report groups, etc.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -93,8 +92,7 @@ public class Expressions {
      */
     public static PrintWhenGroupHasMoreThanOneRowExpression printWhenGroupHasMoreThanOneRow(GroupBuilder<?> group) {
         Validate.notNull(group, "group must not be null");
-        return printWhenGroupHasMoreThanOneRow(group.getGroup()
-                                                    .getName());
+        return printWhenGroupHasMoreThanOneRow(group.getGroup().getName());
     }
 
     /**
@@ -160,8 +158,7 @@ public class Expressions {
      */
     public static GroupRowNumberExpression groupRowNumber(GroupBuilder<?> group) {
         Validate.notNull(group, "group must not be null");
-        return groupRowNumber(group.getGroup()
-                                   .getName());
+        return groupRowNumber(group.getGroup().getName());
     }
 
     /**
@@ -218,7 +215,7 @@ public class Expressions {
      * <p>value.</p>
      *
      * @param value a T object.
-     * @param <T> a T object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.ValueExpression} object.
      */
     public static <T> ValueExpression<T> value(T value) {
@@ -228,9 +225,9 @@ public class Expressions {
     /**
      * <p>value.</p>
      *
-     * @param value a T object.
+     * @param value      a T object.
      * @param valueClass a {@link java.lang.Class} object.
-     * @param <T> a T object.
+     * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.ValueExpression} object.
      */
     public static <T> ValueExpression<T> value(T value, Class<? super T> valueClass) {
@@ -273,7 +270,7 @@ public class Expressions {
     /**
      * <p>message.</p>
      *
-     * @param key a {@link java.lang.String} object.
+     * @param key       a {@link java.lang.String} object.
      * @param arguments an array of {@link java.lang.Object} objects.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.MessageExpression} object.
      */
@@ -287,11 +284,9 @@ public class Expressions {
     // jasper
 
     /**
-     * Creates a new jasper string expression, useful only for showing a static text.<br/>
-     * This method escapes the characters in a {@code String} using Java String rules.
+     * Creates a new jasper string expression, useful only for showing a static text.<br/> This method escapes the characters in a {@code String} using Java String rules.
      *
-     * @param text
-     *          text to be shown
+     * @param text text to be shown
      * @return the expression
      */
     public static JasperExpression<String> jasperSyntaxText(String text) {
@@ -299,26 +294,21 @@ public class Expressions {
     }
 
     /**
-     * Creates a new jasper expression.<br/>
-     * This expression allows declaring an expression in a Jasper native syntax. Knowledge of the jasper syntax is also required for proper use.
+     * Creates a new jasper expression.<br/> This expression allows declaring an expression in a Jasper native syntax. Knowledge of the jasper syntax is also required for proper use.
      *
-     * @param expression
-     *          the jasper expression
-     * @param valueClass
-     *          the expression class
+     * @param expression the jasper expression
+     * @param valueClass the expression class
+     * @param <T>        a T object.
      * @return the expression
-     * @param <T> a T object.
      */
     public static <T> JasperExpression<T> jasperSyntax(String expression, Class<? super T> valueClass) {
         return new JasperExpression<T>(expression, valueClass);
     }
 
     /**
-     * Creates a new jasper expression.<br/>
-     * This expression allows declaring an expression in a Jasper native syntax. Knowledge of the jasper syntax is also required for proper use.
+     * Creates a new jasper expression.<br/> This expression allows declaring an expression in a Jasper native syntax. Knowledge of the jasper syntax is also required for proper use.
      *
-     * @param expression
-     *          the jasper expression
+     * @param expression the jasper expression
      * @return the expression
      */
     @SuppressWarnings("rawtypes")
@@ -331,7 +321,7 @@ public class Expressions {
     /**
      * <p>property.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name            a {@link java.lang.String} object.
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.PropertyExpression} object.
      */
@@ -342,7 +332,7 @@ public class Expressions {
     /**
      * <p>property.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.PropertyExpression} object.
      */
@@ -355,7 +345,7 @@ public class Expressions {
     /**
      * <p>parameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name            a {@link java.lang.String} object.
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.ParameterExpression} object.
      */
@@ -366,7 +356,7 @@ public class Expressions {
     /**
      * <p>parameter.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a {@link java.lang.Object} object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.ParameterExpression} object.
      */
@@ -490,7 +480,7 @@ public class Expressions {
      * <p>crosstabValue.</p>
      *
      * @param group a {@link net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder} object.
-     * @param <T> a T object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.CrosstabValueExpression} object.
      */
     public static <T> CrosstabValueExpression<T> crosstabValue(AbstractCrosstabGroupBuilder<?, ?, ?> group) {
@@ -501,7 +491,7 @@ public class Expressions {
      * <p>crosstabValue.</p>
      *
      * @param measure a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
-     * @param <T> a T object.
+     * @param <T>     a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.CrosstabValueExpression} object.
      */
     public static <T> CrosstabValueExpression<T> crosstabValue(DRICrosstabValue<T> measure) {
@@ -512,8 +502,8 @@ public class Expressions {
      * <p>crosstabValue.</p>
      *
      * @param measure a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
-     * @param group a {@link net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder} object.
-     * @param <T> a T object.
+     * @param group   a {@link net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder} object.
+     * @param <T>     a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.CrosstabValueExpression} object.
      */
     public static <T> CrosstabValueExpression<T> crosstabValue(DRICrosstabValue<T> measure, AbstractCrosstabGroupBuilder<?, ?, ?> group) {
@@ -523,10 +513,10 @@ public class Expressions {
     /**
      * <p>crosstabValue.</p>
      *
-     * @param measure a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
-     * @param rowGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
+     * @param measure     a {@link net.sf.dynamicreports.report.definition.DRICrosstabValue} object.
+     * @param rowGroup    a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder} object.
      * @param columnGroup a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabColumnGroupBuilder} object.
-     * @param <T> a T object.
+     * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.CrosstabValueExpression} object.
      */
     public static <T> CrosstabValueExpression<T> crosstabValue(DRICrosstabValue<T> measure, CrosstabRowGroupBuilder<?> rowGroup, CrosstabColumnGroupBuilder<?> columnGroup) {

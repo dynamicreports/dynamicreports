@@ -51,7 +51,9 @@ public class DatasetParametersExpression extends AbstractDesignSimpleExpression 
         this.parameters = parameters;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object evaluate(ReportParameters reportParameters) {
         Map<String, Object> parameters = new HashMap<String, Object>(this.parameters);
@@ -59,7 +61,9 @@ public class DatasetParametersExpression extends AbstractDesignSimpleExpression 
         return parameters;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return Map.class;

@@ -22,8 +22,7 @@
 package net.sf.dynamicreports.report.definition.expression;
 
 /**
- * This expression allows declaring an expression in a Jasper native syntax.
- * Knowledge of the jasper syntax is also required for proper use.
+ * This expression allows declaring an expression in a Jasper native syntax. Knowledge of the jasper syntax is also required for proper use.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id

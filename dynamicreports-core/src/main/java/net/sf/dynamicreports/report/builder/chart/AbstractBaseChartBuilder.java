@@ -114,7 +114,7 @@ public abstract class AbstractBaseChartBuilder<T extends AbstractBaseChartBuilde
      * <p>addSeriesColorByName.</p>
      *
      * @param seriesName a {@link java.lang.String} object.
-     * @param color a {@link java.awt.Color} object.
+     * @param color      a {@link java.awt.Color} object.
      * @return a T object.
      */
     public T addSeriesColorByName(String seriesName, Color color) {

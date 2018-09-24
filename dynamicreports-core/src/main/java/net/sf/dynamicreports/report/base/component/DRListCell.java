@@ -54,8 +54,8 @@ public class DRListCell implements DRIListCell {
      * <p>Constructor for DRListCell.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
      */
     public DRListCell(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRComponent component) {
         this(component);
@@ -63,7 +63,9 @@ public class DRListCell implements DRIListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalCellComponentAlignment getHorizontalAlignment() {
         return horizontalAlignment;
@@ -78,7 +80,9 @@ public class DRListCell implements DRIListCell {
         this.horizontalAlignment = horizontalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VerticalCellComponentAlignment getVerticalAlignment() {
         return verticalAlignment;
@@ -93,7 +97,9 @@ public class DRListCell implements DRIListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRComponent getComponent() {
         return component;

@@ -35,7 +35,9 @@ public class DRCurrentDate extends DRFormatField implements DRICurrentDate {
 
     private String pattern;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
         return pattern;

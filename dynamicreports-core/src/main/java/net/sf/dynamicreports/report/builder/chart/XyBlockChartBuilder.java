@@ -49,7 +49,7 @@ public class XyBlockChartBuilder extends AbstractBaseChartBuilder<XyBlockChartBu
      *
      * @param defaultLowerBound a double.
      * @param defaultUpperBound a double.
-     * @param defaultPaint a {@link java.awt.Paint} object.
+     * @param defaultPaint      a {@link java.awt.Paint} object.
      */
     protected XyBlockChartBuilder(double defaultLowerBound, double defaultUpperBound, Paint defaultPaint) {
         super(ChartType.XYBLOCK);
@@ -76,7 +76,7 @@ public class XyBlockChartBuilder extends AbstractBaseChartBuilder<XyBlockChartBu
     /**
      * <p>setXValue.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBlockChartBuilder} object.
      */

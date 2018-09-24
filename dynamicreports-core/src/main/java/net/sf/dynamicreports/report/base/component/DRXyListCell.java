@@ -41,8 +41,8 @@ public class DRXyListCell implements DRIXyListCell {
     /**
      * <p>Constructor for DRXyListCell.</p>
      *
-     * @param x a {@link java.lang.Integer} object.
-     * @param y a {@link java.lang.Integer} object.
+     * @param x         a {@link java.lang.Integer} object.
+     * @param y         a {@link java.lang.Integer} object.
      * @param component a {@link net.sf.dynamicreports.report.base.component.DRComponent} object.
      */
     public DRXyListCell(Integer x, Integer y, DRComponent component) {
@@ -54,7 +54,9 @@ public class DRXyListCell implements DRIXyListCell {
         this.component = component;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getX() {
         return x;
@@ -69,7 +71,9 @@ public class DRXyListCell implements DRIXyListCell {
         this.x = x;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getY() {
         return y;
@@ -84,7 +88,9 @@ public class DRXyListCell implements DRIXyListCell {
         this.y = y;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRComponent getComponent() {
         return component;

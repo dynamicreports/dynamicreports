@@ -67,7 +67,9 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
         this.calculateComponents = true;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void init() {
         super.init();
@@ -75,7 +77,9 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
         this.components = new ArrayList<DRDesignComponent>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRDesignComponent> getComponents() {
         return components;
@@ -94,7 +98,7 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
     /**
      * <p>addComponent.</p>
      *
-     * @param index a int.
+     * @param index     a int.
      * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(int index, DRDesignComponent component) {
@@ -105,10 +109,10 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
     /**
      * <p>addComponent.</p>
      *
-     * @param index a int.
+     * @param index               a int.
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(int index, HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRDesignComponent component) {
         components.add(index, component);
@@ -119,8 +123,8 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
      * <p>addComponent.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     public void addComponent(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRDesignComponent component) {
         components.add(component);
@@ -145,7 +149,9 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
         return components.isEmpty();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ListType getType() {
         return type;
@@ -160,7 +166,9 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
         this.type = type;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentGroupType getComponentGroupType() {
         return componentGroupType;
@@ -233,7 +241,9 @@ public class DRDesignList extends DRDesignComponent implements DRIDesignList {
         this.removable = removable;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignComponent getBackgroundComponent() {
         return backgroundComponent;

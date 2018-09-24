@@ -35,7 +35,9 @@ public class DRDesignCandlestickPlot extends DRDesignAxisPlot implements DRIDesi
 
     private Boolean showVolume;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowVolume() {
         return showVolume;

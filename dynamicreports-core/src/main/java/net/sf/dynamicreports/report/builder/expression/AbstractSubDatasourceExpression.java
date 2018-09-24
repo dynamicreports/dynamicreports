@@ -58,14 +58,18 @@ public abstract class AbstractSubDatasourceExpression<T> extends AbstractComplex
         addExpression(expression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @SuppressWarnings("unchecked")
     @Override
     public JRDataSource evaluate(List<?> values, ReportParameters reportParameters) {
         return createSubDatasource((T) values.get(0));
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<? super JRDataSource> getValueClass() {
         return JRDataSource.class;

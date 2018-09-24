@@ -76,33 +76,22 @@ public class ColumnTransform {
      */
     public void transform() throws DRException {
         columnComponents = getColumnComponents();
-        boolean showColumnTitle = accessor.getTemplateTransform()
-                                          .isShowColumnTitle();
-        boolean showColumnValues = accessor.getTemplateTransform()
-                                           .isShowColumnValues();
-        boolean showColumnTitleForGroup = accessor.getBandTransform()
-                                                  .getColumnHeaderForGroupBand() != null;
+        boolean showColumnTitle = accessor.getTemplateTransform().isShowColumnTitle();
+        boolean showColumnValues = accessor.getTemplateTransform().isShowColumnValues();
+        boolean showColumnTitleForGroup = accessor.getBandTransform().getColumnHeaderForGroupBand() != null;
 
         ColumnGrid columnTitle = null;
         if (showColumnTitle) {
-            columnTitle = accessor.getColumnGridTransform()
-                                  .createColumnTitleGrid(accessor.getStyleTransform()
-                                                                 .getDefaultStyle(DefaultStyleType.COLUMN_TITLE));
+            columnTitle = accessor.getColumnGridTransform().createColumnTitleGrid(accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN_TITLE));
         }
         ColumnGrid columnTitleForGroup = null;
         if (showColumnTitleForGroup) {
-            columnTitleForGroup = accessor.getColumnGridTransform()
-                                          .createColumnTitleGrid(accessor.getStyleTransform()
-                                                                         .getDefaultStyle(DefaultStyleType.COLUMN_TITLE));
+            columnTitleForGroup = accessor.getColumnGridTransform().createColumnTitleGrid(accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN_TITLE));
         }
-        ColumnGrid detail = accessor.getColumnGridTransform()
-                                    .createColumnGrid();
+        ColumnGrid detail = accessor.getColumnGridTransform().createColumnGrid();
 
-        for (DRIColumn<?> column : accessor.getReport()
-                                           .getColumns()) {
-            if (!accessor.getGroupTransform()
-                         .getHideGroupColumns()
-                         .contains(column)) {
+        for (DRIColumn<?> column : accessor.getReport().getColumns()) {
+            if (!accessor.getGroupTransform().getHideGroupColumns().contains(column)) {
                 if (column.getTitleExpression() != null) {
                     if (showColumnTitle) {
                         columnTitle.addComponent(column, titleComponent(column));
@@ -124,29 +113,20 @@ public class ColumnTransform {
         }
 
         if (showColumnTitle && !columnTitle.isEmpty()) {
-            accessor.getBandTransform()
-                    .getColumnHeaderBand()
-                    .addComponent(0, columnTitle.getList());
+            accessor.getBandTransform().getColumnHeaderBand().addComponent(0, columnTitle.getList());
         }
         if (showColumnTitleForGroup && !columnTitleForGroup.isEmpty()) {
-            accessor.getBandTransform()
-                    .getColumnHeaderForGroupBand()
-                    .addComponent(0, columnTitleForGroup.getList());
+            accessor.getBandTransform().getColumnHeaderForGroupBand().addComponent(0, columnTitleForGroup.getList());
         }
         if (showColumnValues) {
-            accessor.getBandTransform()
-                    .getDetailBand()
-                    .addComponent(detail.getList());
+            accessor.getBandTransform().getDetailBand().addComponent(detail.getList());
         }
     }
 
     private Map<DRIColumn<?>, DRIComponent> getColumnComponents() throws DRException {
         Map<DRIColumn<?>, DRIComponent> columnComponents = new HashMap<DRIColumn<?>, DRIComponent>();
-        for (DRIColumn<?> column : accessor.getReport()
-                                           .getColumns()) {
-            if (!accessor.getGroupTransform()
-                         .getHideGroupColumns()
-                         .contains(column)) {
+        for (DRIColumn<?> column : accessor.getReport().getColumns()) {
+            if (!accessor.getGroupTransform().getHideGroupColumns().contains(column)) {
                 DRIComponent component = column.getComponent();
                 if (column instanceof DRIBooleanColumn) {
                     component = createBooleanComponent((DRIBooleanColumn) column);
@@ -158,37 +138,24 @@ public class ColumnTransform {
     }
 
     private DRIComponent createBooleanComponent(DRIBooleanColumn column) throws DRException {
-        DRIReportStyle booleanColumnStyle = accessor.getTemplateTransform()
-                                                    .getBooleanColumnStyle(column);
+        DRIReportStyle booleanColumnStyle = accessor.getTemplateTransform().getBooleanColumnStyle(column);
         if (booleanColumnStyle == null) {
             return column.getComponent();
         }
         DRBooleanField booleanField = new DRBooleanField();
-        booleanField.setComponentType(column.getComponent()
-                                            .getComponentType());
-        booleanField.setEmptyWhenNullValue(column.getComponent()
-                                                 .getEmptyWhenNullValue());
-        booleanField.setValueExpression(column.getComponent()
-                                              .getValueExpression());
-        booleanField.setWidth(column.getComponent()
-                                    .getWidth());
-        booleanField.setWidthType(column.getComponent()
-                                        .getWidthType());
-        booleanField.setHeight(column.getComponent()
-                                     .getHeight());
-        booleanField.setHeightType(column.getComponent()
-                                         .getHeightType());
-        booleanField.setImageWidth(column.getComponent()
-                                         .getImageWidth());
-        booleanField.setImageHeight(column.getComponent()
-                                          .getImageHeight());
-        booleanField.setHorizontalImageAlignment(column.getComponent()
-                                                       .getHorizontalImageAlignment());
-        booleanField.setHorizontalTextAlignment(column.getComponent()
-                                                      .getHorizontalTextAlignment());
+        booleanField.setComponentType(column.getComponent().getComponentType());
+        booleanField.setEmptyWhenNullValue(column.getComponent().getEmptyWhenNullValue());
+        booleanField.setValueExpression(column.getComponent().getValueExpression());
+        booleanField.setWidth(column.getComponent().getWidth());
+        booleanField.setWidthType(column.getComponent().getWidthType());
+        booleanField.setHeight(column.getComponent().getHeight());
+        booleanField.setHeightType(column.getComponent().getHeightType());
+        booleanField.setImageWidth(column.getComponent().getImageWidth());
+        booleanField.setImageHeight(column.getComponent().getImageHeight());
+        booleanField.setHorizontalImageAlignment(column.getComponent().getHorizontalImageAlignment());
+        booleanField.setHorizontalTextAlignment(column.getComponent().getHorizontalTextAlignment());
         booleanField.setStyle(booleanColumnStyle);
-        booleanField.setPrintWhenExpression(column.getComponent()
-                                                  .getPrintWhenExpression());
+        booleanField.setPrintWhenExpression(column.getComponent().getPrintWhenExpression());
         return booleanField;
     }
 
@@ -198,16 +165,13 @@ public class ColumnTransform {
         @SuppressWarnings("rawtypes") DRTextField titleField = new DRTextField();
         titleField.setValueExpression(column.getTitleExpression());
         titleField.setStyle(column.getTitleStyle());
-        titleField.setWidth(accessor.getTemplateTransform()
-                                    .getColumnWidth(column, accessor.getStyleTransform()
-                                                                    .getDefaultStyle(DefaultStyleType.COLUMN)));
+        titleField.setWidth(accessor.getTemplateTransform().getColumnWidth(column, accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN)));
         titleField.setHeight(column.getTitleHeight());
         titleField.setHeightType(column.getTitleHeightType());
         titleField.setRows(column.getTitleRows());
         titleField.setStretchWithOverflow(column.getTitleStretchWithOverflow());
         titleField.setPropertyExpressions(column.getTitlePropertyExpressions());
-        DRDesignTextField designTitleField = accessor.getComponentTransform()
-                                                     .textField(titleField, DefaultStyleType.COLUMN_TITLE);
+        DRDesignTextField designTitleField = accessor.getComponentTransform().textField(titleField, DefaultStyleType.COLUMN_TITLE);
         designTitleField.setUniqueName("column_" + column.getName() + ".title");
         return designTitleField;
     }
@@ -215,8 +179,7 @@ public class ColumnTransform {
     // detail
     private DRDesignComponent detailValueComponent(DRIValueColumn<?> column) throws DRException {
         DRDesignComponent detailComponent = detailComponent(column);
-        ((DRDesignTextField) detailComponent).setPrintRepeatedValues(accessor.getTemplateTransform()
-                                                                             .isColumnPrintRepeatedDetailValues(column));
+        ((DRDesignTextField) detailComponent).setPrintRepeatedValues(accessor.getTemplateTransform().isColumnPrintRepeatedDetailValues(column));
         return detailComponent;
     }
 
@@ -227,27 +190,23 @@ public class ColumnTransform {
     }
 
     private DRDesignComponent detailComponent(DRIColumn<?> column) throws DRException {
-        DRDesignComponent designComponent = accessor.getComponentTransform()
-                                                    .component(getColumnComponent(column), DefaultStyleType.COLUMN, null, null);
+        DRDesignComponent designComponent = accessor.getComponentTransform().component(getColumnComponent(column), DefaultStyleType.COLUMN, null, null);
         designComponent.setUniqueName("column_" + column.getName());
 
         List<DRIConditionalStyle> rowHighlighters = new ArrayList<DRIConditionalStyle>();
         rowHighlighters.addAll(getDetailRowHighlighters());
-        DRISimpleStyle detailOddRowStyle = accessor.getTemplateTransform()
-                                                   .getDetailOddRowStyle();
+        DRISimpleStyle detailOddRowStyle = accessor.getTemplateTransform().getDetailOddRowStyle();
         if (detailOddRowStyle != null) {
             rowHighlighters.add(detailRowConditionalStyle(detailOddRowStyle, Expressions.printInOddRow()));
         }
-        DRISimpleStyle detailEvenRowStyle = accessor.getTemplateTransform()
-                                                    .getDetailEvenRowStyle();
+        DRISimpleStyle detailEvenRowStyle = accessor.getTemplateTransform().getDetailEvenRowStyle();
         if (detailEvenRowStyle != null) {
             rowHighlighters.add(detailRowConditionalStyle(detailEvenRowStyle, Expressions.printInEvenRow()));
         }
         if (!rowHighlighters.isEmpty()) {
             DRIReportStyle style = getColumnComponent(column).getStyle();
             if (style == null) {
-                style = accessor.getTemplateTransform()
-                                .getColumnStyle(column instanceof DRIValueColumn<?>);
+                style = accessor.getTemplateTransform().getColumnStyle(column instanceof DRIValueColumn<?>);
             }
             DRStyle newStyle = new DRStyle();
             newStyle.setParentStyle(style);
@@ -256,8 +215,7 @@ public class ColumnTransform {
             }
             List<DRIConditionalStyle> conditionalStyles = new ArrayList<DRIConditionalStyle>();
             if (style != null) {
-                DRIStyle stl = accessor.getStyleTransform()
-                                       .getStyle(style);
+                DRIStyle stl = accessor.getStyleTransform().getStyle(style);
                 for (DRIConditionalStyle conditionalStyle : stl.getConditionalStyles()) {
                     conditionalStyles.add(conditionalStyle);
                 }
@@ -269,8 +227,7 @@ public class ColumnTransform {
             for (DRIConditionalStyle conditionalStyle : conditionalStyles) {
                 if (backgroundColor != null && conditionalStyle.getBackgroundColor() != null) {
                     DRConditionalStyle newConditionalStyle = new DRConditionalStyle(conditionalStyle.getConditionExpression());
-                    accessor.getStyleTransform()
-                            .copyStyle(newConditionalStyle, conditionalStyle);
+                    accessor.getStyleTransform().copyStyle(newConditionalStyle, conditionalStyle);
                     Color mergedColor = StyleResolver.mergeColors(backgroundColor, conditionalStyle.getBackgroundColor(), 0.25f);
                     newConditionalStyle.setBackgroundColor(mergedColor);
                     newStyle.addConditionalStyle(newConditionalStyle);
@@ -278,20 +235,17 @@ public class ColumnTransform {
                     newStyle.addConditionalStyle((DRConditionalStyle) conditionalStyle);
                 }
             }
-            designComponent.setStyle(accessor.getStyleTransform()
-                                             .transformStyle(newStyle, true, DefaultStyleType.COLUMN));
+            designComponent.setStyle(accessor.getStyleTransform().transformStyle(newStyle, true, DefaultStyleType.COLUMN));
         } else {
             if (designComponent.getStyle() == null && !(column instanceof DRIValueColumn<?>)) {
-                DRIReportStyle columnStyle = accessor.getTemplateTransform()
-                                                     .getColumnStyle(false);
+                DRIReportStyle columnStyle = accessor.getTemplateTransform().getColumnStyle(false);
                 DRStyle newStyle = null;
                 if (columnStyle != null) {
                     newStyle = new DRStyle();
                     newStyle.setParentStyle(columnStyle);
                     newStyle.setPadding(new DRPadding(0));
                 }
-                DRDesignStyle designColumnStyle = accessor.getStyleTransform()
-                                                          .transformStyle(newStyle, false, DefaultStyleType.NONE);
+                DRDesignStyle designColumnStyle = accessor.getStyleTransform().transformStyle(newStyle, false, DefaultStyleType.NONE);
                 designComponent.setStyle(designColumnStyle);
             }
         }
@@ -300,14 +254,12 @@ public class ColumnTransform {
     }
 
     private List<? extends DRIConditionalStyle> getDetailRowHighlighters() {
-        return accessor.getReport()
-                       .getDetailRowHighlighters();
+        return accessor.getReport().getDetailRowHighlighters();
     }
 
     private DRConditionalStyle detailRowConditionalStyle(DRISimpleStyle style, DRIExpression<Boolean> expression) {
         DRConditionalStyle conditionalStyle = new DRConditionalStyle(expression);
-        accessor.getStyleTransform()
-                .copyStyle(conditionalStyle, style);
+        accessor.getStyleTransform().copyStyle(conditionalStyle, style);
         return conditionalStyle;
     }
 

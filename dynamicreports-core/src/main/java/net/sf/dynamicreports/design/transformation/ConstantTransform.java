@@ -39,9 +39,9 @@ class ConstantTransform {
     /**
      * <p>variableResetType.</p>
      *
-     * @param resetType a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+     * @param resetType  a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      * @param resetGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
-     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param accessor   a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
      * @return a {@link net.sf.dynamicreports.design.constant.ResetType} object.
      */
     public static ResetType variableResetType(Evaluation resetType, DRIGroup resetGroup, DesignTransformAccessor accessor) {
@@ -59,20 +59,17 @@ class ConstantTransform {
             case COLUMN:
                 return ResetType.COLUMN;
             case FIRST_GROUP:
-                if (accessor.getGroupTransform()
-                            .getFirstGroup() == null) {
+                if (accessor.getGroupTransform().getFirstGroup() == null) {
                     return ResetType.REPORT;
                 }
                 return ResetType.GROUP;
             case BEFORE_GROUP:
-                if (accessor.getGroupTransform()
-                            .getBeforeGroup(resetGroup) == null) {
+                if (accessor.getGroupTransform().getBeforeGroup(resetGroup) == null) {
                     return ResetType.REPORT;
                 }
                 return ResetType.GROUP;
             case LAST_GROUP:
-                if (accessor.getGroupTransform()
-                            .getLastGroup() == null) {
+                if (accessor.getGroupTransform().getLastGroup() == null) {
                     return ResetType.REPORT;
                 }
                 return ResetType.GROUP;
@@ -86,10 +83,10 @@ class ConstantTransform {
     /**
      * <p>variableResetGroup.</p>
      *
-     * @param name a {@link java.lang.String} object.
-     * @param resetType a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+     * @param name       a {@link java.lang.String} object.
+     * @param resetType  a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      * @param resetGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
-     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param accessor   a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
      * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -111,20 +108,17 @@ class ConstantTransform {
                 if (resetGroup != null) {
                     throw new DRException("Reset group for variable " + name + " is required only for reset type BEFORE_GROUP or GROUP");
                 }
-                return accessor.getGroupTransform()
-                               .getFirstGroup();
+                return accessor.getGroupTransform().getFirstGroup();
             case BEFORE_GROUP:
                 if (resetGroup == null) {
                     throw new DRException("Reset group missing for variable " + name);
                 }
-                return accessor.getGroupTransform()
-                               .getBeforeGroup(resetGroup);
+                return accessor.getGroupTransform().getBeforeGroup(resetGroup);
             case LAST_GROUP:
                 if (resetGroup != null) {
                     throw new DRException("Reset group for variable " + name + " is required only for reset type BEFORE_GROUP or GROUP");
                 }
-                return accessor.getGroupTransform()
-                               .getLastGroup();
+                return accessor.getGroupTransform().getLastGroup();
             case GROUP:
                 if (resetGroup == null) {
                     throw new DRException("Reset group missing for variable " + name);
@@ -138,9 +132,9 @@ class ConstantTransform {
     /**
      * <p>textFieldEvaluationTime.</p>
      *
-     * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+     * @param evaluationTime  a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      * @param evaluationGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
-     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param accessor        a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
      * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
      */
     public static EvaluationTime textFieldEvaluationTime(Evaluation evaluationTime, DRIGroup evaluationGroup, DesignTransformAccessor accessor) {
@@ -158,20 +152,17 @@ class ConstantTransform {
             case COLUMN:
                 return EvaluationTime.COLUMN;
             case FIRST_GROUP:
-                if (accessor.getGroupTransform()
-                            .getFirstGroup() == null) {
+                if (accessor.getGroupTransform().getFirstGroup() == null) {
                     return EvaluationTime.REPORT;
                 }
                 return EvaluationTime.GROUP;
             case BEFORE_GROUP:
-                if (accessor.getGroupTransform()
-                            .getBeforeGroup(evaluationGroup) == null) {
+                if (accessor.getGroupTransform().getBeforeGroup(evaluationGroup) == null) {
                     return EvaluationTime.REPORT;
                 }
                 return EvaluationTime.GROUP;
             case LAST_GROUP:
-                if (accessor.getGroupTransform()
-                            .getLastGroup() == null) {
+                if (accessor.getGroupTransform().getLastGroup() == null) {
                     return EvaluationTime.REPORT;
                 }
                 return EvaluationTime.GROUP;
@@ -185,9 +176,9 @@ class ConstantTransform {
     /**
      * <p>textFieldEvaluationGroup.</p>
      *
-     * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
+     * @param evaluationTime  a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      * @param evaluationGroup a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
-     * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
+     * @param accessor        a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
      * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -209,20 +200,17 @@ class ConstantTransform {
                 if (evaluationGroup != null) {
                     throw new DRException("Evaluation group for textField is required only for evaluation time BEFORE_GROUP or GROUP");
                 }
-                return accessor.getGroupTransform()
-                               .getFirstGroup();
+                return accessor.getGroupTransform().getFirstGroup();
             case BEFORE_GROUP:
                 if (evaluationGroup == null) {
                     throw new DRException("Evaluation group missing for textField");
                 }
-                return accessor.getGroupTransform()
-                               .getBeforeGroup(evaluationGroup);
+                return accessor.getGroupTransform().getBeforeGroup(evaluationGroup);
             case LAST_GROUP:
                 if (evaluationGroup != null) {
                     throw new DRException("Evaluation group for textField is required only for evaluation time BEFORE_GROUP or GROUP");
                 }
-                return accessor.getGroupTransform()
-                               .getLastGroup();
+                return accessor.getGroupTransform().getLastGroup();
             case GROUP:
                 if (evaluationGroup == null) {
                     throw new DRException("Evaluation group missing for textField");

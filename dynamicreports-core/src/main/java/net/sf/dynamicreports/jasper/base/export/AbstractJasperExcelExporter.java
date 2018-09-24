@@ -86,7 +86,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetNames = new ArrayList<String>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getOnePagePerSheet() {
         return onePagePerSheet;
@@ -101,7 +103,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.onePagePerSheet = onePagePerSheet;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getRemoveEmptySpaceBetweenRows() {
         return removeEmptySpaceBetweenRows;
@@ -116,7 +120,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.removeEmptySpaceBetweenRows = removeEmptySpaceBetweenRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getRemoveEmptySpaceBetweenColumns() {
         return removeEmptySpaceBetweenColumns;
@@ -131,7 +137,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.removeEmptySpaceBetweenColumns = removeEmptySpaceBetweenColumns;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getWhitePageBackground() {
         return whitePageBackground;
@@ -146,7 +154,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.whitePageBackground = whitePageBackground;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getDetectCellType() {
         return detectCellType;
@@ -161,7 +171,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.detectCellType = detectCellType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<String> getSheetNames() {
         return sheetNames;
@@ -185,7 +197,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetNames.add(sheetName);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getFontSizeFixEnabled() {
         return fontSizeFixEnabled;
@@ -200,7 +214,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.fontSizeFixEnabled = fontSizeFixEnabled;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getImageBorderFixEnabled() {
         return imageBorderFixEnabled;
@@ -215,7 +231,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.imageBorderFixEnabled = imageBorderFixEnabled;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getMaxRowsPerSheet() {
         return maxRowsPerSheet;
@@ -230,7 +248,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.maxRowsPerSheet = maxRowsPerSheet;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreGraphics() {
         return ignoreGraphics;
@@ -245,7 +265,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignoreGraphics = ignoreGraphics;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getCollapseRowSpan() {
         return collapseRowSpan;
@@ -260,7 +282,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.collapseRowSpan = collapseRowSpan;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreCellBorder() {
         return ignoreCellBorder;
@@ -275,7 +299,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignoreCellBorder = ignoreCellBorder;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreCellBackground() {
         return ignoreCellBackground;
@@ -290,7 +316,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignoreCellBackground = ignoreCellBackground;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPassword() {
         return password;
@@ -305,7 +333,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.password = password;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnorePageMargins() {
         return ignorePageMargins;
@@ -320,7 +350,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignorePageMargins = ignorePageMargins;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getWrapText() {
         return wrapText;
@@ -335,7 +367,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.wrapText = wrapText;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getCellLocked() {
         return cellLocked;
@@ -350,7 +384,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.cellLocked = cellLocked;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getCellHidden() {
         return cellHidden;
@@ -365,7 +401,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.cellHidden = cellHidden;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetHeaderLeft() {
         return sheetHeaderLeft;
@@ -380,7 +418,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetHeaderLeft = sheetHeaderLeft;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetHeaderCenter() {
         return sheetHeaderCenter;
@@ -395,7 +435,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetHeaderCenter = sheetHeaderCenter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetHeaderRight() {
         return sheetHeaderRight;
@@ -410,7 +452,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetHeaderRight = sheetHeaderRight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetFooterLeft() {
         return sheetFooterLeft;
@@ -425,7 +469,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetFooterLeft = sheetFooterLeft;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetFooterCenter() {
         return sheetFooterCenter;
@@ -440,7 +486,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetFooterCenter = sheetFooterCenter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getSheetFooterRight() {
         return sheetFooterRight;
@@ -455,7 +503,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetFooterRight = sheetFooterRight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Map<String, String> getFormatPatternsMap() {
         return formatPatternsMap;
@@ -470,7 +520,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.formatPatternsMap = formatPatternsMap;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;
@@ -485,7 +537,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignoreHyperLink = ignoreHyperLink;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreAnchors() {
         return ignoreAnchors;
@@ -500,7 +554,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.ignoreAnchors = ignoreAnchors;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getFitWidth() {
         return fitWidth;
@@ -515,7 +571,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.fitWidth = fitWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getFitHeight() {
         return fitHeight;
@@ -530,7 +588,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.fitHeight = fitHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getPageScale() {
         return pageScale;
@@ -545,7 +605,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.pageScale = pageScale;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public RunDirection getSheetDirection() {
         return sheetDirection;
@@ -560,7 +622,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.sheetDirection = sheetDirection;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Float getColumnWidthRatio() {
         return columnWidthRatio;
@@ -575,7 +639,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.columnWidthRatio = columnWidthRatio;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getUseTimeZone() {
         return useTimeZone;
@@ -590,7 +656,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.useTimeZone = useTimeZone;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getFirstPageNumber() {
         return firstPageNumber;
@@ -605,7 +673,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.firstPageNumber = firstPageNumber;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getShowGridLines() {
         return showGridLines;
@@ -620,7 +690,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.showGridLines = showGridLines;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ImageAnchorType getImageAnchorType() {
         return imageAnchorType;
@@ -635,7 +707,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.imageAnchorType = imageAnchorType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getCreateCustomPalette() {
         return createCustomPalette;
@@ -650,7 +724,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.createCustomPalette = createCustomPalette;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getWorkbookTemplate() {
         return workbookTemplate;
@@ -665,7 +741,9 @@ public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter
         this.workbookTemplate = workbookTemplate;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getKeepWorkbookTemplateSheets() {
         return keepWorkbookTemplateSheets;

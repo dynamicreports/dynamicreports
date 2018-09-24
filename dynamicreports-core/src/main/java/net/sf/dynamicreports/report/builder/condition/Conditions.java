@@ -34,9 +34,9 @@ public class Conditions {
     /**
      * <p>equal.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param values a T object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.EqualExpression} object.
      */
     @SafeVarargs
@@ -47,9 +47,9 @@ public class Conditions {
     /**
      * <p>equal.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.EqualValueExpression} object.
      */
     public static <T extends Number> EqualValueExpression<T> equal(DRIValue<T> value, Number... number) {
@@ -59,9 +59,9 @@ public class Conditions {
     /**
      * <p>unEqual.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param values a T object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.UnEqualExpression} object.
      */
     @SafeVarargs
@@ -72,9 +72,9 @@ public class Conditions {
     /**
      * <p>unEqual.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.UnEqualValueExpression} object.
      */
     public static <T extends Number> UnEqualValueExpression<T> unEqual(DRIValue<T> value, Number... number) {
@@ -84,9 +84,9 @@ public class Conditions {
     /**
      * <p>smaller.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.SmallerValueExpression} object.
      */
     public static <T extends Number> SmallerValueExpression<T> smaller(DRIValue<T> value, Number number) {
@@ -96,9 +96,9 @@ public class Conditions {
     /**
      * <p>smallerOrEquals.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.SmallerOrEqualsValueExpression} object.
      */
     public static <T extends Number> SmallerOrEqualsValueExpression<T> smallerOrEquals(DRIValue<T> value, Number number) {
@@ -108,9 +108,9 @@ public class Conditions {
     /**
      * <p>greater.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.GreaterValueExpression} object.
      */
     public static <T extends Number> GreaterValueExpression<T> greater(DRIValue<T> value, Number number) {
@@ -120,9 +120,9 @@ public class Conditions {
     /**
      * <p>greaterOrEquals.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value  a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param number a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.GreaterOrEqualsValueExpression} object.
      */
     public static <T extends Number> GreaterOrEqualsValueExpression<T> greaterOrEquals(DRIValue<T> value, Number number) {
@@ -133,9 +133,9 @@ public class Conditions {
      * <p>between.</p>
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-     * @param min a {@link java.lang.Number} object.
-     * @param max a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param min   a {@link java.lang.Number} object.
+     * @param max   a {@link java.lang.Number} object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.BetweenValueExpression} object.
      */
     public static <T extends Number> BetweenValueExpression<T> between(DRIValue<T> value, Number min, Number max) {
@@ -146,9 +146,9 @@ public class Conditions {
      * <p>notBetween.</p>
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
-     * @param min a {@link java.lang.Number} object.
-     * @param max a {@link java.lang.Number} object.
-     * @param <T> a T object.
+     * @param min   a {@link java.lang.Number} object.
+     * @param max   a {@link java.lang.Number} object.
+     * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.condition.NotBetweenValueExpression} object.
      */
     public static <T extends Number> NotBetweenValueExpression<T> notBetween(DRIValue<T> value, Number min, Number max) {

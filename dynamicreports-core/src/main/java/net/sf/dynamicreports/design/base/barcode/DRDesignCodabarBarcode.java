@@ -42,7 +42,9 @@ public class DRDesignCodabarBarcode extends DRDesignBarcode4j implements DRIDesi
         super("Codabar");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Double getWideFactor() {
         return wideFactor;

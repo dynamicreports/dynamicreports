@@ -40,7 +40,9 @@ public class DRDesignChartDataset implements DRIDesignChartDataset {
     private ResetType resetType;
     private DRDesignGroup resetGroup;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignDataset getSubDataset() {
         return subDataset;
@@ -55,7 +57,9 @@ public class DRDesignChartDataset implements DRIDesignChartDataset {
         this.subDataset = subDataset;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ResetType getResetType() {
         return resetType;
@@ -70,7 +74,9 @@ public class DRDesignChartDataset implements DRIDesignChartDataset {
         this.resetType = resetType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignGroup getResetGroup() {
         return resetGroup;

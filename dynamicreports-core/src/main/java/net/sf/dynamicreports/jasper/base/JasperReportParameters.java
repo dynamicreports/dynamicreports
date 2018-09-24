@@ -50,7 +50,9 @@ import java.util.ResourceBundle;
  * @version $Id: $Id
  */
 public class JasperReportParameters implements ReportParameters {
-    /** Constant <code>MASTER_REPORT_PARAMETERS="MASTER_REPORT_PARAMETERS"</code> */
+    /**
+     * Constant <code>MASTER_REPORT_PARAMETERS="MASTER_REPORT_PARAMETERS"</code>
+     */
     public static final String MASTER_REPORT_PARAMETERS = "MASTER_REPORT_PARAMETERS";
 
     private JasperScriptlet jasperScriptlet;
@@ -64,7 +66,9 @@ public class JasperReportParameters implements ReportParameters {
         this.jasperScriptlet = jasperScriptlet;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getValue(String name) {
@@ -91,7 +95,9 @@ public class JasperReportParameters implements ReportParameters {
         throw new DRReportException("Value " + name + " not found");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getValue(DRIValue<T> value) {
@@ -100,7 +106,9 @@ public class JasperReportParameters implements ReportParameters {
 
     // field
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getFieldValue(String name) {
@@ -113,7 +121,9 @@ public class JasperReportParameters implements ReportParameters {
 
     // variable
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getVariableValue(String name) {
@@ -124,37 +134,49 @@ public class JasperReportParameters implements ReportParameters {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getPageNumber() {
         return (Integer) getVariableValue(JRVariable.PAGE_NUMBER);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getColumnNumber() {
         return (Integer) getVariableValue(JRVariable.COLUMN_NUMBER);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getReportRowNumber() {
         return (Integer) getVariableValue(JRVariable.REPORT_COUNT);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getPageRowNumber() {
         return (Integer) getVariableValue(JRVariable.PAGE_COUNT);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getColumnRowNumber() {
         return (Integer) getVariableValue(JRVariable.COLUMN_COUNT);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getCrosstabRowNumber() {
         CrosstabRowCounter counter = (CrosstabRowCounter) getValue(CROSSTAB_ROW_COUNTER);
@@ -164,7 +186,9 @@ public class JasperReportParameters implements ReportParameters {
         return 0;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getGroupCount(String groupName) {
         return (Integer) getVariableValue(groupName + "_COUNT");
@@ -172,7 +196,9 @@ public class JasperReportParameters implements ReportParameters {
 
     // parameter
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getParameterValue(String name) {
@@ -183,31 +209,41 @@ public class JasperReportParameters implements ReportParameters {
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Connection getConnection() {
         return (Connection) getParameterValue(JRParameter.REPORT_CONNECTION);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Locale getLocale() {
         return (Locale) getParameterValue(JRParameter.REPORT_LOCALE);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIScriptlet getScriptlet(String name) {
         return ((CustomScriptlet) getParameterValue(name + JRScriptlet.SCRIPTLET_PARAMETER_NAME_SUFFIX)).getScriptlet();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getMessage(String key) {
         return ((ResourceBundle) getParameterValue(JRParameter.REPORT_RESOURCE_BUNDLE)).getString(key);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getMessage(String key, Object[] arguments) {
         String message = getMessage(key);
@@ -220,8 +256,7 @@ public class JasperReportParameters implements ReportParameters {
 
     // simple expression
     private Object getSimpleExpressionValue(String name) {
-        return jasperScriptlet.getSimpleExpression(name)
-                              .evaluate(this);
+        return jasperScriptlet.getSimpleExpression(name).evaluate(this);
     }
 
     // complex expression
@@ -239,19 +274,25 @@ public class JasperReportParameters implements ReportParameters {
         return jasperScriptlet.getSystemValue(name);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ReportParameters getMasterParameters() {
         return (ReportParameters) getParameterValue(MASTER_REPORT_PARAMETERS);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getSubreportWidth() {
         return jasperScriptlet.getSubreportWidth();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

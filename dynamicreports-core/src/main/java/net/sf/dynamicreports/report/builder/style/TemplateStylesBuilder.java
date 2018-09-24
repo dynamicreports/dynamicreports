@@ -93,8 +93,7 @@ public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder
 
     private TemplateStylesBuilder addStyles(DRStyle[] styles) {
         for (DRStyle style : styles) {
-            this.getObject()
-                .add(new StyleBuilder(style));
+            this.getObject().add(new StyleBuilder(style));
         }
         return this;
     }
@@ -133,8 +132,7 @@ public class TemplateStylesBuilder extends AbstractBuilder<TemplateStylesBuilder
     public StyleBuilder getStyle(String name) {
         Validate.notNull(name, "name must not be null");
         for (StyleBuilder style : getStyles()) {
-            if (name.equals(style.getStyle()
-                                 .getName())) {
+            if (name.equals(style.getStyle().getName())) {
                 return style;
             }
         }

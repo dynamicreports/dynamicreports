@@ -41,7 +41,7 @@ public class ParameterExpression implements DRIParameterExpression {
     /**
      * <p>Constructor for ParameterExpression.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name            a {@link java.lang.String} object.
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     public ParameterExpression(String name, DRIExpression<?> valueExpression) {
@@ -51,7 +51,9 @@ public class ParameterExpression implements DRIParameterExpression {
         this.valueExpression = valueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
@@ -66,7 +68,9 @@ public class ParameterExpression implements DRIParameterExpression {
         this.name = name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;

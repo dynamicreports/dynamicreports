@@ -55,7 +55,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         super("textField");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
         return pattern;
@@ -70,7 +72,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.pattern = pattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getPatternExpression() {
         return patternExpression;
@@ -85,7 +89,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.patternExpression = patternExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;
@@ -100,7 +106,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;
@@ -115,7 +123,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.valueExpression = valueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isPrintRepeatedValues() {
         return printRepeatedValues;
@@ -130,7 +140,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.printRepeatedValues = printRepeatedValues;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public EvaluationTime getEvaluationTime() {
         return evaluationTime;
@@ -145,7 +157,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.evaluationTime = evaluationTime;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignGroup getEvaluationGroup() {
         return evaluationGroup;
@@ -160,7 +174,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.evaluationGroup = evaluationGroup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Markup getMarkup() {
         return markup;
@@ -175,7 +191,9 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
         this.markup = markup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isStretchWithOverflow() {
         return stretchWithOverflow;

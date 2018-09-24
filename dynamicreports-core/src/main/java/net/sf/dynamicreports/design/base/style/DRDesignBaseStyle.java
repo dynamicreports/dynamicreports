@@ -60,7 +60,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
     private DRDesignParagraph paragraph;
     private DRDesignPen linePen;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getForegroundColor() {
         return foregroundColor;
@@ -75,7 +77,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.foregroundColor = foregroundColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Color getBackgroundColor() {
         return backgroundColor;
@@ -90,7 +94,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.backgroundColor = backgroundColor;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getRadius() {
         return radius;
@@ -105,7 +111,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.radius = radius;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ImageScale getImageScale() {
         return imageScale;
@@ -120,7 +128,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.imageScale = imageScale;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;
@@ -135,7 +145,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VerticalTextAlignment getVerticalTextAlignment() {
         return verticalTextAlignment;
@@ -150,7 +162,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.verticalTextAlignment = verticalTextAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalImageAlignment getHorizontalImageAlignment() {
         return horizontalImageAlignment;
@@ -165,7 +179,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.horizontalImageAlignment = horizontalImageAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public VerticalImageAlignment getVerticalImageAlignment() {
         return verticalImageAlignment;
@@ -180,7 +196,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.verticalImageAlignment = verticalImageAlignment;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignBorder getBorder() {
         return border;
@@ -195,7 +213,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.border = border;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignPadding getPadding() {
         return padding;
@@ -210,7 +230,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.padding = padding;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignFont getFont() {
         return font;
@@ -225,7 +247,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.font = font;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Rotation getRotation() {
         return rotation;
@@ -240,7 +264,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.rotation = rotation;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
         return pattern;
@@ -255,7 +281,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.pattern = pattern;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Markup getMarkup() {
         return markup;
@@ -270,7 +298,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.markup = markup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignParagraph getParagraph() {
         return paragraph;
@@ -285,7 +315,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.paragraph = paragraph;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignPen getLinePen() {
         return linePen;
@@ -300,7 +332,9 @@ public abstract class DRDesignBaseStyle implements DRIDesignBaseStyle {
         this.linePen = linePen;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

@@ -36,7 +36,9 @@ public class DREllipse extends DRDimensionComponent implements DRIEllipse {
 
     private DRPen pen;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRPen getPen() {
         return pen;

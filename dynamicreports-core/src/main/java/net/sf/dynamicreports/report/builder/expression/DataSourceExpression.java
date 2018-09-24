@@ -49,7 +49,9 @@ public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource>
         this.dataSource = dataSource;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JRDataSource evaluate(ReportParameters reportParameters) {
         if (moveFirst && dataSource != null && dataSource instanceof JRRewindableDataSource) {
@@ -62,7 +64,9 @@ public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource>
         return dataSource;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<JRDataSource> getValueClass() {
         return JRDataSource.class;

@@ -76,8 +76,7 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
     /**
      * Sets the total type. Has effect only when the report contains at least one group.
      *
-     * @param totalType
-     *          the total type
+     * @param totalType the total type
      * @return a column builder
      */
     public PercentageColumnBuilder setTotalType(PercentageTotalType totalType) {
@@ -88,8 +87,7 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
     /**
      * Sets the total group. Has effect only when the report contains at least one group.
      *
-     * @param totalGroup
-     *          the total group
+     * @param totalGroup the total group
      * @return a column builder
      */
     public PercentageColumnBuilder setTotalGroup(GroupBuilder<?> totalGroup) {
@@ -103,7 +101,9 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
         return this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void configure() {
         if (getComponent().getDataType() == null) {

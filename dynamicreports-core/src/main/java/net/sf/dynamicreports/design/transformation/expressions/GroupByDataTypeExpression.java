@@ -42,14 +42,16 @@ public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> 
      * <p>Constructor for GroupByDataTypeExpression.</p>
      *
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
+     * @param dataType        a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
     public GroupByDataTypeExpression(DRIExpression<?> valueExpression, DRIDataType<?, ?> dataType) {
         this.valueExpression = valueExpression;
         this.dataType = dataType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String evaluate(ReportParameters reportParameters) {
         return dataType.valueToString(valueExpression.getName(), reportParameters);

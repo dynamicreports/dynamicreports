@@ -47,8 +47,7 @@ public class JasperPptxExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperPptxExporterBuilder} object.
      */
     public JasperPptxExporterBuilder setIgnoreHyperLink(Boolean ignoreHyperLink) {
-        this.getObject()
-            .setIgnoreHyperLink(ignoreHyperLink);
+        this.getObject().setIgnoreHyperLink(ignoreHyperLink);
         return this;
     }
 }

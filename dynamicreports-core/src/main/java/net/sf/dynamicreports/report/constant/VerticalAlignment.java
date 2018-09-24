@@ -25,8 +25,8 @@ package net.sf.dynamicreports.report.constant;
  * <p>VerticalAlignment class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @deprecated use VerticalTextAligment for texts or VerticalImageAligment for images instead
  * @version $Id: $Id
+ * @deprecated use VerticalTextAligment for texts or VerticalImageAligment for images instead
  */
 public enum VerticalAlignment {
     TOP, MIDDLE, BOTTOM, JUSTIFIED

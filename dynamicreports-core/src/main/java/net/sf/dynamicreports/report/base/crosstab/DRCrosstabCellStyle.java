@@ -52,8 +52,8 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
     /**
      * <p>Constructor for DRCrosstabCellStyle.</p>
      *
-     * @param style a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-     * @param rowGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
+     * @param style       a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
+     * @param rowGroup    a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup} object.
      * @param columnGroup a {@link net.sf.dynamicreports.report.definition.crosstab.DRICrosstabColumnGroup} object.
      */
     public DRCrosstabCellStyle(DRIReportStyle style, DRICrosstabRowGroup<?> rowGroup, DRICrosstabColumnGroup<?> columnGroup) {
@@ -62,7 +62,9 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.columnGroup = columnGroup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRICrosstabRowGroup<?> getRowGroup() {
         return rowGroup;
@@ -77,7 +79,9 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.rowGroup = rowGroup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRICrosstabColumnGroup<?> getColumnGroup() {
         return columnGroup;
@@ -92,7 +96,9 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.columnGroup = columnGroup;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getStyle() {
         return style;

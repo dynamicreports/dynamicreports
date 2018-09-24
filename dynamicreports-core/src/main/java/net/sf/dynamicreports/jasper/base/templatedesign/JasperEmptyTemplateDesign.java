@@ -35,7 +35,9 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 public class JasperEmptyTemplateDesign extends AbstractTemplateDesign<JasperDesign> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JasperDesign getDesign() throws DRException {
         JasperDesign design = new JasperDesign();

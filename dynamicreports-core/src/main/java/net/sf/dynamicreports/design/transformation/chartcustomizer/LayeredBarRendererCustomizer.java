@@ -54,11 +54,12 @@ public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Seriali
         this.seriesBarWidths = seriesBarWidths;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot()
-                                                          .getRenderer();
+        BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
         LayeredBarRenderer renderer = new LayeredBarRenderer();
 
         renderer.setBaseItemLabelsVisible(categoryRenderer.getBaseItemLabelsVisible());
@@ -66,8 +67,7 @@ public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Seriali
         renderer.setBaseItemLabelPaint(categoryRenderer.getBaseItemLabelPaint());
         renderer.setBaseItemLabelGenerator(categoryRenderer.getBaseItemLabelGenerator());
         renderer.setShadowVisible(categoryRenderer.getShadowsVisible());
-        CategoryDataset categoryDataset = chart.getCategoryPlot()
-                                               .getDataset();
+        CategoryDataset categoryDataset = chart.getCategoryPlot().getDataset();
         if (categoryDataset != null) {
             for (int i = 0; i < categoryDataset.getRowCount(); i++) {
                 Paint seriesOutlinePaint = categoryRenderer.getSeriesOutlinePaint(i);
@@ -92,7 +92,6 @@ public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Seriali
             }
         }
 
-        chart.getCategoryPlot()
-             .setRenderer(renderer);
+        chart.getCategoryPlot().setRenderer(renderer);
     }
 }

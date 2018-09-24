@@ -57,8 +57,8 @@ public class DRDesignListCell implements Serializable {
      * <p>Constructor for DRDesignListCell.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.design.base.component.DRDesignComponent} object.
      */
     protected DRDesignListCell(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRDesignComponent component) {
         this.horizontalAlignment = horizontalAlignment;

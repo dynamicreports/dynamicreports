@@ -36,7 +36,7 @@ public class QueryBuilder extends AbstractBuilder<QueryBuilder, DRQuery> {
     /**
      * <p>Constructor for QueryBuilder.</p>
      *
-     * @param text a {@link java.lang.String} object.
+     * @param text     a {@link java.lang.String} object.
      * @param language a {@link java.lang.String} object.
      */
     protected QueryBuilder(String text, String language) {

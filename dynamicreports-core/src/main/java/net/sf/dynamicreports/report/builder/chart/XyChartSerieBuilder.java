@@ -47,8 +47,7 @@ public class XyChartSerieBuilder extends AbstractChartSerieBuilder<XyChartSerieB
     protected XyChartSerieBuilder(ValueColumnBuilder<?, ? extends Number> column) {
         super(new DRXyChartSerie());
         setYValue(column);
-        getObject().setLabelExpression(column.getColumn()
-                                             .getTitleExpression());
+        getObject().setLabelExpression(column.getColumn().getTitleExpression());
     }
 
     /**

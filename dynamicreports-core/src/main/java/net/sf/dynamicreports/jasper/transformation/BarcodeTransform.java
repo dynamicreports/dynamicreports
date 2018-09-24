@@ -141,8 +141,7 @@ public class BarcodeTransform {
         } else if (barcode instanceof DRIDesignQrCode) {
             return qrCode((DRIDesignQrCode) barcode);
         } else {
-            throw new JasperDesignException("Barcode " + barcode.getClass()
-                                                                .getName() + " not supported");
+            throw new JasperDesignException("Barcode " + barcode.getClass().getName() + " not supported");
         }
     }
 
@@ -151,15 +150,11 @@ public class BarcodeTransform {
         EvaluationTime evaluationTime = barbecue.getEvaluationTime();
         jrBarbecue.setEvaluationTimeValue(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && barbecue.getEvaluationGroup() != null) {
-            jrBarbecue.setEvaluationGroup(accessor.getGroupTransform()
-                                                  .getGroup(barbecue.getEvaluationGroup())
-                                                  .getName());
+            jrBarbecue.setEvaluationGroup(accessor.getGroupTransform().getGroup(barbecue.getEvaluationGroup()).getName());
         }
         jrBarbecue.setType(ConstantTransform.barbecueType(barbecue.getType()));
-        jrBarbecue.setCodeExpression(accessor.getExpressionTransform()
-                                             .getExpression(barbecue.getCodeExpression()));
-        jrBarbecue.setApplicationIdentifierExpression(accessor.getExpressionTransform()
-                                                              .getExpression(barbecue.getApplicationIdentifierExpression()));
+        jrBarbecue.setCodeExpression(accessor.getExpressionTransform().getExpression(barbecue.getCodeExpression()));
+        jrBarbecue.setApplicationIdentifierExpression(accessor.getExpressionTransform().getExpression(barbecue.getApplicationIdentifierExpression()));
         if (barbecue.getDrawText() != null) {
             jrBarbecue.setDrawText(barbecue.getDrawText());
         }
@@ -178,18 +173,14 @@ public class BarcodeTransform {
         EvaluationTime evaluationTime = barcode.getEvaluationTime();
         jrBarcode.setEvaluationTimeValue(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && barcode.getEvaluationGroup() != null) {
-            jrBarcode.setEvaluationGroup(accessor.getGroupTransform()
-                                                 .getGroup(barcode.getEvaluationGroup())
-                                                 .getName());
+            jrBarcode.setEvaluationGroup(accessor.getGroupTransform().getGroup(barcode.getEvaluationGroup()).getName());
         }
-        jrBarcode.setCodeExpression(accessor.getExpressionTransform()
-                                            .getExpression(barcode.getCodeExpression()));
+        jrBarcode.setCodeExpression(accessor.getExpressionTransform().getExpression(barcode.getCodeExpression()));
     }
 
     private void barcode4j(Barcode4jComponent jrBarcode4j, DRIDesignBarcode4j barcode4j) {
         barcode(jrBarcode4j, barcode4j);
-        jrBarcode4j.setPatternExpression(accessor.getExpressionTransform()
-                                                 .getExpression(barcode4j.getPatternExpression()));
+        jrBarcode4j.setPatternExpression(accessor.getExpressionTransform().getExpression(barcode4j.getPatternExpression()));
         jrBarcode4j.setModuleWidth(barcode4j.getModuleWidth());
         if (barcode4j.getOrientation() != null) {
             jrBarcode4j.setOrientation(ConstantTransform.barcodeOrientation(barcode4j.getOrientation()));
@@ -299,14 +290,12 @@ public class BarcodeTransform {
         POSTNETComponent jrBarcode = new POSTNETComponent();
         barcode4j(jrBarcode, barcode);
         if (barcode.getChecksumMode() != null) {
-            jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode())
-                                                       .getName());
+            jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()).getName());
         }
         jrBarcode.setDisplayChecksum(barcode.getDisplayChecksum());
         jrBarcode.setShortBarHeight(barcode.getShortBarHeight());
         if (barcode.getBaselinePosition() != null) {
-            jrBarcode.setBaselinePosition(ConstantTransform.barcodeBaselinePosition(barcode.getBaselinePosition())
-                                                           .getName());
+            jrBarcode.setBaselinePosition(ConstantTransform.barcodeBaselinePosition(barcode.getBaselinePosition()).getName());
         }
         jrBarcode.setIntercharGapWidth(barcode.getIntercharGapWidth());
         return jrBarcode;

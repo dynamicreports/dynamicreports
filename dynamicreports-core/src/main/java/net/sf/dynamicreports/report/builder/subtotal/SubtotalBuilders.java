@@ -41,8 +41,8 @@ public class SubtotalBuilders {
      * <p>aggregate.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param calculation    a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> aggregate(ValueColumnBuilder<?, ?> subtotalColumn, Calculation calculation) {
@@ -52,11 +52,11 @@ public class SubtotalBuilders {
     /**
      * <p>aggregate.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param calculation  a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> aggregate(String fieldName, Class<?> valueClass, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
@@ -66,10 +66,10 @@ public class SubtotalBuilders {
     /**
      * <p>aggregate.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param calculation  a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> aggregate(FieldBuilder<?> field, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
@@ -79,10 +79,10 @@ public class SubtotalBuilders {
     /**
      * <p>aggregate.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param calculation a {@link net.sf.dynamicreports.report.constant.Calculation} object.
-     * @param <T> a T object.
+     * @param calculation  a {@link net.sf.dynamicreports.report.constant.Calculation} object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> aggregate(DRIExpression<?> expression, ColumnBuilder<?, ?> showInColumn, Calculation calculation) {
@@ -95,7 +95,7 @@ public class SubtotalBuilders {
      * <p>sum.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<T> sum(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -105,10 +105,10 @@ public class SubtotalBuilders {
     /**
      * <p>sum.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<T> sum(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -118,9 +118,9 @@ public class SubtotalBuilders {
     /**
      * <p>sum.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<T> sum(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -130,9 +130,9 @@ public class SubtotalBuilders {
     /**
      * <p>sum.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<T> sum(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -145,7 +145,7 @@ public class SubtotalBuilders {
      * <p>avg.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> avg(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -155,10 +155,10 @@ public class SubtotalBuilders {
     /**
      * <p>avg.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> avg(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -168,9 +168,9 @@ public class SubtotalBuilders {
     /**
      * <p>avg.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> avg(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -180,9 +180,9 @@ public class SubtotalBuilders {
     /**
      * <p>avg.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> avg(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -204,8 +204,8 @@ public class SubtotalBuilders {
     /**
      * <p>count.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -216,7 +216,7 @@ public class SubtotalBuilders {
     /**
      * <p>count.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -227,7 +227,7 @@ public class SubtotalBuilders {
     /**
      * <p>count.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -250,8 +250,8 @@ public class SubtotalBuilders {
     /**
      * <p>distinctCount.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -262,7 +262,7 @@ public class SubtotalBuilders {
     /**
      * <p>distinctCount.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -273,7 +273,7 @@ public class SubtotalBuilders {
     /**
      * <p>distinctCount.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
@@ -287,7 +287,7 @@ public class SubtotalBuilders {
      * <p>first.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> first(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -297,10 +297,10 @@ public class SubtotalBuilders {
     /**
      * <p>first.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> first(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -310,9 +310,9 @@ public class SubtotalBuilders {
     /**
      * <p>first.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> first(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -322,9 +322,9 @@ public class SubtotalBuilders {
     /**
      * <p>first.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> first(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -337,7 +337,7 @@ public class SubtotalBuilders {
      * <p>max.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> max(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -347,10 +347,10 @@ public class SubtotalBuilders {
     /**
      * <p>max.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> max(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -360,9 +360,9 @@ public class SubtotalBuilders {
     /**
      * <p>max.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> max(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -372,9 +372,9 @@ public class SubtotalBuilders {
     /**
      * <p>max.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> max(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -387,7 +387,7 @@ public class SubtotalBuilders {
      * <p>min.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> min(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -397,10 +397,10 @@ public class SubtotalBuilders {
     /**
      * <p>min.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> min(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -410,9 +410,9 @@ public class SubtotalBuilders {
     /**
      * <p>min.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> min(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -422,9 +422,9 @@ public class SubtotalBuilders {
     /**
      * <p>min.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T> AggregationSubtotalBuilder<T> min(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -437,7 +437,7 @@ public class SubtotalBuilders {
      * <p>stdDev.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> stdDev(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -447,10 +447,10 @@ public class SubtotalBuilders {
     /**
      * <p>stdDev.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> stdDev(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -460,9 +460,9 @@ public class SubtotalBuilders {
     /**
      * <p>stdDev.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> stdDev(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -472,9 +472,9 @@ public class SubtotalBuilders {
     /**
      * <p>stdDev.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> stdDev(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -487,7 +487,7 @@ public class SubtotalBuilders {
      * <p>var.</p>
      *
      * @param subtotalColumn a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>            a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> var(ValueColumnBuilder<?, T> subtotalColumn) {
@@ -497,10 +497,10 @@ public class SubtotalBuilders {
     /**
      * <p>var.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> var(String fieldName, Class<T> valueClass, ColumnBuilder<?, ?> showInColumn) {
@@ -510,9 +510,9 @@ public class SubtotalBuilders {
     /**
      * <p>var.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> var(FieldBuilder<T> field, ColumnBuilder<?, ?> showInColumn) {
@@ -522,9 +522,9 @@ public class SubtotalBuilders {
     /**
      * <p>var.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */
     public <T extends Number> AggregationSubtotalBuilder<Number> var(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -536,9 +536,9 @@ public class SubtotalBuilders {
     /**
      * <p>customValue.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @param <T> a T object.
+     * @param <T>          a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.CustomSubtotalBuilder} object.
      */
     public <T> CustomSubtotalBuilder<T> customValue(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -560,8 +560,8 @@ public class SubtotalBuilders {
     /**
      * <p>percentage.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
+     * @param fieldName    a {@link java.lang.String} object.
+     * @param valueClass   a {@link java.lang.Class} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      */
@@ -572,7 +572,7 @@ public class SubtotalBuilders {
     /**
      * <p>percentage.</p>
      *
-     * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
+     * @param field        a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      */
@@ -589,7 +589,7 @@ public class SubtotalBuilders {
     /**
      * <p>text.</p>
      *
-     * @param text a {@link java.lang.String} object.
+     * @param text         a {@link java.lang.String} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder} object.
      */

@@ -545,35 +545,32 @@ public class Exporters {
      * <p>imageExporter.</p>
      *
      * @param outputStream a {@link java.io.OutputStream} object.
-     * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+     * @param imageType    a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public static JasperImageExporterBuilder imageExporter(OutputStream outputStream, ImageType imageType) {
-        return new JasperImageExporterBuilder().setOutputStream(outputStream)
-                                               .setImageType(imageType);
+        return new JasperImageExporterBuilder().setOutputStream(outputStream).setImageType(imageType);
     }
 
     /**
      * <p>imageExporter.</p>
      *
      * @param outputFile a {@link java.io.File} object.
-     * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+     * @param imageType  a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public static JasperImageExporterBuilder imageExporter(File outputFile, ImageType imageType) {
-        return new JasperImageExporterBuilder().setOutputFile(outputFile)
-                                               .setImageType(imageType);
+        return new JasperImageExporterBuilder().setOutputFile(outputFile).setImageType(imageType);
     }
 
     /**
      * <p>imageExporter.</p>
      *
      * @param outputFileName a {@link java.lang.String} object.
-     * @param imageType a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
+     * @param imageType      a {@link net.sf.dynamicreports.jasper.constant.ImageType} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder} object.
      */
     public static JasperImageExporterBuilder imageExporter(String outputFileName, ImageType imageType) {
-        return new JasperImageExporterBuilder().setOutputFileName(outputFileName)
-                                               .setImageType(imageType);
+        return new JasperImageExporterBuilder().setOutputFileName(outputFileName).setImageType(imageType);
     }
 }

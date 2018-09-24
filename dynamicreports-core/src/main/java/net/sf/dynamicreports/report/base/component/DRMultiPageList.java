@@ -48,7 +48,9 @@ public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPag
         components = new ArrayList<DRIComponent>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRIComponent> getComponents() {
         return components;
@@ -72,7 +74,9 @@ public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPag
         components.add(component);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SplitType getSplitType() {
         return splitType;

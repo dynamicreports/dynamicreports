@@ -66,7 +66,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         valueField = new DRTextField<T>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRColumn<?> getShowInColumn() {
         return showInColumn;
@@ -82,13 +84,17 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.showInColumn = showInColumn;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRTextField<T> getValueField() {
         return valueField;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getLabelExpression() {
         return labelExpression;
@@ -103,7 +109,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.labelExpression = labelExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getLabelStyle() {
         return labelStyle;
@@ -118,7 +126,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.labelStyle = labelStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position getLabelPosition() {
         return labelPosition;
@@ -133,7 +143,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.labelPosition = labelPosition;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getLabelWidth() {
         return labelWidth;
@@ -148,7 +160,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.labelWidth = labelWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ComponentDimensionType getLabelWidthType() {
         return labelWidthType;
@@ -163,7 +177,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.labelWidthType = labelWidthType;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public SubtotalPosition getPosition() {
         return position;
@@ -179,7 +195,9 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.position = position;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRGroup getGroup() {
         return group;
@@ -194,17 +212,19 @@ public class DRSubtotal<T> implements DRISubtotal<T> {
         this.group = group;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
-        return valueField.getValueExpression()
-                         .getName();
+        return valueField.getValueExpression().getName();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<? super T> getValueClass() {
-        return valueField.getValueExpression()
-                         .getValueClass();
+        return valueField.getValueExpression().getValueClass();
     }
 }

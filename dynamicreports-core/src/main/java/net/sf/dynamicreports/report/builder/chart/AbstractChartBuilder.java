@@ -102,8 +102,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setTitle(String title) {
-        getObject().getTitle()
-                   .setTitle(Expressions.text(title));
+        getObject().getTitle().setTitle(Expressions.text(title));
         return (T) this;
     }
 
@@ -114,8 +113,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setTitle(DRIExpression<String> titleExpression) {
-        getObject().getTitle()
-                   .setTitle(titleExpression);
+        getObject().getTitle().setTitle(titleExpression);
         return (T) this;
     }
 
@@ -126,8 +124,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setTitleColor(Color titleColor) {
-        getObject().getTitle()
-                   .setColor(titleColor);
+        getObject().getTitle().setColor(titleColor);
         return (T) this;
     }
 
@@ -139,8 +136,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      */
     public T setTitleFont(FontBuilder titleFont) {
         Validate.notNull(titleFont, "titleFont must not be null");
-        getObject().getTitle()
-                   .setFont(titleFont.build());
+        getObject().getTitle().setFont(titleFont.build());
         return (T) this;
     }
 
@@ -151,8 +147,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setTitlePosition(Position titlePosition) {
-        getObject().getTitle()
-                   .setPosition(titlePosition);
+        getObject().getTitle().setPosition(titlePosition);
         return (T) this;
     }
 
@@ -165,8 +160,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setSubtitle(String subtitle) {
-        getObject().getSubtitle()
-                   .setTitle(Expressions.text(subtitle));
+        getObject().getSubtitle().setTitle(Expressions.text(subtitle));
         return (T) this;
     }
 
@@ -177,8 +171,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setSubtitle(DRIExpression<String> subtitleExpression) {
-        getObject().getSubtitle()
-                   .setTitle(subtitleExpression);
+        getObject().getSubtitle().setTitle(subtitleExpression);
         return (T) this;
     }
 
@@ -189,8 +182,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setSubtitleColor(Color subtitleColor) {
-        getObject().getSubtitle()
-                   .setColor(subtitleColor);
+        getObject().getSubtitle().setColor(subtitleColor);
         return (T) this;
     }
 
@@ -202,8 +194,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      */
     public T setSubtitleFont(FontBuilder subtitleFont) {
         Validate.notNull(subtitleFont, "subtitleFont must not be null");
-        getObject().getSubtitle()
-                   .setFont(subtitleFont.build());
+        getObject().getSubtitle().setFont(subtitleFont.build());
         return (T) this;
     }
 
@@ -216,8 +207,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setLegendColor(Color legendColor) {
-        getObject().getLegend()
-                   .setColor(legendColor);
+        getObject().getLegend().setColor(legendColor);
         return (T) this;
     }
 
@@ -228,8 +218,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setLegendBackgroundColor(Color legendBackgroundColor) {
-        getObject().getLegend()
-                   .setBackgroundColor(legendBackgroundColor);
+        getObject().getLegend().setBackgroundColor(legendBackgroundColor);
         return (T) this;
     }
 
@@ -240,8 +229,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setShowLegend(Boolean showLegend) {
-        getObject().getLegend()
-                   .setShowLegend(showLegend);
+        getObject().getLegend().setShowLegend(showLegend);
         return (T) this;
     }
 
@@ -253,8 +241,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      */
     public T setLegendFont(FontBuilder legendFont) {
         Validate.notNull(legendFont, "legendFont must not be null");
-        getObject().getLegend()
-                   .setFont(legendFont.build());
+        getObject().getLegend().setFont(legendFont.build());
         return (T) this;
     }
 
@@ -265,8 +252,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      * @return a T object.
      */
     public T setLegendPosition(Position legendPosition) {
-        getObject().getLegend()
-                   .setPosition(legendPosition);
+        getObject().getLegend().setPosition(legendPosition);
         return (T) this;
     }
 
@@ -280,8 +266,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
      */
     public T setSubDataset(DatasetBuilder subDataset) {
         Validate.notNull(subDataset, "subDataset must not be null");
-        getObject().getDataset()
-                   .setSubDataset(subDataset.build());
+        getObject().getDataset().setSubDataset(subDataset.build());
         return (T) this;
     }
 
@@ -312,7 +297,7 @@ public abstract class AbstractChartBuilder<T extends AbstractChartBuilder<T>> ex
     /**
      * <p>setDataSource.</p>
      *
-     * @param sql a {@link java.lang.String} object.
+     * @param sql        a {@link java.lang.String} object.
      * @param connection a {@link java.sql.Connection} object.
      * @return a T object.
      */

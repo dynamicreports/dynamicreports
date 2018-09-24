@@ -151,8 +151,8 @@ public class ChartTransform {
     /**
      * <p>transform.</p>
      *
-     * @param chart a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
-     * @param resetType a {@link net.sf.dynamicreports.design.constant.ResetType} object.
+     * @param chart      a {@link net.sf.dynamicreports.report.definition.chart.DRIChart} object.
+     * @param resetType  a {@link net.sf.dynamicreports.design.constant.ResetType} object.
      * @param resetGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      * @return a {@link net.sf.dynamicreports.design.base.chart.DRDesignChart} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -163,26 +163,20 @@ public class ChartTransform {
 
     private DRDesignChart transform(DRIChart chart, DRIDataset subDataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignChart designChart = new DRDesignChart();
-        designChart.setWidth(accessor.getTemplateTransform()
-                                     .getChartWidth(chart));
-        designChart.setHeight(accessor.getTemplateTransform()
-                                      .getChartHeight(chart));
+        designChart.setWidth(accessor.getTemplateTransform().getChartWidth(chart));
+        designChart.setHeight(accessor.getTemplateTransform().getChartHeight(chart));
         designChart.setChartType(chart.getChartType());
-        designChart.setTheme(accessor.getTemplateTransform()
-                                     .getChartTheme(chart));
+        designChart.setTheme(accessor.getTemplateTransform().getChartTheme(chart));
         if (!(chart.getPlot() instanceof DRIMultiAxisPlot)) {
             designChart.setDataset(dataset(chart.getDataset(), subDataset, resetType, resetGroup));
         }
-        designChart.setPlot(plot(chart.getPlot(), designChart.getCustomizers(), chart.getDataset()
-                                                                                     .getSubDataset(), resetType, resetGroup));
+        designChart.setPlot(plot(chart.getPlot(), designChart.getCustomizers(), chart.getDataset().getSubDataset(), resetType, resetGroup));
         designChart.setTitle(title(chart.getTitle()));
         designChart.setSubtitle(subtitle(chart.getSubtitle()));
         designChart.setLegend(legend(chart.getLegend()));
 
-        if (!chart.getCustomizers()
-                  .isEmpty()) {
-            designChart.getCustomizers()
-                       .addAll(chart.getCustomizers());
+        if (!chart.getCustomizers().isEmpty()) {
+            designChart.getCustomizers().addAll(chart.getCustomizers());
         }
 
         return designChart;
@@ -231,16 +225,14 @@ public class ChartTransform {
         } else if (plot instanceof DRIAxisPlot) {
             designPlot = axisPlot((DRIAxisPlot) plot, chartCustomizers);
         } else {
-            throw new DRDesignReportException("Chart plot " + plot.getClass()
-                                                                  .getName() + " not supported");
+            throw new DRDesignReportException("Chart plot " + plot.getClass().getName() + " not supported");
         }
 
         if (plot instanceof DRIBasePlot) {
             AbstractDesignBasePlot designBasePlot = ((AbstractDesignBasePlot) designPlot);
             DRIBasePlot basePlot = (DRIBasePlot) plot;
             designBasePlot.setOrientation(basePlot.getOrientation());
-            designBasePlot.setSeriesColors(accessor.getTemplateTransform()
-                                                   .getChartSeriesColors(basePlot));
+            designBasePlot.setSeriesColors(accessor.getTemplateTransform().getChartSeriesColors(basePlot));
             Map<String, Color> seriesColorsByName = basePlot.getSeriesColorsByName();
             if (!seriesColorsByName.isEmpty()) {
                 chartCustomizers.add(new SeriesColorsByNameCustomizer(seriesColorsByName));
@@ -318,13 +310,10 @@ public class ChartTransform {
             DRDesignChartAxis designAxis = new DRDesignChartAxis();
             designAxis.setPosition(axis.getPosition());
             DRDesignChart chart = transform(axis.getChart(), subDataset, resetType, resetGroup);
-            chart.setStyle(accessor.getStyleTransform()
-                                   .transformStyle(axis.getChart()
-                                                       .getStyle(), false, DefaultStyleType.CHART));
+            chart.setStyle(accessor.getStyleTransform().transformStyle(axis.getChart().getStyle(), false, DefaultStyleType.CHART));
             chart.setUniqueName(ReportUtils.generateUniqueName("chart"));
             designAxis.setChart(chart);
-            designMultiAxisPlot.getAxes()
-                               .add(designAxis);
+            designMultiAxisPlot.getAxes().add(designAxis);
         }
         return designMultiAxisPlot;
     }
@@ -359,18 +348,15 @@ public class ChartTransform {
             if (piePlot.getShowPercentages() != null && piePlot.getShowPercentages()) {
                 labelFormat += " ({2})";
             }
-            String valuePattern = accessor.getTemplateTransform()
-                                          .getChartValuePattern(piePlot);
-            String percentValuePattern = accessor.getTemplateTransform()
-                                                 .getChartPercentValuePattern(piePlot);
+            String valuePattern = accessor.getTemplateTransform().getChartValuePattern(piePlot);
+            String percentValuePattern = accessor.getTemplateTransform().getChartPercentValuePattern(piePlot);
             chartCustomizers.add(new PieChartLabelFormatCustomizer(labelFormat, valuePattern, percentValuePattern));
         }
     }
 
     private DRDesignSpiderPlot spiderPlot(DRISpiderPlot spiderPlot) throws DRException {
         DRDesignSpiderPlot designSpiderPlot = new DRDesignSpiderPlot();
-        designSpiderPlot.setMaxValueExpression(accessor.getExpressionTransform()
-                                                       .transformExpression(spiderPlot.getMaxValueExpression()));
+        designSpiderPlot.setMaxValueExpression(accessor.getExpressionTransform().transformExpression(spiderPlot.getMaxValueExpression()));
         designSpiderPlot.setRotation(spiderPlot.getRotation());
         designSpiderPlot.setTableOrder(spiderPlot.getTableOrder());
         designSpiderPlot.setWebFilled(spiderPlot.getWebFilled());
@@ -379,8 +365,7 @@ public class ChartTransform {
         designSpiderPlot.setInteriorGap(spiderPlot.getInteriorGap());
         designSpiderPlot.setAxisLineColor(spiderPlot.getAxisLineColor());
         designSpiderPlot.setAxisLineWidth(spiderPlot.getAxisLineWidth());
-        designSpiderPlot.setLabelFont(accessor.getStyleTransform()
-                                              .transformFont(spiderPlot.getLabelFont()));
+        designSpiderPlot.setLabelFont(accessor.getStyleTransform().transformFont(spiderPlot.getLabelFont()));
         designSpiderPlot.setLabelGap(spiderPlot.getLabelGap());
         designSpiderPlot.setLabelColor(spiderPlot.getLabelColor());
         return designSpiderPlot;
@@ -417,18 +402,14 @@ public class ChartTransform {
 
     private DRDesignMeterPlot meterPlot(DRIMeterPlot meterPlot) throws DRException {
         DRDesignMeterPlot designMeterPlot = new DRDesignMeterPlot();
-        designMeterPlot.setDataRangeLowExpression(accessor.getExpressionTransform()
-                                                          .transformExpression(meterPlot.getDataRangeLowExpression()));
-        designMeterPlot.setDataRangeHighExpression(accessor.getExpressionTransform()
-                                                           .transformExpression(meterPlot.getDataRangeHighExpression()));
+        designMeterPlot.setDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(meterPlot.getDataRangeLowExpression()));
+        designMeterPlot.setDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(meterPlot.getDataRangeHighExpression()));
         designMeterPlot.setValueColor(meterPlot.getValueColor());
         designMeterPlot.setValueMask(meterPlot.getValueMask());
-        designMeterPlot.setValueFont(accessor.getStyleTransform()
-                                             .transformFont(meterPlot.getValueFont()));
+        designMeterPlot.setValueFont(accessor.getStyleTransform().transformFont(meterPlot.getValueFont()));
         designMeterPlot.setShape(meterPlot.getShape());
         for (DRIMeterInterval interval : meterPlot.getIntervals()) {
-            designMeterPlot.getIntervals()
-                           .add(meterInterval(interval));
+            designMeterPlot.getIntervals().add(meterInterval(interval));
         }
         designMeterPlot.setMeterAngle(meterPlot.getMeterAngle());
         designMeterPlot.setUnits(meterPlot.getUnits());
@@ -436,36 +417,25 @@ public class ChartTransform {
         designMeterPlot.setMeterBackgroundColor(meterPlot.getMeterBackgroundColor());
         designMeterPlot.setNeedleColor(meterPlot.getNeedleColor());
         designMeterPlot.setTickColor(meterPlot.getTickColor());
-        designMeterPlot.setTickLabelFont(accessor.getStyleTransform()
-                                                 .transformFont(meterPlot.getTickLabelFont()));
+        designMeterPlot.setTickLabelFont(accessor.getStyleTransform().transformFont(meterPlot.getTickLabelFont()));
         return designMeterPlot;
     }
 
     private DRDesignThermometerPlot thermometerPlot(DRIThermometerPlot thermometerPlot) throws DRException {
         DRDesignThermometerPlot designThermometerPlot = new DRDesignThermometerPlot();
-        designThermometerPlot.setDataRangeLowExpression(accessor.getExpressionTransform()
-                                                                .transformExpression(thermometerPlot.getDataRangeLowExpression()));
-        designThermometerPlot.setDataRangeHighExpression(accessor.getExpressionTransform()
-                                                                 .transformExpression(thermometerPlot.getDataRangeHighExpression()));
+        designThermometerPlot.setDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getDataRangeLowExpression()));
+        designThermometerPlot.setDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getDataRangeHighExpression()));
         designThermometerPlot.setValueColor(thermometerPlot.getValueColor());
         designThermometerPlot.setValueMask(thermometerPlot.getValueMask());
-        designThermometerPlot.setValueFont(accessor.getStyleTransform()
-                                                   .transformFont(thermometerPlot.getValueFont()));
-        designThermometerPlot.setValueLocation(accessor.getTemplateTransform()
-                                                       .getChartThermometerPlotValueLocation(thermometerPlot));
+        designThermometerPlot.setValueFont(accessor.getStyleTransform().transformFont(thermometerPlot.getValueFont()));
+        designThermometerPlot.setValueLocation(accessor.getTemplateTransform().getChartThermometerPlotValueLocation(thermometerPlot));
         designThermometerPlot.setMercuryColor(thermometerPlot.getMercuryColor());
-        designThermometerPlot.setLowDataRangeLowExpression(accessor.getExpressionTransform()
-                                                                   .transformExpression(thermometerPlot.getLowDataRangeLowExpression()));
-        designThermometerPlot.setLowDataRangeHighExpression(accessor.getExpressionTransform()
-                                                                    .transformExpression(thermometerPlot.getLowDataRangeHighExpression()));
-        designThermometerPlot.setMediumDataRangeLowExpression(accessor.getExpressionTransform()
-                                                                      .transformExpression(thermometerPlot.getMediumDataRangeLowExpression()));
-        designThermometerPlot.setMediumDataRangeHighExpression(accessor.getExpressionTransform()
-                                                                       .transformExpression(thermometerPlot.getMediumDataRangeHighExpression()));
-        designThermometerPlot.setHighDataRangeLowExpression(accessor.getExpressionTransform()
-                                                                    .transformExpression(thermometerPlot.getHighDataRangeLowExpression()));
-        designThermometerPlot.setHighDataRangeHighExpression(accessor.getExpressionTransform()
-                                                                     .transformExpression(thermometerPlot.getHighDataRangeHighExpression()));
+        designThermometerPlot.setLowDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getLowDataRangeLowExpression()));
+        designThermometerPlot.setLowDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getLowDataRangeHighExpression()));
+        designThermometerPlot.setMediumDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getMediumDataRangeLowExpression()));
+        designThermometerPlot.setMediumDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getMediumDataRangeHighExpression()));
+        designThermometerPlot.setHighDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getHighDataRangeLowExpression()));
+        designThermometerPlot.setHighDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(thermometerPlot.getHighDataRangeHighExpression()));
         return designThermometerPlot;
     }
 
@@ -474,10 +444,8 @@ public class ChartTransform {
         designInterval.setLabel(interval.getLabel());
         designInterval.setBackgroundColor(interval.getBackgroundColor());
         designInterval.setAlpha(interval.getAlpha());
-        designInterval.setDataRangeLowExpression(accessor.getExpressionTransform()
-                                                         .transformExpression(interval.getDataRangeLowExpression()));
-        designInterval.setDataRangeHighExpression(accessor.getExpressionTransform()
-                                                          .transformExpression(interval.getDataRangeHighExpression()));
+        designInterval.setDataRangeLowExpression(accessor.getExpressionTransform().transformExpression(interval.getDataRangeLowExpression()));
+        designInterval.setDataRangeHighExpression(accessor.getExpressionTransform().transformExpression(interval.getDataRangeHighExpression()));
         return designInterval;
     }
 
@@ -501,16 +469,13 @@ public class ChartTransform {
         if (axisPlot.getShowValues() != null && axisPlot.getShowValues()) {
             String valuePattern;
             if (axisPlot.getShowPercentages() != null && axisPlot.getShowPercentages()) {
-                valuePattern = accessor.getTemplateTransform()
-                                       .getChartPercentValuePattern(axisPlot);
+                valuePattern = accessor.getTemplateTransform().getChartPercentValuePattern(axisPlot);
             } else {
-                valuePattern = accessor.getTemplateTransform()
-                                       .getChartValuePattern(axisPlot);
+                valuePattern = accessor.getTemplateTransform().getChartValuePattern(axisPlot);
             }
             boolean customRangeMaxValue = false;
             if (axisPlot.getYAxisFormat() != null) {
-                customRangeMaxValue = axisPlot.getYAxisFormat()
-                                              .getRangeMaxValueExpression() != null;
+                customRangeMaxValue = axisPlot.getYAxisFormat().getRangeMaxValueExpression() != null;
             }
             chartCustomizers.add(new ShowValuesCustomizer(valuePattern, customRangeMaxValue));
         }
@@ -519,22 +484,17 @@ public class ChartTransform {
     // axis format
     private DRDesignAxisFormat axisFormat(DRIAxisFormat axisFormat) throws DRException {
         DRDesignAxisFormat designAxisFormat = new DRDesignAxisFormat();
-        designAxisFormat.setLabelExpression(accessor.getExpressionTransform()
-                                                    .transformExpression(axisFormat.getLabelExpression()));
-        designAxisFormat.setLabelFont(accessor.getStyleTransform()
-                                              .transformFont(axisFormat.getLabelFont()));
+        designAxisFormat.setLabelExpression(accessor.getExpressionTransform().transformExpression(axisFormat.getLabelExpression()));
+        designAxisFormat.setLabelFont(accessor.getStyleTransform().transformFont(axisFormat.getLabelFont()));
         designAxisFormat.setLabelColor(axisFormat.getLabelColor());
-        designAxisFormat.setTickLabelFont(accessor.getStyleTransform()
-                                                  .transformFont(axisFormat.getTickLabelFont()));
+        designAxisFormat.setTickLabelFont(accessor.getStyleTransform().transformFont(axisFormat.getTickLabelFont()));
         designAxisFormat.setTickLabelColor(axisFormat.getTickLabelColor());
         designAxisFormat.setTickLabelMask(axisFormat.getTickLabelMask());
         designAxisFormat.setVerticalTickLabels(axisFormat.getVerticalTickLabels());
         designAxisFormat.setTickLabelRotation(axisFormat.getTickLabelRotation());
         designAxisFormat.setLineColor(axisFormat.getLineColor());
-        designAxisFormat.setRangeMinValueExpression(accessor.getExpressionTransform()
-                                                            .transformExpression(axisFormat.getRangeMinValueExpression()));
-        designAxisFormat.setRangeMaxValueExpression(accessor.getExpressionTransform()
-                                                            .transformExpression(axisFormat.getRangeMaxValueExpression()));
+        designAxisFormat.setRangeMinValueExpression(accessor.getExpressionTransform().transformExpression(axisFormat.getRangeMinValueExpression()));
+        designAxisFormat.setRangeMaxValueExpression(accessor.getExpressionTransform().transformExpression(axisFormat.getRangeMaxValueExpression()));
         return designAxisFormat;
     }
 
@@ -555,10 +515,8 @@ public class ChartTransform {
 
     private void subtitle(DRDesignChartSubtitle designSubtitle, DRIChartSubtitle subtitle) throws DRException {
         designSubtitle.setColor(subtitle.getColor());
-        designSubtitle.setFont(accessor.getStyleTransform()
-                                       .transformFont(subtitle.getFont()));
-        designSubtitle.setTitle(accessor.getExpressionTransform()
-                                        .transformExpression(subtitle.getTitle()));
+        designSubtitle.setFont(accessor.getStyleTransform().transformFont(subtitle.getFont()));
+        designSubtitle.setTitle(accessor.getExpressionTransform().transformExpression(subtitle.getTitle()));
     }
 
     // legend
@@ -567,8 +525,7 @@ public class ChartTransform {
         designLegend.setColor(legend.getColor());
         designLegend.setBackgroundColor(legend.getBackgroundColor());
         designLegend.setShowLegend(legend.getShowLegend());
-        designLegend.setFont(accessor.getStyleTransform()
-                                     .transformFont(legend.getFont()));
+        designLegend.setFont(accessor.getStyleTransform().transformFont(legend.getFont()));
         designLegend.setPosition(legend.getPosition());
         return designLegend;
     }
@@ -577,12 +534,10 @@ public class ChartTransform {
     private DRDesignChartDataset dataset(DRIChartDataset dataset, DRIDataset subDataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignDataset designSubDataset = null;
         if (dataset.getSubDataset() != null) {
-            designSubDataset = accessor.getDatasetTransform()
-                                       .transform(dataset.getSubDataset());
+            designSubDataset = accessor.getDatasetTransform().transform(dataset.getSubDataset());
             accessor.transformToDataset(dataset.getSubDataset());
         } else {
-            designSubDataset = accessor.getDatasetTransform()
-                                       .transform(subDataset);
+            designSubDataset = accessor.getDatasetTransform().transform(subDataset);
             accessor.transformToDataset(subDataset);
         }
 
@@ -598,8 +553,7 @@ public class ChartTransform {
         } else if (dataset instanceof DRIValueDataset) {
             designDataset = valueDataset((DRIValueDataset) dataset);
         } else {
-            throw new DRDesignReportException("Dataset " + dataset.getClass()
-                                                                  .getName() + " not supported");
+            throw new DRDesignReportException("Dataset " + dataset.getClass().getName() + " not supported");
         }
 
         designDataset.setSubDataset(designSubDataset);
@@ -615,10 +569,8 @@ public class ChartTransform {
     }
 
     private void seriesDataset(DRISeriesDataset dataset, DRDesignSeriesDataset designDataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
-        DRIDesignExpression valueExpression = accessor.getExpressionTransform()
-                                                      .transformExpression(dataset.getValueExpression());
-        DRIDesignHyperLink datasetItemHyperLink = accessor.getReportTransform()
-                                                          .hyperlink(dataset.getItemHyperLink());
+        DRIDesignExpression valueExpression = accessor.getExpressionTransform().transformExpression(dataset.getValueExpression());
+        DRIDesignHyperLink datasetItemHyperLink = accessor.getReportTransform().hyperlink(dataset.getItemHyperLink());
         designDataset.setValueExpression(valueExpression);
         int index = 0;
         for (DRIChartSerie serie : dataset.getSeries()) {
@@ -634,11 +586,9 @@ public class ChartTransform {
             } else if (serie instanceof DRIGanttChartSerie) {
                 designSerie = ganttSerie(dataset.getSubDataset(), (DRIGanttChartSerie) serie, valueExpression, resetType, resetGroup, index++);
             } else {
-                throw new DRDesignReportException("Chart serie " + serie.getClass()
-                                                                        .getName() + " not supported");
+                throw new DRDesignReportException("Chart serie " + serie.getClass().getName() + " not supported");
             }
-            DRIDesignHyperLink itemHyperLink = accessor.getReportTransform()
-                                                       .hyperlink(serie.getItemHyperLink());
+            DRIDesignHyperLink itemHyperLink = accessor.getReportTransform().hyperlink(serie.getItemHyperLink());
             if (itemHyperLink == null) {
                 itemHyperLink = datasetItemHyperLink;
             }
@@ -657,24 +607,21 @@ public class ChartTransform {
     private DRDesignCategoryDataset categoryDataset(DRICategoryDataset dataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignCategoryDataset designDataset = new DRDesignCategoryDataset();
         seriesDataset(dataset, designDataset, resetType, resetGroup);
-        designDataset.setUseSeriesAsCategory(accessor.getTemplateTransform()
-                                                     .isChartCategoryDatasetUseSeriesAsCategory(dataset));
+        designDataset.setUseSeriesAsCategory(accessor.getTemplateTransform().isChartCategoryDatasetUseSeriesAsCategory(dataset));
         return designDataset;
     }
 
     private DRDesignTimeSeriesDataset timeSeriesDataset(DRITimeSeriesDataset dataset, ResetType resetType, DRDesignGroup resetGroup) throws DRException {
         DRDesignTimeSeriesDataset designDataset = new DRDesignTimeSeriesDataset();
         seriesDataset(dataset, designDataset, resetType, resetGroup);
-        designDataset.setTimePeriodType(accessor.getTemplateTransform()
-                                                .getChartTimeSeriesDatasetTimePeriodType(dataset));
+        designDataset.setTimePeriodType(accessor.getTemplateTransform().getChartTimeSeriesDatasetTimePeriodType(dataset));
         return designDataset;
     }
 
     private DRDesignHighLowDataset highLowDataset(DRIHighLowDataset dataset) throws DRException {
         DRDesignHighLowDataset designDataset = new DRDesignHighLowDataset();
         AbstractExpressionTransform expressionTransform = accessor.getExpressionTransform();
-        designDataset.setItemHyperLink(accessor.getReportTransform()
-                                               .hyperlink(dataset.getItemHyperLink()));
+        designDataset.setItemHyperLink(accessor.getReportTransform().hyperlink(dataset.getItemHyperLink()));
         designDataset.setSeriesExpression(expressionTransform.transformExpression(dataset.getSeriesExpression()));
         designDataset.setDateExpression(expressionTransform.transformExpression(dataset.getDateExpression()));
         designDataset.setHighExpression(expressionTransform.transformExpression(dataset.getHighExpression()));

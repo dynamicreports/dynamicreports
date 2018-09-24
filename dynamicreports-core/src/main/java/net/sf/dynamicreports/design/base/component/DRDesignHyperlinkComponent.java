@@ -48,7 +48,9 @@ public abstract class DRDesignHyperlinkComponent extends DRDesignComponent imple
         super(name);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIDesignExpression getAnchorNameExpression() {
         return anchorNameExpression;
@@ -63,7 +65,9 @@ public abstract class DRDesignHyperlinkComponent extends DRDesignComponent imple
         this.anchorNameExpression = anchorNameExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getBookmarkLevel() {
         return bookmarkLevel;
@@ -78,7 +82,9 @@ public abstract class DRDesignHyperlinkComponent extends DRDesignComponent imple
         this.bookmarkLevel = bookmarkLevel;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignHyperLink getHyperLink() {
         return hyperLink;

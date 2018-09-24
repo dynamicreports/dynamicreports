@@ -62,7 +62,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>valueToString.</p>
      *
-     * @param value a U object.
+     * @param value  a U object.
      * @param locale a {@link java.util.Locale} object.
      * @return a {@link java.lang.String} object.
      */
@@ -71,7 +71,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>valueToString.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value            a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      * @return a {@link java.lang.String} object.
      */
@@ -80,7 +80,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>valueToString.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name             a {@link java.lang.String} object.
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      * @return a {@link java.lang.String} object.
      */
@@ -89,7 +89,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>stringToValue.</p>
      *
-     * @param value a {@link java.lang.String} object.
+     * @param value  a {@link java.lang.String} object.
      * @param locale a {@link java.util.Locale} object.
      * @return a T object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -99,7 +99,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>stringToValue.</p>
      *
-     * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
+     * @param value            a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      * @return a T object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -109,7 +109,7 @@ public interface DRIDataType<U, T extends U> extends Serializable {
     /**
      * <p>stringToValue.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name             a {@link java.lang.String} object.
      * @param reportParameters a {@link net.sf.dynamicreports.report.definition.ReportParameters} object.
      * @return a T object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.

@@ -47,13 +47,17 @@ public abstract class AbstractSystemExpression<T> implements DRISystemExpression
         this.name = name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return name;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {

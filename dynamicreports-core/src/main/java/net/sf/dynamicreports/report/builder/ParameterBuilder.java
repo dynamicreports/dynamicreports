@@ -36,7 +36,7 @@ public class ParameterBuilder<T> extends AbstractBuilder<ParameterBuilder<T>, DR
     /**
      * <p>Constructor for ParameterBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name  a {@link java.lang.String} object.
      * @param value a T object.
      */
     protected ParameterBuilder(String name, T value) {
@@ -46,7 +46,7 @@ public class ParameterBuilder<T> extends AbstractBuilder<ParameterBuilder<T>, DR
     /**
      * <p>Constructor for ParameterBuilder.</p>
      *
-     * @param name a {@link java.lang.String} object.
+     * @param name       a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      */
     protected ParameterBuilder(String name, Class<T> valueClass) {

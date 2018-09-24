@@ -38,7 +38,9 @@ public class DRSort implements DRISort {
     private DRIExpression<?> expression;
     private OrderType orderType;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getExpression() {
         return expression;
@@ -53,7 +55,9 @@ public class DRSort implements DRISort {
         this.expression = expression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OrderType getOrderType() {
         return orderType;

@@ -63,8 +63,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Specifies whether or not print a value if the value is the same as the previous value.
      *
-     * @param printRepeatedDetailValues
-     *          print repeated detail values
+     * @param printRepeatedDetailValues print repeated detail values
      * @return a column builder
      */
     public T setPrintRepeatedDetailValues(Boolean printRepeatedDetailValues) {
@@ -104,8 +103,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the column value format pattern.
      *
-     * @param pattern
-     *          the format pattern
+     * @param pattern the format pattern
      * @return a column builder
      */
     public T setPattern(String pattern) {
@@ -114,11 +112,9 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * Sets the column value format pattern.
-     * The expression must be a type of String.
+     * Sets the column value format pattern. The expression must be a type of String.
      *
-     * @param patternExpression
-     *          the format pattern expression
+     * @param patternExpression the format pattern expression
      * @return a column builder
      */
     public T setPattern(DRIExpression<String> patternExpression) {
@@ -129,8 +125,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the column value formatter expression.
      *
-     * @param valueFormatter
-     *          the value formatter expression
+     * @param valueFormatter the value formatter expression
      * @return a column builder
      */
     public T setValueFormatter(DRIValueFormatter<?, ? super U> valueFormatter) {
@@ -141,8 +136,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the column data type.
      *
-     * @param dataType
-     *          the data type
+     * @param dataType the data type
      * @return a column builder
      */
     public T setDataType(DRIDataType<? super U, U> dataType) {
@@ -151,15 +145,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the preferred width of a column.
-     * The width is set to the <code>columns</code> multiplied by width of the
-     * character <em>m</em> for the font used
+     * This method is used to define the preferred width of a column. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
-     * @param columns
-     *          the number of preferred columns >= 0
-     * @exception IllegalArgumentException
-     *              if <code>columns</code> is < 0
+     * @param columns the number of preferred columns >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>columns</code> is < 0
      */
     public T setColumns(Integer columns) {
         getComponent().setColumns(columns);
@@ -167,15 +157,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the fixed width of a column.
-     * The width is set to the <code>columns</code> multiplied by width of the
-     * character <em>m</em> for the font used
+     * This method is used to define the fixed width of a column. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
-     * @param columns
-     *          the number of fixed columns >= 0
-     * @exception IllegalArgumentException
-     *              if <code>columns</code> is < 0
+     * @param columns the number of fixed columns >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>columns</code> is < 0
      */
     public T setFixedColumns(Integer columns) {
         getComponent().setColumns(columns);
@@ -184,15 +170,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the minimum width of a column.
-     * The width is set to the <code>columns</code> multiplied by width of the
-     * character <em>m</em> for the font used
+     * This method is used to define the minimum width of a column. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
-     * @param columns
-     *          the number of minimum columns >= 0
-     * @exception IllegalArgumentException
-     *              if <code>columns</code> is < 0
+     * @param columns the number of minimum columns >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>columns</code> is < 0
      */
     public T setMinColumns(Integer columns) {
         getComponent().setColumns(columns);
@@ -201,14 +183,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the preferred height of a column.
-     * The height is set to the <code>rows</code> multiplied by height of the font
+     * This method is used to define the preferred height of a column. The height is set to the <code>rows</code> multiplied by height of the font
      *
-     * @param rows
-     *          the number of preferred rows >= 0
-     * @exception IllegalArgumentException
-     *              if <code>rows</code> is < 0
+     * @param rows the number of preferred rows >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setRows(Integer rows) {
         getComponent().setRows(rows);
@@ -216,14 +195,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the fixed height of a column.
-     * The height is set to the <code>rows</code> multiplied by height of the font
+     * This method is used to define the fixed height of a column. The height is set to the <code>rows</code> multiplied by height of the font
      *
-     * @param rows
-     *          the number of fixed rows >= 0
-     * @exception IllegalArgumentException
-     *              if <code>rows</code> is < 0
+     * @param rows the number of fixed rows >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setFixedRows(Integer rows) {
         getComponent().setRows(rows);
@@ -232,14 +208,11 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * This method is used to define the minimum height of a column.
-     * The height is set to the <code>rows</code> multiplied by height of the font
+     * This method is used to define the minimum height of a column. The height is set to the <code>rows</code> multiplied by height of the font
      *
-     * @param rows
-     *          the number of minimum rows >= 0
-     * @exception IllegalArgumentException
-     *              if <code>rows</code> is < 0
+     * @param rows the number of minimum rows >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setMinRows(Integer rows) {
         getComponent().setRows(rows);
@@ -283,8 +256,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the column value hyperlink.
      *
-     * @param hyperLink
-     *          the value hyperlink
+     * @param hyperLink the value hyperlink
      * @return a column builder
      */
     public T setHyperLink(HyperLinkBuilder hyperLink) {
@@ -299,12 +271,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the preferred width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column preferred width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column preferred width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setWidth(Integer width) {
         getComponent().setWidth(width);
@@ -314,12 +284,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the fixed width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column fixed width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column fixed width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedWidth(Integer width) {
         getComponent().setWidth(width);
@@ -330,12 +298,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the minimum width of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param width
-     *          the column minimum width >= 0
-     * @exception IllegalArgumentException
-     *              if <code>width</code> is < 0
+     * @param width the column minimum width >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinWidth(Integer width) {
         getComponent().setWidth(width);
@@ -346,12 +312,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the preferred height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column preferred height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column preferred height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setHeight(Integer height) {
         getComponent().setHeight(height);
@@ -361,12 +325,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the fixed height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column fixed height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column fixed height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedHeight(Integer height) {
         getComponent().setHeight(height);
@@ -377,12 +339,10 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Sets the minimum height of a column.
      *
-     * @see net.sf.dynamicreports.report.builder.Units
-     * @param height
-     *          the column minimum height >= 0
-     * @exception IllegalArgumentException
-     *              if <code>height</code> is < 0
+     * @param height the column minimum height >= 0
      * @return a column builder
+     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinHeight(Integer height) {
         getComponent().setHeight(height);
@@ -444,8 +404,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Adds a jasper property to the column value.
      *
-     * @param propertyExpression
-     *          the property expression
+     * @param propertyExpression the property expression
      * @return a column builder
      */
     public T addProperty(DRIPropertyExpression propertyExpression) {
@@ -456,10 +415,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Adds a jasper property to the column value.
      *
-     * @param name
-     *          the property name
-     * @param valueExpression
-     *          the property value expression
+     * @param name            the property name
+     * @param valueExpression the property value expression
      * @return a column builder
      */
     public T addProperty(String name, DRIExpression<String> valueExpression) {
@@ -470,10 +427,8 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     /**
      * Adds a jasper property to the column value.
      *
-     * @param name
-     *          the property name
-     * @param value
-     *          the property value
+     * @param name  the property name
+     * @param value the property value
      * @return a column builder
      */
     public T addProperty(String name, String value) {
@@ -481,7 +436,9 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
         return (T) this;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected DRTextField<U> getComponent() {
         return (DRTextField<U>) getObject().getComponent();

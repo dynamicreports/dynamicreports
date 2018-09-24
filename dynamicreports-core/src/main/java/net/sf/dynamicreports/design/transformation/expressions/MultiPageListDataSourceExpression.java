@@ -47,13 +47,17 @@ public class MultiPageListDataSourceExpression extends AbstractSimpleExpression<
         this.count = count;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JRDataSource evaluate(ReportParameters reportParameters) {
         return new JREmptyDataSource(count);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<JRDataSource> getValueClass() {
         return JRDataSource.class;

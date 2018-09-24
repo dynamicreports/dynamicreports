@@ -43,26 +43,28 @@ public class ListType extends AbstractDataType<List, List> {
 
     private static ListFormatter listFormatter = new ListFormatter();
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIValueFormatter<?, ? extends List> getValueFormatter() {
         return listFormatter;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getStringType()
-                       .getPattern();
+        return Defaults.getDefaults().getStringType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getStringType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getStringType().getHorizontalTextAlignment();
     }
 
     private static class ListFormatter extends AbstractValueFormatter<String, List> {

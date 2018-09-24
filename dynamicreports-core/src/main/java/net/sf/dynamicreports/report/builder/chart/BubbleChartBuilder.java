@@ -66,7 +66,7 @@ public class BubbleChartBuilder extends AbstractBaseChartBuilder<BubbleChartBuil
     /**
      * <p>setXValue.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
      */

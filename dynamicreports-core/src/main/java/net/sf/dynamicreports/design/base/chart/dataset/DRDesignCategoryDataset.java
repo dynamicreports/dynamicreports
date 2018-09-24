@@ -35,7 +35,9 @@ public class DRDesignCategoryDataset extends DRDesignSeriesDataset implements DR
 
     private boolean useSeriesAsCategory;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isUseSeriesAsCategory() {
         return useSeriesAsCategory;

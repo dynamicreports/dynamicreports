@@ -140,7 +140,7 @@ public abstract class AbstractExpressionTransform {
     /**
      * <p>transformExpression.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression    a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param parameterName a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
@@ -152,9 +152,9 @@ public abstract class AbstractExpressionTransform {
     /**
      * <p>transformExpression.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression     a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
-     * @param parameterName a {@link java.lang.String} object.
+     * @param parameterName  a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
@@ -184,17 +184,13 @@ public abstract class AbstractExpressionTransform {
         } else if (expression instanceof DRIVariable<?>) {
             express = transformVariable((DRIVariable<?>) expression);
         } else if (expression instanceof DRIValueColumn<?>) {
-            express = transformExpression(((DRIValueColumn<?>) expression).getComponent()
-                                                                          .getValueExpression());
+            express = transformExpression(((DRIValueColumn<?>) expression).getComponent().getValueExpression());
         } else if (expression instanceof DRIBooleanColumn) {
-            express = transformExpression(((DRIBooleanColumn) expression).getComponent()
-                                                                         .getValueExpression());
+            express = transformExpression(((DRIBooleanColumn) expression).getComponent().getValueExpression());
         } else if (expression instanceof DRISubtotal<?>) {
-            express = transformExpression(((DRISubtotal<?>) expression).getValueField()
-                                                                       .getValueExpression());
+            express = transformExpression(((DRISubtotal<?>) expression).getValueField().getValueExpression());
         } else {
-            throw new DRDesignReportException("Expression " + expression.getClass()
-                                                                        .getName() + " not supported");
+            throw new DRDesignReportException("Expression " + expression.getClass().getName() + " not supported");
         }
         express = addExpression(express);
         if (valueFormatter == null) {
@@ -207,8 +203,7 @@ public abstract class AbstractExpressionTransform {
         DRDesignField designField = new DRDesignField();
         designField.setName(field.getName());
         designField.setValueClass(field.getValueClass());
-        designField.setDescription(accessor.getTemplateTransform()
-                                           .getFieldDescription(field));
+        designField.setDescription(accessor.getTemplateTransform().getFieldDescription(field));
         return designField;
     }
 
@@ -314,16 +309,14 @@ public abstract class AbstractExpressionTransform {
         } else if (expression instanceof DRIDesignComplexExpression) {
             addComplexExpression((DRIDesignComplexExpression) expression);
         } else {
-            throw new DRDesignReportException("Expression " + expression.getClass()
-                                                                        .getName() + " not supported");
+            throw new DRDesignReportException("Expression " + expression.getClass().getName() + " not supported");
         }
         return expression;
     }
 
     private void addVariable(DRDesignVariable variable) {
         if (variables.containsKey(variable.getName())) {
-            if (!variables.get(variable.getName())
-                          .equals(variable)) {
+            if (!variables.get(variable.getName()).equals(variable)) {
                 throw new DRDesignReportException("Duplicate declaration of variable \"" + variable.getName() + "\"");
             }
             return;
@@ -334,8 +327,7 @@ public abstract class AbstractExpressionTransform {
     private DRIDesignField addField(DRIDesignField field) {
         if (fields.containsKey(field.getName())) {
             DRIDesignField fld = fields.get(field.getName());
-            if (!fld.getValueClass()
-                    .equals(field.getValueClass())) {
+            if (!fld.getValueClass().equals(field.getValueClass())) {
                 throw new DRDesignReportException("Duplicate declaration of field \"" + field.getName() + "\"");
             }
             return fld;
@@ -360,8 +352,7 @@ public abstract class AbstractExpressionTransform {
 
     private void addSimpleExpression(DRIDesignSimpleExpression simpleExpression) {
         if (simpleExpressions.containsKey(simpleExpression.getName())) {
-            if (!simpleExpressions.get(simpleExpression.getName())
-                                  .equals(simpleExpression)) {
+            if (!simpleExpressions.get(simpleExpression.getName()).equals(simpleExpression)) {
                 throw new DRDesignReportException("Duplicate declaration of simple expression \"" + simpleExpression.getName() + "\"");
             }
             return;
@@ -371,8 +362,7 @@ public abstract class AbstractExpressionTransform {
 
     private void addComplexExpression(DRIDesignComplexExpression complexExpression) {
         if (complexExpressions.containsKey(complexExpression.getName())) {
-            if (!complexExpressions.get(complexExpression.getName())
-                                   .equals(complexExpression)) {
+            if (!complexExpressions.get(complexExpression.getName()).equals(complexExpression)) {
                 throw new DRDesignReportException("Duplicate declaration of complex expression \"" + complexExpression.getName() + "\"");
             }
             return;

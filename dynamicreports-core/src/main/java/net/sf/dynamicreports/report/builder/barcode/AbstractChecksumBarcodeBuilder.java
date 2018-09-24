@@ -39,7 +39,7 @@ public abstract class AbstractChecksumBarcodeBuilder<T extends AbstractBarcode4j
     /**
      * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
      *
-     * @param code a {@link java.lang.String} object.
+     * @param code    a {@link java.lang.String} object.
      * @param barcode a U object.
      */
     protected AbstractChecksumBarcodeBuilder(String code, U barcode) {
@@ -50,7 +50,7 @@ public abstract class AbstractChecksumBarcodeBuilder<T extends AbstractBarcode4j
      * <p>Constructor for AbstractChecksumBarcodeBuilder.</p>
      *
      * @param codeExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @param barcode a U object.
+     * @param barcode        a U object.
      */
     protected AbstractChecksumBarcodeBuilder(DRIExpression<String> codeExpression, U barcode) {
         super(codeExpression, barcode);

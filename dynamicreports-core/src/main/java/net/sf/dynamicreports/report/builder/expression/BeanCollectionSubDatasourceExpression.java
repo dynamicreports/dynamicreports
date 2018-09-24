@@ -55,7 +55,9 @@ public class BeanCollectionSubDatasourceExpression extends AbstractSubDatasource
         super(expression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected JRDataSource createSubDatasource(Collection<?> data) {
         return new JRBeanCollectionDataSource(data);

@@ -65,16 +65,14 @@ public class StyleTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignStyle style : accessor.getReport()
-                                            .getStyles()) {
+        for (DRIDesignStyle style : accessor.getReport().getStyles()) {
             addStyle(style);
         }
     }
 
     private void addStyle(DRIDesignStyle style) {
         try {
-            accessor.getDesign()
-                    .addStyle(style(style));
+            accessor.getDesign().addStyle(style(style));
         } catch (JRException e) {
             throw new JasperDesignException("Registration failed for style \"" + style.getName() + "\"", e);
         }
@@ -152,7 +150,7 @@ public class StyleTransform {
      * <p>pen.</p>
      *
      * @param jrPen a {@link net.sf.jasperreports.engine.JRPen} object.
-     * @param pen a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
+     * @param pen   a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
      */
     protected void pen(JRPen jrPen, DRIDesignPen pen) {
         if (pen == null) {
@@ -194,8 +192,7 @@ public class StyleTransform {
         baseStyle.setFontName(font.getFontName());
         baseStyle.setBold(font.getBold());
         baseStyle.setItalic(font.getItalic());
-        baseStyle.setFontSize(font.getFontSize() == null ? null : font.getFontSize()
-                                                                      .floatValue());
+        baseStyle.setFontSize(font.getFontSize() == null ? null : font.getFontSize().floatValue());
         baseStyle.setStrikeThrough(font.getStrikeThrough());
         baseStyle.setUnderline(font.getUnderline());
         baseStyle.setPdfFontName(font.getPdfFontName());
@@ -218,8 +215,7 @@ public class StyleTransform {
         jrFont.setFontName(font.getFontName());
         jrFont.setBold(font.getBold());
         jrFont.setItalic(font.getItalic());
-        jrFont.setFontSize(font.getFontSize() == null ? null : font.getFontSize()
-                                                                   .floatValue());
+        jrFont.setFontSize(font.getFontSize() == null ? null : font.getFontSize().floatValue());
         jrFont.setStrikeThrough(font.getStrikeThrough());
         jrFont.setUnderline(font.getUnderline());
         jrFont.setPdfFontName(font.getPdfFontName());
@@ -238,13 +234,9 @@ public class StyleTransform {
         if (style == null) {
             return null;
         }
-        if (!accessor.getDesign()
-                     .getStylesMap()
-                     .containsKey(style.getName())) {
+        if (!accessor.getDesign().getStylesMap().containsKey(style.getName())) {
             throw new JasperDesignException("Style \"" + style.getName() + "\" is not registered");
         }
-        return (JRDesignStyle) accessor.getDesign()
-                                       .getStylesMap()
-                                       .get(style.getName());
+        return (JRDesignStyle) accessor.getDesign().getStylesMap().get(style.getName());
     }
 }

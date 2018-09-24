@@ -38,7 +38,7 @@ public class CustomSubtotalBuilder<T> extends SubtotalBuilder<CustomSubtotalBuil
     /**
      * <p>Constructor for CustomSubtotalBuilder.</p>
      *
-     * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
+     * @param expression   a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param showInColumn a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
      */
     protected CustomSubtotalBuilder(DRIExpression<T> expression, ColumnBuilder<?, ?> showInColumn) {
@@ -46,7 +46,9 @@ public class CustomSubtotalBuilder<T> extends SubtotalBuilder<CustomSubtotalBuil
         setValueExpression(expression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return getSubtotal().getName();

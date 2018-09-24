@@ -43,7 +43,9 @@ public class PercentageGroupedCategoryDataset extends PercentageCategoryDataset 
         super(dataset);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Number getValue(int row, int column) {
         double total = 0;

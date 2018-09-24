@@ -73,7 +73,7 @@ public class Charts {
     /**
      * <p>serie.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
      */
@@ -126,7 +126,7 @@ public class Charts {
     /**
      * <p>groupedSerie.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
      */
@@ -179,7 +179,7 @@ public class Charts {
     /**
      * <p>xySerie.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
      */
@@ -445,7 +445,7 @@ public class Charts {
      *
      * @param defaultLowerBound a double.
      * @param defaultUpperBound a double.
-     * @param defaultPaint a {@link java.awt.Paint} object.
+     * @param defaultPaint      a {@link java.awt.Paint} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBlockChartBuilder} object.
      */
     public static XyBlockChartBuilder xyBlockChart(double defaultLowerBound, double defaultUpperBound, Paint defaultPaint) {

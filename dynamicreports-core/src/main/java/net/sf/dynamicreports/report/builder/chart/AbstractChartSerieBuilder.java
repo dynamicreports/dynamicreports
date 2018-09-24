@@ -65,7 +65,7 @@ public abstract class AbstractChartSerieBuilder<T extends AbstractChartSerieBuil
     /**
      * <p>setSeries.</p>
      *
-     * @param fieldName a {@link java.lang.String} object.
+     * @param fieldName  a {@link java.lang.String} object.
      * @param valueClass a {@link java.lang.Class} object.
      * @return a T object.
      */

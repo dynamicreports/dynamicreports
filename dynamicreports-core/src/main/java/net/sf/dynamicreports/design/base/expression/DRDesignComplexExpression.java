@@ -43,32 +43,40 @@ public class DRDesignComplexExpression extends AbstractDesignComplexExpression {
      * <p>Constructor for DRDesignComplexExpression.</p>
      *
      * @param complexExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIComplexExpression} object.
-     * @param parameterName a {@link java.lang.String} object.
+     * @param parameterName     a {@link java.lang.String} object.
      */
     public DRDesignComplexExpression(DRIComplexExpression<?> complexExpression, String parameterName) {
         this.complexExpression = complexExpression;
         this.parameterName = parameterName;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
         return complexExpression.evaluate(values, reportParameters);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return complexExpression.getValueClass();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getName() {
         return complexExpression.getName();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getParameterName() {
         return parameterName;

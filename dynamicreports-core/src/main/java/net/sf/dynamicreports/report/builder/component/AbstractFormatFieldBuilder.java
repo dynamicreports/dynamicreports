@@ -72,9 +72,9 @@ public abstract class AbstractFormatFieldBuilder<T extends AbstractFormatFieldBu
     /**
      * <p>setHorizontalAlignment.</p>
      *
-     * @deprecated use setHorizontalTextAlignment instead
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalAlignment} object.
      * @return a T object.
+     * @deprecated use setHorizontalTextAlignment instead
      */
     @Deprecated
     public T setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {

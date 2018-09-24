@@ -46,7 +46,7 @@ public class SubreportParametersExpression extends AbstractDesignComplexExpressi
     /**
      * <p>Constructor for SubreportParametersExpression.</p>
      *
-     * @param subreportExpression a {@link net.sf.dynamicreports.jasper.transformation.expression.SubreportExpression} object.
+     * @param subreportExpression  a {@link net.sf.dynamicreports.jasper.transformation.expression.SubreportExpression} object.
      * @param parametersExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
     public SubreportParametersExpression(SubreportExpression subreportExpression, DRIDesignExpression parametersExpression) {
@@ -57,19 +57,16 @@ public class SubreportParametersExpression extends AbstractDesignComplexExpressi
         }
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
         Map<String, Object> parameters = new HashMap<String, Object>();
-        parameters.putAll(subreportExpression.getReportDesign()
-                                             .getParameters());
-        if (subreportExpression.getReportBuilder()
-                               .getReport()
-                               .getParameterValues() != null) {
-            parameters.putAll(subreportExpression.getReportBuilder()
-                                                 .getReport()
-                                                 .getParameterValues());
+        parameters.putAll(subreportExpression.getReportDesign().getParameters());
+        if (subreportExpression.getReportBuilder().getReport().getParameterValues() != null) {
+            parameters.putAll(subreportExpression.getReportBuilder().getReport().getParameterValues());
         }
         if (!values.isEmpty()) {
             parameters.putAll((Map<String, Object>) values.get(0));
@@ -78,7 +75,9 @@ public class SubreportParametersExpression extends AbstractDesignComplexExpressi
         return parameters;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return Map.class;

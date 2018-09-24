@@ -62,7 +62,9 @@ public class DRColumnGridList implements DRIColumnGridList {
         this.listCells = new ArrayList<DRColumnGridListCell>();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRColumnGridListCell> getListCells() {
         return listCells;
@@ -91,14 +93,16 @@ public class DRColumnGridList implements DRIColumnGridList {
      * <p>addComponent.</p>
      *
      * @param horizontalAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalCellComponentAlignment} object.
-     * @param verticalAlignment a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
-     * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
+     * @param verticalAlignment   a {@link net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment} object.
+     * @param component           a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
      */
     public void addComponent(HorizontalCellComponentAlignment horizontalAlignment, VerticalCellComponentAlignment verticalAlignment, DRIColumnGridComponent component) {
         listCells.add(new DRColumnGridListCell(horizontalAlignment, verticalAlignment, component));
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ListType getType() {
         return type;
@@ -114,7 +118,9 @@ public class DRColumnGridList implements DRIColumnGridList {
         this.type = type;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getGap() {
         return gap;

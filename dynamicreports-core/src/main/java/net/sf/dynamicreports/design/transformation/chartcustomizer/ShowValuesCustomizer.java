@@ -56,7 +56,7 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
     /**
      * <p>Constructor for ShowValuesCustomizer.</p>
      *
-     * @param valuePattern a {@link java.lang.String} object.
+     * @param valuePattern        a {@link java.lang.String} object.
      * @param customRangeMaxValue a boolean.
      */
     public ShowValuesCustomizer(String valuePattern, boolean customRangeMaxValue) {
@@ -64,12 +64,13 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
         this.customRangeMaxValue = customRangeMaxValue;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot()
-                                                 .getRenderer();
+            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
             if (StringUtils.isBlank(valuePattern)) {
                 renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
             } else {
@@ -77,18 +78,14 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
             }
             renderer.setBaseItemLabelsVisible(Boolean.TRUE);
             if (!customRangeMaxValue) {
-                chart.getCategoryPlot()
-                     .getRangeAxis()
-                     .zoomRange(0, 1.1);
+                chart.getCategoryPlot().getRangeAxis().zoomRange(0, 1.1);
             }
-            if (renderer.getClass()
-                        .equals(BarRenderer3D.class)) {
+            if (renderer.getClass().equals(BarRenderer3D.class)) {
                 ((BarRenderer3D) renderer).setItemLabelAnchorOffset(10D);
                 renderer.setBasePositiveItemLabelPosition(new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.BASELINE_LEFT));
             }
         } else if (chart.getPlot() instanceof XYPlot) {
-            XYItemRenderer renderer = chart.getXYPlot()
-                                           .getRenderer();
+            XYItemRenderer renderer = chart.getXYPlot().getRenderer();
             if (StringUtils.isBlank(valuePattern)) {
                 renderer.setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
             } else {
@@ -96,9 +93,7 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
                     new StandardXYItemLabelGenerator(StandardXYItemLabelGenerator.DEFAULT_ITEM_LABEL_FORMAT, NumberFormat.getNumberInstance(), new DecimalFormat(valuePattern)));
             }
             renderer.setBaseItemLabelsVisible(Boolean.TRUE);
-            chart.getXYPlot()
-                 .getRangeAxis()
-                 .zoomRange(0, 1.1);
+            chart.getXYPlot().getRangeAxis().zoomRange(0, 1.1);
         }
     }
 }

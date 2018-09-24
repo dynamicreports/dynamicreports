@@ -43,7 +43,9 @@ public class DRDesignEllipse extends DRDesignComponent implements DRIDesignEllip
         super("ellipse");
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRDesignPen getPen() {
         return pen;

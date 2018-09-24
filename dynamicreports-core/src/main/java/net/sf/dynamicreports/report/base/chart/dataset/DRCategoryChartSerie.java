@@ -38,7 +38,9 @@ public class DRCategoryChartSerie extends DRChartSerie implements DRICategoryCha
     private DRIExpression<?> valueExpression;
     private DRIExpression<?> labelExpression;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;
@@ -54,7 +56,9 @@ public class DRCategoryChartSerie extends DRChartSerie implements DRICategoryCha
         this.valueExpression = valueExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getLabelExpression() {
         return labelExpression;

@@ -56,11 +56,12 @@ public class DifferenceRendererCustomizer implements DRIChartCustomizer, Seriali
         this.showShapes = differencePlot.getShowShapes();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot()
-                                                                            .getRenderer();
+        XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();
         XYDifferenceRenderer renderer = new XYDifferenceRenderer();
 
         renderer.setBaseItemLabelsVisible(lineRenderer.getBaseItemLabelsVisible());
@@ -77,7 +78,6 @@ public class DifferenceRendererCustomizer implements DRIChartCustomizer, Seriali
         if (showShapes != null) {
             renderer.setShapesVisible(showShapes);
         }
-        chart.getXYPlot()
-             .setRenderer(renderer);
+        chart.getXYPlot().setRenderer(renderer);
     }
 }

@@ -34,23 +34,25 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 public class IntegerType extends NumberType<Integer> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getPattern() {
-        return Defaults.getDefaults()
-                       .getIntegerType()
-                       .getPattern();
+        return Defaults.getDefaults().getIntegerType().getPattern();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
-        return Defaults.getDefaults()
-                       .getIntegerType()
-                       .getHorizontalTextAlignment();
+        return Defaults.getDefaults().getIntegerType().getHorizontalTextAlignment();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected Integer numberToValue(Number number) {
         return new Integer(number.intValue());

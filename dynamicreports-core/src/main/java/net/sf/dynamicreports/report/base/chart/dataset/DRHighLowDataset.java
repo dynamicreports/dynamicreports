@@ -44,7 +44,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
     private DRIExpression<?> volumeExpression;
     private DRIHyperLink itemHyperLink;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getSeriesExpression() {
         return seriesExpression;
@@ -59,7 +61,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.seriesExpression = seriesExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getDateExpression() {
         return dateExpression;
@@ -74,7 +78,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.dateExpression = dateExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getHighExpression() {
         return highExpression;
@@ -89,7 +95,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.highExpression = highExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getLowExpression() {
         return lowExpression;
@@ -104,7 +112,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.lowExpression = lowExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getOpenExpression() {
         return openExpression;
@@ -119,7 +129,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.openExpression = openExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getCloseExpression() {
         return closeExpression;
@@ -134,7 +146,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.closeExpression = closeExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIExpression<?> getVolumeExpression() {
         return volumeExpression;
@@ -149,7 +163,9 @@ public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDatase
         this.volumeExpression = volumeExpression;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIHyperLink getItemHyperLink() {
         return itemHyperLink;

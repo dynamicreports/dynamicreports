@@ -44,19 +44,17 @@ import java.util.Locale;
  * @version $Id: $Id
  */
 public class StyleResolver {
-    private static FontRenderContext context = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB).createGraphics()
-                                                                                                  .getFontRenderContext();
+    private static FontRenderContext context = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB).createGraphics().getFontRenderContext();
 
     /**
      * <p>getFontWidth.</p>
      *
-     * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
+     * @param style   a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @param columns a int.
      * @return a int.
      */
     protected static int getFontWidth(DRDesignStyle style, int columns) {
-        double width = getFont(style).getStringBounds("m", context)
-                                     .getWidth();
+        double width = getFont(style).getStringBounds("m", context).getWidth();
         return (int) Math.ceil(width * columns) + getHorizontalPadding(style);
     }
 
@@ -64,12 +62,11 @@ public class StyleResolver {
      * <p>getFontHeight.</p>
      *
      * @param style a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
-     * @param rows a int.
+     * @param rows  a int.
      * @return a int.
      */
     protected static int getFontHeight(DRDesignStyle style, int rows) {
-        double height = getFont(style).getMaxCharBounds(context)
-                                      .getHeight();
+        double height = getFont(style).getMaxCharBounds(context).getHeight();
         return (int) Math.ceil(height * rows) + getVerticalPadding(style);
     }
 
@@ -81,8 +78,7 @@ public class StyleResolver {
      */
     public static double getFontWidth(DRFont font) {
         Font fnt = getFont(font.getFontName(), font.getBold(), font.getItalic(), font.getFontSize());
-        return fnt.getStringBounds("m", context)
-                  .getWidth();
+        return fnt.getStringBounds("m", context).getWidth();
     }
 
     /**
@@ -93,8 +89,7 @@ public class StyleResolver {
      */
     public static double getFontHeight(DRFont font) {
         Font fnt = getFont(font.getFontName(), font.getBold(), font.getItalic(), font.getFontSize());
-        return fnt.getMaxCharBounds(context)
-                  .getHeight();
+        return fnt.getMaxCharBounds(context).getHeight();
     }
 
     private static Font getFont(DRDesignStyle style) {
@@ -141,10 +136,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getFontName() != null) {
-            return style.getFont()
-                        .getFontName();
+        if (style.getFont().getFontName() != null) {
+            return style.getFont().getFontName();
         }
         if (style.getParentStyle() != null) {
             return getFontName(style.getParentStyle());
@@ -162,10 +155,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getFontSize() != null) {
-            return style.getFont()
-                        .getFontSize();
+        if (style.getFont().getFontSize() != null) {
+            return style.getFont().getFontSize();
         }
         if (style.getParentStyle() != null) {
             return getFontSize(style.getParentStyle());
@@ -183,10 +174,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getBold() != null) {
-            return style.getFont()
-                        .getBold();
+        if (style.getFont().getBold() != null) {
+            return style.getFont().getBold();
         }
         if (style.getParentStyle() != null) {
             return getFontBold(style.getParentStyle());
@@ -204,10 +193,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getItalic() != null) {
-            return style.getFont()
-                        .getItalic();
+        if (style.getFont().getItalic() != null) {
+            return style.getFont().getItalic();
         }
         if (style.getParentStyle() != null) {
             return getFontItalic(style.getParentStyle());
@@ -225,10 +212,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getUnderline() != null) {
-            return style.getFont()
-                        .getUnderline();
+        if (style.getFont().getUnderline() != null) {
+            return style.getFont().getUnderline();
         }
         if (style.getParentStyle() != null) {
             return getFontUnderline(style.getParentStyle());
@@ -246,10 +231,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getStrikeThrough() != null) {
-            return style.getFont()
-                        .getStrikeThrough();
+        if (style.getFont().getStrikeThrough() != null) {
+            return style.getFont().getStrikeThrough();
         }
         if (style.getParentStyle() != null) {
             return getFontStrikeThrough(style.getParentStyle());
@@ -267,10 +250,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getPdfFontName() != null) {
-            return style.getFont()
-                        .getPdfFontName();
+        if (style.getFont().getPdfFontName() != null) {
+            return style.getFont().getPdfFontName();
         }
         if (style.getParentStyle() != null) {
             return getPdfFontName(style.getParentStyle());
@@ -288,10 +269,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getPdfEncoding() != null) {
-            return style.getFont()
-                        .getPdfEncoding();
+        if (style.getFont().getPdfEncoding() != null) {
+            return style.getFont().getPdfEncoding();
         }
         if (style.getParentStyle() != null) {
             return getPdfEncoding(style.getParentStyle());
@@ -309,10 +288,8 @@ public class StyleResolver {
         if (style == null) {
             return null;
         }
-        if (style.getFont()
-                 .getPdfEmbedded() != null) {
-            return style.getFont()
-                        .getPdfEmbedded();
+        if (style.getFont().getPdfEmbedded() != null) {
+            return style.getFont().getPdfEmbedded();
         }
         if (style.getParentStyle() != null) {
             return getPdfEmbedded(style.getParentStyle());
@@ -344,10 +321,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getPadding() != null && style.getPadding()
-                                               .getTop() != null) {
-            return style.getPadding()
-                        .getTop();
+        if (style.getPadding() != null && style.getPadding().getTop() != null) {
+            return style.getPadding().getTop();
         }
         if (style.getParentStyle() != null) {
             return getTopPadding(style.getParentStyle());
@@ -359,10 +334,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getPadding() != null && style.getPadding()
-                                               .getBottom() != null) {
-            return style.getPadding()
-                        .getBottom();
+        if (style.getPadding() != null && style.getPadding().getBottom() != null) {
+            return style.getPadding().getBottom();
         }
         if (style.getParentStyle() != null) {
             return getBottomPadding(style.getParentStyle());
@@ -374,10 +347,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getPadding() != null && style.getPadding()
-                                               .getLeft() != null) {
-            return style.getPadding()
-                        .getLeft();
+        if (style.getPadding() != null && style.getPadding().getLeft() != null) {
+            return style.getPadding().getLeft();
         }
         if (style.getParentStyle() != null) {
             return getLeftPadding(style.getParentStyle());
@@ -389,10 +360,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getPadding() != null && style.getPadding()
-                                               .getRight() != null) {
-            return style.getPadding()
-                        .getRight();
+        if (style.getPadding() != null && style.getPadding().getRight() != null) {
+            return style.getPadding().getRight();
         }
         if (style.getParentStyle() != null) {
             return getRightPadding(style.getParentStyle());
@@ -404,10 +373,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getParagraph() != null && style.getParagraph()
-                                                 .getFirstLineIndent() != null) {
-            return style.getParagraph()
-                        .getFirstLineIndent();
+        if (style.getParagraph() != null && style.getParagraph().getFirstLineIndent() != null) {
+            return style.getParagraph().getFirstLineIndent();
         }
         if (style.getParentStyle() != null) {
             return getFirstLineIndent(style.getParentStyle());
@@ -419,10 +386,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getParagraph() != null && style.getParagraph()
-                                                 .getLeftIndent() != null) {
-            return style.getParagraph()
-                        .getLeftIndent();
+        if (style.getParagraph() != null && style.getParagraph().getLeftIndent() != null) {
+            return style.getParagraph().getLeftIndent();
         }
         if (style.getParentStyle() != null) {
             return getLeftIndent(style.getParentStyle());
@@ -434,10 +399,8 @@ public class StyleResolver {
         if (style == null) {
             return 0;
         }
-        if (style.getParagraph() != null && style.getParagraph()
-                                                 .getRightIndent() != null) {
-            return style.getParagraph()
-                        .getRightIndent();
+        if (style.getParagraph() != null && style.getParagraph().getRightIndent() != null) {
+            return style.getParagraph().getRightIndent();
         }
         if (style.getParentStyle() != null) {
             return getRightIndent(style.getParentStyle());
@@ -506,7 +469,7 @@ public class StyleResolver {
      * <p>getBackgroundColor.</p>
      *
      * @param reportStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
-     * @param transform a {@link net.sf.dynamicreports.design.transformation.StyleTransform} object.
+     * @param transform   a {@link net.sf.dynamicreports.design.transformation.StyleTransform} object.
      * @return a {@link java.awt.Color} object.
      */
     public static Color getBackgroundColor(DRIReportStyle reportStyle, StyleTransform transform) {
@@ -526,8 +489,8 @@ public class StyleResolver {
     /**
      * <p>mergeColors.</p>
      *
-     * @param color1 a {@link java.awt.Color} object.
-     * @param color2 a {@link java.awt.Color} object.
+     * @param color1  a {@link java.awt.Color} object.
+     * @param color2  a {@link java.awt.Color} object.
      * @param percent a float.
      * @return a {@link java.awt.Color} object.
      */

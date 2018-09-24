@@ -50,13 +50,17 @@ public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
         addExpression(valueExpression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
         return valueFormatter.format(values.get(0), reportParameters);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Class<?> getValueClass() {
         return valueFormatter.getValueClass();

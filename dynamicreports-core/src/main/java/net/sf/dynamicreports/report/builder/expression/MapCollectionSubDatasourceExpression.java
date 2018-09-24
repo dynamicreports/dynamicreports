@@ -56,7 +56,9 @@ public class MapCollectionSubDatasourceExpression extends AbstractSubDatasourceE
         super(expression);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected JRDataSource createSubDatasource(Collection<Map<String, ?>> data) {
         return new JRMapCollectionDataSource(data);

@@ -69,7 +69,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
     private List<DRICrosstabVariable<?>> variables;
     private List<DRICrosstabMeasure<?>> measures;
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void init() {
         super.init();
@@ -83,13 +85,17 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         headerCell = new DRCrosstabCellContent();
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRCrosstabDataset getDataset() {
         return dataset;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean isRepeatColumnHeaders() {
         return repeatColumnHeaders;
@@ -104,7 +110,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.repeatColumnHeaders = repeatColumnHeaders;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean isRepeatRowHeaders() {
         return repeatRowHeaders;
@@ -119,7 +127,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.repeatRowHeaders = repeatRowHeaders;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getColumnBreakOffset() {
         return columnBreakOffset;
@@ -134,7 +144,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.columnBreakOffset = columnBreakOffset;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getIgnoreWidth() {
         return ignoreWidth;
@@ -149,7 +161,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.ignoreWidth = ignoreWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public RunDirection getRunDirection() {
         return runDirection;
@@ -164,25 +178,33 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.runDirection = runDirection;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRCrosstabCellContent getWhenNoDataCell() {
         return whenNoDataCell;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRCrosstabCellContent getHeaderCell() {
         return headerCell;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRICrosstabColumnGroup<?>> getColumnGroups() {
         return columnGroups;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getCellWidth() {
         return cellWidth;
@@ -197,7 +219,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.cellWidth = cellWidth;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Integer getCellHeight() {
         return cellHeight;
@@ -212,7 +236,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.cellHeight = cellHeight;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getHighlightOddRows() {
         return highlightOddRows;
@@ -227,7 +253,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.highlightOddRows = highlightOddRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRSimpleStyle getOddRowStyle() {
         return oddRowStyle;
@@ -242,7 +270,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.oddRowStyle = oddRowStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Boolean getHighlightEvenRows() {
         return highlightEvenRows;
@@ -257,7 +287,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.highlightEvenRows = highlightEvenRows;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRSimpleStyle getEvenRowStyle() {
         return evenRowStyle;
@@ -272,7 +304,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.evenRowStyle = evenRowStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getGroupStyle() {
         return groupStyle;
@@ -287,7 +321,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.groupStyle = groupStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getGroupTotalStyle() {
         return groupTotalStyle;
@@ -302,7 +338,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.groupTotalStyle = groupTotalStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getGrandTotalStyle() {
         return grandTotalStyle;
@@ -317,7 +355,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.grandTotalStyle = grandTotalStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getCellStyle() {
         return cellStyle;
@@ -332,7 +372,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.cellStyle = cellStyle;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DRIReportStyle getMeasureTitleStyle() {
         return measureTitleStyle;
@@ -357,7 +399,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.columnGroups.add(columnGroup);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRICrosstabRowGroup<?>> getRowGroups() {
         return rowGroups;
@@ -373,7 +417,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.rowGroups.add(rowGroup);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRICrosstabVariable<?>> getVariables() {
         return variables;
@@ -389,7 +435,9 @@ public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
         this.variables.add(variable);
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<DRICrosstabMeasure<?>> getMeasures() {
         return measures;
