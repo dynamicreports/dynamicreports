@@ -41,6 +41,8 @@ import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import static org.hamcrest.core.Is.is;
+
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
