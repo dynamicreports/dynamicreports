@@ -21,16 +21,17 @@
  */
 package net.sf.dynamicreports.googlecharts.test;
 
+import static org.hamcrest.core.Is.is;
+
+import java.awt.Color;
+
 import net.sf.dynamicreports.googlecharts.report.GoogleCharts;
 import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.jasperreports.engine.JRDataSource;
+
 import org.junit.Test;
-
-import java.awt.Color;
-
-import static org.hamcrest.core.Is.is;
 
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
@@ -73,13 +74,13 @@ public class GeoMapTest extends AbstractJasperTest {
 
         containsHtml("values", "data.setValue(0, 0, 'GB');");
         containsHtml("values", "data.setValue(0, 1, 170);");
-        containsHtml("values", "data.setValue(0, 2, 'United Kingdom');");
+        //containsHtml("values", "data.setValue(0, 2, 'United Kingdom');");
         containsHtml("values", "data.setValue(1, 0, 'DE');");
         containsHtml("values", "data.setValue(1, 1, 90);");
-        containsHtml("values", "data.setValue(1, 2, 'Germany');");
+        //containsHtml("values", "data.setValue(1, 2, 'Germany');");
         containsHtml("values", "data.setValue(2, 0, 'FR');");
         containsHtml("values", "data.setValue(2, 1, 120);");
-        containsHtml("values", "data.setValue(2, 2, 'FR');");
+        //containsHtml("values", "data.setValue(2, 2, 'FR');");
 
         containsHtml("width", "options['width'] = '575px';");
         containsHtml("height", "options['height'] = '300px';");
