@@ -25,6 +25,7 @@ addons:
 before_install:
   - echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
   - sudo apt-get install ttf-mscorefonts-installer
+  - sudo chmod +x mvnw
 
 after_success:
   - "[[ $TRAVIS_BRANCH == \"development\" ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]] && [[ ${TRAVIS_TAG} == '' ]] && mvn deploy -B -DskipTests -s settings.xml"
