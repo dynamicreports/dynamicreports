@@ -169,6 +169,20 @@
         </profile>
 
         <profile>
+            <id>java8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                    <version>1.7.25</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
             <id>java9</id>
             <!--Please remember to run this after running compile in core module-->
             <activation>
