@@ -27,9 +27,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:http://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</connection>
-        <developerConnection>scm:svn:https://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</developerConnection>
-        <url>http://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</url>
+        <connection>scm:git:https://github.com/dynamicreports/dynamicreports.git</connection>
+        <developerConnection>scm:git:https://github.com/dynamicreports/dynamicreports.git</developerConnection>
+        <url>https://github.com/dynamicreports/dynamicreports</url>
     </scm>
 
     <modules>
