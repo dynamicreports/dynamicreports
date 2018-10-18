@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +10,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.0.0-SNAPSHOT</version>
+    <version>6.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -27,9 +25,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:svn:http://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</connection>
-        <developerConnection>scm:svn:https://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</developerConnection>
-        <url>http://svn.code.sf.net/p/dynamicreports/code/tags/dynamicreports-5.1.0</url>
+        <connection>scm:git:https://github.com/dynamicreports/dynamicreports.git</connection>
+        <developerConnection>scm:git:https://github.com/dynamicreports/dynamicreports.git</developerConnection>
+        <url>https://github.com/dynamicreports/dynamicreports</url>
     </scm>
 
     <modules>
