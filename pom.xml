@@ -73,10 +73,10 @@
         <junitVersion>4.12</junitVersion>
         <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
-        <!--//TODO update poi to version 4 once jaspereports drops deprecated org.apache.poi.hssf.util.HSSFColor.WHITE-->
+        <!--//TODO update poi to version 4 once jasperreports drops deprecated org.apache.poi.hssf.util.HSSFColor.WHITE-->
         <poiVersion>3.17</poiVersion>
-        <!--//TODO update springframework-->
-        <springframeworkVersion>3.2.18.RELEASE</springframeworkVersion>
+        <!--//TODO update springframework to 5.1.3.RELEASE after jasperreports drops 3.2.18.RELEASE in upcoming version 6.8.0-->
+        <springframeworkVersion>4.3.20.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xalanVersion>2.7.2</xalanVersion>
         <xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
