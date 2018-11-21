@@ -9,6 +9,11 @@ Changes in version 6.0.1 (2018-09-01)
  - Upgrade to poi library to version 3.17
  - Upgrade groovy to version 2.4.15 from version 1.7.5
  - Java 9 compatibility
+ - Add API to prevent abuse of dependencies
+ - Add API to detect usage of legacy code, before java 1.8
+ - Add API to detect usage of jdk internal API
+ - Upgrade JAXB runtime
+ - Upgrade maven compiler plugin to version 3.8.0 (for Java 11 Compatibility)
 
 Changes in version 6.0.0 (2018-09-01)
 ---------------------------------------------------

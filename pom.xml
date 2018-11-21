@@ -86,6 +86,7 @@
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
+        <maven-dependency-plugin-version>3.1.1</maven-dependency-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
@@ -321,6 +322,23 @@
                             <goals>
                                 <goal>report</goal>
                             </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!--This dependency is intended to fail build where devs misuse dependencies-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin-version}</version>
+                    <executions>
+                        <execution>
+                            <id>analyze</id>
+                            <goals>
+                                <goal>analyze-only</goal>
+                            </goals>
+                            <configuration>
+                                <failOnWarning>true</failOnWarning>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
