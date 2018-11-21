@@ -23,6 +23,9 @@
         <encoding>UTF-8</encoding>
         <sourceVersion>1.8</sourceVersion>
         <targetVersion>1.8</targetVersion>
+        <lint>deprecation</lint>
+        <lint>unchecked</lint>
+        <illegal-access>warn</illegal-access>
     </properties>
 
     <dependencies>
@@ -95,7 +98,8 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <scope>test</scope>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
