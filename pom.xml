@@ -612,39 +612,6 @@
             </build>
         </profile>
 
-        <profile>
-            <id>scripts</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
-                        <executions>
-                            <execution><!-- Run our install-ms-fonts.sh script -->
-                                <id>scripts</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>bash</executable>
-                                    <commandlineArgs>src/scripts/compile-scripts.sh</commandlineArgs>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <dependencies>
-                            <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
-                            <dependency>
-                                <groupId>org.codehaus.mojo</groupId>
-                                <artifactId>exec-maven-plugin</artifactId>
-                                <version>1.6.0</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
     </profiles>
 
     <repositories>

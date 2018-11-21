@@ -1,6 +1,13 @@
 DynamicReports Change Log
 =========================
 
+
+Changes in version 6.0.1 (2018-09-01)
+---------------------------------------------------
+ - Updated spring framework to version 4.3.20.RELEASE due to vulnerabilities found in
+   3.2.18.RELEASE
+ - Upgrade to poi library to version 3.17
+
 Changes in version 6.0.0 (2018-09-01)
 ---------------------------------------------------
  - Upgrade to JasperReports 6.7.0
