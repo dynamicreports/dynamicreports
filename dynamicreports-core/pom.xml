@@ -18,6 +18,13 @@
         You can very quickly create reports and produce documents that can be displayed, printed or exported into many popular formats such as PDF, Excel, Word and others.
     </description>
 
+    <properties>
+        <!--Environment -->
+        <encoding>UTF-8</encoding>
+        <sourceVersion>1.8</sourceVersion>
+        <targetVersion>1.8</targetVersion>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
@@ -145,8 +152,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <!--//TODO this could be causing serious animal sniffer errors-->
+                    <!--<source>9</source>
+                    <target>9</target>-->
+                    <source>${sourceVersion}</source>
+                    <target>${targetVersion}</target>
+                    <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>
@@ -296,6 +307,7 @@
                         <executions>
                             <execution>
                                 <id>jaxb</id>
+                                <!--This is how you disable it-->
                                 <phase>none</phase>
                             </execution>
                         </executions>
