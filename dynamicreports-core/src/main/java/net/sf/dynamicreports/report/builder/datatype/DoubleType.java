@@ -55,6 +55,6 @@ public class DoubleType extends NumberType<Double> {
      */
     @Override
     protected Double numberToValue(Number number) {
-        return new Double(number.doubleValue());
+        return number.doubleValue();
     }
 }

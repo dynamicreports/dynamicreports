@@ -55,6 +55,6 @@ public class ShortType extends NumberType<Short> {
      */
     @Override
     protected Short numberToValue(Number number) {
-        return new Short(number.shortValue());
+        return number.shortValue();
     }
 }

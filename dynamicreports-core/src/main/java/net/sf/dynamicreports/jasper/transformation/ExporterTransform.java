@@ -302,13 +302,13 @@ public class ExporterTransform {
             reportExportConfiguration.setCharWidth(jasperExporter.getCharacterWidth());
         } else {
             DRFont font = Defaults.getDefaults().getFont();
-            reportExportConfiguration.setCharWidth(new Float(StyleResolver.getFontWidth(font)));
+            reportExportConfiguration.setCharWidth((float) StyleResolver.getFontWidth(font));
         }
         if (jasperExporter.getCharacterHeight() != null) {
             reportExportConfiguration.setCharHeight(jasperExporter.getCharacterHeight());
         } else {
             DRFont font = Defaults.getDefaults().getFont();
-            reportExportConfiguration.setCharHeight(new Float(StyleResolver.getFontHeight(font)));
+            reportExportConfiguration.setCharHeight((float) StyleResolver.getFontHeight(font));
         }
         if (jasperExporter.getPageWidthInChars() != null) {
             reportExportConfiguration.setPageWidthInChars(jasperExporter.getPageWidthInChars());

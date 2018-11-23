@@ -55,6 +55,6 @@ public class IntegerType extends NumberType<Integer> {
      */
     @Override
     protected Integer numberToValue(Number number) {
-        return new Integer(number.intValue());
+        return number.intValue();
     }
 }

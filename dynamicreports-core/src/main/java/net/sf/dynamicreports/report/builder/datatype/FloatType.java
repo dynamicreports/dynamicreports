@@ -55,6 +55,6 @@ public class FloatType extends NumberType<Float> {
      */
     @Override
     protected Float numberToValue(Number number) {
-        return new Float(number.floatValue());
+        return number.floatValue();
     }
 }

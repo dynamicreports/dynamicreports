@@ -123,7 +123,7 @@ class BandComponentsTransform {
     private void generateComponentNames(DRDesignComponent component, String bandName) {
         String componentName = bandName + "." + component.getUniqueName();
         if (!componentNames.containsKey(componentName)) {
-            componentNames.put(componentName, new Integer(1));
+            componentNames.put(componentName, 1);
         } else {
             componentNames.put(componentName, componentNames.get(componentName) + 1);
         }

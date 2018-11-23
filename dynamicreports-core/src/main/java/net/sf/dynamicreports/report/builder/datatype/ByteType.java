@@ -55,6 +55,6 @@ public class ByteType extends NumberType<Byte> {
      */
     @Override
     protected Byte numberToValue(Number number) {
-        return new Byte(number.byteValue());
+        return number.byteValue();
     }
 }
