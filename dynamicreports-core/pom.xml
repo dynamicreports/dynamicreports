@@ -164,6 +164,7 @@
                     <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
+            <!--Check for use of legacy code-->
             <plugin>
                 <groupId>org.gaul</groupId>
                 <artifactId>modernizer-maven-plugin</artifactId>
