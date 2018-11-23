@@ -164,19 +164,16 @@
                     <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
-            <!--This dependency is intended to fail build where devs misuse dependencies-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <artifactId>maven-jdeps-plugin</artifactId>
+                <version>${maven-jdeps-plugin-version}</version>
                 <executions>
                     <execution>
-                        <id>analyze</id>
                         <goals>
-                            <goal>analyze-only</goal>
+                            <goal>jdkinternals</goal> <!-- verify main classes -->
+                            <goal>test-jdkinternals</goal> <!-- verify test classes -->
                         </goals>
-                        <configuration>
-                            <failOnWarning>true</failOnWarning>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
