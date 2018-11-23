@@ -59,7 +59,7 @@ public class HyperLinkTest extends AbstractJasperValueTest {
         Assert.assertEquals("hyperlink anchor", "anchor", textField.getHyperlinkAnchor());
         Assert.assertEquals("hyperlink anchorName", "anchorName", textField.getAnchorName());
         Assert.assertEquals("hyperlink bookmark level", 1, textField.getBookmarkLevel());
-        Assert.assertEquals("hyperlink page", new Integer(1), textField.getHyperlinkPage());
+        Assert.assertEquals("hyperlink page", Integer.valueOf(1), textField.getHyperlinkPage());
         Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR, textField.getHyperlinkTypeValue());
         Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR.getName(), textField.getLinkType());
         Assert.assertEquals("hyperlink target", HyperlinkTargetEnum.TOP, textField.getHyperlinkTargetValue());

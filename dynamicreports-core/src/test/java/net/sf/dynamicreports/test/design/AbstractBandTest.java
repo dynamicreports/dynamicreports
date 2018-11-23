@@ -100,13 +100,13 @@ public abstract class AbstractBandTest {
 
     protected void componentPositionTest(DRDesignComponent component, int x, int y, int width, int height) {
         Assert.assertNotNull("width", component.getWidth());
-        Assert.assertEquals("width", new Integer(width), component.getWidth());
+        Assert.assertEquals("width", Integer.valueOf(width), component.getWidth());
         Assert.assertNotNull("height", component.getHeight());
-        Assert.assertEquals("height", new Integer(height), component.getHeight());
+        Assert.assertEquals("height", Integer.valueOf(height), component.getHeight());
         Assert.assertNotNull("x", component.getX());
-        Assert.assertEquals("x", new Integer(x), component.getX());
+        Assert.assertEquals("x", Integer.valueOf(x), component.getX());
         Assert.assertNotNull("y", component.getY());
-        Assert.assertEquals("y", new Integer(y), component.getY());
+        Assert.assertEquals("y", Integer.valueOf(y), component.getY());
     }
 
     public abstract void configureReport(ReportBuilder<?> rb);

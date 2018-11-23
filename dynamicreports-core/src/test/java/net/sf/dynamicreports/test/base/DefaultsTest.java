@@ -63,7 +63,7 @@ public class DefaultsTest {
         DRFont font = defaults.getFont();
         /*Assert.assertEquals("Font name", "SansSerif", font.getFontName());*/
         Assert.assertEquals("Font name", "Arial", font.getFontName());
-        Assert.assertEquals("Font size", new Integer(15), font.getFontSize());
+        Assert.assertEquals("Font size", Integer.valueOf(15), font.getFontSize());
         Assert.assertEquals("Pdf font name", "Courier New", font.getPdfFontName());
         Assert.assertEquals("Pdf encoding", "Cp1250", font.getPdfEncoding());
         Assert.assertTrue("Pdf embedded", font.getPdfEmbedded());
