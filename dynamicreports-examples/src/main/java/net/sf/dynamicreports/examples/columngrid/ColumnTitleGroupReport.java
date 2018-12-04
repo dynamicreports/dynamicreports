@@ -29,6 +29,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -84,7 +85,7 @@ public class ColumnTitleGroupReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Notebook", new Date(), 1, new BigDecimal(500));
+        dataSource.add("Notebook", Date.from(Instant.now()), 1, BigDecimal.valueOf(500));
         return dataSource;
     }
 }
