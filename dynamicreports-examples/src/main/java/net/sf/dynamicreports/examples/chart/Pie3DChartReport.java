@@ -82,9 +82,9 @@ public class Pie3DChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Tablet", 350, new BigDecimal(300));
-        dataSource.add("Laptop", 300, new BigDecimal(500));
-        dataSource.add("Smartphone", 450, new BigDecimal(250));
+        dataSource.add("Tablet", 350, BigDecimal.valueOf(300));
+        dataSource.add("Laptop", 300, BigDecimal.valueOf(500));
+        dataSource.add("Smartphone", 450, BigDecimal.valueOf(250));
         return dataSource;
     }
 }
