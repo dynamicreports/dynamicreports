@@ -71,7 +71,7 @@ public class PercentageColumnWidthReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Book", new Date(), 10, new BigDecimal(200));
+        dataSource.add("Book", new Date(), 10, BigDecimal.valueOf (200));
         return dataSource;
     }
 }

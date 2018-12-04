@@ -76,7 +76,7 @@ public class ColumnDetectDataTypeReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Notebook", new Date(), 1, new BigDecimal(500));
+        dataSource.add("Notebook", new Date(), 1, BigDecimal.valueOf(500));
         return dataSource;
     }
 
