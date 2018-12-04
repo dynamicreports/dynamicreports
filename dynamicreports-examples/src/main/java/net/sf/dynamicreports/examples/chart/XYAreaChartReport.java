@@ -28,6 +28,8 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.util.stream.IntStream;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -86,9 +88,7 @@ public class XYAreaChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("x", "y1", "y2");
-        for (int i = 0; i < 20; i++) {
-            dataSource.add(i, (int) (Math.random() * 10), (int) (Math.random() * 10));
-        }
+        IntStream.range(0, 20).forEachOrdered(i -> dataSource.add(i, (int) (Math.random() * 10), (int) (Math.random() * 10)));
         return dataSource;
     }
 }
