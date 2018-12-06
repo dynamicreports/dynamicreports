@@ -108,16 +108,16 @@ public class TableOfContentsReport2 {
     private JRDataSource createSubreportDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
         for (int i = 0; i < 30; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
         }
         return dataSource;
     }
 
     private JRDataSource createChartDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 170, new BigDecimal(100));
-        dataSource.add("Notebook", 90, new BigDecimal(450));
-        dataSource.add("PDA", 120, new BigDecimal(250));
+        dataSource.add("Book", 170, BigDecimal.valueOf(100));
+        dataSource.add("Notebook", 90, BigDecimal.valueOf(450));
+        dataSource.add("PDA", 120, BigDecimal.valueOf(250));
         return dataSource;
     }
 }
