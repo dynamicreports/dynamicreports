@@ -79,7 +79,7 @@ public class TitleSubreport {
 
     private JRDataSource createSubreportDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        IntStream.range(0, 10).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1)));
+        IntStream.range(0, 10).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 }
