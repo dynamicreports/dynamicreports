@@ -68,7 +68,7 @@ public class GoogleChartsExtensionsRegistryFactory implements ExtensionsRegistry
     static {
         final DefaultComponentsBundle bundle = new DefaultComponentsBundle();
         final GoogleChartsHandler handler = new GoogleChartsHandler();
-        final List<CustomComponentTransform<?, ?>> transforms = new ArrayList<CustomComponentTransform<?, ?>>();
+        final List<CustomComponentTransform<?, ?>> transforms = new ArrayList<>();
 
         GoogleChartsDesignConverter designConverter = new GoogleChartsDesignConverter();
 
@@ -79,7 +79,7 @@ public class GoogleChartsExtensionsRegistryFactory implements ExtensionsRegistry
         parser.setDigesterConfigurer(handler);
         bundle.setXmlParser(parser);
 
-        HashMap<String, ComponentManager> componentManagers = new HashMap<String, ComponentManager>();
+        HashMap<String, ComponentManager> componentManagers = new HashMap<>();
         bundle.setComponentManagers(componentManagers);
 
         REGISTRY = new ExtensionsRegistry() {

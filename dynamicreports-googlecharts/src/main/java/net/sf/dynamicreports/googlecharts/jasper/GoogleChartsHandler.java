@@ -53,8 +53,8 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
      * <p>Constructor for GoogleChartsHandler.</p>
      */
     public GoogleChartsHandler() {
-        components = new HashMap<String, Class<? extends Component>>();
-        handlers = new HashMap<String, GenericElementHandler>();
+        components = new HashMap<>();
+        handlers = new HashMap<>();
     }
 
     /**
@@ -74,10 +74,10 @@ public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlW
      */
     @Override
     public void configureDigester(Digester digester) {
-        for (String name : components.keySet()) {
+        components.keySet().forEach(name -> {
             String mapPattern = "*/componentElement/googleCharts/" + name;
             digester.addObjectCreate(mapPattern, components.get(name));
-        }
+        });
     }
 
     /**
