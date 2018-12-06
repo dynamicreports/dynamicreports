@@ -64,13 +64,13 @@ public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
             valueLabel = "";
         }
         @SuppressWarnings("unchecked") List<Color> colors = (List<Color>) element.getParameterValue(GeoMapPrintElement.PARAMETER_COLORS);
-        String stringColors = null;
+        StringBuilder stringColors = null;
         if (colors != null && !colors.isEmpty()) {
-            stringColors = "";
-            for (Color color : colors) {
-                stringColors += "," + getColorString(color);
+            stringColors = new StringBuilder();
+            for (final Color color : colors) {
+                stringColors.append(",").append(getColorString(color));
             }
-            stringColors = StringUtils.removeStart(stringColors, ",");
+            stringColors = new StringBuilder(StringUtils.removeStart(stringColors.toString(), ","));
         }
         @SuppressWarnings("unchecked") Set<GeoMapData> dataset = (Set<GeoMapData>) element.getParameterValue(GeoMapPrintElement.PARAMETER_DATASET);
 
@@ -91,7 +91,7 @@ public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
         velocityContext.put("id", "map_" + element.hashCode());
         velocityContext.put("region", region);
         velocityContext.put("valueLabel", valueLabel);
-        velocityContext.put("colors", stringColors);
+        velocityContext.put("colors", stringColors == null ? null : stringColors.toString());
         velocityContext.put("dataset", dataset);
         @SuppressWarnings("unchecked") Exporter<ExporterInput, ? extends HtmlReportConfiguration, ? extends HtmlExporterConfiguration, HtmlExporterOutput> exporter = context.getExporterRef();
         HtmlExporter htmlExporter2 = exporter instanceof HtmlExporter ? (HtmlExporter) exporter : null;
