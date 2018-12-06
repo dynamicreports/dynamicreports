@@ -108,49 +108,49 @@ public class SubDatasourceReport {
 
     private JRDataSource createDataSource1() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 170, new BigDecimal(100));
-        dataSource.add("Notebook", 90, new BigDecimal(450));
-        dataSource.add("PDA", 120, new BigDecimal(250));
+        dataSource.add("Book", 170, BigDecimal.valueOf(100));
+        dataSource.add("Notebook", 90, BigDecimal.valueOf(450));
+        dataSource.add("PDA", 120, BigDecimal.valueOf(250));
         return dataSource;
     }
 
     private JRDataSource createDataSource2() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 100, new BigDecimal(120));
-        dataSource.add("Notebook", 190, new BigDecimal(350));
-        dataSource.add("PDA", 800, new BigDecimal(290));
+        dataSource.add("Book", 100, BigDecimal.valueOf(120));
+        dataSource.add("Notebook", 190, BigDecimal.valueOf(350));
+        dataSource.add("PDA", 800, BigDecimal.valueOf(290));
         return dataSource;
     }
 
     private JRDataSource createDataSource3() {
         DRDataSource dataSource = new DRDataSource("state", "item", "quantity", "unitprice");
-        dataSource.add("New York", "Notebook", 1, new BigDecimal(500));
-        dataSource.add("New York", "DVD", 5, new BigDecimal(30));
-        dataSource.add("New York", "DVD", 2, new BigDecimal(45));
-        dataSource.add("New York", "DVD", 4, new BigDecimal(36));
-        dataSource.add("New York", "DVD", 5, new BigDecimal(41));
-        dataSource.add("New York", "Book", 2, new BigDecimal(11));
-        dataSource.add("New York", "Book", 8, new BigDecimal(9));
-        dataSource.add("New York", "Book", 6, new BigDecimal(14));
+        dataSource.add("New York", "Notebook", 1, BigDecimal.valueOf(500));
+        dataSource.add("New York", "DVD", 5, BigDecimal.valueOf(30));
+        dataSource.add("New York", "DVD", 2, BigDecimal.valueOf(45));
+        dataSource.add("New York", "DVD", 4, BigDecimal.valueOf(36));
+        dataSource.add("New York", "DVD", 5, BigDecimal.valueOf(41));
+        dataSource.add("New York", "Book", 2, BigDecimal.valueOf(11));
+        dataSource.add("New York", "Book", 8, BigDecimal.valueOf(9));
+        dataSource.add("New York", "Book", 6, BigDecimal.valueOf(14));
 
-        dataSource.add("Washington", "Notebook", 1, new BigDecimal(610));
-        dataSource.add("Washington", "DVD", 4, new BigDecimal(40));
-        dataSource.add("Washington", "DVD", 6, new BigDecimal(35));
-        dataSource.add("Washington", "DVD", 3, new BigDecimal(46));
-        dataSource.add("Washington", "DVD", 2, new BigDecimal(42));
-        dataSource.add("Washington", "Book", 3, new BigDecimal(12));
-        dataSource.add("Washington", "Book", 9, new BigDecimal(8));
-        dataSource.add("Washington", "Book", 4, new BigDecimal(14));
-        dataSource.add("Washington", "Book", 5, new BigDecimal(10));
+        dataSource.add("Washington", "Notebook", 1, BigDecimal.valueOf(610));
+        dataSource.add("Washington", "DVD", 4, BigDecimal.valueOf(40));
+        dataSource.add("Washington", "DVD", 6, BigDecimal.valueOf(35));
+        dataSource.add("Washington", "DVD", 3, BigDecimal.valueOf(46));
+        dataSource.add("Washington", "DVD", 2, BigDecimal.valueOf(42));
+        dataSource.add("Washington", "Book", 3, BigDecimal.valueOf(12));
+        dataSource.add("Washington", "Book", 9, BigDecimal.valueOf(8));
+        dataSource.add("Washington", "Book", 4, BigDecimal.valueOf(14));
+        dataSource.add("Washington", "Book", 5, BigDecimal.valueOf(10));
 
-        dataSource.add("Florida", "Notebook", 1, new BigDecimal(460));
-        dataSource.add("Florida", "DVD", 3, new BigDecimal(49));
-        dataSource.add("Florida", "DVD", 4, new BigDecimal(32));
-        dataSource.add("Florida", "DVD", 2, new BigDecimal(47));
-        dataSource.add("Florida", "Book", 4, new BigDecimal(11));
-        dataSource.add("Florida", "Book", 8, new BigDecimal(6));
-        dataSource.add("Florida", "Book", 6, new BigDecimal(16));
-        dataSource.add("Florida", "Book", 3, new BigDecimal(18));
+        dataSource.add("Florida", "Notebook", 1, BigDecimal.valueOf(460));
+        dataSource.add("Florida", "DVD", 3, BigDecimal.valueOf(49));
+        dataSource.add("Florida", "DVD", 4, BigDecimal.valueOf(32));
+        dataSource.add("Florida", "DVD", 2, BigDecimal.valueOf(47));
+        dataSource.add("Florida", "Book", 4, BigDecimal.valueOf(11));
+        dataSource.add("Florida", "Book", 8, BigDecimal.valueOf(6));
+        dataSource.add("Florida", "Book", 6, BigDecimal.valueOf(16));
+        dataSource.add("Florida", "Book", 3, BigDecimal.valueOf(18));
         return dataSource;
     }
 }

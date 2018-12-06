@@ -32,6 +32,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedRe
 /**
  * <p>ConcatenatedReport1 class.</p>
  *
+ * Please ensure you have write access on local disc c:\ before running this example
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */

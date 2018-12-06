@@ -48,25 +48,25 @@ public class SalesCrosstabData {
         for (int i = 0; i < 370; i++) {
             Date date = c.getTime();
 
-            dataSource.add("Florida", "Notebook", date, 1, new BigDecimal(500));
-            dataSource.add("Florida", "DVD", date, 5, new BigDecimal(30));
-            dataSource.add("Florida", "Book", date, 2, new BigDecimal(11));
-            dataSource.add("Florida", "Phone", date, 1, new BigDecimal(200));
+            dataSource.add("Florida", "Notebook", date, 1, BigDecimal.valueOf(500));
+            dataSource.add("Florida", "DVD", date, 5, BigDecimal.valueOf(30));
+            dataSource.add("Florida", "Book", date, 2, BigDecimal.valueOf(11));
+            dataSource.add("Florida", "Phone", date, 1, BigDecimal.valueOf(200));
 
-            dataSource.add("Washington", "Notebook", date, 1, new BigDecimal(610));
-            dataSource.add("Washington", "DVD", date, 2, new BigDecimal(42));
-            dataSource.add("Washington", "Book", date, 3, new BigDecimal(12));
-            dataSource.add("Washington", "Phone", date, 1, new BigDecimal(380));
+            dataSource.add("Washington", "Notebook", date, 1, BigDecimal.valueOf(610));
+            dataSource.add("Washington", "DVD", date, 2, BigDecimal.valueOf(42));
+            dataSource.add("Washington", "Book", date, 3, BigDecimal.valueOf(12));
+            dataSource.add("Washington", "Phone", date, 1, BigDecimal.valueOf(380));
 
-            dataSource.add("New York", "Notebook", date, 1, new BigDecimal(460));
-            dataSource.add("New York", "DVD", date, 3, new BigDecimal(49));
-            dataSource.add("New York", "Book", date, 4, new BigDecimal(11));
-            dataSource.add("New York", "Phone", date, 2, new BigDecimal(190));
+            dataSource.add("New York", "Notebook", date, 1, BigDecimal.valueOf(460));
+            dataSource.add("New York", "DVD", date, 3, BigDecimal.valueOf(49));
+            dataSource.add("New York", "Book", date, 4, BigDecimal.valueOf(11));
+            dataSource.add("New York", "Phone", date, 2, BigDecimal.valueOf(190));
 
-            dataSource.add("Arizona", "Notebook", date, 1, new BigDecimal(400));
-            dataSource.add("Arizona", "DVD", date, 2, new BigDecimal(30));
-            dataSource.add("Arizona", "Book", date, 6, new BigDecimal(18));
-            dataSource.add("Arizona", "Phone", date, 2, new BigDecimal(110));
+            dataSource.add("Arizona", "Notebook", date, 1, BigDecimal.valueOf(400));
+            dataSource.add("Arizona", "DVD", date, 2, BigDecimal.valueOf(30));
+            dataSource.add("Arizona", "Book", date, 6, BigDecimal.valueOf(18));
+            dataSource.add("Arizona", "Phone", date, 2, BigDecimal.valueOf(110));
 
             c.add(Calendar.DAY_OF_MONTH, -1);
         }

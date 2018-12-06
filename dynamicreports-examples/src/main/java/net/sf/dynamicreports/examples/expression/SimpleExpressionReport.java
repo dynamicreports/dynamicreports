@@ -75,7 +75,7 @@ public class SimpleExpressionReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 20, new BigDecimal(10));
+        dataSource.add("Book", 20, BigDecimal.valueOf(10));
         return dataSource;
     }
 
@@ -86,7 +86,7 @@ public class SimpleExpressionReport {
         public BigDecimal evaluate(ReportParameters reportParameters) {
             Integer quantity = reportParameters.getValue("quantity");
             BigDecimal unitPrice = reportParameters.getValue("unitprice");
-            return new BigDecimal(quantity).multiply(unitPrice);
+            return BigDecimal.valueOf(quantity).multiply(unitPrice);
         }
     }
 }

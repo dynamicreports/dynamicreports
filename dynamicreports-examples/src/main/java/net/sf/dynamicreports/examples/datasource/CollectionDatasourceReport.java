@@ -95,18 +95,18 @@ public class CollectionDatasourceReport {
         List<SubData> subData = new ArrayList<SubData>();
         subData.add(new SubData(toDate(2011, 0, 10), 2));
         subData.add(new SubData(toDate(2011, 0, 15), 3));
-        data.add(new Data("DVD", 5, new BigDecimal(30), subData));
+        data.add(new Data("DVD", 5, BigDecimal.valueOf(30), subData));
 
         subData = new ArrayList<SubData>();
         subData.add(new SubData(toDate(2011, 0, 11), 1));
         subData.add(new SubData(toDate(2011, 0, 12), 3));
         subData.add(new SubData(toDate(2011, 0, 16), 4));
-        data.add(new Data("Book", 8, new BigDecimal(11), subData));
+        data.add(new Data("Book", 8, BigDecimal.valueOf(11), subData));
 
         subData = new ArrayList<SubData>();
         subData.add(new SubData(toDate(2011, 0, 9), 1));
         subData.add(new SubData(toDate(2011, 0, 18), 1));
-        data.add(new Data("PDA", 2, new BigDecimal(15), subData));
+        data.add(new Data("PDA", 2, BigDecimal.valueOf(15), subData));
 
         return new JRBeanCollectionDataSource(data);
     }

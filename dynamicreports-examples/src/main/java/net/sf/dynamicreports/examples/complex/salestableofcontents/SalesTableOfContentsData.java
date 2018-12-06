@@ -54,7 +54,7 @@ public class SalesTableOfContentsData {
                 c.set(Calendar.DAY_OF_MONTH, 1);
                 for (int i = 0; i < 15; i++) {
                     Date date = c.getTime();
-                    dataSource.add(country, item, date, (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+                    dataSource.add(country, item, date, (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
                     c.add(Calendar.DAY_OF_MONTH, 1);
                 }
             }
