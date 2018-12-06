@@ -103,14 +103,14 @@ public class PercentageSubtotalReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("country", "item", "price");
-        dataSource.add("USA", "Tablet", new BigDecimal(150));
-        dataSource.add("USA", "Tablet", new BigDecimal(190));
-        dataSource.add("USA", "Laptop", new BigDecimal(250));
-        dataSource.add("USA", "Laptop", new BigDecimal(420));
-        dataSource.add("Canada", "Tablet", new BigDecimal(120));
-        dataSource.add("Canada", "Tablet", new BigDecimal(180));
-        dataSource.add("Canada", "Laptop", new BigDecimal(300));
-        dataSource.add("Canada", "Laptop", new BigDecimal(390));
+        dataSource.add("USA", "Tablet", BigDecimal.valueOf(150));
+        dataSource.add("USA", "Tablet", BigDecimal.valueOf(190));
+        dataSource.add("USA", "Laptop", BigDecimal.valueOf(250));
+        dataSource.add("USA", "Laptop", BigDecimal.valueOf(420));
+        dataSource.add("Canada", "Tablet", BigDecimal.valueOf(120));
+        dataSource.add("Canada", "Tablet", BigDecimal.valueOf(180));
+        dataSource.add("Canada", "Laptop", BigDecimal.valueOf(300));
+        dataSource.add("Canada", "Laptop", BigDecimal.valueOf(390));
         return dataSource;
     }
 }

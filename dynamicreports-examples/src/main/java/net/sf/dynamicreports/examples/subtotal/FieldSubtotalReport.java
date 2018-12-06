@@ -83,11 +83,11 @@ public class FieldSubtotalReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Tablet", toDate(2010, 1, 1), 3, new BigDecimal(110));
-        dataSource.add("Tablet", toDate(2010, 2, 1), 1, new BigDecimal(150));
-        dataSource.add("Laptop", toDate(2010, 2, 1), 3, new BigDecimal(300));
-        dataSource.add("Smartphone", toDate(2010, 4, 1), 8, new BigDecimal(90));
-        dataSource.add("Smartphone", toDate(2010, 5, 1), 6, new BigDecimal(120));
+        dataSource.add("Tablet", toDate(2010, 1, 1), 3, BigDecimal.valueOf(110));
+        dataSource.add("Tablet", toDate(2010, 2, 1), 1, BigDecimal.valueOf(150));
+        dataSource.add("Laptop", toDate(2010, 2, 1), 3, BigDecimal.valueOf(300));
+        dataSource.add("Smartphone", toDate(2010, 4, 1), 8, BigDecimal.valueOf(90));
+        dataSource.add("Smartphone", toDate(2010, 5, 1), 6, BigDecimal.valueOf(120));
         return dataSource;
     }
 
