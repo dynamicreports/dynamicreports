@@ -35,6 +35,7 @@ import net.sf.jasperreports.engine.JasperReport;
 
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -72,9 +73,7 @@ public class DetailJasperSubreport {
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();
-        } catch (DRException e) {
-            e.printStackTrace();
-        } catch (JRException e) {
+        } catch (DRException | JRException e) {
             e.printStackTrace();
         }
     }
@@ -94,9 +93,7 @@ public class DetailJasperSubreport {
         @Override
         public JRDataSource evaluate(ReportParameters reportParameters) {
             DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-            for (int i = 0; i < 5; i++) {
-                dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-            }
+            IntStream.range(0, 5).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1)));
             return dataSource;
         }
     }
