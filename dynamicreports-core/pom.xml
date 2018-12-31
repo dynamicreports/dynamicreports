@@ -18,6 +18,16 @@
         You can very quickly create reports and produce documents that can be displayed, printed or exported into many popular formats such as PDF, Excel, Word and others.
     </description>
 
+    <properties>
+        <!--Environment -->
+        <encoding>UTF-8</encoding>
+        <sourceVersion>1.8</sourceVersion>
+        <targetVersion>1.8</targetVersion>
+        <lint>deprecation</lint>
+        <lint>unchecked</lint>
+        <illegal-access>warn</illegal-access>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
@@ -88,7 +98,8 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <scope>test</scope>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -141,6 +152,36 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!--//TODO this could be causing serious animal sniffer errors-->
+                    <!--<source>9</source>
+                    <target>9</target>-->
+                    <source>${sourceVersion}</source>
+                    <target>${targetVersion}</target>
+                    <encoding>${encoding}</encoding>
+                </configuration>
+            </plugin>
+            <!--Check for use of legacy code-->
+            <plugin>
+                <groupId>org.gaul</groupId>
+                <artifactId>modernizer-maven-plugin</artifactId>
+            </plugin>
+            <!--//TODO fix "commandline was too long error"-->
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jdeps-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            &lt;!&ndash;<goal>jdkinternals</goal>&ndash;&gt; &lt;!&ndash; verify main classes &ndash;&gt;
+                            <goal>test-jdkinternals</goal> &lt;!&ndash; verify test classes &ndash;&gt;
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
         </plugins>
     </build>
 
@@ -288,6 +329,7 @@
                         <executions>
                             <execution>
                                 <id>jaxb</id>
+                                <!--This is how you disable it-->
                                 <phase>none</phase>
                             </execution>
                         </executions>

@@ -30,6 +30,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -100,10 +101,10 @@ public class CandlestickChartReport {
         DRDataSource dataSource = new DRDataSource("series", "date", "high", "low", "open", "close", "volume");
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, -20);
-        for (int i = 0; i < 20; i++) {
+        IntStream.range(0, 20).forEachOrdered(i -> {
             dataSource.add("serie", c.getTime(), 150 + Math.random() * 50, 20 + Math.random() * 30, 50 + Math.random() * 90, 50 + Math.random() * 110, 50 + Math.random() * 100);
             c.add(Calendar.DAY_OF_MONTH, 1);
-        }
+        });
         return dataSource;
     }
 }

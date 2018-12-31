@@ -31,13 +31,13 @@ public interface ChartGenerator {
     /**
      * Constant <code>PARAMETER_CHART_GENERATOR="CHARTGENERATOR"</code>
      */
-    public static final String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
+    String PARAMETER_CHART_GENERATOR = "CHARTGENERATOR";
 
     /**
      * <p>generateChart.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String generateChart();
+    String generateChart();
 
 }

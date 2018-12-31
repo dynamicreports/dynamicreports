@@ -84,14 +84,14 @@ public class ColumnGroupReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Tablet", toDate(2010, 1, 1), 5, new BigDecimal(300));
-        dataSource.add("Tablet", toDate(2010, 1, 3), 1, new BigDecimal(280));
-        dataSource.add("Tablet", toDate(2010, 1, 19), 5, new BigDecimal(320));
-        dataSource.add("Laptop", toDate(2010, 1, 5), 3, new BigDecimal(580));
-        dataSource.add("Laptop", toDate(2010, 1, 8), 1, new BigDecimal(620));
-        dataSource.add("Laptop", toDate(2010, 1, 15), 5, new BigDecimal(600));
-        dataSource.add("Smartphone", toDate(2010, 1, 18), 8, new BigDecimal(150));
-        dataSource.add("Smartphone", toDate(2010, 1, 20), 8, new BigDecimal(210));
+        dataSource.add("Tablet", toDate(2010, 1, 1), 5, BigDecimal.valueOf(300));
+        dataSource.add("Tablet", toDate(2010, 1, 3), 1, BigDecimal.valueOf(280));
+        dataSource.add("Tablet", toDate(2010, 1, 19), 5, BigDecimal.valueOf(320));
+        dataSource.add("Laptop", toDate(2010, 1, 5), 3, BigDecimal.valueOf(580));
+        dataSource.add("Laptop", toDate(2010, 1, 8), 1, BigDecimal.valueOf(620));
+        dataSource.add("Laptop", toDate(2010, 1, 15), 5, BigDecimal.valueOf(600));
+        dataSource.add("Smartphone", toDate(2010, 1, 18), 8, BigDecimal.valueOf(150));
+        dataSource.add("Smartphone", toDate(2010, 1, 20), 8, BigDecimal.valueOf(210));
         return dataSource;
     }
 

@@ -55,6 +55,6 @@ public class LongType extends NumberType<Long> {
      */
     @Override
     protected Long numberToValue(Number number) {
-        return new Long(number.longValue());
+        return number.longValue();
     }
 }

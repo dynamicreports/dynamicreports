@@ -62,22 +62,22 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
         JRStyle style = getElementAt(name, index).getStyle();
 
         JRBoxPen pen = style.getLineBox().getTopPen();
-        Assert.assertEquals(new Float(top), pen.getLineWidth());
+        Assert.assertEquals(top, pen.getLineWidth());
         Assert.assertEquals(topColor, pen.getLineColor());
         Assert.assertEquals(topLineStyle, pen.getLineStyleValue());
 
         pen = style.getLineBox().getBottomPen();
-        Assert.assertEquals(new Float(bottom), pen.getLineWidth());
+        Assert.assertEquals(bottom, pen.getLineWidth());
         Assert.assertEquals(bottomColor, pen.getLineColor());
         Assert.assertEquals(bottomLineStyle, pen.getLineStyleValue());
 
         pen = style.getLineBox().getLeftPen();
-        Assert.assertEquals(new Float(left), pen.getLineWidth());
+        Assert.assertEquals(left, pen.getLineWidth());
         Assert.assertEquals(leftColor, pen.getLineColor());
         Assert.assertEquals(leftLineStyle, pen.getLineStyleValue());
 
         pen = style.getLineBox().getRightPen();
-        Assert.assertEquals(new Float(right), pen.getLineWidth());
+        Assert.assertEquals(right, pen.getLineWidth());
         Assert.assertEquals(rightColor, pen.getLineColor());
         Assert.assertEquals(rightLineStyle, pen.getLineStyleValue());
     }

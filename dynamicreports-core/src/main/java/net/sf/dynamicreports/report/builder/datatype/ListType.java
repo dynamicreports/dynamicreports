@@ -72,7 +72,7 @@ public class ListType extends AbstractDataType<List, List> {
 
         @Override
         public String format(List values, ReportParameters reportParameters) {
-            StringBuffer result = new StringBuffer();
+            StringBuilder result = new StringBuilder();
             for (Object value : values) {
                 if (result.length() > 0) {
                     result.append("\n");

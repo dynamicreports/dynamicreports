@@ -7,16 +7,16 @@
  * This file is part of DynamicReports.
  *
  * DynamicReports is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * it under the terms of the GNU Lesser General License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * DynamicReports is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Lesser General Public License for more details.
+ * GNU Lesser General License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
+ * You should have received a copy of the GNU Lesser General License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
 package net.sf.dynamicreports.googlecharts.report.geomap;
@@ -39,26 +39,26 @@ public interface DRIGeoMapDataset extends Serializable {
      *
      * @return a {@link net.sf.dynamicreports.report.definition.DRIDataset} object.
      */
-    public DRIDataset getSubDataset();
+    DRIDataset getSubDataset();
 
     /**
      * <p>getLocationExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getLocationExpression();
+    DRIExpression<?> getLocationExpression();
 
     /**
      * <p>getValueExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getValueExpression();
+    DRIExpression<?> getValueExpression();
 
     /**
      * <p>getLabelExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getLabelExpression();
+    DRIExpression<?> getLabelExpression();
 }

@@ -86,14 +86,14 @@ public class GroupSubtotalReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("country", "item", "quantity", "price");
-        dataSource.add("USA", "Tablet", 4, new BigDecimal(150));
-        dataSource.add("USA", "Tablet", 3, new BigDecimal(190));
-        dataSource.add("USA", "Laptop", 2, new BigDecimal(250));
-        dataSource.add("USA", "Laptop", 1, new BigDecimal(420));
-        dataSource.add("Canada", "Tablet", 6, new BigDecimal(120));
-        dataSource.add("Canada", "Tablet", 2, new BigDecimal(180));
-        dataSource.add("Canada", "Laptop", 3, new BigDecimal(300));
-        dataSource.add("Canada", "Laptop", 2, new BigDecimal(390));
+        dataSource.add("USA", "Tablet", 4, BigDecimal.valueOf(150));
+        dataSource.add("USA", "Tablet", 3, BigDecimal.valueOf(190));
+        dataSource.add("USA", "Laptop", 2, BigDecimal.valueOf(250));
+        dataSource.add("USA", "Laptop", 1, BigDecimal.valueOf(420));
+        dataSource.add("Canada", "Tablet", 6, BigDecimal.valueOf(120));
+        dataSource.add("Canada", "Tablet", 2, BigDecimal.valueOf(180));
+        dataSource.add("Canada", "Laptop", 3, BigDecimal.valueOf(300));
+        dataSource.add("Canada", "Laptop", 2, BigDecimal.valueOf(390));
         return dataSource;
     }
 }

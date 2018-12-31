@@ -27,6 +27,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -71,7 +72,7 @@ public class PercentageColumnWidthReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Book", new Date(), 10, new BigDecimal(200));
+        dataSource.add("Book", Date.from(Instant.now()), 10, BigDecimal.valueOf (200));
         return dataSource;
     }
 }

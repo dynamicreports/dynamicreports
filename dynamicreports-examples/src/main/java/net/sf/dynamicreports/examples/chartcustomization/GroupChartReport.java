@@ -89,12 +89,12 @@ public class GroupChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("country", "item", "quantity", "sales");
-        dataSource.add("USA", "Tablet", 170, new BigDecimal(100));
-        dataSource.add("USA", "Laptop", 90, new BigDecimal(280));
-        dataSource.add("USA", "Smartphone", 120, new BigDecimal(250));
-        dataSource.add("Canada", "Tablet", 120, new BigDecimal(80));
-        dataSource.add("Canada", "Laptop", 150, new BigDecimal(310));
-        dataSource.add("Canada", "Smartphone", 100, new BigDecimal(180));
+        dataSource.add("USA", "Tablet", 170, BigDecimal.valueOf(100));
+        dataSource.add("USA", "Laptop", 90, BigDecimal.valueOf(280));
+        dataSource.add("USA", "Smartphone", 120, BigDecimal.valueOf(250));
+        dataSource.add("Canada", "Tablet", 120, BigDecimal.valueOf(80));
+        dataSource.add("Canada", "Laptop", 150, BigDecimal.valueOf(310));
+        dataSource.add("Canada", "Smartphone", 100, BigDecimal.valueOf(180));
         return dataSource;
     }
 }

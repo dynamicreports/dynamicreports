@@ -84,7 +84,7 @@ public class PageFormatReport {
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
         for (int i = 0; i < 40; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
         }
         return dataSource;
     }

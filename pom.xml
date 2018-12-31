@@ -61,7 +61,7 @@
         <batikbridgeVersion>1.9</batikbridgeVersion>
         <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.1</commonslang3Version>
-        <groovyVersion>1.7.5</groovyVersion>
+        <groovyVersion>2.4.15</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
         <jasperreportsVersion>6.7.0</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
@@ -73,18 +73,22 @@
         <junitVersion>4.12</junitVersion>
         <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
-        <poiVersion>3.15</poiVersion>
-        <springframeworkVersion>3.2.18.RELEASE</springframeworkVersion>
+        <!--//TODO update poi to version 4 once jasperreports drops deprecated org.apache.poi.hssf.util.HSSFColor.WHITE-->
+        <poiVersion>3.17</poiVersion>
+        <!--//TODO update springframework to 5.1.3.RELEASE after jasperreports drops 3.2.18.RELEASE in upcoming version 6.8.0-->
+        <springframeworkVersion>4.3.20.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xalanVersion>2.7.2</xalanVersion>
         <xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
+        <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
         <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
+        <maven-jdeps-plugin-version>3.1.1</maven-jdeps-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
         <!--Profile Plugins-->
@@ -108,6 +112,11 @@
         <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
         <checkstyle.config.includeTestSourceDirectory>false</checkstyle.config.includeTestSourceDirectory>
         <linkXRef>false</linkXRef>
+
+        <!--Configuration for Modernizer-maven-plugin-->
+        <modernizer-failOnViolations>true</modernizer-failOnViolations>
+        <modernizer-javaVersion>${sourceVersion}</modernizer-javaVersion>
+        <modernizer-skip>false</modernizer-skip>
 
     </properties>
 
@@ -318,6 +327,39 @@
                             <phase>test</phase>
                             <goals>
                                 <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jdeps-plugin</artifactId>
+                    <version>3.1.1</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>jdkinternals</goal> <!-- verify main classes -->
+                                <goal>test-jdkinternals</goal> <!-- verify test classes -->
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!--Configuring plugin to detect use of legacy API-->
+                <plugin>
+                    <groupId>org.gaul</groupId>
+                    <artifactId>modernizer-maven-plugin</artifactId>
+                    <version>1.7.0</version>
+                    <configuration>
+                        <javaVersion>${modernizer-javaVersion}</javaVersion>
+                        <failOnViolations>${modernizer-failOnViolations}</failOnViolations>
+                        <skip>${modernizer-skip}</skip>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>modernizer</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>modernizer</goal>
                             </goals>
                         </execution>
                     </executions>
@@ -605,39 +647,6 @@
                             <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
                             <linkXRef>${linkXRef}</linkXRef>
                         </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <profile>
-            <id>scripts</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.6.0</version>
-                        <executions>
-                            <execution><!-- Run our install-ms-fonts.sh script -->
-                                <id>scripts</id>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <executable>bash</executable>
-                                    <commandlineArgs>src/scripts/compile-scripts.sh</commandlineArgs>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <dependencies>
-                            <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
-                            <dependency>
-                                <groupId>org.codehaus.mojo</groupId>
-                                <artifactId>exec-maven-plugin</artifactId>
-                                <version>1.6.0</version>
-                            </dependency>
-                        </dependencies>
                     </plugin>
                 </plugins>
             </build>

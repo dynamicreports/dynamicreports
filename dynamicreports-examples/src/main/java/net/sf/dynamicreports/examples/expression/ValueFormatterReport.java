@@ -76,7 +76,7 @@ public class ValueFormatterReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 20, new BigDecimal(10));
+        dataSource.add("Book", 20, BigDecimal.valueOf(10));
         return dataSource;
     }
 

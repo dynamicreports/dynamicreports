@@ -35,6 +35,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
@@ -68,7 +70,7 @@ public class ScriptletReport {
     }
 
     private void build() {
-        itemsCount = new HashMap<String, Integer>();
+        itemsCount = new ConcurrentHashMap<>();
 
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         CustomSubtotalBuilder<String> itemSbt = sbt.customValue(new ItemSubtotal(), itemColumn);
@@ -113,10 +115,7 @@ public class ScriptletReport {
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            String result = "";
-            for (String item : itemsCount.keySet()) {
-                result += item + " = " + itemsCount.get(item) + "\n";
-            }
+            String result = itemsCount.keySet().stream().map(item -> item + " = " + itemsCount.get(item) + "\n").collect(Collectors.joining());
             return StringUtils.removeEnd(result, "\n");
         }
     }
@@ -128,11 +127,7 @@ public class ScriptletReport {
             super.afterDetailEval(reportParameters);
             String item = reportParameters.getValue("item");
             Integer count;
-            if (itemsCount.containsKey(item)) {
-                count = itemsCount.get(item);
-            } else {
-                count = 0;
-            }
+            count = itemsCount.getOrDefault(item, 0);
             itemsCount.put(item, ++count);
         }
 

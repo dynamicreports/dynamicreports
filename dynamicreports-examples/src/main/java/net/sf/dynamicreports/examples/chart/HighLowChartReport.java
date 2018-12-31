@@ -103,7 +103,7 @@ public class HighLowChartReport {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, -20);
         for (int i = 0; i < 20; i++) {
-            dataSource.add("serie", c.getTime(), 150 + Math.random() * 50, 20 + Math.random() * 30, 50 + Math.random() * 90, 50 + Math.random() * 110, 50 + Math.random() * 100);
+            dataSource.add("series", c.getTime(), 150 + Math.random() * 50, 20 + Math.random() * 30, 50 + Math.random() * 90, 50 + Math.random() * 110, 50 + Math.random() * 100);
             c.add(Calendar.DAY_OF_MONTH, 1);
         }
         return dataSource;

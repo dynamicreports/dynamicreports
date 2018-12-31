@@ -57,7 +57,7 @@ public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
         String chartData = ((ChartGenerator) element.getParameterValue(ChartGenerator.PARAMETER_CHART_GENERATOR)).generateChart();
         String chartEncodedData = JRStringUtil.htmlEncode(chartData);
 
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         result.append("<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0\" ");
         result.append("width=\"" + width + "\" ");
         result.append("height=\"" + height + "\" ");

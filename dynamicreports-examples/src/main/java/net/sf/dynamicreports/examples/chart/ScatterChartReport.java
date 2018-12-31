@@ -28,6 +28,8 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
+import java.util.stream.IntStream;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -87,9 +89,7 @@ public class ScatterChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("x", "y1", "y2");
-        for (int i = -10; i < 10; i++) {
-            dataSource.add(i, i + (int) (Math.random() * 5), i + (int) (Math.random() * 5));
-        }
+        IntStream.range(-10, 10).forEachOrdered(i -> dataSource.add(i, i + (int) (Math.random() * 5), i + (int) (Math.random() * 5)));
         return dataSource;
     }
 }

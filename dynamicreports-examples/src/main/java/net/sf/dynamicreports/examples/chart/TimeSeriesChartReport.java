@@ -91,13 +91,13 @@ public class TimeSeriesChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("orderdate", "quantity", "price");
-        dataSource.add(toDate(2010, 1), 50, new BigDecimal(200));
-        dataSource.add(toDate(2010, 2), 110, new BigDecimal(450));
-        dataSource.add(toDate(2010, 3), 70, new BigDecimal(280));
-        dataSource.add(toDate(2010, 4), 250, new BigDecimal(620));
-        dataSource.add(toDate(2010, 5), 100, new BigDecimal(400));
-        dataSource.add(toDate(2010, 6), 80, new BigDecimal(320));
-        dataSource.add(toDate(2010, 7), 180, new BigDecimal(490));
+        dataSource.add(toDate(2010, 1), 50, BigDecimal.valueOf(200));
+        dataSource.add(toDate(2010, 2), 110, BigDecimal.valueOf(450));
+        dataSource.add(toDate(2010, 3), 70, BigDecimal.valueOf(280));
+        dataSource.add(toDate(2010, 4), 250, BigDecimal.valueOf(620));
+        dataSource.add(toDate(2010, 5), 100, BigDecimal.valueOf(400));
+        dataSource.add(toDate(2010, 6), 80, BigDecimal.valueOf(320));
+        dataSource.add(toDate(2010, 7), 180, BigDecimal.valueOf(490));
         return dataSource;
     }
 

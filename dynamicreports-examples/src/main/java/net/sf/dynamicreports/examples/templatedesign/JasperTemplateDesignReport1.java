@@ -27,6 +27,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.io.InputStream;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -73,9 +74,7 @@ public class JasperTemplateDesignReport1 {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        for (int i = 0; i < 10; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, (int) (Math.random() * 100) + 1);
-        }
+        IntStream.range(0, 10).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, (int) (Math.random() * 100) + 1));
         return dataSource;
     }
 }

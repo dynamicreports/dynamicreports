@@ -31,6 +31,8 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
+import java.util.stream.IntStream;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -87,9 +89,7 @@ public class DetailDynamicSubreport {
             JasperReportBuilder report = report();
             report.setTemplate(Templates.reportTemplate).title(cmp.text("Subreport" + masterRowNumber).setStyle(Templates.bold12CenteredStyle));
 
-            for (int i = 1; i <= masterRowNumber; i++) {
-                report.addColumn(col.column("Column" + i, "column" + i, type.stringType()));
-            }
+            IntStream.rangeClosed(1, masterRowNumber).mapToObj(i -> col.column("Column" + i, "column" + i, type.stringType())).forEach(report::addColumn);
 
             return report;
         }
@@ -102,9 +102,7 @@ public class DetailDynamicSubreport {
         public JRDataSource evaluate(ReportParameters reportParameters) {
             int masterRowNumber = reportParameters.getReportRowNumber();
             String[] columns = new String[masterRowNumber];
-            for (int i = 1; i <= masterRowNumber; i++) {
-                columns[i - 1] = "column" + i;
-            }
+            IntStream.rangeClosed(1, masterRowNumber).forEach(i -> columns[i - 1] = "column" + i);
             DRDataSource dataSource = new DRDataSource(columns);
 
             for (int i = 1; i <= masterRowNumber; i++) {

@@ -93,7 +93,7 @@ public class VariableReport {
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
         for (int i = 0; i < 30; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+            dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
         }
         return dataSource;
     }
@@ -137,7 +137,7 @@ public class VariableReport {
         public BigDecimal evaluate(ReportParameters reportParameters) {
             Integer quantity = reportParameters.getValue(quantityColumn);
             BigDecimal unitPrice = reportParameters.getValue(unitPriceColumn);
-            return unitPrice.multiply(new BigDecimal(quantity));
+            return unitPrice.multiply(BigDecimal.valueOf(quantity));
         }
     }
 }

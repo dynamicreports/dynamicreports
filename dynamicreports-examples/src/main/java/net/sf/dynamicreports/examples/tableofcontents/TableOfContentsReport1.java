@@ -85,7 +85,7 @@ public class TableOfContentsReport1 {
         for (String country : countries) {
             for (String item : items) {
                 for (int i = 0; i < 8; i++) {
-                    dataSource.add(country, item, toDate(2010, 1, (int) (Math.random() * 10) + 1), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+                    dataSource.add(country, item, toDate(2010, 1, (int) (Math.random() * 10) + 1), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
                 }
             }
         }

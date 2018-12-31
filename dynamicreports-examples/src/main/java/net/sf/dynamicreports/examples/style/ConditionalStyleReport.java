@@ -95,13 +95,13 @@ public class ConditionalStyleReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("DVD", toDate(2010, 1, 1), 5, new BigDecimal(30));
-        dataSource.add("DVD", toDate(2010, 1, 3), 1, new BigDecimal(28));
-        dataSource.add("DVD", toDate(2010, 1, 19), 5, new BigDecimal(32));
-        dataSource.add("Book", toDate(2010, 1, 5), 3, new BigDecimal(11));
-        dataSource.add("Book", toDate(2010, 1, 11), 1, new BigDecimal(15));
-        dataSource.add("Book", toDate(2010, 1, 15), 5, new BigDecimal(10));
-        dataSource.add("Book", toDate(2010, 1, 20), 8, new BigDecimal(9));
+        dataSource.add("DVD", toDate(2010, 1, 1), 5, BigDecimal.valueOf(30));
+        dataSource.add("DVD", toDate(2010, 1, 3), 1, BigDecimal.valueOf(28));
+        dataSource.add("DVD", toDate(2010, 1, 19), 5, BigDecimal.valueOf(32));
+        dataSource.add("Book", toDate(2010, 1, 5), 3, BigDecimal.valueOf(11));
+        dataSource.add("Book", toDate(2010, 1, 11), 1, BigDecimal.valueOf(15));
+        dataSource.add("Book", toDate(2010, 1, 15), 5, BigDecimal.valueOf(10));
+        dataSource.add("Book", toDate(2010, 1, 20), 8, BigDecimal.valueOf(9));
         return dataSource;
     }
 
