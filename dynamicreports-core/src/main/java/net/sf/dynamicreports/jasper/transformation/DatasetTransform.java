@@ -82,7 +82,7 @@ public class DatasetTransform {
         if (dataset.getQuery() != null) {
             jrDataset.setQuery(accessor.getReportTransform().query(dataset.getQuery()));
         }
-        JasperCustomValues customValues = new JasperCustomValues();
+        JasperCustomValues customValues = new JasperCustomValues(accessor.getReport().getProperties());
         DatasetExpressionTransform datasetExpressionTransform = new DatasetExpressionTransform(dataset, jrDataset, customValues);
         datasetExpressionTransform.transform();
         datasetExpressions.put(dataset, datasetExpressionTransform);

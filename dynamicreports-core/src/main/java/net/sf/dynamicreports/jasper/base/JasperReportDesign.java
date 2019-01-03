@@ -78,7 +78,7 @@ public class JasperReportDesign implements Serializable {
         this.design = (JasperDesign) report.getTemplateDesign().getDesign();
         this.tableOfContents = report.isTableOfContents();
         this.tableOfContentsCustomizer = report.getTableOfContentsCustomizer();
-        this.customValues = new JasperCustomValues();
+        this.customValues = new JasperCustomValues(report.getProperties());
         this.parameters = new HashMap<String, Object>();
     }
 
