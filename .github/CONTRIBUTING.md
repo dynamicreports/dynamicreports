@@ -63,10 +63,6 @@ which the api, depends. JAXB engines create classes and xml files which are not 
 - Before running tests in the modules other than the core module please run compilation("mvn clean compile") on the core module first
 - If you are generating documentation using the "source-10" profile, also run the compilation on the core module first
 
-### The Dynamic Reports depends on ms-fonts
-This means that if you are running local builds on a linux, you will nee to install the ttf-mscorefonts-installer. If you are
-using ubuntu, just run "sudo apt-get install ttf-mscorefonts-installer". Sorry linux guys
-
 ### Dynamic Reports Design Decisions
 
 When we make a significant decision in how we maintain the project and what we can or cannot support, we will document it in the [dynamicreports/design-decisions repository](https://github.com/dynamicreports/design-decisions). If you have a question around how we do things, check to see if it is documented there.
