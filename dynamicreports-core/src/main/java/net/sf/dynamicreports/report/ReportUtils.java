@@ -97,6 +97,15 @@ public class ReportUtils {
     return rawType;
   }
 
+  /**
+   * Setter for testing purposes only.
+   * 
+   * @param counter the counter value
+   */
+  static void setCounter(int counter) {
+    ReportUtils.counter = counter;
+  }
+
   private static ParameterizedType getParameterizedType(Class<?> classs) {
     if (classs == null) {
       return null;
@@ -118,7 +127,7 @@ public class ReportUtils {
       }
     }
   }
-  
+
   private static String generateName(String name) {
     if (counter == Integer.MAX_VALUE) {
       counter = 0;
