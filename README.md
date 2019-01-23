@@ -32,6 +32,10 @@ These are the main goals of the project
 - Create a wiki with comprehensive explanations and illustrations on the usage of the library
 - Enhance the documentation in the source code that would make the user clear on what the library is trying to
   do
+  
+#### Documentation
+
+See [Readthedocs](https://dynamicreports.readthedocs.io/en/latest/)
 
 #### Project Dependencies
 A few tools merit to be mentioned:
@@ -41,6 +45,7 @@ A few tools merit to be mentioned:
  - Java version 8
  - Code style: [google](https://google.github.io/styleguide/javaguide.html). Enforced by checkstyle. (Setting
  that up too)
+ - Documentation Hosting: [readthedocs.org](https://readthedocs.org/)
 
 #### Contributing
 
