@@ -20,10 +20,8 @@
 
 package net.sf.dynamicreports.jasper.base;
 
-import net.sf.jasperreports.engine.JasperCompileManager;
-
 /**
- * Thread safe implementation of {@link JasperCompileManager} used for filling
+ * Thread safe implementation of {@link JasperScriptletManager} used for filling
  * cached reports concurrently. Note: use of this class can lead to memory leaks
  * if the threads starting the report fill are not terminated properly.
  */
