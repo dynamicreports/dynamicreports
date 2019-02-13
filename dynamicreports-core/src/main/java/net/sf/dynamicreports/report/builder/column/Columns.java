@@ -182,7 +182,7 @@ public class Columns {
      * @return a column builder
      */
     public static PercentageColumnBuilder percentageColumn(String fieldName, Class<? extends Number> valueClass) {
-        return percentageColumn(DynamicReports.<Number>field(fieldName, valueClass));
+        return percentageColumn(DynamicReports.field(fieldName, valueClass));
     }
 
     /**

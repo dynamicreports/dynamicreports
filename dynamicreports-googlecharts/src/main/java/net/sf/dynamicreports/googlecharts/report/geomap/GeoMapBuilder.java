@@ -216,7 +216,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
      * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder} object.
      */
     public GeoMapBuilder setValue(String fieldName, Class<? extends Number> valueClass) {
-        return setValue(DynamicReports.<Number>field(fieldName, valueClass));
+        return setValue(DynamicReports.field(fieldName, valueClass));
     }
 
     /**

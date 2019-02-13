@@ -61,7 +61,7 @@ public class MeterChartReport {
     }
 
     private void build() {
-        MeterChartBuilder chart1 = cht.meterChart().setValue(DynamicReports.<Number>field("value", type.integerType())).setShape(MeterShape.DIAL);
+        MeterChartBuilder chart1 = cht.meterChart().setValue(DynamicReports.field("value", type.integerType())).setShape(MeterShape.DIAL);
 
         MeterChartBuilder chart2 = cht.meterChart()
                                       .setValue(18)

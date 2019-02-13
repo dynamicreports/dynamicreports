@@ -81,7 +81,7 @@ public class XyBlockChartBuilder extends AbstractBaseChartBuilder<XyBlockChartBu
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyBlockChartBuilder} object.
      */
     public XyBlockChartBuilder setXValue(String fieldName, Class<? extends Number> valueClass) {
-        return setXValue(DynamicReports.<Number>field(fieldName, valueClass));
+        return setXValue(DynamicReports.field(fieldName, valueClass));
     }
 
     /**

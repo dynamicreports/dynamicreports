@@ -61,7 +61,7 @@ public class ThermometerChartReport {
     }
 
     private void build() {
-        ThermometerChartBuilder chart1 = cht.thermometerChart().setValue(DynamicReports.<Number>field("value", type.integerType()));
+        ThermometerChartBuilder chart1 = cht.thermometerChart().setValue(DynamicReports.field("value", type.integerType()));
 
         ThermometerChartBuilder chart2 = cht.thermometerChart()
                                             .setValue(18)

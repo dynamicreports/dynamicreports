@@ -73,7 +73,7 @@ public abstract class AbstractXyChartBuilder<T extends AbstractXyChartBuilder<T,
      * @return a T object.
      */
     public T setXValue(String fieldName, Class<? extends Number> valueClass) {
-        return setXValue(DynamicReports.<Number>field(fieldName, valueClass));
+        return setXValue(DynamicReports.field(fieldName, valueClass));
     }
 
     /**

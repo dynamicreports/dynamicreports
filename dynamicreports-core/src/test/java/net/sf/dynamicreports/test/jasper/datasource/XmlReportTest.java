@@ -28,9 +28,11 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
 import net.sf.jasperreports.engine.query.JRXPathQueryExecuterFactory;
+import net.sf.jasperreports.engine.util.BigDecimalHandler;
 import net.sf.jasperreports.engine.util.JRXmlUtils;
 import org.junit.Assert;
 
+import java.math.BigDecimal;
 import java.util.Locale;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
@@ -43,12 +45,12 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class XmlReportTest extends AbstractJasperValueTest {
-    private TextColumnBuilder<Object> column1;
-    private TextColumnBuilder<Object> column2;
-    private TextColumnBuilder<Object> column3;
-    private TextColumnBuilder<Object> column4;
-    private TextColumnBuilder<Object> column5;
-    private TextColumnBuilder<Object> column6;
+    private TextColumnBuilder<String> column1;
+    private TextColumnBuilder<Integer> column2;
+    private TextColumnBuilder<BigDecimal> column3;
+    private TextColumnBuilder<String> column4;
+    private TextColumnBuilder<Integer> column5;
+    private TextColumnBuilder<BigDecimal> column6;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {

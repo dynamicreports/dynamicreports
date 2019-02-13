@@ -72,8 +72,8 @@ public class DifferenceChartReport {
                                 .setTitleFont(boldFont)
                                 .setTimePeriod(DynamicReports.<Date>field("date", type.dateType()))
                                 .setTimePeriodType(TimePeriod.DAY)
-                                .series(cht.serie(DynamicReports.<Number>field("value1", type.doubleType())).setLabel("Value1"),
-                                        cht.serie(DynamicReports.<Number>field("value2", type.doubleType())).setLabel("Value2"))
+                                .series(cht.serie(DynamicReports.field("value1", type.doubleType())).setLabel("Value1"),
+                                        cht.serie(DynamicReports.field("value2", type.doubleType())).setLabel("Value2"))
                                 .setTimeAxisFormat(cht.axisFormat().setLabel("Date")))
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())

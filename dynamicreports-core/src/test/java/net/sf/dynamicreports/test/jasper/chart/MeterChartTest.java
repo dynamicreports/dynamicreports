@@ -49,7 +49,7 @@ public class MeterChartTest extends AbstractJasperChartTest {
   @Override
   protected void configureReport(JasperReportBuilder rb) {
     rb.setLocale(Locale.ENGLISH).summary(
-        cht.meterChart().setValue(DynamicReports.<Number>field("field1", Integer.class))
+        cht.meterChart().setValue(DynamicReports.field("field1", Integer.class))
             .setDataRangeLowExpression(3).setDataRangeHighExpression(30).setValueColor(Color.BLUE)
             .setValueMask("#,###.0").setValueFont(ARIMO).setShape(MeterShape.CIRCLE)
             .setMeterAngle(270).setUnits("units").setTickInterval(3d)

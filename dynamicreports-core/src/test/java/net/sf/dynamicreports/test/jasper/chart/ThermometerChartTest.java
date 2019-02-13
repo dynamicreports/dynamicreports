@@ -49,14 +49,14 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
   @Override
   protected void configureReport(JasperReportBuilder rb) {
     rb.setLocale(Locale.ENGLISH).summary(
-        cht.thermometerChart().setValue(DynamicReports.<Number>field("field1", Integer.class))
+        cht.thermometerChart().setValue(DynamicReports.field("field1", Integer.class))
             .setDataRangeLowExpression(3).setDataRangeHighExpression(30).setValueColor(Color.BLUE)
             .setValueMask("#,###.0").setValueFont(ARIMO).setValueLocation(ValueLocation.BULB)
             .setMercuryColor(Color.LIGHT_GRAY).setLowDataRangeLowExpression(8)
             .setLowDataRangeHighExpression(10).setMediumDataRangeLowExpression(18)
             .setMediumDataRangeHighExpression(20).setHighDataRangeLowExpression(28)
             .setHighDataRangeHighExpression(30),
-        cht.thermometerChart().setValue(DynamicReports.<Number>field("field1", Integer.class)));
+        cht.thermometerChart().setValue(DynamicReports.field("field1", Integer.class)));
   }
 
   @Override

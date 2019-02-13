@@ -574,7 +574,7 @@ public class Subtotals {
      * @return a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
      */
     public static PercentageSubtotalBuilder percentage(String fieldName, Class<? extends Number> valueClass, ColumnBuilder<?, ?> showInColumn) {
-        return percentage(DynamicReports.<Number>field(fieldName, valueClass), showInColumn);
+        return percentage(DynamicReports.field(fieldName, valueClass), showInColumn);
     }
 
     /**
