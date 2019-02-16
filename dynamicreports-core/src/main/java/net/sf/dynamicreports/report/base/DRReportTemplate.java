@@ -111,6 +111,10 @@ public class DRReportTemplate implements DRIReportTemplate {
     private GroupFooterPosition groupFooterPosition;
     private Boolean groupKeepTogether;
     private Boolean groupHeaderWithSubtotal;
+    private Integer minDetailsToStartFromTop;
+    private Boolean preventOrphanFooter;
+    private Integer minHeightToStartNewPage;
+
     // subtotal
     private Position subtotalLabelPosition;
     // text field
@@ -1073,6 +1077,57 @@ public class DRReportTemplate implements DRIReportTemplate {
      */
     public void setGroupHeaderWithSubtotal(Boolean groupHeaderWithSubtotal) {
         this.groupHeaderWithSubtotal = groupHeaderWithSubtotal;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Integer getMinHeightToStartNewPage() {
+        return minHeightToStartNewPage;
+    }
+
+    /**
+     * <p>Setter for the field <code>minHeightToStartNewPage</code>.</p>
+     *
+     * @param minHeightToStartNewPage a {@link java.lang.Integer} object.
+     */
+    public void setMinHeightToStartNewPage(Integer minHeightToStartNewPage) {
+        this.minHeightToStartNewPage = minHeightToStartNewPage;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getPreventOrphanFooter() {
+        return preventOrphanFooter;
+    }
+
+    /**
+     * <p>Setter for the field <code>preventOrphanFooter</code>.</p>
+     *
+     * @param preventOrphanFooter a {@link java.lang.Boolean} object.
+     */
+    public void setPreventOrphanFooter(Boolean preventOrphanFooter) {
+        this.preventOrphanFooter = preventOrphanFooter;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Integer getMinDetailsToStartFromTop() {
+        return minDetailsToStartFromTop;
+    }
+
+    /**
+     * <p>Setter for the field <code>minDetailsToStartFromTop</code>.</p>
+     *
+     * @param minDetailsToStartFromTop a {@link java.lang.Integer} object.
+     */
+    public void setMinDetailsToStartFromTop(Integer minDetailsToStartFromTop) {
+        this.minDetailsToStartFromTop = minDetailsToStartFromTop;
     }
 
     /**

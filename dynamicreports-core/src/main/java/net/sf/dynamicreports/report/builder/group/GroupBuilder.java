@@ -228,6 +228,17 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
     }
 
     /**
+     * <p>setMinDetailsToStartFromTop.</p>
+     *
+     * @param minDetailsToStartFromTop a {@link java.lang.Integer} object.
+     * @return a T object.
+     */
+    public T setMinDetailsToStartFromTop(Integer minDetailsToStartFromTop) {
+        getObject().setMinDetailsToStartFromTop(minDetailsToStartFromTop);
+        return (T) this;
+    }
+
+    /**
      * <p>setFooterPosition.</p>
      *
      * @param footerPosition a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
@@ -255,6 +266,26 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
      */
     public T setKeepTogether(Boolean keepTogether) {
         getObject().setKeepTogether(keepTogether);
+        return (T) this;
+    }
+
+    /**
+     * <p>preventOrphanFooter.</p>
+     *
+     * @return a T object.
+     */
+    public T preventOrphanFooter() {
+        return setPreventOrphanFooter(true);
+    }
+
+    /**
+     * <p>setPreventOrphanFooter.</p>
+     *
+     * @param preventOrphanFooter a {@link java.lang.Boolean} object.
+     * @return a T object.
+     */
+    public T setPreventOrphanFooter(Boolean preventOrphanFooter) {
+        getObject().setPreventOrphanFooter(preventOrphanFooter);
         return (T) this;
     }
 

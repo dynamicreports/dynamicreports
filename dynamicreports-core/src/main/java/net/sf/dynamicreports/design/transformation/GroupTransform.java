@@ -238,6 +238,8 @@ public class GroupTransform {
         designGroup.setFooterPosition(templateTransform.getGroupFooterPosition(group));
         designGroup.setKeepTogether(templateTransform.isGroupKeepTogether(group));
         designGroup.setHeaderWithSubtotal(templateTransform.isGroupHeaderWithSubtotal(group));
+        designGroup.setMinDetailsToStartFromTop(templateTransform.getGroupMinDetailsToStartFromTop(group));
+        designGroup.setPreventOrphanFooter(templateTransform.isPreventOrphanFooter(group));
         DRIExpression<?> groupExpression = group.getValueField().getValueExpression();
         if (templateTransform.isGroupByDataType(group) && group.getValueField().getDataType() != null) {
             accessor.getExpressionTransform().transformExpression(groupExpression);

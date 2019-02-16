@@ -1,7 +1,7 @@
-/*
+/**
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
- * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
+ * Copyright (C) 2010 - 2018 Ricardo Mariaca
  * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
@@ -99,6 +99,13 @@ public interface DRIDesignGroup extends Serializable {
     public Integer getMinHeightToStartNewPage();
 
     /**
+     * <p>getMinDetailsToStartFromTop.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinDetailsToStartFromTop();
+
+    /**
      * <p>getFooterPosition.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
@@ -111,6 +118,13 @@ public interface DRIDesignGroup extends Serializable {
      * @return a boolean.
      */
     public boolean isKeepTogether();
+
+    /**
+     * <p>isPreventOrphanFooter.</p>
+     *
+     * @return a boolean.
+     */
+    boolean isPreventOrphanFooter();
 
     /**
      * <p>isHeaderWithSubtotal.</p>

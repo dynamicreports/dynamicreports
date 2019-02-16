@@ -394,6 +394,27 @@ public interface DRIReportTemplate extends Serializable {
     public Boolean getGroupHeaderWithSubtotal();
 
     /**
+     * <p>getGroupMinDetailsToStartFromTop.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinDetailsToStartFromTop();
+
+    /**
+     * <p>getPreventOrphanFooter.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getPreventOrphanFooter();
+
+    /**
+     * <p>getMinHeightToStartNewPage.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinHeightToStartNewPage();
+
+    /**
      * <p>getSubtotalLabelPosition.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.Position} object.

@@ -57,8 +57,10 @@ public class DRGroup implements DRIGroup {
     private Boolean reprintHeaderOnEachPage;
     private Boolean resetPageNumber;
     private Integer minHeightToStartNewPage;
+    private Integer minDetailsToStartFromTop;
     private GroupFooterPosition footerPosition;
     private Boolean keepTogether;
+    private Boolean preventOrphanFooter;
     private Boolean headerWithSubtotal;
     private DRBand headerBand;
     private DRBand footerBand;
@@ -369,6 +371,23 @@ public class DRGroup implements DRIGroup {
      * {@inheritDoc}
      */
     @Override
+    public Integer getMinDetailsToStartFromTop() {
+        return minDetailsToStartFromTop;
+    }
+
+    /**
+     * <p>Setter for the field <code>minDetailsToStartFromTop</code>.</p>
+     *
+     * @param minDetailsToStartFromTop a {@link java.lang.Integer} object.
+     */
+    public void setMinDetailsToStartFromTop(Integer minDetailsToStartFromTop) {
+        this.minDetailsToStartFromTop = minDetailsToStartFromTop;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public GroupFooterPosition getFooterPosition() {
         return footerPosition;
     }
@@ -397,6 +416,23 @@ public class DRGroup implements DRIGroup {
      */
     public void setKeepTogether(Boolean keepTogether) {
         this.keepTogether = keepTogether;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getPreventOrphanFooter() {
+        return preventOrphanFooter;
+    }
+
+    /**
+     * <p>Setter for the field <code>preventOrphanFooter</code>.</p>
+     *
+     * @param preventOrphanFooter a {@link java.lang.Boolean} object.
+     */
+    public void setPreventOrphanFooter(Boolean preventOrphanFooter) {
+        this.preventOrphanFooter = preventOrphanFooter;
     }
 
     /**

@@ -1270,6 +1270,9 @@ public class TemplateTransform {
         if (group.getMinHeightToStartNewPage() != null) {
             return group.getMinHeightToStartNewPage();
         }
+        if (template.getMinHeightToStartNewPage() != null) {
+            return template.getMinHeightToStartNewPage();
+        }
         return Defaults.getDefaults().getGroupMinHeightToStartNewPage();
     }
 
@@ -1320,6 +1323,39 @@ public class TemplateTransform {
         }
         return Defaults.getDefaults().isGroupHeaderWithSubtotal();
     }
+
+    /**
+     * <p>isPreventOrphanFooter.</p>
+     *
+     * @param group a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+     * @return a boolean.
+     */
+    protected boolean isPreventOrphanFooter(DRIGroup group) {
+        if (group.getPreventOrphanFooter() != null) {
+            return group.getPreventOrphanFooter();
+        }
+        if (template.getPreventOrphanFooter() != null) {
+            return template.getPreventOrphanFooter();
+        }
+        return Defaults.getDefaults().isGroupPreventOrphanFooter();
+    }
+
+    /**
+     * <p>getGroupMinDetailsToStartFromTop.</p>
+     *
+     * @param group a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
+     * @return a {@link java.lang.Integer} object.
+     */
+    protected Integer getGroupMinDetailsToStartFromTop(DRIGroup group) {
+        if (group.getMinDetailsToStartFromTop() != null) {
+            return group.getMinDetailsToStartFromTop();
+        }
+        if (template.getMinDetailsToStartFromTop() != null) {
+            return template.getMinDetailsToStartFromTop();
+        }
+        return Defaults.getDefaults().getGroupMinDetailsToStartFromTop();
+    }
+
 
     /**
      * <p>isGroupByDataType.</p>

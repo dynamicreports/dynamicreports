@@ -47,8 +47,10 @@ public class DRDesignGroup implements DRIDesignGroup {
     private boolean reprintHeaderOnEachPage;
     private boolean resetPageNumber;
     private Integer minHeightToStartNewPage;
+    private Integer minDetailsToStartFromTop;
     private GroupFooterPosition footerPosition;
     private boolean keepTogether;
+    private boolean preventOrphanFooter;
     private boolean headerWithSubtotal;
 
     /**
@@ -242,6 +244,20 @@ public class DRDesignGroup implements DRIDesignGroup {
      * {@inheritDoc}
      */
     @Override
+    public Integer getMinDetailsToStartFromTop() {
+        return minDetailsToStartFromTop;
+    }
+
+    /**
+     * <p>Setter for the field <code>minDetailsToStartFromTop</code>.</p>
+     *
+     * @param minDetailsToStartFromTop a {@link java.lang.Integer} object.
+     */
+    public void setMinDetailsToStartFromTop(Integer minDetailsToStartFromTop) {
+        this.minDetailsToStartFromTop = minDetailsToStartFromTop;
+    }
+
+    @Override
     public GroupFooterPosition getFooterPosition() {
         return footerPosition;
     }
@@ -275,6 +291,20 @@ public class DRDesignGroup implements DRIDesignGroup {
     /**
      * {@inheritDoc}
      */
+    @Override
+    public boolean isPreventOrphanFooter() {
+        return preventOrphanFooter;
+    }
+
+    /**
+     * <p>Setter for the field <code>preventOrphanFooter</code>.</p>
+     *
+     * @param preventOrphanFooter a boolean.
+     */
+    public void setPreventOrphanFooter(boolean preventOrphanFooter) {
+        this.preventOrphanFooter = preventOrphanFooter;
+    }
+
     @Override
     public boolean isHeaderWithSubtotal() {
         return headerWithSubtotal;

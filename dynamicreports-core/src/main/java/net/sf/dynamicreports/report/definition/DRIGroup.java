@@ -157,6 +157,13 @@ public interface DRIGroup extends Serializable {
     public Integer getMinHeightToStartNewPage();
 
     /**
+     * <p>getMinDetailsToStartFromTop.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getMinDetailsToStartFromTop();
+
+    /**
      * <p>getFooterPosition.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.GroupFooterPosition} object.
@@ -169,6 +176,13 @@ public interface DRIGroup extends Serializable {
      * @return a {@link java.lang.Boolean} object.
      */
     public Boolean getKeepTogether();
+
+    /**
+     * <p>getPreventOrphanFooter.</p>
+     *
+     * @return a {@link java.lang.Boolean} object.
+     */
+    public Boolean getPreventOrphanFooter();
 
     /**
      * <p>getHeaderWithSubtotal.</p>

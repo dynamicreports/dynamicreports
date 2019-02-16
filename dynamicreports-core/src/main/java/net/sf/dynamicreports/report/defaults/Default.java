@@ -128,6 +128,8 @@ public class Default {
     private boolean groupKeepTogether;
     private boolean groupHeaderWithSubtotal;
     private boolean groupByDataType;
+    private boolean groupPreventOrphanFooter;
+    private Integer groupMinDetailsToStartFromTop;
     // subtotal
     private Position subtotalLabelPosition;
     // table of contents
@@ -968,6 +970,24 @@ public class Default {
      */
     public boolean isGroupHeaderWithSubtotal() {
         return groupHeaderWithSubtotal;
+    }
+
+    /**
+     * <p>isGroupHeaderWithSubtotal.</p>
+     *
+     * @return a boolean.
+     */
+    public boolean isGroupPreventOrphanFooter() {
+        return groupPreventOrphanFooter;
+    }
+
+    /**
+     * <p>Getter for the field <code>groupMinDetailsToStartFromTop</code>.</p>
+     *
+     * @return a {@link java.lang.Integer} object.
+     */
+    public Integer getGroupMinDetailsToStartFromTop() {
+        return groupMinDetailsToStartFromTop;
     }
 
     /**
