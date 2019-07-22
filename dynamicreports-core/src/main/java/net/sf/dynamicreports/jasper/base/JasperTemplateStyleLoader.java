@@ -227,7 +227,7 @@ public class JasperTemplateStyleLoader {
         font.setFontName(jrStyle.getOwnFontName());
         font.setBold(jrStyle.isOwnBold());
         font.setItalic(jrStyle.isOwnItalic());
-        font.setFontSize(jrStyle.getOwnFontSize());
+        font.setFontSize(jrStyle.getOwnFontsize() == null? null: jrStyle.getOwnFontsize().intValue());
         font.setStrikeThrough(jrStyle.isOwnStrikeThrough());
         font.setUnderline(jrStyle.isOwnUnderline());
         font.setPdfFontName(jrStyle.getOwnPdfFontName());
