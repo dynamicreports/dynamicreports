@@ -63,7 +63,7 @@
         <commonslang3Version>3.1</commonslang3Version>
         <groovyVersion>2.4.15</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
-        <jasperreportsVersion>6.8.0</jasperreportsVersion>
+        <jasperreportsVersion>6.9.0</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
