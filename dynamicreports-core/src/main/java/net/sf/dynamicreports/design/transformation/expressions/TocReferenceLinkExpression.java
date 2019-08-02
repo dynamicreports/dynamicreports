@@ -54,9 +54,7 @@ public class TocReferenceLinkExpression extends AbstractComplexExpression<String
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String id;

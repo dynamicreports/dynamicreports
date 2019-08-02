@@ -46,9 +46,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
     private HorizontalImageAlignment horizontalImageAlignment;
     private HorizontalTextAlignment horizontalTextAlignment;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<Boolean> getValueExpression() {
         return valueExpression;
@@ -64,9 +62,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.valueExpression = valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BooleanComponentType getComponentType() {
         return componentType;
@@ -81,9 +77,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.componentType = componentType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getEmptyWhenNullValue() {
         return emptyWhenNullValue;
@@ -98,9 +92,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.emptyWhenNullValue = emptyWhenNullValue;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getImageWidth() {
         return imageWidth;
@@ -118,9 +110,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.imageWidth = imageWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getImageHeight() {
         return imageHeight;
@@ -138,9 +128,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.imageHeight = imageHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalImageAlignment getHorizontalImageAlignment() {
         return horizontalImageAlignment;
@@ -155,9 +143,7 @@ public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanFi
         this.horizontalImageAlignment = horizontalImageAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;

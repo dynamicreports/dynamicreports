@@ -43,9 +43,7 @@ public class TemplateStyleBuilder extends AbstractBuilder<TemplateStyleBuilder, 
         super(new DRTemplateStyle(name));
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRTemplateStyle getStyle() {
         return build();

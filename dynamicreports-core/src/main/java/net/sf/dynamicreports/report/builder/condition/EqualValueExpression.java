@@ -43,9 +43,7 @@ public class EqualValueExpression<T extends Number> extends AbstractValuesExpres
         super(value, numbers);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected Boolean compare(Number actualValue, Number[] numbers) {
         for (Number number : numbers) {

@@ -40,13 +40,12 @@ public class SubtractExpression extends CalculationExpression {
      * <p>Constructor for SubtractExpression.</p>
      *
      * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     */ public SubtractExpression(DRIExpression<? extends Number>... expressions) {
+     */
+    public SubtractExpression(DRIExpression<? extends Number>... expressions) {
         super(expressions);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.subtract(value2);

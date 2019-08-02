@@ -39,9 +39,7 @@ public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDe
     private DRIDesignExpression conditionExpression;
     private DRIDesignDataset dataset;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getConditionExpression() {
         return conditionExpression;
@@ -56,9 +54,7 @@ public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDe
         this.conditionExpression = conditionExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignDataset getDataset() {
         return dataset;
@@ -73,9 +69,7 @@ public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDe
         this.dataset = dataset;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean equals(Object obj) {
         EqualsBuilder equalsBuilder = new EqualsBuilder().appendSuper(super.equals(obj));

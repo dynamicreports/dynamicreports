@@ -52,9 +52,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
     private DRIExpression<? extends Number> highDataRangeLowExpression;
     private DRIExpression<? extends Number> highDataRangeHighExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getDataRangeLowExpression() {
         return dataRangeLowExpression;
@@ -69,9 +67,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.dataRangeLowExpression = dataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getDataRangeHighExpression() {
         return dataRangeHighExpression;
@@ -86,9 +82,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.dataRangeHighExpression = dataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getValueColor() {
         return valueColor;
@@ -103,9 +97,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.valueColor = valueColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getValueMask() {
         return valueMask;
@@ -120,9 +112,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.valueMask = valueMask;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIFont getValueFont() {
         return valueFont;
@@ -137,9 +127,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.valueFont = valueFont;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ValueLocation getValueLocation() {
         return valueLocation;
@@ -154,9 +142,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.valueLocation = valueLocation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getMercuryColor() {
         return mercuryColor;
@@ -171,9 +157,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.mercuryColor = mercuryColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getLowDataRangeLowExpression() {
         return lowDataRangeLowExpression;
@@ -188,9 +172,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.lowDataRangeLowExpression = lowDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getLowDataRangeHighExpression() {
         return lowDataRangeHighExpression;
@@ -205,9 +187,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.lowDataRangeHighExpression = lowDataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getMediumDataRangeLowExpression() {
         return mediumDataRangeLowExpression;
@@ -222,9 +202,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.mediumDataRangeLowExpression = mediumDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getMediumDataRangeHighExpression() {
         return mediumDataRangeHighExpression;
@@ -239,9 +217,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.mediumDataRangeHighExpression = mediumDataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getHighDataRangeLowExpression() {
         return highDataRangeLowExpression;
@@ -256,9 +232,7 @@ public class DRThermometerPlot implements DRIThermometerPlot {
         this.highDataRangeLowExpression = highDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getHighDataRangeHighExpression() {
         return highDataRangeHighExpression;

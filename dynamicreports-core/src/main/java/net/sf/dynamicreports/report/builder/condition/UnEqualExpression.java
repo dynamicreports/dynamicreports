@@ -46,16 +46,15 @@ public class UnEqualExpression extends AbstractSimpleExpression<Boolean> {
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param values a T object.
      * @param <T> a T object.
-     */ public <T> UnEqualExpression(DRIValue<T> value, T... values) {
+     */
+    public <T> UnEqualExpression(DRIValue<T> value, T... values) {
         Validate.notNull(value, "value must not be null");
         Validate.noNullElements(values, "values must not contains null value");
         this.value = value;
         this.values = values;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Object actualValue = reportParameters.getValue(value);
@@ -67,9 +66,7 @@ public class UnEqualExpression extends AbstractSimpleExpression<Boolean> {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

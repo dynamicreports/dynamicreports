@@ -39,18 +39,14 @@ public class DRXyList extends DRDimensionComponent implements DRIXyList {
 
     private List<DRXyListCell> xyListCells;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
         this.xyListCells = new ArrayList<DRXyListCell>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRXyListCell> getXyListCells() {
         return xyListCells;

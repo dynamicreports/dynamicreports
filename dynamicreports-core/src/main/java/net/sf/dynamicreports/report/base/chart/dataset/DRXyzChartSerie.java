@@ -39,9 +39,7 @@ public class DRXyzChartSerie extends DRChartSerie implements DRIXyzChartSerie {
     private DRIExpression<?> yValueExpression;
     private DRIExpression<?> zValueExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getXValueExpression() {
         return xValueExpression;
@@ -57,9 +55,7 @@ public class DRXyzChartSerie extends DRChartSerie implements DRIXyzChartSerie {
         this.xValueExpression = xValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getYValueExpression() {
         return yValueExpression;
@@ -75,9 +71,7 @@ public class DRXyzChartSerie extends DRChartSerie implements DRIXyzChartSerie {
         this.yValueExpression = yValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getZValueExpression() {
         return zValueExpression;

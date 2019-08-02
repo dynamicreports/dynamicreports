@@ -54,17 +54,13 @@ public abstract class AbstractSimpleExpression<T> implements DRISimpleExpression
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {

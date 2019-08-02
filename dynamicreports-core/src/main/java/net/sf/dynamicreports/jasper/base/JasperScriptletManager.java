@@ -21,7 +21,10 @@
 package net.sf.dynamicreports.jasper.base;
 
 /**
- * Interface for managers of {@link JasperScriptlet} used in {@link JasperCustomValues}.
+ * Interface for managers of {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} used in {@link net.sf.dynamicreports.jasper.base.JasperCustomValues}.
+ *
+ * @author edwin.njeru
+ * @version 6.0.1-SNAPSHOT
  */
 public interface JasperScriptletManager {
 
@@ -31,16 +34,16 @@ public interface JasperScriptletManager {
     public static final String USE_THREAD_SAFE_SCRIPLET_MANAGER_PROPERTY_KEY = "net.sf.dynamicreports.useThreadSafeScriptletManager";
 
     /**
-     * Getter for the {@link JasperScriptlet} instance.
+     * Getter for the {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} instance.
      *
-     * @return the set {@link JasperScriptlet} instance
+     * @return the set {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} instance
      */
     JasperScriptlet getJasperScriptlet();
 
     /**
-     * Setter for the {@link JasperScriptlet} instance.
+     * Setter for the {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} instance.
      *
-     * @param jasperScriptlet the {@link JasperScriptlet} instance to set
+     * @param jasperScriptlet the {@link net.sf.dynamicreports.jasper.base.JasperScriptlet} instance to set
      */
     void setJasperScriptlet(JasperScriptlet jasperScriptlet);
 }

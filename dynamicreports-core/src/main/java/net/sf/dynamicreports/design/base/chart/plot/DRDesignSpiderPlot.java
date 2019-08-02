@@ -52,9 +52,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
     private Double labelGap;
     private Color labelColor;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getMaxValueExpression() {
         return maxValueExpression;
@@ -69,9 +67,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.maxValueExpression = maxValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public SpiderRotation getRotation() {
         return rotation;
@@ -86,9 +82,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.rotation = rotation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public TableOrder getTableOrder() {
         return tableOrder;
@@ -103,9 +97,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.tableOrder = tableOrder;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getWebFilled() {
         return webFilled;
@@ -120,9 +112,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.webFilled = webFilled;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getStartAngle() {
         return startAngle;
@@ -137,9 +127,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.startAngle = startAngle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getHeadPercent() {
         return headPercent;
@@ -154,9 +142,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.headPercent = headPercent;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getInteriorGap() {
         return interiorGap;
@@ -171,9 +157,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.interiorGap = interiorGap;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getAxisLineColor() {
         return axisLineColor;
@@ -188,9 +172,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.axisLineColor = axisLineColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Float getAxisLineWidth() {
         return axisLineWidth;
@@ -205,9 +187,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.axisLineWidth = axisLineWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignFont getLabelFont() {
         return labelFont;
@@ -222,9 +202,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.labelFont = labelFont;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getLabelGap() {
         return labelGap;
@@ -239,9 +217,7 @@ public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {
         this.labelGap = labelGap;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getLabelColor() {
         return labelColor;

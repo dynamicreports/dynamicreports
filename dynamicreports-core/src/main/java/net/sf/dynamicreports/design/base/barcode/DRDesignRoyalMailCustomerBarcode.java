@@ -44,9 +44,7 @@ public class DRDesignRoyalMailCustomerBarcode extends DRDesignChecksumBarcode im
         super("RoyalMailCustomer");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getAscenderHeight() {
         return ascenderHeight;
@@ -61,9 +59,7 @@ public class DRDesignRoyalMailCustomerBarcode extends DRDesignChecksumBarcode im
         this.ascenderHeight = ascenderHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getIntercharGapWidth() {
         return intercharGapWidth;
@@ -78,9 +74,7 @@ public class DRDesignRoyalMailCustomerBarcode extends DRDesignChecksumBarcode im
         this.intercharGapWidth = intercharGapWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getTrackHeight() {
         return trackHeight;

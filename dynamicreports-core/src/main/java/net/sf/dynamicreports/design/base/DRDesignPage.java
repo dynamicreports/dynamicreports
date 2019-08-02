@@ -42,9 +42,7 @@ public class DRDesignPage implements DRIDesignPage {
     private int columnSpace;
     private int columnWidth;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getWidth() {
         return width;
@@ -59,9 +57,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.width = width;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getHeight() {
         return height;
@@ -76,9 +72,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.height = height;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PageOrientation getOrientation() {
         return orientation;
@@ -93,9 +87,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.orientation = orientation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignMargin getMargin() {
         return margin;
@@ -110,9 +102,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.margin = margin;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getColumnsPerPage() {
         return columnsPerPage;
@@ -127,9 +117,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.columnsPerPage = columnsPerPage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getColumnSpace() {
         return columnSpace;
@@ -144,9 +132,7 @@ public class DRDesignPage implements DRIDesignPage {
         this.columnSpace = columnSpace;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getColumnWidth() {
         return columnWidth;

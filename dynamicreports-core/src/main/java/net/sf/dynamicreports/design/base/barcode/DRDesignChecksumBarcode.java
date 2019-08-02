@@ -45,9 +45,7 @@ public abstract class DRDesignChecksumBarcode extends DRDesignBarcode4j implemen
         super(name);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeChecksumMode getChecksumMode() {
         return checksumMode;

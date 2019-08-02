@@ -1578,6 +1578,7 @@ public class TemplateTransform {
      *
      * @param image       a {@link net.sf.dynamicreports.report.definition.component.DRIImage} object.
      * @param imageHeight a {@link java.lang.Integer} object.
+     * @param imageHeight a {@link java.lang.Integer} object.
      * @param style       a {@link net.sf.dynamicreports.design.base.style.DRDesignStyle} object.
      * @return a int.
      */

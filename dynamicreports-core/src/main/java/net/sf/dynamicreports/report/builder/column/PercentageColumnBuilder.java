@@ -101,9 +101,7 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         if (getComponent().getDataType() == null) {

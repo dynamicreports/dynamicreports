@@ -47,9 +47,7 @@ public class DRCrosstabCellContent implements DRICrosstabCellContent {
         this.list = new DRList(ListType.VERTICAL);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRList getList() {
         return list;
@@ -64,9 +62,7 @@ public class DRCrosstabCellContent implements DRICrosstabCellContent {
         list.addComponent(component);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIReportStyle getStyle() {
         return style;

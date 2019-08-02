@@ -248,7 +248,8 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      *
      * @param pdfEmbedded a {@link java.lang.Boolean} object.
      * @return a T object.
-     */ public T setPdfEmbedded(Boolean pdfEmbedded) {
+     */
+    public T setPdfEmbedded(Boolean pdfEmbedded) {
         getObject().getFont().setPdfEmbedded(pdfEmbedded);
         return (T) this;
     }
@@ -259,7 +260,8 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      *
      * @param pdfEncoding a {@link java.lang.String} object.
      * @return a T object.
-     */ public T setPdfEncoding(String pdfEncoding) {
+     */
+    public T setPdfEncoding(String pdfEncoding) {
         getObject().getFont().setPdfEncoding(pdfEncoding);
         return (T) this;
     }
@@ -270,7 +272,8 @@ public abstract class BaseStyleBuilder<T extends BaseStyleBuilder<T, U>, U exten
      *
      * @param pdfFontName a {@link java.lang.String} object.
      * @return a T object.
-     */ public T setPdfFontName(String pdfFontName) {
+     */
+    public T setPdfFontName(String pdfFontName) {
         getObject().getFont().setPdfFontName(pdfFontName);
         return (T) this;
     }

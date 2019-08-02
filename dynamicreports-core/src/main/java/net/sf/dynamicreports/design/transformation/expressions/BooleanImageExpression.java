@@ -101,9 +101,7 @@ public class BooleanImageExpression extends AbstractComplexExpression<Renderable
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Renderable evaluate(List<?> values, ReportParameters reportParameters) {
         Boolean value = (Boolean) values.get(0);

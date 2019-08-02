@@ -35,9 +35,7 @@ import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
  */
 public interface DRICrosstabVariable<T> extends DRISystemExpression<T>, DRIValue<T> {
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<? super T> getValueClass();
 

@@ -60,9 +60,7 @@ public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Seria
         this.negativeBarPaint = waterfallBarPlot.getNegativeBarPaint();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();

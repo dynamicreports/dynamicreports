@@ -261,6 +261,7 @@
                         </executions>
                         <configuration>
                             <excludes>module-info.java</excludes>
+                            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             <headerLocation>../src/etc/checkstyle.xml</headerLocation>
                             <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                             <configLocation>../src/etc/checkstyle.xml</configLocation>
@@ -379,6 +380,8 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <doclint>none</doclint>
+                            <additionalparam>${javadoc.opts}</additionalparam>
                             <nosince>false</nosince>
                             <failOnError>false</failOnError>
                             <doclint>none</doclint>
@@ -419,5 +422,16 @@
                 </dependency>
             </dependencies>
         </profile>
+
+        <profile>
+            <id>java8-doclint-disabled</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
+        </profile>
+
     </profiles>
 </project>

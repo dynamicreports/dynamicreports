@@ -52,9 +52,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
     private DRIDesignExpression highDataRangeLowExpression;
     private DRIDesignExpression highDataRangeHighExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeLowExpression() {
         return dataRangeLowExpression;
@@ -69,9 +67,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.dataRangeLowExpression = dataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeHighExpression() {
         return dataRangeHighExpression;
@@ -86,9 +82,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.dataRangeHighExpression = dataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getValueColor() {
         return valueColor;
@@ -103,9 +97,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.valueColor = valueColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getValueMask() {
         return valueMask;
@@ -120,9 +112,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.valueMask = valueMask;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignFont getValueFont() {
         return valueFont;
@@ -137,9 +127,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.valueFont = valueFont;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ValueLocation getValueLocation() {
         return valueLocation;
@@ -154,9 +142,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.valueLocation = valueLocation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getMercuryColor() {
         return mercuryColor;
@@ -171,9 +157,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.mercuryColor = mercuryColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLowDataRangeLowExpression() {
         return lowDataRangeLowExpression;
@@ -188,9 +172,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.lowDataRangeLowExpression = lowDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLowDataRangeHighExpression() {
         return lowDataRangeHighExpression;
@@ -205,9 +187,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.lowDataRangeHighExpression = lowDataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getMediumDataRangeLowExpression() {
         return mediumDataRangeLowExpression;
@@ -222,9 +202,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.mediumDataRangeLowExpression = mediumDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getMediumDataRangeHighExpression() {
         return mediumDataRangeHighExpression;
@@ -239,9 +217,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.mediumDataRangeHighExpression = mediumDataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getHighDataRangeLowExpression() {
         return highDataRangeLowExpression;
@@ -256,9 +232,7 @@ public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesi
         this.highDataRangeLowExpression = highDataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getHighDataRangeHighExpression() {
         return highDataRangeHighExpression;

@@ -63,9 +63,7 @@ public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {
         this.seriesColorsByName = seriesColorsByName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {

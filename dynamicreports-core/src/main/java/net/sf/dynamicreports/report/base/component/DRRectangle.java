@@ -37,9 +37,7 @@ public class DRRectangle extends DRDimensionComponent implements DRIRectangle {
     private Integer radius;
     private DRPen pen;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getRadius() {
         return radius;
@@ -54,9 +52,7 @@ public class DRRectangle extends DRDimensionComponent implements DRIRectangle {
         this.radius = radius;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRPen getPen() {
         return pen;

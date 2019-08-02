@@ -38,9 +38,7 @@ public abstract class DRBarcode extends DRDimensionComponent implements DRIBarco
 
     private DRIExpression<String> codeExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getCodeExpression() {
         return codeExpression;

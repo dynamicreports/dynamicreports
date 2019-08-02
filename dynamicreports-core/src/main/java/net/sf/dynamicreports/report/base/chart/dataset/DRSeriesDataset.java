@@ -51,9 +51,7 @@ public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset 
         series = new ArrayList<DRIChartSerie>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;
@@ -79,17 +77,13 @@ public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset 
         series.add(serie);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIChartSerie> getSeries() {
         return series;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIHyperLink getItemHyperLink() {
         return itemHyperLink;

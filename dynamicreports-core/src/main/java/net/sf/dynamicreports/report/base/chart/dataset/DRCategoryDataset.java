@@ -35,9 +35,7 @@ public class DRCategoryDataset extends DRSeriesDataset implements DRICategoryDat
 
     private Boolean useSeriesAsCategory;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getUseSeriesAsCategory() {
         return useSeriesAsCategory;

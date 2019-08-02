@@ -39,25 +39,19 @@ import java.util.Locale;
 public class CharacterType extends AbstractDataType<Character, Character> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return Defaults.getDefaults().getCharacterType().getPattern();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return Defaults.getDefaults().getCharacterType().getHorizontalTextAlignment();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Character stringToValue(String value, Locale locale) throws DRException {
         if (StringUtils.isNotEmpty(value)) {

@@ -55,9 +55,7 @@ public class CurrentDateExpression extends AbstractComplexExpression<String> {
         addExpression(currentDateExpression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String pattern = (String) values.get(0);

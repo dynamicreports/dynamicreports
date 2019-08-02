@@ -67,7 +67,7 @@ public class JasperTocReport {
      * @param jasperPrint        a {@link net.sf.jasperreports.engine.JasperPrint} object.
      * @param parameters         a {@link java.util.Map} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
-     * @throws net.sf.jasperreports.engine.JRException            if any.
+     * @throws net.sf.jasperreports.engine.JRException if any.
      */
     public static void createTocReport(JasperReportDesign jasperReportDesign, JasperPrint jasperPrint, Map<String, Object> parameters) throws DRException, JRException {
         JasperCustomValues customValues = jasperReportDesign.getCustomValues();

@@ -63,9 +63,7 @@ public class DRListCell implements DRIListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalCellComponentAlignment getHorizontalAlignment() {
         return horizontalAlignment;
@@ -80,9 +78,7 @@ public class DRListCell implements DRIListCell {
         this.horizontalAlignment = horizontalAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public VerticalCellComponentAlignment getVerticalAlignment() {
         return verticalAlignment;
@@ -97,9 +93,7 @@ public class DRListCell implements DRIListCell {
         this.verticalAlignment = verticalAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRComponent getComponent() {
         return component;

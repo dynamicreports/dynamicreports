@@ -124,9 +124,7 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         DRVariable<T> subtotalVariable = new DRVariable<T>(expression, calculation);
@@ -138,9 +136,7 @@ public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSu
         super.configure();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getSubtotal().getName();

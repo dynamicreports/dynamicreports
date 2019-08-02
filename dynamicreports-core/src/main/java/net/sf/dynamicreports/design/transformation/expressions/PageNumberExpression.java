@@ -47,9 +47,7 @@ public class PageNumberExpression extends AbstractComplexExpression<String> {
         addExpression(pageNumberFormatExpression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String pattern = (String) values.get(0);

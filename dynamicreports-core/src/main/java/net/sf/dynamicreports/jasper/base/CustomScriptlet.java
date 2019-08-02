@@ -44,81 +44,61 @@ public class CustomScriptlet extends JRAbstractScriptlet {
         this.scriptlet = scriptlet;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void afterColumnInit() throws JRScriptletException {
         scriptlet.afterColumnInit(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void afterDetailEval() throws JRScriptletException {
         scriptlet.afterDetailEval(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void afterGroupInit(String groupName) throws JRScriptletException {
         scriptlet.afterGroupInit(groupName, getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void afterPageInit() throws JRScriptletException {
         scriptlet.afterPageInit(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void afterReportInit() throws JRScriptletException {
         scriptlet.afterReportInit(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void beforeColumnInit() throws JRScriptletException {
         scriptlet.beforeColumnInit(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void beforeDetailEval() throws JRScriptletException {
         scriptlet.beforeDetailEval(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void beforeGroupInit(String groupName) throws JRScriptletException {
         scriptlet.beforeGroupInit(groupName, getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void beforePageInit() throws JRScriptletException {
         scriptlet.beforePageInit(getReportParameters());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void beforeReportInit() throws JRScriptletException {
         scriptlet.beforeReportInit(getReportParameters());

@@ -44,9 +44,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
     private DRIDesignExpression volumeExpression;
     private DRIDesignHyperLink itemHyperLink;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getSeriesExpression() {
         return seriesExpression;
@@ -61,9 +59,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.seriesExpression = seriesExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDateExpression() {
         return dateExpression;
@@ -78,9 +74,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.dateExpression = dateExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getHighExpression() {
         return highExpression;
@@ -95,9 +89,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.highExpression = highExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLowExpression() {
         return lowExpression;
@@ -112,9 +104,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.lowExpression = lowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getOpenExpression() {
         return openExpression;
@@ -129,9 +119,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.openExpression = openExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getCloseExpression() {
         return closeExpression;
@@ -146,9 +134,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.closeExpression = closeExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getVolumeExpression() {
         return volumeExpression;
@@ -163,9 +149,7 @@ public class DRDesignHighLowDataset extends DRDesignChartDataset implements DRID
         this.volumeExpression = volumeExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignHyperLink getItemHyperLink() {
         return itemHyperLink;

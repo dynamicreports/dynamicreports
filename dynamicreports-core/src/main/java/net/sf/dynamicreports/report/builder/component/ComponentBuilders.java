@@ -293,7 +293,6 @@ public class ComponentBuilders {
      * <p>text.</p>
      *
      * @param number a T object.
-     * @param <T>    a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     public <T extends Number> TextFieldBuilder<T> text(T number) {
@@ -517,6 +516,7 @@ public class ComponentBuilders {
     /**
      * <p>genericElement.</p>
      *
+     * @param namespace a {@link java.lang.String} object.
      * @param namespace a {@link java.lang.String} object.
      * @param name      a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.GenericElementBuilder} object.

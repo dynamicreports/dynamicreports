@@ -38,9 +38,7 @@ public class DRDesignTabStop implements DRIDesignTabStop {
     private int position;
     private TabStopAlignment alignment;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getPosition() {
         return position;
@@ -55,9 +53,7 @@ public class DRDesignTabStop implements DRIDesignTabStop {
         this.position = position;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public TabStopAlignment getAlignment() {
         return alignment;
@@ -72,9 +68,7 @@ public class DRDesignTabStop implements DRIDesignTabStop {
         this.alignment = alignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

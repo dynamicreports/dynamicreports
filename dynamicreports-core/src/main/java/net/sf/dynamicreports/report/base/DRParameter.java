@@ -44,7 +44,8 @@ public class DRParameter<T> implements DRIParameter<T> {
      *
      * @param name a {@link java.lang.String} object.
      * @param value a T object.
-     */ public DRParameter(String name, T value) {
+     */
+    public DRParameter(String name, T value) {
         Validate.notEmpty(name, "name must not be empty");
         Validate.notNull(value, "value must not be null");
         this.name = name;
@@ -65,25 +66,19 @@ public class DRParameter<T> implements DRIParameter<T> {
         this.valueClass = valueClass;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<T> getValueClass() {
         return valueClass;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public T getValue() {
         return value;

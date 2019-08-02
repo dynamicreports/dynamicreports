@@ -60,6 +60,7 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
      * @param locale                  a {@link java.util.Locale} object.
      * @param resourceBundle          a {@link java.util.ResourceBundle} object.
      * @param resourceBundleName      a {@link java.lang.String} object.
+     * @param resourceBundleName      a {@link java.lang.String} object.
      * @param whenResourceMissingType a {@link net.sf.dynamicreports.report.constant.WhenResourceMissingType} object.
      * @param detailComponents        a {@link java.util.List} object.
      * @param templateStyles          a {@link java.util.Map} object.
@@ -74,9 +75,7 @@ public class MultiPageListSubreportExpression extends AbstractSimpleExpression<J
         this.templateStyles = templateStyles;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperReportBuilder evaluate(ReportParameters reportParameters) {
         JasperReportBuilder report = report();

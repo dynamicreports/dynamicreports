@@ -40,13 +40,12 @@ public class AddExpression extends CalculationExpression {
      * <p>Constructor for AddExpression.</p>
      *
      * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     */ public AddExpression(DRIExpression<? extends Number>... expressions) {
+     */
+    public AddExpression(DRIExpression<? extends Number>... expressions) {
         super(expressions);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.add(value2);

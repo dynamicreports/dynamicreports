@@ -69,9 +69,7 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @SuppressWarnings("unchecked")
     @Override
     public T evaluate(List<?> values, ReportParameters reportParameters) {
@@ -87,9 +85,7 @@ public class CrosstabExpression<T> extends AbstractComplexExpression<T> {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @SuppressWarnings( {"rawtypes", "unchecked"})
     @Override
     public Class getValueClass() {

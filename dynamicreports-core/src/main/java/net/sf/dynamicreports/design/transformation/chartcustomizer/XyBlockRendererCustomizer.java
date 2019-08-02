@@ -55,9 +55,7 @@ public class XyBlockRendererCustomizer implements DRIChartCustomizer, Serializab
         this.xyBlockPlot = xyBlockPlot;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         chart.getXYPlot().getDomainAxis().setUpperMargin(0);

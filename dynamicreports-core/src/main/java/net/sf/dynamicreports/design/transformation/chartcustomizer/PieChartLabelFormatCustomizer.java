@@ -57,9 +57,7 @@ public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serial
         this.percentValuePattern = percentValuePattern;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         PiePlot plot = (PiePlot) chart.getPlot();

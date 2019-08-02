@@ -131,7 +131,8 @@ public class FontBuilder extends AbstractBuilder<FontBuilder, DRFont> {
      *
      * @param pdfEmbedded a {@link java.lang.Boolean} object.
      * @return a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
-     */ public FontBuilder setPdfEmbedded(Boolean pdfEmbedded) {
+     */
+    public FontBuilder setPdfEmbedded(Boolean pdfEmbedded) {
         getObject().setPdfEmbedded(pdfEmbedded);
         return this;
     }
@@ -142,7 +143,8 @@ public class FontBuilder extends AbstractBuilder<FontBuilder, DRFont> {
      *
      * @param pdfEncoding a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
-     */ public FontBuilder setPdfEncoding(String pdfEncoding) {
+     */
+    public FontBuilder setPdfEncoding(String pdfEncoding) {
         getObject().setPdfEncoding(pdfEncoding);
         return this;
     }
@@ -153,7 +155,8 @@ public class FontBuilder extends AbstractBuilder<FontBuilder, DRFont> {
      *
      * @param pdfFontName a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
-     */ public FontBuilder setPdfFontName(String pdfFontName) {
+     */
+    public FontBuilder setPdfFontName(String pdfFontName) {
         getObject().setPdfFontName(pdfFontName);
         return this;
     }

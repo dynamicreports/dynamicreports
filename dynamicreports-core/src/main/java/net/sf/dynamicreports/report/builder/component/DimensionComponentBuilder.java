@@ -54,10 +54,22 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      * @param width  the component preferred width >= 0
      * @param height the component preferred height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setDimension(Integer width, Integer height) {
@@ -72,10 +84,22 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      * @param width  the component fixed width >= 0
      * @param height the component fixed height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedDimension(Integer width, Integer height) {
@@ -92,10 +116,22 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      * @param width  the component minimum width >= 0
      * @param height the component minimum height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
-     * @throws IllegalArgumentException if <code>width</code> is < 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinDimension(Integer width, Integer height) {
@@ -111,7 +147,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param width the component preferred width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setWidth(Integer width) {
@@ -124,7 +160,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param width the component fixed width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedWidth(Integer width) {
@@ -138,7 +174,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param width the component minimum width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinWidth(Integer width) {
@@ -152,7 +188,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param height the component preferred height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setHeight(Integer height) {
@@ -165,7 +201,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param height the component fixed height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedHeight(Integer height) {
@@ -179,7 +215,7 @@ public abstract class DimensionComponentBuilder<T extends DimensionComponentBuil
      *
      * @param height the component minimum height >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinHeight(Integer height) {

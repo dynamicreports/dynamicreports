@@ -46,6 +46,7 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
      * <p>Constructor for DRGenericElement.</p>
      *
      * @param namespace a {@link java.lang.String} object.
+     * @param namespace a {@link java.lang.String} object.
      * @param name      a {@link java.lang.String} object.
      */
     public DRGenericElement(String namespace, String name) {
@@ -55,18 +56,14 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
         genericElementName = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
         parameterExpressions = new ArrayList<DRIParameterExpression>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getGenericElementNamespace() {
         return genericElementNamespace;
@@ -81,9 +78,7 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
         this.genericElementNamespace = genericElementNamespace;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getGenericElementName() {
         return genericElementName;
@@ -98,9 +93,7 @@ public class DRGenericElement extends DRDimensionComponent implements DRIGeneric
         this.genericElementName = genericElementName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIParameterExpression> getParameterExpressions() {
         return parameterExpressions;

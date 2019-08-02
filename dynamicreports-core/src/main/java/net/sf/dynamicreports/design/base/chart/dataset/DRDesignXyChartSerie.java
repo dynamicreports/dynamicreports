@@ -38,9 +38,7 @@ public class DRDesignXyChartSerie extends DRDesignChartSerie implements DRIDesig
     private DRIDesignExpression yValueExpression;
     private DRIDesignExpression labelExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getXValueExpression() {
         return xValueExpression;
@@ -55,9 +53,7 @@ public class DRDesignXyChartSerie extends DRDesignChartSerie implements DRIDesig
         this.xValueExpression = xValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getYValueExpression() {
         return yValueExpression;
@@ -72,9 +68,7 @@ public class DRDesignXyChartSerie extends DRDesignChartSerie implements DRIDesig
         this.yValueExpression = yValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLabelExpression() {
         return labelExpression;

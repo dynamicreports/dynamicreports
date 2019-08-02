@@ -40,7 +40,8 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
      * <p>Constructor for CalculationExpression.</p>
      *
      * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     */ protected CalculationExpression(DRIExpression<? extends Number>... expressions) {
+     */
+    protected CalculationExpression(DRIExpression<? extends Number>... expressions) {
         Validate.notNull(expressions, "expressions must not be null");
         Validate.noNullElements(expressions, "expressions must not contains null expression");
         for (DRIExpression<? extends Number> expression : expressions) {
@@ -48,9 +49,7 @@ abstract class CalculationExpression extends AbstractComplexExpression<BigDecima
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
         BigDecimal result = null;

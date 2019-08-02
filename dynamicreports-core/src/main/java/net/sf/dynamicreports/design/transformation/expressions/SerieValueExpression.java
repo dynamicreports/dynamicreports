@@ -66,9 +66,7 @@ public class SerieValueExpression extends AbstractSimpleExpression<Number> {
         this.key = key;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Number evaluate(ReportParameters reportParameters) {
         if (reportParameters.getReportRowNumber() <= 1) {

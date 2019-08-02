@@ -42,18 +42,14 @@ public class DRStyle extends DRBaseStyle implements DRIStyle {
     private DRIReportStyle parentStyle;
     private List<DRConditionalStyle> conditionalStyles;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
         conditionalStyles = new ArrayList<DRConditionalStyle>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
@@ -68,9 +64,7 @@ public class DRStyle extends DRBaseStyle implements DRIStyle {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIReportStyle getParentStyle() {
         return parentStyle;
@@ -85,9 +79,7 @@ public class DRStyle extends DRBaseStyle implements DRIStyle {
         this.parentStyle = parentStyle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRConditionalStyle> getConditionalStyles() {
         return conditionalStyles;

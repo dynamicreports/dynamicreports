@@ -153,218 +153,164 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         margin.setRight(jasperDesign.getRightMargin());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getReportName() {
         return jasperDesign.getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIField<?>> getFields() {
         return fields;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isDefinedParameter(String name) {
         JRParameter parameter = jasperDesign.getParametersMap().get(name);
         return parameter != null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getResourceBundleName() {
         return jasperDesign.getResourceBundle();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnorePagination() {
         return jasperDesign.isIgnorePagination();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public WhenNoDataType getWhenNoDataType() {
         return ConstantTransform.whenNoDataType(jasperDesign.getWhenNoDataTypeValue());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public WhenResourceMissingType getWhenResourceMissingType() {
         return ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingTypeValue());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getTitleOnANewPage() {
         return jasperDesign.isTitleNewPage();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getSummaryOnANewPage() {
         return jasperDesign.isSummaryNewPage();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getSummaryWithPageHeaderAndFooter() {
         return jasperDesign.isSummaryWithPageHeaderAndFooter();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getFloatColumnFooter() {
         return jasperDesign.isFloatColumnFooter();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageWidth() {
         return jasperDesign.getPageWidth();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageHeight() {
         return jasperDesign.getPageHeight();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PageOrientation getPageOrientation() {
         return ConstantTransform.pageOrientation(jasperDesign.getOrientationValue());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIMargin getPageMargin() {
         return margin;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageColumnsPerPage() {
         return jasperDesign.getColumnCount();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageColumnSpace() {
         return jasperDesign.getColumnSpacing();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageColumnWidth() {
         return jasperDesign.getColumnWidth();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getTitleComponentsCount() {
         return getBandComponentsCount(jasperDesign.getTitle());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getPageHeaderComponentsCount() {
         return getBandComponentsCount(jasperDesign.getPageHeader());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getPageFooterComponentsCount() {
         return getBandComponentsCount(jasperDesign.getPageFooter());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getColumnHeaderComponentsCount() {
         return getBandComponentsCount(jasperDesign.getColumnHeader());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getColumnFooterComponentsCount() {
         return getBandComponentsCount(jasperDesign.getColumnFooter());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getLastPageFooterComponentsCount() {
         return getBandComponentsCount(jasperDesign.getLastPageFooter());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getSummaryComponentsCount() {
         return getBandComponentsCount(jasperDesign.getSummary());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getNoDataComponentsCount() {
         return getBandComponentsCount(jasperDesign.getNoData());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getBackgroundComponentsCount() {
         return getBandComponentsCount(jasperDesign.getBackground());
@@ -377,9 +323,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         return 0;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperDesign getDesign() throws DRException {
         try {

@@ -119,7 +119,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param rows the number of preferred rows >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setTitleRows(Integer rows) {
         getObject().setTitleRows(rows);
@@ -131,7 +131,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param rows the number of fixed rows >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setTitleFixedRows(Integer rows) {
         getObject().setTitleRows(rows);
@@ -144,7 +144,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param rows the number of minimum rows >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public T setTitleMinRows(Integer rows) {
         getObject().setTitleRows(rows);
@@ -157,7 +157,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param height the column title preferred height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setTitleHeight(Integer height) {
@@ -170,7 +170,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param height the column title fixed height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setTitleFixedHeight(Integer height) {
@@ -184,7 +184,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param height the column title minimum height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setTitleMinHeight(Integer height) {

@@ -36,9 +36,7 @@ public class DRHighLowPlot extends DRAxisPlot implements DRIHighLowPlot {
     private Boolean showOpenTicks;
     private Boolean showCloseTicks;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowOpenTicks() {
         return showOpenTicks;
@@ -53,9 +51,7 @@ public class DRHighLowPlot extends DRAxisPlot implements DRIHighLowPlot {
         this.showOpenTicks = showOpenTicks;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowCloseTicks() {
         return showCloseTicks;

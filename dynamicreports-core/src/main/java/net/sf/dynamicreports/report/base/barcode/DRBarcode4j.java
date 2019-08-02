@@ -43,9 +43,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
     private Double quietZone;
     private Double verticalQuietZone;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getPatternExpression() {
         return patternExpression;
@@ -60,9 +58,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
         this.patternExpression = patternExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getModuleWidth() {
         return moduleWidth;
@@ -77,9 +73,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
         this.moduleWidth = moduleWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeOrientation getOrientation() {
         return orientation;
@@ -94,9 +88,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
         this.orientation = orientation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeTextPosition getTextPosition() {
         return textPosition;
@@ -111,9 +103,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
         this.textPosition = textPosition;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getQuietZone() {
         return quietZone;
@@ -128,9 +118,7 @@ public abstract class DRBarcode4j extends DRBarcode implements DRIBarcode4j {
         this.quietZone = quietZone;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getVerticalQuietZone() {
         return verticalQuietZone;

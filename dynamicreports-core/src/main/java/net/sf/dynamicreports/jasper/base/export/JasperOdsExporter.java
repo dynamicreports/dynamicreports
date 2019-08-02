@@ -35,9 +35,7 @@ public class JasperOdsExporter extends AbstractJasperExcelExporter implements Ja
 
     private Boolean flexibleRowHeight;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getFlexibleRowHeight() {
         return flexibleRowHeight;

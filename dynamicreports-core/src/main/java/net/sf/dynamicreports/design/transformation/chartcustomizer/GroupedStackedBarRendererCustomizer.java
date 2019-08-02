@@ -60,9 +60,7 @@ public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, 
     private KeyToGroupMap map;
     private Map<String, Paint> seriesColors;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         this.seriesColors = new LinkedHashMap<String, Paint>();

@@ -35,9 +35,7 @@ public class DRDesignCrosstabRowGroup extends DRDesignCrosstabGroup implements D
 
     private int width;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getWidth() {
         return width;

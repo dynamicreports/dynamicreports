@@ -36,9 +36,7 @@ public class DRCrosstabColumnGroup<T> extends DRCrosstabGroup<T> implements DRIC
     private Integer headerHeight;
     private Integer totalHeaderWidth;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getHeaderHeight() {
         return headerHeight;
@@ -53,9 +51,7 @@ public class DRCrosstabColumnGroup<T> extends DRCrosstabGroup<T> implements DRIC
         this.headerHeight = headerHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getTotalHeaderWidth() {
         return totalHeaderWidth;

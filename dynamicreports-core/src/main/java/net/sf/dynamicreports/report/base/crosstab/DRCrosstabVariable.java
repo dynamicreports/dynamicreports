@@ -57,33 +57,25 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
         this.name = ReportUtils.generateUniqueName("crosstabMeasure");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Calculation getCalculation() {
         return calculation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public CrosstabPercentageType getPercentageType() {
         return percentageType;
@@ -98,9 +90,7 @@ public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
         this.percentageType = percentageType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {

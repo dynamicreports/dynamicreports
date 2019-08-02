@@ -39,9 +39,7 @@ public class DRDesignPadding implements DRIDesignPadding {
     private Integer bottom;
     private Integer right;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getTop() {
         return top;
@@ -56,9 +54,7 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.top = top;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getLeft() {
         return left;
@@ -73,9 +69,7 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.left = left;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getBottom() {
         return bottom;
@@ -90,9 +84,7 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.bottom = bottom;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getRight() {
         return right;
@@ -107,9 +99,7 @@ public class DRDesignPadding implements DRIDesignPadding {
         this.right = right;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

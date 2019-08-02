@@ -36,9 +36,7 @@ public class DRDesignBubblePlot extends DRDesignAxisPlot implements DRIDesignBub
 
     private ScaleType scaleType;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ScaleType getScaleType() {
         return scaleType;

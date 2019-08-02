@@ -71,17 +71,13 @@ public class DRVariable<T> implements DRIVariable<T> {
         this.calculation = calculation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getInitialValueExpression() {
         return initialValueExpression;
@@ -96,17 +92,13 @@ public class DRVariable<T> implements DRIVariable<T> {
         this.initialValueExpression = initialValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Calculation getCalculation() {
         return calculation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Evaluation getResetType() {
         return resetType;
@@ -121,9 +113,7 @@ public class DRVariable<T> implements DRIVariable<T> {
         this.resetType = resetType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRGroup getResetGroup() {
         return resetGroup;
@@ -138,17 +128,13 @@ public class DRVariable<T> implements DRIVariable<T> {
         this.resetGroup = resetGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getValueExpression() {
         return valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public Class<? super T> getValueClass() {

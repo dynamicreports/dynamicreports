@@ -50,17 +50,13 @@ public class DRQuery implements DRIQuery {
         this.language = language;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getText() {
         return text;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLanguage() {
         return language;

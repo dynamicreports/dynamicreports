@@ -156,9 +156,7 @@ public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVa
         return build();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getVariable().getName();
