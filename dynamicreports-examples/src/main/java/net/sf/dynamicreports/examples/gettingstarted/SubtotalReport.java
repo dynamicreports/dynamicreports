@@ -92,7 +92,7 @@ public class SubtotalReport {
                     .subtotalsOfPercentageAtGroupFooter(columnGroup, createPercSubtotal("This is a group footer perc."))
 
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

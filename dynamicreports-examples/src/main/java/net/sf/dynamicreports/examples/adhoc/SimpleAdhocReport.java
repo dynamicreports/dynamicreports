@@ -97,7 +97,7 @@ public class SimpleAdhocReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        IntStream.range(0, 20).forEach(i -> dataSource.add("Book # "+ i, Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
+        IntStream.range(0, 20).forEach(i -> dataSource.add("Book # " + i, Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 }

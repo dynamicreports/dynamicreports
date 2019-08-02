@@ -218,13 +218,13 @@ public class Columns {
         return percentageColumn(field).setTitle(title);
     }
 
-	/*public static PercentageColumnBuilder percentageColumn(DRISimpleExpression<? extends Number> expression) {
-		return new PercentageColumnBuilder(expression);
-	}
-	
-	public static PercentageColumnBuilder percentageColumn(String title, DRISimpleExpression<? extends Number> expression) {
-		return percentageColumn(expression).setTitle(title);
-	}	*/
+    /*public static PercentageColumnBuilder percentageColumn(DRISimpleExpression<? extends Number> expression) {
+        return new PercentageColumnBuilder(expression);
+    }
+
+    public static PercentageColumnBuilder percentageColumn(String title, DRISimpleExpression<? extends Number> expression) {
+        return percentageColumn(expression).setTitle(title);
+    }*/
 
     // column row number
 

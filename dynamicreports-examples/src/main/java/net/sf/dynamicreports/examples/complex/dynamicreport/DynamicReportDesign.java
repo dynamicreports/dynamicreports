@@ -72,7 +72,7 @@ public class DynamicReportDesign {
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public JasperReportBuilder build() throws DRException {
         JasperReportBuilder report = report();
 

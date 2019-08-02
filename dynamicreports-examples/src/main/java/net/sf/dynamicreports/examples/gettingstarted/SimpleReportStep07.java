@@ -21,6 +21,7 @@
  */
 package net.sf.dynamicreports.examples.gettingstarted;
 
+import net.sf.dynamicreports.report.builder.chart.Bar3DChartBuilder;
 import net.sf.dynamicreports.report.builder.column.PercentageColumnBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -32,24 +33,27 @@ import net.sf.jasperreports.engine.JRDataSource;
 import java.awt.Color;
 import java.math.BigDecimal;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * <p>SimpleReport_Step03 class.</p>
+ * <p>SimpleReport_Step07 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step03 {
+public class SimpleReportStep07 {
 
     /**
-     * <p>Constructor for SimpleReport_Step03.</p>
+     * <p>Constructor for SimpleReport_Step07.</p>
      */
-    public SimpleReport_Step03() {
+    public SimpleReportStep07() {
         build();
     }
 
@@ -59,7 +63,7 @@ public class SimpleReport_Step03 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step03();
+        new SimpleReportStep07();
     }
 
     private void build() {
@@ -68,7 +72,7 @@ public class SimpleReport_Step03 {
         StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
 
         // title, field name data type
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
         // price = unitPrice * quantity
@@ -77,16 +81,24 @@ public class SimpleReport_Step03 {
         TextColumnBuilder<Integer> rowNumberColumn = col.reportRowNumberColumn("No.")
                                                         // sets the fixed width of a column, width = 2 * character width
                                                         .setFixedColumns(2).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
+        Bar3DChartBuilder itemChart = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+        Bar3DChartBuilder itemChart2 = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).setUseSeriesAsCategory(true).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
+                    .setSubtotalStyle(boldStyle)
                     .highlightDetailEvenRows()
                     .columns(// add columns
                              rowNumberColumn, itemColumn, quantityColumn, unitPriceColumn, priceColumn, pricePercColumn)
+                    .columnGrid(rowNumberColumn, quantityColumn, unitPriceColumn, grid.verticalColumnGridList(priceColumn, pricePercColumn))
+                    .groupBy(itemColumn)
+                    .subtotalsAtSummary(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
+                    .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
+                    .summary(cmp.horizontalList(itemChart, itemChart2))
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

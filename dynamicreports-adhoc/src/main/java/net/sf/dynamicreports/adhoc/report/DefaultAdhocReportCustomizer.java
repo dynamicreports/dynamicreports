@@ -135,7 +135,7 @@ import java.util.Map;
  *         public void customize(ReportBuilder<?> report, AdhocReport adhocReport) throws DRException {
  *            super.customize(report, adhocReport);
  *            // default report values
- * 	          report.setTemplate(Templates.reportTemplate);
+ *            report.setTemplate(Templates.reportTemplate);
  *            report.title(Templates.createTitleComponent("AdhocCustomizer"));
  *            // a fixed page footer that user cannot change, this customization is not stored in the xml file
  *            report.pageFooter(Templates.footerComponent);
@@ -883,7 +883,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart    a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param categoryChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractCategoryChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void categoryChart(AdhocChart adhocChart, AbstractCategoryChartBuilder<?, ?> categoryChart) {
         baseChart(adhocChart, categoryChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -923,7 +923,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart      a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param timeSeriesChart a {@link net.sf.dynamicreports.report.builder.chart.AbstractTimeSeriesChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void timeSeriesChart(AdhocChart adhocChart, AbstractTimeSeriesChartBuilder<?, ?> timeSeriesChart) {
         baseChart(adhocChart, timeSeriesChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -993,7 +993,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param pieChart   a {@link net.sf.dynamicreports.report.builder.chart.AbstractPieChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void pieChart(AdhocChart adhocChart, AbstractPieChartBuilder<?, ?> pieChart) {
         baseChart(adhocChart, pieChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -1020,7 +1020,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param xyChart    a {@link net.sf.dynamicreports.report.builder.chart.AbstractXyChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void xyChart(AdhocChart adhocChart, AbstractXyChartBuilder<?, ?> xyChart) {
         baseChart(adhocChart, xyChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -1051,7 +1051,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart  a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param spiderChart a {@link net.sf.dynamicreports.report.builder.chart.SpiderChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void spiderChart(AdhocChart adhocChart, SpiderChartBuilder spiderChart) {
         chart(adhocChart, spiderChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -1074,7 +1074,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChart  a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChart} object.
      * @param bubbleChart a {@link net.sf.dynamicreports.report.builder.chart.BubbleChartBuilder} object.
      */
-    @SuppressWarnings( {"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     protected void bubbleChart(AdhocChart adhocChart, BubbleChartBuilder bubbleChart) {
         baseChart(adhocChart, bubbleChart);
         ColumnBuilder valueColumn = columns.get(adhocChart.getXValue());
@@ -1439,7 +1439,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.CategoryChartSerieBuilder} object.
      */
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected CategoryChartSerieBuilder categoryChartSerie(AdhocChartSerie adhocChartSerie) {
         CategoryChartSerieBuilder categoryChartSerie;
         ColumnBuilder valueColumn = columns.get(adhocChartSerie.getYValue());
@@ -1467,7 +1467,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.GroupedCategoryChartSerieBuilder} object.
      */
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected GroupedCategoryChartSerieBuilder groupedCategoryChartSerie(AdhocChartSerie adhocChartSerie) {
         GroupedCategoryChartSerieBuilder groupedCategoryChartSerie;
         ColumnBuilder valueColumn = columns.get(adhocChartSerie.getYValue());
@@ -1505,7 +1505,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyChartSerieBuilder} object.
      */
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected XyChartSerieBuilder xyChartSerie(AdhocChartSerie adhocChartSerie) {
         XyChartSerieBuilder xyChartSerie;
         ColumnBuilder valueColumn = columns.get(adhocChartSerie.getYValue());
@@ -1542,7 +1542,7 @@ public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
      * @param adhocChartSerie a {@link net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie} object.
      * @return a {@link net.sf.dynamicreports.report.builder.chart.XyzChartSerieBuilder} object.
      */
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected XyzChartSerieBuilder xyzChartSerie(AdhocChartSerie adhocChartSerie) {
         XyzChartSerieBuilder xyzChartSerie = Charts.xyzSerie();
         chartSerie(adhocChartSerie, xyzChartSerie);

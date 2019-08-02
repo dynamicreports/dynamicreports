@@ -152,7 +152,7 @@ public class XmlToAdhocTransform {
             return value;
         }
         if (valueClass.equals(Boolean.class.getName())) {
-            return new Boolean(value);
+            return Boolean.valueOf(value);
         }
         if (valueClass.equals(Integer.class.getName())) {
             return new Integer(value);

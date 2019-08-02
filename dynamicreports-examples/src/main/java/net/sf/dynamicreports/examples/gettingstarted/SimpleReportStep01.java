@@ -38,12 +38,12 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step01 {
+public class SimpleReportStep01 {
 
     /**
      * <p>Constructor for SimpleReport_Step01.</p>
      */
-    public SimpleReport_Step01() {
+    public SimpleReportStep01() {
         build();
     }
 
@@ -53,7 +53,7 @@ public class SimpleReport_Step01 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step01();
+        new SimpleReportStep01();
     }
 
     private void build() {
@@ -65,7 +65,7 @@ public class SimpleReport_Step01 {
                     .title(cmp.text("Getting started"))// shows report title
                     .pageFooter(cmp.pageXofY())// shows number of page at page footer
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

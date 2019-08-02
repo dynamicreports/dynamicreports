@@ -120,6 +120,14 @@ public class AdhocAxisFormat implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getLabel() != null ? getLabel().hashCode() : 0;
+        result = 31 * result + (getLabelFont() != null ? getLabelFont().hashCode() : 0);
+        result = 31 * result + (getLabelColor() != null ? getLabelColor().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -21,23 +21,22 @@
 package net.sf.dynamicreports.jasper.base;
 
 /**
- * Thread safe implementation of {@link JasperScriptletManager} used for filling
- * cached reports concurrently. Note: use of this class can lead to memory leaks
- * if the threads starting the report fill are not terminated properly.
+ * Thread safe implementation of {@link JasperScriptletManager} used for filling cached reports concurrently. Note: use of this class can lead to memory leaks if the threads starting the report fill
+ * are not terminated properly.
  */
 public class ThreadSafeJasperScriptletManager implements JasperScriptletManager {
 
-  private ThreadLocal<JasperScriptlet> threadLocalScriptlet = new ThreadLocal<>();
-  
-  @Override
-  public void setJasperScriptlet(JasperScriptlet jasperScriptlet) {
-    threadLocalScriptlet.set(jasperScriptlet);
+    private ThreadLocal<JasperScriptlet> threadLocalScriptlet = new ThreadLocal<>();
 
-  }
+    @Override
+    public JasperScriptlet getJasperScriptlet() {
+        return threadLocalScriptlet.get();
+    }
 
-  @Override
-  public JasperScriptlet getJasperScriptlet() {
-    return threadLocalScriptlet.get();
-  }
+    @Override
+    public void setJasperScriptlet(JasperScriptlet jasperScriptlet) {
+        threadLocalScriptlet.set(jasperScriptlet);
+
+    }
 
 }

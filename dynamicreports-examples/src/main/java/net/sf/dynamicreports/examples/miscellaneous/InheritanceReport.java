@@ -80,6 +80,11 @@ public class InheritanceReport {
         return dataSource;
     }
 
+    /**
+     * Illustration purposes. This class remains non-final to illustrate the impact an inheritance-type report
+     * and as you can see it will be extended by ReportB. It is however expected that the user will have the
+     * wisdom to avoid creating non-final private classes.
+     */
     private class ReportA {
         protected JasperReportBuilder report = report();
 

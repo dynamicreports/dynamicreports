@@ -40,7 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * @version $Id: $Id
  */
 public class ColumnGrid2Report {
-    private final int columns_count = 12;
+    private final int columnsCount = 12;
 
     /**
      * <p>Constructor for ColumnGrid2Report.</p>
@@ -59,8 +59,8 @@ public class ColumnGrid2Report {
     }
 
     private void build() {
-        @SuppressWarnings("unchecked") TextColumnBuilder<String>[] columns = new TextColumnBuilder[columns_count];
-        for (int i = 1; i <= columns_count; i++) {
+        @SuppressWarnings("unchecked") TextColumnBuilder<String>[] columns = new TextColumnBuilder[columnsCount];
+        for (int i = 1; i <= columnsCount; i++) {
             columns[i - 1] = col.column("Column" + i, "column" + i, type.stringType());
         }
 
@@ -78,14 +78,14 @@ public class ColumnGrid2Report {
     }
 
     private JRDataSource createDataSource() {
-        String[] columns = new String[columns_count];
-        for (int i = 1; i <= columns_count; i++) {
+        String[] columns = new String[columnsCount];
+        for (int i = 1; i <= columnsCount; i++) {
             columns[i - 1] = "column" + i;
         }
         DRDataSource dataSource = new DRDataSource(columns);
         for (int i = 1; i <= 5; i++) {
-            Object[] row = new Object[columns_count];
-            for (int j = 0; j < columns_count; j++) {
+            Object[] row = new Object[columnsCount];
+            for (int j = 0; j < columnsCount; j++) {
                 row[j] = "row " + i;
             }
             dataSource.add(row);

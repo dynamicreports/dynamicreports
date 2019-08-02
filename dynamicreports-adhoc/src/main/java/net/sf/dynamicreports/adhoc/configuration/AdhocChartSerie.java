@@ -213,6 +213,17 @@ public class AdhocChartSerie implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getSeries() != null ? getSeries().hashCode() : 0;
+        result = 31 * result + (xValue != null ? xValue.hashCode() : 0);
+        result = 31 * result + (yValue != null ? yValue.hashCode() : 0);
+        result = 31 * result + (zValue != null ? zValue.hashCode() : 0);
+        result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+        result = 31 * result + (getProperties() != null ? getProperties().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

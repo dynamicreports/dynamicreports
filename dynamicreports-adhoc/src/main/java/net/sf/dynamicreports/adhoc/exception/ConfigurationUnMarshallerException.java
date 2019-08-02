@@ -37,15 +37,15 @@ public class ConfigurationUnMarshallerException extends DRException {
      * <pre>
      *     {@code
      *     try {
-     * 			Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
-     * 			JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
-     * 			XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
-     * 			AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
-     * 			return adhocConfiguration;
-     * 		} catch (JAXBException e) {
-     * 	        // time to throw our exception
-     * 			throw new ConfigurationUnMarshallerException(is);
-     * 		}
+     *          Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();
+     *          JAXBElement<XmlAdhocConfiguration> element = unmarshaller.unmarshal(new StreamSource(is), XmlAdhocConfiguration.class);
+     *          XmlAdhocConfiguration xmlAdhocConfiguration = element.getValue();
+     *          AdhocConfiguration adhocConfiguration = xmlToAdhocTransform.transform(xmlAdhocConfiguration);
+     *          return adhocConfiguration;
+     *       } catch (JAXBException e) {
+     *          // time to throw our exception
+     *          throw new ConfigurationUnMarshallerException(is);
+     *       }
      *     }
      * </pre>
      *

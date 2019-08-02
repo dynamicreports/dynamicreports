@@ -580,9 +580,9 @@ public class SubtotalBuilders {
         return Subtotals.percentage(field, showInColumn);
     }
 
-	/*public PercentageSubtotalBuilder percentage(DRISimpleExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
-		return Subtotals.percentage(expression, showInColumn);
-	}*/
+    /*public PercentageSubtotalBuilder percentage(DRISimpleExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
+       return Subtotals.percentage(expression, showInColumn);
+    }*/
 
     // text
 

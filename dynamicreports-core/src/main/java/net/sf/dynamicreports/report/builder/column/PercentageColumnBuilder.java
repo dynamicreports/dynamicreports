@@ -68,10 +68,10 @@ public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumn
         this.actualExpression = field.getField();
     }
 
-	/*protected PercentageColumnBuilder(DRISimpleExpression<? extends Number> valueExpression) {
-		Validate.notNull(valueExpression, "valueExpression must not be null");
-		this.actualExpression = valueExpression;
-	}*/
+    /*protected PercentageColumnBuilder(DRISimpleExpression<? extends Number> valueExpression) {
+        Validate.notNull(valueExpression, "valueExpression must not be null");
+        this.actualExpression = valueExpression;
+    }*/
 
     /**
      * Sets the total type. Has effect only when the report contains at least one group.

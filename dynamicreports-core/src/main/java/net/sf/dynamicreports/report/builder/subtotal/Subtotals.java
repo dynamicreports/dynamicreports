@@ -589,10 +589,10 @@ public class Subtotals {
         return new PercentageSubtotalBuilder(field, showInColumn);
     }
 
-	/*public static PercentageSubtotalBuilder percentage(DRISimpleExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
-		Validate.notNull(showInColumn, "showInColumn must not be null");
-		return new PercentageSubtotalBuilder(expression, showInColumn);
-	}*/
+    /*public static PercentageSubtotalBuilder percentage(DRISimpleExpression<? extends Number> expression, ColumnBuilder<?, ?> showInColumn) {
+        Validate.notNull(showInColumn, "showInColumn must not be null");
+        return new PercentageSubtotalBuilder(expression, showInColumn);
+    }*/
 
     // text
 

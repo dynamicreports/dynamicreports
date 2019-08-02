@@ -25,21 +25,22 @@ package net.sf.dynamicreports.jasper.base;
  */
 public interface JasperScriptletManager {
 
-  /** Property key used for selecting thread safe implementation. */
-  public static final String USE_THREAD_SAFE_SCRIPLET_MANAGER_PROPERTY_KEY =
-      "net.sf.dynamicreports.useThreadSafeScriptletManager";
+    /**
+     * Property key used for selecting thread safe implementation.
+     */
+    public static final String USE_THREAD_SAFE_SCRIPLET_MANAGER_PROPERTY_KEY = "net.sf.dynamicreports.useThreadSafeScriptletManager";
 
-  /**
-   * Setter for the {@link JasperScriptlet} instance.
-   * 
-   * @param jasperScriptlet the {@link JasperScriptlet} instance to set
-   */
-  void setJasperScriptlet(JasperScriptlet jasperScriptlet);
+    /**
+     * Getter for the {@link JasperScriptlet} instance.
+     *
+     * @return the set {@link JasperScriptlet} instance
+     */
+    JasperScriptlet getJasperScriptlet();
 
-  /**
-   * Getter for the {@link JasperScriptlet} instance.
-   * 
-   * @return the set {@link JasperScriptlet} instance
-   */
-  JasperScriptlet getJasperScriptlet();
+    /**
+     * Setter for the {@link JasperScriptlet} instance.
+     *
+     * @param jasperScriptlet the {@link JasperScriptlet} instance to set
+     */
+    void setJasperScriptlet(JasperScriptlet jasperScriptlet);
 }
