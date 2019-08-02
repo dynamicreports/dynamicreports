@@ -385,6 +385,9 @@
                             <defaultVersion>${project.version}</defaultVersion>
                             <defaultSince>${project.version}</defaultSince>
                             <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
+                            <sourceFileExcludes>
+                                <sourceFileExclude>${project.basedir}/dynamicreports-core/target</sourceFileExclude>
+                            </sourceFileExcludes>
                         </configuration>
                     </plugin>
                 </plugins>
