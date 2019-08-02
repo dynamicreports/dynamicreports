@@ -93,7 +93,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * Used by the library to convert an object into one that can be used by the JAXB api to marshall an object into an xml file. This is not used in general but is specific to configurations used in the
  * adhoc module. An instance of this class may be applied as follows:
  * <pre>
- *     {@link
+ *     {@code
  *     XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
  *
  *     Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
