@@ -110,7 +110,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class AdhocToXmlTransform {
+public class AdhocToXmlTransform implements IAdhocToXmlTransform {
 
     private static final Logger log = getLogger(AdhocToXmlTransform.class);
 
@@ -120,6 +120,7 @@ public class AdhocToXmlTransform {
      * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
      * @return a {@link net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration} object.
      */
+    @Override
     public XmlAdhocConfiguration transform(AdhocConfiguration adhocConfiguration) {
         log.debug("Transforming object : {} to XmlAdhocConfiguration", adhocConfiguration);
         XmlAdhocConfiguration xmlAdhocConfiguration = new XmlAdhocConfiguration();
