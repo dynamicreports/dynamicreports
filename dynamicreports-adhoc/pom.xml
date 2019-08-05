@@ -26,16 +26,16 @@
             <artifactId>junit</artifactId>
         </dependency>
         <!--Remove multiple SLF4J bindings-->
-        <dependency>
+        <!--<dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <scope>compile</scope>
         </dependency>
-        <!--<dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-to-slf4j</artifactId>
-            <scope>compile</scope>
-        </dependency>
+        <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-to-slf4j</artifactId>
+        <scope>compile</scope>
+    </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
@@ -266,7 +266,7 @@
             </build>
         </profile>
 
-        <!--<profile>
+        <profile>
             <id>java8</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -278,7 +278,7 @@
                     <version>1.7.25</version>
                 </dependency>
             </dependencies>
-        </profile>-->
+        </profile>
 
         <profile>
             <id>java9</id>
