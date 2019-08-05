@@ -58,4 +58,12 @@ public class ConfigurationMarshallerException extends DRException {
         super(String.format("Exception encountered while marshalling the JAXBElement : %s into the outputStream : %s", element, new StreamResult(outputStream)));
     }
 
+    /**
+     * <p>Constructor for DRException.</p>
+     *
+     * @param message a {@link String} object.
+     */
+    public ConfigurationMarshallerException(String message) {
+        super(message);
+    }
 }
