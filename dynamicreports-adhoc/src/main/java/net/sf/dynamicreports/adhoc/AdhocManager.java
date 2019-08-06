@@ -31,10 +31,7 @@ import net.sf.dynamicreports.adhoc.transformation.IAdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.IXmlToAdhocTransform;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.exception.DRException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -54,7 +51,7 @@ import java.io.OutputStream;
  *      JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
  *     }
  * </pre>
- * The {@link JasperReportBuilder} may also be created using the {@link #createReport(AdhocReport)} without providing an an implementation for {@link AdhocReportCustomizer} relying on the {@link
+ * The {@link JasperReportBuilder} may also be created using the {@code #createReport(AdhocReport)} without providing an an implementation for {@link AdhocReportCustomizer} relying on the {@link
  * DefaultAdhocReportCustomizer} object instead.
  * <br>
  * The {@link AdhocManager} also provides {@link #saveConfiguration(AdhocConfiguration, OutputStream)} and the {@link #loadConfiguration(InputStream)} methods for marshalling configuration and
@@ -63,9 +60,9 @@ import java.io.OutputStream;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class AdhocManager implements ConfigurationLoader {
+public class AdhocManager implements XmlConfigurationLoader {
 
-    private static volatile AdhocManager INSTANCE = null;
+    private static volatile XmlConfigurationLoader INSTANCE = null;
     private final IAdhocToXmlTransform adhocToXmlTransform;
     private final IXmlToAdhocTransform xmlToAdhocTransform;
 
@@ -74,7 +71,7 @@ public class AdhocManager implements ConfigurationLoader {
         this.xmlToAdhocTransform = xmlToAdhocTransform;
     }
 
-    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform ) {
+    public static XmlConfigurationLoader getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform ) {
         if (INSTANCE == null) {
             synchronized (AdhocManager.class) {
                 INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);

@@ -2,6 +2,7 @@ package net.sf.dynamicreports.adhoc.test;
 
 import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.AdhocToXmlTransformDecorator;
+import net.sf.dynamicreports.adhoc.XmlConfigurationLoader;
 import net.sf.dynamicreports.adhoc.XmlToAdhocTransformDecorator;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
@@ -16,7 +17,7 @@ import java.io.ByteArrayOutputStream;
 
 public class AdhocExceptionsTests {
 
-    private AdhocManager adhocMan =
+    private XmlConfigurationLoader adhocMan =
             AdhocManager.getInstance(
                     new AdhocToXmlTransformDecorator(new AdhocToXmlTransform()),
                     new XmlToAdhocTransformDecorator(new XmlToAdhocTransform()));

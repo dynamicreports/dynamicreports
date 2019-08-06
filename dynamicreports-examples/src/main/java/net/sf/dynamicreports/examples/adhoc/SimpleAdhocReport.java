@@ -24,6 +24,7 @@ package net.sf.dynamicreports.examples.adhoc;
 import net.sf.dynamicreports.adhoc.AdhocManager;
 import net.sf.dynamicreports.adhoc.CustomReport;
 import net.sf.dynamicreports.adhoc.SimpleCustomReport;
+import net.sf.dynamicreports.adhoc.XmlConfigurationLoader;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
@@ -69,7 +70,7 @@ public class SimpleAdhocReport {
 
     private void build() {
 
-        AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+        XmlConfigurationLoader adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
         CustomReport customReport = new SimpleCustomReport(new DefaultAdhocReportCustomizer());
 
         AdhocConfiguration configuration = new AdhocConfiguration();

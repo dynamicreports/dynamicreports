@@ -25,7 +25,6 @@ import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.ComponentBuilder;
 import org.junit.After;
 import org.junit.Before;
@@ -41,7 +40,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class AdhocManagerTest {
 
-    private AdhocManager adhocManager;
+    private XmlConfigurationLoader adhocManager;
     private CustomReport customReport;
 
     @Before
