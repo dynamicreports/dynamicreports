@@ -40,9 +40,7 @@ public class DRPaintScale implements DRIPaintScale {
     private double value;
     private Paint paint;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLabel() {
         return label;
@@ -57,9 +55,7 @@ public class DRPaintScale implements DRIPaintScale {
         this.label = label;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public double getValue() {
         return value;
@@ -74,9 +70,7 @@ public class DRPaintScale implements DRIPaintScale {
         this.value = value;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Paint getPaint() {
         return paint;

@@ -36,25 +36,19 @@ import java.math.BigDecimal;
 public class BigDecimalType extends NumberType<BigDecimal> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return Defaults.getDefaults().getBigDecimalType().getPattern();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return Defaults.getDefaults().getBigDecimalType().getHorizontalTextAlignment();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected BigDecimal numberToValue(Number number) {
         return new BigDecimal(number.doubleValue());

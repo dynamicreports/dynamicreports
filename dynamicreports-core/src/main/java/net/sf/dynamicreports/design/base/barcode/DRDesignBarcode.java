@@ -50,9 +50,7 @@ public abstract class DRDesignBarcode extends DRDesignComponent implements DRIDe
         super(name);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getCodeExpression() {
         return codeExpression;
@@ -67,9 +65,7 @@ public abstract class DRDesignBarcode extends DRDesignComponent implements DRIDe
         this.codeExpression = codeExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public EvaluationTime getEvaluationTime() {
         return evaluationTime;
@@ -84,9 +80,7 @@ public abstract class DRDesignBarcode extends DRDesignComponent implements DRIDe
         this.evaluationTime = evaluationTime;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignGroup getEvaluationGroup() {
         return evaluationGroup;

@@ -44,9 +44,7 @@ public class DRDesignFont implements DRIDesignFont {
     private String pdfEncoding;
     private Boolean pdfEmbedded;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getFontName() {
         return fontName;
@@ -61,9 +59,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.fontName = fontName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getBold() {
         return bold;
@@ -78,9 +74,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.bold = bold;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getItalic() {
         return italic;
@@ -95,9 +89,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.italic = italic;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getUnderline() {
         return underline;
@@ -112,9 +104,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.underline = underline;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getStrikeThrough() {
         return strikeThrough;
@@ -129,9 +119,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.strikeThrough = strikeThrough;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getFontSize() {
         return fontSize;
@@ -146,9 +134,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.fontSize = fontSize;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPdfFontName() {
         return pdfFontName;
@@ -163,9 +149,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.pdfFontName = pdfFontName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPdfEncoding() {
         return pdfEncoding;
@@ -180,9 +164,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.pdfEncoding = pdfEncoding;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getPdfEmbedded() {
         return pdfEmbedded;
@@ -197,9 +179,7 @@ public class DRDesignFont implements DRIDesignFont {
         this.pdfEmbedded = pdfEmbedded;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

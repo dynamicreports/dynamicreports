@@ -35,9 +35,7 @@ public class DRDesignCrosstabColumnGroup extends DRDesignCrosstabGroup implement
 
     private int height;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getHeight() {
         return height;

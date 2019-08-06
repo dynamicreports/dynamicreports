@@ -53,9 +53,7 @@ public class BeanArraySubDatasourceExpression extends AbstractSubDatasourceExpre
         super(expression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected JRDataSource createSubDatasource(Object[] data) {
         return new JRBeanArrayDataSource(data);

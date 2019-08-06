@@ -62,9 +62,7 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.columnGroup = columnGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRICrosstabRowGroup<?> getRowGroup() {
         return rowGroup;
@@ -79,9 +77,7 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.rowGroup = rowGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRICrosstabColumnGroup<?> getColumnGroup() {
         return columnGroup;
@@ -96,9 +92,7 @@ public class DRCrosstabCellStyle implements DRICrosstabCellStyle {
         this.columnGroup = columnGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIReportStyle getStyle() {
         return style;

@@ -78,17 +78,13 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         propertyExpressions = new ArrayList<DRIDesignPropertyExpression>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getUniqueName() {
         return uniqueName;
@@ -103,9 +99,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.uniqueName = uniqueName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignStyle getStyle() {
         return style;
@@ -120,9 +114,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.style = style;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getX() {
         return x;
@@ -137,9 +129,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.x = x;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getY() {
         return y;
@@ -154,9 +144,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.y = y;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getWidth() {
         return width;
@@ -171,9 +159,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.width = width;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getHeight() {
         return height;
@@ -188,9 +174,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.height = height;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getPrintWhenExpression() {
         return printWhenExpression;
@@ -205,9 +189,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.printWhenExpression = printWhenExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isRemoveLineWhenBlank() {
         return isRemoveLineWhenBlank;
@@ -222,9 +204,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.isRemoveLineWhenBlank = isRemoveLineWhenBlank;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIDesignPropertyExpression> getPropertyExpressions() {
         return propertyExpressions;
@@ -239,9 +219,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.propertyExpressions = propertyExpressions;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ComponentPositionType getPositionType() {
         return positionType;
@@ -256,9 +234,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.positionType = positionType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public StretchType getStretchType() {
         return stretchType;
@@ -273,9 +249,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.stretchType = stretchType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isPrintInFirstWholeBand() {
         return printInFirstWholeBand;
@@ -290,9 +264,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.printInFirstWholeBand = printInFirstWholeBand;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isPrintWhenDetailOverflows() {
         return printWhenDetailOverflows;
@@ -307,9 +279,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.printWhenDetailOverflows = printWhenDetailOverflows;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignGroup getPrintWhenGroupChanges() {
         return printWhenGroupChanges;
@@ -324,9 +294,7 @@ public abstract class DRDesignComponent implements DRIDesignComponent {
         this.printWhenGroupChanges = printWhenGroupChanges;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignTableOfContentsHeading getTableOfContentsHeading() {
         return tableOfContentsHeading;

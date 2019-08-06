@@ -116,41 +116,31 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void setReport(ReportBuilder<?> report) {
         this.report = report;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void setHeadingList(List<JasperTocHeading> headingList) {
         this.headingList = headingList;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void setHeadings(int headings) {
         this.headings = headings;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void setLevels(int levels) {
         this.levels = levels;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize() {
         init();
@@ -288,9 +278,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         this.pageIndexFixedWidth = pageIndexFixedWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public TableOfContentsPosition getPosition() {
         return position;

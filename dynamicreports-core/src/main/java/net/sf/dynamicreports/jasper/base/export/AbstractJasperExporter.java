@@ -50,9 +50,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
     private Integer offsetX;
     private Integer offsetY;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Writer getOutputWriter() {
         return outputWriter;
@@ -68,9 +66,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.outputWriter = outputWriter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public OutputStream getOutputStream() {
         return outputStream;
@@ -86,9 +82,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.outputStream = outputStream;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public File getOutputFile() {
         return outputFile;
@@ -104,9 +98,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.outputFile = outputFile;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getOutputFileName() {
         return outputFileName;
@@ -122,9 +114,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.outputFileName = outputFileName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageIndex() {
         return pageIndex;
@@ -139,9 +129,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.pageIndex = pageIndex;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getStartPageIndex() {
         return startPageIndex;
@@ -156,9 +144,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.startPageIndex = startPageIndex;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getEndPageIndex() {
         return endPageIndex;
@@ -173,9 +159,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.endPageIndex = endPageIndex;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getCharacterEncoding() {
         return characterEncoding;
@@ -190,9 +174,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.characterEncoding = characterEncoding;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getOffsetX() {
         return offsetX;
@@ -207,9 +189,7 @@ public abstract class AbstractJasperExporter implements JasperIExporter {
         this.offsetX = offsetX;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getOffsetY() {
         return offsetY;

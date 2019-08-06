@@ -64,9 +64,7 @@ public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return pattern;
@@ -81,9 +79,7 @@ public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
         this.pattern = pattern;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;
@@ -98,9 +94,7 @@ public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIValueFormatter<?, ? extends U> getValueFormatter() {
         return valueFormatter;

@@ -44,9 +44,7 @@ public class BetweenValueExpression<T extends Number> extends AbstractBetweenVal
         super(value, min, max);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected Boolean compare(Number actualValue, Number min, Number max) {
         return actualValue.doubleValue() >= min.doubleValue() && actualValue.doubleValue() <= max.doubleValue();

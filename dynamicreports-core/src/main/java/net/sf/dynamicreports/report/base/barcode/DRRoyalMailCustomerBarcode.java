@@ -37,9 +37,7 @@ public class DRRoyalMailCustomerBarcode extends DRChecksumBarcode implements DRI
     private Double intercharGapWidth;
     private Double trackHeight;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getAscenderHeight() {
         return ascenderHeight;
@@ -54,9 +52,7 @@ public class DRRoyalMailCustomerBarcode extends DRChecksumBarcode implements DRI
         this.ascenderHeight = ascenderHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getIntercharGapWidth() {
         return intercharGapWidth;
@@ -71,9 +67,7 @@ public class DRRoyalMailCustomerBarcode extends DRChecksumBarcode implements DRI
         this.intercharGapWidth = intercharGapWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getTrackHeight() {
         return trackHeight;

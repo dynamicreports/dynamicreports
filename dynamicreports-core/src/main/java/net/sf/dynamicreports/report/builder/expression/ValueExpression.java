@@ -43,7 +43,8 @@ public class ValueExpression<T> extends AbstractSimpleExpression<T> {
      * <p>Constructor for ValueExpression.</p>
      *
      * @param value a T object.
-     */ public ValueExpression(T value) {
+     */
+    public ValueExpression(T value) {
         Validate.notNull(value, "value must not be null");
         this.value = value;
         this.valueClass = (Class<? super T>) value.getClass();
@@ -54,6 +55,7 @@ public class ValueExpression<T> extends AbstractSimpleExpression<T> {
      *
      * @param value      a T object.
      * @param valueClass a {@link java.lang.Class} object.
+     * @param valueClass a {@link java.lang.Class} object.
      */
     public ValueExpression(T value, Class<? super T> valueClass) {
         Validate.notNull(valueClass, "valueClass must not be null");
@@ -61,17 +63,13 @@ public class ValueExpression<T> extends AbstractSimpleExpression<T> {
         this.valueClass = valueClass;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public T evaluate(ReportParameters reportParameters) {
         return value;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<? super T> getValueClass() {
         return valueClass;

@@ -75,9 +75,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         permissions = new ArrayList<PdfPermission>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getCreatingBatchModeBookmarks() {
         return creatingBatchModeBookmarks;
@@ -92,9 +90,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.creatingBatchModeBookmarks = creatingBatchModeBookmarks;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getCompressed() {
         return compressed;
@@ -109,9 +105,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.compressed = compressed;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getEncrypted() {
         return encrypted;
@@ -126,9 +120,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.encrypted = encrypted;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getBitKey128() {
         return bitKey128;
@@ -143,9 +135,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.bitKey128 = bitKey128;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getUserPassword() {
         return userPassword;
@@ -160,9 +150,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.userPassword = userPassword;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getOwnerPassword() {
         return ownerPassword;
@@ -177,9 +165,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.ownerPassword = ownerPassword;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<PdfPermission> getPermissions() {
         return permissions;
@@ -203,9 +189,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.permissions.add(permission);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PdfVersion getPdfVersion() {
         return pdfVersion;
@@ -220,9 +204,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.pdfVersion = pdfVersion;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMetadataTitle() {
         return metadataTitle;
@@ -237,9 +219,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.metadataTitle = metadataTitle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMetadataAuthor() {
         return metadataAuthor;
@@ -254,9 +234,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.metadataAuthor = metadataAuthor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMetadataSubject() {
         return metadataSubject;
@@ -271,9 +249,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.metadataSubject = metadataSubject;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMetadataKeyWords() {
         return metadataKeyWords;
@@ -288,9 +264,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.metadataKeyWords = metadataKeyWords;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMetadataCreator() {
         return metadataCreator;
@@ -305,9 +279,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.metadataCreator = metadataCreator;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getForceSvgShapes() {
         return forceSvgShapes;
@@ -322,9 +294,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.forceSvgShapes = forceSvgShapes;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPdfJavaScript() {
         return pdfJavaScript;
@@ -339,9 +309,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.pdfJavaScript = pdfJavaScript;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getTagged() {
         return tagged;
@@ -356,9 +324,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.tagged = tagged;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getTagLanguage() {
         return tagLanguage;
@@ -373,9 +339,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.tagLanguage = tagLanguage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getCollapseMissingBookmarkLevels() {
         return collapseMissingBookmarkLevels;
@@ -390,9 +354,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.collapseMissingBookmarkLevels = collapseMissingBookmarkLevels;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getSizePageToContent() {
         return sizePageToContent;
@@ -407,9 +369,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.sizePageToContent = sizePageToContent;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;
@@ -424,9 +384,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.ignoreHyperLink = ignoreHyperLink;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getForceLineBreakPolicy() {
         return forceLineBreakPolicy;
@@ -441,9 +399,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.forceLineBreakPolicy = forceLineBreakPolicy;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PdfPrintScaling getPrintScaling() {
         return printScaling;
@@ -458,9 +414,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.printScaling = printScaling;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PdfaConformance getPdfaConformance() {
         return pdfaConformance;
@@ -475,9 +429,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.pdfaConformance = pdfaConformance;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getIccProfilePath() {
         return iccProfilePath;
@@ -492,9 +444,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.iccProfilePath = iccProfilePath;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getAllowedPermissionsHint() {
         return allowedPermissionsHint;
@@ -509,9 +459,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.allowedPermissionsHint = allowedPermissionsHint;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getDeniedPermissionsHint() {
         return deniedPermissionsHint;
@@ -526,9 +474,7 @@ public class JasperPdfExporter extends AbstractJasperExporter implements JasperI
         this.deniedPermissionsHint = deniedPermissionsHint;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getDisplayMetadataTitle() {
         return displayMetadataTitle;

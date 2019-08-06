@@ -35,9 +35,7 @@ public class DRXyStepPlot extends DRAxisPlot implements DRIXyStepPlot {
 
     private Double stepPoint;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getStepPoint() {
         return stepPoint;

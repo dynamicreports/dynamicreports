@@ -39,9 +39,7 @@ public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {
     private Color negativeColor;
     private Boolean showShapes;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getPositiveColor() {
         return positiveColor;
@@ -56,9 +54,7 @@ public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {
         this.positiveColor = positiveColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getNegativeColor() {
         return negativeColor;
@@ -73,9 +69,7 @@ public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {
         this.negativeColor = negativeColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowShapes() {
         return showShapes;

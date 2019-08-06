@@ -41,25 +41,19 @@ import java.util.Locale;
 public class DateType extends AbstractDataType<Date, Date> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return Defaults.getDefaults().getDateType().getPattern();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return Defaults.getDefaults().getDateType().getHorizontalTextAlignment();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String valueToString(Date value, Locale locale) {
         if (value != null) {
@@ -68,9 +62,7 @@ public class DateType extends AbstractDataType<Date, Date> {
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Date stringToValue(String value, Locale locale) throws DRException {
         if (value != null) {

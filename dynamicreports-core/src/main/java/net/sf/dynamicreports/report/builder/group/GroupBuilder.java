@@ -519,9 +519,7 @@ public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBu
         return addFooterComponent(components);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         super.configure();

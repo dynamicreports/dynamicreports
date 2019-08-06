@@ -44,9 +44,7 @@ public class DRTemplateStyle implements DRITemplateStyle {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;

@@ -72,205 +72,93 @@ import java.util.ResourceBundle;
 public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T, DRReport> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * <p>Constructor for ReportBuilder.</p>
-     */
     public ReportBuilder() {
         super(new DRReport());
     }
 
-    /**
-     * <p>setReportName.</p>
-     *
-     * @param reportName a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T setReportName(String reportName) {
         getObject().setReportName(reportName);
         return (T) this;
     }
 
-    /**
-     * <p>setLocale.</p>
-     *
-     * @param locale a {@link java.util.Locale} object.
-     * @return a T object.
-     */
     public T setLocale(Locale locale) {
         getObject().setLocale(locale);
         return (T) this;
     }
 
-    /**
-     * <p>setResourceBundle.</p>
-     *
-     * @param resourceBundle a {@link java.util.ResourceBundle} object.
-     * @return a T object.
-     */
     public T setResourceBundle(ResourceBundle resourceBundle) {
         getObject().setResourceBundle(resourceBundle);
         return (T) this;
     }
 
-    /**
-     * <p>setResourceBundle.</p>
-     *
-     * @param resourceBundleName a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T setResourceBundle(String resourceBundleName) {
         getObject().setResourceBundleName(resourceBundleName);
         return (T) this;
     }
 
-    /**
-     * <p>setShowColumnTitle.</p>
-     *
-     * @param showColumnTitle a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setShowColumnTitle(Boolean showColumnTitle) {
         getObject().setShowColumnTitle(showColumnTitle);
         return (T) this;
     }
 
-    /**
-     * <p>setShowColumnValues.</p>
-     *
-     * @param showColumnValues a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setShowColumnValues(Boolean showColumnValues) {
         getObject().setShowColumnValues(showColumnValues);
         return (T) this;
     }
 
-    /**
-     * <p>setPageFormat.</p>
-     *
-     * @param pageType a {@link net.sf.dynamicreports.report.constant.PageType} object.
-     * @return a T object.
-     */
     public T setPageFormat(PageType pageType) {
         return setPageFormat(pageType, PageOrientation.PORTRAIT);
     }
 
-    /**
-     * <p>setPageFormat.</p>
-     *
-     * @param pageType    a {@link net.sf.dynamicreports.report.constant.PageType} object.
-     * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
-     * @return a T object.
-     */
     public T setPageFormat(PageType pageType, PageOrientation orientation) {
         getObject().getPage().setPageFormat(pageType, orientation);
         return (T) this;
     }
 
-    /**
-     * <p>setPageFormat.</p>
-     *
-     * @param width       a {@link java.lang.Integer} object.
-     * @param height      a {@link java.lang.Integer} object.
-     * @param orientation a {@link net.sf.dynamicreports.report.constant.PageOrientation} object.
-     * @return a T object.
-     */
     public T setPageFormat(Integer width, Integer height, PageOrientation orientation) {
         getObject().getPage().setPageFormat(width, height, orientation);
         return (T) this;
     }
 
-    /**
-     * <p>setPageMargin.</p>
-     *
-     * @param margin a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
-     * @return a T object.
-     */
     public T setPageMargin(MarginBuilder margin) {
         Validate.notNull(margin, "margin must not be null");
         getObject().getPage().setMargin(margin.build());
         return (T) this;
     }
 
-    /**
-     * <p>setPageColumnsPerPage.</p>
-     *
-     * @param columnsPerPage a {@link java.lang.Integer} object.
-     * @return a T object.
-     */
     public T setPageColumnsPerPage(Integer columnsPerPage) {
         getObject().getPage().setColumnsPerPage(columnsPerPage);
         return (T) this;
     }
 
-    /**
-     * <p>setPageColumnSpace.</p>
-     *
-     * @param columnSpace a {@link java.lang.Integer} object.
-     * @return a T object.
-     */
     public T setPageColumnSpace(Integer columnSpace) {
         getObject().getPage().setColumnSpace(columnSpace);
         return (T) this;
     }
 
-    /**
-     * <p>ignorePageWidth.</p>
-     *
-     * @return a T object.
-     */
     public T ignorePageWidth() {
         return setIgnorePageWidth(true);
     }
 
-    /**
-     * <p>setIgnorePageWidth.</p>
-     *
-     * @param ignorePageWidth a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setIgnorePageWidth(Boolean ignorePageWidth) {
         getObject().getPage().setIgnorePageWidth(ignorePageWidth);
         return (T) this;
     }
 
-    /**
-     * <p>ignorePagination.</p>
-     *
-     * @return a T object.
-     */
     public T ignorePagination() {
         return setIgnorePagination(true);
     }
 
-    /**
-     * <p>setIgnorePagination.</p>
-     *
-     * @param ignorePagination a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setIgnorePagination(Boolean ignorePagination) {
         getObject().setIgnorePagination(ignorePagination);
         return (T) this;
     }
 
-    /**
-     * <p>setWhenNoDataType.</p>
-     *
-     * @param whenNoDataType a {@link net.sf.dynamicreports.report.constant.WhenNoDataType} object.
-     * @return a T object.
-     */
     public T setWhenNoDataType(WhenNoDataType whenNoDataType) {
         getObject().setWhenNoDataType(whenNoDataType);
         return (T) this;
     }
 
-    /**
-     * <p>setWhenResourceMissingType.</p>
-     *
-     * @param whenResourceMissingType a {@link net.sf.dynamicreports.report.constant.WhenResourceMissingType} object.
-     * @return a T object.
-     */
     public T setWhenResourceMissingType(WhenResourceMissingType whenResourceMissingType) {
         getObject().setWhenResourceMissingType(whenResourceMissingType);
         return (T) this;
@@ -356,66 +244,30 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setPrintOrder.</p>
-     *
-     * @param printOrder a {@link net.sf.dynamicreports.report.constant.Orientation} object.
-     * @return a T object.
-     */
     public T setPrintOrder(Orientation printOrder) {
         getObject().setPrintOrder(printOrder);
         return (T) this;
     }
 
-    /**
-     * <p>setColumnDirection.</p>
-     *
-     * @param columnDirection a {@link net.sf.dynamicreports.report.constant.RunDirection} object.
-     * @return a T object.
-     */
     public T setColumnDirection(RunDirection columnDirection) {
         getObject().setColumnDirection(columnDirection);
         return (T) this;
     }
 
-    /**
-     * <p>setLanguage.</p>
-     *
-     * @param language a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T setLanguage(String language) {
         getObject().setLanguage(language);
         return (T) this;
     }
 
-    /**
-     * <p>setUseFieldNameAsDescription.</p>
-     *
-     * @param useFieldNameAsDescription a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setUseFieldNameAsDescription(Boolean useFieldNameAsDescription) {
         getObject().setUseFieldNameAsDescription(useFieldNameAsDescription);
         return (T) this;
     }
 
-    /**
-     * <p>scriptlets.</p>
-     *
-     * @param scriptlets a {@link net.sf.dynamicreports.report.definition.DRIScriptlet} object.
-     * @return a T object.
-     */
     public T scriptlets(DRIScriptlet... scriptlets) {
         return addScriptlet(scriptlets);
     }
 
-    /**
-     * <p>addScriptlet.</p>
-     *
-     * @param scriptlets a {@link net.sf.dynamicreports.report.definition.DRIScriptlet} object.
-     * @return a T object.
-     */
     public T addScriptlet(DRIScriptlet... scriptlets) {
         Validate.notNull(scriptlets, "scriptlets must not be null");
         Validate.noNullElements(scriptlets, "scriptlets must not contains null scriptlet");
@@ -425,93 +277,42 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setProperties.</p>
-     *
-     * @param properties a {@link java.util.Properties} object.
-     * @return a T object.
-     */
     public T setProperties(Properties properties) {
         getObject().setProperties(properties);
         return (T) this;
     }
 
-    /**
-     * <p>addProperty.</p>
-     *
-     * @param key   a {@link java.lang.String} object.
-     * @param value a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T addProperty(String key, String value) {
         getObject().addProperty(key, value);
         return (T) this;
     }
 
-    /**
-     * <p>setQuery.</p>
-     *
-     * @param text     a {@link java.lang.String} object.
-     * @param language a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T setQuery(String text, String language) {
         Validate.notNull(text, "text must not be null");
         Validate.notNull(language, "language must not be null");
         return setQuery(DynamicReports.query(text, language));
     }
 
-    /**
-     * <p>setQuery.</p>
-     *
-     * @param sql a {@link java.lang.String} object.
-     * @return a T object.
-     */
     public T setQuery(String sql) {
         Validate.notNull(sql, "sql must not be null");
         return setQuery(DynamicReports.query(sql, QueryLanguage.SQL));
     }
 
-    /**
-     * <p>setQuery.</p>
-     *
-     * @param query a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
-     * @return a T object.
-     */
     public T setQuery(QueryBuilder query) {
         Validate.notNull(query, "query must not be null");
         getObject().setQuery(query.build());
         return (T) this;
     }
 
-    /**
-     * <p>columnGrid.</p>
-     *
-     * @param type a {@link net.sf.dynamicreports.report.constant.ListType} object.
-     * @return a T object.
-     */
     public T columnGrid(ListType type) {
         getObject().setColumnGrid(new DRColumnGrid(type));
         return (T) this;
     }
 
-    /**
-     * <p>columnGrid.</p>
-     *
-     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-     * @return a T object.
-     */
     public T columnGrid(ColumnGridComponentBuilder... components) {
         return columnGrid(ListType.HORIZONTAL, components);
     }
 
-    /**
-     * <p>columnGrid.</p>
-     *
-     * @param type       a {@link net.sf.dynamicreports.report.constant.ListType} object.
-     * @param components a {@link net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder} object.
-     * @return a T object.
-     */
     public T columnGrid(ListType type, ColumnGridComponentBuilder... components) {
         Validate.notNull(components, "components must not be null");
         Validate.noNullElements(components, "components must not contains null component");
@@ -524,13 +325,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // template
-
-    /**
-     * <p>setTemplate.</p>
-     *
-     * @param template a {@link net.sf.dynamicreports.report.builder.ReportTemplateBuilder} object.
-     * @return a T object.
-     */
     public T setTemplate(ReportTemplateBuilder template) {
         Validate.notNull(template, "template must not be null");
         getObject().setTemplate(template.build());
@@ -538,23 +332,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // template style
-
-    /**
-     * <p>templateStyles.</p>
-     *
-     * @param templateStyles a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
-     * @return a T object.
-     */
     public T templateStyles(TemplateStylesBuilder... templateStyles) {
         return addTemplateStyle(templateStyles);
     }
 
-    /**
-     * <p>addTemplateStyle.</p>
-     *
-     * @param templateStyles a {@link net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder} object.
-     * @return a T object.
-     */
     public T addTemplateStyle(TemplateStylesBuilder... templateStyles) {
         Validate.notNull(templateStyles, "templateStyles must not be null");
         Validate.noNullElements(templateStyles, "templateStyles must not contains null templateStyle");
@@ -566,22 +347,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>templateStyles.</p>
-     *
-     * @param templateStyles a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
-     * @return a T object.
-     */
     public T templateStyles(StyleBuilder... templateStyles) {
         return addTemplateStyle(templateStyles);
     }
 
-    /**
-     * <p>addTemplateStyle.</p>
-     *
-     * @param templateStyles a {@link net.sf.dynamicreports.report.builder.style.StyleBuilder} object.
-     * @return a T object.
-     */
     public T addTemplateStyle(StyleBuilder... templateStyles) {
         Validate.notNull(templateStyles, "templateStyles must not be null");
         Validate.noNullElements(templateStyles, "templateStyles must not contains null templateStyle");
@@ -592,45 +361,18 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // parameter
-
-    /**
-     * <p>parameters.</p>
-     *
-     * @param parameters a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
-     * @return a T object.
-     */
     public T parameters(ParameterBuilder<?>... parameters) {
         return addParameter(parameters);
     }
 
-    /**
-     * <p>addParameter.</p>
-     *
-     * @param name  a {@link java.lang.String} object.
-     * @param value a {@link java.lang.Object} object.
-     * @return a T object.
-     */
     public T addParameter(String name, Object value) {
         return addParameter(DynamicReports.parameter(name, value));
     }
 
-    /**
-     * <p>addParameter.</p>
-     *
-     * @param name       a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
-     * @return a T object.
-     */
     public T addParameter(String name, Class<?> valueClass) {
         return addParameter(DynamicReports.parameter(name, valueClass));
     }
 
-    /**
-     * <p>addParameter.</p>
-     *
-     * @param parameters a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
-     * @return a T object.
-     */
     public T addParameter(ParameterBuilder<?>... parameters) {
         Validate.notNull(parameters, "parameters must not be null");
         Validate.noNullElements(parameters, "parameters must not contains null parameter");
@@ -640,70 +382,29 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setParameter.</p>
-     *
-     * @param name  a {@link java.lang.String} object.
-     * @param value a {@link java.lang.Object} object.
-     * @return a T object.
-     */
     public T setParameter(String name, Object value) {
         getObject().addParameterValue(name, value);
         return (T) this;
     }
 
-    /**
-     * <p>setParameters.</p>
-     *
-     * @param parameters a {@link java.util.Map} object.
-     * @return a T object.
-     */
     public T setParameters(Map<String, Object> parameters) {
         getObject().setParameterValues(parameters);
         return (T) this;
     }
 
     // field
-
-    /**
-     * <p>fields.</p>
-     *
-     * @param fields a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-     * @return a T object.
-     */
     public T fields(FieldBuilder<?>... fields) {
         return addField(fields);
     }
 
-    /**
-     * <p>addField.</p>
-     *
-     * @param name       a {@link java.lang.String} object.
-     * @param valueClass a {@link java.lang.Class} object.
-     * @return a T object.
-     */
     public T addField(String name, Class<?> valueClass) {
         return addField(DynamicReports.field(name, valueClass));
     }
 
-    /**
-     * <p>addField.</p>
-     *
-     * @param name     a {@link java.lang.String} object.
-     * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
-     * @param <U>      a U object.
-     * @return a T object.
-     */
     public <U> T addField(String name, DRIDataType<? super U, U> dataType) {
         return addField(DynamicReports.field(name, dataType));
     }
 
-    /**
-     * <p>addField.</p>
-     *
-     * @param fields a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
-     * @return a T object.
-     */
     public T addField(FieldBuilder<?>... fields) {
         Validate.notNull(fields, "fields must not be null");
         Validate.noNullElements(fields, "fields must not contains null field");
@@ -714,23 +415,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // variable
-
-    /**
-     * <p>variables.</p>
-     *
-     * @param variables a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-     * @return a T object.
-     */
     public T variables(VariableBuilder<?>... variables) {
         return addVariable(variables);
     }
 
-    /**
-     * <p>addVariable.</p>
-     *
-     * @param variables a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
-     * @return a T object.
-     */
     public T addVariable(VariableBuilder<?>... variables) {
         Validate.notNull(variables, "variables must not be null");
         Validate.noNullElements(variables, "variables must not contains null variable");
@@ -781,23 +469,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // column
-
-    /**
-     * <p>columns.</p>
-     *
-     * @param columns a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @return a T object.
-     */
     public T columns(ColumnBuilder<?, ?>... columns) {
         return addColumn(columns);
     }
 
-    /**
-     * <p>addColumn.</p>
-     *
-     * @param columns a {@link net.sf.dynamicreports.report.builder.column.ColumnBuilder} object.
-     * @return a T object.
-     */
     public T addColumn(ColumnBuilder<?, ?>... columns) {
         Validate.notNull(columns, "columns must not be null");
         Validate.noNullElements(columns, "columns must not contains null column");
@@ -808,13 +483,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // style
-
-    /**
-     * <p>setDefaultFont.</p>
-     *
-     * @param defaultFont a {@link net.sf.dynamicreports.report.builder.style.FontBuilder} object.
-     * @return a T object.
-     */
     public T setDefaultFont(FontBuilder defaultFont) {
         if (defaultFont != null) {
             getObject().setDefaultFont(defaultFont.build());
@@ -824,12 +492,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setTextStyle.</p>
-     *
-     * @param textStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setTextStyle(ReportStyleBuilder textStyle) {
         if (textStyle != null) {
             getObject().setTextStyle(textStyle.build());
@@ -839,12 +501,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnTitleStyle.</p>
-     *
-     * @param columnTitleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setColumnTitleStyle(ReportStyleBuilder columnTitleStyle) {
         if (columnTitleStyle != null) {
             getObject().setColumnTitleStyle(columnTitleStyle.build());
@@ -854,12 +510,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnStyle.</p>
-     *
-     * @param columnStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setColumnStyle(ReportStyleBuilder columnStyle) {
         if (columnStyle != null) {
             getObject().setColumnStyle(columnStyle.build());
@@ -869,12 +519,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupTitleStyle.</p>
-     *
-     * @param groupTitleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setGroupTitleStyle(ReportStyleBuilder groupTitleStyle) {
         if (groupTitleStyle != null) {
             getObject().setGroupTitleStyle(groupTitleStyle.build());
@@ -884,12 +528,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupStyle.</p>
-     *
-     * @param groupStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setGroupStyle(ReportStyleBuilder groupStyle) {
         if (groupStyle != null) {
             getObject().setGroupStyle(groupStyle.build());
@@ -899,12 +537,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setSubtotalStyle.</p>
-     *
-     * @param subtotalStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setSubtotalStyle(ReportStyleBuilder subtotalStyle) {
         if (subtotalStyle != null) {
             getObject().setSubtotalStyle(subtotalStyle.build());
@@ -914,12 +546,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setImageStyle.</p>
-     *
-     * @param imageStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setImageStyle(ReportStyleBuilder imageStyle) {
         if (imageStyle != null) {
             getObject().setImageStyle(imageStyle.build());
@@ -929,12 +555,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setChartStyle.</p>
-     *
-     * @param chartStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setChartStyle(ReportStyleBuilder chartStyle) {
         if (chartStyle != null) {
             getObject().setChartStyle(chartStyle.build());
@@ -944,12 +564,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setBarcodeStyle.</p>
-     *
-     * @param barcodeStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
-     * @return a T object.
-     */
     public T setBarcodeStyle(ReportStyleBuilder barcodeStyle) {
         if (barcodeStyle != null) {
             getObject().setBarcodeStyle(barcodeStyle.build());
@@ -960,33 +574,15 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // row highlighter
-
-    /**
-     * <p>highlightDetailOddRows.</p>
-     *
-     * @return a T object.
-     */
     public T highlightDetailOddRows() {
         return setHighlightDetailOddRows(true);
     }
 
-    /**
-     * <p>setHighlightDetailOddRows.</p>
-     *
-     * @param highlightDetailOddRows a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setHighlightDetailOddRows(Boolean highlightDetailOddRows) {
         getObject().setHighlightDetailOddRows(highlightDetailOddRows);
         return (T) this;
     }
 
-    /**
-     * <p>setDetailOddRowStyle.</p>
-     *
-     * @param detailOddRowStyle a {@link net.sf.dynamicreports.report.builder.style.SimpleStyleBuilder} object.
-     * @return a T object.
-     */
     public T setDetailOddRowStyle(SimpleStyleBuilder detailOddRowStyle) {
         if (detailOddRowStyle != null) {
             getObject().setDetailOddRowStyle(detailOddRowStyle.build());
@@ -996,32 +592,15 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>highlightDetailEvenRows.</p>
-     *
-     * @return a T object.
-     */
     public T highlightDetailEvenRows() {
         return setHighlightDetailEvenRows(true);
     }
 
-    /**
-     * <p>setHighlightDetailEvenRows.</p>
-     *
-     * @param highlightDetailEvenRows a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setHighlightDetailEvenRows(Boolean highlightDetailEvenRows) {
         getObject().setHighlightDetailEvenRows(highlightDetailEvenRows);
         return (T) this;
     }
 
-    /**
-     * <p>setDetailEvenRowStyle.</p>
-     *
-     * @param detailEvenRowStyle a {@link net.sf.dynamicreports.report.builder.style.SimpleStyleBuilder} object.
-     * @return a T object.
-     */
     public T setDetailEvenRowStyle(SimpleStyleBuilder detailEvenRowStyle) {
         if (detailEvenRowStyle != null) {
             getObject().setDetailEvenRowStyle(detailEvenRowStyle.build());
@@ -1031,22 +610,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>detailRowHighlighters.</p>
-     *
-     * @param detailRowHighlighters a {@link net.sf.dynamicreports.report.builder.style.ConditionalStyleBuilder} object.
-     * @return a T object.
-     */
     public T detailRowHighlighters(ConditionalStyleBuilder... detailRowHighlighters) {
         return addDetailRowHighlighter(detailRowHighlighters);
     }
 
-    /**
-     * <p>addDetailRowHighlighter.</p>
-     *
-     * @param detailRowHighlighters a {@link net.sf.dynamicreports.report.builder.style.ConditionalStyleBuilder} object.
-     * @return a T object.
-     */
     public T addDetailRowHighlighter(ConditionalStyleBuilder... detailRowHighlighters) {
         Validate.notNull(detailRowHighlighters, "detailRowHighlighters must not be null");
         Validate.noNullElements(detailRowHighlighters, "detailRowHighlighters must not contains null detailRowHighlighter");
@@ -1057,23 +624,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // subtotal
-
-    /**
-     * <p>subtotalsAtTitle.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtTitle(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtTitle(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtTitle.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtTitle(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1083,22 +637,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtPageHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtPageHeader(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtPageHeader(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtPageHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtPageHeader(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1108,22 +650,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtPageFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtPageFooter(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtPageFooter(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtPageFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtPageFooter(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1133,22 +663,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtColumnHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtColumnHeader(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtColumnHeader(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtColumnHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtColumnHeader(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1158,22 +676,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtColumnFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtColumnFooter(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtColumnFooter(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtColumnFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtColumnFooter(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1183,24 +689,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtGroupHeader.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtGroupHeader(GroupBuilder<?> group, SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtGroupHeader(group, subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtGroupHeader.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtGroupHeader(GroupBuilder<?> group, SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(group, "group must not be null");
         Validate.notNull(subtotals, "subtotals must not be null");
@@ -1211,24 +703,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtGroupFooter.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtGroupFooter(GroupBuilder<?> group, SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtGroupFooter(group, subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtGroupFooter.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtGroupFooter(GroupBuilder<?> group, SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(group, "group must not be null");
         Validate.notNull(subtotals, "subtotals must not be null");
@@ -1239,22 +717,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtFirstGroupHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtFirstGroupHeader(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtFirstGroupHeader(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtFirstGroupHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtFirstGroupHeader(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1264,22 +730,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtFirstGroupFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtFirstGroupFooter(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtFirstGroupFooter(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtFirstGroupFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtFirstGroupFooter(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1289,22 +743,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtLastGroupHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtLastGroupHeader(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtLastGroupHeader(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtLastGroupHeader.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtLastGroupHeader(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1314,22 +756,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtLastGroupFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtLastGroupFooter(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtLastGroupFooter(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtLastGroupFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtLastGroupFooter(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1339,22 +769,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtLastPageFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtLastPageFooter(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtLastPageFooter(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtLastPageFooter.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtLastPageFooter(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1364,22 +782,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsAtSummary.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsAtSummary(SubtotalBuilder<?, ?>... subtotals) {
         return addSubtotalAtSummary(subtotals);
     }
 
-    /**
-     * <p>addSubtotalAtSummary.</p>
-     *
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalAtSummary(SubtotalBuilder<?, ?>... subtotals) {
         Validate.notNull(subtotals, "subtotals must not be null");
         Validate.noNullElements(subtotals, "subtotals must not contains null subtotal");
@@ -1389,24 +795,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsOfPercentageAtGroupHeader.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsOfPercentageAtGroupHeader(GroupBuilder<?> group, PercentageSubtotalBuilder... subtotals) {
         return addSubtotalOfPercentageAtGroupHeader(group, subtotals);
     }
 
-    /**
-     * <p>addSubtotalOfPercentageAtGroupHeader.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalOfPercentageAtGroupHeader(GroupBuilder<?> group, PercentageSubtotalBuilder... subtotals) {
         Validate.notNull(group, "group must not be null");
         Validate.notNull(subtotals, "subtotals must not be null");
@@ -1417,24 +809,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>subtotalsOfPercentageAtGroupFooter.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
-     * @return a T object.
-     */
     public T subtotalsOfPercentageAtGroupFooter(GroupBuilder<?> group, PercentageSubtotalBuilder... subtotals) {
         return addSubtotalOfPercentageAtGroupFooter(group, subtotals);
     }
 
-    /**
-     * <p>addSubtotalOfPercentageAtGroupFooter.</p>
-     *
-     * @param group     a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param subtotals a {@link net.sf.dynamicreports.report.builder.subtotal.PercentageSubtotalBuilder} object.
-     * @return a T object.
-     */
     public T addSubtotalOfPercentageAtGroupFooter(GroupBuilder<?> group, PercentageSubtotalBuilder... subtotals) {
         Validate.notNull(group, "group must not be null");
         Validate.notNull(subtotals, "subtotals must not be null");
@@ -1446,13 +824,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // group
-
-    /**
-     * <p>groupBy.</p>
-     *
-     * @param groupColumns a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
-     * @return a T object.
-     */
     public T groupBy(ValueColumnBuilder<?, ?>... groupColumns) {
         Validate.notNull(groupColumns, "groupColumns must not be null");
         Validate.noNullElements(groupColumns, "groupColumns must not contains null groupColumn");
@@ -1462,22 +833,10 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>groupBy.</p>
-     *
-     * @param groups a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @return a T object.
-     */
     public T groupBy(GroupBuilder<?>... groups) {
         return addGroup(groups);
     }
 
-    /**
-     * <p>addGroup.</p>
-     *
-     * @param groups a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @return a T object.
-     */
     public T addGroup(GroupBuilder<?>... groups) {
         Validate.notNull(groups, "groups must not be null");
         Validate.noNullElements(groups, "groups must not contains null group");
@@ -1488,71 +847,36 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     // table of contents
-
-    /**
-     * <p>tableOfContents.</p>
-     *
-     * @return a T object.
-     */
     public T tableOfContents() {
         return setTableOfContents(true);
     }
 
-    /**
-     * <p>tableOfContents.</p>
-     *
-     * @param tableOfContentsCustomizer a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
-     * @return a T object.
-     */
     public T tableOfContents(TableOfContentsCustomizerBuilder tableOfContentsCustomizer) {
         return setTableOfContents(tableOfContentsCustomizer);
     }
 
-    /**
-     * <p>tableOfContents.</p>
-     *
-     * @param tableOfContentsCustomizer a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer} object.
-     * @return a T object.
-     */
     public T tableOfContents(DRITableOfContentsCustomizer tableOfContentsCustomizer) {
         return setTableOfContents(tableOfContentsCustomizer);
     }
 
-    /**
-     * <p>setTableOfContents.</p>
-     *
-     * @param tableOfContents a {@link java.lang.Boolean} object.
-     * @return a T object.
-     */
     public T setTableOfContents(Boolean tableOfContents) {
         getObject().setTableOfContents(tableOfContents);
         return (T) this;
     }
 
-    /**
-     * <p>setTableOfContents.</p>
-     *
-     * @param tableOfContentsCustomizer a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsCustomizerBuilder} object.
-     * @return a T object.
-     */
     public T setTableOfContents(TableOfContentsCustomizerBuilder tableOfContentsCustomizer) {
         getObject().setTableOfContentsCustomizer(tableOfContentsCustomizer.build());
         return setTableOfContents(true);
     }
 
-    /**
-     * <p>setTableOfContents.</p>
-     *
-     * @param tableOfContentsCustomizer a {@link net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer} object.
-     * @return a T object.
-     */
     public T setTableOfContents(DRITableOfContentsCustomizer tableOfContentsCustomizer) {
         getObject().setTableOfContentsCustomizer(tableOfContentsCustomizer);
         return setTableOfContents(true);
     }
 
     /**
-     * Sets a dataset filter expression. The expression must be a type of Boolean
+     * Sets a dataset filter expression.
+     * The expression must be a type of Boolean
      *
      * @param filterExpression the filter expression
      * @return a report builder
@@ -1578,12 +902,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setTitlePrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setTitlePrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getTitleBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -1604,12 +922,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setTitleBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setTitleBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getTitleBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -1617,7 +929,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the title band. The band is printed on the first page and only once.
+     * Adds components to the title band.
+     * The band is printed on the first page and only once.
      *
      * @param components the title components
      * @return a report builder
@@ -1627,7 +940,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the title band. The band is printed on the first page and only once.
+     * Adds components to the title band.
+     * The band is printed on the first page and only once.
      *
      * @param components the title components
      * @return a report builder
@@ -1657,12 +971,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setPageHeaderPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setPageHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getPageHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -1683,12 +991,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setPageHeaderBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setPageHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getPageHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -1696,7 +998,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page header band. The band is printed on each page at the top of the page.
+     * Adds components to the page header band.
+     * The band is printed on each page at the top of the page.
      *
      * @param components the page header components
      * @return a report builder
@@ -1706,7 +1009,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page header band. The band is printed on each page at the top of the page.
+     * Adds components to the page header band.
+     * The band is printed on each page at the top of the page.
      *
      * @param components the page header components
      * @return a report builder
@@ -1736,12 +1040,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setPageFooterPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setPageFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getPageFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -1762,12 +1060,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setPageFooterBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setPageFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getPageFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -1775,7 +1067,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page footer band. The band is printed on each page at the bottom of the page.
+     * Adds components to the page footer band.
+     * The band is printed on each page at the bottom of the page.
      *
      * @param components the page footer components
      * @return a report builder
@@ -1785,7 +1078,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the page footer band. The band is printed on each page at the bottom of the page.
+     * Adds components to the page footer band.
+     * The band is printed on each page at the bottom of the page.
      *
      * @param components the page footer components
      * @return a report builder
@@ -1815,12 +1109,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnHeaderPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setColumnHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getColumnHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -1841,12 +1129,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnHeaderBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setColumnHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getColumnHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -1854,7 +1136,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column header band. The band is printed on each page at the top of the page and it's placed below the page header band.
+     * Adds components to the column header band.
+     * The band is printed on each page at the top of the page and it's placed below the page header band.
      *
      * @param components the column header components
      * @return a report builder
@@ -1864,7 +1147,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column header band. The band is printed on each page at the top of the page and it's placed below the page header band.
+     * Adds components to the column header band.
+     * The band is printed on each page at the top of the page and it's placed below the page header band.
      *
      * @param components the column header components
      * @return a report builder
@@ -1894,12 +1178,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnFooterPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setColumnFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getColumnFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -1920,12 +1198,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setColumnFooterBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setColumnFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getColumnFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -1933,7 +1205,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column footer band. The band is printed on each page at the bottom of the page and it's placed above the page footer band.
+     * Adds components to the column footer band.
+     * The band is printed on each page at the bottom of the page and it's placed above the page footer band.
      *
      * @param components the column footer components
      * @return a report builder
@@ -1943,7 +1216,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the column footer band. The band is printed on each page at the bottom of the page and it's placed above the page footer band.
+     * Adds components to the column footer band.
+     * The band is printed on each page at the bottom of the page and it's placed above the page footer band.
      *
      * @param components the column footer components
      * @return a report builder
@@ -1978,13 +1252,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupHeaderPrintWhenExpression.</p>
-     *
-     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setGroupHeaderPrintWhenExpression(GroupBuilder<?> group, DRIExpression<Boolean> printWhenExpression) {
         Validate.notNull(group, "group must not be null");
         int index = getObject().getGroups().indexOf(group.getGroup());
@@ -2014,13 +1281,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupHeaderBackgroundComponent.</p>
-     *
-     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setGroupHeaderBackgroundComponent(GroupBuilder<?> group, ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         Validate.notNull(group, "group must not be null");
@@ -2032,7 +1292,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group header band. The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
+     * Adds components to the group header band.
+     * The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
      *
      * @param group      the group to which to add the components
      * @param components the group header components
@@ -2043,7 +1304,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group header band. The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
+     * Adds components to the group header band.
+     * The band is printed for each data group. It's placed above the grouped data and between the column header and footer.
      *
      * @param group      the group to which to add the components
      * @param components the group header components
@@ -2083,13 +1345,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupFooterPrintWhenExpression.</p>
-     *
-     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setGroupFooterPrintWhenExpression(GroupBuilder<?> group, DRIExpression<Boolean> printWhenExpression) {
         Validate.notNull(group, "group must not be null");
         int index = getObject().getGroups().indexOf(group.getGroup());
@@ -2119,13 +1374,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setGroupFooterBackgroundComponent.</p>
-     *
-     * @param group               a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setGroupFooterBackgroundComponent(GroupBuilder<?> group, ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         Validate.notNull(group, "group must not be null");
@@ -2137,7 +1385,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group footer band. The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
+     * Adds components to the group footer band.
+     * The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
      *
      * @param group      the group to which to add the components
      * @param components the group footer components
@@ -2148,7 +1397,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the group footer band. The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
+     * Adds components to the group footer band.
+     * The band is printed for each data group. It's placed below the grouped data and between the column header and footer.
      *
      * @param group      the group to which to add the components
      * @param components the group footer components
@@ -2183,12 +1433,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setDetailPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getDetailBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2209,12 +1453,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setDetailBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getDetailBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2222,7 +1460,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail band. The band is printed for each record row in the data source and it's placed between the column header and footer band.
+     * Adds components to the detail band.
+     * The band is printed for each record row in the data source and it's placed between the column header and footer band.
      *
      * @param components the detail components
      * @return a report builder
@@ -2232,7 +1471,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail band. The band is printed for each record row in the data source and it's placed between the column header and footer band.
+     * Adds components to the detail band.
+     * The band is printed for each record row in the data source and it's placed between the column header and footer band.
      *
      * @param components the detail components
      * @return a report builder
@@ -2262,12 +1502,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailHeaderPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setDetailHeaderPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getDetailHeaderBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2288,12 +1522,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailHeaderBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setDetailHeaderBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getDetailHeaderBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2301,7 +1529,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail header band. The band is printed for each record row in the data source and it's placed above the detail band.
+     * Adds components to the detail header band.
+     * The band is printed for each record row in the data source and it's placed above the detail band.
      *
      * @param components the detail header components
      * @return a report builder
@@ -2311,7 +1540,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail header band. The band is printed for each record row in the data source and it's placed above the detail band.
+     * Adds components to the detail header band.
+     * The band is printed for each record row in the data source and it's placed above the detail band.
      *
      * @param components the detail header components
      * @return a report builder
@@ -2341,12 +1571,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailFooterPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setDetailFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getDetailFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2367,12 +1591,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setDetailFooterBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setDetailFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getDetailFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2380,7 +1598,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail footer band. The band is printed for each record row in the data source and it's placed below the detail band.
+     * Adds components to the detail footer band.
+     * The band is printed for each record row in the data source and it's placed below the detail band.
      *
      * @param components the detail footer components
      * @return a report builder
@@ -2390,7 +1609,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the detail footer band. The band is printed for each record row in the data source and it's placed below the detail band.
+     * Adds components to the detail footer band.
+     * The band is printed for each record row in the data source and it's placed below the detail band.
      *
      * @param components the detail footer components
      * @return a report builder
@@ -2420,12 +1640,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setLastPageFooterPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setLastPageFooterPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getLastPageFooterBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2446,12 +1660,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setLastPageFooterBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setLastPageFooterBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getLastPageFooterBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2459,7 +1667,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the last page footer band. The band is printed only on the last page at the bottom of the page.
+     * Adds components to the last page footer band.
+     * The band is printed only on the last page at the bottom of the page.
      *
      * @param components the last page footer components
      * @return a report builder
@@ -2469,7 +1678,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the last page footer band. The band is printed only on the last page at the bottom of the page.
+     * Adds components to the last page footer band.
+     * The band is printed only on the last page at the bottom of the page.
      *
      * @param components the last page footer components
      * @return a report builder
@@ -2499,12 +1709,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setSummaryPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setSummaryPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getSummaryBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2525,12 +1729,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setSummaryBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setSummaryBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getSummaryBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2538,7 +1736,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the summary band. The band is printed on the last page and only once.
+     * Adds components to the summary band.
+     * The band is printed on the last page and only once.
      *
      * @param components the summary components
      * @return a report builder
@@ -2548,7 +1747,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the summary band. The band is printed on the last page and only once.
+     * Adds components to the summary band.
+     * The band is printed on the last page and only once.
      *
      * @param components the summary components
      * @return a report builder
@@ -2578,12 +1778,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setNoDataPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setNoDataPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getNoDataBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2604,12 +1798,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setNoDataBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setNoDataBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getNoDataBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2617,7 +1805,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the no data band. The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
+     * Adds components to the no data band.
+     * The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
      *
      * @param components the no data components
      * @return a report builder
@@ -2627,7 +1816,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the no data band. The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
+     * Adds components to the no data band.
+     * The band is printed only when the data source is empty. It's used to show the information that there are not any data in the report.
      *
      * @param components the no data components
      * @return a report builder
@@ -2657,12 +1847,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setBackgroundPrintWhenExpression.</p>
-     *
-     * @param printWhenExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     * @return a T object.
-     */
     public T setBackgroundPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
         getObject().getBackgroundBand().setPrintWhenExpression(printWhenExpression);
         return (T) this;
@@ -2683,12 +1867,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>setBackgroundBackgroundComponent.</p>
-     *
-     * @param backgroundComponent a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
-     * @return a T object.
-     */
     public T setBackgroundBackgroundComponent(ComponentBuilder<?, ?> backgroundComponent) {
         Validate.notNull(backgroundComponent, "backgroundComponent must not be null");
         getObject().getBackgroundBand().getList().setBackgroundComponent(backgroundComponent.build());
@@ -2696,7 +1874,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the background band. The band is printed on each page. It's mostly used for adding watermarks to the report.
+     * Adds components to the background band.
+     * The band is printed on each page. It's mostly used for adding watermarks to the report.
      *
      * @param components the background components
      * @return a report builder
@@ -2706,7 +1885,8 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
     }
 
     /**
-     * Adds components to the background band. The band is printed on each page. It's mostly used for adding watermarks to the report.
+     * Adds components to the background band.
+     * The band is printed on each page. It's mostly used for adding watermarks to the report.
      *
      * @param components the background components
      * @return a report builder
@@ -2720,11 +1900,6 @@ public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T
         return (T) this;
     }
 
-    /**
-     * <p>getReport.</p>
-     *
-     * @return a {@link net.sf.dynamicreports.report.base.DRReport} object.
-     */
     public DRReport getReport() {
         return build();
     }

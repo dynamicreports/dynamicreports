@@ -63,9 +63,7 @@ public abstract class AbstractValueFormatter<T, U> implements DRIValueFormatter<
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public Class<T> getValueClass() {

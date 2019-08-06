@@ -201,13 +201,13 @@ public class ColumnBuilders {
         return Columns.percentageColumn(title, field);
     }
 
-	/*public PercentageColumnBuilder percentageColumn(DRISimpleExpression<? extends Number> expression) {
-		return Columns.percentageColumn(expression);
-	}
-	
-	public PercentageColumnBuilder percentageColumn(String title, DRISimpleExpression<? extends Number> expression) {
-		return Columns.percentageColumn(title, expression);
-	}*/
+    /*public PercentageColumnBuilder percentageColumn(DRISimpleExpression<? extends Number> expression) {
+        return Columns.percentageColumn(expression);
+    }
+
+    public PercentageColumnBuilder percentageColumn(String title, DRISimpleExpression<? extends Number> expression) {
+        return Columns.percentageColumn(title, expression);
+    }*/
 
     // column row number
 

@@ -38,12 +38,12 @@ import java.math.BigDecimal;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_ClassicSyntax {
+public class SimpleReportClassicSyntax {
 
     /**
      * <p>Constructor for SimpleReport_ClassicSyntax.</p>
      */
-    public SimpleReport_ClassicSyntax() {
+    public SimpleReportClassicSyntax() {
         build();
     }
 
@@ -53,7 +53,7 @@ public class SimpleReport_ClassicSyntax {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_ClassicSyntax();
+        new SimpleReportClassicSyntax();
     }
 
     private void build() {

@@ -64,9 +64,7 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
         this.customRangeMaxValue = customRangeMaxValue;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {

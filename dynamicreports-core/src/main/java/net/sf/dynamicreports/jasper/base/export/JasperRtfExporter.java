@@ -35,9 +35,7 @@ public class JasperRtfExporter extends AbstractJasperExporter implements JasperI
 
     private Boolean ignoreHyperLink;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;

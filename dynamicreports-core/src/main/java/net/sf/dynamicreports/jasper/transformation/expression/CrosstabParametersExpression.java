@@ -51,9 +51,7 @@ public class CrosstabParametersExpression extends AbstractDesignSimpleExpression
         this.parameters = parameters;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Object evaluate(ReportParameters reportParameters) {
         Map<String, Object> parameters = new HashMap<String, Object>(this.parameters);
@@ -61,9 +59,7 @@ public class CrosstabParametersExpression extends AbstractDesignSimpleExpression
         return parameters;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return Map.class;

@@ -44,9 +44,7 @@ public class DRDesignRectangle extends DRDesignComponent implements DRIDesignRec
         super("rectangle");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getRadius() {
         return radius;
@@ -61,9 +59,7 @@ public class DRDesignRectangle extends DRDesignComponent implements DRIDesignRec
         this.radius = radius;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignPen getPen() {
         return pen;

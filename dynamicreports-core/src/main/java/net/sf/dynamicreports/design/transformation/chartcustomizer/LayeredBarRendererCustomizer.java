@@ -54,9 +54,7 @@ public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Seriali
         this.seriesBarWidths = seriesBarWidths;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();

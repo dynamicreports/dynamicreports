@@ -40,13 +40,12 @@ public class MultiplyExpression extends CalculationExpression {
      * <p>Constructor for MultiplyExpression.</p>
      *
      * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     */ public MultiplyExpression(DRIExpression<? extends Number>... expressions) {
+     */
+    public MultiplyExpression(DRIExpression<? extends Number>... expressions) {
         super(expressions);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.multiply(value2);

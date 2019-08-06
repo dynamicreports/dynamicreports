@@ -51,9 +51,7 @@ public class PropertyExpression implements DRIPropertyExpression {
         this.valueExpression = valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
@@ -68,9 +66,7 @@ public class PropertyExpression implements DRIPropertyExpression {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getValueExpression() {
         return valueExpression;

@@ -57,9 +57,7 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
         this.max = max;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Number actualValue = reportParameters.getValue(value);
@@ -69,9 +67,7 @@ public abstract class AbstractBetweenValueExpression<T extends Number> extends A
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

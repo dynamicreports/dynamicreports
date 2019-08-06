@@ -36,9 +36,7 @@ public class DRChartTitle extends DRChartSubtitle implements DRIChartTitle {
 
     private Position position;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Position getPosition() {
         return position;

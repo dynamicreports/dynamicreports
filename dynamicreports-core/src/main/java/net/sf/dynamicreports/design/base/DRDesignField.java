@@ -45,9 +45,7 @@ public class DRDesignField implements DRIDesignField {
         this.external = false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
@@ -62,9 +60,7 @@ public class DRDesignField implements DRIDesignField {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return valueClass;
@@ -79,9 +75,7 @@ public class DRDesignField implements DRIDesignField {
         this.valueClass = valueClass;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean isExternal() {
         return external;
@@ -96,9 +90,7 @@ public class DRDesignField implements DRIDesignField {
         this.external = external;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getDescription() {
         return description;

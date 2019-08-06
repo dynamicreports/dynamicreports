@@ -36,9 +36,7 @@ public class DRDataMatrixBarcode extends DRBarcode4j implements DRIDataMatrixBar
 
     private BarcodeShape shape;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeShape getShape() {
         return shape;

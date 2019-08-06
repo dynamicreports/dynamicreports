@@ -128,7 +128,7 @@ public class CustomPercentageCrosstabReport {
         return dataSource;
     }
 
-    private class PercentageExpression extends AbstractComplexExpression<BigDecimal> {
+    private final class PercentageExpression extends AbstractComplexExpression<BigDecimal> {
         private static final long serialVersionUID = 1L;
 
         private PercentageExpression(CrosstabMeasureBuilder<BigDecimal> unitPriceMeasure, CrosstabColumnGroupBuilder<String> columnGroup) {

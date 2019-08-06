@@ -21,6 +21,8 @@
  */
 package net.sf.dynamicreports.examples.gettingstarted;
 
+import net.sf.dynamicreports.report.builder.column.PercentageColumnBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -33,21 +35,22 @@ import java.math.BigDecimal;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * <p>SimpleReport_Step02 class.</p>
+ * <p>SimpleReport_Step05 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step02 {
+public class SimpleReportStep05 {
 
     /**
-     * <p>Constructor for SimpleReport_Step02.</p>
+     * <p>Constructor for SimpleReport_Step05.</p>
      */
-    public SimpleReport_Step02() {
+    public SimpleReportStep05() {
         build();
     }
 
@@ -57,24 +60,38 @@ public class SimpleReport_Step02 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step02();
+        new SimpleReportStep05();
     }
 
     private void build() {
         StyleBuilder boldStyle = stl.style().bold();
         StyleBuilder boldCenteredStyle = stl.style(boldStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
+
+        // title, field name data type
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
+        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
+        TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
+        // price = unitPrice * quantity
+        TextColumnBuilder<BigDecimal> priceColumn = unitPriceColumn.multiply(quantityColumn).setTitle("Price");
+        PercentageColumnBuilder pricePercColumn = col.percentageColumn("Price %", priceColumn);
+        TextColumnBuilder<Integer> rowNumberColumn = col.reportRowNumberColumn("No.")
+                                                        // sets the fixed width of a column, width = 2 * character width
+                                                        .setFixedColumns(2).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
+                    .setSubtotalStyle(boldStyle)
                     .highlightDetailEvenRows()
                     .columns(// add columns
-                             // title, field name data type
-                             col.column("Item", "item", type.stringType()), col.column("Quantity", "quantity", type.integerType()), col.column("Unit price", "unitprice", type.bigDecimalType()))
+                             rowNumberColumn, itemColumn, quantityColumn, unitPriceColumn, priceColumn, pricePercColumn)
+                    .groupBy(itemColumn)
+                    .subtotalsAtSummary(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
+                    .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

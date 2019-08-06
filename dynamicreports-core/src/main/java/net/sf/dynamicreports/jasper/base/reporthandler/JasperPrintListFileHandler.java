@@ -74,9 +74,7 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
         tempFiles = new ArrayList<File>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void add(JasperPrint jasperPrint) {
         try {
@@ -90,17 +88,13 @@ public class JasperPrintListFileHandler extends AbstractPrintListHandler {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<JasperPrint> getPrintList() {
         return printList;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void finalize() throws Throwable {
         for (File tempFile : tempFiles) {

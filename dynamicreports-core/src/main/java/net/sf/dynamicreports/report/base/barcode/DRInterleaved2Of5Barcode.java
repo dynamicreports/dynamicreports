@@ -36,9 +36,7 @@ public class DRInterleaved2Of5Barcode extends DRChecksumBarcode implements DRIIn
     private Boolean displayChecksum;
     private Double wideFactor;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getDisplayChecksum() {
         return displayChecksum;
@@ -53,9 +51,7 @@ public class DRInterleaved2Of5Barcode extends DRChecksumBarcode implements DRIIn
         this.displayChecksum = displayChecksum;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getWideFactor() {
         return wideFactor;

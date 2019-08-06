@@ -60,17 +60,13 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;
@@ -85,9 +81,7 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.valueExpression = valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getInitialValueExpression() {
         return initialValueExpression;
@@ -102,9 +96,7 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.initialValueExpression = initialValueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Calculation getCalculation() {
         return calculation;
@@ -119,9 +111,7 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.calculation = calculation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ResetType getResetType() {
         return resetType;
@@ -136,9 +126,7 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.resetType = resetType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignGroup getResetGroup() {
         return resetGroup;
@@ -153,9 +141,7 @@ public class DRDesignVariable implements DRIDesignVariable {
         this.resetGroup = resetGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return ReportUtils.getVariableValueClass(calculation, valueExpression.getValueClass());

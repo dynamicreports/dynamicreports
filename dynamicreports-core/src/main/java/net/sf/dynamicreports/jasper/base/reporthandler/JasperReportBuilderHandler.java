@@ -47,9 +47,7 @@ public class JasperReportBuilderHandler implements JasperReportHandler {
         continuousPageNumbering = false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void concatenate(JasperReportBuilder... jasperReportBuilders) {
         for (JasperReportBuilder jasperReportBuilder : jasperReportBuilders) {
@@ -57,17 +55,13 @@ public class JasperReportBuilderHandler implements JasperReportHandler {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void setContinuousPageNumbering(boolean continuousPageNumbering) {
         this.continuousPageNumbering = continuousPageNumbering;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<JasperPrint> getPrintList() throws DRException {
         List<JasperPrint> printList = new ArrayList<JasperPrint>();

@@ -354,9 +354,7 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return build().getExpression().getName();

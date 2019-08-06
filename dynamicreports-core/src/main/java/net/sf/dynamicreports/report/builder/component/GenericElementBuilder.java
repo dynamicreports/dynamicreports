@@ -40,6 +40,7 @@ public class GenericElementBuilder extends DimensionComponentBuilder<GenericElem
      * <p>Constructor for GenericElementBuilder.</p>
      *
      * @param namespace a {@link java.lang.String} object.
+     * @param namespace a {@link java.lang.String} object.
      * @param name      a {@link java.lang.String} object.
      */
     protected GenericElementBuilder(String namespace, String name) {

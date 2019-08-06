@@ -41,26 +41,23 @@ public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
 
     @SuppressWarnings("unchecked")
     /**
-     * <p>Constructor for DRDesignValueFormatter.</p>
+     * Constructor for DRDesignValueFormatter.
      *
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
-     */ public DRDesignValueFormatter(DRIValueFormatter<?, ?> valueFormatter, DRIDesignExpression valueExpression) {
+     */
+    public DRDesignValueFormatter(DRIValueFormatter<?, ?> valueFormatter, DRIDesignExpression valueExpression) {
         this.valueFormatter = (DRIValueFormatter<?, Object>) valueFormatter;
         addExpression(valueExpression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
         return valueFormatter.format(values.get(0), reportParameters);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return valueFormatter.getValueClass();

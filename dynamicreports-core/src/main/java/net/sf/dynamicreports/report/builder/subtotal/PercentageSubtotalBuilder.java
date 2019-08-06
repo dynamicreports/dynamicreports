@@ -112,9 +112,7 @@ public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSub
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         if (getObject().getValueField().getDataType() == null) {

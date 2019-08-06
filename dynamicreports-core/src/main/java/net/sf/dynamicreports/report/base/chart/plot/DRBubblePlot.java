@@ -36,9 +36,7 @@ public class DRBubblePlot extends DRAxisPlot implements DRIBubblePlot {
 
     private ScaleType scaleType;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ScaleType getScaleType() {
         return scaleType;

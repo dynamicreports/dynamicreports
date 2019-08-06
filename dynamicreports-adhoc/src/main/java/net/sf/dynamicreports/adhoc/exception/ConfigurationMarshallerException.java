@@ -34,13 +34,13 @@ import java.io.OutputStream;
  * <pre>
  *     {@code
  *     try {
- * 			Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
- * 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
- * 			element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
- * 			marshaller.marshal(element, new StreamResult(outputStream));
- * 		} catch (JAXBException e) {
- * 			throw new ConfigurationMarshallerException(element, outputStream);
- * 		}
+ *          Marshaller marshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createMarshaller();
+ *          marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+ *          element = new net.sf.dynamicreports.adhoc.xmlconfiguration.ObjectFactory().createConfiguration(xmlAdhocConfiguration);
+ *          marshaller.marshal(element, new StreamResult(outputStream));
+ *       } catch (JAXBException e) {
+ *         throw new ConfigurationMarshallerException(element, outputStream);
+ *       }
  *     }
  * </pre>
  * The constructor only accepts two parameters being the {@link JAXBElement} that was being marshalled and the {@link OutputStream} into which we are marshalling the element.
@@ -58,4 +58,12 @@ public class ConfigurationMarshallerException extends DRException {
         super(String.format("Exception encountered while marshalling the JAXBElement : %s into the outputStream : %s", element, new StreamResult(outputStream)));
     }
 
+    /**
+     * <p>Constructor for DRException.</p>
+     *
+     * @param message a {@link String} object.
+     */
+    public ConfigurationMarshallerException(String message) {
+        super(message);
+    }
 }

@@ -44,17 +44,13 @@ public class DRBooleanColumn extends DRColumn<DRIBooleanField> implements DRIBoo
         super(booleanField);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getComponent().getValueExpression().getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

@@ -52,9 +52,7 @@ public abstract class AbstractValuesExpression<T extends Number> extends Abstrac
         this.numbers = numbers;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Number actualValue = reportParameters.getValue(value);
@@ -64,9 +62,7 @@ public abstract class AbstractValuesExpression<T extends Number> extends Abstrac
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

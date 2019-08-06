@@ -34,9 +34,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 public class ReportRowNumberExpression extends AbstractSimpleExpression<Integer> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer evaluate(ReportParameters reportParameters) {
         return reportParameters.getReportRowNumber();

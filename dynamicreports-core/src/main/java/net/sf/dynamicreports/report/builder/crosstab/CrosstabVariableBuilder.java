@@ -81,9 +81,7 @@ public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariable
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getObject().getName();

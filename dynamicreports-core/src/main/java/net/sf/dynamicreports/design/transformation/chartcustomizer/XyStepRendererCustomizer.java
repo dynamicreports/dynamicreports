@@ -50,9 +50,7 @@ public class XyStepRendererCustomizer implements DRIChartCustomizer, Serializabl
         this.stepPoint = stepPoint;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();

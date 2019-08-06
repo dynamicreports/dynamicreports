@@ -45,9 +45,7 @@ public class GroupRowNumberExpression extends AbstractSimpleExpression<Integer> 
         this.groupName = groupName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer evaluate(ReportParameters reportParameters) {
         return reportParameters.getGroupCount(groupName);

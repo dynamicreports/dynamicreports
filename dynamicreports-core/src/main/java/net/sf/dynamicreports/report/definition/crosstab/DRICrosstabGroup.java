@@ -43,9 +43,7 @@ import java.util.List;
  */
 public interface DRICrosstabGroup<T> extends DRISystemExpression<T> {
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName();
 

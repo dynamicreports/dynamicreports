@@ -64,6 +64,7 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
      *
      * @param pageWidthExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      * @param reportExpression    a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
+     * @param pageWidthExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      * @param pageWidth           a {@link java.lang.Integer} object.
      */
     public SubreportExpression(DRIDesignExpression pageWidthExpression, DRIDesignExpression reportExpression, Integer pageWidth) {
@@ -75,9 +76,7 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
         jasperReports = new HashMap<ReportBuilder<?>, JasperReport>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
         reportBuilder = (ReportBuilder<?>) values.get(1);
@@ -124,17 +123,13 @@ public class SubreportExpression extends AbstractDesignComplexExpression {
         return reportBuilder;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return JasperReport.class;

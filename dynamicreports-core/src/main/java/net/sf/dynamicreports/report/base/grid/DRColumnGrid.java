@@ -53,9 +53,7 @@ public class DRColumnGrid implements DRIColumnGrid {
         this.list = new DRColumnGridList(type);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRColumnGridList getList() {
         return list;

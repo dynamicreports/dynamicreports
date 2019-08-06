@@ -42,9 +42,7 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
     private Calculation calculation;
     private CrosstabPercentageType percentageType;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
@@ -59,9 +57,7 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;
@@ -76,9 +72,7 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
         this.valueExpression = valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Calculation getCalculation() {
         return calculation;
@@ -93,9 +87,7 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
         this.calculation = calculation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public CrosstabPercentageType getPercentageType() {
         return percentageType;
@@ -110,9 +102,7 @@ public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
         this.percentageType = percentageType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         if (percentageType != null && percentageType.equals(CrosstabPercentageType.GRAND_TOTAL) && !calculation.equals(Calculation.COUNT) && !calculation.equals(Calculation.DISTINCT_COUNT)) {

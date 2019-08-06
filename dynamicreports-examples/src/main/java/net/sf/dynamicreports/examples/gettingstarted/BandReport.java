@@ -93,7 +93,7 @@ public class BandReport {
                     .background(createTextField("This is a background band").setHeight(800).setStyle(backgroundStyle))
 
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

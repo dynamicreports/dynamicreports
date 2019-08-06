@@ -34,9 +34,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 public class CrosstabRowCount extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         CrosstabRowCounter counter = reportParameters.getValue(ReportParameters.CROSSTAB_ROW_COUNTER);

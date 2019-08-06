@@ -46,9 +46,7 @@ public class DRValueColumn<T> extends DRColumn<DRITextField<T>> implements DRIVa
         super(valueField);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getPrintRepeatedDetailValues() {
         return printRepeatedDetailValues;
@@ -63,17 +61,13 @@ public class DRValueColumn<T> extends DRColumn<DRITextField<T>> implements DRIVa
         this.printRepeatedDetailValues = printRepeatedDetailValues;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getComponent().getValueExpression().getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<? super T> getValueClass() {
         return getComponent().getValueExpression().getValueClass();

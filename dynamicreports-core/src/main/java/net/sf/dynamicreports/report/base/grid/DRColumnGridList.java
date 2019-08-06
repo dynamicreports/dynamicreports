@@ -62,9 +62,7 @@ public class DRColumnGridList implements DRIColumnGridList {
         this.listCells = new ArrayList<DRColumnGridListCell>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRColumnGridListCell> getListCells() {
         return listCells;
@@ -100,9 +98,7 @@ public class DRColumnGridList implements DRIColumnGridList {
         listCells.add(new DRColumnGridListCell(horizontalAlignment, verticalAlignment, component));
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ListType getType() {
         return type;
@@ -118,9 +114,7 @@ public class DRColumnGridList implements DRIColumnGridList {
         this.type = type;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getGap() {
         return gap;

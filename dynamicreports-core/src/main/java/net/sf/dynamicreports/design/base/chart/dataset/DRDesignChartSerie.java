@@ -38,9 +38,7 @@ public abstract class DRDesignChartSerie implements DRIDesignChartSerie {
     private DRIDesignExpression seriesExpression;
     private DRIDesignHyperLink itemHyperLink;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getSeriesExpression() {
         return seriesExpression;
@@ -55,9 +53,7 @@ public abstract class DRDesignChartSerie implements DRIDesignChartSerie {
         this.seriesExpression = seriesExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignHyperLink getItemHyperLink() {
         return itemHyperLink;

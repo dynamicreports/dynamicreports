@@ -96,4 +96,12 @@ public class GeoMapData {
         }
         return location.equals(((GeoMapData) obj).location);
     }
+
+    @Override
+    public int hashCode() {
+        int result = getLocation() != null ? getLocation().hashCode() : 0;
+        result = 31 * result + (getValue() != null ? getValue().hashCode() : 0);
+        result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+        return result;
+    }
 }

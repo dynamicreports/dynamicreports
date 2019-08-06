@@ -97,6 +97,13 @@ public class AdhocConfiguration implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getReport() != null ? getReport().hashCode() : 0;
+        result = 31 * result + (getFilter() != null ? getFilter().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

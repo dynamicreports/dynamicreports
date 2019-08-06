@@ -43,9 +43,7 @@ public class GreaterOrEqualsValueExpression<T extends Number> extends AbstractVa
         super(value, number);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected Boolean compare(Number actualValue, Number number) {
         return actualValue.doubleValue() >= number.doubleValue();

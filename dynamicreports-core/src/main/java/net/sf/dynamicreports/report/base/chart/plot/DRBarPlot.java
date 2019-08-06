@@ -37,9 +37,7 @@ public class DRBarPlot extends DRAxisPlot implements DRIBarPlot {
     private Boolean showTickLabels;
     private Boolean showLabels;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowLabels() {
         return showLabels;
@@ -54,9 +52,7 @@ public class DRBarPlot extends DRAxisPlot implements DRIBarPlot {
         this.showLabels = showLabels;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowTickLabels() {
         return showTickLabels;
@@ -71,9 +67,7 @@ public class DRBarPlot extends DRAxisPlot implements DRIBarPlot {
         this.showTickLabels = showTickLabels;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowTickMarks() {
         return showTickMarks;

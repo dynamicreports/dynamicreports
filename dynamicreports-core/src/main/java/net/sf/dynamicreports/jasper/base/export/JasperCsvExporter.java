@@ -36,9 +36,7 @@ public class JasperCsvExporter extends AbstractJasperExporter implements JasperI
     private String fieldDelimiter;
     private String recordDelimiter;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getFieldDelimiter() {
         return fieldDelimiter;
@@ -53,9 +51,7 @@ public class JasperCsvExporter extends AbstractJasperExporter implements JasperI
         this.fieldDelimiter = fieldDelimiter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getRecordDelimiter() {
         return recordDelimiter;

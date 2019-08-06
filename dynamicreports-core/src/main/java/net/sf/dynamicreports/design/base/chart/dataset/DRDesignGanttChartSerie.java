@@ -39,9 +39,7 @@ public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDe
     private DRIDesignExpression percentExpression;
     private DRIDesignExpression labelExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getStartDateExpression() {
         return startDateExpression;
@@ -56,9 +54,7 @@ public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDe
         this.startDateExpression = startDateExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getEndDateExpression() {
         return endDateExpression;
@@ -73,9 +69,7 @@ public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDe
         this.endDateExpression = endDateExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getPercentExpression() {
         return percentExpression;
@@ -90,9 +84,7 @@ public class DRDesignGanttChartSerie extends DRDesignChartSerie implements DRIDe
         this.percentExpression = percentExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLabelExpression() {
         return labelExpression;

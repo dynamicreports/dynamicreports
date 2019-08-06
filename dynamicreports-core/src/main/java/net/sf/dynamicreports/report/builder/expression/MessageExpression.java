@@ -57,9 +57,7 @@ public class MessageExpression extends AbstractSimpleExpression<String> {
         this.arguments = arguments;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(ReportParameters reportParameters) {
         return reportParameters.getMessage(key, arguments);

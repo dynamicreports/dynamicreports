@@ -36,9 +36,7 @@ public class DRDesignTableOfContentsHeading implements DRIDesignTableOfContentsH
 
     private DRDesignTextField referenceField;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignTextField getReferenceField() {
         return referenceField;

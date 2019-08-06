@@ -91,25 +91,19 @@ public class DRGroup implements DRIGroup {
         footerBand = new DRBand();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRTextField<?> getValueField() {
         return valueField;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getTitleExpression() {
         return titleExpression;
@@ -124,9 +118,7 @@ public class DRGroup implements DRIGroup {
         this.titleExpression = titleExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIReportStyle getTitleStyle() {
         return titleStyle;
@@ -141,9 +133,7 @@ public class DRGroup implements DRIGroup {
         this.titleStyle = titleStyle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getTitleWidth() {
         return titleWidth;
@@ -158,9 +148,7 @@ public class DRGroup implements DRIGroup {
         this.titleWidth = titleWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public GroupHeaderLayout getHeaderLayout() {
         return headerLayout;
@@ -175,9 +163,7 @@ public class DRGroup implements DRIGroup {
         this.headerLayout = headerLayout;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getHideColumn() {
         return hideColumn;
@@ -192,9 +178,7 @@ public class DRGroup implements DRIGroup {
         this.hideColumn = hideColumn;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getGroupByDataType() {
         return groupByDataType;
@@ -209,9 +193,7 @@ public class DRGroup implements DRIGroup {
         this.groupByDataType = groupByDataType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowColumnHeaderAndFooter() {
         return showColumnHeaderAndFooter;
@@ -226,9 +208,7 @@ public class DRGroup implements DRIGroup {
         this.showColumnHeaderAndFooter = showColumnHeaderAndFooter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getAddToTableOfContents() {
         return addToTableOfContents;
@@ -243,9 +223,7 @@ public class DRGroup implements DRIGroup {
         this.addToTableOfContents = addToTableOfContents;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<Boolean> getPrintSubtotalsWhenExpression() {
         return printSubtotalsWhenExpression;
@@ -260,9 +238,7 @@ public class DRGroup implements DRIGroup {
         this.printSubtotalsWhenExpression = printSubtotalsWhenExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPadding() {
         return padding;
@@ -280,9 +256,7 @@ public class DRGroup implements DRIGroup {
         this.padding = padding;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getStartInNewPage() {
         return startInNewPage;
@@ -297,9 +271,7 @@ public class DRGroup implements DRIGroup {
         this.startInNewPage = startInNewPage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getStartInNewColumn() {
         return startInNewColumn;
@@ -314,9 +286,7 @@ public class DRGroup implements DRIGroup {
         this.startInNewColumn = startInNewColumn;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getReprintHeaderOnEachPage() {
         return reprintHeaderOnEachPage;
@@ -331,9 +301,7 @@ public class DRGroup implements DRIGroup {
         this.reprintHeaderOnEachPage = reprintHeaderOnEachPage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getResetPageNumber() {
         return resetPageNumber;
@@ -348,9 +316,7 @@ public class DRGroup implements DRIGroup {
         this.resetPageNumber = resetPageNumber;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getMinHeightToStartNewPage() {
         return minHeightToStartNewPage;
@@ -365,9 +331,7 @@ public class DRGroup implements DRIGroup {
         this.minHeightToStartNewPage = minHeightToStartNewPage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public GroupFooterPosition getFooterPosition() {
         return footerPosition;
@@ -382,9 +346,7 @@ public class DRGroup implements DRIGroup {
         this.footerPosition = footerPosition;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getKeepTogether() {
         return keepTogether;
@@ -399,9 +361,7 @@ public class DRGroup implements DRIGroup {
         this.keepTogether = keepTogether;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getHeaderWithSubtotal() {
         return headerWithSubtotal;
@@ -416,17 +376,13 @@ public class DRGroup implements DRIGroup {
         this.headerWithSubtotal = headerWithSubtotal;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRBand getHeaderBand() {
         return headerBand;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRBand getFooterBand() {
         return footerBand;

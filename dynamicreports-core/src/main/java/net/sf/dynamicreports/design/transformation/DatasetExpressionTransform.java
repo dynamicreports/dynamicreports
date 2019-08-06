@@ -50,41 +50,31 @@ public class DatasetExpressionTransform extends AbstractExpressionTransform {
         this.dataset = dataset;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected ResetType getVariableResetType(DRIVariable<?> variable) {
         return ResetType.REPORT;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected List<? extends DRIField<?>> transformFields() {
         return dataset.getFields();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected List<? extends DRIVariable<?>> transformVariables() {
         return dataset.getVariables();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected List<? extends DRISort> transformSorts() {
         return dataset.getSorts();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected DRIDesignDataset getDataset() {
         return accessor.getDatasetTransform().getDesignDataset(dataset);

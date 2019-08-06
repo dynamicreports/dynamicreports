@@ -36,9 +36,7 @@ public abstract class DRChecksumBarcode extends DRBarcode4j implements DRIChecks
 
     private BarcodeChecksumMode checksumMode;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeChecksumMode getChecksumMode() {
         return checksumMode;

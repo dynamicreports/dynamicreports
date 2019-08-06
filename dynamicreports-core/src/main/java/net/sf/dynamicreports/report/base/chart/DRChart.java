@@ -85,9 +85,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         setChartType(chartType);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
@@ -97,9 +95,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         this.legend = new DRChartLegend();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ChartType getChartType() {
         return chartType;
@@ -218,25 +214,19 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRChartDataset getDataset() {
         return dataset;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIPlot getPlot() {
         return plot;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIChartCustomizer> getCustomizers() {
         return customizers;
@@ -260,9 +250,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         this.customizers.add(customizer);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRChartTitle getTitle() {
         return title;
@@ -278,9 +266,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         this.title = title;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRChartSubtitle getSubtitle() {
         return subtitle;
@@ -296,9 +282,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         this.subtitle = subtitle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRChartLegend getLegend() {
         return legend;
@@ -314,9 +298,7 @@ public class DRChart extends DRHyperLinkComponent implements DRIChart {
         this.legend = legend;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getTheme() {
         return theme;

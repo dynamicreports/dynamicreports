@@ -39,9 +39,7 @@ public class DRDesignBorder implements DRIDesignBorder {
     private DRDesignPen bottomPen;
     private DRDesignPen rightPen;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignPen getTopPen() {
         return topPen;
@@ -56,9 +54,7 @@ public class DRDesignBorder implements DRIDesignBorder {
         this.topPen = topPen;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignPen getLeftPen() {
         return leftPen;
@@ -73,9 +69,7 @@ public class DRDesignBorder implements DRIDesignBorder {
         this.leftPen = leftPen;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignPen getBottomPen() {
         return bottomPen;
@@ -90,9 +84,7 @@ public class DRDesignBorder implements DRIDesignBorder {
         this.bottomPen = bottomPen;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignPen getRightPen() {
         return rightPen;
@@ -107,9 +99,7 @@ public class DRDesignBorder implements DRIDesignBorder {
         this.rightPen = rightPen;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

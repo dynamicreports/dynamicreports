@@ -21,20 +21,25 @@
 package net.sf.dynamicreports.jasper.base;
 
 /**
- * Simple, default implementation of {@link JasperScriptletManager}.
+ * Simple, default implementation of {@link net.sf.dynamicreports.jasper.base.JasperScriptletManager}.
+ *
+ * @author edwin.njeru
+ * @version 6.0.1-SNAPSHOT
  */
 public class DefaultJasperScriptletManager implements JasperScriptletManager {
 
-  private JasperScriptlet jasperScriptlet;
+    private JasperScriptlet jasperScriptlet;
 
-  @Override
-  public void setJasperScriptlet(JasperScriptlet jasperScriptlet) {
-    this.jasperScriptlet = jasperScriptlet;
-  }
+    /** {@inheritDoc} */
+    @Override
+    public JasperScriptlet getJasperScriptlet() {
+        return jasperScriptlet;
+    }
 
-  @Override
-  public JasperScriptlet getJasperScriptlet() {
-    return jasperScriptlet;
-  }
+    /** {@inheritDoc} */
+    @Override
+    public void setJasperScriptlet(JasperScriptlet jasperScriptlet) {
+        this.jasperScriptlet = jasperScriptlet;
+    }
 
 }

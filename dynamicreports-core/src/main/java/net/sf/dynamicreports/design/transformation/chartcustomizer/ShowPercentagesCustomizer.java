@@ -41,9 +41,7 @@ import java.io.Serializable;
 public class ShowPercentagesCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {

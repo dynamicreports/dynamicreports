@@ -47,9 +47,7 @@ public class SystemMessageExpression extends AbstractSimpleExpression<String> {
         this.key = key;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(ReportParameters reportParameters) {
         return ResourceBundle.getBundle(Constants.RESOURCE_BUNDLE_NAME, reportParameters.getLocale()).getString(key);

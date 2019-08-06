@@ -132,7 +132,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      *
      * @param width the label component preferred width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelWidth(Integer width) {
@@ -145,7 +145,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      *
      * @param width the label component fixed width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelFixedWidth(Integer width) {
@@ -159,7 +159,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
      *
      * @param width the label component minimum width >= 0
      * @return a T object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setLabelMinWidth(Integer width) {
@@ -383,9 +383,7 @@ public abstract class BaseSubtotalBuilder<T extends BaseSubtotalBuilder<T, U>, U
         return (T) this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         super.configure();

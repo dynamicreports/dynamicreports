@@ -38,9 +38,7 @@ public class HorizontalFlowListBuilder extends HorizontalListBuilder {
     protected HorizontalFlowListBuilder() {
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         newFlowRow();

@@ -133,6 +133,11 @@ public class AdhocFilter implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        return getRestrictions() != null ? getRestrictions().hashCode() : 0;
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -49,9 +49,7 @@ public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesi
         super("image");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getImageExpression() {
         return imageExpression;
@@ -66,9 +64,7 @@ public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesi
         this.imageExpression = imageExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ImageScale getImageScale() {
         return imageScale;
@@ -83,9 +79,7 @@ public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesi
         this.imageScale = imageScale;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getUsingCache() {
         return usingCache;
@@ -100,9 +94,7 @@ public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesi
         this.usingCache = usingCache;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getLazy() {
         return lazy;
@@ -117,9 +109,7 @@ public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesi
         this.lazy = lazy;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalImageAlignment getHorizontalImageAlignment() {
         return horizontalImageAlignment;

@@ -53,9 +53,7 @@ public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Bo
         this.emptyWhenNullValue = emptyWhenNullValue;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String format(Boolean value, ReportParameters reportParameters) {
         if (emptyWhenNullValue && value == null) {

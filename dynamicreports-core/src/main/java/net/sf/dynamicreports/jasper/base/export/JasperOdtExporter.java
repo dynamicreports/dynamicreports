@@ -36,9 +36,7 @@ public class JasperOdtExporter extends AbstractJasperExporter implements JasperI
     private Boolean flexibleRowHeight;
     private Boolean ignoreHyperLink;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getFlexibleRowHeight() {
         return flexibleRowHeight;
@@ -53,9 +51,7 @@ public class JasperOdtExporter extends AbstractJasperExporter implements JasperI
         this.flexibleRowHeight = flexibleRowHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;

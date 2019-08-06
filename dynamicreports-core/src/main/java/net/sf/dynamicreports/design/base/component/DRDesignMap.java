@@ -49,9 +49,7 @@ public class DRDesignMap extends DRDesignComponent implements DRIDesignMap {
         super("map");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public EvaluationTime getEvaluationTime() {
         return evaluationTime;
@@ -66,9 +64,7 @@ public class DRDesignMap extends DRDesignComponent implements DRIDesignMap {
         this.evaluationTime = evaluationTime;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignGroup getEvaluationGroup() {
         return evaluationGroup;
@@ -83,9 +79,7 @@ public class DRDesignMap extends DRDesignComponent implements DRIDesignMap {
         this.evaluationGroup = evaluationGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLatitudeExpression() {
         return latitudeExpression;
@@ -100,9 +94,7 @@ public class DRDesignMap extends DRDesignComponent implements DRIDesignMap {
         this.latitudeExpression = latitudeExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getLongitudeExpression() {
         return longitudeExpression;
@@ -117,9 +109,7 @@ public class DRDesignMap extends DRDesignComponent implements DRIDesignMap {
         this.longitudeExpression = longitudeExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getZoomExpression() {
         return zoomExpression;

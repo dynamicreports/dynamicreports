@@ -21,11 +21,14 @@
  */
 package net.sf.dynamicreports.examples.gettingstarted;
 
+import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.report.builder.chart.Bar3DChartBuilder;
 import net.sf.dynamicreports.report.builder.column.PercentageColumnBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
+import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -36,24 +39,26 @@ import java.math.BigDecimal;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * <p>SimpleReport_Step07 class.</p>
+ * <p>SimpleReport_Step09 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step07 {
+public class SimpleReportStep09 {
 
     /**
-     * <p>Constructor for SimpleReport_Step07.</p>
+     * <p>Constructor for SimpleReport_Step09.</p>
      */
-    public SimpleReport_Step07() {
+    public SimpleReportStep09() {
         build();
     }
 
@@ -63,13 +68,14 @@ public class SimpleReport_Step07 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step07();
+        new SimpleReportStep09();
     }
 
     private void build() {
         StyleBuilder boldStyle = stl.style().bold();
         StyleBuilder boldCenteredStyle = stl.style(boldStyle).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
+        StyleBuilder titleStyle = stl.style(boldCenteredStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE).setFontSize(15);
 
         // title, field name data type
         TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
@@ -83,6 +89,8 @@ public class SimpleReport_Step07 {
                                                         .setFixedColumns(2).setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
         Bar3DChartBuilder itemChart = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
         Bar3DChartBuilder itemChart2 = cht.bar3DChart().setTitle("Sales by item").setCategory(itemColumn).setUseSeriesAsCategory(true).addSerie(cht.serie(unitPriceColumn), cht.serie(priceColumn));
+        ColumnGroupBuilder itemGroup = grp.group(itemColumn);
+        itemGroup.setPrintSubtotalsWhenExpression(exp.printWhenGroupHasMoreThanOneRow(itemGroup));
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
@@ -91,14 +99,20 @@ public class SimpleReport_Step07 {
                     .columns(// add columns
                              rowNumberColumn, itemColumn, quantityColumn, unitPriceColumn, priceColumn, pricePercColumn)
                     .columnGrid(rowNumberColumn, quantityColumn, unitPriceColumn, grid.verticalColumnGridList(priceColumn, pricePercColumn))
-                    .groupBy(itemColumn)
+                    .groupBy(itemGroup)
                     .subtotalsAtSummary(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
-                    .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
+                    .title(// shows report title
+                           cmp.horizontalList()
+                              .add(cmp.image(Templates.class.getResource("images/dynamicreports.png")).setFixedDimension(80, 80),
+                                   cmp.text("DynamicReports").setStyle(titleStyle).setHorizontalTextAlignment(HorizontalTextAlignment.LEFT),
+                                   cmp.text("Getting started").setStyle(titleStyle).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT))
+                              .newRow()
+                              .add(cmp.filler().setStyle(stl.style().setTopBorder(stl.pen2Point())).setFixedHeight(10)))
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .summary(cmp.horizontalList(itemChart, itemChart2))
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

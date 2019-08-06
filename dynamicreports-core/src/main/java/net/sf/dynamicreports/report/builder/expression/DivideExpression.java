@@ -43,14 +43,13 @@ public class DivideExpression extends CalculationExpression {
      *
      * @param scale a int.
      * @param expressions a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
-     */ public DivideExpression(int scale, DRIExpression<? extends Number>... expressions) {
+     */
+    public DivideExpression(int scale, DRIExpression<? extends Number>... expressions) {
         super(expressions);
         this.scale = scale;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected BigDecimal calculate(BigDecimal value1, BigDecimal value2) {
         return value1.divide(value2, scale, BigDecimal.ROUND_HALF_UP);
