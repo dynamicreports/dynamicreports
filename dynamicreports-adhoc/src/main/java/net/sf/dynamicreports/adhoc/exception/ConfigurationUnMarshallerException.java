@@ -55,4 +55,8 @@ public class ConfigurationUnMarshallerException extends DRException {
 
         super(String.format("Exception encountered when reading configuration from the source : %s", is));
     }
+
+    public ConfigurationUnMarshallerException(String message) {
+        super(message);
+    }
 }

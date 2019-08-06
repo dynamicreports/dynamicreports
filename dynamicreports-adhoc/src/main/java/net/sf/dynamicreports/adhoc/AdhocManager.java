@@ -27,9 +27,8 @@ import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.IAdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.IXmlToAdhocTransform;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -69,14 +68,15 @@ public class AdhocManager {
     private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
     private static volatile AdhocManager INSTANCE = null;
     private final IAdhocToXmlTransform adhocToXmlTransform;
-    private final XmlToAdhocTransform xmlToAdhocTransform;
+    private final IXmlToAdhocTransform xmlToAdhocTransform;
 
-    private AdhocManager(IAdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    private AdhocManager(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform) {
         this.adhocToXmlTransform = adhocToXmlTransform;
         this.xmlToAdhocTransform = xmlToAdhocTransform;
     }
 
-    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform
+    ) {
         if (INSTANCE == null) {
             synchronized (AdhocManager.class) {
                 INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);
