@@ -46,7 +46,7 @@ import static org.hamcrest.core.Is.is;
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
-public class AdhocReportTest extends AbstractJasperTest {
+public class CustomReportTest extends AbstractJasperTest {
     private AdhocConfiguration adhocConfiguration;
     private String groupName;
 
@@ -91,7 +91,7 @@ public class AdhocReportTest extends AbstractJasperTest {
 
     @Override
     protected JasperReportBuilder createReport() throws DRException {
-        JasperReportBuilder report = adhocManager.createReport(adhocConfiguration.getReport());
+        JasperReportBuilder report = customReport.createReport(adhocConfiguration.getReport());
         report.setLocale(Locale.ENGLISH);
 
         groupName = report.getReport().getGroups().get(0).getName();

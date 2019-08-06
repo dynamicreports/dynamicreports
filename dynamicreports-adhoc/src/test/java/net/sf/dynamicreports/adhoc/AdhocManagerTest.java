@@ -21,19 +21,34 @@
  */
 package net.sf.dynamicreports.adhoc;
 
+import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
+import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.component.ComponentBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import static junit.framework.TestCase.assertSame;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 public class AdhocManagerTest {
 
     private AdhocManager adhocManager;
+    private CustomReport customReport;
 
     @Before
     public void setUp() throws Exception {
 
+        ReportCustomizer reportCustomizer = new ReportCustomizer();
+        customReport = new SimpleCustomReport(reportCustomizer);
         adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
     }
 
@@ -44,7 +59,26 @@ public class AdhocManagerTest {
     @Test
     public void createReport() throws Exception {
 
-        //assertSame(new JasperReportBuilder(), adhocManager.createReport(new AdhocReport()));
+        ByteArrayOutputStream os1 = new ByteArrayOutputStream();
+        ByteArrayOutputStream os2 = new ByteArrayOutputStream();
+        ByteArrayOutputStream os3 = new ByteArrayOutputStream();
+        ByteArrayOutputStream os4 = new ByteArrayOutputStream();
+        ByteArrayOutputStream os6 = new ByteArrayOutputStream();
+
+        customReport.createReport(new AdhocReport()).toCsv(os1);
+        customReport.createReport(new AdhocReport()).toPdf(os2);
+        customReport.createReport(new AdhocReport()).toPptx(os3);
+        customReport.createReport(new AdhocReport()).toXml(os4);
+        customReport.createReport(new AdhocReport()).toXlsx(os6);
+
+        assertNotNull(os1);
+        assertNotNull(os2);
+        assertNotNull(os3);
+        assertNotNull(os4);
+        assertNotNull(os6);
+
+        // TODO Import POI to test xlsx
+        // TODO Import PDF-Box to test pdf files
     }
 
     @Test
@@ -57,5 +91,12 @@ public class AdhocManagerTest {
 
     @Test
     public void loadConfiguration() {
+    }
+
+    private class ReportCustomizer extends DefaultAdhocReportCustomizer {
+
+        private List<ComponentBuilder<?, ?>> getComponents() {
+            return new ArrayList<ComponentBuilder<?, ?>>(components.values());
+        }
     }
 }

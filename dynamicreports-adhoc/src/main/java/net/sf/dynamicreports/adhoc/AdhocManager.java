@@ -63,9 +63,8 @@ import java.io.OutputStream;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class AdhocManager {
+public class AdhocManager implements ConfigurationLoader {
 
-    private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
     private static volatile AdhocManager INSTANCE = null;
     private final IAdhocToXmlTransform adhocToXmlTransform;
     private final IXmlToAdhocTransform xmlToAdhocTransform;
@@ -75,8 +74,7 @@ public class AdhocManager {
         this.xmlToAdhocTransform = xmlToAdhocTransform;
     }
 
-    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform
-    ) {
+    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform ) {
         if (INSTANCE == null) {
             synchronized (AdhocManager.class) {
                 INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);
@@ -85,62 +83,7 @@ public class AdhocManager {
         return INSTANCE;
     }
 
-
-    // todo add singleton here
-    // todo use non-static methods and run tests
-    // todo stop configuring transformers in class and initialize in constructor
-
-    /**
-     * <p>createReport.</p>
-     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
-     * <pre>
-     *     {@code
-     *     AdhocConfiguration configuration = new AdhocConfiguration();
-     *      AdhocReport report = new AdhocReport();
-     *      configuration.setReport(report);
-     *      // configure report...
-     *     JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport());
-     *     reportBuilder.setDataSource(createDataSource());
-     *     reportBuilder.show();
-     *     }
-     * </pre>
-     * The {@code AdhocReportCustomizer} is internally provided by invocation of the {@link DefaultAdhocReportCustomizer}
-     *
-     * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
-     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
-     * @throws net.sf.dynamicreports.report.exception.DRException if any.
-     */
-    public JasperReportBuilder createReport(AdhocReport adhocReport) throws DRException {
-        log.debug("Creating JasperReportBuilder from adhocReport: {} using defaultAdhocReportCustomizer", adhocReport.getProperties().getProperties());
-        return createReport(adhocReport, new DefaultAdhocReportCustomizer());
-    }
-
-    /**
-     * <p>createReport.</p>
-     * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
-     * <pre>
-     *     {@code
-     *      AdhocConfiguration configuration = new AdhocConfiguration();
-     *      AdhocReport report = new AdhocReport();
-     *      configuration.setReport(report);
-     *      // configure report...
-     *      JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
-     *      reportBuilder.setDataSource(createDataSource());
-     *      reportBuilder.show();
-     *     }
-     * </pre>
-     *
-     * @param adhocReport           a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
-     * @param adhocReportCustomizer a {@link net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer} object.
-     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
-     * @throws net.sf.dynamicreports.report.exception.DRException if any.
-     */
-    public JasperReportBuilder createReport(AdhocReport adhocReport, AdhocReportCustomizer adhocReportCustomizer) throws DRException {
-        log.debug("Creating JasperReportBuilder from adhocReport: {} and adhocReportCustomizer : {}", adhocReport.getProperties().getProperties(), adhocReportCustomizer);
-        JasperReportBuilder report = DynamicReports.report();
-        adhocReportCustomizer.customize(report, adhocReport);
-        return report;
-    }
+    // TODO delegate marshalling code to several tested interfaces
 
     /**
      * <p>saveConfiguration.</p>
@@ -165,8 +108,8 @@ public class AdhocManager {
      * @param os                 a {@link java.io.OutputStream} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
+    @Override
     public void saveConfiguration(AdhocConfiguration adhocConfiguration, OutputStream os) throws DRException {
-        log.info("Saving the AdhocConfiguration : {} to the outputStream {} in XML format using JAXB Api", adhocConfiguration.getReport().getProperties().getProperties(), os.toString());
         XmlAdhocConfiguration xmlAdhocConfiguration = adhocToXmlTransform.transform(adhocConfiguration);
         JAXBElement<XmlAdhocConfiguration> element = null;
         try {
@@ -192,6 +135,7 @@ public class AdhocManager {
      * @return a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
+    @Override
     public AdhocConfiguration loadConfiguration(InputStream is) throws DRException {
         try {
             Unmarshaller unmarshaller = JAXBContext.newInstance(XmlAdhocConfiguration.class).createUnmarshaller();

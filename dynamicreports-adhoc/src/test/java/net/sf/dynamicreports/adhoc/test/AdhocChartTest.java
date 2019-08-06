@@ -21,6 +21,8 @@
  */
 package net.sf.dynamicreports.adhoc.test;
 
+import net.sf.dynamicreports.adhoc.CustomReport;
+import net.sf.dynamicreports.adhoc.SimpleCustomReport;
 import net.sf.dynamicreports.adhoc.configuration.AdhocAxisFormat;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChart;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChartSerie;
@@ -261,8 +263,9 @@ public class AdhocChartTest extends AdhocTests {
 
     private void testConfiguration(AdhocConfiguration adhocConfiguration) {
         ReportCustomizer customizer = new ReportCustomizer();
+        CustomReport customReport = new SimpleCustomReport(customizer);
         try {
-            adhocManager.createReport(adhocConfiguration.getReport(), customizer);
+            customReport.createReport(adhocConfiguration.getReport());
         } catch (DRException e) {
             e.printStackTrace();
             Assert.fail(e.getMessage());

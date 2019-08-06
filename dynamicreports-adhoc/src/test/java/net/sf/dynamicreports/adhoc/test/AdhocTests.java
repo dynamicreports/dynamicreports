@@ -22,6 +22,9 @@
 package net.sf.dynamicreports.adhoc.test;
 
 import net.sf.dynamicreports.adhoc.AdhocManager;
+import net.sf.dynamicreports.adhoc.CustomReport;
+import net.sf.dynamicreports.adhoc.SimpleCustomReport;
+import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 
@@ -32,4 +35,6 @@ import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 public class AdhocTests {
 
     protected AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+
+    protected CustomReport customReport = new SimpleCustomReport(new DefaultAdhocReportCustomizer());
 }

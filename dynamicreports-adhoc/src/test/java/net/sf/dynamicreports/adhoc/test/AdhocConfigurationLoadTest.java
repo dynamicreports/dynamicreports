@@ -21,6 +21,8 @@
  */
 package net.sf.dynamicreports.adhoc.test;
 
+import net.sf.dynamicreports.adhoc.CustomReport;
+import net.sf.dynamicreports.adhoc.SimpleCustomReport;
 import net.sf.dynamicreports.adhoc.configuration.AdhocChart;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocGroup;
@@ -82,8 +84,9 @@ public class AdhocConfigurationLoadTest extends AdhocTests {
     private void testConfiguration(AdhocConfiguration adhocConfiguration) {
         DRReport report = null;
         ReportCustomizer customizer = new ReportCustomizer();
+        CustomReport customReport = new SimpleCustomReport(customizer);
         try {
-            JasperReportBuilder reportBuilder = adhocManager.createReport(adhocConfiguration.getReport(), customizer);
+            JasperReportBuilder reportBuilder = customReport.createReport(adhocConfiguration.getReport());
             report = reportBuilder.getReport();
         } catch (DRException e) {
             e.printStackTrace();

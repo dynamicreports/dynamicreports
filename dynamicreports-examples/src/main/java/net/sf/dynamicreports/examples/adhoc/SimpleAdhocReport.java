@@ -22,9 +22,12 @@
 package net.sf.dynamicreports.examples.adhoc;
 
 import net.sf.dynamicreports.adhoc.AdhocManager;
+import net.sf.dynamicreports.adhoc.CustomReport;
+import net.sf.dynamicreports.adhoc.SimpleCustomReport;
 import net.sf.dynamicreports.adhoc.configuration.AdhocColumn;
 import net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration;
 import net.sf.dynamicreports.adhoc.configuration.AdhocReport;
+import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
 import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -67,6 +70,7 @@ public class SimpleAdhocReport {
     private void build() {
 
         AdhocManager adhocManager = AdhocManager.getInstance(new AdhocToXmlTransform(), new XmlToAdhocTransform());
+        CustomReport customReport = new SimpleCustomReport(new DefaultAdhocReportCustomizer());
 
         AdhocConfiguration configuration = new AdhocConfiguration();
         AdhocReport report = new AdhocReport();
@@ -87,7 +91,7 @@ public class SimpleAdhocReport {
             // The following code loads a configuration from an xml file
                 AdhocConfiguration loadedConfiguration = adhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
 
-            JasperReportBuilder reportBuilder = adhocManager.createReport(configuration.getReport());
+            JasperReportBuilder reportBuilder = customReport.createReport(configuration.getReport());
             reportBuilder.setDataSource(createDataSource());
             reportBuilder.show();
         } catch (DRException | FileNotFoundException e) {
