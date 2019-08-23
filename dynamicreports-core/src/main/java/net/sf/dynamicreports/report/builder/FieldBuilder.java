@@ -76,9 +76,7 @@ public class FieldBuilder<T> extends AbstractBuilder<FieldBuilder<T>, DRField<T>
         return build();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getField().getName();

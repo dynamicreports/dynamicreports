@@ -53,25 +53,19 @@ public class JasperExpression<T> implements DRIJasperExpression<T> {
         this.name = ReportUtils.generateUniqueName("jasperExpression");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getExpression() {
         return expression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<? super T> getValueClass() {
         return valueClass;

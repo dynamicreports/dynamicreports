@@ -56,9 +56,7 @@ public class DRLayeredBarPlot extends DRBarPlot implements DRILayeredBarPlot {
         this.seriesBarWidths.add(barWidth);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<Double> getSeriesBarWidths() {
         return seriesBarWidths;

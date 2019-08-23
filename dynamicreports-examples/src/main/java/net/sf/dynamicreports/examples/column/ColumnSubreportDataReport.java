@@ -97,7 +97,7 @@ public class ColumnSubreportDataReport {
         values.put("comment", "comment3");
         comments.add(values);
         data.setItem("Book");
-        data.setQuantity(new Integer(10));
+        data.setQuantity(10);
         data.setComments(comments);
         datasource.add(data);
 
@@ -110,7 +110,7 @@ public class ColumnSubreportDataReport {
         values.put("comment", "comment2");
         comments.add(values);
         data.setItem("Notebook");
-        data.setQuantity(new Integer(20));
+        data.setQuantity(20);
         data.setComments(comments);
         datasource.add(data);
 

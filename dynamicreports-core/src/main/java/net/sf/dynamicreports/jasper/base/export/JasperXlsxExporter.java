@@ -35,9 +35,7 @@ public class JasperXlsxExporter extends AbstractJasperExcelExporter implements J
 
     private String macroTemplate;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getMacroTemplate() {
         return macroTemplate;

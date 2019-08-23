@@ -86,9 +86,7 @@ public class ColumnGroupBuilder extends GroupBuilder<ColumnGroupBuilder> {
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         setValueExpression(column);

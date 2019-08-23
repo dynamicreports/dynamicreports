@@ -35,6 +35,7 @@ import org.apache.commons.lang3.Validate;
 
 import java.awt.Color;
 import java.sql.Connection;
+import java.util.Arrays;
 
 /**
  * <p>GeoMapBuilder class.</p>
@@ -93,9 +94,7 @@ public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGe
     public GeoMapBuilder addColor(Color... colors) {
         Validate.notNull(colors, "colors must not be null");
         Validate.noNullElements(colors, "colors must not contains null color");
-        for (Color color : colors) {
-            getObject().addColor(color);
-        }
+        Arrays.stream(colors).forEach(color -> getObject().addColor(color));
         return this;
     }
 

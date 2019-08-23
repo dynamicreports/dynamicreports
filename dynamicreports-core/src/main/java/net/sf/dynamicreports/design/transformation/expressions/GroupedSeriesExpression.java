@@ -64,9 +64,7 @@ public class GroupedSeriesExpression extends AbstractComplexExpression<String> {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String group = (String) values.get(0);

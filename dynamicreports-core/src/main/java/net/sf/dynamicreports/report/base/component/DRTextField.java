@@ -55,9 +55,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
     private Boolean stretchWithOverflow;
     private Boolean printRepeatedValues;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<T> getValueExpression() {
         return valueExpression;
@@ -73,9 +71,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.valueExpression = valueExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return pattern;
@@ -90,9 +86,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.pattern = pattern;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getPatternExpression() {
         return patternExpression;
@@ -107,9 +101,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.patternExpression = patternExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return horizontalTextAlignment;
@@ -124,9 +116,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIValueFormatter<?, ? super T> getValueFormatter() {
         return valueFormatter;
@@ -141,9 +131,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.valueFormatter = valueFormatter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDataType<? super T, T> getDataType() {
         return dataType;
@@ -172,7 +160,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * This method is used to define the width of a column. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
      * @param columns the number of columns >= 0
-     * @throws IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
     public void setColumns(Integer columns) {
         if (columns != null) {
@@ -195,7 +183,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * This method is used to define the height of a column. The height is set to the <code>rows</code> multiplied by height of the font
      *
      * @param rows the number of rows >= 0
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public void setRows(Integer rows) {
         if (rows != null) {
@@ -204,9 +192,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.rows = rows;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Evaluation getEvaluationTime() {
         return evaluationTime;
@@ -221,9 +207,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.evaluationTime = evaluationTime;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRGroup getEvaluationGroup() {
         return evaluationGroup;
@@ -238,9 +222,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.evaluationGroup = evaluationGroup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Markup getMarkup() {
         return markup;
@@ -255,9 +237,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.markup = markup;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getStretchWithOverflow() {
         return stretchWithOverflow;
@@ -272,9 +252,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
         this.stretchWithOverflow = stretchWithOverflow;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getPrintRepeatedValues() {
         return printRepeatedValues;

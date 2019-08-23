@@ -36,9 +36,7 @@ import java.util.List;
  */
 public class JasperChartCustomizer extends JRAbstractChartCustomizer {
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, JRChart jasperChart) {
         String key = jasperChart.getKey();

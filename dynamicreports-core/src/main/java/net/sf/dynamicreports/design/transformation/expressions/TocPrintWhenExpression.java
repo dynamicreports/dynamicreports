@@ -48,9 +48,7 @@ public class TocPrintWhenExpression extends AbstractComplexExpression<Boolean> {
         addExpression(expression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(List<?> values, ReportParameters reportParameters) {
         Object value = values.get(0);

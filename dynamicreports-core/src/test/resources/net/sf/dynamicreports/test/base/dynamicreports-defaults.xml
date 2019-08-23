@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DynamicReports>
     <!-- DEFAULT FONT -->
-    <font fontName="Arial" fontSize="15" pdfFontName="Courier New" pdfEncoding="Cp1250" pdfEmbedded="true"/>
+    <font fontName="Arimo" fontSize="15" pdfFontName="Arimo" pdfEncoding="Identity-H" pdfEmbedded="true"/>
 
     <!-- DEFAULT DATA TYPES -->
     <bigDecimalType pattern="#,###.00#" horizontalAlignment="LEFT"/>

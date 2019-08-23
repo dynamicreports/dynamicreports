@@ -42,9 +42,7 @@ public class DRDesignMeterInterval implements DRIDesignMeterInterval {
     private DRIDesignExpression dataRangeLowExpression;
     private DRIDesignExpression dataRangeHighExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLabel() {
         return label;
@@ -59,9 +57,7 @@ public class DRDesignMeterInterval implements DRIDesignMeterInterval {
         this.label = label;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getBackgroundColor() {
         return backgroundColor;
@@ -76,9 +72,7 @@ public class DRDesignMeterInterval implements DRIDesignMeterInterval {
         this.backgroundColor = backgroundColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getAlpha() {
         return alpha;
@@ -93,9 +87,7 @@ public class DRDesignMeterInterval implements DRIDesignMeterInterval {
         this.alpha = alpha;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeLowExpression() {
         return dataRangeLowExpression;
@@ -110,9 +102,7 @@ public class DRDesignMeterInterval implements DRIDesignMeterInterval {
         this.dataRangeLowExpression = dataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeHighExpression() {
         return dataRangeHighExpression;

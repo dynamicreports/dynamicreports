@@ -63,9 +63,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         intervals = new ArrayList<DRIDesignMeterInterval>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeLowExpression() {
         return dataRangeLowExpression;
@@ -80,9 +78,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.dataRangeLowExpression = dataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getDataRangeHighExpression() {
         return dataRangeHighExpression;
@@ -97,9 +93,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.dataRangeHighExpression = dataRangeHighExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getValueColor() {
         return valueColor;
@@ -114,9 +108,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.valueColor = valueColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getValueMask() {
         return valueMask;
@@ -131,9 +123,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.valueMask = valueMask;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignFont getValueFont() {
         return valueFont;
@@ -148,9 +138,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.valueFont = valueFont;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public MeterShape getShape() {
         return shape;
@@ -165,9 +153,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.shape = shape;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIDesignMeterInterval> getIntervals() {
         return intervals;
@@ -182,9 +168,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.intervals = intervals;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getMeterAngle() {
         return meterAngle;
@@ -199,9 +183,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.meterAngle = meterAngle;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getUnits() {
         return units;
@@ -216,9 +198,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.units = units;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getTickInterval() {
         return tickInterval;
@@ -233,9 +213,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.tickInterval = tickInterval;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getMeterBackgroundColor() {
         return meterBackgroundColor;
@@ -250,9 +228,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.meterBackgroundColor = meterBackgroundColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getNeedleColor() {
         return needleColor;
@@ -267,9 +243,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.needleColor = needleColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getTickColor() {
         return tickColor;
@@ -284,9 +258,7 @@ public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMete
         this.tickColor = tickColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignFont getTickLabelFont() {
         return tickLabelFont;

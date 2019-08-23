@@ -56,9 +56,7 @@ public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {
         this.dimension = new Dimension(width, height);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Dimension2D getDimension(JasperReportsContext jasperReportsContext) {
         return dimension;

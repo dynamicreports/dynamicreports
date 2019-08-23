@@ -85,7 +85,7 @@ public class BandChartDataTest extends AbstractJasperChartTest implements Serial
             chartTitleTest(name + ".chart1", index, "Title sum=" + value);
             chartCategoryCountTest(name + ".chart1", index, 1);
             chartSeriesCountTest(name + ".chart1", index, 1);
-            chartDataTest(name + ".chart1", index, new String[] {"value"}, new String[] {"Column2"}, new Number[][] {{new Double(value)}});
+            chartDataTest(name + ".chart1", index, new String[] {"value"}, new String[] {"Column2"}, new Number[][] {{(double) value}});
             index++;
         }
     }

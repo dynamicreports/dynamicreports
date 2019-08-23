@@ -195,9 +195,7 @@ public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T
         return new TextColumnBuilder<BigDecimal>(exp).setDataType(type.bigDecimalType());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getObject().getName();

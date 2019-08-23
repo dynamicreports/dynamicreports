@@ -29,6 +29,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -61,7 +62,7 @@ public class ColumnDetectDataTypeReport {
         new ColumnDetectDataTypeReport();
     }
 
-    @SuppressWarnings( {"rawtypes", "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     private void build() {
         try {
             JasperReportBuilder report = report();
@@ -76,24 +77,24 @@ public class ColumnDetectDataTypeReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Notebook", new Date(), 1, new BigDecimal(500));
+        dataSource.add("Notebook", Date.from(Instant.now()), 1, BigDecimal.valueOf(500));
         return dataSource;
     }
 
     private List<Column> createColumns() {
         List<Column> columns = new ArrayList<Column>();
-        columns.add(new Column("Item", "item", "string"));// dataType = "String", "STRING", "java.lang.String", "text"
-        columns.add(new Column("Quantity", "quantity", "integer"));// dataType = "Integer", "INTEGER", "java.lang.Integer"
-        columns.add(new Column("Unit price", "unitprice", "bigDecimal"));// dataType = "bigdecimal", "BIGDECIMAL", "java.math.BigDecimal"
-        columns.add(new Column("Order date", "orderdate", "date"));// dataType = "Date", "DATE", "java.util.Date"
-        columns.add(new Column("Order date", "orderdate", "dateYearToFraction"));// dataType = "dateyeartofraction", "DATEYEARTOFRACTION"
-        columns.add(new Column("Order year", "orderdate", "dateYear"));// dataType = "DateYear", "dateyear", "DATEYEAR"
-        columns.add(new Column("Order month", "orderdate", "dateMonth"));// dataType = "DateMonth", "datemonth", "DATEMONTH"
-        columns.add(new Column("Order day", "orderdate", "dateDay"));// dataType = "DateDay", "dateday", "DATEDAY"
+        columns.add(new Column("Item", "item", "string")); // dataType = "String", "STRING", "java.lang.String", "text"
+        columns.add(new Column("Quantity", "quantity", "integer")); // dataType = "Integer", "INTEGER", "java.lang.Integer"
+        columns.add(new Column("Unit price", "unitprice", "bigDecimal")); // dataType = "bigdecimal", "BIGDECIMAL", "java.math.BigDecimal"
+        columns.add(new Column("Order date", "orderdate", "date")); // dataType = "Date", "DATE", "java.util.Date"
+        columns.add(new Column("Order date", "orderdate", "dateYearToFraction")); // dataType = "dateyeartofraction", "DATEYEARTOFRACTION"
+        columns.add(new Column("Order year", "orderdate", "dateYear")); // dataType = "DateYear", "dateyear", "DATEYEAR"
+        columns.add(new Column("Order month", "orderdate", "dateMonth")); // dataType = "DateMonth", "datemonth", "DATEMONTH"
+        columns.add(new Column("Order day", "orderdate", "dateDay")); // dataType = "DateDay", "dateday", "DATEDAY"
         return columns;
     }
 
-    private class Column {
+    private final class Column {
         private String title;
         private String field;
         private String dataType;

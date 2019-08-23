@@ -41,7 +41,9 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
@@ -111,12 +113,8 @@ public class AdhocCustomizerReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        for (int i = 0; i < 15; i++) {
-            dataSource.add("Book", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
-        for (int i = 0; i < 20; i++) {
-            dataSource.add("PDA", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
+        IntStream.range(0, 15).forEachOrdered(i -> dataSource.add("Book ", Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
+        IntStream.range(0, 20).forEachOrdered(i -> dataSource.add("PDA", Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 

@@ -41,9 +41,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
     private String lineSeparator;
     private Boolean trimLineRight;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Float getCharacterWidth() {
         return characterWidth;
@@ -58,9 +56,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.characterWidth = characterWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Float getCharacterHeight() {
         return characterHeight;
@@ -75,9 +71,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.characterHeight = characterHeight;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageWidthInChars() {
         return pageWidthInChars;
@@ -92,9 +86,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.pageWidthInChars = pageWidthInChars;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getPageHeightInChars() {
         return pageHeightInChars;
@@ -109,9 +101,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.pageHeightInChars = pageHeightInChars;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPageSeparator() {
         return pageSeparator;
@@ -126,9 +116,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.pageSeparator = pageSeparator;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLineSeparator() {
         return lineSeparator;
@@ -143,9 +131,7 @@ public class JasperTextExporter extends AbstractJasperExporter implements Jasper
         this.lineSeparator = lineSeparator;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getTrimLineRight() {
         return trimLineRight;

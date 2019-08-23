@@ -35,22 +35,21 @@ import java.math.BigDecimal;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * <p>SimpleReport_Step05 class.</p>
+ * <p>SimpleReport_Step03 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step05 {
+public class SimpleReportStep03 {
 
     /**
-     * <p>Constructor for SimpleReport_Step05.</p>
+     * <p>Constructor for SimpleReport_Step03.</p>
      */
-    public SimpleReport_Step05() {
+    public SimpleReportStep03() {
         build();
     }
 
@@ -60,7 +59,7 @@ public class SimpleReport_Step05 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step05();
+        new SimpleReportStep03();
     }
 
     private void build() {
@@ -69,7 +68,7 @@ public class SimpleReport_Step05 {
         StyleBuilder columnTitleStyle = stl.style(boldCenteredStyle).setBorder(stl.pen1Point()).setBackgroundColor(Color.LIGHT_GRAY);
 
         // title, field name data type
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType()).setStyle(boldStyle);
+        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
         TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
         TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
         // price = unitPrice * quantity
@@ -81,17 +80,13 @@ public class SimpleReport_Step05 {
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
-                    .setSubtotalStyle(boldStyle)
                     .highlightDetailEvenRows()
                     .columns(// add columns
                              rowNumberColumn, itemColumn, quantityColumn, unitPriceColumn, priceColumn, pricePercColumn)
-                    .groupBy(itemColumn)
-                    .subtotalsAtSummary(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
-                    .subtotalsAtFirstGroupFooter(sbt.sum(unitPriceColumn), sbt.sum(priceColumn))
                     .title(cmp.text("Getting started").setStyle(boldCenteredStyle))// shows report title
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -99,14 +94,14 @@ public class SimpleReport_Step05 {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Notebook", 1, new BigDecimal(500));
-        dataSource.add("DVD", 5, new BigDecimal(30));
-        dataSource.add("DVD", 1, new BigDecimal(28));
-        dataSource.add("DVD", 5, new BigDecimal(32));
-        dataSource.add("Book", 3, new BigDecimal(11));
-        dataSource.add("Book", 1, new BigDecimal(15));
-        dataSource.add("Book", 5, new BigDecimal(10));
-        dataSource.add("Book", 8, new BigDecimal(9));
+        dataSource.add("Notebook", 1, BigDecimal.valueOf(500));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(30));
+        dataSource.add("DVD", 1, BigDecimal.valueOf(28));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(32));
+        dataSource.add("Book", 3, BigDecimal.valueOf(11));
+        dataSource.add("Book", 1, BigDecimal.valueOf(15));
+        dataSource.add("Book", 5, BigDecimal.valueOf(10));
+        dataSource.add("Book", 8, BigDecimal.valueOf(9));
         return dataSource;
     }
 }

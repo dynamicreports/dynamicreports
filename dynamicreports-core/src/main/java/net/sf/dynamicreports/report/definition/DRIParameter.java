@@ -31,9 +31,7 @@ import java.io.Serializable;
  */
 public interface DRIParameter<T> extends DRIValue<T>, Serializable {
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName();
 

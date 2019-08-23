@@ -43,9 +43,7 @@ public class DRDesignDataMatrixBarcode extends DRDesignBarcode4j implements DRID
         super("DataMatrix");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeShape getShape() {
         return shape;

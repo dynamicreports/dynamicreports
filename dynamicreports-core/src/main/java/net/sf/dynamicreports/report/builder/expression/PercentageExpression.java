@@ -47,9 +47,7 @@ public class PercentageExpression extends AbstractComplexExpression<Double> {
         addExpression(totalExpression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double evaluate(List<?> values, ReportParameters reportParameters) {
         return ((Number) values.get(0)).doubleValue() / ((Number) values.get(1)).doubleValue();

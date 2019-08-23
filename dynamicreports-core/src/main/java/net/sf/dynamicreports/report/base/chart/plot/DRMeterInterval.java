@@ -42,9 +42,7 @@ public class DRMeterInterval implements DRIMeterInterval {
     private DRIExpression<? extends Number> dataRangeLowExpression;
     private DRIExpression<? extends Number> dataRangeHighExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLabel() {
         return label;
@@ -59,9 +57,7 @@ public class DRMeterInterval implements DRIMeterInterval {
         this.label = label;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getBackgroundColor() {
         return backgroundColor;
@@ -76,9 +72,7 @@ public class DRMeterInterval implements DRIMeterInterval {
         this.backgroundColor = backgroundColor;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getAlpha() {
         return alpha;
@@ -93,9 +87,7 @@ public class DRMeterInterval implements DRIMeterInterval {
         this.alpha = alpha;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getDataRangeLowExpression() {
         return dataRangeLowExpression;
@@ -110,9 +102,7 @@ public class DRMeterInterval implements DRIMeterInterval {
         this.dataRangeLowExpression = dataRangeLowExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<? extends Number> getDataRangeHighExpression() {
         return dataRangeHighExpression;

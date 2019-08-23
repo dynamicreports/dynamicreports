@@ -41,21 +41,20 @@ public class EqualExpression extends AbstractSimpleExpression<Boolean> {
 
     @SafeVarargs
     /**
-     * <p>Constructor for EqualExpression.</p>
+     * Constructor for EqualExpression.
      *
      * @param value a {@link net.sf.dynamicreports.report.definition.DRIValue} object.
      * @param values a T object.
      * @param <T> a T object.
-     */ public <T> EqualExpression(DRIValue<T> value, T... values) {
+     */
+    public <T> EqualExpression(DRIValue<T> value, T... values) {
         Validate.notNull(value, "value must not be null");
         Validate.noNullElements(values, "values must not contains null value");
         this.value = value;
         this.values = values;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
         Object actualValue = reportParameters.getValue(value);
@@ -67,9 +66,7 @@ public class EqualExpression extends AbstractSimpleExpression<Boolean> {
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<Boolean> getValueClass() {
         return Boolean.class;

@@ -38,9 +38,7 @@ public class DRDesignMargin implements DRIDesignMargin {
     private int bottom;
     private int right;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getTop() {
         return top;
@@ -55,9 +53,7 @@ public class DRDesignMargin implements DRIDesignMargin {
         this.top = top;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getLeft() {
         return left;
@@ -72,9 +68,7 @@ public class DRDesignMargin implements DRIDesignMargin {
         this.left = left;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getBottom() {
         return bottom;
@@ -89,9 +83,7 @@ public class DRDesignMargin implements DRIDesignMargin {
         this.bottom = bottom;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public int getRight() {
         return right;

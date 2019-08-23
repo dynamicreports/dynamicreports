@@ -111,14 +111,14 @@ public class CustomTextSubtotalReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("country", "item", "quantity", "price");
-        dataSource.add("USA", "Tablet", 4, new BigDecimal(600));
-        dataSource.add("USA", "Tablet", 3, new BigDecimal(570));
-        dataSource.add("USA", "Laptop", 2, new BigDecimal(500));
-        dataSource.add("USA", "Laptop", 1, new BigDecimal(420));
-        dataSource.add("Canada", "Tablet", 6, new BigDecimal(720));
-        dataSource.add("Canada", "Tablet", 2, new BigDecimal(360));
-        dataSource.add("Canada", "Laptop", 3, new BigDecimal(900));
-        dataSource.add("Canada", "Laptop", 2, new BigDecimal(780));
+        dataSource.add("USA", "Tablet", 4, BigDecimal.valueOf(600));
+        dataSource.add("USA", "Tablet", 3, BigDecimal.valueOf(570));
+        dataSource.add("USA", "Laptop", 2, BigDecimal.valueOf(500));
+        dataSource.add("USA", "Laptop", 1, BigDecimal.valueOf(420));
+        dataSource.add("Canada", "Tablet", 6, BigDecimal.valueOf(720));
+        dataSource.add("Canada", "Tablet", 2, BigDecimal.valueOf(360));
+        dataSource.add("Canada", "Laptop", 3, BigDecimal.valueOf(900));
+        dataSource.add("Canada", "Laptop", 2, BigDecimal.valueOf(780));
         return dataSource;
     }
 
@@ -137,7 +137,7 @@ public class CustomTextSubtotalReport {
         public String evaluate(ReportParameters reportParameters) {
             Integer quantitySumValue = reportParameters.getValue(quantitySum);
             BigDecimal priceSumValue = reportParameters.getValue(priceSum);
-            BigDecimal unitPriceSbt = priceSumValue.divide(new BigDecimal(quantitySumValue), 2, BigDecimal.ROUND_HALF_UP);
+            BigDecimal unitPriceSbt = priceSumValue.divide(BigDecimal.valueOf(quantitySumValue), 2, BigDecimal.ROUND_HALF_UP);
             return "sum(quantity) = " + type.integerType().valueToString(quantitySum, reportParameters) + ", " + "sum(price) = " + type.bigDecimalType().valueToString(priceSum, reportParameters) +
                 ", " + "sum(price) / sum(quantity) = " + type.bigDecimalType().valueToString(unitPriceSbt, reportParameters.getLocale());
         }

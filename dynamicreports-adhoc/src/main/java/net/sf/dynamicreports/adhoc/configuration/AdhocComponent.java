@@ -191,6 +191,16 @@ public class AdhocComponent implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getKey() != null ? getKey().hashCode() : 0;
+        result = 31 * result + (getStyle() != null ? getStyle().hashCode() : 0);
+        result = 31 * result + (getWidth() != null ? getWidth().hashCode() : 0);
+        result = 31 * result + (getHeight() != null ? getHeight().hashCode() : 0);
+        result = 31 * result + (getProperties() != null ? getProperties().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

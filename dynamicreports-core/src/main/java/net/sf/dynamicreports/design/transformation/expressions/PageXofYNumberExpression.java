@@ -53,9 +53,7 @@ public class PageXofYNumberExpression extends AbstractComplexExpression<String> 
         this.index = index;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(List<?> values, ReportParameters reportParameters) {
         String pattern = (String) values.get(0);

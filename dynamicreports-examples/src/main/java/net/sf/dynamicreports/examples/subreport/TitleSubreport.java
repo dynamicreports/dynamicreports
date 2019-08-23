@@ -28,6 +28,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -78,9 +79,7 @@ public class TitleSubreport {
 
     private JRDataSource createSubreportDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        for (int i = 0; i < 10; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
+        IntStream.range(0, 10).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 }

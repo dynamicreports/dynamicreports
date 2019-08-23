@@ -7,16 +7,16 @@
  * This file is part of DynamicReports.
  *
  * DynamicReports is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * it under the terms of the GNU Lesser General License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * DynamicReports is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Lesser General Public License for more details.
+ * GNU Lesser General License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public License
+ * You should have received a copy of the GNU Lesser General License
  * along with DynamicReports. If not, see <http://www.gnu.org/licenses/>.
  */
 package net.sf.dynamicreports.googlecharts.jasper.geomap;
@@ -43,54 +43,54 @@ public interface GeoMapComponent extends Component, JRCloneable {
      *
      * @return a {@link net.sf.jasperreports.engine.type.EvaluationTimeEnum} object.
      */
-    public EvaluationTimeEnum getEvaluationTime();
+    EvaluationTimeEnum getEvaluationTime();
 
     /**
      * <p>getEvaluationGroup.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getEvaluationGroup();
+    String getEvaluationGroup();
 
     /**
      * <p>getShowLegend.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getShowLegend();
+    Boolean getShowLegend();
 
     /**
      * <p>getDataMode.</p>
      *
      * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
      */
-    public GeoMapDataMode getDataMode();
+    GeoMapDataMode getDataMode();
 
     /**
      * <p>getRegionExpression.</p>
      *
      * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
      */
-    public JRExpression getRegionExpression();
+    JRExpression getRegionExpression();
 
     /**
      * <p>getValueLabelExpression.</p>
      *
      * @return a {@link net.sf.jasperreports.engine.JRExpression} object.
      */
-    public JRExpression getValueLabelExpression();
+    JRExpression getValueLabelExpression();
 
     /**
      * <p>getColors.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<Color> getColors();
+    List<Color> getColors();
 
     /**
      * <p>getDataset.</p>
      *
      * @return a {@link net.sf.dynamicreports.googlecharts.jasper.geomap.GeoMapDataset} object.
      */
-    public GeoMapDataset getDataset();
+    GeoMapDataset getDataset();
 }

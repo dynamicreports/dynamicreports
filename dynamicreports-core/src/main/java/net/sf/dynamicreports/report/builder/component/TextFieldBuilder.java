@@ -211,7 +211,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param columns the number of preferred columns >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
     public TextFieldBuilder<T> setColumns(Integer columns) {
         getObject().setColumns(columns);
@@ -223,7 +223,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param columns the number of fixed columns >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
     public TextFieldBuilder<T> setFixedColumns(Integer columns) {
         getObject().setColumns(columns);
@@ -236,7 +236,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param columns the number of minimum columns >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
     public TextFieldBuilder<T> setMinColumns(Integer columns) {
         getObject().setColumns(columns);
@@ -249,7 +249,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param rows the number of preferred rows >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public TextFieldBuilder<T> setRows(Integer rows) {
         getObject().setRows(rows);
@@ -261,7 +261,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param rows the number of fixed rows >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public TextFieldBuilder<T> setFixedRows(Integer rows) {
         getObject().setRows(rows);
@@ -274,7 +274,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param rows the number of minimum rows >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @throws IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
     public TextFieldBuilder<T> setMinRows(Integer rows) {
         getObject().setRows(rows);

@@ -57,9 +57,7 @@ public class SubreportParametersExpression extends AbstractDesignComplexExpressi
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     @SuppressWarnings("unchecked")
     public Object evaluate(List<?> values, ReportParameters reportParameters) {
@@ -75,9 +73,7 @@ public class SubreportParametersExpression extends AbstractDesignComplexExpressi
         return parameters;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return Map.class;

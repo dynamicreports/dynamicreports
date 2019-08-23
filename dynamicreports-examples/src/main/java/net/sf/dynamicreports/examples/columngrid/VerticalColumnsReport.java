@@ -78,9 +78,9 @@ public class VerticalColumnsReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Notebook", 1, new BigDecimal(500));
-        dataSource.add("Book", 7, new BigDecimal(300));
-        dataSource.add("PDA", 2, new BigDecimal(250));
+        dataSource.add("Notebook", 1, BigDecimal.valueOf(500));
+        dataSource.add("Book", 7, BigDecimal.valueOf(300));
+        dataSource.add("PDA", 2, BigDecimal.valueOf(250));
         return dataSource;
     }
 }

@@ -41,6 +41,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>OpenFlashChartReport class.</p>
  *
+ * Please ensure you have write-access before running this example
+ *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
@@ -95,9 +97,9 @@ public class OpenFlashChartReport {
      */
     protected JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 60, new BigDecimal(150));
-        dataSource.add("Camera", 40, new BigDecimal(400));
-        dataSource.add("PDA", 50, new BigDecimal(250));
+        dataSource.add("Book", 60, BigDecimal.valueOf(150));
+        dataSource.add("Camera", 40, BigDecimal.valueOf(400));
+        dataSource.add("PDA", 50, BigDecimal.valueOf(250));
         return dataSource;
     }
 

@@ -94,57 +94,43 @@ public class JasperTransform implements JasperTransformAccessor {
         reportTransform.addDependencies();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ReportTransform getReportTransform() {
         return reportTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ChartTransform getChartTransform() {
         return chartTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public BarcodeTransform getBarcodeTransform() {
         return barcodeTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public CrosstabTransform getCrosstabTransform() {
         return crosstabTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ComponentTransform getComponentTransform() {
         return componentTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void transformToMainDataset() {
         transformToDataset(null);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void transformToDataset(DRIDesignDataset dataset) {
         if (dataset != null) {
@@ -154,17 +140,13 @@ public class JasperTransform implements JasperTransformAccessor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public AbstractExpressionTransform getExpressionTransform() {
         return expressionTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public AbstractExpressionTransform getExpressionTransform(DRIDesignDataset dataset) {
         if (dataset == null) {
@@ -174,81 +156,61 @@ public class JasperTransform implements JasperTransformAccessor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public GroupTransform getGroupTransform() {
         return groupTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public StyleTransform getStyleTransform() {
         return styleTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DatasetTransform getDatasetTransform() {
         return datasetTransform;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignReport getReport() {
         return report;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperCustomValues getCustomValues() {
         return jasperReportDesign.getCustomValues();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperDesign getDesign() {
         return jasperReportDesign.getDesign();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Map<String, Object> getParameters() {
         return jasperReportDesign.getParameters();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Map<String, Object> getParameterValues() {
         return report.getParameterValues();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getStartPageNumber() {
         return jasperReportDesign.getStartPageNumber();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public ReportParameters getMasterReportParameters() {
         return jasperReportDesign.getMasterReportParameters();

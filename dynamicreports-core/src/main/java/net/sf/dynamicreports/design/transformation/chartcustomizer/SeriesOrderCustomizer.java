@@ -55,9 +55,7 @@ public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {
         this.seriesOrderType = seriesOrderType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {

@@ -48,33 +48,25 @@ public class DRDesignSimpleExpression extends AbstractDesignSimpleExpression {
         this.parameterName = parameterName;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Object evaluate(ReportParameters reportParameters) {
         return simpleExpression.evaluate(reportParameters);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return simpleExpression.getValueClass();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return simpleExpression.getName();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getParameterName() {
         return parameterName;

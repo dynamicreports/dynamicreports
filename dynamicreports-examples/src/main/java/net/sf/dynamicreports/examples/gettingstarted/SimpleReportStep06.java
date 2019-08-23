@@ -47,12 +47,12 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step06 {
+public class SimpleReportStep06 {
 
     /**
      * <p>Constructor for SimpleReport_Step06.</p>
      */
-    public SimpleReport_Step06() {
+    public SimpleReportStep06() {
         build();
     }
 
@@ -62,7 +62,7 @@ public class SimpleReport_Step06 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step06();
+        new SimpleReportStep06();
     }
 
     private void build() {
@@ -96,7 +96,7 @@ public class SimpleReport_Step06 {
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .summary(itemChart, itemChart2)
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -104,14 +104,14 @@ public class SimpleReport_Step06 {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Notebook", 1, new BigDecimal(500));
-        dataSource.add("DVD", 5, new BigDecimal(30));
-        dataSource.add("DVD", 1, new BigDecimal(28));
-        dataSource.add("DVD", 5, new BigDecimal(32));
-        dataSource.add("Book", 3, new BigDecimal(11));
-        dataSource.add("Book", 1, new BigDecimal(15));
-        dataSource.add("Book", 5, new BigDecimal(10));
-        dataSource.add("Book", 8, new BigDecimal(9));
+        dataSource.add("Notebook", 1, BigDecimal.valueOf(500));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(30));
+        dataSource.add("DVD", 1, BigDecimal.valueOf(28));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(32));
+        dataSource.add("Book", 3, BigDecimal.valueOf(11));
+        dataSource.add("Book", 1, BigDecimal.valueOf(15));
+        dataSource.add("Book", 5, BigDecimal.valueOf(10));
+        dataSource.add("Book", 8, BigDecimal.valueOf(9));
         return dataSource;
     }
 }

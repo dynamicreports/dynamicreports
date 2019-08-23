@@ -41,9 +41,7 @@ public class DRChartSubtitle implements DRIChartSubtitle {
     private DRFont font;
     private DRIExpression<String> title;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Color getColor() {
         return color;
@@ -58,9 +56,7 @@ public class DRChartSubtitle implements DRIChartSubtitle {
         this.color = color;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRFont getFont() {
         return font;
@@ -75,9 +71,7 @@ public class DRChartSubtitle implements DRIChartSubtitle {
         this.font = font;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getTitle() {
         return title;

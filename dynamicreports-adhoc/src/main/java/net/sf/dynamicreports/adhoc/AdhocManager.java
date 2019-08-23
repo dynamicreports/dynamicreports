@@ -27,8 +27,8 @@ import net.sf.dynamicreports.adhoc.exception.ConfigurationMarshallerException;
 import net.sf.dynamicreports.adhoc.exception.ConfigurationUnMarshallerException;
 import net.sf.dynamicreports.adhoc.report.AdhocReportCustomizer;
 import net.sf.dynamicreports.adhoc.report.DefaultAdhocReportCustomizer;
-import net.sf.dynamicreports.adhoc.transformation.AdhocToXmlTransform;
-import net.sf.dynamicreports.adhoc.transformation.XmlToAdhocTransform;
+import net.sf.dynamicreports.adhoc.transformation.IAdhocToXmlTransform;
+import net.sf.dynamicreports.adhoc.transformation.IXmlToAdhocTransform;
 import net.sf.dynamicreports.adhoc.xmlconfiguration.XmlAdhocConfiguration;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -67,15 +67,16 @@ public class AdhocManager {
 
     private static final Logger log = LoggerFactory.getLogger(AdhocManager.class);
     private static volatile AdhocManager INSTANCE = null;
-    private final AdhocToXmlTransform adhocToXmlTransform;
-    private final XmlToAdhocTransform xmlToAdhocTransform;
+    private final IAdhocToXmlTransform adhocToXmlTransform;
+    private final IXmlToAdhocTransform xmlToAdhocTransform;
 
-    private AdhocManager(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    private AdhocManager(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform) {
         this.adhocToXmlTransform = adhocToXmlTransform;
         this.xmlToAdhocTransform = xmlToAdhocTransform;
     }
 
-    public static AdhocManager getInstance(AdhocToXmlTransform adhocToXmlTransform, XmlToAdhocTransform xmlToAdhocTransform) {
+    public static AdhocManager getInstance(IAdhocToXmlTransform adhocToXmlTransform, IXmlToAdhocTransform xmlToAdhocTransform
+    ) {
         if (INSTANCE == null) {
             synchronized (AdhocManager.class) {
                 INSTANCE = new AdhocManager(adhocToXmlTransform, xmlToAdhocTransform);
@@ -93,17 +94,17 @@ public class AdhocManager {
      * <p>createReport.</p>
      * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
      * <pre>
-     *     {@link
+     *     {@code
      *     AdhocConfiguration configuration = new AdhocConfiguration();
-     * 		AdhocReport report = new AdhocReport();
-     * 		configuration.setReport(report);
-     * 		// configure report...
+     *      AdhocReport report = new AdhocReport();
+     *      configuration.setReport(report);
+     *      // configure report...
      *     JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport());
-     * 	   reportBuilder.setDataSource(createDataSource());
-     * 	   reportBuilder.show();
+     *     reportBuilder.setDataSource(createDataSource());
+     *     reportBuilder.show();
      *     }
      * </pre>
-     * The {@link AdhocReportCustomizer} is internally provided by invocation of the {@link DefaultAdhocReportCustomizer}
+     * The {@code AdhocReportCustomizer} is internally provided by invocation of the {@link DefaultAdhocReportCustomizer}
      *
      * @param adhocReport a {@link net.sf.dynamicreports.adhoc.configuration.AdhocReport} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
@@ -118,14 +119,14 @@ public class AdhocManager {
      * <p>createReport.</p>
      * Creates a JasperReportBuilder which is subsequently set up with the {@code JRDataSource} and finaly used to create a report like shown here:
      * <pre>
-     *     {@link
-     *     AdhocConfiguration configuration = new AdhocConfiguration();
-     * 		AdhocReport report = new AdhocReport();
-     * 		configuration.setReport(report);
-     * 		// configure report...
-     *     JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
-     * 	   reportBuilder.setDataSource(createDataSource());
-     * 	   reportBuilder.show();
+     *     {@code
+     *      AdhocConfiguration configuration = new AdhocConfiguration();
+     *      AdhocReport report = new AdhocReport();
+     *      configuration.setReport(report);
+     *      // configure report...
+     *      JasperReportBuilder reportBuilder = AdhocManager.createReport(configuration.getReport(), new ReportCustomizer());
+     *      reportBuilder.setDataSource(createDataSource());
+     *      reportBuilder.show();
      *     }
      * </pre>
      *
@@ -147,17 +148,17 @@ public class AdhocManager {
      * <pre>
      *     AdhocReport report = new AdhocReport();
      *     AdhocColumn column = new AdhocColumn();
-     * 		column.setName("item");
-     * 		report.addColumn(column);
+     *     column.setName("item");
+     *      report.addColumn(column);
      *
-     * 		column = new AdhocColumn();
-     * 		column.setName("quantity");
-     * 		report.addColumn(column);
-     * 	AdhocConfiguration configuration = new AdhocConfiguration();
-     * 	configuration.setReport(report);
+     *      column = new AdhocColumn();
+     *      column.setName("quantity");
+     *      report.addColumn(column);
+     *  AdhocConfiguration configuration = new AdhocConfiguration();
+     *  configuration.setReport(report);
      *
-     * 	// Now saving to an XML file in the system
-     * 	AdhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
+     *  // Now saving to an XML file in the system
+     *  AdhocManager.saveConfiguration(configuration, new FileOutputStream("c:/temp/configuration.xml"));
      * </pre>
      *
      * @param adhocConfiguration a {@link net.sf.dynamicreports.adhoc.configuration.AdhocConfiguration} object.
@@ -182,8 +183,8 @@ public class AdhocManager {
      * <p>loadConfiguration.</p>
      * This method enables a client to read {@link AdhocConfiguration} from an {@link InputStream} The method may be applied as shown:
      * <pre>
-     *     {@link
-     * 			AdhocConfiguration loadedConfiguration = AdhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
+     *     {@code
+     *        AdhocConfiguration loadedConfiguration = AdhocManager.loadConfiguration(new FileInputStream("c:/temp/configuration.xml"));
      *     }
      * </pre>
      *

@@ -46,9 +46,7 @@ public class CustomSubtotalBuilder<T> extends SubtotalBuilder<CustomSubtotalBuil
         setValueExpression(expression);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return getSubtotal().getName();

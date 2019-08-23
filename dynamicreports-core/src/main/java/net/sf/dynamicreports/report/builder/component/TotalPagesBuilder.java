@@ -41,9 +41,7 @@ public class TotalPagesBuilder extends AbstractFormatFieldBuilder<TotalPagesBuil
         super(new DRTotalPages());
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         if (getObject().getFormatExpression() == null) {

@@ -46,9 +46,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
     private Comparator<String> seriesOrderBy;
     private OrderType seriesOrderType;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
@@ -56,9 +54,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.yAxisFormat = new DRAxisFormat();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRAxisFormat getXAxisFormat() {
         return xAxisFormat;
@@ -74,9 +70,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.xAxisFormat = xAxisFormat;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRAxisFormat getYAxisFormat() {
         return yAxisFormat;
@@ -92,9 +86,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.yAxisFormat = yAxisFormat;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowValues() {
         return showValues;
@@ -109,9 +101,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.showValues = showValues;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getValuePattern() {
         return valuePattern;
@@ -126,9 +116,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.valuePattern = valuePattern;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getShowPercentages() {
         return showPercentages;
@@ -143,9 +131,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.showPercentages = showPercentages;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPercentValuePattern() {
         return percentValuePattern;
@@ -160,9 +146,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.percentValuePattern = percentValuePattern;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Comparator<String> getSeriesOrderBy() {
         return seriesOrderBy;
@@ -177,9 +161,7 @@ public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
         this.seriesOrderBy = seriesOrderBy;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public OrderType getSeriesOrderType() {
         return seriesOrderType;

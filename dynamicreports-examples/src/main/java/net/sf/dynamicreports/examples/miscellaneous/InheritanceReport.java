@@ -32,6 +32,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedReport;
@@ -41,6 +42,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>InheritanceReport class.</p>
+ *
+ * Please ensure you have write access on local disc c:\ before running this example
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
@@ -73,12 +76,15 @@ public class InheritanceReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        for (int i = 0; i < 10; i++) {
-            dataSource.add("Book", (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
+        IntStream.range(0, 10).forEach(i -> dataSource.add("Book", (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 
+    /**
+     * Illustration purposes. This class remains non-final to illustrate the impact an inheritance-type report
+     * and as you can see it will be extended by ReportB. It is however expected that the user will have the
+     * wisdom to avoid creating non-final private classes.
+     */
     private class ReportA {
         protected JasperReportBuilder report = report();
 

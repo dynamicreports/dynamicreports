@@ -90,7 +90,7 @@ public class DRPage implements DRIPage {
      * Sets the page width.
      *
      * @param width the page width >= 0
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setWidth(Integer width) {
@@ -114,7 +114,7 @@ public class DRPage implements DRIPage {
      * Sets the page height.
      *
      * @param height the page height >= 0
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setHeight(Integer height) {
@@ -124,9 +124,7 @@ public class DRPage implements DRIPage {
         this.height = height;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public PageOrientation getOrientation() {
         return orientation;
@@ -141,9 +139,7 @@ public class DRPage implements DRIPage {
         this.orientation = orientation;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRMargin getMargin() {
         return margin;
@@ -158,9 +154,7 @@ public class DRPage implements DRIPage {
         this.margin = margin;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getColumnsPerPage() {
         return columnsPerPage;
@@ -178,9 +172,7 @@ public class DRPage implements DRIPage {
         this.columnsPerPage = columnsPerPage;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getColumnSpace() {
         return columnSpace;
@@ -198,9 +190,7 @@ public class DRPage implements DRIPage {
         this.columnSpace = columnSpace;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnorePageWidth() {
         return ignorePageWidth;

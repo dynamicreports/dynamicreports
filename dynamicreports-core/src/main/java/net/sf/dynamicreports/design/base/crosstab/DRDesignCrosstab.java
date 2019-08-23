@@ -59,9 +59,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         super("crosstab");
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void init() {
         super.init();
@@ -71,9 +69,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         measures = new ArrayList<DRIDesignCrosstabMeasure>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignCrosstabDataset getDataset() {
         return dataset;
@@ -88,9 +84,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.dataset = dataset;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean isRepeatColumnHeaders() {
         return repeatColumnHeaders;
@@ -105,9 +99,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.repeatColumnHeaders = repeatColumnHeaders;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean isRepeatRowHeaders() {
         return repeatRowHeaders;
@@ -122,9 +114,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.repeatRowHeaders = repeatRowHeaders;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getColumnBreakOffset() {
         return columnBreakOffset;
@@ -139,9 +129,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.columnBreakOffset = columnBreakOffset;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnoreWidth() {
         return ignoreWidth;
@@ -156,9 +144,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.ignoreWidth = ignoreWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public RunDirection getRunDirection() {
         return runDirection;
@@ -173,9 +159,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.runDirection = runDirection;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignCrosstabCellContent getWhenNoDataCell() {
         return whenNoDataCell;
@@ -190,9 +174,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.whenNoDataCell = whenNoDataCell;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignCrosstabCellContent getHeaderCell() {
         return headerCell;
@@ -207,9 +189,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.headerCell = headerCell;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRDesignCrosstabColumnGroup> getColumnGroups() {
         return columnGroups;
@@ -224,9 +204,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.columnGroups = columnGroups;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRDesignCrosstabRowGroup> getRowGroups() {
         return rowGroups;
@@ -241,9 +219,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.rowGroups = rowGroups;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRDesignCrosstabCell> getCells() {
         return cells;
@@ -258,9 +234,7 @@ public class DRDesignCrosstab extends DRDesignComponent implements DRIDesignCros
         this.cells = cells;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIDesignCrosstabMeasure> getMeasures() {
         return measures;

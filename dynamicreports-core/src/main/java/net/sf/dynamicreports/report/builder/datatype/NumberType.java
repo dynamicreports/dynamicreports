@@ -40,9 +40,7 @@ import java.util.Locale;
 public abstract class NumberType<T extends Number> extends AbstractDataType<Number, T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String valueToString(Number value, Locale locale) {
         if (value != null) {
@@ -51,9 +49,7 @@ public abstract class NumberType<T extends Number> extends AbstractDataType<Numb
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public T stringToValue(String value, Locale locale) throws DRException {
         if (value != null) {
@@ -74,9 +70,7 @@ public abstract class NumberType<T extends Number> extends AbstractDataType<Numb
      */
     protected abstract T numberToValue(Number number);
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @SuppressWarnings("unchecked")
     @Override
     public Class<T> getValueClass() {

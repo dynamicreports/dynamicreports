@@ -36,9 +36,7 @@ public class DRChartDataset implements DRIChartDataset {
 
     private DRDataset subDataset;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDataset getSubDataset() {
         return subDataset;

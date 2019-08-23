@@ -36,9 +36,7 @@ public class DRDesignQuery implements DRIDesignQuery {
     private String text;
     private String language;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getText() {
         return text;
@@ -53,9 +51,7 @@ public class DRDesignQuery implements DRIDesignQuery {
         this.text = text;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getLanguage() {
         return language;

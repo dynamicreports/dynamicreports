@@ -37,9 +37,7 @@ public class DRDesignPropertyExpression implements DRIDesignPropertyExpression {
     private String name;
     private DRIDesignExpression valueExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
@@ -54,9 +52,7 @@ public class DRDesignPropertyExpression implements DRIDesignPropertyExpression {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;

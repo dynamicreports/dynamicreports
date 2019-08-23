@@ -51,17 +51,17 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * <p>SimpleReport_Step11 class.</p>
+ * <p>SimpleReport_Step12 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  * @version $Id: $Id
  */
-public class SimpleReport_Step11 {
+public class SimpleReportStep12 {
 
     /**
-     * <p>Constructor for SimpleReport_Step11.</p>
+     * <p>Constructor for SimpleReport_Step12.</p>
      */
-    public SimpleReport_Step11() {
+    public SimpleReportStep12() {
         build();
     }
 
@@ -71,7 +71,7 @@ public class SimpleReport_Step11 {
      * @param args an array of {@link java.lang.String} objects.
      */
     public static void main(String[] args) {
-        new SimpleReport_Step11();
+        new SimpleReportStep12();
     }
 
     private void build() {
@@ -99,6 +99,10 @@ public class SimpleReport_Step11 {
 
         ConditionalStyleBuilder condition1 = stl.conditionalStyle(cnd.greater(priceColumn, 150)).setBackgroundColor(new Color(210, 255, 210));
         ConditionalStyleBuilder condition2 = stl.conditionalStyle(cnd.smaller(priceColumn, 30)).setBackgroundColor(new Color(255, 210, 210));
+        ConditionalStyleBuilder condition3 = stl.conditionalStyle(cnd.greater(priceColumn, 200)).setBackgroundColor(new Color(0, 190, 0)).bold();
+        ConditionalStyleBuilder condition4 = stl.conditionalStyle(cnd.smaller(priceColumn, 20)).setBackgroundColor(new Color(190, 0, 0)).bold();
+        StyleBuilder priceStyle = stl.style().conditionalStyles(condition3, condition4);
+        priceColumn.setStyle(priceStyle);
         try {
             report()// create new report design
                     .setColumnTitleStyle(columnTitleStyle)
@@ -121,7 +125,7 @@ public class SimpleReport_Step11 {
                     .pageFooter(cmp.pageXofY().setStyle(boldCenteredStyle))// shows number of page at page footer
                     .summary(cmp.horizontalList(itemChart, itemChart2))
                     .setDataSource(createDataSource())// set datasource
-                    .show();// create and show report
+                    .show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }
@@ -129,14 +133,14 @@ public class SimpleReport_Step11 {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Notebook", 1, new BigDecimal(500));
-        dataSource.add("DVD", 5, new BigDecimal(30));
-        dataSource.add("DVD", 1, new BigDecimal(28));
-        dataSource.add("DVD", 5, new BigDecimal(32));
-        dataSource.add("Book", 3, new BigDecimal(11));
-        dataSource.add("Book", 1, new BigDecimal(15));
-        dataSource.add("Book", 5, new BigDecimal(10));
-        dataSource.add("Book", 8, new BigDecimal(9));
+        dataSource.add("Notebook", 1, BigDecimal.valueOf(500));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(30));
+        dataSource.add("DVD", 1, BigDecimal.valueOf(28));
+        dataSource.add("DVD", 5, BigDecimal.valueOf(32));
+        dataSource.add("Book", 3, BigDecimal.valueOf(11));
+        dataSource.add("Book", 1, BigDecimal.valueOf(15));
+        dataSource.add("Book", 5, BigDecimal.valueOf(10));
+        dataSource.add("Book", 8, BigDecimal.valueOf(9));
         return dataSource;
     }
 

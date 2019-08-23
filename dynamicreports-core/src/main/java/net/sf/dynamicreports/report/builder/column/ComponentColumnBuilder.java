@@ -53,7 +53,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param width the column preferred width >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setWidth(Integer width) {
@@ -66,7 +66,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param width the column fixed width >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setFixedWidth(Integer width) {
@@ -80,7 +80,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param width the column minimum width >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setMinWidth(Integer width) {
@@ -94,7 +94,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param height the column preferred height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setHeight(Integer height) {
@@ -107,7 +107,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param height the column fixed height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setFixedHeight(Integer height) {
@@ -121,7 +121,7 @@ public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder
      *
      * @param height the column minimum height >= 0
      * @return a column builder
-     * @throws IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public ComponentColumnBuilder setMinHeight(Integer height) {

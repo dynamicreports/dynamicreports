@@ -249,9 +249,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperReportBuilder setParameter(String name, Object value) {
         super.setParameter(name, value);
@@ -260,9 +258,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public JasperReportBuilder setParameters(Map<String, Object> parameters) {
         super.setParameters(parameters);

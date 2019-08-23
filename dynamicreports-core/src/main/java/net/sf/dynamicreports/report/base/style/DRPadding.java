@@ -60,9 +60,7 @@ public class DRPadding implements DRIPadding {
         right = padding;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getTop() {
         return top;
@@ -80,9 +78,7 @@ public class DRPadding implements DRIPadding {
         this.top = top;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getLeft() {
         return left;
@@ -100,9 +96,7 @@ public class DRPadding implements DRIPadding {
         this.left = left;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getBottom() {
         return bottom;
@@ -120,9 +114,7 @@ public class DRPadding implements DRIPadding {
         this.bottom = bottom;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getRight() {
         return right;

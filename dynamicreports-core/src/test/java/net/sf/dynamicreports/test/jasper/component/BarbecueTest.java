@@ -109,8 +109,8 @@ public class BarbecueTest extends AbstractJasperTest {
         Assert.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
         Assert.assertTrue("Barbecue draw text", component.isDrawText());
         Assert.assertTrue("Barbecue checksum required", component.isChecksumRequired());
-        Assert.assertEquals("Barbecue bar width", new Integer(2), component.getBarWidth());
-        Assert.assertEquals("Barbecue bar height", new Integer(5), component.getBarHeight());
+        Assert.assertEquals("Barbecue bar width", Integer.valueOf(2), component.getBarWidth());
+        Assert.assertEquals("Barbecue bar height", Integer.valueOf(5), component.getBarHeight());
         Assert.assertEquals("Barbecue orientation", RotationEnum.RIGHT, component.getRotation());
     }
 

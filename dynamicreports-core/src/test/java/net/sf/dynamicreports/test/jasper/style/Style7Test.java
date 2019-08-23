@@ -67,13 +67,13 @@ public class Style7Test extends AbstractJasperStyleTest implements Serializable 
 
         JRStyle style = getElementAt("title.textField1", 0).getStyle();
         Assert.assertEquals("line spacing", LineSpacingEnum.DOUBLE, style.getParagraph().getLineSpacing());
-        Assert.assertEquals("line spacing size", new Float(2), style.getParagraph().getLineSpacingSize());
-        Assert.assertEquals("first line indent", new Integer(10), style.getParagraph().getFirstLineIndent());
-        Assert.assertEquals("left indent", new Integer(15), style.getParagraph().getLeftIndent());
-        Assert.assertEquals("right indent", new Integer(20), style.getParagraph().getRightIndent());
-        Assert.assertEquals("spacing before", new Integer(5), style.getParagraph().getSpacingBefore());
-        Assert.assertEquals("spacing after", new Integer(6), style.getParagraph().getSpacingAfter());
-        Assert.assertEquals("tab stop width", new Integer(9), style.getParagraph().getTabStopWidth());
+        Assert.assertEquals("line spacing size", 2f, style.getParagraph().getLineSpacingSize());
+        Assert.assertEquals("first line indent", Integer.valueOf(10), style.getParagraph().getFirstLineIndent());
+        Assert.assertEquals("left indent", Integer.valueOf(15), style.getParagraph().getLeftIndent());
+        Assert.assertEquals("right indent", Integer.valueOf(20), style.getParagraph().getRightIndent());
+        Assert.assertEquals("spacing before", Integer.valueOf(5), style.getParagraph().getSpacingBefore());
+        Assert.assertEquals("spacing after", Integer.valueOf(6), style.getParagraph().getSpacingAfter());
+        Assert.assertEquals("tab stop width", Integer.valueOf(9), style.getParagraph().getTabStopWidth());
         TabStop[] tabStops = style.getParagraph().getTabStops();
         Assert.assertNotNull("tab stops", tabStops);
         Assert.assertEquals("tab stop position", 12, tabStops[0].getPosition());

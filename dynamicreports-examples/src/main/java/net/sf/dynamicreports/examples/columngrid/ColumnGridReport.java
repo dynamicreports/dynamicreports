@@ -29,6 +29,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -91,9 +92,9 @@ public class ColumnGridReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Notebook", new Date(), 1, new BigDecimal(500));
-        dataSource.add("Book", new Date(), 7, new BigDecimal(300));
-        dataSource.add("PDA", new Date(), 2, new BigDecimal(250));
+        dataSource.add("Notebook", Date.from(Instant.now()), 1, BigDecimal.valueOf(500));
+        dataSource.add("Book", Date.from(Instant.now()), 7, BigDecimal.valueOf(300));
+        dataSource.add("PDA", Date.from(Instant.now()), 2, BigDecimal.valueOf(250));
         return dataSource;
     }
 }

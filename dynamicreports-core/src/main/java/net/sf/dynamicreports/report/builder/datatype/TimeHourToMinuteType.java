@@ -34,17 +34,13 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 public class TimeHourToMinuteType extends DateType {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return Defaults.getDefaults().getTimeHourToMinuteType().getPattern();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return Defaults.getDefaults().getTimeHourToMinuteType().getHorizontalTextAlignment();

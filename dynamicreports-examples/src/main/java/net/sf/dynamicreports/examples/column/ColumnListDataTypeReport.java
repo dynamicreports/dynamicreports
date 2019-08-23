@@ -79,7 +79,7 @@ public class ColumnListDataTypeReport {
         comments.add("comment2");
         comments.add("comment3");
         data.setItem("Book");
-        data.setQuantity(new Integer(10));
+        data.setQuantity(10);
         data.setComments(comments);
         datasource.add(data);
 
@@ -88,7 +88,7 @@ public class ColumnListDataTypeReport {
         comments.add("comment1");
         comments.add("comment2");
         data.setItem("Notebook");
-        data.setQuantity(new Integer(20));
+        data.setQuantity(20);
         data.setComments(comments);
         datasource.add(data);
 

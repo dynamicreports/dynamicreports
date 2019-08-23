@@ -41,9 +41,7 @@ public class DRHyperLink implements DRIHyperLink {
     private String hyperLinkType;
     private String hyperLinkTarget;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getAnchorExpression() {
         return anchorExpression;
@@ -58,9 +56,7 @@ public class DRHyperLink implements DRIHyperLink {
         this.anchorExpression = anchorExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<Integer> getPageExpression() {
         return pageExpression;
@@ -75,9 +71,7 @@ public class DRHyperLink implements DRIHyperLink {
         this.pageExpression = pageExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getReferenceExpression() {
         return referenceExpression;
@@ -92,9 +86,7 @@ public class DRHyperLink implements DRIHyperLink {
         this.referenceExpression = referenceExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<String> getTooltipExpression() {
         return tooltipExpression;
@@ -109,9 +101,7 @@ public class DRHyperLink implements DRIHyperLink {
         this.tooltipExpression = tooltipExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getType() {
         return hyperLinkType;
@@ -126,9 +116,7 @@ public class DRHyperLink implements DRIHyperLink {
         this.hyperLinkType = hyperLinkType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getTarget() {
         return hyperLinkTarget;

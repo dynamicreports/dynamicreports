@@ -84,10 +84,10 @@ public class PercentageColumnsReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 3, new BigDecimal(11));
-        dataSource.add("Book", 1, new BigDecimal(15));
-        dataSource.add("Book", 5, new BigDecimal(10));
-        dataSource.add("Book", 8, new BigDecimal(9));
+        dataSource.add("Book", 3, BigDecimal.valueOf (11));
+        dataSource.add("Book", 1, BigDecimal.valueOf (15));
+        dataSource.add("Book", 5, BigDecimal.valueOf (10));
+        dataSource.add("Book", 8, BigDecimal.valueOf (9));
         return dataSource;
     }
 }

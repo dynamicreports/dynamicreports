@@ -215,6 +215,7 @@ public class BandTransform {
      * <p>band.</p>
      *
      * @param bandName                   a {@link java.lang.String} object.
+     * @param bandName                   a {@link java.lang.String} object.
      * @param band                       a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
      * @param splitType                  a {@link net.sf.dynamicreports.report.constant.SplitType} object.
      * @param defaultStyle               a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
@@ -244,6 +245,7 @@ public class BandTransform {
     /**
      * <p>band.</p>
      *
+     * @param bandName                   a {@link java.lang.String} object.
      * @param bandName                   a {@link java.lang.String} object.
      * @param band                       a {@link net.sf.dynamicreports.report.definition.DRIBand} object.
      * @param splitType                  a {@link net.sf.dynamicreports.report.constant.SplitType} object.

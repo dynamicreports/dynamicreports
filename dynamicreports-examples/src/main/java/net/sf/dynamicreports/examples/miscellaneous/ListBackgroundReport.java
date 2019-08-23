@@ -33,7 +33,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.awt.Color;
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -98,9 +100,7 @@ public class ListBackgroundReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        for (int i = 0; i < 30; i++) {
-            dataSource.add("Book", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
+        IntStream.range(0, 30).forEach(i -> dataSource.add("Book", Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 }

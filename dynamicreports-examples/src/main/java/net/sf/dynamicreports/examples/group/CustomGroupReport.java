@@ -79,14 +79,14 @@ public class CustomGroupReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("orderdate", "item", "quantity", "unitprice");
-        dataSource.add("2009-11-01", "Tablet", 5, new BigDecimal(250));
-        dataSource.add("2009-11-01", "Laptop", 3, new BigDecimal(480));
-        dataSource.add("2009-12-01", "Smartphone", 1, new BigDecimal(280));
-        dataSource.add("2009-12-01", "Tablet", 1, new BigDecimal(190));
-        dataSource.add("2010-01-01", "Tablet", 4, new BigDecimal(230));
-        dataSource.add("2010-01-01", "Laptop", 2, new BigDecimal(650));
-        dataSource.add("2010-02-01", "Laptop", 3, new BigDecimal(550));
-        dataSource.add("2010-02-01", "Smartphone", 5, new BigDecimal(210));
+        dataSource.add("2009-11-01", "Tablet", 5, BigDecimal.valueOf(250));
+        dataSource.add("2009-11-01", "Laptop", 3, BigDecimal.valueOf(480));
+        dataSource.add("2009-12-01", "Smartphone", 1, BigDecimal.valueOf(280));
+        dataSource.add("2009-12-01", "Tablet", 1, BigDecimal.valueOf(190));
+        dataSource.add("2010-01-01", "Tablet", 4, BigDecimal.valueOf(230));
+        dataSource.add("2010-01-01", "Laptop", 2, BigDecimal.valueOf(650));
+        dataSource.add("2010-02-01", "Laptop", 3, BigDecimal.valueOf(550));
+        dataSource.add("2010-02-01", "Smartphone", 5, BigDecimal.valueOf(210));
         return dataSource;
     }
 

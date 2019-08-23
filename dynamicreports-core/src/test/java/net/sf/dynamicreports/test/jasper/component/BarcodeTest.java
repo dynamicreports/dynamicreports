@@ -332,12 +332,12 @@ public class BarcodeTest extends AbstractJasperTest {
 
         // pdf417
         PDF417Component pdf417 = testBarcode("PDF417", PDF417Component.class, TextPositionEnum.NONE);
-        Assert.assertEquals("PDF417 min columns", new Integer(2), pdf417.getMinColumns());
-        Assert.assertEquals("PDF417 max columns", new Integer(30), pdf417.getMaxColumns());
-        Assert.assertEquals("PDF417 min rows", new Integer(3), pdf417.getMinRows());
-        Assert.assertEquals("PDF417 max rows", new Integer(29), pdf417.getMaxRows());
+        Assert.assertEquals("PDF417 min columns", Integer.valueOf(2), pdf417.getMinColumns());
+        Assert.assertEquals("PDF417 max columns", Integer.valueOf(30), pdf417.getMaxColumns());
+        Assert.assertEquals("PDF417 min rows", Integer.valueOf(3), pdf417.getMinRows());
+        Assert.assertEquals("PDF417 max rows", Integer.valueOf(29), pdf417.getMaxRows());
         Assert.assertEquals("PDF417 width to height ratio", 2.6, pdf417.getWidthToHeightRatio());
-        Assert.assertEquals("PDF417 error correction level", new Integer(8), pdf417.getErrorCorrectionLevel());
+        Assert.assertEquals("PDF417 error correction level", Integer.valueOf(8), pdf417.getErrorCorrectionLevel());
 
         // qrCode
         testQrCode();
@@ -376,7 +376,7 @@ public class BarcodeTest extends AbstractJasperTest {
         Assert.assertTrue("QRCode is not instance of " + QRCodeComponent.class.getName(), component.getClass().equals(QRCodeComponent.class));
         QRCodeComponent qrComponentComponent = (QRCodeComponent) component;
 
-        Assert.assertEquals("QRCode margin", new Integer(2), qrComponentComponent.getMargin());
+        Assert.assertEquals("QRCode margin", Integer.valueOf(2), qrComponentComponent.getMargin());
         Assert.assertEquals("QRCode error correction level", ErrorCorrectionLevelEnum.H, qrComponentComponent.getErrorCorrectionLevel());
     }
 }

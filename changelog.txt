@@ -1,6 +1,20 @@
 DynamicReports Change Log
 =========================
 
+
+Changes in version 6.0.1 (2018-09-01)
+---------------------------------------------------
+ - Updated spring framework to version 4.3.20.RELEASE due to vulnerabilities found in
+   3.2.18.RELEASE
+ - Upgrade to poi library to version 3.17
+ - Upgrade groovy to version 2.4.15 from version 1.7.5
+ - Java 9 compatibility
+ - Remove deprecated code
+ - Add API to detect usage of legacy code, before java 1.8
+ - Upgrade JAXB runtime
+ - Upgrade maven compiler plugin to version 3.8.0 (for Java 11 Compatibility)
+ - Address of Issue#39: Thread safety for unique names generation in ReportsUtils class
+
 Changes in version 6.0.0 (2018-09-01)
 ---------------------------------------------------
  - Upgrade to JasperReports 6.7.0

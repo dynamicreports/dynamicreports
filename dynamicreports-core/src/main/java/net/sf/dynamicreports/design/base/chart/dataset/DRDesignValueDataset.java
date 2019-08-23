@@ -36,9 +36,7 @@ public class DRDesignValueDataset extends DRDesignChartDataset implements DRIDes
 
     private DRIDesignExpression valueExpression;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;

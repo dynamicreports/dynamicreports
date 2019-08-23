@@ -324,6 +324,22 @@ public class AdhocChart extends AdhocComponent {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getType() != null ? getType().hashCode() : 0;
+        result = 31 * result + (getTitle() != null ? getTitle().hashCode() : 0);
+        result = 31 * result + (getTitleFont() != null ? getTitleFont().hashCode() : 0);
+        result = 31 * result + (getTitleColor() != null ? getTitleColor().hashCode() : 0);
+        result = 31 * result + (getShowLegend() != null ? getShowLegend().hashCode() : 0);
+        result = 31 * result + (xValue != null ? xValue.hashCode() : 0);
+        result = 31 * result + (getSeries() != null ? getSeries().hashCode() : 0);
+        result = 31 * result + (getSeriesColors() != null ? getSeriesColors().hashCode() : 0);
+        result = 31 * result + (xAxisFormat != null ? xAxisFormat.hashCode() : 0);
+        result = 31 * result + (yAxisFormat != null ? yAxisFormat.hashCode() : 0);
+        result = 31 * result + (getOrientation() != null ? getOrientation().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

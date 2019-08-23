@@ -13,7 +13,7 @@
                 <entry key="custom">
                     <map>
                         <entry key="net.sf.jasperreports.html">
-                            <ref local="customHtmlExportHandler"/>
+                            <ref bean="customHtmlExportHandler"/>
                         </entry>
                     </map>
                 </entry>

@@ -213,6 +213,17 @@ public class AdhocColumn implements Cloneable, Serializable {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getTitle() != null ? getTitle().hashCode() : 0);
+        result = 31 * result + (getWidth() != null ? getWidth().hashCode() : 0);
+        result = 31 * result + (getStyle() != null ? getStyle().hashCode() : 0);
+        result = 31 * result + (getTitleStyle() != null ? getTitleStyle().hashCode() : 0);
+        result = 31 * result + (getProperties() != null ? getProperties().hashCode() : 0);
+        return result;
+    }
+
     /**
      * {@inheritDoc}
      */

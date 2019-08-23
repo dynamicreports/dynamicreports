@@ -43,25 +43,19 @@ public class ListType extends AbstractDataType<List, List> {
 
     private static ListFormatter listFormatter = new ListFormatter();
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIValueFormatter<?, ? extends List> getValueFormatter() {
         return listFormatter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getPattern() {
         return Defaults.getDefaults().getStringType().getPattern();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalTextAlignment getHorizontalTextAlignment() {
         return Defaults.getDefaults().getStringType().getHorizontalTextAlignment();
@@ -72,7 +66,7 @@ public class ListType extends AbstractDataType<List, List> {
 
         @Override
         public String format(List values, ReportParameters reportParameters) {
-            StringBuffer result = new StringBuffer();
+            StringBuilder result = new StringBuilder();
             for (Object value : values) {
                 if (result.length() > 0) {
                     result.append("\n");

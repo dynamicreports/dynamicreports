@@ -54,9 +54,7 @@ public class DRXyListCell implements DRIXyListCell {
         this.component = component;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getX() {
         return x;
@@ -71,9 +69,7 @@ public class DRXyListCell implements DRIXyListCell {
         this.x = x;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getY() {
         return y;
@@ -88,9 +84,7 @@ public class DRXyListCell implements DRIXyListCell {
         this.y = y;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRComponent getComponent() {
         return component;

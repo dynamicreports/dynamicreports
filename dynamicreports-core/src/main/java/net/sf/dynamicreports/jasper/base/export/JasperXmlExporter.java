@@ -35,9 +35,7 @@ public class JasperXmlExporter extends AbstractJasperExporter implements JasperI
 
     private Boolean embeddingImages;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getEmbeddingImages() {
         return embeddingImages;

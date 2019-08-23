@@ -130,7 +130,7 @@ public class ConversionColumnReport {
             String value = reportParameters.getValue("quantity");
             try {
                 Number number = new DecimalFormat("#,###.##", new DecimalFormatSymbols(reportParameters.getLocale())).parse(value);
-                return new BigDecimal(number.doubleValue());
+                return BigDecimal.valueOf(number.doubleValue());
             } catch (ParseException e) {
                 e.printStackTrace();
             }

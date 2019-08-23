@@ -48,9 +48,7 @@ public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDe
         series = new ArrayList<DRIDesignChartSerie>();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getValueExpression() {
         return valueExpression;
@@ -74,9 +72,7 @@ public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDe
         series.add(serie);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public List<DRIDesignChartSerie> getSeries() {
         return series;

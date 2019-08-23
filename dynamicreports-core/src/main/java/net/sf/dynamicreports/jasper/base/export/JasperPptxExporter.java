@@ -35,9 +35,7 @@ public class JasperPptxExporter extends AbstractJasperExporter implements Jasper
 
     private Boolean ignoreHyperLink;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getIgnoreHyperLink() {
         return ignoreHyperLink;

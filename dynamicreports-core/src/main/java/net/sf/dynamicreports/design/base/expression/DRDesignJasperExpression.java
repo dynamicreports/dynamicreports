@@ -45,25 +45,19 @@ public class DRDesignJasperExpression implements DRIDesignJasperExpression {
         this.jasperExpression = jasperExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getExpression() {
         return jasperExpression.getExpression();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return jasperExpression.getValueClass();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return jasperExpression.getName();

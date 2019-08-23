@@ -47,7 +47,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageX component preferred width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageXWidth(Integer width) {
@@ -60,7 +60,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageX component fixed width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageXFixedWidth(Integer width) {
@@ -74,7 +74,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageX component minimum width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageXMinWidth(Integer width) {
@@ -88,7 +88,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageY component preferred width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageYWidth(Integer width) {
@@ -101,7 +101,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageY component fixed width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageYFixedWidth(Integer width) {
@@ -115,7 +115,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
      *
      * @param width the pageY component minimum width >= 0
      * @return a {@link net.sf.dynamicreports.report.builder.component.PageXslashYBuilder} object.
-     * @throws IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public PageXslashYBuilder setPageYMinWidth(Integer width) {
@@ -124,9 +124,7 @@ public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBu
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     protected void configure() {
         if (getObject().getFormatExpression() == null) {

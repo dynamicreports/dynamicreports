@@ -44,9 +44,7 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
     private DRIExpression<?> dataSourceExpression;
     private Boolean runToBottom;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getReportExpression() {
         return reportExpression;
@@ -62,9 +60,7 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
         this.reportExpression = reportExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<Map<String, Object>> getParametersExpression() {
         return parametersExpression;
@@ -79,9 +75,7 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
         this.parametersExpression = parametersExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<Connection> getConnectionExpression() {
         return connectionExpression;
@@ -96,9 +90,7 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
         this.connectionExpression = connectionExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIExpression<?> getDataSourceExpression() {
         return dataSourceExpression;
@@ -113,9 +105,7 @@ public class DRSubreport extends DRDimensionComponent implements DRISubreport {
         this.dataSourceExpression = dataSourceExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getRunToBottom() {
         return runToBottom;

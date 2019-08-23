@@ -94,7 +94,7 @@ public class GroupSubtotalsReport {
         c.add(Calendar.YEAR, -1);
         for (int i = 0; i < 200; i++) {
             Date date = c.getTime();
-            dataSource.add(date, (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
+            dataSource.add(date, (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1));
             c.add(Calendar.DAY_OF_MONTH, 1);
         }
         return dataSource;

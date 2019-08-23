@@ -89,11 +89,11 @@ public class CustomSubtotalReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "price");
-        dataSource.add("Tablet", 3, new BigDecimal(330));
-        dataSource.add("Tablet", 1, new BigDecimal(150));
-        dataSource.add("Laptop", 3, new BigDecimal(900));
-        dataSource.add("Smartphone", 8, new BigDecimal(720));
-        dataSource.add("Smartphone", 6, new BigDecimal(720));
+        dataSource.add("Tablet", 3, BigDecimal.valueOf(330));
+        dataSource.add("Tablet", 1, BigDecimal.valueOf(150));
+        dataSource.add("Laptop", 3, BigDecimal.valueOf(900));
+        dataSource.add("Smartphone", 8, BigDecimal.valueOf(720));
+        dataSource.add("Smartphone", 6, BigDecimal.valueOf(720));
         return dataSource;
     }
 
@@ -104,7 +104,7 @@ public class CustomSubtotalReport {
         public BigDecimal evaluate(ReportParameters reportParameters) {
             Integer quantitySumValue = reportParameters.getValue(quantitySum);
             BigDecimal priceSumValue = reportParameters.getValue(priceSum);
-            return priceSumValue.divide(new BigDecimal(quantitySumValue), 2, BigDecimal.ROUND_HALF_UP);
+            return priceSumValue.divide(BigDecimal.valueOf(quantitySumValue), 2, BigDecimal.ROUND_HALF_UP);
         }
     }
 }

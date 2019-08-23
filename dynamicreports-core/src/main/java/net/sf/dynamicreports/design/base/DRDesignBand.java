@@ -53,17 +53,13 @@ public class DRDesignBand implements DRIDesignBand {
         this.name = name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public SplitType getSplitType() {
         return splitType;
@@ -78,9 +74,7 @@ public class DRDesignBand implements DRIDesignBand {
         this.splitType = splitType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignList getList() {
         return list;
@@ -114,9 +108,7 @@ public class DRDesignBand implements DRIDesignBand {
         list.addComponent(index, component);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRDesignComponent getBandComponent() {
         return bandComponent;
@@ -131,9 +123,7 @@ public class DRDesignBand implements DRIDesignBand {
         this.bandComponent = component;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Integer getHeight() {
         return height;
@@ -148,9 +138,7 @@ public class DRDesignBand implements DRIDesignBand {
         this.height = height;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public DRIDesignExpression getPrintWhenExpression() {
         return printWhenExpression;

@@ -49,9 +49,7 @@ public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> 
         this.dataType = dataType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String evaluate(ReportParameters reportParameters) {
         return dataType.valueToString(valueExpression.getName(), reportParameters);

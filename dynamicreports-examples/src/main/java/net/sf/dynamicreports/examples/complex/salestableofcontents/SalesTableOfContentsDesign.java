@@ -189,7 +189,7 @@ public class SalesTableOfContentsDesign {
             return headingComponent;
         }
 
-        private class CountryExpression extends AbstractComplexExpression<String> {
+        private final class CountryExpression extends AbstractComplexExpression<String> {
             private static final long serialVersionUID = 1L;
 
             private String value;
@@ -209,7 +209,7 @@ public class SalesTableOfContentsDesign {
             }
         }
 
-        private class CountryHeadingExpression extends AbstractComplexExpression<String> {
+        private final class CountryHeadingExpression extends AbstractComplexExpression<String> {
             private static final long serialVersionUID = 1L;
 
             private CountryHeadingExpression() {

@@ -36,7 +36,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
+import java.util.stream.IntStream;
 
 /**
  * <p>SimpleAdhocReport class.</p>
@@ -88,18 +90,14 @@ public class SimpleAdhocReport {
             JasperReportBuilder reportBuilder = adhocManager.createReport(configuration.getReport());
             reportBuilder.setDataSource(createDataSource());
             reportBuilder.show();
-        } catch (DRException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        } catch (DRException | FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        for (int i = 0; i < 20; i++) {
-            dataSource.add("Book", new Date(), (int) (Math.random() * 10) + 1, new BigDecimal(Math.random() * 100 + 1));
-        }
+        IntStream.range(0, 20).forEach(i -> dataSource.add("Book # " + i, Date.from(Instant.now()), (int) (Math.random() * 10) + 1, BigDecimal.valueOf(Math.random() * 100 + 1)));
         return dataSource;
     }
 }

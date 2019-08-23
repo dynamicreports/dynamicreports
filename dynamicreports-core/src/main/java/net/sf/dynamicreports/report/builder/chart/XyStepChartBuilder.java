@@ -63,10 +63,10 @@ public class XyStepChartBuilder extends AbstractXyChartBuilder<XyStepChartBuilde
         return this;
     }
 
-	/*public XyStepChartBuilder setPercentValuePattern(String percentValuePattern) {
-		getPlot().setPercentValuePattern(percentValuePattern);
-		return this;
-	}*/
+    /*public XyStepChartBuilder setPercentValuePattern(String percentValuePattern) {
+        getPlot().setPercentValuePattern(percentValuePattern);
+        return this;
+    }*/
 
     /**
      * <p>setStepPoint.</p>

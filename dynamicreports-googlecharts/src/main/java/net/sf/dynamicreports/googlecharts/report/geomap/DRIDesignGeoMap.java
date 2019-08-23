@@ -42,54 +42,54 @@ public interface DRIDesignGeoMap extends DRIDesignCustomComponent {
      *
      * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
      */
-    public EvaluationTime getEvaluationTime();
+    EvaluationTime getEvaluationTime();
 
     /**
      * <p>getEvaluationGroup.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      */
-    public DRIDesignGroup getEvaluationGroup();
+    DRIDesignGroup getEvaluationGroup();
 
     /**
      * <p>getShowLegend.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getShowLegend();
+    Boolean getShowLegend();
 
     /**
      * <p>getDataMode.</p>
      *
      * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.GeoMapDataMode} object.
      */
-    public GeoMapDataMode getDataMode();
+    GeoMapDataMode getDataMode();
 
     /**
      * <p>getRegionExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public DRIDesignExpression getRegionExpression();
+    DRIDesignExpression getRegionExpression();
 
     /**
      * <p>getValueLabelExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public DRIDesignExpression getValueLabelExpression();
+    DRIDesignExpression getValueLabelExpression();
 
     /**
      * <p>getColors.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<Color> getColors();
+    List<Color> getColors();
 
     /**
      * <p>getDataset.</p>
      *
      * @return a {@link net.sf.dynamicreports.googlecharts.report.geomap.DRIDesignGeoMapDataset} object.
      */
-    public DRIDesignGeoMapDataset getDataset();
+    DRIDesignGeoMapDataset getDataset();
 }

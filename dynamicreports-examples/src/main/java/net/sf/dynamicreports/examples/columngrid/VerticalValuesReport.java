@@ -34,6 +34,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Date;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
@@ -104,9 +105,9 @@ public class VerticalValuesReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "orderdate", "quantity", "unitprice");
-        dataSource.add("Notebook", new Date(), 1, new BigDecimal(500));
-        dataSource.add("Book", new Date(), 4, new BigDecimal(25));
-        dataSource.add("PDA", new Date(), 2, new BigDecimal(120));
+        dataSource.add("Notebook", Date.from(Instant.now()), 1, BigDecimal.valueOf (500));
+        dataSource.add("Book", Date.from(Instant.now()), 4, BigDecimal.valueOf(25));
+        dataSource.add("PDA", Date.from(Instant.now()), 2, BigDecimal.valueOf(120));
         return dataSource;
     }
 }

@@ -75,7 +75,7 @@ public class ComplexExpressionReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
-        dataSource.add("Book", 20, new BigDecimal(10));
+        dataSource.add("Book", 20, BigDecimal.valueOf(10));
         return dataSource;
     }
 
@@ -91,7 +91,7 @@ public class ComplexExpressionReport {
         public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
             Integer quantity = (Integer) values.get(0);
             BigDecimal unitPrice = (BigDecimal) values.get(1);
-            return new BigDecimal(quantity).multiply(unitPrice);
+            return BigDecimal.valueOf(quantity).multiply(unitPrice);
         }
     }
 }

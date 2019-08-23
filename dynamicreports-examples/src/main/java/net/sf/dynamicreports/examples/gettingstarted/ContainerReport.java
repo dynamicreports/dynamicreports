@@ -68,7 +68,7 @@ public class ContainerReport {
                     .title(createTextField("Horizontal list (contains 10 textfields)"), createHorizontalList(), cmp.verticalGap(20),
                            createTextField("Multi row horizontal list (contains 10 textfields)"), createMultiRowHorizontalList(), cmp.verticalGap(20),
                            createTextField("Horizontal flow list (contains 9 textfields)"), createHorizontalFlowList(), cmp.verticalGap(20), createTextField("Vertical list (contains 4 textfields)"),
-                           createVerticalList(), cmp.verticalGap(20), createTextField("Nested list (contains 1 horizontal and 3 vertical lists)"), createNestedList()).show();// create and show report
+                           createVerticalList(), cmp.verticalGap(20), createTextField("Nested list (contains 1 horizontal and 3 vertical lists)"), createNestedList()).show(); // create and show report
         } catch (DRException e) {
             e.printStackTrace();
         }

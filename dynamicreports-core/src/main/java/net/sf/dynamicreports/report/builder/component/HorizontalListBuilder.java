@@ -178,9 +178,7 @@ public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalL
         return this;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public HorizontalListBuilder setStyle(ReportStyleBuilder style) {
         if (style != null) {

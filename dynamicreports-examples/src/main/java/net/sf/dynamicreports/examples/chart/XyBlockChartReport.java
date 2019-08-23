@@ -30,6 +30,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
 
 import java.awt.Color;
+import java.util.stream.IntStream;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
@@ -91,10 +92,10 @@ public class XyBlockChartReport {
 
     private JRDataSource createDataSource() {
         DRDataSource dataSource = new DRDataSource("x", "y", "z");
-        for (int i = 0; i < 10; i++) {
+        IntStream.range(0, 10).forEachOrdered(i -> {
             dataSource.add(i, 0, (int) (Math.random() * 4));
             dataSource.add(i, 1, (int) (Math.random() * 4));
-        }
+        });
         return dataSource;
     }
 }

@@ -51,9 +51,7 @@ public class DatabaseDatasourceReport {
             connection = DriverManager.getConnection("jdbc:hsqldb:mem:test");
             createTable();
             build();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

@@ -215,6 +215,7 @@ public class ExpressionBuilders {
      *
      * @param value      a T object.
      * @param valueClass a {@link java.lang.Class} object.
+     * @param valueClass a {@link java.lang.Class} object.
      * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.expression.ValueExpression} object.
      */

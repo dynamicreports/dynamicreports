@@ -56,9 +56,7 @@ public class DifferenceRendererCustomizer implements DRIChartCustomizer, Seriali
         this.showShapes = differencePlot.getShowShapes();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();

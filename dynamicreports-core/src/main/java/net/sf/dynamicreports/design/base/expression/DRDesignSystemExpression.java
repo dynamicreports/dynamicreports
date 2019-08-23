@@ -45,17 +45,13 @@ public class DRDesignSystemExpression implements DRIDesignSystemExpression {
         this.systemExpression = systemExpression;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Class<?> getValueClass() {
         return systemExpression.getValueClass();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public String getName() {
         return systemExpression.getName();

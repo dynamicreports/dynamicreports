@@ -39,9 +39,7 @@ public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barco
     private Double intercharGapWidth;
     private Double wideFactor;
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getDisplayChecksum() {
         return displayChecksum;
@@ -56,9 +54,7 @@ public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barco
         this.displayChecksum = displayChecksum;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getDisplayStartStop() {
         return displayStartStop;
@@ -73,9 +69,7 @@ public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barco
         this.displayStartStop = displayStartStop;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Boolean getExtendedCharSetEnabled() {
         return extendedCharSetEnabled;
@@ -90,9 +84,7 @@ public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barco
         this.extendedCharSetEnabled = extendedCharSetEnabled;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getIntercharGapWidth() {
         return intercharGapWidth;
@@ -107,9 +99,7 @@ public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barco
         this.intercharGapWidth = intercharGapWidth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Double getWideFactor() {
         return wideFactor;
