@@ -1,7 +1,10 @@
 
+#### Master
 [![Build Status](https://travis-ci.com/dynamicreports/dynamicreports.svg?branch=master)](https://travis-ci.com/dynamicreports/dynamicreports)
-[![Build Status](https://travis-ci.com/dynamicreports/dynamicreports.svg?branch=development)](https://travis-ci.com/dynamicreports/dynamicreports)
 [![codecov](https://codecov.io/gh/dynamicreports/dynamicreports/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamicreports/dynamicreports)
+
+#### Development
+[![Build Status](https://travis-ci.com/dynamicreports/dynamicreports.svg?branch=development)](https://travis-ci.com/dynamicreports/dynamicreports)
 [![codecov](https://codecov.io/gh/dynamicreports/dynamicreports/branch/development/graph/badge.svg)](https://codecov.io/gh/dynamicreports/dynamicreports)
 
 # Dynamic Reports
