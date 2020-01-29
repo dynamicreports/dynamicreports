@@ -7,10 +7,10 @@
         <artifactId>oss-parent</artifactId>
         <version>9</version>
     </parent>
-
+<prerequisites><maven>3.3.9</maven></prerequisites>
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.1.1-SNAPSHOT</version>
+    <version>6.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -46,12 +46,12 @@
         <!--Dependencies -->
         <barcode4jVersion>2.0</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
-        <batikbridgeVersion>1.9</batikbridgeVersion>
+        <batikbridgeVersion>1.12</batikbridgeVersion>
         <commonslangVersion>2.6</commonslangVersion>
-        <commonslang3Version>3.1</commonslang3Version>
+        <commonslang3Version>3.9</commonslang3Version>
         <groovyVersion>2.4.15</groovyVersion>
         <hsqldbVersion>1.8.0.10</hsqldbVersion>
-        <jasperreportsVersion>6.9.0</jasperreportsVersion>
+        <jasperreportsVersion>6.11.0</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
@@ -70,19 +70,17 @@
         <xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
-        <jacoco-maven-plugin-version>0.8.1</jacoco-maven-plugin-version>
+        <jacoco-maven-plugin-version>0.8.5</jacoco-maven-plugin-version>
         <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
-        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
-        <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
-        <maven-enforcer-plugin-version>3.0.0-M2</maven-enforcer-plugin-version>
+        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
         <maven-jdeps-plugin-version>3.1.1</maven-jdeps-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
         <!--Profile Plugins-->
         <license-maven-plugin-version>3.0</license-maven-plugin-version>
-        <maven-javadoc-plugin-version>3.0.1</maven-javadoc-plugin-version>
-        <maven-source-plugin-version>3.0.1</maven-source-plugin-version>
+        <maven-javadoc-plugin-version>3.1.1</maven-javadoc-plugin-version>
+        <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
 
         <!--Mycila License plugin configuration-->
         <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
@@ -291,9 +289,33 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                    <executions>
+                        <execution>
+                            <id>enforce-versions</id>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <rules>
+                            <requireJavaVersion>[1.8,)</requireJavaVersion>
+                            <requireMavenVersion>[3.3.9,)</requireMavenVersion>
+                        </rules>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin-version}</version>
+                    <version>3.8.1</version>
                     <configuration>
                         <source>${sourceVersion}</source>
                         <target>${targetVersion}</target>
@@ -322,7 +344,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jdeps-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.1.2</version>
                     <executions>
                         <execution>
                             <goals>
@@ -336,7 +358,7 @@
                 <plugin>
                     <groupId>org.gaul</groupId>
                     <artifactId>modernizer-maven-plugin</artifactId>
-                    <version>1.7.0</version>
+                    <version>2.0.0</version>
                     <configuration>
                         <javaVersion>${modernizer-javaVersion}</javaVersion>
                         <failOnViolations>${modernizer-failOnViolations}</failOnViolations>
@@ -351,6 +373,41 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>0.14.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -453,7 +510,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>animal-sniffer-maven-plugin</artifactId>
-                        <version>1.16</version>
+                        <version>1.18</version>
                         <executions>
                             <execution>
                                 <phase>test</phase>
@@ -655,7 +712,7 @@
     </profiles>
 
     <repositories>
-        <!--Repository containing com.lowagie:itext:jar:2.1.7.js6, not available in maven central -->
+        <!--Repository containing com.lowagie:itext:jar:2.1.7.js7, not available in maven central -->
         <repository>
             <id>jaspersoft-third-party</id>
             <url>
