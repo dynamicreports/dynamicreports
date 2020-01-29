@@ -7,7 +7,7 @@
         <artifactId>oss-parent</artifactId>
         <version>9</version>
     </parent>
-<prerequisites><maven>3.3.9</maven></prerequisites>
+
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
     <version>6.2.0-SNAPSHOT</version>
@@ -302,8 +302,12 @@
                     </executions>
                     <configuration>
                         <rules>
-                            <requireJavaVersion>[1.8,)</requireJavaVersion>
-                            <requireMavenVersion>[3.3.9,)</requireMavenVersion>
+                            <requireJavaVersion>
+                                <version>[1.8,)</version>
+                            </requireJavaVersion>
+                            <requireMavenVersion>
+                                <version>[3.3.9,)</version>
+                            </requireMavenVersion>
                         </rules>
                     </configuration>
                 </plugin>
@@ -378,6 +382,21 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin-version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
