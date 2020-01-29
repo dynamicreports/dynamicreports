@@ -14,7 +14,7 @@ You can very quickly create reports and produce documents that can be displayed,
 or exported into many popular formats such as PDF, Excel, Word and others.
 <br>
 The original source code was first hosted on [sourceforge](https://sourceforge.net/p/dynamicreports) and
-interactions were carried out through [dynamicreports.org](http://www.dynamicreports.org/). After
+interactions were carried out through [dynamicreports.org]. After
 using this project and libraries, we the maintainers felt compelled to support the development for it has
 been a great tool. However the source code has not been easily accessible and the original hosting website
 on which this project was first created is no longer responsive and we do not want to see a great project
