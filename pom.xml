@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
-    <url>http://www.dynamicreports.org</url>
+    <url>https://github.com/dynamicreports</url>
     <description>DynamicReports parent</description>
     <inceptionYear>2010</inceptionYear>
     <licenses>
@@ -36,18 +36,6 @@
         <module>dynamicreports-googlecharts</module>
         <module>dynamicreports-examples</module>
     </modules>
-
-    <developers>
-        <developer>
-            <id>ricardomariaca</id>
-            <name>Ricardo Mariaca</name>
-            <email>r.mariaca@dynamicreports.org</email>
-            <roles>
-                <role>Project lead</role>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
 
     <properties>
         <!--Environment -->
