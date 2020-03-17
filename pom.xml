@@ -44,30 +44,28 @@
         <targetVersion>1.8</targetVersion>
 
         <!--Dependencies -->
-        <barcode4jVersion>2.0</barcode4jVersion>
+        <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.12</batikbridgeVersion>
         <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.9</commonslang3Version>
-        <groovyVersion>2.4.15</groovyVersion>
-        <hsqldbVersion>1.8.0.10</hsqldbVersion>
+        <groovyVersion>2.4.16</groovyVersion>
+        <hsqldbVersion>2.5.0</hsqldbVersion>
         <jasperreportsVersion>6.11.0</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
         <jaxbVersion>2.3.0.1</jaxbVersion>
-        <jsonVersion>20080701</jsonVersion>
+        <jsonVersion>20190722</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
-        <junitVersion>4.12</junitVersion>
-        <log4j-to-slf4jVersion>2.10.0</log4j-to-slf4jVersion>
+        <junitVersion>4.13</junitVersion>
+        <log4j-to-slf4jVersion>2.13.1</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
-        <!--//TODO update poi to version 4 once jasperreports drops deprecated org.apache.poi.hssf.util.HSSFColor.WHITE-->
-        <poiVersion>3.17</poiVersion>
-        <!--//TODO update springframework to 5.1.3.RELEASE after jasperreports drops 3.2.18.RELEASE in upcoming version 6.8.0-->
-        <springframeworkVersion>5.1.8.RELEASE</springframeworkVersion>
+        <poiVersion>4.1.2</poiVersion>
+        <springframeworkVersion>5.2.4.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xalanVersion>2.7.2</xalanVersion>
-        <xmlgraphicscommonsVersion>2.1</xmlgraphicscommonsVersion>
+        <xmlgraphicscommonsVersion>2.4</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.5</jacoco-maven-plugin-version>
