@@ -125,7 +125,9 @@
                 </executions>
                 <configuration>
                     <excludes>module-info.java</excludes>
-                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    <sourceDirectories>
+                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    </sourceDirectories>
                     <headerLocation>../src/etc/checkstyle.xml</headerLocation>
                     <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                     <configLocation>../src/etc/checkstyle.xml</configLocation>
