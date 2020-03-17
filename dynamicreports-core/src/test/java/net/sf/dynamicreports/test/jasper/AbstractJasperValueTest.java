@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.jasper;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.GroupBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.BaseSubtotalBuilder;

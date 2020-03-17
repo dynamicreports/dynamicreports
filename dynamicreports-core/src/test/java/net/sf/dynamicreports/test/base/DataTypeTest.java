@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.base;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.report.builder.datatype.BigDecimalType;
 import net.sf.dynamicreports.report.builder.datatype.StringType;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;

@@ -21,7 +21,13 @@
  */
 package net.sf.dynamicreports.test.jasper.style;
 
-import junit.framework.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import java.io.Serializable;
+
+import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.report.constant.LineSpacing;
@@ -32,11 +38,6 @@ import net.sf.jasperreports.engine.TabStop;
 import net.sf.jasperreports.engine.type.LineSpacingEnum;
 import net.sf.jasperreports.engine.type.TabStopAlignEnum;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
@@ -44,8 +45,8 @@ public class Style7Test extends AbstractJasperStyleTest implements Serializable 
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style()
+    protected void configureReport(final JasperReportBuilder rb) {
+        final StyleBuilder style = stl.style()
                                 .setLineSpacing(LineSpacing.DOUBLE)
                                 .setLineSpacingSize(2f)
                                 .setFirstLineIndent(10)
@@ -65,16 +66,16 @@ public class Style7Test extends AbstractJasperStyleTest implements Serializable 
 
         numberOfPagesTest(1);
 
-        JRStyle style = getElementAt("title.textField1", 0).getStyle();
+        final JRStyle style = getElementAt("title.textField1", 0).getStyle();
         Assert.assertEquals("line spacing", LineSpacingEnum.DOUBLE, style.getParagraph().getLineSpacing());
-        Assert.assertEquals("line spacing size", 2f, style.getParagraph().getLineSpacingSize());
+        Assert.assertEquals("line spacing size", Float.valueOf(2), style.getParagraph().getLineSpacingSize());
         Assert.assertEquals("first line indent", Integer.valueOf(10), style.getParagraph().getFirstLineIndent());
         Assert.assertEquals("left indent", Integer.valueOf(15), style.getParagraph().getLeftIndent());
         Assert.assertEquals("right indent", Integer.valueOf(20), style.getParagraph().getRightIndent());
         Assert.assertEquals("spacing before", Integer.valueOf(5), style.getParagraph().getSpacingBefore());
         Assert.assertEquals("spacing after", Integer.valueOf(6), style.getParagraph().getSpacingAfter());
         Assert.assertEquals("tab stop width", Integer.valueOf(9), style.getParagraph().getTabStopWidth());
-        TabStop[] tabStops = style.getParagraph().getTabStops();
+        final TabStop[] tabStops = style.getParagraph().getTabStops();
         Assert.assertNotNull("tab stops", tabStops);
         Assert.assertEquals("tab stop position", 12, tabStops[0].getPosition());
         Assert.assertEquals("tab stop alignment", TabStopAlignEnum.CENTER, tabStops[0].getAlignment());

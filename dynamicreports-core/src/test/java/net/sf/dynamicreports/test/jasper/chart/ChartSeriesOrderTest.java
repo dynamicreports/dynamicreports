@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
