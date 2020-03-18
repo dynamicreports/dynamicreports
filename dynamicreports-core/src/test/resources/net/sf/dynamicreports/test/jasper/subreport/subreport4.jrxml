@@ -2,7 +2,7 @@
 <jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="575" pageHeight="842"
               columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenNoDataType="AllSectionsNoDetail">
-    <style name="style_22_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+    <style name="style_22_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
         <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
     </style>
     <parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>

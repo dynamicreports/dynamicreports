@@ -1,6 +1,14 @@
 DynamicReports Change Log
 =========================
 
+Changes in version 6.11.0 (2020-03-17)
+---------------------------------------------------
+ - Change in verions convention -> we follow the numbering of jasperreport
+ - Updated spring framework to version 5.2.4.RELEASE
+ - Upgrade to poi library to version 4.1.2
+ - Update deprecated code for junit
+ - Remove of Arial font requirement
+
 
 Changes in version 6.0.1 (2018-09-01)
 ---------------------------------------------------

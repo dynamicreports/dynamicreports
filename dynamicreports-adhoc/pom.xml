@@ -5,14 +5,14 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>6.1.0</version>
+        <version>6.11.0</version>
     </parent>
 
     <artifactId>dynamicreports-adhoc</artifactId>
     <packaging>jar</packaging>
 
     <name>DynamicReports - adhoc</name>
-    <url>http://www.dynamicreports.org</url>
+    <url>https://github.com/dynamicreports</url>
     <description>DynamicReports adhoc</description>
 
     <dependencies>
@@ -112,7 +112,9 @@
                 </executions>
                 <configuration>
                     <excludes>module-info.java</excludes>
-                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    <sourceDirectories>
+                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    </sourceDirectories>
                     <headerLocation>../src/etc/checkstyle.xml</headerLocation>
                     <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                     <configLocation>../src/etc/checkstyle.xml</configLocation>

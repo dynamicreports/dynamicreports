@@ -21,7 +21,24 @@
  */
 package net.sf.dynamicreports.test.design.report;
 
-import junit.framework.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.bcode;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.template;
+
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Locale;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 import net.sf.dynamicreports.design.base.DRDesignGroup;
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.design.base.barcode.DRDesignBarcode;
@@ -48,29 +65,13 @@ import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.report.constant.WhenResourceMissingType;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.design.DesignReportBuilder;
-import org.junit.Test;
-
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.bcode;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
 public class ReportTemplateTest {
 
-    private void configureReport(ReportBuilder<?> rb) {
+    private void configureReport(final ReportBuilder<?> rb) {
         TextColumnBuilder<Integer> column1;
 
         rb.columns(column1 = col.column("Column1", "field1", Integer.class), col.booleanColumn("Column2", "field2"))
@@ -154,10 +155,10 @@ public class ReportTemplateTest {
 
     @Test
     public void test() {
-        @SuppressWarnings("rawtypes") ReportBuilder rb = new DesignReportBuilder();
+        @SuppressWarnings("rawtypes") final ReportBuilder rb = new DesignReportBuilder();
         configureReport(rb);
         try {
-            DRDesignReport report = new DRDesignReport(rb.getReport());
+            final DRDesignReport report = new DRDesignReport(rb.getReport());
             Assert.assertEquals("locale", Locale.ENGLISH, report.getLocale());
             Assert.assertNull("show column title", report.getColumnHeaderBand());
             Assert.assertTrue("ignore pagination", report.isIgnorePagination());
@@ -171,7 +172,7 @@ public class ReportTemplateTest {
             Assert.assertEquals("column direction", RunDirection.RIGHT_TO_LEFT, report.getColumnDirection());
             Assert.assertEquals("language", Language.GROOVY, report.getLanguage());
 
-            DRDesignTextField columnTextField1 = (DRDesignTextField) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getComponents().get(0);
+            final DRDesignTextField columnTextField1 = (DRDesignTextField) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getComponents().get(0);
             DRIDesignStyle style = columnTextField1.getStyle();
             Assert.assertEquals("detail odd row style", Color.BLUE, style.getConditionalStyles().get(0).getBackgroundColor());
             Assert.assertEquals("detail even row style", Color.CYAN, style.getConditionalStyles().get(1).getBackgroundColor());
@@ -188,15 +189,15 @@ public class ReportTemplateTest {
             Assert.assertFalse("column print repeated detail values", columnTextField1.isPrintRepeatedValues());
             Assert.assertEquals("column width", Integer.valueOf(180), columnTextField1.getWidth());
 
-            DRDesignTextField columnTextField2 = (DRDesignTextField) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getComponents().get(1);
+            final DRDesignTextField columnTextField2 = (DRDesignTextField) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getComponents().get(1);
             style = columnTextField2.getStyle();
             Assert.assertEquals("detail odd row style", Color.BLUE, style.getConditionalStyles().get(0).getBackgroundColor());
             Assert.assertEquals("detail even row style", Color.CYAN, style.getConditionalStyles().get(1).getBackgroundColor());
-            Assert.assertEquals("boolean border", 1f, style.getParentStyle().getBorder().getTopPen().getLineWidth());
+            Assert.assertEquals("boolean border", Float.valueOf(1), style.getParentStyle().getBorder().getTopPen().getLineWidth());
             Assert.assertEquals("column width", Integer.valueOf(181), columnTextField2.getWidth());
 
-            DRDesignGroup group = (DRDesignGroup) report.getGroups().toArray()[0];
-            DRDesignComponent textField = group.getHeaderBands().get(1).getBandComponent();
+            final DRDesignGroup group = (DRDesignGroup) report.getGroups().toArray()[0];
+            final DRDesignComponent textField = group.getHeaderBands().get(1).getBandComponent();
             Assert.assertEquals("group header layout", 2, ((DRDesignList) group.getHeaderBands().get(0).getBandComponent()).getComponents().size());
             Assert.assertEquals("group header layout", "groupHeader.textField1", textField.getUniqueName());
             Assert.assertEquals("group padding", Integer.valueOf(20), columnTextField1.getX());
@@ -207,24 +208,24 @@ public class ReportTemplateTest {
 
             Assert.assertEquals("text field width", Integer.valueOf(150), textField.getWidth());
 
-            DRDesignList titleList = (DRDesignList) report.getTitleBand().getBandComponent();
+            final DRDesignList titleList = (DRDesignList) report.getTitleBand().getBandComponent();
             Assert.assertEquals("list gap", 10, titleList.getGap());
 
-            DRDesignComponent image = titleList.getComponents().get(0);
+            final DRDesignComponent image = titleList.getComponents().get(0);
             Assert.assertEquals("image width", Integer.valueOf(110), image.getWidth());
             Assert.assertEquals("image height", Integer.valueOf(120), image.getHeight());
 
-            DRDesignComponent chart = titleList.getComponents().get(1);
+            final DRDesignComponent chart = titleList.getComponents().get(1);
             Assert.assertEquals("chart width", Integer.valueOf(210), chart.getWidth());
             Assert.assertEquals("chart height", Integer.valueOf(220), chart.getHeight());
             Assert.assertEquals("chart colors", Color.BLUE, ((AbstractDesignBasePlot) ((DRDesignChart) chart).getPlot()).getSeriesColors().get(0));
             Assert.assertEquals("chart theme", "customTheme", ((DRDesignChart) chart).getTheme());
 
-            DRDesignComponent barcode = titleList.getComponents().get(2);
+            final DRDesignComponent barcode = titleList.getComponents().get(2);
             Assert.assertEquals("barcode width", Integer.valueOf(110), barcode.getWidth());
             Assert.assertEquals("barcode height", Integer.valueOf(120), barcode.getHeight());
 
-            DRDesignCrosstab crosstab = (DRDesignCrosstab) titleList.getComponents().get(3);
+            final DRDesignCrosstab crosstab = (DRDesignCrosstab) titleList.getComponents().get(3);
             Assert.assertEquals("crosstab width", Integer.valueOf(90), crosstab.getWidth());
             Assert.assertEquals("crosstab height", Integer.valueOf(101), crosstab.getHeight());
             style = crosstab.getCells().get(0).getContent().getComponent().getStyle();
@@ -265,7 +266,7 @@ public class ReportTemplateTest {
             Assert.assertEquals("crosstab measure title header style", Color.YELLOW, style.getBackgroundColor());
 
             Assert.assertEquals("detail split type", SplitType.IMMEDIATE, report.getDetailBands().get(0).getSplitType());
-        } catch (DRException e) {
+        } catch (final DRException e) {
             e.printStackTrace();
             Assert.fail(e.getMessage());
         }
@@ -273,7 +274,7 @@ public class ReportTemplateTest {
 
     @Test
     public void styleTest() {
-        ReportBuilder<?> rb = new DesignReportBuilder();
+        final ReportBuilder<?> rb = new DesignReportBuilder();
         TextColumnBuilder<Integer> column1;
 
         rb.columns(column1 = col.column("Column1", "field1", Integer.class))
@@ -289,7 +290,7 @@ public class ReportTemplateTest {
                                  .setChartStyle(stl.style().setBorder(stl.pen2Point()))
                                  .setBarcodeStyle(stl.style().setBorder(stl.pen().setLineWidth(3f))));
         try {
-            DRDesignReport report = new DRDesignReport(rb.getReport());
+            final DRDesignReport report = new DRDesignReport(rb.getReport());
 
             DRDesignTextField textField = (DRDesignTextField) ((DRDesignList) report.getDetailBands().get(0).getBandComponent()).getComponents().get(0);
             Assert.assertEquals("column style", Integer.valueOf(1), textField.getStyle().getFont().getFontSize());
@@ -297,7 +298,7 @@ public class ReportTemplateTest {
             textField = (DRDesignTextField) ((DRDesignList) report.getColumnHeaderBand().getBandComponent()).getComponents().get(1);
             Assert.assertEquals("column title style", Integer.valueOf(2), textField.getStyle().getFont().getFontSize());
 
-            DRDesignList groupHeaderComponent = (DRDesignList) new ArrayList<DRDesignGroup>(report.getGroups()).get(0).getHeaderBands().get(0).getBandComponent();
+            final DRDesignList groupHeaderComponent = (DRDesignList) new ArrayList<>(report.getGroups()).get(0).getHeaderBands().get(0).getBandComponent();
             textField = (DRDesignTextField) groupHeaderComponent.getComponents().get(1);
             Assert.assertEquals("group style", Integer.valueOf(3), textField.getStyle().getFont().getFontSize());
 
@@ -307,15 +308,15 @@ public class ReportTemplateTest {
             textField = (DRDesignTextField) ((DRDesignList) report.getSummaryBand().getBandComponent()).getComponents().get(0);
             Assert.assertEquals("subtotal style", Integer.valueOf(5), textField.getStyle().getFont().getFontSize());
 
-            DRDesignImage image = (DRDesignImage) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(0);
-            Assert.assertEquals("image style", 1f, image.getStyle().getBorder().getTopPen().getLineWidth());
+            final DRDesignImage image = (DRDesignImage) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(0);
+            Assert.assertEquals("image style", Float.valueOf(1), image.getStyle().getBorder().getTopPen().getLineWidth());
 
-            DRDesignChart chart = (DRDesignChart) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(1);
-            Assert.assertEquals("chart style", 2f, chart.getStyle().getBorder().getTopPen().getLineWidth());
+            final DRDesignChart chart = (DRDesignChart) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(1);
+            Assert.assertEquals("chart style", Float.valueOf(2), chart.getStyle().getBorder().getTopPen().getLineWidth());
 
-            DRDesignBarcode barcode = (DRDesignBarcode) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(2);
-            Assert.assertEquals("barcode style", 3f, barcode.getStyle().getBorder().getTopPen().getLineWidth());
-        } catch (DRException e) {
+            final DRDesignBarcode barcode = (DRDesignBarcode) ((DRDesignList) report.getTitleBand().getBandComponent()).getComponents().get(2);
+            Assert.assertEquals("barcode style", Float.valueOf(3), barcode.getStyle().getBorder().getTopPen().getLineWidth());
+        } catch (final DRException e) {
             e.printStackTrace();
             Assert.fail(e.getMessage());
         }

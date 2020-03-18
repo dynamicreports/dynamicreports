@@ -21,7 +21,11 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
-import junit.framework.Assert;
+import java.io.InputStream;
+import java.io.Serializable;
+
+import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.Components;
@@ -35,9 +39,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
-import java.io.InputStream;
-import java.io.Serializable;
-
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
  */
@@ -45,8 +46,8 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
+    protected void configureReport(final JasperReportBuilder rb) {
+        final SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport);
     }
@@ -91,11 +92,11 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
         private static final long serialVersionUID = 1L;
 
         @Override
-        public JasperReport evaluate(ReportParameters reportParameters) {
+        public JasperReport evaluate(final ReportParameters reportParameters) {
             try {
-                InputStream is = JasperSubreportTest.class.getResourceAsStream("subreport" + reportParameters.getReportRowNumber() + ".jrxml");
+                final InputStream is = JasperSubreportTest.class.getResourceAsStream("subreport" + reportParameters.getReportRowNumber() + ".jrxml");
                 return JasperCompileManager.compileReport(is);
-            } catch (JRException e) {
+            } catch (final JRException e) {
                 e.printStackTrace();
                 Assert.fail(e.getMessage());
                 return null;
@@ -107,16 +108,16 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
         private static final long serialVersionUID = 1L;
 
         @Override
-        public JRDataSource evaluate(ReportParameters reportParameters) {
-            int masterRowNumber = reportParameters.getReportRowNumber();
-            String[] columns = new String[masterRowNumber];
+        public JRDataSource evaluate(final ReportParameters reportParameters) {
+            final int masterRowNumber = reportParameters.getReportRowNumber();
+            final String[] columns = new String[masterRowNumber];
             for (int i = 1; i <= masterRowNumber; i++) {
                 columns[i - 1] = "column" + i;
             }
-            DRDataSource dataSource = new DRDataSource(columns);
+            final DRDataSource dataSource = new DRDataSource(columns);
 
             for (int i = 1; i <= masterRowNumber; i++) {
-                Object[] values = new Object[masterRowNumber];
+                final Object[] values = new Object[masterRowNumber];
                 for (int j = 1; j <= masterRowNumber; j++) {
                     values[j - 1] = "row" + i + "_column" + j;
                 }

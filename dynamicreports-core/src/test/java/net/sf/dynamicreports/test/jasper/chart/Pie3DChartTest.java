@@ -21,22 +21,23 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import junit.framework.Assert;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.chart.plot.Plot;
+import org.junit.Assert;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
@@ -45,7 +46,7 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void configureReport(JasperReportBuilder rb) {
+    protected void configureReport(final JasperReportBuilder rb) {
         TextColumnBuilder<String> column1;
         TextColumnBuilder<Integer> column2;
 
@@ -67,7 +68,7 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
         Assert.assertTrue("circular", ((PiePlot) plot).isCircular());
         Assert.assertEquals("label format", "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat());
         Assert.assertEquals("legend label format", "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat());
-        Assert.assertEquals("depth factor", 0.5, ((PiePlot3D) plot).getDepthFactor());
+        Assert.assertEquals("depth factor", Double.valueOf(0.5), Double.valueOf(((PiePlot3D) plot).getDepthFactor()));
 
         chart = getChart("summary.chart2", 0);
         plot = chart.getPlot();
@@ -76,7 +77,7 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1);
             dataSource.add("value" + (i + 1), i + 1);

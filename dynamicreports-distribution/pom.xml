@@ -12,7 +12,7 @@
   <packaging>jar</packaging>
 
   <name>Dynamicreports - distribution</name>
-  <url>http://www.dynamicreports.org</url>
+  <url>https://github.com/dynamicreports</url>
   <description>Dynamicreports distribution</description>
 
   <properties>

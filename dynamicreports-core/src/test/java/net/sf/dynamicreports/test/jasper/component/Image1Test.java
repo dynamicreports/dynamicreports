@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.ImageScale;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;

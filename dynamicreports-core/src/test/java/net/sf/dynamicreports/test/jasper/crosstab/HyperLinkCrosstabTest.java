@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;

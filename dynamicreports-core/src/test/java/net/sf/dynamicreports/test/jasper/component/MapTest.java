@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.fill.JRTemplateGenericPrintElement;

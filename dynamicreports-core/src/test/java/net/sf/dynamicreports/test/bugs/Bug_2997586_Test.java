@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.bugs;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.report.builder.component.TextFieldBuilder;
 import org.junit.Test;
 
