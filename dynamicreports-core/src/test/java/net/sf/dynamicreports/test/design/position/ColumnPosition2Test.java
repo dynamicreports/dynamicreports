@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.design.position;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.design.base.DRDesignBand;
 import net.sf.dynamicreports.design.base.component.DRDesignComponent;
 import net.sf.dynamicreports.design.base.component.DRDesignList;

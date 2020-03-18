@@ -21,7 +21,7 @@
  */
 package net.sf.dynamicreports.test.design.report;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;

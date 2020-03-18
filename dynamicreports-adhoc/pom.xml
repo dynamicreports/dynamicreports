@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>6.1.1-SNAPSHOT</version>
+        <version>6.2.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>dynamicreports-adhoc</artifactId>
@@ -112,7 +112,9 @@
                 </executions>
                 <configuration>
                     <excludes>module-info.java</excludes>
-                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    <sourceDirectories>
+                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    </sourceDirectories>
                     <headerLocation>../src/etc/checkstyle.xml</headerLocation>
                     <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                     <configLocation>../src/etc/checkstyle.xml</configLocation>
