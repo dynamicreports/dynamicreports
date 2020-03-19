@@ -73,7 +73,8 @@ public interface DRICrosstabGroup<T> extends DRISystemExpression<T> {
      * @return a {@link java.lang.Boolean} object.
      * @deprecated replaced by {@link #getHeaderTextAdjust()}
      */
-    @Deprecated Boolean getHeaderStretchWithOverflow();
+    @Deprecated
+    Boolean getHeaderStretchWithOverflow();
 
     /**
      * <p>getHeaderTextAdjust.</p>

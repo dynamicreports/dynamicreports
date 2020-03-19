@@ -47,11 +47,11 @@ import net.sf.dynamicreports.report.exception.DRException;
 /**
  * <p>ColumnGridTransform class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public class ColumnGridTransform {
-    private DesignTransformAccessor accessor;
+    private final DesignTransformAccessor accessor;
     private DRIColumnGridList columnGridList;
 
     /**
@@ -59,7 +59,7 @@ public class ColumnGridTransform {
      *
      * @param accessor a {@link net.sf.dynamicreports.design.transformation.DesignTransformAccessor} object.
      */
-    public ColumnGridTransform(DesignTransformAccessor accessor) {
+    public ColumnGridTransform(final DesignTransformAccessor accessor) {
         this.accessor = accessor;
     }
 
@@ -67,14 +67,14 @@ public class ColumnGridTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        DRIReport report = accessor.getReport();
-        DRIColumnGrid columnGrid = report.getColumnGrid();
+        final DRIReport report = accessor.getReport();
+        final DRIColumnGrid columnGrid = report.getColumnGrid();
         if (columnGrid != null && !columnGrid.getList().getListCells().isEmpty()) {
             this.columnGridList = columnGrid.getList();
             return;
         }
 
-        DRColumnGridList columnGridList = new DRColumnGridList();
+        final DRColumnGridList columnGridList = new DRColumnGridList();
         if (columnGrid != null) {
             columnGridList.setGap(columnGrid.getList().getGap());
             columnGridList.setType(columnGrid.getList().getType());
@@ -83,9 +83,9 @@ public class ColumnGridTransform {
         this.columnGridList = columnGridList;
     }
 
-    private void addColumnsToGridList(DRColumnGridList columnGridList) {
-        DRIReport report = accessor.getReport();
-        for (DRIColumn<?> column : report.getColumns()) {
+    private void addColumnsToGridList(final DRColumnGridList columnGridList) {
+        final DRIReport report = accessor.getReport();
+        for (final DRIColumn<?> column : report.getColumns()) {
             if (!accessor.getGroupTransform().getHideGroupColumns().contains(column)) {
                 columnGridList.addComponent(column);
             }
@@ -109,16 +109,16 @@ public class ColumnGridTransform {
      * @return a {@link net.sf.dynamicreports.design.transformation.ColumnGrid} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */
-    protected ColumnGrid createColumnTitleGrid(DRDesignStyle groupPaddingStyle) throws DRException {
+    protected ColumnGrid createColumnTitleGrid(final DRDesignStyle groupPaddingStyle) throws DRException {
         return createColumnGrid(columnGridList, groupPaddingStyle, true);
     }
 
-    private ColumnGrid createColumnGrid(DRIColumnGridList columnGridList, DRDesignStyle groupPaddingStyle, boolean titleGroup) throws DRException {
-        ColumnGrid columnGrid = new ColumnGrid();
-        DRDesignList list = list(columnGridList, columnGrid, titleGroup).getList();
-        int groupPadding = accessor.getGroupTransform().getGroupPadding();
+    private ColumnGrid createColumnGrid(final DRIColumnGridList columnGridList, final DRDesignStyle groupPaddingStyle, final boolean titleGroup) throws DRException {
+        final ColumnGrid columnGrid = new ColumnGrid();
+        final DRDesignList list = list(columnGridList, columnGrid, titleGroup).getList();
+        final int groupPadding = accessor.getGroupTransform().getGroupPadding();
         if (groupPadding > 0) {
-            DRDesignFiller filler = new DRDesignFiller();
+            final DRDesignFiller filler = new DRDesignFiller();
             filler.setStyle(groupPaddingStyle);
             filler.setWidth(groupPadding);
             filler.setHeight(0);
@@ -128,10 +128,10 @@ public class ColumnGridTransform {
         return columnGrid;
     }
 
-    private GridList list(DRIColumnGridComponent columnGridComponent, ColumnGrid columnGrid, boolean titleGroup) throws DRException {
+    private GridList list(final DRIColumnGridComponent columnGridComponent, final ColumnGrid columnGrid, final boolean titleGroup) throws DRException {
         if (columnGridComponent instanceof DRIColumn<?>) {
-            DRDesignList list = new DRDesignList(ListType.VERTICAL);
-            DRIColumn<?> column = (DRIColumn<?>) columnGridComponent;
+            final DRDesignList list = new DRDesignList(ListType.VERTICAL);
+            final DRIColumn<?> column = (DRIColumn<?>) columnGridComponent;
             list.setWidth(accessor.getTemplateTransform().getColumnWidth(column, accessor.getStyleTransform().getDefaultStyle(DefaultStyleType.COLUMN)));
             columnGrid.addList(column, list);
             return new GridList(list, null);
@@ -144,16 +144,16 @@ public class ColumnGridTransform {
         }
     }
 
-    private DRDesignList columnGridList(DRIColumnGridList columnGridList, ColumnGrid columnGrid, boolean titleGroup) throws DRException {
-        DRDesignList list = new DRDesignList();
+    private DRDesignList columnGridList(final DRIColumnGridList columnGridList, final ColumnGrid columnGrid, final boolean titleGroup) throws DRException {
+        final DRDesignList list = new DRDesignList();
         list.setType(columnGridList.getType());
         list.setGap(columnGridList.getGap());
-        for (DRIColumnGridListCell cell : columnGridList.getListCells()) {
-            DRIColumnGridComponent component = cell.getComponent();
+        for (final DRIColumnGridListCell cell : columnGridList.getListCells()) {
+            final DRIColumnGridComponent component = cell.getComponent();
             HorizontalCellComponentAlignment horizontalAlignment = cell.getHorizontalAlignment();
             VerticalCellComponentAlignment verticalAlignment = cell.getVerticalAlignment();
             if (component instanceof DRIColumn<?>) {
-                DRIColumn<?> column = (DRIColumn<?>) component;
+                final DRIColumn<?> column = (DRIColumn<?>) component;
                 if (column instanceof DRIBooleanColumn) {
                     if (horizontalAlignment == null) {
                         horizontalAlignment = ConstantTransform.toHorizontalCellComponentAlignment(((DRIBooleanColumn) column).getComponent().getWidthType());
@@ -162,7 +162,7 @@ public class ColumnGridTransform {
                         verticalAlignment = ConstantTransform.toVerticalCellComponentAlignment(((DRIBooleanColumn) column).getComponent().getHeightType());
                     }
                 } else {
-                    DRIComponent columnComponent = accessor.getColumnTransform().getColumnComponent(column);
+                    final DRIComponent columnComponent = accessor.getColumnTransform().getColumnComponent(column);
                     if (columnComponent instanceof DRIDimensionComponent) {
                         if (horizontalAlignment == null) {
                             horizontalAlignment = ConstantTransform.toHorizontalCellComponentAlignment(((DRIDimensionComponent) columnComponent).getWidthType());
@@ -173,7 +173,7 @@ public class ColumnGridTransform {
                     }
                 }
             }
-            GridList gridList = list(component, columnGrid, titleGroup);
+            final GridList gridList = list(component, columnGrid, titleGroup);
             if (gridList.getHorizontalCellAlignment() != null) {
                 list.addComponent(gridList.getHorizontalCellAlignment(), cell.getVerticalAlignment(), gridList.getList());
             } else {
@@ -184,24 +184,25 @@ public class ColumnGridTransform {
     }
 
     @SuppressWarnings("unchecked")
-    private GridList columnGridTitleGroup(DRIColumnTitleGroup columnGridTitleGroup, ColumnGrid columnGrid, boolean titleGroup) throws DRException {
-        DRDesignList columnList = list(columnGridTitleGroup.getList(), columnGrid, titleGroup).getList();
+    private GridList columnGridTitleGroup(final DRIColumnTitleGroup columnGridTitleGroup, final ColumnGrid columnGrid, final boolean titleGroup) throws DRException {
+        final DRDesignList columnList = list(columnGridTitleGroup.getList(), columnGrid, titleGroup).getList();
 
-        @SuppressWarnings("rawtypes") DRTextField titleGroupField = new DRTextField();
+        @SuppressWarnings("rawtypes") final DRTextField titleGroupField = new DRTextField();
         titleGroupField.setValueExpression(columnGridTitleGroup.getTitleExpression());
         titleGroupField.setStyle(columnGridTitleGroup.getTitleStyle());
         titleGroupField.setHeight(columnGridTitleGroup.getTitleHeight());
         titleGroupField.setHeightType(columnGridTitleGroup.getTitleHeightType());
         titleGroupField.setRows(columnGridTitleGroup.getTitleRows());
         titleGroupField.setStretchWithOverflow(columnGridTitleGroup.getTitleStretchWithOverflow());
+        titleGroupField.setTextAdjust(columnGridTitleGroup.getTitleTextAdjust());
         titleGroupField.setPropertyExpressions(columnGridTitleGroup.getTitlePropertyExpressions());
 
         HorizontalCellComponentAlignment hCellAlignment = null;
         if (columnGridTitleGroup.getTitleWidth() == null && columnGridTitleGroup.getTitleColumns() == null) {
             int totalWidth = 0;
-            for (DRDesignListCell cell : columnList.getListCells()) {
-                Integer width = cell.getComponent().getWidth();
-                HorizontalCellComponentAlignment horizontalAlignment = cell.getHorizontalAlignment();
+            for (final DRDesignListCell cell : columnList.getListCells()) {
+                final Integer width = cell.getComponent().getWidth();
+                final HorizontalCellComponentAlignment horizontalAlignment = cell.getHorizontalAlignment();
                 if (horizontalAlignment == null || horizontalAlignment.equals(HorizontalCellComponentAlignment.EXPAND) || horizontalAlignment.equals(HorizontalCellComponentAlignment.FLOAT)) {
                     totalWidth = 0;
                     break;
@@ -224,13 +225,13 @@ public class ColumnGridTransform {
             hCellAlignment = ConstantTransform.toHorizontalCellComponentAlignment(columnGridTitleGroup.getTitleWidthType());
         }
 
-        DRDesignTextField designTitleGroupField = accessor.getComponentTransform().textField(titleGroupField, DefaultStyleType.COLUMN_TITLE);
+        final DRDesignTextField designTitleGroupField = accessor.getComponentTransform().textField(titleGroupField, DefaultStyleType.COLUMN_TITLE);
         designTitleGroupField.setUniqueName("columngroup.title");
 
         if (!titleGroup || columnGridTitleGroup.getTitleExpression() == null) {
             columnList.setRemovable(true);
             if (hCellAlignment != null) {
-                DRDesignList list = new DRDesignList();
+                final DRDesignList list = new DRDesignList();
                 list.setType(ListType.VERTICAL);
                 list.addComponent(columnList);
                 list.setWidth(designTitleGroupField.getWidth());
@@ -241,7 +242,7 @@ public class ColumnGridTransform {
 
         columnGrid.setEmpty(!titleGroup);
 
-        DRDesignList list = new DRDesignList();
+        final DRDesignList list = new DRDesignList();
         list.setType(ListType.VERTICAL);
         if (hCellAlignment != null) {
             list.addComponent(hCellAlignment, null, designTitleGroupField);
@@ -256,10 +257,10 @@ public class ColumnGridTransform {
     }
 
     private class GridList {
-        private HorizontalCellComponentAlignment horizontalCellAlignment;
-        private DRDesignList list;
+        private final HorizontalCellComponentAlignment horizontalCellAlignment;
+        private final DRDesignList list;
 
-        private GridList(DRDesignList list, HorizontalCellComponentAlignment horizontalCellAlignment) {
+        private GridList(final DRDesignList list, final HorizontalCellComponentAlignment horizontalCellAlignment) {
             this.list = list;
             this.horizontalCellAlignment = horizontalCellAlignment;
         }
