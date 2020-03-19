@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>MeterShape class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum MeterShape {

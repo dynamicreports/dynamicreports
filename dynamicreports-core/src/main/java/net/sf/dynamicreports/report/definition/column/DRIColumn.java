@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * <p>DRIColumn interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIColumn<T extends DRIComponent> extends DRIColumnGridComponent {

@@ -45,7 +45,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>ConversionColumnReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ConversionColumnReport {

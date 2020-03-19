@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>DRIColumnGrid interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIColumnGrid extends Serializable {

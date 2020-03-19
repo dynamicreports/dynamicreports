@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.component;
 /**
  * <p>DRIFiller interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIFiller extends DRIDimensionComponent {

@@ -43,7 +43,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 /**
  * <p>GroupCountChartReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GroupCountChartReport {

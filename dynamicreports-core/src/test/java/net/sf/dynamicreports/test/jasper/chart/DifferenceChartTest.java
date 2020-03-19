@@ -52,7 +52,7 @@ import org.junit.Assert;
 /**
  * Difference chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class DifferenceChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;

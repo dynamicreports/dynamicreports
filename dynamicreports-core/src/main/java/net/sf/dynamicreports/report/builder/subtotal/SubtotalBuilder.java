@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>Abstract SubtotalBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class SubtotalBuilder<T extends SubtotalBuilder<T, U>, U> extends BaseSubtotalBuilder<T, U> {

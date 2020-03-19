@@ -40,7 +40,7 @@ import java.util.List;
 /**
  * <p>DRCrosstabMeasure class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {

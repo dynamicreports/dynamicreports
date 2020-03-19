@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIChartAxis;
 /**
  * <p>DRChartAxis class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRChartAxis implements DRIChartAxis {

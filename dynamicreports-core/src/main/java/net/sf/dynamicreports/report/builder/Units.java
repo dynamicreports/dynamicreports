@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.builder;
 /**
  * A set of methods of converting unit values to pixels.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class Units {

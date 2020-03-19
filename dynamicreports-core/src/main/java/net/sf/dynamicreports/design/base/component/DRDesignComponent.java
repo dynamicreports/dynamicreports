@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * <p>Abstract DRDesignComponent class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRDesignComponent implements DRIDesignComponent {

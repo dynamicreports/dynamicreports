@@ -28,7 +28,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRXyListCell class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRXyListCell implements DRIXyListCell {

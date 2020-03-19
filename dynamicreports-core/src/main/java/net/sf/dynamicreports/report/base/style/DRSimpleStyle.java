@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.style.DRISimpleStyle;
 /**
  * <p>DRSimpleStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRSimpleStyle extends DRBaseStyle implements DRISimpleStyle {

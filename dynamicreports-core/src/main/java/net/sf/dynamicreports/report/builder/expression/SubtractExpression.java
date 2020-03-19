@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * <p>SubtractExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SubtractExpression extends CalculationExpression {

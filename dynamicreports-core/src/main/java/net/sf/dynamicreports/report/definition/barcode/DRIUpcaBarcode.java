@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.barcode;
 /**
  * <p>DRIUpcaBarcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIUpcaBarcode extends DRIChecksumBarcode {

@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 /**
  * <p>DefaultBinder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DefaultBinder {

@@ -31,7 +31,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * ReportUtils class.
  * </p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ReportUtils {

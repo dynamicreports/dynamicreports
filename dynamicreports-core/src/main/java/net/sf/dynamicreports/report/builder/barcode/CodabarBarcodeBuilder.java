@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>CodabarBarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CodabarBarcodeBuilder extends AbstractBarcode4jBuilder<CodabarBarcodeBuilder, DRCodabarBarcode> {

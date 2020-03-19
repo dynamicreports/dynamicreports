@@ -34,7 +34,7 @@ import java.util.Locale;
 /**
  * <p>Abstract NumberType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class NumberType<T extends Number> extends AbstractDataType<Number, T> {

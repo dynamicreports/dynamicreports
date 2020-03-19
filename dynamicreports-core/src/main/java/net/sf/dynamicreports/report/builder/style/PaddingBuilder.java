@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>PaddingBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PaddingBuilder extends AbstractBuilder<PaddingBuilder, DRPadding> {

@@ -34,7 +34,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>CrosstabVariableBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariableBuilder<T>, DRCrosstabVariable<T>> implements DRICrosstabValue<T> {

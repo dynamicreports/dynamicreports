@@ -37,7 +37,7 @@ import java.util.Map;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ParametersTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

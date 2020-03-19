@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.constant.Markup;
 /**
  * <p>DRDesignTextField class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRIDesignTextField {

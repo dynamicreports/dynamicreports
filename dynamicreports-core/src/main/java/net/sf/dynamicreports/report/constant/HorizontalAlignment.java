@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>HorizontalAlignment class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  * @deprecated use HorizontalTextAligment for texts or HorizontalImageAligment for images instead
  */

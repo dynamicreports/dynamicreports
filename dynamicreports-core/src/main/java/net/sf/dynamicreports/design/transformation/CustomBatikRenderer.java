@@ -35,7 +35,7 @@ import java.net.URL;
 /**
  * <p>CustomBatikRenderer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {

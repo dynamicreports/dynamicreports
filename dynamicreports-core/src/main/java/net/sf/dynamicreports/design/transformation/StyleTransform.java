@@ -64,7 +64,7 @@ import java.util.Map;
 /**
  * <p>StyleTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StyleTransform {

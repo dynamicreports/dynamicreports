@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>GroupRowNumberExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GroupRowNumberExpression extends AbstractSimpleExpression<Integer> {

@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRStyle extends DRBaseStyle implements DRIStyle {

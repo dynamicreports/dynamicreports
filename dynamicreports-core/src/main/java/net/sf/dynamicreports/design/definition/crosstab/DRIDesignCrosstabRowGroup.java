@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.definition.crosstab;
 /**
  * <p>DRIDesignCrosstabRowGroup interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignCrosstabRowGroup extends DRIDesignCrosstabGroup {

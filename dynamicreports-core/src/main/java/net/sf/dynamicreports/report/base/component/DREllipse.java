@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.component.DRIEllipse;
 /**
  * <p>DREllipse class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DREllipse extends DRDimensionComponent implements DRIEllipse {

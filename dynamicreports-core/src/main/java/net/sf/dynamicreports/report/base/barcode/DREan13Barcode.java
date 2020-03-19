@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIEan13Barcode;
 /**
  * <p>DREan13Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DREan13Barcode extends DRChecksumBarcode implements DRIEan13Barcode {

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>OrderByExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class OrderByExpression extends AbstractSimpleExpression<Comparable<?>> {

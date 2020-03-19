@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
 /**
  * <p>DRDesignQrCode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {

@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * <p>MainDatasetExpressionTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class MainDatasetExpressionTransform extends AbstractExpressionTransform {

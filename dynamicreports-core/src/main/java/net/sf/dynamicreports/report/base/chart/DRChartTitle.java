@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.DRIChartTitle;
 /**
  * <p>DRChartTitle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRChartTitle extends DRChartSubtitle implements DRIChartTitle {

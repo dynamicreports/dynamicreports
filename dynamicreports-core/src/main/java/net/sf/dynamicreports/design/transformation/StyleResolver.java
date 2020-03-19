@@ -40,7 +40,7 @@ import java.util.Locale;
 /**
  * <p>StyleResolver class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StyleResolver {

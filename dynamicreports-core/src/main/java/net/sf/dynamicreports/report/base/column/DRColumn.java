@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * <p>DRColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {

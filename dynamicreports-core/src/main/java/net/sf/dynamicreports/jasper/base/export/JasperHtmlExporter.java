@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>JasperHtmlExporter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperHtmlExporter extends AbstractJasperExporter implements JasperIHtmlExporter {

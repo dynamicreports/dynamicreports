@@ -28,7 +28,7 @@ import java.io.Serializable;
 /**
  * <p>Abstract AbstractBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implements Serializable {

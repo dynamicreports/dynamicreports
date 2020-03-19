@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRILine;
 /**
  * <p>DRLine class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRLine extends DRDimensionComponent implements DRILine {

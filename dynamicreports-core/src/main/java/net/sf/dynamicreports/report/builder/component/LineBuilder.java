@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.LineDirection;
 /**
  * <p>LineBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class LineBuilder extends DimensionComponentBuilder<LineBuilder, DRLine> {

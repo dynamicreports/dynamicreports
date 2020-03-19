@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 /**
  * <p>GreaterOrEqualsValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GreaterOrEqualsValueExpression<T extends Number> extends AbstractValueExpression<T> {

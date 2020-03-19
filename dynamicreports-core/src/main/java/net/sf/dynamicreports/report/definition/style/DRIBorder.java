@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>DRIBorder interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIBorder extends Serializable {

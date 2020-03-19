@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * <p>DRIXyList interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIXyList extends DRIDimensionComponent {

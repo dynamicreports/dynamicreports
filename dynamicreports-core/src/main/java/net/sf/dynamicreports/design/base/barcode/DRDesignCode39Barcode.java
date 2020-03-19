@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignCode39Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignCode39Barcode extends DRDesignChecksumBarcode implements DRIDesignCode39Barcode {

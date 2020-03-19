@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignEan13Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignEan13Barcode extends DRDesignChecksumBarcode implements DRIDesignEan13Barcode {

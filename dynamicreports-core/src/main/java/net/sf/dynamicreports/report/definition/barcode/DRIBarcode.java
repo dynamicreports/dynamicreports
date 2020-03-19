@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>DRIBarcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIBarcode extends DRIDimensionComponent {

@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocRestriction class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocRestriction implements Cloneable, Serializable {

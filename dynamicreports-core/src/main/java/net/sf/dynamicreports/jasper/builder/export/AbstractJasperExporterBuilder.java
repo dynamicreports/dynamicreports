@@ -32,7 +32,7 @@ import java.io.Writer;
 /**
  * <p>Abstract AbstractJasperExporterBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

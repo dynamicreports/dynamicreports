@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>DRSeriesDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRSeriesDataset extends DRChartDataset implements DRISeriesDataset {

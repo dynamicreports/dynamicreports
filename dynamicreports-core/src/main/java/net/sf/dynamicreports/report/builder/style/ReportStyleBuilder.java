@@ -28,7 +28,7 @@ import java.io.Serializable;
 /**
  * <p>ReportStyleBuilder interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface ReportStyleBuilder extends Serializable {

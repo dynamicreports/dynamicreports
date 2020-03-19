@@ -40,7 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * 
  * Please ensure you have write-access to local disc C:\ before running this example
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class EncryptedPdfReport {

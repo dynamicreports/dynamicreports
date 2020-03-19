@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.JRVariable;
 /**
  * <p>StartPageNumberScriptlet class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StartPageNumberScriptlet extends JRDefaultScriptlet {

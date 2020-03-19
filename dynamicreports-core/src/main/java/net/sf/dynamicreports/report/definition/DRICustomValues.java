@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * <p>DRICustomValues interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRICustomValues extends Serializable {

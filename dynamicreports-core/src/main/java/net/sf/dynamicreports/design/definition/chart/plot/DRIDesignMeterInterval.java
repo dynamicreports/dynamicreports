@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignMeterInterval interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignMeterInterval extends Serializable {

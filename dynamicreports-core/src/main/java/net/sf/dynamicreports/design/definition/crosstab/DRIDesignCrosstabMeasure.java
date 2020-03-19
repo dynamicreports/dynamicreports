@@ -30,7 +30,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignCrosstabMeasure interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignCrosstabMeasure extends Serializable {

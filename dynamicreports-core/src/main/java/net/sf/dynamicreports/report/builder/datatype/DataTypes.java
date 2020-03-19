@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * A set of build in data types
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DataTypes {

@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * <p>DRIList interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIList extends DRIDimensionComponent {

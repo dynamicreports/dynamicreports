@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIGroupedStackedBarPl
 /**
  * <p>DRGroupedStackedBarPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRGroupedStackedBarPlot extends DRBarPlot implements DRIGroupedStackedBarPlot {

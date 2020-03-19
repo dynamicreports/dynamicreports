@@ -48,7 +48,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 /**
  * <p>ColumnGridTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ColumnGridTransform {

@@ -36,7 +36,7 @@ import java.awt.Color;
 /**
  * <p>Abstract DRBaseStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRBaseStyle implements DRIBaseStyle {

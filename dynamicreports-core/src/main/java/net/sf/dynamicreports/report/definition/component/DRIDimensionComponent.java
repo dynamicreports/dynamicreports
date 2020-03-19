@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.DRIGroup;
 /**
  * <p>DRIDimensionComponent interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDimensionComponent extends DRIComponent {

@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperCrosstabValueTest extends AbstractJasperValueTest {
     private String crosstabBand;

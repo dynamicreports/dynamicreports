@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 /**
  * <p>UnEqualValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class UnEqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {

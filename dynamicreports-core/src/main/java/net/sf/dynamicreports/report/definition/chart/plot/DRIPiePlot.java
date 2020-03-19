@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.chart.plot;
 /**
  * <p>DRIPiePlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIPiePlot extends DRIBasePlot {

@@ -39,7 +39,7 @@ import java.awt.Color;
 /**
  * <p>MeterChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class MeterChartBuilder extends AbstractChartBuilder<MeterChartBuilder> {

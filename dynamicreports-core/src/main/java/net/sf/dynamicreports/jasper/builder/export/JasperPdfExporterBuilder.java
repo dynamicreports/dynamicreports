@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>JasperPdfExporterBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<JasperPdfExporterBuilder, JasperPdfExporter> {

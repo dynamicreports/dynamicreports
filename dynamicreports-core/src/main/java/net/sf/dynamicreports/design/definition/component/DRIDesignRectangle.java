@@ -26,7 +26,7 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
 /**
  * <p>DRIDesignRectangle interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignRectangle extends DRIDesignComponent {

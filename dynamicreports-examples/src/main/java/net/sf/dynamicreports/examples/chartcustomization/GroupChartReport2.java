@@ -47,7 +47,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>GroupChartReport2 class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GroupChartReport2 {

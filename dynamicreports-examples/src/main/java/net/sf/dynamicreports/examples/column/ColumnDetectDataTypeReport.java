@@ -41,7 +41,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>ColumnDetectDataTypeReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ColumnDetectDataTypeReport {

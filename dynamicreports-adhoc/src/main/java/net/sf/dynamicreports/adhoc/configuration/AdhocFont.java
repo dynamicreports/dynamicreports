@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocFont class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocFont implements Cloneable, Serializable {

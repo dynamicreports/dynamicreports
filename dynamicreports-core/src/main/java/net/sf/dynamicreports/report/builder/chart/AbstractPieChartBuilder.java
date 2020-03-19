@@ -35,7 +35,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract AbstractPieChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

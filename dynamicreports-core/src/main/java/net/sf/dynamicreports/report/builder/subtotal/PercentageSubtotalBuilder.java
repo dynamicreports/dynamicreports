@@ -39,7 +39,7 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 /**
  * <p>PercentageSubtotalBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSubtotalBuilder, Double> {

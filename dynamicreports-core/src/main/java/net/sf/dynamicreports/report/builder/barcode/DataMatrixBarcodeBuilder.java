@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>DataMatrixBarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DataMatrixBarcodeBuilder extends AbstractBarcode4jBuilder<DataMatrixBarcodeBuilder, DRDataMatrixBarcode> {

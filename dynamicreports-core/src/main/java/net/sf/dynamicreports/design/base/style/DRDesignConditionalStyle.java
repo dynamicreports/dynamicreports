@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 /**
  * <p>DRDesignConditionalStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDesignConditionalStyle {

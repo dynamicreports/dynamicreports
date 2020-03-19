@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 /**
  * <p>MultiPageListDataSourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class MultiPageListDataSourceExpression extends AbstractSimpleExpression<JRDataSource> {

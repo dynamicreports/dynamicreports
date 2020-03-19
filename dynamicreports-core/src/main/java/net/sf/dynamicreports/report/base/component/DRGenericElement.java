@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRGenericElement class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRGenericElement extends DRDimensionComponent implements DRIGenericElement {

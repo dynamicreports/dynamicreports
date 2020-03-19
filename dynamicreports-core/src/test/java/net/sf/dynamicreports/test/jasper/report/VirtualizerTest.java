@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.fill.JRFileVirtualizer;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class VirtualizerTest extends AbstractJasperValueTest {
 

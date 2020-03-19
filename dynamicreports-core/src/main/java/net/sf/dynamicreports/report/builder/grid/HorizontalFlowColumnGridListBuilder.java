@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>HorizontalFlowColumnGridListBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class HorizontalFlowColumnGridListBuilder extends HorizontalColumnGridListBuilder {

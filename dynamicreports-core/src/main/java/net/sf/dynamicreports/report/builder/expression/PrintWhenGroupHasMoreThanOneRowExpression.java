@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>PrintWhenGroupHasMoreThanOneRowExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PrintWhenGroupHasMoreThanOneRowExpression extends AbstractSimpleExpression<Boolean> {

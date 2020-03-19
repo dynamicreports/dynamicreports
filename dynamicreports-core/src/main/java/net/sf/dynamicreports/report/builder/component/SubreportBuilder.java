@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * <p>SubreportBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SubreportBuilder extends DimensionComponentBuilder<SubreportBuilder, DRSubreport> {

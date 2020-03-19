@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.component.DRIFiller;
 /**
  * <p>DRFiller class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRFiller extends DRDimensionComponent implements DRIFiller {

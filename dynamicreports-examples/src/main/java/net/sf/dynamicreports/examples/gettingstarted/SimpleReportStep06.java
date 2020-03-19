@@ -44,7 +44,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>SimpleReport_Step06 class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SimpleReportStep06 {

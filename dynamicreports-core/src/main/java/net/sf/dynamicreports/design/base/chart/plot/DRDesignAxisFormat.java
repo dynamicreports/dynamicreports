@@ -31,7 +31,7 @@ import java.awt.Color;
 /**
  * <p>DRDesignAxisFormat class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignAxisFormat implements DRIDesignAxisFormat {

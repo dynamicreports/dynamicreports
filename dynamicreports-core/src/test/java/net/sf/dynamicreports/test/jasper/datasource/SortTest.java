@@ -37,7 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class SortTest extends AbstractJasperChartTest {
     private TextColumnBuilder<String> column1;

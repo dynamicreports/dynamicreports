@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract DRChartSerie class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRChartSerie implements DRIChartSerie {

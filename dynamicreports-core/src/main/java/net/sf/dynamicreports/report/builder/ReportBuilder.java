@@ -65,7 +65,7 @@ import java.util.ResourceBundle;
 /**
  * <p>ReportBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

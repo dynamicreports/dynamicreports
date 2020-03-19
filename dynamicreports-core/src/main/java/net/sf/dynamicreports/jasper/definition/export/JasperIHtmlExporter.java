@@ -26,7 +26,7 @@ import net.sf.dynamicreports.jasper.constant.SizeUnit;
 /**
  * <p>JasperIHtmlExporter interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface JasperIHtmlExporter extends JasperIExporter {

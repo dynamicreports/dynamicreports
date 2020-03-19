@@ -28,7 +28,7 @@ import java.util.Calendar;
 /**
  * <p>ApplicationFormData class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ApplicationFormData {

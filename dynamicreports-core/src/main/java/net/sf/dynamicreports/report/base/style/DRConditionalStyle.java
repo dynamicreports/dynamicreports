@@ -29,7 +29,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRConditionalStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRConditionalStyle extends DRBaseStyle implements DRIConditionalStyle {

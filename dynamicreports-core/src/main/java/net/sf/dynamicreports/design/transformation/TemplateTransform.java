@@ -111,7 +111,7 @@ import java.util.Map;
 /**
  * <p>TemplateTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class TemplateTransform {

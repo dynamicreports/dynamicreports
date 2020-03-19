@@ -36,7 +36,7 @@ import java.util.Locale;
 /**
  * <p>CurrentDateExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CurrentDateExpression extends AbstractComplexExpression<String> {

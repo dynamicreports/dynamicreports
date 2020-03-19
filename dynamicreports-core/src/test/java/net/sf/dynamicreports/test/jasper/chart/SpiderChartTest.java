@@ -49,7 +49,7 @@ import net.sf.jasperreports.engine.JRPrintFrame;
 import net.sf.jasperreports.engine.JRPrintImage;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class SpiderChartTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;

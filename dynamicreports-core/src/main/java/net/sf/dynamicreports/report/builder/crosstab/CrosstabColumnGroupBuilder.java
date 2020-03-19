@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>CrosstabColumnGroupBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CrosstabColumnGroupBuilder<T> extends AbstractCrosstabGroupBuilder<CrosstabColumnGroupBuilder<T>, DRCrosstabColumnGroup<T>, T> {

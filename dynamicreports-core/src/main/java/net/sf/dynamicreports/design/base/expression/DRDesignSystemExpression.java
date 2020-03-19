@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
 /**
  * <p>DRDesignSystemExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignSystemExpression implements DRIDesignSystemExpression {

@@ -38,7 +38,7 @@ import java.util.Date;
 /**
  * <p>Abstract AbstractTimeSeriesChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

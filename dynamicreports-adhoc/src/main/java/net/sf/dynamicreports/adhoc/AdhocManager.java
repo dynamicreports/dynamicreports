@@ -60,7 +60,7 @@ import java.io.OutputStream;
  * The {@link AdhocManager} also provides {@link #saveConfiguration(AdhocConfiguration, OutputStream)} and the {@link #loadConfiguration(InputStream)} methods for marshalling configuration and
  * unmarshalling configuration to and from the outputStream and inputStream respectively.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocManager {

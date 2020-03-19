@@ -27,7 +27,7 @@ import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
 /**
  * <p>OpenFlashChartXhtmlHandler class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class OpenFlashChartXhtmlHandler extends OpenFlashChartHtmlHandler {

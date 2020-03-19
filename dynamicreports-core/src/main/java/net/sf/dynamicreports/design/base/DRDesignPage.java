@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.PageOrientation;
 /**
  * <p>DRDesignPage class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignPage implements DRIDesignPage {

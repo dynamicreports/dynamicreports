@@ -46,7 +46,7 @@ import net.sf.jasperreports.engine.type.ModeEnum;
 /**
  * <p>StyleTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StyleTransform {

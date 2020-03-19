@@ -28,7 +28,7 @@ import java.util.Comparator;
 /**
  * <p>DRIAxisPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIAxisPlot extends DRIBasePlot {

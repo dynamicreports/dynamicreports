@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 /**
  * <p>EqualValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class EqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {

@@ -46,7 +46,7 @@ import org.junit.Assert;
 /**
  * Grouped stacked bar charts tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class GroupedStackedBarChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;

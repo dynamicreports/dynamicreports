@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * <p>InvoiceData class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class InvoiceData {

@@ -48,7 +48,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;

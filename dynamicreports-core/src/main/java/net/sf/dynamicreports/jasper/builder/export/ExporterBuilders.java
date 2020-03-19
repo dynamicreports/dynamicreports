@@ -30,7 +30,7 @@ import java.io.Writer;
 /**
  * A set of methods of creating exporters
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ExporterBuilders {

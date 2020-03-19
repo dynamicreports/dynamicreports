@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.constant.SplitType;
 /**
  * <p>DRDesignBand class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignBand implements DRIDesignBand {

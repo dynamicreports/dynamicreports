@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRIChartDataset;
 /**
  * <p>DRChartDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRChartDataset implements DRIChartDataset {

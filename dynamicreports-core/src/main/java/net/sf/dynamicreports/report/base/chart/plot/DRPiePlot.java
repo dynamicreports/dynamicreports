@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIPiePlot;
 /**
  * <p>DRPiePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRPiePlot extends AbstractBasePlot implements DRIPiePlot {

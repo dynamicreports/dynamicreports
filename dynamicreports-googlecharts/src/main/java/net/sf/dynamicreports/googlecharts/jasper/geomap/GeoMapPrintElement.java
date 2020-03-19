@@ -27,7 +27,7 @@ import net.sf.jasperreports.engine.JRGenericElementType;
 /**
  * <p>GeoMapPrintElement class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapPrintElement {

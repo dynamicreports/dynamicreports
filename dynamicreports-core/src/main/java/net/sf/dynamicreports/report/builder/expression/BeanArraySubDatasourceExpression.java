@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 /**
  * <p>BeanArraySubDatasourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BeanArraySubDatasourceExpression extends AbstractSubDatasourceExpression<Object[]> {

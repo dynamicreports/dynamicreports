@@ -37,7 +37,7 @@ import java.io.Serializable;
 /**
  * <p>WaterfallBarRendererCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class WaterfallBarRendererCustomizer implements DRIChartCustomizer, Serializable {

@@ -42,7 +42,7 @@ import java.util.Map;
 /**
  * <p>JasperScriptlet class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperScriptlet extends JRDefaultScriptlet {

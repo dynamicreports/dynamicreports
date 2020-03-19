@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>DRIQuery interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIQuery extends Serializable {

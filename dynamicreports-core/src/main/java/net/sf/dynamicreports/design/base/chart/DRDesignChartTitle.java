@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Position;
 /**
  * <p>DRDesignChartTitle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignChartTitle extends DRDesignChartSubtitle implements DRIDesignChartTitle {

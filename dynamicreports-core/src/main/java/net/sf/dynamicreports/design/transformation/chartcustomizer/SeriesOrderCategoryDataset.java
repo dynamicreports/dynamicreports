@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * <p>SeriesOrderCategoryDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SeriesOrderCategoryDataset implements CategoryDataset, Serializable {

@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 /**
  * <p>SystemMessageExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SystemMessageExpression extends AbstractSimpleExpression<String> {

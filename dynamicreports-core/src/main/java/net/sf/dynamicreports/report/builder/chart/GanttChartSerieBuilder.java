@@ -35,7 +35,7 @@ import java.util.Date;
 /**
  * <p>GanttChartSerieBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GanttChartSerieBuilder extends AbstractChartSerieBuilder<GanttChartSerieBuilder, DRGanttChartSerie> {

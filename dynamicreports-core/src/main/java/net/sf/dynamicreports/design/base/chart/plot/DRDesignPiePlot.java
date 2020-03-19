@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignPiePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignPiePlot extends AbstractDesignBasePlot implements DRIDesignPiePlot {

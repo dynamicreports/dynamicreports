@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>JasperOdtExporterBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperOdtExporterBuilder extends AbstractJasperExporterBuilder<JasperOdtExporterBuilder, JasperOdtExporter> {

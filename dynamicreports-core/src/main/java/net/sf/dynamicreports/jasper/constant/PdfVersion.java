@@ -24,7 +24,7 @@ package net.sf.dynamicreports.jasper.constant;
 /**
  * <p>PdfVersion class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum PdfVersion {

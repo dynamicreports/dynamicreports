@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>PostnetBarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PostnetBarcodeBuilder extends AbstractChecksumBarcodeBuilder<PostnetBarcodeBuilder, DRPostnetBarcode> {

@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract AbstractValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractValueExpression<T extends Number> extends AbstractSimpleExpression<Boolean> {

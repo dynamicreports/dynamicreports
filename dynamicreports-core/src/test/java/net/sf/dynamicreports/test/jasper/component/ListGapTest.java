@@ -29,7 +29,7 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ListGapTest extends AbstractJasperPositionTest {
 

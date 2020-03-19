@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRGeoMap class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRGeoMap extends DRDimensionComponent implements DRIGeoMap {

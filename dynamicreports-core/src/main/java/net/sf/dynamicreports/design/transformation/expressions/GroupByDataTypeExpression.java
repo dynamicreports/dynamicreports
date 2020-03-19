@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>GroupByDataTypeExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> {

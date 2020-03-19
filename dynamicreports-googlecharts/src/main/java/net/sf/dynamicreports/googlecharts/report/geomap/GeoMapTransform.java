@@ -40,7 +40,7 @@ import net.sf.jasperreports.engine.design.JRDesignComponentElement;
 /**
  * <p>GeoMapTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapTransform implements CustomComponentTransform<DRIGeoMap, DRIDesignGeoMap> {

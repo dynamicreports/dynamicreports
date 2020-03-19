@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * <p>DRIDesignStyle interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignStyle extends DRIDesignBaseStyle {

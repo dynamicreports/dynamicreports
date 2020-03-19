@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.SystemExpression;
 /**
  * <p>PageNumberExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public final class PageNumberExpression extends AbstractSystemExpression<Integer> {

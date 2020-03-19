@@ -30,7 +30,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignAxisFormat interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignAxisFormat extends Serializable {

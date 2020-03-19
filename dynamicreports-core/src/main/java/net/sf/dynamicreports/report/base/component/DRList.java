@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>DRList class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRList extends DRDimensionComponent implements DRIList {

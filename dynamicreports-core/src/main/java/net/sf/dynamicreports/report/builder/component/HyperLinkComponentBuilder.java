@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>Abstract HyperLinkComponentBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

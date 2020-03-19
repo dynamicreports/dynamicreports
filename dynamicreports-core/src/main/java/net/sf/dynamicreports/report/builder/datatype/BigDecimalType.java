@@ -30,7 +30,7 @@ import java.math.BigDecimal;
 /**
  * <p>BigDecimalType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BigDecimalType extends NumberType<BigDecimal> {

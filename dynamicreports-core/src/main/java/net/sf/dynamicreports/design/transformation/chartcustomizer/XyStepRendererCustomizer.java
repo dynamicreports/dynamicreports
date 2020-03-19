@@ -33,7 +33,7 @@ import java.io.Serializable;
 /**
  * <p>XyStepRendererCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class XyStepRendererCustomizer implements DRIChartCustomizer, Serializable {

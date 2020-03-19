@@ -39,7 +39,7 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 /**
  * <p>AggregationSubtotalBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSubtotalBuilder<T>, T> implements DRIValue<T> {

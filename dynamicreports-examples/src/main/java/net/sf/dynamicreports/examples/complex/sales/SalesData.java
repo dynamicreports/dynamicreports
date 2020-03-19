@@ -31,7 +31,7 @@ import java.util.Date;
 /**
  * <p>SalesData class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SalesData {

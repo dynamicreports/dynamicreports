@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>PrintInOddRowExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PrintInOddRowExpression extends AbstractSimpleExpression<Boolean> {

@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 import java.awt.Color;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperCrosstabStyleTest extends AbstractJasperStyleTest {
     private String crosstabBand;

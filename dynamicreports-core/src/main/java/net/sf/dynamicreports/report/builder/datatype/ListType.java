@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>ListType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("rawtypes")

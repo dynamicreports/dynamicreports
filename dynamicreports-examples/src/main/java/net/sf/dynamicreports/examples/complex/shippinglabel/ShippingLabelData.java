@@ -28,7 +28,7 @@ import java.util.Date;
 /**
  * <p>ShippingLabelData class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ShippingLabelData {

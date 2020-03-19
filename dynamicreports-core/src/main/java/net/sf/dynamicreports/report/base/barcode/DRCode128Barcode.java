@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRICode128Barcode;
 /**
  * <p>DRCode128Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCode128Barcode extends DRBarcode4j implements DRICode128Barcode {

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 /**
  * <p>FieldBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class FieldBuilder<T> extends AbstractBuilder<FieldBuilder<T>, DRField<T>> implements DRIValue<T> {

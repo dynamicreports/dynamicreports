@@ -38,7 +38,7 @@ import java.awt.Paint;
 /**
  * <p>XyBlockChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class XyBlockChartBuilder extends AbstractBaseChartBuilder<XyBlockChartBuilder, DRXyBlockPlot, DRSeriesDataset> {

@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocPage class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocPage implements Cloneable, Serializable {

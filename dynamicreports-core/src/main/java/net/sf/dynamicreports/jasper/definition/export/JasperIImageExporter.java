@@ -26,7 +26,7 @@ import net.sf.dynamicreports.jasper.constant.ImageType;
 /**
  * <p>JasperIImageExporter interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface JasperIImageExporter extends JasperIExporter {

@@ -39,7 +39,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * Table of contents style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TableOfContentsStyleTest extends AbstractJasperStyleTest {
 

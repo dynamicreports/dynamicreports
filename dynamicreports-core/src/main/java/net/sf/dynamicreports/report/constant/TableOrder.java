@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>TableOrder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum TableOrder {

@@ -32,7 +32,7 @@ import java.util.Locale;
 /**
  * <p>BooleanType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BooleanType extends AbstractDataType<Boolean, Boolean> {

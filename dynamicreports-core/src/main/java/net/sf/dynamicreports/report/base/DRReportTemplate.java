@@ -50,7 +50,7 @@ import java.util.Locale;
 /**
  * <p>DRReportTemplate class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRReportTemplate implements DRIReportTemplate {

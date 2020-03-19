@@ -36,7 +36,7 @@ import java.util.Set;
 /**
  * <p>GeoMapFillDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDataset {

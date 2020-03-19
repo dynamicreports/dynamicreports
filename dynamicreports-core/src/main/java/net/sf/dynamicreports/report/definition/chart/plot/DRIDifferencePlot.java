@@ -26,7 +26,7 @@ import java.awt.Color;
 /**
  * <p>DRIDifferencePlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDifferencePlot extends DRIAxisPlot {

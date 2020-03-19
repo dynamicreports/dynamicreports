@@ -35,7 +35,7 @@ import java.io.Serializable;
 /**
  * <p>ShowPercentagesCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ShowPercentagesCustomizer implements DRIChartCustomizer, Serializable {

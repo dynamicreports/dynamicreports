@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.style.DRITemplateStyle;
 /**
  * <p>DRTemplateStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRTemplateStyle implements DRITemplateStyle {

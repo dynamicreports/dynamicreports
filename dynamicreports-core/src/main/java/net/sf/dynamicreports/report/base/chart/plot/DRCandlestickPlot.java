@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRICandlestickPlot;
 /**
  * <p>DRCandlestickPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCandlestickPlot extends DRAxisPlot implements DRICandlestickPlot {

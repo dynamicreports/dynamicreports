@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>Code128BarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class Code128BarcodeBuilder extends AbstractBarcode4jBuilder<Code128BarcodeBuilder, DRCode128Barcode> {

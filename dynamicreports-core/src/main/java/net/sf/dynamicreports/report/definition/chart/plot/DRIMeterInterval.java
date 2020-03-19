@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>DRIMeterInterval interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIMeterInterval extends Serializable {

@@ -35,7 +35,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class SubtotalPosition4Test extends AbstractJasperPositionTest {
     private AggregationSubtotalBuilder<Integer> subtotal1;

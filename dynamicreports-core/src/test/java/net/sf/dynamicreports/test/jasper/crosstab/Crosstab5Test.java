@@ -48,7 +48,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

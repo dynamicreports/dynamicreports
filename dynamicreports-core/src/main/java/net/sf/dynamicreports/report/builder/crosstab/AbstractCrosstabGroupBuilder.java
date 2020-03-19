@@ -47,7 +47,7 @@ import java.util.Comparator;
 /**
  * <p>Abstract AbstractCrosstabGroupBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})

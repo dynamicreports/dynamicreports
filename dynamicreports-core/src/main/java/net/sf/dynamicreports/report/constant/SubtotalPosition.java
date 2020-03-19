@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>SubtotalPosition class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum SubtotalPosition {

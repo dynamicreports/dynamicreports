@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIQrCode;
 /**
  * <p>DRQrCode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRQrCode extends DRBarcode implements DRIQrCode {

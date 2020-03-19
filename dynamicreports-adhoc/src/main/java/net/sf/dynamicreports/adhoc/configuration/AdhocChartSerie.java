@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocChartSerie class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocChartSerie implements Cloneable, Serializable {

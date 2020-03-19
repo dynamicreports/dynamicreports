@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.component.DRIPageNumber;
 /**
  * <p>DRPageNumber class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRPageNumber extends DRFormatField implements DRIPageNumber {

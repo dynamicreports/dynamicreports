@@ -36,7 +36,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedRe
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ConcatenatedReport4Test {
     JasperConcatenatedReportBuilder concatenatedReport;

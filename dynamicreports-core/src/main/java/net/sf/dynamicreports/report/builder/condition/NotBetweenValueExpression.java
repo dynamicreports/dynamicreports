@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
 /**
  * <p>NotBetweenValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class NotBetweenValueExpression<T extends Number> extends AbstractBetweenValueExpression<T> {

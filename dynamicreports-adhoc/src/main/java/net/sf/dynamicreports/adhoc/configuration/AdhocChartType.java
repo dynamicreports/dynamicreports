@@ -24,7 +24,7 @@ package net.sf.dynamicreports.adhoc.configuration;
 /**
  * <p>AdhocChartType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum AdhocChartType {

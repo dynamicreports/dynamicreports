@@ -67,7 +67,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.design.DesignReportBuilder;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ReportTemplateTest {
 

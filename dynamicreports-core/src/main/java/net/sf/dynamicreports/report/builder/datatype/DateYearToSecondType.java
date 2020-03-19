@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.defaults.Defaults;
 /**
  * <p>DateYearToSecondType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DateYearToSecondType extends DateType {

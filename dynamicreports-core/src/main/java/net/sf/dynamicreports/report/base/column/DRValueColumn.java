@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRITextField;
 /**
  * <p>DRValueColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRValueColumn<T> extends DRColumn<DRITextField<T>> implements DRIValueColumn<T> {

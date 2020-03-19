@@ -26,7 +26,7 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 /**
  * <p>DRIDesignField interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignField extends DRIDesignExpression {

@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 /**
  * <p>DesignTransformAccessor interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DesignTransformAccessor {

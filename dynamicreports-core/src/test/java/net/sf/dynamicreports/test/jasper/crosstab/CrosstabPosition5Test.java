@@ -39,7 +39,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CrosstabPosition5Test extends AbstractJasperCrosstabPositionTest {
     private CrosstabRowGroupBuilder<String> rowGroup;

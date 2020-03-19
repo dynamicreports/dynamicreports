@@ -35,7 +35,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRSubtotal class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRSubtotal<T> implements DRISubtotal<T> {

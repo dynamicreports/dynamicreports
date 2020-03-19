@@ -26,7 +26,7 @@ import net.sf.dynamicreports.design.definition.style.DRIDesignPen;
 /**
  * <p>DRIDesignEllipse interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignEllipse extends DRIDesignComponent {

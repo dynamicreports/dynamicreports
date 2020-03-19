@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.constant;
 /**
  * <p>ComponentGroupType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum ComponentGroupType {

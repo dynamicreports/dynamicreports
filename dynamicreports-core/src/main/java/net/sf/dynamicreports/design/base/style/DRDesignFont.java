@@ -28,7 +28,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 /**
  * <p>DRDesignFont class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignFont implements DRIDesignFont {

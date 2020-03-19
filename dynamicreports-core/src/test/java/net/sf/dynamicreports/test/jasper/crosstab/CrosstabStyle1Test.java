@@ -44,7 +44,7 @@ import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 /**
  * Crosstab style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CrosstabStyle1Test extends AbstractJasperCrosstabStyleTest {
   private CrosstabRowGroupBuilder<String> rowGroup;

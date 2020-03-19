@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * <p>Abstract AbstractBaseChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

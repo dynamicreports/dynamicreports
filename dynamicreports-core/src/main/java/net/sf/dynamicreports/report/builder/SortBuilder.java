@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>SortBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SortBuilder extends AbstractBuilder<SortBuilder, DRSort> {

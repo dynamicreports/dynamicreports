@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * <p>DRDesignComplexExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignComplexExpression extends AbstractDesignComplexExpression {

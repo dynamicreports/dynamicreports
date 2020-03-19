@@ -31,7 +31,7 @@ import java.util.Comparator;
 /**
  * <p>DRAxisPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {

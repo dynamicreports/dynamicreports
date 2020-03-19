@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.exception.DRException;
  * <p>
  * Enables runtime-provided report configurations to be added to the library, with out using xml like one would with JasperReports library.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface AdhocReportCustomizer {

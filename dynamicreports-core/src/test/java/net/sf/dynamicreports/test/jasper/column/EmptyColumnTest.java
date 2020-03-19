@@ -32,7 +32,7 @@ import java.io.Serializable;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class EmptyColumnTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

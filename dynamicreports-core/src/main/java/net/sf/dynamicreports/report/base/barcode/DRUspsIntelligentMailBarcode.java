@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIUspsIntelligentMailBar
 /**
  * <p>DRUspsIntelligentMailBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRUspsIntelligentMailBarcode extends DRChecksumBarcode implements DRIUspsIntelligentMailBarcode {

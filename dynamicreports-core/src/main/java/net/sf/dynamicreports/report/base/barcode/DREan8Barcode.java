@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIEan8Barcode;
 /**
  * <p>DREan8Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DREan8Barcode extends DRChecksumBarcode implements DRIEan8Barcode {

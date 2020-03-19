@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.fill.JRFillObjectFactory;
 /**
  * <p>GeoMapFillFactory class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapFillFactory implements ComponentFillFactory {

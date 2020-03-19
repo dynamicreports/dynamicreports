@@ -40,7 +40,7 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class JasperSubreportTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

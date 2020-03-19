@@ -30,7 +30,7 @@ import java.io.Serializable;
 /**
  * <p>DRDesignListCell class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignListCell implements Serializable {

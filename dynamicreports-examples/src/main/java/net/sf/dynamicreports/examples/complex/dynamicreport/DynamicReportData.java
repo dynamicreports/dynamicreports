@@ -32,7 +32,7 @@ import java.util.Date;
 /**
  * <p>DynamicReportData class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DynamicReportData {

@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * <p>DRCrosstab class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {

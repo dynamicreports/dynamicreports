@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * <p>DRIDesignGroup interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignGroup extends Serializable {

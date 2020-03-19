@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.exception.DRException;
 import org.junit.Test;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractBandTest {
 

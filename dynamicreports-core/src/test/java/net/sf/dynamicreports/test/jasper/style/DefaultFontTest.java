@@ -37,7 +37,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * Default font tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class DefaultFontTest extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;

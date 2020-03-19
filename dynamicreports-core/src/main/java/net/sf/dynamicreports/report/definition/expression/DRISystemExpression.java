@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.expression;
 /**
  * <p>DRISystemExpression interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRISystemExpression<T> extends DRIExpression<T> {

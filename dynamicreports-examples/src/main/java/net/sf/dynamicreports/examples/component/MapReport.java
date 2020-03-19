@@ -35,7 +35,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.template;
  *
  * Please ensure you have admin privileges on local disc C:\ before running this example
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class MapReport {

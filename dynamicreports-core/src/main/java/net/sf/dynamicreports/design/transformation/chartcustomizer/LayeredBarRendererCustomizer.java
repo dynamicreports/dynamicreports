@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * <p>LayeredBarRendererCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Serializable {

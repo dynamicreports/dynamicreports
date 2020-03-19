@@ -44,7 +44,7 @@ import java.util.Locale;
 import static org.hamcrest.core.Is.is;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class AdhocReportTest extends AbstractJasperTest {
     private AdhocConfiguration adhocConfiguration;

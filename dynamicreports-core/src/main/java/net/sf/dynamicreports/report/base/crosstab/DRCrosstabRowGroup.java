@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup;
 /**
  * <p>DRCrosstabRowGroup class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCrosstabRowGroup<T> extends DRCrosstabGroup<T> implements DRICrosstabRowGroup<T> {

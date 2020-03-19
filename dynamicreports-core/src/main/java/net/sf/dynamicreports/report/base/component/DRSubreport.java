@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * <p>DRSubreport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRSubreport extends DRDimensionComponent implements DRISubreport {

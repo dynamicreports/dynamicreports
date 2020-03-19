@@ -40,7 +40,7 @@ import java.util.Arrays;
 /**
  * <p>GeoMapBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGeoMap> {

@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.JRRewindableDataSource;
 /**
  * <p>DataSourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource> {

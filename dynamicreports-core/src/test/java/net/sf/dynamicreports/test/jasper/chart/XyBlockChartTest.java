@@ -45,7 +45,7 @@ import org.junit.Assert;
 /**
  * XY Block chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class XyBlockChartTest extends AbstractJasperChartTest {
 

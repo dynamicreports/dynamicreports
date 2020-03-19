@@ -32,7 +32,7 @@ import java.awt.Color;
 /**
  * <p>DRDesignThermometerPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesignThermometerPlot {

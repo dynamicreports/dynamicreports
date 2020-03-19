@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * <p>SeriesOrderByNamesComparator class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SeriesOrderByNamesComparator implements Comparator<String>, Serializable {

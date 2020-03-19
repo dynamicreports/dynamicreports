@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>GeoMapDataset interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface GeoMapDataset extends JRElementDataset, Serializable {

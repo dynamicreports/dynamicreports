@@ -29,7 +29,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>PropertyExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PropertyExpression implements DRIPropertyExpression {

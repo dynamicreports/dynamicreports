@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>PdfEncoding class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PdfEncoding {

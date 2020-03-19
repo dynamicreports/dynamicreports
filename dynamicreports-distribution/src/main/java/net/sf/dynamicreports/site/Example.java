@@ -22,7 +22,7 @@
 package net.sf.dynamicreports.site;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Example {
 	private String name;

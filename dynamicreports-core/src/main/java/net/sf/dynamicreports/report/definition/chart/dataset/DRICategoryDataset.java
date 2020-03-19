@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.chart.dataset;
 /**
  * <p>DRICategoryDataset interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRICategoryDataset extends DRISeriesDataset {

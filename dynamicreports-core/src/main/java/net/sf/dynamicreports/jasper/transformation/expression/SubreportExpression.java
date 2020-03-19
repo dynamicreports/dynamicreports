@@ -46,7 +46,7 @@ import java.util.Map;
 /**
  * <p>SubreportExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SubreportExpression extends AbstractDesignComplexExpression {

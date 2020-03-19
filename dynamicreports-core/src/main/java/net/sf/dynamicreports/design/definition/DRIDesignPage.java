@@ -28,7 +28,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignPage interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignPage extends Serializable {

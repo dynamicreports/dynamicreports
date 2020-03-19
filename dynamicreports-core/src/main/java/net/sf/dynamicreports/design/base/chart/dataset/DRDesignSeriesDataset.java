@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRDesignSeriesDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDesignSeriesDataset {

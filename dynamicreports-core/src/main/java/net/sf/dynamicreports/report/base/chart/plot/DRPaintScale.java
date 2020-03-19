@@ -30,7 +30,7 @@ import java.awt.Paint;
 /**
  * <p>DRPaintScale class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRPaintScale implements DRIPaintScale {

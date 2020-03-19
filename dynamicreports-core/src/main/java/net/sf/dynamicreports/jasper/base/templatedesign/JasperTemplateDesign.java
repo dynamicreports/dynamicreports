@@ -53,7 +53,7 @@ import java.util.List;
 /**
  * <p>JasperTemplateDesign class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {

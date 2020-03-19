@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
 /**
  * <p>DRIQrCode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIQrCode extends DRIBarcode {

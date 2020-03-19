@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>TocReferenceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class TocReferenceExpression extends AbstractComplexExpression<String> {

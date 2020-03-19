@@ -35,7 +35,7 @@ import org.junit.Assert;
 /**
  * Style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Style9Test extends AbstractJasperStyleTest {
 

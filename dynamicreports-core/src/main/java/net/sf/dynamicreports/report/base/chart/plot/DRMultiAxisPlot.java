@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * <p>DRMultiAxisPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRMultiAxisPlot extends DRAxisPlot implements DRIMultiAxisPlot {

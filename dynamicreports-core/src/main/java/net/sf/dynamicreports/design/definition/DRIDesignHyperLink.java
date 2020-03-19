@@ -28,7 +28,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignHyperLink interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignHyperLink extends Serializable {

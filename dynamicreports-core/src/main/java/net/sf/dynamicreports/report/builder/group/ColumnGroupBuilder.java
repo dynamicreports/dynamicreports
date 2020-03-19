@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>ColumnGroupBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ColumnGroupBuilder extends GroupBuilder<ColumnGroupBuilder> {

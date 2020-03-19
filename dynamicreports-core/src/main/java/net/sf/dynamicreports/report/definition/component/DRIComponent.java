@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRIComponent interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIComponent extends Serializable {

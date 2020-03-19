@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>PageNumberExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PageNumberExpression extends AbstractComplexExpression<String> {

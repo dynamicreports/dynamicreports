@@ -61,7 +61,7 @@ import java.util.List;
 /**
  * <p>DRChart class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRChart extends DRHyperLinkComponent implements DRIChart {

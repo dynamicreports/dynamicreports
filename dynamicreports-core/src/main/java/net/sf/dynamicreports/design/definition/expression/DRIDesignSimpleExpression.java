@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>DRIDesignSimpleExpression interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignSimpleExpression extends DRIDesignExpression {

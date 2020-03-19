@@ -36,7 +36,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cnd;
 import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ConditionsTest {
 

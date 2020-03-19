@@ -35,7 +35,7 @@ import java.util.Comparator;
 /**
  * <p>SeriesOrderCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SeriesOrderCustomizer implements DRIChartCustomizer, Serializable {

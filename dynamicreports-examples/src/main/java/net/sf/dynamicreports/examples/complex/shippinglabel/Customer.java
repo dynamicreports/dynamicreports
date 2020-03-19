@@ -24,7 +24,7 @@ package net.sf.dynamicreports.examples.complex.shippinglabel;
 /**
  * <p>Customer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class Customer {

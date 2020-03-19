@@ -39,7 +39,7 @@ import java.util.ListIterator;
 /**
  * <p>JasperPrintListFileHandler class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperPrintListFileHandler extends AbstractPrintListHandler {

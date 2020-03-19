@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * <p>Abstract DRComponent class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRComponent implements DRIComponent {

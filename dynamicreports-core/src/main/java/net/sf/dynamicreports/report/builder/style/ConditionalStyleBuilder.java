@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>ConditionalStyleBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ConditionalStyleBuilder extends BaseStyleBuilder<ConditionalStyleBuilder, DRConditionalStyle> {

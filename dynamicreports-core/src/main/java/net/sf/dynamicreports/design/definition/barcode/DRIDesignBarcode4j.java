@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.BarcodeTextPosition;
 /**
  * <p>DRIDesignBarcode4j interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignBarcode4j extends DRIDesignBarcode {

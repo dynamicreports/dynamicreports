@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>DRIParameter interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIParameter<T> extends DRIValue<T>, Serializable {

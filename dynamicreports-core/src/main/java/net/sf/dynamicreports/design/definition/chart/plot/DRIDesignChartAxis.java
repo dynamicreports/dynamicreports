@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignChartAxis interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignChartAxis extends Serializable {

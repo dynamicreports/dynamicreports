@@ -34,7 +34,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRGroup class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRGroup implements DRIGroup {

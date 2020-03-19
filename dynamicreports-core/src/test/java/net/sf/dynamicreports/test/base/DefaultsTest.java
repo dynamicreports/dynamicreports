@@ -41,7 +41,7 @@ import org.junit.Test;
 /**
  * Defaults tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class DefaultsTest {
 

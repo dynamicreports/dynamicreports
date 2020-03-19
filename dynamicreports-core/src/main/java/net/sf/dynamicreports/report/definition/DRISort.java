@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>DRISort interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRISort extends Serializable {

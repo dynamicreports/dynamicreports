@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.barcode;
 /**
  * <p>DRIUspsIntelligentMailBarcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIUspsIntelligentMailBarcode extends DRIChecksumBarcode {

@@ -50,7 +50,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * <p>AdhocCustomizerReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocCustomizerReport {

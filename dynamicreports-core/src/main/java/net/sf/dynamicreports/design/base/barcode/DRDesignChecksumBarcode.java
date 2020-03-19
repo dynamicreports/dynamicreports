@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>Abstract DRDesignChecksumBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRDesignChecksumBarcode extends DRDesignBarcode4j implements DRIDesignChecksumBarcode {

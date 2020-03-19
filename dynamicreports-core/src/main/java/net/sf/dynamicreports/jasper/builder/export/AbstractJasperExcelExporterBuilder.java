@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * <p>Abstract AbstractJasperExcelExporterBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

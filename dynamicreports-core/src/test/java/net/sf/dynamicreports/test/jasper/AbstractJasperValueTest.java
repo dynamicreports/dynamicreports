@@ -33,7 +33,7 @@ import net.sf.jasperreports.engine.util.JRStyledTextUtil;
 import java.util.List;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperValueTest extends AbstractJasperTest {
 

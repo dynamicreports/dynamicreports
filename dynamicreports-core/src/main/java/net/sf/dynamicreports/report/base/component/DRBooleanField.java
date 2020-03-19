@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRBooleanField class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRBooleanField extends DRHyperLinkComponent implements DRIBooleanField {

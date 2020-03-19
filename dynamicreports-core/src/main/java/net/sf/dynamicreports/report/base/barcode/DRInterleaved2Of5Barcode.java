@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIInterleaved2Of5Barcode
 /**
  * <p>DRInterleaved2Of5Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRInterleaved2Of5Barcode extends DRChecksumBarcode implements DRIInterleaved2Of5Barcode {

@@ -31,7 +31,7 @@ import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 /**
  * <p>GeoMapCompiler class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GeoMapCompiler implements ComponentCompiler {

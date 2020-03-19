@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * <p>Abstract AbstractTemplateDesign class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractTemplateDesign<T> implements DRITemplateDesign<T> {

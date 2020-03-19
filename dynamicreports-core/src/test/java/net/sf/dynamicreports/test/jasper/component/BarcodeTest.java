@@ -67,7 +67,7 @@ import net.sf.jasperreports.engine.component.Component;
 import net.sf.jasperreports.renderers.SimpleRenderToImageAwareDataRenderer;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class BarcodeTest extends AbstractJasperTest {
 

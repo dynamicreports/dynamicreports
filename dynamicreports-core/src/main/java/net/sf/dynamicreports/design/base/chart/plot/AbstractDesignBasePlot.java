@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * <p>Abstract AbstractDesignBasePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractDesignBasePlot implements DRIDesignBasePlot {

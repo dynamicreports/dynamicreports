@@ -43,7 +43,7 @@ import java.util.Date;
 /**
  * <p>TextFieldBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("deprecation")

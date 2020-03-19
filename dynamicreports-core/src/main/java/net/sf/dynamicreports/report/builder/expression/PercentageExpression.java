@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * <p>PercentageExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PercentageExpression extends AbstractComplexExpression<Double> {

@@ -27,7 +27,7 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class NoDataSectionTest extends AbstractJasperValueTest {
 

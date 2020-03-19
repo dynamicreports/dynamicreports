@@ -29,7 +29,7 @@ import java.awt.Color;
 /**
  * <p>DRDifferencePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {

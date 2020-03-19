@@ -31,7 +31,7 @@ import java.awt.Color;
 /**
  * <p>DRChartSubtitle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRChartSubtitle implements DRIChartSubtitle {

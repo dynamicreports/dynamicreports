@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>TemplateStyleBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class TemplateStyleBuilder extends AbstractBuilder<TemplateStyleBuilder, DRTemplateStyle> implements ReportStyleBuilder {

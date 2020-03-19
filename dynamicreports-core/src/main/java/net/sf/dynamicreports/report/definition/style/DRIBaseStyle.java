@@ -35,7 +35,7 @@ import java.io.Serializable;
 /**
  * <p>DRIBaseStyle interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIBaseStyle extends Serializable {

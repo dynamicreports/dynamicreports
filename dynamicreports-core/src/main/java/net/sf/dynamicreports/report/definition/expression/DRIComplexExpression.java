@@ -29,7 +29,7 @@ import java.util.List;
  * A complex implementation of an expression.<br/> The difference between a simple and complex expression is that a complex expression allows registering additional fields or variables that are not
  * defined in the report and are needed for calculating the value.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIComplexExpression<T> extends DRIExpression<T> {

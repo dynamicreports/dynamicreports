@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>PageXofYNumberExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PageXofYNumberExpression extends AbstractComplexExpression<String> {

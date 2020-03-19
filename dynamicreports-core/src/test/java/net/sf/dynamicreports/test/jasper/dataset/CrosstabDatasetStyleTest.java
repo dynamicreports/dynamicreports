@@ -48,7 +48,7 @@ import org.junit.Assert;
 /**
  * Crosstab dataset style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
     implements Serializable {

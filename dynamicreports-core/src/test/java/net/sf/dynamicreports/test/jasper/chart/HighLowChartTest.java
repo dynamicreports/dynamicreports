@@ -45,7 +45,7 @@ import org.junit.Assert;
 /**
  * High low chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class HighLowChartTest extends AbstractJasperChartTest {
   private Date date1;

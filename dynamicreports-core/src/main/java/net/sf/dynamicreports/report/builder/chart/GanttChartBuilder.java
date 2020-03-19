@@ -35,7 +35,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>GanttChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilder, DRBarPlot, DRSeriesDataset> {

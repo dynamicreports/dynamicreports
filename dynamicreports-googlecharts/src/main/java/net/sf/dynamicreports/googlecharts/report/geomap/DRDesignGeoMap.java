@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>DRDesignGeoMap class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignGeoMap extends DRDesignComponent implements DRIDesignGeoMap {

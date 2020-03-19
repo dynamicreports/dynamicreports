@@ -44,7 +44,7 @@ import java.text.NumberFormat;
 /**
  * <p>ShowValuesCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {

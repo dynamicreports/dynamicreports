@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.OrderType;
 /**
  * <p>DRDesignSort class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignSort implements DRIDesignSort {

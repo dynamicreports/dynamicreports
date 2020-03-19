@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * <p>Abstract AbstractJasperExcelExporter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter implements JasperIExcelExporter {

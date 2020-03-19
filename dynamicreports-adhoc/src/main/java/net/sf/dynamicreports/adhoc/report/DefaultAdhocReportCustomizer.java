@@ -178,7 +178,7 @@ import java.util.Map;
  *    }
  * </pre>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {

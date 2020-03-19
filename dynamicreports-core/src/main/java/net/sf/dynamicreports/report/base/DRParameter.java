@@ -28,7 +28,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRParameter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRParameter<T> implements DRIParameter<T> {

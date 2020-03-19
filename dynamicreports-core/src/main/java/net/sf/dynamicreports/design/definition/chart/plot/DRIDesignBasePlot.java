@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * <p>DRIDesignBasePlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignBasePlot extends DRIDesignPlot {

@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.TimePeriod;
 /**
  * <p>DRDesignTimeSeriesDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignTimeSeriesDataset extends DRDesignSeriesDataset implements DRIDesignTimeSeriesDataset {

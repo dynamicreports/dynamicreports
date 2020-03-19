@@ -38,7 +38,7 @@ import java.io.Serializable;
 /**
  * <p>XyBlockRendererCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class XyBlockRendererCustomizer implements DRIChartCustomizer, Serializable {

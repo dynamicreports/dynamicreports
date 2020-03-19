@@ -32,7 +32,7 @@ import net.sf.jasperreports.engine.util.JRImageLoader;
 /**
  * <p>GoogleChartsDesignConverter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GoogleChartsDesignConverter extends ElementIconConverter implements ComponentDesignConverter {

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
 /**
  * <p>TableOfContentsCustomizerBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfContentsCustomizerBuilder, TableOfContentsCustomizer> {

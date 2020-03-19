@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>DRXyBlockPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRXyBlockPlot extends DRAxisPlot implements DRIXyBlockPlot {

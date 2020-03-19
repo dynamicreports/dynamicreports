@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.ScaleType;
 /**
  * <p>DRDesignBubblePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignBubblePlot extends DRDesignAxisPlot implements DRIDesignBubblePlot {

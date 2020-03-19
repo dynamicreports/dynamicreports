@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIUpceBarcode;
 /**
  * <p>DRUpceBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRUpceBarcode extends DRChecksumBarcode implements DRIUpceBarcode {

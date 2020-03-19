@@ -24,7 +24,7 @@ package net.sf.dynamicreports.jasper.constant;
 /**
  * <p>ImageType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum ImageType {

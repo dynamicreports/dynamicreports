@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIChecksumBarcode;
 /**
  * <p>Abstract DRChecksumBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRChecksumBarcode extends DRBarcode4j implements DRIChecksumBarcode {

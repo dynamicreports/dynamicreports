@@ -31,7 +31,7 @@ import java.util.Collection;
 /**
  * <p>BeanCollectionSubDatasourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BeanCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<?>> {

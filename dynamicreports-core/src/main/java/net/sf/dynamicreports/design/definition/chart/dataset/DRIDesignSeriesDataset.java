@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * <p>DRIDesignSeriesDataset interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignSeriesDataset extends DRIDesignChartDataset {

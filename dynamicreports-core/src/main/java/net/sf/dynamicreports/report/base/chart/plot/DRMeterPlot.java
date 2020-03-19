@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * <p>DRMeterPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRMeterPlot implements DRIMeterPlot {

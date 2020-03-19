@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.component.DRICurrentDate;
 /**
  * <p>DRCurrentDate class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCurrentDate extends DRFormatField implements DRICurrentDate {

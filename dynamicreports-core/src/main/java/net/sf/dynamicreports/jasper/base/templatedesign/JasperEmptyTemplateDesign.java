@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 /**
  * <p>JasperEmptyTemplateDesign class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperEmptyTemplateDesign extends AbstractTemplateDesign<JasperDesign> {

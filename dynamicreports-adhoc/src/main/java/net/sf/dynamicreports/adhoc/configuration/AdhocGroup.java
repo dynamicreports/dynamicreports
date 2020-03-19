@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocGroup class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocGroup implements Cloneable, Serializable {

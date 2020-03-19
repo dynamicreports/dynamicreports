@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>PageXslashYBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PageXslashYBuilder extends AbstractFormatFieldBuilder<PageXslashYBuilder, DRPageXofY> {

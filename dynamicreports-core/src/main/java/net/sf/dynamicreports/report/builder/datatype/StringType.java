@@ -32,7 +32,7 @@ import java.util.Locale;
 /**
  * <p>StringType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StringType extends AbstractDataType<String, String> {

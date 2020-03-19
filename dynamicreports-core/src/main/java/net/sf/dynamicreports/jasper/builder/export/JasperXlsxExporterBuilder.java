@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>JasperXlsxExporterBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperXlsxExporterBuilder extends AbstractJasperExcelExporterBuilder<JasperXlsxExporterBuilder, JasperXlsxExporter> {

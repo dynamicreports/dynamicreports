@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.component.DRITotalPages;
 /**
  * <p>DRTotalPages class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRTotalPages extends DRFormatField implements DRITotalPages {

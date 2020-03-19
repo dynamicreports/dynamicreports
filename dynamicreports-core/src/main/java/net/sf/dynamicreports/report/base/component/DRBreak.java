@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.component.DRIBreak;
 /**
  * <p>DRBreak class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRBreak extends DRComponent implements DRIBreak {

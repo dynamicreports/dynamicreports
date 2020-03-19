@@ -24,7 +24,7 @@ package net.sf.dynamicreports.adhoc.configuration;
 /**
  * <p>AdhocCalculation class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum AdhocCalculation {

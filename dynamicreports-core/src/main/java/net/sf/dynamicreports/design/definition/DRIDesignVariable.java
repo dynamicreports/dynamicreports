@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Calculation;
 /**
  * <p>DRIDesignVariable interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignVariable extends DRIDesignExpression {

@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignParameterExpression interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignParameterExpression extends Serializable {

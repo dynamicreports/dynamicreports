@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * <p>DRIDesignMeterPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignMeterPlot extends DRIDesignPlot {

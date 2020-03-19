@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.crosstab;
 /**
  * <p>DRICrosstabRowGroup interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRICrosstabRowGroup<T> extends DRICrosstabGroup<T> {

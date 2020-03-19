@@ -24,7 +24,7 @@ package net.sf.dynamicreports.adhoc.configuration;
 /**
  * <p>AdhocVerticalAlignment class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public enum AdhocVerticalAlignment {

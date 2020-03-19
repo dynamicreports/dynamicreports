@@ -46,7 +46,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * Crosstab style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CrosstabStyle2Test extends AbstractJasperCrosstabStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;

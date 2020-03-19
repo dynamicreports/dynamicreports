@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 /**
  * <p>DRCrosstabCellStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCrosstabCellStyle implements DRICrosstabCellStyle {

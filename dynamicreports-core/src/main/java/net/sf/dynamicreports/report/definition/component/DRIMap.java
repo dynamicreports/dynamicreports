@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>DRIMap interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIMap extends DRIDimensionComponent {

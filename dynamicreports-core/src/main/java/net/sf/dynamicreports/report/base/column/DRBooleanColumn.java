@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRIBooleanField;
 /**
  * <p>DRBooleanColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRBooleanColumn extends DRColumn<DRIBooleanField> implements DRIBooleanColumn {

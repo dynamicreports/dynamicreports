@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * <p>CustomComponents class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CustomComponents {

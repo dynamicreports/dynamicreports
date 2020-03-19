@@ -33,7 +33,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>XyChartSerieBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class XyChartSerieBuilder extends AbstractChartSerieBuilder<XyChartSerieBuilder, DRXyChartSerie> {

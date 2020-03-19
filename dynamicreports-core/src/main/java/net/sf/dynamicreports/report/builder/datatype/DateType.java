@@ -35,7 +35,7 @@ import java.util.Locale;
 /**
  * <p>DateType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DateType extends AbstractDataType<Date, Date> {

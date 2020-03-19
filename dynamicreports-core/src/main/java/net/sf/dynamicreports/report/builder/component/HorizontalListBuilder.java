@@ -33,7 +33,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>HorizontalListBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class HorizontalListBuilder extends DimensionComponentBuilder<HorizontalListBuilder, DRList> {

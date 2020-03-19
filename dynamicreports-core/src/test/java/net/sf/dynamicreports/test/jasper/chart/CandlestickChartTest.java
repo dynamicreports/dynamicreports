@@ -45,7 +45,7 @@ import org.junit.Assert;
 /**
  * Candlestick chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CandlestickChartTest extends AbstractJasperChartTest {
   private Date date1;

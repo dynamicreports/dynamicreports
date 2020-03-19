@@ -31,7 +31,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignBand interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignBand extends Serializable {

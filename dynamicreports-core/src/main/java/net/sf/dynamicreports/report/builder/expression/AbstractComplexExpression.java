@@ -40,7 +40,7 @@ import java.util.List;
 /**
  * <p>Abstract AbstractComplexExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractComplexExpression<T> implements DRIComplexExpression<T> {

@@ -30,7 +30,7 @@ import java.awt.Color;
 /**
  * <p>DRMeterInterval class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRMeterInterval implements DRIMeterInterval {

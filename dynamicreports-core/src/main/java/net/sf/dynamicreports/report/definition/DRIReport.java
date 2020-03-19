@@ -44,7 +44,7 @@ import java.util.ResourceBundle;
 /**
  * <p>DRIReport interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIReport extends Serializable {

@@ -34,7 +34,7 @@ import java.util.List;
 /**
  * <p>JasperPdfExporter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class JasperPdfExporter extends AbstractJasperExporter implements JasperIPdfExporter {

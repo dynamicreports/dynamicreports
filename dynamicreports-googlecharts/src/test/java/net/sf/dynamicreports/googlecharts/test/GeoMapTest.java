@@ -34,7 +34,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 import org.junit.Test;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class GeoMapTest extends AbstractJasperTest {
 

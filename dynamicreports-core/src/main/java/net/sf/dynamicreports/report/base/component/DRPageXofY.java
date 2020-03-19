@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.component.DRIPageXofY;
 /**
  * <p>DRPageXofY class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRPageXofY extends DRFormatField implements DRIPageXofY {

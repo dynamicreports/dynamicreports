@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabDataset;
 /**
  * <p>DRCrosstabDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRCrosstabDataset implements DRICrosstabDataset {

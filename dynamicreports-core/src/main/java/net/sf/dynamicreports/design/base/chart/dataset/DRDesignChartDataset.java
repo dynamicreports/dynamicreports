@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignChartDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignChartDataset implements DRIDesignChartDataset {

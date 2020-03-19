@@ -46,7 +46,7 @@ import java.util.Set;
 /**
  * <p>SeriesColorsByNameCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SeriesColorsByNameCustomizer implements DRIChartCustomizer {

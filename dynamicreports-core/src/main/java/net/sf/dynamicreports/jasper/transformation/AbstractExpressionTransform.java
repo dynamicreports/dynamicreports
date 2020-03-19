@@ -58,7 +58,7 @@ import java.util.Map;
 /**
  * <p>Abstract AbstractExpressionTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractExpressionTransform {

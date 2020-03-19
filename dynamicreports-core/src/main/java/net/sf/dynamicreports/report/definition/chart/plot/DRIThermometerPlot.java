@@ -30,7 +30,7 @@ import java.awt.Color;
 /**
  * <p>DRIThermometerPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIThermometerPlot extends DRIPlot {

@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocColumn implements Cloneable, Serializable {

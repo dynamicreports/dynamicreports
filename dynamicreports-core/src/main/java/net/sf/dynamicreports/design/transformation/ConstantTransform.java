@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.definition.DRIGroup;
 import net.sf.dynamicreports.report.exception.DRException;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 class ConstantTransform {
 

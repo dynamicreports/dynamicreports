@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.data.JRMapArrayDataSource;
 /**
  * <p>MapArraySubDatasourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class MapArraySubDatasourceExpression extends AbstractSubDatasourceExpression<Object[]> {

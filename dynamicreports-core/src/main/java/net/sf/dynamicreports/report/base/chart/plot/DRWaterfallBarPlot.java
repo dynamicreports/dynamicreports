@@ -29,7 +29,7 @@ import java.awt.Paint;
 /**
  * <p>DRWaterfallBarPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot {

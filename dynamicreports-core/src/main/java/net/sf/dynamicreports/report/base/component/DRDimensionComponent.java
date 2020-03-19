@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract DRDimensionComponent class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRDimensionComponent extends DRComponent implements DRIDimensionComponent {

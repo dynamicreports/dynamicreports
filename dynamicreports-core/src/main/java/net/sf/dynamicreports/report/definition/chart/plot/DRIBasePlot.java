@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * <p>DRIBasePlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIBasePlot extends DRIPlot {

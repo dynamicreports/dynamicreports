@@ -43,7 +43,7 @@ import org.junit.Assert;
 /**
  * Scatter chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class ScatterChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;

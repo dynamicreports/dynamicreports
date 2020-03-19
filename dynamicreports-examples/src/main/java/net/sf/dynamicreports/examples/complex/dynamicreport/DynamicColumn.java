@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 /**
  * <p>DynamicColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DynamicColumn {

@@ -46,7 +46,7 @@ import java.util.HashMap;
 /**
  * <p>OpenFlashChartPdfHandler class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("deprecation")

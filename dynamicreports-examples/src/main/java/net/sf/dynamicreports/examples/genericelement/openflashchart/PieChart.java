@@ -29,7 +29,7 @@ import org.json.JSONObject;
 /**
  * <p>PieChart class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PieChart implements ChartGenerator {

@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * <p>DRIMultiAxisPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIMultiAxisPlot extends DRIAxisPlot {

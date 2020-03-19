@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * <p>ReportTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ReportTransform {

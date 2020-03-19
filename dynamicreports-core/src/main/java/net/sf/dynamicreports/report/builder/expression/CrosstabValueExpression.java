@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.definition.DRICrosstabValue;
 /**
  * <p>CrosstabValueExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public final class CrosstabValueExpression<T> extends AbstractSystemExpression<T> {

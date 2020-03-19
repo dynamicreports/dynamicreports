@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.definition.chart.plot;
 /**
  * <p>DRIDesignHighLowPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignHighLowPlot extends DRIDesignAxisPlot {

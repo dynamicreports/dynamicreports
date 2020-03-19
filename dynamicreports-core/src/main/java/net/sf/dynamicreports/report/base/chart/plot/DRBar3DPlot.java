@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIBar3DPlot;
 /**
  * <p>DRBar3DPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRBar3DPlot extends DRAxisPlot implements DRIBar3DPlot {

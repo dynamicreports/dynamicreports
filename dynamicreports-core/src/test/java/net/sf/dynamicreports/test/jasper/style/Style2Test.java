@@ -41,7 +41,7 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 /**
  * Style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Style2Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;

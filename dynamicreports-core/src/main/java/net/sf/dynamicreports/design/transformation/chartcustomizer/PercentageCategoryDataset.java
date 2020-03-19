@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>PercentageCategoryDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PercentageCategoryDataset implements CategoryDataset, Serializable {

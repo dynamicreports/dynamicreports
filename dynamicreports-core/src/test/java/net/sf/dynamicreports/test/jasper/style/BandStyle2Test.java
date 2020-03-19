@@ -41,7 +41,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class BandStyle2Test extends AbstractJasperStyleTest implements Serializable {
     private static final long serialVersionUID = 1L;

@@ -44,7 +44,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 /**
  * <p>PercentageCrosstabReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PercentageCrosstabReport {

@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * <p>Abstract AbstractSubDatasourceExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractSubDatasourceExpression<T> extends AbstractComplexExpression<JRDataSource> {

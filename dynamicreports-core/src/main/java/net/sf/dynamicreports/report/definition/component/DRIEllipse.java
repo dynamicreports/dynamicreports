@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.definition.style.DRIPen;
 /**
  * <p>DRIEllipse interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIEllipse extends DRIDimensionComponent {

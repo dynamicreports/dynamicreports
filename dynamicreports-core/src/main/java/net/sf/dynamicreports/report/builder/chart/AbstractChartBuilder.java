@@ -41,7 +41,7 @@ import java.sql.Connection;
 /**
  * <p>Abstract AbstractChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

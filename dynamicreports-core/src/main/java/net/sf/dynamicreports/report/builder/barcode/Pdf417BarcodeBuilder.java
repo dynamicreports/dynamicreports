@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>Pdf417BarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class Pdf417BarcodeBuilder extends AbstractBarcode4jBuilder<Pdf417BarcodeBuilder, DRPdf417Barcode> {

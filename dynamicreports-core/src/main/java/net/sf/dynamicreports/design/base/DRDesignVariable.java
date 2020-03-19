@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignVariable class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignVariable implements DRIDesignVariable {

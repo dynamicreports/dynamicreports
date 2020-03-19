@@ -26,7 +26,7 @@ import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 /**
  * <p>DRIPageXofY interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIPageXofY extends DRIFormatField {

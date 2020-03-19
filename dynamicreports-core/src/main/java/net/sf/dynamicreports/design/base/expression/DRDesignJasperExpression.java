@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIJasperExpression;
 /**
  * <p>DRDesignJasperExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignJasperExpression implements DRIDesignJasperExpression {

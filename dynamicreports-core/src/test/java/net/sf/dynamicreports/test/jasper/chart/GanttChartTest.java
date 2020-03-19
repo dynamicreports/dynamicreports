@@ -44,7 +44,7 @@ import org.junit.Assert;
 /**
  * Gant chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class GanttChartTest extends AbstractJasperChartTest {
 

@@ -42,7 +42,7 @@ import org.junit.Assert;
 /**
  * Meter chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class MeterChartTest extends AbstractJasperChartTest {
 

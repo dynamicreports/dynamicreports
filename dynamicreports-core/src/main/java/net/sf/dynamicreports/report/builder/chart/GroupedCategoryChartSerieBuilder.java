@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>GroupedCategoryChartSerieBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class GroupedCategoryChartSerieBuilder extends AbstractCategoryChartSerieBuilder<GroupedCategoryChartSerieBuilder, DRGroupedCategoryChartSerie> {

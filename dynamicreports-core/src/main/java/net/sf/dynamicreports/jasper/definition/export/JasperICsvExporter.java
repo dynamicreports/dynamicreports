@@ -24,7 +24,7 @@ package net.sf.dynamicreports.jasper.definition.export;
 /**
  * <p>JasperICsvExporter interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface JasperICsvExporter extends JasperIExporter {

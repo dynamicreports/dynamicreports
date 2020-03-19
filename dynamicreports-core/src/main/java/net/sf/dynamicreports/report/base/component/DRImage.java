@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>DRImage class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRImage extends DRHyperLinkComponent implements DRIImage {

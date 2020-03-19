@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.LineDirection;
 /**
  * <p>DRIDesignLine interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignLine extends DRIDesignComponent {

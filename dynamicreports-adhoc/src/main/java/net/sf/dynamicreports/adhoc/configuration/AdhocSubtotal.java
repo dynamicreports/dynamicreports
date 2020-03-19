@@ -26,7 +26,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocSubtotal class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocSubtotal implements Cloneable, Serializable {

@@ -35,7 +35,7 @@ import java.util.Locale;
 /**
  * <p>Abstract AbstractDataType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class AbstractDataType<U, T extends U> implements DRIDataType<U, T> {

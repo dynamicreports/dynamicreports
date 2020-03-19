@@ -44,7 +44,7 @@ import org.junit.Assert;
 /**
  * XY step chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class XyStepChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;

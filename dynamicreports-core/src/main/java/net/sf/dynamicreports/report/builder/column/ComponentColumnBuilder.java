@@ -33,7 +33,7 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 /**
  * It is used to display custom components (e.g. images or complex content) in columns.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class ComponentColumnBuilder extends ColumnBuilder<ComponentColumnBuilder, DRColumn<DRComponent>> {

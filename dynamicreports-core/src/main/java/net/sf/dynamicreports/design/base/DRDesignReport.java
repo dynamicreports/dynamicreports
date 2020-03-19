@@ -74,7 +74,7 @@ import java.util.ResourceBundle;
 /**
  * <p>DRDesignReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignReport implements DesignTransformAccessor, DRIDesignReport {

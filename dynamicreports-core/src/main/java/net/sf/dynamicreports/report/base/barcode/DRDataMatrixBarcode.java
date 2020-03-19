@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIDataMatrixBarcode;
 /**
  * <p>DRDataMatrixBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDataMatrixBarcode extends DRBarcode4j implements DRIDataMatrixBarcode {

@@ -35,7 +35,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 /**
  * <p>BandTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BandTransform {

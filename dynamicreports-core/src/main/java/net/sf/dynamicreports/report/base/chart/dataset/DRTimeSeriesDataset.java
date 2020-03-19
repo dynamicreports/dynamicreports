@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRITimeSeriesDatase
 /**
  * <p>DRTimeSeriesDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRTimeSeriesDataset extends DRSeriesDataset implements DRITimeSeriesDataset {

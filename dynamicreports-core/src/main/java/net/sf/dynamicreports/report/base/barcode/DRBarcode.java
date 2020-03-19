@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract DRBarcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRBarcode extends DRDimensionComponent implements DRIBarcode {

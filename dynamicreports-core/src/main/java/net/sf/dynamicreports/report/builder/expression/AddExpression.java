@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * <p>AddExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AddExpression extends CalculationExpression {

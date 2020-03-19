@@ -40,7 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * It is used to show values from the data source.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T>, T> implements DRIValue<T> {

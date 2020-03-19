@@ -33,7 +33,7 @@ import java.awt.Color;
 /**
  * <p>DRDesignSpiderPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignSpiderPlot implements DRIDesignSpiderPlot {

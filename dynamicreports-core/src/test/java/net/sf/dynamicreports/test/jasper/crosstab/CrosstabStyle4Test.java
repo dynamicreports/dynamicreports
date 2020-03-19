@@ -40,7 +40,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * Crosstab style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class CrosstabStyle4Test extends AbstractJasperCrosstabStyleTest {
   private CrosstabRowGroupBuilder<String> rowGroup1;

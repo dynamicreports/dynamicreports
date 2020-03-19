@@ -50,7 +50,7 @@ import java.util.Map.Entry;
 /**
  * <p>SubtotalTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SubtotalTransform {

@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>Abstract DRDesignBarcode4j class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public abstract class DRDesignBarcode4j extends DRDesignBarcode implements DRIDesignBarcode4j {

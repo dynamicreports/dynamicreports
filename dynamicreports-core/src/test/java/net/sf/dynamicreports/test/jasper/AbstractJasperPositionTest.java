@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder;
 import net.sf.jasperreports.engine.JRPrintElement;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperPositionTest extends AbstractJasperTest {
 

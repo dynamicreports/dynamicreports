@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * <p>DRDesignMeterPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMeterPlot {

@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRParagraph class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRParagraph implements DRIParagraph {

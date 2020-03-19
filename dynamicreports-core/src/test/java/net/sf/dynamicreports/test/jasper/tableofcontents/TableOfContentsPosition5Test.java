@@ -30,7 +30,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 import static net.sf.dynamicreports.report.builder.DynamicReports.tableOfContentsHeading;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
     private TableOfContentsHeadingBuilder tocHeading1;

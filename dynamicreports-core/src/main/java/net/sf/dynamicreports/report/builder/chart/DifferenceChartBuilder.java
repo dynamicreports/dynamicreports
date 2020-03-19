@@ -30,7 +30,7 @@ import java.awt.Color;
 /**
  * <p>DifferenceChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DifferenceChartBuilder extends AbstractTimeSeriesChartBuilder<DifferenceChartBuilder, DRDifferencePlot> {

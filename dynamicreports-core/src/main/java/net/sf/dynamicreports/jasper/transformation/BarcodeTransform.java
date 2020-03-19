@@ -68,7 +68,7 @@ import net.sf.jasperreports.engine.design.JRDesignElement;
 /**
  * <p>BarcodeTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BarcodeTransform {

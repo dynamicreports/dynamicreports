@@ -31,7 +31,7 @@ import java.awt.Color;
 /**
  * <p>DRISpiderPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRISpiderPlot extends DRIPlot {

@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * <p>DRICrosstabMeasure interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRICrosstabMeasure<T> extends Serializable {

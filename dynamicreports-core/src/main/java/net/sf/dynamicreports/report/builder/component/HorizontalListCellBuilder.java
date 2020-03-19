@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
 /**
  * <p>HorizontalListCellBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class HorizontalListCellBuilder extends AbstractBuilder<HorizontalListCellBuilder, DRListCell> {

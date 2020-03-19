@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * <p>DRMultiPageList class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPageList {

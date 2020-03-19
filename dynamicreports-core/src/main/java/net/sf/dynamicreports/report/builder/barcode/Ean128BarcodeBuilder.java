@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>Ean128BarcodeBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class Ean128BarcodeBuilder extends AbstractChecksumBarcodeBuilder<Ean128BarcodeBuilder, DREan128Barcode> {

@@ -33,7 +33,7 @@ import net.sf.dynamicreports.test.design.AbstractBandTest;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class VerticalListPositionTest extends AbstractBandTest {
 

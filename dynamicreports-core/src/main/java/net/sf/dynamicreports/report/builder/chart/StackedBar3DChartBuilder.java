@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>StackedBar3DChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StackedBar3DChartBuilder extends AbstractCategoryChartBuilder<StackedBar3DChartBuilder, DRBar3DPlot> {

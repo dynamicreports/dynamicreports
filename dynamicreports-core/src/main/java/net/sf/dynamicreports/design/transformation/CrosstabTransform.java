@@ -79,7 +79,7 @@ import java.util.Map;
 /**
  * <p>CrosstabTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class CrosstabTransform {

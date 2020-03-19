@@ -27,7 +27,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocStyle class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocStyle implements Cloneable, Serializable {

@@ -33,7 +33,7 @@ import java.util.Locale;
 /**
  * <p>DRIDataType interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDataType<U, T extends U> extends Serializable {

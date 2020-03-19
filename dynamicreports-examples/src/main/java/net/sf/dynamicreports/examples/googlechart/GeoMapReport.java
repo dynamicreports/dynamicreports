@@ -39,7 +39,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 /**
  * <p>GeoMapReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * <p>
  * GeoMap component works only for html export. Visit the following link for more information about geo map parameters http://code.google.com/apis/chart/interactive/docs/gallery/geomap.html
  *

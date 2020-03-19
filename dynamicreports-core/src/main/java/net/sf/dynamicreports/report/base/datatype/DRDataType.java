@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 /**
  * <p>DRDataType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {

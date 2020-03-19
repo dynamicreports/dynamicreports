@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.definition.barcode;
 /**
  * <p>DRIDesignCode39Barcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignCode39Barcode extends DRIDesignChecksumBarcode {

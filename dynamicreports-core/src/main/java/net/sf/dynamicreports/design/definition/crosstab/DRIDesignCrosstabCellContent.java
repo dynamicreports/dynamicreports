@@ -29,7 +29,7 @@ import java.io.Serializable;
 /**
  * <p>DRIDesignCrosstabCellContent interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignCrosstabCellContent extends Serializable {

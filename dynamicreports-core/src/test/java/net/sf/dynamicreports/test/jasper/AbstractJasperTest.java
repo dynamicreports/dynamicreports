@@ -51,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperTest {
     private JasperReportBuilder reportBuilder;

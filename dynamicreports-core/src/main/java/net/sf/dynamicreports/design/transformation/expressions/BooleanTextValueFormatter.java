@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 /**
  * <p>BooleanTextValueFormatter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Boolean> {

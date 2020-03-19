@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 import java.io.InputStream;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TemplateDesign3Test extends AbstractJasperValueTest {
 

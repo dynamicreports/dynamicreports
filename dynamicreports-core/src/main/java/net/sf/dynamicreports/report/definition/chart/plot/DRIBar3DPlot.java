@@ -24,7 +24,7 @@ package net.sf.dynamicreports.report.definition.chart.plot;
 /**
  * <p>DRIBar3DPlot interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIBar3DPlot extends DRIAxisPlot {

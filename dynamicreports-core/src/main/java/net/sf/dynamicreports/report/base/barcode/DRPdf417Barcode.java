@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIPdf417Barcode;
 /**
  * <p>DRPdf417Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRPdf417Barcode extends DRBarcode4j implements DRIPdf417Barcode {

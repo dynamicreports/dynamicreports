@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.ImageScale;
 /**
  * <p>DRIDesignImage interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignImage extends DRIDesignHyperLinkComponent {

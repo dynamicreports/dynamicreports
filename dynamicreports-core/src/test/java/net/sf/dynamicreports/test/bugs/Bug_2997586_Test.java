@@ -28,7 +28,7 @@ import org.junit.Test;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * <p>
  * The height in setDimension(Integer width, Integer height) of the DimensionComponentBuilder class is set with the width.
  */

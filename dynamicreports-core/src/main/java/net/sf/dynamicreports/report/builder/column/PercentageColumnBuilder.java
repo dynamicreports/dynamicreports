@@ -38,7 +38,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * It calculates percentage values from the field or column values.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumnBuilder, Double> {

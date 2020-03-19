@@ -47,7 +47,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class GroupCustomSubtotal1Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * <p>BooleanImageExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class BooleanImageExpression extends AbstractComplexExpression<Renderable> {

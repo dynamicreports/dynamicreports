@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * <p>DatasetTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DatasetTransform {

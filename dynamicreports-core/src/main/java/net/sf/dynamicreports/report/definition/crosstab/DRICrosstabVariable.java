@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
 /**
  * <p>DRICrosstabVariable interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRICrosstabVariable<T> extends DRISystemExpression<T>, DRIValue<T> {

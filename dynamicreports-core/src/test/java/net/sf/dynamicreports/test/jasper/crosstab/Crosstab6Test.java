@@ -35,7 +35,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Crosstab6Test extends AbstractJasperCrosstabValueTest {
     private CrosstabRowGroupBuilder<String> rowGroup;

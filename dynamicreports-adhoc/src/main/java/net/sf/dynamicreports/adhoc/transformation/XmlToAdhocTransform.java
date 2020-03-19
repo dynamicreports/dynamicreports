@@ -102,7 +102,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  *     }
  * </pre>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class XmlToAdhocTransform implements IXmlToAdhocTransform {

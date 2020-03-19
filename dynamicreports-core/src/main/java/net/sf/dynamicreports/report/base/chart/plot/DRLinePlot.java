@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRILinePlot;
 /**
  * <p>DRLinePlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRLinePlot extends DRAxisPlot implements DRILinePlot {

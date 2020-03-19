@@ -37,7 +37,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 /**
  * <p>Abstract ValueColumnBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})

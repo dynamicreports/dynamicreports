@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * <p>DRIChart interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIChart extends DRIHyperLinkComponent {

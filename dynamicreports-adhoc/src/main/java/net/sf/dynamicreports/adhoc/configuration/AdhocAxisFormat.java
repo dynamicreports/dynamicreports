@@ -27,7 +27,7 @@ import java.io.Serializable;
 /**
  * <p>AdhocAxisFormat class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class AdhocAxisFormat implements Cloneable, Serializable {

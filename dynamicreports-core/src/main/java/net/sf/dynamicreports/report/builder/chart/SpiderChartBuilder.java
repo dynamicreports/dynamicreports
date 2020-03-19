@@ -41,7 +41,7 @@ import java.awt.Color;
 /**
  * <p>SpiderChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SpiderChartBuilder extends AbstractChartBuilder<SpiderChartBuilder> {

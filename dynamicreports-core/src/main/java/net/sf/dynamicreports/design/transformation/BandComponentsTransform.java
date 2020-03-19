@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 class BandComponentsTransform {
     private DesignTransformAccessor accessor;

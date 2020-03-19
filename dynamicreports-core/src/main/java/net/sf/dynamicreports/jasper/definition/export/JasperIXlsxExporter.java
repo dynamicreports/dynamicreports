@@ -24,7 +24,7 @@ package net.sf.dynamicreports.jasper.definition.export;
 /**
  * <p>JasperIXlsxExporter interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface JasperIXlsxExporter extends JasperIExcelExporter {

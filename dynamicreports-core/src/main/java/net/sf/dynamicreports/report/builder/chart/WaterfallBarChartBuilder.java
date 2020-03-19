@@ -30,7 +30,7 @@ import java.awt.Paint;
 /**
  * <p>WaterfallBarChartBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class WaterfallBarChartBuilder extends AbstractCategoryChartBuilder<WaterfallBarChartBuilder, DRWaterfallBarPlot> {

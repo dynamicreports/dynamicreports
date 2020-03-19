@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 /**
  * <p>SubreportWidthExpression class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class SubreportWidthExpression extends AbstractDesignSimpleExpression {

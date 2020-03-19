@@ -36,7 +36,7 @@ import java.net.URL;
 /**
  * <p>ImageBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("deprecation")

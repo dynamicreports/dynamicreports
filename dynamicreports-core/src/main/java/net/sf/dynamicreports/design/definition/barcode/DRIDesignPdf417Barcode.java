@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.definition.barcode;
 /**
  * <p>DRIDesignPdf417Barcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignPdf417Barcode extends DRIDesignBarcode4j {

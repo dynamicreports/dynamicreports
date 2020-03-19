@@ -26,7 +26,7 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 /**
  * <p>DRIDesignCategoryChartSerie interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignCategoryChartSerie extends DRIDesignChartSerie {

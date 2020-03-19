@@ -42,7 +42,7 @@ import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 /**
  * Style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Style8Test extends AbstractJasperStyleTest {
   private BooleanColumnBuilder column1;

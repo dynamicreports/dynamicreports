@@ -31,7 +31,7 @@ import java.awt.Color;
 /**
  * <p>DRDesignChartLegend class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRDesignChartLegend implements DRIDesignChartLegend {

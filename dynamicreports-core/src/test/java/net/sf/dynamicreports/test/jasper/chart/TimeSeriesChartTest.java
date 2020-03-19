@@ -48,7 +48,7 @@ import org.junit.Assert;
 /**
  * Time series chart tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TimeSeriesChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;

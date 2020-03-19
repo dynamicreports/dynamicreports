@@ -24,7 +24,7 @@ package net.sf.dynamicreports.design.definition.barcode;
 /**
  * <p>DRIDesignEan8Barcode interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIDesignEan8Barcode extends DRIDesignChecksumBarcode {

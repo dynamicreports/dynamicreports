@@ -30,7 +30,7 @@ import java.io.Serializable;
 /**
  * <p>DRIChartSubtitle interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public interface DRIChartSubtitle extends Serializable {

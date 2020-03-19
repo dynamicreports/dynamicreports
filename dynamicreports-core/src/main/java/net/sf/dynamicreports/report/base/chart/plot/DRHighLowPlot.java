@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIHighLowPlot;
 /**
  * <p>DRHighLowPlot class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DRHighLowPlot extends DRAxisPlot implements DRIHighLowPlot {

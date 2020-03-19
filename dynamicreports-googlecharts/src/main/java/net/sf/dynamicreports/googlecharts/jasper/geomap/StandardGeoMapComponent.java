@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * <p>StandardGeoMapComponent class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class StandardGeoMapComponent implements GeoMapComponent, Serializable, JRChangeEventsSupport {

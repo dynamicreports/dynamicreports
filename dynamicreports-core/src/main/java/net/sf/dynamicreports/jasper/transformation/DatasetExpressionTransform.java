@@ -41,7 +41,7 @@ import java.util.Collection;
 /**
  * <p>DatasetExpressionTransform class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 public class DatasetExpressionTransform extends AbstractExpressionTransform {

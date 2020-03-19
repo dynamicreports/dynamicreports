@@ -35,7 +35,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 /**
  * <p>Abstract ColumnBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * 
  */
 @SuppressWarnings("unchecked")

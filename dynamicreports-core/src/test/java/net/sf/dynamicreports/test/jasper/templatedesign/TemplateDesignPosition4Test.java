@@ -37,7 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TemplateDesignPosition4Test extends AbstractJasperPositionTest implements Serializable {
     private static final long serialVersionUID = 1L;

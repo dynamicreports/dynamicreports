@@ -49,7 +49,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperTest extends AdhocTests {
     private JasperReportBuilder reportBuilder;

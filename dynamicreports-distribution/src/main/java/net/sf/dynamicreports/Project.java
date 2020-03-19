@@ -27,7 +27,7 @@ import java.util.Date;
 import java.util.Properties;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Project {
 	private String version;
