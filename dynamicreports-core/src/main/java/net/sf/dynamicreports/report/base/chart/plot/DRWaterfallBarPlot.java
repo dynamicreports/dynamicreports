@@ -30,7 +30,7 @@ import java.awt.Paint;
  * <p>DRWaterfallBarPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRWaterfallBarPlot extends DRBarPlot implements DRIWaterfallBarPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

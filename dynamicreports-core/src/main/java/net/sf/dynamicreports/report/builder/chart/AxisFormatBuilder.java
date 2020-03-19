@@ -35,7 +35,7 @@ import java.awt.Color;
  * <p>AxisFormatBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AxisFormatBuilder extends AbstractBuilder<AxisFormatBuilder, DRAxisFormat> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

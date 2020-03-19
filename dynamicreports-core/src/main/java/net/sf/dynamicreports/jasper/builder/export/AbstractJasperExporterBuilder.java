@@ -33,7 +33,7 @@ import java.io.Writer;
  * <p>Abstract AbstractJasperExporterBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractJasperExporterBuilder<T extends AbstractJasperExporterBuilder<T, U>, U extends AbstractJasperExporter> extends AbstractBuilder<T, U> {

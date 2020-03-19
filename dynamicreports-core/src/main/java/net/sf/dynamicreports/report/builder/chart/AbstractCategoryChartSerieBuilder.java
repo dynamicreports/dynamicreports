@@ -34,7 +34,7 @@ import org.apache.commons.lang3.Validate;
  * <p>AbstractCategoryChartSerieBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public class AbstractCategoryChartSerieBuilder<T extends AbstractCategoryChartSerieBuilder<T, U>, U extends DRCategoryChartSerie> extends AbstractChartSerieBuilder<T, U> {

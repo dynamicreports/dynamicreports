@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>AxisPosition class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum AxisPosition {
     LEFT_OR_TOP, RIGHT_OR_BOTTOM

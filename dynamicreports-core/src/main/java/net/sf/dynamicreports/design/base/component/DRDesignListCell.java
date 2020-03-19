@@ -31,7 +31,7 @@ import java.io.Serializable;
  * <p>DRDesignListCell class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignListCell implements Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

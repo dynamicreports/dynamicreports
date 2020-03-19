@@ -101,7 +101,7 @@ import java.util.Map;
  * part is created and configured using a particular builder method and it's passed to the report builder instance.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -36,7 +36,7 @@ import java.util.Locale;
  * <p>DateType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DateType extends AbstractDataType<Date, Date> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

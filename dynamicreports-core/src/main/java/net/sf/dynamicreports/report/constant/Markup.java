@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>Markup class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum Markup {
     NONE, STYLED, RTF, HTML

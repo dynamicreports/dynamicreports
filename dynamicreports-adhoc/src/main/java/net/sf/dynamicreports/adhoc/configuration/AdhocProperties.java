@@ -29,7 +29,7 @@ import java.util.Map;
  * <p>AdhocProperties class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocProperties implements Cloneable, Serializable {
     /**

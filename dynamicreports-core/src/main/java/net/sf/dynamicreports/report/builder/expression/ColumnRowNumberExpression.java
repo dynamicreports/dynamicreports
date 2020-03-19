@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * <p>ColumnRowNumberExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ColumnRowNumberExpression extends AbstractSimpleExpression<Integer> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

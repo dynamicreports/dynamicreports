@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>LineSpacing class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum LineSpacing {
     SINGLE, ONE_AND_HALF, DOUBLE, AT_LEAST, FIXED, PROPORTIONAL

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabDataset;
  * <p>DRCrosstabDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCrosstabDataset implements DRICrosstabDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

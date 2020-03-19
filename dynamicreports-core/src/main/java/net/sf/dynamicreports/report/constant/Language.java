@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>Language class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Language {
     /**

@@ -66,7 +66,7 @@ import java.util.ResourceBundle;
  * <p>ReportBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public class ReportBuilder<T extends ReportBuilder<T>> extends AbstractBuilder<T, DRReport> {

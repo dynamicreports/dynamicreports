@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignEllipse class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignEllipse extends DRDesignComponent implements DRIDesignEllipse {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -42,7 +42,7 @@ import java.awt.Color;
  * <p>SpiderChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SpiderChartBuilder extends AbstractChartBuilder<SpiderChartBuilder> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

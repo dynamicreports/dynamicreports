@@ -38,7 +38,7 @@ import java.util.Date;
  * <p>Abstract AbstractHighLowChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractHighLowChartBuilder<T extends AbstractHighLowChartBuilder<T, U>, U extends DRAxisPlot>

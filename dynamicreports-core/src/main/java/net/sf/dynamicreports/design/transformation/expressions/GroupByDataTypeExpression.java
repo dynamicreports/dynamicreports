@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>GroupByDataTypeExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GroupByDataTypeExpression extends AbstractSimpleExpression<String> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

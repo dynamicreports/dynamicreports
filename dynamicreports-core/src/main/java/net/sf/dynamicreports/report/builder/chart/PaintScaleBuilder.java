@@ -31,7 +31,7 @@ import java.awt.Paint;
  * <p>PaintScaleBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class PaintScaleBuilder extends AbstractBuilder<PaintScaleBuilder, DRPaintScale> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

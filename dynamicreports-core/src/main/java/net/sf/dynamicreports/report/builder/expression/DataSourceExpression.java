@@ -32,7 +32,7 @@ import net.sf.jasperreports.engine.JRRewindableDataSource;
  * <p>DataSourceExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DataSourceExpression extends AbstractSimpleExpression<JRDataSource> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

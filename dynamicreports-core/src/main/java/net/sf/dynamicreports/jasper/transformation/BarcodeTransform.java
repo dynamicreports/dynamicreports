@@ -69,7 +69,7 @@ import net.sf.jasperreports.engine.design.JRDesignElement;
  * <p>BarcodeTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BarcodeTransform {
     private JasperTransformAccessor accessor;

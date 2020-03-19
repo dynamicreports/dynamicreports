@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>GroupFooterPosition class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum GroupFooterPosition {
     NORMAL, STACK_AT_BOTTOM, FORCE_AT_BOTTOM, COLLATE_AT_BOTTOM

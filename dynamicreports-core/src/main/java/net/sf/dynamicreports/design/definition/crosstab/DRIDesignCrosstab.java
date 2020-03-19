@@ -30,7 +30,7 @@ import java.util.List;
  * <p>DRIDesignCrosstab interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignCrosstab extends DRIDesignComponent {
 

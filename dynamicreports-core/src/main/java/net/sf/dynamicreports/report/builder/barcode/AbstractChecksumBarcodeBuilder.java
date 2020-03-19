@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>Abstract AbstractChecksumBarcodeBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractChecksumBarcodeBuilder<T extends AbstractBarcode4jBuilder<T, U>, U extends DRChecksumBarcode> extends AbstractBarcode4jBuilder<T, U> {

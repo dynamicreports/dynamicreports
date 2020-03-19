@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.SystemExpression;
  * <p>PageNumberExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public final class PageNumberExpression extends AbstractSystemExpression<Integer> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

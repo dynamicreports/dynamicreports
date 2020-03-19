@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DRICategoryChartSerie interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRICategoryChartSerie extends DRIChartSerie {
 

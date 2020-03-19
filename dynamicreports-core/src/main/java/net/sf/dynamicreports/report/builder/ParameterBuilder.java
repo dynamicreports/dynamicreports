@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>ParameterBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ParameterBuilder<T> extends AbstractBuilder<ParameterBuilder<T>, DRParameter<T>> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

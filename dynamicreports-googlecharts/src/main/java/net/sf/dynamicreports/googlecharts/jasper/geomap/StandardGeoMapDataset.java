@@ -32,7 +32,7 @@ import net.sf.jasperreports.engine.util.JRCloneUtils;
  * <p>StandardGeoMapDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class StandardGeoMapDataset extends JRDesignElementDataset implements GeoMapDataset {
     /**

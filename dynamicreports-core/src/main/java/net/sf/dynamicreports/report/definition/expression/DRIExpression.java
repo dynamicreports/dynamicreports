@@ -28,7 +28,7 @@ import java.io.Serializable;
  * expressions and get their values to calculate the expression value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIExpression<T> extends Serializable {
 

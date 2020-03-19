@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIChartAxis;
  * <p>DRChartAxis class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRChartAxis implements DRIChartAxis {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

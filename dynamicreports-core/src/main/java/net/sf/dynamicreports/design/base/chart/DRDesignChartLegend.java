@@ -32,7 +32,7 @@ import java.awt.Color;
  * <p>DRDesignChartLegend class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignChartLegend implements DRIDesignChartLegend {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

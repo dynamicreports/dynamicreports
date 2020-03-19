@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract DRFormatField class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRFormatField extends DRHyperLinkComponent implements DRIFormatField {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

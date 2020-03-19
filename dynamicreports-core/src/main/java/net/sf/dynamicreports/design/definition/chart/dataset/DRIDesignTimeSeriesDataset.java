@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.TimePeriod;
  * <p>DRIDesignTimeSeriesDataset interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignTimeSeriesDataset extends DRIDesignSeriesDataset {
 

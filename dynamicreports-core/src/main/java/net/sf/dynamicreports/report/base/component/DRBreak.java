@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRIBreak;
  * <p>DRBreak class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRBreak extends DRComponent implements DRIBreak {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

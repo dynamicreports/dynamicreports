@@ -45,7 +45,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
  *
  * Please ensure you have write-access to local disc c:\ before running thie example
  *
- * @version $Id: $Id
+ * 
  */
 public class GeoMapReport {
 

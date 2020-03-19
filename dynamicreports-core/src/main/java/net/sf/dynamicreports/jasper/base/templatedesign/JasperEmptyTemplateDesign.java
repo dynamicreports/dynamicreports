@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
  * <p>JasperEmptyTemplateDesign class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperEmptyTemplateDesign extends AbstractTemplateDesign<JasperDesign> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

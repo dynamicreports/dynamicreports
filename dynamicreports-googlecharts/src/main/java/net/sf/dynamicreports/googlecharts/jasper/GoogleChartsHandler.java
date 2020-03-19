@@ -43,7 +43,7 @@ import java.util.Map;
  * <p>GoogleChartsHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GoogleChartsHandler implements XmlDigesterConfigurer, ComponentXmlWriter, GenericElementHandlerBundle {
     private Map<String, Class<? extends Component>> components;

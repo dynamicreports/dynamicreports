@@ -34,7 +34,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
  * <p>JasperTemplateDesignReport3 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperTemplateDesignReport3 {
 

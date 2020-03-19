@@ -28,7 +28,7 @@ import java.util.List;
  * <p>AdhocValueRestriction class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocValueRestriction extends AdhocRestriction {
     private static final long serialVersionUID = 1L;

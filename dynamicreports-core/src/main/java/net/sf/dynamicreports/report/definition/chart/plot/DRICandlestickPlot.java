@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.chart.plot;
  * <p>DRICandlestickPlot interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRICandlestickPlot extends DRIAxisPlot {
 

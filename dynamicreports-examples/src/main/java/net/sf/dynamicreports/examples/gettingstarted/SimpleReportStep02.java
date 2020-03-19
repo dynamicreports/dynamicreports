@@ -40,7 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>SimpleReport_Step02 class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SimpleReportStep02 {
 

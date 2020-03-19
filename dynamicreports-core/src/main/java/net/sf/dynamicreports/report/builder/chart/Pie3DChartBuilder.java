@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Pie3DChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Pie3DChartBuilder extends AbstractPieChartBuilder<Pie3DChartBuilder, DRPie3DPlot> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

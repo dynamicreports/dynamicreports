@@ -37,7 +37,7 @@ import java.util.List;
  * <p>SeriesOrderCategoryDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SeriesOrderCategoryDataset implements CategoryDataset, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

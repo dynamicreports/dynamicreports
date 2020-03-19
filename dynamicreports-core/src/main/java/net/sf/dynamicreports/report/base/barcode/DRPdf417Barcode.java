@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIPdf417Barcode;
  * <p>DRPdf417Barcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRPdf417Barcode extends DRBarcode4j implements DRIPdf417Barcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

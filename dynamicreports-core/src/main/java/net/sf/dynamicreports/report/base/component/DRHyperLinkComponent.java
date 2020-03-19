@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>Abstract DRHyperLinkComponent class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRHyperLinkComponent extends DRDimensionComponent implements DRIHyperLinkComponent {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -35,7 +35,7 @@ import java.util.List;
  * <p>JasperPdfExporter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperPdfExporter extends AbstractJasperExporter implements JasperIPdfExporter {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

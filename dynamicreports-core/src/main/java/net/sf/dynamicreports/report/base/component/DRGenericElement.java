@@ -33,7 +33,7 @@ import java.util.List;
  * <p>DRGenericElement class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRGenericElement extends DRDimensionComponent implements DRIGenericElement {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

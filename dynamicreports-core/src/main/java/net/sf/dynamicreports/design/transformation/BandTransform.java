@@ -44,7 +44,7 @@ import java.util.List;
  * <p>BandTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BandTransform {
     private DesignTransformAccessor accessor;

@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.JRScriptletException;
  * <p>CustomScriptlet class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CustomScriptlet extends JRAbstractScriptlet {
     private DRIScriptlet scriptlet;

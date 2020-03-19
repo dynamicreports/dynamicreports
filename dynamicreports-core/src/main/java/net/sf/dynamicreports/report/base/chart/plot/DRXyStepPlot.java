@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIXyStepPlot;
  * <p>DRXyStepPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRXyStepPlot extends DRAxisPlot implements DRIXyStepPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

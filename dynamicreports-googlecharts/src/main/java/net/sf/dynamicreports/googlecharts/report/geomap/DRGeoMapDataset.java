@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DRGeoMapDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRGeoMapDataset implements DRIGeoMapDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

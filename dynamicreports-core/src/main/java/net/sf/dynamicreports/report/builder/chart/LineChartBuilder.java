@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>LineChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class LineChartBuilder extends AbstractCategoryChartBuilder<LineChartBuilder, DRLinePlot> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

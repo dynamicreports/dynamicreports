@@ -35,7 +35,7 @@ import java.util.List;
  * <p>ListType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("rawtypes")
 public class ListType extends AbstractDataType<List, List> {

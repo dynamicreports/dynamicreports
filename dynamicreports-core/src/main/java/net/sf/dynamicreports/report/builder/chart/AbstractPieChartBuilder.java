@@ -36,7 +36,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract AbstractPieChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractPieChartBuilder<T extends AbstractPieChartBuilder<T, U>, U extends DRPiePlot> extends AbstractBaseChartBuilder<T, U, DRSeriesDataset> {

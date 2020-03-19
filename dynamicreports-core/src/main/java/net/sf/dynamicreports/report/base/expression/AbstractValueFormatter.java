@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract AbstractValueFormatter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractValueFormatter<T, U> implements DRIValueFormatter<T, U> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -37,7 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>DatabaseDatasourceReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DatabaseDatasourceReport {
     private Connection connection;

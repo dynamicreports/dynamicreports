@@ -29,7 +29,7 @@ import net.sf.jasperreports.engine.JasperPrint;
  * <p>Abstract AbstractPrintListHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractPrintListHandler implements JasperReportHandler {
     private boolean continuousPageNumbering;

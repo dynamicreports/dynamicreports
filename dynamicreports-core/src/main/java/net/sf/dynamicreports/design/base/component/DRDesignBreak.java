@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignBreak class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignBreak extends DRDesignComponent implements DRIDesignBreak {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

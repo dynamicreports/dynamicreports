@@ -47,7 +47,7 @@ import java.util.HashMap;
  * <p>OpenFlashChartPdfHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("deprecation")
 public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {

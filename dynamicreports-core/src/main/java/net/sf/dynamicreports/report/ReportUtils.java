@@ -32,7 +32,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * </p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ReportUtils {
     private static final Lock LOCK = new ReentrantLock();

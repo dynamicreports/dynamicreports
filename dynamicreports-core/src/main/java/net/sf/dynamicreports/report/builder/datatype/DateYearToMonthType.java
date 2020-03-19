@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.defaults.Defaults;
  * <p>DateYearToMonthType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DateYearToMonthType extends DateType {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

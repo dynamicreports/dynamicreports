@@ -34,7 +34,7 @@ import java.awt.Color;
  * <p>DRSpiderPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRSpiderPlot implements DRISpiderPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>JasperOdtExporterBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperOdtExporterBuilder extends AbstractJasperExporterBuilder<JasperOdtExporterBuilder, JasperOdtExporter> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

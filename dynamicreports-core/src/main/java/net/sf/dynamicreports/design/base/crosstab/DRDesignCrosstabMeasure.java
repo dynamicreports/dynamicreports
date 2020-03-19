@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.constant.CrosstabPercentageType;
  * <p>DRDesignCrosstabMeasure class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignCrosstabMeasure implements DRIDesignCrosstabMeasure {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

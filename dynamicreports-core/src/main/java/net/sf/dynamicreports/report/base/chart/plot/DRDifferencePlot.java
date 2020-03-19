@@ -30,7 +30,7 @@ import java.awt.Color;
  * <p>DRDifferencePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDifferencePlot extends DRAxisPlot implements DRIDifferencePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

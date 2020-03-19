@@ -50,7 +50,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
  * <p>CustomTextSubtotalReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CustomTextSubtotalReport {
 

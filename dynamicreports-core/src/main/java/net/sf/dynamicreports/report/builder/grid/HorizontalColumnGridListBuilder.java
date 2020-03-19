@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
  * <p>HorizontalColumnGridListBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class HorizontalColumnGridListBuilder extends AbstractBuilder<HorizontalColumnGridListBuilder, DRColumnGridList> implements ColumnGridComponentBuilder {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Abstract DRDesignBarcode4j class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRDesignBarcode4j extends DRDesignBarcode implements DRIDesignBarcode4j {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

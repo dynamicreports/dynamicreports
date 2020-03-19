@@ -32,7 +32,7 @@ import java.util.List;
  * <p>DRLayeredBarPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRLayeredBarPlot extends DRBarPlot implements DRILayeredBarPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

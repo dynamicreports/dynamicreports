@@ -36,7 +36,7 @@ import java.util.List;
  * <p>DRColumnGridList class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRColumnGridList implements DRIColumnGridList {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

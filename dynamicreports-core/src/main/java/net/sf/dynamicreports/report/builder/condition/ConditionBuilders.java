@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
  * A set of build in condition expressions
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ConditionBuilders {
 

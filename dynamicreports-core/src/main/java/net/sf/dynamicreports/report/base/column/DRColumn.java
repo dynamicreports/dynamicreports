@@ -38,7 +38,7 @@ import java.util.List;
  * <p>DRColumn class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -36,7 +36,7 @@ import java.util.Date;
  * <p>GanttChartSerieBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GanttChartSerieBuilder extends AbstractChartSerieBuilder<GanttChartSerieBuilder, DRGanttChartSerie> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

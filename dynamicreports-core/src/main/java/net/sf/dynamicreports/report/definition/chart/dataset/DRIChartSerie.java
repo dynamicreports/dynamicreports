@@ -30,7 +30,7 @@ import java.io.Serializable;
  * <p>DRIChartSerie interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIChartSerie extends Serializable {
 

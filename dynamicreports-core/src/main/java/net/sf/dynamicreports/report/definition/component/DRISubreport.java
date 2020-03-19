@@ -30,7 +30,7 @@ import java.util.Map;
  * <p>DRISubreport interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRISubreport extends DRIDimensionComponent {
 

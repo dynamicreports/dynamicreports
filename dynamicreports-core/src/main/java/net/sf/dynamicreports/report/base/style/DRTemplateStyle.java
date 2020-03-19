@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.style.DRITemplateStyle;
  * <p>DRTemplateStyle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRTemplateStyle implements DRITemplateStyle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

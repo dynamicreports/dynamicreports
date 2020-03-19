@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Abstract DRDesignChartSerie class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRDesignChartSerie implements DRIDesignChartSerie {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

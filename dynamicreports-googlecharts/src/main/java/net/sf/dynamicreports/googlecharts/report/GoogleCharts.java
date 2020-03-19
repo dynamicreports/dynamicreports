@@ -27,7 +27,7 @@ import net.sf.dynamicreports.googlecharts.report.geomap.GeoMapBuilder;
  * <p>GoogleCharts class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GoogleCharts {
 

@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRReportException class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRReportException extends RuntimeException {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

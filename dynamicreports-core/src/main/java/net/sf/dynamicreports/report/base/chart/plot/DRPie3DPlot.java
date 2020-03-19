@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIPie3DPlot;
  * <p>DRPie3DPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRPie3DPlot extends DRPiePlot implements DRIPie3DPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

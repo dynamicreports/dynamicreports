@@ -179,7 +179,7 @@ import java.util.Map;
  * </pre>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DefaultAdhocReportCustomizer implements AdhocReportCustomizer {
     protected ReportBuilder<?> report;

@@ -32,7 +32,7 @@ import java.util.List;
  * <p>DRITableOfContentsCustomizer interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRITableOfContentsCustomizer extends Serializable {
 

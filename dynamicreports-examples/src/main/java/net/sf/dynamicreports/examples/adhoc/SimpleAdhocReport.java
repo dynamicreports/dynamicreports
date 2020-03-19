@@ -44,7 +44,7 @@ import java.util.stream.IntStream;
  * <p>SimpleAdhocReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SimpleAdhocReport {
 

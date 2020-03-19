@@ -38,7 +38,7 @@ import java.util.List;
  * <p>DRDesignChart class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignChart extends DRDesignHyperlinkComponent implements DRIDesignChart {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

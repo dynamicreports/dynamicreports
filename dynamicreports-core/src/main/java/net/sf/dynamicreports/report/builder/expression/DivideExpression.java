@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * <p>DivideExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DivideExpression extends CalculationExpression {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

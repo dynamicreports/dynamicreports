@@ -37,7 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
  * <p>
  * This report is working properly only when the font "FreeUniversal" is registered. The font is registered in these files: customfonts.xml and jasperreports_extension.properties. The files are
  * located in the root of the classpath.
- * @version $Id: $Id
+ * 
  */
 public class DefaultFontReport {
 

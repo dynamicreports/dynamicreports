@@ -39,7 +39,7 @@ import java.awt.Paint;
  * <p>XyBlockChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class XyBlockChartBuilder extends AbstractBaseChartBuilder<XyBlockChartBuilder, DRXyBlockPlot, DRSeriesDataset> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

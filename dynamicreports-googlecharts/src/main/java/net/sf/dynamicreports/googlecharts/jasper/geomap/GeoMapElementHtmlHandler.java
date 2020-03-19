@@ -45,7 +45,7 @@ import java.util.Set;
  * <p>GeoMapElementHtmlHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GeoMapElementHtmlHandler implements GenericElementHtmlHandler {
 

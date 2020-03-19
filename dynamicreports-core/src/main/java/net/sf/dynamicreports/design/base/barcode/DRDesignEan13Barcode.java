@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignEan13Barcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignEan13Barcode extends DRDesignChecksumBarcode implements DRIDesignEan13Barcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -31,7 +31,7 @@ import java.awt.Paint;
  * <p>WaterfallBarChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class WaterfallBarChartBuilder extends AbstractCategoryChartBuilder<WaterfallBarChartBuilder, DRWaterfallBarPlot> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

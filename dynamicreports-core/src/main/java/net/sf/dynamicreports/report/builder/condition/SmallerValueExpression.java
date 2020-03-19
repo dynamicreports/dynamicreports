@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
  * <p>SmallerValueExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SmallerValueExpression<T extends Number> extends AbstractValueExpression<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

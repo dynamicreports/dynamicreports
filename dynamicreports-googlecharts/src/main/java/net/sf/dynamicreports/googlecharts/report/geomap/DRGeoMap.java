@@ -33,7 +33,7 @@ import java.util.List;
  * <p>DRGeoMap class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRGeoMap extends DRDimensionComponent implements DRIGeoMap {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

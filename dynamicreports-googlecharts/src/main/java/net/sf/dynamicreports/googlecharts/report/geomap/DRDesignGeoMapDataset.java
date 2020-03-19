@@ -30,7 +30,7 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  * <p>DRDesignGeoMapDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignGeoMapDataset implements DRIDesignGeoMapDataset {
     private DRDesignDataset subDataset;

@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.BreakType;
  * <p>DRIDesignBreak interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignBreak extends DRIDesignComponent {
 

@@ -44,7 +44,7 @@ import java.util.Map;
  * <p>TableOfContentsTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class TableOfContentsTransform {
     private DesignTransformAccessor accessor;

@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
  * <p>DRDesignConditionalStyle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignConditionalStyle extends DRDesignBaseStyle implements DRIDesignConditionalStyle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

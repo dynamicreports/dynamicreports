@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel;
  * <p>DRDesignQrCode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignQrCode extends DRDesignBarcode implements DRIDesignQrCode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

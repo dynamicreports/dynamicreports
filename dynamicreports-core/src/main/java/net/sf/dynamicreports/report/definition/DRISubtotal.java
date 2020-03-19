@@ -33,7 +33,7 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
  * <p>DRISubtotal interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRISubtotal<T> extends DRIExpression<T>, DRIValue<T> {
 

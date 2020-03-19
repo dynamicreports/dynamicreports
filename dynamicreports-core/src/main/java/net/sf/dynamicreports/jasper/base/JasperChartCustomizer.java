@@ -32,7 +32,7 @@ import java.util.List;
  * <p>JasperChartCustomizer class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperChartCustomizer extends JRAbstractChartCustomizer {
 

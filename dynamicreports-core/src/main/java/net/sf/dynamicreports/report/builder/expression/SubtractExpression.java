@@ -30,7 +30,7 @@ import java.math.BigDecimal;
  * <p>SubtractExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SubtractExpression extends CalculationExpression {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

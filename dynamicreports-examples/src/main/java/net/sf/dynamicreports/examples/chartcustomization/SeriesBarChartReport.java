@@ -38,7 +38,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>SeriesBarChartReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SeriesBarChartReport {
 

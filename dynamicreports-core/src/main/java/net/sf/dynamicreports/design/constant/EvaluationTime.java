@@ -25,7 +25,7 @@ package net.sf.dynamicreports.design.constant;
  * <p>EvaluationTime class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum EvaluationTime {
     NOW, REPORT, PAGE, COLUMN, GROUP, BAND, AUTO

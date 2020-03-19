@@ -39,7 +39,7 @@ import java.sql.Connection;
  * <p>CrosstabBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CrosstabBuilder extends DimensionComponentBuilder<CrosstabBuilder, DRCrosstab> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

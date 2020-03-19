@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.crosstab;
  * <p>DRICrosstabColumnGroup interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRICrosstabColumnGroup<T> extends DRICrosstabGroup<T> {
 

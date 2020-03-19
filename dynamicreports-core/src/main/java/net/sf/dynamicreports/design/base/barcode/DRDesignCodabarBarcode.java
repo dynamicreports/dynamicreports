@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignCodabarBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignCodabarBarcode extends DRDesignBarcode4j implements DRIDesignCodabarBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

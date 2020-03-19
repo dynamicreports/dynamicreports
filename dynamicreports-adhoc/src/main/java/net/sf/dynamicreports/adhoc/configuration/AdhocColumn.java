@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>AdhocColumn class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocColumn implements Cloneable, Serializable {
     private static final long serialVersionUID = 1L;

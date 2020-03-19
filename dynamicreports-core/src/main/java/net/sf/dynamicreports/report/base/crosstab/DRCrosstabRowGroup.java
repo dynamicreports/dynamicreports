@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabRowGroup;
  * <p>DRCrosstabRowGroup class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCrosstabRowGroup<T> extends DRCrosstabGroup<T> implements DRICrosstabRowGroup<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

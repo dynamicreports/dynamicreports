@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.exception.DRException;
  * <p>PageTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class PageTransform {
     private TemplateTransform templateTransform;

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRIRectangle;
  * <p>DRRectangle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRRectangle extends DRDimensionComponent implements DRIRectangle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

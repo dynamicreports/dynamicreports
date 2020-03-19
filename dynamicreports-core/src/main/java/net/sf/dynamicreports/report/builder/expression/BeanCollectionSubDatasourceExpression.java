@@ -32,7 +32,7 @@ import java.util.Collection;
  * <p>BeanCollectionSubDatasourceExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BeanCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<?>> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

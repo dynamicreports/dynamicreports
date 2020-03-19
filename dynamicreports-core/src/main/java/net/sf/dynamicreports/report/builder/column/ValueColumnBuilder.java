@@ -38,7 +38,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
  * <p>Abstract ValueColumnBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})
 public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> extends ColumnBuilder<T, DRValueColumn<U>> {

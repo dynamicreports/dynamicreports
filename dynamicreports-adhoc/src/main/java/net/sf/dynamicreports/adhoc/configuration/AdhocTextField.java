@@ -25,7 +25,7 @@ package net.sf.dynamicreports.adhoc.configuration;
  * <p>AdhocTextField class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocTextField extends AdhocComponent {
     private static final long serialVersionUID = 1L;

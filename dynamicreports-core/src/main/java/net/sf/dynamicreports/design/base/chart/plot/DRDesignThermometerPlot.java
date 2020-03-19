@@ -33,7 +33,7 @@ import java.awt.Color;
  * <p>DRDesignThermometerPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignThermometerPlot extends DRDesignAxisPlot implements DRIDesignThermometerPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

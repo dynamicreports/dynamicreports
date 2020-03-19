@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>Calculation class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum Calculation {
     NOTHING, COUNT, SUM, AVERAGE, LOWEST, HIGHEST, STANDARD_DEVIATION, VARIANCE, FIRST, DISTINCT_COUNT

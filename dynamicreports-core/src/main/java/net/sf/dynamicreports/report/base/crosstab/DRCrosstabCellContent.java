@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
  * <p>DRCrosstabCellContent class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCrosstabCellContent implements DRICrosstabCellContent {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

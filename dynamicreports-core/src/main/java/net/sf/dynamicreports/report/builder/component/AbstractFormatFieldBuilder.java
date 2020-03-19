@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>Abstract AbstractFormatFieldBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})
 public abstract class AbstractFormatFieldBuilder<T extends AbstractFormatFieldBuilder<T, U>, U extends DRFormatField> extends HyperLinkComponentBuilder<T, U> {

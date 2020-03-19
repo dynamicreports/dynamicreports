@@ -33,7 +33,7 @@ import java.util.Map;
  * <p>MapCollectionSubDatasourceExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MapCollectionSubDatasourceExpression extends AbstractSubDatasourceExpression<Collection<Map<String, ?>>> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

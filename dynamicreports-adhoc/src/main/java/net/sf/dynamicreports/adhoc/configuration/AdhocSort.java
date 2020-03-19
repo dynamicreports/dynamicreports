@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>AdhocSort class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocSort implements Cloneable, Serializable {
     private static final long serialVersionUID = 1L;

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>EllipseBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class EllipseBuilder extends DimensionComponentBuilder<EllipseBuilder, DREllipse> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

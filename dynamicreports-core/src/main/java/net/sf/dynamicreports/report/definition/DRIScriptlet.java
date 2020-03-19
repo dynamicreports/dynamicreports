@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition;
  * <p>DRIScriptlet interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIScriptlet {
 

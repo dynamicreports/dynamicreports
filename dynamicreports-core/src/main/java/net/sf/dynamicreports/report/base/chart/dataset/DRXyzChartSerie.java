@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DRXyzChartSerie class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRXyzChartSerie extends DRChartSerie implements DRIXyzChartSerie {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

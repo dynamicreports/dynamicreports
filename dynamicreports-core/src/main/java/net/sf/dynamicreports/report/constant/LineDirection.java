@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>LineDirection class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum LineDirection {
     TOP_DOWN, BOTTOM_UP

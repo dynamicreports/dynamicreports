@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DRIValueDataset interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIValueDataset extends DRIChartDataset {
 

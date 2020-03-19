@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>SplitType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum SplitType {
     /**

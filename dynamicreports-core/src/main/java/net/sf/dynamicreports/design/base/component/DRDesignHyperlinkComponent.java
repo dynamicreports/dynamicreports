@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Abstract DRDesignHyperlinkComponent class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRDesignHyperlinkComponent extends DRDesignComponent implements DRIDesignHyperLinkComponent {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

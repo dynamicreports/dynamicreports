@@ -47,7 +47,7 @@ import java.util.ResourceBundle;
  * <p>JasperReportParameters class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperReportParameters implements ReportParameters {
     /**

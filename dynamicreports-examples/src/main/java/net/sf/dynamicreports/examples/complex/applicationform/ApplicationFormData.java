@@ -29,7 +29,7 @@ import java.util.Calendar;
  * <p>ApplicationFormData class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ApplicationFormData {
     private ApplicationForm applicationForm;

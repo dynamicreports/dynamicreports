@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>RunDirection class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum RunDirection {
     LEFT_TO_RIGHT, RIGHT_TO_LEFT

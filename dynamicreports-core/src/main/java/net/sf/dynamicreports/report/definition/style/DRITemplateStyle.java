@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.style;
  * <p>DRITemplateStyle interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRITemplateStyle extends DRIReportStyle {
 

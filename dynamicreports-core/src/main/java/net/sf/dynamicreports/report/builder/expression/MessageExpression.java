@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * <p>MessageExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MessageExpression extends AbstractSimpleExpression<String> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

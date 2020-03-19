@@ -132,7 +132,7 @@ import java.util.Map;
  * <p>ChartTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ChartTransform {
     private DesignTransformAccessor accessor;

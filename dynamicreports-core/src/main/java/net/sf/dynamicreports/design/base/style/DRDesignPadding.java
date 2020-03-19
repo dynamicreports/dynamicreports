@@ -29,7 +29,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
  * <p>DRDesignPadding class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignPadding implements DRIDesignPadding {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

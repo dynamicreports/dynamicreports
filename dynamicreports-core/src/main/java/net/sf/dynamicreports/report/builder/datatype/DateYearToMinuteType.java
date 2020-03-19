@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.defaults.Defaults;
  * <p>DateYearToMinuteType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DateYearToMinuteType extends DateType {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

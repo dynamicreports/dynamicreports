@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>TableOrder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum TableOrder {
     BY_ROW, BY_COLUMN;

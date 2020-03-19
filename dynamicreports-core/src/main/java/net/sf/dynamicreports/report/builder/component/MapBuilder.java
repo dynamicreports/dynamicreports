@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>MapBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MapBuilder extends DimensionComponentBuilder<MapBuilder, DRMap> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

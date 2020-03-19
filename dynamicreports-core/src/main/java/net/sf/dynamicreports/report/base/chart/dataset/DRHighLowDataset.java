@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DRHighLowDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRHighLowDataset extends DRChartDataset implements DRIHighLowDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

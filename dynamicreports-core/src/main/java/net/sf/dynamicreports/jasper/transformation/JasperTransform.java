@@ -35,7 +35,7 @@ import java.util.Map;
  * <p>JasperTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperTransform implements JasperTransformAccessor {
     private DRIDesignReport report;

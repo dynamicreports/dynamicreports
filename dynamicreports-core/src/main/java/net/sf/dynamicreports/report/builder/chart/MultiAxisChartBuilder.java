@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
  * <p>MultiAxisChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MultiAxisChartBuilder extends AbstractBaseChartBuilder<MultiAxisChartBuilder, DRMultiAxisPlot, DRChartDataset> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

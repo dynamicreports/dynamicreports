@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
  * <p>BeanArraySubDatasourceExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BeanArraySubDatasourceExpression extends AbstractSubDatasourceExpression<Object[]> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

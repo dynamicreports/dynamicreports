@@ -34,7 +34,7 @@ import java.util.List;
  * <p>GeoMapComponent interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface GeoMapComponent extends Component, JRCloneable {
 

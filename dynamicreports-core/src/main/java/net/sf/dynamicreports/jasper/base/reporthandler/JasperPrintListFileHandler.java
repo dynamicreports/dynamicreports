@@ -40,7 +40,7 @@ import java.util.ListIterator;
  * <p>JasperPrintListFileHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperPrintListFileHandler extends AbstractPrintListHandler {
     private static final String TEMP_FILE_PREFIX = "JasperPrint";

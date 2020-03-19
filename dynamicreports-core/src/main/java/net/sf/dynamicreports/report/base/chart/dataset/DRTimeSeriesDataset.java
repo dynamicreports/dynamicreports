@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.chart.dataset.DRITimeSeriesDatase
  * <p>DRTimeSeriesDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRTimeSeriesDataset extends DRSeriesDataset implements DRITimeSeriesDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.chart.DRIChartTitle;
  * <p>DRChartTitle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRChartTitle extends DRChartSubtitle implements DRIChartTitle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

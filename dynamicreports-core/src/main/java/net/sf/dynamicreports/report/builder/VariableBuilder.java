@@ -35,7 +35,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIJasperExpression;
  * <p>VariableBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class VariableBuilder<T> extends AbstractBuilder<VariableBuilder<T>, DRVariable<T>> implements DRIValue<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

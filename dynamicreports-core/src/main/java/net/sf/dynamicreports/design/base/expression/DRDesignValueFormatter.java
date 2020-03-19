@@ -32,7 +32,7 @@ import java.util.List;
  * <p>DRDesignValueFormatter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignValueFormatter extends AbstractDesignComplexExpression {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

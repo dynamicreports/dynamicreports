@@ -33,7 +33,7 @@ import java.util.Locale;
  * <p>BooleanType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BooleanType extends AbstractDataType<Boolean, Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

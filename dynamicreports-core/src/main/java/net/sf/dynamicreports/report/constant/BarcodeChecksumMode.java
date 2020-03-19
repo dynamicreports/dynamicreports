@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>BarcodeChecksumMode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum BarcodeChecksumMode {
     AUTO, IGNORE, ADD, CHECK

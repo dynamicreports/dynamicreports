@@ -30,7 +30,7 @@ import java.io.Serializable;
  * applied in any report column, group, subtotal, or text field component.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIValueFormatter<T, U> extends Serializable {
 

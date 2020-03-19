@@ -33,7 +33,7 @@ import java.util.List;
  * <p>JasperReportBuilderHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperReportBuilderHandler implements JasperReportHandler {
     private List<JasperReportBuilder> jasperReportBuilders;

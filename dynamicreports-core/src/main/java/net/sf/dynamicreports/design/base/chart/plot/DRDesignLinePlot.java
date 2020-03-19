@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignLinePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignLinePlot extends DRDesignAxisPlot implements DRIDesignLinePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

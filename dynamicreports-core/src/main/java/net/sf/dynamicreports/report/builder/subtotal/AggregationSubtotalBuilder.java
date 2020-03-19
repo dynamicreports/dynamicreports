@@ -40,7 +40,7 @@ import net.sf.dynamicreports.report.exception.DRReportException;
  * <p>AggregationSubtotalBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AggregationSubtotalBuilder<T> extends SubtotalBuilder<AggregationSubtotalBuilder<T>, T> implements DRIValue<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

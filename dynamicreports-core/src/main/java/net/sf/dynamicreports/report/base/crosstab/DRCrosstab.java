@@ -40,7 +40,7 @@ import java.util.List;
  * <p>DRCrosstab class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCrosstab extends DRDimensionComponent implements DRICrosstab {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

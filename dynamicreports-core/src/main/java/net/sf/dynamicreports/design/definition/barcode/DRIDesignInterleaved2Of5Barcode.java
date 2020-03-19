@@ -25,7 +25,7 @@ package net.sf.dynamicreports.design.definition.barcode;
  * <p>DRIDesignInterleaved2Of5Barcode interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignInterleaved2Of5Barcode extends DRIDesignChecksumBarcode {
 

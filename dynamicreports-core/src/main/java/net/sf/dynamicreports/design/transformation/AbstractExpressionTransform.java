@@ -75,7 +75,7 @@ import java.util.Map;
  * <p>Abstract AbstractExpressionTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractExpressionTransform {
     protected DesignTransformAccessor accessor;

@@ -34,7 +34,7 @@ import java.util.List;
  * A set of build in data types
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DataTypes {
     private static final BigDecimalType bigDecimalType = new BigDecimalType();

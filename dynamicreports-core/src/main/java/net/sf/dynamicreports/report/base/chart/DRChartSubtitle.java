@@ -32,7 +32,7 @@ import java.awt.Color;
  * <p>DRChartSubtitle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRChartSubtitle implements DRIChartSubtitle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

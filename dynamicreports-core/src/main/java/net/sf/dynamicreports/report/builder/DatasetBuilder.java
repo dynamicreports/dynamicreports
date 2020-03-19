@@ -37,7 +37,7 @@ import java.sql.Connection;
  * <p>DatasetBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DatasetBuilder extends AbstractBuilder<DatasetBuilder, DRDataset> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

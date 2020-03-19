@@ -40,7 +40,7 @@ import java.awt.Color;
  * <p>ThermometerChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ThermometerChartBuilder extends AbstractChartBuilder<ThermometerChartBuilder> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

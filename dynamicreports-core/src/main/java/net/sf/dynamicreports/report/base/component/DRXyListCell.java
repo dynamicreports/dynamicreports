@@ -29,7 +29,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DRXyListCell class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRXyListCell implements DRIXyListCell {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

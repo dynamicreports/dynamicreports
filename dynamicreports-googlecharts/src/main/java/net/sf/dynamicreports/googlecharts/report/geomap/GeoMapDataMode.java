@@ -25,7 +25,7 @@ package net.sf.dynamicreports.googlecharts.report.geomap;
  * <p>GeoMapDataMode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum GeoMapDataMode {
     REGIONS, MARKERS

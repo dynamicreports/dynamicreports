@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.component.DRICurrentDate;
  * <p>DRCurrentDate class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCurrentDate extends DRFormatField implements DRICurrentDate {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

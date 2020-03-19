@@ -33,7 +33,7 @@ import java.io.Writer;
  * <p>Abstract AbstractJasperExporter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractJasperExporter implements JasperIExporter {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -51,7 +51,7 @@ import java.util.Map.Entry;
  * <p>SubtotalTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SubtotalTransform {
     private DesignTransformAccessor accessor;

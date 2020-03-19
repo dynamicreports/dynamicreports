@@ -42,7 +42,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
  * <p>MultiPageListSubreportExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MultiPageListSubreportExpression extends AbstractSimpleExpression<JasperReportBuilder> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

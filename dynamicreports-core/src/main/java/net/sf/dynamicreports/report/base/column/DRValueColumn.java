@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.component.DRITextField;
  * <p>DRValueColumn class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRValueColumn<T> extends DRColumn<DRITextField<T>> implements DRIValueColumn<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

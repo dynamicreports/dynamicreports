@@ -29,7 +29,7 @@ import java.util.List;
  * <p>AdhocReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocReport implements Cloneable, Serializable {
     private static final long serialVersionUID = 1L;

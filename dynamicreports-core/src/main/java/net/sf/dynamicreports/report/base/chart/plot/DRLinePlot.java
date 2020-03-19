@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRILinePlot;
  * <p>DRLinePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRLinePlot extends DRAxisPlot implements DRILinePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

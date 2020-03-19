@@ -108,7 +108,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * marshalling, must therefore adhere to, and that can only be created using the {@link #transform(AdhocConfiguration)} method of this class.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocToXmlTransform implements IAdhocToXmlTransform {
 

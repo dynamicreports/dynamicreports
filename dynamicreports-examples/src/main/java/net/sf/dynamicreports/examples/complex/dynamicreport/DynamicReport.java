@@ -28,7 +28,7 @@ import java.util.List;
  * <p>DynamicReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DynamicReport {
     private String title;

@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>AreaChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AreaChartBuilder extends AbstractCategoryChartBuilder<AreaChartBuilder, DRAxisPlot> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

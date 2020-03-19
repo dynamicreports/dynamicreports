@@ -35,7 +35,7 @@ import java.util.List;
  * <p>DRList class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRList extends DRDimensionComponent implements DRIList {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -33,7 +33,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DRCrosstabVariable class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCrosstabVariable<T> implements DRICrosstabVariable<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

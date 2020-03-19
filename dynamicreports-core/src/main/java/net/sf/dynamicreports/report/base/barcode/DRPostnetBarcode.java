@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIPostnetBarcode;
  * <p>DRPostnetBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRPostnetBarcode extends DRChecksumBarcode implements DRIPostnetBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

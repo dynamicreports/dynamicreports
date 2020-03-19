@@ -29,7 +29,7 @@ import java.io.Serializable;
  * <p>DRIDesignTableOfContentsHeading interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignTableOfContentsHeading extends Serializable {
 

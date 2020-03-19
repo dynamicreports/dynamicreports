@@ -46,7 +46,7 @@ import java.util.Locale;
  * <p>DRIReportTemplate interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIReportTemplate extends Serializable {
 

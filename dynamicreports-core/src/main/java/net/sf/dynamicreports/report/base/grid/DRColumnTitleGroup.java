@@ -38,7 +38,7 @@ import java.util.List;
  * <p>DRColumnTitleGroup class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRColumnTitleGroup implements DRIColumnTitleGroup {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

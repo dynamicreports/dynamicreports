@@ -31,7 +31,7 @@ import java.util.ResourceBundle;
  * <p>BooleanTextValueFormatter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BooleanTextValueFormatter extends AbstractValueFormatter<String, Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

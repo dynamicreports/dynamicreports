@@ -28,7 +28,7 @@ import java.util.Locale;
  * <p>ReportParameters interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface ReportParameters {
     /**

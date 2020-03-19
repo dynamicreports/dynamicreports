@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>ValueLocation class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum ValueLocation {
     NONE, LEFT, RIGHT, BULB

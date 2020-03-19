@@ -39,7 +39,7 @@ import org.apache.commons.lang3.Validate;
  * It calculates percentage values from the field or column values.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class PercentageColumnBuilder extends ValueColumnBuilder<PercentageColumnBuilder, Double> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

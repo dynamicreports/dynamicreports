@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignValueDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignValueDataset extends DRDesignChartDataset implements DRIDesignValueDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

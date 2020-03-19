@@ -43,7 +43,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>ComponentColumnReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ComponentColumnReport {
 

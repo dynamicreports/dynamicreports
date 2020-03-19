@@ -27,7 +27,7 @@ import net.sf.dynamicreports.report.constant.BarcodeBaselinePosition;
  * <p>DRIPostnetBarcode interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIPostnetBarcode extends DRIChecksumBarcode {
 

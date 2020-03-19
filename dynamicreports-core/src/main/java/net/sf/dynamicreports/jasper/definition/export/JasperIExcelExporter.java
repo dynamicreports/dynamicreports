@@ -31,7 +31,7 @@ import java.util.Map;
  * <p>JasperIExcelExporter interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface JasperIExcelExporter extends JasperIExporter {
 

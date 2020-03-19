@@ -31,7 +31,7 @@ import java.awt.Color;
  * <p>DifferenceChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DifferenceChartBuilder extends AbstractTimeSeriesChartBuilder<DifferenceChartBuilder, DRDifferencePlot> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

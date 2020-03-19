@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>GroupHeaderLayout class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum GroupHeaderLayout {
     EMPTY, VALUE, TITLE_AND_VALUE

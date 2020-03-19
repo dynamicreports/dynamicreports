@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>JasperRtfExporter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperRtfExporter extends AbstractJasperExporter implements JasperIRtfExporter {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

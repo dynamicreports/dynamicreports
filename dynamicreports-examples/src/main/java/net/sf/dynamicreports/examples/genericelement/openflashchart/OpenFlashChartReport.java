@@ -44,7 +44,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * Please ensure you have write-access before running this example
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class OpenFlashChartReport {
     private PieChart pieChart1;

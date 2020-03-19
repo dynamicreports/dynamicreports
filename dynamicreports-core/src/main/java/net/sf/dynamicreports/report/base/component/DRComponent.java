@@ -36,7 +36,7 @@ import java.util.List;
  * <p>Abstract DRComponent class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRComponent implements DRIComponent {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

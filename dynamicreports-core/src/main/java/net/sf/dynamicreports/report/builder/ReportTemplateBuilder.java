@@ -51,7 +51,7 @@ import java.util.Locale;
  * <p>ReportTemplateBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ReportTemplateBuilder extends AbstractBuilder<ReportTemplateBuilder, DRReportTemplate> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

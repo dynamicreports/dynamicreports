@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.ScaleType;
  * <p>DRDesignBubblePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignBubblePlot extends DRDesignAxisPlot implements DRIDesignBubblePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

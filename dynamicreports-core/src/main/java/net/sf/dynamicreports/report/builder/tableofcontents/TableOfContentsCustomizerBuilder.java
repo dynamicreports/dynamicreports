@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
  * <p>TableOfContentsCustomizerBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class TableOfContentsCustomizerBuilder extends AbstractBuilder<TableOfContentsCustomizerBuilder, TableOfContentsCustomizer> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

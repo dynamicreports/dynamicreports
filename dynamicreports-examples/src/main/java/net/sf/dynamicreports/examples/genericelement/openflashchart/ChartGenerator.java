@@ -25,7 +25,7 @@ package net.sf.dynamicreports.examples.genericelement.openflashchart;
  * <p>ChartGenerator interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface ChartGenerator {
     /**

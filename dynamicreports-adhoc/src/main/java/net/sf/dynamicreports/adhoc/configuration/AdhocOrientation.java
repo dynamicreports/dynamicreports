@@ -25,7 +25,7 @@ package net.sf.dynamicreports.adhoc.configuration;
  * <p>AdhocOrientation class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum AdhocOrientation {
     HORIZONTAL, VERTICAL

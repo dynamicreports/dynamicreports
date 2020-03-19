@@ -52,7 +52,7 @@ import java.util.Map;
  * <p>ColumnTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ColumnTransform {
     private DesignTransformAccessor accessor;

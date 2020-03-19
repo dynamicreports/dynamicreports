@@ -57,7 +57,7 @@ import java.util.Map;
  * <p>GroupTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GroupTransform {
     private DesignTransformAccessor accessor;

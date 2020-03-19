@@ -30,7 +30,7 @@ import java.io.Writer;
  * <p>JasperIExporter interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface JasperIExporter extends Serializable {
 

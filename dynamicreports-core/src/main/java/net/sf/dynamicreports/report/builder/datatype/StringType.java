@@ -33,7 +33,7 @@ import java.util.Locale;
  * <p>StringType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class StringType extends AbstractDataType<String, String> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

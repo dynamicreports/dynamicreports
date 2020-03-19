@@ -35,7 +35,7 @@ import java.text.DecimalFormat;
  * <p>PieChartLabelFormatCustomizer class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class PieChartLabelFormatCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

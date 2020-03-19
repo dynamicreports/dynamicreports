@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.component.DRITotalPages;
  * <p>DRTotalPages class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRTotalPages extends DRFormatField implements DRITotalPages {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

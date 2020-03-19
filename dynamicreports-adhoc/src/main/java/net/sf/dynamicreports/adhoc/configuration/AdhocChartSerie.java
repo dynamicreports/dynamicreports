@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>AdhocChartSerie class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocChartSerie implements Cloneable, Serializable {
     private static final long serialVersionUID = 1L;

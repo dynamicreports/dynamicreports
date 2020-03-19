@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignBar3DPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignBar3DPlot extends DRDesignAxisPlot implements DRIDesignBar3DPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

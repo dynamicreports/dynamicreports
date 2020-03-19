@@ -32,7 +32,7 @@ import java.util.List;
  * <p>InvoiceData class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class InvoiceData {
     private Invoice invoice;

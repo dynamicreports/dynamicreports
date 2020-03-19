@@ -29,7 +29,7 @@ import java.io.Serializable;
  * <p>Abstract AbstractBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractBuilder<T extends AbstractBuilder<T, U>, U> implements Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

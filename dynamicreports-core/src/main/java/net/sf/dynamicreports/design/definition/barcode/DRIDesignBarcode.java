@@ -30,7 +30,7 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
  * <p>DRIDesignBarcode interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignBarcode extends DRIDesignComponent {
 

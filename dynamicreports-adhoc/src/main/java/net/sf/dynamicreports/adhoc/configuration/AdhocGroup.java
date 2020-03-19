@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>AdhocGroup class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocGroup implements Cloneable, Serializable {
     private static final long serialVersionUID = 1L;

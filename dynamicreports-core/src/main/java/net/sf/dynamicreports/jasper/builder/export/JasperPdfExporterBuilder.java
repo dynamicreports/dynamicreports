@@ -33,7 +33,7 @@ import org.apache.commons.lang3.Validate;
  * <p>JasperPdfExporterBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperPdfExporterBuilder extends AbstractJasperExporterBuilder<JasperPdfExporterBuilder, JasperPdfExporter> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

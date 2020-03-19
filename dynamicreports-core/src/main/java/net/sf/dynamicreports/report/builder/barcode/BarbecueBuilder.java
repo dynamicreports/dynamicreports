@@ -33,7 +33,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>BarbecueBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class BarbecueBuilder extends DimensionComponentBuilder<BarbecueBuilder, DRBarbecue> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

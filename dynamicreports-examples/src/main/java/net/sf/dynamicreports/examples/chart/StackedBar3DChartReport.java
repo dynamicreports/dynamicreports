@@ -38,7 +38,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>StackedBar3DChartReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class StackedBar3DChartReport {
 

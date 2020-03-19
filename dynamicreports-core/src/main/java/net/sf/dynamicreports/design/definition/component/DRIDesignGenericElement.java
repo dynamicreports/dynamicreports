@@ -31,7 +31,7 @@ import java.util.List;
  * <p>DRIDesignGenericElement interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignGenericElement extends DRIDesignComponent {
 

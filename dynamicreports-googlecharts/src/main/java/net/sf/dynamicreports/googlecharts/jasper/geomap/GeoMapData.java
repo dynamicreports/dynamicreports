@@ -25,7 +25,7 @@ package net.sf.dynamicreports.googlecharts.jasper.geomap;
  * <p>GeoMapData class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GeoMapData {
     private String location;

@@ -31,7 +31,7 @@ import java.awt.Color;
  * <p>DRMeterInterval class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRMeterInterval implements DRIMeterInterval {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

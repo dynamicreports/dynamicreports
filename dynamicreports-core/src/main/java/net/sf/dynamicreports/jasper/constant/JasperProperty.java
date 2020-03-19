@@ -52,7 +52,7 @@ import net.sf.jasperreports.export.XlsReportConfiguration;
  * <p>JasperProperty class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperProperty {
 

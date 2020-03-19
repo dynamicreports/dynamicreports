@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DRImage class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRImage extends DRHyperLinkComponent implements DRIImage {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

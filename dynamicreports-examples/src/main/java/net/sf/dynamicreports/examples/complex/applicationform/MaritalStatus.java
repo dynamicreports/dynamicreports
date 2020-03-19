@@ -25,7 +25,7 @@ package net.sf.dynamicreports.examples.complex.applicationform;
  * <p>MaritalStatus class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum MaritalStatus {
     SINGLE, MARRIED, DIVORCED

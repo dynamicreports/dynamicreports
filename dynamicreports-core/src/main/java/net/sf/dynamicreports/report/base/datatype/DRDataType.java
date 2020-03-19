@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
  * <p>DRDataType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDataType<U, T extends U> extends AbstractDataType<U, T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>DRIDesignPropertyExpression interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignPropertyExpression extends Serializable {
 

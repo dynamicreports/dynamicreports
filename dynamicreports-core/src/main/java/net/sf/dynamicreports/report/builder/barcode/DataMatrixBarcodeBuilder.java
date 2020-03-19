@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DataMatrixBarcodeBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DataMatrixBarcodeBuilder extends AbstractBarcode4jBuilder<DataMatrixBarcodeBuilder, DRDataMatrixBarcode> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

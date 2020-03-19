@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
  * <p>HorizontalListCellBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class HorizontalListCellBuilder extends AbstractBuilder<HorizontalListCellBuilder, DRListCell> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -47,7 +47,7 @@ import java.util.List;
  * <p>GoogleChartsExtensionsRegistryFactory class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GoogleChartsExtensionsRegistryFactory implements ExtensionsRegistryFactory {
     /**

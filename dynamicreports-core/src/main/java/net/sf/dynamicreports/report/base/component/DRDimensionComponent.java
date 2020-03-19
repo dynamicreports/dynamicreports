@@ -33,7 +33,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract DRDimensionComponent class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRDimensionComponent extends DRComponent implements DRIDimensionComponent {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

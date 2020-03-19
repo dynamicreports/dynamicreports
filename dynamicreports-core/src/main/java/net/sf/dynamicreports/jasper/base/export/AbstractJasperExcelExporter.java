@@ -34,7 +34,7 @@ import java.util.Map;
  * <p>Abstract AbstractJasperExcelExporter class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractJasperExcelExporter extends AbstractJasperExporter implements JasperIExcelExporter {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

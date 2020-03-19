@@ -31,7 +31,7 @@ import java.io.Serializable;
  * <p>DRIDesignChartDataset interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignChartDataset extends Serializable {
 

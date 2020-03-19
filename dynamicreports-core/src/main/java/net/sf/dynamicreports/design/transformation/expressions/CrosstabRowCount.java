@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * <p>CrosstabRowCount class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CrosstabRowCount extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

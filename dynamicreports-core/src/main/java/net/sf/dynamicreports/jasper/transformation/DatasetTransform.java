@@ -38,7 +38,7 @@ import java.util.Map;
  * <p>DatasetTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DatasetTransform {
     private JasperTransformAccessor accessor;

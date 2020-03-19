@@ -29,7 +29,7 @@ import org.apache.commons.lang3.Validate;
  * <p>StyleBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class StyleBuilder extends BaseStyleBuilder<StyleBuilder, DRStyle> implements ReportStyleBuilder {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

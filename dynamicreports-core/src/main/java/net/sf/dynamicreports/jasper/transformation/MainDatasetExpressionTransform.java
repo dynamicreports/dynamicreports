@@ -42,7 +42,7 @@ import java.util.Collection;
  * <p>MainDatasetExpressionTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MainDatasetExpressionTransform extends AbstractExpressionTransform {
     private JasperTransformAccessor accessor;

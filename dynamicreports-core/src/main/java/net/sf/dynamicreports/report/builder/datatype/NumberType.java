@@ -35,7 +35,7 @@ import java.util.Locale;
  * <p>Abstract NumberType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class NumberType<T extends Number> extends AbstractDataType<Number, T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

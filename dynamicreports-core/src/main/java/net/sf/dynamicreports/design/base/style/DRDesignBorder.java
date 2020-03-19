@@ -29,7 +29,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
  * <p>DRDesignBorder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignBorder implements DRIDesignBorder {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

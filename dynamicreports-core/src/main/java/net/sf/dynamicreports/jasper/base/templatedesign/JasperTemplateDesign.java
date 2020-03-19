@@ -54,7 +54,7 @@ import java.util.List;
  * <p>JasperTemplateDesign class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

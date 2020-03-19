@@ -58,7 +58,7 @@ import java.util.Properties;
  * <p>ReportTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ReportTransform {
     private JasperTransformAccessor accessor;

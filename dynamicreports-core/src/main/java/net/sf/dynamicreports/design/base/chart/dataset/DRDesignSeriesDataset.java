@@ -33,7 +33,7 @@ import java.util.List;
  * <p>DRDesignSeriesDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignSeriesDataset extends DRDesignChartDataset implements DRIDesignSeriesDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

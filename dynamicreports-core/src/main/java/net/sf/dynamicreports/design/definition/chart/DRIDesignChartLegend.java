@@ -31,7 +31,7 @@ import java.io.Serializable;
  * <p>DRIDesignChartLegend interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignChartLegend extends Serializable {
 

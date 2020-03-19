@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.PageOrientation;
  * <p>DRDesignPage class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignPage implements DRIDesignPage {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -32,7 +32,7 @@ import java.util.Comparator;
  * <p>DRAxisPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRAxisPlot extends AbstractBasePlot implements DRIAxisPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

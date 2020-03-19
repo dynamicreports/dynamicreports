@@ -32,7 +32,7 @@ import java.awt.Color;
  * <p>DRPen class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRPen implements DRIPen {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

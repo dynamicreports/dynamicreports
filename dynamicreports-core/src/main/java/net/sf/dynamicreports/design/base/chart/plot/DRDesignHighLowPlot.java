@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignHighLowPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignHighLowPlot extends DRDesignAxisPlot implements DRIDesignHighLowPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

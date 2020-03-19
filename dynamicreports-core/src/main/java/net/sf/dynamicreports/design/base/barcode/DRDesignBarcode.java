@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Abstract DRDesignBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRDesignBarcode extends DRDesignComponent implements DRIDesignBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.style.DRIBorder;
  * <p>DRBorder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRBorder implements DRIBorder {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

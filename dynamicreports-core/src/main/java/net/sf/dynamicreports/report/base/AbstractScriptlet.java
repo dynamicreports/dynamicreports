@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract AbstractScriptlet class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractScriptlet implements DRIScriptlet {
     private String name;

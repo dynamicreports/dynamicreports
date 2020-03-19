@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.barcode;
  * <p>DRICode128Barcode interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRICode128Barcode extends DRIBarcode4j {
 

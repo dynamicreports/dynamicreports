@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.component.DRIBooleanField;
  * <p>DRBooleanColumn class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRBooleanColumn extends DRColumn<DRIBooleanField> implements DRIBooleanColumn {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

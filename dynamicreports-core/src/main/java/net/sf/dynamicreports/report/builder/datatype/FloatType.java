@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.defaults.Defaults;
  * <p>FloatType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class FloatType extends NumberType<Float> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

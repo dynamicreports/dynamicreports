@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>Abstract AbstractBarcode4jBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("unchecked")
 public abstract class AbstractBarcode4jBuilder<T extends AbstractBarcode4jBuilder<T, U>, U extends DRBarcode4j> extends AbstractBarcodeBuilder<T, U> {

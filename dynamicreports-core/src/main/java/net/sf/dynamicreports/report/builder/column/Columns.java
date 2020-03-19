@@ -34,7 +34,7 @@ import org.apache.commons.lang3.Validate;
  * A set of methods of creating report columns.<br/> It is used to display data in a multi-column layout.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Columns {
 

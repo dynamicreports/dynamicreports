@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>DRIValueColumn interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIValueColumn<T> extends DRIExpression<T>, DRIColumn<DRITextField<T>>, DRIValue<T> {
 

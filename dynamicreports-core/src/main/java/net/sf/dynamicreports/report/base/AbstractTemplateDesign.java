@@ -36,7 +36,7 @@ import java.util.List;
  * <p>Abstract AbstractTemplateDesign class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractTemplateDesign<T> implements DRITemplateDesign<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

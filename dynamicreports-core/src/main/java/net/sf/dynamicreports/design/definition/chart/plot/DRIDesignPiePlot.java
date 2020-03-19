@@ -25,7 +25,7 @@ package net.sf.dynamicreports.design.definition.chart.plot;
  * <p>DRIDesignPiePlot interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIDesignPiePlot extends DRIDesignBasePlot {
 

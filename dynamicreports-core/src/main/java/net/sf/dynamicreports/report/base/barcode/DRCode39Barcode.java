@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRICode39Barcode;
  * <p>DRCode39Barcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRCode39Barcode extends DRChecksumBarcode implements DRICode39Barcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

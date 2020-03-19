@@ -29,7 +29,7 @@ import java.util.List;
  * <p>AdhocChart class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocChart extends AdhocComponent {
     private static final long serialVersionUID = 1L;

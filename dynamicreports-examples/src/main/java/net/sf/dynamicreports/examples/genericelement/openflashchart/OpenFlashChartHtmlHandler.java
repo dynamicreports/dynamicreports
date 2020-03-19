@@ -33,7 +33,7 @@ import java.awt.Color;
  * <p>OpenFlashChartHtmlHandler class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class OpenFlashChartHtmlHandler implements GenericElementHtmlHandler {
 

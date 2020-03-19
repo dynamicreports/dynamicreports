@@ -93,7 +93,7 @@ import java.io.File;
  * <p>ExporterTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ExporterTransform {
     private JasperIExporter jasperExporter;

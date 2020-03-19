@@ -37,7 +37,7 @@ import java.util.Date;
  * A set of methods of creating components
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ComponentBuilders {
 

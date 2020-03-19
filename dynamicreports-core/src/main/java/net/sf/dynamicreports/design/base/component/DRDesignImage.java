@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.constant.ImageScale;
  * <p>DRDesignImage class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignImage extends DRDesignHyperlinkComponent implements DRIDesignImage {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

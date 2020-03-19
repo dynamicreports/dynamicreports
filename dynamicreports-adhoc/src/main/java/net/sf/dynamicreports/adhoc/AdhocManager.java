@@ -61,7 +61,7 @@ import java.io.OutputStream;
  * unmarshalling configuration to and from the outputStream and inputStream respectively.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class AdhocManager {
 

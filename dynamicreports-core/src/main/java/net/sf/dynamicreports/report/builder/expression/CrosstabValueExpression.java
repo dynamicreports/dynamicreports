@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.definition.DRICrosstabValue;
  * <p>CrosstabValueExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public final class CrosstabValueExpression<T> extends AbstractSystemExpression<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

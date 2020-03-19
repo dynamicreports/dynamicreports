@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIBubblePlot;
  * <p>DRBubblePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRBubblePlot extends DRAxisPlot implements DRIBubblePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

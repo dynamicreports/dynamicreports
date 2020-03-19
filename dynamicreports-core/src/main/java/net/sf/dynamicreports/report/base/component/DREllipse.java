@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.component.DRIEllipse;
  * <p>DREllipse class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DREllipse extends DRDimensionComponent implements DRIEllipse {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

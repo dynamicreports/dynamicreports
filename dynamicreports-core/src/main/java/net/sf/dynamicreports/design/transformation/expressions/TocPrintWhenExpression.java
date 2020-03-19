@@ -32,7 +32,7 @@ import java.util.List;
  * <p>TocPrintWhenExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class TocPrintWhenExpression extends AbstractComplexExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

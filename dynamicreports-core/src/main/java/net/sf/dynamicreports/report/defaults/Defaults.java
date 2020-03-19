@@ -36,7 +36,7 @@ import java.io.InputStream;
  * <p>Defaults class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Defaults {
     private static final Log log = LogFactory.getLog(Defaults.class);

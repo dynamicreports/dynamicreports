@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>Abstract AbstractDesignSimpleExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractDesignSimpleExpression implements DRIDesignSimpleExpression {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -42,7 +42,7 @@ import java.util.List;
  * <p>ReportTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ReportTransform {
     private DesignTransformAccessor accessor;

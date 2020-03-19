@@ -25,7 +25,7 @@ package net.sf.dynamicreports.adhoc.configuration;
  * <p>AdhocTimePeriod class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum AdhocTimePeriod {
     YEAR, QUARTER, MONTH, WEEK, DAY, HOUR, MINUTE, SECOND, MILLISECOND

@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract AbstractValuesExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractValuesExpression<T extends Number> extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

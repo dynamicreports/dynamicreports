@@ -39,7 +39,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract GroupBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings( {"unchecked", "rawtypes", "deprecation"})
 public abstract class GroupBuilder<T extends GroupBuilder<T>> extends AbstractBuilder<T, DRGroup> {

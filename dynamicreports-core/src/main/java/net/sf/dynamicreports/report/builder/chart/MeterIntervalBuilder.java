@@ -33,7 +33,7 @@ import java.awt.Color;
  * <p>MeterIntervalBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MeterIntervalBuilder extends AbstractBuilder<MeterIntervalBuilder, DRMeterInterval> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

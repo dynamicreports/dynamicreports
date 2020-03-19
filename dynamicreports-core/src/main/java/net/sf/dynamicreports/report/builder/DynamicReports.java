@@ -53,7 +53,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DynamicReports class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DynamicReports {
     /**

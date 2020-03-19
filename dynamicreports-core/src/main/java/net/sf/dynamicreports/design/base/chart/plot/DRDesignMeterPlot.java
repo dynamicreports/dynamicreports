@@ -36,7 +36,7 @@ import java.util.List;
  * <p>DRDesignMeterPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignMeterPlot extends DRDesignAxisPlot implements DRIDesignMeterPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

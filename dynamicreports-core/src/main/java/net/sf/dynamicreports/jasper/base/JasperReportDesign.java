@@ -36,7 +36,7 @@ import java.util.Map;
  * <p>JasperReportDesign class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperReportDesign implements Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

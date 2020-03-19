@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.chart.plot;
  * <p>DRIGroupedStackedBarPlot interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIGroupedStackedBarPlot extends DRIBarPlot {
 

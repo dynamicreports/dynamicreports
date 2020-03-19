@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
  * <p>UnEqualValueExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class UnEqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

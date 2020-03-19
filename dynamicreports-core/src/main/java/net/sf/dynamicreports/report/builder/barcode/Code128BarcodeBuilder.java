@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>Code128BarcodeBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Code128BarcodeBuilder extends AbstractBarcode4jBuilder<Code128BarcodeBuilder, DRCode128Barcode> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

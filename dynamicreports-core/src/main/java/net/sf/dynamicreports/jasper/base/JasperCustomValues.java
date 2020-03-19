@@ -43,7 +43,7 @@ import static net.sf.dynamicreports.jasper.base.JasperScriptletManager.USE_THREA
  * </p>
  *
  * @author edwin.njeru
- * @version $Id: $Id
+ * 
  */
 public class JasperCustomValues implements DRICustomValues {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

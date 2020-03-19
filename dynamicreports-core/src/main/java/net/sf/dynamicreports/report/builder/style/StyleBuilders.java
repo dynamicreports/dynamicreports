@@ -33,7 +33,7 @@ import java.net.URL;
  * A set of methods of creating and customizing styles
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class StyleBuilders {
 

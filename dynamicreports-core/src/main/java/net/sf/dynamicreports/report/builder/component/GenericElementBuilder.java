@@ -31,7 +31,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIParameterExpression
  * <p>GenericElementBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GenericElementBuilder extends DimensionComponentBuilder<GenericElementBuilder, DRGenericElement> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

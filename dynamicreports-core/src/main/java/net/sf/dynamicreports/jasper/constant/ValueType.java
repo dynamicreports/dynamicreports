@@ -25,7 +25,7 @@ package net.sf.dynamicreports.jasper.constant;
  * <p>ValueType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum ValueType {
     FIELD, VARIABLE, PARAMETER, SIMPLE_EXPRESSION, COMPLEX_EXPRESSION, SYSTEM_EXPRESSION

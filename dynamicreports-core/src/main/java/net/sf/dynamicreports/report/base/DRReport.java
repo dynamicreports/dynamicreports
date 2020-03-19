@@ -52,7 +52,7 @@ import java.util.ResourceBundle;
  * <p>DRReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRReport implements DRIReport {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

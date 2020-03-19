@@ -39,7 +39,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>VerticalColumnsReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class VerticalColumnsReport {
 

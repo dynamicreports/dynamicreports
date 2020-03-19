@@ -37,7 +37,7 @@ import java.util.Map;
  * <p>DRDataSource class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDataSource implements JRRewindableDataSource, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

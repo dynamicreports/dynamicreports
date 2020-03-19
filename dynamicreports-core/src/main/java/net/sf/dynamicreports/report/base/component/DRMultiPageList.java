@@ -33,7 +33,7 @@ import java.util.List;
  * <p>DRMultiPageList class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRMultiPageList extends DRDimensionComponent implements DRIMultiPageList {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

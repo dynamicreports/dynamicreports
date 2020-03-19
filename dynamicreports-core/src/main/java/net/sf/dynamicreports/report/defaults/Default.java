@@ -66,7 +66,7 @@ import java.util.Locale;
  * <p>Default class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Default {
     private String reportName;

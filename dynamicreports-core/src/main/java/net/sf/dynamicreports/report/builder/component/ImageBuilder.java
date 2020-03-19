@@ -37,7 +37,7 @@ import java.net.URL;
  * <p>ImageBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("deprecation")
 public class ImageBuilder extends HyperLinkComponentBuilder<ImageBuilder, DRImage> {

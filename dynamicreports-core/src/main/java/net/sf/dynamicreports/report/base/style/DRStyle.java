@@ -33,7 +33,7 @@ import java.util.List;
  * <p>DRStyle class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRStyle extends DRBaseStyle implements DRIStyle {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

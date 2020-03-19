@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.constant.SplitType;
  * <p>DRDesignBand class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignBand implements DRIDesignBand {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

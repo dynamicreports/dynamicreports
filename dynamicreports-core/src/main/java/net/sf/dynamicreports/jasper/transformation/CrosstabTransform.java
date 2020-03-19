@@ -55,7 +55,7 @@ import java.util.Map;
  * <p>CrosstabTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CrosstabTransform {
     private JasperTransformAccessor accessor;

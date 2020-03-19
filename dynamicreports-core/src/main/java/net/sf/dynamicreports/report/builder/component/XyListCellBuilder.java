@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>XyListCellBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class XyListCellBuilder extends AbstractBuilder<XyListCellBuilder, DRXyListCell> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

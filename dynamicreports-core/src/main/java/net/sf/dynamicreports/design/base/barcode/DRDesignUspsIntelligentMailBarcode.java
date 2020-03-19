@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>DRDesignUspsIntelligentMailBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRDesignUspsIntelligentMailBarcode extends DRDesignChecksumBarcode implements DRIDesignUspsIntelligentMailBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

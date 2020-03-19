@@ -27,7 +27,7 @@ import org.apache.commons.lang3.Validate;
  * A set of methods of customizing columns layout
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Grids {
 

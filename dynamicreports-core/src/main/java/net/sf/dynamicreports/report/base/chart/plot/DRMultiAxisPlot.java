@@ -34,7 +34,7 @@ import java.util.List;
  * <p>DRMultiAxisPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRMultiAxisPlot extends DRAxisPlot implements DRIMultiAxisPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

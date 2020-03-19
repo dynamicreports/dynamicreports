@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.DRIValue;
  * <p>EqualValueExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class EqualValueExpression<T extends Number> extends AbstractValuesExpression<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

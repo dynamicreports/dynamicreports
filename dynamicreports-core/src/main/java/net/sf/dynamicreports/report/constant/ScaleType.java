@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>ScaleType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum ScaleType {
     ON_BOTH_AXES, ON_DOMAIN_AXIS, ON_RANGE_AXIS

@@ -27,7 +27,7 @@ import java.io.Serializable;
  * <p>DRIMargin interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIMargin extends Serializable {
 

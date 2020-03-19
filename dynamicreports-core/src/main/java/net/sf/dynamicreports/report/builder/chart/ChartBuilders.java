@@ -32,7 +32,7 @@ import java.awt.Paint;
  * A set of methods of creating and customizing charts
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ChartBuilders {
 

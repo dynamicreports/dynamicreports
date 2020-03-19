@@ -32,7 +32,7 @@ import java.awt.Color;
  * <p>PenBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class PenBuilder extends AbstractBuilder<PenBuilder, DRPen> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

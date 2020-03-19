@@ -45,7 +45,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>CustomChartReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CustomChartReport {
     private DefaultBoxAndWhiskerCategoryDataset dataset = new DefaultBoxAndWhiskerCategoryDataset();

@@ -32,7 +32,7 @@ import java.awt.Color;
  * <p>DRAxisFormat class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRAxisFormat implements DRIAxisFormat {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

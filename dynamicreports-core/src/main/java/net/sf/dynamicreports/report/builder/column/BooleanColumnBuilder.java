@@ -37,7 +37,7 @@ import org.apache.commons.lang3.Validate;
  * It shows a boolean value either as a text or as an image.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 @SuppressWarnings("deprecation")
 public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DRBooleanColumn> {

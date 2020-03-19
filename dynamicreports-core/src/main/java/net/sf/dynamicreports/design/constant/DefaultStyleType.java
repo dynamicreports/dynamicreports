@@ -25,7 +25,7 @@ package net.sf.dynamicreports.design.constant;
  * <p>DefaultStyleType class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum DefaultStyleType {
     NONE, TEXT, COLUMN, COLUMN_TITLE, GROUP, GROUP_TITLE, SUBTOTAL, IMAGE, CHART, BARCODE

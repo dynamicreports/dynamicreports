@@ -30,7 +30,7 @@ import org.apache.commons.lang3.Validate;
  * <p>DRValueDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRValueDataset extends DRChartDataset implements DRIValueDataset {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

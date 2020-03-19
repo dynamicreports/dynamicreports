@@ -32,7 +32,7 @@ import java.util.List;
  * <p>DRXyList class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRXyList extends DRDimensionComponent implements DRIXyList {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -37,7 +37,7 @@ import java.util.Set;
  * <p>GeoMapFillDataset class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GeoMapFillDataset extends JRFillElementDataset implements GeoMapDataset {
     private static final long serialVersionUID = JRConstants.SERIAL_VERSION_UID;

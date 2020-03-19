@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
  * <p>SortBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SortBuilder extends AbstractBuilder<SortBuilder, DRSort> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

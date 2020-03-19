@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>RectangleAnchor class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum RectangleAnchor {
     CENTER, TOP, TOP_LEFT, TOP_RIGHT, BOTTOM, BOTTOM_LEFT, BOTTOM_RIGHT, LEFT, RIGHT

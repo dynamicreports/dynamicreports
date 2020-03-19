@@ -41,7 +41,7 @@ import java.util.Arrays;
  * <p>GeoMapBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GeoMapBuilder extends DimensionComponentBuilder<GeoMapBuilder, DRGeoMap> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

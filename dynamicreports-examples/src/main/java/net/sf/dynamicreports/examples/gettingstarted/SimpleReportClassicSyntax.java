@@ -36,7 +36,7 @@ import java.math.BigDecimal;
  * <p>SimpleReport_ClassicSyntax class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SimpleReportClassicSyntax {
 

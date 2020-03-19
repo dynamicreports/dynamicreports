@@ -29,7 +29,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIChecksumBarcode;
  * <p>Abstract DRChecksumBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRChecksumBarcode extends DRBarcode4j implements DRIChecksumBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

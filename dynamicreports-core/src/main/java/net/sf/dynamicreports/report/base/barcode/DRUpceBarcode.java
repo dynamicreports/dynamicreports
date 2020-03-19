@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIUpceBarcode;
  * <p>DRUpceBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRUpceBarcode extends DRChecksumBarcode implements DRIUpceBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

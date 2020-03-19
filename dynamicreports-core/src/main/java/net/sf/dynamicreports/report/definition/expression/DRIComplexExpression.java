@@ -30,7 +30,7 @@ import java.util.List;
  * defined in the report and are needed for calculating the value.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRIComplexExpression<T> extends DRIExpression<T> {
 

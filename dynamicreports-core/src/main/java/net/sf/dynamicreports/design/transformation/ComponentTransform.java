@@ -124,7 +124,7 @@ import net.sf.dynamicreports.report.exception.DRException;
  * <p>ComponentTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ComponentTransform {
     private DesignTransformAccessor accessor;

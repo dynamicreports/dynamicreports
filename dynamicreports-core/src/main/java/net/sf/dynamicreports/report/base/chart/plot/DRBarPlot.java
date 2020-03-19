@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.chart.plot.DRIBarPlot;
  * <p>DRBarPlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRBarPlot extends DRAxisPlot implements DRIBarPlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

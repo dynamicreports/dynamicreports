@@ -42,7 +42,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * <p>CustomSubtotalReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CustomSubtotalReport {
     private AggregationSubtotalBuilder<Integer> quantitySum;

@@ -32,7 +32,7 @@ import java.util.Date;
  * <p>SalesCrosstabData class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class SalesCrosstabData {
 

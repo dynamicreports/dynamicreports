@@ -30,7 +30,7 @@ import net.sf.jasperreports.engine.design.JRDesignGroup;
  * <p>GroupTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GroupTransform {
     private JasperTransformAccessor accessor;

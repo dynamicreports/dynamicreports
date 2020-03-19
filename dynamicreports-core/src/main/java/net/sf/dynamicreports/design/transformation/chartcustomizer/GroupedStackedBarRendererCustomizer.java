@@ -49,7 +49,7 @@ import java.util.Set;
  * <p>GroupedStackedBarRendererCustomizer class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, Serializable {
     /**

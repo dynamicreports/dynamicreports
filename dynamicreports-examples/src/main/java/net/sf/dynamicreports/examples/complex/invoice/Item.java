@@ -27,7 +27,7 @@ import java.math.BigDecimal;
  * <p>Item class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class Item {
     private String description;

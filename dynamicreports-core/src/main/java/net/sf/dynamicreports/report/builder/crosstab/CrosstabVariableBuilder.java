@@ -35,7 +35,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
  * <p>CrosstabVariableBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CrosstabVariableBuilder<T> extends AbstractBuilder<CrosstabVariableBuilder<T>, DRCrosstabVariable<T>> implements DRICrosstabValue<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

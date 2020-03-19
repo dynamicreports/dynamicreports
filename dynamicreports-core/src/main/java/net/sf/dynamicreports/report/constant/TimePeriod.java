@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.constant;
  * <p>TimePeriod class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public enum TimePeriod {
     YEAR, QUARTER, MONTH, WEEK, DAY, HOUR, MINUTE, SECOND, MILLISECOND

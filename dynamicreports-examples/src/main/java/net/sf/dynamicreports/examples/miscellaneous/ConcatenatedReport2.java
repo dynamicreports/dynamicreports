@@ -44,7 +44,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
  * Please ensure you have write access on local disc c:\ before running this example
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ConcatenatedReport2 {
 

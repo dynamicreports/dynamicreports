@@ -30,7 +30,7 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
  * <p>OrderByExpression class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class OrderByExpression extends AbstractSimpleExpression<Comparable<?>> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

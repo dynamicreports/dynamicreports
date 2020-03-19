@@ -36,7 +36,7 @@ import java.util.Map;
  * <p>Abstract AbstractBasePlot class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class AbstractBasePlot implements DRIBasePlot {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

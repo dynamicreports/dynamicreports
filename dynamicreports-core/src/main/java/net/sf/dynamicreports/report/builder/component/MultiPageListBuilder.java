@@ -32,7 +32,7 @@ import org.apache.commons.lang3.Validate;
  * <p>MultiPageListBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class MultiPageListBuilder extends DimensionComponentBuilder<MultiPageListBuilder, DRMultiPageList> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

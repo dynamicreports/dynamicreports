@@ -67,7 +67,7 @@ import java.io.Serializable;
  * This report builder allows concatenating several separated reports into one single document. Each report starts on a new page with its own page dimension.
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperConcatenatedReportBuilder implements Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

@@ -38,7 +38,7 @@ import java.util.List;
  * <p>JasperSystemFontExtensionsRegistryFactory class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class JasperSystemFontExtensionsRegistryFactory implements ExtensionsRegistryFactory {
     /**

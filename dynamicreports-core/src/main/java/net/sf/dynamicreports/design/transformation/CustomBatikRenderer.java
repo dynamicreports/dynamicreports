@@ -36,7 +36,7 @@ import java.net.URL;
  * <p>CustomBatikRenderer class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CustomBatikRenderer extends WrappingSvgDataToGraphics2DRenderer {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

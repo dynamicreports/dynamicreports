@@ -31,7 +31,7 @@ import org.apache.commons.lang3.Validate;
  * <p>Abstract DRChartSerie class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public abstract class DRChartSerie implements DRIChartSerie {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

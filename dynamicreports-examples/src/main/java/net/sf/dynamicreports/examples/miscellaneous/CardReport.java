@@ -38,7 +38,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
  * <p>CardReport class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class CardReport {
 

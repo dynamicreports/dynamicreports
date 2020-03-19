@@ -25,7 +25,7 @@ package net.sf.dynamicreports.report.definition.component;
  * <p>DRITotalPages interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface DRITotalPages extends DRIFormatField {
 

@@ -33,7 +33,7 @@ import java.util.Map;
  * <p>JasperTransformAccessor interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface JasperTransformAccessor {
 

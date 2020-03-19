@@ -28,7 +28,7 @@ import net.sf.dynamicreports.report.definition.barcode.DRIUspsIntelligentMailBar
  * <p>DRUspsIntelligentMailBarcode class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class DRUspsIntelligentMailBarcode extends DRChecksumBarcode implements DRIUspsIntelligentMailBarcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

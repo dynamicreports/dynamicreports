@@ -34,7 +34,7 @@ import net.sf.jasperreports.engine.JRComponentElement;
  * <p>CustomComponentTransform interface.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public interface CustomComponentTransform<T extends DRIComponent, U extends DRIDesignComponent> {
 

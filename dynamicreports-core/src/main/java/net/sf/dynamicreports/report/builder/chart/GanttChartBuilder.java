@@ -36,7 +36,7 @@ import org.apache.commons.lang3.Validate;
  * <p>GanttChartBuilder class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class GanttChartBuilder extends AbstractBaseChartBuilder<GanttChartBuilder, DRBarPlot, DRSeriesDataset> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

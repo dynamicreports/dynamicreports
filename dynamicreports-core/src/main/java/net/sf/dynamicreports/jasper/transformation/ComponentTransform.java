@@ -86,7 +86,7 @@ import java.util.List;
  * <p>ComponentTransform class.</p>
  *
  * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * 
  */
 public class ComponentTransform {
     private JasperTransformAccessor accessor;
