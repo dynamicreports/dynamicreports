@@ -28,13 +28,14 @@ import net.sf.dynamicreports.report.builder.grid.ColumnGridComponentBuilder;
 import net.sf.dynamicreports.report.builder.style.ReportStyleBuilder;
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 
 /**
  * <p>Abstract ColumnBuilder class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 @SuppressWarnings("unchecked")
@@ -46,7 +47,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param column a U object.
      */
-    protected ColumnBuilder(U column) {
+    protected ColumnBuilder(final U column) {
         super(column);
     }
 
@@ -56,7 +57,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param titleExpression the title expression
      * @return a column builder
      */
-    public T setTitle(DRIExpression<?> titleExpression) {
+    public T setTitle(final DRIExpression<?> titleExpression) {
         getObject().setTitleExpression(titleExpression);
         return (T) this;
     }
@@ -67,7 +68,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param title the title
      * @return a column builder
      */
-    public T setTitle(String title) {
+    public T setTitle(final String title) {
         getObject().setTitleExpression(Expressions.text(title));
         return (T) this;
     }
@@ -78,7 +79,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param titleStyle the title style
      * @return a column builder
      */
-    public T setTitleStyle(ReportStyleBuilder titleStyle) {
+    public T setTitleStyle(final ReportStyleBuilder titleStyle) {
         if (titleStyle != null) {
             getObject().setTitleStyle(titleStyle.getStyle());
         } else {
@@ -93,7 +94,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param style the value style
      * @return a column builder
      */
-    public T setStyle(ReportStyleBuilder style) {
+    public T setStyle(final ReportStyleBuilder style) {
         if (style != null) {
             getComponent().setStyle(style.getStyle());
         } else {
@@ -108,7 +109,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param printWhenExpression the print expression
      * @return a column builder
      */
-    public T setPrintWhenExpression(DRIExpression<Boolean> printWhenExpression) {
+    public T setPrintWhenExpression(final DRIExpression<Boolean> printWhenExpression) {
         getComponent().setPrintWhenExpression(printWhenExpression);
         return (T) this;
     }
@@ -120,7 +121,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setTitleRows(Integer rows) {
+    public T setTitleRows(final Integer rows) {
         getObject().setTitleRows(rows);
         return (T) this;
     }
@@ -132,7 +133,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setTitleFixedRows(Integer rows) {
+    public T setTitleFixedRows(final Integer rows) {
         getObject().setTitleRows(rows);
         getObject().setTitleHeightType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -145,7 +146,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setTitleMinRows(Integer rows) {
+    public T setTitleMinRows(final Integer rows) {
         getObject().setTitleRows(rows);
         getObject().setTitleHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -159,7 +160,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setTitleHeight(Integer height) {
+    public T setTitleHeight(final Integer height) {
         getObject().setTitleHeight(height);
         return (T) this;
     }
@@ -172,7 +173,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setTitleFixedHeight(Integer height) {
+    public T setTitleFixedHeight(final Integer height) {
         getObject().setTitleHeight(height);
         getObject().setTitleHeightType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -186,7 +187,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setTitleMinHeight(Integer height) {
+    public T setTitleMinHeight(final Integer height) {
         getObject().setTitleHeight(height);
         getObject().setTitleHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -197,9 +198,22 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
      * @return a T object.
+     * @deprecated replaced by {@link #setTitleTextAdjust(TextAdjust)}
      */
-    public T setTitleStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public T setTitleStretchWithOverflow(final Boolean stretchWithOverflow) {
         getObject().setTitleStretchWithOverflow(stretchWithOverflow);
+        return (T) this;
+    }
+
+    /**
+     * <p>setTitleTextAdjust.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @return a T object.
+     */
+    public T setTitleTextAdjust(final TextAdjust textAdjust) {
+        getObject().setTitleTextAdjust(textAdjust);
         return (T) this;
     }
 
@@ -209,7 +223,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param propertyExpression the property expression
      * @return a column builder
      */
-    public T addTitleProperty(DRIPropertyExpression propertyExpression) {
+    public T addTitleProperty(final DRIPropertyExpression propertyExpression) {
         getObject().addTitlePropertyExpression(propertyExpression);
         return (T) this;
     }
@@ -221,7 +235,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param valueExpression the property value expression
      * @return a column builder
      */
-    public T addTitleProperty(String name, DRIExpression<String> valueExpression) {
+    public T addTitleProperty(final String name, final DRIExpression<String> valueExpression) {
         getObject().addTitlePropertyExpression(Expressions.property(name, valueExpression));
         return (T) this;
     }
@@ -233,7 +247,7 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
      * @param value the property value
      * @return a column builder
      */
-    public T addTitleProperty(String name, String value) {
+    public T addTitleProperty(final String name, final String value) {
         getObject().addTitlePropertyExpression(Expressions.property(name, value));
         return (T) this;
     }

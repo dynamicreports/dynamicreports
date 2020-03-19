@@ -20,6 +20,10 @@
  */
 package net.sf.dynamicreports.report.builder.component;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.base.component.DRTextField;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
@@ -31,18 +35,16 @@ import net.sf.dynamicreports.report.constant.Evaluation;
 import net.sf.dynamicreports.report.constant.HorizontalAlignment;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRIField;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
-import org.apache.commons.lang3.Validate;
-
-import java.util.Date;
 
 /**
  * <p>TextFieldBuilder class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 @SuppressWarnings("deprecation")
@@ -62,7 +64,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setText(VariableBuilder<T> variable) {
+    public TextFieldBuilder<T> setText(final VariableBuilder<T> variable) {
         Validate.notNull(variable, "variable must not be null");
         getObject().setValueExpression(variable.getVariable());
         return this;
@@ -74,7 +76,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setText(FieldBuilder<T> field) {
+    public TextFieldBuilder<T> setText(final FieldBuilder<T> field) {
         Validate.notNull(field, "field must not be null");
         getObject().setValueExpression(field.getField());
         if (getObject().getDataType() == null) {
@@ -89,7 +91,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param textExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setText(DRIExpression<T> textExpression) {
+    public TextFieldBuilder<T> setText(final DRIExpression<T> textExpression) {
         getObject().setValueExpression(textExpression);
         if (textExpression instanceof DRIField && getObject().getDataType() == null) {
             getObject().setDataType(((DRIField<T>) textExpression).getDataType());
@@ -104,7 +106,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     @SuppressWarnings("unchecked")
-    public TextFieldBuilder<T> setText(String text) {
+    public TextFieldBuilder<T> setText(final String text) {
         getObject().setValueExpression((DRIExpression<T>) Expressions.text(text));
         return this;
     }
@@ -116,7 +118,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     @SuppressWarnings("unchecked")
-    public TextFieldBuilder<T> setText(Number number) {
+    public TextFieldBuilder<T> setText(final Number number) {
         getObject().setValueExpression((DRIExpression<T>) Expressions.number(number));
         return this;
     }
@@ -128,7 +130,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
     @SuppressWarnings("unchecked")
-    public TextFieldBuilder<T> setText(Date date) {
+    public TextFieldBuilder<T> setText(final Date date) {
         getObject().setValueExpression((DRIExpression<T>) Expressions.date(date));
         return this;
     }
@@ -139,7 +141,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param pattern a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setPattern(String pattern) {
+    public TextFieldBuilder<T> setPattern(final String pattern) {
         getObject().setPattern(pattern);
         return this;
     }
@@ -150,7 +152,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param patternExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setPattern(DRIExpression<String> patternExpression) {
+    public TextFieldBuilder<T> setPattern(final DRIExpression<String> patternExpression) {
         getObject().setPatternExpression(patternExpression);
         return this;
     }
@@ -163,7 +165,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @deprecated use setHorizontalTextAlignment instead
      */
     @Deprecated
-    public TextFieldBuilder<T> setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
+    public TextFieldBuilder<T> setHorizontalAlignment(final HorizontalAlignment horizontalAlignment) {
         if (horizontalAlignment != null) {
             getObject().setHorizontalTextAlignment(HorizontalTextAlignment.valueOf(horizontalAlignment.name()));
         } else {
@@ -178,7 +180,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public TextFieldBuilder<T> setHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         getObject().setHorizontalTextAlignment(horizontalTextAlignment);
         return this;
     }
@@ -189,7 +191,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setValueFormatter(DRIValueFormatter<?, ? super T> valueFormatter) {
+    public TextFieldBuilder<T> setValueFormatter(final DRIValueFormatter<?, ? super T> valueFormatter) {
         getObject().setValueFormatter(valueFormatter);
         return this;
     }
@@ -200,7 +202,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setDataType(DRIDataType<? super T, T> dataType) {
+    public TextFieldBuilder<T> setDataType(final DRIDataType<? super T, T> dataType) {
         getObject().setDataType(dataType);
         return this;
     }
@@ -212,7 +214,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public TextFieldBuilder<T> setColumns(Integer columns) {
+    public TextFieldBuilder<T> setColumns(final Integer columns) {
         getObject().setColumns(columns);
         return this;
     }
@@ -224,7 +226,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public TextFieldBuilder<T> setFixedColumns(Integer columns) {
+    public TextFieldBuilder<T> setFixedColumns(final Integer columns) {
         getObject().setColumns(columns);
         getObject().setWidthType(ComponentDimensionType.FIXED);
         return this;
@@ -237,7 +239,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public TextFieldBuilder<T> setMinColumns(Integer columns) {
+    public TextFieldBuilder<T> setMinColumns(final Integer columns) {
         getObject().setColumns(columns);
         getObject().setWidthType(ComponentDimensionType.EXPAND);
         return this;
@@ -250,7 +252,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public TextFieldBuilder<T> setRows(Integer rows) {
+    public TextFieldBuilder<T> setRows(final Integer rows) {
         getObject().setRows(rows);
         return this;
     }
@@ -262,7 +264,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public TextFieldBuilder<T> setFixedRows(Integer rows) {
+    public TextFieldBuilder<T> setFixedRows(final Integer rows) {
         getObject().setRows(rows);
         getObject().setHeightType(ComponentDimensionType.FIXED);
         return this;
@@ -275,7 +277,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public TextFieldBuilder<T> setMinRows(Integer rows) {
+    public TextFieldBuilder<T> setMinRows(final Integer rows) {
         getObject().setRows(rows);
         getObject().setHeightType(ComponentDimensionType.EXPAND);
         return this;
@@ -287,7 +289,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setEvaluationTime(Evaluation evaluationTime) {
+    public TextFieldBuilder<T> setEvaluationTime(final Evaluation evaluationTime) {
         getObject().setEvaluationTime(evaluationTime);
         return this;
     }
@@ -298,7 +300,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param evaluationGroup a {@link net.sf.dynamicreports.report.builder.group.GroupBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setEvaluationGroup(GroupBuilder<?> evaluationGroup) {
+    public TextFieldBuilder<T> setEvaluationGroup(final GroupBuilder<?> evaluationGroup) {
         Validate.notNull(evaluationGroup, "evaluationGroup must not be null");
         getObject().setEvaluationGroup(evaluationGroup.build());
         getObject().setEvaluationTime(Evaluation.GROUP);
@@ -311,7 +313,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param markup a {@link net.sf.dynamicreports.report.constant.Markup} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setMarkup(Markup markup) {
+    public TextFieldBuilder<T> setMarkup(final Markup markup) {
         getObject().setMarkup(markup);
         return this;
     }
@@ -321,9 +323,22 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
+     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
      */
-    public TextFieldBuilder<T> setStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public TextFieldBuilder<T> setStretchWithOverflow(final Boolean stretchWithOverflow) {
         getObject().setStretchWithOverflow(stretchWithOverflow);
+        return this;
+    }
+
+    /**
+     * <p>setTextAdjust.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @return a T object.
+     */
+    public TextFieldBuilder<T> setTextAdjust(final TextAdjust textAdjust) {
+        getObject().setTextAdjust(textAdjust);
         return this;
     }
 
@@ -333,7 +348,7 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
      * @param printRepeatedValues a {@link java.lang.Boolean} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
      */
-    public TextFieldBuilder<T> setPrintRepeatedValues(Boolean printRepeatedValues) {
+    public TextFieldBuilder<T> setPrintRepeatedValues(final Boolean printRepeatedValues) {
         getObject().setPrintRepeatedValues(printRepeatedValues);
         return this;
     }

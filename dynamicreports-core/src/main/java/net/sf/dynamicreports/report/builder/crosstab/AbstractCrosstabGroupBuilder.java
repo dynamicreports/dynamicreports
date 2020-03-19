@@ -20,6 +20,10 @@
  */
 package net.sf.dynamicreports.report.builder.crosstab;
 
+import java.util.Comparator;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.base.column.DRValueColumn;
 import net.sf.dynamicreports.report.base.crosstab.DRCrosstabGroup;
 import net.sf.dynamicreports.report.builder.AbstractBuilder;
@@ -33,20 +37,18 @@ import net.sf.dynamicreports.report.constant.CrosstabTotalPosition;
 import net.sf.dynamicreports.report.constant.HorizontalAlignment;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.OrderType;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRIField;
 import net.sf.dynamicreports.report.definition.DRIValue;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
-import org.apache.commons.lang3.Validate;
-
-import java.util.Comparator;
 
 /**
  * <p>Abstract AbstractCrosstabGroupBuilder class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})
@@ -59,10 +61,10 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param column        a {@link net.sf.dynamicreports.report.builder.column.ValueColumnBuilder} object.
      * @param crosstabGroup a U object.
      */
-    protected AbstractCrosstabGroupBuilder(ValueColumnBuilder<?, V> column, U crosstabGroup) {
+    protected AbstractCrosstabGroupBuilder(final ValueColumnBuilder<?, V> column, final U crosstabGroup) {
         super(crosstabGroup);
         Validate.notNull(column, "column must not be null");
-        DRValueColumn<V> col = column.getColumn();
+        final DRValueColumn<V> col = column.getColumn();
         getObject().setExpression(col);
         getObject().setDataType(col.getComponent().getDataType());
         getObject().setHeaderPattern(col.getComponent().getPattern());
@@ -74,7 +76,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param field         a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @param crosstabGroup a U object.
      */
-    protected AbstractCrosstabGroupBuilder(FieldBuilder<V> field, U crosstabGroup) {
+    protected AbstractCrosstabGroupBuilder(final FieldBuilder<V> field, final U crosstabGroup) {
         super(crosstabGroup);
         Validate.notNull(field, "field must not be null");
         getObject().setExpression(field.getField());
@@ -87,7 +89,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param expression    a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @param crosstabGroup a U object.
      */
-    protected AbstractCrosstabGroupBuilder(DRIExpression<V> expression, U crosstabGroup) {
+    protected AbstractCrosstabGroupBuilder(final DRIExpression<V> expression, final U crosstabGroup) {
         super(crosstabGroup);
         getObject().setExpression(expression);
         if (expression instanceof DRIField) {
@@ -101,7 +103,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param pattern a {@link java.lang.String} object.
      * @return a T object.
      */
-    public T setHeaderPattern(String pattern) {
+    public T setHeaderPattern(final String pattern) {
         getObject().setHeaderPattern(pattern);
         return (T) this;
     }
@@ -114,7 +116,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @deprecated use setHeaderHorizontalTextAlignment instead
      */
     @Deprecated
-    public T setHeaderHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
+    public T setHeaderHorizontalAlignment(final HorizontalAlignment horizontalAlignment) {
         if (horizontalAlignment != null) {
             getObject().setHeaderHorizontalTextAlignment(HorizontalTextAlignment.valueOf(horizontalAlignment.name()));
         } else {
@@ -129,7 +131,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      * @return a T object.
      */
-    public T setHeaderHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public T setHeaderHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         getObject().setHeaderHorizontalTextAlignment(horizontalTextAlignment);
         return (T) this;
     }
@@ -140,7 +142,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      * @return a T object.
      */
-    public T setHeaderValueFormatter(DRIValueFormatter<?, ? super V> valueFormatter) {
+    public T setHeaderValueFormatter(final DRIValueFormatter<?, ? super V> valueFormatter) {
         getObject().setHeaderValueFormatter(valueFormatter);
         return (T) this;
     }
@@ -150,10 +152,23 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
      * @return a T object.
+     * @deprecated replaced by {@link #setHeaderTextAdjust(TextAdjust)}
      */
-    public T setHeaderStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public T setHeaderStretchWithOverflow(final Boolean stretchWithOverflow) {
         getObject().setHeaderStretchWithOverflow(stretchWithOverflow);
         return (T) this;
+    }
+
+    /**
+     * <p>setHeaderTextAdjust.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @return a T object.
+     */
+    public T setHeaderTextAdjust(final TextAdjust textAdjust) {
+        getObject().setHeaderTextAdjust(textAdjust);
+        return (T )this;
     }
 
     /**
@@ -162,7 +177,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param hyperLink the group header hyperlink
      * @return a crosstab group builder
      */
-    public T setHeaderHyperLink(HyperLinkBuilder hyperLink) {
+    public T setHeaderHyperLink(final HyperLinkBuilder hyperLink) {
         if (hyperLink != null) {
             getObject().setHeaderHyperLink(hyperLink.getHyperLink());
         } else {
@@ -177,7 +192,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      * @return a T object.
      */
-    public T setHeaderStyle(ReportStyleBuilder style) {
+    public T setHeaderStyle(final ReportStyleBuilder style) {
         if (style != null) {
             getObject().setHeaderStyle(style.getStyle());
         } else {
@@ -192,7 +207,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param propertyExpression the property expression
      * @return a crosstab group builder
      */
-    public T addHeaderProperty(DRIPropertyExpression propertyExpression) {
+    public T addHeaderProperty(final DRIPropertyExpression propertyExpression) {
         getObject().addHeaderPropertyExpression(propertyExpression);
         return (T) this;
     }
@@ -204,7 +219,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param valueExpression the property value expression
      * @return a crosstab group builder
      */
-    public T addHeaderProperty(String name, DRIExpression<String> valueExpression) {
+    public T addHeaderProperty(final String name, final DRIExpression<String> valueExpression) {
         getObject().addHeaderPropertyExpression(Expressions.property(name, valueExpression));
         return (T) this;
     }
@@ -216,7 +231,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param value the property value
      * @return a crosstab group builder
      */
-    public T addHeaderProperty(String name, String value) {
+    public T addHeaderProperty(final String name, final String value) {
         getObject().addHeaderPropertyExpression(Expressions.property(name, value));
         return (T) this;
     }
@@ -227,7 +242,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param showTotal a {@link java.lang.Boolean} object.
      * @return a T object.
      */
-    public T setShowTotal(Boolean showTotal) {
+    public T setShowTotal(final Boolean showTotal) {
         getObject().setShowTotal(showTotal);
         return (T) this;
     }
@@ -238,7 +253,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param totalPosition a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
      * @return a T object.
      */
-    public T setTotalPosition(CrosstabTotalPosition totalPosition) {
+    public T setTotalPosition(final CrosstabTotalPosition totalPosition) {
         getObject().setTotalPosition(totalPosition);
         return (T) this;
     }
@@ -249,7 +264,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param totalHeaderExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
-    public T setTotalHeader(DRIExpression<?> totalHeaderExpression) {
+    public T setTotalHeader(final DRIExpression<?> totalHeaderExpression) {
         getObject().setTotalHeaderExpression(totalHeaderExpression);
         return (T) this;
     }
@@ -260,7 +275,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param totalHeader a {@link java.lang.String} object.
      * @return a T object.
      */
-    public T setTotalHeader(String totalHeader) {
+    public T setTotalHeader(final String totalHeader) {
         getObject().setTotalHeaderExpression(Expressions.text(totalHeader));
         return (T) this;
     }
@@ -270,10 +285,23 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
      * @return a T object.
+     * @deprecated replaced by {@link #setTotalHeaderTextAdjust(TextAdjust)}
      */
-    public T setTotalHeaderStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public T setTotalHeaderStretchWithOverflow(final Boolean stretchWithOverflow) {
         getObject().setTotalHeaderStretchWithOverflow(stretchWithOverflow);
         return (T) this;
+    }
+
+    /**
+     * <p>setTotalHeaderTextAdjust.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @return a T object.
+     */
+    public T setTotalHeaderTextAdjust(final TextAdjust textAdjust) {
+        getObject().setTotalHeaderTextAdjust(textAdjust);
+        return (T )this;
     }
 
     /**
@@ -282,7 +310,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param style a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      * @return a T object.
      */
-    public T setTotalHeaderStyle(ReportStyleBuilder style) {
+    public T setTotalHeaderStyle(final ReportStyleBuilder style) {
         if (style != null) {
             getObject().setTotalHeaderStyle(style.getStyle());
         } else {
@@ -297,7 +325,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param propertyExpression the property expression
      * @return a crosstab group builder
      */
-    public T addTotalHeaderProperty(DRIPropertyExpression propertyExpression) {
+    public T addTotalHeaderProperty(final DRIPropertyExpression propertyExpression) {
         getObject().addTotalHeaderPropertyExpression(propertyExpression);
         return (T) this;
     }
@@ -309,7 +337,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param valueExpression the property value expression
      * @return a crosstab group builder
      */
-    public T addTotalHeaderProperty(String name, DRIExpression<String> valueExpression) {
+    public T addTotalHeaderProperty(final String name, final DRIExpression<String> valueExpression) {
         getObject().addTotalHeaderPropertyExpression(Expressions.property(name, valueExpression));
         return (T) this;
     }
@@ -321,7 +349,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param value the property value
      * @return a crosstab group builder
      */
-    public T addTotalHeaderProperty(String name, String value) {
+    public T addTotalHeaderProperty(final String name, final String value) {
         getObject().addTotalHeaderPropertyExpression(Expressions.property(name, value));
         return (T) this;
     }
@@ -332,7 +360,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      * @return a T object.
      */
-    public T setDataType(DRIDataType<? super V, V> dataType) {
+    public T setDataType(final DRIDataType<? super V, V> dataType) {
         getObject().setDataType(dataType);
         return (T) this;
     }
@@ -343,7 +371,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
      * @return a T object.
      */
-    public T setOrderType(OrderType orderType) {
+    public T setOrderType(final OrderType orderType) {
         getObject().setOrderType(orderType);
         return (T) this;
     }
@@ -354,7 +382,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param orderByExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
-    public T setOrderByExpression(DRIExpression<? extends Comparable<?>> orderByExpression) {
+    public T setOrderByExpression(final DRIExpression<? extends Comparable<?>> orderByExpression) {
         return orderBy(orderByExpression);
     }
 
@@ -364,7 +392,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param measure a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
      * @return a T object.
      */
-    public T orderBy(CrosstabMeasureBuilder<? extends Comparable<?>> measure) {
+    public T orderBy(final CrosstabMeasureBuilder<? extends Comparable<?>> measure) {
         return orderBy(Expressions.orderBy(measure));
     }
 
@@ -374,7 +402,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param orderByExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
-    public T orderBy(DRIExpression<? extends Comparable<?>> orderByExpression) {
+    public T orderBy(final DRIExpression<? extends Comparable<?>> orderByExpression) {
         getObject().setOrderByExpression(orderByExpression);
         return (T) this;
     }
@@ -385,7 +413,7 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      * @param comparatorExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
-    public T setComparatorExpression(DRIExpression<? extends Comparator<?>> comparatorExpression) {
+    public T setComparatorExpression(final DRIExpression<? extends Comparator<?>> comparatorExpression) {
         getObject().setComparatorExpression(comparatorExpression);
         return (T) this;
     }
