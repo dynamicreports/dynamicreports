@@ -32,7 +32,7 @@ import net.sf.dynamicreports.report.constant.TextAdjust;
 /**
  * <p>DRDesignTextField class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRIDesignTextField {
@@ -197,8 +197,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
 
     /** {@inheritDoc} */
     @Override
-    public TextAdjust getTextAdjust()
-    {
+    public TextAdjust getTextAdjust() {
         return textAdjust;
     }
 
@@ -207,8 +206,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
      */
-    public void setTextAdjust(final TextAdjust textAdjust)
-    {
+    public void setTextAdjust(final TextAdjust textAdjust) {
         this.textAdjust = textAdjust;
     }
 }
