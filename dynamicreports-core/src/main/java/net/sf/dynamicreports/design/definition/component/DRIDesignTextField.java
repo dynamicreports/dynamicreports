@@ -25,12 +25,13 @@ import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 
 /**
  * <p>DRIDesignTextField interface.</p>
  *
- * @author Ricardo Mariaca
- * 
+ * @author Ricardo Mariaca, Jan Moxter
+ *
  */
 public interface DRIDesignTextField extends DRIDesignHyperLinkComponent {
 
@@ -39,61 +40,68 @@ public interface DRIDesignTextField extends DRIDesignHyperLinkComponent {
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getPattern();
+    String getPattern();
 
     /**
      * <p>getPatternExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public DRIDesignExpression getPatternExpression();
+    DRIDesignExpression getPatternExpression();
 
     /**
      * <p>getHorizontalTextAlignment.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public HorizontalTextAlignment getHorizontalTextAlignment();
+    HorizontalTextAlignment getHorizontalTextAlignment();
 
     /**
      * <p>getValueExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public DRIDesignExpression getValueExpression();
+    DRIDesignExpression getValueExpression();
 
     /**
      * <p>isPrintRepeatedValues.</p>
      *
      * @return a boolean.
      */
-    public boolean isPrintRepeatedValues();
+    boolean isPrintRepeatedValues();
 
     /**
      * <p>getEvaluationTime.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
      */
-    public EvaluationTime getEvaluationTime();
+    EvaluationTime getEvaluationTime();
 
     /**
      * <p>getEvaluationGroup.</p>
      *
      * @return a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      */
-    public DRIDesignGroup getEvaluationGroup();
+    DRIDesignGroup getEvaluationGroup();
 
     /**
      * <p>getMarkup.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
      */
-    public Markup getMarkup();
+    Markup getMarkup();
 
     /**
      * <p>isStretchWithOverflow.</p>
      *
      * @return a boolean.
+     * @deprecated Replaced by {@link #getTextAdjust()}.
      */
-    public boolean isStretchWithOverflow();
+    @Deprecated
+    boolean isStretchWithOverflow();
+
+    /**
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getTextAdjust();
 }
