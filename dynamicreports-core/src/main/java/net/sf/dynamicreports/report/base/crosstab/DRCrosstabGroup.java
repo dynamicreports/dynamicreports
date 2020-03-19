@@ -20,38 +20,41 @@
  */
 package net.sf.dynamicreports.report.base.crosstab;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.base.DRHyperLink;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.CrosstabTotalPosition;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.OrderType;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabGroup;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
-import org.apache.commons.lang3.Validate;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * <p>Abstract DRCrosstabGroup class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private String name;
+    private final String name;
     private String headerPattern;
     private HorizontalTextAlignment headerHorizontalTextAlignment;
     private DRIValueFormatter<?, ? super T> headerValueFormatter;
     private Boolean headerStretchWithOverflow;
+    private TextAdjust headerTextAdjust;
     private DRHyperLink headerHyperLink;
     private DRIReportStyle headerStyle;
     private List<DRIPropertyExpression> headerPropertyExpressions;
@@ -59,6 +62,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
     private CrosstabTotalPosition totalPosition;
     private DRIExpression<?> totalHeaderExpression;
     private Boolean totalHeaderStretchWithOverflow;
+    private TextAdjust totalHeaderTextAdjust;
     private DRIReportStyle totalHeaderStyle;
     private List<DRIPropertyExpression> totalHeaderPropertyExpressions;
     private DRIExpression<T> expression;
@@ -72,8 +76,8 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      */
     public DRCrosstabGroup() {
         this.name = ReportUtils.generateUniqueName("crosstabGroup");
-        headerPropertyExpressions = new ArrayList<DRIPropertyExpression>();
-        totalHeaderPropertyExpressions = new ArrayList<DRIPropertyExpression>();
+        headerPropertyExpressions = new ArrayList<>();
+        totalHeaderPropertyExpressions = new ArrayList<>();
     }
 
     /** {@inheritDoc} */
@@ -93,7 +97,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerPattern a {@link java.lang.String} object.
      */
-    public void setHeaderPattern(String headerPattern) {
+    public void setHeaderPattern(final String headerPattern) {
         this.headerPattern = headerPattern;
     }
 
@@ -108,7 +112,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerHorizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public void setHeaderHorizontalTextAlignment(HorizontalTextAlignment headerHorizontalTextAlignment) {
+    public void setHeaderHorizontalTextAlignment(final HorizontalTextAlignment headerHorizontalTextAlignment) {
         this.headerHorizontalTextAlignment = headerHorizontalTextAlignment;
     }
 
@@ -123,7 +127,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerValueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public void setHeaderValueFormatter(DRIValueFormatter<?, ? super T> headerValueFormatter) {
+    public void setHeaderValueFormatter(final DRIValueFormatter<?, ? super T> headerValueFormatter) {
         this.headerValueFormatter = headerValueFormatter;
     }
 
@@ -137,9 +141,26 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      * <p>Setter for the field <code>headerStretchWithOverflow</code>.</p>
      *
      * @param headerStretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #setHeaderTextAdjust(TextAdjust)}
      */
-    public void setHeaderStretchWithOverflow(Boolean headerStretchWithOverflow) {
+    @Deprecated
+    public void setHeaderStretchWithOverflow(final Boolean headerStretchWithOverflow) {
         this.headerStretchWithOverflow = headerStretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getHeaderTextAdjust() {
+        return this.headerTextAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>setHeaderTextAdjust</code>.</p>
+     *
+     * @param headerTextAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setHeaderTextAdjust(final TextAdjust headerTextAdjust) {
+        this.headerTextAdjust = headerTextAdjust;
     }
 
     /** {@inheritDoc} */
@@ -153,7 +174,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerHyperLink a {@link net.sf.dynamicreports.report.base.DRHyperLink} object.
      */
-    public void setHeaderHyperLink(DRHyperLink headerHyperLink) {
+    public void setHeaderHyperLink(final DRHyperLink headerHyperLink) {
         this.headerHyperLink = headerHyperLink;
     }
 
@@ -168,7 +189,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public void setHeaderStyle(DRIReportStyle headerStyle) {
+    public void setHeaderStyle(final DRIReportStyle headerStyle) {
         this.headerStyle = headerStyle;
     }
 
@@ -183,7 +204,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerPropertyExpressions a {@link java.util.List} object.
      */
-    public void setHeaderPropertyExpressions(List<DRIPropertyExpression> headerPropertyExpressions) {
+    public void setHeaderPropertyExpressions(final List<DRIPropertyExpression> headerPropertyExpressions) {
         this.headerPropertyExpressions = headerPropertyExpressions;
     }
 
@@ -192,7 +213,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param headerPropertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
      */
-    public void addHeaderPropertyExpression(DRIPropertyExpression headerPropertyExpression) {
+    public void addHeaderPropertyExpression(final DRIPropertyExpression headerPropertyExpression) {
         Validate.notNull(headerPropertyExpression, "headerPropertyExpression must not be null");
         this.headerPropertyExpressions.add(headerPropertyExpression);
     }
@@ -208,7 +229,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param showTotal a {@link java.lang.Boolean} object.
      */
-    public void setShowTotal(Boolean showTotal) {
+    public void setShowTotal(final Boolean showTotal) {
         this.showTotal = showTotal;
     }
 
@@ -223,7 +244,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param totalPosition a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
      */
-    public void setTotalPosition(CrosstabTotalPosition totalPosition) {
+    public void setTotalPosition(final CrosstabTotalPosition totalPosition) {
         this.totalPosition = totalPosition;
     }
 
@@ -238,7 +259,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param totalHeaderExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setTotalHeaderExpression(DRIExpression<?> totalHeaderExpression) {
+    public void setTotalHeaderExpression(final DRIExpression<?> totalHeaderExpression) {
         this.totalHeaderExpression = totalHeaderExpression;
     }
 
@@ -252,9 +273,26 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      * <p>Setter for the field <code>totalHeaderStretchWithOverflow</code>.</p>
      *
      * @param totalHeaderStretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #setTotalHeaderTextAdjust(TextAdjust)}
      */
-    public void setTotalHeaderStretchWithOverflow(Boolean totalHeaderStretchWithOverflow) {
+    @Deprecated
+    public void setTotalHeaderStretchWithOverflow(final Boolean totalHeaderStretchWithOverflow) {
         this.totalHeaderStretchWithOverflow = totalHeaderStretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTotalHeaderTextAdjust() {
+        return this.totalHeaderTextAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>totalHeaderTextAdjust</code>.</p>
+     *
+     * @param headerTextAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTotalHeaderTextAdjust(final TextAdjust headerTextAdjust) {
+        this.totalHeaderTextAdjust = headerTextAdjust;
     }
 
     /** {@inheritDoc} */
@@ -268,7 +306,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param totalHeaderStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public void setTotalHeaderStyle(DRIReportStyle totalHeaderStyle) {
+    public void setTotalHeaderStyle(final DRIReportStyle totalHeaderStyle) {
         this.totalHeaderStyle = totalHeaderStyle;
     }
 
@@ -283,7 +321,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param totalHeaderPropertyExpressions a {@link java.util.List} object.
      */
-    public void setTotalHeaderPropertyExpressions(List<DRIPropertyExpression> totalHeaderPropertyExpressions) {
+    public void setTotalHeaderPropertyExpressions(final List<DRIPropertyExpression> totalHeaderPropertyExpressions) {
         this.totalHeaderPropertyExpressions = totalHeaderPropertyExpressions;
     }
 
@@ -292,7 +330,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param totalHeaderPropertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
      */
-    public void addTotalHeaderPropertyExpression(DRIPropertyExpression totalHeaderPropertyExpression) {
+    public void addTotalHeaderPropertyExpression(final DRIPropertyExpression totalHeaderPropertyExpression) {
         Validate.notNull(totalHeaderPropertyExpression, "totalHeaderPropertyExpression must not be null");
         this.totalHeaderPropertyExpressions.add(totalHeaderPropertyExpression);
     }
@@ -308,7 +346,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setExpression(DRIExpression<T> expression) {
+    public void setExpression(final DRIExpression<T> expression) {
         Validate.notNull(expression, "expression must not be null");
         this.expression = expression;
     }
@@ -324,7 +362,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public void setDataType(DRIDataType<? super T, T> dataType) {
+    public void setDataType(final DRIDataType<? super T, T> dataType) {
         this.dataType = dataType;
     }
 
@@ -339,7 +377,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param orderByExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setOrderByExpression(DRIExpression<? extends Comparable<?>> orderByExpression) {
+    public void setOrderByExpression(final DRIExpression<? extends Comparable<?>> orderByExpression) {
         this.orderByExpression = orderByExpression;
     }
 
@@ -354,7 +392,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param orderType a {@link net.sf.dynamicreports.report.constant.OrderType} object.
      */
-    public void setOrderType(OrderType orderType) {
+    public void setOrderType(final OrderType orderType) {
         this.orderType = orderType;
     }
 
@@ -369,7 +407,7 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      *
      * @param comparatorExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setComparatorExpression(DRIExpression<? extends Comparator<?>> comparatorExpression) {
+    public void setComparatorExpression(final DRIExpression<? extends Comparator<?>> comparatorExpression) {
         this.comparatorExpression = comparatorExpression;
     }
 

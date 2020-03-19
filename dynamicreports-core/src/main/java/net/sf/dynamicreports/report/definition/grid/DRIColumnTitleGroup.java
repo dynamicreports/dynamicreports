@@ -20,17 +20,18 @@
  */
 package net.sf.dynamicreports.report.definition.grid;
 
+import java.util.List;
+
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
-import java.util.List;
-
 /**
  * <p>DRIColumnTitleGroup interface.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public interface DRIColumnTitleGroup extends DRIColumnGridComponent {
@@ -40,75 +41,84 @@ public interface DRIColumnTitleGroup extends DRIColumnGridComponent {
      *
      * @return a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridList} object.
      */
-    public DRIColumnGridList getList();
+    DRIColumnGridList getList();
 
     /**
      * <p>getTitleExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getTitleExpression();
+    DRIExpression<?> getTitleExpression();
 
     /**
      * <p>getTitleStyle.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public DRIReportStyle getTitleStyle();
+    DRIReportStyle getTitleStyle();
 
     /**
      * <p>getTitleWidth.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getTitleWidth();
+    Integer getTitleWidth();
 
     /**
      * <p>getTitleWidthType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
      */
-    public ComponentDimensionType getTitleWidthType();
+    ComponentDimensionType getTitleWidthType();
 
     /**
      * <p>getTitleColumns.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getTitleColumns();
+    Integer getTitleColumns();
 
     /**
      * <p>getTitleHeight.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getTitleHeight();
+    Integer getTitleHeight();
 
     /**
      * <p>getTitleHeightType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
      */
-    public ComponentDimensionType getTitleHeightType();
+    ComponentDimensionType getTitleHeightType();
 
     /**
      * <p>getTitleRows.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getTitleRows();
+    Integer getTitleRows();
 
     /**
      * <p>getTitleStretchWithOverflow.</p>
      *
      * @return a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #getTitleTextAdjust()}
      */
-    public Boolean getTitleStretchWithOverflow();
+    @Deprecated
+    Boolean getTitleStretchWithOverflow();
+
+    /**
+     * <p>getTitleTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getTitleTextAdjust();
 
     /**
      * <p>getTitlePropertyExpressions.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<DRIPropertyExpression> getTitlePropertyExpressions();
+    List<DRIPropertyExpression> getTitlePropertyExpressions();
 }

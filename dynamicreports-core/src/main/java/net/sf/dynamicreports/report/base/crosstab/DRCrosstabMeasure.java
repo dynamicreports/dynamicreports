@@ -20,10 +20,16 @@
  */
 package net.sf.dynamicreports.report.base.crosstab;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.base.DRHyperLink;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabCellStyle;
 import net.sf.dynamicreports.report.definition.crosstab.DRICrosstabMeasure;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
@@ -31,27 +37,24 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
-import org.apache.commons.lang3.Validate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>DRCrosstabMeasure class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private String name;
-    private DRIExpression<?> expression;
+    private final String name;
+    private final DRIExpression<?> expression;
     private DRIDataType<? super T, T> dataType;
     private String pattern;
     private HorizontalTextAlignment horizontalTextAlignment;
     private DRIValueFormatter<?, ? super T> valueFormatter;
     private Boolean stretchWithOverflow;
+    private TextAdjust textAdjust;
     private DRHyperLink hyperLink;
     private List<DRIPropertyExpression> propertyExpressions;
     private List<DRICrosstabCellStyle> styles;
@@ -63,12 +66,12 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRCrosstabMeasure(DRIExpression<?> expression) {
+    public DRCrosstabMeasure(final DRIExpression<?> expression) {
         Validate.notNull(expression, "expression must not be null");
         this.expression = expression;
         this.name = ReportUtils.generateUniqueName("crosstabMeasure");
-        this.styles = new ArrayList<DRICrosstabCellStyle>();
-        propertyExpressions = new ArrayList<DRIPropertyExpression>();
+        this.styles = new ArrayList<>();
+        propertyExpressions = new ArrayList<>();
     }
 
     /** {@inheritDoc} */
@@ -94,7 +97,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public void setDataType(DRIDataType<? super T, T> dataType) {
+    public void setDataType(final DRIDataType<? super T, T> dataType) {
         this.dataType = dataType;
     }
 
@@ -109,7 +112,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param pattern a {@link java.lang.String} object.
      */
-    public void setPattern(String pattern) {
+    public void setPattern(final String pattern) {
         this.pattern = pattern;
     }
 
@@ -124,7 +127,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public void setHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
@@ -139,7 +142,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public void setValueFormatter(DRIValueFormatter<?, ? super T> valueFormatter) {
+    public void setValueFormatter(final DRIValueFormatter<?, ? super T> valueFormatter) {
         this.valueFormatter = valueFormatter;
     }
 
@@ -153,9 +156,26 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
      */
-    public void setStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public void setStretchWithOverflow(final Boolean stretchWithOverflow) {
         this.stretchWithOverflow = stretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTextAdjust() {
+        return this.textAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>textAdjust</code>.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTextAdjust(final TextAdjust textAdjust) {
+        this.textAdjust = textAdjust;
     }
 
     /** {@inheritDoc} */
@@ -169,7 +189,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param hyperLink a {@link net.sf.dynamicreports.report.base.DRHyperLink} object.
      */
-    public void setHyperLink(DRHyperLink hyperLink) {
+    public void setHyperLink(final DRHyperLink hyperLink) {
         this.hyperLink = hyperLink;
     }
 
@@ -184,7 +204,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param propertyExpressions a {@link java.util.List} object.
      */
-    public void setPropertyExpressions(List<DRIPropertyExpression> propertyExpressions) {
+    public void setPropertyExpressions(final List<DRIPropertyExpression> propertyExpressions) {
         this.propertyExpressions = propertyExpressions;
     }
 
@@ -193,7 +213,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
      */
-    public void addPropertyExpression(DRIPropertyExpression propertyExpression) {
+    public void addPropertyExpression(final DRIPropertyExpression propertyExpression) {
         Validate.notNull(propertyExpression, "propertyExpression must not be null");
         this.propertyExpressions.add(propertyExpression);
     }
@@ -209,7 +229,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param styles a {@link java.util.List} object.
      */
-    public void setStyle(List<DRICrosstabCellStyle> styles) {
+    public void setStyle(final List<DRICrosstabCellStyle> styles) {
         this.styles = styles;
     }
 
@@ -224,7 +244,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setTitleExpression(DRIExpression<?> titleExpression) {
+    public void setTitleExpression(final DRIExpression<?> titleExpression) {
         this.titleExpression = titleExpression;
     }
 
@@ -239,7 +259,7 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      *
      * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public void setTitleStyle(DRIReportStyle titleStyle) {
+    public void setTitleStyle(final DRIReportStyle titleStyle) {
         this.titleStyle = titleStyle;
     }
 }

@@ -20,9 +20,13 @@
  */
 package net.sf.dynamicreports.report.definition.crosstab;
 
+import java.util.Comparator;
+import java.util.List;
+
 import net.sf.dynamicreports.report.constant.CrosstabTotalPosition;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.OrderType;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
@@ -31,144 +35,156 @@ import net.sf.dynamicreports.report.definition.expression.DRISystemExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
-import java.util.Comparator;
-import java.util.List;
-
 /**
  * <p>DRICrosstabGroup interface.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public interface DRICrosstabGroup<T> extends DRISystemExpression<T> {
 
     /** {@inheritDoc} */
-    @Override
-    public String getName();
+    @Override String getName();
 
     /**
      * <p>getHeaderPattern.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getHeaderPattern();
+    String getHeaderPattern();
 
     /**
      * <p>getHeaderHorizontalTextAlignment.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public HorizontalTextAlignment getHeaderHorizontalTextAlignment();
+    HorizontalTextAlignment getHeaderHorizontalTextAlignment();
 
     /**
      * <p>getHeaderValueFormatter.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public DRIValueFormatter<?, ? super T> getHeaderValueFormatter();
+    DRIValueFormatter<?, ? super T> getHeaderValueFormatter();
 
     /**
      * <p>getHeaderStretchWithOverflow.</p>
      *
      * @return a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #getHeaderTextAdjust()}
      */
-    public Boolean getHeaderStretchWithOverflow();
+    @Deprecated Boolean getHeaderStretchWithOverflow();
+
+    /**
+     * <p>getHeaderTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getHeaderTextAdjust();
 
     /**
      * <p>getHeaderHyperLink.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
      */
-    public DRIHyperLink getHeaderHyperLink();
+    DRIHyperLink getHeaderHyperLink();
 
     /**
      * <p>getHeaderStyle.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public DRIReportStyle getHeaderStyle();
+    DRIReportStyle getHeaderStyle();
 
     /**
      * <p>getHeaderPropertyExpressions.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<DRIPropertyExpression> getHeaderPropertyExpressions();
+    List<DRIPropertyExpression> getHeaderPropertyExpressions();
 
     /**
      * <p>getShowTotal.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getShowTotal();
+    Boolean getShowTotal();
 
     /**
      * <p>getTotalPosition.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.CrosstabTotalPosition} object.
      */
-    public CrosstabTotalPosition getTotalPosition();
+    CrosstabTotalPosition getTotalPosition();
 
     /**
      * <p>getTotalHeaderExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getTotalHeaderExpression();
+    DRIExpression<?> getTotalHeaderExpression();
 
     /**
      * <p>getTotalHeaderStretchWithOverflow.</p>
      *
      * @return a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #getTotalHeaderTextAdjust()}
      */
-    public Boolean getTotalHeaderStretchWithOverflow();
+    @Deprecated Boolean getTotalHeaderStretchWithOverflow();
+
+    /**
+     * <p>getTotalHeaderTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getTotalHeaderTextAdjust();
 
     /**
      * <p>getTotalHeaderStyle.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public DRIReportStyle getTotalHeaderStyle();
+    DRIReportStyle getTotalHeaderStyle();
 
     /**
      * <p>getTotalHeaderPropertyExpressions.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<DRIPropertyExpression> getTotalHeaderPropertyExpressions();
+    List<DRIPropertyExpression> getTotalHeaderPropertyExpressions();
 
     /**
      * <p>getExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<T> getExpression();
+    DRIExpression<T> getExpression();
 
     /**
      * <p>getDataType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public DRIDataType<? super T, T> getDataType();
+    DRIDataType<? super T, T> getDataType();
 
     /**
      * <p>getOrderByExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<? extends Comparable<?>> getOrderByExpression();
+    DRIExpression<? extends Comparable<?>> getOrderByExpression();
 
     /**
      * <p>getOrderType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.OrderType} object.
      */
-    public OrderType getOrderType();
+    OrderType getOrderType();
 
     /**
      * <p>getComparatorExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<? extends Comparator<?>> getComparatorExpression();
+    DRIExpression<? extends Comparator<?>> getComparatorExpression();
 }
