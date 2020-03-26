@@ -20,6 +20,14 @@
  */
 package net.sf.dynamicreports.report.defaults;
 
+import java.awt.Color;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
 import net.sf.dynamicreports.report.base.DRMargin;
 import net.sf.dynamicreports.report.base.datatype.DRDataType;
 import net.sf.dynamicreports.report.base.style.DRFont;
@@ -44,6 +52,7 @@ import net.sf.dynamicreports.report.constant.Position;
 import net.sf.dynamicreports.report.constant.RunDirection;
 import net.sf.dynamicreports.report.constant.SplitType;
 import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.constant.TimePeriod;
 import net.sf.dynamicreports.report.constant.ValueLocation;
 import net.sf.dynamicreports.report.constant.VerticalCellComponentAlignment;
@@ -51,20 +60,13 @@ import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.report.constant.WhenResourceMissingType;
 import net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer;
 import net.sf.dynamicreports.report.definition.component.DRIComponent;
+import net.sf.dynamicreports.report.definition.component.DRITextField;
 import net.sf.dynamicreports.report.definition.style.DRIStyle;
-
-import java.awt.Color;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 /**
  * <p>Default class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public class Default {
@@ -138,6 +140,7 @@ public class Default {
     private int textFieldWidth;
     private boolean textFieldPrintRepeatedValues;
     private boolean textFieldStretchWithOverflow;
+    private TextAdjust textFieldTextAdjust;
     // image
     private int imageWidth;
     private int imageHeight;
@@ -354,6 +357,7 @@ public class Default {
         this.textFieldWidth = 100;
         this.textFieldPrintRepeatedValues = true;
         this.textFieldStretchWithOverflow = true;
+        this.textFieldTextAdjust = TextAdjust.STRETCH_HEIGHT;
 
         this.imageWidth = 100;
         this.imageHeight = 100;
@@ -397,7 +401,7 @@ public class Default {
 
         this.chartWidth = 200;
         this.chartHeight = 200;
-        this.chartSeriesColors = new ArrayList<Color>();
+        this.chartSeriesColors = new ArrayList<>();
         this.chartValuePattern = "#,##0.##";
         this.chartPercentValuePattern = "#,##0.##";
         this.chartCategoryDatasetUseSeriesAsCategory = false;
@@ -464,30 +468,30 @@ public class Default {
 
         this.font = new DRFont("SansSerif", 10);
 
-        this.bigDecimalType = new DRDataType<Number, BigDecimal>("#,##0.00#", HorizontalTextAlignment.RIGHT);
-        this.bigIntegerType = new DRDataType<Number, BigInteger>("#,##0", HorizontalTextAlignment.RIGHT);
-        this.byteType = new DRDataType<Number, Byte>("#,##0", HorizontalTextAlignment.RIGHT);
-        this.doubleType = new DRDataType<Number, Double>("#,##0.#", HorizontalTextAlignment.RIGHT);
-        this.floatType = new DRDataType<Number, Float>("#,##0.#", HorizontalTextAlignment.RIGHT);
-        this.integerType = new DRDataType<Number, Integer>("#,##0", HorizontalTextAlignment.RIGHT);
-        this.longType = new DRDataType<Number, Long>("#,##0", HorizontalTextAlignment.RIGHT);
-        this.shortType = new DRDataType<Number, Short>("#,##0", HorizontalTextAlignment.RIGHT);
-        this.dateType = new DRDataType<Date, Date>("MM/dd/yyyy", HorizontalTextAlignment.RIGHT);
-        this.dateYearToMonthType = new DRDataType<Date, Date>("MM/yyyy", HorizontalTextAlignment.RIGHT);
-        this.dateYearToHourType = new DRDataType<Date, Date>("MM/dd/yyyy h a", HorizontalTextAlignment.RIGHT);
-        this.dateYearToMinuteType = new DRDataType<Date, Date>("MM/dd/yyyy h:mm a", HorizontalTextAlignment.RIGHT);
-        this.dateYearToSecondType = new DRDataType<Date, Date>("MM/dd/yyyy h:mm:ss a", HorizontalTextAlignment.RIGHT);
-        this.dateYearToFractionType = new DRDataType<Date, Date>("MM/dd/yyyy h:mm:ss,SSS a", HorizontalTextAlignment.RIGHT);
-        this.dateYearType = new DRDataType<Date, Date>("yyyy", HorizontalTextAlignment.RIGHT);
-        this.dateMonthType = new DRDataType<Date, Date>("MMMM", HorizontalTextAlignment.RIGHT);
-        this.dateDayType = new DRDataType<Date, Date>("dd", HorizontalTextAlignment.RIGHT);
-        this.timeHourToMinuteType = new DRDataType<Date, Date>("h:mm a", HorizontalTextAlignment.RIGHT);
-        this.timeHourToSecondType = new DRDataType<Date, Date>("h:mm:ss a", HorizontalTextAlignment.RIGHT);
-        this.timeHourToFractionType = new DRDataType<Date, Date>("h:mm:ss,SSS a", HorizontalTextAlignment.RIGHT);
-        this.percentageType = new DRDataType<Number, Double>("#,##0.00%", HorizontalTextAlignment.RIGHT);
-        this.booleanType = new DRDataType<Boolean, Boolean>(null, HorizontalTextAlignment.CENTER);
-        this.characterType = new DRDataType<Character, Character>(null, HorizontalTextAlignment.LEFT);
-        this.stringType = new DRDataType<String, String>(null, HorizontalTextAlignment.LEFT);
+        this.bigDecimalType = new DRDataType<>("#,##0.00#", HorizontalTextAlignment.RIGHT);
+        this.bigIntegerType = new DRDataType<>("#,##0", HorizontalTextAlignment.RIGHT);
+        this.byteType = new DRDataType<>("#,##0", HorizontalTextAlignment.RIGHT);
+        this.doubleType = new DRDataType<>("#,##0.#", HorizontalTextAlignment.RIGHT);
+        this.floatType = new DRDataType<>("#,##0.#", HorizontalTextAlignment.RIGHT);
+        this.integerType = new DRDataType<>("#,##0", HorizontalTextAlignment.RIGHT);
+        this.longType = new DRDataType<>("#,##0", HorizontalTextAlignment.RIGHT);
+        this.shortType = new DRDataType<>("#,##0", HorizontalTextAlignment.RIGHT);
+        this.dateType = new DRDataType<>("MM/dd/yyyy", HorizontalTextAlignment.RIGHT);
+        this.dateYearToMonthType = new DRDataType<>("MM/yyyy", HorizontalTextAlignment.RIGHT);
+        this.dateYearToHourType = new DRDataType<>("MM/dd/yyyy h a", HorizontalTextAlignment.RIGHT);
+        this.dateYearToMinuteType = new DRDataType<>("MM/dd/yyyy h:mm a", HorizontalTextAlignment.RIGHT);
+        this.dateYearToSecondType = new DRDataType<>("MM/dd/yyyy h:mm:ss a", HorizontalTextAlignment.RIGHT);
+        this.dateYearToFractionType = new DRDataType<>("MM/dd/yyyy h:mm:ss,SSS a", HorizontalTextAlignment.RIGHT);
+        this.dateYearType = new DRDataType<>("yyyy", HorizontalTextAlignment.RIGHT);
+        this.dateMonthType = new DRDataType<>("MMMM", HorizontalTextAlignment.RIGHT);
+        this.dateDayType = new DRDataType<>("dd", HorizontalTextAlignment.RIGHT);
+        this.timeHourToMinuteType = new DRDataType<>("h:mm a", HorizontalTextAlignment.RIGHT);
+        this.timeHourToSecondType = new DRDataType<>("h:mm:ss a", HorizontalTextAlignment.RIGHT);
+        this.timeHourToFractionType = new DRDataType<>("h:mm:ss,SSS a", HorizontalTextAlignment.RIGHT);
+        this.percentageType = new DRDataType<>("#,##0.00%", HorizontalTextAlignment.RIGHT);
+        this.booleanType = new DRDataType<>(null, HorizontalTextAlignment.CENTER);
+        this.characterType = new DRDataType<>(null, HorizontalTextAlignment.LEFT);
+        this.stringType = new DRDataType<>(null, HorizontalTextAlignment.LEFT);
 
         this.loadSystemFonts = true;
     }
@@ -1045,9 +1049,20 @@ public class Default {
      * <p>isTextFieldStretchWithOverflow.</p>
      *
      * @return a boolean.
+     * @deprecated replaced by {@link #getTextFieldTextAdjust(DRITextField)}
      */
+    @Deprecated
     public boolean isTextFieldStretchWithOverflow() {
         return textFieldStretchWithOverflow;
+    }
+
+    /**
+     * <p>getTextFieldTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public TextAdjust getTextFieldTextAdjust() {
+        return null;
     }
 
     /**
@@ -2027,7 +2042,7 @@ public class Default {
      *
      * @param loadSystemFonts a boolean.
      */
-    protected void setLoadSystemFonts(boolean loadSystemFonts) {
+    protected void setLoadSystemFonts(final boolean loadSystemFonts) {
         this.loadSystemFonts = loadSystemFonts;
     }
 

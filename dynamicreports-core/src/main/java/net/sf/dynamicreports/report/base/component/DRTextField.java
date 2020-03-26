@@ -20,21 +20,23 @@
  */
 package net.sf.dynamicreports.report.base.component;
 
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.base.DRGroup;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.Evaluation;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.component.DRITextField;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
-import org.apache.commons.lang3.Validate;
 
 /**
  * <p>DRTextField class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField<T> {
@@ -53,6 +55,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
     private Markup markup;
     private Boolean stretchWithOverflow;
     private Boolean printRepeatedValues;
+    private TextAdjust textAdjust;
 
     /** {@inheritDoc} */
     @Override
@@ -65,7 +68,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setValueExpression(DRIExpression<T> valueExpression) {
+    public void setValueExpression(final DRIExpression<T> valueExpression) {
         Validate.notNull(valueExpression, "valueExpression must not be null");
         this.valueExpression = valueExpression;
     }
@@ -81,7 +84,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param pattern a {@link java.lang.String} object.
      */
-    public void setPattern(String pattern) {
+    public void setPattern(final String pattern) {
         this.pattern = pattern;
     }
 
@@ -96,7 +99,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param patternExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setPatternExpression(DRIExpression<String> patternExpression) {
+    public void setPatternExpression(final DRIExpression<String> patternExpression) {
         this.patternExpression = patternExpression;
     }
 
@@ -111,7 +114,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public void setHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
@@ -126,7 +129,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param valueFormatter a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public void setValueFormatter(DRIValueFormatter<?, ? super T> valueFormatter) {
+    public void setValueFormatter(final DRIValueFormatter<?, ? super T> valueFormatter) {
         this.valueFormatter = valueFormatter;
     }
 
@@ -141,7 +144,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param dataType a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public void setDataType(DRIDataType<? super T, T> dataType) {
+    public void setDataType(final DRIDataType<? super T, T> dataType) {
         this.dataType = dataType;
     }
 
@@ -161,7 +164,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * @param columns the number of columns >= 0
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public void setColumns(Integer columns) {
+    public void setColumns(final Integer columns) {
         if (columns != null) {
             Validate.isTrue(columns >= 0, "columns must be >= 0");
         }
@@ -184,7 +187,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * @param rows the number of rows >= 0
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public void setRows(Integer rows) {
+    public void setRows(final Integer rows) {
         if (rows != null) {
             Validate.isTrue(rows >= 0, "rows must be >= 0");
         }
@@ -202,7 +205,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param evaluationTime a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      */
-    public void setEvaluationTime(Evaluation evaluationTime) {
+    public void setEvaluationTime(final Evaluation evaluationTime) {
         this.evaluationTime = evaluationTime;
     }
 
@@ -217,7 +220,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param evaluationGroup a {@link net.sf.dynamicreports.report.base.DRGroup} object.
      */
-    public void setEvaluationGroup(DRGroup evaluationGroup) {
+    public void setEvaluationGroup(final DRGroup evaluationGroup) {
         this.evaluationGroup = evaluationGroup;
     }
 
@@ -232,7 +235,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param markup a {@link net.sf.dynamicreports.report.constant.Markup} object.
      */
-    public void setMarkup(Markup markup) {
+    public void setMarkup(final Markup markup) {
         this.markup = markup;
     }
 
@@ -246,8 +249,10 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced {@link #setTextAdjust(TextAdjust)}
      */
-    public void setStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public void setStretchWithOverflow(final Boolean stretchWithOverflow) {
         this.stretchWithOverflow = stretchWithOverflow;
     }
 
@@ -262,7 +267,22 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      *
      * @param printRepeatedValues a {@link java.lang.Boolean} object.
      */
-    public void setPrintRepeatedValues(Boolean printRepeatedValues) {
+    public void setPrintRepeatedValues(final Boolean printRepeatedValues) {
         this.printRepeatedValues = printRepeatedValues;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTextAdjust() {
+        return this.textAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>textAdjust</code>.</p>
+     *
+     * @param setTextAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTextAdjust(final TextAdjust textAdjust) {
+        this.textAdjust = textAdjust;
     }
 }

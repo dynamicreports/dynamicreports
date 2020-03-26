@@ -28,6 +28,7 @@ import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.HorizontalAlignment;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
@@ -36,7 +37,7 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 /**
  * <p>Abstract ValueColumnBuilder class.</p>
  *
- * @author Ricardo Mariaca
+ * @author Ricardo Mariaca, Jan Moxter
  * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})
@@ -47,7 +48,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * <p>Constructor for ValueColumnBuilder.</p>
      */
     protected ValueColumnBuilder() {
-        super(new DRValueColumn<U>(new DRTextField<U>()));
+        super(new DRValueColumn<>(new DRTextField<U>()));
     }
 
     /**
@@ -55,7 +56,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param valueExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    protected void setValueExpression(DRIExpression<U> valueExpression) {
+    protected void setValueExpression(final DRIExpression<U> valueExpression) {
         getComponent().setValueExpression(valueExpression);
     }
 
@@ -65,7 +66,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param printRepeatedDetailValues print repeated detail values
      * @return a column builder
      */
-    public T setPrintRepeatedDetailValues(Boolean printRepeatedDetailValues) {
+    public T setPrintRepeatedDetailValues(final Boolean printRepeatedDetailValues) {
         getObject().setPrintRepeatedDetailValues(printRepeatedDetailValues);
         return (T) this;
     }
@@ -78,7 +79,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @deprecated use setHorizontalTextAlignment instead
      */
     @Deprecated
-    public T setHorizontalAlignment(HorizontalAlignment horizontalAlignment) {
+    public T setHorizontalAlignment(final HorizontalAlignment horizontalAlignment) {
         if (horizontalAlignment != null) {
             getComponent().setHorizontalTextAlignment(HorizontalTextAlignment.valueOf(horizontalAlignment.name()));
         } else {
@@ -94,7 +95,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      * @return a column builder
      */
-    public T setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public T setHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         getComponent().setHorizontalTextAlignment(horizontalTextAlignment);
         return (T) this;
     }
@@ -105,7 +106,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param pattern the format pattern
      * @return a column builder
      */
-    public T setPattern(String pattern) {
+    public T setPattern(final String pattern) {
         getComponent().setPattern(pattern);
         return (T) this;
     }
@@ -116,7 +117,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param patternExpression the format pattern expression
      * @return a column builder
      */
-    public T setPattern(DRIExpression<String> patternExpression) {
+    public T setPattern(final DRIExpression<String> patternExpression) {
         getComponent().setPatternExpression(patternExpression);
         return (T) this;
     }
@@ -127,7 +128,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param valueFormatter the value formatter expression
      * @return a column builder
      */
-    public T setValueFormatter(DRIValueFormatter<?, ? super U> valueFormatter) {
+    public T setValueFormatter(final DRIValueFormatter<?, ? super U> valueFormatter) {
         getComponent().setValueFormatter(valueFormatter);
         return (T) this;
     }
@@ -138,7 +139,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param dataType the data type
      * @return a column builder
      */
-    public T setDataType(DRIDataType<? super U, U> dataType) {
+    public T setDataType(final DRIDataType<? super U, U> dataType) {
         getComponent().setDataType(dataType);
         return (T) this;
     }
@@ -150,7 +151,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public T setColumns(Integer columns) {
+    public T setColumns(final Integer columns) {
         getComponent().setColumns(columns);
         return (T) this;
     }
@@ -162,7 +163,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public T setFixedColumns(Integer columns) {
+    public T setFixedColumns(final Integer columns) {
         getComponent().setColumns(columns);
         getComponent().setWidthType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -175,7 +176,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public T setMinColumns(Integer columns) {
+    public T setMinColumns(final Integer columns) {
         getComponent().setColumns(columns);
         getComponent().setWidthType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -188,7 +189,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setRows(Integer rows) {
+    public T setRows(final Integer rows) {
         getComponent().setRows(rows);
         return (T) this;
     }
@@ -200,7 +201,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setFixedRows(Integer rows) {
+    public T setFixedRows(final Integer rows) {
         getComponent().setRows(rows);
         getComponent().setHeightType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -213,7 +214,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @return a column builder
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public T setMinRows(Integer rows) {
+    public T setMinRows(final Integer rows) {
         getComponent().setRows(rows);
         getComponent().setHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -225,7 +226,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param anchorName a {@link java.lang.String} object.
      * @return a T object.
      */
-    public T setAnchorName(String anchorName) {
+    public T setAnchorName(final String anchorName) {
         getComponent().setAnchorNameExpression(Expressions.text(anchorName));
         return (T) this;
     }
@@ -236,7 +237,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param anchorNameExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a T object.
      */
-    public T setAnchorName(DRIExpression<String> anchorNameExpression) {
+    public T setAnchorName(final DRIExpression<String> anchorNameExpression) {
         getComponent().setAnchorNameExpression(anchorNameExpression);
         return (T) this;
     }
@@ -247,7 +248,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param bookmarkLevel a {@link java.lang.Integer} object.
      * @return a T object.
      */
-    public T setBookmarkLevel(Integer bookmarkLevel) {
+    public T setBookmarkLevel(final Integer bookmarkLevel) {
         getComponent().setBookmarkLevel(bookmarkLevel);
         return (T) this;
     }
@@ -258,7 +259,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param hyperLink the value hyperlink
      * @return a column builder
      */
-    public T setHyperLink(HyperLinkBuilder hyperLink) {
+    public T setHyperLink(final HyperLinkBuilder hyperLink) {
         if (hyperLink != null) {
             getComponent().setHyperLink(hyperLink.getHyperLink());
         } else {
@@ -275,7 +276,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setWidth(Integer width) {
+    public T setWidth(final Integer width) {
         getComponent().setWidth(width);
         return (T) this;
     }
@@ -288,7 +289,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setFixedWidth(Integer width) {
+    public T setFixedWidth(final Integer width) {
         getComponent().setWidth(width);
         getComponent().setWidthType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -302,7 +303,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setMinWidth(Integer width) {
+    public T setMinWidth(final Integer width) {
         getComponent().setWidth(width);
         getComponent().setWidthType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -316,7 +317,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setHeight(Integer height) {
+    public T setHeight(final Integer height) {
         getComponent().setHeight(height);
         return (T) this;
     }
@@ -329,7 +330,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setFixedHeight(Integer height) {
+    public T setFixedHeight(final Integer height) {
         getComponent().setHeight(height);
         getComponent().setHeightType(ComponentDimensionType.FIXED);
         return (T) this;
@@ -343,7 +344,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public T setMinHeight(Integer height) {
+    public T setMinHeight(final Integer height) {
         getComponent().setHeight(height);
         getComponent().setHeightType(ComponentDimensionType.EXPAND);
         return (T) this;
@@ -354,9 +355,22 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param stretchWithOverflow a {@link java.lang.Boolean} object.
      * @return a T object.
+     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
      */
-    public T setStretchWithOverflow(Boolean stretchWithOverflow) {
+    @Deprecated
+    public T setStretchWithOverflow(final Boolean stretchWithOverflow) {
         getComponent().setStretchWithOverflow(stretchWithOverflow);
+        return (T) this;
+    }
+
+    /**
+     * <p>setTextAdjust.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @return a T object.
+     */
+    public T setTextAdjust(final TextAdjust textAdjust) {
+        getComponent().setTextAdjust(textAdjust);
         return (T) this;
     }
 
@@ -375,7 +389,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param printInFirstWholeBand a {@link java.lang.Boolean} object.
      * @return a T object.
      */
-    public T setPrintInFirstWholeBand(Boolean printInFirstWholeBand) {
+    public T setPrintInFirstWholeBand(final Boolean printInFirstWholeBand) {
         getComponent().setPrintInFirstWholeBand(printInFirstWholeBand);
         return (T) this;
     }
@@ -395,7 +409,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param printWhenDetailOverflows a {@link java.lang.Boolean} object.
      * @return a T object.
      */
-    public T setPrintWhenDetailOverflows(Boolean printWhenDetailOverflows) {
+    public T setPrintWhenDetailOverflows(final Boolean printWhenDetailOverflows) {
         getComponent().setPrintWhenDetailOverflows(printWhenDetailOverflows);
         return (T) this;
     }
@@ -406,7 +420,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param propertyExpression the property expression
      * @return a column builder
      */
-    public T addProperty(DRIPropertyExpression propertyExpression) {
+    public T addProperty(final DRIPropertyExpression propertyExpression) {
         getComponent().addPropertyExpression(propertyExpression);
         return (T) this;
     }
@@ -418,7 +432,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param valueExpression the property value expression
      * @return a column builder
      */
-    public T addProperty(String name, DRIExpression<String> valueExpression) {
+    public T addProperty(final String name, final DRIExpression<String> valueExpression) {
         getComponent().addPropertyExpression(Expressions.property(name, valueExpression));
         return (T) this;
     }
@@ -430,7 +444,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      * @param value the property value
      * @return a column builder
      */
-    public T addProperty(String name, String value) {
+    public T addProperty(final String name, final String value) {
         getComponent().addPropertyExpression(Expressions.property(name, value));
         return (T) this;
     }

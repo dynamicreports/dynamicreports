@@ -20,6 +20,11 @@
  */
 package net.sf.dynamicreports.jasper.transformation;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
 import net.sf.dynamicreports.design.base.component.DRDesignComponent;
 import net.sf.dynamicreports.design.base.component.DRDesignTextField;
 import net.sf.dynamicreports.design.constant.EvaluationTime;
@@ -76,26 +81,22 @@ import net.sf.jasperreports.engine.design.JRDesignTextField;
 import net.sf.jasperreports.engine.type.HyperlinkTargetEnum;
 import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
 import net.sf.jasperreports.engine.type.OnErrorTypeEnum;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>ComponentTransform class.</p>
  *
- * @author Ricardo Mariaca
- * 
+ * @author Ricardo Mariaca, Jan Moxter
+ *
  */
 public class ComponentTransform {
-    private JasperTransformAccessor accessor;
+    private final JasperTransformAccessor accessor;
 
     /**
      * <p>Constructor for ComponentTransform.</p>
      *
      * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
      */
-    public ComponentTransform(JasperTransformAccessor accessor) {
+    public ComponentTransform(final JasperTransformAccessor accessor) {
         this.accessor = accessor;
     }
 
@@ -106,54 +107,54 @@ public class ComponentTransform {
      * @param listType  a {@link net.sf.dynamicreports.report.constant.ListType} object.
      * @return an array of {@link net.sf.jasperreports.engine.design.JRDesignElement} objects.
      */
-    protected JRDesignElement[] component(DRIDesignComponent component, ListType listType) {
+    protected JRDesignElement[] component(final DRIDesignComponent component, final ListType listType) {
         JRDesignElement[] jrElements;
         if (component instanceof DRIDesignChart) {
-            JRDesignElement jrElement = accessor.getChartTransform().transform((DRIDesignChart) component);
+            final JRDesignElement jrElement = accessor.getChartTransform().transform((DRIDesignChart) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignBarcode) {
-            JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarcode) component);
+            final JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarcode) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignBarbecue) {
-            JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarbecue) component);
+            final JRDesignElement jrElement = accessor.getBarcodeTransform().transform((DRIDesignBarbecue) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignList) {
             jrElements = list((DRIDesignList) component);
         } else if (component instanceof DRIDesignTextField) {
-            JRDesignElement jrElement = textField((DRIDesignTextField) component);
+            final JRDesignElement jrElement = textField((DRIDesignTextField) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignFiller) {
-            JRDesignElement jrElement = filler((DRIDesignFiller) component);
+            final JRDesignElement jrElement = filler((DRIDesignFiller) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignImage) {
-            JRDesignElement jrElement = image((DRIDesignImage) component);
+            final JRDesignElement jrElement = image((DRIDesignImage) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignSubreport) {
-            JRDesignElement jrElement = subreport((DRIDesignSubreport) component, component.getWidth());
+            final JRDesignElement jrElement = subreport((DRIDesignSubreport) component, component.getWidth());
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignLine) {
-            JRDesignElement jrElement = line((DRIDesignLine) component);
+            final JRDesignElement jrElement = line((DRIDesignLine) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignEllipse) {
-            JRDesignElement jrElement = ellipse((DRIDesignEllipse) component);
+            final JRDesignElement jrElement = ellipse((DRIDesignEllipse) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignRectangle) {
-            JRDesignElement jrElement = rectangle((DRIDesignRectangle) component);
+            final JRDesignElement jrElement = rectangle((DRIDesignRectangle) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignBreak) {
-            JRDesignElement jrElement = breakComponent((DRIDesignBreak) component);
+            final JRDesignElement jrElement = breakComponent((DRIDesignBreak) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignGenericElement) {
-            JRDesignElement jrElement = genericElement((DRIDesignGenericElement) component);
+            final JRDesignElement jrElement = genericElement((DRIDesignGenericElement) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignCrosstab) {
-            JRDesignElement jrElement = accessor.getCrosstabTransform().transform((DRIDesignCrosstab) component);
+            final JRDesignElement jrElement = accessor.getCrosstabTransform().transform((DRIDesignCrosstab) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignMap) {
-            JRDesignElement jrElement = map((DRIDesignMap) component);
+            final JRDesignElement jrElement = map((DRIDesignMap) component);
             jrElements = component(jrElement, component, listType);
         } else if (component instanceof DRIDesignCustomComponent) {
-            JRDesignElement jrElement = customComponent(component);
+            final JRDesignElement jrElement = customComponent(component);
             jrElements = component(jrElement, component, listType);
         } else {
             throw new JasperDesignException("Component " + component.getClass().getName() + " not supported");
@@ -162,7 +163,7 @@ public class ComponentTransform {
         return jrElements;
     }
 
-    private JRDesignElement[] component(JRDesignElement jrElement, DRIDesignComponent component, ListType listType) {
+    private JRDesignElement[] component(final JRDesignElement jrElement, final DRIDesignComponent component, final ListType listType) {
         StretchType stretchType = component.getStretchType();
         if (stretchType == null) {
             if (component instanceof DRIDesignSubreport || component instanceof DRIDesignLine || component instanceof DRIDesignBreak || component instanceof DRIDesignCrosstab ||
@@ -197,16 +198,16 @@ public class ComponentTransform {
         jrElement.setPrintWhenExpression(accessor.getExpressionTransform().getExpression(component.getPrintWhenExpression()));
         jrElement.setRemoveLineWhenBlank(component.isRemoveLineWhenBlank());
 
-        for (DRIDesignPropertyExpression propertyExpression : component.getPropertyExpressions()) {
+        for (final DRIDesignPropertyExpression propertyExpression : component.getPropertyExpressions()) {
             jrElement.addPropertyExpression(accessor.getExpressionTransform().getPropertyExpression(propertyExpression));
         }
 
-        DRIDesignTableOfContentsHeading tocHeading = component.getTableOfContentsHeading();
+        final DRIDesignTableOfContentsHeading tocHeading = component.getTableOfContentsHeading();
         if (tocHeading != null) {
-            DRDesignTextField referenceField = (DRDesignTextField) tocHeading.getReferenceField();
+            final DRDesignTextField referenceField = (DRDesignTextField) tocHeading.getReferenceField();
             referenceField.setX(component.getX());
             referenceField.setY(component.getY());
-            JRDesignElement jrReferenceElement = textField(referenceField);
+            final JRDesignElement jrReferenceElement = textField(referenceField);
             component(jrReferenceElement, referenceField, listType);
             return new JRDesignElement[] {jrReferenceElement, jrElement};
         } else {
@@ -214,7 +215,7 @@ public class ComponentTransform {
         }
     }
 
-    private StretchType detectStretchType(ListType listType) {
+    private StretchType detectStretchType(final ListType listType) {
         if (listType == null || listType.equals(ListType.VERTICAL)) {
             return StretchType.NO_STRETCH;
         }
@@ -223,30 +224,30 @@ public class ComponentTransform {
     }
 
     // list
-    private JRDesignElement[] list(DRIDesignList list) {
+    private JRDesignElement[] list(final DRIDesignList list) {
         switch (list.getComponentGroupType()) {
             case FRAME:
-                JRDesignFrame frame = new JRDesignFrame();
-                JRDesignElement[] jrElems = component(frame, list, list.getType());
+                final JRDesignFrame frame = new JRDesignFrame();
+                final JRDesignElement[] jrElems = component(frame, list, list.getType());
 
-                DRDesignComponent background = (DRDesignComponent) list.getBackgroundComponent();
+                final DRDesignComponent background = (DRDesignComponent) list.getBackgroundComponent();
                 if (background != null) {
-                    JRDesignElement jrBackground = component(background, list.getType())[0];
+                    final JRDesignElement jrBackground = component(background, list.getType())[0];
                     frame.addElement(jrBackground);
                 }
 
-                for (DRIDesignComponent element : list.getComponents()) {
-                    JRDesignElement[] jrElements = component(element, list.getType());
-                    for (JRDesignElement jrElement : jrElements) {
+                for (final DRIDesignComponent element : list.getComponents()) {
+                    final JRDesignElement[] jrElements = component(element, list.getType());
+                    for (final JRDesignElement jrElement : jrElements) {
                         frame.addElement(jrElement);
                     }
                 }
                 return jrElems;
             case NONE:
-                List<JRDesignElement> jrElementList = new ArrayList<JRDesignElement>();
-                for (DRIDesignComponent element : list.getComponents()) {
-                    JRDesignElement[] jrElements = component(element, list.getType());
-                    for (JRDesignElement jrElement : jrElements) {
+                final List<JRDesignElement> jrElementList = new ArrayList<>();
+                for (final DRIDesignComponent element : list.getComponents()) {
+                    final JRDesignElement[] jrElements = component(element, list.getType());
+                    for (final JRDesignElement jrElement : jrElements) {
                         jrElementList.add(jrElement);
                     }
                 }
@@ -257,22 +258,22 @@ public class ComponentTransform {
     }
 
     // textField
-    private JRDesignElement textField(DRIDesignTextField textField) {
-        JRDesignTextField jrTextField = new JRDesignTextField();
+    private JRDesignElement textField(final DRIDesignTextField textField) {
+        final JRDesignTextField jrTextField = new JRDesignTextField();
 
         jrTextField.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(textField.getAnchorNameExpression()));
         if (textField.getBookmarkLevel() != null) {
             jrTextField.setBookmarkLevel(textField.getBookmarkLevel());
         }
 
-        DRIDesignHyperLink hyperLink = textField.getHyperLink();
+        final DRIDesignHyperLink hyperLink = textField.getHyperLink();
         if (hyperLink != null) {
             jrTextField.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
             jrTextField.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
             jrTextField.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
             jrTextField.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
-                HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
+                final HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
                     jrTextField.setHyperlinkType(hyperLinkType);
                 } else {
@@ -280,7 +281,7 @@ public class ComponentTransform {
                 }
             }
             if (hyperLink.getTarget() != null) {
-                HyperlinkTargetEnum hyperLinkTarget = ConstantTransform.hyperLinkTarget(hyperLink.getTarget());
+                final HyperlinkTargetEnum hyperLinkTarget = ConstantTransform.hyperLinkTarget(hyperLink.getTarget());
                 if (hyperLinkTarget != null) {
                     jrTextField.setHyperlinkTarget(hyperLinkTarget);
                 } else {
@@ -289,15 +290,19 @@ public class ComponentTransform {
             }
         }
 
-        EvaluationTime evaluationTime = textField.getEvaluationTime();
+        final EvaluationTime evaluationTime = textField.getEvaluationTime();
         jrTextField.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && textField.getEvaluationGroup() != null) {
             jrTextField.setEvaluationGroup(accessor.getGroupTransform().getGroup(textField.getEvaluationGroup()));
         }
 
-        jrTextField.setStretchWithOverflow(textField.isStretchWithOverflow());
+        if (textField.getTextAdjust() != null) {
+            jrTextField.setTextAdjust(ConstantTransform.textAdjust(textField.getTextAdjust()));
+        } else {
+            jrTextField.setStretchWithOverflow(textField.isStretchWithOverflow());
+        }
 
-        String pattern = textField.getPattern();
+        final String pattern = textField.getPattern();
         if (!StringUtils.isBlank(pattern)) {
             jrTextField.setPattern(pattern);
         }
@@ -312,28 +317,28 @@ public class ComponentTransform {
     }
 
     // filler
-    private JRDesignElement filler(DRIDesignFiller filler) {
-        JRDesignStaticText jrDesignStaticText = new JRDesignStaticText();
+    private JRDesignElement filler(final DRIDesignFiller filler) {
+        final JRDesignStaticText jrDesignStaticText = new JRDesignStaticText();
         return jrDesignStaticText;
     }
 
     // image
-    private JRDesignElement image(DRIDesignImage image) {
-        JRDesignImage jrImage = new JRDesignImage(new JRDesignStyle().getDefaultStyleProvider());
+    private JRDesignElement image(final DRIDesignImage image) {
+        final JRDesignImage jrImage = new JRDesignImage(new JRDesignStyle().getDefaultStyleProvider());
 
         jrImage.setAnchorNameExpression(accessor.getExpressionTransform().getExpression(image.getAnchorNameExpression()));
         if (image.getBookmarkLevel() != null) {
             jrImage.setBookmarkLevel(image.getBookmarkLevel());
         }
 
-        DRIDesignHyperLink hyperLink = image.getHyperLink();
+        final DRIDesignHyperLink hyperLink = image.getHyperLink();
         if (hyperLink != null) {
             jrImage.setHyperlinkAnchorExpression(accessor.getExpressionTransform().getExpression(hyperLink.getAnchorExpression()));
             jrImage.setHyperlinkPageExpression(accessor.getExpressionTransform().getExpression(hyperLink.getPageExpression()));
             jrImage.setHyperlinkReferenceExpression(accessor.getExpressionTransform().getExpression(hyperLink.getReferenceExpression()));
             jrImage.setHyperlinkTooltipExpression(accessor.getExpressionTransform().getExpression(hyperLink.getTooltipExpression()));
             if (hyperLink.getType() != null) {
-                HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
+                final HyperlinkTypeEnum hyperLinkType = ConstantTransform.hyperLinkType(hyperLink.getType());
                 if (hyperLinkType != null) {
                     jrImage.setHyperlinkType(hyperLinkType);
                 } else {
@@ -341,7 +346,7 @@ public class ComponentTransform {
                 }
             }
             if (hyperLink.getTarget() != null) {
-                HyperlinkTargetEnum hyperLinkTarget = ConstantTransform.hyperLinkTarget(hyperLink.getTarget());
+                final HyperlinkTargetEnum hyperLinkTarget = ConstantTransform.hyperLinkTarget(hyperLink.getTarget());
                 if (hyperLinkTarget != null) {
                     jrImage.setHyperlinkTarget(hyperLinkTarget);
                 } else {
@@ -365,26 +370,26 @@ public class ComponentTransform {
     }
 
     // subreport
-    private JRDesignElement subreport(DRIDesignSubreport subreport, Integer width) {
-        JRDesignSubreport jrSubreport = new JRDesignSubreport(new JRDesignStyle().getDefaultStyleProvider());
+    private JRDesignElement subreport(final DRIDesignSubreport subreport, final Integer width) {
+        final JRDesignSubreport jrSubreport = new JRDesignSubreport(new JRDesignStyle().getDefaultStyleProvider());
         jrSubreport.setConnectionExpression(accessor.getExpressionTransform().getExpression(subreport.getConnectionExpression()));
         jrSubreport.setDataSourceExpression(accessor.getExpressionTransform().getExpression(subreport.getDataSourceExpression()));
         jrSubreport.setRunToBottom(subreport.getRunToBottom());
 
         if (ReportBuilder.class.isAssignableFrom(subreport.getReportExpression().getValueClass())) {
-            SubreportWidthExpression pageWidthExpression = new SubreportWidthExpression(width);
+            final SubreportWidthExpression pageWidthExpression = new SubreportWidthExpression(width);
             accessor.getExpressionTransform().addSimpleExpression(pageWidthExpression);
-            SubreportExpression subreportExpression = new SubreportExpression(pageWidthExpression, subreport.getReportExpression(), width);
+            final SubreportExpression subreportExpression = new SubreportExpression(pageWidthExpression, subreport.getReportExpression(), width);
             accessor.getExpressionTransform().addComplexExpression(subreportExpression);
             jrSubreport.setExpression(accessor.getExpressionTransform().getExpression(subreportExpression));
 
-            SubreportParametersExpression parametersExpression = new SubreportParametersExpression(subreportExpression, subreport.getParametersExpression());
+            final SubreportParametersExpression parametersExpression = new SubreportParametersExpression(subreportExpression, subreport.getParametersExpression());
             accessor.getExpressionTransform().addComplexExpression(parametersExpression);
             jrSubreport.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
         } else {
             jrSubreport.setExpression(accessor.getExpressionTransform().getExpression(subreport.getReportExpression()));
 
-            JasperSubreportParametersExpression parametersExpression = new JasperSubreportParametersExpression(subreport.getParametersExpression());
+            final JasperSubreportParametersExpression parametersExpression = new JasperSubreportParametersExpression(subreport.getParametersExpression());
             accessor.getExpressionTransform().addComplexExpression(parametersExpression);
             jrSubreport.setParametersMapExpression(accessor.getExpressionTransform().getExpression(parametersExpression));
         }
@@ -393,55 +398,55 @@ public class ComponentTransform {
     }
 
     // line
-    private JRDesignElement line(DRIDesignLine line) {
-        JRDesignLine jrDesignLine = new JRDesignLine();
+    private JRDesignElement line(final DRIDesignLine line) {
+        final JRDesignLine jrDesignLine = new JRDesignLine();
         jrDesignLine.setDirection(ConstantTransform.lineDirection(line.getDirection()));
         accessor.getStyleTransform().pen(jrDesignLine.getLinePen(), line.getPen());
         return jrDesignLine;
     }
 
     // ellipse
-    private JRDesignElement ellipse(DRIDesignEllipse ellipse) {
-        JRDesignEllipse jrDesignEllipse = new JRDesignEllipse(new JRDesignStyle().getDefaultStyleProvider());
+    private JRDesignElement ellipse(final DRIDesignEllipse ellipse) {
+        final JRDesignEllipse jrDesignEllipse = new JRDesignEllipse(new JRDesignStyle().getDefaultStyleProvider());
         accessor.getStyleTransform().pen(jrDesignEllipse.getLinePen(), ellipse.getPen());
         return jrDesignEllipse;
     }
 
     // rectangle
-    private JRDesignElement rectangle(DRIDesignRectangle rectangle) {
-        JRDesignRectangle jrDesignRectangle = new JRDesignRectangle();
+    private JRDesignElement rectangle(final DRIDesignRectangle rectangle) {
+        final JRDesignRectangle jrDesignRectangle = new JRDesignRectangle();
         jrDesignRectangle.setRadius(rectangle.getRadius());
         accessor.getStyleTransform().pen(jrDesignRectangle.getLinePen(), rectangle.getPen());
         return jrDesignRectangle;
     }
 
     // break
-    private JRDesignElement breakComponent(DRIDesignBreak breakComponent) {
-        JRDesignBreak jrDesignBreak = new JRDesignBreak();
+    private JRDesignElement breakComponent(final DRIDesignBreak breakComponent) {
+        final JRDesignBreak jrDesignBreak = new JRDesignBreak();
         jrDesignBreak.setType(ConstantTransform.breakType(breakComponent.getType()));
         return jrDesignBreak;
     }
 
     // generic element
-    private JRDesignElement genericElement(DRIDesignGenericElement genericElement) {
-        JRDesignGenericElement jrDesignGenericElement = new JRDesignGenericElement(new JRDesignStyle().getDefaultStyleProvider());
-        JRGenericElementType genericType = new JRGenericElementType(genericElement.getGenericElementNamespace(), genericElement.getGenericElementName());
+    private JRDesignElement genericElement(final DRIDesignGenericElement genericElement) {
+        final JRDesignGenericElement jrDesignGenericElement = new JRDesignGenericElement(new JRDesignStyle().getDefaultStyleProvider());
+        final JRGenericElementType genericType = new JRGenericElementType(genericElement.getGenericElementNamespace(), genericElement.getGenericElementName());
         jrDesignGenericElement.setGenericType(genericType);
-        EvaluationTime evaluationTime = genericElement.getEvaluationTime();
+        final EvaluationTime evaluationTime = genericElement.getEvaluationTime();
         jrDesignGenericElement.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && genericElement.getEvaluationGroup() != null) {
             jrDesignGenericElement.setEvaluationGroupName(accessor.getGroupTransform().getGroup(genericElement.getEvaluationGroup()).getName());
         }
-        for (DRIDesignParameterExpression parameterExpression : genericElement.getParameterExpressions()) {
+        for (final DRIDesignParameterExpression parameterExpression : genericElement.getParameterExpressions()) {
             jrDesignGenericElement.addParameter(accessor.getExpressionTransform().getGenericElementParameterExpression(parameterExpression));
         }
         return jrDesignGenericElement;
     }
 
     // map
-    private JRDesignElement map(DRIDesignMap map) {
-        StandardMapComponent jrMap = new StandardMapComponent();
-        EvaluationTime evaluationTime = map.getEvaluationTime();
+    private JRDesignElement map(final DRIDesignMap map) {
+        final StandardMapComponent jrMap = new StandardMapComponent();
+        final EvaluationTime evaluationTime = map.getEvaluationTime();
         jrMap.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && map.getEvaluationGroup() != null) {
             jrMap.setEvaluationGroup(accessor.getGroupTransform().getGroup(map.getEvaluationGroup()).getName());
@@ -450,7 +455,7 @@ public class ComponentTransform {
         jrMap.setLongitudeExpression(accessor.getExpressionTransform().getExpression(map.getLongitudeExpression()));
         jrMap.setZoomExpression(accessor.getExpressionTransform().getExpression(map.getZoomExpression()));
 
-        JRDesignComponentElement jrComponent = new JRDesignComponentElement();
+        final JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(jrMap);
         jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", "map"));
 
@@ -458,12 +463,12 @@ public class ComponentTransform {
     }
 
     // custom component
-    private JRDesignElement customComponent(DRIDesignComponent component) {
-        @SuppressWarnings("rawtypes") CustomComponentTransform componentTransfom = CustomComponents.getComponentTransform(component);
+    private JRDesignElement customComponent(final DRIDesignComponent component) {
+        @SuppressWarnings("rawtypes") final CustomComponentTransform componentTransfom = CustomComponents.getComponentTransform(component);
         if (componentTransfom == null) {
             throw new DRDesignReportException("Component " + component.getClass().getName() + " not supported");
         }
-        @SuppressWarnings("unchecked") JRDesignComponentElement jrComponent = (JRDesignComponentElement) componentTransfom.jasperComponent(accessor, component);
+        @SuppressWarnings("unchecked") final JRDesignComponentElement jrComponent = (JRDesignComponentElement) componentTransfom.jasperComponent(accessor, component);
         return jrComponent;
     }
 
