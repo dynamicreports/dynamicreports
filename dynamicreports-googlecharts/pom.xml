@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>6.11.1</version>
+        <version>6.11.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>dynamicreports-googlecharts</artifactId>
