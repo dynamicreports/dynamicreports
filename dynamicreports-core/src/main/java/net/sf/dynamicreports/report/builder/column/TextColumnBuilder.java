@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -40,8 +39,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * It is used to show values from the data source.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public class TextColumnBuilder<T> extends ValueColumnBuilder<TextColumnBuilder<T>, T> implements DRIValue<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

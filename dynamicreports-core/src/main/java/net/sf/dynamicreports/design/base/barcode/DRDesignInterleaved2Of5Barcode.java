@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -27,8 +26,8 @@ import net.sf.dynamicreports.report.constant.Constants;
 /**
  * <p>DRDesignInterleaved2Of5Barcode class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public class DRDesignInterleaved2Of5Barcode extends DRDesignChecksumBarcode implements DRIDesignInterleaved2Of5Barcode {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

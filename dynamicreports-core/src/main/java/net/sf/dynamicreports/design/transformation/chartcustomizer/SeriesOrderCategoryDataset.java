@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -36,8 +35,8 @@ import java.util.List;
 /**
  * <p>SeriesOrderCategoryDataset class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public class SeriesOrderCategoryDataset implements CategoryDataset, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

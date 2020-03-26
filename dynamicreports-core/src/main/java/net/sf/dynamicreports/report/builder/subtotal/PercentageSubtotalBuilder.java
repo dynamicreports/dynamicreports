@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -39,8 +38,8 @@ import net.sf.dynamicreports.report.exception.DRReportException;
 /**
  * <p>PercentageSubtotalBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public class PercentageSubtotalBuilder extends BaseSubtotalBuilder<PercentageSubtotalBuilder, Double> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

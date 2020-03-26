@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -31,8 +30,8 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 /**
  * <p>Abstract AbstractFormatFieldBuilder class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 @SuppressWarnings( {"unchecked", "deprecation"})
 public abstract class AbstractFormatFieldBuilder<T extends AbstractFormatFieldBuilder<T, U>, U extends DRFormatField> extends HyperLinkComponentBuilder<T, U> {

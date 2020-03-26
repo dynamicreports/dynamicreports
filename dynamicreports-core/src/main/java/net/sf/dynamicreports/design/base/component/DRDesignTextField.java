@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -28,12 +27,13 @@ import net.sf.dynamicreports.design.definition.expression.DRIDesignExpression;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 
 /**
  * <p>DRDesignTextField class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRIDesignTextField {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -47,6 +47,8 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
     private DRDesignGroup evaluationGroup;
     private Markup markup;
     private boolean stretchWithOverflow;
+    private TextAdjust textAdjust;
+
 
     /**
      * <p>Constructor for DRDesignTextField.</p>
@@ -66,7 +68,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param pattern a {@link java.lang.String} object.
      */
-    public void setPattern(String pattern) {
+    public void setPattern(final String pattern) {
         this.pattern = pattern;
     }
 
@@ -81,7 +83,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param patternExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public void setPatternExpression(DRIDesignExpression patternExpression) {
+    public void setPatternExpression(final DRIDesignExpression patternExpression) {
         this.patternExpression = patternExpression;
     }
 
@@ -96,7 +98,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param horizontalTextAlignment a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public void setHorizontalTextAlignment(HorizontalTextAlignment horizontalTextAlignment) {
+    public void setHorizontalTextAlignment(final HorizontalTextAlignment horizontalTextAlignment) {
         this.horizontalTextAlignment = horizontalTextAlignment;
     }
 
@@ -111,7 +113,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param valueExpression a {@link net.sf.dynamicreports.design.definition.expression.DRIDesignExpression} object.
      */
-    public void setValueExpression(DRIDesignExpression valueExpression) {
+    public void setValueExpression(final DRIDesignExpression valueExpression) {
         this.valueExpression = valueExpression;
     }
 
@@ -126,7 +128,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param printRepeatedValues a boolean.
      */
-    public void setPrintRepeatedValues(boolean printRepeatedValues) {
+    public void setPrintRepeatedValues(final boolean printRepeatedValues) {
         this.printRepeatedValues = printRepeatedValues;
     }
 
@@ -141,7 +143,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param evaluationTime a {@link net.sf.dynamicreports.design.constant.EvaluationTime} object.
      */
-    public void setEvaluationTime(EvaluationTime evaluationTime) {
+    public void setEvaluationTime(final EvaluationTime evaluationTime) {
         this.evaluationTime = evaluationTime;
     }
 
@@ -156,7 +158,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param evaluationGroup a {@link net.sf.dynamicreports.design.base.DRDesignGroup} object.
      */
-    public void setEvaluationGroup(DRDesignGroup evaluationGroup) {
+    public void setEvaluationGroup(final DRDesignGroup evaluationGroup) {
         this.evaluationGroup = evaluationGroup;
     }
 
@@ -171,12 +173,13 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      *
      * @param markup a {@link net.sf.dynamicreports.report.constant.Markup} object.
      */
-    public void setMarkup(Markup markup) {
+    public void setMarkup(final Markup markup) {
         this.markup = markup;
     }
 
     /** {@inheritDoc} */
     @Override
+    @Deprecated
     public boolean isStretchWithOverflow() {
         return stretchWithOverflow;
     }
@@ -185,8 +188,25 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
      *
      * @param stretchWithOverflow a boolean.
+     * @deprecated Replaced by {@link #setTextAdjust(TextAdjust)}.
      */
-    public void setStretchWithOverflow(boolean stretchWithOverflow) {
+    @Deprecated
+    public void setStretchWithOverflow(final boolean stretchWithOverflow) {
         this.stretchWithOverflow = stretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTextAdjust() {
+        return textAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>textAdjust</code>.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTextAdjust(final TextAdjust textAdjust) {
+        this.textAdjust = textAdjust;
     }
 }

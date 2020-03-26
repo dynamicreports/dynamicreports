@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -29,8 +28,8 @@ import java.util.List;
  * A complex implementation of an expression.<br/> The difference between a simple and complex expression is that a complex expression allows registering additional fields or variables that are not
  * defined in the report and are needed for calculating the value.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public interface DRIComplexExpression<T> extends DRIExpression<T> {
 

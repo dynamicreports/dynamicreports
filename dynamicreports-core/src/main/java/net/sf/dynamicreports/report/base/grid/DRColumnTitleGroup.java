@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -21,29 +20,31 @@
  */
 package net.sf.dynamicreports.report.base.grid;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.ListType;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent;
 import net.sf.dynamicreports.report.definition.grid.DRIColumnTitleGroup;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
-import org.apache.commons.lang3.Validate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>DRColumnTitleGroup class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public class DRColumnTitleGroup implements DRIColumnTitleGroup {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private DRColumnGridList list;
+    private final DRColumnGridList list;
 
     private DRIExpression<?> titleExpression;
     private DRIReportStyle titleStyle;
@@ -54,6 +55,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
     private ComponentDimensionType titleHeightType;
     private Integer titleRows;
     private Boolean titleStretchWithOverflow;
+    private TextAdjust titleTextAdjust;
     private List<DRIPropertyExpression> titlePropertyExpressions;
 
     /**
@@ -61,7 +63,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      */
     public DRColumnTitleGroup() {
         this.list = new DRColumnGridList(ListType.HORIZONTAL);
-        titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
+        titlePropertyExpressions = new ArrayList<>();
     }
 
     /** {@inheritDoc} */
@@ -75,7 +77,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param component a {@link net.sf.dynamicreports.report.definition.grid.DRIColumnGridComponent} object.
      */
-    public void addComponent(DRIColumnGridComponent component) {
+    public void addComponent(final DRIColumnGridComponent component) {
         list.addComponent(component);
     }
 
@@ -90,7 +92,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setTitleExpression(DRIExpression<?> titleExpression) {
+    public void setTitleExpression(final DRIExpression<?> titleExpression) {
         this.titleExpression = titleExpression;
     }
 
@@ -105,7 +107,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public void setTitleStyle(DRIReportStyle titleStyle) {
+    public void setTitleStyle(final DRIReportStyle titleStyle) {
         this.titleStyle = titleStyle;
     }
 
@@ -126,7 +128,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * @throws java.lang.IllegalArgumentException if <code>titleWidth</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public void setTitleWidth(Integer titleWidth) {
+    public void setTitleWidth(final Integer titleWidth) {
         if (titleWidth != null) {
             Validate.isTrue(titleWidth >= 0, "titleWidth must be >= 0");
         }
@@ -144,7 +146,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param titleWidthType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
      */
-    public void setTitleWidthType(ComponentDimensionType titleWidthType) {
+    public void setTitleWidthType(final ComponentDimensionType titleWidthType) {
         this.titleWidthType = titleWidthType;
     }
 
@@ -164,7 +166,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * @param titleColumns the number of columns >= 0
      * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
      */
-    public void setTitleColumns(Integer titleColumns) {
+    public void setTitleColumns(final Integer titleColumns) {
         if (titleColumns != null) {
             Validate.isTrue(titleColumns >= 0, "titleColumns must be >= 0");
         }
@@ -188,7 +190,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * @throws java.lang.IllegalArgumentException if <code>titleHeight</code> is < 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
-    public void setTitleHeight(Integer titleHeight) {
+    public void setTitleHeight(final Integer titleHeight) {
         if (titleHeight != null) {
             Validate.isTrue(titleHeight >= 0, "titleHeight must be >= 0");
         }
@@ -206,7 +208,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param titleHeightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
      */
-    public void setTitleHeightType(ComponentDimensionType titleHeightType) {
+    public void setTitleHeightType(final ComponentDimensionType titleHeightType) {
         this.titleHeightType = titleHeightType;
     }
 
@@ -226,7 +228,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * @param titleRows the number of rows >= 0
      * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
      */
-    public void setTitleRows(Integer titleRows) {
+    public void setTitleRows(final Integer titleRows) {
         if (titleRows != null) {
             Validate.isTrue(titleRows >= 0, "titleRows must be >= 0");
         }
@@ -243,9 +245,26 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
      *
      * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #getTitleTextAdjust()}
      */
-    public void setTitleStretchWithOverflow(Boolean titleStretchWithOverflow) {
+    @Deprecated
+    public void setTitleStretchWithOverflow(final Boolean titleStretchWithOverflow) {
         this.titleStretchWithOverflow = titleStretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTitleTextAdjust() {
+        return this.titleTextAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>titleTextAdjust</code>.</p>
+     *
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTitleTextAdjust(final TextAdjust textAdjust) {
+        this.titleTextAdjust = textAdjust;
     }
 
     /** {@inheritDoc} */
@@ -259,7 +278,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param titlePropertyExpressions a {@link java.util.List} object.
      */
-    public void setTitlePropertyExpressions(List<DRIPropertyExpression> titlePropertyExpressions) {
+    public void setTitlePropertyExpressions(final List<DRIPropertyExpression> titlePropertyExpressions) {
         this.titlePropertyExpressions = titlePropertyExpressions;
     }
 
@@ -268,7 +287,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      *
      * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
      */
-    public void addTitlePropertyExpression(DRIPropertyExpression propertyExpression) {
+    public void addTitlePropertyExpression(final DRIPropertyExpression propertyExpression) {
         Validate.notNull(propertyExpression, "propertyExpression must not be null");
         this.titlePropertyExpressions.add(propertyExpression);
     }

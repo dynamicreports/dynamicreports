@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -29,8 +28,8 @@ import java.io.Serializable;
  * The purpose of this expression is to format a value only.<br/> For instance, when it is necessary to display a currency next to the value or just show a value in another format.<br/> It can be
  * applied in any report column, group, subtotal, or text field component.
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public interface DRIValueFormatter<T, U> extends Serializable {
 

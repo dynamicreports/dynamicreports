@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -21,7 +20,11 @@
  */
 package net.sf.dynamicreports.report.definition.crosstab;
 
+import java.io.Serializable;
+import java.util.List;
+
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRIHyperLink;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
@@ -29,14 +32,11 @@ import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
 
-import java.io.Serializable;
-import java.util.List;
-
 /**
  * <p>DRICrosstabMeasure interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public interface DRICrosstabMeasure<T> extends Serializable {
 
@@ -45,82 +45,90 @@ public interface DRICrosstabMeasure<T> extends Serializable {
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getName();
+    String getName();
 
     /**
      * <p>getDataType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public DRIDataType<? super T, T> getDataType();
+    DRIDataType<? super T, T> getDataType();
 
     /**
      * <p>getExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getExpression();
+    DRIExpression<?> getExpression();
 
     /**
      * <p>getPattern.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getPattern();
+    String getPattern();
 
     /**
      * <p>getHorizontalTextAlignment.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public HorizontalTextAlignment getHorizontalTextAlignment();
+    HorizontalTextAlignment getHorizontalTextAlignment();
 
     /**
      * <p>getValueFormatter.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public DRIValueFormatter<?, ? super T> getValueFormatter();
+    DRIValueFormatter<?, ? super T> getValueFormatter();
 
     /**
      * <p>getStretchWithOverflow.</p>
      *
      * @return a {@link java.lang.Boolean} object.
+     * @deprecated replaced by {@link #getTextAdjust()}
      */
-    public Boolean getStretchWithOverflow();
+    @Deprecated Boolean getStretchWithOverflow();
+
+    /**
+     * <p>getTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getTextAdjust();
 
     /**
      * <p>getHyperLink.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.DRIHyperLink} object.
      */
-    public DRIHyperLink getHyperLink();
+    DRIHyperLink getHyperLink();
 
     /**
      * <p>getPropertyExpressions.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<DRIPropertyExpression> getPropertyExpressions();
+    List<DRIPropertyExpression> getPropertyExpressions();
 
     /**
      * <p>getStyles.</p>
      *
      * @return a {@link java.util.List} object.
      */
-    public List<DRICrosstabCellStyle> getStyles();
+    List<DRICrosstabCellStyle> getStyles();
 
     /**
      * <p>getTitleExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<?> getTitleExpression();
+    DRIExpression<?> getTitleExpression();
 
     /**
      * <p>getTitleStyle.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public DRIReportStyle getTitleStyle();
+    DRIReportStyle getTitleStyle();
 }

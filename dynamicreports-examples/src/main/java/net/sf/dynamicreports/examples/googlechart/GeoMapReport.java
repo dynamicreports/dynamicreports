@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -39,13 +38,13 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 /**
  * <p>GeoMapReport class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  * <p>
  * GeoMap component works only for html export. Visit the following link for more information about geo map parameters http://code.google.com/apis/chart/interactive/docs/gallery/geomap.html
  *
  * Please ensure you have write-access to local disc c:\ before running thie example
  *
- * @version $Id: $Id
+ * 
  */
 public class GeoMapReport {
 

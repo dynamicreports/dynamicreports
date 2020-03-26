@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -24,8 +23,8 @@ package net.sf.dynamicreports.adhoc.configuration;
 /**
  * <p>AdhocValueOperator class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public enum AdhocValueOperator {
     EQUAL, UNEQUAL, IN, NOT_IN, LIKE, NOT_LIKE, START_WITH, NOT_START_WITH, END_WITH, NOT_END_WITH, GREATER, GREATER_OR_EQUAL, SMALLER, SMALLER_OR_EQUAL, BETWEEN, NOT_BETWEEN, IS_NOT_NULL, IS_NULL

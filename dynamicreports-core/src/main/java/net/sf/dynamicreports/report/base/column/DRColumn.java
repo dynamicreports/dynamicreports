@@ -2,8 +2,7 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
- *
+ * 
  * This file is part of DynamicReports.
  *
  * DynamicReports is free software: you can redistribute it and/or modify
@@ -21,29 +20,31 @@
  */
 package net.sf.dynamicreports.report.base.column;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.ReportUtils;
 import net.sf.dynamicreports.report.constant.ComponentDimensionType;
 import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.column.DRIColumn;
 import net.sf.dynamicreports.report.definition.component.DRIComponent;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression;
 import net.sf.dynamicreports.report.definition.style.DRIReportStyle;
-import org.apache.commons.lang3.Validate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>DRColumn class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private String name;
+    private final String name;
     private T component;
 
     private DRIExpression<?> titleExpression;
@@ -52,6 +53,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
     private ComponentDimensionType titleHeightType;
     private Integer titleRows;
     private Boolean titleStretchWithOverflow;
+    private TextAdjust titleTextAdjust;
     private List<DRIPropertyExpression> titlePropertyExpressions;
 
     /**
@@ -59,7 +61,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      */
     protected DRColumn() {
         this.name = ReportUtils.generateUniqueName("column");
-        titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
+        titlePropertyExpressions = new ArrayList<>();
     }
 
     /**
@@ -67,11 +69,11 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param component a T object.
      */
-    public DRColumn(T component) {
+    public DRColumn(final T component) {
         Validate.notNull(component, "component must not be null");
         this.name = ReportUtils.generateUniqueName("column");
         this.component = component;
-        titlePropertyExpressions = new ArrayList<DRIPropertyExpression>();
+        titlePropertyExpressions = new ArrayList<>();
     }
 
     /** {@inheritDoc} */
@@ -91,7 +93,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titleExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public void setTitleExpression(DRIExpression<?> titleExpression) {
+    public void setTitleExpression(final DRIExpression<?> titleExpression) {
         this.titleExpression = titleExpression;
     }
 
@@ -106,7 +108,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titleStyle a {@link net.sf.dynamicreports.report.definition.style.DRIReportStyle} object.
      */
-    public void setTitleStyle(DRIReportStyle titleStyle) {
+    public void setTitleStyle(final DRIReportStyle titleStyle) {
         this.titleStyle = titleStyle;
     }
 
@@ -121,7 +123,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titleHeight a {@link java.lang.Integer} object.
      */
-    public void setTitleHeight(Integer titleHeight) {
+    public void setTitleHeight(final Integer titleHeight) {
         if (titleHeight != null) {
             Validate.isTrue(titleHeight >= 0, "titleHeight must be >= 0");
         }
@@ -139,7 +141,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titleHeightType a {@link net.sf.dynamicreports.report.constant.ComponentDimensionType} object.
      */
-    public void setTitleHeightType(ComponentDimensionType titleHeightType) {
+    public void setTitleHeightType(final ComponentDimensionType titleHeightType) {
         this.titleHeightType = titleHeightType;
     }
 
@@ -154,7 +156,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titleRows a {@link java.lang.Integer} object.
      */
-    public void setTitleRows(Integer titleRows) {
+    public void setTitleRows(final Integer titleRows) {
         if (titleRows != null) {
             Validate.isTrue(titleRows >= 0, "titleRows must be >= 0");
         }
@@ -171,9 +173,26 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
      *
      * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
+     * @deprecated replaced by  {@link #setTitleTextAdjust(TextAdjust)}
      */
-    public void setTitleStretchWithOverflow(Boolean titleStretchWithOverflow) {
+    @Deprecated
+    public void setTitleStretchWithOverflow(final Boolean titleStretchWithOverflow) {
         this.titleStretchWithOverflow = titleStretchWithOverflow;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TextAdjust getTitleTextAdjust() {
+        return titleTextAdjust;
+    }
+
+    /**
+     * <p>Setter for the field <code>titleTextAdjust</code>.</p>
+     *
+     * @param titleStretchWithOverflow a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    public void setTitleTextAdjust(final TextAdjust titleTextAdjust) {
+        this.titleTextAdjust = titleTextAdjust;
     }
 
     /** {@inheritDoc} */
@@ -187,7 +206,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param titlePropertyExpressions a {@link java.util.List} object.
      */
-    public void setTitlePropertyExpressions(List<DRIPropertyExpression> titlePropertyExpressions) {
+    public void setTitlePropertyExpressions(final List<DRIPropertyExpression> titlePropertyExpressions) {
         this.titlePropertyExpressions = titlePropertyExpressions;
     }
 
@@ -196,7 +215,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
      *
      * @param propertyExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIPropertyExpression} object.
      */
-    public void addTitlePropertyExpression(DRIPropertyExpression propertyExpression) {
+    public void addTitlePropertyExpression(final DRIPropertyExpression propertyExpression) {
         Validate.notNull(propertyExpression, "propertyExpression must not be null");
         this.titlePropertyExpressions.add(propertyExpression);
     }

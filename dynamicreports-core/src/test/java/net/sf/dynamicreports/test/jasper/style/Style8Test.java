@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -42,7 +41,7 @@ import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 /**
  * Style tests.
  * 
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class Style8Test extends AbstractJasperStyleTest {
   private BooleanColumnBuilder column1;

@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -21,6 +20,16 @@
  */
 package net.sf.dynamicreports.report.builder.tableofcontents;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -36,24 +45,15 @@ import net.sf.dynamicreports.report.constant.Constants;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.HyperLinkType;
 import net.sf.dynamicreports.report.constant.TableOfContentsPosition;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRITableOfContentsCustomizer;
 import net.sf.dynamicreports.report.definition.ReportParameters;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>TableOfContentsCustomizer class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -64,7 +64,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
     protected static String dots;
 
     static {
-        StringBuilder dots = new StringBuilder(200);
+        final StringBuilder dots = new StringBuilder(200);
         for (int i = 0; i < dots.capacity(); i++) {
             dots.append(".");
         }
@@ -93,7 +93,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      * <p>Constructor for TableOfContentsCustomizer.</p>
      */
     public TableOfContentsCustomizer() {
-        headingStyles = new HashMap<Integer, ReportStyleBuilder>();
+        headingStyles = new HashMap<>();
     }
 
     /**
@@ -118,25 +118,25 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
 
     /** {@inheritDoc} */
     @Override
-    public void setReport(ReportBuilder<?> report) {
+    public void setReport(final ReportBuilder<?> report) {
         this.report = report;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void setHeadingList(List<JasperTocHeading> headingList) {
+    public void setHeadingList(final List<JasperTocHeading> headingList) {
         this.headingList = headingList;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void setHeadings(int headings) {
+    public void setHeadings(final int headings) {
         this.headings = headings;
     }
 
     /** {@inheritDoc} */
     @Override
-    public void setLevels(int levels) {
+    public void setLevels(final int levels) {
         this.levels = levels;
     }
 
@@ -163,9 +163,9 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      */
     protected ComponentBuilder<?, ?> detailComponent() {
-        VerticalListBuilder detailComponent = cmp.verticalList();
+        final VerticalListBuilder detailComponent = cmp.verticalList();
         for (int i = 0; i < levels; i++) {
-            ComponentBuilder<?, ?> headingComponent = headingComponent(i);
+            final ComponentBuilder<?, ?> headingComponent = headingComponent(i);
             headingComponent.setPrintWhenExpression(new PrintHeadingExpression(i));
             headingComponent.removeLineWhenBlank();
             detailComponent.add(headingComponent);
@@ -179,14 +179,14 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      * @param level a int.
      * @return a {@link net.sf.dynamicreports.report.builder.component.ComponentBuilder} object.
      */
-    protected ComponentBuilder<?, ?> headingComponent(int level) {
-        HorizontalListBuilder headingComponent = cmp.horizontalList();
+    protected ComponentBuilder<?, ?> headingComponent(final int level) {
+        final HorizontalListBuilder headingComponent = cmp.horizontalList();
 
         if (level > 0) {
             headingComponent.add(cmp.filler().setFixedWidth(level * 10));
         }
 
-        TextFieldBuilder<String> textComponent = cmp.text(textField).setHyperLink(referenceHyperLink);
+        final TextFieldBuilder<String> textComponent = cmp.text(textField).setHyperLink(referenceHyperLink);
         if (textFixedWidth != null) {
             textComponent.setFixedWidth(textFixedWidth);
         }
@@ -196,13 +196,13 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
             headingComponent.add(cmp.filler().setFixedWidth(level * 10));
         }
 
-        TextFieldBuilder<String> dotsComponent = cmp.text(dots.toString()).setStretchWithOverflow(false).setHyperLink(referenceHyperLink);
+        final TextFieldBuilder<String> dotsComponent = cmp.text(dots.toString()).setTextAdjust(TextAdjust.CUT_TEXT).setHyperLink(referenceHyperLink);
         if (dotsFixedWidth != null) {
             dotsComponent.setFixedWidth(dotsFixedWidth);
         }
         headingComponent.add(dotsComponent);
 
-        TextFieldBuilder<Integer> pageIndexComponent = cmp.text(pageIndexField).setHyperLink(referenceHyperLink);
+        final TextFieldBuilder<Integer> pageIndexComponent = cmp.text(pageIndexField).setHyperLink(referenceHyperLink);
         if (pageIndexFixedWidth != null) {
             pageIndexComponent.setFixedWidth(pageIndexFixedWidth);
         } else {
@@ -228,7 +228,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param titleStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      */
-    public void setTitleStyle(ReportStyleBuilder titleStyle) {
+    public void setTitleStyle(final ReportStyleBuilder titleStyle) {
         this.titleStyle = titleStyle;
     }
 
@@ -237,7 +237,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      */
-    public void setHeadingStyle(ReportStyleBuilder headingStyle) {
+    public void setHeadingStyle(final ReportStyleBuilder headingStyle) {
         this.headingStyle = headingStyle;
     }
 
@@ -247,7 +247,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      * @param level        a int.
      * @param headingStyle a {@link net.sf.dynamicreports.report.builder.style.ReportStyleBuilder} object.
      */
-    public void setHeadingStyle(int level, ReportStyleBuilder headingStyle) {
+    public void setHeadingStyle(final int level, final ReportStyleBuilder headingStyle) {
         this.headingStyles.put(level, headingStyle);
     }
 
@@ -256,7 +256,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param textFixedWidth a {@link java.lang.Integer} object.
      */
-    public void setTextFixedWidth(Integer textFixedWidth) {
+    public void setTextFixedWidth(final Integer textFixedWidth) {
         this.textFixedWidth = textFixedWidth;
     }
 
@@ -265,7 +265,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param dotsFixedWidth a {@link java.lang.Integer} object.
      */
-    public void setDotsFixedWidth(Integer dotsFixedWidth) {
+    public void setDotsFixedWidth(final Integer dotsFixedWidth) {
         this.dotsFixedWidth = dotsFixedWidth;
     }
 
@@ -274,7 +274,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param pageIndexFixedWidth a {@link java.lang.Integer} object.
      */
-    public void setPageIndexFixedWidth(Integer pageIndexFixedWidth) {
+    public void setPageIndexFixedWidth(final Integer pageIndexFixedWidth) {
         this.pageIndexFixedWidth = pageIndexFixedWidth;
     }
 
@@ -289,7 +289,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
      *
      * @param position a {@link net.sf.dynamicreports.report.constant.TableOfContentsPosition} object.
      */
-    public void setPosition(TableOfContentsPosition position) {
+    public void setPosition(final TableOfContentsPosition position) {
         this.position = position;
     }
 
@@ -297,7 +297,7 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
         private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
         @Override
-        public String evaluate(ReportParameters reportParameters) {
+        public String evaluate(final ReportParameters reportParameters) {
             return reportParameters.getValue(referenceField);
         }
     }
@@ -305,14 +305,14 @@ public class TableOfContentsCustomizer implements DRITableOfContentsCustomizer {
     protected class PrintHeadingExpression extends AbstractSimpleExpression<Boolean> {
         private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-        private int level;
+        private final int level;
 
-        public PrintHeadingExpression(int level) {
+        public PrintHeadingExpression(final int level) {
             this.level = level;
         }
 
         @Override
-        public Boolean evaluate(ReportParameters reportParameters) {
+        public Boolean evaluate(final ReportParameters reportParameters) {
             return reportParameters.getValue(levelField) == level;
         }
     }

@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -29,8 +28,8 @@ import org.apache.commons.lang3.Validate;
 /**
  * <p>Abstract AbstractValueFormatter class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public abstract class AbstractValueFormatter<T, U> implements DRIValueFormatter<T, U> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;

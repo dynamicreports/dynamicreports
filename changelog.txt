@@ -1,9 +1,15 @@
 DynamicReports Change Log
 =========================
 
+Changes in version 6.11.1 (2020-03-25)
+---------------------------------------------------
+ - Code base clean up (removale of dead code)
+ - implemention of missing TextAdjust property introduced with jasperreport 6.11.0
+
+
 Changes in version 6.11.0 (2020-03-17)
 ---------------------------------------------------
- - Change in verions convention -> we follow the numbering of jasperreport
+ - Change in version convention -> we follow the numbering of jasperreport
  - Updated spring framework to version 5.2.4.RELEASE
  - Upgrade to poi library to version 4.1.2
  - Update deprecated code for junit

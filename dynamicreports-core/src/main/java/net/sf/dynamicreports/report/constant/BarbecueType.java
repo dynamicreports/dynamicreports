@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -24,8 +23,8 @@ package net.sf.dynamicreports.report.constant;
 /**
  * <p>BarbecueType class.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca
+ * 
  */
 public enum BarbecueType {
     BARCODE_2OF7, BARCODE_3OF9, BOOKLAND, CODABAR, CODE128, CODE128A, CODE128B, CODE128C, CODE39, CODE39_EXTENDED, EAN128, EAN13, GLOBAL_TRADE_ITEM_NUMBER, INT_2OF5, MONARCH, NW7, PDF417, POSTNET,

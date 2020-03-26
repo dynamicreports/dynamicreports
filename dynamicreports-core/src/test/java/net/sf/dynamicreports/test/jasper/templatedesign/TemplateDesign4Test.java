@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -34,7 +33,7 @@ import java.io.Serializable;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
+ * @author Ricardo Mariaca
  */
 public class TemplateDesign4Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;

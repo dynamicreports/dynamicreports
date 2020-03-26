@@ -2,7 +2,6 @@
  * DynamicReports - Free Java reporting library for creating reports dynamically
  *
  * Copyright (C) 2010 - 2018 Ricardo Mariaca and the Dynamic Reports Contributors
- * http://www.dynamicreports.org
  *
  * This file is part of DynamicReports.
  *
@@ -24,6 +23,7 @@ package net.sf.dynamicreports.report.definition.component;
 import net.sf.dynamicreports.report.constant.Evaluation;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.constant.Markup;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.definition.DRIGroup;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
@@ -32,8 +32,8 @@ import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 /**
  * <p>DRITextField interface.</p>
  *
- * @author Ricardo Mariaca (r.mariaca@dynamicreports.org)
- * @version $Id: $Id
+ * @author Ricardo Mariaca, Jan Moxter
+ * 
  */
 public interface DRITextField<T> extends DRIHyperLinkComponent {
 
@@ -42,89 +42,98 @@ public interface DRITextField<T> extends DRIHyperLinkComponent {
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<T> getValueExpression();
+    DRIExpression<T> getValueExpression();
 
     /**
      * <p>getPattern.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getPattern();
+    String getPattern();
 
     /**
      * <p>getPatternExpression.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
-    public DRIExpression<String> getPatternExpression();
+    DRIExpression<String> getPatternExpression();
 
     /**
      * <p>getHorizontalTextAlignment.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.HorizontalTextAlignment} object.
      */
-    public HorizontalTextAlignment getHorizontalTextAlignment();
+    HorizontalTextAlignment getHorizontalTextAlignment();
 
     /**
      * <p>getValueFormatter.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIValueFormatter} object.
      */
-    public DRIValueFormatter<?, ? super T> getValueFormatter();
+    DRIValueFormatter<?, ? super T> getValueFormatter();
 
     /**
      * <p>getDataType.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.datatype.DRIDataType} object.
      */
-    public DRIDataType<? super T, T> getDataType();
+    DRIDataType<? super T, T> getDataType();
 
     /**
      * <p>getColumns.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getColumns();
+    Integer getColumns();
 
     /**
      * <p>getRows.</p>
      *
      * @return a {@link java.lang.Integer} object.
      */
-    public Integer getRows();
+    Integer getRows();
 
     /**
      * <p>getEvaluationTime.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.Evaluation} object.
      */
-    public Evaluation getEvaluationTime();
+    Evaluation getEvaluationTime();
 
     /**
      * <p>getEvaluationGroup.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.definition.DRIGroup} object.
      */
-    public DRIGroup getEvaluationGroup();
+    DRIGroup getEvaluationGroup();
 
     /**
      * <p>getMarkup.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.Markup} object.
      */
-    public Markup getMarkup();
+    Markup getMarkup();
 
     /**
      * <p>getStretchWithOverflow.</p>
      *
      * @return a {@link java.lang.Boolean} object.
+     * @deprecated replaced {@link #getTextAdjust()}
      */
-    public Boolean getStretchWithOverflow();
+    @Deprecated
+    Boolean getStretchWithOverflow();
 
     /**
      * <p>getPrintRepeatedValues.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getPrintRepeatedValues();
+    Boolean getPrintRepeatedValues();
+
+    /**
+     * <p>getTextAdjust.</p>
+     *
+     * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     */
+    TextAdjust getTextAdjust();
 }
