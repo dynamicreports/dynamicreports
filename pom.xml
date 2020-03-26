@@ -10,7 +10,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.11.2-SNAPSHOT</version>
+    <version>6.12.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -49,9 +49,9 @@
         <batikbridgeVersion>1.12</batikbridgeVersion>
         <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.9</commonslang3Version>
-        <groovyVersion>2.4.16</groovyVersion>
+        <groovyVersion>2.4.19</groovyVersion>
         <hsqldbVersion>2.5.0</hsqldbVersion>
-        <jasperreportsVersion>6.11.0</jasperreportsVersion>
+        <jasperreportsVersion>6.12.2</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
@@ -62,7 +62,7 @@
         <log4j-to-slf4jVersion>2.13.1</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
         <poiVersion>4.1.2</poiVersion>
-        <springframeworkVersion>5.2.4.RELEASE</springframeworkVersion>
+        <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xalanVersion>2.7.2</xalanVersion>
         <xmlgraphicscommonsVersion>2.4</xmlgraphicscommonsVersion>
