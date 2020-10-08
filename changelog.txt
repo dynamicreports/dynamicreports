@@ -3,8 +3,8 @@ DynamicReports Change Log
 
 Changes in version 6.11.1 (2020-03-25)
 ---------------------------------------------------
- - Code base clean up (removale of dead code)
- - implemention of missing TextAdjust property introduced with jasperreport 6.11.0
+ - Code base clean up (removal of dead code)
+ - implementation of missing TextAdjust property introduced with jasperreport 6.11.0
 
 
 Changes in version 6.11.0 (2020-03-17)
