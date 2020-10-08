@@ -50,16 +50,16 @@
         <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.11</commonslang3Version>
         <groovyVersion>2.4.19</groovyVersion>
-        <hsqldbVersion>2.5.0</hsqldbVersion>
+        <hsqldbVersion>2.5.1</hsqldbVersion>
         <jasperreportsVersion>6.12.2</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
         <jaxbVersion>2.3.0.1</jaxbVersion>
-        <jsonVersion>20190722</jsonVersion>
+        <jsonVersion>20200518</jsonVersion>
         <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
         <junitVersion>4.13</junitVersion>
-        <log4j-to-slf4jVersion>2.13.1</log4j-to-slf4jVersion>
+        <log4j-to-slf4jVersion>2.13.3</log4j-to-slf4jVersion>
         <logback-classicVersion>1.2.3</logback-classicVersion>
         <poiVersion>4.1.2</poiVersion>
         <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
