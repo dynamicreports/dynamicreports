@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.report.builder.column;
 
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.component.ComponentBuilder;
@@ -27,13 +29,12 @@ import net.sf.dynamicreports.report.builder.expression.Expressions;
 import net.sf.dynamicreports.report.definition.DRIField;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
-import org.apache.commons.lang3.Validate;
 
 /**
  * A set of methods of creating report columns.<br/> It is used to display data in a multi-column layout.
  *
- * @author Ricardo Mariaca
- * 
+ * @author Ricardo Mariaca, Jan Moxter
+ *
  */
 public class Columns {
 
@@ -47,7 +48,8 @@ public class Columns {
      * @param <T>        a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String fieldName, Class<T> valueClass) {
+    @SuppressWarnings("unchecked")
+    public static <T> TextColumnBuilder<T> column(final String fieldName, final Class<T> valueClass) {
         return (TextColumnBuilder<T>) column(DynamicReports.field(fieldName, valueClass));
     }
 
@@ -60,7 +62,8 @@ public class Columns {
      * @param <T>        a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String title, String fieldName, Class<T> valueClass) {
+    @SuppressWarnings("unchecked")
+    public static <T> TextColumnBuilder<T> column(final String title, final String fieldName, final Class<T> valueClass) {
         return (TextColumnBuilder<T>) column(title, DynamicReports.field(fieldName, valueClass));
     }
 
@@ -72,9 +75,9 @@ public class Columns {
      * @param <T>       a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String fieldName, DRIDataType<? super T, T> dataType) {
+    public static <T> TextColumnBuilder<T> column(final String fieldName, final DRIDataType<? super T, T> dataType) {
         Validate.notNull(dataType, "dataType must not be null");
-        TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(DynamicReports.<T>field(fieldName, dataType.getValueClass()));
+        final TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<>(DynamicReports.<T>field(fieldName, dataType.getValueClass()));
         textColumnBuilder.setDataType(dataType);
         return textColumnBuilder;
     }
@@ -88,8 +91,8 @@ public class Columns {
      * @param <T>       a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String title, String fieldName, DRIDataType<? super T, T> dataType) {
-        TextColumnBuilder<T> textColumnBuilder = column(fieldName, dataType);
+    public static <T> TextColumnBuilder<T> column(final String title, final String fieldName, final DRIDataType<? super T, T> dataType) {
+        final TextColumnBuilder<T> textColumnBuilder = column(fieldName, dataType);
         textColumnBuilder.setTitle(title);
         return textColumnBuilder;
     }
@@ -101,8 +104,8 @@ public class Columns {
      * @param <T>   a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(FieldBuilder<T> field) {
-        TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(field);
+    public static <T> TextColumnBuilder<T> column(final FieldBuilder<T> field) {
+        final TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<>(field);
         if (field.getField().getDataType() != null) {
             textColumnBuilder.setDataType(field.getField().getDataType());
         }
@@ -117,7 +120,7 @@ public class Columns {
      * @param <T>   a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String title, FieldBuilder<T> field) {
+    public static <T> TextColumnBuilder<T> column(final String title, final FieldBuilder<T> field) {
         return column(field).setTitle(title);
     }
 
@@ -130,8 +133,8 @@ public class Columns {
      * @param <T>        a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(DRIExpression<T> expression) {
-        TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<T>(expression);
+    public static <T> TextColumnBuilder<T> column(final DRIExpression<T> expression) {
+        final TextColumnBuilder<T> textColumnBuilder = new TextColumnBuilder<>(expression);
         if (expression instanceof DRIField && ((DRIField<T>) expression).getDataType() != null) {
             textColumnBuilder.setDataType(((DRIField<T>) expression).getDataType());
         }
@@ -146,7 +149,7 @@ public class Columns {
      * @param <T>        a T object.
      * @return a column builder
      */
-    public static <T> TextColumnBuilder<T> column(String title, DRIExpression<T> expression) {
+    public static <T> TextColumnBuilder<T> column(final String title, final DRIExpression<T> expression) {
         return column(expression).setTitle(title);
     }
 
@@ -158,7 +161,7 @@ public class Columns {
      * @param column the column definition
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(ValueColumnBuilder<?, ? extends Number> column) {
+    public static PercentageColumnBuilder percentageColumn(final ValueColumnBuilder<?, ? extends Number> column) {
         return new PercentageColumnBuilder(column);
     }
 
@@ -169,7 +172,7 @@ public class Columns {
      * @param column the column definition
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(String title, ValueColumnBuilder<?, ? extends Number> column) {
+    public static PercentageColumnBuilder percentageColumn(final String title, final ValueColumnBuilder<?, ? extends Number> column) {
         return percentageColumn(column).setTitle(title);
     }
 
@@ -180,7 +183,7 @@ public class Columns {
      * @param valueClass the field value class
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(String fieldName, Class<? extends Number> valueClass) {
+    public static PercentageColumnBuilder percentageColumn(final String fieldName, final Class<? extends Number> valueClass) {
         return percentageColumn(DynamicReports.<Number>field(fieldName, valueClass));
     }
 
@@ -192,7 +195,7 @@ public class Columns {
      * @param valueClass the field value class
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(String title, String fieldName, Class<? extends Number> valueClass) {
+    public static PercentageColumnBuilder percentageColumn(final String title, final String fieldName, final Class<? extends Number> valueClass) {
         return percentageColumn(fieldName, valueClass).setTitle(title);
     }
 
@@ -202,7 +205,7 @@ public class Columns {
      * @param field the field definition
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(FieldBuilder<? extends Number> field) {
+    public static PercentageColumnBuilder percentageColumn(final FieldBuilder<? extends Number> field) {
         return new PercentageColumnBuilder(field);
     }
 
@@ -213,7 +216,7 @@ public class Columns {
      * @param field the field definition
      * @return a column builder
      */
-    public static PercentageColumnBuilder percentageColumn(String title, FieldBuilder<? extends Number> field) {
+    public static PercentageColumnBuilder percentageColumn(final String title, final FieldBuilder<? extends Number> field) {
         return percentageColumn(field).setTitle(title);
     }
 
@@ -242,7 +245,7 @@ public class Columns {
      * @param title the column title
      * @return a column builder
      */
-    public static TextColumnBuilder<Integer> columnRowNumberColumn(String title) {
+    public static TextColumnBuilder<Integer> columnRowNumberColumn(final String title) {
         return columnRowNumberColumn().setTitle(title);
     }
 
@@ -263,7 +266,7 @@ public class Columns {
      * @param title the column title
      * @return a column builder
      */
-    public static TextColumnBuilder<Integer> pageRowNumberColumn(String title) {
+    public static TextColumnBuilder<Integer> pageRowNumberColumn(final String title) {
         return pageRowNumberColumn().setTitle(title);
     }
 
@@ -284,7 +287,7 @@ public class Columns {
      * @param title the column title
      * @return a column builder
      */
-    public static TextColumnBuilder<Integer> reportRowNumberColumn(String title) {
+    public static TextColumnBuilder<Integer> reportRowNumberColumn(final String title) {
         return reportRowNumberColumn().setTitle(title);
     }
 
@@ -296,7 +299,7 @@ public class Columns {
      * @param component the component definition
      * @return a column builder
      */
-    public static ComponentColumnBuilder componentColumn(ComponentBuilder<?, ?> component) {
+    public static ComponentColumnBuilder componentColumn(final ComponentBuilder<?, ?> component) {
         Validate.notNull(component, "component must not be null");
         return new ComponentColumnBuilder(component);
     }
@@ -308,7 +311,7 @@ public class Columns {
      * @param component the component definition
      * @return a column builder
      */
-    public static ComponentColumnBuilder componentColumn(String title, ComponentBuilder<?, ?> component) {
+    public static ComponentColumnBuilder componentColumn(final String title, final ComponentBuilder<?, ?> component) {
         return componentColumn(component).setTitle(title);
     }
 
@@ -320,7 +323,7 @@ public class Columns {
      * @param fieldName the name of the field
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(String fieldName) {
+    public static BooleanColumnBuilder booleanColumn(final String fieldName) {
         return booleanColumn(DynamicReports.<Boolean>field(fieldName, Boolean.class));
     }
 
@@ -331,7 +334,7 @@ public class Columns {
      * @param fieldName the name of the field
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(String title, String fieldName) {
+    public static BooleanColumnBuilder booleanColumn(final String title, final String fieldName) {
         return booleanColumn(title, DynamicReports.<Boolean>field(fieldName, Boolean.class));
     }
 
@@ -341,7 +344,7 @@ public class Columns {
      * @param field the field definition
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(FieldBuilder<Boolean> field) {
+    public static BooleanColumnBuilder booleanColumn(final FieldBuilder<Boolean> field) {
         return new BooleanColumnBuilder(field);
     }
 
@@ -352,7 +355,7 @@ public class Columns {
      * @param field the field definition
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(String title, FieldBuilder<Boolean> field) {
+    public static BooleanColumnBuilder booleanColumn(final String title, final FieldBuilder<Boolean> field) {
         return booleanColumn(field).setTitle(title);
     }
 
@@ -362,7 +365,7 @@ public class Columns {
      * @param expression the boolean value expression
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(DRIExpression<Boolean> expression) {
+    public static BooleanColumnBuilder booleanColumn(final DRIExpression<Boolean> expression) {
         return new BooleanColumnBuilder(expression);
     }
 
@@ -373,7 +376,7 @@ public class Columns {
      * @param expression the boolean value expression
      * @return a column builder
      */
-    public static BooleanColumnBuilder booleanColumn(String title, DRIExpression<Boolean> expression) {
+    public static BooleanColumnBuilder booleanColumn(final String title, final DRIExpression<Boolean> expression) {
         return booleanColumn(expression).setTitle(title);
     }
 
@@ -395,8 +398,8 @@ public class Columns {
      * @param showDetailRows show detail rows
      * @return a column builder
      */
-    public static TextColumnBuilder<String> emptyColumn(boolean showTitle, boolean showDetailRows) {
-        TextColumnBuilder<String> column = column(Expressions.text(null));
+    public static TextColumnBuilder<String> emptyColumn(final boolean showTitle, final boolean showDetailRows) {
+        final TextColumnBuilder<String> column = column(Expressions.text(null));
         if (showTitle) {
             column.setTitle("");
         }
