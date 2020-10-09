@@ -45,18 +45,18 @@ import net.sf.jasperreports.engine.type.ModeEnum;
 /**
  * <p>StyleTransform class.</p>
  *
- * @author Ricardo Mariaca
- * 
+ * @author Ricardo Mariaca, Jan Moxter
+ *
  */
 public class StyleTransform {
-    private JasperTransformAccessor accessor;
+    private final JasperTransformAccessor accessor;
 
     /**
      * <p>Constructor for StyleTransform.</p>
      *
      * @param accessor a {@link net.sf.dynamicreports.jasper.transformation.JasperTransformAccessor} object.
      */
-    public StyleTransform(JasperTransformAccessor accessor) {
+    public StyleTransform(final JasperTransformAccessor accessor) {
         this.accessor = accessor;
     }
 
@@ -64,48 +64,48 @@ public class StyleTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignStyle style : accessor.getReport().getStyles()) {
+        for (final DRIDesignStyle style : accessor.getReport().getStyles()) {
             addStyle(style);
         }
     }
 
-    private void addStyle(DRIDesignStyle style) {
+    private void addStyle(final DRIDesignStyle style) {
         try {
             accessor.getDesign().addStyle(style(style));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new JasperDesignException("Registration failed for style \"" + style.getName() + "\"", e);
         }
     }
 
     // style
-    private JRDesignStyle style(DRIDesignStyle style) {
-        JRDesignStyle jrStyle = new JRDesignStyle();
+    private JRDesignStyle style(final DRIDesignStyle style) {
+        final JRDesignStyle jrStyle = new JRDesignStyle();
         abstractStyle(jrStyle, style);
 
         jrStyle.setName(style.getName());
-        DRIDesignStyle parentStyle = style.getParentStyle();
+        final DRIDesignStyle parentStyle = style.getParentStyle();
         if (parentStyle != null) {
             style(parentStyle);
             jrStyle.setParentStyleNameReference(parentStyle.getName());
         }
-        for (DRIDesignConditionalStyle conditionalStyle : style.getConditionalStyles()) {
+        for (final DRIDesignConditionalStyle conditionalStyle : style.getConditionalStyles()) {
             jrStyle.addConditionalStyle(conditionalStyle(conditionalStyle));
         }
         return jrStyle;
     }
 
-    private JRDesignConditionalStyle conditionalStyle(DRIDesignConditionalStyle conditionalStyle) {
-        JRDesignConditionalStyle jrConditionalStyle = new JRDesignConditionalStyle();
+    private JRDesignConditionalStyle conditionalStyle(final DRIDesignConditionalStyle conditionalStyle) {
+        final JRDesignConditionalStyle jrConditionalStyle = new JRDesignConditionalStyle();
         abstractStyle(jrConditionalStyle, conditionalStyle);
 
-        AbstractExpressionTransform expressionTransform = accessor.getExpressionTransform(conditionalStyle.getDataset());
-        JRDesignExpression expression = expressionTransform.getExpression(conditionalStyle.getConditionExpression());
+        final AbstractExpressionTransform expressionTransform = accessor.getExpressionTransform(conditionalStyle.getDataset());
+        final JRDesignExpression expression = expressionTransform.getExpression(conditionalStyle.getConditionExpression());
         jrConditionalStyle.setConditionExpression(expression);
 
         return jrConditionalStyle;
     }
 
-    private void abstractStyle(JRBaseStyle baseStyle, DRIDesignBaseStyle style) {
+    private void abstractStyle(final JRBaseStyle baseStyle, final DRIDesignBaseStyle style) {
         baseStyle.setForecolor(style.getForegroundColor());
         baseStyle.setBackcolor(style.getBackgroundColor());
         if (style.getBackgroundColor() != null) {
@@ -123,12 +123,12 @@ public class StyleTransform {
         baseStyle.setRotation(ConstantTransform.rotation(style.getRotation()));
         baseStyle.setPattern(style.getPattern());
         baseStyle.setMarkup(ConstantTransform.markup(style.getMarkup()));
-        baseStyle.setBlankWhenNull(true);
+        baseStyle.setBlankWhenNull(Boolean.TRUE);
         paragraph(baseStyle.getParagraph(), style.getParagraph());
         pen(baseStyle.getLinePen(), style.getLinePen());
     }
 
-    private void paragraph(JRParagraph jrParagraph, DRIDesignParagraph paragraph) {
+    private void paragraph(final JRParagraph jrParagraph, final DRIDesignParagraph paragraph) {
         jrParagraph.setLineSpacing(ConstantTransform.lineSpacing(paragraph.getLineSpacing()));
         jrParagraph.setLineSpacingSize(paragraph.getLineSpacingSize());
         jrParagraph.setFirstLineIndent(paragraph.getFirstLineIndent());
@@ -137,8 +137,8 @@ public class StyleTransform {
         jrParagraph.setSpacingBefore(paragraph.getSpacingBefore());
         jrParagraph.setSpacingAfter(paragraph.getSpacingAfter());
         jrParagraph.setTabStopWidth(paragraph.getTabStopWidth());
-        for (DRIDesignTabStop tabStop : paragraph.getTabStops()) {
-            TabStop jrTabStop = new TabStop();
+        for (final DRIDesignTabStop tabStop : paragraph.getTabStops()) {
+            final TabStop jrTabStop = new TabStop();
             jrTabStop.setPosition(tabStop.getPosition());
             jrTabStop.setAlignment(ConstantTransform.tabStopAlignment(tabStop.getAlignment()));
             jrParagraph.addTabStop(jrTabStop);
@@ -151,7 +151,7 @@ public class StyleTransform {
      * @param jrPen a {@link net.sf.jasperreports.engine.JRPen} object.
      * @param pen   a {@link net.sf.dynamicreports.design.definition.style.DRIDesignPen} object.
      */
-    protected void pen(JRPen jrPen, DRIDesignPen pen) {
+    protected void pen(final JRPen jrPen, final DRIDesignPen pen) {
         if (pen == null) {
             return;
         }
@@ -161,7 +161,7 @@ public class StyleTransform {
         jrPen.setLineWidth(pen.getLineWidth());
     }
 
-    private void border(JRLineBox lineBox, DRIDesignBorder border) {
+    private void border(final JRLineBox lineBox, final DRIDesignBorder border) {
         if (border == null) {
             return;
         }
@@ -172,7 +172,7 @@ public class StyleTransform {
         pen(lineBox.getBottomPen(), border.getBottomPen());
     }
 
-    private void padding(JRLineBox lineBox, DRIDesignPadding padding) {
+    private void padding(final JRLineBox lineBox, final DRIDesignPadding padding) {
         if (padding == null) {
             return;
         }
@@ -183,7 +183,7 @@ public class StyleTransform {
         lineBox.setBottomPadding(padding.getBottom());
     }
 
-    private void font(JRBaseStyle baseStyle, DRIDesignFont font) {
+    private void font(final JRBaseStyle baseStyle, final DRIDesignFont font) {
         if (font == null) {
             return;
         }
@@ -205,12 +205,12 @@ public class StyleTransform {
      * @param font a {@link net.sf.dynamicreports.design.definition.style.DRIDesignFont} object.
      * @return a {@link net.sf.jasperreports.engine.base.JRBaseFont} object.
      */
-    protected JRBaseFont font(DRIDesignFont font) {
+    protected JRBaseFont font(final DRIDesignFont font) {
         if (font == null) {
             return null;
         }
 
-        JRBaseFont jrFont = new JRBaseFont();
+        final JRBaseFont jrFont = new JRBaseFont();
         jrFont.setFontName(font.getFontName());
         jrFont.setBold(font.getBold());
         jrFont.setItalic(font.getItalic());
@@ -229,7 +229,7 @@ public class StyleTransform {
      * @param style a {@link net.sf.dynamicreports.design.definition.style.DRIDesignStyle} object.
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignStyle} object.
      */
-    protected JRDesignStyle getStyle(DRIDesignStyle style) {
+    protected JRDesignStyle getStyle(final DRIDesignStyle style) {
         if (style == null) {
             return null;
         }

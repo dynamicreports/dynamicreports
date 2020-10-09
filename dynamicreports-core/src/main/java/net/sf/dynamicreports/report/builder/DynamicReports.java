@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.report.builder;
 
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.builder.export.ExporterBuilders;
@@ -46,13 +48,12 @@ import net.sf.dynamicreports.report.constant.OrderType;
 import net.sf.dynamicreports.report.definition.datatype.DRIDataType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.dynamicreports.report.exception.DRException;
-import org.apache.commons.lang3.Validate;
 
 /**
  * <p>DynamicReports class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class DynamicReports {
     /**
@@ -132,7 +133,7 @@ public class DynamicReports {
      * @param jasperReportHandler a {@link net.sf.dynamicreports.jasper.definition.JasperReportHandler} object.
      * @return a report builder
      */
-    public static JasperConcatenatedReportBuilder concatenatedReport(JasperReportHandler jasperReportHandler) {
+    public static JasperConcatenatedReportBuilder concatenatedReport(final JasperReportHandler jasperReportHandler) {
         return new JasperConcatenatedReportBuilder(jasperReportHandler);
     }
 
@@ -146,12 +147,13 @@ public class DynamicReports {
      * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      */
-    public static <T> FieldBuilder<T> field(String name, Class valueClass) {
-        FieldBuilder<T> fieldBuilder = new FieldBuilder<T>(name, valueClass);
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T> FieldBuilder<T> field(final String name, final Class valueClass) {
+        final FieldBuilder<T> fieldBuilder = new FieldBuilder<>(name, valueClass);
         try {
-            DRIDataType<? super T, T> dataType = DataTypes.detectType(valueClass);
+            final DRIDataType<? super T, T> dataType = DataTypes.detectType(valueClass);
             fieldBuilder.setDataType(dataType);
-        } catch (DRException e) {
+        } catch (final DRException e) {
         }
         return fieldBuilder;
     }
@@ -164,9 +166,10 @@ public class DynamicReports {
      * @param <T>      a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      */
-    public static <T> FieldBuilder<T> field(String name, DRIDataType dataType) {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static <T> FieldBuilder<T> field(final String name, final DRIDataType dataType) {
         Validate.notNull(dataType, "dataType must not be null");
-        FieldBuilder<T> fieldBuilder = new FieldBuilder<T>(name, dataType.getValueClass());
+        final FieldBuilder<T> fieldBuilder = new FieldBuilder<T>(name, dataType.getValueClass());
         fieldBuilder.setDataType(dataType);
         return fieldBuilder;
     }
@@ -181,9 +184,9 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(ValueColumnBuilder<?, ?> column, Calculation calculation) {
+    public static <T> VariableBuilder<T> variable(final ValueColumnBuilder<?, ?> column, final Calculation calculation) {
         Validate.notNull(column, "column must not be null");
-        return new VariableBuilder<T>(column, calculation);
+        return new VariableBuilder<>(column, calculation);
     }
 
     /**
@@ -195,9 +198,9 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(String name, ValueColumnBuilder<?, ?> column, Calculation calculation) {
+    public static <T> VariableBuilder<T> variable(final String name, final ValueColumnBuilder<?, ?> column, final Calculation calculation) {
         Validate.notNull(column, "column must not be null");
-        return new VariableBuilder<T>(name, column, calculation);
+        return new VariableBuilder<>(name, column, calculation);
     }
 
     /**
@@ -208,9 +211,9 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(FieldBuilder<T> field, Calculation calculation) {
+    public static <T> VariableBuilder<T> variable(final FieldBuilder<T> field, final Calculation calculation) {
         Validate.notNull(field, "field must not be null");
-        return new VariableBuilder<T>(field, calculation);
+        return new VariableBuilder<>(field, calculation);
     }
 
     /**
@@ -222,8 +225,8 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(String name, FieldBuilder<T> field, Calculation calculation) {
-        return new VariableBuilder<T>(name, field, calculation);
+    public static <T> VariableBuilder<T> variable(final String name, final FieldBuilder<T> field, final Calculation calculation) {
+        return new VariableBuilder<>(name, field, calculation);
     }
 
     /**
@@ -235,8 +238,8 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(String fieldName, Class<?> valueClass, Calculation calculation) {
-        return new VariableBuilder<T>(field(fieldName, valueClass), calculation);
+    public static <T> VariableBuilder<T> variable(final String fieldName, final Class<?> valueClass, final Calculation calculation) {
+        return new VariableBuilder<>(field(fieldName, valueClass), calculation);
     }
 
     /**
@@ -249,8 +252,8 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(String name, String fieldName, Class<?> valueClass, Calculation calculation) {
-        return new VariableBuilder<T>(name, field(fieldName, valueClass), calculation);
+    public static <T> VariableBuilder<T> variable(final String name, final String fieldName, final Class<?> valueClass, final Calculation calculation) {
+        return new VariableBuilder<>(name, field(fieldName, valueClass), calculation);
     }
 
     /**
@@ -261,8 +264,8 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(DRIExpression<?> expression, Calculation calculation) {
-        return new VariableBuilder<T>(expression, calculation);
+    public static <T> VariableBuilder<T> variable(final DRIExpression<?> expression, final Calculation calculation) {
+        return new VariableBuilder<>(expression, calculation);
     }
 
     /**
@@ -274,8 +277,8 @@ public class DynamicReports {
      * @param <T>         a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      */
-    public static <T> VariableBuilder<T> variable(String name, DRIExpression<?> expression, Calculation calculation) {
-        return new VariableBuilder<T>(name, expression, calculation);
+    public static <T> VariableBuilder<T> variable(final String name, final DRIExpression<?> expression, final Calculation calculation) {
+        return new VariableBuilder<>(name, expression, calculation);
     }
 
     // sort
@@ -286,7 +289,7 @@ public class DynamicReports {
      * @param column a {@link net.sf.dynamicreports.report.builder.column.TextColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder asc(TextColumnBuilder<?> column) {
+    public static SortBuilder asc(final TextColumnBuilder<?> column) {
         return new SortBuilder(column).setOrderType(OrderType.ASCENDING);
     }
 
@@ -296,7 +299,7 @@ public class DynamicReports {
      * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder asc(FieldBuilder<?> field) {
+    public static SortBuilder asc(final FieldBuilder<?> field) {
         return new SortBuilder(field).setOrderType(OrderType.ASCENDING);
     }
 
@@ -307,7 +310,7 @@ public class DynamicReports {
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder asc(String fieldName, Class<?> valueClass) {
+    public static SortBuilder asc(final String fieldName, final Class<?> valueClass) {
         return new SortBuilder(field(fieldName, valueClass)).setOrderType(OrderType.ASCENDING);
     }
 
@@ -317,7 +320,7 @@ public class DynamicReports {
      * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder asc(VariableBuilder<?> variable) {
+    public static SortBuilder asc(final VariableBuilder<?> variable) {
         return new SortBuilder(variable).setOrderType(OrderType.ASCENDING);
     }
 
@@ -327,7 +330,7 @@ public class DynamicReports {
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder asc(DRIExpression<?> expression) {
+    public static SortBuilder asc(final DRIExpression<?> expression) {
         return new SortBuilder(expression).setOrderType(OrderType.ASCENDING);
     }
 
@@ -337,7 +340,7 @@ public class DynamicReports {
      * @param column a {@link net.sf.dynamicreports.report.builder.column.TextColumnBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder desc(TextColumnBuilder<?> column) {
+    public static SortBuilder desc(final TextColumnBuilder<?> column) {
         return new SortBuilder(column).setOrderType(OrderType.DESCENDING);
     }
 
@@ -347,7 +350,7 @@ public class DynamicReports {
      * @param field a {@link net.sf.dynamicreports.report.builder.FieldBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder desc(FieldBuilder<?> field) {
+    public static SortBuilder desc(final FieldBuilder<?> field) {
         return new SortBuilder(field).setOrderType(OrderType.DESCENDING);
     }
 
@@ -358,7 +361,7 @@ public class DynamicReports {
      * @param valueClass a {@link java.lang.Class} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder desc(String fieldName, Class<?> valueClass) {
+    public static SortBuilder desc(final String fieldName, final Class<?> valueClass) {
         return new SortBuilder(field(fieldName, valueClass)).setOrderType(OrderType.DESCENDING);
     }
 
@@ -368,7 +371,7 @@ public class DynamicReports {
      * @param variable a {@link net.sf.dynamicreports.report.builder.VariableBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder desc(VariableBuilder<?> variable) {
+    public static SortBuilder desc(final VariableBuilder<?> variable) {
         return new SortBuilder(variable).setOrderType(OrderType.DESCENDING);
     }
 
@@ -378,7 +381,7 @@ public class DynamicReports {
      * @param expression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.SortBuilder} object.
      */
-    public static SortBuilder desc(DRIExpression<?> expression) {
+    public static SortBuilder desc(final DRIExpression<?> expression) {
         return new SortBuilder(expression).setOrderType(OrderType.DESCENDING);
     }
 
@@ -399,7 +402,7 @@ public class DynamicReports {
      * @param link a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
      */
-    public static HyperLinkBuilder hyperLink(String link) {
+    public static HyperLinkBuilder hyperLink(final String link) {
         return new HyperLinkBuilder(link);
     }
 
@@ -409,7 +412,7 @@ public class DynamicReports {
      * @param linkExpression a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      * @return a {@link net.sf.dynamicreports.report.builder.HyperLinkBuilder} object.
      */
-    public static HyperLinkBuilder hyperLink(DRIExpression<String> linkExpression) {
+    public static HyperLinkBuilder hyperLink(final DRIExpression<String> linkExpression) {
         return new HyperLinkBuilder(linkExpression);
     }
 
@@ -430,7 +433,7 @@ public class DynamicReports {
      * @param margin a int.
      * @return a {@link net.sf.dynamicreports.report.builder.MarginBuilder} object.
      */
-    public static MarginBuilder margin(int margin) {
+    public static MarginBuilder margin(final int margin) {
         return new MarginBuilder(margin);
     }
 
@@ -444,8 +447,8 @@ public class DynamicReports {
      * @param <T>   a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
      */
-    public static <T> ParameterBuilder<T> parameter(String name, T value) {
-        return new ParameterBuilder<T>(name, value);
+    public static <T> ParameterBuilder<T> parameter(final String name, final T value) {
+        return new ParameterBuilder<>(name, value);
     }
 
     /**
@@ -456,8 +459,8 @@ public class DynamicReports {
      * @param <T>        a T object.
      * @return a {@link net.sf.dynamicreports.report.builder.ParameterBuilder} object.
      */
-    public static <T> ParameterBuilder<T> parameter(String name, Class<T> valueClass) {
-        return new ParameterBuilder<T>(name, valueClass);
+    public static <T> ParameterBuilder<T> parameter(final String name, final Class<T> valueClass) {
+        return new ParameterBuilder<>(name, valueClass);
     }
 
     // query
@@ -469,7 +472,7 @@ public class DynamicReports {
      * @param language a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.QueryBuilder} object.
      */
-    public static QueryBuilder query(String text, String language) {
+    public static QueryBuilder query(final String text, final String language) {
         return new QueryBuilder(text, language);
     }
 
@@ -481,7 +484,7 @@ public class DynamicReports {
      * @param value a {@link java.lang.Number} object.
      * @return a int.
      */
-    public static int cm(Number value) {
+    public static int cm(final Number value) {
         return Units.cm(value);
     }
 
@@ -491,7 +494,7 @@ public class DynamicReports {
      * @param value a {@link java.lang.Number} object.
      * @return a int.
      */
-    public static int inch(Number value) {
+    public static int inch(final Number value) {
         return Units.inch(value);
     }
 
@@ -501,7 +504,7 @@ public class DynamicReports {
      * @param value a {@link java.lang.Number} object.
      * @return a int.
      */
-    public static int mm(Number value) {
+    public static int mm(final Number value) {
         return Units.mm(value);
     }
 
@@ -542,7 +545,7 @@ public class DynamicReports {
      * @param label a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder} object.
      */
-    public static TableOfContentsHeadingBuilder tableOfContentsHeading(String label) {
+    public static TableOfContentsHeadingBuilder tableOfContentsHeading(final String label) {
         return new TableOfContentsHeadingBuilder().setLabel(label);
     }
 
