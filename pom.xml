@@ -47,7 +47,6 @@
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.12</batikbridgeVersion>
-        <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.11</commonslang3Version>
         <groovyVersion>2.4.19</groovyVersion>
         <hsqldbVersion>2.5.1</hsqldbVersion>
@@ -144,11 +143,6 @@
                         <groupId>com.ibm.icu</groupId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>${commonslangVersion}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
