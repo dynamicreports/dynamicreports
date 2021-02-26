@@ -1,6 +1,12 @@
 DynamicReports Change Log
 =========================
 
+Changes work in progress
+---------------------------------------------------
+ - Remove commons-lang 2.6 dependency
+ - Update jasperreport to 6.16.0
+ - Update junit to 4.13.1, securit audit fix
+ 
 Changes in version 6.12.0 (2020-10-08)
 ---------------------------------------------------
  - Update jasperreport to 6.12.0
