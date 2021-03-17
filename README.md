@@ -39,17 +39,59 @@ These are the main goals of the project
   
 ## Documentation
 
-See [Readthedocs](https://dynamicreports.readthedocs.io/en/latest/)
+DynamicReprots documentation available at [Readthedocs](https://dynamicreports.readthedocs.io/)
+
+Project API documentation
+- Core API documentaion, https://dynamicreports.github.io/apidocs/dr/core/
+- AdHoc reports API documentation, https://dynamicreports.github.io/apidocs/dr/adhoc/
+- GoogleCharts integration API documentation, https://dynamicreports.github.io/apidocs/dr/googlecharts/
+- Examples API documentation, https://dynamicreports.github.io/apidocs/dr/examples/
 
 ## Project Dependencies
 A few tools merit to be mentioned:
+ - Java version 8
  - Versioning : git
  - Build Tool : maven
  - CI : [Travis](https://travis-ci.com/dynamicreports/dynamicreports) (yet to fully setup)
- - Java version 8
  - Code style: [google](https://google.github.io/styleguide/javaguide.html). Enforced by checkstyle. (Setting
  that up too)
  - Documentation Hosting: [readthedocs.org](https://readthedocs.org/)
+
+## Usage or Build
+DynamicReports is synchronized with a Maven central repository. For Maven projects you just add dependency to your maven configuration. In case you would like to use a development version, add a Sonatype Nexus snapshot repository to your maven configuration. 
+
+### Maven
+#### Core module
+```xml
+<dependency>
+    <groupId>net.sourceforge.dynamicreports</groupId>
+    <artifactId>dynamicreports-core</artifactId>
+    <version>6.12.0</version>
+</dependency>
+```
+#### AdHoc module
+```xml
+<dependency>
+    <groupId>net.sourceforge.dynamicreports</groupId>
+    <artifactId>dynamicreports-adhoc</artifactId>
+    <version>6.12.0</version>
+</dependency>
+```
+#### Google Chart addon module
+```xml
+<dependency>
+    <groupId>net.sourceforge.dynamicreports</groupId>
+    <artifactId>dynamicreports-googlecharts</artifactId>
+    <version>6.12.0</version>
+</dependency>
+```
+
+For non Maven projects you can to download jar file from [maven repository](https://search.maven.org/search?q=g:net.sourceforge.dynamicreports)
+
+#### Build from source 
+Check release page to download source [release files](https://github.com/dynamicreports/dynamicreports/releases).
+
+Unzip the souces, execute `mvnw clean install` from project root directory. This compile project sources and create project jar files.
 
 ## Contributing
 
