@@ -10,7 +10,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.12.0</version>
+    <version>6.12.1</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -47,7 +47,6 @@
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.12</batikbridgeVersion>
-        <commonslangVersion>2.6</commonslangVersion>
         <commonslang3Version>3.11</commonslang3Version>
         <groovyVersion>2.4.19</groovyVersion>
         <hsqldbVersion>2.5.1</hsqldbVersion>
@@ -144,11 +143,6 @@
                         <groupId>com.ibm.icu</groupId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>${commonslangVersion}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -733,14 +727,14 @@
         <repository>
             <id>jaspersoft-third-party</id>
             <url>
-                http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/
+                https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/
             </url>
         </repository>
         <repository>
             <id>jr-ce-releases</id>
             <name>JasperReports CE Releases</name>
             <url>
-                http://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases
+                https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases
             </url>
         </repository>
     </repositories>
