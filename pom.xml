@@ -36,36 +36,35 @@
     </modules>
 
     <properties>
-        <!--Environment -->
         <encoding>UTF-8</encoding>
-        <sourceVersion>1.8</sourceVersion>
-        <targetVersion>1.8</targetVersion>
+        <sourceVersion>17</sourceVersion>
+        <targetVersion>17</targetVersion>
 
         <!--Dependencies -->
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
-        <batikbridgeVersion>1.12</batikbridgeVersion>
-        <commonslang3Version>3.11</commonslang3Version>
+        <batikbridgeVersion>1.16</batikbridgeVersion>
+        <commonslang3Version>3.12.0</commonslang3Version>
         <groovyVersion>2.4.19</groovyVersion>
-        <hsqldbVersion>2.5.1</hsqldbVersion>
-        <jasperreportsVersion>6.12.1</jasperreportsVersion>
+        <hsqldbVersion>2.7.2</hsqldbVersion>
+        <jasperreportsVersion>6.20.5</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
         <jaxbVersion>2.3.0.1</jaxbVersion>
-        <jsonVersion>20200518</jsonVersion>
-        <jul-to-slf4jVersion>1.7.25</jul-to-slf4jVersion>
+        <jsonVersion>20230618</jsonVersion>
+        <jul-to-slf4jVersion>2.0.7</jul-to-slf4jVersion>
         <junitVersion>4.13.2</junitVersion>
         <log4j-to-slf4jVersion>2.13.3</log4j-to-slf4jVersion>
-        <logback-classicVersion>1.2.3</logback-classicVersion>
-        <poiVersion>4.1.2</poiVersion>
+        <logback-classicVersion>1.4.8</logback-classicVersion>
+        <poiVersion>5.2.3</poiVersion>
         <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
-        <xalanVersion>2.7.2</xalanVersion>
-        <xmlgraphicscommonsVersion>2.4</xmlgraphicscommonsVersion>
+        <xalanVersion>2.7.3</xalanVersion>
+        <xmlgraphicscommonsVersion>2.8</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
-        <jacoco-maven-plugin-version>0.8.5</jacoco-maven-plugin-version>
+        <jacoco-maven-plugin-version>0.8.10</jacoco-maven-plugin-version>
         <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
@@ -73,7 +72,7 @@
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
         <!--Profile Plugins-->
-        <license-maven-plugin-version>3.0</license-maven-plugin-version>
+        <license-maven-plugin-version>4.2</license-maven-plugin-version>
         <maven-javadoc-plugin-version>3.5.0</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
 
@@ -145,7 +144,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-text</artifactId>
-                <version>1.9</version>
+                <version>1.10.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -252,6 +251,11 @@
                 <artifactId>json</artifactId>
                 <version>${jsonVersion}</version>
                 <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>1.2.0</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -415,7 +419,7 @@
                 </plugin>
                 <plugin>
                     <groupId>org.jvnet.jaxb2.maven2</groupId>
-                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <artifactId>maven-jaxb23-plugin</artifactId>
                     <version>0.15.3</version>
                 </plugin>
             </plugins>

@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
-            <version>3.4.0</version>
+            <version>3.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -113,6 +113,11 @@
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

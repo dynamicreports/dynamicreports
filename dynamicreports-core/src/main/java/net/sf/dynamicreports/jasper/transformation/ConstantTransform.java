@@ -109,6 +109,7 @@ import net.sf.jasperreports.engine.design.JRDesignChart;
 import net.sf.jasperreports.engine.export.type.ImageAnchorTypeEnum;
 import net.sf.jasperreports.engine.type.BreakTypeEnum;
 import net.sf.jasperreports.engine.type.CalculationEnum;
+import net.sf.jasperreports.engine.type.DatasetResetTypeEnum;
 import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 import net.sf.jasperreports.engine.type.FooterPositionEnum;
 import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
@@ -143,7 +144,7 @@ import net.sf.jasperreports.export.type.PdfaConformanceEnum;
  * <p>ConstantTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ConstantTransform {
 
@@ -555,6 +556,27 @@ public class ConstantTransform {
                 throw new JasperDesignException("Variable reset type " + resetType.name() + " not supported");
         }
     }
+
+    public static DatasetResetTypeEnum variableDatasetResetType(final ResetType resetType) {
+      if (resetType == null) {
+          return DatasetResetTypeEnum.NONE;
+      }
+
+      switch (resetType) {
+          case NONE:
+              return DatasetResetTypeEnum.NONE;
+          case REPORT:
+              return DatasetResetTypeEnum.REPORT;
+          case PAGE:
+              return DatasetResetTypeEnum.PAGE;
+          case COLUMN:
+              return DatasetResetTypeEnum.COLUMN;
+          case GROUP:
+              return DatasetResetTypeEnum.GROUP;
+          default:
+              throw new JasperDesignException("Variable reset type " + resetType.name() + " not supported");
+      }
+  }
 
     /**
      * <p>evaluationTime.</p>
