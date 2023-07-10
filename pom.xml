@@ -10,7 +10,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.12.2-SNAPSHOT</version>
+    <version>6.20.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -32,8 +32,6 @@
 
     <modules>
         <module>dynamicreports-core</module>
-        <module>dynamicreports-adhoc</module>
-        <module>dynamicreports-googlecharts</module>
         <module>dynamicreports-examples</module>
     </modules>
 
@@ -50,7 +48,7 @@
         <commonslang3Version>3.11</commonslang3Version>
         <groovyVersion>2.4.19</groovyVersion>
         <hsqldbVersion>2.5.1</hsqldbVersion>
-        <jasperreportsVersion>6.12.2</jasperreportsVersion>
+        <jasperreportsVersion>6.12.1</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
@@ -76,7 +74,7 @@
 
         <!--Profile Plugins-->
         <license-maven-plugin-version>3.0</license-maven-plugin-version>
-        <maven-javadoc-plugin-version>3.1.1</maven-javadoc-plugin-version>
+        <maven-javadoc-plugin-version>3.5.0</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
 
         <!--Mycila License plugin configuration-->
@@ -418,7 +416,7 @@
                 <plugin>
                     <groupId>org.jvnet.jaxb2.maven2</groupId>
                     <artifactId>maven-jaxb2-plugin</artifactId>
-                    <version>0.14.0</version>
+                    <version>0.15.3</version>
                 </plugin>
             </plugins>
         </pluginManagement>

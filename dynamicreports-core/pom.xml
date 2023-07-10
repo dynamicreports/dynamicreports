@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>6.12.2-SNAPSHOT</version>
+        <version>6.20.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>dynamicreports-core</artifactId>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
-            <version>3.3.3</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -65,6 +65,31 @@
             <artifactId>batik-bridge</artifactId>
             <scope>compile</scope>
         </dependency>
+         <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+                <dependency>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                    <version>${jaxb-apiVersion}</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+                <dependency>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>${jaxb-coreVersion}</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+                <dependency>
+                    <groupId>org.glassfish.jaxb</groupId>
+                    <artifactId>jaxb-core</artifactId>
+                    <version>${jaxb-coreVersion}</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+                <dependency>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                    <version>${jaxb-implVersion}</version>
+                </dependency>
+
         <dependency>
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>xmlgraphics-commons</artifactId>
@@ -105,10 +130,9 @@
 
     <build>
         <plugins>
-            <!--Works perfectly with java8 why should we change this?-->
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
+                <artifactId>maven-jaxb23-plugin</artifactId>
                 <configuration>
                     <schemaIncludes>
                         <schemaInclude>**/dynamicreports.xsd</schemaInclude>
@@ -341,162 +365,5 @@
                 </plugins>
             </build>
         </profile>
-
-        <profile>
-            <id>java9</id>
-            <!--Please remember to run this after running compile in core module-->
-            <activation>
-                <!--Activate if java9 is activated on the parent pom-->
-                <property>
-                    <name>profile</name>
-                    <value>java9</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <!--We have to upgrade for jaxb api to work in java9-->
-                    <plugin>
-                        <groupId>org.jvnet.jaxb2.maven2</groupId>
-                        <artifactId>maven-jaxb23-plugin</artifactId>
-                        <version>0.14.0</version>
-                        <configuration>
-                            <schemaIncludes>
-                                <schemaInclude>**/dynamicreports.xsd</schemaInclude>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <bindingInclude>**/dynamicreports.xjb</bindingInclude>
-                            </bindingIncludes>
-                            <removeOldOutput>true</removeOldOutput>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>jaxb</id>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>generate</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <!--Disable this version in java9-->
-                    <plugin>
-                        <groupId>org.jvnet.jaxb2.maven2</groupId>
-                        <artifactId>maven-jaxb2-plugin</artifactId>
-                        <version>0.13.1</version>
-                        <configuration>
-                            <schemaIncludes>
-                                <schemaInclude>**/dynamicreports.xsd</schemaInclude>
-                            </schemaIncludes>
-                            <bindingIncludes>
-                                <bindingInclude>**/dynamicreports.xjb</bindingInclude>
-                            </bindingIncludes>
-                            <removeOldOutput>true</removeOldOutput>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>jaxb</id>
-                                <!--This is how you disable it-->
-                                <phase>none</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <executions>
-                            <execution>
-                                <id>add-source</id>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>add-source</goal>
-                                </goals>
-                                <configuration>
-                                    <sources>
-                                        <source>${basedir}/target/generated-sources/xjc</source>
-                                    </sources>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin-version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin-version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <doclint>none</doclint>
-                            <additionalparam>${javadoc.opts}</additionalparam>
-                            <nosince>false</nosince>
-                            <failOnError>false</failOnError>
-                            <doclint>none</doclint>
-                            <defaultVersion>${project.version}</defaultVersion>
-                            <defaultSince>${project.version}</defaultSince>
-                            <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
-                            <sourceFileExcludes>
-                                <sourceFileExclude>${project.basedir}/dynamicreports-core/target</sourceFileExclude>
-                            </sourceFileExcludes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-            <dependencies>
-                <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-                <dependency>
-                    <groupId>javax.xml.bind</groupId>
-                    <artifactId>jaxb-api</artifactId>
-                    <version>${jaxb-apiVersion}</version>
-                </dependency>
-                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
-                <dependency>
-                    <groupId>com.sun.xml.bind</groupId>
-                    <artifactId>jaxb-core</artifactId>
-                    <version>${jaxb-coreVersion}</version>
-                </dependency>
-                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
-                <dependency>
-                    <groupId>org.glassfish.jaxb</groupId>
-                    <artifactId>jaxb-core</artifactId>
-                    <version>${jaxb-coreVersion}</version>
-                </dependency>
-                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
-                <dependency>
-                    <groupId>com.sun.xml.bind</groupId>
-                    <artifactId>jaxb-impl</artifactId>
-                    <version>${jaxb-implVersion}</version>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <profile>
-            <id>java8-doclint-disabled</id>
-            <activation>
-                <jdk>[1.8,)</jdk>
-            </activation>
-            <properties>
-                <javadoc.opts>-Xdoclint:none</javadoc.opts>
-            </properties>
-        </profile>
-
     </profiles>
 </project>
