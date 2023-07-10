@@ -60,7 +60,6 @@
         <poiVersion>5.2.3</poiVersion>
         <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
-        <xalanVersion>2.7.3</xalanVersion>
         <xmlgraphicscommonsVersion>2.8</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
@@ -216,13 +215,6 @@
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
                 <version>${hsqldbVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>xalan</groupId>
-                <artifactId>xalan</artifactId>
-                <version>${xalanVersion}</version>
                 <scope>runtime</scope>
                 <optional>true</optional>
             </dependency>
