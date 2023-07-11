@@ -91,12 +91,6 @@
         <checkstyle.config.includeTestResources>false</checkstyle.config.includeTestResources>
         <checkstyle.config.includeTestSourceDirectory>false</checkstyle.config.includeTestSourceDirectory>
         <linkXRef>false</linkXRef>
-
-        <!--Configuration for Modernizer-maven-plugin-->
-        <modernizer-failOnViolations>true</modernizer-failOnViolations>
-        <modernizer-javaVersion>${sourceVersion}</modernizer-javaVersion>
-        <modernizer-skip>false</modernizer-skip>
-
     </properties>
 
     <dependencyManagement>
@@ -345,26 +339,6 @@
                             <goals>
                                 <goal>jdkinternals</goal> <!-- verify main classes -->
                                 <goal>test-jdkinternals</goal> <!-- verify test classes -->
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <!--Configuring plugin to detect use of legacy API-->
-                <plugin>
-                    <groupId>org.gaul</groupId>
-                    <artifactId>modernizer-maven-plugin</artifactId>
-                    <version>2.0.0</version>
-                    <configuration>
-                        <javaVersion>${modernizer-javaVersion}</javaVersion>
-                        <failOnViolations>${modernizer-failOnViolations}</failOnViolations>
-                        <skip>${modernizer-skip}</skip>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>modernizer</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>modernizer</goal>
                             </goals>
                         </execution>
                     </executions>
