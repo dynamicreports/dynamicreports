@@ -35,35 +35,35 @@ import net.sf.jasperreports.engine.JRDataSource;
  * @author Jan Moxter
  */
 public class TextField6Test extends AbstractJasperPositionTest {
-    private TextColumnBuilder<String> column1;
+  private TextColumnBuilder<String> column1;
 
-    @Override
-    protected void configureReport(final JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("test test", "field1", String.class)
-                        .setFixedWidth(25)
-                        .setTextAdjust(TextAdjust.CUT_TEXT)
-                        .setTitleTextAdjust(TextAdjust.CUT_TEXT))
-          .title(cmp.text("test test").setFixedWidth(25)
-                          .setTextAdjust(TextAdjust.CUT_TEXT), cmp.text("test test").setFixedWidth(25));
-    }
+  @Override
+  protected void configureReport(final JasperReportBuilder rb) {
+    rb.columns(column1 = col.column("test test", "field1", String.class)
+      .setFixedWidth(25)
+      .setTextAdjust(TextAdjust.CUT_TEXT)
+      .setTitleTextAdjust(TextAdjust.CUT_TEXT))
+      .title(cmp.text("test test").setFixedWidth(25).setTextAdjust(TextAdjust.CUT_TEXT),
+          cmp.text("test test").setFixedWidth(25));
+  }
 
-    @Override
-    public void test() {
-        super.test();
+  @Override
+  public void test() {
+    super.test();
 
-        numberOfPagesTest(1);
+    numberOfPagesTest(1);
 
-        elementPositionTest("title.textField1", 0, 10, 10, 25, 16);
-        elementPositionTest("title.textField2", 0, 10, 26, 25, 26);
+    elementPositionTest("title.textField1", 0, 10, 10, 25, 16);
+    elementPositionTest("title.textField2", 0, 10, 26, 25, 27);
 
-        columnTitlePositionTest(column1, 0, 10, 52, 25, 16);
-        columnDetailPositionTest(column1, 0, 10, 68, 25, 16);
-    }
+    columnTitlePositionTest(column1, 0, 10, 53, 25, 16);
+    columnDetailPositionTest(column1, 0, 10, 69, 25, 16);
+  }
 
-    @Override
-    protected JRDataSource createDataSource() {
-        final DRDataSource dataSource = new DRDataSource("field1");
-        dataSource.add("test test");
-        return dataSource;
-    }
+  @Override
+  protected JRDataSource createDataSource() {
+    final DRDataSource dataSource = new DRDataSource("field1");
+    dataSource.add("test test");
+    return dataSource;
+  }
 }

@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -33,56 +36,56 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-
 /**
  * @author Ricardo Mariaca
  */
 public class CrosstabPosition9Test extends AbstractJasperCrosstabPositionTest {
-    private CrosstabRowGroupBuilder<String> rowGroup1;
-    private CrosstabRowGroupBuilder<String> rowGroup2;
-    private CrosstabColumnGroupBuilder<String> columnGroup1;
-    private CrosstabMeasureBuilder<Integer> measure1;
+  private CrosstabRowGroupBuilder<String> rowGroup1;
+  private CrosstabRowGroupBuilder<String> rowGroup2;
+  private CrosstabColumnGroupBuilder<String> columnGroup1;
+  private CrosstabMeasureBuilder<Integer> measure1;
 
-    @Override
-    protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
-        TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
-        TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
+  @Override
+  protected void configureReport(JasperReportBuilder rb) {
+    final TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
+    final TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
+    final TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
 
-        rowGroup1 = ctab.rowGroup(column1).setShowTotal(false);
-        rowGroup2 = ctab.rowGroup(column1).setShowTotal(false).setHeaderWidth(25);
-        measure1 = ctab.measure("measure1", column3, Calculation.SUM);
+    rowGroup1 = ctab.rowGroup(column1).setShowTotal(false);
+    rowGroup2 = ctab.rowGroup(column1).setShowTotal(false).setHeaderWidth(25);
+    measure1 = ctab.measure("measure1", column3, Calculation.SUM);
 
-        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup1, rowGroup2).columnGroups(columnGroup1 = ctab.columnGroup(column2)).measures(measure1);
+    final CrosstabBuilder crosstab = ctab.crosstab()
+      .rowGroups(rowGroup1, rowGroup2)
+      .columnGroups(columnGroup1 = ctab.columnGroup(column2))
+      .measures(measure1);
 
-        rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).summary(crosstab);
-    }
+    rb.setPageFormat(PageType.A4, PageOrientation.LANDSCAPE).summary(crosstab);
+  }
 
-    @Override
-    public void test() {
-        super.test();
+  @Override
+  public void test() {
+    super.test();
 
-        numberOfPagesTest(1);
+    numberOfPagesTest(1);
 
-        setCrosstabBand("summary");
+    setCrosstabBand("summary");
 
-        // column group 1
-        crosstabGroupHeaderPositionTest(columnGroup1, 0, 0, 0, 100, 16);
+    // column group 1
+    crosstabGroupHeaderPositionTest(columnGroup1, 0, 0, 0, 100, 16);
 
-        // row group 1
-        crosstabGroupHeaderPositionTest(rowGroup1, 0, 0, 0, 100, 26);
-        crosstabGroupHeaderPositionTest(rowGroup2, 0, 0, 0, 25, 26);
+    // row group 1
+    crosstabGroupHeaderPositionTest(rowGroup1, 0, 0, 0, 100, 27);
+    crosstabGroupHeaderPositionTest(rowGroup2, 0, 0, 0, 25, 27);
 
-        // measures
-        crosstabCellPositionTest(measure1, null, null, 0, 0, 0, 100, 26);
-    }
+    // measures
+    crosstabCellPositionTest(measure1, null, null, 0, 0, 0, 100, 27);
+  }
 
-    @Override
-    protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
-        dataSource.add("text text", "a", 1);
-        return dataSource;
-    }
+  @Override
+  protected JRDataSource createDataSource() {
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    dataSource.add("text text", "a", 1);
+    return dataSource;
+  }
 }
