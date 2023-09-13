@@ -58,7 +58,7 @@
         <log4j-to-slf4jVersion>2.13.3</log4j-to-slf4jVersion>
         <logback-classicVersion>1.4.8</logback-classicVersion>
         <poiVersion>5.2.3</poiVersion>
-        <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
+        <springframeworkVersion>5.3.29</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
 
