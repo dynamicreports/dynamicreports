@@ -51,7 +51,7 @@ import net.sf.jasperreports.engine.export.JRRtfExporter;
 import net.sf.jasperreports.engine.export.JRTextExporter;
 import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.export.JRXmlExporter;
-import net.sf.jasperreports.engine.export.JsonExporter;
+import net.sf.jasperreports.engine.export.JsonMetadataExporter;
 import net.sf.jasperreports.engine.export.oasis.JROdsExporter;
 import net.sf.jasperreports.engine.export.oasis.JROdtExporter;
 import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
@@ -70,7 +70,7 @@ import net.sf.jasperreports.export.SimpleHtmlExporterOutput;
 import net.sf.jasperreports.export.SimpleHtmlReportConfiguration;
 import net.sf.jasperreports.export.SimpleJsonExporterConfiguration;
 import net.sf.jasperreports.export.SimpleJsonExporterOutput;
-import net.sf.jasperreports.export.SimpleJsonReportConfiguration;
+import net.sf.jasperreports.export.SimpleJsonMetadataReportConfiguration;
 import net.sf.jasperreports.export.SimpleOdsExporterConfiguration;
 import net.sf.jasperreports.export.SimpleOdsReportConfiguration;
 import net.sf.jasperreports.export.SimpleOdtExporterConfiguration;
@@ -595,9 +595,9 @@ public class ExporterTransform {
     return jrExporter;
   }
 
-  private JsonExporter json(JasperIJsonExporter jasperExporter) {
+  private JsonMetadataExporter json(JasperIJsonExporter jasperExporter) {
     final SimpleJsonExporterOutput exporterOutput = simpleJsonExporterOutput(jasperExporter);
-    final SimpleJsonReportConfiguration reportExportConfiguration = new SimpleJsonReportConfiguration();
+    final SimpleJsonMetadataReportConfiguration reportExportConfiguration = new SimpleJsonMetadataReportConfiguration();
     reportExportConfiguration(reportExportConfiguration, jasperExporter);
     reportExportConfiguration.setIgnoreHyperlink(reportExportConfiguration.isIgnoreHyperlink());
 
@@ -609,7 +609,7 @@ public class ExporterTransform {
       exporterConfiguration.setReportComponentsExportOnly(jasperExporter.isReportComponentsExportOnly());
     }
 
-    final JsonExporter jrExporter = new JsonExporter();
+    final JsonMetadataExporter jrExporter = new JsonMetadataExporter();
     jrExporter.setExporterOutput(exporterOutput);
     jrExporter.setConfiguration(reportExportConfiguration);
     jrExporter.setConfiguration(exporterConfiguration);
