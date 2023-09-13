@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      USER_ID: ${{ secrets.SONATYPE_USERNAME }}
-      USER_PWD: ${{ secrets.SONATYPE_PWD }}
+      SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+      SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PWD }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -21,4 +21,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B install
     - name: Deploy
-      run: mvn -B deploy 
+      run: mvn -B deploy -s settings.xml
