@@ -394,13 +394,6 @@
 
     <profiles>
         <profile>
-            <id>distribution</id>
-            <modules>
-                <module>dynamicreports-distribution</module>
-            </modules>
-        </profile>
-
-        <profile>
             <id>license</id>
             <build>
                 <plugins>
