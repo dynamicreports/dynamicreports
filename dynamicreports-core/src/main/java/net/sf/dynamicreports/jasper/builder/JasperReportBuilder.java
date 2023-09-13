@@ -20,6 +20,25 @@
  */
 package net.sf.dynamicreports.jasper.builder;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.design.definition.DRIDesignReport;
 import net.sf.dynamicreports.jasper.base.JasperReportDesign;
@@ -34,6 +53,7 @@ import net.sf.dynamicreports.jasper.builder.export.JasperCsvExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperDocxExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperImageExporterBuilder;
+import net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperOdsExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperOdtExporterBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperPdfExporterBuilder;
@@ -77,30 +97,13 @@ import net.sf.jasperreports.export.SimpleGraphics2DExporterOutput;
 import net.sf.jasperreports.export.SimpleGraphics2DReportConfiguration;
 import net.sf.jasperreports.view.JasperDesignViewer;
 import net.sf.jasperreports.view.JasperViewer;
-import org.apache.commons.lang3.Validate;
-
-import javax.imageio.ImageIO;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * The most used report builder for creating reports. It allows constructing and customizing the whole report content. A report consists of bands, columns, subtotals, groups, and other parts. Each
  * part is created and configured using a particular builder method and it's passed to the report builder instance.
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -282,7 +285,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         if (dataSource != null && dataSource instanceof JRRewindableDataSource) {
             try {
                 ((JRRewindableDataSource) dataSource).moveFirst();
-            } catch (JRException e) {
+            } catch (final JRException e) {
                 throw new DRException(e);
             }
         }
@@ -291,9 +294,9 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
 
     private JasperReportDesign toJasperReportDesign() throws DRException {
         if (reportDesign == null) {
-            DRIDesignReport report = new DRDesignReport(build());
+            final DRIDesignReport report = new DRDesignReport(build());
             reportDesign = new JasperReportDesign(report, startPageNumber);
-            JasperTransform jasperTransform = new JasperTransform(report, reportDesign);
+            final JasperTransform jasperTransform = new JasperTransform(report, reportDesign);
             jasperTransform.transform();
         }
         return reportDesign;
@@ -322,7 +325,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         if (jasperReport == null) {
             try {
                 jasperReport = JasperCompileManager.compileReport(toJasperDesign());
-            } catch (JRException e) {
+            } catch (final JRException e) {
                 throw new DRException(e);
             }
         }
@@ -338,7 +341,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     public Map<String, Object> getJasperParameters() throws DRException {
         if (parameters == null) {
             parameters = new HashMap<>();
-            JasperReportDesign jasperReportDesign = toJasperReportDesign();
+            final JasperReportDesign jasperReportDesign = toJasperReportDesign();
             parameters.putAll(jasperReportDesign.getParameters());
             if (getReport().getParameterValues() != null) {
                 parameters.putAll(getReport().getParameterValues());
@@ -355,7 +358,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
      */
     public JasperPrint toJasperPrint() throws DRException {
         if (jasperPrint == null) {
-            Map<String, Object> parameters = getJasperParameters();
+            final Map<String, Object> parameters = getJasperParameters();
             if (virtualizer != null) {
                 parameters.put(JRParameter.REPORT_VIRTUALIZER, virtualizer);
             }
@@ -372,7 +375,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
                 if (toJasperReportDesign().isTableOfContents()) {
                     JasperTocReport.createTocReport(toJasperReportDesign(), jasperPrint, parameters);
                 }
-            } catch (JRException e) {
+            } catch (final JRException e) {
                 throw new DRException(e);
             }
 
@@ -412,7 +415,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     public JasperReportBuilder showJrXml() throws DRException {
         try {
             JasperDesignViewer.viewReportDesign(toJasperDesign());
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
         return this;
@@ -429,7 +432,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         Validate.notNull(outputStream, "outputStream must not be null");
         try {
             JRXmlWriter.writeReport(toJasperDesign(), outputStream, "UTF-8");
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
         return this;
@@ -455,7 +458,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     public JasperReportBuilder print(boolean withPrintDialog) throws DRException {
         try {
             JasperPrintManager.printReport(toJasperPrint(), withPrintDialog);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
         return this;
@@ -494,13 +497,13 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     public JasperReportBuilder toImage(JasperImageExporterBuilder imageExporterBuilder) throws DRException {
         Validate.notNull(imageExporterBuilder, "imageExporterBuilder must not be null");
 
-        JasperImageExporter imageExporter = imageExporterBuilder.build();
+        final JasperImageExporter imageExporter = imageExporterBuilder.build();
 
-        JasperPrint jasperPrint = toJasperPrint();
+        final JasperPrint jasperPrint = toJasperPrint();
         Integer fromPage = null;
         Integer toPage = null;
         float zoom = 1;
-        String imageType = imageExporter.getImageType().name().toLowerCase();
+        final String imageType = imageExporter.getImageType().name().toLowerCase();
         int offsetX = 0;
         int offsetY = 0;
         int pageGap = 0;
@@ -536,27 +539,27 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
             toPage = jasperPrint.getPages().size();
         }
 
-        int pages = toPage - fromPage;
+        final int pages = toPage - fromPage;
 
-        int pageWidth = (int) (jasperPrint.getPageWidth() * zoom);
-        int pageHeight = (int) (jasperPrint.getPageHeight() * zoom);
-        int width = pageWidth * pages + pages - 1 + offsetX * 2;
-        int height = (int) (jasperPrint.getPageHeight() * zoom) + offsetY * 2;
-        Image image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        final int pageWidth = (int) (jasperPrint.getPageWidth() * zoom);
+        final int pageHeight = (int) (jasperPrint.getPageHeight() * zoom);
+        final int width = pageWidth * pages + pages - 1 + offsetX * 2;
+        final int height = (int) (jasperPrint.getPageHeight() * zoom) + offsetY * 2;
+        final Image image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
         int offset = offsetX;
         for (int i = 0; i < pages; i++) {
             try {
-                SimpleExporterInput exporterInput = new SimpleExporterInput(jasperPrint);
-                SimpleGraphics2DExporterOutput exporterOutput = new SimpleGraphics2DExporterOutput();
-                Image pageImage = new BufferedImage(pageWidth, pageHeight, BufferedImage.TYPE_INT_RGB);
+                final SimpleExporterInput exporterInput = new SimpleExporterInput(jasperPrint);
+                final SimpleGraphics2DExporterOutput exporterOutput = new SimpleGraphics2DExporterOutput();
+                final Image pageImage = new BufferedImage(pageWidth, pageHeight, BufferedImage.TYPE_INT_RGB);
                 exporterOutput.setGraphics2D((Graphics2D) pageImage.getGraphics());
-                SimpleGraphics2DReportConfiguration reportExportConfiguration = new SimpleGraphics2DReportConfiguration();
+                final SimpleGraphics2DReportConfiguration reportExportConfiguration = new SimpleGraphics2DReportConfiguration();
                 reportExportConfiguration.setPageIndex(fromPage);
                 reportExportConfiguration.setZoomRatio(zoom);
-                SimpleGraphics2DExporterConfiguration exporterConfiguration = new SimpleGraphics2DExporterConfiguration();
+                final SimpleGraphics2DExporterConfiguration exporterConfiguration = new SimpleGraphics2DExporterConfiguration();
 
-                JRGraphics2DExporter jrExporter = new JRGraphics2DExporter();
+                final JRGraphics2DExporter jrExporter = new JRGraphics2DExporter();
                 jrExporter.setExporterInput(exporterInput);
                 jrExporter.setExporterOutput(exporterOutput);
                 jrExporter.setConfiguration(reportExportConfiguration);
@@ -566,7 +569,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
                 ((Graphics2D) image.getGraphics()).drawImage(pageImage, offset, offsetY, null);
                 fromPage++;
                 offset += pageWidth + pageGap;
-            } catch (JRException e) {
+            } catch (final JRException e) {
                 throw new DRException(e);
             }
         }
@@ -580,7 +583,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
             } else {
                 throw new JasperDesignException("ImageExporter output not supported");
             }
-        } catch (IOException e) {
+        } catch (final IOException e) {
             throw new DRException(e);
         }
         return this;
@@ -658,8 +661,28 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
         return export(htmlExporterBuilder);
     }
 
-    // html
+    // json
+    /**
+     * <p>toJson.</p>
+     *
+     * @param outputStream a {@link java.io.OutputStream} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public JasperReportBuilder toJson(OutputStream outputStream) throws DRException {
+        return toJson(Exporters.jsonExporter(outputStream));
+    }
 
+    /**
+     * <p>toJson.</p>
+     *
+     * @param htmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
+     * @throws net.sf.dynamicreports.report.exception.DRException if any.
+     */
+    public JasperReportBuilder toJson(JasperJsonExporterBuilder jsonExporterBuilder) throws DRException {
+        return export(jsonExporterBuilder);
+    }
     /**
      * <p>toOds.</p>
      *
@@ -886,11 +909,12 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     public JasperReportBuilder export(AbstractJasperExporterBuilder<?, ? extends AbstractJasperExporter> exporterBuilder) throws DRException {
         Validate.notNull(exporterBuilder, "exporterBuilder must not be null");
         try {
-            ExporterTransform exporterTransform = new ExporterTransform(exporterBuilder.build());
-            @SuppressWarnings("unchecked") Exporter<ExporterInput, ?, ?, ?> exporter = (Exporter<ExporterInput, ?, ?, ?>) exporterTransform.transform();
+            final ExporterTransform exporterTransform = new ExporterTransform(exporterBuilder.build());
+            @SuppressWarnings("unchecked")
+            final Exporter<ExporterInput, ?, ?, ?> exporter = (Exporter<ExporterInput, ?, ?, ?>) exporterTransform.transform();
             exporter.setExporterInput(new SimpleExporterInput(toJasperPrint()));
             exporter.exportReport();
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
         return this;

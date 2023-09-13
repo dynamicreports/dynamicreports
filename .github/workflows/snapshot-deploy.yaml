@@ -1,0 +1,24 @@
+name: Java CI with Maven
+
+on:
+  push:
+     branches:
+     - development
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+      SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PWD }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: Deploy
+      run: mvn -B deploy -s settings.xml

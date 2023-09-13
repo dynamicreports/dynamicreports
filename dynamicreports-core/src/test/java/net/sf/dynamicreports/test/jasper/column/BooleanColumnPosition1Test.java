@@ -20,43 +20,46 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BooleanComponentType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-
 /**
  * @author Ricardo Mariaca
  */
 public class BooleanColumnPosition1Test extends AbstractJasperPositionTest {
 
-    @Override
-    protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(col.booleanColumn("field1").setComponentType(BooleanComponentType.TEXT_TRUE_FALSE),
-                   col.booleanColumn("field1").setComponentType(BooleanComponentType.IMAGE_STYLE_1).setStyle(stl.style().setPadding(0)), col.column("field2", String.class).setFixedWidth(20));
-    }
+  @Override
+  protected void configureReport(JasperReportBuilder rb) {
+    rb.columns(col.booleanColumn("field1").setComponentType(BooleanComponentType.TEXT_TRUE_FALSE),
+        col.booleanColumn("field1")
+          .setComponentType(BooleanComponentType.IMAGE_STYLE_1)
+          .setStyle(stl.style().setPadding(0)),
+        col.column("field2", String.class).setFixedWidth(20));
+  }
 
-    @Override
-    public void test() {
-        super.test();
+  @Override
+  public void test() {
+    super.test();
 
-        numberOfPagesTest(1);
-        elementPositionTest("detail.column_field11", 0, 0, 0, 277, 38);
-        elementPositionTest("detail.column_field12", 0, 277, 0, 278, 38);
+    numberOfPagesTest(1);
+    elementPositionTest("detail.column_field11", 0, 0, 0, 277, 39);
+    elementPositionTest("detail.column_field12", 0, 277, 0, 278, 39);
 
-        elementPositionTest("detail.column_field11", 1, 0, 0, 277, 16);
-        elementPositionTest("detail.column_field12", 1, 277, 0, 278, 16);
-    }
+    elementPositionTest("detail.column_field11", 1, 0, 0, 277, 16);
+    elementPositionTest("detail.column_field12", 1, 277, 0, 278, 16);
+  }
 
-    @Override
-    protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
-        dataSource.add(true, "11111");
-        dataSource.add(false, "");
-        return dataSource;
-    }
+  @Override
+  protected JRDataSource createDataSource() {
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
+    dataSource.add(true, "11111");
+    dataSource.add(false, "");
+    return dataSource;
+  }
 }
