@@ -40,6 +40,7 @@ import com.lowagie.text.pdf.PdfWriter;
 
 import net.sf.dynamicreports.design.constant.EvaluationTime;
 import net.sf.dynamicreports.design.constant.ResetType;
+import net.sf.dynamicreports.jasper.constant.BorderCollapse;
 import net.sf.dynamicreports.jasper.constant.PdfPermission;
 import net.sf.dynamicreports.jasper.constant.PdfVersion;
 import net.sf.dynamicreports.jasper.constant.SizeUnit;
@@ -135,6 +136,7 @@ import net.sf.jasperreports.engine.type.VerticalImageAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import net.sf.jasperreports.engine.type.WhenNoDataTypeEnum;
 import net.sf.jasperreports.engine.type.WhenResourceMissingTypeEnum;
+import net.sf.jasperreports.export.type.HtmlBorderCollapseEnum;
 import net.sf.jasperreports.export.type.HtmlSizeUnitEnum;
 import net.sf.jasperreports.export.type.PdfPrintScalingEnum;
 import net.sf.jasperreports.export.type.PdfVersionEnum;
@@ -823,6 +825,21 @@ public class ConstantTransform {
             default:
                 throw new JasperDesignException("SizeUnit " + sizeUnit.name() + " not supported");
         }
+    }
+
+    protected static HtmlBorderCollapseEnum borderCollapse(final BorderCollapse borderCollapse) {
+      switch (borderCollapse) {
+        case SEPARATE:
+          return HtmlBorderCollapseEnum.SEPARATE;
+        case COLLAPSE:
+          return HtmlBorderCollapseEnum.COLLAPSE;
+        case INITIAL:
+          return HtmlBorderCollapseEnum.INITIAL;
+        case INHERIT:
+          return HtmlBorderCollapseEnum.INHERIT;
+        default:
+          throw new JasperDesignException("BorderCollapse " + borderCollapse.name() + " not supported");
+      }
     }
 
     /**

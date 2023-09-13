@@ -20,13 +20,14 @@
  */
 package net.sf.dynamicreports.jasper.definition.export;
 
+import net.sf.dynamicreports.jasper.constant.BorderCollapse;
 import net.sf.dynamicreports.jasper.constant.SizeUnit;
 
 /**
  * <p>JasperIHtmlExporter interface.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public interface JasperIHtmlExporter extends JasperIExporter {
 
@@ -35,124 +36,124 @@ public interface JasperIHtmlExporter extends JasperIExporter {
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getOutputImagesToDir();
+    Boolean getOutputImagesToDir();
 
     /**
      * <p>getImagesDirName.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getImagesDirName();
+    String getImagesDirName();
 
     /**
      * <p>getImagesURI.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getImagesURI();
+    String getImagesURI();
 
     /**
      * <p>getHtmlHeader.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getHtmlHeader();
+    String getHtmlHeader();
 
     /**
      * <p>getBetweenPagesHtml.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getBetweenPagesHtml();
+    String getBetweenPagesHtml();
 
     /**
      * <p>getHtmlFooter.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getHtmlFooter();
+    String getHtmlFooter();
 
     /**
      * <p>getRemoveEmptySpaceBetweenRows.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getRemoveEmptySpaceBetweenRows();
+    Boolean getRemoveEmptySpaceBetweenRows();
 
     /**
      * <p>getWhitePageBackground.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getWhitePageBackground();
+    Boolean getWhitePageBackground();
 
     /**
      * <p>getUsingImagesToAlign.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getUsingImagesToAlign();
+    Boolean getUsingImagesToAlign();
 
     /**
      * <p>getWrapBreakWord.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getWrapBreakWord();
+    Boolean getWrapBreakWord();
 
     /**
      * <p>getSizeUnit.</p>
      *
      * @return a {@link net.sf.dynamicreports.jasper.constant.SizeUnit} object.
      */
-    public SizeUnit getSizeUnit();
+    SizeUnit getSizeUnit();
 
     /**
      * <p>getFramesAsNestedTables.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getFramesAsNestedTables();
+    Boolean getFramesAsNestedTables();
 
     /**
      * <p>getIgnorePageMargins.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getIgnorePageMargins();
+    Boolean getIgnorePageMargins();
 
     /**
      * <p>getBorderCollapse.</p>
      *
      * @return a {@link java.lang.String} object.
      */
-    public String getBorderCollapse();
+    BorderCollapse getBorderCollapse();
 
     /**
      * <p>getAccessibleHtml.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getAccessibleHtml();
+    Boolean getAccessibleHtml();
 
     /**
      * <p>getZoomRatio.</p>
      *
      * @return a {@link java.lang.Float} object.
      */
-    public Float getZoomRatio();
+    Float getZoomRatio();
 
     /**
      * <p>getIgnoreHyperLink.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getIgnoreHyperLink();
+    Boolean getIgnoreHyperLink();
 
     /**
      * <p>getFlushOutput.</p>
      *
      * @return a {@link java.lang.Boolean} object.
      */
-    public Boolean getFlushOutput();
+    Boolean getFlushOutput();
 }

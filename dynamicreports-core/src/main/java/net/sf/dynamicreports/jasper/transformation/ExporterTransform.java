@@ -563,7 +563,7 @@ public class ExporterTransform {
       reportExportConfiguration.setIgnorePageMargins(jasperExporter.getIgnorePageMargins());
     }
     if (jasperExporter.getBorderCollapse() != null) {
-      reportExportConfiguration.setBorderCollapse(jasperExporter.getBorderCollapse());
+      reportExportConfiguration.setBorderCollapse(ConstantTransform.borderCollapse(jasperExporter.getBorderCollapse()));
     }
     if (jasperExporter.getAccessibleHtml() != null) {
       reportExportConfiguration.setAccessibleHtml(jasperExporter.getAccessibleHtml());
