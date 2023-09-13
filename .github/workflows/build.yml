@@ -21,4 +21,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B install
     - name: Deploy
-      run: mvn -B eploy 
+      run: mvn -B deploy 
