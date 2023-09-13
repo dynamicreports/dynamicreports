@@ -32,9 +32,7 @@
 
     <modules>
         <module>dynamicreports-core</module>
-        <!--
         <module>dynamicreports-examples</module>
-        -->
     </modules>
 
     <properties>
