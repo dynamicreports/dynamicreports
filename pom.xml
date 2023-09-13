@@ -66,7 +66,7 @@
         <jacoco-maven-plugin-version>0.8.10</jacoco-maven-plugin-version>
         <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
-        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
         <maven-jdeps-plugin-version>3.1.1</maven-jdeps-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
