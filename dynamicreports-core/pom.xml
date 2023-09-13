@@ -23,7 +23,13 @@
         displayed, printed or exported into many popular formats such as PDF,
         Excel, Word and others.
     </description>
-
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
     <properties>
         <!--Environment -->
         <encoding>UTF-8</encoding>
