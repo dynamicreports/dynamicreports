@@ -72,7 +72,7 @@
 
         <!--Profile Plugins-->
         <license-maven-plugin-version>4.2</license-maven-plugin-version>
-        <maven-javadoc-plugin-version>3.5.0</maven-javadoc-plugin-version>
+        <maven-javadoc-plugin-version>3.6.0</maven-javadoc-plugin-version>
         <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
 
         <!--Mycila License plugin configuration-->
