@@ -55,7 +55,7 @@
         <jsonVersion>20230618</jsonVersion>
         <jul-to-slf4jVersion>2.0.9</jul-to-slf4jVersion>
         <junitVersion>4.13.2</junitVersion>
-        <log4j-to-slf4jVersion>2.20.0</log4j-to-slf4jVersion>
+        <log4j-to-slf4jVersion>2.21.0</log4j-to-slf4jVersion>
         <logback-classicVersion>1.4.11</logback-classicVersion>
         <poiVersion>5.2.3</poiVersion>
         <springframeworkVersion>5.3.30</springframeworkVersion>
