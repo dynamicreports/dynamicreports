@@ -20,17 +20,17 @@
  */
 package net.sf.dynamicreports.jasper.builder.export;
 
-import net.sf.dynamicreports.jasper.constant.ImageType;
-
 import java.io.File;
 import java.io.OutputStream;
 import java.io.Writer;
+
+import net.sf.dynamicreports.jasper.constant.ImageType;
 
 /**
  * A set of methods of creating exporters
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ExporterBuilders {
 
@@ -158,6 +158,48 @@ public class ExporterBuilders {
      */
     public JasperHtmlExporterBuilder htmlExporter(String outputFileName) {
         return Exporters.htmlExporter(outputFileName);
+    }
+
+    // json
+
+    /**
+     * <p>htmlExporter.</p>
+     *
+     * @param outputWriter a {@link java.io.Writer} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     */
+    public JasperJsonExporterBuilder jsonExporter(Writer outputWriter) {
+        return Exporters.jsonExporter(outputWriter);
+    }
+
+    /**
+     * <p>htmlExporter.</p>
+     *
+     * @param outputStream a {@link java.io.OutputStream} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     */
+    public JasperJsonExporterBuilder jsonExporter(OutputStream outputStream) {
+        return Exporters.jsonExporter(outputStream);
+    }
+
+    /**
+     * <p>htmlExporter.</p>
+     *
+     * @param outputFile a {@link java.io.File} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     */
+    public JasperJsonExporterBuilder jsonExporter(File outputFile) {
+        return Exporters.jsonExporter(outputFile);
+    }
+
+    /**
+     * <p>htmlExporter.</p>
+     *
+     * @param outputFileName a {@link java.lang.String} object.
+     * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     */
+    public JasperJsonExporterBuilder jsonExporter(String outputFileName) {
+        return Exporters.jsonExporter(outputFileName);
     }
 
     // ods

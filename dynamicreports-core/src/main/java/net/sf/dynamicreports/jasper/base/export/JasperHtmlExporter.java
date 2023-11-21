@@ -20,6 +20,7 @@
  */
 package net.sf.dynamicreports.jasper.base.export;
 
+import net.sf.dynamicreports.jasper.constant.BorderCollapse;
 import net.sf.dynamicreports.jasper.constant.SizeUnit;
 import net.sf.dynamicreports.jasper.definition.export.JasperIHtmlExporter;
 import net.sf.dynamicreports.report.constant.Constants;
@@ -28,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>JasperHtmlExporter class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperHtmlExporter extends AbstractJasperExporter implements JasperIHtmlExporter {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -46,7 +47,7 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
     private SizeUnit sizeUnit;
     private Boolean framesAsNestedTables;
     private Boolean ignorePageMargins;
-    private String borderCollapse;
+    private BorderCollapse borderCollapse;
     private Boolean accessibleHtml;
     private Float zoomRatio;
     private Boolean ignoreHyperLink;
@@ -249,7 +250,7 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
 
     /** {@inheritDoc} */
     @Override
-    public String getBorderCollapse() {
+    public BorderCollapse getBorderCollapse() {
         return borderCollapse;
     }
 
@@ -258,7 +259,7 @@ public class JasperHtmlExporter extends AbstractJasperExporter implements Jasper
      *
      * @param borderCollapse a {@link java.lang.String} object.
      */
-    public void setBorderCollapse(String borderCollapse) {
+    public void setBorderCollapse(BorderCollapse borderCollapse) {
         this.borderCollapse = borderCollapse;
     }
 

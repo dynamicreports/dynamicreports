@@ -40,6 +40,7 @@ import com.lowagie.text.pdf.PdfWriter;
 
 import net.sf.dynamicreports.design.constant.EvaluationTime;
 import net.sf.dynamicreports.design.constant.ResetType;
+import net.sf.dynamicreports.jasper.constant.BorderCollapse;
 import net.sf.dynamicreports.jasper.constant.PdfPermission;
 import net.sf.dynamicreports.jasper.constant.PdfVersion;
 import net.sf.dynamicreports.jasper.constant.SizeUnit;
@@ -109,6 +110,7 @@ import net.sf.jasperreports.engine.design.JRDesignChart;
 import net.sf.jasperreports.engine.export.type.ImageAnchorTypeEnum;
 import net.sf.jasperreports.engine.type.BreakTypeEnum;
 import net.sf.jasperreports.engine.type.CalculationEnum;
+import net.sf.jasperreports.engine.type.DatasetResetTypeEnum;
 import net.sf.jasperreports.engine.type.EvaluationTimeEnum;
 import net.sf.jasperreports.engine.type.FooterPositionEnum;
 import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
@@ -134,6 +136,7 @@ import net.sf.jasperreports.engine.type.VerticalImageAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import net.sf.jasperreports.engine.type.WhenNoDataTypeEnum;
 import net.sf.jasperreports.engine.type.WhenResourceMissingTypeEnum;
+import net.sf.jasperreports.export.type.HtmlBorderCollapseEnum;
 import net.sf.jasperreports.export.type.HtmlSizeUnitEnum;
 import net.sf.jasperreports.export.type.PdfPrintScalingEnum;
 import net.sf.jasperreports.export.type.PdfVersionEnum;
@@ -143,7 +146,7 @@ import net.sf.jasperreports.export.type.PdfaConformanceEnum;
  * <p>ConstantTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ConstantTransform {
 
@@ -556,6 +559,27 @@ public class ConstantTransform {
         }
     }
 
+    public static DatasetResetTypeEnum variableDatasetResetType(final ResetType resetType) {
+      if (resetType == null) {
+          return DatasetResetTypeEnum.NONE;
+      }
+
+      switch (resetType) {
+          case NONE:
+              return DatasetResetTypeEnum.NONE;
+          case REPORT:
+              return DatasetResetTypeEnum.REPORT;
+          case PAGE:
+              return DatasetResetTypeEnum.PAGE;
+          case COLUMN:
+              return DatasetResetTypeEnum.COLUMN;
+          case GROUP:
+              return DatasetResetTypeEnum.GROUP;
+          default:
+              throw new JasperDesignException("Variable reset type " + resetType.name() + " not supported");
+      }
+  }
+
     /**
      * <p>evaluationTime.</p>
      *
@@ -801,6 +825,21 @@ public class ConstantTransform {
             default:
                 throw new JasperDesignException("SizeUnit " + sizeUnit.name() + " not supported");
         }
+    }
+
+    protected static HtmlBorderCollapseEnum borderCollapse(final BorderCollapse borderCollapse) {
+      switch (borderCollapse) {
+        case SEPARATE:
+          return HtmlBorderCollapseEnum.SEPARATE;
+        case COLLAPSE:
+          return HtmlBorderCollapseEnum.COLLAPSE;
+        case INITIAL:
+          return HtmlBorderCollapseEnum.INITIAL;
+        case INHERIT:
+          return HtmlBorderCollapseEnum.INHERIT;
+        default:
+          throw new JasperDesignException("BorderCollapse " + borderCollapse.name() + " not supported");
+      }
     }
 
     /**

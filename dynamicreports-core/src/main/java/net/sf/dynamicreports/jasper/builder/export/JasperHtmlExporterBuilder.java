@@ -21,6 +21,7 @@
 package net.sf.dynamicreports.jasper.builder.export;
 
 import net.sf.dynamicreports.jasper.base.export.JasperHtmlExporter;
+import net.sf.dynamicreports.jasper.constant.BorderCollapse;
 import net.sf.dynamicreports.jasper.constant.SizeUnit;
 import net.sf.dynamicreports.report.constant.Constants;
 
@@ -28,7 +29,7 @@ import net.sf.dynamicreports.report.constant.Constants;
  * <p>JasperHtmlExporterBuilder class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperHtmlExporterBuilder extends AbstractJasperExporterBuilder<JasperHtmlExporterBuilder, JasperHtmlExporter> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -193,7 +194,7 @@ public class JasperHtmlExporterBuilder extends AbstractJasperExporterBuilder<Jas
      * @param borderCollapse a {@link java.lang.String} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder} object.
      */
-    public JasperHtmlExporterBuilder setBorderCollapse(String borderCollapse) {
+    public JasperHtmlExporterBuilder setBorderCollapse(BorderCollapse borderCollapse) {
         this.getObject().setBorderCollapse(borderCollapse);
         return this;
     }

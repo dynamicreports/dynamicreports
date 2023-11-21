@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.sourceforge.dynamicreports</groupId>
         <artifactId>dynamicreports-parent</artifactId>
-        <version>6.12.1</version>
+        <version>6.20.1</version>
     </parent>
 
     <artifactId>dynamicreports-examples</artifactId>
@@ -19,16 +19,6 @@
         <dependency>
             <groupId>net.sourceforge.dynamicreports</groupId>
             <artifactId>dynamicreports-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.dynamicreports</groupId>
-            <artifactId>dynamicreports-adhoc</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.dynamicreports</groupId>
-            <artifactId>dynamicreports-googlecharts</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
@@ -56,17 +46,9 @@
             <artifactId>hsqldb</artifactId>
         </dependency>
         <dependency>
-            <groupId>xalan</groupId>
-            <artifactId>xalan</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
         </dependency>
-        <!--<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
@@ -293,7 +275,7 @@
                     <plugin>
                         <groupId>org.jvnet.jaxb2.maven2</groupId>
                         <artifactId>maven-jaxb23-plugin</artifactId>
-                        <version>0.14.0</version>
+                        <version>0.15.3</version>
                         <configuration>
                             <schemaIncludes>
                                 <schemaInclude>**/dynamicreports.xsd</schemaInclude>
@@ -317,7 +299,7 @@
                     <plugin>
                         <groupId>org.jvnet.jaxb2.maven2</groupId>
                         <artifactId>maven-jaxb2-plugin</artifactId>
-                        <version>0.13.1</version>
+                        <version>0.15.3</version>
                         <configuration>
                             <schemaIncludes>
                                 <schemaInclude>**/dynamicreports.xsd</schemaInclude>
