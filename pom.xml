@@ -44,23 +44,23 @@
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.17</batikbridgeVersion>
-        <commonslang3Version>3.12.0</commonslang3Version>
-        <groovyVersion>2.4.19</groovyVersion>
+        <commonslang3Version>3.13.0</commonslang3Version>
+        <groovyVersion>2.4.21</groovyVersion>
         <hsqldbVersion>2.7.2</hsqldbVersion>
         <jasperreportsVersion>6.20.6</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
         <jaxbVersion>2.3.0.1</jaxbVersion>
-        <jsonVersion>20230618</jsonVersion>
-        <jul-to-slf4jVersion>2.0.7</jul-to-slf4jVersion>
+        <jsonVersion>20231013</jsonVersion>
+        <jul-to-slf4jVersion>2.0.9</jul-to-slf4jVersion>
         <junitVersion>4.13.2</junitVersion>
-        <log4j-to-slf4jVersion>2.13.3</log4j-to-slf4jVersion>
-        <logback-classicVersion>1.4.8</logback-classicVersion>
-        <poiVersion>5.2.3</poiVersion>
-        <springframeworkVersion>5.2.5.RELEASE</springframeworkVersion>
+        <log4j-to-slf4jVersion>2.21.1</log4j-to-slf4jVersion>
+        <logback-classicVersion>1.4.11</logback-classicVersion>
+        <poiVersion>5.2.4</poiVersion>
+        <springframeworkVersion>5.3.30</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
-        <xmlgraphicscommonsVersion>2.8</xmlgraphicscommonsVersion>
+        <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.10</jacoco-maven-plugin-version>
@@ -72,8 +72,8 @@
 
         <!--Profile Plugins-->
         <license-maven-plugin-version>4.2</license-maven-plugin-version>
-        <maven-javadoc-plugin-version>3.5.0</maven-javadoc-plugin-version>
-        <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
+        <maven-javadoc-plugin-version>3.6.0</maven-javadoc-plugin-version>
+        <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
 
         <!--Mycila License plugin configuration-->
         <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
@@ -276,7 +276,7 @@
                 <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.4.1</version>
                     <executions>
                         <execution>
                             <id>enforce-versions</id>
@@ -299,7 +299,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -318,7 +318,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.11.0</version>
                     <configuration>
                         <source>${sourceVersion}</source>
                         <target>${targetVersion}</target>
@@ -360,7 +360,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -380,17 +380,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -446,7 +446,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-compiler-plugin</artifactId>
-                            <version>3.8.1</version>
+                            <version>3.11.0</version>
                             <configuration>
                                 <source>1.8</source>
                                 <target>1.8</target>
