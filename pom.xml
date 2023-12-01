@@ -56,7 +56,7 @@
         <jul-to-slf4jVersion>2.0.9</jul-to-slf4jVersion>
         <junitVersion>4.13.2</junitVersion>
         <log4j-to-slf4jVersion>2.22.0</log4j-to-slf4jVersion>
-        <logback-classicVersion>1.4.11</logback-classicVersion>
+        <logback-classicVersion>1.4.13</logback-classicVersion>
         <poiVersion>5.2.4</poiVersion>
         <springframeworkVersion>5.3.31</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
