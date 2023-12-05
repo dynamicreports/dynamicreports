@@ -63,7 +63,7 @@
         <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
-        <jacoco-maven-plugin-version>0.8.10</jacoco-maven-plugin-version>
+        <jacoco-maven-plugin-version>0.8.11</jacoco-maven-plugin-version>
         <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
         <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
         <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
