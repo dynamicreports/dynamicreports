@@ -25,13 +25,6 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import java.awt.Color;
 import java.util.Locale;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.constant.RectangleAnchor;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.LegendItemCollection;
 import org.jfree.chart.axis.Axis;
@@ -41,9 +34,16 @@ import org.jfree.chart.renderer.xy.XYBlockRenderer;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.junit.Assert;
 
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.RectangleAnchor;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
+
 /**
  * XY Block chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class XyBlockChartTest extends AbstractJasperChartTest {
@@ -84,16 +84,16 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+    final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
     Assert.assertEquals("renderer", XYBlockRenderer.class, renderer.getClass());
     Assert.assertEquals("block width", 1.1, ((XYBlockRenderer) renderer).getBlockWidth(), 0);
     Assert.assertEquals("block height", 0.9, ((XYBlockRenderer) renderer).getBlockHeight(), 0);
-    Assert.assertEquals("block anchor", org.jfree.ui.RectangleAnchor.BOTTOM_LEFT,
+    Assert.assertEquals("block anchor", org.jfree.chart.ui.RectangleAnchor.BOTTOM_LEFT,
         ((XYBlockRenderer) renderer).getBlockAnchor());
 
     Assert.assertEquals("paintScale", LookupPaintScale.class,
         ((XYBlockRenderer) renderer).getPaintScale().getClass());
-    LookupPaintScale paintScale = (LookupPaintScale) ((XYBlockRenderer) renderer).getPaintScale();
+    final LookupPaintScale paintScale = (LookupPaintScale) ((XYBlockRenderer) renderer).getPaintScale();
     Assert.assertEquals("paintScale default lower bound", 0.1, paintScale.getLowerBound(), 0);
     Assert.assertEquals("paintScale default upper bound", 5d, paintScale.getUpperBound(), 0);
     Assert.assertEquals("paintScale default paint", Color.WHITE, paintScale.getDefaultPaint());
@@ -101,7 +101,7 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
     Assert.assertEquals("paintScale paint 2", Color.GREEN, paintScale.getPaint(2));
     Assert.assertEquals("paintScale paint 3", Color.BLUE, paintScale.getPaint(3));
 
-    LegendItemCollection legendItems = chart.getXYPlot().getLegendItems();
+    final LegendItemCollection legendItems = chart.getXYPlot().getLegendItems();
     Assert.assertEquals("legend item 1 label", "1", legendItems.get(0).getLabel());
     Assert.assertEquals("legend item 1 paint", Color.RED, legendItems.get(0).getFillPaint());
     Assert.assertEquals("legend item 2 label", "2", legendItems.get(1).getLabel());
@@ -135,7 +135,7 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     for (int i = 0; i < 4; i++) {
       dataSource.add(i + 1, i + 2, i);
     }

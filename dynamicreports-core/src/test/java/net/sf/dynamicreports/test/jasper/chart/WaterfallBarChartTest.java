@@ -26,12 +26,6 @@ import java.awt.Color;
 import java.io.Serializable;
 import java.util.Locale;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.Axis;
 import org.jfree.chart.axis.CategoryLabelPosition;
@@ -39,12 +33,18 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.WaterfallBarRenderer;
-import org.jfree.ui.RectangleEdge;
+import org.jfree.chart.ui.RectangleEdge;
 import org.junit.Assert;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Waterfall bar chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class WaterfallBarChartTest extends AbstractJasperChartTest implements Serializable {
@@ -81,10 +81,10 @@ public class WaterfallBarChartTest extends AbstractJasperChartTest implements Se
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    CategoryPlot categoryPlot = chart.getCategoryPlot();
+    final CategoryPlot categoryPlot = chart.getCategoryPlot();
     Assert.assertEquals("renderer", WaterfallBarRenderer.class,
         categoryPlot.getRenderer().getClass());
-    Assert.assertTrue("show labels", categoryPlot.getRenderer().getBaseItemLabelsVisible());
+    Assert.assertTrue("show labels", categoryPlot.getRenderer().getDefaultItemLabelsVisible());
     Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
     Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
 
@@ -95,9 +95,9 @@ public class WaterfallBarChartTest extends AbstractJasperChartTest implements Se
     Assert.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
     Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
     Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
+    final CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
         .getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
-    Assert.assertEquals("plot label rotation", (45d / 180) * Math.PI, labelPosition.getAngle(), 0);
+    Assert.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
     Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
@@ -116,7 +116,7 @@ public class WaterfallBarChartTest extends AbstractJasperChartTest implements Se
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     for (int i = 0; i < 4; i++) {
       dataSource.add("value" + (i + 1), i + 1);
       dataSource.add("value" + (i + 1), i + 1);

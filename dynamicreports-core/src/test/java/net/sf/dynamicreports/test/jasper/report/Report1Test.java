@@ -20,7 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.parameter;
+
+import java.math.BigDecimal;
+import java.util.ListResourceBundle;
+import java.util.Locale;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.AbstractScriptlet;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -35,15 +45,6 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.fonts.FontUtil;
 import net.sf.jasperreports.engine.type.OrientationEnum;
-
-import java.math.BigDecimal;
-import java.util.ListResourceBundle;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.parameter;
 
 /**
  * @author Ricardo Mariaca
@@ -81,12 +82,12 @@ public class Report1Test extends AbstractJasperValueTest {
         elementCountTest("title.textField1", 3);
         elementValueTest("title.textField1", "bundleKey3", "bundleKey3", "bundleValue");
 
-        FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
+        final FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
         Assert.assertFalse("fonts", fontUtil.getFontFamilyNames().isEmpty());
 
-        JasperPrint jasperPrint = getJasperPrint();
+        final JasperPrint jasperPrint = getJasperPrint();
         Assert.assertEquals("Report", jasperPrint.getName());
-        Assert.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientationValue());
+        Assert.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientation());
         Assert.assertEquals(1190, jasperPrint.getPageWidth());
         Assert.assertEquals(842, jasperPrint.getPageHeight());
 
@@ -100,7 +101,7 @@ public class Report1Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 50; i++) {
             dataSource.add(i);
         }

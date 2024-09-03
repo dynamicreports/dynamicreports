@@ -20,7 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import java.awt.Color;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperStyleTest;
@@ -30,11 +36,6 @@ import net.sf.jasperreports.engine.JRPrintLine;
 import net.sf.jasperreports.engine.JRPrintRectangle;
 import net.sf.jasperreports.engine.type.LineStyleEnum;
 
-import java.awt.Color;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -42,7 +43,7 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style().setLinePen(stl.penDotted());
+        final StyleBuilder style = stl.style().setLinePen(stl.penDotted());
         rb.title(cmp.line().setStyle(style), cmp.filler().setFixedHeight(10), cmp.line().setPen(stl.pen2Point()), cmp.ellipse().setStyle(style), cmp.ellipse().setPen(stl.pen2Point()),
                  cmp.rectangle().setStyle(style), cmp.rectangle().setPen(stl.pen2Point()));
     }
@@ -74,6 +75,6 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
     private void penTest(JRPen pen, Float width, Color color, LineStyleEnum style) {
         Assert.assertEquals(width, pen.getLineWidth());
         Assert.assertEquals(color, pen.getLineColor());
-        Assert.assertEquals(style, pen.getLineStyleValue());
+        Assert.assertEquals(style, pen.getLineStyle());
     }
 }

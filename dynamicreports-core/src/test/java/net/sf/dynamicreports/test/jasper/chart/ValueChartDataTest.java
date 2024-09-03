@@ -20,13 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.constant.PageOrientation;
-import net.sf.dynamicreports.report.constant.PageType;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.template;
+
+import java.io.Serializable;
+import java.util.Locale;
+
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
@@ -35,13 +36,13 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.junit.Assert;
 
-import java.io.Serializable;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.template;
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.PageOrientation;
+import net.sf.dynamicreports.report.constant.PageType;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * @author Ricardo Mariaca
@@ -76,30 +77,30 @@ public class ValueChartDataTest extends AbstractJasperChartTest implements Seria
 
         numberOfPagesTest(1);
 
-        DefaultCategoryDataset categoryDataset = new DefaultCategoryDataset();
+        final DefaultCategoryDataset categoryDataset = new DefaultCategoryDataset();
         categoryDataset.addValue(1.191, "row", "column");
 
         JFreeChart chart = getChart("summary.chart1", 0);
         CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
-        Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertNotNull(renderer1.getDefaultItemLabelGenerator());
+        Assert.assertEquals("1.19", renderer1.getDefaultItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart2", 0);
         renderer1 = chart.getCategoryPlot().getRenderer();
-        Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.191", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertNotNull(renderer1.getDefaultItemLabelGenerator());
+        Assert.assertEquals("1.191", renderer1.getDefaultItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart3", 0);
         renderer1 = chart.getCategoryPlot().getRenderer();
-        Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.19", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertNotNull(renderer1.getDefaultItemLabelGenerator());
+        Assert.assertEquals("1.19", renderer1.getDefaultItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
         chart = getChart("summary.chart4", 0);
         renderer1 = chart.getCategoryPlot().getRenderer();
-        Assert.assertNotNull(renderer1.getBaseItemLabelGenerator());
-        Assert.assertEquals("1.2", renderer1.getBaseItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
+        Assert.assertNotNull(renderer1.getDefaultItemLabelGenerator());
+        Assert.assertEquals("1.2", renderer1.getDefaultItemLabelGenerator().generateLabel(categoryDataset, 0, 0));
 
-        DefaultPieDataset dataset = new DefaultPieDataset();
+        final DefaultPieDataset dataset = new DefaultPieDataset();
         dataset.setValue("key1", 1.191);
         dataset.setValue("key2", 122);
 
@@ -114,7 +115,7 @@ public class ValueChartDataTest extends AbstractJasperChartTest implements Seria
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1, i + 2);
             dataSource.add("value" + (i + 1), i + 1, i + 2);

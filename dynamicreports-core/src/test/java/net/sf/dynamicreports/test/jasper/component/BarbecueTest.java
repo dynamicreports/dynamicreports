@@ -20,18 +20,19 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.constant.BarcodeOrientation;
-import net.sf.dynamicreports.test.jasper.AbstractJasperTest;
-import net.sf.jasperreports.components.barbecue.BarbecueComponent;
-import net.sf.jasperreports.engine.base.JRBaseComponentElement;
-import net.sf.jasperreports.engine.type.RotationEnum;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.bcode;
 import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
+
+import org.junit.Assert;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.constant.BarcodeOrientation;
+import net.sf.dynamicreports.test.jasper.AbstractJasperTest;
+import net.sf.jasperreports.barbecue.BarbecueComponent;
+import net.sf.jasperreports.engine.base.JRBaseComponentElement;
+import net.sf.jasperreports.engine.type.RotationEnum;
 
 /**
  * @author Ricardo Mariaca
@@ -103,8 +104,8 @@ public class BarbecueTest extends AbstractJasperTest {
         testBarbecue(27, "USD4");
         testBarbecue(28, "USPS");
 
-        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue29");
-        BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
+        final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue29");
+        final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
         Assert.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
         Assert.assertTrue("Barbecue draw text", component.isDrawText());
         Assert.assertTrue("Barbecue checksum required", component.isChecksumRequired());
@@ -114,8 +115,8 @@ public class BarbecueTest extends AbstractJasperTest {
     }
 
     private void testBarbecue(int index, String type) {
-        JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue" + index);
-        BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
+        final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue" + index);
+        final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
         Assert.assertEquals("Barbecue type ", type, component.getType());
         Assert.assertTrue("Barbecue code ", component.getCodeExpression().getText().contains("12345678"));
     }

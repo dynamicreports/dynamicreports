@@ -20,7 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.TextFieldBuilder;
 import net.sf.dynamicreports.report.builder.group.CustomGroupBuilder;
@@ -33,12 +40,6 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.type.PositionTypeEnum;
 import net.sf.jasperreports.engine.type.StretchTypeEnum;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -46,9 +47,9 @@ public class Component3Test extends AbstractJasperTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        CustomGroupBuilder group = grp.group("group1", exp.text(""));
+        final CustomGroupBuilder group = grp.group("group1", exp.text(""));
 
-        TextFieldBuilder<String> textField = cmp.text("")
+        final TextFieldBuilder<String> textField = cmp.text("")
                                                 .setPositionType(ComponentPositionType.FIX_RELATIVE_TO_TOP)
                                                 .setStretchType(StretchType.NO_STRETCH)
                                                 .setPrintInFirstWholeBand(true)
@@ -64,11 +65,11 @@ public class Component3Test extends AbstractJasperTest {
         numberOfPagesTest(1);
 
         JRElement textField = getJasperReport().getTitle().getElementByKey("title.textField1");
-        Assert.assertEquals("position type", PositionTypeEnum.FIX_RELATIVE_TO_TOP, textField.getPositionTypeValue());
-        Assert.assertEquals("stretch type", StretchTypeEnum.NO_STRETCH, textField.getStretchTypeValue());
+        Assert.assertEquals("position type", PositionTypeEnum.FIX_RELATIVE_TO_TOP, textField.getPositionType());
+        Assert.assertEquals("stretch type", StretchTypeEnum.NO_STRETCH, textField.getStretchType());
         Assert.assertTrue("print in first whole band", textField.isPrintInFirstWholeBand());
         Assert.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());
-        Assert.assertEquals("print when group changes", "group1", textField.getPrintWhenGroupChanges().getName());
+        Assert.assertEquals("print when group changes", "group1", textField.getPrintWhenGroupChanges());
 
         textField = getJasperReport().getDetailSection().getBands()[0].getElementByKey("detail.column_column11");
         Assert.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());

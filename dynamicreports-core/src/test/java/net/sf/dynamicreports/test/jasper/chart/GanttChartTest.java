@@ -25,6 +25,14 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 import java.awt.Color;
 import java.util.Date;
 
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.Axis;
+import org.jfree.chart.axis.CategoryLabelPosition;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.renderer.category.GanttRenderer;
+import org.jfree.chart.ui.RectangleEdge;
+import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -32,27 +40,19 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.Axis;
-import org.jfree.chart.axis.CategoryLabelPosition;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.renderer.category.GanttRenderer;
-import org.jfree.ui.RectangleEdge;
-import org.junit.Assert;
-
 /**
  * Gant chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class GanttChartTest extends AbstractJasperChartTest {
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    FieldBuilder<String> field1 = field("field1", String.class);
-    FieldBuilder<Date> field2 = field("field2", Date.class);
-    FieldBuilder<Date> field3 = field("field3", Date.class);
-    FieldBuilder<Double> field4 = field("field4", Double.class);
+    final FieldBuilder<String> field1 = field("field1", String.class);
+    final FieldBuilder<Date> field2 = field("field2", Date.class);
+    final FieldBuilder<Date> field3 = field("field3", Date.class);
+    final FieldBuilder<Double> field4 = field("field4", Double.class);
     rb.summary(
         cht.ganttChart().setTask(field1)
             .series(
@@ -80,9 +80,9 @@ public class GanttChartTest extends AbstractJasperChartTest {
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    CategoryPlot categoryPlot = chart.getCategoryPlot();
+    final CategoryPlot categoryPlot = chart.getCategoryPlot();
     Assert.assertEquals("renderer", GanttRenderer.class, categoryPlot.getRenderer().getClass());
-    Assert.assertTrue("show labels", categoryPlot.getRenderer().getBaseItemLabelsVisible());
+    Assert.assertTrue("show labels", categoryPlot.getRenderer().getDefaultItemLabelsVisible());
     Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
     Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
     ganttChartDataTest(chart, "label", new String[] {"task1", "task2", "task3"},
@@ -101,9 +101,9 @@ public class GanttChartTest extends AbstractJasperChartTest {
     Assert.assertEquals("task label font", ARIMO_BOLD_AWT, axis.getLabelFont());
     Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
     Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
+    final CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
         .getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
-    Assert.assertEquals("plot label rotation", (45d / 180) * Math.PI, labelPosition.getAngle(), 0);
+    Assert.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
     Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
@@ -118,7 +118,7 @@ public class GanttChartTest extends AbstractJasperChartTest {
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource =
+    final DRDataSource dataSource =
         new DRDataSource("field1", "field2", "field3", "field4", "field5", "field6");
     dataSource.add("task1", toDate(2011, 1, 1), toDate(2011, 1, 5), 1d, toDate(2011, 1, 2),
         toDate(2011, 1, 6));

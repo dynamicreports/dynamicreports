@@ -20,7 +20,21 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
+
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.chart.TimeSeriesChartBuilder;
@@ -28,25 +42,13 @@ import net.sf.dynamicreports.report.constant.AxisPosition;
 import net.sf.dynamicreports.report.constant.TimePeriod;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.charts.JRChart;
 import net.sf.jasperreports.charts.JRChartAxis;
+import net.sf.jasperreports.charts.JRChartPlot;
 import net.sf.jasperreports.charts.JRMultiAxisPlot;
 import net.sf.jasperreports.charts.type.AxisPositionEnum;
-import net.sf.jasperreports.engine.JRChart;
-import net.sf.jasperreports.engine.JRChartPlot;
+import net.sf.jasperreports.charts.type.ChartTypeEnum;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.renderer.xy.XYItemRenderer;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
-
-import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -56,13 +58,13 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        FieldBuilder<Date> field1 = field("field1", type.dateType());
-        FieldBuilder<Integer> field2 = field("field2", type.integerType());
-        FieldBuilder<Integer> field3 = field("field3", type.integerType());
+        final FieldBuilder<Date> field1 = field("field1", type.dateType());
+        final FieldBuilder<Integer> field2 = field("field2", type.integerType());
+        final FieldBuilder<Integer> field3 = field("field3", type.integerType());
 
-        TimeSeriesChartBuilder chart1 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
+        final TimeSeriesChartBuilder chart1 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field2).setLabel("serie1"));
 
-        TimeSeriesChartBuilder chart2 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field3).setLabel("serie2"));
+        final TimeSeriesChartBuilder chart2 = cht.timeSeriesChart().setTimePeriod(field1).setTimePeriodType(TimePeriod.DAY).series(cht.serie(field3).setLabel("serie2"));
 
         rb.summary(cht.multiAxisChart(chart1, chart2), cht.multiAxisChart().addChart(chart1, AxisPosition.LEFT_OR_TOP).addChart(chart2, AxisPosition.RIGHT_OR_BOTTOM));
     }
@@ -73,8 +75,8 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
 
         numberOfPagesTest(1);
 
-        JFreeChart chart = getChart("summary.chart1", 0);
-        XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+        final JFreeChart chart = getChart("summary.chart1", 0);
+        final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
         Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
         TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
         TimeSeries serie = (TimeSeries) dataset.getSeries().get(0);
@@ -89,23 +91,23 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
         Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
         Assert.assertEquals("value", 9d, serie.getDataItem(3).getValue());
 
-        JRChart chart2 = (JRChart) getJasperReport().getSummary().getElementByKey("summary.chart2");
-        JRChartPlot plot = chart2.getPlot();
+        final JRChart chart2 = (JRChart) getJasperReport().getSummary().getElementByKey("summary.chart2");
+        final JRChartPlot plot = chart2.getPlot();
         Assert.assertTrue("plot", plot instanceof JRMultiAxisPlot);
-        JRMultiAxisPlot multiAxisPlot = (JRMultiAxisPlot) plot;
+        final JRMultiAxisPlot multiAxisPlot = (JRMultiAxisPlot) plot;
         Assert.assertEquals("axes", 2, multiAxisPlot.getAxes().size());
         JRChartAxis chartAxis = multiAxisPlot.getAxes().get(0);
-        Assert.assertEquals("position", AxisPositionEnum.LEFT_OR_TOP, chartAxis.getPositionValue());
-        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart().getChartType());
+        Assert.assertEquals("position", AxisPositionEnum.LEFT_OR_TOP, chartAxis.getPosition());
+        Assert.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
         chartAxis = multiAxisPlot.getAxes().get(1);
-        Assert.assertEquals("position", AxisPositionEnum.RIGHT_OR_BOTTOM, chartAxis.getPositionValue());
-        Assert.assertEquals("chart", JRChart.CHART_TYPE_TIMESERIES, chartAxis.getChart().getChartType());
+        Assert.assertEquals("position", AxisPositionEnum.RIGHT_OR_BOTTOM, chartAxis.getPosition());
+        Assert.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
-        Calendar c = Calendar.getInstance();
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         for (int i = 0; i < 4; i++) {
             dataSource.add(c.getTime(), i + 1, i * i);

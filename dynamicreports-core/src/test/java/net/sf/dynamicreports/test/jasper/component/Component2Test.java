@@ -20,15 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.LineDirection;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRPrintLine;
 import net.sf.jasperreports.engine.JRPrintRectangle;
 import net.sf.jasperreports.engine.type.LineDirectionEnum;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
  * @author Ricardo Mariaca
@@ -57,9 +58,9 @@ public class Component2Test extends AbstractJasperPositionTest {
         elementPositionTest("title.line5", 0, 288, 0, 287, 50);
 
         JRPrintLine line = (JRPrintLine) getElementAt("title.line4", 0);
-        Assert.assertEquals("Line direction", LineDirectionEnum.TOP_DOWN, line.getDirectionValue());
+        Assert.assertEquals("Line direction", LineDirectionEnum.TOP_DOWN, line.getDirection());
         line = (JRPrintLine) getElementAt("title.line5", 0);
-        Assert.assertEquals("Line direction", LineDirectionEnum.BOTTOM_UP, line.getDirectionValue());
+        Assert.assertEquals("Line direction", LineDirectionEnum.BOTTOM_UP, line.getDirection());
 
         elementPositionTest("title.ellipse1", 0, 10, 61, 575, 100);
         elementPositionTest("title.rectangle1", 0, 10, 161, 575, 100);

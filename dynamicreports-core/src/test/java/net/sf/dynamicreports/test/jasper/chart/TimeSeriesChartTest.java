@@ -29,13 +29,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.constant.TimePeriod;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.Axis;
 import org.jfree.chart.axis.NumberAxis;
@@ -44,9 +37,16 @@ import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.junit.Assert;
 
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.TimePeriod;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
+
 /**
  * Time series chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class TimeSeriesChartTest extends AbstractJasperChartTest implements Serializable {
@@ -85,10 +85,10 @@ public class TimeSeriesChartTest extends AbstractJasperChartTest implements Seri
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+    final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
     Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-    Assert.assertFalse("show shapes", ((XYLineAndShapeRenderer) renderer).getBaseShapesVisible());
-    Assert.assertFalse("show lines", ((XYLineAndShapeRenderer) renderer).getBaseLinesVisible());
+    Assert.assertFalse("show shapes", ((XYLineAndShapeRenderer) renderer).getDefaultShapesVisible());
+    Assert.assertFalse("show lines", ((XYLineAndShapeRenderer) renderer).getDefaultLinesVisible());
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
@@ -117,8 +117,8 @@ public class TimeSeriesChartTest extends AbstractJasperChartTest implements Seri
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
-    Calendar c = Calendar.getInstance();
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final Calendar c = Calendar.getInstance();
     c.setTime(new Date());
     for (int i = 0; i < 4; i++) {
       dataSource.add(c.getTime(), new Timestamp(c.getTimeInMillis()), i + 1);

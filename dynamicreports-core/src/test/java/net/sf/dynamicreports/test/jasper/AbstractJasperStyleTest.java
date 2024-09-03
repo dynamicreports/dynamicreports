@@ -74,17 +74,17 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
     pen = style.getLineBox().getBottomPen();
     Assert.assertEquals(bottom, pen.getLineWidth().floatValue(), 0);
     Assert.assertEquals(bottomColor, pen.getLineColor());
-    Assert.assertEquals(bottomLineStyle, pen.getLineStyleValue());
+    Assert.assertEquals(bottomLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getLeftPen();
     Assert.assertEquals(left, pen.getLineWidth().floatValue(), 0);
     Assert.assertEquals(leftColor, pen.getLineColor());
-    Assert.assertEquals(leftLineStyle, pen.getLineStyleValue());
+    Assert.assertEquals(leftLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getRightPen();
     Assert.assertEquals(right, pen.getLineWidth().floatValue(), 0);
     Assert.assertEquals(rightColor, pen.getLineColor());
-    Assert.assertEquals(rightLineStyle, pen.getLineStyleValue());
+    Assert.assertEquals(rightLineStyle, pen.getLineStyle());
   }
 
   protected void paddingTest(String name, int index, Integer top, Integer bottom, Integer left,

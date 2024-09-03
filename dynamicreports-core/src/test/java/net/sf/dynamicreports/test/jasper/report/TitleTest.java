@@ -20,18 +20,19 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRPrintText;
 import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
 /**
  * @author Ricardo Mariaca
@@ -54,10 +55,10 @@ public class TitleTest extends AbstractJasperValueTest {
         elementCountTest("title.textField1", 2);
         elementValueTest("title.textField1", "title 1", "test title");
 
-        JRPrintText textField = (JRPrintText) getElementAt("title.textField1", 0);
+        final JRPrintText textField = (JRPrintText) getElementAt("title.textField1", 0);
         Assert.assertEquals("hyperlink reference", "link", textField.getHyperlinkReference());
         Assert.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
-        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.REFERENCE, textField.getHyperlinkTypeValue());
+        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.REFERENCE, textField.getHyperlinkType());
 
         elementCountTest("title.textField2", 1);
         elementValueTest("title.textField2", "title 2");
@@ -71,7 +72,7 @@ public class TitleTest extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 50; i++) {
             dataSource.add(i);
         }

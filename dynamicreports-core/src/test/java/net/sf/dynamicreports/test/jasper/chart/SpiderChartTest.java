@@ -33,7 +33,7 @@ import java.io.Serializable;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.SpiderWebPlot;
 import org.jfree.chart.title.TextTitle;
-import org.jfree.util.Rotation;
+import org.jfree.chart.util.Rotation;
 import org.junit.Assert;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -88,7 +88,7 @@ public class SpiderChartTest extends AbstractJasperChartTest implements Serializ
         SpiderWebPlot plot = (SpiderWebPlot) chart.getPlot();
         Assert.assertEquals("max value", Double.valueOf(10), Double.valueOf(plot.getMaxValue()));
         Assert.assertEquals("rotation", Rotation.ANTICLOCKWISE, plot.getDirection());
-        Assert.assertEquals("table order", org.jfree.util.TableOrder.BY_COLUMN, plot.getDataExtractOrder());
+        Assert.assertEquals("table order", org.jfree.chart.util.TableOrder.BY_COLUMN, plot.getDataExtractOrder());
         Assert.assertFalse("web filled", plot.isWebFilled());
         Assert.assertEquals("start angle", Double.valueOf(20), Double.valueOf(plot.getStartAngle()));
         Assert.assertEquals("head percent", Double.valueOf(30), Double.valueOf(plot.getHeadPercent()));

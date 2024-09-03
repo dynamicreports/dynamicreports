@@ -20,7 +20,11 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -32,9 +36,6 @@ import net.sf.jasperreports.crosstabs.type.CrosstabColumnPositionEnum;
 import net.sf.jasperreports.crosstabs.type.CrosstabRowPositionEnum;
 import net.sf.jasperreports.engine.type.RunDirectionEnum;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -42,11 +43,11 @@ public class CrosstabTest extends AbstractJasperTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
-        TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
-        TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
+        final TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
+        final TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
+        final TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
+        final CrosstabBuilder crosstab = ctab.crosstab()
                                        .setRepeatColumnHeaders(false)
                                        .setRepeatRowHeaders(false)
                                        .setColumnBreakOffset(100)
@@ -63,13 +64,13 @@ public class CrosstabTest extends AbstractJasperTest {
     public void test() {
         super.test();
 
-        JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary().getElementByKey("summary.crosstab1");
+        final JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary().getElementByKey("summary.crosstab1");
         Assert.assertFalse("Crosstab repeatColumnHeaders", crosstab.isRepeatColumnHeaders());
         Assert.assertFalse("Crosstab repeatRowHeaders", crosstab.isRepeatRowHeaders());
-        Assert.assertEquals("Crosstab columnBreakOffset", 100, crosstab.getColumnBreakOffset());
+        Assert.assertEquals("Crosstab columnBreakOffset", Integer.valueOf(100), crosstab.getColumnBreakOffset());
         Assert.assertTrue("Crosstab ignoreWidth", crosstab.getIgnoreWidth());
-        Assert.assertEquals("Crosstab runDirection", RunDirectionEnum.RTL, crosstab.getRunDirectionValue());
-        Assert.assertEquals("Crosstab row group position", CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPositionValue());
-        Assert.assertEquals("Crosstab column group position", CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPositionValue());
+        Assert.assertEquals("Crosstab runDirection", RunDirectionEnum.RTL, crosstab.getRunDirection());
+        Assert.assertEquals("Crosstab row group position", CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPosition());
+        Assert.assertEquals("Crosstab column group position", CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPosition());
     }
 }

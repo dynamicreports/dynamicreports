@@ -20,17 +20,18 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
 import org.junit.Assert;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.type.OrientationEnum;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -50,15 +51,15 @@ public class IgnorePaginationTest extends AbstractJasperValueTest implements Ser
 
         numberOfPagesTest(1);
 
-        JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientationValue());
+        final JasperPrint jasperPrint = getJasperPrint();
+        Assert.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientation());
         Assert.assertEquals(595, jasperPrint.getPageWidth());
         Assert.assertEquals(1636, jasperPrint.getPageHeight());
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 100; i++) {
             dataSource.add(i);
         }
