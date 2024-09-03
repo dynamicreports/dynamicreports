@@ -22,7 +22,7 @@ package net.sf.dynamicreports.test.jasper.component;
 
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.LineDirection;
@@ -58,9 +58,9 @@ public class Component2Test extends AbstractJasperPositionTest {
         elementPositionTest("title.line5", 0, 288, 0, 287, 50);
 
         JRPrintLine line = (JRPrintLine) getElementAt("title.line4", 0);
-        Assert.assertEquals("Line direction", LineDirectionEnum.TOP_DOWN, line.getDirection());
+        Assertions.assertEquals("Line direction", LineDirectionEnum.TOP_DOWN, line.getDirection());
         line = (JRPrintLine) getElementAt("title.line5", 0);
-        Assert.assertEquals("Line direction", LineDirectionEnum.BOTTOM_UP, line.getDirection());
+        Assertions.assertEquals("Line direction", LineDirectionEnum.BOTTOM_UP, line.getDirection());
 
         elementPositionTest("title.ellipse1", 0, 10, 61, 575, 100);
         elementPositionTest("title.rectangle1", 0, 10, 161, 575, 100);
@@ -68,11 +68,11 @@ public class Component2Test extends AbstractJasperPositionTest {
         elementPositionTest("title.rectangle3", 0, 10, 361, 575, 100);
 
         JRPrintRectangle rectangle = (JRPrintRectangle) getElementAt("title.rectangle1", 0);
-        Assert.assertEquals("Rectangle radius", 0, rectangle.getRadius());
+        Assertions.assertEquals("Rectangle radius", 0, rectangle.getRadius());
         rectangle = (JRPrintRectangle) getElementAt("title.rectangle2", 0);
-        Assert.assertEquals("Rectangle radius", 10, rectangle.getRadius());
+        Assertions.assertEquals("Rectangle radius", 10, rectangle.getRadius());
         rectangle = (JRPrintRectangle) getElementAt("title.rectangle3", 0);
-        Assert.assertEquals("Rectangle radius", 20, rectangle.getRadius());
+        Assertions.assertEquals("Rectangle radius", 20, rectangle.getRadius());
 
         elementPositionTest("title.list4", 0, 10, 491, 575, 16);
         elementPositionTest("title.textField1", 0, 0, 0, 282, 16);

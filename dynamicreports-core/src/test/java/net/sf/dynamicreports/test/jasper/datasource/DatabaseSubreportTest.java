@@ -20,14 +20,12 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
-import net.sf.dynamicreports.report.builder.expression.AbstractComplexExpression;
-import net.sf.dynamicreports.report.builder.group.CustomGroupBuilder;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -37,12 +35,15 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Locale;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+import org.junit.jupiter.api.Assertions;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
+import net.sf.dynamicreports.report.builder.expression.AbstractComplexExpression;
+import net.sf.dynamicreports.report.builder.group.CustomGroupBuilder;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 
 /**
  * @author Ricardo Mariaca
@@ -59,19 +60,19 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
             Class.forName("org.hsqldb.jdbcDriver");
             connection = DriverManager.getConnection("jdbc:hsqldb:mem:test");
             createTable();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
         super.init();
     }
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = cmp.subreport(new SubreportExpression());
+        final SubreportBuilder subreport = cmp.subreport(new SubreportExpression());
         subreport.setConnection(connection);
 
-        CustomGroupBuilder group = grp.group(field("field4", Integer.class));
+        final CustomGroupBuilder group = grp.group(field("field4", Integer.class));
         group.footer(subreport);
 
         rb.groupBy(group).setDataSource("SELECT * FROM test_table2", connection);
@@ -106,7 +107,7 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
     }
 
     private void createTable() throws SQLException {
-        Statement st = connection.createStatement();
+        final Statement st = connection.createStatement();
         st.execute("CREATE TABLE test_table2 (field1 VARCHAR(50), field2 INTEGER, field3 DECIMAL, field4 INTEGER)");
         st.execute("INSERT INTO test_table2 VALUES ('text', 5, 100, 1)");
         st.execute("INSERT INTO test_table2 VALUES ('text', 6, 200, 1)");
@@ -122,7 +123,7 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
 
         @Override
         public JasperReportBuilder evaluate(List<?> values, ReportParameters reportParameters) {
-            JasperReportBuilder report = report();
+            final JasperReportBuilder report = report();
             report.setLocale(Locale.ENGLISH)
                   .columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.integerType()),
                            column3 = col.column("Column3", "field3", type.bigDecimalType()))

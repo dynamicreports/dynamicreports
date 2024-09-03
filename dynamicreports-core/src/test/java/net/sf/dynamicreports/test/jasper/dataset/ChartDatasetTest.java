@@ -20,7 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.dataset;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.dataset;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+
+import org.jfree.chart.JFreeChart;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.DatasetBuilder;
@@ -32,15 +42,6 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.dataset;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 
 /**
  * @author Ricardo Mariaca
@@ -50,18 +51,18 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        FieldBuilder<Integer> field2 = field("field2", Integer.class);
+        final FieldBuilder<Integer> field2 = field("field2", Integer.class);
 
-        DatasetBuilder dataset1 = dataset();
+        final DatasetBuilder dataset1 = dataset();
         dataset1.addField(field2);
         dataset1.setDataSource(createDataSource());
 
-        DatasetBuilder dataset2 = dataset();
+        final DatasetBuilder dataset2 = dataset();
         dataset2.addField("field1", String.class);
         dataset2.setDataSource(createDataSource());
 
-        DatasetBuilder dataset3 = dataset();
-        VariableBuilder<Integer> variable = variable("var1", field2, Calculation.SUM);
+        final DatasetBuilder dataset3 = dataset();
+        final VariableBuilder<Integer> variable = variable("var1", field2, Calculation.SUM);
         dataset3.variables(variable);
         dataset3.setDataSource(new Datasource3Expression());
 
@@ -119,7 +120,7 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1, i + 2);
             dataSource.add("value" + (i + 1), i + 1, i + 2);
@@ -132,16 +133,16 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
         @Override
         public Double evaluate(ReportParameters reportParameters) {
-            Assert.assertNotNull(reportParameters.getMasterParameters());
+            Assertions.assertNotNull(reportParameters.getMasterParameters());
             try {
                 reportParameters.getValue("parameter");
-                Assert.fail("parameter is not null");
-            } catch (Exception e) {
+                Assertions.fail("parameter is not null");
+            } catch (final Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
+            Assertions.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
 
-            double f1 = ((Number) reportParameters.getValue("field2")).doubleValue();
-            double f2 = ((Number) reportParameters.getValue("field3")).doubleValue();
+            final double f1 = ((Number) reportParameters.getValue("field2")).doubleValue();
+            final double f2 = ((Number) reportParameters.getValue("field3")).doubleValue();
             return f1 + f2;
         }
     }
@@ -151,13 +152,13 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            Assert.assertNotNull(reportParameters.getMasterParameters());
+            Assertions.assertNotNull(reportParameters.getMasterParameters());
             try {
                 reportParameters.getValue("parameter");
-                Assert.fail("parameter is not null");
-            } catch (Exception e) {
+                Assertions.fail("parameter is not null");
+            } catch (final Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
+            Assertions.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
             return (String) reportParameters.getValue("field1") + "_exp";
         }
     }
@@ -167,8 +168,8 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            Assert.assertNull(reportParameters.getMasterParameters());
-            Assert.assertEquals("parameter_value", reportParameters.getValue("parameter"));
+            Assertions.assertNull(reportParameters.getMasterParameters());
+            Assertions.assertEquals("parameter_value", reportParameters.getValue("parameter"));
             return "Title";
         }
     }
@@ -178,8 +179,8 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            Assert.assertNull(reportParameters.getMasterParameters());
-            Assert.assertEquals("parameter_value", reportParameters.getValue("parameter"));
+            Assertions.assertNull(reportParameters.getMasterParameters());
+            Assertions.assertEquals("parameter_value", reportParameters.getValue("parameter"));
             chart.setTitle("customizer" + reportParameters.getPageNumber());
         }
     }
@@ -189,8 +190,8 @@ public class ChartDatasetTest extends AbstractJasperChartTest implements Seriali
 
         @Override
         public JRDataSource evaluate(ReportParameters reportParameters) {
-            Assert.assertNull(reportParameters.getMasterParameters());
-            Assert.assertEquals("parameter_value", reportParameters.getValue("parameter"));
+            Assertions.assertNull(reportParameters.getMasterParameters());
+            Assertions.assertEquals("parameter_value", reportParameters.getValue("parameter"));
             return createDataSource();
         }
     }

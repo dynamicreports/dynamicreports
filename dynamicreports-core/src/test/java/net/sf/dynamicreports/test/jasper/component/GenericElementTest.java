@@ -20,7 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.export;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.ByteArrayOutputStream;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.builder.export.JasperHtmlExporterBuilder;
 import net.sf.dynamicreports.report.base.AbstractScriptlet;
@@ -30,15 +40,6 @@ import net.sf.dynamicreports.report.builder.component.GenericElementBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.export;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -47,36 +48,36 @@ public class GenericElementTest {
     private String data = "";
     private String output;
 
-    @Before
+    @BeforeAll
     public void init() {
         try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            JasperHtmlExporterBuilder htmlExporter = export.htmlExporter(outputStream);
+            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            final JasperHtmlExporterBuilder htmlExporter = export.htmlExporter(outputStream);
 
-            JasperReportBuilder reportBuilder = DynamicReports.report();
+            final JasperReportBuilder reportBuilder = DynamicReports.report();
             configureReport(reportBuilder);
             reportBuilder.setDataSource(createDataSource()).toHtml(htmlExporter);
 
             output = outputStream.toString();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     protected void configureReport(JasperReportBuilder rb) {
-        GenericElementBuilder genericElement = cmp.genericElement("http://www.dynamicreports.org/custom", "custom").addParameter("id", "10").addParameter("data", new ParameterExpression());
+        final GenericElementBuilder genericElement = cmp.genericElement("http://www.dynamicreports.org/custom", "custom").addParameter("id", "10").addParameter("data", new ParameterExpression());
 
         rb.scriptlets(new ReportScriptlet()).fields(field("field1", type.stringType())).summary(genericElement);
     }
 
     @Test
     public void test() {
-        Assert.assertTrue("generic element output", output.indexOf("<div id=\"10\">ABCD</div>") != -1);
+        Assertions.assertTrue("generic element output", output.indexOf("<div id=\"10\">ABCD</div>") != -1);
     }
 
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("A");
         dataSource.add("B");
         dataSource.add("C");
@@ -98,7 +99,7 @@ public class GenericElementTest {
         @Override
         public void afterDetailEval(ReportParameters reportParameters) {
             super.afterDetailEval(reportParameters);
-            String name = reportParameters.getValue("field1");
+            final String name = reportParameters.getValue("field1");
             data += name;
         }
     }

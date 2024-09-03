@@ -32,7 +32,7 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYBarRenderer;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -79,32 +79,32 @@ public class XyBarChartTest extends AbstractJasperChartTest implements Serializa
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final XYPlot plot = chart.getXYPlot();
-    Assert.assertEquals("renderer", XYBarRenderer.class, plot.getRenderer().getClass());
-    Assert.assertTrue("show labels", plot.getRenderer().getDefaultItemLabelsVisible());
-    // Assert.assertFalse("show tick labels", plot.getDomainAxis().isTickMarksVisible());
-    // Assert.assertFalse("show tick marks", plot.getDomainAxis().isTickLabelsVisible());
+    Assertions.assertEquals("renderer", XYBarRenderer.class, plot.getRenderer().getClass());
+    Assertions.assertTrue("show labels", plot.getRenderer().getDefaultItemLabelsVisible());
+    // Assertions.assertFalse("show tick labels", plot.getDomainAxis().isTickMarksVisible());
+    // Assertions.assertFalse("show tick marks", plot.getDomainAxis().isTickLabelsVisible());
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assert.assertEquals("category label", "category", axis.getLabel());
-    Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("category label", "category", axis.getLabel());
+    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assert.assertEquals("value label", "value", axis.getLabel());
-    Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("tick label mask", "10.00",
+    Assertions.assertEquals("value label", "value", axis.getLabel());
+    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
-    Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
+    Assertions.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
   }
 
   @Override

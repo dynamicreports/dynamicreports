@@ -25,7 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 import java.awt.Color;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -73,8 +73,8 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
     }
 
     private void penTest(JRPen pen, Float width, Color color, LineStyleEnum style) {
-        Assert.assertEquals(width, pen.getLineWidth());
-        Assert.assertEquals(color, pen.getLineColor());
-        Assert.assertEquals(style, pen.getLineStyle());
+        Assertions.assertEquals(width, pen.getLineWidth());
+        Assertions.assertEquals(color, pen.getLineColor());
+        Assertions.assertEquals(style, pen.getLineStyle());
     }
 }

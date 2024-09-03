@@ -20,7 +20,23 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.awt.Color;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.LegendItem;
+import org.jfree.chart.renderer.category.CategoryItemRenderer;
+import org.jfree.data.category.CategoryDataset;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -30,21 +46,6 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.apache.commons.lang3.StringUtils;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.LegendItem;
-import org.jfree.chart.renderer.category.CategoryItemRenderer;
-import org.jfree.data.category.CategoryDataset;
-
-import java.awt.Color;
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -61,7 +62,7 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         TextColumnBuilder<Integer> column3;
         TextColumnBuilder<String> column4;
 
-        colors = new HashMap<String, Color>();
+        colors = new HashMap<>();
         colors.put("a", Color.BLUE);
         colors.put("b", Color.YELLOW);
         colors.put("c", Color.GREEN);
@@ -129,9 +130,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
         CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         String[] categories = new String[] {"value1", "value2"};
@@ -149,14 +150,14 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
+            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
+            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
 
         series = new String[] {"1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "a", "1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "b",
@@ -173,9 +174,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         renderer1 = chart.getCategoryPlot().getRenderer();
         dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         categories = new String[] {"value1", "value2"};
@@ -193,14 +194,14 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
+            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
+            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
 
         series = new String[] {"2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "d", "2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "c",
@@ -218,9 +219,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         renderer1 = chart.getCategoryPlot().getRenderer();
         dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         categories = new String[] {"value1", "value2"};
@@ -238,14 +239,14 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
+            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
+            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
 
         series = new String[] {"1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "c", "1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "b",
@@ -262,9 +263,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         renderer1 = chart.getCategoryPlot().getRenderer();
         dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         categories = new String[] {"value1", "value2"};
@@ -282,14 +283,14 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
+            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
+            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
 
         series = new String[] {"2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "d", "2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "a",
@@ -307,9 +308,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         renderer1 = chart.getCategoryPlot().getRenderer();
         dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         categories = new String[] {"value1", "value2"};
@@ -325,9 +326,9 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
         renderer1 = chart.getCategoryPlot().getRenderer();
         dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         categories = new String[] {"value1", "value2"};
@@ -341,17 +342,17 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
 
     @Override
     protected void chartDataTest(String name, int index, String[] categories, String[] series, Number[][] values) {
-        CategoryDataset dataset = getChart(name, index).getCategoryPlot().getDataset();
+        final CategoryDataset dataset = getChart(name, index).getCategoryPlot().getDataset();
         for (int i = 0; i < categories.length; i++) {
             for (int j = 0; j < series.length; j++) {
-                Assert.assertEquals("chart data", values[i][j], dataset.getValue(j, i));
+                Assertions.assertEquals("chart data", values[i][j], dataset.getValue(j, i));
             }
         }
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
         dataSource.add("value1", "b", 2, "1");
         dataSource.add("value1", "a", 1, "1");
         dataSource.add("value1", "c", 3, "1");

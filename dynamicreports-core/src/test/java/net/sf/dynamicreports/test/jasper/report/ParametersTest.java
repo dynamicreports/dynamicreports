@@ -20,7 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.definition.ReportParameters;
@@ -28,12 +35,6 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
  * @author Ricardo Mariaca
@@ -60,29 +61,29 @@ public class ParametersTest extends AbstractJasperValueTest implements Serializa
             getReportBuilder().setParameter("title", "1");
             build();
             elementValueTest("title.textField1", "1");
-            Assert.assertSame(jasperReport, getJasperReport());
-            Assert.assertNotSame(jasperPrint, getJasperPrint());
+            Assertions.assertSame(jasperReport, getJasperReport());
+            Assertions.assertNotSame(jasperPrint, getJasperPrint());
 
             jasperReport = getJasperReport();
             jasperPrint = getJasperPrint();
             getReportBuilder().setParameter("title", "2");
             build();
             elementValueTest("title.textField1", "2");
-            Assert.assertSame(jasperReport, getJasperReport());
-            Assert.assertNotSame(jasperPrint, getJasperPrint());
+            Assertions.assertSame(jasperReport, getJasperReport());
+            Assertions.assertNotSame(jasperPrint, getJasperPrint());
 
             jasperReport = getJasperReport();
             jasperPrint = getJasperPrint();
-            Map<String, Object> parameters = new HashMap<String, Object>();
+            final Map<String, Object> parameters = new HashMap<>();
             parameters.put("title", "3");
             getReportBuilder().setParameters(parameters);
             build();
             elementValueTest("title.textField1", "3");
-            Assert.assertSame(jasperReport, getJasperReport());
-            Assert.assertNotSame(jasperPrint, getJasperPrint());
-        } catch (DRException e) {
+            Assertions.assertSame(jasperReport, getJasperReport());
+            Assertions.assertNotSame(jasperPrint, getJasperPrint());
+        } catch (final DRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 

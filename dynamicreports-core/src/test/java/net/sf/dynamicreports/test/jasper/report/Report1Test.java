@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 import java.util.ListResourceBundle;
 import java.util.Locale;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.AbstractScriptlet;
@@ -83,15 +83,15 @@ public class Report1Test extends AbstractJasperValueTest {
         elementValueTest("title.textField1", "bundleKey3", "bundleKey3", "bundleValue");
 
         final FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
-        Assert.assertFalse("fonts", fontUtil.getFontFamilyNames().isEmpty());
+        Assertions.assertFalse("fonts", fontUtil.getFontFamilyNames().isEmpty());
 
         final JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals("Report", jasperPrint.getName());
-        Assert.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientation());
-        Assert.assertEquals(1190, jasperPrint.getPageWidth());
-        Assert.assertEquals(842, jasperPrint.getPageHeight());
+        Assertions.assertEquals("Report", jasperPrint.getName());
+        Assertions.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientation());
+        Assertions.assertEquals(1190, jasperPrint.getPageWidth());
+        Assertions.assertEquals(842, jasperPrint.getPageHeight());
 
-        Assert.assertEquals(50, scriptlet.count);
+        Assertions.assertEquals(50, scriptlet.count);
     }
 
     @Override
@@ -122,12 +122,12 @@ public class Report1Test extends AbstractJasperValueTest {
         @Override
         public void afterReportInit(ReportParameters reportParameters) {
             super.afterReportInit(reportParameters);
-            Assert.assertEquals(Locale.ENGLISH, reportParameters.getLocale());
-            Assert.assertEquals("bundleValue", reportParameters.getMessage("bundleKey1"));
-            Assert.assertEquals("bundleValue a - b", reportParameters.getMessage("bundleKey2", new Object[] {"a", "b"}));
-            Assert.assertEquals(parameter1, reportParameters.getValue("parameter1"));
-            Assert.assertEquals(parameter2, reportParameters.getValue("parameter2"));
-            Assert.assertEquals(this, reportParameters.getScriptlet(getName()));
+            Assertions.assertEquals(Locale.ENGLISH, reportParameters.getLocale());
+            Assertions.assertEquals("bundleValue", reportParameters.getMessage("bundleKey1"));
+            Assertions.assertEquals("bundleValue a - b", reportParameters.getMessage("bundleKey2", new Object[] {"a", "b"}));
+            Assertions.assertEquals(parameter1, reportParameters.getValue("parameter1"));
+            Assertions.assertEquals(parameter2, reportParameters.getValue("parameter2"));
+            Assertions.assertEquals(this, reportParameters.getScriptlet(getName()));
         }
 
         @Override

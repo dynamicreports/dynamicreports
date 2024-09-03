@@ -20,7 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
+import java.io.InputStream;
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
@@ -33,11 +39,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
-import java.io.InputStream;
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -46,9 +47,9 @@ public class JasperSubreport2Test extends AbstractJasperValueTest implements Ser
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
+        final SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
 
-        SubreportBuilder titleSubreport = cmp.subreport(titleSubreport()).setDataSource(titleSubreportDataSource());
+        final SubreportBuilder titleSubreport = cmp.subreport(titleSubreport()).setDataSource(titleSubreportDataSource());
 
         rb.title(titleSubreport).detail(detailSubreport);
     }
@@ -78,28 +79,28 @@ public class JasperSubreport2Test extends AbstractJasperValueTest implements Ser
 
     private JasperReport titleSubreport() {
         try {
-            InputStream is = JasperSubreportTest.class.getResourceAsStream("titlesubreport.jrxml");
+            final InputStream is = JasperSubreportTest.class.getResourceAsStream("titlesubreport.jrxml");
             return JasperCompileManager.compileReport(is);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
             return null;
         }
     }
 
     private JasperReport detailSubreport() {
         try {
-            InputStream is = JasperSubreportTest.class.getResourceAsStream("detailsubreport.jrxml");
+            final InputStream is = JasperSubreportTest.class.getResourceAsStream("detailsubreport.jrxml");
             return JasperCompileManager.compileReport(is);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
             return null;
         }
     }
 
     private JRDataSource titleSubreportDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("value1");
         dataSource.add("value2");
         dataSource.add("value3");

@@ -20,10 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -32,8 +30,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Locale;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+import org.junit.jupiter.api.Assertions;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 
 /**
  * @author Ricardo Mariaca
@@ -50,9 +51,9 @@ public class DatabaseReportTest extends AbstractJasperValueTest {
             Class.forName("org.hsqldb.jdbcDriver");
             connection = DriverManager.getConnection("jdbc:hsqldb:mem:test");
             createTable();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
         super.init();
     }
@@ -94,7 +95,7 @@ public class DatabaseReportTest extends AbstractJasperValueTest {
     }
 
     private void createTable() throws SQLException {
-        Statement st = connection.createStatement();
+        final Statement st = connection.createStatement();
         st.execute("CREATE TABLE test_table1 (field1 VARCHAR(50), field2 INTEGER, field3 DECIMAL)");
         st.execute("INSERT INTO test_table1 VALUES ('text', 5, 100)");
     }

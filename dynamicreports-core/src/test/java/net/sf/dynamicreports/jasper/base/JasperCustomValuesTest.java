@@ -4,44 +4,45 @@ import static net.sf.dynamicreports.jasper.base.JasperScriptletManager.USE_THREA
 
 import java.util.Properties;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * Unit tests for {@link JasperCustomValues}.
  */
 public class JasperCustomValuesTest {
 
-  private JasperScriptlet scriptlet = new JasperScriptlet();
-  
+  private final JasperScriptlet scriptlet = new JasperScriptlet();
+
   @Test
   public void shouldUseDefaultScriptletManager() {
-    JasperCustomValues cut = createClassUnderTest(false);
-    Assert.assertTrue(cut.getScriptletManager() instanceof DefaultJasperScriptletManager);
+    final JasperCustomValues cut = createClassUnderTest(false);
+    Assertions.assertTrue(cut.getScriptletManager() instanceof DefaultJasperScriptletManager);
   }
-  
+
   @Test
   public void shouldUseThreadSafeScriptleManagerIfPropertySet() {
-    JasperCustomValues cut = createClassUnderTest(true);
-    Assert.assertTrue(cut.getScriptletManager() instanceof ThreadSafeJasperScriptletManager);
+    final JasperCustomValues cut = createClassUnderTest(true);
+    Assertions.assertTrue(cut.getScriptletManager() instanceof ThreadSafeJasperScriptletManager);
   }
 
   @Test
   public void shouldSetScriptletWithDefaultManager() {
-    JasperCustomValues cut = createClassUnderTest(false);
+    final JasperCustomValues cut = createClassUnderTest(false);
     cut.setJasperScriptlet(scriptlet);
-    Assert.assertEquals(scriptlet, cut.getJasperScriptlet());
+    Assertions.assertEquals(scriptlet, cut.getJasperScriptlet());
   }
-  
+
   @Test
   public void shouldSetScriptletWithThreadSafeManager() {
-    JasperCustomValues cut = createClassUnderTest(true);
+    final JasperCustomValues cut = createClassUnderTest(true);
     cut.setJasperScriptlet(scriptlet);
-    Assert.assertEquals(scriptlet, cut.getJasperScriptlet());    
+    Assertions.assertEquals(scriptlet, cut.getJasperScriptlet());
   }
-  
+
   private JasperCustomValues createClassUnderTest(boolean useThreadSafeManager) {
-    Properties properties = new Properties();
+    final Properties properties = new Properties();
     if (useThreadSafeManager) {
       properties.setProperty(USE_THREAD_SAFE_SCRIPLET_MANAGER_PROPERTY_KEY, "true");
     }

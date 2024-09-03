@@ -20,7 +20,18 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -35,16 +46,6 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -66,20 +67,20 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
         rowGroup = ctab.rowGroup("field1", String.class);
         columnGroup = ctab.columnGroup("field2", String.class);
 
-        FieldBuilder<Integer> field = field("field3", Integer.class);
+        final FieldBuilder<Integer> field = field("field3", Integer.class);
         variable1 = ctab.variable(field, Calculation.SUM);
         measure1 = ctab.measure(field, Calculation.SUM);
         measure2 = ctab.measure(field, Calculation.SUM);
         measure2.setPercentageType(CrosstabPercentageType.GRAND_TOTAL);
         measure3 = ctab.measure(new PercentageExpression1());
         measure3.setDataType(type.doubleType());
-        String expression = "$V{" + measure1.getName() + "}.doubleValue()/$V{" + measure1.getName() + "_" + rowGroup.getName() + "_" + columnGroup.getName() + "_ALL}.doubleValue() * 100";
+        final String expression = "$V{" + measure1.getName() + "}.doubleValue()/$V{" + measure1.getName() + "_" + rowGroup.getName() + "_" + columnGroup.getName() + "_ALL}.doubleValue() * 100";
         measure4 = ctab.measure(exp.jasperSyntax(expression, Double.class));
         measure4.setDataType(type.doubleType());
         measure5 = ctab.measure(new PercentageExpression2());
         measure5.setDataType(type.doubleType());
 
-        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).variables(variable1).measures(measure1, measure2, measure3, measure4, measure5);
+        final CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).variables(variable1).measures(measure1, measure2, measure3, measure4, measure5);
 
         rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
@@ -157,7 +158,7 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("a", "c", 1);
         dataSource.add("a", "c", 2);
         dataSource.add("a", "d", 3);
@@ -179,8 +180,8 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
 
         @Override
         public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
-            Integer value1 = (Integer) values.get(0);
-            Integer value2 = (Integer) values.get(1);
+            final Integer value1 = (Integer) values.get(0);
+            final Integer value2 = (Integer) values.get(1);
             return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }
@@ -196,11 +197,11 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
 
         @Override
         public BigDecimal evaluate(List<?> values, ReportParameters reportParameters) {
-            Integer value1 = (Integer) values.get(0);
-            Integer value2 = (Integer) values.get(1);
-            Integer measure1Value = reportParameters.getValue(measure1);
-            Assert.assertEquals("measure value", value1, measure1Value);
-            Assert.assertEquals("measure value", value2, values.get(2));
+            final Integer value1 = (Integer) values.get(0);
+            final Integer value2 = (Integer) values.get(1);
+            final Integer measure1Value = reportParameters.getValue(measure1);
+            Assertions.assertEquals("measure value", value1, measure1Value);
+            Assertions.assertEquals("measure value", value2, values.get(2));
             return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }

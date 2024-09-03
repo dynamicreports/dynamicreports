@@ -34,7 +34,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.SpiderWebPlot;
 import org.jfree.chart.title.TextTitle;
 import org.jfree.chart.util.Rotation;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -86,24 +86,24 @@ public class SpiderChartTest extends AbstractJasperChartTest implements Serializ
         JRPrintImage image = (JRPrintImage) printFrame.getElements().get(0);
         JFreeChart chart = getChart(image);
         SpiderWebPlot plot = (SpiderWebPlot) chart.getPlot();
-        Assert.assertEquals("max value", Double.valueOf(10), Double.valueOf(plot.getMaxValue()));
-        Assert.assertEquals("rotation", Rotation.ANTICLOCKWISE, plot.getDirection());
-        Assert.assertEquals("table order", org.jfree.chart.util.TableOrder.BY_COLUMN, plot.getDataExtractOrder());
-        Assert.assertFalse("web filled", plot.isWebFilled());
-        Assert.assertEquals("start angle", Double.valueOf(20), Double.valueOf(plot.getStartAngle()));
-        Assert.assertEquals("head percent", Double.valueOf(30), Double.valueOf(plot.getHeadPercent()));
-        Assert.assertEquals("interior gap", Double.valueOf(0.15), Double.valueOf(plot.getInteriorGap()));
-        Assert.assertEquals("axis line color", Color.RED, plot.getAxisLinePaint());
-        Assert.assertEquals("interior gap", Float.valueOf(2), Float.valueOf(((BasicStroke) plot.getAxisLineStroke()).getLineWidth()));
-        Assert.assertEquals("label color", Color.BLUE, plot.getLabelPaint());
-        Assert.assertEquals("label gap", Double.valueOf(2), Double.valueOf(plot.getAxisLabelGap()));
-        Assert.assertTrue("label font", plot.getLabelFont().isBold());
+        Assertions.assertEquals("max value", Double.valueOf(10), Double.valueOf(plot.getMaxValue()));
+        Assertions.assertEquals("rotation", Rotation.ANTICLOCKWISE, plot.getDirection());
+        Assertions.assertEquals("table order", org.jfree.chart.util.TableOrder.BY_COLUMN, plot.getDataExtractOrder());
+        Assertions.assertFalse("web filled", plot.isWebFilled());
+        Assertions.assertEquals("start angle", Double.valueOf(20), Double.valueOf(plot.getStartAngle()));
+        Assertions.assertEquals("head percent", Double.valueOf(30), Double.valueOf(plot.getHeadPercent()));
+        Assertions.assertEquals("interior gap", Double.valueOf(0.15), Double.valueOf(plot.getInteriorGap()));
+        Assertions.assertEquals("axis line color", Color.RED, plot.getAxisLinePaint());
+        Assertions.assertEquals("interior gap", Float.valueOf(2), Float.valueOf(((BasicStroke) plot.getAxisLineStroke()).getLineWidth()));
+        Assertions.assertEquals("label color", Color.BLUE, plot.getLabelPaint());
+        Assertions.assertEquals("label gap", Double.valueOf(2), Double.valueOf(plot.getAxisLabelGap()));
+        Assertions.assertTrue("label font", plot.getLabelFont().isBold());
 
         image = (JRPrintImage) printFrame.getElements().get(1);
         chart = getChart(image);
         plot = (SpiderWebPlot) chart.getPlot();
-        Assert.assertEquals("title", "title", chart.getTitle().getText());
-        Assert.assertEquals("subtitle", "subtitle", ((TextTitle) chart.getSubtitle(1)).getText());
+        Assertions.assertEquals("title", "title", chart.getTitle().getText());
+        Assertions.assertEquals("subtitle", "subtitle", ((TextTitle) chart.getSubtitle(1)).getText());
     }
 
     @Override

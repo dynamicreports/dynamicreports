@@ -20,7 +20,10 @@
  */
 package net.sf.dynamicreports.test.jasper;
 
-import org.junit.Assert;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.GroupBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.BaseSubtotalBuilder;
@@ -29,47 +32,45 @@ import net.sf.jasperreports.engine.JRPrintElement;
 import net.sf.jasperreports.engine.JRPrintText;
 import net.sf.jasperreports.engine.util.JRStyledTextUtil;
 
-import java.util.List;
-
 /**
  * @author Ricardo Mariaca
  */
 public abstract class AbstractJasperValueTest extends AbstractJasperTest {
 
     protected void elementCountTest(String name, int expectedNumberOfElements) {
-        Assert.assertEquals("element count " + name, expectedNumberOfElements, findElement(name).size());
+        Assertions.assertEquals("element count " + name, expectedNumberOfElements, findElement(name).size());
     }
 
     protected void elementValueTest(String name, int index, String value) {
-        Assert.assertEquals("element value " + name, value, getElementValue(name, index));
+        Assertions.assertEquals("element value " + name, value, getElementValue(name, index));
     }
 
     protected void elementFullValueTest(String name, int index, String value) {
-        Assert.assertEquals("element value " + name, value, getElementFullValue(name, index));
+        Assertions.assertEquals("element value " + name, value, getElementFullValue(name, index));
     }
 
     protected void elementValueTest(String name, String... values) {
-        List<JRPrintElement> elements = findElement(name);
-        Assert.assertTrue(values.length <= elements.size());
+        final List<JRPrintElement> elements = findElement(name);
+        Assertions.assertTrue(values.length <= elements.size());
         for (int i = 0; i < values.length; i++) {
-            JRPrintText textElement = (JRPrintText) elements.get(i);
-            String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
-            Assert.assertEquals("element value " + name, values[i], value);
+            final JRPrintText textElement = (JRPrintText) elements.get(i);
+            final String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
+            Assertions.assertEquals("element value " + name, values[i], value);
         }
     }
 
     protected void elementFullValueTest(String name, String... values) {
-        List<JRPrintElement> elements = findElement(name);
-        Assert.assertTrue(values.length <= elements.size());
+        final List<JRPrintElement> elements = findElement(name);
+        Assertions.assertTrue(values.length <= elements.size());
         for (int i = 0; i < values.length; i++) {
-            String value = ((JRPrintText) elements.get(i)).getFullText();
-            Assert.assertEquals("element value " + name, values[i], value);
+            final String value = ((JRPrintText) elements.get(i)).getFullText();
+            Assertions.assertEquals("element value " + name, values[i], value);
         }
     }
 
     private String getElementValue(String key, int index) {
-        JRPrintText textElement = (JRPrintText) getElementAt(key, index);
-        String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
+        final JRPrintText textElement = (JRPrintText) getElementAt(key, index);
+        final String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
         return value;
     }
 

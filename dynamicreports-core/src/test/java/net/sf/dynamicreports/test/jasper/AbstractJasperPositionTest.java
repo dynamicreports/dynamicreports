@@ -20,7 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.GroupBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder;
@@ -32,11 +33,11 @@ import net.sf.jasperreports.engine.JRPrintElement;
 public abstract class AbstractJasperPositionTest extends AbstractJasperTest {
 
     protected void elementPositionTest(String name, int index, int x, int y, int width, int height) {
-        JRPrintElement element = getElementAt(name, index);
-        Assert.assertEquals("width", width, element.getWidth());
-        Assert.assertEquals("height", height, element.getHeight());
-        Assert.assertEquals("x", x, element.getX());
-        Assert.assertEquals("y", y, element.getY());
+        final JRPrintElement element = getElementAt(name, index);
+        Assertions.assertEquals("width", width, element.getWidth());
+        Assertions.assertEquals("height", height, element.getHeight());
+        Assertions.assertEquals("x", x, element.getX());
+        Assertions.assertEquals("y", y, element.getY());
     }
 
     // column detail

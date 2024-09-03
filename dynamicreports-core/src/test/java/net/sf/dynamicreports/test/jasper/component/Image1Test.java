@@ -32,7 +32,7 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.Arrays;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.ImageScale;
@@ -68,11 +68,11 @@ public class Image1Test extends AbstractJasperTest {
         try {
             final byte[] imageData = JRImageLoader.getInstance(DefaultJasperReportsContext.getInstance()).loadBytesFromAwtImage(image, ImageTypeEnum.JPEG);
             final JRPrintImage jrImage = (JRPrintImage) getElementAt("title.image1", 0);
-            Assert.assertTrue("image data", Arrays.equals(imageData, ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance())));
-            Assert.assertEquals("scale image", ScaleImageEnum.CLIP, jrImage.getScaleImage());
+            Assertions.assertTrue("image data", Arrays.equals(imageData, ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance())));
+            Assertions.assertEquals("scale image", ScaleImageEnum.CLIP, jrImage.getScaleImage());
         } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 

@@ -26,6 +26,11 @@ import java.lang.reflect.Field;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.Plot;
+import org.jfree.chart.plot.ThermometerPlot;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
 import net.sf.dynamicreports.report.constant.ValueLocation;
@@ -33,14 +38,9 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.Plot;
-import org.jfree.chart.plot.ThermometerPlot;
-import org.junit.Assert;
-
 /**
  * Thermometer chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class ThermometerChartTest extends AbstractJasperChartTest {
@@ -64,45 +64,45 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
 
     numberOfPagesTest(1);
 
-    JFreeChart chart = getChart("summary.chart1", 0);
-    Plot plot = chart.getPlot();
-    Assert.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
-    ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
-    Assert.assertEquals("value", 15, thermometerPlot.getDataset().getValue());
-    Assert.assertEquals("data range low", 3d, thermometerPlot.getLowerBound(), 0);
-    Assert.assertEquals("data range high", 30d, thermometerPlot.getUpperBound(), 0);
-    Assert.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
+    final JFreeChart chart = getChart("summary.chart1", 0);
+    final Plot plot = chart.getPlot();
+    Assertions.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
+    final ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
+    Assertions.assertEquals("value", 15, thermometerPlot.getDataset().getValue());
+    Assertions.assertEquals("data range low", 3d, thermometerPlot.getLowerBound(), 0);
+    Assertions.assertEquals("data range high", 30d, thermometerPlot.getUpperBound(), 0);
+    Assertions.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
     try {
-      Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
+      final Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
       field.setAccessible(true);
-      Assert.assertEquals("value mask", "15.0",
+      Assertions.assertEquals("value mask", "15.0",
           ((NumberFormat) field.get(thermometerPlot)).format(15));
-    } catch (Exception e) {
+    } catch (final Exception e) {
       e.printStackTrace();
-      Assert.fail(e.getMessage());
+      Assertions.fail(e.getMessage());
     }
-    Assert.assertEquals("value font", ARIMO_AWT, thermometerPlot.getValueFont());
-    Assert.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
-    Assert.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
+    Assertions.assertEquals("value font", ARIMO_AWT, thermometerPlot.getValueFont());
+    Assertions.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
+    Assertions.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
     try {
-      Field field = thermometerPlot.getClass().getDeclaredField("subrangeInfo");
+      final Field field = thermometerPlot.getClass().getDeclaredField("subrangeInfo");
       field.setAccessible(true);
-      double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
-      Assert.assertEquals("low data range low", 8d, subrangeInfo[2][0], 0);
-      Assert.assertEquals("low data range high", 10d, subrangeInfo[2][1], 0);
-      Assert.assertEquals("medium data range low", 18d, subrangeInfo[1][0], 0);
-      Assert.assertEquals("medium data range high", 20d, subrangeInfo[1][1], 0);
-      Assert.assertEquals("high data range low", 28d, subrangeInfo[0][0], 0);
-      Assert.assertEquals("high data range high", 30d, subrangeInfo[0][1], 0);
-    } catch (Exception e) {
+      final double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
+      Assertions.assertEquals("low data range low", 8d, subrangeInfo[2][0], 0);
+      Assertions.assertEquals("low data range high", 10d, subrangeInfo[2][1], 0);
+      Assertions.assertEquals("medium data range low", 18d, subrangeInfo[1][0], 0);
+      Assertions.assertEquals("medium data range high", 20d, subrangeInfo[1][1], 0);
+      Assertions.assertEquals("high data range low", 28d, subrangeInfo[0][0], 0);
+      Assertions.assertEquals("high data range high", 30d, subrangeInfo[0][1], 0);
+    } catch (final Exception e) {
       e.printStackTrace();
-      Assert.fail(e.getMessage());
+      Assertions.fail(e.getMessage());
     }
   }
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1");
+    final DRDataSource dataSource = new DRDataSource("field1");
     dataSource.add(15);
     return dataSource;
   }

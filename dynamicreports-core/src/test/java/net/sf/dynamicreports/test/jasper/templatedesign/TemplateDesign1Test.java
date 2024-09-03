@@ -20,7 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.templatedesign;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+
+import java.io.InputStream;
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder;
@@ -29,12 +36,6 @@ import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperPrint;
-
-import java.io.InputStream;
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 
 /**
  * @author Ricardo Mariaca
@@ -48,7 +49,7 @@ public class TemplateDesign1Test extends AbstractJasperValueTest implements Seri
 
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
-        InputStream is = TemplateDesign1Test.class.getResourceAsStream("templatedesign1.jrxml");
+        final InputStream is = TemplateDesign1Test.class.getResourceAsStream("templatedesign1.jrxml");
         rb.setTemplateDesign(is)
           .addParameter("parameter", "parametertest")
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
@@ -61,8 +62,8 @@ public class TemplateDesign1Test extends AbstractJasperValueTest implements Seri
 
         numberOfPagesTest(1);
 
-        JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals("templatedesign1", jasperPrint.getName());
+        final JasperPrint jasperPrint = getJasperPrint();
+        Assertions.assertEquals("templatedesign1", jasperPrint.getName());
 
         columnTitleValueTest(column1, "Column1");
         columnDetailValueTest(column1, "row0", "row1");
@@ -79,7 +80,7 @@ public class TemplateDesign1Test extends AbstractJasperValueTest implements Seri
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 2; i++) {
             dataSource.add("row" + i, i);
         }

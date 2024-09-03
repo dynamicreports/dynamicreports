@@ -20,12 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import net.sf.dynamicreports.report.exception.DRException;
-import org.junit.Assert;
-import org.junit.Test;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import net.sf.dynamicreports.report.exception.DRException;
 
 /**
  * @author Ricardo Mariaca
@@ -36,32 +37,32 @@ public class PageNumber6Test {
     public void test() {
         try {
             report().summary(cmp.pageXofY().setFormatExpression("{1} {0}")).toJasperPrint();
-            Assert.fail("Wrong page number");
-        } catch (DRException e) {
+            Assertions.fail("Wrong page number");
+        } catch (final DRException e) {
         }
 
         try {
             report().summary(cmp.pageXofY().setFormatExpression("{1} {1}")).toJasperPrint();
-            Assert.fail("Wrong page number");
-        } catch (DRException e) {
+            Assertions.fail("Wrong page number");
+        } catch (final DRException e) {
         }
 
         try {
             report().summary(cmp.pageXofY().setFormatExpression("{0} {0}")).toJasperPrint();
-            Assert.fail("Wrong page number");
-        } catch (DRException e) {
+            Assertions.fail("Wrong page number");
+        } catch (final DRException e) {
         }
 
         try {
             report().summary(cmp.pageXofY().setFormatExpression("{0}")).toJasperPrint();
-            Assert.fail("Wrong page number");
-        } catch (DRException e) {
+            Assertions.fail("Wrong page number");
+        } catch (final DRException e) {
         }
 
         try {
             report().summary(cmp.pageXofY().setFormatExpression("{1}")).toJasperPrint();
-            Assert.fail("Wrong page number");
-        } catch (DRException e) {
+            Assertions.fail("Wrong page number");
+        } catch (final DRException e) {
         }
     }
 }

@@ -31,7 +31,7 @@ import org.jfree.chart.axis.CategoryLabelPosition;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.GanttRenderer;
 import org.jfree.chart.ui.RectangleEdge;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -81,10 +81,10 @@ public class GanttChartTest extends AbstractJasperChartTest {
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final CategoryPlot categoryPlot = chart.getCategoryPlot();
-    Assert.assertEquals("renderer", GanttRenderer.class, categoryPlot.getRenderer().getClass());
-    Assert.assertTrue("show labels", categoryPlot.getRenderer().getDefaultItemLabelsVisible());
-    Assert.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
-    Assert.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
+    Assertions.assertEquals("renderer", GanttRenderer.class, categoryPlot.getRenderer().getClass());
+    Assertions.assertTrue("show labels", categoryPlot.getRenderer().getDefaultItemLabelsVisible());
+    Assertions.assertFalse("show tick labels", categoryPlot.getDomainAxis().isTickMarksVisible());
+    Assertions.assertFalse("show tick marks", categoryPlot.getDomainAxis().isTickLabelsVisible());
     ganttChartDataTest(chart, "label", new String[] {"task1", "task2", "task3"},
         new Object[][] {{toDate(2011, 1, 1), toDate(2011, 1, 8), 1d},
             {toDate(2011, 1, 10), toDate(2011, 1, 15), 0.5d},
@@ -96,24 +96,24 @@ public class GanttChartTest extends AbstractJasperChartTest {
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getCategoryPlot().getDomainAxis();
-    Assert.assertEquals("task label", "task", axis.getLabel());
-    Assert.assertEquals("task label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("task label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("task label", "task", axis.getLabel());
+    Assertions.assertEquals("task label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("task label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
     final CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
         .getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
-    Assert.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getCategoryPlot().getRangeAxis();
-    Assert.assertEquals("time label", "time", axis.getLabel());
-    Assert.assertEquals("time label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("time label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("time label", "time", axis.getLabel());
+    Assertions.assertEquals("time label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("time label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
   }
 
   @Override

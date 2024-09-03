@@ -20,7 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -36,13 +44,6 @@ import net.sf.dynamicreports.test.jasper.JasperTestUtils;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRPrintElement;
 import net.sf.jasperreports.engine.JRPrintText;
-
-import java.io.Serializable;
-import java.util.List;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
 /**
  * @author Ricardo Mariaca
@@ -63,7 +64,7 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
         measure = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure.setHyperLink(hyperLink(new HyperLinkExpression2(rowGroup, columnGroup, measure)));
 
-        CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure);
+        final CrosstabBuilder crosstab = ctab.crosstab().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure);
 
         rb.setLocale(Locale.ENGLISH).summary(crosstab);
     }
@@ -77,34 +78,34 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
         setCrosstabBand("summary");
 
         List<JRPrintElement> elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(rowGroup));
-        Assert.assertEquals("Row group size", 2, elements.size());
+        Assertions.assertEquals("Row group size", 2, elements.size());
         JRPrintText element = (JRPrintText) elements.get(0);
-        Assert.assertEquals("Row group link", "a", element.getHyperlinkReference());
+        Assertions.assertEquals("Row group link", "a", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);
-        Assert.assertEquals("Row group link", "b", element.getHyperlinkReference());
+        Assertions.assertEquals("Row group link", "b", element.getHyperlinkReference());
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(columnGroup));
-        Assert.assertEquals("Column group size", 2, elements.size());
+        Assertions.assertEquals("Column group size", 2, elements.size());
         element = (JRPrintText) elements.get(0);
-        Assert.assertEquals("Column group link", "c", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "c", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);
-        Assert.assertEquals("Column group link", "d", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "d", element.getHyperlinkReference());
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabCellName(measure, null, null));
-        Assert.assertEquals("Column group size", 4, elements.size());
+        Assertions.assertEquals("Column group size", 4, elements.size());
         element = (JRPrintText) elements.get(0);
-        Assert.assertEquals("Column group link", "a c 3", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "a c 3", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);
-        Assert.assertEquals("Column group link", "a d 7", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "a d 7", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(2);
-        Assert.assertEquals("Column group link", "b c 11", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "b c 11", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(3);
-        Assert.assertEquals("Column group link", "b d 15", element.getHyperlinkReference());
+        Assertions.assertEquals("Column group link", "b d 15", element.getHyperlinkReference());
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("a", "c", 1);
         dataSource.add("a", "c", 2);
         dataSource.add("a", "d", 3);

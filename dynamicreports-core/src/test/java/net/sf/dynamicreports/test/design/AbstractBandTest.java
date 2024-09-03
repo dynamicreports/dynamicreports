@@ -20,13 +20,16 @@
  */
 package net.sf.dynamicreports.test.design;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.design.base.DRDesignBand;
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.design.base.component.DRDesignComponent;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
-import org.junit.Test;
+
 
 /**
  * @author Ricardo Mariaca
@@ -35,77 +38,77 @@ public abstract class AbstractBandTest {
 
     @Test
     public void test() {
-        ReportBuilder<?> rb = new DesignReportBuilder();
+        final ReportBuilder<?> rb = new DesignReportBuilder();
         configureReport(rb);
         try {
-            DRDesignReport report = new DRDesignReport(rb.getReport());
+            final DRDesignReport report = new DRDesignReport(rb.getReport());
             titleBandTest(report.getTitleBand());
             pageHeaderBandTest(report.getPageHeaderBand());
             pageFooterBandTest(report.getPageFooterBand());
             columnHeaderBandTest(report.getColumnHeaderBand());
             columnFooterBandTest(report.getColumnFooterBand());
-            for (DRDesignBand designBand : report.getDetailBands()) {
+            for (final DRDesignBand designBand : report.getDetailBands()) {
                 detailBandTest(designBand);
             }
             lastPageFooterBandTest(report.getLastPageFooterBand());
             summaryBandTest(report.getSummaryBand());
             noDataBandTest(report.getNoDataBand());
             backgroundBandTest(report.getBackgroundBand());
-        } catch (DRException e) {
+        } catch (final DRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     protected void titleBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void pageHeaderBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void pageFooterBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void columnHeaderBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void columnFooterBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void detailBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void lastPageFooterBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void summaryBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void noDataBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void backgroundBandTest(DRDesignBand band) {
-        Assert.assertNull(band);
+        Assertions.assertNull(band);
     }
 
     protected void componentPositionTest(DRDesignComponent component, int x, int y, int width, int height) {
-        Assert.assertNotNull("width", component.getWidth());
-        Assert.assertEquals("width", Integer.valueOf(width), component.getWidth());
-        Assert.assertNotNull("height", component.getHeight());
-        Assert.assertEquals("height", Integer.valueOf(height), component.getHeight());
-        Assert.assertNotNull("x", component.getX());
-        Assert.assertEquals("x", Integer.valueOf(x), component.getX());
-        Assert.assertNotNull("y", component.getY());
-        Assert.assertEquals("y", Integer.valueOf(y), component.getY());
+        Assertions.assertNotNull("width", component.getWidth());
+        Assertions.assertEquals("width", Integer.valueOf(width), component.getWidth());
+        Assertions.assertNotNull("height", component.getHeight());
+        Assertions.assertEquals("height", Integer.valueOf(height), component.getHeight());
+        Assertions.assertNotNull("x", component.getX());
+        Assertions.assertEquals("x", Integer.valueOf(x), component.getX());
+        Assertions.assertNotNull("y", component.getY());
+        Assertions.assertEquals("y", Integer.valueOf(y), component.getY());
     }
 
     public abstract void configureReport(ReportBuilder<?> rb);

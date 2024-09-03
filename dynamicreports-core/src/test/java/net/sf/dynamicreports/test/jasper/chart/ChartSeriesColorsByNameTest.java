@@ -20,13 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.awt.Color;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.StringUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.LegendItem;
@@ -36,15 +38,14 @@ import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.xy.XYDataset;
+import org.junit.jupiter.api.Assertions;
 
-import java.awt.Color;
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * @author Ricardo Mariaca
@@ -62,7 +63,7 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         TextColumnBuilder<String> column4;
         TextColumnBuilder<Integer> column5;
 
-        colors = new HashMap<String, Color>();
+        colors = new HashMap<>();
         colors.put("a", Color.BLUE);
         colors.put("b", Color.YELLOW);
         colors.put("c", Color.GREEN);
@@ -117,55 +118,55 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
 
         chartCountTest("summary.chart1", 1);
         JFreeChart chart = getChart("summary.chart1", 0);
-        CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
-        CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
+        final CategoryItemRenderer renderer1 = chart.getCategoryPlot().getRenderer();
+        final CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
-            String key = (String) dataset1.getRowKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            final String key = (String) dataset1.getRowKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
         }
 
         chartCountTest("summary.chart2", 1);
         chart = getChart("summary.chart2", 0);
-        CategoryItemRenderer renderer2 = chart.getCategoryPlot().getRenderer();
-        CategoryDataset dataset2 = chart.getCategoryPlot().getDataset();
+        final CategoryItemRenderer renderer2 = chart.getCategoryPlot().getRenderer();
+        final CategoryDataset dataset2 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
-            LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assert.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assert.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
+            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
+            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
         }
 
         chartCountTest("summary.chart3", 1);
         chart = getChart("summary.chart3", 0);
-        PiePlot plot3 = (PiePlot) chart.getPlot();
-        PieDataset dataset3 = plot3.getDataset();
+        final PiePlot plot3 = (PiePlot) chart.getPlot();
+        final PieDataset dataset3 = plot3.getDataset();
         for (int i = 0; i < dataset3.getItemCount(); i++) {
-            String key = (String) dataset3.getKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), plot3.getSectionPaint(key));
+            final String key = (String) dataset3.getKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), plot3.getSectionPaint(key));
         }
 
         chartCountTest("summary.chart4", 1);
         chart = getChart("summary.chart4", 0);
-        XYItemRenderer renderer4 = chart.getXYPlot().getRenderer();
-        XYDataset dataset4 = chart.getXYPlot().getDataset();
+        final XYItemRenderer renderer4 = chart.getXYPlot().getRenderer();
+        final XYDataset dataset4 = chart.getXYPlot().getDataset();
         for (int i = 0; i < dataset4.getSeriesCount(); i++) {
-            String key = (String) dataset4.getSeriesKey(i);
-            Assert.assertNotNull("null series color", colors.get(key));
-            Assert.assertEquals("series color", colors.get(key), renderer4.getSeriesPaint(i));
+            final String key = (String) dataset4.getSeriesKey(i);
+            Assertions.assertNotNull("null series color", colors.get(key));
+            Assertions.assertEquals("series color", colors.get(key), renderer4.getSeriesPaint(i));
         }
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
         dataSource.add("value1", "a", 1, "1", 1);
         dataSource.add("value1", "b", 2, "1", 1);
         dataSource.add("value1", "c", 3, "1", 1);

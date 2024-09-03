@@ -35,7 +35,7 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.StackedBarRenderer;
 import org.jfree.chart.ui.RectangleEdge;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -83,37 +83,37 @@ public class StackedBar3DChartTest extends AbstractJasperChartTest implements Se
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final CategoryPlot categoryPlot = chart.getCategoryPlot();
-    Assert.assertEquals("renderer", StackedBarRenderer.class,
+    Assertions.assertEquals("renderer", StackedBarRenderer.class,
         categoryPlot.getRenderer().getClass());
     final BarRenderer renderer = (BarRenderer) categoryPlot.getRenderer();
-    Assert.assertTrue("show labels", renderer.getDefaultItemLabelsVisible());
-  //  Assert.assertEquals("x offset", 2d, renderer.getXOffset(), 0);
-  //  Assert.assertEquals("y offset", 3d, renderer.getYOffset(), 0);
+    Assertions.assertTrue("show labels", renderer.getDefaultItemLabelsVisible());
+  //  Assertions.assertEquals("x offset", 2d, renderer.getXOffset(), 0);
+  //  Assertions.assertEquals("y offset", 3d, renderer.getYOffset(), 0);
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getCategoryPlot().getDomainAxis();
-    Assert.assertEquals("category label", "category", axis.getLabel());
-    Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("category label", "category", axis.getLabel());
+    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
     final CategoryLabelPosition labelPosition = chart.getCategoryPlot().getDomainAxis()
         .getCategoryLabelPositions().getLabelPosition(RectangleEdge.LEFT);
-    Assert.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("plot label rotation", 45d / 180 * Math.PI, labelPosition.getAngle(), 0);
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getCategoryPlot().getRangeAxis();
-    Assert.assertEquals("value label", "value", axis.getLabel());
-    Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("tick label mask", "10.00",
+    Assertions.assertEquals("value label", "value", axis.getLabel());
+    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
-    Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
+    Assertions.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
   }
 
   @Override

@@ -20,7 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import java.util.HashMap;
+import java.util.ListResourceBundle;
+import java.util.Locale;
+import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
@@ -31,15 +41,6 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRParameter;
 import net.sf.jasperreports.engine.JasperPrint;
 
-import java.util.HashMap;
-import java.util.ListResourceBundle;
-import java.util.Locale;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -47,7 +48,7 @@ public class Report5Test extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setParameters(new SubreportParametersExpression());
+        final SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setParameters(new SubreportParametersExpression());
 
         rb.title(cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class))).detail(detailSubreport).setLocale(Locale.ENGLISH).setResourceBundle(new ResourceBundle());
     }
@@ -61,8 +62,8 @@ public class Report5Test extends AbstractJasperValueTest {
         elementCountTest("title.textField1", 3);
         elementValueTest("title.textField1", "bundleValue1", "bundleValue1", "bundleValue1");
 
-        JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals(Locale.ENGLISH.getLanguage(), jasperPrint.getLocaleCode());
+        final JasperPrint jasperPrint = getJasperPrint();
+        Assertions.assertEquals(Locale.ENGLISH.getLanguage(), jasperPrint.getLocaleCode());
     }
 
     @Override
@@ -76,7 +77,7 @@ public class Report5Test extends AbstractJasperValueTest {
     }
 
     private JasperReportBuilder detailSubreport() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.title(cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class)));
         return report;
     }
@@ -86,7 +87,7 @@ public class Report5Test extends AbstractJasperValueTest {
 
         @Override
         public Map<String, Object> evaluate(ReportParameters reportParameters) {
-            Map<String, Object> parameters = new HashMap<String, Object>();
+            final Map<String, Object> parameters = new HashMap<>();
             parameters.put(JRParameter.REPORT_LOCALE, reportParameters.getParameterValue(JRParameter.REPORT_LOCALE));
             parameters.put(JRParameter.REPORT_RESOURCE_BUNDLE, reportParameters.getParameterValue(JRParameter.REPORT_RESOURCE_BUNDLE));
             return parameters;

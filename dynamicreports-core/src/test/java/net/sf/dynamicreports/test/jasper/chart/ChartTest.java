@@ -31,7 +31,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.title.LegendTitle;
 import org.jfree.chart.title.TextTitle;
 import org.jfree.chart.ui.RectangleEdge;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -81,38 +81,38 @@ public class ChartTest extends AbstractJasperChartTest implements Serializable {
     JFreeChart chart = getChart("summary.chart1", 0);
 
     final TextTitle title = chart.getTitle();
-    Assert.assertEquals("title", "title", title.getText());
-    Assert.assertEquals("title color", Color.BLUE, title.getPaint());
-    Assert.assertEquals("title font", ARIMO_BOLD_AWT, title.getFont());
-    Assert.assertEquals("title position", RectangleEdge.RIGHT, title.getPosition());
+    Assertions.assertEquals("title", "title", title.getText());
+    Assertions.assertEquals("title color", Color.BLUE, title.getPaint());
+    Assertions.assertEquals("title font", ARIMO_BOLD_AWT, title.getFont());
+    Assertions.assertEquals("title position", RectangleEdge.RIGHT, title.getPosition());
 
     final TextTitle subtitle = (TextTitle) chart.getSubtitle(1);
-    Assert.assertEquals("subtitle", "subtitle", subtitle.getText());
-    Assert.assertEquals("subtitle color", Color.CYAN, subtitle.getPaint());
-    Assert.assertEquals("subtitle font", ARIMO_AWT, subtitle.getFont());
+    Assertions.assertEquals("subtitle", "subtitle", subtitle.getText());
+    Assertions.assertEquals("subtitle color", Color.CYAN, subtitle.getPaint());
+    Assertions.assertEquals("subtitle font", ARIMO_AWT, subtitle.getFont());
 
     final LegendTitle legend = (LegendTitle) chart.getSubtitle(0);
-    Assert.assertEquals("legend color", Color.BLUE, legend.getItemPaint());
-    Assert.assertEquals("legend backgroundcolor", Color.LIGHT_GRAY, legend.getBackgroundPaint());
-    Assert.assertEquals("legend font", ARIMO_ITALIC_AWT, legend.getItemFont());
-    Assert.assertEquals("legend position", RectangleEdge.LEFT, legend.getPosition());
+    Assertions.assertEquals("legend color", Color.BLUE, legend.getItemPaint());
+    Assertions.assertEquals("legend backgroundcolor", Color.LIGHT_GRAY, legend.getBackgroundPaint());
+    Assertions.assertEquals("legend font", ARIMO_ITALIC_AWT, legend.getItemFont());
+    Assertions.assertEquals("legend position", RectangleEdge.LEFT, legend.getPosition());
 
     chartCountTest("summary.chart2", 1);
     chart = getChart("summary.chart2", 0);
-    Assert.assertNull("legend", chart.getLegend());
-    Assert.assertEquals("plot orientation", PlotOrientation.HORIZONTAL,
+    Assertions.assertNull("legend", chart.getLegend());
+    Assertions.assertEquals("plot orientation", PlotOrientation.HORIZONTAL,
         chart.getCategoryPlot().getOrientation());
-    Assert.assertEquals("plot series colors", Color.BLUE,
+    Assertions.assertEquals("plot series colors", Color.BLUE,
         chart.getPlot().getDrawingSupplier().getNextPaint());
-    Assert.assertEquals("plot series colors", Color.GREEN,
+    Assertions.assertEquals("plot series colors", Color.GREEN,
         chart.getPlot().getDrawingSupplier().getNextPaint());
-    Assert.assertEquals("plot series colors", Color.RED,
+    Assertions.assertEquals("plot series colors", Color.RED,
         chart.getPlot().getDrawingSupplier().getNextPaint());
 
     chart = getChart("summary.chart3", 0);
-    Assert.assertEquals("axis color", Color.BLACK,
+    Assertions.assertEquals("axis color", Color.BLACK,
         chart.getCategoryPlot().getRangeAxis(0).getAxisLinePaint());
-    Assert.assertEquals("axis color", Color.BLUE,
+    Assertions.assertEquals("axis color", Color.BLUE,
         chart.getCategoryPlot().getRangeAxis(1).getAxisLinePaint());
   }
 

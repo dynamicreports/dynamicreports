@@ -20,21 +20,22 @@
  */
 package net.sf.dynamicreports.test.jasper.style;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import java.io.ByteArrayInputStream;
+import java.nio.charset.Charset;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.report.builder.style.TemplateStyleBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRStyle;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.nio.charset.Charset;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 /**
  * @author Ramunas Belkauskas
@@ -46,8 +47,8 @@ public class StyleNamesTest {
             "<jasperTemplate>\n" + "  <style name=\"MyBoldStyle2\" isBold=\"true\"/>\n" + "</jasperTemplate>";
 
     private static void assertContainsStyleWithName(final String name, final Iterable<JRStyle> styles) {
-        Assert.assertNotNull(name);
-        Assert.assertNotNull(styles);
+        Assertions.assertNotNull(name);
+        Assertions.assertNotNull(styles);
         JRStyle found = null;
         for (final JRStyle style : styles) {
             if (name.equals(style.getName())) {
@@ -55,7 +56,7 @@ public class StyleNamesTest {
                 break;
             }
         }
-        Assert.assertNotNull(String.format("Style with name \"%s\" not found", name), found);
+        Assertions.assertNotNull(String.format("Style with name \"%s\" not found", name), found);
     }
 
     @Test

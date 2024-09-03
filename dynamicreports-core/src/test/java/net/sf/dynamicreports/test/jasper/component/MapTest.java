@@ -20,14 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.fill.JRTemplateGenericPrintElement;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 import java.io.Serializable;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import org.junit.jupiter.api.Assertions;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.fill.JRTemplateGenericPrintElement;
 
 /**
  * @author Ricardo Mariaca
@@ -46,9 +47,9 @@ public class MapTest extends AbstractJasperChartTest implements Serializable {
 
         numberOfPagesTest(1);
 
-        JRTemplateGenericPrintElement map = (JRTemplateGenericPrintElement) getJasperPrint().getPages().get(0).getElements().get(0);
-        Assert.assertEquals("latitude", map.getParameterValue("latitude"), 40.7f);
-        Assert.assertEquals("longitude", map.getParameterValue("longitude"), -74f);
-        Assert.assertEquals("zoom", map.getParameterValue("zoom"), 12);
+        final JRTemplateGenericPrintElement map = (JRTemplateGenericPrintElement) getJasperPrint().getPages().get(0).getElements().get(0);
+        Assertions.assertEquals("latitude", map.getParameterValue("latitude"), 40.7f);
+        Assertions.assertEquals("longitude", map.getParameterValue("longitude"), -74f);
+        Assertions.assertEquals("zoom", map.getParameterValue("zoom"), 12);
     }
 }

@@ -20,7 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
@@ -29,14 +38,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -44,14 +45,14 @@ public class Subreport4Test extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
-        Map<String, Object> parameters1 = new HashMap<String, Object>();
+        final Map<String, Object> parameters1 = new HashMap<>();
         parameters1.put("parameter5", "value5");
         parameters1.put("parameter6", "value6");
-        Map<String, Object> parameters2 = new HashMap<String, Object>();
+        final Map<String, Object> parameters2 = new HashMap<>();
         parameters2.put("parameter5", "value7");
 
-        SubreportBuilder subreport1 = cmp.subreport(subreport1()).setParameters(parameters1);
-        SubreportBuilder subreport2 = cmp.subreport(subreport2()).setParameters(parameters2);
+        final SubreportBuilder subreport1 = cmp.subreport(subreport1()).setParameters(parameters1);
+        final SubreportBuilder subreport2 = cmp.subreport(subreport2()).setParameters(parameters2);
 
         rb.addParameter("parameter4", "value4").title(subreport1, subreport2);
     }
@@ -77,7 +78,7 @@ public class Subreport4Test extends AbstractJasperValueTest {
     }
 
     private JasperReportBuilder subreport1() throws DRException {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.addParameter("parameter1", "value1")
               .addParameter("parameter2", String.class)
               .addParameter("parameter6", String.class)
@@ -91,11 +92,11 @@ public class Subreport4Test extends AbstractJasperValueTest {
 
     private JasperReport subreport2() {
         try {
-            InputStream is = Subreport4Test.class.getResourceAsStream("subreport4.jrxml");
+            final InputStream is = Subreport4Test.class.getResourceAsStream("subreport4.jrxml");
             return JasperCompileManager.compileReport(is);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
             return null;
         }
     }

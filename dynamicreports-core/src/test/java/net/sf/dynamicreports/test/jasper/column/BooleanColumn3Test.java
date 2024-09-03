@@ -20,7 +20,18 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BooleanComponentType;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
@@ -30,16 +41,6 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperReport;
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.HashMap;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 /**
  * @author Ricardo Mariaca
@@ -49,28 +50,28 @@ public class BooleanColumn3Test {
     @Test
     public void test() {
         try {
-            JasperReportBuilder rb = createReport();
-            JRDataSource dataSource = createDataSource();
+            final JasperReportBuilder rb = createReport();
+            final JRDataSource dataSource = createDataSource();
 
-            JasperReport report = rb.toJasperReport();
-            Map<String, Object> params = new HashMap<String, Object>();
+            final JasperReport report = rb.toJasperReport();
+            final Map<String, Object> params = new HashMap<>();
             params.putAll(rb.getJasperParameters());
 
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            final ByteArrayOutputStream bos = new ByteArrayOutputStream();
             JasperFillManager.fillReportToStream(report, bos, params, dataSource);
 
             JasperExportManager.exportReportToPdfStream(new ByteArrayInputStream(bos.toByteArray()), new ByteArrayOutputStream());
 
             bos.flush();
             bos.close();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     private JasperReportBuilder createReport() {
-        JasperReportBuilder rb = report();
+        final JasperReportBuilder rb = report();
         rb.columns(col.booleanColumn("Column1", "field1")
                       .setComponentType(BooleanComponentType.IMAGE_CHECKBOX_1)
                       .setStyle(stl.style().setTextAlignment(HorizontalTextAlignment.CENTER, VerticalTextAlignment.TOP)));
@@ -78,7 +79,7 @@ public class BooleanColumn3Test {
     }
 
     private JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add(true);
         dataSource.add(false);
         dataSource.add();

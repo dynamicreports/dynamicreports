@@ -20,7 +20,13 @@
  */
 package net.sf.dynamicreports.test.design.report;
 
-import org.junit.Assert;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.report.base.AbstractTemplateDesign;
 import net.sf.dynamicreports.report.base.DRMargin;
@@ -30,10 +36,6 @@ import net.sf.dynamicreports.report.constant.PageOrientation;
 import net.sf.dynamicreports.report.definition.DRIMargin;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.design.DesignReportBuilder;
-import org.junit.Test;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
 
 /**
  * @author Ricardo Mariaca
@@ -45,32 +47,32 @@ public class TemplateDesignTest {
         ReportBuilder<?> rb1 = new DesignReportBuilder(new TestTemplateDesign());
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.setPageFormat(100, 100, PageOrientation.LANDSCAPE);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page width");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page width");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.setPageFormat(50, 200, PageOrientation.LANDSCAPE);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page height");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page height");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.setPageFormat(200, 100, PageOrientation.PORTRAIT);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page orientation");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page orientation");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
@@ -79,8 +81,8 @@ public class TemplateDesignTest {
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page left margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page left margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
@@ -89,8 +91,8 @@ public class TemplateDesignTest {
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page right margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page right margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
@@ -99,8 +101,8 @@ public class TemplateDesignTest {
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page top margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page top margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
@@ -109,96 +111,96 @@ public class TemplateDesignTest {
         rb1.setPageMargin(margin);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page bottom margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page bottom margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.setPageColumnsPerPage(5);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page columnsPerPage margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page columnsPerPage margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.setPageColumnSpace(5);
         try {
             new DRDesignReport(rb1.getReport());
-        } catch (DRException e) {
-            Assert.fail("template design failed - page columnSpace margin");
+        } catch (final DRException e) {
+            Assertions.fail("template design failed - page columnSpace margin");
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.title(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - title band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - title band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.pageHeader(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - page header band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - page header band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.pageFooter(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - page footer band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - page footer band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.columnHeader(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - column header band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - column header band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.columnFooter(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - column footer band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - column footer band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.pageFooter(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - page footer band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - page footer band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.summary(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - summary band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - summary band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.noData(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - no data band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - no data band");
+        } catch (final DRException e) {
         }
 
         rb1 = new DesignReportBuilder(new TestTemplateDesign());
         rb1.background(cmp.text(""));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("template design failed - background band");
-        } catch (DRException e) {
+            Assertions.fail("template design failed - background band");
+        } catch (final DRException e) {
         }
     }
 
@@ -222,7 +224,7 @@ public class TemplateDesignTest {
 
         @Override
         public DRIMargin getPageMargin() {
-            DRMargin margin = new DRMargin();
+            final DRMargin margin = new DRMargin();
             margin.setLeft(5);
             margin.setRight(6);
             margin.setTop(7);

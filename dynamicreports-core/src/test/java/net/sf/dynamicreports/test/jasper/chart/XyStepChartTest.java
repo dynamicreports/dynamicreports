@@ -26,23 +26,23 @@ import java.awt.Color;
 import java.io.Serializable;
 import java.util.Locale;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
-import net.sf.jasperreports.engine.JRDataSource;
-
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.Axis;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYStepRenderer;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
+import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * XY step chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class XyStepChartTest extends AbstractJasperChartTest implements Serializable {
@@ -77,38 +77,38 @@ public class XyStepChartTest extends AbstractJasperChartTest implements Serializ
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-    Assert.assertEquals("renderer", XYStepRenderer.class, renderer.getClass());
-    Assert.assertEquals("step point", 0.5d, ((XYStepRenderer) renderer).getStepPoint(), 0);
+    final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+    Assertions.assertEquals("renderer", XYStepRenderer.class, renderer.getClass());
+    Assertions.assertEquals("step point", 0.5d, ((XYStepRenderer) renderer).getStepPoint(), 0);
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assert.assertEquals("category label", "category", axis.getLabel());
-    Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("category label", "category", axis.getLabel());
+    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assert.assertEquals("value label", "value", axis.getLabel());
-    Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("tick label mask", "10.00",
+    Assertions.assertEquals("value label", "value", axis.getLabel());
+    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
-    Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
+    Assertions.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
   }
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     for (int i = 0; i < 4; i++) {
-      dataSource.add((i + 1), i + 1);
+      dataSource.add(i + 1, i + 1);
     }
     return dataSource;
   }

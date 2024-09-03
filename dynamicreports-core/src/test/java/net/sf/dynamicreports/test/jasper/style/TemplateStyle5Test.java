@@ -20,7 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.style;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import java.awt.Color;
+import java.io.InputStream;
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.TemplateStylesBuilder;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
@@ -30,12 +37,6 @@ import net.sf.dynamicreports.test.jasper.templatedesign.TemplateDesign1Test;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.type.LineStyleEnum;
 
-import java.awt.Color;
-import java.io.InputStream;
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-
 /**
  * @author Ricardo Mariaca
  */
@@ -44,10 +45,10 @@ public class TemplateStyle5Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
-        TemplateStylesBuilder templateStyles =
+        final TemplateStylesBuilder templateStyles =
             stl.templateStyles().loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate1.jrtx")).styles(stl.style().setName("style1").setBackgroundColor(Color.RED));
         templateStyles.getStyle("columnTitleStyle3").setBackgroundColor(Color.LIGHT_GRAY);
-        InputStream is = TemplateDesign1Test.class.getResourceAsStream("templatedesign6.jrxml");
+        final InputStream is = TemplateDesign1Test.class.getResourceAsStream("templatedesign6.jrxml");
         rb.setTemplateDesign(is).setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).addTemplateStyle(templateStyles);
     }
 
@@ -57,8 +58,8 @@ public class TemplateStyle5Test extends AbstractJasperStyleTest implements Seria
 
         numberOfPagesTest(1);
 
-        JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals("templatedesign6", jasperPrint.getName());
+        final JasperPrint jasperPrint = getJasperPrint();
+        Assertions.assertEquals("templatedesign6", jasperPrint.getName());
 
         styleTest("templateDesign.title1", 0, Color.BLACK, Color.LIGHT_GRAY, "SansSerif", null, true, null);
         borderTest("templateDesign.title1", 0, Color.BLACK, LineStyleEnum.SOLID, 2, Color.BLACK, LineStyleEnum.SOLID, 2, Color.BLACK, LineStyleEnum.SOLID, 2, Color.BLACK, LineStyleEnum.SOLID, 2);

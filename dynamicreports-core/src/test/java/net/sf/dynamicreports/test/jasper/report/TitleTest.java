@@ -25,7 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -56,9 +56,9 @@ public class TitleTest extends AbstractJasperValueTest {
         elementValueTest("title.textField1", "title 1", "test title");
 
         final JRPrintText textField = (JRPrintText) getElementAt("title.textField1", 0);
-        Assert.assertEquals("hyperlink reference", "link", textField.getHyperlinkReference());
-        Assert.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
-        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.REFERENCE, textField.getHyperlinkType());
+        Assertions.assertEquals("hyperlink reference", "link", textField.getHyperlinkReference());
+        Assertions.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
+        Assertions.assertEquals("hyperlink type reference", HyperlinkTypeEnum.REFERENCE, textField.getHyperlinkType());
 
         elementCountTest("title.textField2", 1);
         elementValueTest("title.textField2", "title 2");

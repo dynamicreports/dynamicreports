@@ -20,34 +20,36 @@
  */
 package net.sf.dynamicreports.test.bugs;
 
-import org.junit.Assert;
-import net.sf.dynamicreports.report.builder.component.TextFieldBuilder;
-import org.junit.Test;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+import net.sf.dynamicreports.report.builder.component.TextFieldBuilder;
 
 /**
  * @author Ricardo Mariaca
- * <p>
- * The height in setDimension(Integer width, Integer height) of the DimensionComponentBuilder class is set with the width.
+ *         <p>
+ *         The height in setDimension(Integer width, Integer height) of the
+ *         DimensionComponentBuilder class is set with the width.
  */
 public class Bug_2997586_Test {
 
-    @Test
-    public void test() {
-        Integer width = 150;
-        Integer height = 200;
+  @Test
+  public void test() {
+    final Integer width = 150;
+    final Integer height = 200;
 
-        TextFieldBuilder<String> textField = cmp.text("").setDimension(width, height);
-        Assert.assertEquals("Component width", width, textField.getComponent().getWidth());
-        Assert.assertEquals("Component height", height, textField.getComponent().getHeight());
+    TextFieldBuilder<String> textField = cmp.text("").setDimension(width, height);
+    assertEquals(width, textField.getComponent().getWidth(), "Component width");
+    assertEquals(height, textField.getComponent().getHeight(), "Component height");
 
-        textField = cmp.text("").setFixedDimension(width, height);
-        Assert.assertEquals("Component fixed width", width, textField.getComponent().getWidth());
-        Assert.assertEquals("Component fixed height", height, textField.getComponent().getHeight());
+    textField = cmp.text("").setFixedDimension(width, height);
+    assertEquals(width, textField.getComponent().getWidth(), "Component fixed width");
+    assertEquals(height, textField.getComponent().getHeight(), "Component fixed height");
 
-        textField = cmp.text("").setMinDimension(width, height);
-        Assert.assertEquals("Component min width", width, textField.getComponent().getWidth());
-        Assert.assertEquals("Component min height", height, textField.getComponent().getHeight());
-    }
+    textField = cmp.text("").setMinDimension(width, height);
+    assertEquals(width, textField.getComponent().getWidth(), "Component min width");
+    assertEquals(height, textField.getComponent().getHeight(), "Component min height");
+  }
 }

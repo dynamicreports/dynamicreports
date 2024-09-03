@@ -33,7 +33,7 @@ import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -77,31 +77,31 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
 
         final JFreeChart chart = getChart("summary.chart1", 0);
         final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-        Assert.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
+        Assertions.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
         TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
         TimeSeries serie = (TimeSeries) dataset.getSeries().get(0);
-        Assert.assertEquals("value", 1d, serie.getDataItem(0).getValue());
-        Assert.assertEquals("value", 2d, serie.getDataItem(1).getValue());
-        Assert.assertEquals("value", 3d, serie.getDataItem(2).getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(3).getValue());
+        Assertions.assertEquals("value", 1d, serie.getDataItem(0).getValue());
+        Assertions.assertEquals("value", 2d, serie.getDataItem(1).getValue());
+        Assertions.assertEquals("value", 3d, serie.getDataItem(2).getValue());
+        Assertions.assertEquals("value", 4d, serie.getDataItem(3).getValue());
         dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(1);
         serie = (TimeSeries) dataset.getSeries().get(0);
-        Assert.assertEquals("value", 0d, serie.getDataItem(0).getValue());
-        Assert.assertEquals("value", 1d, serie.getDataItem(1).getValue());
-        Assert.assertEquals("value", 4d, serie.getDataItem(2).getValue());
-        Assert.assertEquals("value", 9d, serie.getDataItem(3).getValue());
+        Assertions.assertEquals("value", 0d, serie.getDataItem(0).getValue());
+        Assertions.assertEquals("value", 1d, serie.getDataItem(1).getValue());
+        Assertions.assertEquals("value", 4d, serie.getDataItem(2).getValue());
+        Assertions.assertEquals("value", 9d, serie.getDataItem(3).getValue());
 
         final JRChart chart2 = (JRChart) getJasperReport().getSummary().getElementByKey("summary.chart2");
         final JRChartPlot plot = chart2.getPlot();
-        Assert.assertTrue("plot", plot instanceof JRMultiAxisPlot);
+        Assertions.assertTrue("plot", plot instanceof JRMultiAxisPlot);
         final JRMultiAxisPlot multiAxisPlot = (JRMultiAxisPlot) plot;
-        Assert.assertEquals("axes", 2, multiAxisPlot.getAxes().size());
+        Assertions.assertEquals("axes", 2, multiAxisPlot.getAxes().size());
         JRChartAxis chartAxis = multiAxisPlot.getAxes().get(0);
-        Assert.assertEquals("position", AxisPositionEnum.LEFT_OR_TOP, chartAxis.getPosition());
-        Assert.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
+        Assertions.assertEquals("position", AxisPositionEnum.LEFT_OR_TOP, chartAxis.getPosition());
+        Assertions.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
         chartAxis = multiAxisPlot.getAxes().get(1);
-        Assert.assertEquals("position", AxisPositionEnum.RIGHT_OR_BOTTOM, chartAxis.getPosition());
-        Assert.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
+        Assertions.assertEquals("position", AxisPositionEnum.RIGHT_OR_BOTTOM, chartAxis.getPosition());
+        Assertions.assertEquals("chart", ChartTypeEnum.TIMESERIES, chartAxis.getChart().getChartType());
     }
 
     @Override

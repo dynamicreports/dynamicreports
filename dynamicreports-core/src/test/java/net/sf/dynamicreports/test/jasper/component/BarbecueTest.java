@@ -25,7 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BarcodeOrientation;
@@ -106,18 +106,18 @@ public class BarbecueTest extends AbstractJasperTest {
 
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue29");
         final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
-        Assert.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
-        Assert.assertTrue("Barbecue draw text", component.isDrawText());
-        Assert.assertTrue("Barbecue checksum required", component.isChecksumRequired());
-        Assert.assertEquals("Barbecue bar width", Integer.valueOf(2), component.getBarWidth());
-        Assert.assertEquals("Barbecue bar height", Integer.valueOf(5), component.getBarHeight());
-        Assert.assertEquals("Barbecue orientation", RotationEnum.RIGHT, component.getRotation());
+        Assertions.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
+        Assertions.assertTrue("Barbecue draw text", component.isDrawText());
+        Assertions.assertTrue("Barbecue checksum required", component.isChecksumRequired());
+        Assertions.assertEquals("Barbecue bar width", Integer.valueOf(2), component.getBarWidth());
+        Assertions.assertEquals("Barbecue bar height", Integer.valueOf(5), component.getBarHeight());
+        Assertions.assertEquals("Barbecue orientation", RotationEnum.RIGHT, component.getRotation());
     }
 
     private void testBarbecue(int index, String type) {
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue" + index);
         final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
-        Assert.assertEquals("Barbecue type ", type, component.getType());
-        Assert.assertTrue("Barbecue code ", component.getCodeExpression().getText().contains("12345678"));
+        Assertions.assertEquals("Barbecue type ", type, component.getType());
+        Assertions.assertTrue("Barbecue code ", component.getCodeExpression().getText().contains("12345678"));
     }
 }

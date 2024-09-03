@@ -20,6 +20,12 @@
  */
 package net.sf.dynamicreports.test.jasper.group;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -29,11 +35,6 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRGroup;
-import org.junit.Assert;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 
 /**
  * @author Ricardo Mariaca
@@ -73,15 +74,15 @@ public class GroupPosition3Test extends AbstractJasperPositionTest {
         elementPositionTest("subtotalGroupFooter.list1", 0, 10, 816, 575, 16);
         subtotalPositionTest(subtotal1, 0, 10, 0, 565, 16);
 
-        JRGroup jrGroup = getJasperReport().getGroups()[0];
-        Assert.assertTrue("Keep together", jrGroup.isKeepTogether());
-        // Assert.assertEquals("Min height to start new page", new Integer(100), jrGroup.getMinHeightToStartNewPage()); // remove this ambiguous function call
-        Assert.assertEquals("Min height to start new page", 100, jrGroup.getMinHeightToStartNewPage());
+        final JRGroup jrGroup = getJasperReport().getGroups()[0];
+        Assertions.assertTrue("Keep together", jrGroup.isKeepTogether());
+        // Assertions.assertEquals("Min height to start new page", new Integer(100), jrGroup.getMinHeightToStartNewPage()); // remove this ambiguous function call
+        Assertions.assertEquals("Min height to start new page", 100, jrGroup.getMinHeightToStartNewPage());
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 10; i++) {
             dataSource.add("group1", i);
         }

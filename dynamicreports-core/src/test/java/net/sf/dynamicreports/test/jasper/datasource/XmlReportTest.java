@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.util.Locale;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.constant.QueryLanguage;
@@ -28,15 +38,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.data.JRXmlDataSource;
 import net.sf.jasperreports.engine.query.JRXPathQueryExecuterFactory;
 import net.sf.jasperreports.engine.util.JRXmlUtils;
-import org.junit.Assert;
-
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -58,14 +59,14 @@ public class XmlReportTest extends AbstractJasperValueTest {
               .setQuery("/data/row1", QueryLanguage.XPATH)
               .setParameter(JRXPathQueryExecuterFactory.PARAMETER_XML_DATA_DOCUMENT, JRXmlUtils.parse(XmlReportTest.class.getResourceAsStream("data.xml")))
               .summary(cmp.subreport(createSubreport()));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     private JasperReportBuilder createSubreport() throws JRException {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.setLocale(Locale.ENGLISH)
               .columns(column4 = col.column("Column4", field("field4", type.stringType()).setDescription("@field4")),
                        column5 = col.column("Column5", field("field5", type.integerType()).setDescription("field5")), column6 = col.column("Column6", field("field6", type.bigDecimalType())))

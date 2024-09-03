@@ -20,6 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.design.transformation.CustomBatikRenderer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BooleanComponentType;
@@ -29,12 +36,6 @@ import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRPrintImage;
-import org.junit.Assert;
-
-import java.io.Serializable;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -99,23 +100,23 @@ public class BooleanColumn1Test extends AbstractJasperValueTest implements Seria
 
         testImage("detail.column_field111", 0);
         testImage("detail.column_field111", 1);
-        Assert.assertNull((((JRPrintImage) getElementAt("detail.column_field111", 2)).getRenderer()));
+        Assertions.assertNull(((JRPrintImage) getElementAt("detail.column_field111", 2)).getRenderer());
 
     }
 
     private void testImage(String name, int index) {
-        CustomBatikRenderer batikRenderer = ((CustomBatikRenderer) ((JRPrintImage) getElementAt(name, index)).getRenderer());
+        final CustomBatikRenderer batikRenderer = (CustomBatikRenderer) ((JRPrintImage) getElementAt(name, index)).getRenderer();
         try {
-            byte[] data = batikRenderer.getData(DefaultJasperReportsContext.getInstance());
-            Assert.assertNotNull(data);
-        } catch (JRException e) {
-            Assert.fail(e.getMessage());
+            final byte[] data = batikRenderer.getData(DefaultJasperReportsContext.getInstance());
+            Assertions.assertNotNull(data);
+        } catch (final JRException e) {
+            Assertions.fail(e.getMessage());
         }
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add(true);
         dataSource.add(false);
         dataSource.add();

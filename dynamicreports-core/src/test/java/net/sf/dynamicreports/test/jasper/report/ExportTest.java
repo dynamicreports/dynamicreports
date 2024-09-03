@@ -20,21 +20,22 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedReport;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import java.io.ByteArrayOutputStream;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.jasper.builder.JasperConcatenatedReportBuilder;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.constant.ImageType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.concatenatedReport;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 
 /**
  * @author Ricardo Mariaca
@@ -43,7 +44,7 @@ public class ExportTest {
     JasperReportBuilder report;
     JasperConcatenatedReportBuilder concatenatedReport;
 
-    @Before
+    @BeforeAll
     public void init() {
         report = report();
         report.columns(col.column("Column1", "field1", String.class));
@@ -70,9 +71,9 @@ public class ExportTest {
             report.toXlsx(new ByteArrayOutputStream());
             report.toXml(new ByteArrayOutputStream());
             report.toPptx(new ByteArrayOutputStream());
-        } catch (DRException e) {
+        } catch (final DRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
@@ -92,14 +93,14 @@ public class ExportTest {
             concatenatedReport.toXlsx(new ByteArrayOutputStream());
             concatenatedReport.toXml(new ByteArrayOutputStream());
             concatenatedReport.toPptx(new ByteArrayOutputStream());
-        } catch (DRException e) {
+        } catch (final DRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     private JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("field1");
         return dataSource;
     }

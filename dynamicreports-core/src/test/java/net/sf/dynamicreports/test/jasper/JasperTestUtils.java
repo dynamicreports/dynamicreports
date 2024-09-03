@@ -20,7 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.report.base.DRSubtotal;
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder;
@@ -48,7 +49,7 @@ public class JasperTestUtils {
     // subtotal
     private static String getSubtotalName(BaseSubtotalBuilder<?, ?> subtotal) {
         String band = null;
-        DRSubtotal<?> subtl = subtotal.getSubtotal();
+        final DRSubtotal<?> subtl = subtotal.getSubtotal();
         switch (subtl.getPosition()) {
             case TITLE:
                 band = "title";
@@ -82,7 +83,7 @@ public class JasperTestUtils {
                 band = "summary";
                 break;
             default:
-                Assert.fail("Subtotal position " + subtl.getPosition().name() + " not found");
+                Assertions.fail("Subtotal position " + subtl.getPosition().name() + " not found");
                 return null;
         }
         return band + ".column_" + subtl.getShowInColumn().getName() + ".subtotal";

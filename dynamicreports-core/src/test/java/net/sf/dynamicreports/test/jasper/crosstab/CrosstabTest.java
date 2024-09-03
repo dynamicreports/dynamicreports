@@ -23,7 +23,7 @@ package net.sf.dynamicreports.test.jasper.crosstab;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -65,12 +65,12 @@ public class CrosstabTest extends AbstractJasperTest {
         super.test();
 
         final JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary().getElementByKey("summary.crosstab1");
-        Assert.assertFalse("Crosstab repeatColumnHeaders", crosstab.isRepeatColumnHeaders());
-        Assert.assertFalse("Crosstab repeatRowHeaders", crosstab.isRepeatRowHeaders());
-        Assert.assertEquals("Crosstab columnBreakOffset", Integer.valueOf(100), crosstab.getColumnBreakOffset());
-        Assert.assertTrue("Crosstab ignoreWidth", crosstab.getIgnoreWidth());
-        Assert.assertEquals("Crosstab runDirection", RunDirectionEnum.RTL, crosstab.getRunDirection());
-        Assert.assertEquals("Crosstab row group position", CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPosition());
-        Assert.assertEquals("Crosstab column group position", CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPosition());
+        Assertions.assertFalse("Crosstab repeatColumnHeaders", crosstab.isRepeatColumnHeaders());
+        Assertions.assertFalse("Crosstab repeatRowHeaders", crosstab.isRepeatRowHeaders());
+        Assertions.assertEquals("Crosstab columnBreakOffset", Integer.valueOf(100), crosstab.getColumnBreakOffset());
+        Assertions.assertTrue("Crosstab ignoreWidth", crosstab.getIgnoreWidth());
+        Assertions.assertEquals("Crosstab runDirection", RunDirectionEnum.RTL, crosstab.getRunDirection());
+        Assertions.assertEquals("Crosstab row group position", CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPosition());
+        Assertions.assertEquals("Crosstab column group position", CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPosition());
     }
 }

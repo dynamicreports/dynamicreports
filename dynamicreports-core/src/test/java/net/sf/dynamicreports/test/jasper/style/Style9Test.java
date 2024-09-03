@@ -24,23 +24,23 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 import java.awt.Color;
 
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperStyleTest;
 import net.sf.jasperreports.engine.JRStyle;
 
-import org.junit.Assert;
-
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class Style9Test extends AbstractJasperStyleTest {
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder style = stl.style().bold().setForegroundColor(Color.BLUE);
+    final StyleBuilder style = stl.style().bold().setForegroundColor(Color.BLUE);
 
     rb.title(cmp.rectangle().setStyle(style), cmp.text("text").setStyle(style));
   }
@@ -51,8 +51,8 @@ public class Style9Test extends AbstractJasperStyleTest {
 
     numberOfPagesTest(1);
 
-    JRStyle style = getElementAt("title.rectangle1", 0).getStyle();
-    Assert.assertEquals("foreColor", Color.BLUE, style.getForecolor());
+    final JRStyle style = getElementAt("title.rectangle1", 0).getStyle();
+    Assertions.assertEquals("foreColor", Color.BLUE, style.getForecolor());
     styleTest("title.textField1", 0, Color.BLUE, null, TEST_FONT_NAME, 10f, true, null);
   }
 }

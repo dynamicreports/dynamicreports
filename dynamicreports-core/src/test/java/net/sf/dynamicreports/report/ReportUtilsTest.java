@@ -11,9 +11,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.IntStream;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for {@link ReportUtils}.
@@ -24,16 +24,16 @@ public class ReportUtilsTest {
   private static final int NUMBER_OF_THREADS = 20;
   private static final int NUMBER_OF_NAMES = 1000;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     ReportUtils.setCounter(1);
   }
 
   @Test
   public void shouldGenerateUniqueNamesConcurrently() throws Exception {
-    ExecutorService executor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    final ExecutorService executor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     try {
-      List<Future<String>> futureNames = submitTasks(executor);
+      final List<Future<String>> futureNames = submitTasks(executor);
       assertUniqueNames(futureNames);
     } finally {
       executor.shutdown();
@@ -43,22 +43,22 @@ public class ReportUtilsTest {
   @Test
   public void shouldResetCounter() {
     ReportUtils.setCounter(Integer.MAX_VALUE);
-    String name = ReportUtils.generateUniqueName(BASE_NAME);
-    Assert.assertTrue(name.endsWith("0_"));
+    final String name = ReportUtils.generateUniqueName(BASE_NAME);
+    Assertions.assertTrue(name.endsWith("0_"));
   }
 
   private List<Future<String>> submitTasks(ExecutorService executor) {
-    Callable<String> task = () -> ReportUtils.generateUniqueName(BASE_NAME);
-    List<Future<String>> futureNames = new ArrayList<>();
+    final Callable<String> task = () -> ReportUtils.generateUniqueName(BASE_NAME);
+    final List<Future<String>> futureNames = new ArrayList<>();
     IntStream.range(0, NUMBER_OF_NAMES).forEach(i -> futureNames.add(executor.submit(task)));
     return futureNames;
   }
 
   private void assertUniqueNames(List<Future<String>> futureNames) throws Exception {
-    Set<String> generatedNames = new HashSet<>();
-    for (Future<String> futureName : futureNames) {
+    final Set<String> generatedNames = new HashSet<>();
+    for (final Future<String> futureName : futureNames) {
       generatedNames.add(futureName.get());
     }
-    Assert.assertEquals(NUMBER_OF_NAMES, generatedNames.size());
+    Assertions.assertEquals(NUMBER_OF_NAMES, generatedNames.size());
   }
 }

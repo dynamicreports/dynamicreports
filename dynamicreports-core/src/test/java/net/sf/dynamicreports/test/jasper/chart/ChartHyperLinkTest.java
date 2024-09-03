@@ -20,7 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
+
+import java.awt.Rectangle;
+import java.io.Serializable;
+import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -32,14 +41,6 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRPrintImage;
 import net.sf.jasperreports.engine.JRPrintImageAreaHyperlink;
 import net.sf.jasperreports.renderers.AreaHyperlinksRenderable;
-
-import java.awt.Rectangle;
-import java.io.Serializable;
-import java.util.List;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
 /**
  * @author Ricardo Mariaca
@@ -81,38 +82,38 @@ public class ChartHyperLinkTest extends AbstractJasperChartTest implements Seria
         AreaHyperlinksRenderable renderer = (AreaHyperlinksRenderable) image.getRenderer();
         Rectangle renderingArea = new Rectangle(0, 0, image.getWidth(), image.getHeight());
         try {
-            List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
-            Assert.assertEquals("1_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("1_value2_2", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("1_value3_3", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("1_value4_4", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
-        } catch (JRException e) {
+            final List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
+            Assertions.assertEquals("1_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("1_value2_2", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("1_value3_3", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("1_value4_4", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
 
         image = (JRPrintImage) getElementAt("summary.chart2", 0);
         renderer = (AreaHyperlinksRenderable) image.getRenderer();
         renderingArea = new Rectangle(0, 0, image.getWidth(), image.getHeight());
         try {
-            List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
-            Assert.assertEquals("2_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("3_value1_1", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("2_value2_2", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("3_value2_2", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("2_value3_3", imageAreaHyperlinks.get(4).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("3_value3_3", imageAreaHyperlinks.get(5).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("2_value4_4", imageAreaHyperlinks.get(6).getHyperlink().getHyperlinkTooltip());
-            Assert.assertEquals("3_value4_4", imageAreaHyperlinks.get(7).getHyperlink().getHyperlinkTooltip());
-        } catch (JRException e) {
+            final List<JRPrintImageAreaHyperlink> imageAreaHyperlinks = renderer.getImageAreaHyperlinks(renderingArea);
+            Assertions.assertEquals("2_value1_1", imageAreaHyperlinks.get(0).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("3_value1_1", imageAreaHyperlinks.get(1).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("2_value2_2", imageAreaHyperlinks.get(2).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("3_value2_2", imageAreaHyperlinks.get(3).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("2_value3_3", imageAreaHyperlinks.get(4).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("3_value3_3", imageAreaHyperlinks.get(5).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("2_value4_4", imageAreaHyperlinks.get(6).getHyperlink().getHyperlinkTooltip());
+            Assertions.assertEquals("3_value4_4", imageAreaHyperlinks.get(7).getHyperlink().getHyperlinkTooltip());
+        } catch (final JRException e) {
             e.printStackTrace();
-            Assert.fail(e.getMessage());
+            Assertions.fail(e.getMessage());
         }
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1);
         }
@@ -121,7 +122,7 @@ public class ChartHyperLinkTest extends AbstractJasperChartTest implements Seria
 
     private class TooltipExpression extends AbstractSimpleExpression<String> {
         private static final long serialVersionUID = 1L;
-        private String name;
+        private final String name;
 
         public TooltipExpression(String name) {
             this.name = name;

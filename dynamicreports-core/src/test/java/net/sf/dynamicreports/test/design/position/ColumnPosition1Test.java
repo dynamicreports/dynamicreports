@@ -20,7 +20,11 @@
  */
 package net.sf.dynamicreports.test.design.position;
 
-import org.junit.Assert;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.design.base.DRDesignBand;
 import net.sf.dynamicreports.design.base.component.DRDesignComponent;
 import net.sf.dynamicreports.design.base.component.DRDesignList;
@@ -28,8 +32,6 @@ import net.sf.dynamicreports.design.base.component.DRDesignTextField;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.constant.ListType;
 import net.sf.dynamicreports.test.design.AbstractBandTest;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -52,14 +54,14 @@ public class ColumnPosition1Test extends AbstractBandTest {
     }
 
     protected void testBand(DRDesignBand band) {
-        DRDesignComponent component = band.getBandComponent();
-        Assert.assertTrue(component instanceof DRDesignList);
-        DRDesignList list = (DRDesignList) component;
-        Assert.assertEquals(ListType.HORIZONTAL, list.getType());
-        Assert.assertEquals(2, list.getComponents().size());
+        final DRDesignComponent component = band.getBandComponent();
+        Assertions.assertTrue(component instanceof DRDesignList);
+        final DRDesignList list = (DRDesignList) component;
+        Assertions.assertEquals(ListType.HORIZONTAL, list.getType());
+        Assertions.assertEquals(2, list.getComponents().size());
         componentPositionTest(list, 0, 0, 575, 16);
-        Assert.assertTrue(list.getComponents().get(0) instanceof DRDesignTextField);
-        Assert.assertTrue(list.getComponents().get(1) instanceof DRDesignTextField);
+        Assertions.assertTrue(list.getComponents().get(0) instanceof DRDesignTextField);
+        Assertions.assertTrue(list.getComponents().get(1) instanceof DRDesignTextField);
 
         // column1
         componentPositionTest(list.getComponents().get(0), 0, 0, 287, 16);

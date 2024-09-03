@@ -20,15 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JasperPrint;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
  * @author Ricardo Mariaca
@@ -53,8 +54,8 @@ public class Report3Test extends AbstractJasperValueTest implements Serializable
 
         numberOfPagesTest(2);
 
-        JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals("report1", jasperPrint.getName());
+        final JasperPrint jasperPrint = getJasperPrint();
+        Assertions.assertEquals("report1", jasperPrint.getName());
 
         // page header
         elementCountTest("pageHeader.textField1", 2);

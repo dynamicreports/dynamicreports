@@ -20,7 +20,15 @@
  */
 package net.sf.dynamicreports.test.design.report;
 
-import org.junit.Assert;
+
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import net.sf.dynamicreports.design.base.DRDesignReport;
 import net.sf.dynamicreports.report.builder.ReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -29,12 +37,6 @@ import net.sf.dynamicreports.report.constant.Calculation;
 import net.sf.dynamicreports.report.constant.Evaluation;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.design.DesignReportBuilder;
-import org.junit.Test;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 
 /**
  * @author Ricardo Mariaca
@@ -43,75 +45,75 @@ public class ExceptionTest {
 
     @Test
     public void testComponentFixedWidth() {
-        ReportBuilder<?> rb1 = new DesignReportBuilder();
+        final ReportBuilder<?> rb1 = new DesignReportBuilder();
         rb1.title(cmp.text("").setFixedWidth(600));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("component fixed width exception");
-        } catch (DRException e) {
+            Assertions.fail("component fixed width exception");
+        } catch (final DRException e) {
         }
 
-        ReportBuilder<?> rb2 = new DesignReportBuilder();
+        final ReportBuilder<?> rb2 = new DesignReportBuilder();
         rb2.title(cmp.horizontalList(cmp.text("").setFixedWidth(600)));
         try {
             new DRDesignReport(rb2.getReport());
-            Assert.fail("component fixed width exception");
-        } catch (DRException e) {
+            Assertions.fail("component fixed width exception");
+        } catch (final DRException e) {
         }
 
-        ReportBuilder<?> rb3 = new DesignReportBuilder();
+        final ReportBuilder<?> rb3 = new DesignReportBuilder();
         rb3.title(cmp.horizontalFlowList(cmp.text("").setFixedWidth(600)));
         try {
             new DRDesignReport(rb3.getReport());
-            Assert.fail("component fixed width exception");
-        } catch (DRException e) {
+            Assertions.fail("component fixed width exception");
+        } catch (final DRException e) {
         }
     }
 
     @Test
     public void testComponentMinimumWidth() {
-        ReportBuilder<?> rb1 = new DesignReportBuilder();
+        final ReportBuilder<?> rb1 = new DesignReportBuilder();
         rb1.title(cmp.text("").setMinWidth(600));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("component minimum width exception");
-        } catch (DRException e) {
+            Assertions.fail("component minimum width exception");
+        } catch (final DRException e) {
         }
 
-        ReportBuilder<?> rb2 = new DesignReportBuilder();
+        final ReportBuilder<?> rb2 = new DesignReportBuilder();
         rb2.title(cmp.horizontalList(cmp.text("").setMinWidth(600)));
         try {
             new DRDesignReport(rb2.getReport());
-            Assert.fail("component fixed width exception");
-        } catch (DRException e) {
+            Assertions.fail("component fixed width exception");
+        } catch (final DRException e) {
         }
 
-        ReportBuilder<?> rb3 = new DesignReportBuilder();
+        final ReportBuilder<?> rb3 = new DesignReportBuilder();
         rb3.title(cmp.horizontalFlowList(cmp.text("").setMinWidth(600)));
         try {
             new DRDesignReport(rb3.getReport());
-            Assert.fail("component fixed width exception");
-        } catch (DRException e) {
+            Assertions.fail("component fixed width exception");
+        } catch (final DRException e) {
         }
     }
 
     @Test
     public void testVariable() {
-        TextColumnBuilder<Object> column = col.column("fieldName", Object.class);
-        ColumnGroupBuilder group = grp.group(column);
-        ReportBuilder<?> rb1 =
+        final TextColumnBuilder<Object> column = col.column("fieldName", Object.class);
+        final ColumnGroupBuilder group = grp.group(column);
+        final ReportBuilder<?> rb1 =
             new DesignReportBuilder().columns(column).groupBy(group).variables(variable("fieldName", Object.class, Calculation.SUM).setResetGroup(group).setResetType(Evaluation.REPORT));
         try {
             new DRDesignReport(rb1.getReport());
-            Assert.fail("variable exception");
-        } catch (DRException e) {
+            Assertions.fail("variable exception");
+        } catch (final DRException e) {
         }
 
-        ReportBuilder<?> rb2 = new DesignReportBuilder().columns(column).groupBy(group).variables(variable("fieldName", Object.class, Calculation.SUM).setResetType(Evaluation.GROUP));
+        final ReportBuilder<?> rb2 = new DesignReportBuilder().columns(column).groupBy(group).variables(variable("fieldName", Object.class, Calculation.SUM).setResetType(Evaluation.GROUP));
         try {
             new DRDesignReport(rb2.getReport());
-            Assert.fail("variable exception");
-        } catch (DRException e) {
+            Assertions.fail("variable exception");
+        } catch (final DRException e) {
         }
     }
 }

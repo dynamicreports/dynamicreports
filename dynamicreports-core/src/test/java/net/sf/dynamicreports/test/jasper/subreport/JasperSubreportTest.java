@@ -23,7 +23,7 @@ package net.sf.dynamicreports.test.jasper.subreport;
 import java.io.InputStream;
 import java.io.Serializable;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -97,7 +97,7 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
                 return JasperCompileManager.compileReport(is);
             } catch (final JRException e) {
                 e.printStackTrace();
-                Assert.fail(e.getMessage());
+                Assertions.fail(e.getMessage());
                 return null;
             }
         }

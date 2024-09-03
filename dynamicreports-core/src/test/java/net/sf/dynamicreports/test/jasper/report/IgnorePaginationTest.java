@@ -24,7 +24,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 import java.io.Serializable;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -52,9 +52,9 @@ public class IgnorePaginationTest extends AbstractJasperValueTest implements Ser
         numberOfPagesTest(1);
 
         final JasperPrint jasperPrint = getJasperPrint();
-        Assert.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientation());
-        Assert.assertEquals(595, jasperPrint.getPageWidth());
-        Assert.assertEquals(1636, jasperPrint.getPageHeight());
+        Assertions.assertEquals(OrientationEnum.PORTRAIT, jasperPrint.getOrientation());
+        Assertions.assertEquals(595, jasperPrint.getPageWidth());
+        Assertions.assertEquals(1636, jasperPrint.getPageHeight());
     }
 
     @Override

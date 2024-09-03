@@ -29,6 +29,15 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.Axis;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.constant.Constants;
@@ -39,18 +48,9 @@ import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.Axis;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.axis.ValueAxis;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
-import org.jfree.chart.renderer.xy.XYItemRenderer;
-import org.junit.Assert;
-
 /**
  * Difference chart tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class DifferenceChartTest extends AbstractJasperChartTest implements Serializable {
@@ -92,43 +92,43 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);
-    XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-    Assert.assertEquals("renderer", XYDifferenceRenderer.class, renderer.getClass());
-    Assert.assertFalse("show shapes", ((XYDifferenceRenderer) renderer).getShapesVisible());
-    Assert.assertEquals("positive paint", Color.BLUE,
+    final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+    Assertions.assertEquals("renderer", XYDifferenceRenderer.class, renderer.getClass());
+    Assertions.assertFalse("show shapes", ((XYDifferenceRenderer) renderer).getShapesVisible());
+    Assertions.assertEquals("positive paint", Color.BLUE,
         ((XYDifferenceRenderer) renderer).getPositivePaint());
-    Assert.assertEquals("negative paint", Color.MAGENTA,
+    Assertions.assertEquals("negative paint", Color.MAGENTA,
         ((XYDifferenceRenderer) renderer).getNegativePaint());
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assert.assertEquals("category label", "time", axis.getLabel());
-    Assert.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assert.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
+    Assertions.assertEquals("category label", "time", axis.getLabel());
+    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assert.assertEquals("value label", "value", axis.getLabel());
-    Assert.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assert.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assert.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assert.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assert.assertEquals("tick label mask", "10.00",
+    Assertions.assertEquals("value label", "value", axis.getLabel());
+    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
+    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
+    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
+    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+    Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    // Assert.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assert.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
-    Assert.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
-    Assert.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
+    // Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+    Assertions.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
+    Assertions.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
+    Assertions.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
   }
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
-    Calendar c = Calendar.getInstance();
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
+    final Calendar c = Calendar.getInstance();
     c.setTime(new Date());
     for (int i = 0; i < 4; i++) {
       dataSource.add(c.getTime(), new Timestamp(c.getTimeInMillis()), i + 5, 7 - i);
@@ -142,8 +142,8 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
 
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-      XYPlot xyPlot = chart.getXYPlot();
-      Assert.assertEquals("renderer", XYDifferenceRenderer.class, xyPlot.getRenderer().getClass());
+      final XYPlot xyPlot = chart.getXYPlot();
+      Assertions.assertEquals("renderer", XYDifferenceRenderer.class, xyPlot.getRenderer().getClass());
     }
   }
 }

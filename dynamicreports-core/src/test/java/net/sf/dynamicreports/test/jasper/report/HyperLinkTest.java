@@ -23,7 +23,7 @@ package net.sf.dynamicreports.test.jasper.report;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.HyperLinkBuilder;
@@ -54,21 +54,21 @@ public class HyperLinkTest extends AbstractJasperValueTest {
         numberOfPagesTest(1);
 
         JRPrintText textField = (JRPrintText) getElementAt("title.textField1", 0);
-        Assert.assertEquals("hyperlink reference", "reference", textField.getHyperlinkReference());
-        Assert.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
-        Assert.assertEquals("hyperlink anchor", "anchor", textField.getHyperlinkAnchor());
-        Assert.assertEquals("hyperlink anchorName", "anchorName", textField.getAnchorName());
-        Assert.assertEquals("hyperlink bookmark level", 1, textField.getBookmarkLevel());
-        Assert.assertEquals("hyperlink page", Integer.valueOf(1), textField.getHyperlinkPage());
-        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR, textField.getHyperlinkType());
-        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR.getName(), textField.getLinkType());
-        Assert.assertEquals("hyperlink target", HyperlinkTargetEnum.TOP, textField.getHyperlinkTarget());
-        Assert.assertEquals("hyperlink target", HyperlinkTargetEnum.TOP.getName(), textField.getLinkTarget());
+        Assertions.assertEquals("hyperlink reference", "reference", textField.getHyperlinkReference());
+        Assertions.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
+        Assertions.assertEquals("hyperlink anchor", "anchor", textField.getHyperlinkAnchor());
+        Assertions.assertEquals("hyperlink anchorName", "anchorName", textField.getAnchorName());
+        Assertions.assertEquals("hyperlink bookmark level", 1, textField.getBookmarkLevel());
+        Assertions.assertEquals("hyperlink page", Integer.valueOf(1), textField.getHyperlinkPage());
+        Assertions.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR, textField.getHyperlinkType());
+        Assertions.assertEquals("hyperlink type reference", HyperlinkTypeEnum.LOCAL_ANCHOR.getName(), textField.getLinkType());
+        Assertions.assertEquals("hyperlink target", HyperlinkTargetEnum.TOP, textField.getHyperlinkTarget());
+        Assertions.assertEquals("hyperlink target", HyperlinkTargetEnum.TOP.getName(), textField.getLinkTarget());
 
         textField = (JRPrintText) getElementAt("title.textField2", 0);
-        Assert.assertEquals("hyperlink type reference", HyperlinkTypeEnum.CUSTOM, textField.getHyperlinkType());
-        Assert.assertEquals("hyperlink type reference", "customType", textField.getLinkType());
-        Assert.assertEquals("hyperlink target", HyperlinkTargetEnum.CUSTOM, textField.getHyperlinkTarget());
-        Assert.assertEquals("hyperlink target", "customTarget", textField.getLinkTarget());
+        Assertions.assertEquals("hyperlink type reference", HyperlinkTypeEnum.CUSTOM, textField.getHyperlinkType());
+        Assertions.assertEquals("hyperlink type reference", "customType", textField.getLinkType());
+        Assertions.assertEquals("hyperlink target", HyperlinkTargetEnum.CUSTOM, textField.getHyperlinkTarget());
+        Assertions.assertEquals("hyperlink target", "customTarget", textField.getLinkTarget());
     }
 }

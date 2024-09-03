@@ -21,7 +21,7 @@ package net.sf.dynamicreports.test.jasper;
 
 import java.awt.Color;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.GroupBuilder;
@@ -51,13 +51,13 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void styleTest(JRStyle style, Color foreColor, Color backColor, String fontName,
       Float fontSize, Boolean bold, Boolean italic) {
-    Assert.assertNotNull("style is null", style);
-    Assert.assertEquals("foreColor", foreColor, style.getForecolor());
-    Assert.assertEquals("backColor", backColor, style.getBackcolor());
-    Assert.assertEquals("fontName", fontName, style.getFontName());
-    Assert.assertEquals("fontSize", fontSize, style.getFontSize());
-    Assert.assertEquals("bold", bold, style.isBold());
-    Assert.assertEquals("italic", italic, style.isItalic());
+    Assertions.assertNotNull("style is null", style);
+    Assertions.assertEquals("foreColor", foreColor, style.getForecolor());
+    Assertions.assertEquals("backColor", backColor, style.getBackcolor());
+    Assertions.assertEquals("fontName", fontName, style.getFontName());
+    Assertions.assertEquals("fontSize", fontSize, style.getFontSize());
+    Assertions.assertEquals("bold", bold, style.isBold());
+    Assertions.assertEquals("italic", italic, style.isItalic());
   }
 
   protected void borderTest(String name, int index, Color topColor, LineStyleEnum topLineStyle,
@@ -67,43 +67,43 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
     final JRStyle style = getElementAt(name, index).getStyle();
 
     JRBoxPen pen = style.getLineBox().getTopPen();
-    Assert.assertEquals(top, pen.getLineWidth().floatValue(), 0);
-    Assert.assertEquals(topColor, pen.getLineColor());
-    Assert.assertEquals(topLineStyle, pen.getLineStyle());
+    Assertions.assertEquals(top, pen.getLineWidth().floatValue(), 0);
+    Assertions.assertEquals(topColor, pen.getLineColor());
+    Assertions.assertEquals(topLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getBottomPen();
-    Assert.assertEquals(bottom, pen.getLineWidth().floatValue(), 0);
-    Assert.assertEquals(bottomColor, pen.getLineColor());
-    Assert.assertEquals(bottomLineStyle, pen.getLineStyle());
+    Assertions.assertEquals(bottom, pen.getLineWidth().floatValue(), 0);
+    Assertions.assertEquals(bottomColor, pen.getLineColor());
+    Assertions.assertEquals(bottomLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getLeftPen();
-    Assert.assertEquals(left, pen.getLineWidth().floatValue(), 0);
-    Assert.assertEquals(leftColor, pen.getLineColor());
-    Assert.assertEquals(leftLineStyle, pen.getLineStyle());
+    Assertions.assertEquals(left, pen.getLineWidth().floatValue(), 0);
+    Assertions.assertEquals(leftColor, pen.getLineColor());
+    Assertions.assertEquals(leftLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getRightPen();
-    Assert.assertEquals(right, pen.getLineWidth().floatValue(), 0);
-    Assert.assertEquals(rightColor, pen.getLineColor());
-    Assert.assertEquals(rightLineStyle, pen.getLineStyle());
+    Assertions.assertEquals(right, pen.getLineWidth().floatValue(), 0);
+    Assertions.assertEquals(rightColor, pen.getLineColor());
+    Assertions.assertEquals(rightLineStyle, pen.getLineStyle());
   }
 
   protected void paddingTest(String name, int index, Integer top, Integer bottom, Integer left,
       Integer right) {
     final JRStyle style = getElementAt(name, index).getStyle();
-    Assert.assertEquals(top, style.getLineBox().getTopPadding());
-    Assert.assertEquals(bottom, style.getLineBox().getBottomPadding());
-    Assert.assertEquals(left, style.getLineBox().getLeftPadding());
-    Assert.assertEquals(right, style.getLineBox().getRightPadding());
+    Assertions.assertEquals(top, style.getLineBox().getTopPadding());
+    Assertions.assertEquals(bottom, style.getLineBox().getBottomPadding());
+    Assertions.assertEquals(left, style.getLineBox().getLeftPadding());
+    Assertions.assertEquals(right, style.getLineBox().getRightPadding());
   }
 
   protected void horizontalAlignmentTest(String name, int index,
       HorizontalImageAlignEnum horizontalAlignment) {
     final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
-      Assert.assertEquals("horizontalAlignment", HorizontalImageAlignEnum.LEFT,
+      Assertions.assertEquals("horizontalAlignment", HorizontalImageAlignEnum.LEFT,
           element.getHorizontalImageAlign());
     }
-    Assert.assertEquals("horizontalAlignment", horizontalAlignment,
+    Assertions.assertEquals("horizontalAlignment", horizontalAlignment,
         element.getHorizontalImageAlign());
   }
 
@@ -111,10 +111,10 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
       HorizontalTextAlignEnum horizontalAlignment) {
     final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
-      Assert.assertEquals("horizontalAlignment", HorizontalTextAlignEnum.LEFT,
+      Assertions.assertEquals("horizontalAlignment", HorizontalTextAlignEnum.LEFT,
           element.getHorizontalTextAlign());
     }
-    Assert.assertEquals("horizontalAlignment", horizontalAlignment,
+    Assertions.assertEquals("horizontalAlignment", horizontalAlignment,
         element.getHorizontalTextAlign());
   }
 
@@ -122,20 +122,20 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
       VerticalImageAlignEnum verticalAlignment) {
     final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
-      Assert.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
+      Assertions.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
           element.getVerticalImageAlign());
     }
-    Assert.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalImageAlign());
+    Assertions.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalImageAlign());
   }
 
   protected void verticalAlignmentTest(String name, int index,
       VerticalTextAlignEnum verticalAlignment) {
     final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
-      Assert.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
+      Assertions.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
           element.getVerticalTextAlign());
     }
-    Assert.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalTextAlign());
+    Assertions.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalTextAlign());
   }
 
   // column detail

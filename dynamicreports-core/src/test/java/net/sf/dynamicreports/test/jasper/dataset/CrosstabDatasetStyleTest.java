@@ -28,6 +28,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
@@ -42,11 +44,9 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabStyleTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import org.junit.Assert;
-
 /**
  * Crosstab dataset style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
 public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
@@ -59,8 +59,8 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    FieldBuilder<String> field1 = field("field1", String.class);
-    FieldBuilder<String> field2 = field("field2", String.class);
+    final FieldBuilder<String> field1 = field("field1", String.class);
+    final FieldBuilder<String> field2 = field("field2", String.class);
 
     final StyleBuilder cellStyle =
         stl.style().conditionalStyles(stl.conditionalStyle(new ConditionExpression(10, 15, 14, 36))
@@ -72,7 +72,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
     measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
     measure1.setStyle(cellStyle);
 
-    CrosstabBuilder crosstab = ctab.crosstab().setDataSource(createCrosstabDataSource())
+    final CrosstabBuilder crosstab = ctab.crosstab().setDataSource(createCrosstabDataSource())
         .highlightEvenRows().rowGroups(rowGroup).columnGroups(columnGroup).measures(measure1);
 
     rb.addParameter("parameter", "parameter_value").title(crosstab);
@@ -86,7 +86,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
 
     setCrosstabBand("title");
 
-    Color color = new Color(240, 240, 240);
+    final Color color = new Color(240, 240, 240);
 
     crosstabCellStyleTest(measure1, null, null, 0, null, null, TEST_FONT_NAME, 10f, null, null);
     crosstabCellStyleTest(measure1, null, null, 1, null, null, TEST_FONT_NAME, 10f, null, null);
@@ -109,7 +109,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
   }
 
   private JRDataSource createCrosstabDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     dataSource.add("a", "c", 1);
     dataSource.add("a", "c", 2);
     dataSource.add("a", "d", 3);
@@ -124,7 +124,7 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
   private class ConditionExpression extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = 1L;
 
-    private List<Integer> values;
+    private final List<Integer> values;
 
     private ConditionExpression(Integer... values) {
       this.values = Arrays.asList(values);
@@ -132,16 +132,16 @@ public class CrosstabDatasetStyleTest extends AbstractJasperCrosstabStyleTest
 
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
-      Assert.assertNotNull(reportParameters.getMasterParameters());
+      Assertions.assertNotNull(reportParameters.getMasterParameters());
       try {
         reportParameters.getValue("parameter");
-        Assert.fail("parameter is not null");
-      } catch (Exception e) {
+        Assertions.fail("parameter is not null");
+      } catch (final Exception e) {
         // required
       }
-      Assert.assertEquals("parameter_value",
+      Assertions.assertEquals("parameter_value",
           reportParameters.getMasterParameters().getValue("parameter"));
-      Integer value = reportParameters.getValue(measure1);
+      final Integer value = reportParameters.getValue(measure1);
       return values.contains(value);
     }
   }

@@ -30,7 +30,7 @@ import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.chart.plot.Plot;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -63,15 +63,15 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
 
         JFreeChart chart = getChart("summary.chart1", 0);
         Plot plot = chart.getPlot();
-        Assert.assertEquals("plot", PiePlot3D.class, plot.getClass());
-        Assert.assertTrue("circular", ((PiePlot) plot).isCircular());
-        Assert.assertEquals("label format", "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat());
-        Assert.assertEquals("legend label format", "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat());
-        Assert.assertEquals("depth factor", Double.valueOf(0.5), Double.valueOf(((PiePlot3D) plot).getDepthFactor()));
+        Assertions.assertEquals("plot", PiePlot3D.class, plot.getClass());
+        Assertions.assertTrue("circular", ((PiePlot) plot).isCircular());
+        Assertions.assertEquals("label format", "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat());
+        Assertions.assertEquals("legend label format", "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat());
+        Assertions.assertEquals("depth factor", Double.valueOf(0.5), Double.valueOf(((PiePlot3D) plot).getDepthFactor()));
 
         chart = getChart("summary.chart2", 0);
         plot = chart.getPlot();
-        Assert.assertNull("label format", ((PiePlot) plot).getLabelGenerator());
+        Assertions.assertNull("label format", ((PiePlot) plot).getLabelGenerator());
     }
 
     @Override

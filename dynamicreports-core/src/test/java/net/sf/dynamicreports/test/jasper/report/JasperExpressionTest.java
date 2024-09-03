@@ -20,20 +20,21 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+
+import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.apache.commons.lang3.StringUtils;
-
-import java.io.ByteArrayOutputStream;
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 
 /**
  * @author Ricardo Mariaca
@@ -67,18 +68,18 @@ public class JasperExpressionTest extends AbstractJasperValueTest implements Ser
         columnDetailValueTest(column3, "0", "8", "3");
 
         try {
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            final ByteArrayOutputStream bos = new ByteArrayOutputStream();
             getReportBuilder().toJrXml(bos);
-            String jrxml = new String(bos.toByteArray());
-            Assert.assertFalse("jrxml contains dependency to dynamicreports", StringUtils.contains(jrxml, "net.sf.dynamicreports"));
-        } catch (DRException e) {
-            Assert.fail(e.getMessage());
+            final String jrxml = new String(bos.toByteArray());
+            Assertions.assertFalse("jrxml contains dependency to dynamicreports", StringUtils.contains(jrxml, "net.sf.dynamicreports"));
+        } catch (final DRException e) {
+            Assertions.fail(e.getMessage());
         }
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         dataSource.add(1, 1);
         dataSource.add(10, 2);
         dataSource.add(5, 2);

@@ -20,19 +20,20 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.CategoryDataset;
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.category.CategoryDataset;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -65,7 +66,7 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
 
         numberOfPagesTest(1);
 
-        String[] categories = new String[] {"value1", "value2"};
+        final String[] categories = new String[] {"value1", "value2"};
         String[] series = new String[] {"group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2",
             "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2"};
         Number[][] values = new Number[][] {{1d, 3d, 5d, 7d}, {7d, 5d, 3d, 1d}};
@@ -85,11 +86,11 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
         chartCategoryCountTest("summary.chart5", 0, 2);
         chartSeriesCountTest("summary.chart5", 0, 4);
         chartDataTest("summary.chart5", 0, categories, series, values);
-        JFreeChart chart = getChart("summary.chart5", 0);
-        CategoryDataset dataset = chart.getCategoryPlot().getDataset();
-        Assert.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(0));
-        Assert.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", dataset.getRowKey(1));
-        Assert.assertEquals("row key", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(2));
+        final JFreeChart chart = getChart("summary.chart5", 0);
+        final CategoryDataset dataset = chart.getCategoryPlot().getDataset();
+        Assertions.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(0));
+        Assertions.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", dataset.getRowKey(1));
+        Assertions.assertEquals("row key", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(2));
 
         series = new String[] {"group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column4", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column5",
             "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column4", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column5"};
@@ -108,7 +109,7 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
         dataSource.add("value1", "series1", "group1", 1, 2);
         dataSource.add("value1", "series2", "group1", 3, 4);
         dataSource.add("value1", "series1", "group2", 5, 6);
@@ -122,7 +123,7 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
     }
 
     private JRDataSource createDataSource1() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
         dataSource.add("value1", "series2", "group1", 3, 4);
         dataSource.add("value1", "series1", "group2", 5, 6);
         dataSource.add("value1", "series2", "group2", 7, 8);

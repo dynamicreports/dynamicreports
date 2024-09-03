@@ -20,20 +20,21 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.parameter;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.parameter;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -55,7 +56,7 @@ public class ValueTypeNamesTest extends AbstractJasperValueTest implements Seria
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("fieldValue");
         return dataSource;
     }
@@ -65,9 +66,9 @@ public class ValueTypeNamesTest extends AbstractJasperValueTest implements Seria
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            Assert.assertEquals("Field value", "fieldValue", reportParameters.getValue("field1"));
-            Assert.assertEquals("Field value", "fieldValue", reportParameters.getFieldValue("field1"));
-            Assert.assertEquals("Parameter value", "parameterValue", reportParameters.getParameterValue("field1"));
+            Assertions.assertEquals("Field value", "fieldValue", reportParameters.getValue("field1"));
+            Assertions.assertEquals("Field value", "fieldValue", reportParameters.getFieldValue("field1"));
+            Assertions.assertEquals("Parameter value", "parameterValue", reportParameters.getParameterValue("field1"));
             return "";
         }
     }

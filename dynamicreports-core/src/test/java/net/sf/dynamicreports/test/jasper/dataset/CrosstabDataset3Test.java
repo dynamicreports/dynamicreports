@@ -20,7 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.dataset;
 
-import org.junit.Assert;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+
+import java.io.Serializable;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Assertions;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -33,11 +39,6 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
 /**
  * @author Ricardo Mariaca
@@ -59,7 +60,7 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
         measure2 = ctab.measure(new MeasureExpression1(), Calculation.SUM);
         measure3 = ctab.measure(new MeasureExpression2());
 
-        CrosstabBuilder crosstab = ctab.crosstab()
+        final CrosstabBuilder crosstab = ctab.crosstab()
                                        .setDataSource(createCrosstabDataSource())
                                        .rowGroups(rowGroup = ctab.rowGroup("field1", String.class))
                                        .columnGroups(columnGroup = ctab.columnGroup("field2", String.class))
@@ -121,7 +122,7 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
     }
 
     private JRDataSource createCrosstabDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
         dataSource.add("a", "c", 8, 1);
         dataSource.add("a", "c", 7, 1);
         dataSource.add("a", "d", 6, 1);
@@ -138,15 +139,15 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
 
         @Override
         public Double evaluate(ReportParameters reportParameters) {
-            Assert.assertNotNull(reportParameters.getMasterParameters());
+            Assertions.assertNotNull(reportParameters.getMasterParameters());
             try {
                 reportParameters.getValue("parameter");
-                Assert.fail("parameter is not null");
-            } catch (Exception e) {
+                Assertions.fail("parameter is not null");
+            } catch (final Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
-            Integer value1 = reportParameters.getValue("field3");
-            Integer value2 = reportParameters.getValue("field4");
+            Assertions.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
+            final Integer value1 = reportParameters.getValue("field3");
+            final Integer value2 = reportParameters.getValue("field4");
             return value1.doubleValue() / value2.doubleValue();
         }
     }
@@ -156,15 +157,15 @@ public class CrosstabDataset3Test extends AbstractJasperCrosstabValueTest implem
 
         @Override
         public Double evaluate(ReportParameters reportParameters) {
-            Assert.assertNotNull(reportParameters.getMasterParameters());
+            Assertions.assertNotNull(reportParameters.getMasterParameters());
             try {
                 reportParameters.getValue("parameter");
-                Assert.fail("parameter is not null");
-            } catch (Exception e) {
+                Assertions.fail("parameter is not null");
+            } catch (final Exception e) {
             }
-            Assert.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
-            Integer value1 = reportParameters.getValue(measure1);
-            Integer value2 = reportParameters.getValue(variable1);
+            Assertions.assertEquals("parameter_value", reportParameters.getMasterParameters().getValue("parameter"));
+            final Integer value1 = reportParameters.getValue(measure1);
+            final Integer value2 = reportParameters.getValue(variable1);
             return value1.doubleValue() / value2.doubleValue();
         }
     }
