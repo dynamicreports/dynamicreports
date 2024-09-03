@@ -21,6 +21,8 @@ package net.sf.dynamicreports.test.jasper;
 
 import java.awt.Color;
 
+import org.junit.Assert;
+
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.GroupBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder;
@@ -34,18 +36,16 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 import net.sf.jasperreports.engine.type.VerticalImageAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 
-import org.junit.Assert;
-
 /**
  * Base class for jasper style tests.
  */
 public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected static final String TEST_FONT_NAME = "Arimo";
-  
+
   protected void styleTest(String name, int index, Color foreColor, Color backColor,
       String fontName, Float fontSize, Boolean bold, Boolean italic) {
-    JRStyle style = getElementAt(name, index).getStyle();
+    final JRStyle style = getElementAt(name, index).getStyle();
     styleTest(style, foreColor, backColor, fontName, fontSize, bold, italic);
   }
 
@@ -55,7 +55,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
     Assert.assertEquals("foreColor", foreColor, style.getForecolor());
     Assert.assertEquals("backColor", backColor, style.getBackcolor());
     Assert.assertEquals("fontName", fontName, style.getFontName());
-    Assert.assertEquals("fontSize", fontSize, style.getFontsize());
+    Assert.assertEquals("fontSize", fontSize, style.getFontSize());
     Assert.assertEquals("bold", bold, style.isBold());
     Assert.assertEquals("italic", italic, style.isItalic());
   }
@@ -64,12 +64,12 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
       float top, Color bottomColor, LineStyleEnum bottomLineStyle, float bottom, Color leftColor,
       LineStyleEnum leftLineStyle, float left, Color rightColor, LineStyleEnum rightLineStyle,
       float right) {
-    JRStyle style = getElementAt(name, index).getStyle();
+    final JRStyle style = getElementAt(name, index).getStyle();
 
     JRBoxPen pen = style.getLineBox().getTopPen();
     Assert.assertEquals(top, pen.getLineWidth().floatValue(), 0);
     Assert.assertEquals(topColor, pen.getLineColor());
-    Assert.assertEquals(topLineStyle, pen.getLineStyleValue());
+    Assert.assertEquals(topLineStyle, pen.getLineStyle());
 
     pen = style.getLineBox().getBottomPen();
     Assert.assertEquals(bottom, pen.getLineWidth().floatValue(), 0);
@@ -89,7 +89,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void paddingTest(String name, int index, Integer top, Integer bottom, Integer left,
       Integer right) {
-    JRStyle style = getElementAt(name, index).getStyle();
+    final JRStyle style = getElementAt(name, index).getStyle();
     Assert.assertEquals(top, style.getLineBox().getTopPadding());
     Assert.assertEquals(bottom, style.getLineBox().getBottomPadding());
     Assert.assertEquals(left, style.getLineBox().getLeftPadding());
@@ -98,7 +98,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void horizontalAlignmentTest(String name, int index,
       HorizontalImageAlignEnum horizontalAlignment) {
-    JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
+    final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
       Assert.assertEquals("horizontalAlignment", HorizontalImageAlignEnum.LEFT,
           element.getHorizontalImageAlign());
@@ -109,7 +109,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void horizontalAlignmentTest(String name, int index,
       HorizontalTextAlignEnum horizontalAlignment) {
-    JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
+    final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
       Assert.assertEquals("horizontalAlignment", HorizontalTextAlignEnum.LEFT,
           element.getHorizontalTextAlign());
@@ -120,7 +120,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void verticalAlignmentTest(String name, int index,
       VerticalImageAlignEnum verticalAlignment) {
-    JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
+    final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
       Assert.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
           element.getVerticalImageAlign());
@@ -130,7 +130,7 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void verticalAlignmentTest(String name, int index,
       VerticalTextAlignEnum verticalAlignment) {
-    JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
+    final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
       Assert.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
           element.getVerticalTextAlign());

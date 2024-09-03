@@ -46,6 +46,22 @@
             <artifactId>jasperreports</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-charts</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-pdf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-json</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-excel-poi</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>3.5.4</version>

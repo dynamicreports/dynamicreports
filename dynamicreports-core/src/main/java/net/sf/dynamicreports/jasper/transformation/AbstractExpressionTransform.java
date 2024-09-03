@@ -20,6 +20,11 @@
  */
 package net.sf.dynamicreports.jasper.transformation;
 
+import java.text.MessageFormat;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import net.sf.dynamicreports.design.constant.ResetType;
 import net.sf.dynamicreports.design.definition.DRIDesignField;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
@@ -38,7 +43,6 @@ import net.sf.dynamicreports.jasper.exception.JasperDesignException;
 import net.sf.dynamicreports.report.constant.SystemExpression;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRGenericElementParameter;
-import net.sf.jasperreports.engine.JRGroup;
 import net.sf.jasperreports.engine.JRPropertyExpression;
 import net.sf.jasperreports.engine.JRVariable;
 import net.sf.jasperreports.engine.design.JRDesignExpression;
@@ -49,16 +53,11 @@ import net.sf.jasperreports.engine.design.JRDesignSortField;
 import net.sf.jasperreports.engine.design.JRDesignVariable;
 import net.sf.jasperreports.engine.type.SortFieldTypeEnum;
 
-import java.text.MessageFormat;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * <p>Abstract AbstractExpressionTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public abstract class AbstractExpressionTransform {
     private static final String VALUE = "$P'{'{0}'}'.getValue(\"{1}\")";
@@ -67,38 +66,38 @@ public abstract class AbstractExpressionTransform {
     private static final String PARAMETER_VALUE = "$P'{'{0}'}'";
     private static final String COMPLEX_VALUE = "$P'{'{0}'}'.getValue(\"{1}\", new Object[]'{'{2}'}')";
 
-    private Map<String, JRDesignExpression> expressions;
+    private final Map<String, JRDesignExpression> expressions;
 
     /**
      * <p>Constructor for AbstractExpressionTransform.</p>
      */
     public AbstractExpressionTransform() {
-        this.expressions = new HashMap<String, JRDesignExpression>();
+        this.expressions = new HashMap<>();
     }
 
     /**
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignField field : getFields()) {
+        for (final DRIDesignField field : getFields()) {
             addField(field);
         }
-        for (DRIDesignSystemExpression expression : getSystemExpressions()) {
+        for (final DRIDesignSystemExpression expression : getSystemExpressions()) {
             addSystemExpression(expression);
         }
-        for (DRIDesignJasperExpression expression : getJasperExpressions()) {
+        for (final DRIDesignJasperExpression expression : getJasperExpressions()) {
             addJasperExpression(expression);
         }
-        for (DRIDesignSimpleExpression expression : getSimpleExpressions()) {
+        for (final DRIDesignSimpleExpression expression : getSimpleExpressions()) {
             addSimpleExpression(expression);
         }
-        for (DRIDesignComplexExpression complexExpression : getComplexExpressions()) {
+        for (final DRIDesignComplexExpression complexExpression : getComplexExpressions()) {
             addComplexExpression(complexExpression);
         }
-        for (DRIDesignVariable variable : getVariables()) {
+        for (final DRIDesignVariable variable : getVariables()) {
             addVariable(variable);
         }
-        for (DRIDesignSort sort : getSorts()) {
+        for (final DRIDesignSort sort : getSorts()) {
             addSort(sort);
         }
     }
@@ -138,7 +137,7 @@ public abstract class AbstractExpressionTransform {
             }
             getCustomValues().addValueType(field.getName(), ValueType.FIELD);
             addExpression(field);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new JasperDesignException("Registration failed for field \"" + field.getName() + "\"", e);
         }
     }
@@ -148,7 +147,7 @@ public abstract class AbstractExpressionTransform {
             addVariable(variable(variable));
             getCustomValues().addValueType(variable.getName(), ValueType.VARIABLE);
             addExpression(variable);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new JasperDesignException("Registration failed for variable \"" + variable.getName() + "\"", e);
         }
     }
@@ -176,14 +175,14 @@ public abstract class AbstractExpressionTransform {
     private void addSort(DRIDesignSort sort) {
         try {
             addSort(sort(sort));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new JasperDesignException("Registration failed for sort \"" + sort.getExpression().getName() + "\"", e);
         }
     }
 
     // field
     private JRDesignField field(DRIDesignField field) {
-        JRDesignField jrField = new JRDesignField();
+        final JRDesignField jrField = new JRDesignField();
         jrField.setName(field.getName());
         jrField.setValueClass(field.getValueClass());
         jrField.setDescription(field.getDescription());
@@ -192,16 +191,16 @@ public abstract class AbstractExpressionTransform {
 
     // variable
     private JRDesignVariable variable(DRIDesignVariable variable) {
-        JRDesignExpression expression = getExpression(variable.getValueExpression());
-        JRDesignExpression initialValueExpression = getExpression(variable.getInitialValueExpression());
+        final JRDesignExpression expression = getExpression(variable.getValueExpression());
+        final JRDesignExpression initialValueExpression = getExpression(variable.getInitialValueExpression());
 
-        JRDesignVariable jrVariable = new JRDesignVariable();
+        final JRDesignVariable jrVariable = new JRDesignVariable();
         jrVariable.setName(variable.getName());
         jrVariable.setExpression(expression);
         jrVariable.setInitialValueExpression(initialValueExpression);
         jrVariable.setValueClass(variable.getValueClass());
         jrVariable.setCalculation(ConstantTransform.calculation(variable.getCalculation()));
-        ResetType resetType = variable.getResetType();
+        final ResetType resetType = variable.getResetType();
         jrVariable.setResetType(ConstantTransform.variableResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && variable.getResetGroup() != null) {
             jrVariable.setResetGroup(getGroup(variable.getResetGroup()));
@@ -215,13 +214,13 @@ public abstract class AbstractExpressionTransform {
      * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      * @return a {@link net.sf.jasperreports.engine.JRGroup} object.
      */
-    protected JRGroup getGroup(DRIDesignGroup group) {
-        return null;
+    protected String getGroup(DRIDesignGroup group) {
+        return group.getName();
     }
 
     // simple expression
     private JRDesignExpression expression(DRIDesignExpression simpleExpression) {
-        JRDesignExpression expression = new JRDesignExpression();
+        final JRDesignExpression expression = new JRDesignExpression();
         expression.setText(getExpressionText(simpleExpression));
         return expression;
     }
@@ -232,21 +231,21 @@ public abstract class AbstractExpressionTransform {
         } else if (expression instanceof DRIDesignVariable) {
             return toVariableValue(expression.getName());
         } else if (expression instanceof DRIDesignComplexExpression) {
-            DRIDesignComplexExpression complexExpression = (DRIDesignComplexExpression) expression;
+            final DRIDesignComplexExpression complexExpression = (DRIDesignComplexExpression) expression;
             String values = "";
-            for (DRIDesignExpression valueExpression : complexExpression.getExpressions()) {
+            for (final DRIDesignExpression valueExpression : complexExpression.getExpressions()) {
                 values += ", " + getExpressionText(valueExpression);
             }
             if (values.length() > 0) {
                 values = values.substring(2);
             }
-            String parameterName = getExpressionParameterName(complexExpression.getParameterName());
+            final String parameterName = getExpressionParameterName(complexExpression.getParameterName());
             return MessageFormat.format(COMPLEX_VALUE, parameterName, expression.getName(), values);
         } else if (expression instanceof DRIDesignSimpleExpression) {
-            String parameterName = getExpressionParameterName(((DRIDesignSimpleExpression) expression).getParameterName());
+            final String parameterName = getExpressionParameterName(((DRIDesignSimpleExpression) expression).getParameterName());
             return MessageFormat.format(VALUE, parameterName, expression.getName());
         } else if (expression instanceof DRIDesignSystemExpression) {
-            String name = ((DRIDesignSystemExpression) expression).getName();
+            final String name = ((DRIDesignSystemExpression) expression).getName();
             if (name.equals(SystemExpression.PAGE_NUMBER.name())) {
                 return toVariableValue(JRVariable.PAGE_NUMBER);
             } else {
@@ -304,7 +303,7 @@ public abstract class AbstractExpressionTransform {
 
     // sort
     private JRDesignSortField sort(DRIDesignSort sort) {
-        DRIDesignExpression expression = sort.getExpression();
+        final DRIDesignExpression expression = sort.getExpression();
         String name;
         SortFieldTypeEnum type;
         if (expression instanceof DRIDesignField) {
@@ -317,7 +316,7 @@ public abstract class AbstractExpressionTransform {
             throw new JasperDesignException("Sort expression \"" + expression.getName() + "\" not supported");
         }
 
-        JRDesignSortField jrSort = new JRDesignSortField();
+        final JRDesignSortField jrSort = new JRDesignSortField();
         jrSort.setName(name);
         jrSort.setOrder(ConstantTransform.orderType(sort.getOrderType()));
         jrSort.setType(type);
@@ -331,7 +330,7 @@ public abstract class AbstractExpressionTransform {
      * @return a {@link net.sf.jasperreports.engine.JRPropertyExpression} object.
      */
     protected JRPropertyExpression getPropertyExpression(DRIDesignPropertyExpression propertyExpression) {
-        JRDesignPropertyExpression jrPropertyExpression = new JRDesignPropertyExpression();
+        final JRDesignPropertyExpression jrPropertyExpression = new JRDesignPropertyExpression();
         jrPropertyExpression.setName(propertyExpression.getName());
         jrPropertyExpression.setValueExpression(getExpression(propertyExpression.getValueExpression()));
         return jrPropertyExpression;
@@ -344,7 +343,7 @@ public abstract class AbstractExpressionTransform {
      * @return a {@link net.sf.jasperreports.engine.JRGenericElementParameter} object.
      */
     protected JRGenericElementParameter getGenericElementParameterExpression(DRIDesignParameterExpression parameterExpression) {
-        JRDesignGenericElementParameter jrParameterExpression = new JRDesignGenericElementParameter();
+        final JRDesignGenericElementParameter jrParameterExpression = new JRDesignGenericElementParameter();
         jrParameterExpression.setName(parameterExpression.getName());
         jrParameterExpression.setValueExpression(getExpression(parameterExpression.getValueExpression()));
         return jrParameterExpression;

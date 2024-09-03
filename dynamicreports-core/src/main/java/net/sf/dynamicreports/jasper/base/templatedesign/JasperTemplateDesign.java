@@ -20,6 +20,17 @@
  */
 package net.sf.dynamicreports.jasper.base.templatedesign;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.jasper.transformation.ConstantTransform;
 import net.sf.dynamicreports.report.base.DRField;
 import net.sf.dynamicreports.report.base.DRMargin;
@@ -38,22 +49,12 @@ import net.sf.jasperreports.engine.JRParameter;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.engine.xml.JRXmlWriter;
-import org.apache.commons.lang3.Validate;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * <p>JasperTemplateDesign class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -83,7 +84,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         Validate.notNull(file, "file must not be null");
         try {
             init(JRXmlLoader.load(file));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
     }
@@ -98,7 +99,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         Validate.notNull(fileName, "fileName must not be null");
         try {
             init(JRXmlLoader.load(fileName));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
     }
@@ -113,7 +114,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         Validate.notNull(inputStream, "inputStream must not be null");
         try {
             init(JRXmlLoader.load(inputStream));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
     }
@@ -128,9 +129,9 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         Validate.notNull(url, "url must not be null");
         try {
             init(JRXmlLoader.load(url.openStream()));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             throw new DRException(e);
         }
     }
@@ -139,9 +140,10 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
         Validate.notNull(jasperDesign, "jasperDesign must not be null");
         this.jasperDesign = jasperDesign;
 
-        this.fields = new ArrayList<DRIField<?>>();
-        for (JRField jrField : jasperDesign.getFields()) {
-            @SuppressWarnings( {"unchecked", "rawtypes"}) DRField<?> field = new DRField(jrField.getName(), jrField.getValueClass());
+        this.fields = new ArrayList<>();
+        for (final JRField jrField : jasperDesign.getFields()) {
+            @SuppressWarnings( {"unchecked", "rawtypes"})
+            final DRField<?> field = new DRField(jrField.getName(), jrField.getValueClass());
             fields.add(field);
         }
 
@@ -167,7 +169,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     /** {@inheritDoc} */
     @Override
     public boolean isDefinedParameter(String name) {
-        JRParameter parameter = jasperDesign.getParametersMap().get(name);
+        final JRParameter parameter = jasperDesign.getParametersMap().get(name);
         return parameter != null;
     }
 
@@ -186,13 +188,13 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     /** {@inheritDoc} */
     @Override
     public WhenNoDataType getWhenNoDataType() {
-        return ConstantTransform.whenNoDataType(jasperDesign.getWhenNoDataTypeValue());
+        return ConstantTransform.whenNoDataType(jasperDesign.getWhenNoDataType());
     }
 
     /** {@inheritDoc} */
     @Override
     public WhenResourceMissingType getWhenResourceMissingType() {
-        return ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingTypeValue());
+        return ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingType());
     }
 
     /** {@inheritDoc} */
@@ -234,7 +236,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     /** {@inheritDoc} */
     @Override
     public PageOrientation getPageOrientation() {
-        return ConstantTransform.pageOrientation(jasperDesign.getOrientationValue());
+        return ConstantTransform.pageOrientation(jasperDesign.getOrientation());
     }
 
     /** {@inheritDoc} */
@@ -332,7 +334,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
             }
 
             return JRXmlLoader.load(new ByteArrayInputStream(templateDesign.toByteArray()));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
     }

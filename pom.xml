@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sourceforge.dynamicreports</groupId>
@@ -78,7 +80,8 @@
 
         <!--Mycila License plugin configuration-->
         <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
-        <license.header.definition>${project.basedir}/src/etc/header_definition.xml</license.header.definition>
+        <license.header.definition>
+            ${project.basedir}/src/etc/header_definition.xml</license.header.definition>
         <license.maven.owner>Ricardo Mariaca and the DynamicReports Contributors</license.maven.owner>
 
         <!-- Properties for maven-checkstyle-plugin -->
@@ -100,40 +103,26 @@
                 <groupId>net.sf.jasperreports</groupId>
                 <artifactId>jasperreports</artifactId>
                 <version>${jasperreportsVersion}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>bouncycastle</groupId>
-                        <artifactId>bcmail-jdk14</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>bouncycastle</groupId>
-                        <artifactId>bctsp-jdk14</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.lucene</groupId>
-                        <artifactId>lucene-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.lucene</groupId>
-                        <artifactId>lucene-analyzers-common</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.lucene</groupId>
-                        <artifactId>lucene-queryparser</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.olap4j</groupId>
-                        <artifactId>olap4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.codehaus.castor</groupId>
-                        <artifactId>castor-xml</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>icu4j</artifactId>
-                        <groupId>com.ibm.icu</groupId>
-                    </exclusion>
-                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-charts</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-pdf</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-json</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-excel-poi</artifactId>
+                <version>${jasperreportsVersion}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -352,8 +341,10 @@
                     <executions>
                         <execution>
                             <goals>
-                                <goal>jdkinternals</goal> <!-- verify main classes -->
-                                <goal>test-jdkinternals</goal> <!-- verify test classes -->
+                                <goal>jdkinternals</goal> <!-- verify main
+                                classes -->
+                                <goal>test-jdkinternals</goal> <!-- verify test
+                                classes -->
                             </goals>
                         </execution>
                     </executions>
@@ -490,7 +481,8 @@
                             <doclint>none</doclint>
                             <defaultVersion>${project.version}</defaultVersion>
                             <defaultSince>${project.version}</defaultSince>
-                            <javadocExecutable>${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
+                            <javadocExecutable>
+                                ${env.JAVA_10_HOME}\bin\javadoc.exe</javadocExecutable>
                         </configuration>
                     </plugin>
                     <!--To ensure consistent API for java 9 usage-->
@@ -531,19 +523,22 @@
                     <artifactId>jaxb-api</artifactId>
                     <version>${jaxb-apiVersion}</version>
                 </dependency>
-                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+                <!--
+                https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-core</artifactId>
                     <version>${jaxb-coreVersion}</version>
                 </dependency>
-                <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+                <!--
+                https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
                 <dependency>
                     <groupId>org.glassfish.jaxb</groupId>
                     <artifactId>jaxb-core</artifactId>
                     <version>${jaxb-coreVersion}</version>
                 </dependency>
-                <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+                <!--
+                https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
                 <dependency>
                     <groupId>com.sun.xml.bind</groupId>
                     <artifactId>jaxb-impl</artifactId>
@@ -631,13 +626,18 @@
                             <configuration>
                                 <excludes>module-info.java</excludes>
                                 <headerLocation>../src/etc/checkstyle.xml</headerLocation>
-                                <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                                <maxAllowedViolations>
+                                    ${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                                 <configLocation>../src/etc/checkstyle.xml</configLocation>
-                                <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
+                                <consoleOutput>
+                                    ${checkstyle.config.consoleOutput}</consoleOutput>
                                 <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
-                                <includeResources>${checkstyle.config.includeResources}</includeResources>
-                                <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
-                                <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                                <includeResources>
+                                    ${checkstyle.config.includeResources}</includeResources>
+                                <includeTestResources>
+                                    ${checkstyle.config.includeTestResources}</includeTestResources>
+                                <includeTestSourceDirectory>
+                                    ${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
                                 <linkXRef>${linkXRef}</linkXRef>
                             </configuration>
                         </plugin>
@@ -672,13 +672,17 @@
                         <configuration>
                             <excludes>module-info.java</excludes>
                             <headerLocation>${checkstyle.config.headerLocation}</headerLocation>
-                            <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                            <maxAllowedViolations>
+                                ${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                             <configLocation>${checkstyle.config.location}</configLocation>
                             <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
                             <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
-                            <includeResources>${checkstyle.config.includeResources}</includeResources>
-                            <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
-                            <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                            <includeResources>
+                                ${checkstyle.config.includeResources}</includeResources>
+                            <includeTestResources>
+                                ${checkstyle.config.includeTestResources}</includeTestResources>
+                            <includeTestSourceDirectory>
+                                ${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
                             <linkXRef>${linkXRef}</linkXRef>
                         </configuration>
                     </plugin>

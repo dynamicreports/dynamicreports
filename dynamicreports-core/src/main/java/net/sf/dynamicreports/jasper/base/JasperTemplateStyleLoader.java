@@ -20,6 +20,12 @@
  */
 package net.sf.dynamicreports.jasper.base;
 
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.jasper.exception.JasperDesignException;
 import net.sf.dynamicreports.report.base.style.DRBaseStyle;
 import net.sf.dynamicreports.report.base.style.DRBorder;
@@ -61,17 +67,12 @@ import net.sf.jasperreports.engine.type.TabStopAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalImageAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import net.sf.jasperreports.engine.xml.JRXmlTemplateLoader;
-import org.apache.commons.lang3.Validate;
-
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
 
 /**
  * <p>JasperTemplateStyleLoader class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperTemplateStyleLoader {
 
@@ -97,7 +98,7 @@ public class JasperTemplateStyleLoader {
         Validate.notNull(fileName, "fileName must not be null");
         try {
             return loadStyles(JRXmlTemplateLoader.load(fileName));
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new DRException(e);
         }
     }
@@ -126,33 +127,33 @@ public class JasperTemplateStyleLoader {
 
     private static DRStyle[] loadStyles(JRTemplate template) {
         Validate.notNull(template, "template must not be null");
-        JRStyle[] jrStyles = template.getStyles();
-        DRStyle[] styles = new DRStyle[jrStyles.length];
+        final JRStyle[] jrStyles = template.getStyles();
+        final DRStyle[] styles = new DRStyle[jrStyles.length];
         for (int i = 0; i < jrStyles.length; i++) {
-            JRStyle jrStyle = jrStyles[i];
+            final JRStyle jrStyle = jrStyles[i];
             styles[i] = convertStyle(jrStyle);
         }
         return styles;
     }
 
     private static DRStyle convertStyle(JRStyle jrStyle) {
-        DRStyle style = new DRStyle();
+        final DRStyle style = new DRStyle();
         abstractStyle(jrStyle, style);
 
         style.setName(jrStyle.getName());
-        JRStyle jrParentStyle = jrStyle.getStyle();
+        final JRStyle jrParentStyle = jrStyle.getStyle();
         if (jrParentStyle != null) {
             style.setParentStyle(convertStyle(jrParentStyle));
         }
-        for (JRConditionalStyle jrConditionalStyle : jrStyle.getConditionalStyles()) {
+        for (final JRConditionalStyle jrConditionalStyle : jrStyle.getConditionalStyles()) {
             style.addConditionalStyle(conditionalStyle(jrConditionalStyle));
         }
         return style;
     }
 
     private static DRConditionalStyle conditionalStyle(JRConditionalStyle jrConditionalStyle) {
-        DRIExpression<Boolean> expression = Expressions.jasperSyntax(jrConditionalStyle.getConditionExpression().getText(), Boolean.class);
-        DRConditionalStyle conditionalStyle = new DRConditionalStyle(expression);
+        final DRIExpression<Boolean> expression = Expressions.jasperSyntax(jrConditionalStyle.getConditionExpression().getText(), Boolean.class);
+        final DRConditionalStyle conditionalStyle = new DRConditionalStyle(expression);
         abstractStyle(jrConditionalStyle, conditionalStyle);
         return conditionalStyle;
     }
@@ -161,7 +162,7 @@ public class JasperTemplateStyleLoader {
         style.setForegroundColor(jrStyle.getOwnForecolor());
         style.setBackgroundColor(jrStyle.getOwnBackcolor());
         style.setRadius(jrStyle.getOwnRadius());
-        style.setImageScale(imageScale(jrStyle.getOwnScaleImageValue()));
+        style.setImageScale(imageScale(jrStyle.getOwnScaleImage()));
         style.setHorizontalImageAlignment(horizontalImageAlignment(jrStyle.getOwnHorizontalImageAlign()));
         style.setVerticalImageAlignment(verticalImageAlignment(jrStyle.getOwnVerticalImageAlign()));
         style.setHorizontalTextAlignment(horizontalTextAlignment(jrStyle.getOwnHorizontalTextAlign()));
@@ -169,7 +170,7 @@ public class JasperTemplateStyleLoader {
         border(jrStyle.getLineBox(), style.getBorder());
         padding(jrStyle.getLineBox(), style.getPadding());
         font(jrStyle, style.getFont());
-        style.setRotation(rotation(jrStyle.getOwnRotationValue()));
+        style.setRotation(rotation(jrStyle.getOwnRotation()));
         style.setPattern(jrStyle.getOwnPattern());
         style.setMarkup(markup(jrStyle.getOwnMarkup()));
         paragraph(jrStyle.getParagraph(), style.getParagraph());
@@ -186,8 +187,8 @@ public class JasperTemplateStyleLoader {
         paragraph.setSpacingAfter(jrParagraph.getOwnSpacingAfter());
         paragraph.setTabStopWidth(jrParagraph.getOwnTabStopWidth());
         if (jrParagraph.getOwnTabStops() != null) {
-            for (TabStop jrTabStop : jrParagraph.getOwnTabStops()) {
-                DRTabStop tabStop = new DRTabStop();
+            for (final TabStop jrTabStop : jrParagraph.getOwnTabStops()) {
+                final DRTabStop tabStop = new DRTabStop();
                 tabStop.setPosition(jrTabStop.getPosition());
                 tabStop.setAlignment(tabStopAlignment(jrTabStop.getAlignment()));
                 paragraph.getTabStops().add(tabStop);
@@ -203,7 +204,7 @@ public class JasperTemplateStyleLoader {
      */
     protected static void pen(JRPen jrPen, DRPen pen) {
         pen.setLineColor(jrPen.getOwnLineColor());
-        pen.setLineStyle(lineStyle(jrPen.getOwnLineStyleValue()));
+        pen.setLineStyle(lineStyle(jrPen.getOwnLineStyle()));
         pen.setLineWidth(jrPen.getOwnLineWidth());
     }
 
@@ -226,7 +227,7 @@ public class JasperTemplateStyleLoader {
         font.setFontName(jrStyle.getOwnFontName());
         font.setBold(jrStyle.isOwnBold());
         font.setItalic(jrStyle.isOwnItalic());
-        font.setFontSize(jrStyle.getOwnFontsize() == null ? null : jrStyle.getOwnFontsize().intValue());
+        font.setFontSize(jrStyle.getOwnFontSize() == null ? null : jrStyle.getOwnFontSize().intValue());
         font.setStrikeThrough(jrStyle.isOwnStrikeThrough());
         font.setUnderline(jrStyle.isOwnUnderline());
         font.setPdfFontName(jrStyle.getOwnPdfFontName());

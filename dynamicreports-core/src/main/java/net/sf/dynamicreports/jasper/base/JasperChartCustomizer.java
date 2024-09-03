@@ -20,28 +20,29 @@
  */
 package net.sf.dynamicreports.jasper.base;
 
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
-import net.sf.jasperreports.engine.JRAbstractChartCustomizer;
-import net.sf.jasperreports.engine.JRChart;
+import java.util.List;
+
 import org.jfree.chart.JFreeChart;
 
-import java.util.List;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
+import net.sf.jasperreports.charts.JRAbstractChartCustomizer;
+import net.sf.jasperreports.charts.JRChart;
 
 /**
  * <p>JasperChartCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperChartCustomizer extends JRAbstractChartCustomizer {
 
     /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, JRChart jasperChart) {
-        String key = jasperChart.getKey();
-        JasperScriptlet scriptlet = (JasperScriptlet) getParameterValue(JasperScriptlet.SCRIPTLET_NAME);
-        List<DRIChartCustomizer> chartCustomizers = scriptlet.getChartCustomizers(key);
-        for (DRIChartCustomizer chartCustomizer : chartCustomizers) {
+        final String key = jasperChart.getKey();
+        final JasperScriptlet scriptlet = (JasperScriptlet) getParameterValue(JasperScriptlet.SCRIPTLET_NAME);
+        final List<DRIChartCustomizer> chartCustomizers = scriptlet.getChartCustomizers(key);
+        for (final DRIChartCustomizer chartCustomizer : chartCustomizers) {
             chartCustomizer.customize(chart, scriptlet.getReportParameters());
         }
     }

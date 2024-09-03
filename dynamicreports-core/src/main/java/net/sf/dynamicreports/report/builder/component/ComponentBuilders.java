@@ -20,6 +20,11 @@
  */
 package net.sf.dynamicreports.report.builder.component;
 
+import java.awt.Image;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Date;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
@@ -27,16 +32,11 @@ import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.renderers.Renderable;
 
-import java.awt.Image;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Date;
-
 /**
  * A set of methods of creating components
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ComponentBuilders {
 
@@ -432,18 +432,6 @@ public class ComponentBuilders {
      * @return a {@link net.sf.dynamicreports.report.builder.component.ImageBuilder} object.
      */
     public ImageBuilder image(Renderable image) {
-        return Components.image(image);
-    }
-
-    /**
-     * <p>image.</p>
-     *
-     * @param image a {@link net.sf.jasperreports.engine.Renderable} object.
-     * @return a {@link net.sf.dynamicreports.report.builder.component.ImageBuilder} object.
-     * @deprecated use image(net.sf.jasperreports.renderers.Renderable image) instead
-     */
-    @Deprecated
-    public ImageBuilder image(net.sf.jasperreports.engine.Renderable image) {
         return Components.image(image);
     }
 

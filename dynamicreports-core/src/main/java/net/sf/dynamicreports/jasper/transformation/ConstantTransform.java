@@ -93,6 +93,7 @@ import net.sf.dynamicreports.report.constant.VerticalImageAlignment;
 import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.report.constant.WhenResourceMissingType;
+import net.sf.jasperreports.charts.design.JRDesignChart;
 import net.sf.jasperreports.charts.type.AxisPositionEnum;
 import net.sf.jasperreports.charts.type.EdgeEnum;
 import net.sf.jasperreports.charts.type.MeterShapeEnum;
@@ -106,7 +107,6 @@ import net.sf.jasperreports.components.spiderchart.type.TableOrderEnum;
 import net.sf.jasperreports.crosstabs.type.CrosstabPercentageEnum;
 import net.sf.jasperreports.crosstabs.type.CrosstabTotalPositionEnum;
 import net.sf.jasperreports.engine.analytics.dataset.BucketOrder;
-import net.sf.jasperreports.engine.design.JRDesignChart;
 import net.sf.jasperreports.engine.export.type.ImageAnchorTypeEnum;
 import net.sf.jasperreports.engine.type.BreakTypeEnum;
 import net.sf.jasperreports.engine.type.CalculationEnum;
@@ -138,9 +138,9 @@ import net.sf.jasperreports.engine.type.WhenNoDataTypeEnum;
 import net.sf.jasperreports.engine.type.WhenResourceMissingTypeEnum;
 import net.sf.jasperreports.export.type.HtmlBorderCollapseEnum;
 import net.sf.jasperreports.export.type.HtmlSizeUnitEnum;
-import net.sf.jasperreports.export.type.PdfPrintScalingEnum;
-import net.sf.jasperreports.export.type.PdfVersionEnum;
-import net.sf.jasperreports.export.type.PdfaConformanceEnum;
+import net.sf.jasperreports.pdf.type.PdfPrintScalingEnum;
+import net.sf.jasperreports.pdf.type.PdfVersionEnum;
+import net.sf.jasperreports.pdf.type.PdfaConformanceEnum;
 
 /**
  * <p>ConstantTransform class.</p>

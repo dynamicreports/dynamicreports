@@ -20,6 +20,13 @@
  */
 package net.sf.dynamicreports.report.builder.component;
 
+import java.awt.Image;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Date;
+
+import org.apache.commons.lang3.Validate;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
@@ -28,18 +35,12 @@ import net.sf.dynamicreports.report.constant.BreakType;
 import net.sf.dynamicreports.report.definition.expression.DRIExpression;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.renderers.Renderable;
-import org.apache.commons.lang3.Validate;
-
-import java.awt.Image;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Date;
 
 /**
  * A set of methods of creating components
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class Components {
 
@@ -443,27 +444,13 @@ public class Components {
     }
 
     /**
-     * <p>image.</p>
-     *
-     * @param image a {@link net.sf.jasperreports.engine.Renderable} object.
-     * @return a {@link net.sf.dynamicreports.report.builder.component.ImageBuilder} object.
-     * @deprecated use image(net.sf.jasperreports.renderers.Renderable image) instead
-     */
-    @Deprecated
-    public static ImageBuilder image(net.sf.jasperreports.engine.Renderable image) {
-        return new ImageBuilder().setImage(Expressions.value(image, net.sf.jasperreports.engine.Renderable.class));
-    }
-
-    // subreport
-
-    /**
      * <p>subreport.</p>
      *
      * @param reportBuilder a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
      * @return a {@link net.sf.dynamicreports.report.builder.component.SubreportBuilder} object.
      */
     public static SubreportBuilder subreport(JasperReportBuilder reportBuilder) {
-        SubreportBuilder subreport = new SubreportBuilder();
+        final SubreportBuilder subreport = new SubreportBuilder();
         subreport.setReport(reportBuilder);
         if (reportBuilder.getConnection() != null) {
             subreport.setConnection(reportBuilder.getConnection());
@@ -632,7 +619,7 @@ public class Components {
      * @return a {@link net.sf.dynamicreports.report.builder.component.MapBuilder} object.
      */
     public static MapBuilder map(Float latitude, Float longitude, Integer zoom) {
-        MapBuilder mapBuilder = new MapBuilder();
+        final MapBuilder mapBuilder = new MapBuilder();
         mapBuilder.setLatitude(latitude);
         mapBuilder.setLongitude(longitude);
         mapBuilder.setZoom(zoom);
@@ -648,7 +635,7 @@ public class Components {
      * @return a {@link net.sf.dynamicreports.report.builder.component.HorizontalListBuilder} object.
      */
     public static HorizontalListBuilder centerHorizontal(ComponentBuilder<?, ?> component) {
-        HorizontalListBuilder list = horizontalList();
+        final HorizontalListBuilder list = horizontalList();
         list.add(filler().setWidth(1));
         list.add(component);
         list.add(filler().setWidth(1));
@@ -662,7 +649,7 @@ public class Components {
      * @return a {@link net.sf.dynamicreports.report.builder.component.VerticalListBuilder} object.
      */
     public static VerticalListBuilder centerVertical(ComponentBuilder<?, ?> component) {
-        VerticalListBuilder list = verticalList();
+        final VerticalListBuilder list = verticalList();
         list.add(filler().setHeight(1));
         list.add(component);
         list.add(filler().setHeight(1));

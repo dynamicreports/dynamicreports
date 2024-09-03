@@ -20,12 +20,11 @@
  */
 package net.sf.dynamicreports.jasper.constant;
 
+import net.sf.jasperreports.charts.JRChart;
 import net.sf.jasperreports.engine.JRAbstractExporter;
-import net.sf.jasperreports.engine.JRChart;
 import net.sf.jasperreports.engine.JRTextElement;
 import net.sf.jasperreports.engine.export.HtmlExporter;
 import net.sf.jasperreports.engine.export.JRCsvMetadataExporter;
-import net.sf.jasperreports.engine.export.JRPdfExporterTagHelper;
 import net.sf.jasperreports.engine.export.JRXlsAbstractExporter;
 import net.sf.jasperreports.engine.export.JRXlsAbstractMetadataExporter;
 import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
@@ -38,20 +37,21 @@ import net.sf.jasperreports.export.DocxReportConfiguration;
 import net.sf.jasperreports.export.Graphics2DReportConfiguration;
 import net.sf.jasperreports.export.HtmlExporterConfiguration;
 import net.sf.jasperreports.export.HtmlReportConfiguration;
-import net.sf.jasperreports.export.PdfExporterConfiguration;
-import net.sf.jasperreports.export.PdfReportConfiguration;
 import net.sf.jasperreports.export.ReportExportConfiguration;
 import net.sf.jasperreports.export.TextReportConfiguration;
 import net.sf.jasperreports.export.WriterExporterOutput;
 import net.sf.jasperreports.export.XlsExporterConfiguration;
 import net.sf.jasperreports.export.XlsMetadataReportConfiguration;
 import net.sf.jasperreports.export.XlsReportConfiguration;
+import net.sf.jasperreports.pdf.JRPdfExporterTagHelper;
+import net.sf.jasperreports.pdf.PdfExporterConfiguration;
+import net.sf.jasperreports.pdf.PdfReportConfiguration;
 
 /**
  * <p>JasperProperty class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperProperty {
 
