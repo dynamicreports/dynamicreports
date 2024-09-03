@@ -61,7 +61,7 @@ import net.sf.dynamicreports.report.component.DRIDesignCustomComponent;
 import net.sf.dynamicreports.report.constant.ComponentPositionType;
 import net.sf.dynamicreports.report.constant.ListType;
 import net.sf.dynamicreports.report.constant.StretchType;
-import net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory;
+import net.sf.jasperreports.components.map.StandardMapComponent;
 import net.sf.jasperreports.engine.JRGenericElementType;
 import net.sf.jasperreports.engine.design.JRDesignBreak;
 import net.sf.jasperreports.engine.design.JRDesignComponentElement;
@@ -455,7 +455,7 @@ public class ComponentTransform {
 
         final JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(jrMap);
-        jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", "map"));
+        //jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", "map"));
 
         return jrComponent;
     }

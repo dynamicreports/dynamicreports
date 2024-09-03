@@ -43,6 +43,7 @@ import net.sf.dynamicreports.jasper.exception.JasperDesignException;
 import net.sf.dynamicreports.report.constant.SystemExpression;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRGenericElementParameter;
+import net.sf.jasperreports.engine.JRGroup;
 import net.sf.jasperreports.engine.JRPropertyExpression;
 import net.sf.jasperreports.engine.JRVariable;
 import net.sf.jasperreports.engine.design.JRDesignExpression;
@@ -214,8 +215,8 @@ public abstract class AbstractExpressionTransform {
      * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      * @return a {@link net.sf.jasperreports.engine.JRGroup} object.
      */
-    protected String getGroup(DRIDesignGroup group) {
-        return group.getName();
+    protected JRGroup getGroup(DRIDesignGroup group) {
+        return null;
     }
 
     // simple expression

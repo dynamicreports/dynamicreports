@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.jasper.transformation;
 
+import java.util.Collection;
+
 import net.sf.dynamicreports.design.definition.DRIDesignField;
 import net.sf.dynamicreports.design.definition.DRIDesignGroup;
 import net.sf.dynamicreports.design.definition.DRIDesignSort;
@@ -35,16 +37,14 @@ import net.sf.jasperreports.engine.design.JRDesignField;
 import net.sf.jasperreports.engine.design.JRDesignSortField;
 import net.sf.jasperreports.engine.design.JRDesignVariable;
 
-import java.util.Collection;
-
 /**
  * <p>MainDatasetExpressionTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class MainDatasetExpressionTransform extends AbstractExpressionTransform {
-    private JasperTransformAccessor accessor;
+    private final JasperTransformAccessor accessor;
 
     /**
      * <p>Constructor for MainDatasetExpressionTransform.</p>

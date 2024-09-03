@@ -93,6 +93,8 @@ import net.sf.dynamicreports.report.constant.VerticalImageAlignment;
 import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.report.constant.WhenResourceMissingType;
+import net.sf.jasperreports.barcode4j.ErrorCorrectionLevelEnum;
+import net.sf.jasperreports.barcode4j.TextPositionEnum;
 import net.sf.jasperreports.charts.design.JRDesignChart;
 import net.sf.jasperreports.charts.type.AxisPositionEnum;
 import net.sf.jasperreports.charts.type.EdgeEnum;
@@ -100,8 +102,6 @@ import net.sf.jasperreports.charts.type.MeterShapeEnum;
 import net.sf.jasperreports.charts.type.PlotOrientationEnum;
 import net.sf.jasperreports.charts.type.ScaleTypeEnum;
 import net.sf.jasperreports.charts.type.ValueLocationEnum;
-import net.sf.jasperreports.components.barcode4j.ErrorCorrectionLevelEnum;
-import net.sf.jasperreports.components.barcode4j.TextPositionEnum;
 import net.sf.jasperreports.components.spiderchart.type.SpiderRotationEnum;
 import net.sf.jasperreports.components.spiderchart.type.TableOrderEnum;
 import net.sf.jasperreports.crosstabs.type.CrosstabPercentageEnum;
@@ -942,16 +942,16 @@ public class ConstantTransform {
      * @param orientation a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
      * @return a {@link net.sf.jasperreports.components.barcode4j.OrientationEnum} object.
      */
-    public static net.sf.jasperreports.components.barcode4j.OrientationEnum barcodeOrientation(final BarcodeOrientation orientation) {
+    public static net.sf.jasperreports.barcode4j.OrientationEnum barcodeOrientation(final BarcodeOrientation orientation) {
         switch (orientation) {
             case NONE:
-                return net.sf.jasperreports.components.barcode4j.OrientationEnum.UP;
+                return net.sf.jasperreports.barcode4j.OrientationEnum.UP;
             case LEFT:
-                return net.sf.jasperreports.components.barcode4j.OrientationEnum.LEFT;
+                return net.sf.jasperreports.barcode4j.OrientationEnum.LEFT;
             case RIGHT:
-                return net.sf.jasperreports.components.barcode4j.OrientationEnum.RIGHT;
+                return net.sf.jasperreports.barcode4j.OrientationEnum.RIGHT;
             case UPSIDE_DOWN:
-                return net.sf.jasperreports.components.barcode4j.OrientationEnum.DOWN;
+                return net.sf.jasperreports.barcode4j.OrientationEnum.DOWN;
             default:
                 throw new JasperDesignException("BarcodeOrientation " + orientation.name() + " not supported");
         }

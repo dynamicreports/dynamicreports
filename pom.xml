@@ -125,6 +125,26 @@
                 <version>${jasperreportsVersion}</version>
             </dependency>
             <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-barcode4j</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-barbecue</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-data-adapters</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-google-maps</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-text</artifactId>
                 <version>1.15.0</version>

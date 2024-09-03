@@ -40,27 +40,25 @@ import net.sf.dynamicreports.design.definition.barcode.DRIDesignUpcaBarcode;
 import net.sf.dynamicreports.design.definition.barcode.DRIDesignUpceBarcode;
 import net.sf.dynamicreports.design.definition.barcode.DRIDesignUspsIntelligentMailBarcode;
 import net.sf.dynamicreports.jasper.exception.JasperDesignException;
-import net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory;
-import net.sf.jasperreports.components.barbecue.BarbecueComponent;
-import net.sf.jasperreports.components.barbecue.StandardBarbecueComponent;
-import net.sf.jasperreports.components.barcode4j.Barcode4jComponent;
-import net.sf.jasperreports.components.barcode4j.BarcodeComponent;
-import net.sf.jasperreports.components.barcode4j.CodabarComponent;
-import net.sf.jasperreports.components.barcode4j.Code128Component;
-import net.sf.jasperreports.components.barcode4j.Code39Component;
-import net.sf.jasperreports.components.barcode4j.DataMatrixComponent;
-import net.sf.jasperreports.components.barcode4j.EAN128Component;
-import net.sf.jasperreports.components.barcode4j.EAN13Component;
-import net.sf.jasperreports.components.barcode4j.EAN8Component;
-import net.sf.jasperreports.components.barcode4j.Interleaved2Of5Component;
-import net.sf.jasperreports.components.barcode4j.PDF417Component;
-import net.sf.jasperreports.components.barcode4j.POSTNETComponent;
-import net.sf.jasperreports.components.barcode4j.QRCodeComponent;
-import net.sf.jasperreports.components.barcode4j.RoyalMailCustomerComponent;
-import net.sf.jasperreports.components.barcode4j.UPCAComponent;
-import net.sf.jasperreports.components.barcode4j.UPCEComponent;
-import net.sf.jasperreports.components.barcode4j.USPSIntelligentMailComponent;
-import net.sf.jasperreports.engine.component.ComponentKey;
+import net.sf.jasperreports.barbecue.BarbecueComponent;
+import net.sf.jasperreports.barbecue.StandardBarbecueComponent;
+import net.sf.jasperreports.barcode4j.Barcode4jComponent;
+import net.sf.jasperreports.barcode4j.BarcodeComponent;
+import net.sf.jasperreports.barcode4j.CodabarComponent;
+import net.sf.jasperreports.barcode4j.Code128Component;
+import net.sf.jasperreports.barcode4j.Code39Component;
+import net.sf.jasperreports.barcode4j.DataMatrixComponent;
+import net.sf.jasperreports.barcode4j.EAN128Component;
+import net.sf.jasperreports.barcode4j.EAN13Component;
+import net.sf.jasperreports.barcode4j.EAN8Component;
+import net.sf.jasperreports.barcode4j.Interleaved2Of5Component;
+import net.sf.jasperreports.barcode4j.PDF417Component;
+import net.sf.jasperreports.barcode4j.POSTNETComponent;
+import net.sf.jasperreports.barcode4j.QRCodeComponent;
+import net.sf.jasperreports.barcode4j.RoyalMailCustomerComponent;
+import net.sf.jasperreports.barcode4j.UPCAComponent;
+import net.sf.jasperreports.barcode4j.UPCEComponent;
+import net.sf.jasperreports.barcode4j.USPSIntelligentMailComponent;
 import net.sf.jasperreports.engine.design.JRDesignComponentElement;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 
@@ -68,10 +66,10 @@ import net.sf.jasperreports.engine.design.JRDesignElement;
  * <p>BarcodeTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class BarcodeTransform {
-    private JasperTransformAccessor accessor;
+    private final JasperTransformAccessor accessor;
 
     /**
      * <p>Constructor for BarcodeTransform.</p>
@@ -89,9 +87,9 @@ public class BarcodeTransform {
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
      */
     protected JRDesignElement transform(DRIDesignBarcode barcode) {
-        JRDesignComponentElement jrComponent = new JRDesignComponentElement();
+        final JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(barcodeComponent(barcode));
-        jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", barcode.getName()));
+        //jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", barcode.getName()));
         return jrComponent;
     }
 
@@ -102,9 +100,9 @@ public class BarcodeTransform {
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignElement} object.
      */
     protected JRDesignElement transform(DRIDesignBarbecue barbecue) {
-        JRDesignComponentElement jrComponent = new JRDesignComponentElement();
+        final JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(barbecueComponent(barbecue));
-        jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", barbecue.getName()));
+        //jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", barbecue.getName()));
         return jrComponent;
     }
 
@@ -145,9 +143,9 @@ public class BarcodeTransform {
     }
 
     private BarbecueComponent barbecueComponent(DRIDesignBarbecue barbecue) {
-        StandardBarbecueComponent jrBarbecue = new StandardBarbecueComponent();
-        EvaluationTime evaluationTime = barbecue.getEvaluationTime();
-        jrBarbecue.setEvaluationTimeValue(ConstantTransform.evaluationTime(evaluationTime));
+        final StandardBarbecueComponent jrBarbecue = new StandardBarbecueComponent();
+        final EvaluationTime evaluationTime = barbecue.getEvaluationTime();
+        jrBarbecue.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && barbecue.getEvaluationGroup() != null) {
             jrBarbecue.setEvaluationGroup(accessor.getGroupTransform().getGroup(barbecue.getEvaluationGroup()).getName());
         }
@@ -169,8 +167,8 @@ public class BarcodeTransform {
     }
 
     private void barcode(BarcodeComponent jrBarcode, DRIDesignBarcode barcode) {
-        EvaluationTime evaluationTime = barcode.getEvaluationTime();
-        jrBarcode.setEvaluationTimeValue(ConstantTransform.evaluationTime(evaluationTime));
+        final EvaluationTime evaluationTime = barcode.getEvaluationTime();
+        jrBarcode.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && barcode.getEvaluationGroup() != null) {
             jrBarcode.setEvaluationGroup(accessor.getGroupTransform().getGroup(barcode.getEvaluationGroup()).getName());
         }
@@ -190,34 +188,34 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent codabar(DRIDesignCodabarBarcode barcode) {
-        CodabarComponent jrBarcode = new CodabarComponent();
+        final CodabarComponent jrBarcode = new CodabarComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setWideFactor(barcode.getWideFactor());
         return jrBarcode;
     }
 
     private Barcode4jComponent code128(DRIDesignCode128Barcode barcode) {
-        Code128Component jrBarcode = new Code128Component();
+        final Code128Component jrBarcode = new Code128Component();
         barcode4j(jrBarcode, barcode);
         return jrBarcode;
     }
 
     private Barcode4jComponent ean128(DRIDesignEan128Barcode barcode) {
-        EAN128Component jrBarcode = new EAN128Component();
+        final EAN128Component jrBarcode = new EAN128Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         return jrBarcode;
     }
 
     private Barcode4jComponent dataMatrix(DRIDesignDataMatrixBarcode barcode) {
-        DataMatrixComponent jrBarcode = new DataMatrixComponent();
+        final DataMatrixComponent jrBarcode = new DataMatrixComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setShape(ConstantTransform.barcodeShape(barcode.getShape()));
         return jrBarcode;
     }
 
     private Barcode4jComponent code39(DRIDesignCode39Barcode barcode) {
-        Code39Component jrBarcode = new Code39Component();
+        final Code39Component jrBarcode = new Code39Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         jrBarcode.setDisplayChecksum(barcode.getDisplayChecksum());
@@ -229,7 +227,7 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent interleaved2Of5(DRIDesignInterleaved2Of5Barcode barcode) {
-        Interleaved2Of5Component jrBarcode = new Interleaved2Of5Component();
+        final Interleaved2Of5Component jrBarcode = new Interleaved2Of5Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         jrBarcode.setDisplayChecksum(barcode.getDisplayChecksum());
@@ -238,35 +236,35 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent upca(DRIDesignUpcaBarcode barcode) {
-        UPCAComponent jrBarcode = new UPCAComponent();
+        final UPCAComponent jrBarcode = new UPCAComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         return jrBarcode;
     }
 
     private Barcode4jComponent upce(DRIDesignUpceBarcode barcode) {
-        UPCEComponent jrBarcode = new UPCEComponent();
+        final UPCEComponent jrBarcode = new UPCEComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         return jrBarcode;
     }
 
     private Barcode4jComponent ean13(DRIDesignEan13Barcode barcode) {
-        EAN13Component jrBarcode = new EAN13Component();
+        final EAN13Component jrBarcode = new EAN13Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         return jrBarcode;
     }
 
     private Barcode4jComponent ean8(DRIDesignEan8Barcode barcode) {
-        EAN8Component jrBarcode = new EAN8Component();
+        final EAN8Component jrBarcode = new EAN8Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         return jrBarcode;
     }
 
     private Barcode4jComponent uspsIntelligentMail(DRIDesignUspsIntelligentMailBarcode barcode) {
-        USPSIntelligentMailComponent jrBarcode = new USPSIntelligentMailComponent();
+        final USPSIntelligentMailComponent jrBarcode = new USPSIntelligentMailComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         jrBarcode.setAscenderHeight(barcode.getAscenderHeight());
@@ -276,7 +274,7 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent royalMailCustomer(DRIDesignRoyalMailCustomerBarcode barcode) {
-        RoyalMailCustomerComponent jrBarcode = new RoyalMailCustomerComponent();
+        final RoyalMailCustomerComponent jrBarcode = new RoyalMailCustomerComponent();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()));
         jrBarcode.setAscenderHeight(barcode.getAscenderHeight());
@@ -286,7 +284,7 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent postnet(DRIDesignPostnetBarcode barcode) {
-        POSTNETComponent jrBarcode = new POSTNETComponent();
+        final POSTNETComponent jrBarcode = new POSTNETComponent();
         barcode4j(jrBarcode, barcode);
         if (barcode.getChecksumMode() != null) {
             jrBarcode.setChecksumMode(ConstantTransform.barcodeChecksumMode(barcode.getChecksumMode()).getName());
@@ -301,7 +299,7 @@ public class BarcodeTransform {
     }
 
     private Barcode4jComponent pdf417(DRIDesignPdf417Barcode barcode) {
-        PDF417Component jrBarcode = new PDF417Component();
+        final PDF417Component jrBarcode = new PDF417Component();
         barcode4j(jrBarcode, barcode);
         jrBarcode.setMinColumns(barcode.getMinColumns());
         jrBarcode.setMaxColumns(barcode.getMaxColumns());
@@ -313,7 +311,7 @@ public class BarcodeTransform {
     }
 
     private QRCodeComponent qrCode(DRIDesignQrCode qrCode) {
-        QRCodeComponent jrQrCode = new QRCodeComponent();
+        final QRCodeComponent jrQrCode = new QRCodeComponent();
         barcode(jrQrCode, qrCode);
         jrQrCode.setMargin(qrCode.getMargin());
         jrQrCode.setErrorCorrectionLevel(ConstantTransform.qrCodeErrorCorrectionLevel(qrCode.getErrorCorrectionLevel()));
