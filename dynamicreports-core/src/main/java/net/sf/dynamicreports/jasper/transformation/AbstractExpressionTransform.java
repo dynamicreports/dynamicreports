@@ -43,6 +43,7 @@ import net.sf.dynamicreports.jasper.exception.JasperDesignException;
 import net.sf.dynamicreports.report.constant.SystemExpression;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRGenericElementParameter;
+import net.sf.jasperreports.engine.JRGroup;
 import net.sf.jasperreports.engine.JRPropertyExpression;
 import net.sf.jasperreports.engine.JRVariable;
 import net.sf.jasperreports.engine.design.JRDesignExpression;
@@ -203,7 +204,7 @@ public abstract class AbstractExpressionTransform {
         final ResetType resetType = variable.getResetType();
         jrVariable.setResetType(ConstantTransform.variableResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && variable.getResetGroup() != null) {
-            jrVariable.setResetGroup(getGroup(variable.getResetGroup()));
+            jrVariable.setResetGroup(getGroup(variable.getResetGroup()).getName());
         }
         return jrVariable;
     }
@@ -214,7 +215,7 @@ public abstract class AbstractExpressionTransform {
      * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      * @return a {@link net.sf.jasperreports.engine.JRGroup} object.
      */
-    protected String getGroup(DRIDesignGroup group) {
+    protected JRGroup getGroup(DRIDesignGroup group) {
         return null;
     }
 

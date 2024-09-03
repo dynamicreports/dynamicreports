@@ -86,8 +86,8 @@ import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.report.constant.WhenResourceMissingType;
 import net.sf.jasperreports.barcode4j.ErrorCorrectionLevelEnum;
 import net.sf.jasperreports.barcode4j.TextPositionEnum;
-import net.sf.jasperreports.charts.design.JRDesignChart;
 import net.sf.jasperreports.charts.type.AxisPositionEnum;
+import net.sf.jasperreports.charts.type.ChartTypeEnum;
 import net.sf.jasperreports.charts.type.EdgeEnum;
 import net.sf.jasperreports.charts.type.MeterShapeEnum;
 import net.sf.jasperreports.charts.type.PlotOrientationEnum;
@@ -348,56 +348,56 @@ public class ConstantTransform {
      * @param chartType a {@link net.sf.dynamicreports.report.constant.ChartType} object.
      * @return a {@link java.lang.Byte} object.
      */
-    protected static Byte chartType(final ChartType chartType) {
+    protected static net.sf.jasperreports.charts.type.ChartTypeEnum chartType(final ChartType chartType) {
         switch (chartType) {
             case AREA:
-                return JRDesignChart.CHART_TYPE_AREA;
+                return ChartTypeEnum.AREA;
             case STACKEDAREA:
-                return JRDesignChart.CHART_TYPE_STACKEDAREA;
+                return ChartTypeEnum.STACKEDAREA;
             case BAR:
             case LAYEREDBAR:
             case WATERFALLBAR:
-                return JRDesignChart.CHART_TYPE_BAR;
+                return ChartTypeEnum.BAR;
             case BAR3D:
-                return JRDesignChart.CHART_TYPE_BAR3D;
+                return ChartTypeEnum.BAR3D;
             case STACKEDBAR:
             case GROUPEDSTACKEDBAR:
-                return JRDesignChart.CHART_TYPE_STACKEDBAR;
+                return ChartTypeEnum.STACKEDBAR;
             case STACKEDBAR3D:
-                return JRDesignChart.CHART_TYPE_STACKEDBAR3D;
+                return ChartTypeEnum.STACKEDBAR3D;
             case LINE:
-                return JRDesignChart.CHART_TYPE_LINE;
+                return ChartTypeEnum.LINE;
             case PIE:
-                return JRDesignChart.CHART_TYPE_PIE;
+                return ChartTypeEnum.PIE;
             case PIE3D:
-                return JRDesignChart.CHART_TYPE_PIE3D;
+                return ChartTypeEnum.PIE3D;
             case TIMESERIES:
             case DIFFERENCE:
-                return JRDesignChart.CHART_TYPE_TIMESERIES;
+                return ChartTypeEnum.TIMESERIES;
             case XYAREA:
-                return JRDesignChart.CHART_TYPE_XYAREA;
+                return ChartTypeEnum.XYAREA;
             case XYBAR:
-                return JRDesignChart.CHART_TYPE_XYBAR;
+                return ChartTypeEnum.XYBAR;
             case XYLINE:
             case XYSTEP:
-                return JRDesignChart.CHART_TYPE_XYLINE;
+                return ChartTypeEnum.XYLINE;
             case SCATTER:
-                return JRDesignChart.CHART_TYPE_SCATTER;
+                return ChartTypeEnum.SCATTER;
             case MULTI_AXIS:
-                return JRDesignChart.CHART_TYPE_MULTI_AXIS;
+                return ChartTypeEnum.MULTI_AXIS;
             case XYBLOCK:
             case BUBBLE:
-                return JRDesignChart.CHART_TYPE_BUBBLE;
+                return ChartTypeEnum.BUBBLE;
             case CANDLESTICK:
-                return JRDesignChart.CHART_TYPE_CANDLESTICK;
+                return ChartTypeEnum.CANDLESTICK;
             case HIGHLOW:
-                return JRDesignChart.CHART_TYPE_HIGHLOW;
+                return ChartTypeEnum.HIGHLOW;
             case METER:
-                return JRDesignChart.CHART_TYPE_METER;
+                return ChartTypeEnum.METER;
             case THERMOMETER:
-                return JRDesignChart.CHART_TYPE_THERMOMETER;
+                return ChartTypeEnum.THERMOMETER;
             case GANTT:
-                return JRDesignChart.CHART_TYPE_GANTT;
+                return ChartTypeEnum.GANTT;
             default:
                 throw new JasperDesignException("Chart " + chartType.name() + " not supported");
         }
@@ -1594,26 +1594,26 @@ public class ConstantTransform {
      * @param rectangleAnchor a {@link net.sf.dynamicreports.report.constant.RectangleAnchor} object.
      * @return a {@link org.jfree.ui.RectangleAnchor} object.
      */
-    public static org.jfree.ui.RectangleAnchor rectangleAnchor(final RectangleAnchor rectangleAnchor) {
+    public static org.jfree.chart.ui.RectangleAnchor rectangleAnchor(final RectangleAnchor rectangleAnchor) {
         switch (rectangleAnchor) {
             case CENTER:
-                return org.jfree.ui.RectangleAnchor.CENTER;
+                return org.jfree.chart.ui.RectangleAnchor.CENTER;
             case TOP:
-                return org.jfree.ui.RectangleAnchor.TOP;
+                return org.jfree.chart.ui.RectangleAnchor.TOP;
             case TOP_LEFT:
-                return org.jfree.ui.RectangleAnchor.TOP_LEFT;
+                return org.jfree.chart.ui.RectangleAnchor.TOP_LEFT;
             case TOP_RIGHT:
-                return org.jfree.ui.RectangleAnchor.TOP_RIGHT;
+                return org.jfree.chart.ui.RectangleAnchor.TOP_RIGHT;
             case BOTTOM:
-                return org.jfree.ui.RectangleAnchor.BOTTOM;
+                return org.jfree.chart.ui.RectangleAnchor.BOTTOM;
             case BOTTOM_LEFT:
-                return org.jfree.ui.RectangleAnchor.BOTTOM_LEFT;
+                return org.jfree.chart.ui.RectangleAnchor.BOTTOM_LEFT;
             case BOTTOM_RIGHT:
-                return org.jfree.ui.RectangleAnchor.BOTTOM_RIGHT;
+                return org.jfree.chart.ui.RectangleAnchor.BOTTOM_RIGHT;
             case LEFT:
-                return org.jfree.ui.RectangleAnchor.LEFT;
+                return org.jfree.chart.ui.RectangleAnchor.LEFT;
             case RIGHT:
-                return org.jfree.ui.RectangleAnchor.RIGHT;
+                return org.jfree.chart.ui.RectangleAnchor.RIGHT;
             default:
                 throw new JasperDesignException("RectangleAnchor " + rectangleAnchor.name() + " not supported");
         }

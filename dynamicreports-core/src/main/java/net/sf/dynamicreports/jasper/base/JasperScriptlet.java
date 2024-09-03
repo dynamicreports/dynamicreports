@@ -20,6 +20,11 @@
  */
 package net.sf.dynamicreports.jasper.base;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
 import net.sf.dynamicreports.design.definition.expression.DRIDesignComplexExpression;
 import net.sf.dynamicreports.design.definition.expression.DRIDesignSimpleExpression;
 import net.sf.dynamicreports.jasper.constant.ValueType;
@@ -33,16 +38,11 @@ import net.sf.jasperreports.engine.fill.JRFillGroup;
 import net.sf.jasperreports.engine.fill.JRFillParameter;
 import net.sf.jasperreports.engine.fill.JRFillVariable;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
 /**
  * <p>JasperScriptlet class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class JasperScriptlet extends JRDefaultScriptlet {
     /**
@@ -89,7 +89,7 @@ public class JasperScriptlet extends JRDefaultScriptlet {
     private JasperCustomValues getCustomValues() {
         try {
             return (JasperCustomValues) getParameterValue(JasperCustomValues.NAME, false);
-        } catch (JRScriptletException e) {
+        } catch (final JRScriptletException e) {
             throw new JasperDesignException("Custom values not found", e);
         }
     }
@@ -180,10 +180,10 @@ public class JasperScriptlet extends JRDefaultScriptlet {
         return getCustomValues().getSubreportWidth();
     }
 
-    /** {@inheritDoc} */
-    @Override
+    /** {@inheritDoc} TODO check that out */
+
     public void setData(Map<String, JRFillParameter> parsm, Map<String, JRFillField> fldsm, Map<String, JRFillVariable> varsm, JRFillGroup[] grps) {
-        super.setData(parsm, fldsm, varsm, grps);
+        //super.setData(parsm, fldsm, varsm, grps);
         reportParameters = new JasperReportParameters(this);
     }
 
@@ -191,7 +191,7 @@ public class JasperScriptlet extends JRDefaultScriptlet {
     @Override
     public void afterReportInit() throws JRScriptletException {
         super.afterReportInit();
-        JasperCustomValues customValues = getCustomValues();
+        final JasperCustomValues customValues = getCustomValues();
         if (customValues != null) {
             customValues.setJasperScriptlet(this);
         }

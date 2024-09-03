@@ -151,11 +151,13 @@ public class ChartTransform {
     }
 
     private JRDesignChart chart(DRIDesignChart chart) {
-        final JRDesignChart jrChart = new JRDesignChart(new JRDesignStyle().getDefaultStyleProvider(), ConstantTransform.chartType(chart.getChartType()));
+        final JRDesignChart jrChart = new JRDesignChart(
+            new JRDesignStyle().getDefaultStyleProvider(),
+            ConstantTransform.chartType(chart.getChartType()));
         final EvaluationTime evaluationTime = chart.getEvaluationTime();
         jrChart.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && chart.getEvaluationGroup() != null) {
-            jrChart.setEvaluationGroup(accessor.getGroupTransform().getGroup(chart.getEvaluationGroup()));
+            jrChart.setEvaluationGroup(accessor.getGroupTransform().getGroup(chart.getEvaluationGroup()).getName());
         }
 
         if (chart.getChartType().equals(ChartType.XYBAR)) {
@@ -266,7 +268,7 @@ public class ChartTransform {
         final ResetType resetType = dataset.getResetType();
         jrDataset.setResetType(ConstantTransform.variableDatasetResetType(resetType));
         if (resetType.equals(ResetType.GROUP) && dataset.getResetGroup() != null) {
-            jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()));
+            jrDataset.setResetGroup(accessor.getGroupTransform().getGroup(dataset.getResetGroup()).getName());
         }
 
         accessor.transformToDataset(dataset.getSubDataset());
@@ -928,7 +930,7 @@ public class ChartTransform {
     private void multiAxisPlot(DRIDesignMultiAxisPlot plot, JRDesignMultiAxisPlot jrPlot, JRDesignChart jrChart) {
         jrPlot.setChart(jrChart);
         for (final DRIDesignChartAxis axis : plot.getAxes()) {
-            final JRDesignChartAxis jrAxis = new JRDesignChartAxis(jrChart);
+            final JRDesignChartAxis jrAxis = new JRDesignChartAxis(jrPlot);
             jrAxis.setPosition(ConstantTransform.chartAxisPosition(axis.getPosition()));
             final JRDesignChart chart = chart(axis.getChart());
             if (axis.getChart().getStyle() != null) {

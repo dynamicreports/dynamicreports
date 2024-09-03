@@ -91,11 +91,11 @@ public class GroupTransform {
      * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignGroup} object.
      */
-    public String getGroup(DRIDesignGroup group) {
+    public JRDesignGroup getGroup(DRIDesignGroup group) {
         final JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign().getGroupsMap().get(group.getName());
         if (jrGroup == null) {
             throw new JasperDesignException("Group " + group.getName() + " is not registered");
         }
-        return jrGroup.getName();
+        return jrGroup;
     }
 }

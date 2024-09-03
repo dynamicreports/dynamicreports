@@ -182,7 +182,7 @@ public class ComponentTransform {
         jrElement.setPrintInFirstWholeBand(component.isPrintInFirstWholeBand());
         jrElement.setPrintWhenDetailOverflows(component.isPrintWhenDetailOverflows());
         if (component.getPrintWhenGroupChanges() != null) {
-            jrElement.setPrintWhenGroupChanges(accessor.getGroupTransform().getGroup(component.getPrintWhenGroupChanges()));
+            jrElement.setPrintWhenGroupChanges(accessor.getGroupTransform().getGroup(component.getPrintWhenGroupChanges()).getName());
         }
         jrElement.setKey(component.getUniqueName());
         jrElement.setX(component.getX());
@@ -291,13 +291,11 @@ public class ComponentTransform {
         final EvaluationTime evaluationTime = textField.getEvaluationTime();
         jrTextField.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && textField.getEvaluationGroup() != null) {
-            jrTextField.setEvaluationGroup(accessor.getGroupTransform().getGroup(textField.getEvaluationGroup()));
+            jrTextField.setEvaluationGroup(accessor.getGroupTransform().getGroup(textField.getEvaluationGroup()).getName());
         }
 
         if (textField.getTextAdjust() != null) {
             jrTextField.setTextAdjust(ConstantTransform.textAdjust(textField.getTextAdjust()));
-        } else {
-            jrTextField.setStretchWithOverflow(textField.isStretchWithOverflow());
         }
 
         final String pattern = textField.getPattern();
@@ -433,7 +431,7 @@ public class ComponentTransform {
         final EvaluationTime evaluationTime = genericElement.getEvaluationTime();
         jrDesignGenericElement.setEvaluationTime(ConstantTransform.evaluationTime(evaluationTime));
         if (evaluationTime != null && evaluationTime.equals(EvaluationTime.GROUP) && genericElement.getEvaluationGroup() != null) {
-            jrDesignGenericElement.setEvaluationGroupName(accessor.getGroupTransform().getGroup(genericElement.getEvaluationGroup()).getName());
+            jrDesignGenericElement.setEvaluationGroup(accessor.getGroupTransform().getGroup(genericElement.getEvaluationGroup()).getName());
         }
         for (final DRIDesignParameterExpression parameterExpression : genericElement.getParameterExpressions()) {
             jrDesignGenericElement.addParameter(accessor.getExpressionTransform().getGenericElementParameterExpression(parameterExpression));
