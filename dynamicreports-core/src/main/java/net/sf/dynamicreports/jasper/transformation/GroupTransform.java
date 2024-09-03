@@ -29,10 +29,10 @@ import net.sf.jasperreports.engine.design.JRDesignGroup;
  * <p>GroupTransform class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class GroupTransform {
-    private JasperTransformAccessor accessor;
+    private final JasperTransformAccessor accessor;
 
     /**
      * <p>Constructor for GroupTransform.</p>
@@ -47,22 +47,22 @@ public class GroupTransform {
      * <p>transform.</p>
      */
     public void transform() {
-        for (DRIDesignGroup group : accessor.getReport().getGroups()) {
+        for (final DRIDesignGroup group : accessor.getReport().getGroups()) {
             addGroup(group);
         }
     }
 
     private void addGroup(DRIDesignGroup group) {
         try {
-            JRDesignGroup jrGroup = group(group);
+            final JRDesignGroup jrGroup = group(group);
             accessor.getDesign().addGroup(jrGroup);
-        } catch (JRException e) {
+        } catch (final JRException e) {
             throw new JasperDesignException("Registration failed for group \"" + group.getName() + "\"", e);
         }
     }
 
     private JRDesignGroup group(DRIDesignGroup group) {
-        JRDesignGroup jrGroup = new JRDesignGroup();
+        final JRDesignGroup jrGroup = new JRDesignGroup();
         jrGroup.setName(group.getName());
         jrGroup.setReprintHeaderOnEachPage(group.isReprintHeaderOnEachPage());
         jrGroup.setStartNewColumn(group.isStartInNewColumn());
@@ -80,7 +80,7 @@ public class GroupTransform {
      * <p>transformExpressions.</p>
      */
     public void transformExpressions() {
-        for (DRIDesignGroup group : accessor.getReport().getGroups()) {
+        for (final DRIDesignGroup group : accessor.getReport().getGroups()) {
             getGroup(group).setExpression(accessor.getExpressionTransform().getExpression(group.getGroupExpression()));
         }
     }
@@ -91,11 +91,11 @@ public class GroupTransform {
      * @param group a {@link net.sf.dynamicreports.design.definition.DRIDesignGroup} object.
      * @return a {@link net.sf.jasperreports.engine.design.JRDesignGroup} object.
      */
-    public JRDesignGroup getGroup(DRIDesignGroup group) {
-        JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign().getGroupsMap().get(group.getName());
+    public String getGroup(DRIDesignGroup group) {
+        final JRDesignGroup jrGroup = (JRDesignGroup) accessor.getDesign().getGroupsMap().get(group.getName());
         if (jrGroup == null) {
             throw new JasperDesignException("Group " + group.getName() + " is not registered");
         }
-        return jrGroup;
+        return jrGroup.getName();
     }
 }

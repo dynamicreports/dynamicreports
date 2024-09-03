@@ -92,15 +92,6 @@ public interface DRIDesignTextField extends DRIDesignHyperLinkComponent {
     Markup getMarkup();
 
     /**
-     * <p>isStretchWithOverflow.</p>
-     *
-     * @return a boolean.
-     * @deprecated Replaced by {@link #getTextAdjust()}.
-     */
-    @Deprecated
-    boolean isStretchWithOverflow();
-
-    /**
      * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
      */
     TextAdjust getTextAdjust();

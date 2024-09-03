@@ -20,9 +20,13 @@
  */
 package net.sf.dynamicreports.design.transformation.chartcustomizer;
 
-import net.sf.dynamicreports.report.constant.Constants;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
+import java.awt.Paint;
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.commons.lang3.StringUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.LegendItem;
@@ -37,18 +41,15 @@ import org.jfree.data.UnknownKeyException;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import java.awt.Paint;
-import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
  * <p>GroupedStackedBarRendererCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, Serializable {
     /**
@@ -62,34 +63,34 @@ public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, 
     /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        this.seriesColors = new LinkedHashMap<String, Paint>();
+        this.seriesColors = new LinkedHashMap<>();
         this.map = null;
-        Set<String> groups = new LinkedHashSet<String>();
+        final Set<String> groups = new LinkedHashSet<>();
         CategoryDataset dataset = chart.getCategoryPlot().getDataset();
 
         for (int i = 0; i < dataset.getRowCount(); i++) {
-            String rowKey = (String) dataset.getRowKey(i);
-            String group = StringUtils.substringBefore(rowKey, GROUP_SERIES_KEY);
-            String series = StringUtils.substringAfter(rowKey, GROUP_SERIES_KEY);
+            final String rowKey = (String) dataset.getRowKey(i);
+            final String group = StringUtils.substringBefore(rowKey, GROUP_SERIES_KEY);
+            final String series = StringUtils.substringAfter(rowKey, GROUP_SERIES_KEY);
             if (map == null) {
                 map = new KeyToGroupMap(group);
             }
             map.mapKeyToGroup(rowKey, group);
             groups.add(group);
             if (!seriesColors.containsKey(series)) {
-                Paint paint = chart.getCategoryPlot().getDrawingSupplier().getNextPaint();
+                final Paint paint = chart.getCategoryPlot().getDrawingSupplier().getNextPaint();
                 seriesColors.put(series, paint);
             }
         }
 
-        DefaultCategoryDataset newDataset = new DefaultCategoryDataset();
-        for (Object column : dataset.getColumnKeys()) {
-            for (String group : groups) {
-                for (String series : seriesColors.keySet()) {
+        final DefaultCategoryDataset newDataset = new DefaultCategoryDataset();
+        for (final Object column : dataset.getColumnKeys()) {
+            for (final String group : groups) {
+                for (final String series : seriesColors.keySet()) {
                     try {
-                        Number value = dataset.getValue(group + GROUP_SERIES_KEY + series, (Comparable<?>) column);
+                        final Number value = dataset.getValue(group + GROUP_SERIES_KEY + series, (Comparable<?>) column);
                         newDataset.addValue(value, group + GROUP_SERIES_KEY + series, (Comparable<?>) column);
-                    } catch (UnknownKeyException e) {
+                    } catch (final UnknownKeyException e) {
                         newDataset.addValue(0, group + GROUP_SERIES_KEY + series, (Comparable<?>) column);
                     }
                 }
@@ -98,26 +99,26 @@ public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, 
         }
         dataset = newDataset;
 
-        GroupedStackedBarRenderer renderer = new GroupedStackedBarRenderer();
+        final GroupedStackedBarRenderer renderer = new GroupedStackedBarRenderer();
         renderer.setSeriesToGroupMap(map);
 
-        StackedBarRenderer categoryRenderer = (StackedBarRenderer) chart.getCategoryPlot().getRenderer();
-        renderer.setBaseItemLabelsVisible(categoryRenderer.getBaseItemLabelsVisible());
-        renderer.setBaseItemLabelFont(categoryRenderer.getBaseItemLabelFont());
-        renderer.setBaseItemLabelPaint(categoryRenderer.getBaseItemLabelPaint());
-        renderer.setBaseItemLabelGenerator(categoryRenderer.getBaseItemLabelGenerator());
+        final StackedBarRenderer categoryRenderer = (StackedBarRenderer) chart.getCategoryPlot().getRenderer();
+        renderer.setDefaultItemLabelsVisible(categoryRenderer.getDefaultItemLabelsVisible());
+        renderer.setDefaultItemLabelFont(categoryRenderer.getDefaultItemLabelFont());
+        renderer.setDefaultItemLabelPaint(categoryRenderer.getDefaultItemLabelPaint());
+        renderer.setDefaultItemLabelGenerator(categoryRenderer.getDefaultItemLabelGenerator());
         renderer.setShadowVisible(categoryRenderer.getShadowsVisible());
 
         renderer.setItemMargin(0.10);
         renderer.setDrawBarOutline(false);
         for (int i = 0; i < dataset.getRowCount(); i++) {
-            String rowKey = (String) dataset.getRowKey(i);
-            String score = StringUtils.substringAfter(rowKey, GROUP_SERIES_KEY);
+            final String rowKey = (String) dataset.getRowKey(i);
+            final String score = StringUtils.substringAfter(rowKey, GROUP_SERIES_KEY);
             renderer.setSeriesPaint(i, seriesColors.get(score));
         }
 
-        CategoryAxis domainAxis = chart.getCategoryPlot().getDomainAxis();
-        SubCategoryAxis newDomainAxis = new SubCategoryAxis(domainAxis.getLabel());
+        final CategoryAxis domainAxis = chart.getCategoryPlot().getDomainAxis();
+        final SubCategoryAxis newDomainAxis = new SubCategoryAxis(domainAxis.getLabel());
         newDomainAxis.setLabelFont(domainAxis.getLabelFont());
         newDomainAxis.setTickLabelFont(domainAxis.getTickLabelFont());
         newDomainAxis.setLabelPaint(domainAxis.getLabelPaint());
@@ -127,16 +128,16 @@ public class GroupedStackedBarRendererCustomizer implements DRIChartCustomizer, 
         newDomainAxis.setTickLabelsVisible(domainAxis.isTickLabelsVisible());
         newDomainAxis.setTickMarksVisible(domainAxis.isTickMarksVisible());
         newDomainAxis.setCategoryMargin(0.05);
-        for (String group : groups) {
+        for (final String group : groups) {
             newDomainAxis.addSubCategory(group);
         }
 
-        CategoryPlot plot = (CategoryPlot) chart.getPlot();
+        final CategoryPlot plot = (CategoryPlot) chart.getPlot();
         plot.setDomainAxis(newDomainAxis);
         plot.setRenderer(renderer);
 
-        LegendItemCollection legendItems = new LegendItemCollection();
-        for (String item : seriesColors.keySet()) {
+        final LegendItemCollection legendItems = new LegendItemCollection();
+        for (final String item : seriesColors.keySet()) {
             legendItems.add(new LegendItem(item, seriesColors.get(item)));
         }
         plot.setFixedLegendItems(legendItems);

@@ -20,29 +20,30 @@
  */
 package net.sf.dynamicreports.design.transformation.chartcustomizer;
 
-import net.sf.dynamicreports.report.constant.Constants;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
-import net.sf.dynamicreports.report.definition.chart.plot.DRIDifferencePlot;
+import java.awt.Color;
+import java.io.Serializable;
+
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
-import java.awt.Color;
-import java.io.Serializable;
+import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
+import net.sf.dynamicreports.report.definition.chart.plot.DRIDifferencePlot;
 
 /**
  * <p>DifferenceRendererCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class DifferenceRendererCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private Color positiveColor;
-    private Color negativeColor;
-    private Boolean showShapes;
+    private final Color positiveColor;
+    private final Color negativeColor;
+    private final Boolean showShapes;
 
     /**
      * <p>Constructor for DifferenceRendererCustomizer.</p>
@@ -58,13 +59,13 @@ public class DifferenceRendererCustomizer implements DRIChartCustomizer, Seriali
     /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();
-        XYDifferenceRenderer renderer = new XYDifferenceRenderer();
+        final XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();
+        final XYDifferenceRenderer renderer = new XYDifferenceRenderer();
 
-        renderer.setBaseItemLabelsVisible(lineRenderer.getBaseItemLabelsVisible());
-        renderer.setBaseItemLabelFont(lineRenderer.getBaseItemLabelFont());
-        renderer.setBaseItemLabelPaint(lineRenderer.getBaseItemLabelPaint());
-        renderer.setBaseItemLabelGenerator(lineRenderer.getBaseItemLabelGenerator());
+        renderer.setDefaultItemLabelsVisible(lineRenderer.getDefaultItemLabelsVisible());
+        renderer.setDefaultItemLabelFont(lineRenderer.getDefaultItemLabelFont());
+        renderer.setDefaultItemLabelPaint(lineRenderer.getDefaultItemLabelPaint());
+        renderer.setDefaultItemLabelGenerator(lineRenderer.getDefaultItemLabelGenerator());
 
         if (positiveColor != null) {
             renderer.setPositivePaint(positiveColor);

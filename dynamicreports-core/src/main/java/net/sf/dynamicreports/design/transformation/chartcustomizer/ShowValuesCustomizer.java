@@ -20,9 +20,10 @@
  */
 package net.sf.dynamicreports.design.transformation.chartcustomizer;
 
-import net.sf.dynamicreports.report.constant.Constants;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
+import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import org.apache.commons.lang3.StringUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.labels.ItemLabelAnchor;
@@ -31,26 +32,25 @@ import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.labels.StandardXYItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.category.BarRenderer3D;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
-import org.jfree.ui.TextAnchor;
+import org.jfree.chart.ui.TextAnchor;
 
-import java.io.Serializable;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
  * <p>ShowValuesCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private String valuePattern;
-    private boolean customRangeMaxValue;
+    private final String valuePattern;
+    private final boolean customRangeMaxValue;
 
     /**
      * <p>Constructor for ShowValuesCustomizer.</p>
@@ -67,29 +67,29 @@ public class ShowValuesCustomizer implements DRIChartCustomizer, Serializable {
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
         if (chart.getPlot() instanceof CategoryPlot) {
-            CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
+            final CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
             if (StringUtils.isBlank(valuePattern)) {
-                renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+                renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
             } else {
-                renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator(StandardCategoryItemLabelGenerator.DEFAULT_LABEL_FORMAT_STRING, new DecimalFormat(valuePattern)));
+                renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator(StandardCategoryItemLabelGenerator.DEFAULT_LABEL_FORMAT_STRING, new DecimalFormat(valuePattern)));
             }
-            renderer.setBaseItemLabelsVisible(Boolean.TRUE);
+            renderer.setDefaultItemLabelsVisible(Boolean.TRUE);
             if (!customRangeMaxValue) {
                 chart.getCategoryPlot().getRangeAxis().zoomRange(0, 1.1);
             }
             if (renderer.getClass().equals(BarRenderer3D.class)) {
                 ((BarRenderer3D) renderer).setItemLabelAnchorOffset(10D);
-                renderer.setBasePositiveItemLabelPosition(new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.BASELINE_LEFT));
+                renderer.setDefaultPositiveItemLabelPosition(new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.BASELINE_LEFT));
             }
         } else if (chart.getPlot() instanceof XYPlot) {
-            XYItemRenderer renderer = chart.getXYPlot().getRenderer();
+            final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
             if (StringUtils.isBlank(valuePattern)) {
-                renderer.setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
+                renderer.setDefaultItemLabelGenerator(new StandardXYItemLabelGenerator());
             } else {
-                renderer.setBaseItemLabelGenerator(
+                renderer.setDefaultItemLabelGenerator(
                     new StandardXYItemLabelGenerator(StandardXYItemLabelGenerator.DEFAULT_ITEM_LABEL_FORMAT, NumberFormat.getNumberInstance(), new DecimalFormat(valuePattern)));
             }
-            renderer.setBaseItemLabelsVisible(Boolean.TRUE);
+            renderer.setDefaultItemLabelsVisible(Boolean.TRUE);
             chart.getXYPlot().getRangeAxis().zoomRange(0, 1.1);
         }
     }

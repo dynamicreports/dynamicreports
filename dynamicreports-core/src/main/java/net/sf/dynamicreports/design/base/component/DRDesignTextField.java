@@ -33,7 +33,7 @@ import net.sf.dynamicreports.report.constant.TextAdjust;
  * <p>DRDesignTextField class.</p>
  *
  * @author Ricardo Mariaca, Jan Moxter
- * 
+ *
  */
 public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRIDesignTextField {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
@@ -175,13 +175,6 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      */
     public void setMarkup(final Markup markup) {
         this.markup = markup;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated
-    public boolean isStretchWithOverflow() {
-        return stretchWithOverflow;
     }
 
     /**

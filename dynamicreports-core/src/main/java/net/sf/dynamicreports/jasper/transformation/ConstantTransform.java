@@ -23,15 +23,6 @@ package net.sf.dynamicreports.jasper.transformation;
 import java.util.List;
 
 import org.apache.commons.lang3.EnumUtils;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.Hour;
-import org.jfree.data.time.Millisecond;
-import org.jfree.data.time.Minute;
-import org.jfree.data.time.Month;
-import org.jfree.data.time.Quarter;
-import org.jfree.data.time.Second;
-import org.jfree.data.time.Week;
-import org.jfree.data.time.Year;
 import org.krysalis.barcode4j.BaselineAlignment;
 import org.krysalis.barcode4j.ChecksumMode;
 import org.krysalis.barcode4j.impl.datamatrix.SymbolShapeHint;
@@ -101,6 +92,7 @@ import net.sf.jasperreports.charts.type.EdgeEnum;
 import net.sf.jasperreports.charts.type.MeterShapeEnum;
 import net.sf.jasperreports.charts.type.PlotOrientationEnum;
 import net.sf.jasperreports.charts.type.ScaleTypeEnum;
+import net.sf.jasperreports.charts.type.TimePeriodEnum;
 import net.sf.jasperreports.charts.type.ValueLocationEnum;
 import net.sf.jasperreports.components.spiderchart.type.SpiderRotationEnum;
 import net.sf.jasperreports.components.spiderchart.type.TableOrderEnum;
@@ -639,26 +631,26 @@ public class ConstantTransform {
      * @param timePeriodType a {@link net.sf.dynamicreports.report.constant.TimePeriod} object.
      * @return a {@link java.lang.Class} object.
      */
-    protected static Class<?> timePeriodType(final TimePeriod timePeriodType) {
+    protected static TimePeriodEnum timePeriodType(final TimePeriod timePeriodType) {
         switch (timePeriodType) {
             case YEAR:
-                return Year.class;
+                return TimePeriodEnum.YEAR;
             case QUARTER:
-                return Quarter.class;
+                return TimePeriodEnum.QUARTER;
             case MONTH:
-                return Month.class;
+                return TimePeriodEnum.MONTH;
             case WEEK:
-                return Week.class;
+                return TimePeriodEnum.WEEK;
             case DAY:
-                return Day.class;
+                return TimePeriodEnum.DAY;
             case HOUR:
-                return Hour.class;
+                return TimePeriodEnum.HOUR;
             case MINUTE:
-                return Minute.class;
+                return TimePeriodEnum.MINUTE;
             case SECOND:
-                return Second.class;
+                return  TimePeriodEnum.SECOND;
             case MILLISECOND:
-                return Millisecond.class;
+                return TimePeriodEnum.MILLISECOND;
             default:
                 throw new JasperDesignException("Time period type " + timePeriodType.name() + " not supported");
         }

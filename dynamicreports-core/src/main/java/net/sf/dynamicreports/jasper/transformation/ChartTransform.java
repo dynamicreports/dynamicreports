@@ -101,7 +101,6 @@ import net.sf.jasperreports.charts.design.JRDesignXySeries;
 import net.sf.jasperreports.charts.design.JRDesignXyzDataset;
 import net.sf.jasperreports.charts.design.JRDesignXyzSeries;
 import net.sf.jasperreports.charts.util.JRMeterInterval;
-import net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory;
 import net.sf.jasperreports.components.charts.ChartSettings;
 import net.sf.jasperreports.components.spiderchart.SpiderChartComponent;
 import net.sf.jasperreports.components.spiderchart.StandardChartSettings;
@@ -248,7 +247,7 @@ public class ChartTransform {
 
         final JRDesignComponentElement jrComponent = new JRDesignComponentElement();
         jrComponent.setComponent(jrChart);
-        jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", "spiderChart"));
+        //jrComponent.setComponentKey(new ComponentKey(ComponentsExtensionsRegistryFactory.NAMESPACE, "jr", "spiderChart"));
 
         return jrComponent;
     }

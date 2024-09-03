@@ -20,29 +20,30 @@
  */
 package net.sf.dynamicreports.design.transformation.chartcustomizer;
 
-import net.sf.dynamicreports.report.constant.Constants;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.renderer.category.BarRenderer;
-import org.jfree.chart.renderer.category.LayeredBarRenderer;
-import org.jfree.data.category.CategoryDataset;
-import org.jfree.ui.GradientPaintTransformer;
-
 import java.awt.Paint;
 import java.io.Serializable;
 import java.util.List;
+
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.LayeredBarRenderer;
+import org.jfree.chart.ui.GradientPaintTransformer;
+import org.jfree.data.category.CategoryDataset;
+
+import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
  * <p>LayeredBarRendererCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private List<Double> seriesBarWidths;
+    private final List<Double> seriesBarWidths;
 
     /**
      * <p>Constructor for LayeredBarRendererCustomizer.</p>
@@ -56,29 +57,29 @@ public class LayeredBarRendererCustomizer implements DRIChartCustomizer, Seriali
     /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
-        LayeredBarRenderer renderer = new LayeredBarRenderer();
+        final BarRenderer categoryRenderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
+        final LayeredBarRenderer renderer = new LayeredBarRenderer();
 
-        renderer.setBaseItemLabelsVisible(categoryRenderer.getBaseItemLabelsVisible());
-        renderer.setBaseItemLabelFont(categoryRenderer.getBaseItemLabelFont());
-        renderer.setBaseItemLabelPaint(categoryRenderer.getBaseItemLabelPaint());
-        renderer.setBaseItemLabelGenerator(categoryRenderer.getBaseItemLabelGenerator());
+        renderer.setDefaultItemLabelsVisible(categoryRenderer.getDefaultItemLabelsVisible());
+        renderer.setDefaultItemLabelFont(categoryRenderer.getDefaultItemLabelFont());
+        renderer.setDefaultItemLabelPaint(categoryRenderer.getDefaultItemLabelPaint());
+        renderer.setDefaultItemLabelGenerator(categoryRenderer.getDefaultItemLabelGenerator());
         renderer.setShadowVisible(categoryRenderer.getShadowsVisible());
-        CategoryDataset categoryDataset = chart.getCategoryPlot().getDataset();
+        final CategoryDataset categoryDataset = chart.getCategoryPlot().getDataset();
         if (categoryDataset != null) {
             for (int i = 0; i < categoryDataset.getRowCount(); i++) {
-                Paint seriesOutlinePaint = categoryRenderer.getSeriesOutlinePaint(i);
+                final Paint seriesOutlinePaint = categoryRenderer.getSeriesOutlinePaint(i);
                 if (seriesOutlinePaint != null) {
                     renderer.setSeriesOutlinePaint(i, seriesOutlinePaint);
                 }
-                Paint seriesPaint = categoryRenderer.getSeriesPaint(i);
+                final Paint seriesPaint = categoryRenderer.getSeriesPaint(i);
                 if (seriesPaint != null) {
                     renderer.setSeriesPaint(i, seriesPaint);
                 }
             }
         }
         renderer.setItemMargin(categoryRenderer.getItemMargin());
-        GradientPaintTransformer gradientPaintTransformer = categoryRenderer.getGradientPaintTransformer();
+        final GradientPaintTransformer gradientPaintTransformer = categoryRenderer.getGradientPaintTransformer();
         if (gradientPaintTransformer != null) {
             renderer.setGradientPaintTransformer(gradientPaintTransformer);
         }

@@ -20,25 +20,26 @@
  */
 package net.sf.dynamicreports.design.transformation.chartcustomizer;
 
-import net.sf.dynamicreports.report.constant.Constants;
-import net.sf.dynamicreports.report.definition.ReportParameters;
-import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
+import java.io.Serializable;
+
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.renderer.xy.XYStepRenderer;
 
-import java.io.Serializable;
+import net.sf.dynamicreports.report.constant.Constants;
+import net.sf.dynamicreports.report.definition.ReportParameters;
+import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 
 /**
  * <p>XyStepRendererCustomizer class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class XyStepRendererCustomizer implements DRIChartCustomizer, Serializable {
     private static final long serialVersionUID = Constants.SERIAL_VERSION_UID;
 
-    private Double stepPoint;
+    private final Double stepPoint;
 
     /**
      * <p>Constructor for XyStepRendererCustomizer.</p>
@@ -52,15 +53,15 @@ public class XyStepRendererCustomizer implements DRIChartCustomizer, Serializabl
     /** {@inheritDoc} */
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
-        XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();
-        XYStepRenderer renderer = new XYStepRenderer();
+        final XYLineAndShapeRenderer lineRenderer = (XYLineAndShapeRenderer) chart.getXYPlot().getRenderer();
+        final XYStepRenderer renderer = new XYStepRenderer();
 
-        renderer.setBaseItemLabelsVisible(lineRenderer.getBaseItemLabelsVisible());
-        renderer.setBaseItemLabelFont(lineRenderer.getBaseItemLabelFont());
-        renderer.setBaseItemLabelPaint(lineRenderer.getBaseItemLabelPaint());
-        renderer.setBaseItemLabelGenerator(lineRenderer.getBaseItemLabelGenerator());
-        renderer.setBaseShapesVisible(lineRenderer.getBaseShapesVisible());
-        renderer.setBaseLinesVisible(lineRenderer.getBaseLinesVisible());
+        renderer.setDefaultItemLabelsVisible(lineRenderer.getDefaultItemLabelsVisible());
+        renderer.setDefaultItemLabelFont(lineRenderer.getDefaultItemLabelFont());
+        renderer.setDefaultItemLabelPaint(lineRenderer.getDefaultItemLabelPaint());
+        renderer.setDefaultItemLabelGenerator(lineRenderer.getDefaultItemLabelGenerator());
+        renderer.setDefaultShapesVisible(lineRenderer.getDefaultShapesVisible());
+        renderer.setDefaultLinesVisible(lineRenderer.getDefaultLinesVisible());
 
         if (stepPoint != null) {
             renderer.setStepPoint(stepPoint);
