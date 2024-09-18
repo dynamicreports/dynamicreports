@@ -66,12 +66,12 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
 
     final JFreeChart chart = getChart("summary.chart1", 0);
     final Plot plot = chart.getPlot();
-    Assertions.assertEquals("renderer", ThermometerPlot.class, plot.getClass());
+     Assertions.assertEquals( ThermometerPlot.class, plot.getClass(),"renderer");
     final ThermometerPlot thermometerPlot = (ThermometerPlot) plot;
-    Assertions.assertEquals("value", 15, thermometerPlot.getDataset().getValue());
-    Assertions.assertEquals("data range low", 3d, thermometerPlot.getLowerBound(), 0);
-    Assertions.assertEquals("data range high", 30d, thermometerPlot.getUpperBound(), 0);
-    Assertions.assertEquals("value color", Color.BLUE, thermometerPlot.getValuePaint());
+     Assertions.assertEquals( 15, thermometerPlot.getDataset().getValue(),"value");
+     Assertions.assertEquals( 3d, thermometerPlot.getLowerBound(), 0,"data range low");
+     Assertions.assertEquals( 30d, thermometerPlot.getUpperBound(), 0,"data range high");
+     Assertions.assertEquals( Color.BLUE, thermometerPlot.getValuePaint(),"value color");
     try {
       final Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
       field.setAccessible(true);
@@ -81,19 +81,19 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
       e.printStackTrace();
       Assertions.fail(e.getMessage());
     }
-    Assertions.assertEquals("value font", ARIMO_AWT, thermometerPlot.getValueFont());
-    Assertions.assertEquals("value location", ThermometerPlot.BULB, thermometerPlot.getValueLocation());
-    Assertions.assertEquals("mercury color", Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint());
+     Assertions.assertEquals( ARIMO_AWT, thermometerPlot.getValueFont(),"value font");
+     Assertions.assertEquals( ThermometerPlot.BULB, thermometerPlot.getValueLocation(),"value location");
+     Assertions.assertEquals( Color.LIGHT_GRAY, thermometerPlot.getMercuryPaint(),"mercury color");
     try {
       final Field field = thermometerPlot.getClass().getDeclaredField("subrangeInfo");
       field.setAccessible(true);
       final double[][] subrangeInfo = (double[][]) field.get(thermometerPlot);
-      Assertions.assertEquals("low data range low", 8d, subrangeInfo[2][0], 0);
-      Assertions.assertEquals("low data range high", 10d, subrangeInfo[2][1], 0);
-      Assertions.assertEquals("medium data range low", 18d, subrangeInfo[1][0], 0);
-      Assertions.assertEquals("medium data range high", 20d, subrangeInfo[1][1], 0);
-      Assertions.assertEquals("high data range low", 28d, subrangeInfo[0][0], 0);
-      Assertions.assertEquals("high data range high", 30d, subrangeInfo[0][1], 0);
+       Assertions.assertEquals( 8d, subrangeInfo[2][0], 0,"low data range low");
+       Assertions.assertEquals( 10d, subrangeInfo[2][1], 0,"low data range high");
+       Assertions.assertEquals( 18d, subrangeInfo[1][0], 0,"medium data range low");
+       Assertions.assertEquals( 20d, subrangeInfo[1][1], 0,"medium data range high");
+       Assertions.assertEquals( 28d, subrangeInfo[0][0], 0,"high data range low");
+       Assertions.assertEquals( 30d, subrangeInfo[0][1], 0,"high data range high");
     } catch (final Exception e) {
       e.printStackTrace();
       Assertions.fail(e.getMessage());

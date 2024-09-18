@@ -139,12 +139,12 @@ public class ShowValuesChartDataTest extends AbstractJasperChartTest implements 
 
         chart = getChart("summary.chart8", 0);
         String labelFormat = ((StandardPieSectionLabelGenerator) ((PiePlot) chart.getPlot()).getLabelGenerator()).getLabelFormat();
-        Assertions.assertEquals("Label format", "{0} = {1}", labelFormat);
+         Assertions.assertEquals( "{0} = {1}", labelFormat,"Label format");
 
         chart = getChart("summary.chart9", 0);
         final StandardPieSectionLabelGenerator labelGenerator = (StandardPieSectionLabelGenerator) ((PiePlot) chart.getPlot()).getLabelGenerator();
         labelFormat = labelGenerator.getLabelFormat();
-        Assertions.assertEquals("Label format", "{0} = {1}", labelFormat);
+         Assertions.assertEquals( "{0} = {1}", labelFormat,"Label format");
         final DefaultPieDataset dataset = new DefaultPieDataset();
         dataset.setValue("key1", 1.192);
         Assertions.assertEquals("key1 = 1.2", labelGenerator.generateSectionLabel(dataset, "key1"));

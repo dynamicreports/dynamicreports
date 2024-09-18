@@ -62,14 +62,14 @@ public class PieChartTest extends AbstractJasperChartTest implements Serializabl
 
         JFreeChart chart = getChart("summary.chart1", 0);
         Plot plot = chart.getPlot();
-        Assertions.assertEquals("plot", PiePlot.class, plot.getClass());
-        Assertions.assertFalse("circular", ((PiePlot) plot).isCircular());
-        Assertions.assertEquals("label format", "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat());
-        Assertions.assertEquals("legend label format", "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat());
+         Assertions.assertEquals( PiePlot.class, plot.getClass(),"plot");
+        Assertions.assertFalse(((PiePlot) plot).isCircular(), "circular");
+         Assertions.assertEquals( "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat(),"label format");
+         Assertions.assertEquals( "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat(),"legend label format");
 
         chart = getChart("summary.chart2", 0);
         plot = chart.getPlot();
-        Assertions.assertNull("label format", ((PiePlot) plot).getLabelGenerator());
+        Assertions.assertNull(((PiePlot) plot).getLabelGenerator(), "label format");
     }
 
     @Override

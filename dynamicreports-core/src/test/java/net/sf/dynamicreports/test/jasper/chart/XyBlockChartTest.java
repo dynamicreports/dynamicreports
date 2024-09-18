@@ -85,52 +85,49 @@ public class XyBlockChartTest extends AbstractJasperChartTest {
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-    Assertions.assertEquals("renderer", XYBlockRenderer.class, renderer.getClass());
-    Assertions.assertEquals("block width", 1.1, ((XYBlockRenderer) renderer).getBlockWidth(), 0);
-    Assertions.assertEquals("block height", 0.9, ((XYBlockRenderer) renderer).getBlockHeight(), 0);
-    Assertions.assertEquals("block anchor", org.jfree.chart.ui.RectangleAnchor.BOTTOM_LEFT,
-        ((XYBlockRenderer) renderer).getBlockAnchor());
+     Assertions.assertEquals( XYBlockRenderer.class, renderer.getClass(),"renderer");
+     Assertions.assertEquals( 1.1, ((XYBlockRenderer) renderer).getBlockWidth(), 0,"block width");
+     Assertions.assertEquals( 0.9, ((XYBlockRenderer) renderer).getBlockHeight(), 0,"block height");
+     Assertions.assertEquals( org.jfree.chart.ui.RectangleAnchor.BOTTOM_LEFT,        ((XYBlockRenderer) renderer).getBlockAnchor(),"block anchor");
 
-    Assertions.assertEquals("paintScale", LookupPaintScale.class,
-        ((XYBlockRenderer) renderer).getPaintScale().getClass());
+     Assertions.assertEquals( LookupPaintScale.class,        ((XYBlockRenderer) renderer).getPaintScale().getClass(),"paintScale");
     final LookupPaintScale paintScale = (LookupPaintScale) ((XYBlockRenderer) renderer).getPaintScale();
-    Assertions.assertEquals("paintScale default lower bound", 0.1, paintScale.getLowerBound(), 0);
-    Assertions.assertEquals("paintScale default upper bound", 5d, paintScale.getUpperBound(), 0);
-    Assertions.assertEquals("paintScale default paint", Color.WHITE, paintScale.getDefaultPaint());
-    Assertions.assertEquals("paintScale paint 1", Color.RED, paintScale.getPaint(1));
-    Assertions.assertEquals("paintScale paint 2", Color.GREEN, paintScale.getPaint(2));
-    Assertions.assertEquals("paintScale paint 3", Color.BLUE, paintScale.getPaint(3));
+     Assertions.assertEquals( 0.1, paintScale.getLowerBound(), 0,"paintScale default lower bound");
+     Assertions.assertEquals( 5d, paintScale.getUpperBound(), 0,"paintScale default upper bound");
+     Assertions.assertEquals( Color.WHITE, paintScale.getDefaultPaint(),"paintScale default paint");
+     Assertions.assertEquals( Color.RED, paintScale.getPaint(1),"paintScale paint 1");
+     Assertions.assertEquals( Color.GREEN, paintScale.getPaint(2),"paintScale paint 2");
+     Assertions.assertEquals( Color.BLUE, paintScale.getPaint(3),"paintScale paint 3");
 
     final LegendItemCollection legendItems = chart.getXYPlot().getLegendItems();
-    Assertions.assertEquals("legend item 1 label", "1", legendItems.get(0).getLabel());
-    Assertions.assertEquals("legend item 1 paint", Color.RED, legendItems.get(0).getFillPaint());
-    Assertions.assertEquals("legend item 2 label", "2", legendItems.get(1).getLabel());
-    Assertions.assertEquals("legend item 2 paint", Color.GREEN, legendItems.get(1).getFillPaint());
-    Assertions.assertEquals("legend item 3 label", "3", legendItems.get(2).getLabel());
-    Assertions.assertEquals("legend item 3 paint", Color.BLUE, legendItems.get(2).getFillPaint());
+     Assertions.assertEquals( "1", legendItems.get(0).getLabel(),"legend item 1 label");
+     Assertions.assertEquals( Color.RED, legendItems.get(0).getFillPaint(),"legend item 1 paint");
+     Assertions.assertEquals( "2", legendItems.get(1).getLabel(),"legend item 2 label");
+     Assertions.assertEquals( Color.GREEN, legendItems.get(1).getFillPaint(),"legend item 2 paint");
+     Assertions.assertEquals( "3", legendItems.get(2).getLabel(),"legend item 3 label");
+     Assertions.assertEquals( Color.BLUE, legendItems.get(2).getFillPaint(),"legend item 3 paint");
 
     xyzChartDataTest(chart, 0, "serie0",
         new Number[][] {{1d, 2d, 0d}, {2d, 3d, 1d}, {3d, 4d, 2d}, {4d, 5d, 3d}});
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assertions.assertEquals("category label", "category", axis.getLabel());
-    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+     Assertions.assertEquals( "category", axis.getLabel(),"category label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"category label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"category label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
+     Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assertions.assertEquals("value label", "value", axis.getLabel());
-    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assertions.assertEquals("tick label mask", "10.00",
-        ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+     Assertions.assertEquals( "value", axis.getLabel(),"value label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"value label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"value label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
+     Assertions.assertEquals( "10.00",        ((NumberAxis) axis).getNumberFormatOverride().format(10),"tick label mask");
+     Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
   }
 
   @Override

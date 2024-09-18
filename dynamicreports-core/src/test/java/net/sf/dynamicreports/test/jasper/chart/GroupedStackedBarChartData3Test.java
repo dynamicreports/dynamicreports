@@ -75,7 +75,7 @@ public class GroupedStackedBarChartData3Test extends AbstractJasperChartTest {
         chartDataTest("groupFooter.chart1", 0, categories, series, values);
         JFreeChart chart = getChart("groupFooter.chart1", 0);
         LegendItemCollection fixedLegendItems = chart.getCategoryPlot().getFixedLegendItems();
-        Assertions.assertEquals("series name", "series1", fixedLegendItems.get(0).getLabel());
+         Assertions.assertEquals( "series1", fixedLegendItems.get(0).getLabel(),"series name");
         testMap(chart, "group1", "group2", "group3");
 
         series = new String[] {"group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", "group4" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1",
@@ -86,7 +86,7 @@ public class GroupedStackedBarChartData3Test extends AbstractJasperChartTest {
         chartDataTest("groupFooter.chart1", 1, categories, series, values);
         chart = getChart("groupFooter.chart1", 1);
         fixedLegendItems = chart.getCategoryPlot().getFixedLegendItems();
-        Assertions.assertEquals("series name", "series1", fixedLegendItems.get(0).getLabel());
+         Assertions.assertEquals( "series1", fixedLegendItems.get(0).getLabel(),"series name");
         testMap(chart, "group2", "group4", "group5", "group6");
     }
 
@@ -96,10 +96,10 @@ public class GroupedStackedBarChartData3Test extends AbstractJasperChartTest {
             final Field field = renderer.getClass().getDeclaredField("seriesToGroupMap");
             field.setAccessible(true);
             final KeyToGroupMap map = (KeyToGroupMap) field.get(renderer);
-            Assertions.assertEquals("map", groups.length, map.getGroupCount());
+             Assertions.assertEquals( groups.length, map.getGroupCount(),"map");
             final List<?> groups2 = map.getGroups();
             for (int i = 0; i < groups2.size(); i++) {
-                Assertions.assertEquals("map", groups[i], groups2.get(i));
+                 Assertions.assertEquals( groups[i], groups2.get(i),"map");
             }
         } catch (final Exception e) {
             e.printStackTrace();

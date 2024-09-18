@@ -98,7 +98,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-            Assertions.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
+             Assertions.assertEquals( XYLineAndShapeRenderer.class, renderer.getClass(),"renderer");
         }
     }
 
@@ -108,9 +108,9 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             XYItemRenderer renderer = chart.getXYPlot().getRenderer(0);
-            Assertions.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
+             Assertions.assertEquals( XYLineAndShapeRenderer.class, renderer.getClass(),"renderer");
             renderer = chart.getXYPlot().getRenderer(1);
-            Assertions.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
+             Assertions.assertEquals( XYLineAndShapeRenderer.class, renderer.getClass(),"renderer");
         }
     }
 
@@ -120,7 +120,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             final CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
-            Assertions.assertEquals("renderer", BarRenderer.class, renderer.getClass());
+             Assertions.assertEquals( BarRenderer.class, renderer.getClass(),"renderer");
         }
     }
 
@@ -130,7 +130,7 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             final CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer();
-            Assertions.assertEquals("renderer", LineAndShapeRenderer.class, renderer.getClass());
+             Assertions.assertEquals( LineAndShapeRenderer.class, renderer.getClass(),"renderer");
         }
     }
 
@@ -140,9 +140,9 @@ public class MultiAxisChartScriptletTest extends AbstractJasperChartTest impleme
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
             CategoryItemRenderer renderer = chart.getCategoryPlot().getRenderer(0);
-            Assertions.assertEquals("renderer", BarRenderer.class, renderer.getClass());
+             Assertions.assertEquals( BarRenderer.class, renderer.getClass(),"renderer");
             renderer = chart.getCategoryPlot().getRenderer(1);
-            Assertions.assertEquals("renderer", LineAndShapeRenderer.class, renderer.getClass());
+             Assertions.assertEquals( LineAndShapeRenderer.class, renderer.getClass(),"renderer");
         }
     }
 

@@ -81,39 +81,33 @@ public class ChartTest extends AbstractJasperChartTest implements Serializable {
     JFreeChart chart = getChart("summary.chart1", 0);
 
     final TextTitle title = chart.getTitle();
-    Assertions.assertEquals("title", "title", title.getText());
-    Assertions.assertEquals("title color", Color.BLUE, title.getPaint());
-    Assertions.assertEquals("title font", ARIMO_BOLD_AWT, title.getFont());
-    Assertions.assertEquals("title position", RectangleEdge.RIGHT, title.getPosition());
+     Assertions.assertEquals( "title", title.getText(),"title");
+     Assertions.assertEquals( Color.BLUE, title.getPaint(),"title color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, title.getFont(),"title font");
+     Assertions.assertEquals( RectangleEdge.RIGHT, title.getPosition(),"title position");
 
     final TextTitle subtitle = (TextTitle) chart.getSubtitle(1);
-    Assertions.assertEquals("subtitle", "subtitle", subtitle.getText());
-    Assertions.assertEquals("subtitle color", Color.CYAN, subtitle.getPaint());
-    Assertions.assertEquals("subtitle font", ARIMO_AWT, subtitle.getFont());
+     Assertions.assertEquals( "subtitle", subtitle.getText(),"subtitle");
+     Assertions.assertEquals( Color.CYAN, subtitle.getPaint(),"subtitle color");
+     Assertions.assertEquals( ARIMO_AWT, subtitle.getFont(),"subtitle font");
 
     final LegendTitle legend = (LegendTitle) chart.getSubtitle(0);
-    Assertions.assertEquals("legend color", Color.BLUE, legend.getItemPaint());
-    Assertions.assertEquals("legend backgroundcolor", Color.LIGHT_GRAY, legend.getBackgroundPaint());
-    Assertions.assertEquals("legend font", ARIMO_ITALIC_AWT, legend.getItemFont());
-    Assertions.assertEquals("legend position", RectangleEdge.LEFT, legend.getPosition());
+     Assertions.assertEquals( Color.BLUE, legend.getItemPaint(),"legend color");
+     Assertions.assertEquals( Color.LIGHT_GRAY, legend.getBackgroundPaint(),"legend backgroundcolor");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, legend.getItemFont(),"legend font");
+     Assertions.assertEquals( RectangleEdge.LEFT, legend.getPosition(),"legend position");
 
     chartCountTest("summary.chart2", 1);
     chart = getChart("summary.chart2", 0);
-    Assertions.assertNull("legend", chart.getLegend());
-    Assertions.assertEquals("plot orientation", PlotOrientation.HORIZONTAL,
-        chart.getCategoryPlot().getOrientation());
-    Assertions.assertEquals("plot series colors", Color.BLUE,
-        chart.getPlot().getDrawingSupplier().getNextPaint());
-    Assertions.assertEquals("plot series colors", Color.GREEN,
-        chart.getPlot().getDrawingSupplier().getNextPaint());
-    Assertions.assertEquals("plot series colors", Color.RED,
-        chart.getPlot().getDrawingSupplier().getNextPaint());
+    Assertions.assertNull(chart.getLegend(), "legend");
+     Assertions.assertEquals( PlotOrientation.HORIZONTAL,        chart.getCategoryPlot().getOrientation(),"plot orientation");
+     Assertions.assertEquals( Color.BLUE,        chart.getPlot().getDrawingSupplier().getNextPaint(),"plot series colors");
+     Assertions.assertEquals( Color.GREEN,        chart.getPlot().getDrawingSupplier().getNextPaint(),"plot series colors");
+     Assertions.assertEquals( Color.RED,        chart.getPlot().getDrawingSupplier().getNextPaint(),"plot series colors");
 
     chart = getChart("summary.chart3", 0);
-    Assertions.assertEquals("axis color", Color.BLACK,
-        chart.getCategoryPlot().getRangeAxis(0).getAxisLinePaint());
-    Assertions.assertEquals("axis color", Color.BLUE,
-        chart.getCategoryPlot().getRangeAxis(1).getAxisLinePaint());
+     Assertions.assertEquals( Color.BLACK,        chart.getCategoryPlot().getRangeAxis(0).getAxisLinePaint(),"axis color");
+     Assertions.assertEquals( Color.BLUE,        chart.getCategoryPlot().getRangeAxis(1).getAxisLinePaint(),"axis color");
   }
 
   @Override

@@ -122,8 +122,8 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         final CategoryDataset dataset1 = chart.getCategoryPlot().getDataset();
         for (int i = 0; i < dataset1.getRowCount(); i++) {
             final String key = (String) dataset1.getRowKey(i);
-            Assertions.assertNotNull("null series color", colors.get(key));
-            Assertions.assertEquals("series color", colors.get(key), renderer1.getSeriesPaint(i));
+            Assertions.assertNotNull(colors.get(key), "null series color");
+             Assertions.assertEquals( colors.get(key), renderer1.getSeriesPaint(i),"series color");
         }
 
         chartCountTest("summary.chart2", 1);
@@ -133,14 +133,14 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         for (int i = 0; i < dataset2.getRowCount(); i++) {
             String key = (String) dataset2.getRowKey(i);
             key = StringUtils.substringAfter(key, GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY);
-            Assertions.assertNotNull("null series color", colors.get(key));
-            Assertions.assertEquals("series color", colors.get(key), renderer2.getSeriesPaint(i));
+            Assertions.assertNotNull(colors.get(key), "null series color");
+             Assertions.assertEquals( colors.get(key), renderer2.getSeriesPaint(i),"series color");
         }
         for (
             int i = 0; i < chart.getCategoryPlot().getFixedLegendItems().getItemCount(); i++) {
             final LegendItem legendItem = chart.getCategoryPlot().getFixedLegendItems().get(i);
-            Assertions.assertNotNull("null series color", colors.get(legendItem.getLabel()));
-            Assertions.assertEquals("series color", colors.get(legendItem.getLabel()), legendItem.getFillPaint());
+            Assertions.assertNotNull(colors.get(legendItem.getLabel()), "null series color");
+             Assertions.assertEquals( colors.get(legendItem.getLabel()), legendItem.getFillPaint(),"series color");
         }
 
         chartCountTest("summary.chart3", 1);
@@ -149,8 +149,8 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         final PieDataset dataset3 = plot3.getDataset();
         for (int i = 0; i < dataset3.getItemCount(); i++) {
             final String key = (String) dataset3.getKey(i);
-            Assertions.assertNotNull("null series color", colors.get(key));
-            Assertions.assertEquals("series color", colors.get(key), plot3.getSectionPaint(key));
+            Assertions.assertNotNull(colors.get(key), "null series color");
+             Assertions.assertEquals( colors.get(key), plot3.getSectionPaint(key),"series color");
         }
 
         chartCountTest("summary.chart4", 1);
@@ -159,8 +159,8 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
         final XYDataset dataset4 = chart.getXYPlot().getDataset();
         for (int i = 0; i < dataset4.getSeriesCount(); i++) {
             final String key = (String) dataset4.getSeriesKey(i);
-            Assertions.assertNotNull("null series color", colors.get(key));
-            Assertions.assertEquals("series color", colors.get(key), renderer4.getSeriesPaint(i));
+            Assertions.assertNotNull(colors.get(key),"null series color");
+             Assertions.assertEquals( colors.get(key), renderer4.getSeriesPaint(i),"series color");
         }
     }
 

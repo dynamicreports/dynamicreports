@@ -78,31 +78,31 @@ public class ScatterChartTest extends AbstractJasperChartTest implements Seriali
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-    Assertions.assertEquals("renderer", XYLineAndShapeRenderer.class, renderer.getClass());
-    Assertions.assertFalse("show shapes", ((XYLineAndShapeRenderer) renderer).getDefaultShapesVisible());
-    Assertions.assertFalse("show lines", ((XYLineAndShapeRenderer) renderer).getDefaultLinesVisible());
+     Assertions.assertEquals( XYLineAndShapeRenderer.class, renderer.getClass(),"renderer");
+    Assertions.assertFalse(((XYLineAndShapeRenderer) renderer).getDefaultShapesVisible(), "show shapes");
+    Assertions.assertFalse(((XYLineAndShapeRenderer) renderer).getDefaultLinesVisible(),"chart show lines");
     xyChartDataTest(chart, 0, "Column2", new Number[][] {{1d, 2d}, {2d, 3d}, {3d, 4d}, {4d, 5d}});
     xyChartDataTest(chart, 1, "Column1", new Number[][] {{2d, 1d}, {3d, 2d}, {4d, 3d}, {5d, 4d}});
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assertions.assertEquals("category label", "category", axis.getLabel());
-    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+     Assertions.assertEquals( "category", axis.getLabel(),"category label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"category label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"category label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
+     Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assertions.assertEquals("value label", "value", axis.getLabel());
-    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+     Assertions.assertEquals( "value", axis.getLabel(),"value label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"value label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"value label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
     Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
+     Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
   }
 
   @Override

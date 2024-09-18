@@ -101,14 +101,14 @@ public abstract class AbstractBandTest {
     }
 
     protected void componentPositionTest(DRDesignComponent component, int x, int y, int width, int height) {
-        Assertions.assertNotNull("width", component.getWidth());
-        Assertions.assertEquals("width", Integer.valueOf(width), component.getWidth());
-        Assertions.assertNotNull("height", component.getHeight());
-        Assertions.assertEquals("height", Integer.valueOf(height), component.getHeight());
-        Assertions.assertNotNull("x", component.getX());
-        Assertions.assertEquals("x", Integer.valueOf(x), component.getX());
-        Assertions.assertNotNull("y", component.getY());
-        Assertions.assertEquals("y", Integer.valueOf(y), component.getY());
+        Assertions.assertNotNull(component.getWidth(),"width");
+        Assertions.assertEquals(Integer.valueOf(width), component.getWidth(),"width");
+        Assertions.assertNotNull( component.getHeight(),"height");
+        Assertions.assertEquals(Integer.valueOf(height), component.getHeight(),"height");
+        Assertions.assertNotNull( component.getX(),"x");
+        Assertions.assertEquals(Integer.valueOf(x), component.getX(),"x");
+        Assertions.assertNotNull(component.getY(),"y");
+        Assertions.assertEquals( Integer.valueOf(y), component.getY(),"y");
     }
 
     public abstract void configureReport(ReportBuilder<?> rb);

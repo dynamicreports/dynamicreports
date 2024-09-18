@@ -93,36 +93,34 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
 
     JFreeChart chart = getChart("summary.chart1", 0);
     final XYItemRenderer renderer = chart.getXYPlot().getRenderer();
-    Assertions.assertEquals("renderer", XYDifferenceRenderer.class, renderer.getClass());
-    Assertions.assertFalse("show shapes", ((XYDifferenceRenderer) renderer).getShapesVisible());
-    Assertions.assertEquals("positive paint", Color.BLUE,
-        ((XYDifferenceRenderer) renderer).getPositivePaint());
-    Assertions.assertEquals("negative paint", Color.MAGENTA,
-        ((XYDifferenceRenderer) renderer).getNegativePaint());
+     Assertions.assertEquals( XYDifferenceRenderer.class, renderer.getClass(),"renderer");
+     Assertions.assertFalse( ((XYDifferenceRenderer) renderer).getShapesVisible(),"show shapes");
+     Assertions.assertEquals( Color.BLUE,        ((XYDifferenceRenderer) renderer).getPositivePaint(),"positive paint");
+     Assertions.assertEquals( Color.MAGENTA,        ((XYDifferenceRenderer) renderer).getNegativePaint(),"negative paint");
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getXYPlot().getDomainAxis();
-    Assertions.assertEquals("category label", "time", axis.getLabel());
-    Assertions.assertEquals("category label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("category label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
-    Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assertions.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
+     Assertions.assertEquals( "time", axis.getLabel(),"category label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"category label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"category label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
+     Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
+     Assertions.assertTrue( ((ValueAxis) axis).isVerticalTickLabels(),"vertical tick labels");
 
     chart = getChart("summary.chart3", 0);
     axis = chart.getXYPlot().getRangeAxis();
-    Assertions.assertEquals("value label", "value", axis.getLabel());
-    Assertions.assertEquals("value label color", Color.BLUE, axis.getLabelPaint());
-    Assertions.assertEquals("value label font", ARIMO_BOLD_AWT, axis.getLabelFont());
-    Assertions.assertEquals("tick label color", Color.CYAN, axis.getTickLabelPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, axis.getTickLabelFont());
+     Assertions.assertEquals( "value", axis.getLabel(),"value label");
+     Assertions.assertEquals( Color.BLUE, axis.getLabelPaint(),"value label color");
+     Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"value label font");
+     Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
     Assertions.assertEquals("tick label mask", "10.00",
         ((NumberAxis) axis).getNumberFormatOverride().format(10));
-    // Assertions.assertEquals("line color", Color.LIGHT_GRAY, axis.getAxisLinePaint());
-    Assertions.assertEquals("range min value", 1d, ((ValueAxis) axis).getLowerBound(), 0);
-    Assertions.assertEquals("range max value", 15d, ((ValueAxis) axis).getUpperBound(), 0);
-    Assertions.assertTrue("vertical tick labels", ((ValueAxis) axis).isVerticalTickLabels());
+    //  Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
+     Assertions.assertEquals( 1d, ((ValueAxis) axis).getLowerBound(), 0,"range min value");
+     Assertions.assertEquals( 15d, ((ValueAxis) axis).getUpperBound(), 0,"range max value");
+     Assertions.assertTrue( ((ValueAxis) axis).isVerticalTickLabels(),"vertical tick labels");
   }
 
   @Override
@@ -143,7 +141,7 @@ public class DifferenceChartTest extends AbstractJasperChartTest implements Seri
     @Override
     public void customize(JFreeChart chart, ReportParameters reportParameters) {
       final XYPlot xyPlot = chart.getXYPlot();
-      Assertions.assertEquals("renderer", XYDifferenceRenderer.class, xyPlot.getRenderer().getClass());
+       Assertions.assertEquals( XYDifferenceRenderer.class, xyPlot.getRenderer().getClass(),"renderer");
     }
   }
 }

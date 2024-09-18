@@ -88,9 +88,9 @@ public class GroupedStackedBarChartData1Test extends AbstractJasperChartTest {
         chartDataTest("summary.chart5", 0, categories, series, values);
         final JFreeChart chart = getChart("summary.chart5", 0);
         final CategoryDataset dataset = chart.getCategoryPlot().getDataset();
-        Assertions.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(0));
-        Assertions.assertEquals("row key", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", dataset.getRowKey(1));
-        Assertions.assertEquals("row key", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(2));
+         Assertions.assertEquals( "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(0),"row key");
+         Assertions.assertEquals( "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series1", dataset.getRowKey(1),"row key");
+         Assertions.assertEquals( "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "series2", dataset.getRowKey(2),"row key");
 
         series = new String[] {"group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column4", "group1" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column5",
             "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column4", "group2" + GroupedStackedBarRendererCustomizer.GROUP_SERIES_KEY + "Column5"};

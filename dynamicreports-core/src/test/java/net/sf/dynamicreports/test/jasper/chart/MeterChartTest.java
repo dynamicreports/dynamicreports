@@ -70,23 +70,23 @@ public class MeterChartTest extends AbstractJasperChartTest {
 
     final JFreeChart chart = getChart("summary.chart1", 0);
     final Plot plot = chart.getPlot();
-    Assertions.assertEquals("renderer", MeterPlot.class, plot.getClass());
+     Assertions.assertEquals( MeterPlot.class, plot.getClass(),"renderer");
     final MeterPlot meterPlot = (MeterPlot) plot;
-    Assertions.assertEquals("value", 15, meterPlot.getDataset().getValue());
-    Assertions.assertEquals("data range low", 3d, meterPlot.getRange().getLowerBound(), 0);
-    Assertions.assertEquals("data range high", 30d, meterPlot.getRange().getUpperBound(), 0);
-    Assertions.assertEquals("value color", Color.BLUE, meterPlot.getValuePaint());
-    Assertions.assertEquals("value mask", "15.0", meterPlot.getTickLabelFormat().format(15));
-    Assertions.assertEquals("value font", ARIMO_AWT, meterPlot.getValueFont());
-    Assertions.assertEquals("shape", DialShape.CIRCLE, meterPlot.getDialShape());
-    Assertions.assertEquals("meter angle", 270, meterPlot.getMeterAngle());
-    Assertions.assertEquals("units", "units", meterPlot.getUnits());
-    Assertions.assertEquals("tick interval", 3d, meterPlot.getTickSize(), 0);
-    Assertions.assertEquals("background color", Color.LIGHT_GRAY, meterPlot.getDialBackgroundPaint());
-    Assertions.assertEquals("needle color", Color.CYAN, meterPlot.getNeedlePaint());
-    Assertions.assertEquals("tick color", Color.MAGENTA, meterPlot.getTickPaint());
-    Assertions.assertEquals("tick label font", ARIMO_ITALIC_AWT, meterPlot.getTickLabelFont());
-    Assertions.assertEquals("intervals size", 2, meterPlot.getIntervals().size());
+     Assertions.assertEquals( 15, meterPlot.getDataset().getValue(),"value");
+     Assertions.assertEquals( 3d, meterPlot.getRange().getLowerBound(), 0,"data range low");
+     Assertions.assertEquals( 30d, meterPlot.getRange().getUpperBound(), 0,"data range high");
+     Assertions.assertEquals( Color.BLUE, meterPlot.getValuePaint(),"value color");
+     Assertions.assertEquals( "15.0", meterPlot.getTickLabelFormat().format(15),"value mask");
+     Assertions.assertEquals( ARIMO_AWT, meterPlot.getValueFont(),"value font");
+     Assertions.assertEquals( DialShape.CIRCLE, meterPlot.getDialShape(),"shape");
+     Assertions.assertEquals( 270, meterPlot.getMeterAngle(),"meter angle");
+     Assertions.assertEquals( "units", meterPlot.getUnits(),"units");
+     Assertions.assertEquals( 3d, meterPlot.getTickSize(), 0,"tick interval");
+     Assertions.assertEquals( Color.LIGHT_GRAY, meterPlot.getDialBackgroundPaint(),"background color");
+     Assertions.assertEquals( Color.CYAN, meterPlot.getNeedlePaint(),"needle color");
+     Assertions.assertEquals( Color.MAGENTA, meterPlot.getTickPaint(),"tick color");
+     Assertions.assertEquals( ARIMO_ITALIC_AWT, meterPlot.getTickLabelFont(),"tick label font");
+     Assertions.assertEquals( 2, meterPlot.getIntervals().size(),"intervals size");
     intervalTest(meterPlot.getIntervals().get(0), "red",
         new Color(1f, 0f, 0f, 0.8f), 25d, 30d);
     intervalTest(meterPlot.getIntervals().get(1), "yellow",
@@ -95,13 +95,10 @@ public class MeterChartTest extends AbstractJasperChartTest {
 
   private void intervalTest(MeterInterval interval, String label, Color backgroundColor,
       double rangeLow, double rangeHigh) {
-    Assertions.assertEquals("interval label", label, interval.getLabel());
-    Assertions.assertEquals("interval background color", backgroundColor,
-        interval.getBackgroundPaint());
-    Assertions.assertEquals("interval data range low", rangeLow, interval.getRange().getLowerBound(),
-        0);
-    Assertions.assertEquals("interval data range high", rangeHigh, interval.getRange().getUpperBound(),
-        0);
+     Assertions.assertEquals( label, interval.getLabel(),"interval label");
+     Assertions.assertEquals( backgroundColor,        interval.getBackgroundPaint(),"interval background color");
+     Assertions.assertEquals( rangeLow, interval.getRange().getLowerBound(),        0,"interval data range low");
+     Assertions.assertEquals( rangeHigh, interval.getRange().getUpperBound(),        0,"interval data range high");
   }
 
   @Override
