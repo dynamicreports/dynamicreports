@@ -26,6 +26,8 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.design.transformation.CustomBatikRenderer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -40,6 +42,7 @@ import net.sf.jasperreports.engine.JRPrintImage;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BooleanColumn1Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -56,6 +59,7 @@ public class BooleanColumn1Test extends AbstractJasperValueTest implements Seria
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

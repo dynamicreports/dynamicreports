@@ -32,6 +32,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
@@ -40,6 +43,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BandChartDataTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -62,10 +66,9 @@ public class BandChartDataTest extends AbstractJasperChartTest implements Serial
           .summary(cht.barChart().setTitle(new TitleExpression("var1")).setCategory(column1).series(cht.serie(column2)));
     }
 
-    @Override
+    @Test
     public void test() {
         super.test();
-
         numberOfPagesTest(3);
 
         chartTest("title", 100);

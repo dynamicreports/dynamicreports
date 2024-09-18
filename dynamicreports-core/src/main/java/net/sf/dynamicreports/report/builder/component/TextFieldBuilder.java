@@ -319,19 +319,6 @@ public class TextFieldBuilder<T> extends HyperLinkComponentBuilder<TextFieldBuil
     }
 
     /**
-     * <p>setStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a {@link net.sf.dynamicreports.report.builder.component.TextFieldBuilder} object.
-     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public TextFieldBuilder<T> setStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setStretchWithOverflow(stretchWithOverflow);
-        return this;
-    }
-
-    /**
      * <p>setTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

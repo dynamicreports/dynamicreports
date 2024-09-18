@@ -104,7 +104,7 @@ public class DefaultsTest {
 
   private void testDataType(String name, DRDataType<?, ?> dataType, String pattern,
       HorizontalTextAlignment horizontalTextAlignment) {
-    assertEquals(name + " pattern", pattern, dataType.getPattern());
+    assertEquals(pattern, dataType.getPattern(), name + " pattern");
     assertEquals(horizontalTextAlignment, dataType.getHorizontalTextAlignment(), name + " horizontal alignment");
   }
 }

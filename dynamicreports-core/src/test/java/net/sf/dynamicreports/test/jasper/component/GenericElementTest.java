@@ -73,7 +73,7 @@ public class GenericElementTest {
 
     @Test
     public void test() {
-        Assertions.assertTrue("generic element output", output.indexOf("<div id=\"10\">ABCD</div>") != -1);
+        Assertions.assertTrue(output.indexOf("<div id=\"10\">ABCD</div>") != -1, "generic element output");
     }
 
     protected JRDataSource createDataSource() {

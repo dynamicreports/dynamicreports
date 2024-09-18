@@ -203,7 +203,6 @@ public class CrosstabTransform {
         textField.setHorizontalTextAlignment(group.getHeaderHorizontalTextAlignment());
         textField.setValueFormatter(group.getHeaderValueFormatter());
         textField.setDataType(group.getDataType());
-        textField.setStretchWithOverflow(group.getHeaderStretchWithOverflow());
         textField.setTextAdjust(group.getHeaderTextAdjust());
         textField.setHyperLink((DRHyperLink) group.getHeaderHyperLink());
         textField.setPropertyExpressions(group.getHeaderPropertyExpressions());
@@ -254,7 +253,6 @@ public class CrosstabTransform {
                 totalHeaderExpression = new SystemMessageExpression("total");
             }
             textField.setValueExpression(totalHeaderExpression);
-            textField.setStretchWithOverflow(group.getTotalHeaderStretchWithOverflow());
             textField.setTextAdjust(group.getTotalHeaderTextAdjust());
             textField.setPropertyExpressions(group.getTotalHeaderPropertyExpressions());
             textField.setStyle(totalStyle);
@@ -492,7 +490,6 @@ public class CrosstabTransform {
             textField.setHorizontalTextAlignment(measure.getHorizontalTextAlignment());
             textField.setValueFormatter(measure.getValueFormatter());
             textField.setDataType(measure.getDataType());
-            textField.setStretchWithOverflow(measure.getStretchWithOverflow());
             textField.setTextAdjust(measure.getTextAdjust());
             textField.setStretchType(StretchType.CONTAINER_HEIGHT);
             textField.setHyperLink((DRHyperLink) measure.getHyperLink());

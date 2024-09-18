@@ -351,19 +351,6 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
     }
 
     /**
-     * <p>setStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a T object.
-     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public T setStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getComponent().setStretchWithOverflow(stretchWithOverflow);
-        return (T) this;
-    }
-
-    /**
      * <p>setTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

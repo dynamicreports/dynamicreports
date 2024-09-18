@@ -168,7 +168,6 @@ public class ColumnTransform {
         titleField.setHeight(column.getTitleHeight());
         titleField.setHeightType(column.getTitleHeightType());
         titleField.setRows(column.getTitleRows());
-        titleField.setStretchWithOverflow(column.getTitleStretchWithOverflow());
         titleField.setTextAdjust(column.getTitleTextAdjust());
         titleField.setPropertyExpressions(column.getTitlePropertyExpressions());
         final DRDesignTextField designTitleField = accessor.getComponentTransform().textField(titleField, DefaultStyleType.COLUMN_TITLE);

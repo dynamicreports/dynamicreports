@@ -27,6 +27,7 @@ import net.sf.dynamicreports.report.builder.crosstab.CrosstabColumnGroupBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabRowGroupBuilder;
 import net.sf.dynamicreports.report.constant.Calculation;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -52,14 +53,14 @@ public class Crosstab6Test extends AbstractJasperCrosstabValueTest {
                                        .rowGroups(rowGroup = ctab.rowGroup("field1", String.class)
                                                                  .addHeaderProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
                                                                  .addTotalHeaderProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
-                                                                 .setHeaderStretchWithOverflow(false)
-                                                                 .setTotalHeaderStretchWithOverflow(false)
-                                                                 .setHeaderWidth(18))
+                                                                .setHeaderTextAdjust(TextAdjust.CUT_TEXT)
+                                                                 .setTotalHeaderTextAdjust(TextAdjust.CUT_TEXT)
+                                                                .setHeaderWidth(18))
                                        .columnGroups(columnGroup = ctab.columnGroup("field2", String.class)
                                                                        .addHeaderProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
                                                                        .addTotalHeaderProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
-                                                                       .setHeaderStretchWithOverflow(false)
-                                                                       .setTotalHeaderStretchWithOverflow(false))
+                                                                       .setHeaderTextAdjust(TextAdjust.CUT_TEXT)
+                                                                       .setTotalHeaderTextAdjust(TextAdjust.CUT_TEXT))
                                        .measures(measure1);
 
         rb.summary(crosstab);

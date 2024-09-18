@@ -20,9 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.constant.JasperProperty;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -33,6 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TextField3Test extends AbstractJasperValueTest {
     private TextColumnBuilder<String> column1;
 
@@ -40,15 +45,16 @@ public class TextField3Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         rb.columns(column1 = col.column("test test", "field1", String.class)
                                 .setFixedWidth(25)
-                                .setStretchWithOverflow(false)
+                                .setTextAdjust(TextAdjust.CUT_TEXT)
                                 .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true")
-                                .setTitleStretchWithOverflow(false)
+                                .setTitleTextAdjust(TextAdjust.CUT_TEXT)
                                 .addTitleProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"))
-          .title(cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false).addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"), cmp.text("test test").setFixedWidth(25),
-                 cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false));
+          .title(cmp.text("test test").setFixedWidth(25).setTextAdjust(TextAdjust.CUT_TEXT)   .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true"), cmp.text("test test").setFixedWidth(25),
+                 cmp.text("test test").setFixedWidth(25).setTextAdjust(TextAdjust.CUT_TEXT)   );
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

@@ -60,8 +60,8 @@ public class Image2Test extends AbstractJasperTest {
             final byte[] imageData1 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
             jrImage = (JRPrintImage) getElementAt("pageHeader.image1", 1);
             final byte[] imageData2 = ((SimpleDataRenderer) jrImage.getRenderer()).getData(DefaultJasperReportsContext.getInstance());
-            Assertions.assertTrue("image data", Arrays.equals(imageData1, imageData2));
-            Assertions.assertEquals("image horizontal alignment", HorizontalImageAlignEnum.CENTER, jrImage.getHorizontalImageAlign());
+            Assertions.assertTrue(Arrays.equals(imageData1, imageData2), "image data");
+             Assertions.assertEquals( HorizontalImageAlignEnum.CENTER, jrImage.getHorizontalImageAlign(),"image horizontal alignment");
         } catch (final JRException e) {
             e.printStackTrace();
             Assertions.fail(e.getMessage());

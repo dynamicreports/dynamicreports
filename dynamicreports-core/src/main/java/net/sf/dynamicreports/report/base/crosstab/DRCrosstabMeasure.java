@@ -146,12 +146,6 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
         this.valueFormatter = valueFormatter;
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public Boolean getStretchWithOverflow() {
-        return stretchWithOverflow;
-    }
-
     /**
      * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
      *

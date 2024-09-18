@@ -235,12 +235,6 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
         this.titleRows = titleRows;
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public Boolean getTitleStretchWithOverflow() {
-        return titleStretchWithOverflow;
-    }
-
     /**
      * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
      *

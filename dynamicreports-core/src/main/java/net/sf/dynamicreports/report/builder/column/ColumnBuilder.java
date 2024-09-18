@@ -194,19 +194,6 @@ public abstract class ColumnBuilder<T extends ColumnBuilder<T, U>, U extends DRC
     }
 
     /**
-     * <p>setTitleStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a T object.
-     * @deprecated replaced by {@link #setTitleTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public T setTitleStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setTitleStretchWithOverflow(stretchWithOverflow);
-        return (T) this;
-    }
-
-    /**
      * <p>setTitleTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

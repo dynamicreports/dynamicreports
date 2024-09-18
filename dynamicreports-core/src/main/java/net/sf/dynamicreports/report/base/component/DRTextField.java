@@ -241,23 +241,6 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
 
     /** {@inheritDoc} */
     @Override
-    public Boolean getStretchWithOverflow() {
-        return stretchWithOverflow;
-    }
-
-    /**
-     * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced {@link #setTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public void setStretchWithOverflow(final Boolean stretchWithOverflow) {
-        this.stretchWithOverflow = stretchWithOverflow;
-    }
-
-    /** {@inheritDoc} */
-    @Override
     public Boolean getPrintRepeatedValues() {
         return printRepeatedValues;
     }
@@ -280,7 +263,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
     /**
      * <p>Setter for the field <code>textAdjust</code>.</p>
      *
-     * @param setTextAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
      */
     public void setTextAdjust(final TextAdjust textAdjust) {
         this.textAdjust = textAdjust;

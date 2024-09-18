@@ -67,14 +67,14 @@ public class MultiPageList4Test extends AbstractJasperValueTest {
                 count++;
             }
         }
-        Assertions.assertEquals("MultipageList split type", 3, count);
+         Assertions.assertEquals( 3, count,"MultipageList split type");
         count = 0;
         for (final JRPrintElement element : getJasperPrint().getPages().get(1).getElements()) {
             if (element instanceof JRPrintText) {
                 count++;
             }
         }
-        Assertions.assertEquals("MultipageList split type", 3, count);
+         Assertions.assertEquals( 3, count,"MultipageList split type");
     }
 
     private JasperReportBuilder createSubreport() {

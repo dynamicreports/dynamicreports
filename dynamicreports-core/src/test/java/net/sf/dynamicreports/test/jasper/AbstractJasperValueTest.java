@@ -55,7 +55,7 @@ public abstract class AbstractJasperValueTest extends AbstractJasperTest {
         for (int i = 0; i < values.length; i++) {
             final JRPrintText textElement = (JRPrintText) elements.get(i);
             final String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(textElement);
-            Assertions.assertEquals("element value " + name, values[i], value);
+            Assertions.assertEquals(values[i], value, "element value " + name);
         }
     }
 

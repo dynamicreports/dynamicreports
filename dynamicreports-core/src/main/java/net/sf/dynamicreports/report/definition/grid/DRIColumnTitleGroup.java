@@ -100,15 +100,6 @@ public interface DRIColumnTitleGroup extends DRIColumnGridComponent {
     Integer getTitleRows();
 
     /**
-     * <p>getTitleStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getTitleTextAdjust()}
-     */
-    @Deprecated
-    Boolean getTitleStretchWithOverflow();
-
-    /**
      * <p>getTitleTextAdjust.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

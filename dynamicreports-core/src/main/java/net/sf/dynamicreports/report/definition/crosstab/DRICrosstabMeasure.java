@@ -83,14 +83,6 @@ public interface DRICrosstabMeasure<T> extends Serializable {
     DRIValueFormatter<?, ? super T> getValueFormatter();
 
     /**
-     * <p>getStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getTextAdjust()}
-     */
-    @Deprecated Boolean getStretchWithOverflow();
-
-    /**
      * <p>getTextAdjust.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

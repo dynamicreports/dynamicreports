@@ -35,6 +35,8 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.AreaRenderer;
 import org.jfree.chart.ui.RectangleEdge;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -47,6 +49,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AreaChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -72,10 +75,8 @@ public class AreaChartTest extends AbstractJasperChartTest implements Serializab
                     .setRangeMaxValueExpression(15)));
   }
 
-  @Override
+  @Test
   public void test() {
-    super.test();
-
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);

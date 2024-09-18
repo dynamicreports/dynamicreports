@@ -52,7 +52,6 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
     private Integer titleHeight;
     private ComponentDimensionType titleHeightType;
     private Integer titleRows;
-    private Boolean titleStretchWithOverflow;
     private TextAdjust titleTextAdjust;
     private List<DRIPropertyExpression> titlePropertyExpressions;
 
@@ -165,23 +164,6 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
 
     /** {@inheritDoc} */
     @Override
-    public Boolean getTitleStretchWithOverflow() {
-        return titleStretchWithOverflow;
-    }
-
-    /**
-     * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
-     *
-     * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced by  {@link #setTitleTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public void setTitleStretchWithOverflow(final Boolean titleStretchWithOverflow) {
-        this.titleStretchWithOverflow = titleStretchWithOverflow;
-    }
-
-    /** {@inheritDoc} */
-    @Override
     public TextAdjust getTitleTextAdjust() {
         return titleTextAdjust;
     }
@@ -189,7 +171,7 @@ public class DRColumn<T extends DRIComponent> implements DRIColumn<T> {
     /**
      * <p>Setter for the field <code>titleTextAdjust</code>.</p>
      *
-     * @param titleStretchWithOverflow a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
+     * @param titleTextAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
      */
     public void setTitleTextAdjust(final TextAdjust titleTextAdjust) {
         this.titleTextAdjust = titleTextAdjust;

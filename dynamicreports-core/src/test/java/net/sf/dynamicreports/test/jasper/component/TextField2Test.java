@@ -20,11 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -32,20 +36,23 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TextField2Test extends AbstractJasperPositionTest {
   private TextColumnBuilder<String> column1;
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
     rb.columns(column1 = col.column("test test", "field1", String.class)
-      .setFixedWidth(25)
-      .setStretchWithOverflow(false)
-      .setTitleStretchWithOverflow(false))
-      .title(cmp.text("test test").setFixedWidth(25).setStretchWithOverflow(false),
+        .setFixedWidth(25)
+        .setTextAdjust(TextAdjust.STRETCH_HEIGHT)
+        .setTitleTextAdjust(TextAdjust.CUT_TEXT)
+      )
+      .title(cmp.text("test test").setFixedWidth(25).setTextAdjust(TextAdjust.CUT_TEXT),
           cmp.text("test test").setFixedWidth(25));
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

@@ -388,7 +388,6 @@ public class ComponentTransform {
         hyperlink(designTextField, textField, textField.getStyle(), true, defaultStyleType);
         final TemplateTransform templateTransform = accessor.getTemplateTransform();
         designTextField.setPrintRepeatedValues(templateTransform.isTextFieldPrintRepeatedValues(textField));
-        designTextField.setStretchWithOverflow(templateTransform.getTextFieldStretchWithOverflow(textField));
         designTextField.setTextAdjust(templateTransform.getTextFieldTextAdjust(textField));
         final DRDesignStyle style = designTextField.getStyle();
         designTextField.setWidth(templateTransform.getTextFieldWidth(textField, style));

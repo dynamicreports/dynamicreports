@@ -81,15 +81,6 @@ public interface DRIColumn<T extends DRIComponent> extends DRIColumnGridComponen
     Integer getTitleRows();
 
     /**
-     * <p>getTitleStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getTitleTextAdjust()}
-     */
-    @Deprecated
-    Boolean getTitleStretchWithOverflow();
-
-    /**
      * <p>getTitlePropertyExpressions.</p>
      *
      * @return a {@link java.util.List} object.

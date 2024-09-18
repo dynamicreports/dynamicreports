@@ -68,15 +68,6 @@ public interface DRICrosstabGroup<T> extends DRISystemExpression<T> {
     DRIValueFormatter<?, ? super T> getHeaderValueFormatter();
 
     /**
-     * <p>getHeaderStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getHeaderTextAdjust()}
-     */
-    @Deprecated
-    Boolean getHeaderStretchWithOverflow();
-
-    /**
      * <p>getHeaderTextAdjust.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
@@ -124,14 +115,6 @@ public interface DRICrosstabGroup<T> extends DRISystemExpression<T> {
      * @return a {@link net.sf.dynamicreports.report.definition.expression.DRIExpression} object.
      */
     DRIExpression<?> getTotalHeaderExpression();
-
-    /**
-     * <p>getTotalHeaderStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getTotalHeaderTextAdjust()}
-     */
-    @Deprecated Boolean getTotalHeaderStretchWithOverflow();
 
     /**
      * <p>getTotalHeaderTextAdjust.</p>

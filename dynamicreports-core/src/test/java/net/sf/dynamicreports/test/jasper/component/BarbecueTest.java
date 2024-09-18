@@ -106,18 +106,18 @@ public class BarbecueTest extends AbstractJasperTest {
 
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue29");
         final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
-        Assertions.assertEquals("Barbecue application identifier", "\"1\"", component.getApplicationIdentifierExpression().getText());
-        Assertions.assertTrue("Barbecue draw text", component.isDrawText());
-        Assertions.assertTrue("Barbecue checksum required", component.isChecksumRequired());
-        Assertions.assertEquals("Barbecue bar width", Integer.valueOf(2), component.getBarWidth());
-        Assertions.assertEquals("Barbecue bar height", Integer.valueOf(5), component.getBarHeight());
-        Assertions.assertEquals("Barbecue orientation", RotationEnum.RIGHT, component.getRotation());
+         Assertions.assertEquals( "\"1\"", component.getApplicationIdentifierExpression().getText(),"Barbecue application identifier");
+         Assertions.assertTrue( component.isDrawText(),"Barbecue draw text");
+         Assertions.assertTrue( component.isChecksumRequired(),"Barbecue checksum required");
+         Assertions.assertEquals( Integer.valueOf(2), component.getBarWidth(),"Barbecue bar width");
+         Assertions.assertEquals( Integer.valueOf(5), component.getBarHeight(),"Barbecue bar height");
+         Assertions.assertEquals( RotationEnum.RIGHT, component.getRotation(),"Barbecue orientation");
     }
 
     private void testBarbecue(int index, String type) {
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.barbecue" + index);
         final BarbecueComponent component = (BarbecueComponent) barcode.getComponent();
-        Assertions.assertEquals("Barbecue type ", type, component.getType());
-        Assertions.assertTrue("Barbecue code ", component.getCodeExpression().getText().contains("12345678"));
+         Assertions.assertEquals( type, component.getType(),"Barbecue type ");
+         Assertions.assertTrue( component.getCodeExpression().getText().contains("12345678"),"Barbecue code ");
     }
 }

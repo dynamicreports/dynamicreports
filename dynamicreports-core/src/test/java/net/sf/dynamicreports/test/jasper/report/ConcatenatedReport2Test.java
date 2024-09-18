@@ -41,10 +41,10 @@ import net.sf.jasperreports.engine.JRDataSource;
  * @author Ricardo Mariaca
  */
 public class ConcatenatedReport2Test {
-    JasperConcatenatedReportBuilder concatenatedReport;
+    static JasperConcatenatedReportBuilder concatenatedReport;
 
     @BeforeAll
-    public void init() {
+    public static void init() {
         final JasperReportBuilder report1 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text1"));
         final JasperReportBuilder report2 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text2"));
         final JasperReportBuilder report3 = report().columns(col.column("field1", String.class)).pageFooter(cmp.pageNumber()).setDataSource(createDataSource("text3"));
@@ -58,24 +58,24 @@ public class ConcatenatedReport2Test {
         try {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             concatenatedReport.toCsv(bos);
-            Assertions.assertEquals("concatenated report ", "text1\n1\ntext2\n1\ntext3\n1\n", new String(bos.toByteArray()));
+            Assertions.assertEquals("text1\n1\ntext2\n1\ntext3\n1\n", new String(bos.toByteArray()), "concatenated report ");
 
             concatenatedReport.continuousPageNumbering();
             bos = new ByteArrayOutputStream();
             concatenatedReport.toCsv(bos);
-            Assertions.assertEquals("concatenated report ", "text1\n1\ntext2\n2\ntext3\n3\n", new String(bos.toByteArray()));
+            Assertions.assertEquals("text1\n1\ntext2\n2\ntext3\n3\n", new String(bos.toByteArray()), "concatenated report ");
 
             concatenatedReport.setContinuousPageNumbering(false);
             bos = new ByteArrayOutputStream();
             concatenatedReport.toCsv(bos);
-            Assertions.assertEquals("concatenated report ", "text1\n1\ntext2\n1\ntext3\n1\n", new String(bos.toByteArray()));
+            Assertions.assertEquals( "text1\n1\ntext2\n1\ntext3\n1\n", new String(bos.toByteArray()), "concatenated report ");
         } catch (final DRException e) {
             e.printStackTrace();
             Assertions.fail(e.getMessage());
         }
     }
 
-    private JRDataSource createDataSource(String text) {
+    private static JRDataSource createDataSource(String text) {
         final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add(text);
         return dataSource;

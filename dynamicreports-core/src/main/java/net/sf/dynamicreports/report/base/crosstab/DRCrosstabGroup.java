@@ -53,7 +53,6 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
     private String headerPattern;
     private HorizontalTextAlignment headerHorizontalTextAlignment;
     private DRIValueFormatter<?, ? super T> headerValueFormatter;
-    private Boolean headerStretchWithOverflow;
     private TextAdjust headerTextAdjust;
     private DRHyperLink headerHyperLink;
     private DRIReportStyle headerStyle;
@@ -61,7 +60,6 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
     private Boolean showTotal;
     private CrosstabTotalPosition totalPosition;
     private DRIExpression<?> totalHeaderExpression;
-    private Boolean totalHeaderStretchWithOverflow;
     private TextAdjust totalHeaderTextAdjust;
     private DRIReportStyle totalHeaderStyle;
     private List<DRIPropertyExpression> totalHeaderPropertyExpressions;
@@ -131,22 +129,6 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
         this.headerValueFormatter = headerValueFormatter;
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public Boolean getHeaderStretchWithOverflow() {
-        return headerStretchWithOverflow;
-    }
-
-    /**
-     * <p>Setter for the field <code>headerStretchWithOverflow</code>.</p>
-     *
-     * @param headerStretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #setHeaderTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public void setHeaderStretchWithOverflow(final Boolean headerStretchWithOverflow) {
-        this.headerStretchWithOverflow = headerStretchWithOverflow;
-    }
 
     /** {@inheritDoc} */
     @Override
@@ -261,23 +243,6 @@ public abstract class DRCrosstabGroup<T> implements DRICrosstabGroup<T> {
      */
     public void setTotalHeaderExpression(final DRIExpression<?> totalHeaderExpression) {
         this.totalHeaderExpression = totalHeaderExpression;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public Boolean getTotalHeaderStretchWithOverflow() {
-        return totalHeaderStretchWithOverflow;
-    }
-
-    /**
-     * <p>Setter for the field <code>totalHeaderStretchWithOverflow</code>.</p>
-     *
-     * @param totalHeaderStretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #setTotalHeaderTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public void setTotalHeaderStretchWithOverflow(final Boolean totalHeaderStretchWithOverflow) {
-        this.totalHeaderStretchWithOverflow = totalHeaderStretchWithOverflow;
     }
 
     /** {@inheritDoc} */

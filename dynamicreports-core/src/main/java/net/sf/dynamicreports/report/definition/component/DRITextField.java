@@ -115,15 +115,6 @@ public interface DRITextField<T> extends DRIHyperLinkComponent {
     Markup getMarkup();
 
     /**
-     * <p>getStretchWithOverflow.</p>
-     *
-     * @return a {@link java.lang.Boolean} object.
-     * @deprecated replaced {@link #getTextAdjust()}
-     */
-    @Deprecated
-    Boolean getStretchWithOverflow();
-
-    /**
      * <p>getPrintRepeatedValues.</p>
      *
      * @return a {@link java.lang.Boolean} object.

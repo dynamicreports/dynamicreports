@@ -35,6 +35,7 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.ui.RectangleEdge;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -74,10 +75,8 @@ public class Bar3DChartTest extends AbstractJasperChartTest implements Serializa
                     .setRangeMaxValueExpression(15)));
   }
 
-  @Override
+  @Test
   public void test() {
-    super.test();
-
     numberOfPagesTest(1);
 
     JFreeChart chart = getChart("summary.chart1", 0);

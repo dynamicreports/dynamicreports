@@ -148,19 +148,6 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
     }
 
     /**
-     * <p>setHeaderStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a T object.
-     * @deprecated replaced by {@link #setHeaderTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public T setHeaderStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setHeaderStretchWithOverflow(stretchWithOverflow);
-        return (T) this;
-    }
-
-    /**
      * <p>setHeaderTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
@@ -277,19 +264,6 @@ public abstract class AbstractCrosstabGroupBuilder<T extends AbstractCrosstabGro
      */
     public T setTotalHeader(final String totalHeader) {
         getObject().setTotalHeaderExpression(Expressions.text(totalHeader));
-        return (T) this;
-    }
-
-    /**
-     * <p>setTotalHeaderStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a T object.
-     * @deprecated replaced by {@link #setTotalHeaderTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public T setTotalHeaderStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setTotalHeaderStretchWithOverflow(stretchWithOverflow);
         return (T) this;
     }
 

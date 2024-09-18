@@ -1448,21 +1448,6 @@ public class TemplateTransform {
     }
 
     /**
-     * <p>getTextFieldStretchWithOverflow.</p>
-     *
-     * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
-     * @return a boolean.
-     * @deprecated replaced by {@link #getTextFieldTextAdjust(DRITextField)}
-     */
-    @Deprecated
-    protected boolean getTextFieldStretchWithOverflow(final DRITextField<?> textField) {
-        if (textField.getStretchWithOverflow() != null) {
-            return textField.getStretchWithOverflow();
-        }
-        return Defaults.getDefaults().isTextFieldStretchWithOverflow();
-    }
-
-    /**
      * <p>getTextFieldTextAdjust.</p>
      *
      * @param textField a {@link net.sf.dynamicreports.report.definition.component.DRITextField} object.
