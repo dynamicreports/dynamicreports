@@ -65,14 +65,14 @@ public class Component3Test extends AbstractJasperTest {
         numberOfPagesTest(1);
 
         JRElement textField = getJasperReport().getTitle().getElementByKey("title.textField1");
-        Assertions.assertEquals("position type", PositionTypeEnum.FIX_RELATIVE_TO_TOP, textField.getPositionType());
-        Assertions.assertEquals("stretch type", StretchTypeEnum.NO_STRETCH, textField.getStretchType());
-        Assertions.assertTrue("print in first whole band", textField.isPrintInFirstWholeBand());
-        Assertions.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());
-        Assertions.assertEquals("print when group changes", "group1", textField.getPrintWhenGroupChanges());
+        Assertions.assertEquals(PositionTypeEnum.FIX_RELATIVE_TO_TOP, textField.getPositionType(),"position type");
+        Assertions.assertEquals(StretchTypeEnum.NO_STRETCH, textField.getStretchType(),"stretch type");
+        Assertions.assertTrue(textField.isPrintInFirstWholeBand(),"print in first whole band");
+        Assertions.assertTrue(textField.isPrintWhenDetailOverflows(),"print when detail overflows");
+        Assertions.assertEquals("group1", textField.getPrintWhenGroupChanges(), "print when group changes");
 
         textField = getJasperReport().getDetailSection().getBands()[0].getElementByKey("detail.column_column11");
-        Assertions.assertTrue("print when detail overflows", textField.isPrintWhenDetailOverflows());
+        Assertions.assertTrue(textField.isPrintWhenDetailOverflows(), "print when detail overflows");
     }
 
     @Override

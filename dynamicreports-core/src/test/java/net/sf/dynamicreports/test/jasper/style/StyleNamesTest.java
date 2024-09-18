@@ -56,7 +56,7 @@ public class StyleNamesTest {
                 break;
             }
         }
-        Assertions.assertNotNull(String.format("Style with name \"%s\" not found", name), found);
+        Assertions.assertNotNull(found, String.format("Style with name \"%s\" not found", name));
     }
 
     @Test

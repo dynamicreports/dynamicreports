@@ -40,8 +40,8 @@
 
     <properties>
         <encoding>UTF-8</encoding>
-        <sourceVersion>17</sourceVersion>
-        <targetVersion>17</targetVersion>
+        <sourceVersion>8</sourceVersion>
+        <targetVersion>8</targetVersion>
 
         <!--Dependencies -->
         <barcode4jVersion>2.1</barcode4jVersion>

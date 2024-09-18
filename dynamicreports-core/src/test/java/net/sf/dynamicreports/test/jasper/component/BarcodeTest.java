@@ -245,7 +245,7 @@ public class BarcodeTest extends AbstractJasperTest {
 
         // codabar
         final CodabarComponent codabar = testBarcode("Codabar", CodabarComponent.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("Codabar wide factor", Double.valueOf(2.5), codabar.getWideFactor());
+        Assertions.assertEquals(Double.valueOf(2.5), codabar.getWideFactor(), "Codabar wide factor");
         testBarcode("Codabar", 2, 0, "12345678");
         testBarcode("Codabar", 2, 1, "112345678");
 
@@ -267,19 +267,19 @@ public class BarcodeTest extends AbstractJasperTest {
         // code39
         final Code39Component code39 = testBarcode("Code39", Code39Component.class, TextPositionEnum.TOP);
         Assertions.assertEquals("Code39 checksum mode", ChecksumMode.CP_AUTO.getName(), code39.getChecksumMode());
-        Assertions.assertEquals("Code39 display checksum", Boolean.TRUE, code39.isDisplayChecksum());
-        Assertions.assertEquals("Code39 display start stop", Boolean.TRUE, code39.isDisplayStartStop());
-        Assertions.assertEquals("Code39 extended charSet enabled", Boolean.TRUE, code39.isExtendedCharSetEnabled());
-        Assertions.assertEquals("Code39 interchar gap width", Double.valueOf(1.5), code39.getIntercharGapWidth());
-        Assertions.assertEquals("Code39 wide factor", Double.valueOf(2.5), code39.getWideFactor());
+        Assertions.assertEquals(Boolean.TRUE, code39.isDisplayChecksum(),"Code39 display checksum");
+        Assertions.assertEquals(Boolean.TRUE, code39.isDisplayStartStop(),"Code39 display start stop");
+        Assertions.assertEquals(Boolean.TRUE, code39.isExtendedCharSetEnabled(),"Code39 extended charSet enabled");
+        Assertions.assertEquals(Double.valueOf(1.5), code39.getIntercharGapWidth(),"Code39 interchar gap width");
+        Assertions.assertEquals(Double.valueOf(2.5), code39.getWideFactor(),"Code39 wide factor");
         testBarcode("Code39", 6, 0, "12345678");
         testBarcode("Code39", 6, 1, "112345678");
 
         // interleaved2Of5
         final Interleaved2Of5Component interleaved2Of5 = testBarcode("Interleaved2Of5", Interleaved2Of5Component.class, TextPositionEnum.TOP);
         Assertions.assertEquals("Interleaved2Of5 checksum mode", ChecksumMode.CP_AUTO.getName(), interleaved2Of5.getChecksumMode());
-        Assertions.assertEquals("Interleaved2Of5 display checksum", Boolean.TRUE, interleaved2Of5.isDisplayChecksum());
-        Assertions.assertEquals("Interleaved2Of5 wide factor", Double.valueOf(2.5), interleaved2Of5.getWideFactor());
+        Assertions.assertEquals( Boolean.TRUE, interleaved2Of5.isDisplayChecksum(),"Interleaved2Of5 display checksum");
+        Assertions.assertEquals(Double.valueOf(2.5), interleaved2Of5.getWideFactor(),"Interleaved2Of5 wide factor");
         testBarcode("Interleaved2Of5", 7, 0, "12345678");
         testBarcode("Interleaved2Of5", 7, 1, "112345678");
 
@@ -310,34 +310,34 @@ public class BarcodeTest extends AbstractJasperTest {
         // uspsIntelligentMail
         final USPSIntelligentMailComponent uspsIntelligentMail = testBarcode("USPSIntelligentMail", USPSIntelligentMailComponent.class, TextPositionEnum.TOP);
         Assertions.assertEquals("USPSIntelligentMail checksum mode", ChecksumMode.CP_AUTO.getName(), uspsIntelligentMail.getChecksumMode());
-        Assertions.assertEquals("USPSIntelligentMail ascender height", Double.valueOf(2.6), uspsIntelligentMail.getAscenderHeight());
-        Assertions.assertEquals("USPSIntelligentMail interchar gap width", Double.valueOf(1.8), uspsIntelligentMail.getIntercharGapWidth());
-        Assertions.assertEquals("USPSIntelligentMail track height", Double.valueOf(20.1), uspsIntelligentMail.getTrackHeight());
+        Assertions.assertEquals(Double.valueOf(2.6), uspsIntelligentMail.getAscenderHeight(),"USPSIntelligentMail ascender height");
+        Assertions.assertEquals(Double.valueOf(1.8), uspsIntelligentMail.getIntercharGapWidth(),"USPSIntelligentMail interchar gap width");
+        Assertions.assertEquals(Double.valueOf(20.1), uspsIntelligentMail.getTrackHeight(),"USPSIntelligentMail track height");
 
         // royalMailCustomer
         final RoyalMailCustomerComponent royalMailCustomer = testBarcode("RoyalMailCustomer", RoyalMailCustomerComponent.class, null);
         Assertions.assertEquals("RoyalMailCustomer checksum mode", ChecksumMode.CP_AUTO.getName(), royalMailCustomer.getChecksumMode());
-        Assertions.assertEquals("RoyalMailCustomer ascender height", Double.valueOf(2.6), royalMailCustomer.getAscenderHeight());
-        Assertions.assertEquals("RoyalMailCustomer interchar gap width", Double.valueOf(1.8), royalMailCustomer.getIntercharGapWidth());
-        Assertions.assertEquals("RoyalMailCustomer track height", Double.valueOf(20.1), royalMailCustomer.getTrackHeight());
+        Assertions.assertEquals(Double.valueOf(2.6), royalMailCustomer.getAscenderHeight(),"RoyalMailCustomer ascender height");
+        Assertions.assertEquals(Double.valueOf(1.8), royalMailCustomer.getIntercharGapWidth(),"RoyalMailCustomer interchar gap width");
+        Assertions.assertEquals(Double.valueOf(20.1), royalMailCustomer.getTrackHeight(),"RoyalMailCustomer track height");
 
         // postnet
         final POSTNETComponent postnet = testBarcode("POSTNET", POSTNETComponent.class, TextPositionEnum.BOTTOM);
         Assertions.assertEquals("POSTNET checksum mode", ChecksumMode.CP_AUTO.getName(), postnet.getChecksumMode());
-        Assertions.assertEquals("POSTNET display checksum", Boolean.TRUE, postnet.getDisplayChecksum());
-        Assertions.assertEquals("POSTNET interchar gap width", Double.valueOf(1.5), postnet.getIntercharGapWidth());
-        Assertions.assertEquals("POSTNET short bar height", Double.valueOf(2.5), postnet.getShortBarHeight());
-        Assertions.assertEquals("POSTNET baseline position", BaselineAlignment.ALIGN_TOP.getName(), postnet.getBaselinePosition());
-        Assertions.assertEquals("POSTNET interchar gap width", Double.valueOf(1.5), postnet.getIntercharGapWidth());
+        Assertions.assertEquals(Boolean.TRUE, postnet.getDisplayChecksum(),"POSTNET display checksum");
+        Assertions.assertEquals(Double.valueOf(1.5), postnet.getIntercharGapWidth(),"POSTNET interchar gap width");
+        Assertions.assertEquals(Double.valueOf(2.5), postnet.getShortBarHeight(),"POSTNET short bar height");
+        Assertions.assertEquals(BaselineAlignment.ALIGN_TOP.getName(), postnet.getBaselinePosition(),"POSTNET baseline position");
+        Assertions.assertEquals(Double.valueOf(1.5), postnet.getIntercharGapWidth(),"POSTNET interchar gap width");
 
         // pdf417
         final PDF417Component pdf417 = testBarcode("PDF417", PDF417Component.class, TextPositionEnum.NONE);
-        Assertions.assertEquals("PDF417 min columns", Integer.valueOf(2), pdf417.getMinColumns());
-        Assertions.assertEquals("PDF417 max columns", Integer.valueOf(30), pdf417.getMaxColumns());
-        Assertions.assertEquals("PDF417 min rows", Integer.valueOf(3), pdf417.getMinRows());
-        Assertions.assertEquals("PDF417 max rows", Integer.valueOf(29), pdf417.getMaxRows());
-        Assertions.assertEquals("PDF417 width to height ratio", Double.valueOf(2.6), pdf417.getWidthToHeightRatio());
-        Assertions.assertEquals("PDF417 error correction level", Integer.valueOf(8), pdf417.getErrorCorrectionLevel());
+        Assertions.assertEquals(Integer.valueOf(2), pdf417.getMinColumns(),"PDF417 min columns");
+        Assertions.assertEquals(Integer.valueOf(30), pdf417.getMaxColumns(),"PDF417 max columns");
+        Assertions.assertEquals(Integer.valueOf(3), pdf417.getMinRows(),"PDF417 min rows");
+        Assertions.assertEquals(Integer.valueOf(29), pdf417.getMaxRows(),"PDF417 max rows");
+        Assertions.assertEquals(Double.valueOf(2.6), pdf417.getWidthToHeightRatio(),"PDF417 width to height ratio");
+        Assertions.assertEquals(Integer.valueOf(8), pdf417.getErrorCorrectionLevel(),"PDF417 error correction level");
 
         // qrCode
         testQrCode();
@@ -346,14 +346,14 @@ public class BarcodeTest extends AbstractJasperTest {
     private <T extends Barcode4jComponent> T testBarcode(final String name, final Class<T> componentClass, final TextPositionEnum textPosition) {
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title." + name + "2");
         final Component component = barcode.getComponent();
-        Assertions.assertTrue("Barcode is not instance of " + componentClass.getName(), component.getClass().equals(componentClass));
+        Assertions.assertTrue(component.getClass().equals(componentClass),"Barcode is not instance of " + componentClass.getName());
         @SuppressWarnings("unchecked") final T barcodeComponent = (T) component;
 
-        Assertions.assertEquals(name + " module width", Double.valueOf(2), barcodeComponent.getModuleWidth());
-        Assertions.assertEquals(name + " orientation", OrientationEnum.LEFT, barcodeComponent.getOrientation());
-        Assertions.assertEquals(name + " text position", textPosition, barcodeComponent.getTextPosition());
-        Assertions.assertEquals(name + " quiet zone", Double.valueOf(100), barcodeComponent.getQuietZone());
-        Assertions.assertEquals(name + " vertical quiet zone", Double.valueOf(50), barcodeComponent.getVerticalQuietZone());
+        Assertions.assertEquals(Double.valueOf(2), barcodeComponent.getModuleWidth(),name + " module width");
+        Assertions.assertEquals(OrientationEnum.LEFT, barcodeComponent.getOrientation(),name + " orientation");
+        Assertions.assertEquals(textPosition, barcodeComponent.getTextPosition(),name + " text position");
+        Assertions.assertEquals(Double.valueOf(100), barcodeComponent.getQuietZone(),name + " quiet zone");
+        Assertions.assertEquals(Double.valueOf(50), barcodeComponent.getVerticalQuietZone(),name + " vertical quiet zone");
         return barcodeComponent;
     }
 
@@ -363,7 +363,7 @@ public class BarcodeTest extends AbstractJasperTest {
         final SimpleRenderToImageAwareDataRenderer renderer = (SimpleRenderToImageAwareDataRenderer) image.getRenderer();
         try {
             final String barcode = new String(renderer.getData(DefaultJasperReportsContext.getInstance()));
-            Assertions.assertTrue(name + " code", barcode.matches(".*>" + code.replaceAll("\\(", "\\\\(").replaceAll("\\)", "\\\\)") + "<.*"));
+            Assertions.assertTrue(barcode.matches(".*>" + code.replaceAll("\\(", "\\\\(").replaceAll("\\)", "\\\\)") + "<.*"), name + " code");
         } catch (final JRException e) {
             e.printStackTrace();
             Assertions.fail(e.getMessage());
@@ -373,10 +373,10 @@ public class BarcodeTest extends AbstractJasperTest {
     private void testQrCode() {
         final JRBaseComponentElement barcode = (JRBaseComponentElement) getJasperReport().getTitle().getElementByKey("title.QRCode1");
         final Component component = barcode.getComponent();
-        Assertions.assertTrue("QRCode is not instance of " + QRCodeComponent.class.getName(), component.getClass().equals(QRCodeComponent.class));
+        Assertions.assertTrue(component.getClass().equals(QRCodeComponent.class),"QRCode is not instance of " + QRCodeComponent.class.getName());
         final QRCodeComponent qrComponentComponent = (QRCodeComponent) component;
 
-        Assertions.assertEquals("QRCode margin", Integer.valueOf(2), qrComponentComponent.getMargin());
-        Assertions.assertEquals("QRCode error correction level", ErrorCorrectionLevelEnum.H, qrComponentComponent.getErrorCorrectionLevel());
+        Assertions.assertEquals(Integer.valueOf(2), qrComponentComponent.getMargin(),"QRCode margin");
+        Assertions.assertEquals(ErrorCorrectionLevelEnum.H, qrComponentComponent.getErrorCorrectionLevel(),"QRCode error correction level");
     }
 }

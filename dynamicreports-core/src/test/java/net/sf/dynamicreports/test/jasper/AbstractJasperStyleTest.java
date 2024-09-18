@@ -51,13 +51,13 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
 
   protected void styleTest(JRStyle style, Color foreColor, Color backColor, String fontName,
       Float fontSize, Boolean bold, Boolean italic) {
-    Assertions.assertNotNull("style is null", style);
-    Assertions.assertEquals("foreColor", foreColor, style.getForecolor());
-    Assertions.assertEquals("backColor", backColor, style.getBackcolor());
-    Assertions.assertEquals("fontName", fontName, style.getFontName());
-    Assertions.assertEquals("fontSize", fontSize, style.getFontSize());
-    Assertions.assertEquals("bold", bold, style.isBold());
-    Assertions.assertEquals("italic", italic, style.isItalic());
+    Assertions.assertNotNull(style, "style is null");
+    Assertions.assertEquals(foreColor, style.getForecolor(),"foreColor");
+    Assertions.assertEquals(backColor, style.getBackcolor(),"backColor");
+    Assertions.assertEquals( fontName, style.getFontName(), "fontName");
+    Assertions.assertEquals(fontSize, style.getFontSize(), "fontSize");
+    Assertions.assertEquals(bold, style.isBold(), "bold");
+    Assertions.assertEquals(italic, style.isItalic(), "italic");
   }
 
   protected void borderTest(String name, int index, Color topColor, LineStyleEnum topLineStyle,
@@ -100,42 +100,42 @@ public abstract class AbstractJasperStyleTest extends AbstractJasperTest {
       HorizontalImageAlignEnum horizontalAlignment) {
     final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
-      Assertions.assertEquals("horizontalAlignment", HorizontalImageAlignEnum.LEFT,
-          element.getHorizontalImageAlign());
+      Assertions.assertEquals(HorizontalImageAlignEnum.LEFT,
+          element.getHorizontalImageAlign(), "horizontalAlignment");
     }
-    Assertions.assertEquals("horizontalAlignment", horizontalAlignment,
-        element.getHorizontalImageAlign());
+    Assertions.assertEquals(horizontalAlignment,
+        element.getHorizontalImageAlign(), "horizontalAlignment");
   }
 
   protected void horizontalAlignmentTest(String name, int index,
       HorizontalTextAlignEnum horizontalAlignment) {
     final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (horizontalAlignment == null) {
-      Assertions.assertEquals("horizontalAlignment", HorizontalTextAlignEnum.LEFT,
-          element.getHorizontalTextAlign());
+      Assertions.assertEquals(HorizontalTextAlignEnum.LEFT,
+          element.getHorizontalTextAlign(), "horizontalAlignment");
     }
-    Assertions.assertEquals("horizontalAlignment", horizontalAlignment,
-        element.getHorizontalTextAlign());
+    Assertions.assertEquals(horizontalAlignment,
+        element.getHorizontalTextAlign(), "horizontalAlignment");
   }
 
   protected void verticalAlignmentTest(String name, int index,
       VerticalImageAlignEnum verticalAlignment) {
     final JRImageAlignment element = (JRImageAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
-      Assertions.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
-          element.getVerticalImageAlign());
+      Assertions.assertEquals(VerticalTextAlignEnum.TOP,
+          element.getVerticalImageAlign(), "verticalAlignment");
     }
-    Assertions.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalImageAlign());
+    Assertions.assertEquals(verticalAlignment, element.getVerticalImageAlign(), "verticalAlignment");
   }
 
   protected void verticalAlignmentTest(String name, int index,
       VerticalTextAlignEnum verticalAlignment) {
     final JRTextAlignment element = (JRTextAlignment) getElementAt(name, index);
     if (verticalAlignment == null) {
-      Assertions.assertEquals("verticalAlignment", VerticalTextAlignEnum.TOP,
-          element.getVerticalTextAlign());
+      Assertions.assertEquals(VerticalTextAlignEnum.TOP,
+          element.getVerticalTextAlign(), "verticalAlignment");
     }
-    Assertions.assertEquals("verticalAlignment", verticalAlignment, element.getVerticalTextAlign());
+    Assertions.assertEquals(verticalAlignment, element.getVerticalTextAlign(), "verticalAlignment");
   }
 
   // column detail

@@ -65,12 +65,12 @@ public class CrosstabTest extends AbstractJasperTest {
         super.test();
 
         final JRBaseCrosstab crosstab = (JRBaseCrosstab) getJasperReport().getSummary().getElementByKey("summary.crosstab1");
-        Assertions.assertFalse("Crosstab repeatColumnHeaders", crosstab.isRepeatColumnHeaders());
-        Assertions.assertFalse("Crosstab repeatRowHeaders", crosstab.isRepeatRowHeaders());
-        Assertions.assertEquals("Crosstab columnBreakOffset", Integer.valueOf(100), crosstab.getColumnBreakOffset());
-        Assertions.assertTrue("Crosstab ignoreWidth", crosstab.getIgnoreWidth());
-        Assertions.assertEquals("Crosstab runDirection", RunDirectionEnum.RTL, crosstab.getRunDirection());
-        Assertions.assertEquals("Crosstab row group position", CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPosition());
-        Assertions.assertEquals("Crosstab column group position", CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPosition());
+        Assertions.assertFalse(crosstab.isRepeatColumnHeaders(), "Crosstab repeatColumnHeaders");
+        Assertions.assertFalse(crosstab.isRepeatRowHeaders(),"Crosstab repeatRowHeaders");
+        Assertions.assertEquals(Integer.valueOf(100), crosstab.getColumnBreakOffset(),"Crosstab columnBreakOffset");
+        Assertions.assertTrue(crosstab.getIgnoreWidth(),"Crosstab ignoreWidth");
+        Assertions.assertEquals(RunDirectionEnum.RTL, crosstab.getRunDirection(),"Crosstab runDirection");
+        Assertions.assertEquals(CrosstabRowPositionEnum.STRETCH, crosstab.getRowGroups()[0].getPosition(),"Crosstab row group position");
+        Assertions.assertEquals(CrosstabColumnPositionEnum.STRETCH, crosstab.getColumnGroups()[0].getPosition(),"Crosstab column group position");
     }
 }

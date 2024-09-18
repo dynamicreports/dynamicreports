@@ -105,7 +105,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         JRPrintText dots = (JRPrintText) getElementAt("detail.textField2", 0);
         String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         JRPrintText pageIndex = (JRPrintText) getElementAt("detail.textField3", 0);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
@@ -116,7 +116,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 1);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 1);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
@@ -127,7 +127,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 2);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 2);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
@@ -138,7 +138,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 4);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 4);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
@@ -149,7 +149,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 5);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 5);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
@@ -160,7 +160,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
         Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
         dots = (JRPrintText) getElementAt("detail.textField2", 6);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
-        Assertions.assertTrue("dots", StringUtils.containsOnly(value, "."));
+        Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
         Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 6);
         Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());

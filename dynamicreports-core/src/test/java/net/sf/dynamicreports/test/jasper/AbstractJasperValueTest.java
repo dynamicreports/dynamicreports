@@ -38,15 +38,15 @@ import net.sf.jasperreports.engine.util.JRStyledTextUtil;
 public abstract class AbstractJasperValueTest extends AbstractJasperTest {
 
     protected void elementCountTest(String name, int expectedNumberOfElements) {
-        Assertions.assertEquals("element count " + name, expectedNumberOfElements, findElement(name).size());
+        Assertions.assertEquals(expectedNumberOfElements, findElement(name).size(), "element count " + name);
     }
 
     protected void elementValueTest(String name, int index, String value) {
-        Assertions.assertEquals("element value " + name, value, getElementValue(name, index));
+        Assertions.assertEquals(value, getElementValue(name, index), "element value " + name);
     }
 
     protected void elementFullValueTest(String name, int index, String value) {
-        Assertions.assertEquals("element value " + name, value, getElementFullValue(name, index));
+        Assertions.assertEquals(value, getElementFullValue(name, index), "element value " + name);
     }
 
     protected void elementValueTest(String name, String... values) {

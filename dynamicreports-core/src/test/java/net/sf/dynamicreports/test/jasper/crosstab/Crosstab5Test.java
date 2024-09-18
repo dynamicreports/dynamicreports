@@ -200,8 +200,8 @@ public class Crosstab5Test extends AbstractJasperCrosstabValueTest implements Se
             final Integer value1 = (Integer) values.get(0);
             final Integer value2 = (Integer) values.get(1);
             final Integer measure1Value = reportParameters.getValue(measure1);
-            Assertions.assertEquals("measure value", value1, measure1Value);
-            Assertions.assertEquals("measure value", value2, values.get(2));
+            Assertions.assertEquals(value1, measure1Value,"measure value");
+            Assertions.assertEquals(value2, values.get(2),"measure value");
             return new BigDecimal(value1).divide(new BigDecimal(value2), 3, BigDecimal.ROUND_HALF_UP).multiply(new BigDecimal(100));
         }
     }

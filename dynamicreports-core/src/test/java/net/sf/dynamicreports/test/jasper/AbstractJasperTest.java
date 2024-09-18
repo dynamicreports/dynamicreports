@@ -145,7 +145,7 @@ public abstract class AbstractJasperTest {
     }
 
     protected void numberOfPagesTest(int expectedNumberOfPages) {
-        Assertions.assertEquals("pages", expectedNumberOfPages, getNumberOfPages());
+        Assertions.assertEquals(expectedNumberOfPages, getNumberOfPages(), "pages");
     }
 
     private int getNumberOfPages() {

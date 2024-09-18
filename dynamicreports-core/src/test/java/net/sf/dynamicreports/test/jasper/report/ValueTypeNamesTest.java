@@ -66,9 +66,9 @@ public class ValueTypeNamesTest extends AbstractJasperValueTest implements Seria
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            Assertions.assertEquals("Field value", "fieldValue", reportParameters.getValue("field1"));
-            Assertions.assertEquals("Field value", "fieldValue", reportParameters.getFieldValue("field1"));
-            Assertions.assertEquals("Parameter value", "parameterValue", reportParameters.getParameterValue("field1"));
+            Assertions.assertEquals("fieldValue", reportParameters.getValue("field1"), "Field value");
+            Assertions.assertEquals("fieldValue", reportParameters.getFieldValue("field1"), "Field value");
+            Assertions.assertEquals("parameterValue", reportParameters.getParameterValue("field1"), "Parameter value");
             return "";
         }
     }

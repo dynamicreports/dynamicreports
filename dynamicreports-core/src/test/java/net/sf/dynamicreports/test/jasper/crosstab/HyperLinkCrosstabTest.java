@@ -78,21 +78,21 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
         setCrosstabBand("summary");
 
         List<JRPrintElement> elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(rowGroup));
-        Assertions.assertEquals("Row group size", 2, elements.size());
+        Assertions.assertEquals(2, elements.size(),"Row group size");
         JRPrintText element = (JRPrintText) elements.get(0);
         Assertions.assertEquals("Row group link", "a", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);
         Assertions.assertEquals("Row group link", "b", element.getHyperlinkReference());
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(columnGroup));
-        Assertions.assertEquals("Column group size", 2, elements.size());
+        Assertions.assertEquals(2, elements.size(),"Column group size");
         element = (JRPrintText) elements.get(0);
         Assertions.assertEquals("Column group link", "c", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);
         Assertions.assertEquals("Column group link", "d", element.getHyperlinkReference());
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabCellName(measure, null, null));
-        Assertions.assertEquals("Column group size", 4, elements.size());
+        Assertions.assertEquals(4, elements.size(),"Column group size");
         element = (JRPrintText) elements.get(0);
         Assertions.assertEquals("Column group link", "a c 3", element.getHyperlinkReference());
         element = (JRPrintText) elements.get(1);

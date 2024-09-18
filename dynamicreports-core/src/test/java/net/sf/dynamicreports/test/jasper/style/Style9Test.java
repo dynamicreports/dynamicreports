@@ -52,7 +52,7 @@ public class Style9Test extends AbstractJasperStyleTest {
     numberOfPagesTest(1);
 
     final JRStyle style = getElementAt("title.rectangle1", 0).getStyle();
-    Assertions.assertEquals("foreColor", Color.BLUE, style.getForecolor());
+    Assertions.assertEquals(Color.BLUE, style.getForecolor(), "foreColor");
     styleTest("title.textField1", 0, Color.BLUE, null, TEST_FONT_NAME, 10f, true, null);
   }
 }

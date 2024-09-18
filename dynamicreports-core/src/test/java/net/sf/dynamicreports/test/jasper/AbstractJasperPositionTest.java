@@ -34,10 +34,10 @@ public abstract class AbstractJasperPositionTest extends AbstractJasperTest {
 
     protected void elementPositionTest(String name, int index, int x, int y, int width, int height) {
         final JRPrintElement element = getElementAt(name, index);
-        Assertions.assertEquals("width", width, element.getWidth());
-        Assertions.assertEquals("height", height, element.getHeight());
-        Assertions.assertEquals("x", x, element.getX());
-        Assertions.assertEquals("y", y, element.getY());
+        Assertions.assertEquals(width, element.getWidth(), "width");
+        Assertions.assertEquals(height, element.getHeight(), "height");
+        Assertions.assertEquals(x, element.getX(), "x");
+        Assertions.assertEquals(y, element.getY(), "y");
     }
 
     // column detail

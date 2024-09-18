@@ -66,17 +66,17 @@ public class Style7Test extends AbstractJasperStyleTest implements Serializable 
         numberOfPagesTest(1);
 
         final JRStyle style = getElementAt("title.textField1", 0).getStyle();
-        Assertions.assertEquals("line spacing", LineSpacingEnum.DOUBLE, style.getParagraph().getLineSpacing());
-        Assertions.assertEquals("line spacing size", Float.valueOf(2), style.getParagraph().getLineSpacingSize());
-        Assertions.assertEquals("first line indent", Integer.valueOf(10), style.getParagraph().getFirstLineIndent());
-        Assertions.assertEquals("left indent", Integer.valueOf(15), style.getParagraph().getLeftIndent());
-        Assertions.assertEquals("right indent", Integer.valueOf(20), style.getParagraph().getRightIndent());
-        Assertions.assertEquals("spacing before", Integer.valueOf(5), style.getParagraph().getSpacingBefore());
-        Assertions.assertEquals("spacing after", Integer.valueOf(6), style.getParagraph().getSpacingAfter());
-        Assertions.assertEquals("tab stop width", Integer.valueOf(9), style.getParagraph().getTabStopWidth());
+        Assertions.assertEquals(LineSpacingEnum.DOUBLE, style.getParagraph().getLineSpacing(), "line spacing");
+        Assertions.assertEquals(Float.valueOf(2), style.getParagraph().getLineSpacingSize(),"line spacing size");
+        Assertions.assertEquals( Integer.valueOf(10), style.getParagraph().getFirstLineIndent(),"first line indent");
+        Assertions.assertEquals(Integer.valueOf(15), style.getParagraph().getLeftIndent(),"left indent");
+        Assertions.assertEquals(Integer.valueOf(20), style.getParagraph().getRightIndent(),"right indent");
+        Assertions.assertEquals(Integer.valueOf(5), style.getParagraph().getSpacingBefore(),"spacing before");
+        Assertions.assertEquals(Integer.valueOf(6), style.getParagraph().getSpacingAfter(),"spacing after");
+        Assertions.assertEquals(Integer.valueOf(9), style.getParagraph().getTabStopWidth(),"tab stop width");
         final TabStop[] tabStops = style.getParagraph().getTabStops();
-        Assertions.assertNotNull("tab stops", tabStops);
-        Assertions.assertEquals("tab stop position", 12, tabStops[0].getPosition());
-        Assertions.assertEquals("tab stop alignment", TabStopAlignEnum.CENTER, tabStops[0].getAlignment());
+        Assertions.assertNotNull(tabStops,"tab stops");
+        Assertions.assertEquals(12, tabStops[0].getPosition(),"tab stop position");
+        Assertions.assertEquals(TabStopAlignEnum.CENTER, tabStops[0].getAlignment(),"tab stop alignment");
     }
 }

@@ -33,8 +33,8 @@
     <properties>
         <!--Environment -->
         <encoding>UTF-8</encoding>
-        <sourceVersion>17</sourceVersion>
-        <targetVersion>17</targetVersion>
+        <sourceVersion>8</sourceVersion>
+        <targetVersion>8</targetVersion>
         <lint>deprecation</lint>
         <lint>unchecked</lint>
         <illegal-access>warn</illegal-access>
@@ -295,6 +295,23 @@
                     </sourceFileExcludes>
                 </configuration>
             </plugin>
+            <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>5.40.2</version>
+      <configuration>
+        <activeRecipes>
+          <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
+        </activeRecipes>
+      </configuration>
+      <dependencies>
+        <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-testing-frameworks</artifactId>
+          <version>2.18.0</version>
+        </dependency>
+      </dependencies>
+    </plugin>
         </plugins>
     </build>
 

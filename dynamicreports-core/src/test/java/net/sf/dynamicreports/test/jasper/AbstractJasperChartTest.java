@@ -59,25 +59,25 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
 
 
   protected void chartCountTest(String name, int expectedNumberOfCharts) {
-    Assertions.assertEquals("chart count " + name, expectedNumberOfCharts, findElement(name).size());
+    Assertions.assertEquals(expectedNumberOfCharts, findElement(name).size(), "chart count " + name);
   }
 
   protected void chartCategoryCountTest(String name, int index, int expectedNumberOfCategories) {
-    Assertions.assertEquals("chart category count " + name, expectedNumberOfCategories,
-        getChart(name, index).getCategoryPlot().getDataset().getColumnCount());
+    Assertions.assertEquals(expectedNumberOfCategories,
+        getChart(name, index).getCategoryPlot().getDataset().getColumnCount(), "chart category count " + name);
   }
 
   protected void chartSeriesCountTest(String name, int index, int expectedNumberOfSeries) {
-    Assertions.assertEquals("chart series count " + name, expectedNumberOfSeries,
-        getChart(name, index).getCategoryPlot().getDataset().getRowCount());
+    Assertions.assertEquals(expectedNumberOfSeries,
+        getChart(name, index).getCategoryPlot().getDataset().getRowCount(), "chart series count " + name);
   }
 
   protected void chartTitleTest(String name, int index, String title) {
     final TextTitle chartTitle = getChart(name, index).getTitle();
     if (title != null) {
-      Assertions.assertEquals("chart title", title, chartTitle.getText());
+      Assertions.assertEquals(title, chartTitle.getText(), "chart title");
     } else {
-      Assertions.assertNull("chart title", chartTitle);
+      Assertions.assertNull(chartTitle, "chart title");
     }
   }
 
@@ -86,7 +86,7 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     final CategoryDataset dataset = getChart(name, index).getCategoryPlot().getDataset();
     for (int i = 0; i < categories.length; i++) {
       for (int j = 0; j < series.length; j++) {
-        Assertions.assertEquals("chart data", values[i][j], dataset.getValue(series[j], categories[i]));
+        Assertions.assertEquals(values[i][j], dataset.getValue(series[j], categories[i]), "chart data");
       }
     }
   }
@@ -96,9 +96,9 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     final XYDataset dataset = chart.getXYPlot().getDataset();
     int index = 0;
     for (final Number[] numbers : values) {
-      Assertions.assertEquals("chart data series name", seriesName, dataset.getSeriesKey(series));
-      Assertions.assertEquals("chart data x", numbers[0], dataset.getXValue(series, index));
-      Assertions.assertEquals("chart data y", numbers[1], dataset.getYValue(series, index));
+      Assertions.assertEquals(seriesName, dataset.getSeriesKey(series), "chart data series name");
+      Assertions.assertEquals(numbers[0], dataset.getXValue(series, index), "chart data x");
+      Assertions.assertEquals(numbers[1], dataset.getYValue(series, index), "chart data y");
       index++;
     }
   }
@@ -108,10 +108,10 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     final XYZDataset dataset = (XYZDataset) chart.getXYPlot().getDataset();
     int index = 0;
     for (final Number[] numbers : values) {
-      Assertions.assertEquals("chart data series name", seriesName, dataset.getSeriesKey(series));
-      Assertions.assertEquals("chart data x", numbers[0], dataset.getXValue(series, index));
-      Assertions.assertEquals("chart data y", numbers[1], dataset.getYValue(series, index));
-      Assertions.assertEquals("chart data z", numbers[2], dataset.getZValue(series, index));
+      Assertions.assertEquals(seriesName, dataset.getSeriesKey(series), "chart data series name");
+      Assertions.assertEquals(numbers[0], dataset.getXValue(series, index), "chart data x");
+      Assertions.assertEquals(numbers[1], dataset.getYValue(series, index), "chart data y");
+      Assertions.assertEquals(numbers[2], dataset.getZValue(series, index), "chart data z");
       index++;
     }
   }
@@ -120,13 +120,13 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
     final DefaultHighLowDataset dataset = (DefaultHighLowDataset) chart.getXYPlot().getDataset();
     int index = 0;
     for (final Object[] value : values) {
-      Assertions.assertEquals("chart data series", value[0], dataset.getSeriesKey(series));
-      Assertions.assertEquals("chart data date", value[1], dataset.getXDate(series, index));
-      Assertions.assertEquals("chart data high value", value[2], dataset.getHigh(series, index));
-      Assertions.assertEquals("chart data low value", value[3], dataset.getLow(series, index));
-      Assertions.assertEquals("chart data open value", value[4], dataset.getOpenValue(series, index));
-      Assertions.assertEquals("chart data close value", value[5], dataset.getClose(series, index));
-      Assertions.assertEquals("chart data volume value", value[6], dataset.getVolume(series, index));
+      Assertions.assertEquals(value[0], dataset.getSeriesKey(series), "chart data series");
+      Assertions.assertEquals(value[1], dataset.getXDate(series, index), "chart data date");
+      Assertions.assertEquals(value[2], dataset.getHigh(series, index), "chart data high value");
+      Assertions.assertEquals(value[3], dataset.getLow(series, index), "chart data low value");
+      Assertions.assertEquals(value[4], dataset.getOpenValue(series, index), "chart data open value");
+      Assertions.assertEquals(value[5], dataset.getClose(series, index), "chart data close value");
+      Assertions.assertEquals(value[6], dataset.getVolume(series, index), "chart data volume value");
       index++;
     }
   }
@@ -135,12 +135,12 @@ public abstract class AbstractJasperChartTest extends AbstractJasperValueTest {
       Object[][] values) {
     final GanttCategoryDataset dataset = (GanttCategoryDataset) chart.getCategoryPlot().getDataset();
     for (int i = 0; i < tasks.length; i++) {
-      Assertions.assertEquals("chart data start value", ((Date) values[i][0]).getTime(),
-          dataset.getStartValue(serie, tasks[i]));
-      Assertions.assertEquals("chart data end value", ((Date) values[i][1]).getTime(),
-          dataset.getEndValue(serie, tasks[i]));
-      Assertions.assertEquals("chart data percent value", values[i][2],
-          dataset.getPercentComplete(serie, tasks[i], 0));
+      Assertions.assertEquals(((Date) values[i][0]).getTime(),
+          dataset.getStartValue(serie, tasks[i]), "chart data start value");
+      Assertions.assertEquals(((Date) values[i][1]).getTime(),
+          dataset.getEndValue(serie, tasks[i]), "chart data end value");
+      Assertions.assertEquals(values[i][2],
+          dataset.getPercentComplete(serie, tasks[i], 0), "chart data percent value");
     }
   }
 
