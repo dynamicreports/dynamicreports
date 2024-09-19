@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.AbstractCrosstabGroupBuilder;
@@ -48,6 +50,7 @@ import net.sf.jasperreports.engine.JRPrintText;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -70,6 +73,7 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

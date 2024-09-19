@@ -25,6 +25,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 import java.awt.Color;
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -41,6 +44,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  * 
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CrosstabStyle3Test extends AbstractJasperCrosstabStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -65,6 +69,7 @@ public class CrosstabStyle3Test extends AbstractJasperCrosstabStyleTest implemen
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

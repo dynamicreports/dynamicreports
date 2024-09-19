@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.crosstab;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
@@ -39,6 +42,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CrosstabPosition10Test extends AbstractJasperCrosstabPositionTest {
   private CrosstabRowGroupBuilder<String> rowGroup1;
   private CrosstabColumnGroupBuilder<String> columnGroup1;
@@ -62,6 +66,7 @@ public class CrosstabPosition10Test extends AbstractJasperCrosstabPositionTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

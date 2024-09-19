@@ -39,12 +39,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupExpressionCrosstabTest extends AbstractJasperCrosstabValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -67,6 +71,7 @@ public class GroupExpressionCrosstabTest extends AbstractJasperCrosstabValueTest
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

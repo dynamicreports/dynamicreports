@@ -34,11 +34,15 @@ import net.sf.jasperreports.engine.JRDataSource;
 import java.io.Serializable;
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class OrderCrosstabTest extends AbstractJasperCrosstabValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -59,6 +63,7 @@ public class OrderCrosstabTest extends AbstractJasperCrosstabValueTest implement
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

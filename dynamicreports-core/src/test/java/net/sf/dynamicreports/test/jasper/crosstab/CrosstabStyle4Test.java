@@ -25,6 +25,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 import java.awt.Color;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -41,6 +44,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  * 
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CrosstabStyle4Test extends AbstractJasperCrosstabStyleTest {
   private CrosstabRowGroupBuilder<String> rowGroup1;
   private CrosstabRowGroupBuilder<String> rowGroup2;
@@ -75,6 +79,7 @@ public class CrosstabStyle4Test extends AbstractJasperCrosstabStyleTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
