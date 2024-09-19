@@ -104,8 +104,8 @@ public class ScatterChartTest extends AbstractJasperChartTest implements Seriali
      Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"value label font");
      Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
      Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
-    Assertions.assertEquals("tick label mask", "10.00",
-        ((NumberAxis) axis).getNumberFormatOverride().format(10));
+    Assertions.assertEquals( "10.00",
+        ((NumberAxis) axis).getNumberFormatOverride().format(10), "tick label mask");
      Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
   }
 

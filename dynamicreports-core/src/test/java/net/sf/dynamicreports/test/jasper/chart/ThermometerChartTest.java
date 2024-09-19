@@ -79,8 +79,8 @@ public class ThermometerChartTest extends AbstractJasperChartTest {
     try {
       final Field field = thermometerPlot.getClass().getDeclaredField("valueFormat");
       field.setAccessible(true);
-      Assertions.assertEquals("value mask", "15.0",
-          ((NumberFormat) field.get(thermometerPlot)).format(15));
+      Assertions.assertEquals( "15.0",
+          ((NumberFormat) field.get(thermometerPlot)).format(15), "value mask");
     } catch (final Exception e) {
       e.printStackTrace();
       Assertions.fail(e.getMessage());

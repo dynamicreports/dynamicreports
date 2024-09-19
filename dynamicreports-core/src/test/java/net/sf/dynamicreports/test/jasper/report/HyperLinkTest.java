@@ -59,9 +59,9 @@ public class HyperLinkTest extends AbstractJasperValueTest {
 
         JRPrintText textField = (JRPrintText) getElementAt("title.textField1", 0);
         Assertions.assertEquals("reference", textField.getHyperlinkReference(), "hyperlink reference");
-        Assertions.assertEquals("hyperlink tooltip", "tooltip", textField.getHyperlinkTooltip());
-        Assertions.assertEquals("hyperlink anchor", "anchor", textField.getHyperlinkAnchor());
-        Assertions.assertEquals("hyperlink anchorName", "anchorName", textField.getAnchorName());
+        Assertions.assertEquals( "tooltip", textField.getHyperlinkTooltip(), "hyperlink tooltip");
+        Assertions.assertEquals( "anchor", textField.getHyperlinkAnchor(), "hyperlink anchor");
+        Assertions.assertEquals( "anchorName", textField.getAnchorName(), "hyperlink anchorName");
         Assertions.assertEquals(1, textField.getBookmarkLevel(),"hyperlink bookmark level");
         Assertions.assertEquals(Integer.valueOf(1), textField.getHyperlinkPage(), "hyperlink page");
         Assertions.assertEquals(HyperlinkTypeEnum.LOCAL_ANCHOR, textField.getHyperlinkType(),"hyperlink type reference");

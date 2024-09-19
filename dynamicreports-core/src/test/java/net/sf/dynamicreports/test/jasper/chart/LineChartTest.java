@@ -109,8 +109,8 @@ public class LineChartTest extends AbstractJasperChartTest implements Serializab
      Assertions.assertEquals( ARIMO_BOLD_AWT, axis.getLabelFont(),"value label font");
      Assertions.assertEquals( Color.CYAN, axis.getTickLabelPaint(),"tick label color");
      Assertions.assertEquals( ARIMO_ITALIC_AWT, axis.getTickLabelFont(),"tick label font");
-    Assertions.assertEquals("tick label mask", "10.00",
-        ((NumberAxis) axis).getNumberFormatOverride().format(10));
+    Assertions.assertEquals( "10.00",
+        ((NumberAxis) axis).getNumberFormatOverride().format(10), "tick label mask");
      Assertions.assertEquals( Color.LIGHT_GRAY, axis.getAxisLinePaint(),"line color");
      Assertions.assertEquals( 1d, ((ValueAxis) axis).getLowerBound(), 0,"range min value");
      Assertions.assertEquals( 15d, ((ValueAxis) axis).getUpperBound(), 0,"range max value");

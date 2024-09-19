@@ -91,7 +91,7 @@ public class Bar3DChartTest extends AbstractJasperChartTest implements Serializa
 
     chart = getChart("summary.chart2", 0);
     Axis axis = chart.getCategoryPlot().getDomainAxis();
-    Assertions.assertEquals(axis.getLabel(),"category label", "category");
+    Assertions.assertEquals(axis.getLabel(), "category", "category label");
     Assertions.assertEquals(Color.BLUE, axis.getLabelPaint(),"category label color");
     Assertions.assertEquals(ARIMO_BOLD_AWT, axis.getLabelFont(),"category label font");
     Assertions.assertEquals(Color.CYAN, axis.getTickLabelPaint(),"tick label color");

@@ -118,13 +118,13 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         String anchorName = labelExpression1.getName() + "_0";
         elementValueTest("detail.textField1", 0, "text1");
         JRPrintText text = (JRPrintText) getElementAt("detail.textField1", 0);
-        Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, text.getHyperlinkAnchor(), "text anchor");
         JRPrintText dots = (JRPrintText) getElementAt("detail.textField2", 0);
         String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         JRPrintText pageIndex = (JRPrintText) getElementAt("detail.textField3", 0);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         anchorName = labelExpression2.getName() + "_0";
         elementValueTest("detail.textField1", 1, "text2");
@@ -133,9 +133,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         dots = (JRPrintText) getElementAt("detail.textField2", 1);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 1);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         anchorName = labelExpression3.getName() + "_0";
         elementValueTest("detail.textField1", 2, "text3");
@@ -144,9 +144,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         dots = (JRPrintText) getElementAt("detail.textField2", 2);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 2);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         anchorName = labelExpression4.getName() + "_0";
         elementValueTest("detail.textField1", 3, "text4");
@@ -155,9 +155,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         dots = (JRPrintText) getElementAt("detail.textField2", 3);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."),"dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 3);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         anchorName = labelExpression5.getName() + "_0";
         elementValueTest("detail.textField1", 4, "text5");
@@ -166,9 +166,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         dots = (JRPrintText) getElementAt("detail.textField2", 4);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 4);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         anchorName = labelExpression6.getName() + "_0";
         elementValueTest("detail.textField1", 5, "text6");
@@ -177,9 +177,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         dots = (JRPrintText) getElementAt("detail.textField2", 5);
         value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
         Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-        Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+        Assertions.assertEquals( anchorName, dots.getHyperlinkAnchor(), "dots anchor");
         pageIndex = (JRPrintText) getElementAt("detail.textField3", 5);
-        Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+        Assertions.assertEquals(anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
 
         elementValueTest("detail.textField3", "1", "1", "1", "2", "2", "3");
 
@@ -189,10 +189,10 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression1.getName() + "_0";
         elementValueTest(name1, 0, "");
         JRPrintText reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 1, "text1");
         reference = (JRPrintText) getElementAt(name2, 1);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name2);
 
         name1 = labelExpression2.getName() + ".tocReference";
         name2 = "title.textField1";
@@ -200,10 +200,10 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression2.getName() + "_0";
         elementValueTest(name1, 0, "");
         reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 2, "text2");
         reference = (JRPrintText) getElementAt(name2, 2);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name2);
 
         name1 = labelExpression3.getName() + ".tocReference";
         name2 = "title.textField1";
@@ -211,10 +211,10 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression3.getName() + "_0";
         elementValueTest(name1, 0, "");
         reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 3, "text3");
         reference = (JRPrintText) getElementAt(name2, 3);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name2);
 
         name1 = labelExpression4.getName() + ".tocReference";
         name2 = "title.textField2";
@@ -222,10 +222,10 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression4.getName() + "_0";
         elementValueTest(name1, 0, "");
         reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 0, "text4");
         reference = (JRPrintText) getElementAt(name2, 0);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name2);
 
         name1 = labelExpression5.getName() + ".tocReference";
         name2 = "title.textField1";
@@ -233,10 +233,10 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression5.getName() + "_0";
         elementValueTest(name1, 0, "");
         reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals(anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 4, "text5");
         reference = (JRPrintText) getElementAt(name2, 4);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals( anchorName, reference.getAnchorName(),"reference anchorName " + name2);
 
         name1 = labelExpression6.getName() + ".tocReference";
         name2 = "summary.textField1";
@@ -244,9 +244,9 @@ public class TableOfContents3Test extends AbstractJasperValueTest {
         anchorName = labelExpression6.getName() + "_0";
         elementValueTest(name1, 0, "");
         reference = (JRPrintText) getElementAt(name1, 0);
-        Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+        Assertions.assertEquals( anchorName, reference.getAnchorName(),"reference anchorName " + name1);
         elementValueTest(name2, 0, "text6");
         reference = (JRPrintText) getElementAt(name2, 0);
-        Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+        Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name2);
     }
 }

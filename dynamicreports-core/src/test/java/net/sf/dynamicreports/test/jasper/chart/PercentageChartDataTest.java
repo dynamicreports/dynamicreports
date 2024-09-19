@@ -150,7 +150,7 @@ public class PercentageChartDataTest extends AbstractJasperChartTest implements 
         chart = getChart("summary.chart9", 0);
         final StandardPieSectionLabelGenerator labelGenerator = (StandardPieSectionLabelGenerator) ((PiePlot) chart.getPlot()).getLabelGenerator();
         final String labelFormat = labelGenerator.getLabelFormat();
-        Assertions.assertEquals("Label format", "{0} ({2})", labelFormat);
+        Assertions.assertEquals( "{0} ({2})", labelFormat, "Label format");
         final DefaultPieDataset dataset = new DefaultPieDataset();
         dataset.setValue("key1", 21);
         dataset.setValue("key2", 122);

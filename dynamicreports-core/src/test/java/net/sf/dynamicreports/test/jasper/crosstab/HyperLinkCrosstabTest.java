@@ -84,27 +84,27 @@ public class HyperLinkCrosstabTest extends AbstractJasperCrosstabValueTest imple
         List<JRPrintElement> elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(rowGroup));
         Assertions.assertEquals(2, elements.size(),"Row group size");
         JRPrintText element = (JRPrintText) elements.get(0);
-        Assertions.assertEquals("Row group link", "a", element.getHyperlinkReference());
+        Assertions.assertEquals( "a", element.getHyperlinkReference(), "Row group link");
         element = (JRPrintText) elements.get(1);
-        Assertions.assertEquals("Row group link", "b", element.getHyperlinkReference());
+        Assertions.assertEquals( "b", element.getHyperlinkReference(), "Row group link");
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabGroupHeaderName(columnGroup));
         Assertions.assertEquals(2, elements.size(),"Column group size");
         element = (JRPrintText) elements.get(0);
-        Assertions.assertEquals("Column group link", "c", element.getHyperlinkReference());
+        Assertions.assertEquals( "c", element.getHyperlinkReference(), "Column group link");
         element = (JRPrintText) elements.get(1);
-        Assertions.assertEquals("Column group link", "d", element.getHyperlinkReference());
+        Assertions.assertEquals( "d", element.getHyperlinkReference(),"Column group link");
 
         elements = findElement(getPrefix(1) + JasperTestUtils.getCrosstabCellName(measure, null, null));
         Assertions.assertEquals(4, elements.size(),"Column group size");
         element = (JRPrintText) elements.get(0);
-        Assertions.assertEquals("Column group link", "a c 3", element.getHyperlinkReference());
+        Assertions.assertEquals( "a c 3", element.getHyperlinkReference(), "Column group link");
         element = (JRPrintText) elements.get(1);
-        Assertions.assertEquals("Column group link", "a d 7", element.getHyperlinkReference());
+        Assertions.assertEquals( "a d 7", element.getHyperlinkReference(), "Column group link");
         element = (JRPrintText) elements.get(2);
-        Assertions.assertEquals("Column group link", "b c 11", element.getHyperlinkReference());
+        Assertions.assertEquals( "b c 11", element.getHyperlinkReference(), "Column group link");
         element = (JRPrintText) elements.get(3);
-        Assertions.assertEquals("Column group link", "b d 15", element.getHyperlinkReference());
+        Assertions.assertEquals( "b d 15", element.getHyperlinkReference(),"Column group link");
     }
 
     @Override

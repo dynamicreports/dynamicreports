@@ -87,30 +87,30 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
 
             elementValueTest("detail.textField1", index, "value" + (i + 1));
             JRPrintText text = (JRPrintText) getElementAt("detail.textField1", index);
-            Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, text.getHyperlinkAnchor(), "text anchor");
 
             JRPrintText dots = (JRPrintText) getElementAt("detail.textField2", index);
             String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-            Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, dots.getHyperlinkAnchor(), "dots anchor");
 
             JRPrintText pageIndex = (JRPrintText) getElementAt("detail.textField3", index);
-            Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
             index++;
 
             anchorName = labelExpression.getName() + "_" + (i + 1) * 24;
 
             elementValueTest("detail.textField1", index, "group footer" + (i + 1));
             text = (JRPrintText) getElementAt("detail.textField1", index);
-            Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
+            Assertions.assertEquals(anchorName, text.getHyperlinkAnchor(), "text anchor");
 
             dots = (JRPrintText) getElementAt("detail.textField2", index);
             value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-            Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, dots.getHyperlinkAnchor(), "dots anchor");
 
             pageIndex = (JRPrintText) getElementAt("detail.textField3", index);
-            Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
             index++;
         }
         elementValueTest("detail.textField3", "1", "1", "1", "2", "2", "2");
@@ -120,15 +120,15 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
             final String anchorName = group2.getGroup().getName() + "_" + i * 8;
 
             final JRPrintText text = (JRPrintText) getElementAt("detail.textField4", i);
-            Assertions.assertEquals("text anchor", anchorName, text.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, text.getHyperlinkAnchor(), "text anchor");
 
             final JRPrintText dots = (JRPrintText) getElementAt("detail.textField5", i);
             final String value = JRStyledTextUtil.getInstance(DefaultJasperReportsContext.getInstance()).getTruncatedText(dots);
             Assertions.assertTrue(StringUtils.containsOnly(value, "."), "dots");
-            Assertions.assertEquals("dots anchor", anchorName, dots.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, dots.getHyperlinkAnchor(), "dots anchor");
 
             final JRPrintText pageIndex = (JRPrintText) getElementAt("detail.textField6", i);
-            Assertions.assertEquals("pageIndex anchor", anchorName, pageIndex.getHyperlinkAnchor());
+            Assertions.assertEquals( anchorName, pageIndex.getHyperlinkAnchor(), "pageIndex anchor");
         }
         elementValueTest("detail.textField4", "value1", "value2", "value3", "value1", "value2", "value3", "value1", "value2", "value3");
         elementValueTest("detail.textField6", "1", "1", "1", "1", "1", "1", "2", "2", "2");
@@ -141,11 +141,11 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
 
             elementValueTest(name1, i, "");
             JRPrintText reference = (JRPrintText) getElementAt(name1, i);
-            Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name1);
 
             groupHeaderValueTest(group1, i, "value" + (i + 1));
             reference = (JRPrintText) getElementAt(name2, i);
-            Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name2);
         }
 
         name1 = labelExpression.getName() + ".tocReference";
@@ -156,11 +156,11 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
 
             elementValueTest(name1, i, "");
             JRPrintText reference = (JRPrintText) getElementAt(name1, i);
-            Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name1);
 
             groupHeaderValueTest(group1, i, "value" + (i + 1));
             reference = (JRPrintText) getElementAt(name2, i);
-            Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name2);
         }
 
         name1 = "groupHeaderTitleAndValue.group_" + group2.getGroup().getName() + ".tocReference1";
@@ -171,10 +171,10 @@ public class TableOfContents1Test extends AbstractJasperValueTest implements Ser
 
             elementValueTest(name1, i, "");
             JRPrintText reference = (JRPrintText) getElementAt(name1, i);
-            Assertions.assertEquals("reference anchorName " + name1, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name1);
 
             reference = (JRPrintText) getElementAt(name2, i);
-            Assertions.assertEquals("reference anchorName " + name2, anchorName, reference.getAnchorName());
+            Assertions.assertEquals( anchorName, reference.getAnchorName(), "reference anchorName " + name2);
         }
         groupHeaderValueTest(group2, "value1", "value2", "value3", "value1", "value2", "value3", "value1", "value2", "value3");
 
