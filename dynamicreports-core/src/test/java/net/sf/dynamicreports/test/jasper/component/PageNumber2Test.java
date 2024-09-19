@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
@@ -31,6 +34,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PageNumber2Test extends AbstractJasperValueTest {
 
     @Override
@@ -43,6 +47,7 @@ public class PageNumber2Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

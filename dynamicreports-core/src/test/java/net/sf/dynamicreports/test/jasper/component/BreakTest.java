@@ -30,12 +30,15 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BreakTest extends AbstractJasperPositionTest implements Serializable {
     private static final long serialVersionUID = 1L;
 

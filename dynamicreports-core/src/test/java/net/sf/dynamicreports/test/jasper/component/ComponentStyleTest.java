@@ -26,6 +26,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import java.awt.Color;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -39,6 +41,7 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ComponentStyleTest extends AbstractJasperStyleTest {
 
     @Override
@@ -49,6 +52,7 @@ public class ComponentStyleTest extends AbstractJasperStyleTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

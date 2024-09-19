@@ -25,6 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.report.exception.DRException;
 

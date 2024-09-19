@@ -23,6 +23,7 @@ package net.sf.dynamicreports.test.jasper.component;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.LineDirection;
@@ -34,6 +35,7 @@ import net.sf.jasperreports.engine.type.LineDirectionEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Component2Test extends AbstractJasperPositionTest {
 
     @Override

@@ -30,6 +30,8 @@ import java.util.ListResourceBundle;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.AbstractScriptlet;
@@ -49,91 +51,94 @@ import net.sf.jasperreports.engine.type.OrientationEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Report1Test extends AbstractJasperValueTest {
-    private TextColumnBuilder<Integer> column1;
-    private ReportScriptlet scriptlet;
-    private BigDecimal parameter1;
-    private BigDecimal parameter2;
+  private TextColumnBuilder<Integer> column1;
+  private ReportScriptlet scriptlet;
+  private BigDecimal parameter1;
+  private BigDecimal parameter2;
+
+  @Override
+  protected void configureReport(JasperReportBuilder rb) {
+    rb.columns(column1 = col.column("Column1", "field1", Integer.class))
+            .title(cmp.text(exp.jasperSyntax("$R{bundleKey3}", String.class)),
+                    cmp.multiPageList(cmp.text(exp.jasperSyntax("$R{bundleKey3}", String.class)),
+                            cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class))))
+            .setLocale(Locale.ENGLISH)
+            .setResourceBundle(new ResourceBundle())
+            .setWhenResourceMissingType(WhenResourceMissingType.KEY)
+            .setShowColumnTitle(false)
+            .setShowColumnValues(false)
+            .setPageFormat(PageType.A3, PageOrientation.LANDSCAPE)
+            .scriptlets(scriptlet = new ReportScriptlet())
+            .parameters(parameter("parameter1", parameter1 = new BigDecimal(10)))
+            .addParameter("parameter2", parameter2 = new BigDecimal(20));
+  }
+
+  @Override
+  @Test
+  public void test() {
+    super.test();
+
+    numberOfPagesTest(1);
+    columnTitleCountTest(column1, 0);
+    columnDetailCountTest(column1, 0);
+
+    elementCountTest("title.textField1", 3);
+    elementValueTest("title.textField1", "bundleKey3", "bundleKey3", "bundleValue");
+
+    final FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
+    Assertions.assertFalse(fontUtil.getFontFamilyNames().isEmpty(), "fonts");
+
+    final JasperPrint jasperPrint = getJasperPrint();
+    Assertions.assertEquals("Report", jasperPrint.getName());
+    Assertions.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientation());
+    Assertions.assertEquals(1190, jasperPrint.getPageWidth());
+    Assertions.assertEquals(842, jasperPrint.getPageHeight());
+
+    Assertions.assertEquals(50, scriptlet.count);
+  }
+
+  @Override
+  protected boolean serializableTest() {
+    return false;
+  }
+
+  @Override
+  protected JRDataSource createDataSource() {
+    final DRDataSource dataSource = new DRDataSource("field1");
+    for (int i = 0; i < 50; i++) {
+      dataSource.add(i);
+    }
+    return dataSource;
+  }
+
+  private class ResourceBundle extends ListResourceBundle {
 
     @Override
-    protected void configureReport(JasperReportBuilder rb) {
-        rb.columns(column1 = col.column("Column1", "field1", Integer.class))
-          .title(cmp.text(exp.jasperSyntax("$R{bundleKey3}", String.class)),
-                 cmp.multiPageList(cmp.text(exp.jasperSyntax("$R{bundleKey3}", String.class)), cmp.text(exp.jasperSyntax("$R{bundleKey1}", String.class))))
-          .setLocale(Locale.ENGLISH)
-          .setResourceBundle(new ResourceBundle())
-          .setWhenResourceMissingType(WhenResourceMissingType.KEY)
-          .setShowColumnTitle(false)
-          .setShowColumnValues(false)
-          .setPageFormat(PageType.A3, PageOrientation.LANDSCAPE)
-          .scriptlets(scriptlet = new ReportScriptlet())
-          .parameters(parameter("parameter1", parameter1 = new BigDecimal(10)))
-          .addParameter("parameter2", parameter2 = new BigDecimal(20));
+    protected Object[][] getContents() {
+      return new Object[][]{{"bundleKey1", "bundleValue"}, {"bundleKey2", "bundleValue {0} - {1}"}};
+    }
+  }
+
+  private class ReportScriptlet extends AbstractScriptlet {
+    private int count;
+
+    @Override
+    public void afterReportInit(ReportParameters reportParameters) {
+      super.afterReportInit(reportParameters);
+      Assertions.assertEquals(Locale.ENGLISH, reportParameters.getLocale());
+      Assertions.assertEquals("bundleValue", reportParameters.getMessage("bundleKey1"));
+      Assertions.assertEquals("bundleValue a - b", reportParameters.getMessage("bundleKey2", new Object[]{"a", "b"}));
+      Assertions.assertEquals(parameter1, reportParameters.getValue("parameter1"));
+      Assertions.assertEquals(parameter2, reportParameters.getValue("parameter2"));
+      Assertions.assertEquals(this, reportParameters.getScriptlet(getName()));
     }
 
     @Override
-    public void test() {
-        super.test();
-
-        numberOfPagesTest(1);
-        columnTitleCountTest(column1, 0);
-        columnDetailCountTest(column1, 0);
-
-        elementCountTest("title.textField1", 3);
-        elementValueTest("title.textField1", "bundleKey3", "bundleKey3", "bundleValue");
-
-        final FontUtil fontUtil = FontUtil.getInstance(DefaultJasperReportsContext.getInstance());
-        Assertions.assertFalse(fontUtil.getFontFamilyNames().isEmpty(), "fonts");
-
-        final JasperPrint jasperPrint = getJasperPrint();
-        Assertions.assertEquals("Report", jasperPrint.getName());
-        Assertions.assertEquals(OrientationEnum.LANDSCAPE, jasperPrint.getOrientation());
-        Assertions.assertEquals(1190, jasperPrint.getPageWidth());
-        Assertions.assertEquals(842, jasperPrint.getPageHeight());
-
-        Assertions.assertEquals(50, scriptlet.count);
+    public void afterDetailEval(ReportParameters reportParameters) {
+      super.afterDetailEval(reportParameters);
+      count++;
     }
-
-    @Override
-    protected boolean serializableTest() {
-        return false;
-    }
-
-    @Override
-    protected JRDataSource createDataSource() {
-        final DRDataSource dataSource = new DRDataSource("field1");
-        for (int i = 0; i < 50; i++) {
-            dataSource.add(i);
-        }
-        return dataSource;
-    }
-
-    private class ResourceBundle extends ListResourceBundle {
-
-        @Override
-        protected Object[][] getContents() {
-            return new Object[][] {{"bundleKey1", "bundleValue"}, {"bundleKey2", "bundleValue {0} - {1}"}};
-        }
-    }
-
-    private class ReportScriptlet extends AbstractScriptlet {
-        private int count;
-
-        @Override
-        public void afterReportInit(ReportParameters reportParameters) {
-            super.afterReportInit(reportParameters);
-            Assertions.assertEquals(Locale.ENGLISH, reportParameters.getLocale());
-            Assertions.assertEquals("bundleValue", reportParameters.getMessage("bundleKey1"));
-            Assertions.assertEquals("bundleValue a - b", reportParameters.getMessage("bundleKey2", new Object[] {"a", "b"}));
-            Assertions.assertEquals(parameter1, reportParameters.getValue("parameter1"));
-            Assertions.assertEquals(parameter2, reportParameters.getValue("parameter2"));
-            Assertions.assertEquals(this, reportParameters.getScriptlet(getName()));
-        }
-
-        @Override
-        public void afterDetailEval(ReportParameters reportParameters) {
-            super.afterDetailEval(reportParameters);
-            count++;
-        }
-    }
+  }
 }

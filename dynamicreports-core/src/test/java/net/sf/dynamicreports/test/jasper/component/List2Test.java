@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.VerticalListBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
@@ -29,6 +32,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class List2Test extends AbstractJasperPositionTest {
 
     @Override
@@ -60,6 +64,7 @@ public class List2Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

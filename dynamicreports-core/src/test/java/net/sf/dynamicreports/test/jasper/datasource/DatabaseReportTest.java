@@ -31,6 +31,9 @@ import java.sql.Statement;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -39,6 +42,7 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DatabaseReportTest extends AbstractJasperValueTest {
     private Connection connection;
     private TextColumnBuilder<String> column1;
@@ -46,6 +50,7 @@ public class DatabaseReportTest extends AbstractJasperValueTest {
     private TextColumnBuilder<BigDecimal> column3;
 
     @Override
+    @BeforeAll
     public void init() {
         try {
             Class.forName("org.hsqldb.jdbcDriver");
@@ -61,7 +66,8 @@ public class DatabaseReportTest extends AbstractJasperValueTest {
     @Override
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
-          .columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.integerType()),
+          .columns(column1 = col.column("Column1", "field1", type.stringType()),
+                   column2 = col.column("Column2", "field2", type.integerType()),
                    column3 = col.column("Column3", "field3", type.bigDecimalType()))
           .setDataSource("SELECT * FROM test_table1", connection);
     }
@@ -72,6 +78,7 @@ public class DatabaseReportTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

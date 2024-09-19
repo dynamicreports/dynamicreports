@@ -33,6 +33,7 @@ import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.jasperreports.engine.JRDefaultScriptlet;
 import net.sf.jasperreports.engine.JRScriptlet;
 import net.sf.jasperreports.engine.JRScriptletException;
+import net.sf.jasperreports.engine.fill.JRFillDataset;
 import net.sf.jasperreports.engine.fill.JRFillField;
 import net.sf.jasperreports.engine.fill.JRFillGroup;
 import net.sf.jasperreports.engine.fill.JRFillParameter;
@@ -182,8 +183,9 @@ public class JasperScriptlet extends JRDefaultScriptlet {
 
     /** {@inheritDoc} TODO check that out */
 
-    public void setData(Map<String, JRFillParameter> parsm, Map<String, JRFillField> fldsm, Map<String, JRFillVariable> varsm, JRFillGroup[] grps) {
-        //super.setData(parsm, fldsm, varsm, grps);
+    @Override
+    public void setData(JRFillDataset dataset) {
+        super.setData(dataset);
         reportParameters = new JasperReportParameters(this);
     }
 

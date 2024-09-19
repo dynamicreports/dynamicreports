@@ -202,19 +202,6 @@ public class CrosstabMeasureBuilder<T> extends AbstractBuilder<CrosstabMeasureBu
     }
 
     /**
-     * <p>setStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a {@link net.sf.dynamicreports.report.builder.crosstab.CrosstabMeasureBuilder} object.
-     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public CrosstabMeasureBuilder<T> setStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setStretchWithOverflow(stretchWithOverflow);
-        return this;
-    }
-
-    /**
      * <p>setTotalHeaderTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

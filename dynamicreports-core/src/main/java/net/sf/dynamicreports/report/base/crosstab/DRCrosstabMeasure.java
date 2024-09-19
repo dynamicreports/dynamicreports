@@ -53,7 +53,6 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
     private String pattern;
     private HorizontalTextAlignment horizontalTextAlignment;
     private DRIValueFormatter<?, ? super T> valueFormatter;
-    private Boolean stretchWithOverflow;
     private TextAdjust textAdjust;
     private DRHyperLink hyperLink;
     private List<DRIPropertyExpression> propertyExpressions;
@@ -144,17 +143,6 @@ public class DRCrosstabMeasure<T> implements DRICrosstabMeasure<T> {
      */
     public void setValueFormatter(final DRIValueFormatter<?, ? super T> valueFormatter) {
         this.valueFormatter = valueFormatter;
-    }
-
-    /**
-     * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #setTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public void setStretchWithOverflow(final Boolean stretchWithOverflow) {
-        this.stretchWithOverflow = stretchWithOverflow;
     }
 
     /** {@inheritDoc} */

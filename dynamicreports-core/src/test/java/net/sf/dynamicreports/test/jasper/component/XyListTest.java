@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.XyListBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -31,6 +34,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class XyListTest extends AbstractJasperPositionTest {
 
     @Override
@@ -58,6 +62,7 @@ public class XyListTest extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

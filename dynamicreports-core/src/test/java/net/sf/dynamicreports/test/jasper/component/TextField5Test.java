@@ -27,6 +27,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
@@ -34,6 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TextField5Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -43,6 +47,7 @@ public class TextField5Test extends AbstractJasperValueTest implements Serializa
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

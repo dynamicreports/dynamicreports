@@ -24,6 +24,7 @@ import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.export.JasperXlsExporterBuilder;
 import net.sf.dynamicreports.jasper.constant.JasperProperty;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -66,7 +67,9 @@ public class ExcelReport2 {
                 export.xlsExporter("c:/report.xls").setDetectCellType(true).setIgnorePageMargins(true).setWhitePageBackground(false).setRemoveEmptySpaceBetweenColumns(true);
 
             TextColumnBuilder<String> itemColumn =
-                col.column("Item", "item", type.stringType()).setFixedWidth(30).setStretchWithOverflow(false).addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
+                col.column("Item", "item", type.stringType()).setFixedWidth(30)
+                        .setTextAdjust(TextAdjust.CUT_TEXT)
+                        .addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
 
             report().setColumnTitleStyle(Templates.columnTitleStyle)
                     .addProperty(JasperProperty.EXPORT_XLS_FREEZE_ROW, "2")

@@ -26,6 +26,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BarcodeOrientation;
@@ -37,6 +39,7 @@ import net.sf.jasperreports.engine.type.RotationEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BarbecueTest extends AbstractJasperTest {
 
     @Override
@@ -70,6 +73,7 @@ public class BarbecueTest extends AbstractJasperTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

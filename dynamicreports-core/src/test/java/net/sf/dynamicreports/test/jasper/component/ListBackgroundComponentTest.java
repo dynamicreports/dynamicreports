@@ -28,6 +28,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportTemplateBuilder;
@@ -41,6 +42,7 @@ import net.sf.jasperreports.engine.JRPrintElement;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ListBackgroundComponentTest extends AbstractJasperPositionTest {
     private TextColumnBuilder<String> column;
 

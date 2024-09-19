@@ -139,7 +139,6 @@ public class Default {
     // text field
     private int textFieldWidth;
     private boolean textFieldPrintRepeatedValues;
-    private boolean textFieldStretchWithOverflow;
     private TextAdjust textFieldTextAdjust;
     // image
     private int imageWidth;
@@ -356,7 +355,6 @@ public class Default {
 
         this.textFieldWidth = 100;
         this.textFieldPrintRepeatedValues = true;
-        this.textFieldStretchWithOverflow = true;
         this.textFieldTextAdjust = TextAdjust.STRETCH_HEIGHT;
 
         this.imageWidth = 100;
@@ -1046,23 +1044,12 @@ public class Default {
     }
 
     /**
-     * <p>isTextFieldStretchWithOverflow.</p>
-     *
-     * @return a boolean.
-     * @deprecated replaced by {@link #getTextFieldTextAdjust(DRITextField)}
-     */
-    @Deprecated
-    public boolean isTextFieldStretchWithOverflow() {
-        return textFieldStretchWithOverflow;
-    }
-
-    /**
      * <p>getTextFieldTextAdjust.</p>
      *
      * @return a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.
      */
     public TextAdjust getTextFieldTextAdjust() {
-        return null;
+        return textFieldTextAdjust;
     }
 
     /**

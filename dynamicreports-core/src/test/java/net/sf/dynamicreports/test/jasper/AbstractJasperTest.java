@@ -164,12 +164,12 @@ public abstract class AbstractJasperTest {
     protected List<JRPrintElement> findElement(String key) {
         final List<JRPrintElement> elements = new ArrayList<>();
         for (final Object name : jasperPrint.getPages()) {
-        final JRPrintPage page = (JRPrintPage) name;
-        for (final Object name2 : page.getElements()) {
-        final JRPrintElement element = (JRPrintElement) name2;
-        findElement(key, elements, element);
-   }
-    }
+            final JRPrintPage page = (JRPrintPage) name;
+            for (final Object name2 : page.getElements()) {
+                final JRPrintElement element = (JRPrintElement) name2;
+                findElement(key, elements, element);
+            }
+        }
         return elements;
     }
 

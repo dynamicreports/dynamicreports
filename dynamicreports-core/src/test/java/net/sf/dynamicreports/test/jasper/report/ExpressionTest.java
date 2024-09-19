@@ -28,22 +28,31 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import java.io.Serializable;
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ExpressionTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @SuppressWarnings("unchecked")
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        rb.setLocale(Locale.ENGLISH).title(cmp.text(new Expression1()), cmp.text(new Expression2<String>("text2")), cmp.text(new Expression4()).setDataType(type.integerType()));
+        rb.setLocale(Locale.ENGLISH).title(
+                cmp.text(new Expression1()),
+                cmp.text(new Expression2<String>("text2")),
+                cmp.text(new Expression4()).setDataType(type.integerType())
+        );
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

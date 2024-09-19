@@ -46,9 +46,7 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
     private EvaluationTime evaluationTime;
     private DRDesignGroup evaluationGroup;
     private Markup markup;
-    private boolean stretchWithOverflow;
     private TextAdjust textAdjust;
-
 
     /**
      * <p>Constructor for DRDesignTextField.</p>
@@ -175,17 +173,6 @@ public class DRDesignTextField extends DRDesignHyperlinkComponent implements DRI
      */
     public void setMarkup(final Markup markup) {
         this.markup = markup;
-    }
-
-    /**
-     * <p>Setter for the field <code>stretchWithOverflow</code>.</p>
-     *
-     * @param stretchWithOverflow a boolean.
-     * @deprecated Replaced by {@link #setTextAdjust(TextAdjust)}.
-     */
-    @Deprecated
-    public void setStretchWithOverflow(final boolean stretchWithOverflow) {
-        this.stretchWithOverflow = stretchWithOverflow;
     }
 
     /** {@inheritDoc} */

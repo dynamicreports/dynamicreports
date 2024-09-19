@@ -33,6 +33,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.ImageScale;
@@ -49,6 +51,7 @@ import net.sf.jasperreports.renderers.SimpleDataRenderer;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Image1Test extends AbstractJasperTest {
     private Image image;
 
@@ -60,6 +63,7 @@ public class Image1Test extends AbstractJasperTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

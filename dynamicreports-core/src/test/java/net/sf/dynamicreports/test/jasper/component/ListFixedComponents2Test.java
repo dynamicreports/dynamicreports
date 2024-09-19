@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 
@@ -29,6 +31,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ListFixedComponents2Test extends AbstractJasperPositionTest {
 
     @Override

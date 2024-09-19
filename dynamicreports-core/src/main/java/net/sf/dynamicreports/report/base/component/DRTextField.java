@@ -53,7 +53,6 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
     private Evaluation evaluationTime;
     private DRGroup evaluationGroup;
     private Markup markup;
-    private Boolean stretchWithOverflow;
     private Boolean printRepeatedValues;
     private TextAdjust textAdjust;
 

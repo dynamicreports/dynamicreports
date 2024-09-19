@@ -259,19 +259,6 @@ public class ColumnTitleGroupBuilder extends AbstractBuilder<ColumnTitleGroupBui
     }
 
     /**
-     * <p>setTitleStretchWithOverflow.</p>
-     *
-     * @param stretchWithOverflow a {@link java.lang.Boolean} object.
-     * @return a {@link net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder} object.
-     * @deprecated replaced by {@link #setTitleTextAdjust(TextAdjust)}
-     */
-    @Deprecated
-    public ColumnTitleGroupBuilder setTitleStretchWithOverflow(final Boolean stretchWithOverflow) {
-        getObject().setTitleStretchWithOverflow(stretchWithOverflow);
-        return this;
-    }
-
-    /**
      * <p>setTitleTextAdjust.</p>
      *
      * @param textAdjust a {@link net.sf.dynamicreports.report.constant.TextAdjust} object.

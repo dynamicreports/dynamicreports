@@ -46,7 +46,7 @@ public class Crosstab6Test extends AbstractJasperCrosstabValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
         measure1.addProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
-        measure1.setStretchWithOverflow(false);
+        measure1.setTextAdjust(TextAdjust.CUT_TEXT);
 
         CrosstabBuilder crosstab = ctab.crosstab()
                                        .setCellWidth(18)

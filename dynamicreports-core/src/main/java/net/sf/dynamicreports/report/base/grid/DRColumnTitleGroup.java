@@ -54,7 +54,6 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
     private Integer titleHeight;
     private ComponentDimensionType titleHeightType;
     private Integer titleRows;
-    private Boolean titleStretchWithOverflow;
     private TextAdjust titleTextAdjust;
     private List<DRIPropertyExpression> titlePropertyExpressions;
 
@@ -235,16 +234,6 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
         this.titleRows = titleRows;
     }
 
-    /**
-     * <p>Setter for the field <code>titleStretchWithOverflow</code>.</p>
-     *
-     * @param titleStretchWithOverflow a {@link java.lang.Boolean} object.
-     * @deprecated replaced by {@link #getTitleTextAdjust()}
-     */
-    @Deprecated
-    public void setTitleStretchWithOverflow(final Boolean titleStretchWithOverflow) {
-        this.titleStretchWithOverflow = titleStretchWithOverflow;
-    }
 
     /** {@inheritDoc} */
     @Override

@@ -21,6 +21,9 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
@@ -34,6 +37,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Jan Moxter
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TextField6Test extends AbstractJasperPositionTest {
   private TextColumnBuilder<String> column1;
 
@@ -48,6 +52,7 @@ public class TextField6Test extends AbstractJasperPositionTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

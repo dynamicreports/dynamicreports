@@ -24,6 +24,7 @@ import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.constant.JasperProperty;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.grid.ColumnTitleGroupBuilder;
+import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -45,7 +46,9 @@ public class ColumnTitleGroup2Test extends AbstractJasperValueTest {
         column2 = col.column("Column2", "field2", String.class).setFixedWidth(25);
         column3 = col.column("Column3", "field3", String.class).setFixedWidth(25);
 
-        ColumnTitleGroupBuilder titleGroup = grid.titleGroup("test test test", column2, column3).setTitleStretchWithOverflow(false).addTitleProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
+        ColumnTitleGroupBuilder titleGroup = grid.titleGroup("test test test", column2, column3)
+                .setTitleTextAdjust(TextAdjust.CUT_TEXT)
+                .addTitleProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
         rb.columnGrid(column1, titleGroup).columns(column1, column2, column3);
     }
 

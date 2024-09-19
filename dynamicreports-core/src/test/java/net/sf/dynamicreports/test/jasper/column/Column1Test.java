@@ -35,12 +35,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Column1Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -57,13 +61,16 @@ public class Column1Test extends AbstractJasperValueTest implements Serializable
     protected void configureReport(JasperReportBuilder rb) {
         rb.setLocale(Locale.ENGLISH)
           .addField("field1", Integer.class)
-          .columns(column2 = col.column("Column2\nColumn2", "field2", String.class), column3 = col.column("Column3", "field3", Date.class).setPattern("dd.MM.yyyy"),
+          .columns(column2 = col.column("Column2\nColumn2", "field2", String.class).setPrintWhenDetailOverflows(true),
+                   column3 = col.column("Column3", "field3", Date.class).setPattern("dd.MM.yyyy"),
                    column4 = col.column("Column4", "field4", Double.class).setPattern("#,###.00"),
                    column5 = col.column("Column5", "field5", BigDecimal.class).setValueFormatter(new ColumnValueFormatter()),
-                   column6 = col.column("Column6", "field6", Double.class).setPattern(new PatternExpression()), column7 = col.column("Column7", field("field7", Date.class).build()));
+                   column6 = col.column("Column6", "field6", Double.class).setPattern(new PatternExpression()),
+                   column7 = col.column("Column7", field("field7", Date.class).build()));
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

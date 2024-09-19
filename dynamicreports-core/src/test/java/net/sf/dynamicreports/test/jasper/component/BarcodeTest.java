@@ -25,6 +25,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.krysalis.barcode4j.BaselineAlignment;
 import org.krysalis.barcode4j.ChecksumMode;
 import org.krysalis.barcode4j.impl.datamatrix.SymbolShapeHint;
@@ -68,6 +70,7 @@ import net.sf.jasperreports.renderers.SimpleRenderToImageAwareDataRenderer;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BarcodeTest extends AbstractJasperTest {
 
     @Override
@@ -238,6 +241,7 @@ public class BarcodeTest extends AbstractJasperTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

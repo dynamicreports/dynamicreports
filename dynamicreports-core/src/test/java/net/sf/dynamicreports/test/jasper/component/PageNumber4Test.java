@@ -27,6 +27,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
@@ -34,6 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PageNumber4Test extends AbstractJasperValueTest {
 
     @Override
@@ -45,6 +49,7 @@ public class PageNumber4Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
