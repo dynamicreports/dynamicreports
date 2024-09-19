@@ -31,12 +31,16 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CustomGroupTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -51,6 +55,7 @@ public class CustomGroupTest extends AbstractJasperValueTest implements Serializ
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

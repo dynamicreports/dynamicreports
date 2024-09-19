@@ -30,6 +30,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
@@ -39,6 +42,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Group2Test extends AbstractJasperValueTest {
     private TextColumnBuilder<Integer> column2;
     private TextColumnBuilder<Integer> column3;
@@ -63,6 +67,7 @@ public class Group2Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

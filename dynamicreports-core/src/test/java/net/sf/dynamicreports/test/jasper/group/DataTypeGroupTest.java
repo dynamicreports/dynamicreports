@@ -30,6 +30,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 import java.util.Date;
 import java.util.Locale;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
@@ -37,6 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DataTypeGroupTest extends AbstractJasperValueTest {
     private TextColumnBuilder<Date> column1;
     private TextColumnBuilder<Date> column2;
@@ -50,6 +54,7 @@ public class DataTypeGroupTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
