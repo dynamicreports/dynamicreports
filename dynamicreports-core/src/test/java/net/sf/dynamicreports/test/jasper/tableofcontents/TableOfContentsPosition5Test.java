@@ -20,17 +20,21 @@
  */
 package net.sf.dynamicreports.test.jasper.tableofcontents;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder;
-import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 import static net.sf.dynamicreports.report.builder.DynamicReports.tableOfContentsHeading;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.tableofcontents.TableOfContentsHeadingBuilder;
+import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
+
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
     private TableOfContentsHeadingBuilder tocHeading1;
 
@@ -42,11 +46,11 @@ public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
     }
 
     private JasperReportBuilder createSubreport() {
-        TableOfContentsHeadingBuilder tocHeading2 = tableOfContentsHeading();
+        final TableOfContentsHeadingBuilder tocHeading2 = tableOfContentsHeading();
         tocHeading2.setParentHeading(tocHeading1);
-        TableOfContentsHeadingBuilder tocHeading3 = tableOfContentsHeading();
+        final TableOfContentsHeadingBuilder tocHeading3 = tableOfContentsHeading();
         tocHeading3.setParentHeading(tocHeading2);
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.title(cmp.text("text3").setTableOfContentsHeading(tocHeading2));
         report.title(cmp.text("text4").setTableOfContentsHeading(tocHeading3));
         report.title(cmp.text("text5").setTableOfContentsHeading(tableOfContentsHeading()));
@@ -54,6 +58,7 @@ public class TableOfContentsPosition5Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

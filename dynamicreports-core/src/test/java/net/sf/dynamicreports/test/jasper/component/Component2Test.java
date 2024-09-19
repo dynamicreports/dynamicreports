@@ -23,6 +23,7 @@ package net.sf.dynamicreports.test.jasper.component;
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -48,6 +49,7 @@ public class Component2Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

@@ -32,6 +32,8 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.renderer.category.GanttRenderer;
 import org.jfree.chart.ui.RectangleEdge;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -45,6 +47,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GanttChartTest extends AbstractJasperChartTest {
 
   @Override
@@ -74,6 +77,7 @@ public class GanttChartTest extends AbstractJasperChartTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

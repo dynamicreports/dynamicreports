@@ -24,6 +24,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.test.jasper.AbstractJasperStyleTest;
@@ -32,9 +35,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style5Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -45,6 +49,7 @@ public class Style5Test extends AbstractJasperStyleTest implements Serializable 
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

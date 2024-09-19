@@ -21,10 +21,11 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
-import org.junit.jupiter.api.TestInstance;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.constant.JasperProperty;
@@ -57,6 +58,7 @@ public class ColumnTitleGroup3Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

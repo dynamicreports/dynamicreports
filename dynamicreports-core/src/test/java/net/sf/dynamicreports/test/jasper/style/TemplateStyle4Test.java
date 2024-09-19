@@ -29,6 +29,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportTemplateBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -42,9 +45,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Template style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateStyle4Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -55,11 +59,11 @@ public class TemplateStyle4Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textFieldStyle1 =
+    final StyleBuilder textFieldStyle1 =
         stl.style(stl.templateStyle("boldStyle")).setName("textFieldStyle1").setFontSize(15);
-    StyleBuilder textFieldStyle2 = stl.style(stl.templateStyle("boldStyle")).setFontSize(10);
+    final StyleBuilder textFieldStyle2 = stl.style(stl.templateStyle("boldStyle")).setFontSize(10);
 
-    ReportTemplateBuilder template = template().addTemplateStyle(textFieldStyle1).templateStyles(
+    final ReportTemplateBuilder template = template().addTemplateStyle(textFieldStyle1).templateStyles(
         stl.loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate2.jrtx")));
 
     rb.setTemplate(template).setTextStyle(stl.templateStyle("textStyle"))
@@ -75,6 +79,7 @@ public class TemplateStyle4Test extends AbstractJasperStyleTest implements Seria
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -102,7 +107,7 @@ public class TemplateStyle4Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     dataSource.add(1, "1");
     return dataSource;
   }

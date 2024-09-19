@@ -20,6 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.constant.Constants;
@@ -27,13 +35,6 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
-
-import java.io.Serializable;
-
-import org.junit.jupiter.api.TestInstance;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -51,6 +52,7 @@ public class BreakTest extends AbstractJasperPositionTest implements Serializabl
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

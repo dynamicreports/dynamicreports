@@ -36,6 +36,8 @@ import org.jfree.chart.LegendItem;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.data.category.CategoryDataset;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -50,6 +52,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -120,6 +123,7 @@ public class ChartSeriesOrderTest extends AbstractJasperChartTest implements Ser
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

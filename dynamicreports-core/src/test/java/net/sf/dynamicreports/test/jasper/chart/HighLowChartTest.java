@@ -34,6 +34,8 @@ import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.renderer.xy.HighLowRenderer;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -46,6 +48,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class HighLowChartTest extends AbstractJasperChartTest {
   private Date date1;
   private Date date2;
@@ -89,6 +92,7 @@ public class HighLowChartTest extends AbstractJasperChartTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

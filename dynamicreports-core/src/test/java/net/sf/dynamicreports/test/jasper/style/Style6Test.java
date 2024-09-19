@@ -28,6 +28,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 import java.awt.Color;
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.ConditionalStyleBuilder;
@@ -38,9 +41,10 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style6Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -50,9 +54,9 @@ public class Style6Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder style = stl.style();
+    final StyleBuilder style = stl.style();
     style.setBackgroundColor(Color.WHITE);
-    ConditionalStyleBuilder conditionalStyle =
+    final ConditionalStyleBuilder conditionalStyle =
         stl.conditionalStyle(cnd.equal(field("field3", type.stringType()), "2"));
     conditionalStyle.setForegroundColor(Color.BLUE);
     style.conditionalStyles(conditionalStyle);
@@ -65,6 +69,7 @@ public class Style6Test extends AbstractJasperStyleTest implements Serializable 
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -92,7 +97,7 @@ public class Style6Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     dataSource.add("1", "1", "1");
     dataSource.add("1", "1", "2");
     dataSource.add("1", "1", "1");

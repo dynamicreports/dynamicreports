@@ -20,6 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+
+import org.jfree.chart.JFreeChart;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -30,18 +41,11 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupChartDataTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -50,7 +54,7 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
         TextColumnBuilder<String> column1, column2;
         TextColumnBuilder<Integer> column3;
         ColumnGroupBuilder group1;
-        Customizer customizer = new Customizer();
+        final Customizer customizer = new Customizer();
 
         rb.columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", String.class), column3 = col.column("Column3", "field3", Integer.class))
           .groupBy(group1 = grp.group(column1)
@@ -70,14 +74,15 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(2);
 
-        String[] categories1 = new String[] {"value1", "value2"};
-        String[] categories2 = new String[] {"group1", "group2"};
-        String[] series = new String[] {"Column3", "f4", "exp"};
+        final String[] categories1 = new String[] {"value1", "value2"};
+        final String[] categories2 = new String[] {"group1", "group2"};
+        final String[] series = new String[] {"Column3", "f4", "exp"};
 
         chartCountTest("summary.chart1", 1);
         chartTitleTest("summary.chart1", 0, null);
@@ -110,7 +115,7 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
         dataSource.add("group1", "value1", 1, 1);
         dataSource.add("group1", "value1", 2, 2);
         dataSource.add("group1", "value2", 3, 3);
@@ -127,8 +132,8 @@ public class GroupChartDataTest extends AbstractJasperChartTest implements Seria
 
         @Override
         public Double evaluate(ReportParameters reportParameters) {
-            double f1 = ((Number) reportParameters.getValue("field3")).doubleValue();
-            double f2 = ((Number) reportParameters.getValue("field4")).doubleValue();
+            final double f1 = ((Number) reportParameters.getValue("field3")).doubleValue();
+            final double f2 = ((Number) reportParameters.getValue("field4")).doubleValue();
             return f1 + f2;
         }
     }

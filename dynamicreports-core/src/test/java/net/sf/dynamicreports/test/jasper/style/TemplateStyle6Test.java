@@ -25,6 +25,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportTemplateBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -34,24 +37,26 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Template style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateStyle6Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
-    StyleBuilder boldStyle = stl.style(textStyle).setName("boldStyle").bold();
+    final StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
+    final StyleBuilder boldStyle = stl.style(textStyle).setName("boldStyle").bold();
 
-    ReportTemplateBuilder template = template().templateStyles(textStyle, boldStyle);
+    final ReportTemplateBuilder template = template().templateStyles(textStyle, boldStyle);
 
     rb.setTemplate(template)
         .title(cmp.multiPageList(cmp.text("title").setStyle(stl.templateStyle("boldStyle"))));
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -63,7 +68,7 @@ public class TemplateStyle6Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     dataSource.add(1, "1");
     return dataSource;
   }

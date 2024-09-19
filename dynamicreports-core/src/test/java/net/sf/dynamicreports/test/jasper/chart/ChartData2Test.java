@@ -20,20 +20,24 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartData2Test extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -48,14 +52,15 @@ public class ChartData2Test extends AbstractJasperChartTest implements Serializa
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(1);
 
-        String[] categories = new String[] {"value1", "value2", "value3"};
-        String[] series = new String[] {"Column2", "Column3"};
-        Number[][] values = new Number[][] {{2d, 4d}, {4d, 6d}, {6d, 8d}, {8d, 10d}};
+        final String[] categories = new String[] {"value1", "value2", "value3"};
+        final String[] series = new String[] {"Column2", "Column3"};
+        final Number[][] values = new Number[][] {{2d, 4d}, {4d, 6d}, {6d, 8d}, {8d, 10d}};
 
         chartCountTest("summary.chart1", 1);
         chartCategoryCountTest("summary.chart1", 0, 4);
@@ -65,7 +70,7 @@ public class ChartData2Test extends AbstractJasperChartTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1, i + 2);
             dataSource.add("value" + (i + 1), i + 1, i + 2);

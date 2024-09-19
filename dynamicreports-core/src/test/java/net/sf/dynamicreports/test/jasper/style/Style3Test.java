@@ -27,6 +27,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 import java.awt.Color;
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -38,9 +41,10 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style3Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -52,8 +56,8 @@ public class Style3Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder titleStyle = stl.style().setForegroundColor(Color.RED);
-    StyleBuilder columnStyle = stl.style().setForegroundColor(Color.BLUE);
+    final StyleBuilder titleStyle = stl.style().setForegroundColor(Color.RED);
+    final StyleBuilder columnStyle = stl.style().setForegroundColor(Color.BLUE);
 
     rb.setColumnTitleStyle(titleStyle).setColumnStyle(columnStyle).columns(
         column1 = col.column("Column1", "field1", type.stringType()).setStyle(stl.style().italic())
@@ -66,6 +70,7 @@ public class Style3Test extends AbstractJasperStyleTest implements Serializable 
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -90,7 +95,7 @@ public class Style3Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     dataSource.add("1", "1", "1");
     return dataSource;
   }

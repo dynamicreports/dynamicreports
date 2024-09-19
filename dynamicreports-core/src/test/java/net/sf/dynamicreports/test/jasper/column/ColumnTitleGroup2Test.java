@@ -20,6 +20,10 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -30,9 +34,6 @@ import net.sf.dynamicreports.report.constant.TextAdjust;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
 
 /**
  * @author Ricardo Mariaca
@@ -49,13 +50,14 @@ public class ColumnTitleGroup2Test extends AbstractJasperValueTest {
         column2 = col.column("Column2", "field2", String.class).setFixedWidth(25);
         column3 = col.column("Column3", "field3", String.class).setFixedWidth(25);
 
-        ColumnTitleGroupBuilder titleGroup = grid.titleGroup("test test test", column2, column3)
+        final ColumnTitleGroupBuilder titleGroup = grid.titleGroup("test test test", column2, column3)
                 .setTitleTextAdjust(TextAdjust.CUT_TEXT)
                 .addTitleProperty(JasperProperty.PRINT_KEEP_FULL_TEXT, "true");
         rb.columnGrid(column1, titleGroup).columns(column1, column2, column3);
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -76,7 +78,7 @@ public class ColumnTitleGroup2Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("text", "text", "text");
         return dataSource;
     }

@@ -20,6 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.subtotal;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.expression.AbstractComplexExpression;
@@ -30,17 +41,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupCustomSubtotal2Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -54,8 +58,8 @@ public class GroupCustomSubtotal2Test extends AbstractJasperValueTest implements
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
-        ColumnGroupBuilder group = grp.group(column1);
+        final TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
+        final ColumnGroupBuilder group = grp.group(column1);
 
         rb.setLocale(Locale.ENGLISH)
           .columns(column1, column2 = col.column("Column2", "field2", Integer.class))
@@ -69,6 +73,7 @@ public class GroupCustomSubtotal2Test extends AbstractJasperValueTest implements
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -95,7 +100,7 @@ public class GroupCustomSubtotal2Test extends AbstractJasperValueTest implements
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 1; i <= 3; i++) {
             dataSource.add("group1", i);
         }

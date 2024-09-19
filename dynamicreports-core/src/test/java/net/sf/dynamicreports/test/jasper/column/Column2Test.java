@@ -20,19 +20,20 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.TestInstance;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 
 /**
  * @author Ricardo Mariaca
@@ -51,21 +52,22 @@ public class Column2Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
-        List<String> rows = new ArrayList<String>();
+        final List<String> rows = new ArrayList<>();
         for (int i = 0; i < 110; i++) {
             rows.add(String.valueOf(i + 1));
         }
-        List<String> pageRows = new ArrayList<String>();
+        final List<String> pageRows = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             pageRows.add(String.valueOf(i + 1));
         }
         for (int i = 0; i < 10; i++) {
             pageRows.add(String.valueOf(i + 1));
         }
-        List<String> columnRows = new ArrayList<String>();
+        final List<String> columnRows = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             columnRows.add(String.valueOf(i + 1));
         }
@@ -96,7 +98,7 @@ public class Column2Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 110; i++) {
             dataSource.add(i);
         }

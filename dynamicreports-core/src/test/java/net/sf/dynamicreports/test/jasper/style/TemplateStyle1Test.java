@@ -29,6 +29,9 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -42,9 +45,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Template style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateStyle1Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -55,23 +59,23 @@ public class TemplateStyle1Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textStyle =
+    final StyleBuilder textStyle =
         stl.style().setName("textStyle").setForegroundColor(Color.BLACK).setPadding(2);
-    StyleBuilder columnStyle = stl.style(textStyle).setName("columnStyle").italic();
+    final StyleBuilder columnStyle = stl.style(textStyle).setName("columnStyle").italic();
 
-    StyleBuilder columnStyle1 = stl.style(columnStyle).setName("columnStyle1").conditionalStyles(
+    final StyleBuilder columnStyle1 = stl.style(columnStyle).setName("columnStyle1").conditionalStyles(
         stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7)).bold(),
         stl.conditionalStyle(new ConditionExpression(16)).setBackgroundColor(Color.ORANGE));
 
-    StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle")).bold();
-    StyleBuilder titleStyle0 = stl.style(textStyle).bold();
-    StyleBuilder titleStyle =
+    final StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle")).bold();
+    final StyleBuilder titleStyle0 = stl.style(textStyle).bold();
+    final StyleBuilder titleStyle =
         stl.style(titleStyle0).setName("titleStyle").setBottomBorder(stl.pen2Point());
-    StyleBuilder columnTitleStyle3 =
+    final StyleBuilder columnTitleStyle3 =
         stl.style(titleStyle).setName("columnTitleStyle3").setBorder(stl.pen2Point());
-    StyleBuilder subtotalStyle = stl.style(stl.templateStyle("textStyle")).setName("subtotalStyle")
+    final StyleBuilder subtotalStyle = stl.style(stl.templateStyle("textStyle")).setName("subtotalStyle")
         .bold().setTopBorder(stl.pen1Point()).setBackgroundColor(Color.YELLOW);
-    StyleBuilder textFieldStyle =
+    final StyleBuilder textFieldStyle =
         stl.style(textStyle).setName("textFieldStyle").setBold(true).setFontSize(15);
 
     rb.templateStyles(textStyle, columnStyle, columnStyle1, titleStyle, columnTitleStyle3,
@@ -96,6 +100,7 @@ public class TemplateStyle1Test extends AbstractJasperStyleTest implements Seria
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -169,7 +174,7 @@ public class TemplateStyle1Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     for (int i = 0; i < 20; i++) {
       dataSource.add(i, i + 1, i + 2);
     }
@@ -179,7 +184,7 @@ public class TemplateStyle1Test extends AbstractJasperStyleTest implements Seria
   private class ConditionExpression extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = 1L;
 
-    private List<Integer> values;
+    private final List<Integer> values;
 
     private ConditionExpression(Integer... values) {
       this.values = Arrays.asList(values);
@@ -187,7 +192,7 @@ public class TemplateStyle1Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
-      Integer value = (Integer) reportParameters.getValue("field1");
+      final Integer value = (Integer) reportParameters.getValue("field1");
       return values.contains(value);
     }
   }

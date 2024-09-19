@@ -20,19 +20,20 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.TestInstance;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -52,6 +53,7 @@ public class ListDataTypeTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -64,13 +66,13 @@ public class ListDataTypeTest extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
-        List<String> comments = new ArrayList<String>();
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
+        List<String> comments = new ArrayList<>();
         comments.add("comment1");
         comments.add("comment2");
         comments.add("comment3");
         dataSource.add("row1", comments);
-        comments = new ArrayList<String>();
+        comments = new ArrayList<>();
         comments.add("comment1");
         comments.add("comment2");
         dataSource.add("row2", comments);

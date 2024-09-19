@@ -20,6 +20,19 @@
  */
 package net.sf.dynamicreports.test.jasper.style;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.template;
+
+import java.awt.Color;
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportTemplateBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -29,19 +42,10 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperStyleTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.awt.Color;
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-import static net.sf.dynamicreports.report.builder.DynamicReports.template;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BandStyle2Test extends AbstractJasperStyleTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -65,7 +69,7 @@ public class BandStyle2Test extends AbstractJasperStyleTest implements Serializa
         TextColumnBuilder<Integer> column2;
         ColumnGroupBuilder group1;
 
-        ReportTemplateBuilder template = template().setTitleStyle(stl.style().setBackgroundColor(color1))
+        final ReportTemplateBuilder template = template().setTitleStyle(stl.style().setBackgroundColor(color1))
                                                    .setPageHeaderStyle(stl.style().setBackgroundColor(color2))
                                                    .setPageFooterStyle(stl.style().setBackgroundColor(color3))
                                                    .setColumnHeaderStyle(stl.style().setBackgroundColor(color4))
@@ -109,6 +113,7 @@ public class BandStyle2Test extends AbstractJasperStyleTest implements Serializa
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -134,7 +139,7 @@ public class BandStyle2Test extends AbstractJasperStyleTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 10; i++) {
             dataSource.add("group1", i);
         }

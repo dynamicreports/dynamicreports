@@ -26,6 +26,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.awt.Color;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -37,22 +40,23 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Table of contents style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContentsStyleTest extends AbstractJasperStyleTest {
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
-    TextColumnBuilder<String> column2 = col.column("Column2", "field2", type.stringType());
+    final TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
+    final TextColumnBuilder<String> column2 = col.column("Column2", "field2", type.stringType());
 
-    StyleBuilder titleTocStyle = stl.style().setForegroundColor(Color.BLUE).setFontSize(18).bold()
+    final StyleBuilder titleTocStyle = stl.style().setForegroundColor(Color.BLUE).setFontSize(18).bold()
         .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER);
-    StyleBuilder headingTocStyle = stl.style().setFontSize(12).bold();
-    StyleBuilder headingToc1Style = stl.style().italic();
+    final StyleBuilder headingTocStyle = stl.style().setFontSize(12).bold();
+    final StyleBuilder headingToc1Style = stl.style().italic();
 
-    TableOfContentsCustomizerBuilder tableOfContentsCustomizer =
+    final TableOfContentsCustomizerBuilder tableOfContentsCustomizer =
         tableOfContentsCustomizer().setTitleStyle(titleTocStyle).setHeadingStyle(headingTocStyle)
             .setHeadingStyle(1, headingToc1Style);
 
@@ -62,6 +66,7 @@ public class TableOfContentsStyleTest extends AbstractJasperStyleTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -84,10 +89,10 @@ public class TableOfContentsStyleTest extends AbstractJasperStyleTest {
 
   @Override
   protected JRDataSource createDataSource() {
-    String[] values = new String[] {"value1", "value2", "value3"};
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
-    for (String field1 : values) {
-      for (String field2 : values) {
+    final String[] values = new String[] {"value1", "value2", "value3"};
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    for (final String field1 : values) {
+      for (final String field2 : values) {
         for (int i = 0; i < 8; i++) {
           dataSource.add(field1, field2, "text");
         }

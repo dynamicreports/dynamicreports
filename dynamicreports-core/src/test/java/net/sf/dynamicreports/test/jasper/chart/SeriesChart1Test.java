@@ -20,20 +20,24 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SeriesChart1Test extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -48,13 +52,14 @@ public class SeriesChart1Test extends AbstractJasperChartTest implements Seriali
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(1);
 
-        String[] categories = new String[] {"value1", "value2"};
-        String[] series = new String[] {"value1_1", "value1_2", "value2_1"};
+        final String[] categories = new String[] {"value1", "value2"};
+        final String[] series = new String[] {"value1_1", "value1_2", "value2_1"};
 
         chartCountTest("summary.chart1", 1);
         chartCategoryCountTest("summary.chart1", 0, 2);
@@ -64,7 +69,7 @@ public class SeriesChart1Test extends AbstractJasperChartTest implements Seriali
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("value1", "value1_1", 5);
         dataSource.add("value1", "value1_2", 6);
         dataSource.add("value2", "value2_1", 7);

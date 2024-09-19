@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -27,8 +30,6 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.constant.SplitType;
 import net.sf.dynamicreports.report.constant.WhenNoDataType;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 
 /**
  * @author Ricardo Mariaca
@@ -46,6 +47,7 @@ public class ListComponentGroupTypeTest extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

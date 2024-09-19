@@ -23,6 +23,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.BooleanColumnBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -40,9 +43,10 @@ import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style8Test extends AbstractJasperStyleTest {
   private BooleanColumnBuilder column1;
   private BooleanColumnBuilder column2;
@@ -63,6 +67,7 @@ public class Style8Test extends AbstractJasperStyleTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -90,7 +95,7 @@ public class Style8Test extends AbstractJasperStyleTest {
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4");
     dataSource.add(true, true, true, "text");
     return dataSource;
   }

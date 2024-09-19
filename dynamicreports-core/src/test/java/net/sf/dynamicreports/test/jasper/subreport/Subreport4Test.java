@@ -29,6 +29,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
@@ -41,6 +43,7 @@ import net.sf.jasperreports.engine.JasperReport;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Subreport4Test extends AbstractJasperValueTest {
 
     @Override
@@ -58,6 +61,7 @@ public class Subreport4Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

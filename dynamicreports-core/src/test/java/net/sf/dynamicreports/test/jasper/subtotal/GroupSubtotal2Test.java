@@ -20,6 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.subtotal;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+
+import java.util.Locale;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -29,15 +38,10 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupSubtotal2Test extends AbstractJasperValueTest {
     private AggregationSubtotalBuilder<Double> subtotal1;
     private AggregationSubtotalBuilder<Integer> subtotal2;
@@ -58,6 +62,7 @@ public class GroupSubtotal2Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -75,7 +80,7 @@ public class GroupSubtotal2Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         int count = 1;
         for (int i = 0; i < 3; i++) {
             dataSource.add("group1", count++);

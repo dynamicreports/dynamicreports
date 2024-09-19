@@ -36,6 +36,8 @@ import java.util.List;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -48,6 +50,7 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DatabaseSubreportTest extends AbstractJasperValueTest {
     private Connection connection;
     private TextColumnBuilder<String> column1;
@@ -84,6 +87,7 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

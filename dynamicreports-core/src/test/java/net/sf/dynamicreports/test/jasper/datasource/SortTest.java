@@ -20,6 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.desc;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DatasetBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -29,24 +38,19 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.desc;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SortTest extends AbstractJasperChartTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<String> column2;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        DatasetBuilder dataset = DynamicReports.dataset();
+        final DatasetBuilder dataset = DynamicReports.dataset();
         dataset.setDataSource(createDataSource2());
-        FieldBuilder<String> field1 = field("field1", String.class);
+        final FieldBuilder<String> field1 = field("field1", String.class);
         dataset.sortBy(desc(field1));
 
         rb.columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()))
@@ -55,6 +59,7 @@ public class SortTest extends AbstractJasperChartTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -71,15 +76,15 @@ public class SortTest extends AbstractJasperChartTest {
         columnDetailCountTest(column2, 4);
         columnDetailValueTest(column2, "text1", "text2", "text3", "text4");
 
-        String[] categories = new String[] {"text4", "text3", "text2", "text1"};
-        String[] series = new String[] {"f2"};
-        Number[][] values = new Number[][] {{6d}, {10d}, {1d}, {3d}};
+        final String[] categories = new String[] {"text4", "text3", "text2", "text1"};
+        final String[] series = new String[] {"f2"};
+        final Number[][] values = new Number[][] {{6d}, {10d}, {1d}, {3d}};
         chartDataTest("summary.chart1", 0, categories, series, values);
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         dataSource.add("3", "text4");
         dataSource.add("1", "text1");
         dataSource.add("3", "text3");
@@ -88,7 +93,7 @@ public class SortTest extends AbstractJasperChartTest {
     }
 
     protected JRDataSource createDataSource2() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         dataSource.add("text4", 6);
         dataSource.add("text1", 3);
         dataSource.add("text3", 8);

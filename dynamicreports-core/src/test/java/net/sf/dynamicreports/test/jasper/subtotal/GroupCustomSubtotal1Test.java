@@ -20,6 +20,19 @@
  */
 package net.sf.dynamicreports.test.jasper.subtotal;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.List;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
@@ -35,19 +48,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.List;
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupCustomSubtotal1Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -71,6 +75,7 @@ public class GroupCustomSubtotal1Test extends AbstractJasperValueTest implements
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -90,7 +95,7 @@ public class GroupCustomSubtotal1Test extends AbstractJasperValueTest implements
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 1; i <= 3; i++) {
             dataSource.add("group1", i);
         }
@@ -115,14 +120,14 @@ public class GroupCustomSubtotal1Test extends AbstractJasperValueTest implements
         public ValueExpression2() {
             variable1 = variable(column2, Calculation.SUM);
             variable1.setResetType(Evaluation.LAST_GROUP);
-            VariableBuilder<Integer> variable2 = variable(column2, Calculation.SUM);
+            final VariableBuilder<Integer> variable2 = variable(column2, Calculation.SUM);
             variable2.setResetType(Evaluation.REPORT);
             addExpression(new PercentageExpression(variable1.getVariable(), variable2.getVariable()));
         }
 
         @Override
         public String evaluate(List<?> values, ReportParameters reportParameters) {
-            String percentage = new DecimalFormat("#,##0.00%", new DecimalFormatSymbols(Locale.ENGLISH)).format(values.get(0));
+            final String percentage = new DecimalFormat("#,##0.00%", new DecimalFormatSymbols(Locale.ENGLISH)).format(values.get(0));
             return reportParameters.getValue(variable1) + " (" + percentage + ")";
         }
     }

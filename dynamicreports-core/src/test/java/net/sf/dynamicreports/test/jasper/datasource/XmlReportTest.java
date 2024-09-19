@@ -29,6 +29,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -42,6 +44,7 @@ import net.sf.jasperreports.engine.util.JRXmlUtils;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class XmlReportTest extends AbstractJasperValueTest {
     private TextColumnBuilder<Object> column1;
     private TextColumnBuilder<Object> column2;
@@ -81,6 +84,7 @@ public class XmlReportTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

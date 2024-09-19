@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -28,38 +38,33 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartVariableTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
-        TextColumnBuilder<Integer> column2 = col.column("Column2", "field2", Integer.class);
+        final TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
+        final TextColumnBuilder<Integer> column2 = col.column("Column2", "field2", Integer.class);
 
-        VariableBuilder<Integer> variable = variable(column2, Calculation.SUM);
+        final VariableBuilder<Integer> variable = variable(column2, Calculation.SUM);
         rb.columns(column1, column2)
           .summary(cht.barChart().setCategory(exp.text("category")).series(cht.serie(column2), cht.serie(variable), cht.serie(variable)),
                    cht.barChart().setCategory(exp.text("category")).setUseSeriesAsCategory(true).series(cht.serie(column2), cht.serie(variable), cht.serie(variable)));
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(1);
 
-        String[] categories = new String[] {"category"};
-        String[] series = new String[] {"Column2", "serie1", "serie2"};
+        final String[] categories = new String[] {"category"};
+        final String[] series = new String[] {"Column2", "serie1", "serie2"};
 
         chartCountTest("summary.chart1", 1);
         chartCategoryCountTest("summary.chart1", 0, 1);
@@ -74,7 +79,7 @@ public class ChartVariableTest extends AbstractJasperChartTest implements Serial
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1);
         }

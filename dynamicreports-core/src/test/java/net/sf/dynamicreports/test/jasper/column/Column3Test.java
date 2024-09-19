@@ -20,6 +20,18 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractValueFormatter;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -30,17 +42,6 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.expression.DRIValueFormatter;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.junit.jupiter.api.TestInstance;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -66,6 +67,7 @@ public class Column3Test extends AbstractJasperValueTest implements Serializable
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -104,7 +106,7 @@ public class Column3Test extends AbstractJasperValueTest implements Serializable
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5", "field6");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5", "field6");
         for (int i = 0; i < 10; i++) {
             dataSource.add("test", new Date(), new Date(), 1000.1d, new BigDecimal(10), 1d);
         }

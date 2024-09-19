@@ -39,6 +39,8 @@ import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.xy.XYDataset;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -50,6 +52,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -111,6 +114,7 @@ public class ChartSeriesColorsByNameTest extends AbstractJasperChartTest impleme
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

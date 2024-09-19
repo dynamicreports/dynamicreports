@@ -28,6 +28,7 @@ import java.io.Serializable;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -56,6 +57,7 @@ public class JasperExpressionTest extends AbstractJasperValueTest implements Ser
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

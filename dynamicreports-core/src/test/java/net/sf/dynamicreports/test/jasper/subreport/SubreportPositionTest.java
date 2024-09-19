@@ -20,6 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.Components;
@@ -30,28 +41,22 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SubreportPositionTest extends AbstractJasperPositionTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
+        final SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
 
         rb.detail(subreport, cmp.filler().setFixedHeight(20)).summary(cmp.subreport(subreport2()));
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -119,7 +124,7 @@ public class SubreportPositionTest extends AbstractJasperPositionTest implements
     }
 
     private JasperReportBuilder subreport2() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.setPageMargin(margin(10));
         report.summary(cmp.text("subreport2"));
         return report;
@@ -130,8 +135,8 @@ public class SubreportPositionTest extends AbstractJasperPositionTest implements
 
         @Override
         public JasperReportBuilder evaluate(ReportParameters reportParameters) {
-            int masterRowNumber = reportParameters.getReportRowNumber();
-            JasperReportBuilder report = report();
+            final int masterRowNumber = reportParameters.getReportRowNumber();
+            final JasperReportBuilder report = report();
             report.title(cmp.text("Subreport" + masterRowNumber));
 
             for (int i = 1; i <= masterRowNumber; i++) {
@@ -147,15 +152,15 @@ public class SubreportPositionTest extends AbstractJasperPositionTest implements
 
         @Override
         public JRDataSource evaluate(ReportParameters reportParameters) {
-            int masterRowNumber = reportParameters.getReportRowNumber();
-            String[] columns = new String[masterRowNumber];
+            final int masterRowNumber = reportParameters.getReportRowNumber();
+            final String[] columns = new String[masterRowNumber];
             for (int i = 1; i <= masterRowNumber; i++) {
                 columns[i - 1] = "column" + i;
             }
-            DRDataSource dataSource = new DRDataSource(columns);
+            final DRDataSource dataSource = new DRDataSource(columns);
 
             for (int i = 1; i <= masterRowNumber; i++) {
-                Object[] values = new Object[masterRowNumber];
+                final Object[] values = new Object[masterRowNumber];
                 for (int j = 1; j <= masterRowNumber; j++) {
                     values[j - 1] = "row" + i + "_column" + j;
                 }

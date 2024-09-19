@@ -20,6 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.subtotal;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -29,15 +38,10 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SubtotalPosition2Test extends AbstractJasperPositionTest {
     private AggregationSubtotalBuilder<Integer> subtotal1;
     private AggregationSubtotalBuilder<Integer> subtotal2;
@@ -52,8 +56,8 @@ public class SubtotalPosition2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder textStyle = stl.style(stl.pen1Point()).setPadding(2);
-        StyleBuilder columnStyle = stl.style(textStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
+        final StyleBuilder textStyle = stl.style(stl.pen1Point()).setPadding(2);
+        final StyleBuilder columnStyle = stl.style(textStyle).setVerticalTextAlignment(VerticalTextAlignment.MIDDLE);
 
         rb.setTextStyle(textStyle)
           .setColumnStyle(columnStyle)
@@ -65,6 +69,7 @@ public class SubtotalPosition2Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -104,7 +109,7 @@ public class SubtotalPosition2Test extends AbstractJasperPositionTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5", "field6", "field7");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5", "field6", "field7");
         dataSource.add("", "", "", 1, 1, "", 1);
         return dataSource;
     }

@@ -28,6 +28,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.template;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -61,6 +62,7 @@ public class ListBackgroundComponentTest extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

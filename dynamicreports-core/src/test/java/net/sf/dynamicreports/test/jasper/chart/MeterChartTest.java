@@ -30,6 +30,8 @@ import org.jfree.chart.plot.MeterInterval;
 import org.jfree.chart.plot.MeterPlot;
 import org.jfree.chart.plot.Plot;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.DynamicReports;
@@ -43,6 +45,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class MeterChartTest extends AbstractJasperChartTest {
 
   @Override
@@ -63,6 +66,7 @@ public class MeterChartTest extends AbstractJasperChartTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

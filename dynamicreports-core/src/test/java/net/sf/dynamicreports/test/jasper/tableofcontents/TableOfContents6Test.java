@@ -20,6 +20,17 @@
  */
 package net.sf.dynamicreports.test.jasper.tableofcontents;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.tableOfContentsHeading;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.component.DRTextField;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -33,17 +44,10 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.tableOfContentsHeading;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContents6Test extends AbstractJasperValueTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<String> column4;
@@ -58,12 +62,12 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
     private JasperReportBuilder createSubreport1() {
         column1 = col.column("Column1", "field1", type.stringType());
 
-        DRTextField<String> columnComponent = (DRTextField<String>) column1.getColumn().getComponent();
-        TableOfContentsHeadingBuilder tocHeading = tableOfContentsHeading();
+        final DRTextField<String> columnComponent = (DRTextField<String>) column1.getColumn().getComponent();
+        final TableOfContentsHeadingBuilder tocHeading = tableOfContentsHeading();
         tocHeading.setCustomValue(new TocCustomValueExpression());
         columnComponent.setTableOfContentsHeading(tocHeading.getTableOfContentsHeading());
 
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.columns(column1, col.column("Column2", "field2", type.stringType()), col.column("Column3", "field3", type.stringType())).setDataSource(createSubreportDataSource1());
 
         return report;
@@ -71,14 +75,14 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field4");
+        final DRDataSource dataSource = new DRDataSource("field4");
         dataSource.add("detail1");
         dataSource.add("detail2");
         return dataSource;
     }
 
     private JRDataSource createSubreportDataSource1() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("text1", "text1_1", "text2_1");
         dataSource.add("text2", "text1_1", "text2_1");
         dataSource.add("text3", "text1_2", "text2_2");
@@ -87,6 +91,7 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -127,7 +132,7 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
         }
 
         private JasperReportBuilder createSubreport2(CustomGroupBuilder group) {
-            JasperReportBuilder subreport = report();
+            final JasperReportBuilder subreport = report();
             subreport.fields(levelField, textField, referenceField, pageIndexField).groupBy(group).detail(detailComponent()).setDataSource(new JRBeanCollectionDataSource(headingList));
 
             return subreport;
@@ -139,8 +144,8 @@ public class TableOfContents6Test extends AbstractJasperValueTest {
 
         @Override
         public TocCustomValue evaluate(ReportParameters reportParameters) {
-            String field2 = reportParameters.getValue("field2");
-            String field3 = reportParameters.getValue("field3");
+            final String field2 = reportParameters.getValue("field2");
+            final String field3 = reportParameters.getValue("field3");
             return new TocCustomValue(field2, field3);
         }
     }

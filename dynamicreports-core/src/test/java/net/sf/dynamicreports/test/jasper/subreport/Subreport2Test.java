@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -30,16 +40,10 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Subreport2Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -48,12 +52,13 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
+        final SubreportBuilder detailSubreport = cmp.subreport(detailSubreport()).setDataSource(new SubreportDataSourceExpression());
 
         rb.title(cmp.subreport(titleSubreport())).detail(detailSubreport);
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -77,21 +82,21 @@ public class Subreport2Test extends AbstractJasperValueTest implements Serializa
     }
 
     private JasperReportBuilder titleSubreport() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         column1 = col.column("Column1", "field1", type.stringType());
         report.columns(column1).setDataSource(titleSubreportDataSource());
         return report;
     }
 
     private JasperReportBuilder detailSubreport() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         column2 = col.column(new ValueExpression());
         report.columns(column2).title(cmp.text(new SubreportTitleExpression()));
         return report;
     }
 
     private JRDataSource titleSubreportDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("value1");
         dataSource.add("value2");
         dataSource.add("value3");

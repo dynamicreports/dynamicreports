@@ -26,6 +26,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 import java.io.Serializable;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
@@ -40,6 +42,7 @@ import net.sf.jasperreports.engine.type.TabStopAlignEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style7Test extends AbstractJasperStyleTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -60,6 +63,7 @@ public class Style7Test extends AbstractJasperStyleTest implements Serializable 
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

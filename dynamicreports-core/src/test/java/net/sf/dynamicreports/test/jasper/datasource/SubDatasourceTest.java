@@ -20,24 +20,28 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
-import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
-import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
-import net.sf.dynamicreports.report.datasource.DRDataSource;
-import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
-import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-import java.util.Arrays;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
+import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
+import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
+import net.sf.jasperreports.engine.JRDataSource;
+
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SubDatasourceTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -53,6 +57,7 @@ public class SubDatasourceTest extends AbstractJasperValueTest implements Serial
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -83,14 +88,14 @@ public class SubDatasourceTest extends AbstractJasperValueTest implements Serial
     }
 
     private JasperReportBuilder createSubreport() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.columns(column3 = col.column("Column3", "field3", type.stringType()), column4 = col.column("Column4", "field4", type.stringType()));
         return report;
     }
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("1", "text1", Arrays.asList(new SubData("texta1", "texta2"), new SubData("texta3", "texta4")));
         dataSource.add("2", "text2", Arrays.asList(new SubData("textb1", "textb2")));
         return dataSource;

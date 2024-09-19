@@ -20,10 +20,11 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
-import org.junit.jupiter.api.TestInstance;
-
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -53,6 +54,7 @@ public class ColumnPosition2Test extends AbstractJasperPositionTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

@@ -20,6 +20,12 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -28,11 +34,6 @@ import net.sf.dynamicreports.report.builder.component.MultiPageListBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * @author Ricardo Mariaca
@@ -45,7 +46,7 @@ public class MultiPageList3Test extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         column1 = col.column("Column1", "field1", type.integerType());
 
-        MultiPageListBuilder multiPageList = cmp.multiPageList();
+        final MultiPageListBuilder multiPageList = cmp.multiPageList();
         multiPageList.add(cmp.subreport(createSubreport(80)));
         multiPageList.newPage();
         multiPageList.add(cmp.subreport(createSubreport(80)));
@@ -57,6 +58,7 @@ public class MultiPageList3Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -69,14 +71,14 @@ public class MultiPageList3Test extends AbstractJasperValueTest {
     }
 
     private JasperReportBuilder createSubreport(int numberOfRecords) {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.title(cmp.verticalGap(6)).setPageColumnsPerPage(2).columns(column1).setDataSource(createSubreportDataSource(numberOfRecords));
 
         return report;
     }
 
     protected JRDataSource createSubreportDataSource(int numberOfRecords) {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < numberOfRecords; i++) {
             dataSource.add(i);
         }

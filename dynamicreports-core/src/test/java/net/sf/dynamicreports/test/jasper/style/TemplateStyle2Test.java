@@ -28,6 +28,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.ReportTemplateBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -41,9 +44,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Template style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateStyle2Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -54,13 +58,13 @@ public class TemplateStyle2Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
-    StyleBuilder titleStyle = stl.style(textStyle).setName("titleStyle").bold();
-    StyleBuilder subtotalStyle =
+    final StyleBuilder textStyle = stl.style().setName("textStyle").setPadding(2);
+    final StyleBuilder titleStyle = stl.style(textStyle).setName("titleStyle").bold();
+    final StyleBuilder subtotalStyle =
         stl.style(2).setName("subtotalStyle").setTopBorder(stl.pen1Point()).bold();
-    StyleBuilder boldStyle = stl.style().setName("boldStyle").bold();
+    final StyleBuilder boldStyle = stl.style().setName("boldStyle").bold();
 
-    ReportTemplateBuilder template =
+    final ReportTemplateBuilder template =
         template().templateStyles(textStyle, titleStyle, subtotalStyle, boldStyle);
 
     rb.setTemplate(template).setTextStyle(stl.templateStyle("textStyle"))
@@ -74,6 +78,7 @@ public class TemplateStyle2Test extends AbstractJasperStyleTest implements Seria
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -97,7 +102,7 @@ public class TemplateStyle2Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     dataSource.add(1, "1");
     return dataSource;
   }

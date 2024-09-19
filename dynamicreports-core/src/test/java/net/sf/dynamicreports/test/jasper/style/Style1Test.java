@@ -29,6 +29,9 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -42,9 +45,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style1Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -55,18 +59,18 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textStyle = stl.style().setForegroundColor(Color.BLACK).setPadding(2);
-    StyleBuilder columnStyle = stl.style(textStyle).italic();
+    final StyleBuilder textStyle = stl.style().setForegroundColor(Color.BLACK).setPadding(2);
+    final StyleBuilder columnStyle = stl.style(textStyle).italic();
 
-    StyleBuilder columnStyle1 = stl.style(columnStyle).conditionalStyles(
+    final StyleBuilder columnStyle1 = stl.style(columnStyle).conditionalStyles(
         stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7)).bold(),
         stl.conditionalStyle(new ConditionExpression(16)).setBackgroundColor(Color.ORANGE));
 
-    StyleBuilder columnStyle2 = stl.style(columnStyle).bold();
-    StyleBuilder titleStyle0 = stl.style(textStyle).bold();
-    StyleBuilder titleStyle = stl.style(titleStyle0).setBottomBorder(stl.pen2Point());
-    StyleBuilder columnTitleStyle3 = stl.style(titleStyle).setBorder(stl.pen2Point());
-    StyleBuilder subtotalStyle =
+    final StyleBuilder columnStyle2 = stl.style(columnStyle).bold();
+    final StyleBuilder titleStyle0 = stl.style(textStyle).bold();
+    final StyleBuilder titleStyle = stl.style(titleStyle0).setBottomBorder(stl.pen2Point());
+    final StyleBuilder columnTitleStyle3 = stl.style(titleStyle).setBorder(stl.pen2Point());
+    final StyleBuilder subtotalStyle =
         stl.style(textStyle).bold().setTopBorder(stl.pen1Point()).setBackgroundColor(Color.YELLOW);
 
     rb.columns(column1 = col.column("Column1", "field1", Integer.class).setStyle(columnStyle1),
@@ -84,6 +88,7 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -157,7 +162,7 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     for (int i = 0; i < 20; i++) {
       dataSource.add(i, i + 1, i + 2);
     }
@@ -167,7 +172,7 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
   private class ConditionExpression extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = 1L;
 
-    private List<Integer> values;
+    private final List<Integer> values;
 
     private ConditionExpression(Integer... values) {
       this.values = Arrays.asList(values);
@@ -175,7 +180,7 @@ public class Style1Test extends AbstractJasperStyleTest implements Serializable 
 
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
-      Integer value = (Integer) reportParameters.getValue("field1");
+      final Integer value = (Integer) reportParameters.getValue("field1");
       return values.contains(value);
     }
   }

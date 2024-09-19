@@ -32,6 +32,8 @@ import org.jfree.chart.title.LegendTitle;
 import org.jfree.chart.title.TextTitle;
 import org.jfree.chart.ui.RectangleEdge;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -46,6 +48,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -72,6 +75,7 @@ public class ChartTest extends AbstractJasperChartTest implements Serializable {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

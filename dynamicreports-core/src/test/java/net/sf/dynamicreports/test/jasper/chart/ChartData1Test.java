@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+
+import org.jfree.chart.JFreeChart;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -29,17 +39,11 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ChartData1Test extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -70,14 +74,15 @@ public class ChartData1Test extends AbstractJasperChartTest implements Serializa
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(1);
 
         String[] categories = new String[] {"value1", "value2", "value3", "value4"};
-        String[] series = new String[] {"Column2", "f3", "exp"};
-        Number[][] values = new Number[][] {{2d, 4d, 6d}, {4d, 6d, 10d}, {6d, 8d, 14d}, {8d, 10d, 18d}};
+        final String[] series = new String[] {"Column2", "f3", "exp"};
+        final Number[][] values = new Number[][] {{2d, 4d, 6d}, {4d, 6d, 10d}, {6d, 8d, 14d}, {8d, 10d, 18d}};
 
         chartCountTest("summary.chart1", 1);
         chartTitleTest("summary.chart1", 0, "Title sum=20");
@@ -101,7 +106,7 @@ public class ChartData1Test extends AbstractJasperChartTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         for (int i = 0; i < 4; i++) {
             dataSource.add("value" + (i + 1), i + 1, i + 2);
             dataSource.add("value" + (i + 1), i + 1, i + 2);
@@ -114,8 +119,8 @@ public class ChartData1Test extends AbstractJasperChartTest implements Serializa
 
         @Override
         public Double evaluate(ReportParameters reportParameters) {
-            double f1 = ((Number) reportParameters.getValue("field2")).doubleValue();
-            double f2 = ((Number) reportParameters.getValue("field3")).doubleValue();
+            final double f1 = ((Number) reportParameters.getValue("field2")).doubleValue();
+            final double f2 = ((Number) reportParameters.getValue("field3")).doubleValue();
             return f1 + f2;
         }
     }

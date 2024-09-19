@@ -20,18 +20,19 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import java.io.Serializable;
-
-import org.junit.jupiter.api.TestInstance;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -49,6 +50,7 @@ public class DetailBand1Test extends AbstractJasperValueTest implements Serializ
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -66,7 +68,7 @@ public class DetailBand1Test extends AbstractJasperValueTest implements Serializ
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 2; i++) {
             dataSource.add("detail");
         }

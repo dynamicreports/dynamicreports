@@ -20,6 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.tableofcontents;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -27,13 +34,10 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContentsPosition1Test extends AbstractJasperPositionTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<String> column2;
@@ -48,6 +52,7 @@ public class TableOfContentsPosition1Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -109,10 +114,10 @@ public class TableOfContentsPosition1Test extends AbstractJasperPositionTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        String[] values = new String[] {"value1", "value2", "value3"};
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
-        for (String field1 : values) {
-            for (String field2 : values) {
+        final String[] values = new String[] {"value1", "value2", "value3"};
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        for (final String field1 : values) {
+            for (final String field2 : values) {
                 for (int i = 0; i < 8; i++) {
                     dataSource.add(field1, field2, "text");
                 }

@@ -27,6 +27,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -39,9 +42,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Style2Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -52,9 +56,9 @@ public class Style2Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder textStyle = stl.style().setPadding(2);
-    StyleBuilder titleStyle = stl.style(textStyle).bold();
-    StyleBuilder subtotalStyle = stl.style(2).setTopBorder(stl.pen1Point()).bold();
+    final StyleBuilder textStyle = stl.style().setPadding(2);
+    final StyleBuilder titleStyle = stl.style(textStyle).bold();
+    final StyleBuilder subtotalStyle = stl.style(2).setTopBorder(stl.pen1Point()).bold();
 
     rb.setTextStyle(textStyle).setColumnTitleStyle(titleStyle).setSubtotalStyle(subtotalStyle)
         .columns(column1 = col.column("Column1", "field1", type.integerType()),
@@ -65,6 +69,7 @@ public class Style2Test extends AbstractJasperStyleTest implements Serializable 
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -88,7 +93,7 @@ public class Style2Test extends AbstractJasperStyleTest implements Serializable 
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2");
     dataSource.add(1, "1");
     return dataSource;
   }

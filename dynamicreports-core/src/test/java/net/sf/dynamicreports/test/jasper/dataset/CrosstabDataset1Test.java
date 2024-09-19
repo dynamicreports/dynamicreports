@@ -20,6 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.dataset;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+
+import java.util.Locale;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.FieldBuilder;
 import net.sf.dynamicreports.report.builder.crosstab.CrosstabBuilder;
@@ -33,15 +42,10 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.util.Locale;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CrosstabDataset1Test extends AbstractJasperCrosstabValueTest {
     private CrosstabRowGroupBuilder<String> rowGroup1;
     private CrosstabRowGroupBuilder<String> rowGroup2;
@@ -52,16 +56,16 @@ public class CrosstabDataset1Test extends AbstractJasperCrosstabValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        FieldBuilder<String> field1 = field("field1", String.class);
-        FieldBuilder<String> field2 = field("field2", String.class);
-        FieldBuilder<String> field3 = field("field3", String.class);
-        FieldBuilder<String> field4 = field("field4", String.class);
-        FieldBuilder<Integer> field5 = field("field5", Integer.class);
+        final FieldBuilder<String> field1 = field("field1", String.class);
+        final FieldBuilder<String> field2 = field("field2", String.class);
+        final FieldBuilder<String> field3 = field("field3", String.class);
+        final FieldBuilder<String> field4 = field("field4", String.class);
+        final FieldBuilder<Integer> field5 = field("field5", Integer.class);
 
         measure1 = ctab.measure("measure1", field5, Calculation.SUM);
         measure2 = ctab.measure("measure2", field5, Calculation.SUM);
 
-        CrosstabBuilder crosstab = ctab.crosstab()
+        final CrosstabBuilder crosstab = ctab.crosstab()
                                        .setDataSource(createCrosstabDataSource())
                                        .headerCell(cmp.text("Header"))
                                        .setCellWidth(20)
@@ -73,6 +77,7 @@ public class CrosstabDataset1Test extends AbstractJasperCrosstabValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -142,7 +147,7 @@ public class CrosstabDataset1Test extends AbstractJasperCrosstabValueTest {
     }
 
     private JRDataSource createCrosstabDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3", "field4", "field5");
         dataSource.add("a", "c", "g", "i", 1);
         dataSource.add("a", "c", "g", "j", 2);
         dataSource.add("a", "d", "g", "i", 3);

@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.chart;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.VariableBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -29,26 +39,20 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperChartTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.variable;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupChartTest extends AbstractJasperChartTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
-        TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
-        TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
+        final TextColumnBuilder<String> column1 = col.column("Column1", "field1", String.class);
+        final TextColumnBuilder<String> column2 = col.column("Column2", "field2", String.class);
+        final TextColumnBuilder<Integer> column3 = col.column("Column3", "field3", Integer.class);
 
-        VariableBuilder<Integer> column2Variable = variable(column2, Calculation.DISTINCT_COUNT);
+        final VariableBuilder<Integer> column2Variable = variable(column2, Calculation.DISTINCT_COUNT);
         column2Variable.setResetType(Evaluation.FIRST_GROUP);
 
         rb.columns(column1, column2, column3)
@@ -57,13 +61,14 @@ public class GroupChartTest extends AbstractJasperChartTest implements Serializa
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
         numberOfPagesTest(1);
 
-        String[] categories = new String[] {"value1", "value2"};
-        String[] series = new String[] {""};
+        final String[] categories = new String[] {"value1", "value2"};
+        final String[] series = new String[] {""};
 
         chartCountTest("summary.chart1", 1);
         chartCategoryCountTest("summary.chart1", 0, 2);
@@ -78,7 +83,7 @@ public class GroupChartTest extends AbstractJasperChartTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("value1", "value1_1", 5);
         dataSource.add("value1", "value1_1", 6);
         dataSource.add("value1", "value1_2", 7);

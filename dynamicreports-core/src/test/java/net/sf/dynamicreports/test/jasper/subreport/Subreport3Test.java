@@ -20,6 +20,16 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.field;
+import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.SubreportBuilder;
@@ -28,28 +38,23 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.field;
-import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Subreport3Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport1 = cmp.subreport(subreport1());
+        final SubreportBuilder subreport1 = cmp.subreport(subreport1());
         subreport1.setDataSource(createSubreport1DataSource());
 
         rb.fields(field("f1", Integer.class)).detail(subreport1);
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -61,22 +66,22 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("f1");
+        final DRDataSource dataSource = new DRDataSource("f1");
         dataSource.add(1);
         dataSource.add(2);
         return dataSource;
     }
 
     private JasperReportBuilder subreport1() {
-        SubreportBuilder subreport2 = cmp.subreport(subreport2());
+        final SubreportBuilder subreport2 = cmp.subreport(subreport2());
 
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.fields(field("f2", Integer.class)).setPageMargin(margin(0)).detail(subreport2);
         return report;
     }
 
     public JRDataSource createSubreport1DataSource() {
-        DRDataSource dataSource = new DRDataSource("f2");
+        final DRDataSource dataSource = new DRDataSource("f2");
         dataSource.add(3);
         dataSource.add(4);
         dataSource.add(5);
@@ -84,7 +89,7 @@ public class Subreport3Test extends AbstractJasperValueTest implements Serializa
     }
 
     private JasperReportBuilder subreport2() {
-        JasperReportBuilder report = report();
+        final JasperReportBuilder report = report();
         report.setPageMargin(margin(0)).title(cmp.text(new SubreportTitle()));
         return report;
     }

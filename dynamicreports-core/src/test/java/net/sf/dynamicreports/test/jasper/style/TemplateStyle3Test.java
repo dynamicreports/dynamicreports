@@ -29,6 +29,9 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -42,9 +45,10 @@ import net.sf.jasperreports.engine.type.LineStyleEnum;
 
 /**
  * Template style tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateStyle3Test extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -55,10 +59,10 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    StyleBuilder columnStyle1 = stl.style(stl.templateStyle("columnStyle")).conditionalStyles(
+    final StyleBuilder columnStyle1 = stl.style(stl.templateStyle("columnStyle")).conditionalStyles(
         stl.conditionalStyle(new ConditionExpression(2, 5, 6, 7)).bold(),
         stl.conditionalStyle(new ConditionExpression(16)).setBackgroundColor(Color.ORANGE));
-    StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle")).bold();
+    final StyleBuilder columnStyle2 = stl.style(stl.templateStyle("columnStyle")).bold();
 
     rb.addTemplateStyle(stl.loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate1.jrtx")))
         .columns(column1 = col.column("Column1", "field1", Integer.class).setStyle(columnStyle1),
@@ -79,6 +83,7 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -152,7 +157,7 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     for (int i = 0; i < 20; i++) {
       dataSource.add(i, i + 1, i + 2);
     }
@@ -162,7 +167,7 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
   private class ConditionExpression extends AbstractSimpleExpression<Boolean> {
     private static final long serialVersionUID = 1L;
 
-    private List<Integer> values;
+    private final List<Integer> values;
 
     private ConditionExpression(Integer... values) {
       this.values = Arrays.asList(values);
@@ -170,7 +175,7 @@ public class TemplateStyle3Test extends AbstractJasperStyleTest implements Seria
 
     @Override
     public Boolean evaluate(ReportParameters reportParameters) {
-      Integer value = (Integer) reportParameters.getValue("field1");
+      final Integer value = (Integer) reportParameters.getValue("field1");
       return values.contains(value);
     }
   }

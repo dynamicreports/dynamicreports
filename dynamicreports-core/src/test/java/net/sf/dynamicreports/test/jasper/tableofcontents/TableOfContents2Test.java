@@ -29,6 +29,8 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -44,6 +46,7 @@ import net.sf.jasperreports.engine.util.JRStyledTextUtil;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContents2Test extends AbstractJasperValueTest {
     private TextColumnBuilder<String> column1;
     private DRIExpression<String> labelExpression1;
@@ -90,6 +93,7 @@ public class TableOfContents2Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

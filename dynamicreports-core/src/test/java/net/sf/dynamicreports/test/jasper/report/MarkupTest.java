@@ -20,6 +20,12 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -30,11 +36,6 @@ import net.sf.dynamicreports.report.constant.Markup;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 
 /**
  * @author Ricardo Mariaca
@@ -47,7 +48,7 @@ public class MarkupTest extends AbstractJasperValueTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        StyleBuilder style = stl.style().setMarkup(Markup.HTML);
+        final StyleBuilder style = stl.style().setMarkup(Markup.HTML);
 
         rb.setColumnStyle(style)
           .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class))
@@ -56,6 +57,7 @@ public class MarkupTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -68,7 +70,7 @@ public class MarkupTest extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 1; i++) {
             dataSource.add("column <i>column</i> column", i);
         }

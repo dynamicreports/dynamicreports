@@ -32,6 +32,8 @@ import org.jfree.chart.LegendItemCollection;
 import org.jfree.chart.renderer.category.GroupedStackedBarRenderer;
 import org.jfree.data.KeyToGroupMap;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.design.transformation.chartcustomizer.GroupedStackedBarRendererCustomizer;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -44,6 +46,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class GroupedStackedBarChartData3Test extends AbstractJasperChartTest {
 
     @Override
@@ -60,6 +63,7 @@ public class GroupedStackedBarChartData3Test extends AbstractJasperChartTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

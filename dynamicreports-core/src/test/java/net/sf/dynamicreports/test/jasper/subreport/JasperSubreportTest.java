@@ -24,6 +24,8 @@ import java.io.InputStream;
 import java.io.Serializable;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -41,6 +43,7 @@ import net.sf.jasperreports.engine.JasperReport;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JasperSubreportTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -52,6 +55,7 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

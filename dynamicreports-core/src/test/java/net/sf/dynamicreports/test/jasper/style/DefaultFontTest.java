@@ -26,6 +26,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 import java.awt.Color;
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.FontBuilder;
@@ -35,9 +38,10 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 /**
  * Default font tests.
- * 
+ *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class DefaultFontTest extends AbstractJasperStyleTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -46,7 +50,7 @@ public class DefaultFontTest extends AbstractJasperStyleTest implements Serializ
 
   @Override
   protected void configureReport(JasperReportBuilder rb) {
-    FontBuilder defaultFont = stl.font().setFontSize(12);
+    final FontBuilder defaultFont = stl.font().setFontSize(12);
 
     rb.setDefaultFont(defaultFont).columns(
         column1 = col.column("Column1", "field1", type.stringType()).setStyle(stl.style().bold()),
@@ -54,6 +58,7 @@ public class DefaultFontTest extends AbstractJasperStyleTest implements Serializ
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 
@@ -72,7 +77,7 @@ public class DefaultFontTest extends AbstractJasperStyleTest implements Serializ
 
   @Override
   protected JRDataSource createDataSource() {
-    DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+    final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
     dataSource.add("1", "1", "1");
     dataSource.add("1", "1", "1");
     dataSource.add("1", "1", "1");

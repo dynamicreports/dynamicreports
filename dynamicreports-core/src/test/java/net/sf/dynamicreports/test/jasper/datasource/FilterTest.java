@@ -20,6 +20,15 @@
  */
 package net.sf.dynamicreports.test.jasper.datasource;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.DatasetBuilder;
@@ -35,15 +44,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperCrosstabValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.ctab;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class FilterTest extends AbstractJasperCrosstabValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -58,11 +62,11 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
     protected void configureReport(JasperReportBuilder rb) {
         measure1 = ctab.measure("field3", Integer.class, Calculation.SUM);
 
-        DatasetBuilder dataset = DynamicReports.dataset();
+        final DatasetBuilder dataset = DynamicReports.dataset();
         dataset.setDataSource(createCrosstabDataSource());
         dataset.setFilterExpression(new CrosstabFilterExpression());
 
-        CrosstabBuilder crosstab =
+        final CrosstabBuilder crosstab =
             ctab.crosstab().setSubDataset(dataset).rowGroups(rowGroup = ctab.rowGroup("field1", String.class)).columnGroups(columnGroup = ctab.columnGroup("field2", String.class)).measures(measure1);
 
         rb.columns(column1 = col.column("Column1", "field1", type.stringType()), column2 = col.column("Column2", "field2", type.stringType()))
@@ -71,6 +75,7 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -114,7 +119,7 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         dataSource.add("1", "text1");
         dataSource.add("2", "text2");
         dataSource.add("3", "text3");
@@ -123,7 +128,7 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
     }
 
     private JRDataSource createCrosstabDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2", "field3");
         dataSource.add("a", "c", 1);
         dataSource.add("a", "c", 2);
         dataSource.add("a", "d", 3);
@@ -140,7 +145,7 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            String value = reportParameters.getValue("field1");
+            final String value = reportParameters.getValue("field1");
             return value.equals("1");
         }
     }
@@ -150,7 +155,7 @@ public class FilterTest extends AbstractJasperCrosstabValueTest implements Seria
 
         @Override
         public Boolean evaluate(ReportParameters reportParameters) {
-            String value = reportParameters.getValue("field1");
+            final String value = reportParameters.getValue("field1");
             return value.equals("a");
         }
     }

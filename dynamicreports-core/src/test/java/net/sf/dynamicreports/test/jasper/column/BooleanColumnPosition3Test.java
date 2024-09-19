@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -27,8 +30,6 @@ import net.sf.dynamicreports.report.constant.BooleanComponentType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -43,6 +44,7 @@ public class BooleanColumnPosition3Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -59,7 +61,7 @@ public class BooleanColumnPosition3Test extends AbstractJasperPositionTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add(true);
         return dataSource;
     }

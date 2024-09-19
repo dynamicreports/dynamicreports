@@ -33,6 +33,8 @@ import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -45,6 +47,7 @@ import net.sf.jasperreports.engine.JRDataSource;
  *
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class XyLineChartTest extends AbstractJasperChartTest implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -72,6 +75,7 @@ public class XyLineChartTest extends AbstractJasperChartTest implements Serializ
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

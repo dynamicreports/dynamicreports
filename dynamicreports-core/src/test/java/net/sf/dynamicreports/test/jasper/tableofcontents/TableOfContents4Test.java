@@ -20,6 +20,18 @@
  */
 package net.sf.dynamicreports.test.jasper.tableofcontents;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.base.tableofcontents.JasperTocHeading;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
@@ -30,18 +42,10 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContents4Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -56,6 +60,7 @@ public class TableOfContents4Test extends AbstractJasperValueTest implements Ser
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -67,9 +72,9 @@ public class TableOfContents4Test extends AbstractJasperValueTest implements Ser
 
     @Override
     protected JRDataSource createDataSource() {
-        String[] values = new String[] {"value1", "value2", "value3", "value4", "value5", "value6"};
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
-        for (String value : values) {
+        final String[] values = new String[] {"value1", "value2", "value3", "value4", "value5", "value6"};
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
+        for (final String value : values) {
             for (int i = 0; i < 20; i++) {
                 dataSource.add(value, "text");
             }
@@ -82,13 +87,13 @@ public class TableOfContents4Test extends AbstractJasperValueTest implements Ser
 
         @Override
         public String evaluate(ReportParameters reportParameters) {
-            DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
-            Map<String, JasperTocHeading> tocHeadings = customValues.getTocHeadings();
+            final DRICustomValues customValues = (DRICustomValues) reportParameters.getParameterValue(DRICustomValues.NAME);
+            final Map<String, JasperTocHeading> tocHeadings = customValues.getTocHeadings();
             if (tocHeadings.isEmpty()) {
                 return reportParameters.getValue("field1");
             }
-            List<JasperTocHeading> headings = new ArrayList<JasperTocHeading>(tocHeadings.values());
-            JasperTocHeading jasperTocHeading = headings.get(headings.size() - 1);
+            final List<JasperTocHeading> headings = new ArrayList<>(tocHeadings.values());
+            final JasperTocHeading jasperTocHeading = headings.get(headings.size() - 1);
             return jasperTocHeading.getText();
         }
     }

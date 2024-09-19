@@ -20,6 +20,10 @@
  */
 package net.sf.dynamicreports.test.jasper.component;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -28,9 +32,6 @@ import net.sf.dynamicreports.report.builder.component.MultiPageListBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperPositionTest;
 import net.sf.jasperreports.engine.JRDataSource;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 
 /**
  * @author Ricardo Mariaca
@@ -41,9 +42,9 @@ public class MultiPageList2Test extends AbstractJasperPositionTest {
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        MultiPageListBuilder multiPageList1 = cmp.multiPageList();
+        final MultiPageListBuilder multiPageList1 = cmp.multiPageList();
         for (int i = 0; i < 3; i++) {
-            MultiPageListBuilder multiPageList2 = cmp.multiPageList();
+            final MultiPageListBuilder multiPageList2 = cmp.multiPageList();
             multiPageList1.add(multiPageList2);
             for (int j = 0; j < 50; j++) {
                 multiPageList2.add(cmp.text("text"));
@@ -53,6 +54,7 @@ public class MultiPageList2Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -75,7 +77,7 @@ public class MultiPageList2Test extends AbstractJasperPositionTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1");
+        final DRDataSource dataSource = new DRDataSource("field1");
         for (int i = 0; i < 2; i++) {
             dataSource.add(i);
         }

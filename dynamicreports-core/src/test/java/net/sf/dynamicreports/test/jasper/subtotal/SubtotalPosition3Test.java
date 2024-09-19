@@ -25,6 +25,9 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder;
@@ -36,6 +39,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SubtotalPosition3Test extends AbstractJasperPositionTest {
   private AggregationSubtotalBuilder<Integer> subtotal1;
   private AggregationSubtotalBuilder<Integer> subtotal2;
@@ -52,6 +56,7 @@ public class SubtotalPosition3Test extends AbstractJasperPositionTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

@@ -25,6 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import java.io.Serializable;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -44,6 +45,7 @@ public class MapTest extends AbstractJasperChartTest implements Serializable {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

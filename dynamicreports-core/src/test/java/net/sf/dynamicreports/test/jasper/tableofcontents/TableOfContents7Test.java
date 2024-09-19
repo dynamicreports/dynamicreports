@@ -20,6 +20,13 @@
  */
 package net.sf.dynamicreports.test.jasper.tableofcontents;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.group.ColumnGroupBuilder;
@@ -27,25 +34,23 @@ import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.grp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TableOfContents7Test extends AbstractJasperValueTest {
     private ColumnGroupBuilder group1;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
+        final TextColumnBuilder<String> column1 = col.column("Column1", "field1", type.stringType());
         group1 = grp.group(column1).setReprintHeaderOnEachPage(true);
 
         rb.tableOfContents().columns(column1, col.column("Column2", "field2", type.stringType())).groupBy(group1);
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -60,7 +65,7 @@ public class TableOfContents7Test extends AbstractJasperValueTest {
 
     @Override
     protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
+        final DRDataSource dataSource = new DRDataSource("field1", "field2");
         for (int i = 0; i < 30; i++) {
             dataSource.add("value1", "text");
         }

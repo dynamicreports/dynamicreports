@@ -20,6 +20,14 @@
  */
 package net.sf.dynamicreports.test.jasper.subreport;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+
+import java.io.Serializable;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.base.expression.AbstractSimpleExpression;
 import net.sf.dynamicreports.report.builder.component.Components;
@@ -29,25 +37,22 @@ import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 
-import java.io.Serializable;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Subreport6Test extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void configureReport(JasperReportBuilder rb) {
-        SubreportBuilder subreport = Components.subreport(new Subreport1Expression());
+        final SubreportBuilder subreport = Components.subreport(new Subreport1Expression());
 
         rb.detail(subreport);
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 
@@ -67,9 +72,9 @@ public class Subreport6Test extends AbstractJasperValueTest implements Serializa
 
         @Override
         public JasperReportBuilder evaluate(ReportParameters reportParameters) {
-            SubreportBuilder subreport = Components.subreport(new Subreport2Expression());
+            final SubreportBuilder subreport = Components.subreport(new Subreport2Expression());
 
-            JasperReportBuilder report = report();
+            final JasperReportBuilder report = report();
             report.title(cmp.text(reportParameters.getSubreportWidth()), cmp.horizontalList(cmp.horizontalGap(10 * reportParameters.getReportRowNumber()), subreport));
 
             return report;
@@ -81,7 +86,7 @@ public class Subreport6Test extends AbstractJasperValueTest implements Serializa
 
         @Override
         public JasperReportBuilder evaluate(ReportParameters reportParameters) {
-            JasperReportBuilder report = report();
+            final JasperReportBuilder report = report();
             report.title(cmp.text(reportParameters.getSubreportWidth()));
 
             return report;
