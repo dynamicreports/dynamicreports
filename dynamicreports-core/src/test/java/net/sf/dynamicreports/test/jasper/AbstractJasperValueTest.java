@@ -64,7 +64,7 @@ public abstract class AbstractJasperValueTest extends AbstractJasperTest {
         Assertions.assertTrue(values.length <= elements.size());
         for (int i = 0; i < values.length; i++) {
             final String value = ((JRPrintText) elements.get(i)).getFullText();
-            Assertions.assertEquals("element value " + name, values[i], value);
+            Assertions.assertEquals(values[i], value, "element value " + name);
         }
     }
 
