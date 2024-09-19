@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -32,6 +34,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class IgnorePageWidthTest extends AbstractJasperPositionTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<String> column2;

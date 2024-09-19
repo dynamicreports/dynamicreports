@@ -31,6 +31,9 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 
 import java.io.InputStream;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.report;
@@ -38,6 +41,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateDesign5Test extends AbstractJasperValueTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<Integer> column2;
@@ -60,6 +64,7 @@ public class TemplateDesign5Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

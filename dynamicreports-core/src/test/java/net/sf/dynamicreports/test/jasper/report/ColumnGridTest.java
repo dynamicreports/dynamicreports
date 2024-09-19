@@ -31,6 +31,8 @@ import net.sf.jasperreports.engine.JRDataSource;
 
 import java.io.Serializable;
 
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
@@ -38,6 +40,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ColumnGridTest extends AbstractJasperPositionTest implements Serializable {
     private static final long serialVersionUID = 1L;
 

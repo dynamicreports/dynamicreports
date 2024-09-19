@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 
@@ -29,6 +32,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.exp;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PrintWhenExpressionTest extends AbstractJasperValueTest {
 
     @Override
@@ -41,6 +45,7 @@ public class PrintWhenExpressionTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

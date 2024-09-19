@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 
@@ -28,6 +30,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class NoDetailSectionTest extends AbstractJasperValueTest {
 
     @Override

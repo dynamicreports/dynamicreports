@@ -28,9 +28,13 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 
 import java.io.InputStream;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateDesign3Test extends AbstractJasperValueTest {
 
     @Override
@@ -40,6 +44,7 @@ public class TemplateDesign3Test extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

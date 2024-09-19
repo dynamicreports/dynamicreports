@@ -42,10 +42,10 @@ import net.sf.jasperreports.engine.JRField;
  * @author Ricardo Mariaca
  */
 public class ConcatenatedReport5Test {
-    JasperConcatenatedReportBuilder concatenatedReport;
+    static JasperConcatenatedReportBuilder concatenatedReport;
 
     @BeforeAll
-    public void init() {
+    public static void init() {
         final JasperReportBuilder report1 = report().title(cmp.text("text1")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
         final JasperReportBuilder report2 = report().title(cmp.text("text2")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
         final JasperReportBuilder report3 = report().title(cmp.text("text3")).setWhenNoDataType(WhenNoDataType.BLANK_PAGE).setDataSource(new DataSource());
@@ -70,7 +70,7 @@ public class ConcatenatedReport5Test {
         }
     }
 
-    private class DataSource implements JRDataSource {
+    private static class DataSource implements JRDataSource {
         private boolean next = true;
 
         @Override

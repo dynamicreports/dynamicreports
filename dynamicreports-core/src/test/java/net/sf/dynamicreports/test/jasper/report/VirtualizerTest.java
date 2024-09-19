@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.test.jasper.AbstractJasperValueTest;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -31,6 +34,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class VirtualizerTest extends AbstractJasperValueTest {
 
     @Override
@@ -39,6 +43,7 @@ public class VirtualizerTest extends AbstractJasperValueTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

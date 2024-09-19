@@ -38,10 +38,10 @@ import net.sf.dynamicreports.report.exception.DRException;
  * @author Ricardo Mariaca
  */
 public class ConcatenatedReport1Test {
-    JasperConcatenatedReportBuilder concatenatedReport;
+    static JasperConcatenatedReportBuilder concatenatedReport;
 
     @BeforeAll
-    public void init() {
+    public static void init() {
         final JasperReportBuilder report1 = report().title(cmp.text("text1")).pageFooter(cmp.pageNumber());
         final JasperReportBuilder report2 = report().title(cmp.text("text2")).pageFooter(cmp.pageNumber());
         final JasperReportBuilder report3 = report().title(cmp.text("text3")).pageFooter(cmp.pageNumber());

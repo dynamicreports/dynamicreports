@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.report;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.constant.Language;
@@ -34,6 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Report4Test extends AbstractJasperPositionTest {
     private TextColumnBuilder<Integer> column1;
 
@@ -47,6 +51,7 @@ public class Report4Test extends AbstractJasperPositionTest {
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

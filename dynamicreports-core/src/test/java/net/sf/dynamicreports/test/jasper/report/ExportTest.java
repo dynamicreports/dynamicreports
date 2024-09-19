@@ -41,11 +41,11 @@ import net.sf.jasperreports.engine.JRDataSource;
  * @author Ricardo Mariaca
  */
 public class ExportTest {
-    JasperReportBuilder report;
-    JasperConcatenatedReportBuilder concatenatedReport;
+    static JasperReportBuilder report;
+    static JasperConcatenatedReportBuilder concatenatedReport;
 
     @BeforeAll
-    public void init() {
+    public static void init() {
         report = report();
         report.columns(col.column("Column1", "field1", String.class));
         report.setDataSource(createDataSource());
@@ -99,7 +99,7 @@ public class ExportTest {
         }
     }
 
-    private JRDataSource createDataSource() {
+    private static JRDataSource createDataSource() {
         final DRDataSource dataSource = new DRDataSource("field1");
         dataSource.add("field1");
         return dataSource;

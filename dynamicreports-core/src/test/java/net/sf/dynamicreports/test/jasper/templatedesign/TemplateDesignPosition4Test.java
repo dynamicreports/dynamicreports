@@ -30,6 +30,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 import java.io.InputStream;
 import java.io.Serializable;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.margin;
@@ -38,6 +41,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateDesignPosition4Test extends AbstractJasperPositionTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -56,6 +60,7 @@ public class TemplateDesignPosition4Test extends AbstractJasperPositionTest impl
     }
 
     @Override
+    @Test
     public void test() {
         super.test();
 

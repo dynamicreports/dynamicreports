@@ -25,6 +25,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import java.io.Serializable;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -36,6 +37,7 @@ import net.sf.jasperreports.engine.type.OrientationEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class IgnorePaginationTest extends AbstractJasperValueTest implements Serializable {
     private static final long serialVersionUID = 1L;
 

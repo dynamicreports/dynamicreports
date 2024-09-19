@@ -24,6 +24,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
 import static net.sf.dynamicreports.report.builder.DynamicReports.hyperLink;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.TestInstance;
 
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.HyperLinkBuilder;
@@ -37,6 +38,7 @@ import net.sf.jasperreports.engine.type.HyperlinkTypeEnum;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class HyperLinkTest extends AbstractJasperValueTest {
 
     @Override
