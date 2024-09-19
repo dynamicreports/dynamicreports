@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.constant.BooleanComponentType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -31,6 +33,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BooleanColumnPosition3Test extends AbstractJasperPositionTest {
 
     @Override

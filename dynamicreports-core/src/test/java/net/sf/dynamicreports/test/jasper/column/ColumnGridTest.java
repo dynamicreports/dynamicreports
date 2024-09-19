@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder;
@@ -34,6 +36,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ColumnGridTest extends AbstractJasperPositionTest {
     private TextColumnBuilder<Integer> column1;
     private TextColumnBuilder<Integer> column2;

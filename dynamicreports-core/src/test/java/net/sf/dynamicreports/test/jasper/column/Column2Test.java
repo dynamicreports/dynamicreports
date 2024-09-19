@@ -29,12 +29,15 @@ import net.sf.jasperreports.engine.JRDataSource;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.field;
 
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Column2Test extends AbstractJasperValueTest {
     private TextColumnBuilder<Integer> column1;
     private TextColumnBuilder<Integer> column2;

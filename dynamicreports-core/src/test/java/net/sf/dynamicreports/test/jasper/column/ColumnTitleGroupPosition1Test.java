@@ -20,6 +20,9 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+
 import static net.sf.dynamicreports.report.builder.DynamicReports.col;
 import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
 import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
@@ -34,6 +37,7 @@ import net.sf.jasperreports.engine.JRDataSource;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ColumnTitleGroupPosition1Test extends AbstractJasperPositionTest {
   private TextColumnBuilder<String> column1;
   private TextColumnBuilder<String> column2;
@@ -54,6 +58,7 @@ public class ColumnTitleGroupPosition1Test extends AbstractJasperPositionTest {
   }
 
   @Override
+  @Test
   public void test() {
     super.test();
 

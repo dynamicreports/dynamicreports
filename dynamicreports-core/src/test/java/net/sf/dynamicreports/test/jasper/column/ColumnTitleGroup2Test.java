@@ -20,6 +20,8 @@
  */
 package net.sf.dynamicreports.test.jasper.column;
 
+import org.junit.jupiter.api.TestInstance;
+
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.jasper.constant.JasperProperty;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
@@ -35,6 +37,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.grid;
 /**
  * @author Ricardo Mariaca
  */
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ColumnTitleGroup2Test extends AbstractJasperValueTest {
     private TextColumnBuilder<String> column1;
     private TextColumnBuilder<String> column2;
