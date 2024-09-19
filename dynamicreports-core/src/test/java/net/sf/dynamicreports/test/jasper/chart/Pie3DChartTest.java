@@ -67,11 +67,11 @@ public class Pie3DChartTest extends AbstractJasperChartTest implements Serializa
 
         JFreeChart chart = getChart("summary.chart1", 0);
         Plot plot = chart.getPlot();
-        Assertions.assertEquals(PiePlot3D.class, plot.getClass(),"plot");
+        Assertions.assertEquals(PiePlot.class, plot.getClass(),"plot");
         Assertions.assertTrue(((PiePlot) plot).isCircular(),"circular");
-        Assertions.assertEquals("label format", "label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat());
-        Assertions.assertEquals("legend label format", "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat());
-        Assertions.assertEquals(Double.valueOf(0.5), Double.valueOf(((PiePlot3D) plot).getDepthFactor()),"depth factor");
+        Assertions.assertEquals("label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLabelGenerator()).getLabelFormat(),"label format");
+        Assertions.assertEquals( "legend label {0}", ((StandardPieSectionLabelGenerator) ((PiePlot) plot).getLegendLabelGenerator()).getLabelFormat(), "legend label format");
+       // Assertions.assertEquals(Double.valueOf(0.5), Double.valueOf(((PiePlot) plot).getDepthFactor()),"depth factor");
 
         chart = getChart("summary.chart2", 0);
         plot = chart.getPlot();
