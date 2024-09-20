@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="templatedesign4" pageWidth="595" pageHeight="842"
+<jasperReport name="templatedesign4" pageWidth="595" pageHeight="842"
               whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10"
               scriptletClass="net.sf.dynamicreports.test.jasper.templatedesign.ReportScriptlet">
     <property name="ireport.zoom" value="1.5"/>
@@ -9,22 +8,17 @@
     <field name="item" class="java.lang.String"/>
     <detail>
         <band height="103">
-            <staticText>
-                <reportElement key="templateDesign.detail.text1" x="30" y="10" width="515" height="20"/>
-                <textElement textAlignment="Center"/>
+            <element kind="staticText" key="templateDesign.detail.text1" x="30" y="10" width="515" height="20">
                 <text><![CDATA[detail text 1]]></text>
-            </staticText>
-            <staticText>
-                <reportElement key="templateDesign.detail.text2" positionType="Float" x="30" y="70" width="515" height="20"/>
-                <textElement textAlignment="Center"/>
+            </element>
+            <element kind="staticText" key="templateDesign.detail.text2" positionType="Float" x="30" y="70" width="515" height="20">
                 <text><![CDATA[detail text 2]]></text>
-            </staticText>
-            <subreport>
-                <reportElement x="30" y="40" width="515" height="20"/>
+            </element>
+            <element kind="subreport" x="30" y="40" width="515" height="20">
                 <parametersMapExpression><![CDATA[$P{REPORT_SCRIPTLET}.getDynamicSubreportParameters()]]></parametersMapExpression>
                 <dataSourceExpression><![CDATA[$P{REPORT_SCRIPTLET}.getDynamicSubreportDataSource()]]></dataSourceExpression>
-                <subreportExpression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{REPORT_SCRIPTLET}.getDynamicSubreport()]]></subreportExpression>
-            </subreport>
+                <expression class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{REPORT_SCRIPTLET}.getDynamicSubreport()]]></expression>
+            </element>
         </band>
     </detail>
 </jasperReport>

@@ -43,51 +43,52 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.report;
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TemplateDesign5Test extends AbstractJasperValueTest {
-    private TextColumnBuilder<String> column1;
-    private TextColumnBuilder<Integer> column2;
+  private TextColumnBuilder<String> column1;
+  private TextColumnBuilder<Integer> column2;
 
-    @Override
-    protected void configureReport(JasperReportBuilder rb) throws DRException {
-        InputStream is = TemplateDesign5Test.class.getResourceAsStream("templatedesign5.jrxml");
-        JasperReportBuilder report = report();
-        report.setTemplateDesign(is);
-        report.addParameter("parameter", "parametertest");
-        report.setDataSource(new JREmptyDataSource(1));
-        report.setPageFormat(575, 842, PageOrientation.PORTRAIT);
+  @Override
+  protected void configureReport(JasperReportBuilder rb) throws DRException {
+    InputStream is = TemplateDesign5Test.class.getResourceAsStream("templatedesign5.jrxml");
+    JasperReportBuilder report = report();
+    report.setTemplateDesign(is);
+    report.addParameter("parameter", "parametertest");
+    report.setDataSource(new JREmptyDataSource(1));
+    report.setPageFormat(575, 842, PageOrientation.PORTRAIT);
 
-        rb.title(cmp.subreport(report)).columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
+    rb.title(cmp.subreport(report))
+            .columns(column1 = col.column("Column1", "field1", String.class), column2 = col.column("Column2", "field2", Integer.class));
+  }
+
+  @Override
+  protected boolean serializableTest() {
+    return false;
+  }
+
+  @Override
+  @Test
+  public void test() {
+    super.test();
+
+    numberOfPagesTest(1);
+
+    columnTitleValueTest(column1, "Column1");
+    columnDetailValueTest(column1, "row0", "row1");
+    columnTitleValueTest(column2, "Column2");
+    columnDetailValueTest(column2, "0", "1");
+
+    elementValueTest("templateDesign.title1", "title");
+    elementValueTest("templateDesign.title2", "parametertest");
+    elementValueTest("templateDesign.pageHeader", "pageHeader");
+    elementValueTest("templateDesign.pageFooter", "pageFooter");
+    elementValueTest("templateDesign.detail", "detail");
+  }
+
+  @Override
+  protected JRDataSource createDataSource() {
+    DRDataSource dataSource = new DRDataSource("field1", "field2");
+    for (int i = 0; i < 2; i++) {
+      dataSource.add("row" + i, i);
     }
-
-    @Override
-    protected boolean serializableTest() {
-        return false;
-    }
-
-    @Override
-    @Test
-    public void test() {
-        super.test();
-
-        numberOfPagesTest(1);
-
-        columnTitleValueTest(column1, "Column1");
-        columnDetailValueTest(column1, "row0", "row1");
-        columnTitleValueTest(column2, "Column2");
-        columnDetailValueTest(column2, "0", "1");
-
-        elementValueTest("templateDesign.title1", "title");
-        elementValueTest("templateDesign.title2", "parametertest");
-        elementValueTest("templateDesign.pageHeader", "pageHeader");
-        elementValueTest("templateDesign.pageFooter", "pageFooter");
-        elementValueTest("templateDesign.detail", "detail");
-    }
-
-    @Override
-    protected JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("field1", "field2");
-        for (int i = 0; i < 2; i++) {
-            dataSource.add("row" + i, i);
-        }
-        return dataSource;
-    }
+    return dataSource;
+  }
 }
