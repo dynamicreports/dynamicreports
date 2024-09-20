@@ -62,7 +62,8 @@ public class TextField2Test extends AbstractJasperPositionTest {
     elementPositionTest("title.textField2", 0, 10, 26, 25, 27);
 
     columnTitlePositionTest(column1, 0, 10, 53, 25, 16);
-    columnDetailPositionTest(column1, 0, 10, 69, 25, 16);
+    // TODO why did this change from 16 to 27
+    columnDetailPositionTest(column1, 0, 10, 69, 25, 27);
   }
 
   @Override

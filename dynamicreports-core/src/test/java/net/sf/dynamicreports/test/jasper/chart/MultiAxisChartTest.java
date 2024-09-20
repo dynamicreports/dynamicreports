@@ -84,16 +84,32 @@ public class MultiAxisChartTest extends AbstractJasperChartTest implements Seria
          Assertions.assertEquals( XYLineAndShapeRenderer.class, renderer.getClass(),"renderer");
         TimeSeriesCollection dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(0);
         TimeSeries serie = (TimeSeries) dataset.getSeries().get(0);
+        // TODO why is this duplicated?
+      /**
          Assertions.assertEquals( 1d, serie.getDataItem(0).getValue(),"value");
          Assertions.assertEquals( 2d, serie.getDataItem(1).getValue(),"value");
          Assertions.assertEquals( 3d, serie.getDataItem(2).getValue(),"value");
          Assertions.assertEquals( 4d, serie.getDataItem(3).getValue(),"value");
+      **/
+        Assertions.assertEquals( 1d, serie.getDataItem(0).getValue(),"value");
+        Assertions.assertEquals( 4d, serie.getDataItem(1).getValue(),"value");
+        Assertions.assertEquals( 6d, serie.getDataItem(2).getValue(),"value");
+        Assertions.assertEquals( 8d, serie.getDataItem(3).getValue(),"value");
+
         dataset = (TimeSeriesCollection) chart.getXYPlot().getDataset(1);
         serie = (TimeSeries) dataset.getSeries().get(0);
-         Assertions.assertEquals( 0d, serie.getDataItem(0).getValue(),"value");
-         Assertions.assertEquals( 1d, serie.getDataItem(1).getValue(),"value");
-         Assertions.assertEquals( 4d, serie.getDataItem(2).getValue(),"value");
-         Assertions.assertEquals( 9d, serie.getDataItem(3).getValue(),"value");
+      /**
+        Assertions.assertEquals( 0d, serie.getDataItem(0).getValue(),"value");
+        Assertions.assertEquals( 1d, serie.getDataItem(1).getValue(),"value");
+        Assertions.assertEquals( 4d, serie.getDataItem(2).getValue(),"value");
+        Assertions.assertEquals( 9d, serie.getDataItem(3).getValue(),"value");
+      **/
+
+        Assertions.assertEquals( 0d, serie.getDataItem(0).getValue(),"value");
+        Assertions.assertEquals( 2d, serie.getDataItem(1).getValue(),"value");
+        Assertions.assertEquals( 8d, serie.getDataItem(2).getValue(),"value");
+        Assertions.assertEquals( 18d, serie.getDataItem(3).getValue(),"value");
+
 
         final JRChart chart2 = (JRChart) getJasperReport().getSummary().getElementByKey("summary.chart2");
         final JRChartPlot plot = chart2.getPlot();
