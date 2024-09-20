@@ -260,17 +260,17 @@ public class BarcodeTest extends AbstractJasperTest {
 
         // ean128
         final EAN128Component ean128 = testBarcode("EAN128", EAN128Component.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("EAN128 checksum mode", ChecksumMode.CP_AUTO.getName(), ean128.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), ean128.getChecksumMode(), "EAN128 checksum mode");
         testBarcode("EAN128", 4, 0, "(12)345678");
         testBarcode("EAN128", 4, 1, "1(12)345678");
 
         // dataMatrix
         final DataMatrixComponent dataMatrix = testBarcode("DataMatrix", DataMatrixComponent.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("DataMatrix shape", SymbolShapeHint.FORCE_RECTANGLE.getName(), dataMatrix.getShape());
+        Assertions.assertEquals( SymbolShapeHint.FORCE_RECTANGLE.getName(), dataMatrix.getShape(), "DataMatrix shape");
 
         // code39
         final Code39Component code39 = testBarcode("Code39", Code39Component.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("Code39 checksum mode", ChecksumMode.CP_AUTO.getName(), code39.getChecksumMode());
+        Assertions.assertEquals(ChecksumMode.CP_AUTO.getName(), code39.getChecksumMode(), "Code39 checksum mode");
         Assertions.assertEquals(Boolean.TRUE, code39.isDisplayChecksum(),"Code39 display checksum");
         Assertions.assertEquals(Boolean.TRUE, code39.isDisplayStartStop(),"Code39 display start stop");
         Assertions.assertEquals(Boolean.TRUE, code39.isExtendedCharSetEnabled(),"Code39 extended charSet enabled");
@@ -281,7 +281,7 @@ public class BarcodeTest extends AbstractJasperTest {
 
         // interleaved2Of5
         final Interleaved2Of5Component interleaved2Of5 = testBarcode("Interleaved2Of5", Interleaved2Of5Component.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("Interleaved2Of5 checksum mode", ChecksumMode.CP_AUTO.getName(), interleaved2Of5.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), interleaved2Of5.getChecksumMode(), "Interleaved2Of5 checksum mode");
         Assertions.assertEquals( Boolean.TRUE, interleaved2Of5.isDisplayChecksum(),"Interleaved2Of5 display checksum");
         Assertions.assertEquals(Double.valueOf(2.5), interleaved2Of5.getWideFactor(),"Interleaved2Of5 wide factor");
         testBarcode("Interleaved2Of5", 7, 0, "12345678");
@@ -289,45 +289,45 @@ public class BarcodeTest extends AbstractJasperTest {
 
         // upca
         final UPCAComponent upca = testBarcode("UPCA", UPCAComponent.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("UPCA checksum mode", ChecksumMode.CP_AUTO.getName(), upca.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), upca.getChecksumMode(),"UPCA checksum mode");
         testBarcode("UPCA", 8, 0, "1<.*>10000<.*>00000");
         testBarcode("UPCA", 8, 1, "1<.*>10000<.*>00000");
 
         // upce
         final UPCEComponent upce = testBarcode("UPCE", UPCEComponent.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("UPCE checksum mode", ChecksumMode.CP_AUTO.getName(), upce.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), upce.getChecksumMode(), "UPCE checksum mode");
         testBarcode("UPCE", 9, 0, "1<.*>100000");
         testBarcode("UPCE", 9, 1, "1<.*>100000");
 
         // ean13
         final EAN13Component ean13 = testBarcode("EAN13", EAN13Component.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("EAN13 checksum mode", ChecksumMode.CP_AUTO.getName(), ean13.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), ean13.getChecksumMode(), "EAN13 checksum mode");
         testBarcode("EAN13", 10, 0, "1<.*>100000<.*>000006");
         testBarcode("EAN13", 10, 1, "1<.*>100000<.*>000006");
 
         // ean8
         final EAN8Component ean8 = testBarcode("EAN8", EAN8Component.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("EAN8 checksum mode", ChecksumMode.CP_AUTO.getName(), ean8.getChecksumMode());
+        Assertions.assertEquals( ChecksumMode.CP_AUTO.getName(), ean8.getChecksumMode(), "EAN8 checksum mode");
         testBarcode("EAN8", 11, 0, "1100<.*>0006");
         testBarcode("EAN8", 11, 1, "1100<.*>0006");
 
         // uspsIntelligentMail
         final USPSIntelligentMailComponent uspsIntelligentMail = testBarcode("USPSIntelligentMail", USPSIntelligentMailComponent.class, TextPositionEnum.TOP);
-        Assertions.assertEquals("USPSIntelligentMail checksum mode", ChecksumMode.CP_AUTO.getName(), uspsIntelligentMail.getChecksumMode());
+        Assertions.assertEquals(ChecksumMode.CP_AUTO.getName(), uspsIntelligentMail.getChecksumMode(), "USPSIntelligentMail checksum mode");
         Assertions.assertEquals(Double.valueOf(2.6), uspsIntelligentMail.getAscenderHeight(),"USPSIntelligentMail ascender height");
         Assertions.assertEquals(Double.valueOf(1.8), uspsIntelligentMail.getIntercharGapWidth(),"USPSIntelligentMail interchar gap width");
         Assertions.assertEquals(Double.valueOf(20.1), uspsIntelligentMail.getTrackHeight(),"USPSIntelligentMail track height");
 
         // royalMailCustomer
         final RoyalMailCustomerComponent royalMailCustomer = testBarcode("RoyalMailCustomer", RoyalMailCustomerComponent.class, null);
-        Assertions.assertEquals("RoyalMailCustomer checksum mode", ChecksumMode.CP_AUTO.getName(), royalMailCustomer.getChecksumMode());
+        Assertions.assertEquals(ChecksumMode.CP_AUTO.getName(), royalMailCustomer.getChecksumMode(), "RoyalMailCustomer checksum mode");
         Assertions.assertEquals(Double.valueOf(2.6), royalMailCustomer.getAscenderHeight(),"RoyalMailCustomer ascender height");
         Assertions.assertEquals(Double.valueOf(1.8), royalMailCustomer.getIntercharGapWidth(),"RoyalMailCustomer interchar gap width");
         Assertions.assertEquals(Double.valueOf(20.1), royalMailCustomer.getTrackHeight(),"RoyalMailCustomer track height");
 
         // postnet
         final POSTNETComponent postnet = testBarcode("POSTNET", POSTNETComponent.class, TextPositionEnum.BOTTOM);
-        Assertions.assertEquals("POSTNET checksum mode", ChecksumMode.CP_AUTO.getName(), postnet.getChecksumMode());
+        Assertions.assertEquals(ChecksumMode.CP_AUTO.getName(), postnet.getChecksumMode(), "POSTNET checksum mode");
         Assertions.assertEquals(Boolean.TRUE, postnet.getDisplayChecksum(),"POSTNET display checksum");
         Assertions.assertEquals(Double.valueOf(1.5), postnet.getIntercharGapWidth(),"POSTNET interchar gap width");
         Assertions.assertEquals(Double.valueOf(2.5), postnet.getShortBarHeight(),"POSTNET short bar height");
