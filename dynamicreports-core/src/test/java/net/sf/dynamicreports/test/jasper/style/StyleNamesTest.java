@@ -43,8 +43,12 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 public class StyleNamesTest {
 
     private static final String jrtxStr =
-        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<!DOCTYPE jasperTemplate PUBLIC \"-//JasperReports//DTD Template//EN\" \"http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd\">\n" +
-            "<jasperTemplate>\n" + "  <style name=\"MyBoldStyle2\" isBold=\"true\"/>\n" + "</jasperTemplate>";
+
+         "<jasperTemplate xmlns=\"http://jasperreports.sourceforge.net/jasperreports/template\" " +
+                "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
+                "xsi:schemaLocation=\"http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd>\n"
+        + "  <style name=\"MyBoldStyle2\" isBold=\"true\"/>\n"
+        + "</jasperTemplate>";
 
     private static void assertContainsStyleWithName(final String name, final Iterable<JRStyle> styles) {
         Assertions.assertNotNull(name);
