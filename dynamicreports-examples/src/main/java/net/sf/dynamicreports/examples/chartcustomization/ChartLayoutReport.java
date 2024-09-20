@@ -20,6 +20,20 @@
  */
 package net.sf.dynamicreports.examples.chartcustomization;
 
+import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
+import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
+import static net.sf.dynamicreports.report.builder.DynamicReports.col;
+import static net.sf.dynamicreports.report.builder.DynamicReports.report;
+import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
+import static net.sf.dynamicreports.report.builder.DynamicReports.type;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
+import org.jfree.chart.renderer.category.BarRenderer;
+
 import net.sf.dynamicreports.examples.Templates;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.builder.chart.BarChartBuilder;
@@ -30,25 +44,12 @@ import net.sf.dynamicreports.report.definition.ReportParameters;
 import net.sf.dynamicreports.report.definition.chart.DRIChartCustomizer;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
-import org.jfree.chart.renderer.category.BarRenderer;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-
-import static net.sf.dynamicreports.report.builder.DynamicReports.cht;
-import static net.sf.dynamicreports.report.builder.DynamicReports.cmp;
-import static net.sf.dynamicreports.report.builder.DynamicReports.col;
-import static net.sf.dynamicreports.report.builder.DynamicReports.report;
-import static net.sf.dynamicreports.report.builder.DynamicReports.stl;
-import static net.sf.dynamicreports.report.builder.DynamicReports.type;
 
 /**
  * <p>ChartLayoutReport class.</p>
  *
  * @author Ricardo Mariaca
- * 
+ *
  */
 public class ChartLayoutReport {
 
@@ -69,16 +70,16 @@ public class ChartLayoutReport {
     }
 
     private void build() {
-        FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
+        final FontBuilder boldFont = stl.fontArialBold().setFontSize(12);
 
-        TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
-        TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
-        TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
+        final TextColumnBuilder<String> itemColumn = col.column("Item", "item", type.stringType());
+        final TextColumnBuilder<Integer> quantityColumn = col.column("Quantity", "quantity", type.integerType());
+        final TextColumnBuilder<BigDecimal> unitPriceColumn = col.column("Unit price", "unitprice", type.bigDecimalType());
 
-        JasperReportBuilder subreport = report();
+        final JasperReportBuilder subreport = report();
         subreport.setTemplate(Templates.reportTemplate).columns(itemColumn, quantityColumn, unitPriceColumn).setDataSource(createDataSource());
 
-        BarChartBuilder chart = cht.barChart()
+        final BarChartBuilder chart = cht.barChart()
                                    .customizers(new ChartCustomizer())
                                    .setTitle("Bar chart")
                                    .setTitleFont(boldFont)
@@ -94,13 +95,13 @@ public class ChartLayoutReport {
                     .pageFooter(Templates.footerComponent)
                     .setDataSource(createDataSource())
                     .show();
-        } catch (DRException e) {
+        } catch (final DRException e) {
             e.printStackTrace();
         }
     }
 
     private JRDataSource createDataSource() {
-        DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
+        final DRDataSource dataSource = new DRDataSource("item", "quantity", "unitprice");
         dataSource.add("Tablet", 350, BigDecimal.valueOf(300));
         dataSource.add("Laptop", 300, BigDecimal.valueOf(500));
         dataSource.add("Smartphone", 450, BigDecimal.valueOf(250));
@@ -112,9 +113,9 @@ public class ChartLayoutReport {
 
         @Override
         public void customize(JFreeChart chart, ReportParameters reportParameters) {
-            BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
-            renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
-            renderer.setBaseItemLabelsVisible(true);
+            final BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
+            renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+            renderer.setDefaultItemLabelsVisible(true);
         }
     }
 }

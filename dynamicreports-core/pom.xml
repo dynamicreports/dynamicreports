@@ -103,7 +103,6 @@
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>4.0.5</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>

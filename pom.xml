@@ -44,7 +44,6 @@
         <targetVersion>8</targetVersion>
 
         <!--Dependencies -->
-        <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.17</batikbridgeVersion>
         <groovyVersion>2.4.21</groovyVersion>
         <hsqldbVersion>2.7.2</hsqldbVersion>
@@ -162,11 +161,14 @@
                 <optional>true</optional>
             </dependency>
             <dependency>
-                <groupId>net.sourceforge.barbecue</groupId>
-                <artifactId>barbecue</artifactId>
-                <version>${barbecueVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
+                <artifactId>jfreechart</artifactId>
+                <groupId>org.jfree</groupId>
+                <version>1.5.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.librepdf</groupId>
+                <artifactId>openpdf</artifactId>
+                <version>1.3.32</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
