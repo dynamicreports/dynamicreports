@@ -86,6 +86,10 @@
             <artifactId>jasperreports-jaxen</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-groovy</artifactId>
+        </dependency>
+        <dependency>
             <groupId>net.sf.barcode4j</groupId>
             <artifactId>barcode4j</artifactId>
             <exclusions>
