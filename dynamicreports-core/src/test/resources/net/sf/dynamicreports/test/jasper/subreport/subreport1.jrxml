@@ -1,37 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842"
-              columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="net.sf.dynamicreports.jasper.base.JasperScriptlet">
-    <style name="style_22_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0  -->
+<jasperReport name="Report" language="java" pageWidth="575" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3f4d3512-78e5-4d6d-976a-22ca674f65f5">
+    <style name="style_22_" forecolor="#000000" blankWhenNull="true" fontSize="10.0" pdfFontName="Helvetica" pdfEncoding="Cp1252" pdfEmbedded="false">
         <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
     </style>
     <parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
-    <field name="column1" class="java.lang.String"/>
-    <title>
-        <band height="16">
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
-                <reportElement key="title.textField1" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
-                <textElement/>
-                <textFieldExpression class="java.lang.String"><![CDATA["Subreport" + $P{MASTER_REPORT_PARAMETERS}.getReportRowNumber()]]></textFieldExpression>
-            </textField>
-        </band>
-    </title>
-    <columnHeader>
-        <band height="16">
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
-                <reportElement key="columnHeader.column_column1.title1" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
-                <textElement/>
-                <textFieldExpression class="java.lang.String"><![CDATA["Column1"]]></textFieldExpression>
-            </textField>
-        </band>
-    </columnHeader>
-    <detail>
-        <band height="16">
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
-                <reportElement key="detail.column_column11" style="style_22_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
-                <textElement textAlignment="Left"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{column1}]]></textFieldExpression>
-            </textField>
-        </band>
-    </detail>
+    <parameter name="parameter3" class="java.lang.String"/>
+    <parameter name="parameter5" class="java.lang.String"/>
+    <summary height="48">
+        <element kind="textField" uuid="34a23033-c7e6-43f1-ac5d-d1447839139b" key="summary.textField1" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_22_">
+            <expression><![CDATA[$P{parameter3}]]></expression>
+        </element>
+        <element kind="textField" uuid="2880d552-5c90-4447-b517-88bfdad2c132" key="summary.textField2" positionType="Float" stretchType="ElementGroupHeight" x="0" y="16" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_22_">
+            <expression><![CDATA[$P{MASTER_REPORT_PARAMETERS}.getValue("parameter4")]]></expression>
+        </element>
+        <element kind="textField" uuid="a74b6127-1ddb-4da2-8bac-5a67156a5c37" key="summary.textField3" positionType="Float" stretchType="ElementGroupHeight" x="0" y="32" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_22_">
+            <expression><![CDATA[$P{parameter5}]]></expression>
+        </element>
+    </summary>
 </jasperReport>

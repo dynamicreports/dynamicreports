@@ -1,28 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" pageWidth="595" pageHeight="842"
-              columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="net.sf.dynamicreports.jasper.base.JasperScriptlet">
-    <style name="style_21_" isDefault="false" forecolor="#000000" isBlankWhenNull="true" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false">
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0  -->
+<jasperReport name="Report" language="java" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="net.sf.dynamicreports.jasper.base.JasperScriptlet" uuid="8de9064c-b066-4ebb-bf8a-7db21f6be464">
+    <style name="style_21_" forecolor="#000000" blankWhenNull="true" fontSize="10.0" pdfFontName="Helvetica" pdfEncoding="Cp1252" pdfEmbedded="false">
         <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
     </style>
     <parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
     <field name="field1" class="java.lang.String"/>
-    <columnHeader>
-        <band height="16">
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
-                <reportElement key="columnHeader.column_field1.title1" style="style_21_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
-                <textElement/>
-                <textFieldExpression class="java.lang.String"><![CDATA["Column1"]]></textFieldExpression>
-            </textField>
-        </band>
+    <columnHeader height="16">
+        <element kind="textField" uuid="b7a26f92-308e-4cce-81fc-5f68ddbfa012" key="columnHeader.column_field1.title1" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_21_">
+            <expression><![CDATA["Column1"]]></expression>
+        </element>
     </columnHeader>
     <detail>
         <band height="16">
-            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
-                <reportElement key="detail.column_field11" style="style_21_" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="16"/>
-                <textElement textAlignment="Left"/>
-                <textFieldExpression class="java.lang.String"><![CDATA[$F{field1}]]></textFieldExpression>
-            </textField>
+            <element kind="textField" uuid="8571e200-79b4-481d-9950-4528a93cb66b" key="detail.column_field11" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" hTextAlign="Left" style="style_21_">
+                <expression><![CDATA[$F{field1}]]></expression>
+            </element>
         </band>
     </detail>
 </jasperReport>
