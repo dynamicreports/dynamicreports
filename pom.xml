@@ -144,6 +144,11 @@
                 <version>${jasperreportsVersion}</version>
             </dependency>
             <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports-jaxen</artifactId>
+                <version>${jasperreportsVersion}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-text</artifactId>
                 <version>1.12.0</version>

@@ -57,7 +57,8 @@ public class XmlReportTest extends AbstractJasperValueTest {
     protected void configureReport(JasperReportBuilder rb) {
         try {
             rb.setLocale(Locale.ENGLISH)
-              .columns(column1 = col.column("Column1", field("field1", type.stringType()).setDescription("@field1")), column2 = col.column("Column2", field("field2", type.integerType())),
+              .columns(column1 = col.column("Column1", field("field1", type.stringType()).setDescription("@field1")),
+                       column2 = col.column("Column2", field("field2", type.integerType())),
                        column3 = col.column("Column3", field("field3", type.bigDecimalType())))
               .setQuery("/data/row1", QueryLanguage.XPATH)
               .setParameter(JRXPathQueryExecuterFactory.PARAMETER_XML_DATA_DOCUMENT, JRXmlUtils.parse(XmlReportTest.class.getResourceAsStream("data.xml")))
