@@ -6,7 +6,7 @@ on:
   push:
      branches:
      - development
-
+     - 7.0.0-development
 
 jobs:
   deploy:
