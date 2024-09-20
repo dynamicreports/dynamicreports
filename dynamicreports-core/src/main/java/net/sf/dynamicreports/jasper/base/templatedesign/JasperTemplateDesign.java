@@ -194,7 +194,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     /** {@inheritDoc} */
     @Override
     public WhenResourceMissingType getWhenResourceMissingType() {
-        return ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingType());
+        return jasperDesign.getWhenResourceMissingType() == null ? null : ConstantTransform.whenResourceMissingType(jasperDesign.getWhenResourceMissingType());
     }
 
     /** {@inheritDoc} */
@@ -236,7 +236,7 @@ public class JasperTemplateDesign implements DRITemplateDesign<JasperDesign> {
     /** {@inheritDoc} */
     @Override
     public PageOrientation getPageOrientation() {
-        return ConstantTransform.pageOrientation(jasperDesign.getOrientation());
+        return jasperDesign.getOrientation() == null ? null : ConstantTransform.pageOrientation(jasperDesign.getOrientation());
     }
 
     /** {@inheritDoc} */

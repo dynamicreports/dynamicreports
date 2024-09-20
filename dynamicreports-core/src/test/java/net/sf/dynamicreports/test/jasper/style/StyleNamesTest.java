@@ -44,10 +44,8 @@ public class StyleNamesTest {
 
     private static final String jrtxStr =
 
-         "<jasperTemplate xmlns=\"http://jasperreports.sourceforge.net/jasperreports/template\" " +
-                "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
-                "xsi:schemaLocation=\"http://jasperreports.sourceforge.net/jasperreports/template http://jasperreports.sourceforge.net/xsd/jaspertemplate.xsd>\n"
-        + "  <style name=\"MyBoldStyle2\" isBold=\"true\"/>\n"
+         "<jasperTemplate>\n"
+        + "  <style name=\"MyBoldStyle2\" bold=\"true\"/>\n"
         + "</jasperTemplate>";
 
     private static void assertContainsStyleWithName(final String name, final Iterable<JRStyle> styles) {
