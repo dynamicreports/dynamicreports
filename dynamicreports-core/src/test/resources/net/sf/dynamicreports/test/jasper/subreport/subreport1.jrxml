@@ -6,6 +6,11 @@
     <parameter name="MASTER_REPORT_PARAMETERS" class="net.sf.dynamicreports.report.definition.ReportParameters"/>
     <parameter name="parameter3" class="java.lang.String"/>
     <parameter name="parameter5" class="java.lang.String"/>
+    <title height="16">
+        <element kind="textField" uuid="e53de6ff-8aea-4285-9145-388c13285311" key="title.textField1" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_22_">
+            <expression><![CDATA["Subreport" + $P{MASTER_REPORT_PARAMETERS}.getReportRowNumber()]]></expression>
+        </element>
+    </title>
     <summary height="48">
         <element kind="textField" uuid="34a23033-c7e6-43f1-ac5d-d1447839139b" key="summary.textField1" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="575" height="16" textAdjust="StretchHeight" blankWhenNull="true" style="style_22_">
             <expression><![CDATA[$P{parameter3}]]></expression>

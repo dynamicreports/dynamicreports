@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.Locale;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
@@ -58,6 +59,7 @@ public class DatabaseSubreportTest extends AbstractJasperValueTest {
     private TextColumnBuilder<BigDecimal> column3;
 
     @Override
+    @BeforeAll
     public void init() {
         try {
             Class.forName("org.hsqldb.jdbcDriver");

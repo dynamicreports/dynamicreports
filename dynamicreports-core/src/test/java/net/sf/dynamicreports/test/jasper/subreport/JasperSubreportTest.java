@@ -50,7 +50,7 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
     @Override
     protected void configureReport(final JasperReportBuilder rb) {
         final SubreportBuilder subreport = Components.subreport(new SubreportExpression()).setDataSource(new SubreportDataSourceExpression());
-
+        rb.addParameter("parameter4", "This was missing?");
         rb.detail(subreport);
     }
 
@@ -66,8 +66,8 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
         elementValueTest("title.textField1", "Subreport1", "Subreport2", "Subreport3");
 
         // column title
-        elementCountTest("columnHeader.column_column1.title1", 3);
-        elementValueTest("columnHeader.column_column1.title1", "Column1", "Column1", "Column1");
+        elementCountTest("columnHeader.column_column1.title1", 2);
+        elementValueTest("columnHeader.column_column1.title1", "Column1", "Column1");
 
         elementCountTest("columnHeader.column_column2.title1", 2);
         elementValueTest("columnHeader.column_column2.title1", "Column2", "Column2");
@@ -76,8 +76,8 @@ public class JasperSubreportTest extends AbstractJasperValueTest implements Seri
         elementValueTest("columnHeader.column_column3.title1", "Column3");
 
         // column detail
-        elementCountTest("detail.column_column11", 6);
-        elementValueTest("detail.column_column11", "row1_column1", "row1_column1", "row2_column1", "row1_column1", "row2_column1", "row3_column1");
+        elementCountTest("detail.column_column11", 5);
+        elementValueTest("detail.column_column11", "row1_column1", "row2_column1", "row1_column1", "row2_column1", "row3_column1");
 
         elementCountTest("detail.column_column21", 5);
         elementValueTest("detail.column_column21", "row1_column2", "row2_column2", "row1_column2", "row2_column2", "row3_column2");
