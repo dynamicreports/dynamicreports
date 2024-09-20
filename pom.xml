@@ -414,6 +414,11 @@
                     <artifactId>jaxb-maven-plugin</artifactId>
                     <version>4.0.8</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

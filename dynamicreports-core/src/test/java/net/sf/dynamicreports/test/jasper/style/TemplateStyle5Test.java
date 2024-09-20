@@ -49,7 +49,8 @@ public class TemplateStyle5Test extends AbstractJasperStyleTest implements Seria
     @Override
     protected void configureReport(JasperReportBuilder rb) throws DRException {
         final TemplateStylesBuilder templateStyles =
-            stl.templateStyles().loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate1.jrtx")).styles(stl.style().setName("style1").setBackgroundColor(Color.RED));
+            stl.templateStyles().loadStyles(TemplateStyle4Test.class.getResource("StyleTemplate1.jrtx"))
+                    .styles(stl.style().setName("style1").setBackgroundColor(Color.RED));
         templateStyles.getStyle("columnTitleStyle3").setBackgroundColor(Color.LIGHT_GRAY);
         final InputStream is = TemplateDesign1Test.class.getResourceAsStream("templatedesign6.jrxml");
         rb.setTemplateDesign(is).setWhenNoDataType(WhenNoDataType.ALL_SECTIONS_NO_DETAIL).addTemplateStyle(templateStyles);

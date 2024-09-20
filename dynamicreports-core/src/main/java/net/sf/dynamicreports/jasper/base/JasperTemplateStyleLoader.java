@@ -23,6 +23,11 @@ package net.sf.dynamicreports.jasper.base;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.Validate;
 
@@ -57,6 +62,7 @@ import net.sf.jasperreports.engine.JRPen;
 import net.sf.jasperreports.engine.JRStyle;
 import net.sf.jasperreports.engine.JRTemplate;
 import net.sf.jasperreports.engine.TabStop;
+import net.sf.jasperreports.engine.design.JRDesignStyle;
 import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
 import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 import net.sf.jasperreports.engine.type.LineSpacingEnum;
@@ -133,17 +139,22 @@ public class JasperTemplateStyleLoader {
             final JRStyle jrStyle = jrStyles[i];
             styles[i] = convertStyle(jrStyle);
         }
+        // when reading from the file itself jasperreport does not build the hirachy since version 7
+        Map<String, DRStyle> styleMap = Arrays.stream(styles).collect(Collectors.toMap(DRStyle::getName, Function.identity()));
+        Arrays.stream(styles).forEach((style) -> {
+            if (style.getStyleNameReference() != null && style.getParentStyle() == null && styleMap.containsKey(style.getStyleNameReference())) {
+                style.setParentStyle(styleMap.get(style.getStyleNameReference()));
+            }
+        });
         return styles;
     }
 
     private static DRStyle convertStyle(JRStyle jrStyle) {
         final DRStyle style = new DRStyle();
         abstractStyle(jrStyle, style);
-
         style.setName(jrStyle.getName());
-        final JRStyle jrParentStyle = jrStyle.getStyle();
-        if (jrParentStyle != null) {
-            style.setParentStyle(convertStyle(jrParentStyle));
+        if (jrStyle.getStyleNameReference() != null) {
+            style.setStyleNameReference(jrStyle.getStyleNameReference());
         }
         for (final JRConditionalStyle jrConditionalStyle : jrStyle.getConditionalStyles()) {
             style.addConditionalStyle(conditionalStyle(jrConditionalStyle));

@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
-
 <jasperTemplate>
 	<style name="textStyle" forecolor="#000000">
 		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
 	</style>
-	<style name="columnStyle" style="textStyle" isItalic="true"/>
-	<style name="titleStyle0" style="textStyle" isBold="true"/>
-	<style name="titleStyle" style="titleStyle0" isBold="true">
+	<style name="columnStyle" style="textStyle" italic="true"/>
+	<style name="titleStyle0" style="textStyle" bold="true"/>
+	<style name="titleStyle" style="titleStyle0" bold="true">
 		<box>
 			<bottomPen lineWidth="2.0"/>
 		</box>
@@ -20,10 +17,10 @@
 			<rightPen lineWidth="2.0"/>
 		</box>
 	</style>
-	<style name="subtotalStyle" style="textStyle" backcolor="#FFFF00" isBold="true">
+	<style name="subtotalStyle" style="textStyle" backcolor="#FFFF00" bold="true">
 		<box>
 			<topPen lineWidth="1.0"/>
 		</box>
 	</style>
-	<style name="textFieldStyle" style="textStyle" fontSize="15" isBold="true"/>
+	<style name="textFieldStyle" style="textStyle" fontSize="15" bold="true"/>
 </jasperTemplate>

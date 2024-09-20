@@ -57,6 +57,7 @@ public abstract class DRBaseStyle implements DRIBaseStyle {
     private Markup markup;
     private DRParagraph paragraph;
     private DRPen linePen;
+    private String styleNameReference;
 
     /**
      * <p>Constructor for DRBaseStyle.</p>
@@ -316,4 +317,11 @@ public abstract class DRBaseStyle implements DRIBaseStyle {
         this.linePen = linePen;
     }
 
+    public void setStyleNameReference(String styleNameReference) {
+        this.styleNameReference = styleNameReference;
+    }
+
+    public String getStyleNameReference() {
+        return styleNameReference;
+    }
 }
