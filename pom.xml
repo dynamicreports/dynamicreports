@@ -3,7 +3,6 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -49,14 +48,6 @@
 
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
-
-        <!--Plugins -->
-        <jacoco-maven-plugin-version>0.8.11</jacoco-maven-plugin-version>
-        <jdeps-maven-plugin-version>0.5.1</jdeps-maven-plugin-version>
-        <lifecycle-mapping-plugin-version>1.0.0</lifecycle-mapping-plugin-version>
-        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
-        <maven-jdeps-plugin-version>3.1.1</maven-jdeps-plugin-version>
-        <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
         <!--Mycila License plugin configuration-->
         <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
@@ -220,7 +211,7 @@
                                 <version>[1.8,)</version>
                             </requireJavaVersion>
                             <requireMavenVersion>
-                                <version>[3.3.9,)</version>
+                                <version>[3.6.3,)</version>
                             </requireMavenVersion>
                         </rules>
                     </configuration>
@@ -257,7 +248,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${jacoco-maven-plugin-version}</version>
+                    <version>0.8.11</version>
                     <executions>
                         <execution>
                             <goals>
@@ -306,7 +297,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${maven-checkstyle-plugin.version}</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -326,7 +317,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.5.0</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jvnet.jaxb</groupId>
@@ -342,6 +333,11 @@
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
                     <version>4.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.gaul</groupId>
+                    <artifactId>modernizer-maven-plugin</artifactId>
+                    <version>2.9.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -552,7 +548,6 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-checkstyle-plugin</artifactId>
-                            <version>${maven-checkstyle-plugin.version}</version>
                             <executions>
                                 <execution>
                                     <!--Could run with mvn clean verify-->
@@ -598,7 +593,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>${maven-checkstyle-plugin.version}</version>
                         <executions>
                             <execution>
                                 <!--Could run with mvn clean verify-->

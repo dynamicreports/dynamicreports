@@ -1,6 +1,11 @@
 DynamicReports Change Log
 =========================
 
+Changes in version 7.0.0 (2024-10-01)
+---------------------------------------------------
+ - Update jasperreport to 7.0.0
+
+
 Changes in version 6.12.0 (2020-10-08)
 ---------------------------------------------------
  - Update jasperreport to 6.12.0
@@ -47,9 +52,9 @@ Changes in version 5.1.0 (2018-01-25)
 ---------------------------------------------------
  - upgrade to JasperReports 6.5.1
  - removed xhtml and excelapi exporter
- - removed thread safety in JasperCustomValues due to problems with memory leak   
+ - removed thread safety in JasperCustomValues due to problems with memory leak
  - fixed problem with chart styles in multi axis chart
- 
+
 Changes in version 5.0.0 (2017-01-27)
 ---------------------------------------------------
  - upgrade to JasperReports 6.4.0
@@ -57,31 +62,31 @@ Changes in version 5.0.0 (2017-01-27)
  - setPrintRepeatedValues method was added to TextFieldBuilder
  - ability to add item hyperlinks to chart series
  - minor bug fixes
- 
+
 Changes in version 4.1.1 (2016-07-28)
 ---------------------------------------------------
  - upgrade to JasperReports 6.2.2
  - added new types of component stretch type
  - minor bug fixes
- 
+
 Changes in version 4.1.0 (2016-02-11)
 ---------------------------------------------------
  - upgrade to JasperReports 6.2.0
  - xyList component, see ComponentsReport for an example
- 
+
 Changes in version 4.0.2 (2015-11-18)
 ---------------------------------------------------
  - upgrade to JasperReports 6.1.1
- - added support for QR Code barcode, see BarcodeReport for an example 
+ - added support for QR Code barcode, see BarcodeReport for an example
  - minor bug fixes and improvements
- 
+
 Changes in version 4.0.1 (2015-07-28)
 ---------------------------------------------------
  - upgrade to JasperReports 6.1.0
  - downgrade to iText 2.1.7 in pdf exporter
  - horizontal/vertical alignment was replaced by horizontal/vertical text alignment in text fields and horizontal/vertical image alignment in images
  - minor bug fixes
- 
+
 Changes in version 4.0.0 (2015-01-22)
 ---------------------------------------------------
  - upgrade to JasperReports 6.0.0
@@ -94,7 +99,7 @@ Changes in version 3.2.1 (2014-05-07)
  - getSubreportWidth() method was added to ReportParameters class, the method returns the available width for a subreport
  - added new scale types (REAL_HEIGHT and REAL_SIZE) to ImageScale enum
  - minor bug fixes
- 
+
 Changes in version 3.2.0 (2014-02-26)
 ---------------------------------------------------
  - upgrade to JasperReports 5.5.1
@@ -118,20 +123,20 @@ Changes in version 3.1.4 (2013-07-09)
  - newPage() method was added to MultiPageListBuilder, this allows to move to a new page
  - added the possibility to set position of the toc page
  - minor bug fixes and improvements
- 
+
 Changes in version 3.1.3 (2013-05-15)
 ---------------------------------------------------
  - upgrade to JasperReports 5.0.4
- - new column type - emptyColumn, see EmptyColumnReport for an example 
+ - new column type - emptyColumn, see EmptyColumnReport for an example
  - added the possibility to update styles that were loaded from a template style (jrtx)
  - minor improvements
 
 Changes in version 3.1.2 (2013-03-14)
 ---------------------------------------------------
- - new subtotal attributes were added - setLabelPosition, setLabelWidth, setLabelFixedWidth, setLabelMinWidth   
+ - new subtotal attributes were added - setLabelPosition, setLabelWidth, setLabelFixedWidth, setLabelMinWidth
  - added to pageYofY and pageXslashY attributes that allows to set pageX or pageY width
  - fixed problem with a wrong namespace that was used in the previous verion of dynamicreports-adhoc (3.1.1)
-   The wrong namespace caused problems with loading adhoc configurations from xml files and with saving xml configuration files 
+   The wrong namespace caused problems with loading adhoc configurations from xml files and with saving xml configuration files
  - minor bug fixes and improvements
 
 Changes in version 3.1.1 (2013-02-28)
@@ -143,16 +148,16 @@ Changes in version 3.1.1 (2013-02-28)
 
 Changes in version 3.1.0 (2012-12-19)
 ---------------------------------------------------
- - multiPageList component, see MultiPageListReport for an example 
- - new group attribute was added - headerWithSubtotal , see GroupHeaderWithSubtotalReport for an example  
+ - multiPageList component, see MultiPageListReport for an example
+ - new group attribute was added - headerWithSubtotal , see GroupHeaderWithSubtotalReport for an example
  - minor bug fixes and improvements
- 
+
 Changes in version 3.0.4 (2012-11-27)
 ---------------------------------------------------
  - xy block chart, see XyBlockChartReport for an example
- - added the ability to set a subtotal position in AdhocSubtotal  
+ - added the ability to set a subtotal position in AdhocSubtotal
  - minor bug fixes and improvements
- 
+
 Changes in version 3.0.3 (2012-10-25)
 ---------------------------------------------------
  - upgrade to JasperReports 4.7.1
@@ -165,14 +170,14 @@ Changes in version 3.0.2 (2012-09-25)
    This attribute allows to remove group labels from the table of contents
  - ability to set a default report font, see DefaultFontReport for an example
  - minor bug fixes
- 
+
 Changes in version 3.0.1 (2012-08-28)
 ---------------------------------------------------
  - upgrade to JasperReports 4.7.0
  - ability to sort chart series values, see ChartSeriesOrderReport for an example
  - ability to add more chart customizers to a chart
  - minor bug fixes and improvements
- 
+
 Changes in version 3.0.0 (2012-07-30)
 ---------------------------------------------------
  - upgrade to JasperReports 4.6.0
@@ -188,7 +193,7 @@ Changes in version 2.5.1 (2012-06-21)
  - showValues and showPercentages attributes were added to charts
  - new column title group attributes were added - setTitleStretchWithOverflow, addTitleProperty
  - new examples - ChartShowPercentagesReport, ChartShowValuesReport, GroupedStackedBarChartReport
- 
+
 Changes in version 2.5.0 (2012-05-21)
 ---------------------------------------------------
  - dynamicreports-adhoc project - a project that simplifies creating adhoc report applications, see SimpleAdhocReport and AdhocCustomizerReport for an example
@@ -200,11 +205,11 @@ Changes in version 2.5.0 (2012-05-21)
 Changes in version 2.4.1 (2012-04-12)
 ---------------------------------------------------
  - difference chart, see DifferenceChartReport for an example
- - template styles, this allows to use external styles, see TemplateStyleReport, TemplateStyleFileReport for an example 
+ - template styles, this allows to use external styles, see TemplateStyleReport, TemplateStyleFileReport for an example
  - new column attributes were added - setTitleStretchWithOverflow, addTitleProperty
  - upgrade to commons-lang3 3.1
  - minor improvements
- 
+
 Changes in version 2.4.0 (2012-03-14)
 ---------------------------------------------------
  - upgrade to JasperReports 4.5.1
@@ -212,35 +217,35 @@ Changes in version 2.4.0 (2012-03-14)
  - layered bar chart, see LayeredBarChartReport for an example
  - ability to add to the table of contents links to components, see TableOfContentsReport2 for an example
  - minor bug fixes and improvements
- - new examples - CustomPercentageCrosstabReport, FlowColumnPairsReport, ListBackgroundReport, LayeredBarChartReport, TableOfContentsReport2 
- 
+ - new examples - CustomPercentageCrosstabReport, FlowColumnPairsReport, ListBackgroundReport, LayeredBarChartReport, TableOfContentsReport2
+
 Changes in version 2.3.5 (2012-02-15)
 ---------------------------------------------------
  - gantt chart, see GanttChartReport for an example
  - thermometer chart, see ThermometerChartReport for an example
  - dataPreSorted attribute was added to crosstabs
  - minor bug fixes and improvements
- - new examples - ApplicationForm, OpenFlashChartReport, GanttChartReport, ThermometerChartReport 
-  
+ - new examples - ApplicationForm, OpenFlashChartReport, GanttChartReport, ThermometerChartReport
+
 Changes in version 2.3.4 (2012-01-18)
 ---------------------------------------------------
  - meter chart, see MeterChartReport for an example
  - fixed NPE when trying to set a datasource to a MultiAxisChart
  - minor javadoc updates
- 
+
 Changes in version 2.3.3 (2011-12-20)
 ---------------------------------------------------
  - upgrade to JasperReports 4.5.0
  - candlestick chart, see CandlestickChartReport for an example
- - highlow chart, see HighLowChartReport for an example 
- 
+ - highlow chart, see HighLowChartReport for an example
+
 Changes in version 2.3.2 (2011-11-29)
 ---------------------------------------------------
  - support for sorting the data source, see SortReport for an example
- - bubble chart, see BubbleChartReport for an example 
+ - bubble chart, see BubbleChartReport for an example
  - minor bug fixes and improvements
  - new examples - SortReport, BubbleChartReport, PercentageColumnWidthReport, DynamicReport, GroupChartReport2, VariableReport
- 
+
 Changes in version 2.3.1 (2011-11-03)
 ---------------------------------------------------
  - multi axis chart, see MultiAxisChartReport for an example
@@ -248,12 +253,12 @@ Changes in version 2.3.1 (2011-11-03)
  - upgrade to JasperReports 4.1.2
  - minor bug fixes and improvements
  - new examples - MultiAxisChartReport, DynamicPageWidthReport, ComponentsReport
-  
+
 Changes in version 2.3.0 (2011-10-06)
 ---------------------------------------------------
  - map component, see MapReport for an example
  - google geo map component, see GeoMapReport for an example
-  
+
 Changes in version 2.2.1 (2011-09-08)
 ---------------------------------------------------
  - updated JasperReports to 4.1.1
@@ -268,7 +273,7 @@ Changes in version 2.2.0 (2011-08-16)
  - ability to create datasets, see SubDatasourceReport for an example
  - minor bug fixes and improvements
  - new examples - BarcodeReport, DatabaseDatasourceReport, XmlDatasourceReport, SubDatasourceReport, UnitsReport, GroupLayoutReport
- 
+
 Changes in version 2.1.2 (2011-07-26)
 ---------------------------------------------------
  - ability to group column titles, see ColumnTitleGroupReport for an example
@@ -276,28 +281,28 @@ Changes in version 2.1.2 (2011-07-26)
  - pptx exporter
  - minor bug fixes and improvements
  - new examples - ScriptletReport, FontsReport, PrintWhenExpressionReport, ColumnTitleGroupReport
- 
+
 Changes in version 2.1.1 (2011-06-29)
 ---------------------------------------------------
  - ability to set the dimension of a list component
  - continuous page numbering for concatenated reports, see ConcatenatedReport2 for an example
  - minor bug fixes and improvements
  - new examples - ChartLayoutReport, ConditionalStyleReport
-                  
+
 Changes in version 2.1.0 (2011-06-07)
 ---------------------------------------------------
  - updated JasperReports to 4.0.1
  - table of contents - a table of contents generator
  - support for writing jasper expressions, see JasperExpressionReport for an example
  - minor bug fixes and improvements
- - new examples - SalesTableOfContents, TableOfContentsReport, CustomTableOfContentsReport, 
+ - new examples - SalesTableOfContents, TableOfContentsReport, CustomTableOfContentsReport,
                   SimpleExpressionReport, ComplexExpressionReport, JasperExpressionReport, ValueFormatterReport
 
 Changes in version 2.0.2 (2011-05-10)
 ---------------------------------------------------
  - new bands - detail header, detail footer
  - ability to set the series expression in charts, see SeriesBarChartReport for an example
- - new examples - ConversionColumnReport, GroupCountChartReport, SeriesBarChartReport, 
+ - new examples - ConversionColumnReport, GroupCountChartReport, SeriesBarChartReport,
                   ResourceBundleReport, JasperTemplateDesignReport3
  - minor improvements
 
@@ -312,25 +317,25 @@ Changes in version 2.0.0 (2011-03-16)
  - crosstab measure can have expression, see MeasureExpressionCrosstabReport for an example
  - support for crosstab group, total and grand total styles
  - minor bug fixes
- 
+
 Changes in version 2.0.0-beta2 (2011-02-24)
 ---------------------------------------------------
  - crosstab column/row group can have expression, see GroupExpressionCrosstabReport for an example
  - support for crosstab cell styles and conditional styles, see StyleCrosstabReport for an example
  - minor bug fixes and improvements
- 
+
 Changes in version 2.0.0-beta1 (2011-01-31)
 ---------------------------------------------------
  - support for crosstab, see CrosstabReport for an example
  - updated JasperReports to 4.0.0
  - minor improvements
- 
+
 Changes in version 1.5.2 (2010-12-15)
 ---------------------------------------------------
  - support for generic element
- - support for page break, column break 
+ - support for page break, column break
  - minor improvements
- 
+
 Changes in version 1.5.1 (2010-11-24)
 ---------------------------------------------------
  - stretchWithOverflow attribute was added to textfields and columns
@@ -403,11 +408,11 @@ Changes in version 1.1.0 (2010-05-12)
  - new exporters - toDocx, toHtml, toOds, toOdt, toRtf, toText, toXhtml, toXlsx, toXml, toXmlss
  - DynamicReports.cnd.* - conditions expression builder, see SimpleReport_Step12 for an example
  - new data types - dateYear, dateMonth, dateDay
- - data types can convert value to string (see ExpressionColumnReport for an example)  
+ - data types can convert value to string (see ExpressionColumnReport for an example)
  - fixed bug 2997586 - the height in setDimension(Integer width, Integer height) of the DimensionComponentBuilder class is set with the width
  - new examples - examples/gettingstarted/SimpleReport_ClassicSyntax
                   examples/column/*
- - updated SimpleReport_Step11, SimpleReport_Step12 due to the new feature (conditions expression builder) 
+ - updated SimpleReport_Step11, SimpleReport_Step12 due to the new feature (conditions expression builder)
 
 Changes in version 1.0.1 (2010-04-21)
 ---------------------------------------------------
