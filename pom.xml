@@ -43,20 +43,12 @@
         <sourceVersion>8</sourceVersion>
         <targetVersion>8</targetVersion>
 
-        <!--Dependencies -->
-        <batikbridgeVersion>1.17</batikbridgeVersion>
-        <groovyVersion>2.4.21</groovyVersion>
-        <hsqldbVersion>2.7.2</hsqldbVersion>
+        <!--Dependencies Version,  only if used in mulitple -->
         <jasperreportsVersion>7.0.0</jasperreportsVersion>
+
+
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
-        <jaxbVersion>2.3.0.1</jaxbVersion>
-        <jsonVersion>20231013</jsonVersion>
-        <jul-to-slf4jVersion>2.0.12</jul-to-slf4jVersion>
-        <log4j-to-slf4jVersion>2.23.1</log4j-to-slf4jVersion>
-        <springframeworkVersion>5.3.33</springframeworkVersion>
-        <velocityVersion>1.7</velocityVersion>
-        <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.11</jacoco-maven-plugin-version>
@@ -175,87 +167,16 @@
                 <version>4.0.2</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.xmlgraphics</groupId>
-                <artifactId>batik-bridge</artifactId>
-                <version>${batikbridgeVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-                <exclusions>
-                    <exclusion>
-                        <groupId>xalan</groupId>
-                        <artifactId>xalan</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.xmlgraphics</groupId>
-                <artifactId>xmlgraphics-commons</artifactId>
-                <version>${xmlgraphicscommonsVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>commons-io</artifactId>
-                        <groupId>commons-io</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${springframeworkVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${springframeworkVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
-                <version>${hsqldbVersion}</version>
-                <scope>runtime</scope>
+                <version>2.7.3</version>
+                <scope>test</scope>
                 <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy-all</artifactId>
-                <version>${groovyVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity</artifactId>
-                <version>${velocityVersion}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-collections</groupId>
-                        <artifactId>commons-collections</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.json</groupId>
-                <artifactId>json</artifactId>
-                <version>${jsonVersion}</version>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>jaxen</groupId>
-                <artifactId>jaxen</artifactId>
-                <version>1.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>5.11.0</version>
+                <version>5.11.1</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -267,13 +188,13 @@
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-to-slf4j</artifactId>
-                <version>${log4j-to-slf4jVersion}</version>
+                <version>2.24.0</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jul-to-slf4j</artifactId>
-                <version>${jul-to-slf4jVersion}</version>
+                <version>2.0.16</version>
                 <scope>compile</scope>
             </dependency>
         </dependencies>
