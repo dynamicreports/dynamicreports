@@ -58,15 +58,9 @@
         <maven-jdeps-plugin-version>3.1.1</maven-jdeps-plugin-version>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
 
-        <!--Profile Plugins-->
-        <license-maven-plugin-version>4.3</license-maven-plugin-version>
-        <maven-javadoc-plugin-version>3.6.3</maven-javadoc-plugin-version>
-        <maven-source-plugin-version>3.3.0</maven-source-plugin-version>
-
         <!--Mycila License plugin configuration-->
         <license.header.location>${project.basedir}/src/etc/license_header.txt</license.header.location>
-        <license.header.definition>
-            ${project.basedir}/src/etc/header_definition.xml</license.header.definition>
+        <license.header.definition>${project.basedir}/src/etc/header_definition.xml</license.header.definition>
         <license.maven.owner>Ricardo Mariaca and the DynamicReports Contributors</license.maven.owner>
 
         <!-- Properties for maven-checkstyle-plugin -->
@@ -197,6 +191,11 @@
                 <version>2.0.16</version>
                 <scope>compile</scope>
             </dependency>
+             <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20240303</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -297,12 +296,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven-source-plugin-version}</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin-version}</version>
+                    <version>3.6.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -339,6 +338,11 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.5.0</version>
                 </plugin>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>4.6</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -351,7 +355,6 @@
                     <plugin>
                         <groupId>com.mycila</groupId>
                         <artifactId>license-maven-plugin</artifactId>
-                        <version>${license-maven-plugin-version}</version>
                         <configuration>
                             <header>${license.header.location}</header>
                             <headerDefinitions>${license.header.definition}</headerDefinitions>
@@ -396,7 +399,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -409,7 +411,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -505,7 +506,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -518,7 +518,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin-version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>

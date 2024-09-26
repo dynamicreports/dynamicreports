@@ -275,7 +275,6 @@
                     <plugin>
                         <groupId>com.mycila</groupId>
                         <artifactId>license-maven-plugin</artifactId>
-                        <version>${license-maven-plugin-version}</version>
                         <configuration>
                             <header>../src/etc/license_header.txt</header>
                             <headerDefinitions>../src/etc/header_definition.xml</headerDefinitions>
