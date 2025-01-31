@@ -1049,7 +1049,7 @@ public class Default {
      * <p>isTextFieldStretchWithOverflow.</p>
      *
      * @return a boolean.
-     * @deprecated replaced by {@link #getTextFieldTextAdjust(DRITextField)}
+     * @deprecated replaced by {@link #getTextFieldTextAdjust()}
      */
     @Deprecated
     public boolean isTextFieldStretchWithOverflow() {

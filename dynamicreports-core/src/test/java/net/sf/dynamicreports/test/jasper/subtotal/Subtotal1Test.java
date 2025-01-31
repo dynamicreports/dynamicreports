@@ -170,7 +170,7 @@ public class Subtotal1Test extends AbstractJasperValueTest implements Serializab
 
         @Override
         public Integer evaluate(ReportParameters reportParameters) {
-            return new Integer(((String) reportParameters.getValue("field2")).substring(1));
+            return Integer.valueOf(((String) reportParameters.getValue("field2")).substring(1));
         }
     }
 }

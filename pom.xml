@@ -10,7 +10,7 @@
 
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-parent</artifactId>
-    <version>6.20.0-SNAPSHOT</version>
+    <version>6.21.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DynamicReports - parent</name>
@@ -47,7 +47,7 @@
         <commonslang3Version>3.17.0</commonslang3Version>
         <groovyVersion>2.4.21</groovyVersion>
         <hsqldbVersion>2.7.2</hsqldbVersion>
-        <jasperreportsVersion>6.20.6</jasperreportsVersion>
+        <jasperreportsVersion>6.21.4</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
         <jaxb-implVersion>2.4.0-b180830.0438</jaxb-implVersion>
