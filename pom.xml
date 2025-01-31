@@ -43,7 +43,7 @@
         <!--Dependencies -->
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
-        <batikbridgeVersion>1.17</batikbridgeVersion>
+        <batikbridgeVersion>1.18</batikbridgeVersion>
         <commonslang3Version>3.17.0</commonslang3Version>
         <groovyVersion>2.4.21</groovyVersion>
         <hsqldbVersion>2.7.2</hsqldbVersion>
@@ -58,7 +58,7 @@
         <log4j-to-slf4jVersion>2.23.1</log4j-to-slf4jVersion>
         <logback-classicVersion>1.5.6</logback-classicVersion>
         <poiVersion>5.2.5</poiVersion>
-        <springframeworkVersion>5.3.33</springframeworkVersion>
+        <springframeworkVersion>5.3.39</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
         <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
 
