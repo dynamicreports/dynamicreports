@@ -47,7 +47,7 @@
         <batikbridgeVersion>1.18</batikbridgeVersion>
         <commonslang3Version>3.17.0</commonslang3Version>
         <groovyVersion>2.4.21</groovyVersion>
-        <hsqldbVersion>2.7.2</hsqldbVersion>
+        <hsqldbVersion>2.7.4</hsqldbVersion>
         <jasperreportsVersion>6.20.6</jasperreportsVersion>
         <jaxb-apiVersion>2.4.0-b180830.0359</jaxb-apiVersion>
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
