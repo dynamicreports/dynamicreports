@@ -29,28 +29,12 @@
       <property name="scope" value="protected"/>
       <property name="severity" value="warning"/>
     </module>
-    <module name="JavadocMethod">
-      <property name="scope" value="protected"/>
-      <property name="allowUndeclaredRTE" value="true"/>
-      <property name="allowMissingThrowsTags" value="true"/>
-      <property name="allowMissingJavadoc" value="true"/>
-      <property name="allowMissingPropertyJavadoc" value="true"/>
-      <property name="logLoadErrors" value="true"/>
-      <property name="suppressLoadErrors" value="true"/>
-      <property name="severity" value="warning"/>
-    </module>
     <module name="JavadocVariable">
       <property name="scope" value="protected"/>
       <property name="severity" value="warning"/>
     </module>
     <module name="LeftCurly">
       <property name="severity" value="error"/>
-    </module>
-    <module name="LineLength">
-      <property name="ignorePattern" value="^ *\* *[^ ]+$"/>
-      <property name="max" value="200"/>
-      <property name="tabWidth" value="2"/>
-      <property name="severity" value="warning"/>
     </module>
     <module name="LocalFinalVariableName"/>
     <module name="LocalVariableName"/>
