@@ -61,7 +61,7 @@
         <poiVersion>5.2.5</poiVersion>
         <springframeworkVersion>5.3.39</springframeworkVersion>
         <velocityVersion>1.7</velocityVersion>
-        <xmlgraphicscommonsVersion>2.9</xmlgraphicscommonsVersion>
+        <xmlgraphicscommonsVersion>2.11</xmlgraphicscommonsVersion>
 
         <!--Plugins -->
         <jacoco-maven-plugin-version>0.8.12</jacoco-maven-plugin-version>
