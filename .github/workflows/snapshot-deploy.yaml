@@ -1,6 +1,8 @@
 name: Snapshot deployment
 
 on:
+  schedule:
+    - cron: '30 8 * * 5'
   push:
      branches:
      - development
