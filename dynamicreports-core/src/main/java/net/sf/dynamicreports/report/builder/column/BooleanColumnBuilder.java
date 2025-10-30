@@ -68,7 +68,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param width the column preferred width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setWidth(Integer width) {
@@ -81,7 +81,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param width the column fixed width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setFixedWidth(Integer width) {
@@ -95,7 +95,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param width the column minimum width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setMinWidth(Integer width) {
@@ -109,7 +109,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param height the column preferred height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setHeight(Integer height) {
@@ -122,7 +122,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param height the column fixed height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setFixedHeight(Integer height) {
@@ -136,7 +136,7 @@ public class BooleanColumnBuilder extends ColumnBuilder<BooleanColumnBuilder, DR
      *
      * @param height the column minimum height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public BooleanColumnBuilder setMinHeight(Integer height) {

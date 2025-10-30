@@ -44,16 +44,6 @@ public class JasperJsonExporterBuilder extends
     super(new JasperJsonExporter());
   }
 
-  /**
-   * <p>
-   * setCharacterWidth.
-   * </p>
-   *
-   * @param characterWidth a {@link java.lang.Float} object.
-   * @return a
-   *         {@link net.sf.dynamicreports.jasper.builder.export.JasperTextExporterBuilder}
-   *         object.
-   */
   public JasperJsonExporterBuilder setIgnoreHyperlink(boolean ignoreHyperlink) {
     this.getObject().setIgnoreHyperlink(ignoreHyperlink);
     return this;

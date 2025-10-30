@@ -149,7 +149,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param columns the number of preferred columns >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is &lt; 0
      */
     public T setColumns(final Integer columns) {
         getComponent().setColumns(columns);
@@ -161,7 +161,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param columns the number of fixed columns >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is &lt; 0
      */
     public T setFixedColumns(final Integer columns) {
         getComponent().setColumns(columns);
@@ -174,7 +174,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param columns the number of minimum columns >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is &lt; 0
      */
     public T setMinColumns(final Integer columns) {
         getComponent().setColumns(columns);
@@ -187,7 +187,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param rows the number of preferred rows >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is &lt; 0
      */
     public T setRows(final Integer rows) {
         getComponent().setRows(rows);
@@ -199,7 +199,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param rows the number of fixed rows >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is &lt; 0
      */
     public T setFixedRows(final Integer rows) {
         getComponent().setRows(rows);
@@ -212,7 +212,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param rows the number of minimum rows >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is &lt; 0
      */
     public T setMinRows(final Integer rows) {
         getComponent().setRows(rows);
@@ -273,7 +273,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param width the column preferred width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setWidth(final Integer width) {
@@ -286,7 +286,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param width the column fixed width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedWidth(final Integer width) {
@@ -300,7 +300,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param width the column minimum width >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinWidth(final Integer width) {
@@ -314,7 +314,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param height the column preferred height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setHeight(final Integer height) {
@@ -327,7 +327,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param height the column fixed height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setFixedHeight(final Integer height) {
@@ -341,7 +341,7 @@ public abstract class ValueColumnBuilder<T extends ValueColumnBuilder<T, U>, U> 
      *
      * @param height the column minimum height >= 0
      * @return a column builder
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public T setMinHeight(final Integer height) {
