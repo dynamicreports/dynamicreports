@@ -43,7 +43,8 @@
         <targetVersion>8</targetVersion>
 
         <!--Dependencies Version,  only if used in mulitple -->
-        <jasperreportsVersion>7.0.0</jasperreportsVersion>
+        <jasperreportsVersion>7.0.3</jasperreportsVersion>
+        <jasperreportsGoogleMapsVersion>7.0.1</jasperreportsGoogleMapsVersion>
 
 
         <jaxb-coreVersion>2.3.0.1</jaxb-coreVersion>
@@ -112,7 +113,7 @@
             <dependency>
                 <groupId>net.sf.jasperreports</groupId>
                 <artifactId>jasperreports-google-maps</artifactId>
-                <version>${jasperreportsVersion}</version>
+                <version>${jasperreportsGoogleMapsVersion}</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.jasperreports</groupId>
