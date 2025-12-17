@@ -838,7 +838,7 @@ public class ConstantTransform {
      * <p>pdfVersion.</p>
      *
      * @param pdfVersion a {@link net.sf.dynamicreports.jasper.constant.PdfVersion} object.
-     * @return a {@link net.sf.jasperreports.export.type.PdfVersionEnum} object.
+     * @return a {@link net.sf.jasperreports.pdf.type.PdfVersionEnum} object.
      */
     protected static PdfVersionEnum pdfVersion(final PdfVersion pdfVersion) {
         switch (pdfVersion) {
@@ -896,7 +896,7 @@ public class ConstantTransform {
      * <p>pdfPrintScaling.</p>
      *
      * @param pdfPrintScaling a {@link net.sf.dynamicreports.report.constant.PdfPrintScaling} object.
-     * @return a {@link net.sf.jasperreports.export.type.PdfPrintScalingEnum} object.
+     * @return a {@link net.sf.jasperreports.pdf.type.PdfPrintScalingEnum} object.
      */
     protected static PdfPrintScalingEnum pdfPrintScaling(final PdfPrintScaling pdfPrintScaling) {
         switch (pdfPrintScaling) {
@@ -913,7 +913,7 @@ public class ConstantTransform {
      * <p>pdfaConformance.</p>
      *
      * @param pdfaConformance a {@link net.sf.dynamicreports.report.constant.PdfaConformance} object.
-     * @return a {@link net.sf.jasperreports.export.type.PdfaConformanceEnum} object.
+     * @return a {@link net.sf.jasperreports.pdf.type.PdfaConformanceEnum} object.
      */
     protected static PdfaConformanceEnum pdfaConformance(final PdfaConformance pdfaConformance) {
         switch (pdfaConformance) {
@@ -932,7 +932,7 @@ public class ConstantTransform {
      * <p>barcodeOrientation.</p>
      *
      * @param orientation a {@link net.sf.dynamicreports.report.constant.BarcodeOrientation} object.
-     * @return a {@link net.sf.jasperreports.components.barcode4j.OrientationEnum} object.
+     * @return a {@link net.sf.jasperreports.barcode4j.OrientationEnum} object.
      */
     public static net.sf.jasperreports.barcode4j.OrientationEnum barcodeOrientation(final BarcodeOrientation orientation) {
         switch (orientation) {
@@ -974,7 +974,7 @@ public class ConstantTransform {
      * <p>barcodeTextPosition.</p>
      *
      * @param textPosition a {@link net.sf.dynamicreports.report.constant.BarcodeTextPosition} object.
-     * @return a {@link net.sf.jasperreports.components.barcode4j.TextPositionEnum} object.
+     * @return a {@link net.sf.jasperreports.barcode4j.TextPositionEnum} object.
      */
     public static TextPositionEnum barcodeTextPosition(final BarcodeTextPosition textPosition) {
         if (textPosition == null) {
@@ -1066,7 +1066,7 @@ public class ConstantTransform {
      * <p>qrCodeErrorCorrectionLevel.</p>
      *
      * @param errorCorrectionLevel a {@link net.sf.dynamicreports.report.constant.QrCodeErrorCorrectionLevel} object.
-     * @return a {@link net.sf.jasperreports.components.barcode4j.ErrorCorrectionLevelEnum} object.
+     * @return a {@link net.sf.jasperreports.barcode4j.ErrorCorrectionLevelEnum} object.
      */
     public static ErrorCorrectionLevelEnum qrCodeErrorCorrectionLevel(final QrCodeErrorCorrectionLevel errorCorrectionLevel) {
         if (errorCorrectionLevel == null) {
@@ -1592,7 +1592,7 @@ public class ConstantTransform {
      * <p>rectangleAnchor.</p>
      *
      * @param rectangleAnchor a {@link net.sf.dynamicreports.report.constant.RectangleAnchor} object.
-     * @return a {@link org.jfree.ui.RectangleAnchor} object.
+     * @return a {@link org.jfree.chart.ui.RectangleAnchor} object.
      */
     public static org.jfree.chart.ui.RectangleAnchor rectangleAnchor(final RectangleAnchor rectangleAnchor) {
         switch (rectangleAnchor) {

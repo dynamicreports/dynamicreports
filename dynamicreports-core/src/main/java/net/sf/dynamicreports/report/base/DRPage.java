@@ -89,7 +89,7 @@ public class DRPage implements DRIPage {
      * Sets the page width.
      *
      * @param width the page width >= 0
-     * @throws java.lang.IllegalArgumentException if <code>width</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>width</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setWidth(Integer width) {
@@ -113,7 +113,7 @@ public class DRPage implements DRIPage {
      * Sets the page height.
      *
      * @param height the page height >= 0
-     * @throws java.lang.IllegalArgumentException if <code>height</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>height</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setHeight(Integer height) {

@@ -124,7 +124,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * Sets the column title width.
      *
      * @param titleWidth the column title width >= 0
-     * @throws java.lang.IllegalArgumentException if <code>titleWidth</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>titleWidth</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setTitleWidth(final Integer titleWidth) {
@@ -163,7 +163,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * This method is used to define the width of a column title. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
      * @param titleColumns the number of columns >= 0
-     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is &lt; 0
      */
     public void setTitleColumns(final Integer titleColumns) {
         if (titleColumns != null) {
@@ -186,7 +186,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * Sets the column title height.
      *
      * @param titleHeight the column title height >= 0
-     * @throws java.lang.IllegalArgumentException if <code>titleHeight</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>titleHeight</code> is &lt; 0
      * @see net.sf.dynamicreports.report.builder.Units
      */
     public void setTitleHeight(final Integer titleHeight) {
@@ -225,7 +225,7 @@ public class DRColumnTitleGroup implements DRIColumnTitleGroup {
      * This method is used to define the height of a column title. The height is set to the <code>rows</code> multiplied by height of the font
      *
      * @param titleRows the number of rows >= 0
-     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is &lt; 0
      */
     public void setTitleRows(final Integer titleRows) {
         if (titleRows != null) {
