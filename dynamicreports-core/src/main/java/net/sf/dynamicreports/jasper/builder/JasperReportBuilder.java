@@ -676,7 +676,7 @@ public class JasperReportBuilder extends ReportBuilder<JasperReportBuilder> {
     /**
      * <p>toJson.</p>
      *
-     * @param htmlExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
+     * @param jsonExporterBuilder a {@link net.sf.dynamicreports.jasper.builder.export.JasperJsonExporterBuilder} object.
      * @return a {@link net.sf.dynamicreports.jasper.builder.JasperReportBuilder} object.
      * @throws net.sf.dynamicreports.report.exception.DRException if any.
      */

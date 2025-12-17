@@ -161,7 +161,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * This method is used to define the width of a column. The width is set to the <code>columns</code> multiplied by width of the character <em>m</em> for the font used
      *
      * @param columns the number of columns >= 0
-     * @throws java.lang.IllegalArgumentException if <code>columns</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>columns</code> is &lt; 0
      */
     public void setColumns(final Integer columns) {
         if (columns != null) {
@@ -184,7 +184,7 @@ public class DRTextField<T> extends DRHyperLinkComponent implements DRITextField
      * This method is used to define the height of a column. The height is set to the <code>rows</code> multiplied by height of the font
      *
      * @param rows the number of rows >= 0
-     * @throws java.lang.IllegalArgumentException if <code>rows</code> is < 0
+     * @throws java.lang.IllegalArgumentException if <code>rows</code> is &lt; 0
      */
     public void setRows(final Integer rows) {
         if (rows != null) {
