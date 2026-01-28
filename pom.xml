@@ -45,7 +45,7 @@
         <barcode4jVersion>2.1</barcode4jVersion>
         <barbecueVersion>1.5-beta1</barbecueVersion>
         <batikbridgeVersion>1.19</batikbridgeVersion>
-        <commonslang3Version>3.17.0</commonslang3Version>
+        <commonslang3Version>3.19.0</commonslang3Version>
         <groovyVersion>2.4.21</groovyVersion>
         <hsqldbVersion>2.7.4</hsqldbVersion>
         <jasperreportsVersion>6.20.6</jasperreportsVersion>
