@@ -31,6 +31,14 @@
         <url>https://github.com/dynamicreports/dynamicreports</url>
     </scm>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <modules>
         <module>dynamicreports-core</module>
         <module>dynamicreports-examples</module>
