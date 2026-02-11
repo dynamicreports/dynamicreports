@@ -157,7 +157,7 @@
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
-                <version>4.0.2</version>
+                <version>4.0.5</version>
             </dependency>
             <dependency>
                 <groupId>org.hsqldb</groupId>
@@ -468,7 +468,7 @@
                 <dependency>
                     <groupId>jakarta.xml.bind</groupId>
                     <artifactId>jakarta.xml.bind-api</artifactId>
-                    <version>4.0.2</version>
+                    <version>4.0.5</version>
                 </dependency>
 
                 <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
