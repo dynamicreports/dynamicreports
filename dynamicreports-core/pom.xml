@@ -193,9 +193,6 @@
                     <execution>
                         <id>validate</id>
                         <phase>validate</phase>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -214,16 +211,13 @@
                         <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                     </sourceDirectories>
                     <headerLocation>../src/etc/checkstyle.xml</headerLocation>
-                    <maxAllowedViolations>
-                        ${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
+                    <maxAllowedViolations>${checkstyle.config.maxAllowedViolations}</maxAllowedViolations>
                     <configLocation>../src/etc/checkstyle.xml</configLocation>
                     <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
                     <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
                     <includeResources>${checkstyle.config.includeResources}</includeResources>
-                    <includeTestResources>
-                        ${checkstyle.config.includeTestResources}</includeTestResources>
-                    <includeTestSourceDirectory>
-                        ${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                    <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                    <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
                     <linkXRef>${linkXRef}</linkXRef>
                 </configuration>
             </plugin>
@@ -315,12 +309,8 @@
                         <artifactId>maven-checkstyle-plugin</artifactId>
                         <executions>
                             <execution>
-                                <!--Could run with mvn clean verify-->
                                 <id>validate</id>
                                 <phase>validate</phase>
-                                <configuration>
-                                    <encoding>UTF-8</encoding>
-                                </configuration>
                                 <goals>
                                     <goal>check</goal>
                                 </goals>
@@ -342,12 +332,9 @@
                             <configLocation>../src/etc/checkstyle.xml</configLocation>
                             <consoleOutput>${checkstyle.config.consoleOutput}</consoleOutput>
                             <failsOnError>${checkstyle.config.failsOnError}</failsOnError>
-                            <includeResources>
-                                ${checkstyle.config.includeResources}</includeResources>
-                            <includeTestResources>
-                                ${checkstyle.config.includeTestResources}</includeTestResources>
-                            <includeTestSourceDirectory>
-                                ${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
+                            <includeResources>${checkstyle.config.includeResources}</includeResources>
+                            <includeTestResources>${checkstyle.config.includeTestResources}</includeTestResources>
+                            <includeTestSourceDirectory>${checkstyle.config.includeTestSourceDirectory}</includeTestSourceDirectory>
                             <linkXRef>${linkXRef}</linkXRef>
                         </configuration>
                     </plugin>

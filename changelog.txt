@@ -1,9 +1,9 @@
 DynamicReports Change Log
 =========================
 
-Changes in version 7.0.0 (2024-10-01)
+Changes in version 7.0.0 (2026-02-10)
 ---------------------------------------------------
- - Update jasperreport to 7.0.0
+ - Update jasperreport to major version 7
 
 
 Changes in version 6.12.0 (2020-10-08)

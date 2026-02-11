@@ -66,24 +66,10 @@ DynamicReports is synchronized with a Maven central repository. For Maven projec
 <dependency>
     <groupId>net.sourceforge.dynamicreports</groupId>
     <artifactId>dynamicreports-core</artifactId>
-    <version>6.12.0</version>
+    <version>7.0.0</version>
 </dependency>
 ```
-#### AdHoc module
-```xml
-<dependency>
-    <groupId>net.sourceforge.dynamicreports</groupId>
-    <artifactId>dynamicreports-adhoc</artifactId>
-    <version>6.12.0</version>
-</dependency>
-```
-#### Google Chart addon module
-```xml
-<dependency>
-    <groupId>net.sourceforge.dynamicreports</groupId>
-    <artifactId>dynamicreports-googlecharts</artifactId>
-    <version>6.12.0</version>
-</dependency>
+
 ```
 
 For non Maven projects you can to download jar file from [maven repository](https://search.maven.org/search?q=g:net.sourceforge.dynamicreports)
