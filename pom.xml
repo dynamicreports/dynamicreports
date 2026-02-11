@@ -35,7 +35,7 @@
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://central.sonatype.com/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
