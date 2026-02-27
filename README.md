@@ -6,6 +6,7 @@
 #### Development
 
 [![codecov](https://codecov.io/gh/dynamicreports/dynamicreports/branch/development/graph/badge.svg)](https://codecov.io/gh/dynamicreports/dynamicreports)
+[![libs.tech recommends](https://libs.tech/project/128191219/badge.svg)](https://libs.tech/project/128191219/dynamicreports)
 
 # Dynamic Reports
 DynamicReports is an open source Java reporting library based on JasperReports.
