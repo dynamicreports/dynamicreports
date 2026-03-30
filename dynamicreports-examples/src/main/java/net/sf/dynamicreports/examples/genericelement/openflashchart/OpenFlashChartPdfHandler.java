@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 
+import org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceStrength;
 import org.apache.commons.collections4.map.ReferenceMap;
 
 import com.lowagie.text.Rectangle;
@@ -53,7 +54,7 @@ import net.sf.jasperreports.pdf.JRPdfExporterContext;
 @SuppressWarnings("deprecation")
 public class OpenFlashChartPdfHandler implements GenericElementPdfHandler {
 
-    private final ReferenceMap existingContexts = new ReferenceMap(ReferenceMap.WEAK, ReferenceMap.HARD);
+    private final ReferenceMap existingContexts = new ReferenceMap(ReferenceStrength.WEAK, ReferenceStrength.HARD);
 
     /**
      * {@inheritDoc}
